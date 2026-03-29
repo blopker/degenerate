@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+final class CountrySpecVerificationFieldDetails {const CountrySpecVerificationFieldDetails({required this.additional, required this.minimum, });
+
+factory CountrySpecVerificationFieldDetails.fromJson(Map<String, dynamic> json) { return CountrySpecVerificationFieldDetails(
+  additional: (json['additional'] as List<dynamic>).map((e) => e as String).toList(),
+  minimum: (json['minimum'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// Additional fields which are only required for some users.
+final List<String> additional;
+
+/// Fields which every account must eventually provide.
+final List<String> minimum;
+
+Map<String, dynamic> toJson() { return {
+  'additional': additional,
+  'minimum': minimum,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('additional') &&
+      json.containsKey('minimum'); } 
+CountrySpecVerificationFieldDetails copyWith({List<String>? additional, List<String>? minimum, }) { return CountrySpecVerificationFieldDetails(
+  additional: additional ?? this.additional,
+  minimum: minimum ?? this.minimum,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CountrySpecVerificationFieldDetails &&
+          listEquals(additional, other.additional) &&
+          listEquals(minimum, other.minimum); } 
+@override int get hashCode { return Object.hash(Object.hashAll(additional), Object.hashAll(minimum)); } 
+@override String toString() { return 'CountrySpecVerificationFieldDetails(additional: $additional, minimum: $minimum)'; } 
+ }

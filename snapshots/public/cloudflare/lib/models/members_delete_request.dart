@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'member_id.dart';final class MembersDeleteRequest {const MembersDeleteRequest({required this.memberId});
+
+factory MembersDeleteRequest.fromJson(Map<String, dynamic> json) { return MembersDeleteRequest(
+  memberId: MemberId.fromJson(json['member_id'] as String),
+); }
+
+/// Organization Member ID
+final MemberId memberId;
+
+Map<String, dynamic> toJson() { return {
+  'member_id': memberId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('member_id'); } 
+MembersDeleteRequest copyWith({MemberId? memberId}) { return MembersDeleteRequest(
+  memberId: memberId ?? this.memberId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MembersDeleteRequest &&
+          memberId == other.memberId; } 
+@override int get hashCode { return memberId.hashCode; } 
+@override String toString() { return 'MembersDeleteRequest(memberId: $memberId)'; } 
+ }

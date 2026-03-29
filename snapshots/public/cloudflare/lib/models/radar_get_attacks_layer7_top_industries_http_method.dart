@@ -1,0 +1,158 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7TopIndustriesHttpMethod {const RadarGetAttacksLayer7TopIndustriesHttpMethod._(this.value);
+
+factory RadarGetAttacksLayer7TopIndustriesHttpMethod.fromJson(String json) { return switch (json) {
+  'GET' => $get,
+  'POST' => post,
+  'DELETE' => delete,
+  'PUT' => put,
+  'HEAD' => head,
+  'PURGE' => purge,
+  'OPTIONS' => options,
+  'PROPFIND' => propfind,
+  'MKCOL' => mkcol,
+  'PATCH' => patch,
+  'ACL' => acl,
+  'BCOPY' => bcopy,
+  'BDELETE' => bdelete,
+  'BMOVE' => bmove,
+  'BPROPFIND' => bpropfind,
+  'BPROPPATCH' => bproppatch,
+  'CHECKIN' => checkin,
+  'CHECKOUT' => checkout,
+  'CONNECT' => connect,
+  'COPY' => copy,
+  'LABEL' => label,
+  'LOCK' => lock,
+  'MERGE' => merge,
+  'MKACTIVITY' => mkactivity,
+  'MKWORKSPACE' => mkworkspace,
+  'MOVE' => move,
+  'NOTIFY' => notify,
+  'ORDERPATCH' => orderpatch,
+  'POLL' => poll,
+  'PROPPATCH' => proppatch,
+  'REPORT' => report,
+  'SEARCH' => search,
+  'SUBSCRIBE' => subscribe,
+  'TRACE' => trace,
+  'UNCHECKOUT' => uncheckout,
+  'UNLOCK' => unlock,
+  'UNSUBSCRIBE' => unsubscribe,
+  'UPDATE' => update,
+  'VERSIONCONTROL' => versioncontrol,
+  'BASELINECONTROL' => baselinecontrol,
+  'XMSENUMATTS' => xmsenumatts,
+  'RPC_OUT_DATA' => rpcOutData,
+  'RPC_IN_DATA' => rpcInData,
+  'JSON' => $json,
+  'COOK' => cook,
+  'TRACK' => track,
+  _ => RadarGetAttacksLayer7TopIndustriesHttpMethod._(json),
+}; }
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod $get = RadarGetAttacksLayer7TopIndustriesHttpMethod._('GET');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod post = RadarGetAttacksLayer7TopIndustriesHttpMethod._('POST');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod delete = RadarGetAttacksLayer7TopIndustriesHttpMethod._('DELETE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod put = RadarGetAttacksLayer7TopIndustriesHttpMethod._('PUT');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod head = RadarGetAttacksLayer7TopIndustriesHttpMethod._('HEAD');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod purge = RadarGetAttacksLayer7TopIndustriesHttpMethod._('PURGE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod options = RadarGetAttacksLayer7TopIndustriesHttpMethod._('OPTIONS');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod propfind = RadarGetAttacksLayer7TopIndustriesHttpMethod._('PROPFIND');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod mkcol = RadarGetAttacksLayer7TopIndustriesHttpMethod._('MKCOL');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod patch = RadarGetAttacksLayer7TopIndustriesHttpMethod._('PATCH');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod acl = RadarGetAttacksLayer7TopIndustriesHttpMethod._('ACL');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod bcopy = RadarGetAttacksLayer7TopIndustriesHttpMethod._('BCOPY');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod bdelete = RadarGetAttacksLayer7TopIndustriesHttpMethod._('BDELETE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod bmove = RadarGetAttacksLayer7TopIndustriesHttpMethod._('BMOVE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod bpropfind = RadarGetAttacksLayer7TopIndustriesHttpMethod._('BPROPFIND');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod bproppatch = RadarGetAttacksLayer7TopIndustriesHttpMethod._('BPROPPATCH');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod checkin = RadarGetAttacksLayer7TopIndustriesHttpMethod._('CHECKIN');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod checkout = RadarGetAttacksLayer7TopIndustriesHttpMethod._('CHECKOUT');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod connect = RadarGetAttacksLayer7TopIndustriesHttpMethod._('CONNECT');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod copy = RadarGetAttacksLayer7TopIndustriesHttpMethod._('COPY');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod label = RadarGetAttacksLayer7TopIndustriesHttpMethod._('LABEL');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod lock = RadarGetAttacksLayer7TopIndustriesHttpMethod._('LOCK');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod merge = RadarGetAttacksLayer7TopIndustriesHttpMethod._('MERGE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod mkactivity = RadarGetAttacksLayer7TopIndustriesHttpMethod._('MKACTIVITY');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod mkworkspace = RadarGetAttacksLayer7TopIndustriesHttpMethod._('MKWORKSPACE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod move = RadarGetAttacksLayer7TopIndustriesHttpMethod._('MOVE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod notify = RadarGetAttacksLayer7TopIndustriesHttpMethod._('NOTIFY');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod orderpatch = RadarGetAttacksLayer7TopIndustriesHttpMethod._('ORDERPATCH');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod poll = RadarGetAttacksLayer7TopIndustriesHttpMethod._('POLL');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod proppatch = RadarGetAttacksLayer7TopIndustriesHttpMethod._('PROPPATCH');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod report = RadarGetAttacksLayer7TopIndustriesHttpMethod._('REPORT');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod search = RadarGetAttacksLayer7TopIndustriesHttpMethod._('SEARCH');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod subscribe = RadarGetAttacksLayer7TopIndustriesHttpMethod._('SUBSCRIBE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod trace = RadarGetAttacksLayer7TopIndustriesHttpMethod._('TRACE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod uncheckout = RadarGetAttacksLayer7TopIndustriesHttpMethod._('UNCHECKOUT');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod unlock = RadarGetAttacksLayer7TopIndustriesHttpMethod._('UNLOCK');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod unsubscribe = RadarGetAttacksLayer7TopIndustriesHttpMethod._('UNSUBSCRIBE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod update = RadarGetAttacksLayer7TopIndustriesHttpMethod._('UPDATE');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod versioncontrol = RadarGetAttacksLayer7TopIndustriesHttpMethod._('VERSIONCONTROL');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod baselinecontrol = RadarGetAttacksLayer7TopIndustriesHttpMethod._('BASELINECONTROL');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod xmsenumatts = RadarGetAttacksLayer7TopIndustriesHttpMethod._('XMSENUMATTS');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod rpcOutData = RadarGetAttacksLayer7TopIndustriesHttpMethod._('RPC_OUT_DATA');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod rpcInData = RadarGetAttacksLayer7TopIndustriesHttpMethod._('RPC_IN_DATA');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod $json = RadarGetAttacksLayer7TopIndustriesHttpMethod._('JSON');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod cook = RadarGetAttacksLayer7TopIndustriesHttpMethod._('COOK');
+
+static const RadarGetAttacksLayer7TopIndustriesHttpMethod track = RadarGetAttacksLayer7TopIndustriesHttpMethod._('TRACK');
+
+static const List<RadarGetAttacksLayer7TopIndustriesHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7TopIndustriesHttpMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7TopIndustriesHttpMethod($value)'; } 
+ }

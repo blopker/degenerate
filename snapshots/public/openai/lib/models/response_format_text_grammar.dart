@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of response format being defined. Always `grammar`.
+final class ResponseFormatTextGrammarType {const ResponseFormatTextGrammarType._(this.value);
+
+factory ResponseFormatTextGrammarType.fromJson(String json) { return switch (json) {
+  'grammar' => grammar,
+  _ => ResponseFormatTextGrammarType._(json),
+}; }
+
+static const ResponseFormatTextGrammarType grammar = ResponseFormatTextGrammarType._('grammar');
+
+static const List<ResponseFormatTextGrammarType> values = [grammar];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseFormatTextGrammarType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseFormatTextGrammarType($value)'; } 
+ }
+/// A custom grammar for the model to follow when generating text.
+/// Learn more in the [custom grammars guide](/docs/guides/custom-grammars).
+/// 
+final class ResponseFormatTextGrammar {const ResponseFormatTextGrammar({required this.type, required this.grammar, });
+
+factory ResponseFormatTextGrammar.fromJson(Map<String, dynamic> json) { return ResponseFormatTextGrammar(
+  type: ResponseFormatTextGrammarType.fromJson(json['type'] as String),
+  grammar: json['grammar'] as String,
+); }
+
+/// The type of response format being defined. Always `grammar`.
+final ResponseFormatTextGrammarType type;
+
+/// The custom grammar for the model to follow.
+final String grammar;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'grammar': grammar,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('grammar') && json['grammar'] is String; } 
+ResponseFormatTextGrammar copyWith({ResponseFormatTextGrammarType? type, String? grammar, }) { return ResponseFormatTextGrammar(
+  type: type ?? this.type,
+  grammar: grammar ?? this.grammar,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseFormatTextGrammar &&
+          type == other.type &&
+          grammar == other.grammar; } 
+@override int get hashCode { return Object.hash(type, grammar); } 
+@override String toString() { return 'ResponseFormatTextGrammar(type: $type, grammar: $grammar)'; } 
+ }

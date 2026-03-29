@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer {const InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer({required this.country});
+
+factory InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer(
+  country: json['country'] as String,
+); }
+
+final String country;
+
+Map<String, dynamic> toJson() { return {
+  'country': country,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
+InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer copyWith({String? country}) { return InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer(
+  country: country ?? this.country,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer &&
+          country == other.country; } 
+@override int get hashCode { return country.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam3BankTransferEuBankTransfer(country: $country)'; } 
+ }

@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_checkout_sessions_request_subscription_data_billing_mode_flexible.dart';final class PostCheckoutSessionsRequestSubscriptionDataBillingModeType {const PostCheckoutSessionsRequestSubscriptionDataBillingModeType._(this.value);
+
+factory PostCheckoutSessionsRequestSubscriptionDataBillingModeType.fromJson(String json) { return switch (json) {
+  'classic' => classic,
+  'flexible' => flexible,
+  _ => PostCheckoutSessionsRequestSubscriptionDataBillingModeType._(json),
+}; }
+
+static const PostCheckoutSessionsRequestSubscriptionDataBillingModeType classic = PostCheckoutSessionsRequestSubscriptionDataBillingModeType._('classic');
+
+static const PostCheckoutSessionsRequestSubscriptionDataBillingModeType flexible = PostCheckoutSessionsRequestSubscriptionDataBillingModeType._('flexible');
+
+static const List<PostCheckoutSessionsRequestSubscriptionDataBillingModeType> values = [classic, flexible];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestSubscriptionDataBillingModeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataBillingModeType($value)'; } 
+ }
+final class PostCheckoutSessionsRequestSubscriptionDataBillingMode {const PostCheckoutSessionsRequestSubscriptionDataBillingMode({this.flexible, required this.type, });
+
+factory PostCheckoutSessionsRequestSubscriptionDataBillingMode.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestSubscriptionDataBillingMode(
+  flexible: json['flexible'] != null ? PostCheckoutSessionsRequestSubscriptionDataBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
+  type: PostCheckoutSessionsRequestSubscriptionDataBillingModeType.fromJson(json['type'] as String),
+); }
+
+final PostCheckoutSessionsRequestSubscriptionDataBillingModeFlexible? flexible;
+
+final PostCheckoutSessionsRequestSubscriptionDataBillingModeType type;
+
+Map<String, dynamic> toJson() { return {
+  if (flexible != null) 'flexible': flexible?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostCheckoutSessionsRequestSubscriptionDataBillingMode copyWith({PostCheckoutSessionsRequestSubscriptionDataBillingModeFlexible Function()? flexible, PostCheckoutSessionsRequestSubscriptionDataBillingModeType? type, }) { return PostCheckoutSessionsRequestSubscriptionDataBillingMode(
+  flexible: flexible != null ? flexible() : this.flexible,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestSubscriptionDataBillingMode &&
+          flexible == other.flexible &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(flexible, type); } 
+@override String toString() { return 'PostCheckoutSessionsRequestSubscriptionDataBillingMode(flexible: $flexible, type: $type)'; } 
+ }

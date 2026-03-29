@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_health_data.dart';final class LoadBalancingPreviewResultValue {const LoadBalancingPreviewResultValue({this.healthy, this.origins, });
+
+factory LoadBalancingPreviewResultValue.fromJson(Map<String, dynamic> json) { return LoadBalancingPreviewResultValue(
+  healthy: json['healthy'] as bool?,
+  origins: (json['origins'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, LoadBalancingOriginHealthData.fromJson(v as Map<String, dynamic>)))).toList(),
+); }
+
+final bool? healthy;
+
+final List<Map<String,LoadBalancingOriginHealthData>>? origins;
+
+Map<String, dynamic> toJson() { return {
+  'healthy': ?healthy,
+  if (origins != null) 'origins': origins?.map((e) => e.map((k, v) => MapEntry(k, v.toJson()))).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LoadBalancingPreviewResultValue copyWith({bool Function()? healthy, List<Map<String, LoadBalancingOriginHealthData>> Function()? origins, }) { return LoadBalancingPreviewResultValue(
+  healthy: healthy != null ? healthy() : this.healthy,
+  origins: origins != null ? origins() : this.origins,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LoadBalancingPreviewResultValue &&
+          healthy == other.healthy &&
+          listEquals(origins, other.origins); } 
+@override int get hashCode { return Object.hash(healthy, Object.hashAll(origins ?? const [])); } 
+@override String toString() { return 'LoadBalancingPreviewResultValue(healthy: $healthy, origins: $origins)'; } 
+ }

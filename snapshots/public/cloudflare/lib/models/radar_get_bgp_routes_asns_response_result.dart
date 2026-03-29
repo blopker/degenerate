@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_routes_asns_response_result_asns.dart';import 'radar_get_bgp_routes_asns_response_result_meta.dart';final class RadarGetBgpRoutesAsnsResponseResult {const RadarGetBgpRoutesAsnsResponseResult({required this.asns, required this.meta, });
+
+factory RadarGetBgpRoutesAsnsResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesAsnsResponseResult(
+  asns: (json['asns'] as List<dynamic>).map((e) => RadarGetBgpRoutesAsnsResponseResultAsns.fromJson(e as Map<String, dynamic>)).toList(),
+  meta: RadarGetBgpRoutesAsnsResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+); }
+
+final List<RadarGetBgpRoutesAsnsResponseResultAsns> asns;
+
+final RadarGetBgpRoutesAsnsResponseResultMeta meta;
+
+Map<String, dynamic> toJson() { return {
+  'asns': asns.map((e) => e.toJson()).toList(),
+  'meta': meta.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns') &&
+      json.containsKey('meta'); } 
+RadarGetBgpRoutesAsnsResponseResult copyWith({List<RadarGetBgpRoutesAsnsResponseResultAsns>? asns, RadarGetBgpRoutesAsnsResponseResultMeta? meta, }) { return RadarGetBgpRoutesAsnsResponseResult(
+  asns: asns ?? this.asns,
+  meta: meta ?? this.meta,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpRoutesAsnsResponseResult &&
+          listEquals(asns, other.asns) &&
+          meta == other.meta; } 
+@override int get hashCode { return Object.hash(Object.hashAll(asns), meta); } 
+@override String toString() { return 'RadarGetBgpRoutesAsnsResponseResult(asns: $asns, meta: $meta)'; } 
+ }

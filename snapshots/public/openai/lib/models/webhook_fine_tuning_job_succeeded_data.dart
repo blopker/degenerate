@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Event data payload.
+/// 
+final class WebhookFineTuningJobSucceededData {const WebhookFineTuningJobSucceededData({required this.id});
+
+factory WebhookFineTuningJobSucceededData.fromJson(Map<String, dynamic> json) { return WebhookFineTuningJobSucceededData(
+  id: json['id'] as String,
+); }
+
+/// The unique ID of the fine-tuning job.
+/// 
+final String id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+WebhookFineTuningJobSucceededData copyWith({String? id}) { return WebhookFineTuningJobSucceededData(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookFineTuningJobSucceededData &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'WebhookFineTuningJobSucceededData(id: $id)'; } 
+ }

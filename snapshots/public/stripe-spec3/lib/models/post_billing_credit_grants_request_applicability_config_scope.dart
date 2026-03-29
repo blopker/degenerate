@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_credit_grants_request_applicability_config_scope_prices.dart';final class PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType {const PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType._(this.value);
+
+factory PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType.fromJson(String json) { return switch (json) {
+  'metered' => metered,
+  _ => PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType._(json),
+}; }
+
+static const PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType metered = PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType._('metered');
+
+static const List<PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType> values = [metered];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType($value)'; } 
+ }
+final class PostBillingCreditGrantsRequestApplicabilityConfigScope {const PostBillingCreditGrantsRequestApplicabilityConfigScope({this.priceType, this.prices, });
+
+factory PostBillingCreditGrantsRequestApplicabilityConfigScope.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestApplicabilityConfigScope(
+  priceType: json['price_type'] != null ? PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType.fromJson(json['price_type'] as String) : null,
+  prices: (json['prices'] as List<dynamic>?)?.map((e) => PostBillingCreditGrantsRequestApplicabilityConfigScopePrices.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType? priceType;
+
+final List<PostBillingCreditGrantsRequestApplicabilityConfigScopePrices>? prices;
+
+Map<String, dynamic> toJson() { return {
+  if (priceType != null) 'price_type': priceType?.toJson(),
+  if (prices != null) 'prices': prices?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostBillingCreditGrantsRequestApplicabilityConfigScope copyWith({PostBillingCreditGrantsRequestApplicabilityConfigScopePriceType Function()? priceType, List<PostBillingCreditGrantsRequestApplicabilityConfigScopePrices> Function()? prices, }) { return PostBillingCreditGrantsRequestApplicabilityConfigScope(
+  priceType: priceType != null ? priceType() : this.priceType,
+  prices: prices != null ? prices() : this.prices,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingCreditGrantsRequestApplicabilityConfigScope &&
+          priceType == other.priceType &&
+          listEquals(prices, other.prices); } 
+@override int get hashCode { return Object.hash(priceType, Object.hashAll(prices ?? const [])); } 
+@override String toString() { return 'PostBillingCreditGrantsRequestApplicabilityConfigScope(priceType: $priceType, prices: $prices)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_domain_rule_email_domain.dart';/// Match an entire email domain.
+final class AccessDomainRule {const AccessDomainRule({required this.emailDomain});
+
+factory AccessDomainRule.fromJson(Map<String, dynamic> json) { return AccessDomainRule(
+  emailDomain: AccessDomainRuleEmailDomain.fromJson(json['email_domain'] as Map<String, dynamic>),
+); }
+
+final AccessDomainRuleEmailDomain emailDomain;
+
+Map<String, dynamic> toJson() { return {
+  'email_domain': emailDomain.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('email_domain'); } 
+AccessDomainRule copyWith({AccessDomainRuleEmailDomain? emailDomain}) { return AccessDomainRule(
+  emailDomain: emailDomain ?? this.emailDomain,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessDomainRule &&
+          emailDomain == other.emailDomain; } 
+@override int get hashCode { return emailDomain.hashCode; } 
+@override String toString() { return 'AccessDomainRule(emailDomain: $emailDomain)'; } 
+ }

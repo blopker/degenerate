@@ -1,0 +1,87 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'connect_collection_transfer_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class ConnectCollectionTransferObject {const ConnectCollectionTransferObject._(this.value);
+
+factory ConnectCollectionTransferObject.fromJson(String json) { return switch (json) {
+  'connect_collection_transfer' => connectCollectionTransfer,
+  _ => ConnectCollectionTransferObject._(json),
+}; }
+
+static const ConnectCollectionTransferObject connectCollectionTransfer = ConnectCollectionTransferObject._('connect_collection_transfer');
+
+static const List<ConnectCollectionTransferObject> values = [connectCollectionTransfer];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ConnectCollectionTransferObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ConnectCollectionTransferObject($value)'; } 
+ }
+/// 
+final class ConnectCollectionTransfer {const ConnectCollectionTransfer({required this.amount, required this.currency, required this.destination, required this.id, required this.livemode, required this.object, });
+
+factory ConnectCollectionTransfer.fromJson(Map<String, dynamic> json) { return ConnectCollectionTransfer(
+  amount: (json['amount'] as num).toInt(),
+  currency: json['currency'] as String,
+  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  id: json['id'] as String,
+  livemode: json['livemode'] as bool,
+  object: ConnectCollectionTransferObject.fromJson(json['object'] as String),
+); }
+
+/// Amount transferred, in cents (or local equivalent).
+final int amount;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// ID of the account that funds are being collected for.
+final ConnectCollectionTransferDestination destination;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final ConnectCollectionTransferObject object;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'currency': currency,
+  'destination': destination.toJson(),
+  'id': id,
+  'livemode': livemode,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('destination') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object'); } 
+ConnectCollectionTransfer copyWith({int? amount, String? currency, ConnectCollectionTransferDestination? destination, String? id, bool? livemode, ConnectCollectionTransferObject? object, }) { return ConnectCollectionTransfer(
+  amount: amount ?? this.amount,
+  currency: currency ?? this.currency,
+  destination: destination ?? this.destination,
+  id: id ?? this.id,
+  livemode: livemode ?? this.livemode,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ConnectCollectionTransfer &&
+          amount == other.amount &&
+          currency == other.currency &&
+          destination == other.destination &&
+          id == other.id &&
+          livemode == other.livemode &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(amount, currency, destination, id, livemode, object); } 
+@override String toString() { return 'ConnectCollectionTransfer(amount: $amount, currency: $currency, destination: $destination, id: $id, livemode: $livemode, object: $object)'; } 
+ }

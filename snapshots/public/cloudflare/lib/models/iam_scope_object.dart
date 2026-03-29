@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// This is a combination of pre-defined resource name and identifier (like Zone ID etc.)
+extension type IamScopeObjectKey(dynamic value) {
+factory IamScopeObjectKey.fromJson(dynamic json) => IamScopeObjectKey(json);
+
+dynamic toJson() => value;
+
+}
+/// A scope object represents any resource that can have actions applied against invite.
+final class IamScopeObject {const IamScopeObject({required this.key});
+
+factory IamScopeObject.fromJson(Map<String, dynamic> json) { return IamScopeObject(
+  key: json['key'] != null ? IamScopeObjectKey.fromJson(json['key'] as dynamic) : null,
+); }
+
+final IamScopeObjectKey? key;
+
+Map<String, dynamic> toJson() { return {
+  if (key != null) 'key': key?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key'); } 
+IamScopeObject copyWith({IamScopeObjectKey? Function()? key}) { return IamScopeObject(
+  key: key != null ? key() : this.key,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IamScopeObject &&
+          key == other.key; } 
+@override int get hashCode { return key.hashCode; } 
+@override String toString() { return 'IamScopeObject(key: $key)'; } 
+ }

@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'waitingroom_rule_action.dart';import 'waitingroom_rule_description.dart';import 'waitingroom_rule_enabled.dart';import 'waitingroom_rule_expression.dart';import 'waitingroom_rule_position.dart';import 'waitingroom_rule_position_variant1.dart';import 'waitingroom_rule_position_variant2.dart';import 'waitingroom_rule_position_variant3.dart';final class WaitingroomPatchRule {const WaitingroomPatchRule({required this.action, this.description, this.enabled, required this.expression, this.position, });
+
+factory WaitingroomPatchRule.fromJson(Map<String, dynamic> json) { return WaitingroomPatchRule(
+  action: WaitingroomRuleAction.fromJson(json['action'] as String),
+  description: json['description'] != null ? WaitingroomRuleDescription.fromJson(json['description'] as String) : null,
+  enabled: json['enabled'] != null ? WaitingroomRuleEnabled.fromJson(json['enabled'] as bool) : null,
+  expression: WaitingroomRuleExpression.fromJson(json['expression'] as String),
+  position: json['position'] != null ? OneOf3.parse(json['position'], fromA: (v) => WaitingroomRulePositionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WaitingroomRulePositionVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WaitingroomRulePositionVariant3.fromJson(v as Map<String, dynamic>),) : null,
+); }
+
+final WaitingroomRuleAction action;
+
+final WaitingroomRuleDescription? description;
+
+final WaitingroomRuleEnabled? enabled;
+
+final WaitingroomRuleExpression expression;
+
+final WaitingroomRulePosition? position;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  'expression': expression.toJson(),
+  if (position != null) 'position': position?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('expression'); } 
+WaitingroomPatchRule copyWith({WaitingroomRuleAction? action, WaitingroomRuleDescription Function()? description, WaitingroomRuleEnabled Function()? enabled, WaitingroomRuleExpression? expression, WaitingroomRulePosition Function()? position, }) { return WaitingroomPatchRule(
+  action: action ?? this.action,
+  description: description != null ? description() : this.description,
+  enabled: enabled != null ? enabled() : this.enabled,
+  expression: expression ?? this.expression,
+  position: position != null ? position() : this.position,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WaitingroomPatchRule &&
+          action == other.action &&
+          description == other.description &&
+          enabled == other.enabled &&
+          expression == other.expression &&
+          position == other.position; } 
+@override int get hashCode { return Object.hash(action, description, enabled, expression, position); } 
+@override String toString() { return 'WaitingroomPatchRule(action: $action, description: $description, enabled: $enabled, expression: $expression, position: $position)'; } 
+ }

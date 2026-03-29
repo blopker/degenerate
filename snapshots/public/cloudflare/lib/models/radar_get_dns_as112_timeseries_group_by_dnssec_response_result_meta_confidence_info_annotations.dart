@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

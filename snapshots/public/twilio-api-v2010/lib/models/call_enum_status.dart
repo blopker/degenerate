@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The status of this call. Can be: `queued`, `ringing`, `in-progress`, `canceled`, `completed`, `failed`, `busy` or `no-answer`. See [Call Status Values](https://www.twilio.com/docs/voice/api/call-resource#call-status-values) below for more information.
+final class CallEnumStatus {const CallEnumStatus._(this.value);
+
+factory CallEnumStatus.fromJson(String json) { return switch (json) {
+  'queued' => queued,
+  'ringing' => ringing,
+  'in-progress' => inProgress,
+  'completed' => completed,
+  'busy' => busy,
+  'failed' => failed,
+  'no-answer' => noAnswer,
+  'canceled' => canceled,
+  _ => CallEnumStatus._(json),
+}; }
+
+static const CallEnumStatus queued = CallEnumStatus._('queued');
+
+static const CallEnumStatus ringing = CallEnumStatus._('ringing');
+
+static const CallEnumStatus inProgress = CallEnumStatus._('in-progress');
+
+static const CallEnumStatus completed = CallEnumStatus._('completed');
+
+static const CallEnumStatus busy = CallEnumStatus._('busy');
+
+static const CallEnumStatus failed = CallEnumStatus._('failed');
+
+static const CallEnumStatus noAnswer = CallEnumStatus._('no-answer');
+
+static const CallEnumStatus canceled = CallEnumStatus._('canceled');
+
+static const List<CallEnumStatus> values = [queued, ringing, inProgress, completed, busy, failed, noAnswer, canceled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CallEnumStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CallEnumStatus($value)'; } 
+ }

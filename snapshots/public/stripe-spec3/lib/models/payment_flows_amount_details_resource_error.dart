@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The code of the error that occurred when validating the current amount details.
+final class PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode._(this.value);
+
+factory PaymentFlowsAmountDetailsResourceErrorCode.fromJson(String json) { return switch (json) {
+  'amount_details_amount_mismatch' => amountDetailsAmountMismatch,
+  'amount_details_tax_shipping_discount_greater_than_amount' => amountDetailsTaxShippingDiscountGreaterThanAmount,
+  _ => PaymentFlowsAmountDetailsResourceErrorCode._(json),
+}; }
+
+static const PaymentFlowsAmountDetailsResourceErrorCode amountDetailsAmountMismatch = PaymentFlowsAmountDetailsResourceErrorCode._('amount_details_amount_mismatch');
+
+static const PaymentFlowsAmountDetailsResourceErrorCode amountDetailsTaxShippingDiscountGreaterThanAmount = PaymentFlowsAmountDetailsResourceErrorCode._('amount_details_tax_shipping_discount_greater_than_amount');
+
+static const List<PaymentFlowsAmountDetailsResourceErrorCode> values = [amountDetailsAmountMismatch, amountDetailsTaxShippingDiscountGreaterThanAmount];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentFlowsAmountDetailsResourceErrorCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentFlowsAmountDetailsResourceErrorCode($value)'; } 
+ }
+/// 
+final class PaymentFlowsAmountDetailsResourceError {const PaymentFlowsAmountDetailsResourceError({this.code, this.message, });
+
+factory PaymentFlowsAmountDetailsResourceError.fromJson(Map<String, dynamic> json) { return PaymentFlowsAmountDetailsResourceError(
+  code: json['code'] != null ? PaymentFlowsAmountDetailsResourceErrorCode.fromJson(json['code'] as String) : null,
+  message: json['message'] as String?,
+); }
+
+/// The code of the error that occurred when validating the current amount details.
+final PaymentFlowsAmountDetailsResourceErrorCode? code;
+
+/// A message providing more details about the error.
+final String? message;
+
+Map<String, dynamic> toJson() { return {
+  if (code != null) 'code': code?.toJson(),
+  'message': ?message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentFlowsAmountDetailsResourceError copyWith({PaymentFlowsAmountDetailsResourceErrorCode? Function()? code, String? Function()? message, }) { return PaymentFlowsAmountDetailsResourceError(
+  code: code != null ? code() : this.code,
+  message: message != null ? message() : this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentFlowsAmountDetailsResourceError &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'PaymentFlowsAmountDetailsResourceError(code: $code, message: $message)'; } 
+ }

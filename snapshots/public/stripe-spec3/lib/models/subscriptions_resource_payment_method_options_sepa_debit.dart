@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoice_payment_method_options_sepa_debit.dart';/// This sub-hash contains details about the SEPA Direct Debit payment method options to pass to invoices created by the subscription.
+final class SubscriptionsResourcePaymentMethodOptionsSepaDebit {const SubscriptionsResourcePaymentMethodOptionsSepaDebit({this.invoicePaymentMethodOptionsSepaDebit});
+
+factory SubscriptionsResourcePaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return SubscriptionsResourcePaymentMethodOptionsSepaDebit(
+  invoicePaymentMethodOptionsSepaDebit: InvoicePaymentMethodOptionsSepaDebit.canParse(json) ? InvoicePaymentMethodOptionsSepaDebit.fromJson(json) : null,
+); }
+
+final InvoicePaymentMethodOptionsSepaDebit? invoicePaymentMethodOptionsSepaDebit;
+
+/// At least one variant must be present.
+bool get isValid { return invoicePaymentMethodOptionsSepaDebit != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?invoicePaymentMethodOptionsSepaDebit?.toJson(),
+}; } 
+ }

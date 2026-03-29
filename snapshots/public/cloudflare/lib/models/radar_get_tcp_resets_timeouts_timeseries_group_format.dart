@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetTcpResetsTimeoutsTimeseriesGroupFormat {const RadarGetTcpResetsTimeoutsTimeseriesGroupFormat._(this.value);
+
+factory RadarGetTcpResetsTimeoutsTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetTcpResetsTimeoutsTimeseriesGroupFormat._(json),
+}; }
+
+static const RadarGetTcpResetsTimeoutsTimeseriesGroupFormat $json = RadarGetTcpResetsTimeoutsTimeseriesGroupFormat._('JSON');
+
+static const RadarGetTcpResetsTimeoutsTimeseriesGroupFormat csv = RadarGetTcpResetsTimeoutsTimeseriesGroupFormat._('CSV');
+
+static const List<RadarGetTcpResetsTimeoutsTimeseriesGroupFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetTcpResetsTimeoutsTimeseriesGroupFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetTcpResetsTimeoutsTimeseriesGroupFormat($value)'; } 
+ }

@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_card_installments.dart';/// Installment details for this payment.
+/// 
+/// For more information, see the [installments integration guide](https://docs.stripe.com/payments/installments).
+final class PaymentMethodDetailsCardInstallments2 {const PaymentMethodDetailsCardInstallments2({this.paymentMethodDetailsCardInstallments});
+
+factory PaymentMethodDetailsCardInstallments2.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallments2(
+  paymentMethodDetailsCardInstallments: PaymentMethodDetailsCardInstallments.canParse(json) ? PaymentMethodDetailsCardInstallments.fromJson(json) : null,
+); }
+
+final PaymentMethodDetailsCardInstallments? paymentMethodDetailsCardInstallments;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodDetailsCardInstallments != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodDetailsCardInstallments?.toJson(),
+}; } 
+ }

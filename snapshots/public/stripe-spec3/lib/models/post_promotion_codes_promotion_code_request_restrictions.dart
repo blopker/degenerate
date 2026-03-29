@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_promotion_codes_promotion_code_request_restrictions_currency_options_value.dart';/// Settings that restrict the redemption of the promotion code.
+final class PostPromotionCodesPromotionCodeRequestRestrictions {const PostPromotionCodesPromotionCodeRequestRestrictions({this.currencyOptions});
+
+factory PostPromotionCodesPromotionCodeRequestRestrictions.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequestRestrictions(
+  currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
+); }
+
+final Map<String,PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue>? currencyOptions;
+
+Map<String, dynamic> toJson() { return {
+  if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPromotionCodesPromotionCodeRequestRestrictions copyWith({Map<String, PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue> Function()? currencyOptions}) { return PostPromotionCodesPromotionCodeRequestRestrictions(
+  currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPromotionCodesPromotionCodeRequestRestrictions &&
+          currencyOptions == other.currencyOptions; } 
+@override int get hashCode { return currencyOptions.hashCode; } 
+@override String toString() { return 'PostPromotionCodesPromotionCodeRequestRestrictions(currencyOptions: $currencyOptions)'; } 
+ }

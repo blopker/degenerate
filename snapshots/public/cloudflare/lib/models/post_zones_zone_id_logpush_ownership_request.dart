@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'logpush_destination_conf.dart';final class PostZonesZoneIdLogpushOwnershipRequest {const PostZonesZoneIdLogpushOwnershipRequest({required this.destinationConf});
+
+factory PostZonesZoneIdLogpushOwnershipRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushOwnershipRequest(
+  destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
+); }
+
+/// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
+final LogpushDestinationConf destinationConf;
+
+Map<String, dynamic> toJson() { return {
+  'destination_conf': destinationConf.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
+PostZonesZoneIdLogpushOwnershipRequest copyWith({LogpushDestinationConf? destinationConf}) { return PostZonesZoneIdLogpushOwnershipRequest(
+  destinationConf: destinationConf ?? this.destinationConf,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostZonesZoneIdLogpushOwnershipRequest &&
+          destinationConf == other.destinationConf; } 
+@override int get hashCode { return destinationConf.hashCode; } 
+@override String toString() { return 'PostZonesZoneIdLogpushOwnershipRequest(destinationConf: $destinationConf)'; } 
+ }

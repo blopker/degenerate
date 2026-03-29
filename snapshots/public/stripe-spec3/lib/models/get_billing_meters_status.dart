@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetBillingMetersStatus {const GetBillingMetersStatus._(this.value);
+
+factory GetBillingMetersStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'inactive' => inactive,
+  _ => GetBillingMetersStatus._(json),
+}; }
+
+static const GetBillingMetersStatus active = GetBillingMetersStatus._('active');
+
+static const GetBillingMetersStatus inactive = GetBillingMetersStatus._('inactive');
+
+static const List<GetBillingMetersStatus> values = [active, inactive];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetBillingMetersStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetBillingMetersStatus($value)'; } 
+ }

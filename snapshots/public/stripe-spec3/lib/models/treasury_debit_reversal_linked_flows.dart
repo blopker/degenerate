@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'treasury_received_debits_resource_debit_reversal_linked_flows.dart';/// Other flows linked to a DebitReversal.
+final class TreasuryDebitReversalLinkedFlows {const TreasuryDebitReversalLinkedFlows({this.treasuryReceivedDebitsResourceDebitReversalLinkedFlows});
+
+factory TreasuryDebitReversalLinkedFlows.fromJson(Map<String, dynamic> json) { return TreasuryDebitReversalLinkedFlows(
+  treasuryReceivedDebitsResourceDebitReversalLinkedFlows: TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.canParse(json) ? TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(json) : null,
+); }
+
+final TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? treasuryReceivedDebitsResourceDebitReversalLinkedFlows;
+
+/// At least one variant must be present.
+bool get isValid { return treasuryReceivedDebitsResourceDebitReversalLinkedFlows != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?treasuryReceivedDebitsResourceDebitReversalLinkedFlows?.toJson(),
+}; } 
+ }

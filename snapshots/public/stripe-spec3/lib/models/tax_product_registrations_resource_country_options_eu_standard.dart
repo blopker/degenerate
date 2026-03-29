@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Place of supply scheme used in an EU standard registration.
+final class TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._(this.value);
+
+factory TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme.fromJson(String json) { return switch (json) {
+  'inbound_goods' => inboundGoods,
+  'small_seller' => smallSeller,
+  'standard' => standard,
+  _ => TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._(json),
+}; }
+
+static const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme inboundGoods = TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._('inbound_goods');
+
+static const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme smallSeller = TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._('small_seller');
+
+static const TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme standard = TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme._('standard');
+
+static const List<TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme> values = [inboundGoods, smallSeller, standard];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme($value)'; } 
+ }
+/// 
+final class TaxProductRegistrationsResourceCountryOptionsEuStandard {const TaxProductRegistrationsResourceCountryOptionsEuStandard({required this.placeOfSupplyScheme});
+
+factory TaxProductRegistrationsResourceCountryOptionsEuStandard.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsEuStandard(
+  placeOfSupplyScheme: TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme.fromJson(json['place_of_supply_scheme'] as String),
+); }
+
+/// Place of supply scheme used in an EU standard registration.
+final TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme placeOfSupplyScheme;
+
+Map<String, dynamic> toJson() { return {
+  'place_of_supply_scheme': placeOfSupplyScheme.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('place_of_supply_scheme'); } 
+TaxProductRegistrationsResourceCountryOptionsEuStandard copyWith({TaxProductRegistrationsResourceCountryOptionsEuStandardPlaceOfSupplyScheme? placeOfSupplyScheme}) { return TaxProductRegistrationsResourceCountryOptionsEuStandard(
+  placeOfSupplyScheme: placeOfSupplyScheme ?? this.placeOfSupplyScheme,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxProductRegistrationsResourceCountryOptionsEuStandard &&
+          placeOfSupplyScheme == other.placeOfSupplyScheme; } 
+@override int get hashCode { return placeOfSupplyScheme.hashCode; } 
+@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsEuStandard(placeOfSupplyScheme: $placeOfSupplyScheme)'; } 
+ }

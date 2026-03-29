@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TransferDataSpecs3 {const TransferDataSpecs3({this.amount, this.amountPercent, required this.destination, });
+
+factory TransferDataSpecs3.fromJson(Map<String, dynamic> json) { return TransferDataSpecs3(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  amountPercent: json['amount_percent'] != null ? (json['amount_percent'] as num).toDouble() : null,
+  destination: json['destination'] as String,
+); }
+
+final int? amount;
+
+final double? amountPercent;
+
+final String destination;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  'amount_percent': ?amountPercent,
+  'destination': destination,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination') && json['destination'] is String; } 
+TransferDataSpecs3 copyWith({int Function()? amount, double Function()? amountPercent, String? destination, }) { return TransferDataSpecs3(
+  amount: amount != null ? amount() : this.amount,
+  amountPercent: amountPercent != null ? amountPercent() : this.amountPercent,
+  destination: destination ?? this.destination,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TransferDataSpecs3 &&
+          amount == other.amount &&
+          amountPercent == other.amountPercent &&
+          destination == other.destination; } 
+@override int get hashCode { return Object.hash(amount, amountPercent, destination); } 
+@override String toString() { return 'TransferDataSpecs3(amount: $amount, amountPercent: $amountPercent, destination: $destination)'; } 
+ }

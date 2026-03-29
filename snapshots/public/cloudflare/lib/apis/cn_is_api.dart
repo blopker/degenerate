@@ -1,0 +1,117 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/nsc_account_tag.dart';import '../models/nsc_cni.dart';import '../models/nsc_cni_create.dart';import '../models/nsc_cni_list.dart';/// CnIsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class CnIsApi with ApiExecutor {const CnIsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List existing CNI objects
+///
+/// `GET /accounts/{account_id}/cni/cnis`
+Future<ApiResult<NscCniList, Never>> listCnis({required NscAccountTag accountId, String? slot, String? tunnelId, int? cursor, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (slot != null) queryParameters['slot'] = slot;
+if (tunnelId != null) queryParameters['tunnel_id'] = tunnelId;
+if (cursor != null) queryParameters['cursor'] = cursor.toString();
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return NscCniList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a new CNI object
+///
+/// `POST /accounts/{account_id}/cni/cnis`
+Future<ApiResult<NscCni, Never>> createCni({required NscAccountTag accountId, required NscCniCreate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get information about a CNI object
+///
+/// `GET /accounts/{account_id}/cni/cnis/{cni}`
+Future<ApiResult<NscCni, Never>> getCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Modify stored information about a CNI object
+///
+/// `PUT /accounts/{account_id}/cni/cnis/{cni}`
+Future<ApiResult<NscCni, Never>> updateCni({required String cni, required NscAccountTag accountId, required NscCni body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return NscCni.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a specified CNI object
+///
+/// `DELETE /accounts/{account_id}/cni/cnis/{cni}`
+Future<ApiResult<void, Never>> deleteCni({required String cni, required NscAccountTag accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/cni/cnis/${Uri.encodeComponent(cni)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+ }

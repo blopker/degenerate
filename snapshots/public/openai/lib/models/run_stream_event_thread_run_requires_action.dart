@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'run_object.dart';final class RunStreamEventThreadRunRequiresActionEvent {const RunStreamEventThreadRunRequiresActionEvent._(this.value);
+
+factory RunStreamEventThreadRunRequiresActionEvent.fromJson(String json) { return switch (json) {
+  'thread.run.requires_action' => threadRunRequiresAction,
+  _ => RunStreamEventThreadRunRequiresActionEvent._(json),
+}; }
+
+static const RunStreamEventThreadRunRequiresActionEvent threadRunRequiresAction = RunStreamEventThreadRunRequiresActionEvent._('thread.run.requires_action');
+
+static const List<RunStreamEventThreadRunRequiresActionEvent> values = [threadRunRequiresAction];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RunStreamEventThreadRunRequiresActionEvent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RunStreamEventThreadRunRequiresActionEvent($value)'; } 
+ }
+/// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
+final class RunStreamEventThreadRunRequiresAction {const RunStreamEventThreadRunRequiresAction({required this.event, required this.data, });
+
+factory RunStreamEventThreadRunRequiresAction.fromJson(Map<String, dynamic> json) { return RunStreamEventThreadRunRequiresAction(
+  event: RunStreamEventThreadRunRequiresActionEvent.fromJson(json['event'] as String),
+  data: RunObject.fromJson(json['data'] as Map<String, dynamic>),
+); }
+
+final RunStreamEventThreadRunRequiresActionEvent event;
+
+final RunObject data;
+
+Map<String, dynamic> toJson() { return {
+  'event': event.toJson(),
+  'data': data.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event') &&
+      json.containsKey('data'); } 
+RunStreamEventThreadRunRequiresAction copyWith({RunStreamEventThreadRunRequiresActionEvent? event, RunObject? data, }) { return RunStreamEventThreadRunRequiresAction(
+  event: event ?? this.event,
+  data: data ?? this.data,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RunStreamEventThreadRunRequiresAction &&
+          event == other.event &&
+          data == other.data; } 
+@override int get hashCode { return Object.hash(event, data); } 
+@override String toString() { return 'RunStreamEventThreadRunRequiresAction(event: $event, data: $data)'; } 
+ }

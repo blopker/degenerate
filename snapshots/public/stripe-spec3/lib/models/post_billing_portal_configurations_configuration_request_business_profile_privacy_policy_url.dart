@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2 {const PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2._(this.value);
+
+factory PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2._(json),
+}; }
+
+static const PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2 $empty = PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2._('');
+
+static const List<PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2($value)'; } 
+ }
+typedef PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrl = OneOf2<String,PostBillingPortalConfigurationsConfigurationRequestBusinessProfilePrivacyPolicyUrlVariant2>;

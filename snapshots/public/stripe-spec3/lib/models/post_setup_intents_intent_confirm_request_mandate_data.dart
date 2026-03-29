@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'client_key_param2.dart';import 'secret_key_param4.dart';final class PostSetupIntentsIntentConfirmRequestMandateDataVariant2 {const PostSetupIntentsIntentConfirmRequestMandateDataVariant2._(this.value);
+
+factory PostSetupIntentsIntentConfirmRequestMandateDataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsIntentConfirmRequestMandateDataVariant2._(json),
+}; }
+
+static const PostSetupIntentsIntentConfirmRequestMandateDataVariant2 $empty = PostSetupIntentsIntentConfirmRequestMandateDataVariant2._('');
+
+static const List<PostSetupIntentsIntentConfirmRequestMandateDataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestMandateDataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestMandateDataVariant2($value)'; } 
+ }
+typedef PostSetupIntentsIntentConfirmRequestMandateData = OneOf3<SecretKeyParam4,PostSetupIntentsIntentConfirmRequestMandateDataVariant2,ClientKeyParam2>;

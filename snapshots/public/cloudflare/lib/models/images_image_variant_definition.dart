@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'images_image_variant_identifier.dart';import 'images_image_variant_never_require_signed_ur_ls.dart';import 'images_image_variant_options.dart';final class ImagesImageVariantDefinition {const ImagesImageVariantDefinition({required this.id, this.neverRequireSignedUrLs, required this.options, });
+
+factory ImagesImageVariantDefinition.fromJson(Map<String, dynamic> json) { return ImagesImageVariantDefinition(
+  id: ImagesImageVariantIdentifier.fromJson(json['id'] as String),
+  neverRequireSignedUrLs: json['neverRequireSignedURLs'] != null ? ImagesImageVariantNeverRequireSignedUrLs.fromJson(json['neverRequireSignedURLs'] as bool) : null,
+  options: ImagesImageVariantOptions.fromJson(json['options'] as Map<String, dynamic>),
+); }
+
+final ImagesImageVariantIdentifier id;
+
+final ImagesImageVariantNeverRequireSignedUrLs? neverRequireSignedUrLs;
+
+final ImagesImageVariantOptions options;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  if (neverRequireSignedUrLs != null) 'neverRequireSignedURLs': neverRequireSignedUrLs?.toJson(),
+  'options': options.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('options'); } 
+ImagesImageVariantDefinition copyWith({ImagesImageVariantIdentifier? id, ImagesImageVariantNeverRequireSignedUrLs Function()? neverRequireSignedUrLs, ImagesImageVariantOptions? options, }) { return ImagesImageVariantDefinition(
+  id: id ?? this.id,
+  neverRequireSignedUrLs: neverRequireSignedUrLs != null ? neverRequireSignedUrLs() : this.neverRequireSignedUrLs,
+  options: options ?? this.options,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ImagesImageVariantDefinition &&
+          id == other.id &&
+          neverRequireSignedUrLs == other.neverRequireSignedUrLs &&
+          options == other.options; } 
+@override int get hashCode { return Object.hash(id, neverRequireSignedUrLs, options); } 
+@override String toString() { return 'ImagesImageVariantDefinition(id: $id, neverRequireSignedUrLs: $neverRequireSignedUrLs, options: $options)'; } 
+ }

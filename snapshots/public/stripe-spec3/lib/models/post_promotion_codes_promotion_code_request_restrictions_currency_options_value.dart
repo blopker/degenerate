@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue {const PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue({this.minimumAmount});
+
+factory PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
+  minimumAmount: json['minimum_amount'] != null ? (json['minimum_amount'] as num).toInt() : null,
+); }
+
+final int? minimumAmount;
+
+Map<String, dynamic> toJson() { return {
+  'minimum_amount': ?minimumAmount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue copyWith({int Function()? minimumAmount}) { return PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(
+  minimumAmount: minimumAmount != null ? minimumAmount() : this.minimumAmount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue &&
+          minimumAmount == other.minimumAmount; } 
+@override int get hashCode { return minimumAmount.hashCode; } 
+@override String toString() { return 'PostPromotionCodesPromotionCodeRequestRestrictionsCurrencyOptionsValue(minimumAmount: $minimumAmount)'; } 
+ }

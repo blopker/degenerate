@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByResponseTtlResponse400Errors {const RadarGetDnsSummaryByResponseTtlResponse400Errors({required this.message});
+
+factory RadarGetDnsSummaryByResponseTtlResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByResponseTtlResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+RadarGetDnsSummaryByResponseTtlResponse400Errors copyWith({String? message}) { return RadarGetDnsSummaryByResponseTtlResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsSummaryByResponseTtlResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByResponseTtlResponse400Errors(message: $message)'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostDatasetCreateRequest {const PostDatasetCreateRequest({required this.isPublic, required this.name, });
+
+factory PostDatasetCreateRequest.fromJson(Map<String, dynamic> json) { return PostDatasetCreateRequest(
+  isPublic: json['isPublic'] as bool,
+  name: json['name'] as String,
+); }
+
+/// If true, then anyone can search the dataset. If false, then its limited to the account.
+final bool isPublic;
+
+/// Used to describe the dataset within the account context.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'isPublic': isPublic,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('isPublic') && json['isPublic'] is bool &&
+      json.containsKey('name') && json['name'] is String; } 
+PostDatasetCreateRequest copyWith({bool? isPublic, String? name, }) { return PostDatasetCreateRequest(
+  isPublic: isPublic ?? this.isPublic,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostDatasetCreateRequest &&
+          isPublic == other.isPublic &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(isPublic, name); } 
+@override String toString() { return 'PostDatasetCreateRequest(isPublic: $isPublic, name: $name)'; } 
+ }

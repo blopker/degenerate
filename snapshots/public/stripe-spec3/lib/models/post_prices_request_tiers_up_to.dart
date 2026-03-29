@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPricesRequestTiersUpToVariant1 {const PostPricesRequestTiersUpToVariant1._(this.value);
+
+factory PostPricesRequestTiersUpToVariant1.fromJson(String json) { return switch (json) {
+  'inf' => inf,
+  _ => PostPricesRequestTiersUpToVariant1._(json),
+}; }
+
+static const PostPricesRequestTiersUpToVariant1 inf = PostPricesRequestTiersUpToVariant1._('inf');
+
+static const List<PostPricesRequestTiersUpToVariant1> values = [inf];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPricesRequestTiersUpToVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPricesRequestTiersUpToVariant1($value)'; } 
+ }
+typedef PostPricesRequestTiersUpTo = OneOf2<PostPricesRequestTiersUpToVariant1,int>;

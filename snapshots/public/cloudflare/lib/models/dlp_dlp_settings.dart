@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dlp_payload_log_setting.dart';/// DLP account-level settings response.
+final class DlpDlpSettings {const DlpDlpSettings({required this.aiContextAnalysis, required this.ocr, required this.payloadLogging, });
+
+factory DlpDlpSettings.fromJson(Map<String, dynamic> json) { return DlpDlpSettings(
+  aiContextAnalysis: json['ai_context_analysis'] as bool,
+  ocr: json['ocr'] as bool,
+  payloadLogging: DlpPayloadLogSetting.fromJson(json['payload_logging'] as Map<String, dynamic>),
+); }
+
+/// Whether AI context analysis is enabled at the account level.
+final bool aiContextAnalysis;
+
+/// Whether OCR is enabled at the account level.
+final bool ocr;
+
+final DlpPayloadLogSetting payloadLogging;
+
+Map<String, dynamic> toJson() { return {
+  'ai_context_analysis': aiContextAnalysis,
+  'ocr': ocr,
+  'payload_logging': payloadLogging.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ai_context_analysis') && json['ai_context_analysis'] is bool &&
+      json.containsKey('ocr') && json['ocr'] is bool &&
+      json.containsKey('payload_logging'); } 
+DlpDlpSettings copyWith({bool? aiContextAnalysis, bool? ocr, DlpPayloadLogSetting? payloadLogging, }) { return DlpDlpSettings(
+  aiContextAnalysis: aiContextAnalysis ?? this.aiContextAnalysis,
+  ocr: ocr ?? this.ocr,
+  payloadLogging: payloadLogging ?? this.payloadLogging,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpDlpSettings &&
+          aiContextAnalysis == other.aiContextAnalysis &&
+          ocr == other.ocr &&
+          payloadLogging == other.payloadLogging; } 
+@override int get hashCode { return Object.hash(aiContextAnalysis, ocr, payloadLogging); } 
+@override String toString() { return 'DlpDlpSettings(aiContextAnalysis: $aiContextAnalysis, ocr: $ocr, payloadLogging: $payloadLogging)'; } 
+ }

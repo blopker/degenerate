@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullsCreateReviewRequestComments {const PullsCreateReviewRequestComments({required this.path, this.position, required this.body, this.line, this.side, this.startLine, this.startSide, });
+
+factory PullsCreateReviewRequestComments.fromJson(Map<String, dynamic> json) { return PullsCreateReviewRequestComments(
+  path: json['path'] as String,
+  position: json['position'] != null ? (json['position'] as num).toInt() : null,
+  body: json['body'] as String,
+  line: json['line'] != null ? (json['line'] as num).toInt() : null,
+  side: json['side'] as String?,
+  startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
+  startSide: json['start_side'] as String?,
+); }
+
+/// The relative path to the file that necessitates a review comment.
+final String path;
+
+/// The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+final int? position;
+
+/// Text of the review comment.
+final String body;
+
+final int? line;
+
+final String? side;
+
+final int? startLine;
+
+final String? startSide;
+
+Map<String, dynamic> toJson() { return {
+  'path': path,
+  'position': ?position,
+  'body': body,
+  'line': ?line,
+  'side': ?side,
+  'start_line': ?startLine,
+  'start_side': ?startSide,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String &&
+      json.containsKey('body') && json['body'] is String; } 
+PullsCreateReviewRequestComments copyWith({String? path, int Function()? position, String? body, int Function()? line, String Function()? side, int Function()? startLine, String Function()? startSide, }) { return PullsCreateReviewRequestComments(
+  path: path ?? this.path,
+  position: position != null ? position() : this.position,
+  body: body ?? this.body,
+  line: line != null ? line() : this.line,
+  side: side != null ? side() : this.side,
+  startLine: startLine != null ? startLine() : this.startLine,
+  startSide: startSide != null ? startSide() : this.startSide,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullsCreateReviewRequestComments &&
+          path == other.path &&
+          position == other.position &&
+          body == other.body &&
+          line == other.line &&
+          side == other.side &&
+          startLine == other.startLine &&
+          startSide == other.startSide; } 
+@override int get hashCode { return Object.hash(path, position, body, line, side, startLine, startSide); } 
+@override String toString() { return 'PullsCreateReviewRequestComments(path: $path, position: $position, body: $body, line: $line, side: $side, startLine: $startLine, startSide: $startSide)'; } 
+ }

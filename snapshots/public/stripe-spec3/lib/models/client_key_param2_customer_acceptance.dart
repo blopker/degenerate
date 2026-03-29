@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'client_key_param2_customer_acceptance_online.dart';final class ClientKeyParam2CustomerAcceptanceType {const ClientKeyParam2CustomerAcceptanceType._(this.value);
+
+factory ClientKeyParam2CustomerAcceptanceType.fromJson(String json) { return switch (json) {
+  'online' => online,
+  _ => ClientKeyParam2CustomerAcceptanceType._(json),
+}; }
+
+static const ClientKeyParam2CustomerAcceptanceType online = ClientKeyParam2CustomerAcceptanceType._('online');
+
+static const List<ClientKeyParam2CustomerAcceptanceType> values = [online];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ClientKeyParam2CustomerAcceptanceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ClientKeyParam2CustomerAcceptanceType($value)'; } 
+ }
+final class ClientKeyParam2CustomerAcceptance {const ClientKeyParam2CustomerAcceptance({required this.online, required this.type, });
+
+factory ClientKeyParam2CustomerAcceptance.fromJson(Map<String, dynamic> json) { return ClientKeyParam2CustomerAcceptance(
+  online: ClientKeyParam2CustomerAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>),
+  type: ClientKeyParam2CustomerAcceptanceType.fromJson(json['type'] as String),
+); }
+
+final ClientKeyParam2CustomerAcceptanceOnline online;
+
+final ClientKeyParam2CustomerAcceptanceType type;
+
+Map<String, dynamic> toJson() { return {
+  'online': online.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('online') &&
+      json.containsKey('type'); } 
+ClientKeyParam2CustomerAcceptance copyWith({ClientKeyParam2CustomerAcceptanceOnline? online, ClientKeyParam2CustomerAcceptanceType? type, }) { return ClientKeyParam2CustomerAcceptance(
+  online: online ?? this.online,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ClientKeyParam2CustomerAcceptance &&
+          online == other.online &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(online, type); } 
+@override String toString() { return 'ClientKeyParam2CustomerAcceptance(online: $online, type: $type)'; } 
+ }

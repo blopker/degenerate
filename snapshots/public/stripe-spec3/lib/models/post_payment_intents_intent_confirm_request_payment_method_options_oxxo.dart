@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param98.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2._(this.value);
+
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2._(json),
+}; }
+
+static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2._('');
+
+static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxo = OneOf2<PaymentMethodOptionsParam98,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsOxxoVariant2>;

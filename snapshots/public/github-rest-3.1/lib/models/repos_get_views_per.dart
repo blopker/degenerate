@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReposGetViewsPer {const ReposGetViewsPer._(this.value);
+
+factory ReposGetViewsPer.fromJson(String json) { return switch (json) {
+  'day' => day,
+  'week' => week,
+  _ => ReposGetViewsPer._(json),
+}; }
+
+static const ReposGetViewsPer day = ReposGetViewsPer._('day');
+
+static const ReposGetViewsPer week = ReposGetViewsPer._('week');
+
+static const List<ReposGetViewsPer> values = [day, week];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReposGetViewsPer && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReposGetViewsPer($value)'; } 
+ }

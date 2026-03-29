@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_transcription_response_json_logprobs.dart';import 'create_transcription_response_json_usage.dart';import 'transcript_text_usage_duration.dart';import 'transcript_text_usage_tokens.dart';/// Represents a transcription response returned by model, based on the provided input.
+final class CreateTranscriptionResponseJson {const CreateTranscriptionResponseJson({required this.text, this.logprobs, this.usage, });
+
+factory CreateTranscriptionResponseJson.fromJson(Map<String, dynamic> json) { return CreateTranscriptionResponseJson(
+  text: json['text'] as String,
+  logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => CreateTranscriptionResponseJsonLogprobs.fromJson(e as Map<String, dynamic>)).toList(),
+  usage: json['usage'] != null ? OneOf2.parse(json['usage'], fromA: (v) => TranscriptTextUsageTokens.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextUsageDuration.fromJson(v as Map<String, dynamic>),) : null,
+); }
+
+/// The transcribed text.
+final String text;
+
+/// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
+/// 
+final List<CreateTranscriptionResponseJsonLogprobs>? logprobs;
+
+/// Token usage statistics for the request.
+final CreateTranscriptionResponseJsonUsage? usage;
+
+Map<String, dynamic> toJson() { return {
+  'text': text,
+  if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
+  if (usage != null) 'usage': usage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
+CreateTranscriptionResponseJson copyWith({String? text, List<CreateTranscriptionResponseJsonLogprobs> Function()? logprobs, CreateTranscriptionResponseJsonUsage Function()? usage, }) { return CreateTranscriptionResponseJson(
+  text: text ?? this.text,
+  logprobs: logprobs != null ? logprobs() : this.logprobs,
+  usage: usage != null ? usage() : this.usage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateTranscriptionResponseJson &&
+          text == other.text &&
+          listEquals(logprobs, other.logprobs) &&
+          usage == other.usage; } 
+@override int get hashCode { return Object.hash(text, Object.hashAll(logprobs ?? const []), usage); } 
+@override String toString() { return 'CreateTranscriptionResponseJson(text: $text, logprobs: $logprobs, usage: $usage)'; } 
+ }

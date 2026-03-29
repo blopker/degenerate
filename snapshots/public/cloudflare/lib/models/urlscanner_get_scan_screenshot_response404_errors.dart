@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerGetScanScreenshotResponse404Errors {const UrlscannerGetScanScreenshotResponse404Errors({required this.message});
+
+factory UrlscannerGetScanScreenshotResponse404Errors.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanScreenshotResponse404Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+UrlscannerGetScanScreenshotResponse404Errors copyWith({String? message}) { return UrlscannerGetScanScreenshotResponse404Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanScreenshotResponse404Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'UrlscannerGetScanScreenshotResponse404Errors(message: $message)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'balance_settings_resource_payout_schedule.dart';/// Details on when funds from charges are available, and when they are paid out to an external account. See our [Setting Bank and Debit Card Payouts](https://docs.stripe.com/connect/bank-transfers#payout-information) documentation for details.
+final class BalanceSettingsResourcePayoutsSchedule {const BalanceSettingsResourcePayoutsSchedule({this.balanceSettingsResourcePayoutSchedule});
+
+factory BalanceSettingsResourcePayoutsSchedule.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayoutsSchedule(
+  balanceSettingsResourcePayoutSchedule: BalanceSettingsResourcePayoutSchedule.canParse(json) ? BalanceSettingsResourcePayoutSchedule.fromJson(json) : null,
+); }
+
+final BalanceSettingsResourcePayoutSchedule? balanceSettingsResourcePayoutSchedule;
+
+/// At least one variant must be present.
+bool get isValid { return balanceSettingsResourcePayoutSchedule != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?balanceSettingsResourcePayoutSchedule?.toJson(),
+}; } 
+ }

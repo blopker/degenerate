@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersAiPostRunCfFacebookBartLargeCnnRequest {const WorkersAiPostRunCfFacebookBartLargeCnnRequest({required this.inputText, this.maxLength = 1024, });
+
+factory WorkersAiPostRunCfFacebookBartLargeCnnRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
+  inputText: json['input_text'] as String,
+  maxLength: json.containsKey('max_length') ? (json['max_length'] as num).toInt() : 1024,
+); }
+
+/// The text that you want the model to summarize
+final String inputText;
+
+/// The maximum length of the generated summary in tokens
+final int maxLength;
+
+Map<String, dynamic> toJson() { return {
+  'input_text': inputText,
+  'max_length': maxLength,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_text') && json['input_text'] is String; } 
+WorkersAiPostRunCfFacebookBartLargeCnnRequest copyWith({String? inputText, int Function()? maxLength, }) { return WorkersAiPostRunCfFacebookBartLargeCnnRequest(
+  inputText: inputText ?? this.inputText,
+  maxLength: maxLength != null ? maxLength() : this.maxLength,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfFacebookBartLargeCnnRequest &&
+          inputText == other.inputText &&
+          maxLength == other.maxLength; } 
+@override int get hashCode { return Object.hash(inputText, maxLength); } 
+@override String toString() { return 'WorkersAiPostRunCfFacebookBartLargeCnnRequest(inputText: $inputText, maxLength: $maxLength)'; } 
+ }

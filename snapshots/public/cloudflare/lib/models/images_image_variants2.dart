@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// URI to hero variant for an image.
+extension type ImagesImageHeroUrl(Uri value) {
+factory ImagesImageHeroUrl.fromJson(String json) => ImagesImageHeroUrl(Uri.parse(json));
+
+String toJson() => value.toString();
+
+}
+/// URI to original variant for an image.
+extension type ImagesImageOriginalUrl(Uri value) {
+factory ImagesImageOriginalUrl.fromJson(String json) => ImagesImageOriginalUrl(Uri.parse(json));
+
+String toJson() => value.toString();
+
+}
+/// URI to thumbnail variant for an image.
+extension type ImagesImageThumbnailUrl(Uri value) {
+factory ImagesImageThumbnailUrl.fromJson(String json) => ImagesImageThumbnailUrl(Uri.parse(json));
+
+String toJson() => value.toString();
+
+}
+typedef ImagesImageVariants2 = OneOf3<ImagesImageThumbnailUrl,ImagesImageHeroUrl,ImagesImageOriginalUrl>;

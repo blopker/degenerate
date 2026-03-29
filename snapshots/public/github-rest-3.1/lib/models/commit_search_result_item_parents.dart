@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CommitSearchResultItemParents {const CommitSearchResultItemParents({this.url, this.htmlUrl, this.sha, });
+
+factory CommitSearchResultItemParents.fromJson(Map<String, dynamic> json) { return CommitSearchResultItemParents(
+  url: json['url'] as String?,
+  htmlUrl: json['html_url'] as String?,
+  sha: json['sha'] as String?,
+); }
+
+final String? url;
+
+final String? htmlUrl;
+
+final String? sha;
+
+Map<String, dynamic> toJson() { return {
+  'url': ?url,
+  'html_url': ?htmlUrl,
+  'sha': ?sha,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CommitSearchResultItemParents copyWith({String Function()? url, String Function()? htmlUrl, String Function()? sha, }) { return CommitSearchResultItemParents(
+  url: url != null ? url() : this.url,
+  htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
+  sha: sha != null ? sha() : this.sha,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CommitSearchResultItemParents &&
+          url == other.url &&
+          htmlUrl == other.htmlUrl &&
+          sha == other.sha; } 
+@override int get hashCode { return Object.hash(url, htmlUrl, sha); } 
+@override String toString() { return 'CommitSearchResultItemParents(url: $url, htmlUrl: $htmlUrl, sha: $sha)'; } 
+ }

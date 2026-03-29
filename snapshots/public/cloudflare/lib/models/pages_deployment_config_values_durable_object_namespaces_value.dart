@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Durable Object binding.
+final class PagesDeploymentConfigValuesDurableObjectNamespacesValue {const PagesDeploymentConfigValuesDurableObjectNamespacesValue({required this.namespaceId});
+
+factory PagesDeploymentConfigValuesDurableObjectNamespacesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesDurableObjectNamespacesValue(
+  namespaceId: json['namespace_id'] as String,
+); }
+
+/// ID of the Durable Object namespace.
+final String namespaceId;
+
+Map<String, dynamic> toJson() { return {
+  'namespace_id': namespaceId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('namespace_id') && json['namespace_id'] is String; } 
+PagesDeploymentConfigValuesDurableObjectNamespacesValue copyWith({String? namespaceId}) { return PagesDeploymentConfigValuesDurableObjectNamespacesValue(
+  namespaceId: namespaceId ?? this.namespaceId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDeploymentConfigValuesDurableObjectNamespacesValue &&
+          namespaceId == other.namespaceId; } 
+@override int get hashCode { return namespaceId.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesDurableObjectNamespacesValue(namespaceId: $namespaceId)'; } 
+ }

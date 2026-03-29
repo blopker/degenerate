@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors {const WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors({required this.code, required this.message, });
+
+factory WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors(
+  code: json['code'] as String,
+  message: json['message'] as String,
+); }
+
+final String code;
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('message') && json['message'] is String; } 
+WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors copyWith({String? code, String? message, }) { return WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400Errors(code: $code, message: $message)'; } 
+ }

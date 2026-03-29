@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the event. Always 'response.image_generation_call.completed'.
+final class ResponseImageGenCallCompletedEventType {const ResponseImageGenCallCompletedEventType._(this.value);
+
+factory ResponseImageGenCallCompletedEventType.fromJson(String json) { return switch (json) {
+  'response.image_generation_call.completed' => responseImageGenerationCallCompleted,
+  _ => ResponseImageGenCallCompletedEventType._(json),
+}; }
+
+static const ResponseImageGenCallCompletedEventType responseImageGenerationCallCompleted = ResponseImageGenCallCompletedEventType._('response.image_generation_call.completed');
+
+static const List<ResponseImageGenCallCompletedEventType> values = [responseImageGenerationCallCompleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseImageGenCallCompletedEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseImageGenCallCompletedEventType($value)'; } 
+ }
+/// Emitted when an image generation tool call has completed and the final image is available.
+/// 
+final class ResponseImageGenCallCompletedEvent {const ResponseImageGenCallCompletedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.itemId, });
+
+factory ResponseImageGenCallCompletedEvent.fromJson(Map<String, dynamic> json) { return ResponseImageGenCallCompletedEvent(
+  type: ResponseImageGenCallCompletedEventType.fromJson(json['type'] as String),
+  outputIndex: (json['output_index'] as num).toInt(),
+  sequenceNumber: (json['sequence_number'] as num).toInt(),
+  itemId: json['item_id'] as String,
+); }
+
+/// The type of the event. Always 'response.image_generation_call.completed'.
+final ResponseImageGenCallCompletedEventType type;
+
+/// The index of the output item in the response's output array.
+final int outputIndex;
+
+/// The sequence number of this event.
+final int sequenceNumber;
+
+/// The unique identifier of the image generation item being processed.
+final String itemId;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'output_index': outputIndex,
+  'sequence_number': sequenceNumber,
+  'item_id': itemId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('output_index') && json['output_index'] is num &&
+      json.containsKey('sequence_number') && json['sequence_number'] is num &&
+      json.containsKey('item_id') && json['item_id'] is String; } 
+ResponseImageGenCallCompletedEvent copyWith({ResponseImageGenCallCompletedEventType? type, int? outputIndex, int? sequenceNumber, String? itemId, }) { return ResponseImageGenCallCompletedEvent(
+  type: type ?? this.type,
+  outputIndex: outputIndex ?? this.outputIndex,
+  sequenceNumber: sequenceNumber ?? this.sequenceNumber,
+  itemId: itemId ?? this.itemId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseImageGenCallCompletedEvent &&
+          type == other.type &&
+          outputIndex == other.outputIndex &&
+          sequenceNumber == other.sequenceNumber &&
+          itemId == other.itemId; } 
+@override int get hashCode { return Object.hash(type, outputIndex, sequenceNumber, itemId); } 
+@override String toString() { return 'ResponseImageGenCallCompletedEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, itemId: $itemId)'; } 
+ }

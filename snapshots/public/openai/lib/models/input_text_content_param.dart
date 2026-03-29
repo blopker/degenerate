@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the input item. Always `input_text`.
+final class InputTextContentParamType {const InputTextContentParamType._(this.value);
+
+factory InputTextContentParamType.fromJson(String json) { return switch (json) {
+  'input_text' => inputText,
+  _ => InputTextContentParamType._(json),
+}; }
+
+static const InputTextContentParamType inputText = InputTextContentParamType._('input_text');
+
+static const List<InputTextContentParamType> values = [inputText];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InputTextContentParamType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InputTextContentParamType($value)'; } 
+ }
+/// A text input to the model.
+final class InputTextContentParam {const InputTextContentParam({this.type = InputTextContentParamType.inputText, required this.text, });
+
+factory InputTextContentParam.fromJson(Map<String, dynamic> json) { return InputTextContentParam(
+  type: InputTextContentParamType.fromJson(json['type'] as String),
+  text: json['text'] as String,
+); }
+
+/// The type of the input item. Always `input_text`.
+final InputTextContentParamType type;
+
+/// The text input to the model.
+final String text;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'text': text,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String; } 
+InputTextContentParam copyWith({InputTextContentParamType? type, String? text, }) { return InputTextContentParam(
+  type: type ?? this.type,
+  text: text ?? this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InputTextContentParam &&
+          type == other.type &&
+          text == other.text; } 
+@override int get hashCode { return Object.hash(type, text); } 
+@override String toString() { return 'InputTextContentParam(type: $type, text: $text)'; } 
+ }

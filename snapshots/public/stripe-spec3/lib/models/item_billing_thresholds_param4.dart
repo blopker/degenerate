@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ItemBillingThresholdsParam4 {const ItemBillingThresholdsParam4({required this.usageGte});
+
+factory ItemBillingThresholdsParam4.fromJson(Map<String, dynamic> json) { return ItemBillingThresholdsParam4(
+  usageGte: (json['usage_gte'] as num).toInt(),
+); }
+
+final int usageGte;
+
+Map<String, dynamic> toJson() { return {
+  'usage_gte': usageGte,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('usage_gte') && json['usage_gte'] is num; } 
+ItemBillingThresholdsParam4 copyWith({int? usageGte}) { return ItemBillingThresholdsParam4(
+  usageGte: usageGte ?? this.usageGte,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ItemBillingThresholdsParam4 &&
+          usageGte == other.usageGte; } 
+@override int get hashCode { return usageGte.hashCode; } 
+@override String toString() { return 'ItemBillingThresholdsParam4(usageGte: $usageGte)'; } 
+ }

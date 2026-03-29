@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Turn on or off byte-for-byte equivalency checks between the
+/// Cloudflare cache and the origin server.
+/// 
+final class ZonesRespectStrongEtagId {const ZonesRespectStrongEtagId._(this.value);
+
+factory ZonesRespectStrongEtagId.fromJson(String json) { return switch (json) {
+  'respect_strong_etag' => respectStrongEtag,
+  _ => ZonesRespectStrongEtagId._(json),
+}; }
+
+static const ZonesRespectStrongEtagId respectStrongEtag = ZonesRespectStrongEtagId._('respect_strong_etag');
+
+static const List<ZonesRespectStrongEtagId> values = [respectStrongEtag];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesRespectStrongEtagId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesRespectStrongEtagId($value)'; } 
+ }
+/// The status of Respect Strong ETags
+/// 
+final class ZonesRespectStrongEtagValue {const ZonesRespectStrongEtagValue._(this.value);
+
+factory ZonesRespectStrongEtagValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesRespectStrongEtagValue._(json),
+}; }
+
+static const ZonesRespectStrongEtagValue $on = ZonesRespectStrongEtagValue._('on');
+
+static const ZonesRespectStrongEtagValue off = ZonesRespectStrongEtagValue._('off');
+
+static const List<ZonesRespectStrongEtagValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesRespectStrongEtagValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesRespectStrongEtagValue($value)'; } 
+ }
+final class ZonesRespectStrongEtag {const ZonesRespectStrongEtag({this.id, this.value, });
+
+factory ZonesRespectStrongEtag.fromJson(Map<String, dynamic> json) { return ZonesRespectStrongEtag(
+  id: json['id'] != null ? ZonesRespectStrongEtagId.fromJson(json['id'] as String) : null,
+  value: json['value'] != null ? ZonesRespectStrongEtagValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Turn on or off byte-for-byte equivalency checks between the
+/// Cloudflare cache and the origin server.
+/// 
+final ZonesRespectStrongEtagId? id;
+
+/// The status of Respect Strong ETags
+/// 
+final ZonesRespectStrongEtagValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesRespectStrongEtag copyWith({ZonesRespectStrongEtagId Function()? id, ZonesRespectStrongEtagValue Function()? value, }) { return ZonesRespectStrongEtag(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesRespectStrongEtag &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ZonesRespectStrongEtag(id: $id, value: $value)'; } 
+ }

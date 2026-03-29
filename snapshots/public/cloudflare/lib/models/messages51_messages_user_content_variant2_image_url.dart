@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Messages51MessagesUserContentVariant2ImageUrlDetail {const Messages51MessagesUserContentVariant2ImageUrlDetail._(this.value);
+
+factory Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'low' => low,
+  'high' => high,
+  _ => Messages51MessagesUserContentVariant2ImageUrlDetail._(json),
+}; }
+
+static const Messages51MessagesUserContentVariant2ImageUrlDetail auto = Messages51MessagesUserContentVariant2ImageUrlDetail._('auto');
+
+static const Messages51MessagesUserContentVariant2ImageUrlDetail low = Messages51MessagesUserContentVariant2ImageUrlDetail._('low');
+
+static const Messages51MessagesUserContentVariant2ImageUrlDetail high = Messages51MessagesUserContentVariant2ImageUrlDetail._('high');
+
+static const List<Messages51MessagesUserContentVariant2ImageUrlDetail> values = [auto, low, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51MessagesUserContentVariant2ImageUrlDetail && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51MessagesUserContentVariant2ImageUrlDetail($value)'; } 
+ }
+final class Messages51MessagesUserContentVariant2ImageUrl {const Messages51MessagesUserContentVariant2ImageUrl({this.detail = Messages51MessagesUserContentVariant2ImageUrlDetail.auto, this.url, });
+
+factory Messages51MessagesUserContentVariant2ImageUrl.fromJson(Map<String, dynamic> json) { return Messages51MessagesUserContentVariant2ImageUrl(
+  detail: json.containsKey('detail') ? Messages51MessagesUserContentVariant2ImageUrlDetail.fromJson(json['detail'] as String) : Messages51MessagesUserContentVariant2ImageUrlDetail.auto,
+  url: json['url'] as String?,
+); }
+
+final Messages51MessagesUserContentVariant2ImageUrlDetail detail;
+
+final String? url;
+
+Map<String, dynamic> toJson() { return {
+  'detail': detail.toJson(),
+  'url': ?url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Messages51MessagesUserContentVariant2ImageUrl copyWith({Messages51MessagesUserContentVariant2ImageUrlDetail Function()? detail, String Function()? url, }) { return Messages51MessagesUserContentVariant2ImageUrl(
+  detail: detail != null ? detail() : this.detail,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages51MessagesUserContentVariant2ImageUrl &&
+          detail == other.detail &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(detail, url); } 
+@override String toString() { return 'Messages51MessagesUserContentVariant2ImageUrl(detail: $detail, url: $url)'; } 
+ }

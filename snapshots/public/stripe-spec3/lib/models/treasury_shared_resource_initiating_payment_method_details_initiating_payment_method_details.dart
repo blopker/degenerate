@@ -1,0 +1,114 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'received_payment_method_details_financial_account.dart';import 'treasury_shared_resource_billing_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_us_bank_account.dart';/// Set when `type` is `balance`.
+final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(this.value);
+
+factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance.fromJson(String json) { return switch (json) {
+  'payments' => payments,
+  _ => TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(json),
+}; }
+
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance payments = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._('payments');
+
+static const List<TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance> values = [payments];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance($value)'; } 
+ }
+/// Polymorphic type matching the originating money movement's source. This can be an external account, a Stripe balance, or a FinancialAccount.
+final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(this.value);
+
+factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
+  'balance' => balance,
+  'financial_account' => financialAccount,
+  'issuing_card' => issuingCard,
+  'stripe' => stripe,
+  'us_bank_account' => usBankAccount,
+  _ => TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(json),
+}; }
+
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType balance = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('balance');
+
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType financialAccount = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('financial_account');
+
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType issuingCard = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('issuing_card');
+
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType stripe = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('stripe');
+
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType usBankAccount = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('us_bank_account');
+
+static const List<TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType> values = [balance, financialAccount, issuingCard, stripe, usBankAccount];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)'; } 
+ }
+/// 
+final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails({this.balance, required this.billingDetails, this.financialAccount, this.issuingCard, required this.type, this.usBankAccount, });
+
+factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
+  balance: json['balance'] != null ? TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance.fromJson(json['balance'] as String) : null,
+  billingDetails: TreasurySharedResourceBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>),
+  financialAccount: json['financial_account'] != null ? ReceivedPaymentMethodDetailsFinancialAccount.fromJson(json['financial_account'] as Map<String, dynamic>) : null,
+  issuingCard: json['issuing_card'] as String?,
+  type: TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType.fromJson(json['type'] as String),
+  usBankAccount: json['us_bank_account'] != null ? TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+); }
+
+/// Set when `type` is `balance`.
+final TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance? balance;
+
+final TreasurySharedResourceBillingDetails billingDetails;
+
+final ReceivedPaymentMethodDetailsFinancialAccount? financialAccount;
+
+/// Set when `type` is `issuing_card`. This is an [Issuing Card](https://api.stripe.com#issuing_cards) ID.
+final String? issuingCard;
+
+/// Polymorphic type matching the originating money movement's source. This can be an external account, a Stripe balance, or a FinancialAccount.
+final TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType type;
+
+final TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount? usBankAccount;
+
+Map<String, dynamic> toJson() { return {
+  if (balance != null) 'balance': balance?.toJson(),
+  'billing_details': billingDetails.toJson(),
+  if (financialAccount != null) 'financial_account': financialAccount?.toJson(),
+  'issuing_card': ?issuingCard,
+  'type': type.toJson(),
+  if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('billing_details') &&
+      json.containsKey('type'); } 
+TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails copyWith({TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance Function()? balance, TreasurySharedResourceBillingDetails? billingDetails, ReceivedPaymentMethodDetailsFinancialAccount Function()? financialAccount, String Function()? issuingCard, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType? type, TreasurySharedResourceInitiatingPaymentMethodDetailsUsBankAccount Function()? usBankAccount, }) { return TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(
+  balance: balance != null ? balance() : this.balance,
+  billingDetails: billingDetails ?? this.billingDetails,
+  financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
+  issuingCard: issuingCard != null ? issuingCard() : this.issuingCard,
+  type: type ?? this.type,
+  usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails &&
+          balance == other.balance &&
+          billingDetails == other.billingDetails &&
+          financialAccount == other.financialAccount &&
+          issuingCard == other.issuingCard &&
+          type == other.type &&
+          usBankAccount == other.usBankAccount; } 
+@override int get hashCode { return Object.hash(balance, billingDetails, financialAccount, issuingCard, type, usBankAccount); } 
+@override String toString() { return 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails(balance: $balance, billingDetails: $billingDetails, financialAccount: $financialAccount, issuingCard: $issuingCard, type: $type, usBankAccount: $usBankAccount)'; } 
+ }

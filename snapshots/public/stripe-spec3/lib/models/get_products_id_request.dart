@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetProductsIdRequest {const GetProductsIdRequest();
+
+factory GetProductsIdRequest.fromJson(Map<String, dynamic> json) { return GetProductsIdRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetProductsIdRequest copyWith() { return GetProductsIdRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetProductsIdRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetProductsIdRequest()'; } 
+ }

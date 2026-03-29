@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// If this is a `swish` PaymentMethod, this hash contains details about the Swish payment method.
+final class PostPaymentMethodsRequestSwish {const PostPaymentMethodsRequestSwish();
+
+factory PostPaymentMethodsRequestSwish.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestSwish(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodsRequestSwish copyWith() { return PostPaymentMethodsRequestSwish(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestSwish; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestSwish()'; } 
+ }

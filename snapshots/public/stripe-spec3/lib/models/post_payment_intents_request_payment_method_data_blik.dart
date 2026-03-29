@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsRequestPaymentMethodDataBlik {const PostPaymentIntentsRequestPaymentMethodDataBlik();
+
+factory PostPaymentIntentsRequestPaymentMethodDataBlik.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataBlik(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsRequestPaymentMethodDataBlik copyWith() { return PostPaymentIntentsRequestPaymentMethodDataBlik(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsRequestPaymentMethodDataBlik; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataBlik()'; } 
+ }

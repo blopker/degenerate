@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'livestreamsession_session_meeting_id_active_livestream_response_data.dart';final class LivestreamsessionSessionMeetingIdActiveLivestreamResponse {const LivestreamsessionSessionMeetingIdActiveLivestreamResponse({this.data, this.success, });
+
+factory LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(Map<String, dynamic> json) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponse(
+  data: json['data'] != null ? LivestreamsessionSessionMeetingIdActiveLivestreamResponseData.fromJson(json['data'] as Map<String, dynamic>) : null,
+  success: json['success'] as bool?,
+); }
+
+final LivestreamsessionSessionMeetingIdActiveLivestreamResponseData? data;
+
+final bool? success;
+
+Map<String, dynamic> toJson() { return {
+  if (data != null) 'data': data?.toJson(),
+  'success': ?success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LivestreamsessionSessionMeetingIdActiveLivestreamResponse copyWith({LivestreamsessionSessionMeetingIdActiveLivestreamResponseData Function()? data, bool Function()? success, }) { return LivestreamsessionSessionMeetingIdActiveLivestreamResponse(
+  data: data != null ? data() : this.data,
+  success: success != null ? success() : this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LivestreamsessionSessionMeetingIdActiveLivestreamResponse &&
+          data == other.data &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(data, success); } 
+@override String toString() { return 'LivestreamsessionSessionMeetingIdActiveLivestreamResponse(data: $data, success: $success)'; } 
+ }

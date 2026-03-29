@@ -1,0 +1,81 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Identifies the type of account-level resource.
+final class ResourceTaggingAccountResourceType {const ResourceTaggingAccountResourceType._(this.value);
+
+factory ResourceTaggingAccountResourceType.fromJson(String json) { return switch (json) {
+  'access_application' => accessApplication,
+  'access_group' => accessGroup,
+  'account' => account,
+  'ai_gateway' => aiGateway,
+  'alerting_policy' => alertingPolicy,
+  'alerting_webhook' => alertingWebhook,
+  'cloudflared_tunnel' => cloudflaredTunnel,
+  'd1_database' => d1Database,
+  'durable_object_namespace' => durableObjectNamespace,
+  'gateway_list' => gatewayList,
+  'gateway_rule' => gatewayRule,
+  'image' => image,
+  'kv_namespace' => kvNamespace,
+  'queue' => queue,
+  'r2_bucket' => r2Bucket,
+  'resource_share' => resourceShare,
+  'stream_live_input' => streamLiveInput,
+  'stream_video' => streamVideo,
+  'worker' => worker,
+  'worker_version' => workerVersion,
+  _ => ResourceTaggingAccountResourceType._(json),
+}; }
+
+static const ResourceTaggingAccountResourceType accessApplication = ResourceTaggingAccountResourceType._('access_application');
+
+static const ResourceTaggingAccountResourceType accessGroup = ResourceTaggingAccountResourceType._('access_group');
+
+static const ResourceTaggingAccountResourceType account = ResourceTaggingAccountResourceType._('account');
+
+static const ResourceTaggingAccountResourceType aiGateway = ResourceTaggingAccountResourceType._('ai_gateway');
+
+static const ResourceTaggingAccountResourceType alertingPolicy = ResourceTaggingAccountResourceType._('alerting_policy');
+
+static const ResourceTaggingAccountResourceType alertingWebhook = ResourceTaggingAccountResourceType._('alerting_webhook');
+
+static const ResourceTaggingAccountResourceType cloudflaredTunnel = ResourceTaggingAccountResourceType._('cloudflared_tunnel');
+
+static const ResourceTaggingAccountResourceType d1Database = ResourceTaggingAccountResourceType._('d1_database');
+
+static const ResourceTaggingAccountResourceType durableObjectNamespace = ResourceTaggingAccountResourceType._('durable_object_namespace');
+
+static const ResourceTaggingAccountResourceType gatewayList = ResourceTaggingAccountResourceType._('gateway_list');
+
+static const ResourceTaggingAccountResourceType gatewayRule = ResourceTaggingAccountResourceType._('gateway_rule');
+
+static const ResourceTaggingAccountResourceType image = ResourceTaggingAccountResourceType._('image');
+
+static const ResourceTaggingAccountResourceType kvNamespace = ResourceTaggingAccountResourceType._('kv_namespace');
+
+static const ResourceTaggingAccountResourceType queue = ResourceTaggingAccountResourceType._('queue');
+
+static const ResourceTaggingAccountResourceType r2Bucket = ResourceTaggingAccountResourceType._('r2_bucket');
+
+static const ResourceTaggingAccountResourceType resourceShare = ResourceTaggingAccountResourceType._('resource_share');
+
+static const ResourceTaggingAccountResourceType streamLiveInput = ResourceTaggingAccountResourceType._('stream_live_input');
+
+static const ResourceTaggingAccountResourceType streamVideo = ResourceTaggingAccountResourceType._('stream_video');
+
+static const ResourceTaggingAccountResourceType worker = ResourceTaggingAccountResourceType._('worker');
+
+static const ResourceTaggingAccountResourceType workerVersion = ResourceTaggingAccountResourceType._('worker_version');
+
+static const List<ResourceTaggingAccountResourceType> values = [accessApplication, accessGroup, account, aiGateway, alertingPolicy, alertingWebhook, cloudflaredTunnel, d1Database, durableObjectNamespace, gatewayList, gatewayRule, image, kvNamespace, queue, r2Bucket, resourceShare, streamLiveInput, streamVideo, worker, workerVersion];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResourceTaggingAccountResourceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResourceTaggingAccountResourceType($value)'; } 
+ }

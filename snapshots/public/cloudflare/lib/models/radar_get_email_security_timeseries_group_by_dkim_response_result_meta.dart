@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_timeseries_group_by_dkim_response_result_meta_confidence_info.dart';import 'radar_get_email_security_timeseries_group_by_dkim_response_result_meta_date_range.dart';import 'radar_get_email_security_timeseries_group_by_dkim_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval fifteenMinutes = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval oneHour = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval oneDay = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval oneWeek = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval oneMonth = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization percentage = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization min0Max = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization minMax = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization rawValues = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization percentageChange = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization rollingAverage = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization overlappedPercentage = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization ratio = RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta {const RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta(
+  aggInterval: RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval aggInterval;
+
+final RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta copyWith({RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaAggInterval? aggInterval, RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaNormalization? normalization, List<RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMetaUnits>? units, }) { return RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByDkimResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

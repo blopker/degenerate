@@ -1,0 +1,147 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_physical_bundle_features.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject._(this.value);
+
+factory IssuingPhysicalBundleObject.fromJson(String json) { return switch (json) {
+  'issuing.physical_bundle' => issuingPhysicalBundle,
+  _ => IssuingPhysicalBundleObject._(json),
+}; }
+
+static const IssuingPhysicalBundleObject issuingPhysicalBundle = IssuingPhysicalBundleObject._('issuing.physical_bundle');
+
+static const List<IssuingPhysicalBundleObject> values = [issuingPhysicalBundle];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingPhysicalBundleObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingPhysicalBundleObject($value)'; } 
+ }
+/// Whether this physical bundle can be used to create cards.
+final class IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus._(this.value);
+
+factory IssuingPhysicalBundleStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'inactive' => inactive,
+  'review' => review,
+  _ => IssuingPhysicalBundleStatus._(json),
+}; }
+
+static const IssuingPhysicalBundleStatus active = IssuingPhysicalBundleStatus._('active');
+
+static const IssuingPhysicalBundleStatus inactive = IssuingPhysicalBundleStatus._('inactive');
+
+static const IssuingPhysicalBundleStatus review = IssuingPhysicalBundleStatus._('review');
+
+static const List<IssuingPhysicalBundleStatus> values = [active, inactive, review];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingPhysicalBundleStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingPhysicalBundleStatus($value)'; } 
+ }
+/// Whether this physical bundle is a standard Stripe offering or custom-made for you.
+final class IssuingPhysicalBundleType {const IssuingPhysicalBundleType._(this.value);
+
+factory IssuingPhysicalBundleType.fromJson(String json) { return switch (json) {
+  'custom' => custom,
+  'standard' => standard,
+  _ => IssuingPhysicalBundleType._(json),
+}; }
+
+static const IssuingPhysicalBundleType custom = IssuingPhysicalBundleType._('custom');
+
+static const IssuingPhysicalBundleType standard = IssuingPhysicalBundleType._('standard');
+
+static const List<IssuingPhysicalBundleType> values = [custom, standard];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingPhysicalBundleType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingPhysicalBundleType($value)'; } 
+ }
+/// A Physical Bundle represents the bundle of physical items - card stock, carrier letter, and envelope - that is shipped to a cardholder when you create a physical card.
+final class IssuingPhysicalBundle {const IssuingPhysicalBundle({required this.features, required this.id, required this.livemode, required this.name, required this.object, required this.status, required this.type, });
+
+factory IssuingPhysicalBundle.fromJson(Map<String, dynamic> json) { return IssuingPhysicalBundle(
+  features: IssuingPhysicalBundleFeatures.fromJson(json['features'] as Map<String, dynamic>),
+  id: json['id'] as String,
+  livemode: json['livemode'] as bool,
+  name: json['name'] as String,
+  object: IssuingPhysicalBundleObject.fromJson(json['object'] as String),
+  status: IssuingPhysicalBundleStatus.fromJson(json['status'] as String),
+  type: IssuingPhysicalBundleType.fromJson(json['type'] as String),
+); }
+
+final IssuingPhysicalBundleFeatures features;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Friendly display name.
+final String name;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final IssuingPhysicalBundleObject object;
+
+/// Whether this physical bundle can be used to create cards.
+final IssuingPhysicalBundleStatus status;
+
+/// Whether this physical bundle is a standard Stripe offering or custom-made for you.
+final IssuingPhysicalBundleType type;
+
+Map<String, dynamic> toJson() { return {
+  'features': features.toJson(),
+  'id': id,
+  'livemode': livemode,
+  'name': name,
+  'object': object.toJson(),
+  'status': status.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('features') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('status') &&
+      json.containsKey('type'); } 
+IssuingPhysicalBundle copyWith({IssuingPhysicalBundleFeatures? features, String? id, bool? livemode, String? name, IssuingPhysicalBundleObject? object, IssuingPhysicalBundleStatus? status, IssuingPhysicalBundleType? type, }) { return IssuingPhysicalBundle(
+  features: features ?? this.features,
+  id: id ?? this.id,
+  livemode: livemode ?? this.livemode,
+  name: name ?? this.name,
+  object: object ?? this.object,
+  status: status ?? this.status,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingPhysicalBundle &&
+          features == other.features &&
+          id == other.id &&
+          livemode == other.livemode &&
+          name == other.name &&
+          object == other.object &&
+          status == other.status &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(features, id, livemode, name, object, status, type); } 
+@override String toString() { return 'IssuingPhysicalBundle(features: $features, id: $id, livemode: $livemode, name: $name, object: $object, status: $status, type: $type)'; } 
+ }

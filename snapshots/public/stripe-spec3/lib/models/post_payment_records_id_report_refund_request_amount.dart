@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A positive integer in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal) representing how much of this payment to refund. Can refund only up to the remaining, unrefunded amount of the payment.
+final class PostPaymentRecordsIdReportRefundRequestAmount {const PostPaymentRecordsIdReportRefundRequestAmount({required this.currency, required this.value, });
+
+factory PostPaymentRecordsIdReportRefundRequestAmount.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportRefundRequestAmount(
+  currency: json['currency'] as String,
+  value: (json['value'] as num).toInt(),
+); }
+
+final String currency;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'currency': currency,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('value') && json['value'] is num; } 
+PostPaymentRecordsIdReportRefundRequestAmount copyWith({String? currency, int? value, }) { return PostPaymentRecordsIdReportRefundRequestAmount(
+  currency: currency ?? this.currency,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentRecordsIdReportRefundRequestAmount &&
+          currency == other.currency &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(currency, value); } 
+@override String toString() { return 'PostPaymentRecordsIdReportRefundRequestAmount(currency: $currency, value: $value)'; } 
+ }

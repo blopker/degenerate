@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopLocationsByOperatingSystemHttpVersion {const RadarGetHttpTopLocationsByOperatingSystemHttpVersion._(this.value);
+
+factory RadarGetHttpTopLocationsByOperatingSystemHttpVersion.fromJson(String json) { return switch (json) {
+  'HTTPv1' => httPv1,
+  'HTTPv2' => httPv2,
+  'HTTPv3' => httPv3,
+  _ => RadarGetHttpTopLocationsByOperatingSystemHttpVersion._(json),
+}; }
+
+static const RadarGetHttpTopLocationsByOperatingSystemHttpVersion httPv1 = RadarGetHttpTopLocationsByOperatingSystemHttpVersion._('HTTPv1');
+
+static const RadarGetHttpTopLocationsByOperatingSystemHttpVersion httPv2 = RadarGetHttpTopLocationsByOperatingSystemHttpVersion._('HTTPv2');
+
+static const RadarGetHttpTopLocationsByOperatingSystemHttpVersion httPv3 = RadarGetHttpTopLocationsByOperatingSystemHttpVersion._('HTTPv3');
+
+static const List<RadarGetHttpTopLocationsByOperatingSystemHttpVersion> values = [httPv1, httPv2, httPv3];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByOperatingSystemHttpVersion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopLocationsByOperatingSystemHttpVersion($value)'; } 
+ }

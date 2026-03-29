@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ValidateSqlRequest {const ValidateSqlRequest({required this.sql});
+
+factory ValidateSqlRequest.fromJson(Map<String, dynamic> json) { return ValidateSqlRequest(
+  sql: json['sql'] as String,
+); }
+
+/// Specifies SQL to validate.
+final String sql;
+
+Map<String, dynamic> toJson() { return {
+  'sql': sql,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sql') && json['sql'] is String; } 
+ValidateSqlRequest copyWith({String? sql}) { return ValidateSqlRequest(
+  sql: sql ?? this.sql,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ValidateSqlRequest &&
+          sql == other.sql; } 
+@override int get hashCode { return sql.hashCode; } 
+@override String toString() { return 'ValidateSqlRequest(sql: $sql)'; } 
+ }

@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
+final class GlusterfsPersistentVolumeSource {const GlusterfsPersistentVolumeSource({this.endpoints = '', this.endpointsNamespace, this.path = '', this.readOnly, });
+
+factory GlusterfsPersistentVolumeSource.fromJson(Map<String, dynamic> json) { return GlusterfsPersistentVolumeSource(
+  endpoints: json['endpoints'] as String,
+  endpointsNamespace: json['endpointsNamespace'] as String?,
+  path: json['path'] as String,
+  readOnly: json['readOnly'] as bool?,
+); }
+
+/// endpoints is the endpoint name that details Glusterfs topology. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
+final String endpoints;
+
+/// endpointsNamespace is the namespace that contains Glusterfs endpoint. If this field is empty, the EndpointNamespace defaults to the same namespace as the bound PVC. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
+final String? endpointsNamespace;
+
+/// path is the Glusterfs volume path. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
+final String path;
+
+/// readOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
+final bool? readOnly;
+
+Map<String, dynamic> toJson() { return {
+  'endpoints': endpoints,
+  'endpointsNamespace': ?endpointsNamespace,
+  'path': path,
+  'readOnly': ?readOnly,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoints') && json['endpoints'] is String &&
+      json.containsKey('path') && json['path'] is String; } 
+GlusterfsPersistentVolumeSource copyWith({String? endpoints, String Function()? endpointsNamespace, String? path, bool Function()? readOnly, }) { return GlusterfsPersistentVolumeSource(
+  endpoints: endpoints ?? this.endpoints,
+  endpointsNamespace: endpointsNamespace != null ? endpointsNamespace() : this.endpointsNamespace,
+  path: path ?? this.path,
+  readOnly: readOnly != null ? readOnly() : this.readOnly,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GlusterfsPersistentVolumeSource &&
+          endpoints == other.endpoints &&
+          endpointsNamespace == other.endpointsNamespace &&
+          path == other.path &&
+          readOnly == other.readOnly; } 
+@override int get hashCode { return Object.hash(endpoints, endpointsNamespace, path, readOnly); } 
+@override String toString() { return 'GlusterfsPersistentVolumeSource(endpoints: $endpoints, endpointsNamespace: $endpointsNamespace, path: $path, readOnly: $readOnly)'; } 
+ }

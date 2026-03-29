@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UsageAudioTranscriptionsGroupBy {const UsageAudioTranscriptionsGroupBy._(this.value);
+
+factory UsageAudioTranscriptionsGroupBy.fromJson(String json) { return switch (json) {
+  'project_id' => projectId,
+  'user_id' => userId,
+  'api_key_id' => apiKeyId,
+  'model' => model,
+  _ => UsageAudioTranscriptionsGroupBy._(json),
+}; }
+
+static const UsageAudioTranscriptionsGroupBy projectId = UsageAudioTranscriptionsGroupBy._('project_id');
+
+static const UsageAudioTranscriptionsGroupBy userId = UsageAudioTranscriptionsGroupBy._('user_id');
+
+static const UsageAudioTranscriptionsGroupBy apiKeyId = UsageAudioTranscriptionsGroupBy._('api_key_id');
+
+static const UsageAudioTranscriptionsGroupBy model = UsageAudioTranscriptionsGroupBy._('model');
+
+static const List<UsageAudioTranscriptionsGroupBy> values = [projectId, userId, apiKeyId, model];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UsageAudioTranscriptionsGroupBy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UsageAudioTranscriptionsGroupBy($value)'; } 
+ }

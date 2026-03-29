@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_funding_instructions_request_bank_transfer.dart';/// The `funding_type` to get the instructions for.
+final class PostCustomersCustomerFundingInstructionsRequestFundingType {const PostCustomersCustomerFundingInstructionsRequestFundingType._(this.value);
+
+factory PostCustomersCustomerFundingInstructionsRequestFundingType.fromJson(String json) { return switch (json) {
+  'bank_transfer' => bankTransfer,
+  _ => PostCustomersCustomerFundingInstructionsRequestFundingType._(json),
+}; }
+
+static const PostCustomersCustomerFundingInstructionsRequestFundingType bankTransfer = PostCustomersCustomerFundingInstructionsRequestFundingType._('bank_transfer');
+
+static const List<PostCustomersCustomerFundingInstructionsRequestFundingType> values = [bankTransfer];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerFundingInstructionsRequestFundingType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequestFundingType($value)'; } 
+ }
+final class PostCustomersCustomerFundingInstructionsRequest {const PostCustomersCustomerFundingInstructionsRequest({required this.bankTransfer, required this.currency, this.expand, required this.fundingType, });
+
+factory PostCustomersCustomerFundingInstructionsRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerFundingInstructionsRequest(
+  bankTransfer: PostCustomersCustomerFundingInstructionsRequestBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>),
+  currency: json['currency'] as String,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  fundingType: PostCustomersCustomerFundingInstructionsRequestFundingType.fromJson(json['funding_type'] as String),
+); }
+
+/// Additional parameters for `bank_transfer` funding types
+final PostCustomersCustomerFundingInstructionsRequestBankTransfer bankTransfer;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// The `funding_type` to get the instructions for.
+final PostCustomersCustomerFundingInstructionsRequestFundingType fundingType;
+
+Map<String, dynamic> toJson() { return {
+  'bank_transfer': bankTransfer.toJson(),
+  'currency': currency,
+  'expand': ?expand,
+  'funding_type': fundingType.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_transfer') &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('funding_type'); } 
+PostCustomersCustomerFundingInstructionsRequest copyWith({PostCustomersCustomerFundingInstructionsRequestBankTransfer? bankTransfer, String? currency, List<String> Function()? expand, PostCustomersCustomerFundingInstructionsRequestFundingType? fundingType, }) { return PostCustomersCustomerFundingInstructionsRequest(
+  bankTransfer: bankTransfer ?? this.bankTransfer,
+  currency: currency ?? this.currency,
+  expand: expand != null ? expand() : this.expand,
+  fundingType: fundingType ?? this.fundingType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCustomersCustomerFundingInstructionsRequest &&
+          bankTransfer == other.bankTransfer &&
+          currency == other.currency &&
+          listEquals(expand, other.expand) &&
+          fundingType == other.fundingType; } 
+@override int get hashCode { return Object.hash(bankTransfer, currency, Object.hashAll(expand ?? const []), fundingType); } 
+@override String toString() { return 'PostCustomersCustomerFundingInstructionsRequest(bankTransfer: $bankTransfer, currency: $currency, expand: $expand, fundingType: $fundingType)'; } 
+ }

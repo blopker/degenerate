@@ -1,0 +1,85 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigCreateProvidersResponseResult {const AigConfigCreateProvidersResponseResult({required this.alias, required this.defaultConfig, required this.gatewayId, required this.id, required this.modifiedAt, required this.providerSlug, this.rateLimit, this.rateLimitPeriod = 60.0, required this.secretId, required this.secretPreview, });
+
+factory AigConfigCreateProvidersResponseResult.fromJson(Map<String, dynamic> json) { return AigConfigCreateProvidersResponseResult(
+  alias: json['alias'] as String,
+  defaultConfig: json['default_config'] as bool,
+  gatewayId: json['gateway_id'] as String,
+  id: json['id'] as String,
+  modifiedAt: DateTime.parse(json['modified_at'] as String),
+  providerSlug: json['provider_slug'] as String,
+  rateLimit: json['rate_limit'] != null ? (json['rate_limit'] as num).toDouble() : null,
+  rateLimitPeriod: json.containsKey('rate_limit_period') ? (json['rate_limit_period'] as num).toDouble() : 60.0,
+  secretId: json['secret_id'] as String,
+  secretPreview: json['secret_preview'] as String,
+); }
+
+final String alias;
+
+final bool defaultConfig;
+
+/// gateway id
+final String gatewayId;
+
+final String id;
+
+final DateTime modifiedAt;
+
+final String providerSlug;
+
+final double? rateLimit;
+
+final double rateLimitPeriod;
+
+final String secretId;
+
+final String secretPreview;
+
+Map<String, dynamic> toJson() { return {
+  'alias': alias,
+  'default_config': defaultConfig,
+  'gateway_id': gatewayId,
+  'id': id,
+  'modified_at': modifiedAt.toIso8601String(),
+  'provider_slug': providerSlug,
+  'rate_limit': ?rateLimit,
+  'rate_limit_period': rateLimitPeriod,
+  'secret_id': secretId,
+  'secret_preview': secretPreview,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
+      json.containsKey('default_config') && json['default_config'] is bool &&
+      json.containsKey('gateway_id') && json['gateway_id'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('modified_at') && json['modified_at'] is String &&
+      json.containsKey('provider_slug') && json['provider_slug'] is String &&
+      json.containsKey('secret_id') && json['secret_id'] is String &&
+      json.containsKey('secret_preview') && json['secret_preview'] is String; } 
+AigConfigCreateProvidersResponseResult copyWith({String? alias, bool? defaultConfig, String? gatewayId, String? id, DateTime? modifiedAt, String? providerSlug, double Function()? rateLimit, double Function()? rateLimitPeriod, String? secretId, String? secretPreview, }) { return AigConfigCreateProvidersResponseResult(
+  alias: alias ?? this.alias,
+  defaultConfig: defaultConfig ?? this.defaultConfig,
+  gatewayId: gatewayId ?? this.gatewayId,
+  id: id ?? this.id,
+  modifiedAt: modifiedAt ?? this.modifiedAt,
+  providerSlug: providerSlug ?? this.providerSlug,
+  rateLimit: rateLimit != null ? rateLimit() : this.rateLimit,
+  rateLimitPeriod: rateLimitPeriod != null ? rateLimitPeriod() : this.rateLimitPeriod,
+  secretId: secretId ?? this.secretId,
+  secretPreview: secretPreview ?? this.secretPreview,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigCreateProvidersResponseResult &&
+          alias == other.alias &&
+          defaultConfig == other.defaultConfig &&
+          gatewayId == other.gatewayId &&
+          id == other.id &&
+          modifiedAt == other.modifiedAt &&
+          providerSlug == other.providerSlug &&
+          rateLimit == other.rateLimit &&
+          rateLimitPeriod == other.rateLimitPeriod &&
+          secretId == other.secretId &&
+          secretPreview == other.secretPreview; } 
+@override int get hashCode { return Object.hash(alias, defaultConfig, gatewayId, id, modifiedAt, providerSlug, rateLimit, rateLimitPeriod, secretId, secretPreview); } 
+@override String toString() { return 'AigConfigCreateProvidersResponseResult(alias: $alias, defaultConfig: $defaultConfig, gatewayId: $gatewayId, id: $id, modifiedAt: $modifiedAt, providerSlug: $providerSlug, rateLimit: $rateLimit, rateLimitPeriod: $rateLimitPeriod, secretId: $secretId, secretPreview: $secretPreview)'; } 
+ }

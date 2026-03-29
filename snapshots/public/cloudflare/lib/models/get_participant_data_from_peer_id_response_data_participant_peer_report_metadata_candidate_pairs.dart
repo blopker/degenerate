@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_metadata_candidate_pairs_producing_transport.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs({this.consumingTransport, this.producingTransport, });
+
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs(
+  consumingTransport: (json['consuming_transport'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  producingTransport: (json['producing_transport'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<Map<String,dynamic>>? consumingTransport;
+
+final List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport>? producingTransport;
+
+Map<String, dynamic> toJson() { return {
+  if (consumingTransport != null) 'consuming_transport': consumingTransport?.map((e) => e).toList(),
+  if (producingTransport != null) 'producing_transport': producingTransport?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs copyWith({List<Map<String, dynamic>> Function()? consumingTransport, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairsProducingTransport> Function()? producingTransport, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs(
+  consumingTransport: consumingTransport != null ? consumingTransport() : this.consumingTransport,
+  producingTransport: producingTransport != null ? producingTransport() : this.producingTransport,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs &&
+          listEquals(consumingTransport, other.consumingTransport) &&
+          listEquals(producingTransport, other.producingTransport); } 
+@override int get hashCode { return Object.hash(Object.hashAll(consumingTransport ?? const []), Object.hashAll(producingTransport ?? const [])); } 
+@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportMetadataCandidatePairs(consumingTransport: $consumingTransport, producingTransport: $producingTransport)'; } 
+ }

@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'object_detection2_box.dart';final class ObjectDetection2 {const ObjectDetection2({this.box, this.label, this.score, });
+
+factory ObjectDetection2.fromJson(Map<String, dynamic> json) { return ObjectDetection2(
+  box: json['box'] != null ? ObjectDetection2Box.fromJson(json['box'] as Map<String, dynamic>) : null,
+  label: json['label'] as String?,
+  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
+); }
+
+/// Coordinates defining the bounding box around the detected object
+final ObjectDetection2Box? box;
+
+/// The class label or name of the detected object
+final String? label;
+
+/// Confidence score indicating the likelihood that the detection is correct
+final double? score;
+
+Map<String, dynamic> toJson() { return {
+  if (box != null) 'box': box?.toJson(),
+  'label': ?label,
+  'score': ?score,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ObjectDetection2 copyWith({ObjectDetection2Box Function()? box, String Function()? label, double Function()? score, }) { return ObjectDetection2(
+  box: box != null ? box() : this.box,
+  label: label != null ? label() : this.label,
+  score: score != null ? score() : this.score,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ObjectDetection2 &&
+          box == other.box &&
+          label == other.label &&
+          score == other.score; } 
+@override int get hashCode { return Object.hash(box, label, score); } 
+@override String toString() { return 'ObjectDetection2(box: $box, label: $label, score: $score)'; } 
+ }

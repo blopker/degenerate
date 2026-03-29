@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class OrgHookConfig {const OrgHookConfig({this.url, this.insecureSsl, this.contentType, this.secret, });
+
+factory OrgHookConfig.fromJson(Map<String, dynamic> json) { return OrgHookConfig(
+  url: json['url'] as String?,
+  insecureSsl: json['insecure_ssl'] as String?,
+  contentType: json['content_type'] as String?,
+  secret: json['secret'] as String?,
+); }
+
+final String? url;
+
+final String? insecureSsl;
+
+final String? contentType;
+
+final String? secret;
+
+Map<String, dynamic> toJson() { return {
+  'url': ?url,
+  'insecure_ssl': ?insecureSsl,
+  'content_type': ?contentType,
+  'secret': ?secret,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+OrgHookConfig copyWith({String Function()? url, String Function()? insecureSsl, String Function()? contentType, String Function()? secret, }) { return OrgHookConfig(
+  url: url != null ? url() : this.url,
+  insecureSsl: insecureSsl != null ? insecureSsl() : this.insecureSsl,
+  contentType: contentType != null ? contentType() : this.contentType,
+  secret: secret != null ? secret() : this.secret,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgHookConfig &&
+          url == other.url &&
+          insecureSsl == other.insecureSsl &&
+          contentType == other.contentType &&
+          secret == other.secret; } 
+@override int get hashCode { return Object.hash(url, insecureSsl, contentType, secret); } 
+@override String toString() { return 'OrgHookConfig(url: $url, insecureSsl: $insecureSsl, contentType: $contentType, secret: $secret)'; } 
+ }

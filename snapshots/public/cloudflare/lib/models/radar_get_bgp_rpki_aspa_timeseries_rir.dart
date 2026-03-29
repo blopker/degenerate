@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetBgpRpkiAspaTimeseriesRir {const RadarGetBgpRpkiAspaTimeseriesRir._(this.value);
+
+factory RadarGetBgpRpkiAspaTimeseriesRir.fromJson(String json) { return switch (json) {
+  'RIPE_NCC' => ripeNcc,
+  'ARIN' => arin,
+  'APNIC' => apnic,
+  'LACNIC' => lacnic,
+  'AFRINIC' => afrinic,
+  _ => RadarGetBgpRpkiAspaTimeseriesRir._(json),
+}; }
+
+static const RadarGetBgpRpkiAspaTimeseriesRir ripeNcc = RadarGetBgpRpkiAspaTimeseriesRir._('RIPE_NCC');
+
+static const RadarGetBgpRpkiAspaTimeseriesRir arin = RadarGetBgpRpkiAspaTimeseriesRir._('ARIN');
+
+static const RadarGetBgpRpkiAspaTimeseriesRir apnic = RadarGetBgpRpkiAspaTimeseriesRir._('APNIC');
+
+static const RadarGetBgpRpkiAspaTimeseriesRir lacnic = RadarGetBgpRpkiAspaTimeseriesRir._('LACNIC');
+
+static const RadarGetBgpRpkiAspaTimeseriesRir afrinic = RadarGetBgpRpkiAspaTimeseriesRir._('AFRINIC');
+
+static const List<RadarGetBgpRpkiAspaTimeseriesRir> values = [ripeNcc, arin, apnic, lacnic, afrinic];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetBgpRpkiAspaTimeseriesRir && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetBgpRpkiAspaTimeseriesRir($value)'; } 
+ }

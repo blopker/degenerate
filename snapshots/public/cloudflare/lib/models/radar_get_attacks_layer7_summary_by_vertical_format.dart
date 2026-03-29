@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat._(this.value);
+
+factory RadarGetAttacksLayer7SummaryByVerticalFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetAttacksLayer7SummaryByVerticalFormat._(json),
+}; }
+
+static const RadarGetAttacksLayer7SummaryByVerticalFormat $json = RadarGetAttacksLayer7SummaryByVerticalFormat._('JSON');
+
+static const RadarGetAttacksLayer7SummaryByVerticalFormat csv = RadarGetAttacksLayer7SummaryByVerticalFormat._('CSV');
+
+static const List<RadarGetAttacksLayer7SummaryByVerticalFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByVerticalFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7SummaryByVerticalFormat($value)'; } 
+ }

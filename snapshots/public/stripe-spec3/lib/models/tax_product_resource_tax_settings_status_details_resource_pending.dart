@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// 
+final class TaxProductResourceTaxSettingsStatusDetailsResourcePending {const TaxProductResourceTaxSettingsStatusDetailsResourcePending({this.missingFields});
+
+factory TaxProductResourceTaxSettingsStatusDetailsResourcePending.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxSettingsStatusDetailsResourcePending(
+  missingFields: (json['missing_fields'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The list of missing fields that are required to perform calculations. It includes the entry `head_office` when the status is `pending`. It is recommended to set the optional values even if they aren't listed as required for calculating taxes. Calculations can fail if missing fields aren't explicitly provided on every call.
+final List<String>? missingFields;
+
+Map<String, dynamic> toJson() { return {
+  'missing_fields': ?missingFields,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TaxProductResourceTaxSettingsStatusDetailsResourcePending copyWith({List<String>? Function()? missingFields}) { return TaxProductResourceTaxSettingsStatusDetailsResourcePending(
+  missingFields: missingFields != null ? missingFields() : this.missingFields,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxProductResourceTaxSettingsStatusDetailsResourcePending &&
+          listEquals(missingFields, other.missingFields); } 
+@override int get hashCode { return Object.hashAll(missingFields ?? const []).hashCode; } 
+@override String toString() { return 'TaxProductResourceTaxSettingsStatusDetailsResourcePending(missingFields: $missingFields)'; } 
+ }

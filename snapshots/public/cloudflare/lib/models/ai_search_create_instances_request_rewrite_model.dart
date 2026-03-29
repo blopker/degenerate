@@ -1,0 +1,123 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchCreateInstancesRequestRewriteModelVariant1 {const AiSearchCreateInstancesRequestRewriteModelVariant1._(this.value);
+
+factory AiSearchCreateInstancesRequestRewriteModelVariant1.fromJson(String json) { return switch (json) {
+  '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
+  '@cf/zai-org/glm-4.7-flash' => cfZaiOrgGlm47Flash,
+  '@cf/meta/llama-3.1-8b-instruct-fast' => cfMetaLlama318bInstructFast,
+  '@cf/meta/llama-3.1-8b-instruct-fp8' => cfMetaLlama318bInstructFp8,
+  '@cf/meta/llama-4-scout-17b-16e-instruct' => cfMetaLlama4Scout17b16eInstruct,
+  '@cf/qwen/qwen3-30b-a3b-fp8' => cfQwenQwen330bA3bFp8,
+  '@cf/deepseek-ai/deepseek-r1-distill-qwen-32b' => cfDeepseekAiDeepseekR1DistillQwen32b,
+  '@cf/moonshotai/kimi-k2-instruct' => cfMoonshotaiKimiK2Instruct,
+  '@cf/google/gemma-3-12b-it' => cfGoogleGemma312bIt,
+  'anthropic/claude-3-7-sonnet' => anthropicClaude37Sonnet,
+  'anthropic/claude-sonnet-4' => anthropicClaudeSonnet4,
+  'anthropic/claude-opus-4' => anthropicClaudeOpus4,
+  'anthropic/claude-3-5-haiku' => anthropicClaude35Haiku,
+  'cerebras/qwen-3-235b-a22b-instruct' => cerebrasQwen3235bA22bInstruct,
+  'cerebras/qwen-3-235b-a22b-thinking' => cerebrasQwen3235bA22bThinking,
+  'cerebras/llama-3.3-70b' => cerebrasLlama3370b,
+  'cerebras/llama-4-maverick-17b-128e-instruct' => cerebrasLlama4Maverick17b128eInstruct,
+  'cerebras/llama-4-scout-17b-16e-instruct' => cerebrasLlama4Scout17b16eInstruct,
+  'cerebras/gpt-oss-120b' => cerebrasGptOss120b,
+  'google-ai-studio/gemini-2.5-flash' => googleAiStudioGemini25Flash,
+  'google-ai-studio/gemini-2.5-pro' => googleAiStudioGemini25Pro,
+  'grok/grok-4' => grokGrok4,
+  'groq/llama-3.3-70b-versatile' => groqLlama3370bVersatile,
+  'groq/llama-3.1-8b-instant' => groqLlama318bInstant,
+  'openai/gpt-5' => openaiGpt5,
+  'openai/gpt-5-mini' => openaiGpt5Mini,
+  'openai/gpt-5-nano' => openaiGpt5Nano,
+  _ => AiSearchCreateInstancesRequestRewriteModelVariant1._(json),
+}; }
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfMetaLlama3370bInstructFp8Fast = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/meta/llama-3.3-70b-instruct-fp8-fast');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfZaiOrgGlm47Flash = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/zai-org/glm-4.7-flash');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfMetaLlama318bInstructFast = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/meta/llama-3.1-8b-instruct-fast');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfMetaLlama318bInstructFp8 = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/meta/llama-3.1-8b-instruct-fp8');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfMetaLlama4Scout17b16eInstruct = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/meta/llama-4-scout-17b-16e-instruct');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfQwenQwen330bA3bFp8 = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/qwen/qwen3-30b-a3b-fp8');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfDeepseekAiDeepseekR1DistillQwen32b = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/deepseek-ai/deepseek-r1-distill-qwen-32b');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfMoonshotaiKimiK2Instruct = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/moonshotai/kimi-k2-instruct');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cfGoogleGemma312bIt = AiSearchCreateInstancesRequestRewriteModelVariant1._('@cf/google/gemma-3-12b-it');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 anthropicClaude37Sonnet = AiSearchCreateInstancesRequestRewriteModelVariant1._('anthropic/claude-3-7-sonnet');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 anthropicClaudeSonnet4 = AiSearchCreateInstancesRequestRewriteModelVariant1._('anthropic/claude-sonnet-4');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 anthropicClaudeOpus4 = AiSearchCreateInstancesRequestRewriteModelVariant1._('anthropic/claude-opus-4');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 anthropicClaude35Haiku = AiSearchCreateInstancesRequestRewriteModelVariant1._('anthropic/claude-3-5-haiku');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cerebrasQwen3235bA22bInstruct = AiSearchCreateInstancesRequestRewriteModelVariant1._('cerebras/qwen-3-235b-a22b-instruct');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cerebrasQwen3235bA22bThinking = AiSearchCreateInstancesRequestRewriteModelVariant1._('cerebras/qwen-3-235b-a22b-thinking');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cerebrasLlama3370b = AiSearchCreateInstancesRequestRewriteModelVariant1._('cerebras/llama-3.3-70b');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cerebrasLlama4Maverick17b128eInstruct = AiSearchCreateInstancesRequestRewriteModelVariant1._('cerebras/llama-4-maverick-17b-128e-instruct');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cerebrasLlama4Scout17b16eInstruct = AiSearchCreateInstancesRequestRewriteModelVariant1._('cerebras/llama-4-scout-17b-16e-instruct');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 cerebrasGptOss120b = AiSearchCreateInstancesRequestRewriteModelVariant1._('cerebras/gpt-oss-120b');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 googleAiStudioGemini25Flash = AiSearchCreateInstancesRequestRewriteModelVariant1._('google-ai-studio/gemini-2.5-flash');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 googleAiStudioGemini25Pro = AiSearchCreateInstancesRequestRewriteModelVariant1._('google-ai-studio/gemini-2.5-pro');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 grokGrok4 = AiSearchCreateInstancesRequestRewriteModelVariant1._('grok/grok-4');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 groqLlama3370bVersatile = AiSearchCreateInstancesRequestRewriteModelVariant1._('groq/llama-3.3-70b-versatile');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 groqLlama318bInstant = AiSearchCreateInstancesRequestRewriteModelVariant1._('groq/llama-3.1-8b-instant');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 openaiGpt5 = AiSearchCreateInstancesRequestRewriteModelVariant1._('openai/gpt-5');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 openaiGpt5Mini = AiSearchCreateInstancesRequestRewriteModelVariant1._('openai/gpt-5-mini');
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant1 openaiGpt5Nano = AiSearchCreateInstancesRequestRewriteModelVariant1._('openai/gpt-5-nano');
+
+static const List<AiSearchCreateInstancesRequestRewriteModelVariant1> values = [cfMetaLlama3370bInstructFp8Fast, cfZaiOrgGlm47Flash, cfMetaLlama318bInstructFast, cfMetaLlama318bInstructFp8, cfMetaLlama4Scout17b16eInstruct, cfQwenQwen330bA3bFp8, cfDeepseekAiDeepseekR1DistillQwen32b, cfMoonshotaiKimiK2Instruct, cfGoogleGemma312bIt, anthropicClaude37Sonnet, anthropicClaudeSonnet4, anthropicClaudeOpus4, anthropicClaude35Haiku, cerebrasQwen3235bA22bInstruct, cerebrasQwen3235bA22bThinking, cerebrasLlama3370b, cerebrasLlama4Maverick17b128eInstruct, cerebrasLlama4Scout17b16eInstruct, cerebrasGptOss120b, googleAiStudioGemini25Flash, googleAiStudioGemini25Pro, grokGrok4, groqLlama3370bVersatile, groqLlama318bInstant, openaiGpt5, openaiGpt5Mini, openaiGpt5Nano];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestRewriteModelVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchCreateInstancesRequestRewriteModelVariant1($value)'; } 
+ }
+final class AiSearchCreateInstancesRequestRewriteModelVariant2 {const AiSearchCreateInstancesRequestRewriteModelVariant2._(this.value);
+
+factory AiSearchCreateInstancesRequestRewriteModelVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => AiSearchCreateInstancesRequestRewriteModelVariant2._(json),
+}; }
+
+static const AiSearchCreateInstancesRequestRewriteModelVariant2 $empty = AiSearchCreateInstancesRequestRewriteModelVariant2._('');
+
+static const List<AiSearchCreateInstancesRequestRewriteModelVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestRewriteModelVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchCreateInstancesRequestRewriteModelVariant2($value)'; } 
+ }
+typedef AiSearchCreateInstancesRequestRewriteModel = OneOf2<AiSearchCreateInstancesRequestRewriteModelVariant1,AiSearchCreateInstancesRequestRewriteModelVariant2>;

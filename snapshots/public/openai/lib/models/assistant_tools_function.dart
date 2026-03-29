@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'function_object.dart';/// The type of tool being defined: `function`
+final class AssistantToolsFunctionType {const AssistantToolsFunctionType._(this.value);
+
+factory AssistantToolsFunctionType.fromJson(String json) { return switch (json) {
+  'function' => function,
+  _ => AssistantToolsFunctionType._(json),
+}; }
+
+static const AssistantToolsFunctionType function = AssistantToolsFunctionType._('function');
+
+static const List<AssistantToolsFunctionType> values = [function];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AssistantToolsFunctionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AssistantToolsFunctionType($value)'; } 
+ }
+final class AssistantToolsFunction {const AssistantToolsFunction({required this.type, required this.function, });
+
+factory AssistantToolsFunction.fromJson(Map<String, dynamic> json) { return AssistantToolsFunction(
+  type: AssistantToolsFunctionType.fromJson(json['type'] as String),
+  function: FunctionObject.fromJson(json['function'] as Map<String, dynamic>),
+); }
+
+/// The type of tool being defined: `function`
+final AssistantToolsFunctionType type;
+
+final FunctionObject function;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'function': function.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('function'); } 
+AssistantToolsFunction copyWith({AssistantToolsFunctionType? type, FunctionObject? function, }) { return AssistantToolsFunction(
+  type: type ?? this.type,
+  function: function ?? this.function,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AssistantToolsFunction &&
+          type == other.type &&
+          function == other.function; } 
+@override int get hashCode { return Object.hash(type, function); } 
+@override String toString() { return 'AssistantToolsFunction(type: $type, function: $function)'; } 
+ }

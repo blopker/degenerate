@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Sets the number of new users that will be let into the route every minute. This value is used as baseline for the number of users that are let in per minute. So it is possible that there is a little more or little less traffic coming to the route based on the traffic patterns at that time around the world.
+extension type const WaitingroomNewUsersPerMinute(int value) {
+factory WaitingroomNewUsersPerMinute.fromJson(num json) => WaitingroomNewUsersPerMinute(json.toInt());
+
+num toJson() => value;
+
+}

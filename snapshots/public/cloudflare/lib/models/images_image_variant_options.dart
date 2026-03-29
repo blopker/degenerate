@@ -1,0 +1,123 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The fit property describes how the width and height dimensions should be interpreted.
+final class ImagesImageVariantFit {const ImagesImageVariantFit._(this.value);
+
+factory ImagesImageVariantFit.fromJson(String json) { return switch (json) {
+  'scale-down' => scaleDown,
+  'contain' => contain,
+  'cover' => cover,
+  'crop' => crop,
+  'pad' => pad,
+  _ => ImagesImageVariantFit._(json),
+}; }
+
+static const ImagesImageVariantFit scaleDown = ImagesImageVariantFit._('scale-down');
+
+static const ImagesImageVariantFit contain = ImagesImageVariantFit._('contain');
+
+static const ImagesImageVariantFit cover = ImagesImageVariantFit._('cover');
+
+static const ImagesImageVariantFit crop = ImagesImageVariantFit._('crop');
+
+static const ImagesImageVariantFit pad = ImagesImageVariantFit._('pad');
+
+static const List<ImagesImageVariantFit> values = [scaleDown, contain, cover, crop, pad];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImagesImageVariantFit && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImagesImageVariantFit($value)'; } 
+ }
+/// Maximum height in image pixels.
+extension type const ImagesImageVariantHeight(double value) {
+factory ImagesImageVariantHeight.fromJson(num json) => ImagesImageVariantHeight(json.toDouble());
+
+num toJson() => value;
+
+}
+/// What EXIF data should be preserved in the output image.
+final class ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata._(this.value);
+
+factory ImagesImageVariantSchemasMetadata.fromJson(String json) { return switch (json) {
+  'keep' => keep,
+  'copyright' => copyright,
+  'none' => none,
+  _ => ImagesImageVariantSchemasMetadata._(json),
+}; }
+
+static const ImagesImageVariantSchemasMetadata keep = ImagesImageVariantSchemasMetadata._('keep');
+
+static const ImagesImageVariantSchemasMetadata copyright = ImagesImageVariantSchemasMetadata._('copyright');
+
+static const ImagesImageVariantSchemasMetadata none = ImagesImageVariantSchemasMetadata._('none');
+
+static const List<ImagesImageVariantSchemasMetadata> values = [keep, copyright, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImagesImageVariantSchemasMetadata && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImagesImageVariantSchemasMetadata($value)'; } 
+ }
+/// Maximum width in image pixels.
+extension type const ImagesImageVariantWidth(double value) {
+factory ImagesImageVariantWidth.fromJson(num json) => ImagesImageVariantWidth(json.toDouble());
+
+num toJson() => value;
+
+}
+/// Allows you to define image resizing sizes for different use cases.
+final class ImagesImageVariantOptions {const ImagesImageVariantOptions({required this.fit, required this.height, required this.metadata, required this.width, });
+
+factory ImagesImageVariantOptions.fromJson(Map<String, dynamic> json) { return ImagesImageVariantOptions(
+  fit: ImagesImageVariantFit.fromJson(json['fit'] as String),
+  height: ImagesImageVariantHeight.fromJson(json['height'] as num),
+  metadata: ImagesImageVariantSchemasMetadata.fromJson(json['metadata'] as String),
+  width: ImagesImageVariantWidth.fromJson(json['width'] as num),
+); }
+
+/// The fit property describes how the width and height dimensions should be interpreted.
+final ImagesImageVariantFit fit;
+
+/// Maximum height in image pixels.
+final ImagesImageVariantHeight height;
+
+final ImagesImageVariantSchemasMetadata metadata;
+
+final ImagesImageVariantWidth width;
+
+Map<String, dynamic> toJson() { return {
+  'fit': fit.toJson(),
+  'height': height.toJson(),
+  'metadata': metadata.toJson(),
+  'width': width.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('fit') &&
+      json.containsKey('height') &&
+      json.containsKey('metadata') &&
+      json.containsKey('width'); } 
+ImagesImageVariantOptions copyWith({ImagesImageVariantFit? fit, ImagesImageVariantHeight? height, ImagesImageVariantSchemasMetadata? metadata, ImagesImageVariantWidth? width, }) { return ImagesImageVariantOptions(
+  fit: fit ?? this.fit,
+  height: height ?? this.height,
+  metadata: metadata ?? this.metadata,
+  width: width ?? this.width,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ImagesImageVariantOptions &&
+          fit == other.fit &&
+          height == other.height &&
+          metadata == other.metadata &&
+          width == other.width; } 
+@override int get hashCode { return Object.hash(fit, height, metadata, width); } 
+@override String toString() { return 'ImagesImageVariantOptions(fit: $fit, height: $height, metadata: $metadata, width: $width)'; } 
+ }

@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_details_tool_calls_code_object.dart';import 'run_step_details_tool_calls_file_search_object.dart';import 'run_step_details_tool_calls_function_object.dart';typedef RunStepDetailsToolCallsObjectToolCalls = OneOf3<RunStepDetailsToolCallsCodeObject,RunStepDetailsToolCallsFileSearchObject,RunStepDetailsToolCallsFunctionObject>;

@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_response_format_variant1_json_object.dart';import 'prompt43_response_format_variant1_json_schema.dart';import 'prompt43_response_format_variant1_text.dart';typedef Prompt43ResponseFormatVariant1 = OneOf3<Prompt43ResponseFormatVariant1Text,Prompt43ResponseFormatVariant1JsonObject,Prompt43ResponseFormatVariant1JsonSchema>;

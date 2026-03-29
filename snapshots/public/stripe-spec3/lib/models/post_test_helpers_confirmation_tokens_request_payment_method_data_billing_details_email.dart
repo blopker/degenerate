@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2 {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2._(this.value);
+
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2._(json),
+}; }
+
+static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2 $empty = PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2._('');
+
+static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2($value)'; } 
+ }
+typedef PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmail = OneOf2<String,PostTestHelpersConfirmationTokensRequestPaymentMethodDataBillingDetailsEmailVariant2>;

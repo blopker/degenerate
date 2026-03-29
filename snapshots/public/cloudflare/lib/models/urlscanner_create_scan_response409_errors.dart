@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerCreateScanResponse409Errors {const UrlscannerCreateScanResponse409Errors({required this.message});
+
+factory UrlscannerCreateScanResponse409Errors.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+UrlscannerCreateScanResponse409Errors copyWith({String? message}) { return UrlscannerCreateScanResponse409Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerCreateScanResponse409Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'UrlscannerCreateScanResponse409Errors(message: $message)'; } 
+ }

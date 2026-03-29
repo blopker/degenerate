@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorDescribeWorkflowInstanceResponseResultError {const WorDescribeWorkflowInstanceResponseResultError({required this.message, required this.name, });
+
+factory WorDescribeWorkflowInstanceResponseResultError.fromJson(Map<String, dynamic> json) { return WorDescribeWorkflowInstanceResponseResultError(
+  message: json['message'] as String,
+  name: json['name'] as String,
+); }
+
+final String message;
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+WorDescribeWorkflowInstanceResponseResultError copyWith({String? message, String? name, }) { return WorDescribeWorkflowInstanceResponseResultError(
+  message: message ?? this.message,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorDescribeWorkflowInstanceResponseResultError &&
+          message == other.message &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(message, name); } 
+@override String toString() { return 'WorDescribeWorkflowInstanceResponseResultError(message: $message, name: $name)'; } 
+ }

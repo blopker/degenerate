@@ -1,0 +1,133 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);
+
+factory BillingMeterEventAdjustmentObject.fromJson(String json) { return switch (json) {
+  'billing.meter_event_adjustment' => billingMeterEventAdjustment,
+  _ => BillingMeterEventAdjustmentObject._(json),
+}; }
+
+static const BillingMeterEventAdjustmentObject billingMeterEventAdjustment = BillingMeterEventAdjustmentObject._('billing.meter_event_adjustment');
+
+static const List<BillingMeterEventAdjustmentObject> values = [billingMeterEventAdjustment];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingMeterEventAdjustmentObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingMeterEventAdjustmentObject($value)'; } 
+ }
+/// The meter event adjustment's status.
+final class BillingMeterEventAdjustmentStatus {const BillingMeterEventAdjustmentStatus._(this.value);
+
+factory BillingMeterEventAdjustmentStatus.fromJson(String json) { return switch (json) {
+  'complete' => complete,
+  'pending' => pending,
+  _ => BillingMeterEventAdjustmentStatus._(json),
+}; }
+
+static const BillingMeterEventAdjustmentStatus complete = BillingMeterEventAdjustmentStatus._('complete');
+
+static const BillingMeterEventAdjustmentStatus pending = BillingMeterEventAdjustmentStatus._('pending');
+
+static const List<BillingMeterEventAdjustmentStatus> values = [complete, pending];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingMeterEventAdjustmentStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingMeterEventAdjustmentStatus($value)'; } 
+ }
+/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
+final class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType._(this.value);
+
+factory BillingMeterEventAdjustmentType.fromJson(String json) { return switch (json) {
+  'cancel' => cancel,
+  _ => BillingMeterEventAdjustmentType._(json),
+}; }
+
+static const BillingMeterEventAdjustmentType cancel = BillingMeterEventAdjustmentType._('cancel');
+
+static const List<BillingMeterEventAdjustmentType> values = [cancel];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingMeterEventAdjustmentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingMeterEventAdjustmentType($value)'; } 
+ }
+/// A billing meter event adjustment is a resource that allows you to cancel a meter event. For example, you might create a billing meter event adjustment to cancel a meter event that was created in error or attached to the wrong customer.
+final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({this.cancel, required this.eventName, required this.livemode, required this.object, required this.status, required this.type, });
+
+factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return BillingMeterEventAdjustment(
+  cancel: json['cancel'] != null ? BillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
+  eventName: json['event_name'] as String,
+  livemode: json['livemode'] as bool,
+  object: BillingMeterEventAdjustmentObject.fromJson(json['object'] as String),
+  status: BillingMeterEventAdjustmentStatus.fromJson(json['status'] as String),
+  type: BillingMeterEventAdjustmentType.fromJson(json['type'] as String),
+); }
+
+/// Specifies which event to cancel.
+final BillingMeterEventAdjustmentCancel? cancel;
+
+/// The name of the meter event. Corresponds with the `event_name` field on a meter.
+final String eventName;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final BillingMeterEventAdjustmentObject object;
+
+/// The meter event adjustment's status.
+final BillingMeterEventAdjustmentStatus status;
+
+/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
+final BillingMeterEventAdjustmentType type;
+
+Map<String, dynamic> toJson() { return {
+  if (cancel != null) 'cancel': cancel?.toJson(),
+  'event_name': eventName,
+  'livemode': livemode,
+  'object': object.toJson(),
+  'status': status.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_name') && json['event_name'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('status') &&
+      json.containsKey('type'); } 
+BillingMeterEventAdjustment copyWith({BillingMeterEventAdjustmentCancel? Function()? cancel, String? eventName, bool? livemode, BillingMeterEventAdjustmentObject? object, BillingMeterEventAdjustmentStatus? status, BillingMeterEventAdjustmentType? type, }) { return BillingMeterEventAdjustment(
+  cancel: cancel != null ? cancel() : this.cancel,
+  eventName: eventName ?? this.eventName,
+  livemode: livemode ?? this.livemode,
+  object: object ?? this.object,
+  status: status ?? this.status,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingMeterEventAdjustment &&
+          cancel == other.cancel &&
+          eventName == other.eventName &&
+          livemode == other.livemode &&
+          object == other.object &&
+          status == other.status &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(cancel, eventName, livemode, object, status, type); } 
+@override String toString() { return 'BillingMeterEventAdjustment(cancel: $cancel, eventName: $eventName, livemode: $livemode, object: $object, status: $status, type: $type)'; } 
+ }

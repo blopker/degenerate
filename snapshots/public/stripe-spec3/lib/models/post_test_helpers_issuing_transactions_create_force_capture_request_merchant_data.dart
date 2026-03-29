@@ -1,0 +1,972 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._(this.value);
+
+factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory.fromJson(String json) { return switch (json) {
+  'ac_refrigeration_repair' => acRefrigerationRepair,
+  'accounting_bookkeeping_services' => accountingBookkeepingServices,
+  'advertising_services' => advertisingServices,
+  'agricultural_cooperative' => agriculturalCooperative,
+  'airlines_air_carriers' => airlinesAirCarriers,
+  'airports_flying_fields' => airportsFlyingFields,
+  'ambulance_services' => ambulanceServices,
+  'amusement_parks_carnivals' => amusementParksCarnivals,
+  'antique_reproductions' => antiqueReproductions,
+  'antique_shops' => antiqueShops,
+  'aquariums' => aquariums,
+  'architectural_surveying_services' => architecturalSurveyingServices,
+  'art_dealers_and_galleries' => artDealersAndGalleries,
+  'artists_supply_and_craft_shops' => artistsSupplyAndCraftShops,
+  'auto_and_home_supply_stores' => autoAndHomeSupplyStores,
+  'auto_body_repair_shops' => autoBodyRepairShops,
+  'auto_paint_shops' => autoPaintShops,
+  'auto_service_shops' => autoServiceShops,
+  'automated_cash_disburse' => automatedCashDisburse,
+  'automated_fuel_dispensers' => automatedFuelDispensers,
+  'automobile_associations' => automobileAssociations,
+  'automotive_parts_and_accessories_stores' => automotivePartsAndAccessoriesStores,
+  'automotive_tire_stores' => automotiveTireStores,
+  'bail_and_bond_payments' => bailAndBondPayments,
+  'bakeries' => bakeries,
+  'bands_orchestras' => bandsOrchestras,
+  'barber_and_beauty_shops' => barberAndBeautyShops,
+  'betting_casino_gambling' => bettingCasinoGambling,
+  'bicycle_shops' => bicycleShops,
+  'billiard_pool_establishments' => billiardPoolEstablishments,
+  'boat_dealers' => boatDealers,
+  'boat_rentals_and_leases' => boatRentalsAndLeases,
+  'book_stores' => bookStores,
+  'books_periodicals_and_newspapers' => booksPeriodicalsAndNewspapers,
+  'bowling_alleys' => bowlingAlleys,
+  'bus_lines' => busLines,
+  'business_secretarial_schools' => businessSecretarialSchools,
+  'buying_shopping_services' => buyingShoppingServices,
+  'cable_satellite_and_other_pay_television_and_radio' => cableSatelliteAndOtherPayTelevisionAndRadio,
+  'camera_and_photographic_supply_stores' => cameraAndPhotographicSupplyStores,
+  'candy_nut_and_confectionery_stores' => candyNutAndConfectioneryStores,
+  'car_and_truck_dealers_new_used' => carAndTruckDealersNewUsed,
+  'car_and_truck_dealers_used_only' => carAndTruckDealersUsedOnly,
+  'car_rental_agencies' => carRentalAgencies,
+  'car_washes' => carWashes,
+  'carpentry_services' => carpentryServices,
+  'carpet_upholstery_cleaning' => carpetUpholsteryCleaning,
+  'caterers' => caterers,
+  'charitable_and_social_service_organizations_fundraising' => charitableAndSocialServiceOrganizationsFundraising,
+  'chemicals_and_allied_products' => chemicalsAndAlliedProducts,
+  'child_care_services' => childCareServices,
+  'childrens_and_infants_wear_stores' => childrensAndInfantsWearStores,
+  'chiropodists_podiatrists' => chiropodistsPodiatrists,
+  'chiropractors' => chiropractors,
+  'cigar_stores_and_stands' => cigarStoresAndStands,
+  'civic_social_fraternal_associations' => civicSocialFraternalAssociations,
+  'cleaning_and_maintenance' => cleaningAndMaintenance,
+  'clothing_rental' => clothingRental,
+  'colleges_universities' => collegesUniversities,
+  'commercial_equipment' => commercialEquipment,
+  'commercial_footwear' => commercialFootwear,
+  'commercial_photography_art_and_graphics' => commercialPhotographyArtAndGraphics,
+  'commuter_transport_and_ferries' => commuterTransportAndFerries,
+  'computer_network_services' => computerNetworkServices,
+  'computer_programming' => computerProgramming,
+  'computer_repair' => computerRepair,
+  'computer_software_stores' => computerSoftwareStores,
+  'computers_peripherals_and_software' => computersPeripheralsAndSoftware,
+  'concrete_work_services' => concreteWorkServices,
+  'construction_materials' => constructionMaterials,
+  'consulting_public_relations' => consultingPublicRelations,
+  'correspondence_schools' => correspondenceSchools,
+  'cosmetic_stores' => cosmeticStores,
+  'counseling_services' => counselingServices,
+  'country_clubs' => countryClubs,
+  'courier_services' => courierServices,
+  'court_costs' => courtCosts,
+  'credit_reporting_agencies' => creditReportingAgencies,
+  'cruise_lines' => cruiseLines,
+  'dairy_products_stores' => dairyProductsStores,
+  'dance_hall_studios_schools' => danceHallStudiosSchools,
+  'dating_escort_services' => datingEscortServices,
+  'dentists_orthodontists' => dentistsOrthodontists,
+  'department_stores' => departmentStores,
+  'detective_agencies' => detectiveAgencies,
+  'digital_goods_applications' => digitalGoodsApplications,
+  'digital_goods_games' => digitalGoodsGames,
+  'digital_goods_large_volume' => digitalGoodsLargeVolume,
+  'digital_goods_media' => digitalGoodsMedia,
+  'direct_marketing_catalog_merchant' => directMarketingCatalogMerchant,
+  'direct_marketing_combination_catalog_and_retail_merchant' => directMarketingCombinationCatalogAndRetailMerchant,
+  'direct_marketing_inbound_telemarketing' => directMarketingInboundTelemarketing,
+  'direct_marketing_insurance_services' => directMarketingInsuranceServices,
+  'direct_marketing_other' => directMarketingOther,
+  'direct_marketing_outbound_telemarketing' => directMarketingOutboundTelemarketing,
+  'direct_marketing_subscription' => directMarketingSubscription,
+  'direct_marketing_travel' => directMarketingTravel,
+  'discount_stores' => discountStores,
+  'doctors' => doctors,
+  'door_to_door_sales' => doorToDoorSales,
+  'drapery_window_covering_and_upholstery_stores' => draperyWindowCoveringAndUpholsteryStores,
+  'drinking_places' => drinkingPlaces,
+  'drug_stores_and_pharmacies' => drugStoresAndPharmacies,
+  'drugs_drug_proprietaries_and_druggist_sundries' => drugsDrugProprietariesAndDruggistSundries,
+  'dry_cleaners' => dryCleaners,
+  'durable_goods' => durableGoods,
+  'duty_free_stores' => dutyFreeStores,
+  'eating_places_restaurants' => eatingPlacesRestaurants,
+  'educational_services' => educationalServices,
+  'electric_razor_stores' => electricRazorStores,
+  'electric_vehicle_charging' => electricVehicleCharging,
+  'electrical_parts_and_equipment' => electricalPartsAndEquipment,
+  'electrical_services' => electricalServices,
+  'electronics_repair_shops' => electronicsRepairShops,
+  'electronics_stores' => electronicsStores,
+  'elementary_secondary_schools' => elementarySecondarySchools,
+  'emergency_services_gcas_visa_use_only' => emergencyServicesGcasVisaUseOnly,
+  'employment_temp_agencies' => employmentTempAgencies,
+  'equipment_rental' => equipmentRental,
+  'exterminating_services' => exterminatingServices,
+  'family_clothing_stores' => familyClothingStores,
+  'fast_food_restaurants' => fastFoodRestaurants,
+  'financial_institutions' => financialInstitutions,
+  'fines_government_administrative_entities' => finesGovernmentAdministrativeEntities,
+  'fireplace_fireplace_screens_and_accessories_stores' => fireplaceFireplaceScreensAndAccessoriesStores,
+  'floor_covering_stores' => floorCoveringStores,
+  'florists' => florists,
+  'florists_supplies_nursery_stock_and_flowers' => floristsSuppliesNurseryStockAndFlowers,
+  'freezer_and_locker_meat_provisioners' => freezerAndLockerMeatProvisioners,
+  'fuel_dealers_non_automotive' => fuelDealersNonAutomotive,
+  'funeral_services_crematories' => funeralServicesCrematories,
+  'furniture_home_furnishings_and_equipment_stores_except_appliances' => furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances,
+  'furniture_repair_refinishing' => furnitureRepairRefinishing,
+  'furriers_and_fur_shops' => furriersAndFurShops,
+  'general_services' => generalServices,
+  'gift_card_novelty_and_souvenir_shops' => giftCardNoveltyAndSouvenirShops,
+  'glass_paint_and_wallpaper_stores' => glassPaintAndWallpaperStores,
+  'glassware_crystal_stores' => glasswareCrystalStores,
+  'golf_courses_public' => golfCoursesPublic,
+  'government_licensed_horse_dog_racing_us_region_only' => governmentLicensedHorseDogRacingUsRegionOnly,
+  'government_licensed_online_casions_online_gambling_us_region_only' => governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly,
+  'government_owned_lotteries_non_us_region' => governmentOwnedLotteriesNonUsRegion,
+  'government_owned_lotteries_us_region_only' => governmentOwnedLotteriesUsRegionOnly,
+  'government_services' => governmentServices,
+  'grocery_stores_supermarkets' => groceryStoresSupermarkets,
+  'hardware_equipment_and_supplies' => hardwareEquipmentAndSupplies,
+  'hardware_stores' => hardwareStores,
+  'health_and_beauty_spas' => healthAndBeautySpas,
+  'hearing_aids_sales_and_supplies' => hearingAidsSalesAndSupplies,
+  'heating_plumbing_a_c' => heatingPlumbingAC,
+  'hobby_toy_and_game_shops' => hobbyToyAndGameShops,
+  'home_supply_warehouse_stores' => homeSupplyWarehouseStores,
+  'hospitals' => hospitals,
+  'hotels_motels_and_resorts' => hotelsMotelsAndResorts,
+  'household_appliance_stores' => householdApplianceStores,
+  'industrial_supplies' => industrialSupplies,
+  'information_retrieval_services' => informationRetrievalServices,
+  'insurance_default' => insuranceDefault,
+  'insurance_underwriting_premiums' => insuranceUnderwritingPremiums,
+  'intra_company_purchases' => intraCompanyPurchases,
+  'jewelry_stores_watches_clocks_and_silverware_stores' => jewelryStoresWatchesClocksAndSilverwareStores,
+  'landscaping_services' => landscapingServices,
+  'laundries' => laundries,
+  'laundry_cleaning_services' => laundryCleaningServices,
+  'legal_services_attorneys' => legalServicesAttorneys,
+  'luggage_and_leather_goods_stores' => luggageAndLeatherGoodsStores,
+  'lumber_building_materials_stores' => lumberBuildingMaterialsStores,
+  'manual_cash_disburse' => manualCashDisburse,
+  'marinas_service_and_supplies' => marinasServiceAndSupplies,
+  'marketplaces' => marketplaces,
+  'masonry_stonework_and_plaster' => masonryStoneworkAndPlaster,
+  'massage_parlors' => massageParlors,
+  'medical_and_dental_labs' => medicalAndDentalLabs,
+  'medical_dental_ophthalmic_and_hospital_equipment_and_supplies' => medicalDentalOphthalmicAndHospitalEquipmentAndSupplies,
+  'medical_services' => medicalServices,
+  'membership_organizations' => membershipOrganizations,
+  'mens_and_boys_clothing_and_accessories_stores' => mensAndBoysClothingAndAccessoriesStores,
+  'mens_womens_clothing_stores' => mensWomensClothingStores,
+  'metal_service_centers' => metalServiceCenters,
+  'miscellaneous_apparel_and_accessory_shops' => miscellaneousApparelAndAccessoryShops,
+  'miscellaneous_auto_dealers' => miscellaneousAutoDealers,
+  'miscellaneous_business_services' => miscellaneousBusinessServices,
+  'miscellaneous_food_stores' => miscellaneousFoodStores,
+  'miscellaneous_general_merchandise' => miscellaneousGeneralMerchandise,
+  'miscellaneous_general_services' => miscellaneousGeneralServices,
+  'miscellaneous_home_furnishing_specialty_stores' => miscellaneousHomeFurnishingSpecialtyStores,
+  'miscellaneous_publishing_and_printing' => miscellaneousPublishingAndPrinting,
+  'miscellaneous_recreation_services' => miscellaneousRecreationServices,
+  'miscellaneous_repair_shops' => miscellaneousRepairShops,
+  'miscellaneous_specialty_retail' => miscellaneousSpecialtyRetail,
+  'mobile_home_dealers' => mobileHomeDealers,
+  'motion_picture_theaters' => motionPictureTheaters,
+  'motor_freight_carriers_and_trucking' => motorFreightCarriersAndTrucking,
+  'motor_homes_dealers' => motorHomesDealers,
+  'motor_vehicle_supplies_and_new_parts' => motorVehicleSuppliesAndNewParts,
+  'motorcycle_shops_and_dealers' => motorcycleShopsAndDealers,
+  'motorcycle_shops_dealers' => motorcycleShopsDealers,
+  'music_stores_musical_instruments_pianos_and_sheet_music' => musicStoresMusicalInstrumentsPianosAndSheetMusic,
+  'news_dealers_and_newsstands' => newsDealersAndNewsstands,
+  'non_fi_money_orders' => nonFiMoneyOrders,
+  'non_fi_stored_value_card_purchase_load' => nonFiStoredValueCardPurchaseLoad,
+  'nondurable_goods' => nondurableGoods,
+  'nurseries_lawn_and_garden_supply_stores' => nurseriesLawnAndGardenSupplyStores,
+  'nursing_personal_care' => nursingPersonalCare,
+  'office_and_commercial_furniture' => officeAndCommercialFurniture,
+  'opticians_eyeglasses' => opticiansEyeglasses,
+  'optometrists_ophthalmologist' => optometristsOphthalmologist,
+  'orthopedic_goods_prosthetic_devices' => orthopedicGoodsProstheticDevices,
+  'osteopaths' => osteopaths,
+  'package_stores_beer_wine_and_liquor' => packageStoresBeerWineAndLiquor,
+  'paints_varnishes_and_supplies' => paintsVarnishesAndSupplies,
+  'parking_lots_garages' => parkingLotsGarages,
+  'passenger_railways' => passengerRailways,
+  'pawn_shops' => pawnShops,
+  'pet_shops_pet_food_and_supplies' => petShopsPetFoodAndSupplies,
+  'petroleum_and_petroleum_products' => petroleumAndPetroleumProducts,
+  'photo_developing' => photoDeveloping,
+  'photographic_photocopy_microfilm_equipment_and_supplies' => photographicPhotocopyMicrofilmEquipmentAndSupplies,
+  'photographic_studios' => photographicStudios,
+  'picture_video_production' => pictureVideoProduction,
+  'piece_goods_notions_and_other_dry_goods' => pieceGoodsNotionsAndOtherDryGoods,
+  'plumbing_heating_equipment_and_supplies' => plumbingHeatingEquipmentAndSupplies,
+  'political_organizations' => politicalOrganizations,
+  'postal_services_government_only' => postalServicesGovernmentOnly,
+  'precious_stones_and_metals_watches_and_jewelry' => preciousStonesAndMetalsWatchesAndJewelry,
+  'professional_services' => professionalServices,
+  'public_warehousing_and_storage' => publicWarehousingAndStorage,
+  'quick_copy_repro_and_blueprint' => quickCopyReproAndBlueprint,
+  'railroads' => railroads,
+  'real_estate_agents_and_managers_rentals' => realEstateAgentsAndManagersRentals,
+  'record_stores' => recordStores,
+  'recreational_vehicle_rentals' => recreationalVehicleRentals,
+  'religious_goods_stores' => religiousGoodsStores,
+  'religious_organizations' => religiousOrganizations,
+  'roofing_siding_sheet_metal' => roofingSidingSheetMetal,
+  'secretarial_support_services' => secretarialSupportServices,
+  'security_brokers_dealers' => securityBrokersDealers,
+  'service_stations' => serviceStations,
+  'sewing_needlework_fabric_and_piece_goods_stores' => sewingNeedleworkFabricAndPieceGoodsStores,
+  'shoe_repair_hat_cleaning' => shoeRepairHatCleaning,
+  'shoe_stores' => shoeStores,
+  'small_appliance_repair' => smallApplianceRepair,
+  'snowmobile_dealers' => snowmobileDealers,
+  'special_trade_services' => specialTradeServices,
+  'specialty_cleaning' => specialtyCleaning,
+  'sporting_goods_stores' => sportingGoodsStores,
+  'sporting_recreation_camps' => sportingRecreationCamps,
+  'sports_and_riding_apparel_stores' => sportsAndRidingApparelStores,
+  'sports_clubs_fields' => sportsClubsFields,
+  'stamp_and_coin_stores' => stampAndCoinStores,
+  'stationary_office_supplies_printing_and_writing_paper' => stationaryOfficeSuppliesPrintingAndWritingPaper,
+  'stationery_stores_office_and_school_supply_stores' => stationeryStoresOfficeAndSchoolSupplyStores,
+  'swimming_pools_sales' => swimmingPoolsSales,
+  't_ui_travel_germany' => tUiTravelGermany,
+  'tailors_alterations' => tailorsAlterations,
+  'tax_payments_government_agencies' => taxPaymentsGovernmentAgencies,
+  'tax_preparation_services' => taxPreparationServices,
+  'taxicabs_limousines' => taxicabsLimousines,
+  'telecommunication_equipment_and_telephone_sales' => telecommunicationEquipmentAndTelephoneSales,
+  'telecommunication_services' => telecommunicationServices,
+  'telegraph_services' => telegraphServices,
+  'tent_and_awning_shops' => tentAndAwningShops,
+  'testing_laboratories' => testingLaboratories,
+  'theatrical_ticket_agencies' => theatricalTicketAgencies,
+  'timeshares' => timeshares,
+  'tire_retreading_and_repair' => tireRetreadingAndRepair,
+  'tolls_bridge_fees' => tollsBridgeFees,
+  'tourist_attractions_and_exhibits' => touristAttractionsAndExhibits,
+  'towing_services' => towingServices,
+  'trailer_parks_campgrounds' => trailerParksCampgrounds,
+  'transportation_services' => transportationServices,
+  'travel_agencies_tour_operators' => travelAgenciesTourOperators,
+  'truck_stop_iteration' => truckStopIteration,
+  'truck_utility_trailer_rentals' => truckUtilityTrailerRentals,
+  'typesetting_plate_making_and_related_services' => typesettingPlateMakingAndRelatedServices,
+  'typewriter_stores' => typewriterStores,
+  'u_s_federal_government_agencies_or_departments' => uSFederalGovernmentAgenciesOrDepartments,
+  'uniforms_commercial_clothing' => uniformsCommercialClothing,
+  'used_merchandise_and_secondhand_stores' => usedMerchandiseAndSecondhandStores,
+  'utilities' => utilities,
+  'variety_stores' => varietyStores,
+  'veterinary_services' => veterinaryServices,
+  'video_amusement_game_supplies' => videoAmusementGameSupplies,
+  'video_game_arcades' => videoGameArcades,
+  'video_tape_rental_stores' => videoTapeRentalStores,
+  'vocational_trade_schools' => vocationalTradeSchools,
+  'watch_jewelry_repair' => watchJewelryRepair,
+  'welding_repair' => weldingRepair,
+  'wholesale_clubs' => wholesaleClubs,
+  'wig_and_toupee_stores' => wigAndToupeeStores,
+  'wires_money_orders' => wiresMoneyOrders,
+  'womens_accessory_and_specialty_shops' => womensAccessoryAndSpecialtyShops,
+  'womens_ready_to_wear_stores' => womensReadyToWearStores,
+  'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
+  _ => PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._(json),
+}; }
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory acRefrigerationRepair = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('ac_refrigeration_repair');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory accountingBookkeepingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('accounting_bookkeeping_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory advertisingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('advertising_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory agriculturalCooperative = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('agricultural_cooperative');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory airlinesAirCarriers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('airlines_air_carriers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory airportsFlyingFields = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('airports_flying_fields');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory ambulanceServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('ambulance_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory amusementParksCarnivals = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('amusement_parks_carnivals');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory antiqueReproductions = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('antique_reproductions');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory antiqueShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('antique_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory aquariums = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('aquariums');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory architecturalSurveyingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('architectural_surveying_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory artDealersAndGalleries = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('art_dealers_and_galleries');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory artistsSupplyAndCraftShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('artists_supply_and_craft_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory autoAndHomeSupplyStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('auto_and_home_supply_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory autoBodyRepairShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('auto_body_repair_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory autoPaintShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('auto_paint_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory autoServiceShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('auto_service_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory automatedCashDisburse = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('automated_cash_disburse');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory automatedFuelDispensers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('automated_fuel_dispensers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory automobileAssociations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('automobile_associations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory automotivePartsAndAccessoriesStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('automotive_parts_and_accessories_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory automotiveTireStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('automotive_tire_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bailAndBondPayments = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('bail_and_bond_payments');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bakeries = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('bakeries');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bandsOrchestras = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('bands_orchestras');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory barberAndBeautyShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('barber_and_beauty_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bettingCasinoGambling = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('betting_casino_gambling');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bicycleShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('bicycle_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory billiardPoolEstablishments = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('billiard_pool_establishments');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory boatDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('boat_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory boatRentalsAndLeases = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('boat_rentals_and_leases');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bookStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('book_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory booksPeriodicalsAndNewspapers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('books_periodicals_and_newspapers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory bowlingAlleys = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('bowling_alleys');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory busLines = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('bus_lines');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory businessSecretarialSchools = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('business_secretarial_schools');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory buyingShoppingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('buying_shopping_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory cableSatelliteAndOtherPayTelevisionAndRadio = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('cable_satellite_and_other_pay_television_and_radio');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory cameraAndPhotographicSupplyStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('camera_and_photographic_supply_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory candyNutAndConfectioneryStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('candy_nut_and_confectionery_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory carAndTruckDealersNewUsed = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('car_and_truck_dealers_new_used');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory carAndTruckDealersUsedOnly = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('car_and_truck_dealers_used_only');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory carRentalAgencies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('car_rental_agencies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory carWashes = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('car_washes');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory carpentryServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('carpentry_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory carpetUpholsteryCleaning = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('carpet_upholstery_cleaning');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory caterers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('caterers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory charitableAndSocialServiceOrganizationsFundraising = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('charitable_and_social_service_organizations_fundraising');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory chemicalsAndAlliedProducts = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('chemicals_and_allied_products');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory childCareServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('child_care_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory childrensAndInfantsWearStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('childrens_and_infants_wear_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory chiropodistsPodiatrists = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('chiropodists_podiatrists');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory chiropractors = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('chiropractors');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory cigarStoresAndStands = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('cigar_stores_and_stands');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory civicSocialFraternalAssociations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('civic_social_fraternal_associations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory cleaningAndMaintenance = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('cleaning_and_maintenance');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory clothingRental = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('clothing_rental');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory collegesUniversities = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('colleges_universities');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory commercialEquipment = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('commercial_equipment');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory commercialFootwear = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('commercial_footwear');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory commercialPhotographyArtAndGraphics = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('commercial_photography_art_and_graphics');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory commuterTransportAndFerries = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('commuter_transport_and_ferries');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory computerNetworkServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('computer_network_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory computerProgramming = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('computer_programming');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory computerRepair = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('computer_repair');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory computerSoftwareStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('computer_software_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory computersPeripheralsAndSoftware = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('computers_peripherals_and_software');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory concreteWorkServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('concrete_work_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory constructionMaterials = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('construction_materials');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory consultingPublicRelations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('consulting_public_relations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory correspondenceSchools = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('correspondence_schools');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory cosmeticStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('cosmetic_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory counselingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('counseling_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory countryClubs = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('country_clubs');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory courierServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('courier_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory courtCosts = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('court_costs');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory creditReportingAgencies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('credit_reporting_agencies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory cruiseLines = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('cruise_lines');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory dairyProductsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('dairy_products_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory danceHallStudiosSchools = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('dance_hall_studios_schools');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory datingEscortServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('dating_escort_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory dentistsOrthodontists = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('dentists_orthodontists');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory departmentStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('department_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory detectiveAgencies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('detective_agencies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory digitalGoodsApplications = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('digital_goods_applications');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory digitalGoodsGames = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('digital_goods_games');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory digitalGoodsLargeVolume = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('digital_goods_large_volume');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory digitalGoodsMedia = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('digital_goods_media');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingCatalogMerchant = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_catalog_merchant');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingCombinationCatalogAndRetailMerchant = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_combination_catalog_and_retail_merchant');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingInboundTelemarketing = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_inbound_telemarketing');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingInsuranceServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_insurance_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingOther = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_other');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingOutboundTelemarketing = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_outbound_telemarketing');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingSubscription = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_subscription');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory directMarketingTravel = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('direct_marketing_travel');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory discountStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('discount_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory doctors = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('doctors');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory doorToDoorSales = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('door_to_door_sales');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory draperyWindowCoveringAndUpholsteryStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('drapery_window_covering_and_upholstery_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory drinkingPlaces = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('drinking_places');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory drugStoresAndPharmacies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('drug_stores_and_pharmacies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory drugsDrugProprietariesAndDruggistSundries = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('drugs_drug_proprietaries_and_druggist_sundries');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory dryCleaners = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('dry_cleaners');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory durableGoods = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('durable_goods');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory dutyFreeStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('duty_free_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory eatingPlacesRestaurants = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('eating_places_restaurants');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory educationalServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('educational_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory electricRazorStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('electric_razor_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory electricVehicleCharging = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('electric_vehicle_charging');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory electricalPartsAndEquipment = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('electrical_parts_and_equipment');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory electricalServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('electrical_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory electronicsRepairShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('electronics_repair_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory electronicsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('electronics_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory elementarySecondarySchools = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('elementary_secondary_schools');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory emergencyServicesGcasVisaUseOnly = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('emergency_services_gcas_visa_use_only');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory employmentTempAgencies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('employment_temp_agencies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory equipmentRental = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('equipment_rental');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory exterminatingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('exterminating_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory familyClothingStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('family_clothing_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory fastFoodRestaurants = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('fast_food_restaurants');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory financialInstitutions = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('financial_institutions');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory finesGovernmentAdministrativeEntities = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('fines_government_administrative_entities');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory fireplaceFireplaceScreensAndAccessoriesStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('fireplace_fireplace_screens_and_accessories_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory floorCoveringStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('floor_covering_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory florists = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('florists');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory floristsSuppliesNurseryStockAndFlowers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('florists_supplies_nursery_stock_and_flowers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory freezerAndLockerMeatProvisioners = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('freezer_and_locker_meat_provisioners');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory fuelDealersNonAutomotive = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('fuel_dealers_non_automotive');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory funeralServicesCrematories = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('funeral_services_crematories');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('furniture_home_furnishings_and_equipment_stores_except_appliances');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory furnitureRepairRefinishing = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('furniture_repair_refinishing');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory furriersAndFurShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('furriers_and_fur_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory generalServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('general_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory giftCardNoveltyAndSouvenirShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('gift_card_novelty_and_souvenir_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory glassPaintAndWallpaperStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('glass_paint_and_wallpaper_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory glasswareCrystalStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('glassware_crystal_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory golfCoursesPublic = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('golf_courses_public');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory governmentLicensedHorseDogRacingUsRegionOnly = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('government_licensed_horse_dog_racing_us_region_only');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('government_licensed_online_casions_online_gambling_us_region_only');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory governmentOwnedLotteriesNonUsRegion = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('government_owned_lotteries_non_us_region');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory governmentOwnedLotteriesUsRegionOnly = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('government_owned_lotteries_us_region_only');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory governmentServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('government_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory groceryStoresSupermarkets = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('grocery_stores_supermarkets');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory hardwareEquipmentAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('hardware_equipment_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory hardwareStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('hardware_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory healthAndBeautySpas = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('health_and_beauty_spas');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory hearingAidsSalesAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('hearing_aids_sales_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory heatingPlumbingAC = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('heating_plumbing_a_c');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory hobbyToyAndGameShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('hobby_toy_and_game_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory homeSupplyWarehouseStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('home_supply_warehouse_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory hospitals = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('hospitals');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory hotelsMotelsAndResorts = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('hotels_motels_and_resorts');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory householdApplianceStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('household_appliance_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory industrialSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('industrial_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory informationRetrievalServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('information_retrieval_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory insuranceDefault = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('insurance_default');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory insuranceUnderwritingPremiums = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('insurance_underwriting_premiums');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory intraCompanyPurchases = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('intra_company_purchases');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory jewelryStoresWatchesClocksAndSilverwareStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('jewelry_stores_watches_clocks_and_silverware_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory landscapingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('landscaping_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory laundries = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('laundries');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory laundryCleaningServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('laundry_cleaning_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory legalServicesAttorneys = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('legal_services_attorneys');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory luggageAndLeatherGoodsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('luggage_and_leather_goods_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory lumberBuildingMaterialsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('lumber_building_materials_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory manualCashDisburse = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('manual_cash_disburse');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory marinasServiceAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('marinas_service_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory marketplaces = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('marketplaces');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory masonryStoneworkAndPlaster = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('masonry_stonework_and_plaster');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory massageParlors = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('massage_parlors');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory medicalAndDentalLabs = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('medical_and_dental_labs');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory medicalDentalOphthalmicAndHospitalEquipmentAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('medical_dental_ophthalmic_and_hospital_equipment_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory medicalServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('medical_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory membershipOrganizations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('membership_organizations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory mensAndBoysClothingAndAccessoriesStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('mens_and_boys_clothing_and_accessories_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory mensWomensClothingStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('mens_womens_clothing_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory metalServiceCenters = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('metal_service_centers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousApparelAndAccessoryShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_apparel_and_accessory_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousAutoDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_auto_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousBusinessServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_business_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousFoodStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_food_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousGeneralMerchandise = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_general_merchandise');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousGeneralServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_general_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousHomeFurnishingSpecialtyStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_home_furnishing_specialty_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousPublishingAndPrinting = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_publishing_and_printing');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousRecreationServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_recreation_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousRepairShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_repair_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory miscellaneousSpecialtyRetail = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('miscellaneous_specialty_retail');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory mobileHomeDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('mobile_home_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory motionPictureTheaters = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('motion_picture_theaters');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory motorFreightCarriersAndTrucking = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('motor_freight_carriers_and_trucking');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory motorHomesDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('motor_homes_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory motorVehicleSuppliesAndNewParts = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('motor_vehicle_supplies_and_new_parts');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory motorcycleShopsAndDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('motorcycle_shops_and_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory motorcycleShopsDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('motorcycle_shops_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory musicStoresMusicalInstrumentsPianosAndSheetMusic = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('music_stores_musical_instruments_pianos_and_sheet_music');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory newsDealersAndNewsstands = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('news_dealers_and_newsstands');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory nonFiMoneyOrders = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('non_fi_money_orders');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory nonFiStoredValueCardPurchaseLoad = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('non_fi_stored_value_card_purchase_load');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory nondurableGoods = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('nondurable_goods');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory nurseriesLawnAndGardenSupplyStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('nurseries_lawn_and_garden_supply_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory nursingPersonalCare = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('nursing_personal_care');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory officeAndCommercialFurniture = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('office_and_commercial_furniture');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory opticiansEyeglasses = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('opticians_eyeglasses');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory optometristsOphthalmologist = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('optometrists_ophthalmologist');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory orthopedicGoodsProstheticDevices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('orthopedic_goods_prosthetic_devices');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory osteopaths = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('osteopaths');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory packageStoresBeerWineAndLiquor = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('package_stores_beer_wine_and_liquor');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory paintsVarnishesAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('paints_varnishes_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory parkingLotsGarages = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('parking_lots_garages');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory passengerRailways = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('passenger_railways');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory pawnShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('pawn_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory petShopsPetFoodAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('pet_shops_pet_food_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory petroleumAndPetroleumProducts = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('petroleum_and_petroleum_products');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory photoDeveloping = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('photo_developing');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory photographicPhotocopyMicrofilmEquipmentAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('photographic_photocopy_microfilm_equipment_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory photographicStudios = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('photographic_studios');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory pictureVideoProduction = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('picture_video_production');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory pieceGoodsNotionsAndOtherDryGoods = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('piece_goods_notions_and_other_dry_goods');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory plumbingHeatingEquipmentAndSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('plumbing_heating_equipment_and_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory politicalOrganizations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('political_organizations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory postalServicesGovernmentOnly = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('postal_services_government_only');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory preciousStonesAndMetalsWatchesAndJewelry = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('precious_stones_and_metals_watches_and_jewelry');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory professionalServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('professional_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory publicWarehousingAndStorage = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('public_warehousing_and_storage');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory quickCopyReproAndBlueprint = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('quick_copy_repro_and_blueprint');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory railroads = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('railroads');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory realEstateAgentsAndManagersRentals = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('real_estate_agents_and_managers_rentals');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory recordStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('record_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory recreationalVehicleRentals = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('recreational_vehicle_rentals');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory religiousGoodsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('religious_goods_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory religiousOrganizations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('religious_organizations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory roofingSidingSheetMetal = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('roofing_siding_sheet_metal');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory secretarialSupportServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('secretarial_support_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory securityBrokersDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('security_brokers_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory serviceStations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('service_stations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory sewingNeedleworkFabricAndPieceGoodsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('sewing_needlework_fabric_and_piece_goods_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory shoeRepairHatCleaning = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('shoe_repair_hat_cleaning');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory shoeStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('shoe_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory smallApplianceRepair = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('small_appliance_repair');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory snowmobileDealers = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('snowmobile_dealers');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory specialTradeServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('special_trade_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory specialtyCleaning = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('specialty_cleaning');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory sportingGoodsStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('sporting_goods_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory sportingRecreationCamps = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('sporting_recreation_camps');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory sportsAndRidingApparelStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('sports_and_riding_apparel_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory sportsClubsFields = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('sports_clubs_fields');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory stampAndCoinStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('stamp_and_coin_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory stationaryOfficeSuppliesPrintingAndWritingPaper = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('stationary_office_supplies_printing_and_writing_paper');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory stationeryStoresOfficeAndSchoolSupplyStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('stationery_stores_office_and_school_supply_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory swimmingPoolsSales = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('swimming_pools_sales');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory tUiTravelGermany = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('t_ui_travel_germany');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory tailorsAlterations = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tailors_alterations');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory taxPaymentsGovernmentAgencies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tax_payments_government_agencies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory taxPreparationServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tax_preparation_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory taxicabsLimousines = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('taxicabs_limousines');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory telecommunicationEquipmentAndTelephoneSales = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('telecommunication_equipment_and_telephone_sales');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory telecommunicationServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('telecommunication_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory telegraphServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('telegraph_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory tentAndAwningShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tent_and_awning_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory testingLaboratories = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('testing_laboratories');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory theatricalTicketAgencies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('theatrical_ticket_agencies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory timeshares = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('timeshares');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory tireRetreadingAndRepair = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tire_retreading_and_repair');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory tollsBridgeFees = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tolls_bridge_fees');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory touristAttractionsAndExhibits = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('tourist_attractions_and_exhibits');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory towingServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('towing_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory trailerParksCampgrounds = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('trailer_parks_campgrounds');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory transportationServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('transportation_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory travelAgenciesTourOperators = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('travel_agencies_tour_operators');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory truckStopIteration = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('truck_stop_iteration');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory truckUtilityTrailerRentals = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('truck_utility_trailer_rentals');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory typesettingPlateMakingAndRelatedServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('typesetting_plate_making_and_related_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory typewriterStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('typewriter_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory uSFederalGovernmentAgenciesOrDepartments = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('u_s_federal_government_agencies_or_departments');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory uniformsCommercialClothing = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('uniforms_commercial_clothing');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory usedMerchandiseAndSecondhandStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('used_merchandise_and_secondhand_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory utilities = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('utilities');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory varietyStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('variety_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory veterinaryServices = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('veterinary_services');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory videoAmusementGameSupplies = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('video_amusement_game_supplies');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory videoGameArcades = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('video_game_arcades');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory videoTapeRentalStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('video_tape_rental_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory vocationalTradeSchools = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('vocational_trade_schools');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory watchJewelryRepair = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('watch_jewelry_repair');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory weldingRepair = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('welding_repair');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory wholesaleClubs = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('wholesale_clubs');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory wigAndToupeeStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('wig_and_toupee_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory wiresMoneyOrders = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('wires_money_orders');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory womensAccessoryAndSpecialtyShops = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('womens_accessory_and_specialty_shops');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory womensReadyToWearStores = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('womens_ready_to_wear_stores');
+
+static const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory wreckingAndSalvageYards = PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory._('wrecking_and_salvage_yards');
+
+static const List<PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory> values = [acRefrigerationRepair, accountingBookkeepingServices, advertisingServices, agriculturalCooperative, airlinesAirCarriers, airportsFlyingFields, ambulanceServices, amusementParksCarnivals, antiqueReproductions, antiqueShops, aquariums, architecturalSurveyingServices, artDealersAndGalleries, artistsSupplyAndCraftShops, autoAndHomeSupplyStores, autoBodyRepairShops, autoPaintShops, autoServiceShops, automatedCashDisburse, automatedFuelDispensers, automobileAssociations, automotivePartsAndAccessoriesStores, automotiveTireStores, bailAndBondPayments, bakeries, bandsOrchestras, barberAndBeautyShops, bettingCasinoGambling, bicycleShops, billiardPoolEstablishments, boatDealers, boatRentalsAndLeases, bookStores, booksPeriodicalsAndNewspapers, bowlingAlleys, busLines, businessSecretarialSchools, buyingShoppingServices, cableSatelliteAndOtherPayTelevisionAndRadio, cameraAndPhotographicSupplyStores, candyNutAndConfectioneryStores, carAndTruckDealersNewUsed, carAndTruckDealersUsedOnly, carRentalAgencies, carWashes, carpentryServices, carpetUpholsteryCleaning, caterers, charitableAndSocialServiceOrganizationsFundraising, chemicalsAndAlliedProducts, childCareServices, childrensAndInfantsWearStores, chiropodistsPodiatrists, chiropractors, cigarStoresAndStands, civicSocialFraternalAssociations, cleaningAndMaintenance, clothingRental, collegesUniversities, commercialEquipment, commercialFootwear, commercialPhotographyArtAndGraphics, commuterTransportAndFerries, computerNetworkServices, computerProgramming, computerRepair, computerSoftwareStores, computersPeripheralsAndSoftware, concreteWorkServices, constructionMaterials, consultingPublicRelations, correspondenceSchools, cosmeticStores, counselingServices, countryClubs, courierServices, courtCosts, creditReportingAgencies, cruiseLines, dairyProductsStores, danceHallStudiosSchools, datingEscortServices, dentistsOrthodontists, departmentStores, detectiveAgencies, digitalGoodsApplications, digitalGoodsGames, digitalGoodsLargeVolume, digitalGoodsMedia, directMarketingCatalogMerchant, directMarketingCombinationCatalogAndRetailMerchant, directMarketingInboundTelemarketing, directMarketingInsuranceServices, directMarketingOther, directMarketingOutboundTelemarketing, directMarketingSubscription, directMarketingTravel, discountStores, doctors, doorToDoorSales, draperyWindowCoveringAndUpholsteryStores, drinkingPlaces, drugStoresAndPharmacies, drugsDrugProprietariesAndDruggistSundries, dryCleaners, durableGoods, dutyFreeStores, eatingPlacesRestaurants, educationalServices, electricRazorStores, electricVehicleCharging, electricalPartsAndEquipment, electricalServices, electronicsRepairShops, electronicsStores, elementarySecondarySchools, emergencyServicesGcasVisaUseOnly, employmentTempAgencies, equipmentRental, exterminatingServices, familyClothingStores, fastFoodRestaurants, financialInstitutions, finesGovernmentAdministrativeEntities, fireplaceFireplaceScreensAndAccessoriesStores, floorCoveringStores, florists, floristsSuppliesNurseryStockAndFlowers, freezerAndLockerMeatProvisioners, fuelDealersNonAutomotive, funeralServicesCrematories, furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, furnitureRepairRefinishing, furriersAndFurShops, generalServices, giftCardNoveltyAndSouvenirShops, glassPaintAndWallpaperStores, glasswareCrystalStores, golfCoursesPublic, governmentLicensedHorseDogRacingUsRegionOnly, governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, governmentOwnedLotteriesNonUsRegion, governmentOwnedLotteriesUsRegionOnly, governmentServices, groceryStoresSupermarkets, hardwareEquipmentAndSupplies, hardwareStores, healthAndBeautySpas, hearingAidsSalesAndSupplies, heatingPlumbingAC, hobbyToyAndGameShops, homeSupplyWarehouseStores, hospitals, hotelsMotelsAndResorts, householdApplianceStores, industrialSupplies, informationRetrievalServices, insuranceDefault, insuranceUnderwritingPremiums, intraCompanyPurchases, jewelryStoresWatchesClocksAndSilverwareStores, landscapingServices, laundries, laundryCleaningServices, legalServicesAttorneys, luggageAndLeatherGoodsStores, lumberBuildingMaterialsStores, manualCashDisburse, marinasServiceAndSupplies, marketplaces, masonryStoneworkAndPlaster, massageParlors, medicalAndDentalLabs, medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, medicalServices, membershipOrganizations, mensAndBoysClothingAndAccessoriesStores, mensWomensClothingStores, metalServiceCenters, miscellaneousApparelAndAccessoryShops, miscellaneousAutoDealers, miscellaneousBusinessServices, miscellaneousFoodStores, miscellaneousGeneralMerchandise, miscellaneousGeneralServices, miscellaneousHomeFurnishingSpecialtyStores, miscellaneousPublishingAndPrinting, miscellaneousRecreationServices, miscellaneousRepairShops, miscellaneousSpecialtyRetail, mobileHomeDealers, motionPictureTheaters, motorFreightCarriersAndTrucking, motorHomesDealers, motorVehicleSuppliesAndNewParts, motorcycleShopsAndDealers, motorcycleShopsDealers, musicStoresMusicalInstrumentsPianosAndSheetMusic, newsDealersAndNewsstands, nonFiMoneyOrders, nonFiStoredValueCardPurchaseLoad, nondurableGoods, nurseriesLawnAndGardenSupplyStores, nursingPersonalCare, officeAndCommercialFurniture, opticiansEyeglasses, optometristsOphthalmologist, orthopedicGoodsProstheticDevices, osteopaths, packageStoresBeerWineAndLiquor, paintsVarnishesAndSupplies, parkingLotsGarages, passengerRailways, pawnShops, petShopsPetFoodAndSupplies, petroleumAndPetroleumProducts, photoDeveloping, photographicPhotocopyMicrofilmEquipmentAndSupplies, photographicStudios, pictureVideoProduction, pieceGoodsNotionsAndOtherDryGoods, plumbingHeatingEquipmentAndSupplies, politicalOrganizations, postalServicesGovernmentOnly, preciousStonesAndMetalsWatchesAndJewelry, professionalServices, publicWarehousingAndStorage, quickCopyReproAndBlueprint, railroads, realEstateAgentsAndManagersRentals, recordStores, recreationalVehicleRentals, religiousGoodsStores, religiousOrganizations, roofingSidingSheetMetal, secretarialSupportServices, securityBrokersDealers, serviceStations, sewingNeedleworkFabricAndPieceGoodsStores, shoeRepairHatCleaning, shoeStores, smallApplianceRepair, snowmobileDealers, specialTradeServices, specialtyCleaning, sportingGoodsStores, sportingRecreationCamps, sportsAndRidingApparelStores, sportsClubsFields, stampAndCoinStores, stationaryOfficeSuppliesPrintingAndWritingPaper, stationeryStoresOfficeAndSchoolSupplyStores, swimmingPoolsSales, tUiTravelGermany, tailorsAlterations, taxPaymentsGovernmentAgencies, taxPreparationServices, taxicabsLimousines, telecommunicationEquipmentAndTelephoneSales, telecommunicationServices, telegraphServices, tentAndAwningShops, testingLaboratories, theatricalTicketAgencies, timeshares, tireRetreadingAndRepair, tollsBridgeFees, touristAttractionsAndExhibits, towingServices, trailerParksCampgrounds, transportationServices, travelAgenciesTourOperators, truckStopIteration, truckUtilityTrailerRentals, typesettingPlateMakingAndRelatedServices, typewriterStores, uSFederalGovernmentAgenciesOrDepartments, uniformsCommercialClothing, usedMerchandiseAndSecondhandStores, utilities, varietyStores, veterinaryServices, videoAmusementGameSupplies, videoGameArcades, videoTapeRentalStores, vocationalTradeSchools, watchJewelryRepair, weldingRepair, wholesaleClubs, wigAndToupeeStores, wiresMoneyOrders, womensAccessoryAndSpecialtyShops, womensReadyToWearStores, wreckingAndSalvageYards];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory($value)'; } 
+ }
+/// Details about the seller (grocery store, e-commerce website, etc.) where the card authorization happened.
+final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData({this.category, this.city, this.country, this.name, this.networkId, this.postalCode, this.state, this.terminalId, this.url, });
+
+factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData(
+  category: json['category'] != null ? PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory.fromJson(json['category'] as String) : null,
+  city: json['city'] as String?,
+  country: json['country'] as String?,
+  name: json['name'] as String?,
+  networkId: json['network_id'] as String?,
+  postalCode: json['postal_code'] as String?,
+  state: json['state'] as String?,
+  terminalId: json['terminal_id'] as String?,
+  url: json['url'] as String?,
+); }
+
+final PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory? category;
+
+final String? city;
+
+final String? country;
+
+final String? name;
+
+final String? networkId;
+
+final String? postalCode;
+
+final String? state;
+
+final String? terminalId;
+
+final String? url;
+
+Map<String, dynamic> toJson() { return {
+  if (category != null) 'category': category?.toJson(),
+  'city': ?city,
+  'country': ?country,
+  'name': ?name,
+  'network_id': ?networkId,
+  'postal_code': ?postalCode,
+  'state': ?state,
+  'terminal_id': ?terminalId,
+  'url': ?url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData copyWith({PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantDataCategory Function()? category, String Function()? city, String Function()? country, String Function()? name, String Function()? networkId, String Function()? postalCode, String Function()? state, String Function()? terminalId, String Function()? url, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData(
+  category: category != null ? category() : this.category,
+  city: city != null ? city() : this.city,
+  country: country != null ? country() : this.country,
+  name: name != null ? name() : this.name,
+  networkId: networkId != null ? networkId() : this.networkId,
+  postalCode: postalCode != null ? postalCode() : this.postalCode,
+  state: state != null ? state() : this.state,
+  terminalId: terminalId != null ? terminalId() : this.terminalId,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData &&
+          category == other.category &&
+          city == other.city &&
+          country == other.country &&
+          name == other.name &&
+          networkId == other.networkId &&
+          postalCode == other.postalCode &&
+          state == other.state &&
+          terminalId == other.terminalId &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(category, city, country, name, networkId, postalCode, state, terminalId, url); } 
+@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestMerchantData(category: $category, city: $city, country: $country, name: $name, networkId: $networkId, postalCode: $postalCode, state: $state, terminalId: $terminalId, url: $url)'; } 
+ }

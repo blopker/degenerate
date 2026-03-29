@@ -1,0 +1,179 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam28CaptureMethod {const PaymentMethodOptionsParam28CaptureMethod._(this.value);
+
+factory PaymentMethodOptionsParam28CaptureMethod.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'manual' => manual,
+  _ => PaymentMethodOptionsParam28CaptureMethod._(json),
+}; }
+
+static const PaymentMethodOptionsParam28CaptureMethod $empty = PaymentMethodOptionsParam28CaptureMethod._('');
+
+static const PaymentMethodOptionsParam28CaptureMethod manual = PaymentMethodOptionsParam28CaptureMethod._('manual');
+
+static const List<PaymentMethodOptionsParam28CaptureMethod> values = [$empty, manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam28CaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam28CaptureMethod($value)'; } 
+ }
+final class PaymentMethodOptionsParam28PreferredLocale {const PaymentMethodOptionsParam28PreferredLocale._(this.value);
+
+factory PaymentMethodOptionsParam28PreferredLocale.fromJson(String json) { return switch (json) {
+  'cs-CZ' => csCz,
+  'da-DK' => daDk,
+  'de-AT' => deAt,
+  'de-DE' => deDe,
+  'de-LU' => deLu,
+  'el-GR' => elGr,
+  'en-GB' => enGb,
+  'en-US' => enUs,
+  'es-ES' => esEs,
+  'fi-FI' => fiFi,
+  'fr-BE' => frBe,
+  'fr-FR' => frFr,
+  'fr-LU' => frLu,
+  'hu-HU' => huHu,
+  'it-IT' => itIt,
+  'nl-BE' => nlBe,
+  'nl-NL' => nlNl,
+  'pl-PL' => plPl,
+  'pt-PT' => ptPt,
+  'sk-SK' => skSk,
+  'sv-SE' => svSe,
+  _ => PaymentMethodOptionsParam28PreferredLocale._(json),
+}; }
+
+static const PaymentMethodOptionsParam28PreferredLocale csCz = PaymentMethodOptionsParam28PreferredLocale._('cs-CZ');
+
+static const PaymentMethodOptionsParam28PreferredLocale daDk = PaymentMethodOptionsParam28PreferredLocale._('da-DK');
+
+static const PaymentMethodOptionsParam28PreferredLocale deAt = PaymentMethodOptionsParam28PreferredLocale._('de-AT');
+
+static const PaymentMethodOptionsParam28PreferredLocale deDe = PaymentMethodOptionsParam28PreferredLocale._('de-DE');
+
+static const PaymentMethodOptionsParam28PreferredLocale deLu = PaymentMethodOptionsParam28PreferredLocale._('de-LU');
+
+static const PaymentMethodOptionsParam28PreferredLocale elGr = PaymentMethodOptionsParam28PreferredLocale._('el-GR');
+
+static const PaymentMethodOptionsParam28PreferredLocale enGb = PaymentMethodOptionsParam28PreferredLocale._('en-GB');
+
+static const PaymentMethodOptionsParam28PreferredLocale enUs = PaymentMethodOptionsParam28PreferredLocale._('en-US');
+
+static const PaymentMethodOptionsParam28PreferredLocale esEs = PaymentMethodOptionsParam28PreferredLocale._('es-ES');
+
+static const PaymentMethodOptionsParam28PreferredLocale fiFi = PaymentMethodOptionsParam28PreferredLocale._('fi-FI');
+
+static const PaymentMethodOptionsParam28PreferredLocale frBe = PaymentMethodOptionsParam28PreferredLocale._('fr-BE');
+
+static const PaymentMethodOptionsParam28PreferredLocale frFr = PaymentMethodOptionsParam28PreferredLocale._('fr-FR');
+
+static const PaymentMethodOptionsParam28PreferredLocale frLu = PaymentMethodOptionsParam28PreferredLocale._('fr-LU');
+
+static const PaymentMethodOptionsParam28PreferredLocale huHu = PaymentMethodOptionsParam28PreferredLocale._('hu-HU');
+
+static const PaymentMethodOptionsParam28PreferredLocale itIt = PaymentMethodOptionsParam28PreferredLocale._('it-IT');
+
+static const PaymentMethodOptionsParam28PreferredLocale nlBe = PaymentMethodOptionsParam28PreferredLocale._('nl-BE');
+
+static const PaymentMethodOptionsParam28PreferredLocale nlNl = PaymentMethodOptionsParam28PreferredLocale._('nl-NL');
+
+static const PaymentMethodOptionsParam28PreferredLocale plPl = PaymentMethodOptionsParam28PreferredLocale._('pl-PL');
+
+static const PaymentMethodOptionsParam28PreferredLocale ptPt = PaymentMethodOptionsParam28PreferredLocale._('pt-PT');
+
+static const PaymentMethodOptionsParam28PreferredLocale skSk = PaymentMethodOptionsParam28PreferredLocale._('sk-SK');
+
+static const PaymentMethodOptionsParam28PreferredLocale svSe = PaymentMethodOptionsParam28PreferredLocale._('sv-SE');
+
+static const List<PaymentMethodOptionsParam28PreferredLocale> values = [csCz, daDk, deAt, deDe, deLu, elGr, enGb, enUs, esEs, fiFi, frBe, frFr, frLu, huHu, itIt, nlBe, nlNl, plPl, ptPt, skSk, svSe];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam28PreferredLocale && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam28PreferredLocale($value)'; } 
+ }
+final class PaymentMethodOptionsParam28SetupFutureUsage {const PaymentMethodOptionsParam28SetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsParam28SetupFutureUsage.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'none' => none,
+  'off_session' => offSession,
+  _ => PaymentMethodOptionsParam28SetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsParam28SetupFutureUsage $empty = PaymentMethodOptionsParam28SetupFutureUsage._('');
+
+static const PaymentMethodOptionsParam28SetupFutureUsage none = PaymentMethodOptionsParam28SetupFutureUsage._('none');
+
+static const PaymentMethodOptionsParam28SetupFutureUsage offSession = PaymentMethodOptionsParam28SetupFutureUsage._('off_session');
+
+static const List<PaymentMethodOptionsParam28SetupFutureUsage> values = [$empty, none, offSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam28SetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam28SetupFutureUsage($value)'; } 
+ }
+final class PaymentMethodOptionsParam28 {const PaymentMethodOptionsParam28({this.captureMethod, this.preferredLocale, this.reference, this.riskCorrelationId, this.setupFutureUsage, });
+
+factory PaymentMethodOptionsParam28.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam28(
+  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam28CaptureMethod.fromJson(json['capture_method'] as String) : null,
+  preferredLocale: json['preferred_locale'] != null ? PaymentMethodOptionsParam28PreferredLocale.fromJson(json['preferred_locale'] as String) : null,
+  reference: json['reference'] as String?,
+  riskCorrelationId: json['risk_correlation_id'] as String?,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam28SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PaymentMethodOptionsParam28CaptureMethod? captureMethod;
+
+final PaymentMethodOptionsParam28PreferredLocale? preferredLocale;
+
+final String? reference;
+
+final String? riskCorrelationId;
+
+final PaymentMethodOptionsParam28SetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  if (preferredLocale != null) 'preferred_locale': preferredLocale?.toJson(),
+  'reference': ?reference,
+  'risk_correlation_id': ?riskCorrelationId,
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam28 copyWith({PaymentMethodOptionsParam28CaptureMethod Function()? captureMethod, PaymentMethodOptionsParam28PreferredLocale Function()? preferredLocale, String Function()? reference, String Function()? riskCorrelationId, PaymentMethodOptionsParam28SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam28(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
+  reference: reference != null ? reference() : this.reference,
+  riskCorrelationId: riskCorrelationId != null ? riskCorrelationId() : this.riskCorrelationId,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam28 &&
+          captureMethod == other.captureMethod &&
+          preferredLocale == other.preferredLocale &&
+          reference == other.reference &&
+          riskCorrelationId == other.riskCorrelationId &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(captureMethod, preferredLocale, reference, riskCorrelationId, setupFutureUsage); } 
+@override String toString() { return 'PaymentMethodOptionsParam28(captureMethod: $captureMethod, preferredLocale: $preferredLocale, reference: $reference, riskCorrelationId: $riskCorrelationId, setupFutureUsage: $setupFutureUsage)'; } 
+ }

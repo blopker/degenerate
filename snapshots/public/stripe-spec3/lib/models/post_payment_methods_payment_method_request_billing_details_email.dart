@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2 {const PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2._(this.value);
+
+factory PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2._(json),
+}; }
+
+static const PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2 $empty = PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2._('');
+
+static const List<PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2($value)'; } 
+ }
+typedef PostPaymentMethodsPaymentMethodRequestBillingDetailsEmail = OneOf2<String,PostPaymentMethodsPaymentMethodRequestBillingDetailsEmailVariant2>;

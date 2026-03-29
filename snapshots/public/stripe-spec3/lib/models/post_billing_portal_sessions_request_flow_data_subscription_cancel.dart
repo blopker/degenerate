@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_billing_portal_sessions_request_flow_data_subscription_cancel_retention.dart';final class PostBillingPortalSessionsRequestFlowDataSubscriptionCancel {const PostBillingPortalSessionsRequestFlowDataSubscriptionCancel({this.retention, required this.subscription, });
+
+factory PostBillingPortalSessionsRequestFlowDataSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowDataSubscriptionCancel(
+  retention: json['retention'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>) : null,
+  subscription: json['subscription'] as String,
+); }
+
+final PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention? retention;
+
+final String subscription;
+
+Map<String, dynamic> toJson() { return {
+  if (retention != null) 'retention': retention?.toJson(),
+  'subscription': subscription,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
+PostBillingPortalSessionsRequestFlowDataSubscriptionCancel copyWith({PostBillingPortalSessionsRequestFlowDataSubscriptionCancelRetention Function()? retention, String? subscription, }) { return PostBillingPortalSessionsRequestFlowDataSubscriptionCancel(
+  retention: retention != null ? retention() : this.retention,
+  subscription: subscription ?? this.subscription,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingPortalSessionsRequestFlowDataSubscriptionCancel &&
+          retention == other.retention &&
+          subscription == other.subscription; } 
+@override int get hashCode { return Object.hash(retention, subscription); } 
+@override String toString() { return 'PostBillingPortalSessionsRequestFlowDataSubscriptionCancel(retention: $retention, subscription: $subscription)'; } 
+ }

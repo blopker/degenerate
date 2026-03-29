@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the attribute by which to group the results.
+final class RadarGetEmailSecuritySummaryDimension {const RadarGetEmailSecuritySummaryDimension._(this.value);
+
+factory RadarGetEmailSecuritySummaryDimension.fromJson(String json) { return switch (json) {
+  'SPAM' => spam,
+  'MALICIOUS' => malicious,
+  'SPOOF' => spoof,
+  'THREAT_CATEGORY' => threatCategory,
+  'ARC' => arc,
+  'DKIM' => dkim,
+  'DMARC' => dmarc,
+  'SPF' => spf,
+  'TLS_VERSION' => tlsVersion,
+  _ => RadarGetEmailSecuritySummaryDimension._(json),
+}; }
+
+static const RadarGetEmailSecuritySummaryDimension spam = RadarGetEmailSecuritySummaryDimension._('SPAM');
+
+static const RadarGetEmailSecuritySummaryDimension malicious = RadarGetEmailSecuritySummaryDimension._('MALICIOUS');
+
+static const RadarGetEmailSecuritySummaryDimension spoof = RadarGetEmailSecuritySummaryDimension._('SPOOF');
+
+static const RadarGetEmailSecuritySummaryDimension threatCategory = RadarGetEmailSecuritySummaryDimension._('THREAT_CATEGORY');
+
+static const RadarGetEmailSecuritySummaryDimension arc = RadarGetEmailSecuritySummaryDimension._('ARC');
+
+static const RadarGetEmailSecuritySummaryDimension dkim = RadarGetEmailSecuritySummaryDimension._('DKIM');
+
+static const RadarGetEmailSecuritySummaryDimension dmarc = RadarGetEmailSecuritySummaryDimension._('DMARC');
+
+static const RadarGetEmailSecuritySummaryDimension spf = RadarGetEmailSecuritySummaryDimension._('SPF');
+
+static const RadarGetEmailSecuritySummaryDimension tlsVersion = RadarGetEmailSecuritySummaryDimension._('TLS_VERSION');
+
+static const List<RadarGetEmailSecuritySummaryDimension> values = [spam, malicious, spoof, threatCategory, arc, dkim, dmarc, spf, tlsVersion];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecuritySummaryDimension && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryDimension($value)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_attacks_layer7_summary_by_http_version_response_result.dart';final class RadarGetAttacksLayer7SummaryByHttpVersionResponse {const RadarGetAttacksLayer7SummaryByHttpVersionResponse({required this.result, required this.success, });
+
+factory RadarGetAttacksLayer7SummaryByHttpVersionResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
+  result: RadarGetAttacksLayer7SummaryByHttpVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final RadarGetAttacksLayer7SummaryByHttpVersionResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+RadarGetAttacksLayer7SummaryByHttpVersionResponse copyWith({RadarGetAttacksLayer7SummaryByHttpVersionResponseResult? result, bool? success, }) { return RadarGetAttacksLayer7SummaryByHttpVersionResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer7SummaryByHttpVersionResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'RadarGetAttacksLayer7SummaryByHttpVersionResponse(result: $result, success: $success)'; } 
+ }

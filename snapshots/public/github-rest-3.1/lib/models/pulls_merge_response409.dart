@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullsMergeResponse409 {const PullsMergeResponse409({this.message, this.documentationUrl, });
+
+factory PullsMergeResponse409.fromJson(Map<String, dynamic> json) { return PullsMergeResponse409(
+  message: json['message'] as String?,
+  documentationUrl: json['documentation_url'] as String?,
+); }
+
+final String? message;
+
+final String? documentationUrl;
+
+Map<String, dynamic> toJson() { return {
+  'message': ?message,
+  'documentation_url': ?documentationUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PullsMergeResponse409 copyWith({String Function()? message, String Function()? documentationUrl, }) { return PullsMergeResponse409(
+  message: message != null ? message() : this.message,
+  documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullsMergeResponse409 &&
+          message == other.message &&
+          documentationUrl == other.documentationUrl; } 
+@override int get hashCode { return Object.hash(message, documentationUrl); } 
+@override String toString() { return 'PullsMergeResponse409(message: $message, documentationUrl: $documentationUrl)'; } 
+ }

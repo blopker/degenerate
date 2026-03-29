@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'node_runtime_handler_features.dart';/// NodeRuntimeHandler is a set of runtime handler information.
+final class NodeRuntimeHandler {const NodeRuntimeHandler({this.features, this.name = '', });
+
+factory NodeRuntimeHandler.fromJson(Map<String, dynamic> json) { return NodeRuntimeHandler(
+  features: json['features'] != null ? NodeRuntimeHandlerFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
+  name: json.containsKey('name') ? json['name'] as String : '',
+); }
+
+/// Supported features.
+final NodeRuntimeHandlerFeatures? features;
+
+/// Runtime handler name. Empty for the default runtime handler.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  if (features != null) 'features': features?.toJson(),
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+NodeRuntimeHandler copyWith({NodeRuntimeHandlerFeatures Function()? features, String Function()? name, }) { return NodeRuntimeHandler(
+  features: features != null ? features() : this.features,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NodeRuntimeHandler &&
+          features == other.features &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(features, name); } 
+@override String toString() { return 'NodeRuntimeHandler(features: $features, name: $name)'; } 
+ }

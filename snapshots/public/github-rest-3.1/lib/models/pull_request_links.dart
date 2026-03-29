@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'link.dart';final class PullRequestLinks {const PullRequestLinks({required this.comments, required this.commits, required this.statuses, required this.html, required this.issue, required this.reviewComments, required this.reviewComment, required this.self, });
+
+factory PullRequestLinks.fromJson(Map<String, dynamic> json) { return PullRequestLinks(
+  comments: Link.fromJson(json['comments'] as Map<String, dynamic>),
+  commits: Link.fromJson(json['commits'] as Map<String, dynamic>),
+  statuses: Link.fromJson(json['statuses'] as Map<String, dynamic>),
+  html: Link.fromJson(json['html'] as Map<String, dynamic>),
+  issue: Link.fromJson(json['issue'] as Map<String, dynamic>),
+  reviewComments: Link.fromJson(json['review_comments'] as Map<String, dynamic>),
+  reviewComment: Link.fromJson(json['review_comment'] as Map<String, dynamic>),
+  self: Link.fromJson(json['self'] as Map<String, dynamic>),
+); }
+
+final Link comments;
+
+final Link commits;
+
+final Link statuses;
+
+final Link html;
+
+final Link issue;
+
+final Link reviewComments;
+
+final Link reviewComment;
+
+final Link self;
+
+Map<String, dynamic> toJson() { return {
+  'comments': comments.toJson(),
+  'commits': commits.toJson(),
+  'statuses': statuses.toJson(),
+  'html': html.toJson(),
+  'issue': issue.toJson(),
+  'review_comments': reviewComments.toJson(),
+  'review_comment': reviewComment.toJson(),
+  'self': self.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+      json.containsKey('commits') &&
+      json.containsKey('statuses') &&
+      json.containsKey('html') &&
+      json.containsKey('issue') &&
+      json.containsKey('review_comments') &&
+      json.containsKey('review_comment') &&
+      json.containsKey('self'); } 
+PullRequestLinks copyWith({Link? comments, Link? commits, Link? statuses, Link? html, Link? issue, Link? reviewComments, Link? reviewComment, Link? self, }) { return PullRequestLinks(
+  comments: comments ?? this.comments,
+  commits: commits ?? this.commits,
+  statuses: statuses ?? this.statuses,
+  html: html ?? this.html,
+  issue: issue ?? this.issue,
+  reviewComments: reviewComments ?? this.reviewComments,
+  reviewComment: reviewComment ?? this.reviewComment,
+  self: self ?? this.self,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullRequestLinks &&
+          comments == other.comments &&
+          commits == other.commits &&
+          statuses == other.statuses &&
+          html == other.html &&
+          issue == other.issue &&
+          reviewComments == other.reviewComments &&
+          reviewComment == other.reviewComment &&
+          self == other.self; } 
+@override int get hashCode { return Object.hash(comments, commits, statuses, html, issue, reviewComments, reviewComment, self); } 
+@override String toString() { return 'PullRequestLinks(comments: $comments, commits: $commits, statuses: $statuses, html: $html, issue: $issue, reviewComments: $reviewComments, reviewComment: $reviewComment, self: $self)'; } 
+ }

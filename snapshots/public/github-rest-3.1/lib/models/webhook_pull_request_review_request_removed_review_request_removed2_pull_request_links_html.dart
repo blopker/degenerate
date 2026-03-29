@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml({required this.href});
+
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml(
+  href: json['href'] as String,
+); }
+
+final String href;
+
+Map<String, dynamic> toJson() { return {
+  'href': href,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
+WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml copyWith({String? href}) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml(
+  href: href ?? this.href,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml &&
+          href == other.href; } 
+@override int get hashCode { return href.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2PullRequestLinksHtml(href: $href)'; } 
+ }

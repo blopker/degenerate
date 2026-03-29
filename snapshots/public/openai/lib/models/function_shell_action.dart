@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Execute a shell command.
+final class FunctionShellAction {const FunctionShellAction({required this.commands, required this.timeoutMs, required this.maxOutputLength, });
+
+factory FunctionShellAction.fromJson(Map<String, dynamic> json) { return FunctionShellAction(
+  commands: (json['commands'] as List<dynamic>).map((e) => e as String).toList(),
+  timeoutMs: json['timeout_ms'] != null ? (json['timeout_ms'] as num).toInt() : null,
+  maxOutputLength: json['max_output_length'] != null ? (json['max_output_length'] as num).toInt() : null,
+); }
+
+final List<String> commands;
+
+/// Optional timeout in milliseconds for the commands.
+final int? timeoutMs;
+
+/// Optional maximum number of characters to return from each command.
+final int? maxOutputLength;
+
+Map<String, dynamic> toJson() { return {
+  'commands': commands,
+  'timeout_ms': ?timeoutMs,
+  'max_output_length': ?maxOutputLength,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('commands') &&
+      json.containsKey('timeout_ms') && json['timeout_ms'] is num &&
+      json.containsKey('max_output_length') && json['max_output_length'] is num; } 
+FunctionShellAction copyWith({List<String>? commands, int? Function()? timeoutMs, int? Function()? maxOutputLength, }) { return FunctionShellAction(
+  commands: commands ?? this.commands,
+  timeoutMs: timeoutMs != null ? timeoutMs() : this.timeoutMs,
+  maxOutputLength: maxOutputLength != null ? maxOutputLength() : this.maxOutputLength,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FunctionShellAction &&
+          listEquals(commands, other.commands) &&
+          timeoutMs == other.timeoutMs &&
+          maxOutputLength == other.maxOutputLength; } 
+@override int get hashCode { return Object.hash(Object.hashAll(commands), timeoutMs, maxOutputLength); } 
+@override String toString() { return 'FunctionShellAction(commands: $commands, timeoutMs: $timeoutMs, maxOutputLength: $maxOutputLength)'; } 
+ }

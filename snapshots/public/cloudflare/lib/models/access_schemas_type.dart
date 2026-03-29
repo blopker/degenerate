@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Custom page type.
+final class AccessSchemasType {const AccessSchemasType._(this.value);
+
+factory AccessSchemasType.fromJson(String json) { return switch (json) {
+  'identity_denied' => identityDenied,
+  'forbidden' => forbidden,
+  _ => AccessSchemasType._(json),
+}; }
+
+static const AccessSchemasType identityDenied = AccessSchemasType._('identity_denied');
+
+static const AccessSchemasType forbidden = AccessSchemasType._('forbidden');
+
+static const List<AccessSchemasType> values = [identityDenied, forbidden];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccessSchemasType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AccessSchemasType($value)'; } 
+ }

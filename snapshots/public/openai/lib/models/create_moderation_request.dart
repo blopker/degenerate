@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_request_input.dart';import 'create_moderation_request_input_variant3_image_url.dart';import 'create_moderation_request_input_variant3_text.dart';import 'create_moderation_request_model.dart';final class CreateModerationRequest {const CreateModerationRequest({required this.input, this.model, });
+
+factory CreateModerationRequest.fromJson(Map<String, dynamic> json) { return CreateModerationRequest(
+  input: OneOf3.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromC: (v) => (v as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => CreateModerationRequestInputVariant3ImageUrl.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateModerationRequestInputVariant3Text.fromJson(v as Map<String, dynamic>),)).toList(),),
+  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => v as String, fromB: (v) => CreateModerationRequestModelVariant2.fromJson(v as String),) : null,
+); }
+
+/// Input (or inputs) to classify. Can be a single string, an array of strings, or
+/// an array of multi-modal input objects similar to other models.
+/// 
+final CreateModerationRequestInput input;
+
+/// The content moderation model you would like to use. Learn more in
+/// [the moderation guide](/docs/guides/moderation), and learn about
+/// available models [here](/docs/models#moderation).
+/// 
+final CreateModerationRequestModel? model;
+
+Map<String, dynamic> toJson() { return {
+  'input': input.toJson(),
+  if (model != null) 'model': model?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
+CreateModerationRequest copyWith({CreateModerationRequestInput? input, CreateModerationRequestModel Function()? model, }) { return CreateModerationRequest(
+  input: input ?? this.input,
+  model: model != null ? model() : this.model,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModerationRequest &&
+          input == other.input &&
+          model == other.model; } 
+@override int get hashCode { return Object.hash(input, model); } 
+@override String toString() { return 'CreateModerationRequest(input: $input, model: $model)'; } 
+ }

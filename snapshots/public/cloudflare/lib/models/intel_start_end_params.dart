@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class IntelStartEndParams {const IntelStartEndParams({this.end, this.start, });
+
+factory IntelStartEndParams.fromJson(Map<String, dynamic> json) { return IntelStartEndParams(
+  end: json['end'] as String?,
+  start: json['start'] as String?,
+); }
+
+/// Defaults to the current date.
+final String? end;
+
+/// Defaults to 30 days before the end parameter value.
+final String? start;
+
+Map<String, dynamic> toJson() { return {
+  'end': ?end,
+  'start': ?start,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelStartEndParams copyWith({String Function()? end, String Function()? start, }) { return IntelStartEndParams(
+  end: end != null ? end() : this.end,
+  start: start != null ? start() : this.start,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelStartEndParams &&
+          end == other.end &&
+          start == other.start; } 
+@override int get hashCode { return Object.hash(end, start); } 
+@override String toString() { return 'IntelStartEndParams(end: $end, start: $start)'; } 
+ }

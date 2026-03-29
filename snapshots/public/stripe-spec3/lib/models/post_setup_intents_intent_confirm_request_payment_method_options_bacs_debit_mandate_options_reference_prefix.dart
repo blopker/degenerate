@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2._(this.value);
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2._(json),
+}; }
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2._('');
+
+static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2($value)'; } 
+ }
+typedef PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefix = OneOf2<String,PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsBacsDebitMandateOptionsReferencePrefixVariant2>;

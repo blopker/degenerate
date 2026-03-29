@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTestHelpersTestClocksTestClockRequest {const GetTestHelpersTestClocksTestClockRequest();
+
+factory GetTestHelpersTestClocksTestClockRequest.fromJson(Map<String, dynamic> json) { return GetTestHelpersTestClocksTestClockRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetTestHelpersTestClocksTestClockRequest copyWith() { return GetTestHelpersTestClocksTestClockRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetTestHelpersTestClocksTestClockRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetTestHelpersTestClocksTestClockRequest()'; } 
+ }

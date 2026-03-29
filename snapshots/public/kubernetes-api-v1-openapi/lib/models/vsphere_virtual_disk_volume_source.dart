@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Represents a vSphere volume resource.
+final class VsphereVirtualDiskVolumeSource {const VsphereVirtualDiskVolumeSource({this.fsType, this.storagePolicyId, this.storagePolicyName, this.volumePath = '', });
+
+factory VsphereVirtualDiskVolumeSource.fromJson(Map<String, dynamic> json) { return VsphereVirtualDiskVolumeSource(
+  fsType: json['fsType'] as String?,
+  storagePolicyId: json['storagePolicyID'] as String?,
+  storagePolicyName: json['storagePolicyName'] as String?,
+  volumePath: json['volumePath'] as String,
+); }
+
+/// fsType is filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+final String? fsType;
+
+/// storagePolicyID is the storage Policy Based Management (SPBM) profile ID associated with the StoragePolicyName.
+final String? storagePolicyId;
+
+/// storagePolicyName is the storage Policy Based Management (SPBM) profile name.
+final String? storagePolicyName;
+
+/// volumePath is the path that identifies vSphere volume vmdk
+final String volumePath;
+
+Map<String, dynamic> toJson() { return {
+  'fsType': ?fsType,
+  'storagePolicyID': ?storagePolicyId,
+  'storagePolicyName': ?storagePolicyName,
+  'volumePath': volumePath,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('volumePath') && json['volumePath'] is String; } 
+VsphereVirtualDiskVolumeSource copyWith({String Function()? fsType, String Function()? storagePolicyId, String Function()? storagePolicyName, String? volumePath, }) { return VsphereVirtualDiskVolumeSource(
+  fsType: fsType != null ? fsType() : this.fsType,
+  storagePolicyId: storagePolicyId != null ? storagePolicyId() : this.storagePolicyId,
+  storagePolicyName: storagePolicyName != null ? storagePolicyName() : this.storagePolicyName,
+  volumePath: volumePath ?? this.volumePath,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VsphereVirtualDiskVolumeSource &&
+          fsType == other.fsType &&
+          storagePolicyId == other.storagePolicyId &&
+          storagePolicyName == other.storagePolicyName &&
+          volumePath == other.volumePath; } 
+@override int get hashCode { return Object.hash(fsType, storagePolicyId, storagePolicyName, volumePath); } 
+@override String toString() { return 'VsphereVirtualDiskVolumeSource(fsType: $fsType, storagePolicyId: $storagePolicyId, storagePolicyName: $storagePolicyName, volumePath: $volumePath)'; } 
+ }

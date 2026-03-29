@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Project membership role
+final class InviteProjectsRole {const InviteProjectsRole._(this.value);
+
+factory InviteProjectsRole.fromJson(String json) { return switch (json) {
+  'member' => member,
+  'owner' => owner,
+  _ => InviteProjectsRole._(json),
+}; }
+
+static const InviteProjectsRole member = InviteProjectsRole._('member');
+
+static const InviteProjectsRole owner = InviteProjectsRole._('owner');
+
+static const List<InviteProjectsRole> values = [member, owner];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InviteProjectsRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InviteProjectsRole($value)'; } 
+ }
+final class InviteProjects {const InviteProjects({this.id, this.role, });
+
+factory InviteProjects.fromJson(Map<String, dynamic> json) { return InviteProjects(
+  id: json['id'] as String?,
+  role: json['role'] != null ? InviteProjectsRole.fromJson(json['role'] as String) : null,
+); }
+
+/// Project's public ID
+final String? id;
+
+/// Project membership role
+final InviteProjectsRole? role;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  if (role != null) 'role': role?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InviteProjects copyWith({String Function()? id, InviteProjectsRole Function()? role, }) { return InviteProjects(
+  id: id != null ? id() : this.id,
+  role: role != null ? role() : this.role,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InviteProjects &&
+          id == other.id &&
+          role == other.role; } 
+@override int get hashCode { return Object.hash(id, role); } 
+@override String toString() { return 'InviteProjects(id: $id, role: $role)'; } 
+ }

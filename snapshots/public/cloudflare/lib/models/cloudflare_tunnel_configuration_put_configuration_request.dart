@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tunnel_config.dart';final class CloudflareTunnelConfigurationPutConfigurationRequest {const CloudflareTunnelConfigurationPutConfigurationRequest({this.config});
+
+factory CloudflareTunnelConfigurationPutConfigurationRequest.fromJson(Map<String, dynamic> json) { return CloudflareTunnelConfigurationPutConfigurationRequest(
+  config: json['config'] != null ? TunnelConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
+); }
+
+final TunnelConfig? config;
+
+Map<String, dynamic> toJson() { return {
+  if (config != null) 'config': config?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CloudflareTunnelConfigurationPutConfigurationRequest copyWith({TunnelConfig Function()? config}) { return CloudflareTunnelConfigurationPutConfigurationRequest(
+  config: config != null ? config() : this.config,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudflareTunnelConfigurationPutConfigurationRequest &&
+          config == other.config; } 
+@override int get hashCode { return config.hashCode; } 
+@override String toString() { return 'CloudflareTunnelConfigurationPutConfigurationRequest(config: $config)'; } 
+ }

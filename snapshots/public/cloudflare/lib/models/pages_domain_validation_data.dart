@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PagesDomainValidationDataMethod {const PagesDomainValidationDataMethod._(this.value);
+
+factory PagesDomainValidationDataMethod.fromJson(String json) { return switch (json) {
+  'http' => http,
+  'txt' => txt,
+  _ => PagesDomainValidationDataMethod._(json),
+}; }
+
+static const PagesDomainValidationDataMethod http = PagesDomainValidationDataMethod._('http');
+
+static const PagesDomainValidationDataMethod txt = PagesDomainValidationDataMethod._('txt');
+
+static const List<PagesDomainValidationDataMethod> values = [http, txt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDomainValidationDataMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PagesDomainValidationDataMethod($value)'; } 
+ }
+final class PagesDomainValidationDataStatus {const PagesDomainValidationDataStatus._(this.value);
+
+factory PagesDomainValidationDataStatus.fromJson(String json) { return switch (json) {
+  'initializing' => initializing,
+  'pending' => pending,
+  'active' => active,
+  'deactivated' => deactivated,
+  'error' => error,
+  _ => PagesDomainValidationDataStatus._(json),
+}; }
+
+static const PagesDomainValidationDataStatus initializing = PagesDomainValidationDataStatus._('initializing');
+
+static const PagesDomainValidationDataStatus pending = PagesDomainValidationDataStatus._('pending');
+
+static const PagesDomainValidationDataStatus active = PagesDomainValidationDataStatus._('active');
+
+static const PagesDomainValidationDataStatus deactivated = PagesDomainValidationDataStatus._('deactivated');
+
+static const PagesDomainValidationDataStatus error = PagesDomainValidationDataStatus._('error');
+
+static const List<PagesDomainValidationDataStatus> values = [initializing, pending, active, deactivated, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDomainValidationDataStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PagesDomainValidationDataStatus($value)'; } 
+ }
+final class PagesDomainValidationData {const PagesDomainValidationData({this.errorMessage, required this.method, required this.status, this.txtName, this.txtValue, });
+
+factory PagesDomainValidationData.fromJson(Map<String, dynamic> json) { return PagesDomainValidationData(
+  errorMessage: json['error_message'] as String?,
+  method: PagesDomainValidationDataMethod.fromJson(json['method'] as String),
+  status: PagesDomainValidationDataStatus.fromJson(json['status'] as String),
+  txtName: json['txt_name'] as String?,
+  txtValue: json['txt_value'] as String?,
+); }
+
+final String? errorMessage;
+
+final PagesDomainValidationDataMethod method;
+
+final PagesDomainValidationDataStatus status;
+
+final String? txtName;
+
+final String? txtValue;
+
+Map<String, dynamic> toJson() { return {
+  'error_message': ?errorMessage,
+  'method': method.toJson(),
+  'status': status.toJson(),
+  'txt_name': ?txtName,
+  'txt_value': ?txtValue,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') &&
+      json.containsKey('status'); } 
+PagesDomainValidationData copyWith({String Function()? errorMessage, PagesDomainValidationDataMethod? method, PagesDomainValidationDataStatus? status, String Function()? txtName, String Function()? txtValue, }) { return PagesDomainValidationData(
+  errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
+  method: method ?? this.method,
+  status: status ?? this.status,
+  txtName: txtName != null ? txtName() : this.txtName,
+  txtValue: txtValue != null ? txtValue() : this.txtValue,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDomainValidationData &&
+          errorMessage == other.errorMessage &&
+          method == other.method &&
+          status == other.status &&
+          txtName == other.txtName &&
+          txtValue == other.txtValue; } 
+@override int get hashCode { return Object.hash(errorMessage, method, status, txtName, txtValue); } 
+@override String toString() { return 'PagesDomainValidationData(errorMessage: $errorMessage, method: $method, status: $status, txtName: $txtName, txtValue: $txtValue)'; } 
+ }

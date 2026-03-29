@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_quantity.dart';/// LimitRangeItem defines a min/max usage limit for any resource that matches on kind.
+final class LimitRangeItem {const LimitRangeItem({this.$default, this.defaultRequest, this.max, this.maxLimitRequestRatio, this.min, this.type = '', });
+
+factory LimitRangeItem.fromJson(Map<String, dynamic> json) { return LimitRangeItem(
+  $default: (json['default'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
+  defaultRequest: (json['defaultRequest'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
+  max: (json['max'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
+  maxLimitRequestRatio: (json['maxLimitRequestRatio'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
+  min: (json['min'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => (v as num).toDouble(),))),
+  type: json['type'] as String,
+); }
+
+/// Default resource requirement limit value by resource name if resource limit is omitted.
+final Map<String,ResourceQuantity>? $default;
+
+/// DefaultRequest is the default resource requirement request value by resource name if resource request is omitted.
+final Map<String,ResourceQuantity>? defaultRequest;
+
+/// Max usage constraints on this kind by resource name.
+final Map<String,ResourceQuantity>? max;
+
+/// MaxLimitRequestRatio if specified, the named resource must have a request and limit that are both non-zero where limit divided by request is less than or equal to the enumerated value; this represents the max burst for the named resource.
+final Map<String,ResourceQuantity>? maxLimitRequestRatio;
+
+/// Min usage constraints on this kind by resource name.
+final Map<String,ResourceQuantity>? min;
+
+/// Type of resource that this limit applies to.
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  if ($default != null) 'default': $default?.map((k, v) => MapEntry(k, v.toJson())),
+  if (defaultRequest != null) 'defaultRequest': defaultRequest?.map((k, v) => MapEntry(k, v.toJson())),
+  if (max != null) 'max': max?.map((k, v) => MapEntry(k, v.toJson())),
+  if (maxLimitRequestRatio != null) 'maxLimitRequestRatio': maxLimitRequestRatio?.map((k, v) => MapEntry(k, v.toJson())),
+  if (min != null) 'min': min?.map((k, v) => MapEntry(k, v.toJson())),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+LimitRangeItem copyWith({Map<String, ResourceQuantity> Function()? $default, Map<String, ResourceQuantity> Function()? defaultRequest, Map<String, ResourceQuantity> Function()? max, Map<String, ResourceQuantity> Function()? maxLimitRequestRatio, Map<String, ResourceQuantity> Function()? min, String? type, }) { return LimitRangeItem(
+  $default: $default != null ? $default() : this.$default,
+  defaultRequest: defaultRequest != null ? defaultRequest() : this.defaultRequest,
+  max: max != null ? max() : this.max,
+  maxLimitRequestRatio: maxLimitRequestRatio != null ? maxLimitRequestRatio() : this.maxLimitRequestRatio,
+  min: min != null ? min() : this.min,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LimitRangeItem &&
+          $default == other.$default &&
+          defaultRequest == other.defaultRequest &&
+          max == other.max &&
+          maxLimitRequestRatio == other.maxLimitRequestRatio &&
+          min == other.min &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash($default, defaultRequest, max, maxLimitRequestRatio, min, type); } 
+@override String toString() { return 'LimitRangeItem(\$default: ${$default}, defaultRequest: $defaultRequest, max: $max, maxLimitRequestRatio: $maxLimitRequestRatio, min: $min, type: $type)'; } 
+ }

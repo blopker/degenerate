@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_ip.dart';import 'intel_schemas_ip_belongs_to_ref.dart';import 'intel_schemas_ip_risk_types.dart';final class IntelSchemasIp {const IntelSchemasIp({this.belongsToRef, this.ip, this.riskTypes, });
+
+factory IntelSchemasIp.fromJson(Map<String, dynamic> json) { return IntelSchemasIp(
+  belongsToRef: json['belongs_to_ref'] != null ? IntelSchemasIpBelongsToRef.fromJson(json['belongs_to_ref'] as Map<String, dynamic>) : null,
+  ip: json['ip'] != null ? OneOf2.parse(json['ip'], fromA: (v) => IntelIpv4.fromJson(v as String), fromB: (v) => IntelIpv6.fromJson(v as String),) : null,
+  riskTypes: (json['risk_types'] as List<dynamic>?)?.map((e) => IntelSchemasIpRiskTypes.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Specifies a reference to the autonomous systems (AS) that the IP address belongs to.
+final IntelSchemasIpBelongsToRef? belongsToRef;
+
+final IntelIp? ip;
+
+final List<IntelSchemasIpRiskTypes>? riskTypes;
+
+Map<String, dynamic> toJson() { return {
+  if (belongsToRef != null) 'belongs_to_ref': belongsToRef?.toJson(),
+  if (ip != null) 'ip': ip?.toJson(),
+  if (riskTypes != null) 'risk_types': riskTypes?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelSchemasIp copyWith({IntelSchemasIpBelongsToRef Function()? belongsToRef, IntelIp Function()? ip, List<IntelSchemasIpRiskTypes> Function()? riskTypes, }) { return IntelSchemasIp(
+  belongsToRef: belongsToRef != null ? belongsToRef() : this.belongsToRef,
+  ip: ip != null ? ip() : this.ip,
+  riskTypes: riskTypes != null ? riskTypes() : this.riskTypes,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelSchemasIp &&
+          belongsToRef == other.belongsToRef &&
+          ip == other.ip &&
+          listEquals(riskTypes, other.riskTypes); } 
+@override int get hashCode { return Object.hash(belongsToRef, ip, Object.hashAll(riskTypes ?? const [])); } 
+@override String toString() { return 'IntelSchemasIp(belongsToRef: $belongsToRef, ip: $ip, riskTypes: $riskTypes)'; } 
+ }

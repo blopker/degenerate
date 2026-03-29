@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetIssuingDisputesStatus {const GetIssuingDisputesStatus._(this.value);
+
+factory GetIssuingDisputesStatus.fromJson(String json) { return switch (json) {
+  'expired' => expired,
+  'lost' => lost,
+  'submitted' => submitted,
+  'unsubmitted' => unsubmitted,
+  'won' => won,
+  _ => GetIssuingDisputesStatus._(json),
+}; }
+
+static const GetIssuingDisputesStatus expired = GetIssuingDisputesStatus._('expired');
+
+static const GetIssuingDisputesStatus lost = GetIssuingDisputesStatus._('lost');
+
+static const GetIssuingDisputesStatus submitted = GetIssuingDisputesStatus._('submitted');
+
+static const GetIssuingDisputesStatus unsubmitted = GetIssuingDisputesStatus._('unsubmitted');
+
+static const GetIssuingDisputesStatus won = GetIssuingDisputesStatus._('won');
+
+static const List<GetIssuingDisputesStatus> values = [expired, lost, submitted, unsubmitted, won];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetIssuingDisputesStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetIssuingDisputesStatus($value)'; } 
+ }

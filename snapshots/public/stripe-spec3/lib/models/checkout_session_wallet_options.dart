@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'checkout_link_wallet_options.dart';/// 
+final class CheckoutSessionWalletOptions {const CheckoutSessionWalletOptions({this.link});
+
+factory CheckoutSessionWalletOptions.fromJson(Map<String, dynamic> json) { return CheckoutSessionWalletOptions(
+  link: json['link'] != null ? CheckoutLinkWalletOptions.fromJson(json['link'] as Map<String, dynamic>) : null,
+); }
+
+final CheckoutLinkWalletOptions? link;
+
+Map<String, dynamic> toJson() { return {
+  if (link != null) 'link': link?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CheckoutSessionWalletOptions copyWith({CheckoutLinkWalletOptions Function()? link}) { return CheckoutSessionWalletOptions(
+  link: link != null ? link() : this.link,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CheckoutSessionWalletOptions &&
+          link == other.link; } 
+@override int get hashCode { return link.hashCode; } 
+@override String toString() { return 'CheckoutSessionWalletOptions(link: $link)'; } 
+ }

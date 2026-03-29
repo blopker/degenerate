@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'item.dart';import 'item_reordered_changes.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ItemReorderedAction {const ItemReorderedAction._(this.value);
+
+factory ItemReorderedAction.fromJson(String json) { return switch (json) {
+  'reordered' => reordered,
+  _ => ItemReorderedAction._(json),
+}; }
+
+static const ItemReorderedAction reordered = ItemReorderedAction._('reordered');
+
+static const List<ItemReorderedAction> values = [reordered];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ItemReorderedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ItemReorderedAction($value)'; } 
+ }
+final class ItemReordered {const ItemReordered({required this.action, required this.changes, this.installation, required this.organization, required this.projectsV2Item, required this.sender, });
+
+factory ItemReordered.fromJson(Map<String, dynamic> json) { return ItemReordered(
+  action: ItemReorderedAction.fromJson(json['action'] as String),
+  changes: ItemReorderedChanges.fromJson(json['changes'] as Map<String, dynamic>),
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
+  projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final ItemReorderedAction action;
+
+final ItemReorderedChanges changes;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks organization;
+
+final Item projectsV2Item;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'changes': changes.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'organization': organization.toJson(),
+  'projects_v2_item': projectsV2Item.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('changes') &&
+      json.containsKey('organization') &&
+      json.containsKey('projects_v2_item') &&
+      json.containsKey('sender'); } 
+ItemReordered copyWith({ItemReorderedAction? action, ItemReorderedChanges? changes, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemReordered(
+  action: action ?? this.action,
+  changes: changes ?? this.changes,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization ?? this.organization,
+  projectsV2Item: projectsV2Item ?? this.projectsV2Item,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ItemReordered &&
+          action == other.action &&
+          changes == other.changes &&
+          installation == other.installation &&
+          organization == other.organization &&
+          projectsV2Item == other.projectsV2Item &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, changes, installation, organization, projectsV2Item, sender); } 
+@override String toString() { return 'ItemReordered(action: $action, changes: $changes, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
+ }

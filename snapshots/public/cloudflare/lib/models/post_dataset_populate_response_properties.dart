@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_dataset_populate_response_properties_account_id.dart';import 'post_dataset_populate_response_properties_datasets.dart';import 'post_dataset_populate_response_properties_errors.dart';import 'post_dataset_populate_response_properties_summary.dart';final class PostDatasetPopulateResponseProperties {const PostDatasetPopulateResponseProperties({required this.accountId, required this.datasets, required this.errors, required this.summary, });
+
+factory PostDatasetPopulateResponseProperties.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponseProperties(
+  accountId: PostDatasetPopulateResponsePropertiesAccountId.fromJson(json['accountId'] as Map<String, dynamic>),
+  datasets: PostDatasetPopulateResponsePropertiesDatasets.fromJson(json['datasets'] as Map<String, dynamic>),
+  errors: PostDatasetPopulateResponsePropertiesErrors.fromJson(json['errors'] as Map<String, dynamic>),
+  summary: PostDatasetPopulateResponsePropertiesSummary.fromJson(json['summary'] as Map<String, dynamic>),
+); }
+
+final PostDatasetPopulateResponsePropertiesAccountId accountId;
+
+final PostDatasetPopulateResponsePropertiesDatasets datasets;
+
+final PostDatasetPopulateResponsePropertiesErrors errors;
+
+final PostDatasetPopulateResponsePropertiesSummary summary;
+
+Map<String, dynamic> toJson() { return {
+  'accountId': accountId.toJson(),
+  'datasets': datasets.toJson(),
+  'errors': errors.toJson(),
+  'summary': summary.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') &&
+      json.containsKey('datasets') &&
+      json.containsKey('errors') &&
+      json.containsKey('summary'); } 
+PostDatasetPopulateResponseProperties copyWith({PostDatasetPopulateResponsePropertiesAccountId? accountId, PostDatasetPopulateResponsePropertiesDatasets? datasets, PostDatasetPopulateResponsePropertiesErrors? errors, PostDatasetPopulateResponsePropertiesSummary? summary, }) { return PostDatasetPopulateResponseProperties(
+  accountId: accountId ?? this.accountId,
+  datasets: datasets ?? this.datasets,
+  errors: errors ?? this.errors,
+  summary: summary ?? this.summary,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostDatasetPopulateResponseProperties &&
+          accountId == other.accountId &&
+          datasets == other.datasets &&
+          errors == other.errors &&
+          summary == other.summary; } 
+@override int get hashCode { return Object.hash(accountId, datasets, errors, summary); } 
+@override String toString() { return 'PostDatasetPopulateResponseProperties(accountId: $accountId, datasets: $datasets, errors: $errors, summary: $summary)'; } 
+ }

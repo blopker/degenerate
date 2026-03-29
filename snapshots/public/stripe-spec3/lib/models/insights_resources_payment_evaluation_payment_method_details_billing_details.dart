@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_billing_details.dart';/// Billing information associated with the payment evaluation.
+final class InsightsResourcesPaymentEvaluationPaymentMethodDetailsBillingDetails {const InsightsResourcesPaymentEvaluationPaymentMethodDetailsBillingDetails({this.insightsResourcesPaymentEvaluationBillingDetails});
+
+factory InsightsResourcesPaymentEvaluationPaymentMethodDetailsBillingDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentMethodDetailsBillingDetails(
+  insightsResourcesPaymentEvaluationBillingDetails: InsightsResourcesPaymentEvaluationBillingDetails.canParse(json) ? InsightsResourcesPaymentEvaluationBillingDetails.fromJson(json) : null,
+); }
+
+final InsightsResourcesPaymentEvaluationBillingDetails? insightsResourcesPaymentEvaluationBillingDetails;
+
+/// At least one variant must be present.
+bool get isValid { return insightsResourcesPaymentEvaluationBillingDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?insightsResourcesPaymentEvaluationBillingDetails?.toJson(),
+}; } 
+ }

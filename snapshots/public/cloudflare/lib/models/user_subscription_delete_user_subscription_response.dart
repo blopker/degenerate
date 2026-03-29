@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'schemas_identifier.dart';final class UserSubscriptionDeleteUserSubscriptionResponse {const UserSubscriptionDeleteUserSubscriptionResponse({this.subscriptionId});
+
+factory UserSubscriptionDeleteUserSubscriptionResponse.fromJson(Map<String, dynamic> json) { return UserSubscriptionDeleteUserSubscriptionResponse(
+  subscriptionId: json['subscription_id'] != null ? SchemasIdentifier.fromJson(json['subscription_id'] as String) : null,
+); }
+
+/// Subscription identifier tag.
+final SchemasIdentifier? subscriptionId;
+
+Map<String, dynamic> toJson() { return {
+  if (subscriptionId != null) 'subscription_id': subscriptionId?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+UserSubscriptionDeleteUserSubscriptionResponse copyWith({SchemasIdentifier Function()? subscriptionId}) { return UserSubscriptionDeleteUserSubscriptionResponse(
+  subscriptionId: subscriptionId != null ? subscriptionId() : this.subscriptionId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UserSubscriptionDeleteUserSubscriptionResponse &&
+          subscriptionId == other.subscriptionId; } 
+@override int get hashCode { return subscriptionId.hashCode; } 
+@override String toString() { return 'UserSubscriptionDeleteUserSubscriptionResponse(subscriptionId: $subscriptionId)'; } 
+ }

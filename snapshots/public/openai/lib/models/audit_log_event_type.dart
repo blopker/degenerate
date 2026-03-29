@@ -1,0 +1,174 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The event type.
+final class AuditLogEventType {const AuditLogEventType._(this.value);
+
+factory AuditLogEventType.fromJson(String json) { return switch (json) {
+  'api_key.created' => apiKeyCreated,
+  'api_key.updated' => apiKeyUpdated,
+  'api_key.deleted' => apiKeyDeleted,
+  'certificate.created' => certificateCreated,
+  'certificate.updated' => certificateUpdated,
+  'certificate.deleted' => certificateDeleted,
+  'certificates.activated' => certificatesActivated,
+  'certificates.deactivated' => certificatesDeactivated,
+  'checkpoint.permission.created' => checkpointPermissionCreated,
+  'checkpoint.permission.deleted' => checkpointPermissionDeleted,
+  'external_key.registered' => externalKeyRegistered,
+  'external_key.removed' => externalKeyRemoved,
+  'group.created' => groupCreated,
+  'group.updated' => groupUpdated,
+  'group.deleted' => groupDeleted,
+  'invite.sent' => inviteSent,
+  'invite.accepted' => inviteAccepted,
+  'invite.deleted' => inviteDeleted,
+  'ip_allowlist.created' => ipAllowlistCreated,
+  'ip_allowlist.updated' => ipAllowlistUpdated,
+  'ip_allowlist.deleted' => ipAllowlistDeleted,
+  'ip_allowlist.config.activated' => ipAllowlistConfigActivated,
+  'ip_allowlist.config.deactivated' => ipAllowlistConfigDeactivated,
+  'login.succeeded' => loginSucceeded,
+  'login.failed' => loginFailed,
+  'logout.succeeded' => logoutSucceeded,
+  'logout.failed' => logoutFailed,
+  'organization.updated' => organizationUpdated,
+  'project.created' => projectCreated,
+  'project.updated' => projectUpdated,
+  'project.archived' => projectArchived,
+  'project.deleted' => projectDeleted,
+  'rate_limit.updated' => rateLimitUpdated,
+  'rate_limit.deleted' => rateLimitDeleted,
+  'resource.deleted' => resourceDeleted,
+  'tunnel.created' => tunnelCreated,
+  'tunnel.updated' => tunnelUpdated,
+  'tunnel.deleted' => tunnelDeleted,
+  'role.created' => roleCreated,
+  'role.updated' => roleUpdated,
+  'role.deleted' => roleDeleted,
+  'role.assignment.created' => roleAssignmentCreated,
+  'role.assignment.deleted' => roleAssignmentDeleted,
+  'scim.enabled' => scimEnabled,
+  'scim.disabled' => scimDisabled,
+  'service_account.created' => serviceAccountCreated,
+  'service_account.updated' => serviceAccountUpdated,
+  'service_account.deleted' => serviceAccountDeleted,
+  'user.added' => userAdded,
+  'user.updated' => userUpdated,
+  'user.deleted' => userDeleted,
+  _ => AuditLogEventType._(json),
+}; }
+
+static const AuditLogEventType apiKeyCreated = AuditLogEventType._('api_key.created');
+
+static const AuditLogEventType apiKeyUpdated = AuditLogEventType._('api_key.updated');
+
+static const AuditLogEventType apiKeyDeleted = AuditLogEventType._('api_key.deleted');
+
+static const AuditLogEventType certificateCreated = AuditLogEventType._('certificate.created');
+
+static const AuditLogEventType certificateUpdated = AuditLogEventType._('certificate.updated');
+
+static const AuditLogEventType certificateDeleted = AuditLogEventType._('certificate.deleted');
+
+static const AuditLogEventType certificatesActivated = AuditLogEventType._('certificates.activated');
+
+static const AuditLogEventType certificatesDeactivated = AuditLogEventType._('certificates.deactivated');
+
+static const AuditLogEventType checkpointPermissionCreated = AuditLogEventType._('checkpoint.permission.created');
+
+static const AuditLogEventType checkpointPermissionDeleted = AuditLogEventType._('checkpoint.permission.deleted');
+
+static const AuditLogEventType externalKeyRegistered = AuditLogEventType._('external_key.registered');
+
+static const AuditLogEventType externalKeyRemoved = AuditLogEventType._('external_key.removed');
+
+static const AuditLogEventType groupCreated = AuditLogEventType._('group.created');
+
+static const AuditLogEventType groupUpdated = AuditLogEventType._('group.updated');
+
+static const AuditLogEventType groupDeleted = AuditLogEventType._('group.deleted');
+
+static const AuditLogEventType inviteSent = AuditLogEventType._('invite.sent');
+
+static const AuditLogEventType inviteAccepted = AuditLogEventType._('invite.accepted');
+
+static const AuditLogEventType inviteDeleted = AuditLogEventType._('invite.deleted');
+
+static const AuditLogEventType ipAllowlistCreated = AuditLogEventType._('ip_allowlist.created');
+
+static const AuditLogEventType ipAllowlistUpdated = AuditLogEventType._('ip_allowlist.updated');
+
+static const AuditLogEventType ipAllowlistDeleted = AuditLogEventType._('ip_allowlist.deleted');
+
+static const AuditLogEventType ipAllowlistConfigActivated = AuditLogEventType._('ip_allowlist.config.activated');
+
+static const AuditLogEventType ipAllowlistConfigDeactivated = AuditLogEventType._('ip_allowlist.config.deactivated');
+
+static const AuditLogEventType loginSucceeded = AuditLogEventType._('login.succeeded');
+
+static const AuditLogEventType loginFailed = AuditLogEventType._('login.failed');
+
+static const AuditLogEventType logoutSucceeded = AuditLogEventType._('logout.succeeded');
+
+static const AuditLogEventType logoutFailed = AuditLogEventType._('logout.failed');
+
+static const AuditLogEventType organizationUpdated = AuditLogEventType._('organization.updated');
+
+static const AuditLogEventType projectCreated = AuditLogEventType._('project.created');
+
+static const AuditLogEventType projectUpdated = AuditLogEventType._('project.updated');
+
+static const AuditLogEventType projectArchived = AuditLogEventType._('project.archived');
+
+static const AuditLogEventType projectDeleted = AuditLogEventType._('project.deleted');
+
+static const AuditLogEventType rateLimitUpdated = AuditLogEventType._('rate_limit.updated');
+
+static const AuditLogEventType rateLimitDeleted = AuditLogEventType._('rate_limit.deleted');
+
+static const AuditLogEventType resourceDeleted = AuditLogEventType._('resource.deleted');
+
+static const AuditLogEventType tunnelCreated = AuditLogEventType._('tunnel.created');
+
+static const AuditLogEventType tunnelUpdated = AuditLogEventType._('tunnel.updated');
+
+static const AuditLogEventType tunnelDeleted = AuditLogEventType._('tunnel.deleted');
+
+static const AuditLogEventType roleCreated = AuditLogEventType._('role.created');
+
+static const AuditLogEventType roleUpdated = AuditLogEventType._('role.updated');
+
+static const AuditLogEventType roleDeleted = AuditLogEventType._('role.deleted');
+
+static const AuditLogEventType roleAssignmentCreated = AuditLogEventType._('role.assignment.created');
+
+static const AuditLogEventType roleAssignmentDeleted = AuditLogEventType._('role.assignment.deleted');
+
+static const AuditLogEventType scimEnabled = AuditLogEventType._('scim.enabled');
+
+static const AuditLogEventType scimDisabled = AuditLogEventType._('scim.disabled');
+
+static const AuditLogEventType serviceAccountCreated = AuditLogEventType._('service_account.created');
+
+static const AuditLogEventType serviceAccountUpdated = AuditLogEventType._('service_account.updated');
+
+static const AuditLogEventType serviceAccountDeleted = AuditLogEventType._('service_account.deleted');
+
+static const AuditLogEventType userAdded = AuditLogEventType._('user.added');
+
+static const AuditLogEventType userUpdated = AuditLogEventType._('user.updated');
+
+static const AuditLogEventType userDeleted = AuditLogEventType._('user.deleted');
+
+static const List<AuditLogEventType> values = [apiKeyCreated, apiKeyUpdated, apiKeyDeleted, certificateCreated, certificateUpdated, certificateDeleted, certificatesActivated, certificatesDeactivated, checkpointPermissionCreated, checkpointPermissionDeleted, externalKeyRegistered, externalKeyRemoved, groupCreated, groupUpdated, groupDeleted, inviteSent, inviteAccepted, inviteDeleted, ipAllowlistCreated, ipAllowlistUpdated, ipAllowlistDeleted, ipAllowlistConfigActivated, ipAllowlistConfigDeactivated, loginSucceeded, loginFailed, logoutSucceeded, logoutFailed, organizationUpdated, projectCreated, projectUpdated, projectArchived, projectDeleted, rateLimitUpdated, rateLimitDeleted, resourceDeleted, tunnelCreated, tunnelUpdated, tunnelDeleted, roleCreated, roleUpdated, roleDeleted, roleAssignmentCreated, roleAssignmentDeleted, scimEnabled, scimDisabled, serviceAccountCreated, serviceAccountUpdated, serviceAccountDeleted, userAdded, userUpdated, userDeleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AuditLogEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AuditLogEventType($value)'; } 
+ }

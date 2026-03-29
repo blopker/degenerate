@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_dex_rule.dart';final class DigitalExperienceMonitoringListRulesResponse {const DigitalExperienceMonitoringListRulesResponse({this.rules});
+
+factory DigitalExperienceMonitoringListRulesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringListRulesResponse(
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDexRule.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<DigitalExperienceMonitoringDexRule>? rules;
+
+Map<String, dynamic> toJson() { return {
+  if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DigitalExperienceMonitoringListRulesResponse copyWith({List<DigitalExperienceMonitoringDexRule> Function()? rules}) { return DigitalExperienceMonitoringListRulesResponse(
+  rules: rules != null ? rules() : this.rules,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringListRulesResponse &&
+          listEquals(rules, other.rules); } 
+@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
+@override String toString() { return 'DigitalExperienceMonitoringListRulesResponse(rules: $rules)'; } 
+ }

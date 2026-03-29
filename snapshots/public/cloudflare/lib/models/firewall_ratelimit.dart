@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_action.dart';import 'firewall_bypass2.dart';import 'firewall_description.dart';import 'firewall_match.dart';import 'firewall_period.dart';import 'firewall_threshold.dart';/// When true, indicates that the rate limit is currently disabled.
+extension type const FirewallDisabled(bool value) {
+factory FirewallDisabled.fromJson(bool json) => FirewallDisabled(json);
+
+bool toJson() => value;
+
+}
+/// The unique identifier of the rate limit.
+extension type const FirewallId(String value) {
+factory FirewallId.fromJson(String json) => FirewallId(json);
+
+String toJson() => value;
+
+}
+final class FirewallRatelimit {const FirewallRatelimit({this.action, this.bypass, this.description, this.disabled, this.id, this.match, this.period, this.threshold, });
+
+factory FirewallRatelimit.fromJson(Map<String, dynamic> json) { return FirewallRatelimit(
+  action: json['action'] != null ? FirewallAction.fromJson(json['action'] as Map<String, dynamic>) : null,
+  bypass: (json['bypass'] as List<dynamic>?)?.map((e) => FirewallBypass2.fromJson(e as Map<String, dynamic>)).toList(),
+  description: json['description'] != null ? FirewallDescription.fromJson(json['description'] as String) : null,
+  disabled: json['disabled'] != null ? FirewallDisabled.fromJson(json['disabled'] as bool) : null,
+  id: json['id'] != null ? FirewallId.fromJson(json['id'] as String) : null,
+  match: json['match'] != null ? FirewallMatch.fromJson(json['match'] as Map<String, dynamic>) : null,
+  period: json['period'] != null ? FirewallPeriod.fromJson(json['period'] as num) : null,
+  threshold: json['threshold'] != null ? FirewallThreshold.fromJson(json['threshold'] as num) : null,
+); }
+
+final FirewallAction? action;
+
+/// Criteria specifying when the current rate limit should be bypassed. You can specify that the rate limit should not apply to one or more URLs.
+final List<FirewallBypass2>? bypass;
+
+/// An informative summary of the rule. This value is sanitized and any tags will be removed.
+final FirewallDescription? description;
+
+/// When true, indicates that the rate limit is currently disabled.
+final FirewallDisabled? disabled;
+
+/// The unique identifier of the rate limit.
+final FirewallId? id;
+
+final FirewallMatch? match;
+
+/// The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
+final FirewallPeriod? period;
+
+final FirewallThreshold? threshold;
+
+Map<String, dynamic> toJson() { return {
+  if (action != null) 'action': action?.toJson(),
+  if (bypass != null) 'bypass': bypass?.map((e) => e.toJson()).toList(),
+  if (description != null) 'description': description?.toJson(),
+  if (disabled != null) 'disabled': disabled?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (match != null) 'match': match?.toJson(),
+  if (period != null) 'period': period?.toJson(),
+  if (threshold != null) 'threshold': threshold?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FirewallRatelimit copyWith({FirewallAction Function()? action, List<FirewallBypass2> Function()? bypass, FirewallDescription Function()? description, FirewallDisabled Function()? disabled, FirewallId Function()? id, FirewallMatch Function()? match, FirewallPeriod Function()? period, FirewallThreshold Function()? threshold, }) { return FirewallRatelimit(
+  action: action != null ? action() : this.action,
+  bypass: bypass != null ? bypass() : this.bypass,
+  description: description != null ? description() : this.description,
+  disabled: disabled != null ? disabled() : this.disabled,
+  id: id != null ? id() : this.id,
+  match: match != null ? match() : this.match,
+  period: period != null ? period() : this.period,
+  threshold: threshold != null ? threshold() : this.threshold,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FirewallRatelimit &&
+          action == other.action &&
+          listEquals(bypass, other.bypass) &&
+          description == other.description &&
+          disabled == other.disabled &&
+          id == other.id &&
+          match == other.match &&
+          period == other.period &&
+          threshold == other.threshold; } 
+@override int get hashCode { return Object.hash(action, Object.hashAll(bypass ?? const []), description, disabled, id, match, period, threshold); } 
+@override String toString() { return 'FirewallRatelimit(action: $action, bypass: $bypass, description: $description, disabled: $disabled, id: $id, match: $match, period: $period, threshold: $threshold)'; } 
+ }

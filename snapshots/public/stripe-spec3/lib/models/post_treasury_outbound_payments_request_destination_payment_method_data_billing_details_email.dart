@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2 {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2._(this.value);
+
+factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2._(json),
+}; }
+
+static const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2 $empty = PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2._('');
+
+static const List<PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2($value)'; } 
+ }
+typedef PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmail = OneOf2<String,PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetailsEmailVariant2>;

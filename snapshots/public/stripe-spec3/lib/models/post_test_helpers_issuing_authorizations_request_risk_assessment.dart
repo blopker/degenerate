@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_test_helpers_issuing_authorizations_request_risk_assessment_card_testing_risk.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_fraud_risk.dart';import 'post_test_helpers_issuing_authorizations_request_risk_assessment_merchant_dispute_risk.dart';/// Stripe’s assessment of the fraud risk for this authorization.
+final class PostTestHelpersIssuingAuthorizationsRequestRiskAssessment {const PostTestHelpersIssuingAuthorizationsRequestRiskAssessment({this.cardTestingRisk, this.fraudRisk, this.merchantDisputeRisk, });
+
+factory PostTestHelpersIssuingAuthorizationsRequestRiskAssessment.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessment(
+  cardTestingRisk: json['card_testing_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk.fromJson(json['card_testing_risk'] as Map<String, dynamic>) : null,
+  fraudRisk: json['fraud_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk.fromJson(json['fraud_risk'] as Map<String, dynamic>) : null,
+  merchantDisputeRisk: json['merchant_dispute_risk'] != null ? PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk.fromJson(json['merchant_dispute_risk'] as Map<String, dynamic>) : null,
+); }
+
+final PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk? cardTestingRisk;
+
+final PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk? fraudRisk;
+
+final PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk? merchantDisputeRisk;
+
+Map<String, dynamic> toJson() { return {
+  if (cardTestingRisk != null) 'card_testing_risk': cardTestingRisk?.toJson(),
+  if (fraudRisk != null) 'fraud_risk': fraudRisk?.toJson(),
+  if (merchantDisputeRisk != null) 'merchant_dispute_risk': merchantDisputeRisk?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersIssuingAuthorizationsRequestRiskAssessment copyWith({PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentCardTestingRisk Function()? cardTestingRisk, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentFraudRisk Function()? fraudRisk, PostTestHelpersIssuingAuthorizationsRequestRiskAssessmentMerchantDisputeRisk Function()? merchantDisputeRisk, }) { return PostTestHelpersIssuingAuthorizationsRequestRiskAssessment(
+  cardTestingRisk: cardTestingRisk != null ? cardTestingRisk() : this.cardTestingRisk,
+  fraudRisk: fraudRisk != null ? fraudRisk() : this.fraudRisk,
+  merchantDisputeRisk: merchantDisputeRisk != null ? merchantDisputeRisk() : this.merchantDisputeRisk,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersIssuingAuthorizationsRequestRiskAssessment &&
+          cardTestingRisk == other.cardTestingRisk &&
+          fraudRisk == other.fraudRisk &&
+          merchantDisputeRisk == other.merchantDisputeRisk; } 
+@override int get hashCode { return Object.hash(cardTestingRisk, fraudRisk, merchantDisputeRisk); } 
+@override String toString() { return 'PostTestHelpersIssuingAuthorizationsRequestRiskAssessment(cardTestingRisk: $cardTestingRisk, fraudRisk: $fraudRisk, merchantDisputeRisk: $merchantDisputeRisk)'; } 
+ }

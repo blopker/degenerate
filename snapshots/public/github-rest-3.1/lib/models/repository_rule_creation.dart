@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RepositoryRuleCreationType {const RepositoryRuleCreationType._(this.value);
+
+factory RepositoryRuleCreationType.fromJson(String json) { return switch (json) {
+  'creation' => creation,
+  _ => RepositoryRuleCreationType._(json),
+}; }
+
+static const RepositoryRuleCreationType creation = RepositoryRuleCreationType._('creation');
+
+static const List<RepositoryRuleCreationType> values = [creation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRuleCreationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRuleCreationType($value)'; } 
+ }
+/// Only allow users with bypass permission to create matching refs.
+final class RepositoryRuleCreation {const RepositoryRuleCreation({required this.type});
+
+factory RepositoryRuleCreation.fromJson(Map<String, dynamic> json) { return RepositoryRuleCreation(
+  type: RepositoryRuleCreationType.fromJson(json['type'] as String),
+); }
+
+final RepositoryRuleCreationType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+RepositoryRuleCreation copyWith({RepositoryRuleCreationType? type}) { return RepositoryRuleCreation(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRuleCreation &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'RepositoryRuleCreation(type: $type)'; } 
+ }

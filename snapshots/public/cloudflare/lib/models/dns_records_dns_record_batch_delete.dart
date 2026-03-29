@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dns_records_identifier.dart';final class DnsRecordsDnsRecordBatchDelete {const DnsRecordsDnsRecordBatchDelete({required this.id});
+
+factory DnsRecordsDnsRecordBatchDelete.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordBatchDelete(
+  id: DnsRecordsIdentifier.fromJson(json['id'] as String),
+); }
+
+final DnsRecordsIdentifier id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+DnsRecordsDnsRecordBatchDelete copyWith({DnsRecordsIdentifier? id}) { return DnsRecordsDnsRecordBatchDelete(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsRecordsDnsRecordBatchDelete &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordBatchDelete(id: $id)'; } 
+ }

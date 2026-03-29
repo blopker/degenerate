@@ -1,0 +1,89 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_effective_date.dart';import 'webhooks_sponsorship.dart';final class WebhookSponsorshipPendingCancellationAction {const WebhookSponsorshipPendingCancellationAction._(this.value);
+
+factory WebhookSponsorshipPendingCancellationAction.fromJson(String json) { return switch (json) {
+  'pending_cancellation' => pendingCancellation,
+  _ => WebhookSponsorshipPendingCancellationAction._(json),
+}; }
+
+static const WebhookSponsorshipPendingCancellationAction pendingCancellation = WebhookSponsorshipPendingCancellationAction._('pending_cancellation');
+
+static const List<WebhookSponsorshipPendingCancellationAction> values = [pendingCancellation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookSponsorshipPendingCancellationAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookSponsorshipPendingCancellationAction($value)'; } 
+ }
+final class WebhookSponsorshipPendingCancellation {const WebhookSponsorshipPendingCancellation({required this.action, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, required this.sender, required this.sponsorship, });
+
+factory WebhookSponsorshipPendingCancellation.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipPendingCancellation(
+  action: WebhookSponsorshipPendingCancellationAction.fromJson(json['action'] as String),
+  effectiveDate: json['effective_date'] != null ? WebhooksEffectiveDate.fromJson(json['effective_date'] as String) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+  sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
+); }
+
+final WebhookSponsorshipPendingCancellationAction action;
+
+/// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
+final WebhooksEffectiveDate? effectiveDate;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks? repository;
+
+final SimpleUser sender;
+
+final WebhooksSponsorship sponsorship;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (effectiveDate != null) 'effective_date': effectiveDate?.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  if (repository != null) 'repository': repository?.toJson(),
+  'sender': sender.toJson(),
+  'sponsorship': sponsorship.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('sender') &&
+      json.containsKey('sponsorship'); } 
+WebhookSponsorshipPendingCancellation copyWith({WebhookSponsorshipPendingCancellationAction? action, WebhooksEffectiveDate Function()? effectiveDate, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipPendingCancellation(
+  action: action ?? this.action,
+  effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository != null ? repository() : this.repository,
+  sender: sender ?? this.sender,
+  sponsorship: sponsorship ?? this.sponsorship,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookSponsorshipPendingCancellation &&
+          action == other.action &&
+          effectiveDate == other.effectiveDate &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender &&
+          sponsorship == other.sponsorship; } 
+@override int get hashCode { return Object.hash(action, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship); } 
+@override String toString() { return 'WebhookSponsorshipPendingCancellation(action: $action, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
+ }

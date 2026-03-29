@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsTopLocationsProtocol {const RadarGetDnsTopLocationsProtocol._(this.value);
+
+factory RadarGetDnsTopLocationsProtocol.fromJson(String json) { return switch (json) {
+  'UDP' => udp,
+  'TCP' => tcp,
+  'HTTPS' => https,
+  'TLS' => tls,
+  _ => RadarGetDnsTopLocationsProtocol._(json),
+}; }
+
+static const RadarGetDnsTopLocationsProtocol udp = RadarGetDnsTopLocationsProtocol._('UDP');
+
+static const RadarGetDnsTopLocationsProtocol tcp = RadarGetDnsTopLocationsProtocol._('TCP');
+
+static const RadarGetDnsTopLocationsProtocol https = RadarGetDnsTopLocationsProtocol._('HTTPS');
+
+static const RadarGetDnsTopLocationsProtocol tls = RadarGetDnsTopLocationsProtocol._('TLS');
+
+static const List<RadarGetDnsTopLocationsProtocol> values = [udp, tcp, https, tls];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsTopLocationsProtocol && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsTopLocationsProtocol($value)'; } 
+ }

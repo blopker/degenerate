@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies whether the `location` filter applies to the source or target location.
+final class RadarGetAttacksLayer3SummaryByDurationDirection {const RadarGetAttacksLayer3SummaryByDurationDirection._(this.value);
+
+factory RadarGetAttacksLayer3SummaryByDurationDirection.fromJson(String json) { return switch (json) {
+  'ORIGIN' => origin,
+  'TARGET' => target,
+  _ => RadarGetAttacksLayer3SummaryByDurationDirection._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryByDurationDirection origin = RadarGetAttacksLayer3SummaryByDurationDirection._('ORIGIN');
+
+static const RadarGetAttacksLayer3SummaryByDurationDirection target = RadarGetAttacksLayer3SummaryByDurationDirection._('TARGET');
+
+static const List<RadarGetAttacksLayer3SummaryByDurationDirection> values = [origin, target];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryByDurationDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByDurationDirection($value)'; } 
+ }

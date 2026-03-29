@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_authorization_fleet_fuel_price_data.dart';/// Breakdown of fuel portion of the purchase.
+final class IssuingAuthorizationFleetReportedBreakdownFuel {const IssuingAuthorizationFleetReportedBreakdownFuel({this.issuingAuthorizationFleetFuelPriceData});
+
+factory IssuingAuthorizationFleetReportedBreakdownFuel.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetReportedBreakdownFuel(
+  issuingAuthorizationFleetFuelPriceData: IssuingAuthorizationFleetFuelPriceData.canParse(json) ? IssuingAuthorizationFleetFuelPriceData.fromJson(json) : null,
+); }
+
+final IssuingAuthorizationFleetFuelPriceData? issuingAuthorizationFleetFuelPriceData;
+
+/// At least one variant must be present.
+bool get isValid { return issuingAuthorizationFleetFuelPriceData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingAuthorizationFleetFuelPriceData?.toJson(),
+}; } 
+ }

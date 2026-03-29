@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Turn off all active [Cloudflare Apps](https://developers.cloudflare.com/support/more-dashboard-apps/cloudflare-apps/)
+/// (deprecated).
+/// 
+final class ZonesDisableAppsId {const ZonesDisableAppsId._(this.value);
+
+factory ZonesDisableAppsId.fromJson(String json) { return switch (json) {
+  'disable_apps' => disableApps,
+  _ => ZonesDisableAppsId._(json),
+}; }
+
+static const ZonesDisableAppsId disableApps = ZonesDisableAppsId._('disable_apps');
+
+static const List<ZonesDisableAppsId> values = [disableApps];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesDisableAppsId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesDisableAppsId($value)'; } 
+ }
+final class ZonesDisableApps {const ZonesDisableApps({this.id});
+
+factory ZonesDisableApps.fromJson(Map<String, dynamic> json) { return ZonesDisableApps(
+  id: json['id'] != null ? ZonesDisableAppsId.fromJson(json['id'] as String) : null,
+); }
+
+/// Turn off all active [Cloudflare Apps](https://developers.cloudflare.com/support/more-dashboard-apps/cloudflare-apps/)
+/// (deprecated).
+/// 
+final ZonesDisableAppsId? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesDisableApps copyWith({ZonesDisableAppsId Function()? id}) { return ZonesDisableApps(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesDisableApps &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'ZonesDisableApps(id: $id)'; } 
+ }

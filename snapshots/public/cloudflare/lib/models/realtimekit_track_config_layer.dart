@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_track_layer_output.dart';final class RealtimekitTrackConfigLayer {const RealtimekitTrackConfigLayer({this.fileNamePrefix, this.outputs, });
+
+factory RealtimekitTrackConfigLayer.fromJson(Map<String, dynamic> json) { return RealtimekitTrackConfigLayer(
+  fileNamePrefix: json['file_name_prefix'] as String?,
+  outputs: (json['outputs'] as List<dynamic>?)?.map((e) => RealtimekitTrackLayerOutput.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// A file name prefix to apply for files generated from this layer
+final String? fileNamePrefix;
+
+final List<RealtimekitTrackLayerOutput>? outputs;
+
+Map<String, dynamic> toJson() { return {
+  'file_name_prefix': ?fileNamePrefix,
+  if (outputs != null) 'outputs': outputs?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitTrackConfigLayer copyWith({String Function()? fileNamePrefix, List<RealtimekitTrackLayerOutput> Function()? outputs, }) { return RealtimekitTrackConfigLayer(
+  fileNamePrefix: fileNamePrefix != null ? fileNamePrefix() : this.fileNamePrefix,
+  outputs: outputs != null ? outputs() : this.outputs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitTrackConfigLayer &&
+          fileNamePrefix == other.fileNamePrefix &&
+          listEquals(outputs, other.outputs); } 
+@override int get hashCode { return Object.hash(fileNamePrefix, Object.hashAll(outputs ?? const [])); } 
+@override String toString() { return 'RealtimekitTrackConfigLayer(fileNamePrefix: $fileNamePrefix, outputs: $outputs)'; } 
+ }

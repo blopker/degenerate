@@ -1,0 +1,249 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tls_certificates_and_hostnames_client_certificates_components_schemas_certificate_authority.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_schemas_csr.dart';import 'tls_certificates_and_hostnames_schemas_validity_days.dart';/// The Client Certificate PEM
+extension type const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate(String value) {
+factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(String json) => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate(json);
+
+String toJson() => value;
+
+}
+/// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions
+final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._(this.value);
+
+factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'pending_reactivation' => pendingReactivation,
+  'pending_revocation' => pendingRevocation,
+  'revoked' => revoked,
+  _ => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._(json),
+}; }
+
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus active = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('active');
+
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus pendingReactivation = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('pending_reactivation');
+
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus pendingRevocation = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('pending_revocation');
+
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus revoked = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('revoked');
+
+static const List<TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus> values = [active, pendingReactivation, pendingRevocation, revoked];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)'; } 
+ }
+/// Common Name of the Client Certificate
+extension type const TlsCertificatesAndHostnamesCommonName(String value) {
+factory TlsCertificatesAndHostnamesCommonName.fromJson(String json) => TlsCertificatesAndHostnamesCommonName(json);
+
+String toJson() => value;
+
+}
+/// The serial number on the created Client Certificate.
+extension type const TlsCertificatesAndHostnamesComponentsSchemasSerialNumber(String value) {
+factory TlsCertificatesAndHostnamesComponentsSchemasSerialNumber.fromJson(String json) => TlsCertificatesAndHostnamesComponentsSchemasSerialNumber(json);
+
+String toJson() => value;
+
+}
+/// The type of hash used for the Client Certificate..
+extension type const TlsCertificatesAndHostnamesComponentsSchemasSignature(String value) {
+factory TlsCertificatesAndHostnamesComponentsSchemasSignature.fromJson(String json) => TlsCertificatesAndHostnamesComponentsSchemasSignature(json);
+
+String toJson() => value;
+
+}
+/// Country, provided by the CSR
+extension type const TlsCertificatesAndHostnamesCountry(String value) {
+factory TlsCertificatesAndHostnamesCountry.fromJson(String json) => TlsCertificatesAndHostnamesCountry(json);
+
+String toJson() => value;
+
+}
+/// Date that the Client Certificate expires
+extension type const TlsCertificatesAndHostnamesExpiredOn(String value) {
+factory TlsCertificatesAndHostnamesExpiredOn.fromJson(String json) => TlsCertificatesAndHostnamesExpiredOn(json);
+
+String toJson() => value;
+
+}
+/// Unique identifier of the Client Certificate
+extension type const TlsCertificatesAndHostnamesFingerprintSha256(String value) {
+factory TlsCertificatesAndHostnamesFingerprintSha256.fromJson(String json) => TlsCertificatesAndHostnamesFingerprintSha256(json);
+
+String toJson() => value;
+
+}
+/// Date that the Client Certificate was issued by the Certificate Authority
+extension type const TlsCertificatesAndHostnamesIssuedOn(String value) {
+factory TlsCertificatesAndHostnamesIssuedOn.fromJson(String json) => TlsCertificatesAndHostnamesIssuedOn(json);
+
+String toJson() => value;
+
+}
+/// Location, provided by the CSR
+extension type const TlsCertificatesAndHostnamesLocation(String value) {
+factory TlsCertificatesAndHostnamesLocation.fromJson(String json) => TlsCertificatesAndHostnamesLocation(json);
+
+String toJson() => value;
+
+}
+/// Organization, provided by the CSR
+extension type const TlsCertificatesAndHostnamesOrganization(String value) {
+factory TlsCertificatesAndHostnamesOrganization.fromJson(String json) => TlsCertificatesAndHostnamesOrganization(json);
+
+String toJson() => value;
+
+}
+/// Organizational Unit, provided by the CSR
+extension type const TlsCertificatesAndHostnamesOrganizationalUnit(String value) {
+factory TlsCertificatesAndHostnamesOrganizationalUnit.fromJson(String json) => TlsCertificatesAndHostnamesOrganizationalUnit(json);
+
+String toJson() => value;
+
+}
+/// Subject Key Identifier
+extension type const TlsCertificatesAndHostnamesSki(String value) {
+factory TlsCertificatesAndHostnamesSki.fromJson(String json) => TlsCertificatesAndHostnamesSki(json);
+
+String toJson() => value;
+
+}
+/// State, provided by the CSR
+extension type const TlsCertificatesAndHostnamesState(String value) {
+factory TlsCertificatesAndHostnamesState.fromJson(String json) => TlsCertificatesAndHostnamesState(json);
+
+String toJson() => value;
+
+}
+final class TlsCertificatesAndHostnamesClientCertificate {const TlsCertificatesAndHostnamesClientCertificate({this.certificate, this.certificateAuthority, this.commonName, this.country, this.csr, this.expiresOn, this.fingerprintSha256, this.id, this.issuedOn, this.location, this.organization, this.organizationalUnit, this.serialNumber, this.signature, this.ski, this.state, this.status, this.validityDays, });
+
+factory TlsCertificatesAndHostnamesClientCertificate.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesClientCertificate(
+  certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,
+  certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as Map<String, dynamic>) : null,
+  commonName: json['common_name'] != null ? TlsCertificatesAndHostnamesCommonName.fromJson(json['common_name'] as String) : null,
+  country: json['country'] != null ? TlsCertificatesAndHostnamesCountry.fromJson(json['country'] as String) : null,
+  csr: json['csr'] != null ? TlsCertificatesAndHostnamesSchemasCsr.fromJson(json['csr'] as String) : null,
+  expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesExpiredOn.fromJson(json['expires_on'] as String) : null,
+  fingerprintSha256: json['fingerprint_sha256'] != null ? TlsCertificatesAndHostnamesFingerprintSha256.fromJson(json['fingerprint_sha256'] as String) : null,
+  id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
+  issuedOn: json['issued_on'] != null ? TlsCertificatesAndHostnamesIssuedOn.fromJson(json['issued_on'] as String) : null,
+  location: json['location'] != null ? TlsCertificatesAndHostnamesLocation.fromJson(json['location'] as String) : null,
+  organization: json['organization'] != null ? TlsCertificatesAndHostnamesOrganization.fromJson(json['organization'] as String) : null,
+  organizationalUnit: json['organizational_unit'] != null ? TlsCertificatesAndHostnamesOrganizationalUnit.fromJson(json['organizational_unit'] as String) : null,
+  serialNumber: json['serial_number'] != null ? TlsCertificatesAndHostnamesComponentsSchemasSerialNumber.fromJson(json['serial_number'] as String) : null,
+  signature: json['signature'] != null ? TlsCertificatesAndHostnamesComponentsSchemasSignature.fromJson(json['signature'] as String) : null,
+  ski: json['ski'] != null ? TlsCertificatesAndHostnamesSki.fromJson(json['ski'] as String) : null,
+  state: json['state'] != null ? TlsCertificatesAndHostnamesState.fromJson(json['state'] as String) : null,
+  status: json['status'] != null ? TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(json['status'] as String) : null,
+  validityDays: json['validity_days'] != null ? TlsCertificatesAndHostnamesSchemasValidityDays.fromJson(json['validity_days'] as num) : null,
+); }
+
+/// The Client Certificate PEM
+final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate? certificate;
+
+final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority? certificateAuthority;
+
+final TlsCertificatesAndHostnamesCommonName? commonName;
+
+final TlsCertificatesAndHostnamesCountry? country;
+
+final TlsCertificatesAndHostnamesSchemasCsr? csr;
+
+final TlsCertificatesAndHostnamesExpiredOn? expiresOn;
+
+final TlsCertificatesAndHostnamesFingerprintSha256? fingerprintSha256;
+
+final TlsCertificatesAndHostnamesIdentifier? id;
+
+final TlsCertificatesAndHostnamesIssuedOn? issuedOn;
+
+final TlsCertificatesAndHostnamesLocation? location;
+
+final TlsCertificatesAndHostnamesOrganization? organization;
+
+final TlsCertificatesAndHostnamesOrganizationalUnit? organizationalUnit;
+
+final TlsCertificatesAndHostnamesComponentsSchemasSerialNumber? serialNumber;
+
+final TlsCertificatesAndHostnamesComponentsSchemasSignature? signature;
+
+final TlsCertificatesAndHostnamesSki? ski;
+
+final TlsCertificatesAndHostnamesState? state;
+
+/// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions
+final TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus? status;
+
+final TlsCertificatesAndHostnamesSchemasValidityDays? validityDays;
+
+Map<String, dynamic> toJson() { return {
+  if (certificate != null) 'certificate': certificate?.toJson(),
+  if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
+  if (commonName != null) 'common_name': commonName?.toJson(),
+  if (country != null) 'country': country?.toJson(),
+  if (csr != null) 'csr': csr?.toJson(),
+  if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
+  if (fingerprintSha256 != null) 'fingerprint_sha256': fingerprintSha256?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (issuedOn != null) 'issued_on': issuedOn?.toJson(),
+  if (location != null) 'location': location?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  if (organizationalUnit != null) 'organizational_unit': organizationalUnit?.toJson(),
+  if (serialNumber != null) 'serial_number': serialNumber?.toJson(),
+  if (signature != null) 'signature': signature?.toJson(),
+  if (ski != null) 'ski': ski?.toJson(),
+  if (state != null) 'state': state?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (validityDays != null) 'validity_days': validityDays?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TlsCertificatesAndHostnamesClientCertificate copyWith({TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificate Function()? certificate, TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasCertificateAuthority Function()? certificateAuthority, TlsCertificatesAndHostnamesCommonName Function()? commonName, TlsCertificatesAndHostnamesCountry Function()? country, TlsCertificatesAndHostnamesSchemasCsr Function()? csr, TlsCertificatesAndHostnamesExpiredOn Function()? expiresOn, TlsCertificatesAndHostnamesFingerprintSha256 Function()? fingerprintSha256, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesIssuedOn Function()? issuedOn, TlsCertificatesAndHostnamesLocation Function()? location, TlsCertificatesAndHostnamesOrganization Function()? organization, TlsCertificatesAndHostnamesOrganizationalUnit Function()? organizationalUnit, TlsCertificatesAndHostnamesComponentsSchemasSerialNumber Function()? serialNumber, TlsCertificatesAndHostnamesComponentsSchemasSignature Function()? signature, TlsCertificatesAndHostnamesSki Function()? ski, TlsCertificatesAndHostnamesState Function()? state, TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesSchemasValidityDays Function()? validityDays, }) { return TlsCertificatesAndHostnamesClientCertificate(
+  certificate: certificate != null ? certificate() : this.certificate,
+  certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
+  commonName: commonName != null ? commonName() : this.commonName,
+  country: country != null ? country() : this.country,
+  csr: csr != null ? csr() : this.csr,
+  expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
+  fingerprintSha256: fingerprintSha256 != null ? fingerprintSha256() : this.fingerprintSha256,
+  id: id != null ? id() : this.id,
+  issuedOn: issuedOn != null ? issuedOn() : this.issuedOn,
+  location: location != null ? location() : this.location,
+  organization: organization != null ? organization() : this.organization,
+  organizationalUnit: organizationalUnit != null ? organizationalUnit() : this.organizationalUnit,
+  serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
+  signature: signature != null ? signature() : this.signature,
+  ski: ski != null ? ski() : this.ski,
+  state: state != null ? state() : this.state,
+  status: status != null ? status() : this.status,
+  validityDays: validityDays != null ? validityDays() : this.validityDays,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesClientCertificate &&
+          certificate == other.certificate &&
+          certificateAuthority == other.certificateAuthority &&
+          commonName == other.commonName &&
+          country == other.country &&
+          csr == other.csr &&
+          expiresOn == other.expiresOn &&
+          fingerprintSha256 == other.fingerprintSha256 &&
+          id == other.id &&
+          issuedOn == other.issuedOn &&
+          location == other.location &&
+          organization == other.organization &&
+          organizationalUnit == other.organizationalUnit &&
+          serialNumber == other.serialNumber &&
+          signature == other.signature &&
+          ski == other.ski &&
+          state == other.state &&
+          status == other.status &&
+          validityDays == other.validityDays; } 
+@override int get hashCode { return Object.hash(certificate, certificateAuthority, commonName, country, csr, expiresOn, fingerprintSha256, id, issuedOn, location, organization, organizationalUnit, serialNumber, signature, ski, state, status, validityDays); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesClientCertificate(certificate: $certificate, certificateAuthority: $certificateAuthority, commonName: $commonName, country: $country, csr: $csr, expiresOn: $expiresOn, fingerprintSha256: $fingerprintSha256, id: $id, issuedOn: $issuedOn, location: $location, organization: $organization, organizationalUnit: $organizationalUnit, serialNumber: $serialNumber, signature: $signature, ski: $ski, state: $state, status: $status, validityDays: $validityDays)'; } 
+ }

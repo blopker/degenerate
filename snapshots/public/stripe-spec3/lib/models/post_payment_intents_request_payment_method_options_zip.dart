@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param37.dart';final class PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2._(this.value);
+
+factory PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2._(json),
+}; }
+
+static const PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2 $empty = PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2._('');
+
+static const List<PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsRequestPaymentMethodOptionsZip = OneOf2<PaymentMethodOptionsParam37,PostPaymentIntentsRequestPaymentMethodOptionsZipVariant2>;

@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key_to_path.dart';/// Adapts a ConfigMap into a projected volume.
+/// 
+/// The contents of the target ConfigMap's Data field will be presented in a projected volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. Note that this is identical to a configmap volume source without the default mode.
+final class ConfigMapProjection {const ConfigMapProjection({this.items, this.name = '', this.optional, });
+
+factory ConfigMapProjection.fromJson(Map<String, dynamic> json) { return ConfigMapProjection(
+  items: (json['items'] as List<dynamic>?)?.map((e) => KeyToPath.fromJson(e as Map<String, dynamic>)).toList(),
+  name: json.containsKey('name') ? json['name'] as String : '',
+  optional: json['optional'] as bool?,
+); }
+
+/// items if unspecified, each key-value pair in the Data field of the referenced ConfigMap will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the ConfigMap, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.
+final List<KeyToPath>? items;
+
+/// Name of the referent. This field is effectively required, but due to backwards compatibility is allowed to be empty. Instances of this type with an empty value here are almost certainly wrong. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+final String name;
+
+/// optional specify whether the ConfigMap or its keys must be defined
+final bool? optional;
+
+Map<String, dynamic> toJson() { return {
+  if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
+  'name': name,
+  'optional': ?optional,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ConfigMapProjection copyWith({List<KeyToPath> Function()? items, String Function()? name, bool Function()? optional, }) { return ConfigMapProjection(
+  items: items != null ? items() : this.items,
+  name: name != null ? name() : this.name,
+  optional: optional != null ? optional() : this.optional,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ConfigMapProjection &&
+          listEquals(items, other.items) &&
+          name == other.name &&
+          optional == other.optional; } 
+@override int get hashCode { return Object.hash(Object.hashAll(items ?? const []), name, optional); } 
+@override String toString() { return 'ConfigMapProjection(items: $items, name: $name, optional: $optional)'; } 
+ }

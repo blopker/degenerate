@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

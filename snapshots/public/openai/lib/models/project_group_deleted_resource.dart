@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Always `project.group.deleted`.
+final class ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject._(this.value);
+
+factory ProjectGroupDeletedResourceObject.fromJson(String json) { return switch (json) {
+  'project.group.deleted' => projectGroupDeleted,
+  _ => ProjectGroupDeletedResourceObject._(json),
+}; }
+
+static const ProjectGroupDeletedResourceObject projectGroupDeleted = ProjectGroupDeletedResourceObject._('project.group.deleted');
+
+static const List<ProjectGroupDeletedResourceObject> values = [projectGroupDeleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ProjectGroupDeletedResourceObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ProjectGroupDeletedResourceObject($value)'; } 
+ }
+/// Confirmation payload returned after removing a group from a project.
+final class ProjectGroupDeletedResource {const ProjectGroupDeletedResource({required this.object, required this.deleted, });
+
+factory ProjectGroupDeletedResource.fromJson(Map<String, dynamic> json) { return ProjectGroupDeletedResource(
+  object: ProjectGroupDeletedResourceObject.fromJson(json['object'] as String),
+  deleted: json['deleted'] as bool,
+); }
+
+/// Always `project.group.deleted`.
+final ProjectGroupDeletedResourceObject object;
+
+/// Whether the group membership in the project was removed.
+final bool deleted;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'deleted': deleted,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('deleted') && json['deleted'] is bool; } 
+ProjectGroupDeletedResource copyWith({ProjectGroupDeletedResourceObject? object, bool? deleted, }) { return ProjectGroupDeletedResource(
+  object: object ?? this.object,
+  deleted: deleted ?? this.deleted,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProjectGroupDeletedResource &&
+          object == other.object &&
+          deleted == other.deleted; } 
+@override int get hashCode { return Object.hash(object, deleted); } 
+@override String toString() { return 'ProjectGroupDeletedResource(object: $object, deleted: $deleted)'; } 
+ }

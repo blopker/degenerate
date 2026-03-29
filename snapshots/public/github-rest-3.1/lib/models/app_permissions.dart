@@ -1,0 +1,1711 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
+final class AppPermissionsActions {const AppPermissionsActions._(this.value);
+
+factory AppPermissionsActions.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsActions._(json),
+}; }
+
+static const AppPermissionsActions read = AppPermissionsActions._('read');
+
+static const AppPermissionsActions write = AppPermissionsActions._('write');
+
+static const List<AppPermissionsActions> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsActions && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsActions($value)'; } 
+ }
+/// The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
+final class AppPermissionsAdministration {const AppPermissionsAdministration._(this.value);
+
+factory AppPermissionsAdministration.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsAdministration._(json),
+}; }
+
+static const AppPermissionsAdministration read = AppPermissionsAdministration._('read');
+
+static const AppPermissionsAdministration write = AppPermissionsAdministration._('write');
+
+static const List<AppPermissionsAdministration> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsAdministration && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsAdministration($value)'; } 
+ }
+/// The level of permission to grant the access token to create and retrieve build artifact metadata records.
+final class AppPermissionsArtifactMetadata {const AppPermissionsArtifactMetadata._(this.value);
+
+factory AppPermissionsArtifactMetadata.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsArtifactMetadata._(json),
+}; }
+
+static const AppPermissionsArtifactMetadata read = AppPermissionsArtifactMetadata._('read');
+
+static const AppPermissionsArtifactMetadata write = AppPermissionsArtifactMetadata._('write');
+
+static const List<AppPermissionsArtifactMetadata> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsArtifactMetadata && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsArtifactMetadata($value)'; } 
+ }
+/// The level of permission to create and retrieve the access token for repository attestations.
+final class AppPermissionsAttestations {const AppPermissionsAttestations._(this.value);
+
+factory AppPermissionsAttestations.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsAttestations._(json),
+}; }
+
+static const AppPermissionsAttestations read = AppPermissionsAttestations._('read');
+
+static const AppPermissionsAttestations write = AppPermissionsAttestations._('write');
+
+static const List<AppPermissionsAttestations> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsAttestations && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsAttestations($value)'; } 
+ }
+/// The level of permission to grant the access token for checks on code.
+final class AppPermissionsChecks {const AppPermissionsChecks._(this.value);
+
+factory AppPermissionsChecks.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsChecks._(json),
+}; }
+
+static const AppPermissionsChecks read = AppPermissionsChecks._('read');
+
+static const AppPermissionsChecks write = AppPermissionsChecks._('write');
+
+static const List<AppPermissionsChecks> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsChecks && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsChecks($value)'; } 
+ }
+/// The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+final class AppPermissionsCodespaces {const AppPermissionsCodespaces._(this.value);
+
+factory AppPermissionsCodespaces.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsCodespaces._(json),
+}; }
+
+static const AppPermissionsCodespaces read = AppPermissionsCodespaces._('read');
+
+static const AppPermissionsCodespaces write = AppPermissionsCodespaces._('write');
+
+static const List<AppPermissionsCodespaces> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsCodespaces && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsCodespaces($value)'; } 
+ }
+/// The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
+final class AppPermissionsContents {const AppPermissionsContents._(this.value);
+
+factory AppPermissionsContents.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsContents._(json),
+}; }
+
+static const AppPermissionsContents read = AppPermissionsContents._('read');
+
+static const AppPermissionsContents write = AppPermissionsContents._('write');
+
+static const List<AppPermissionsContents> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsContents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsContents($value)'; } 
+ }
+/// The level of permission to grant the access token to manage Dependabot secrets.
+final class AppPermissionsDependabotSecrets {const AppPermissionsDependabotSecrets._(this.value);
+
+factory AppPermissionsDependabotSecrets.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsDependabotSecrets._(json),
+}; }
+
+static const AppPermissionsDependabotSecrets read = AppPermissionsDependabotSecrets._('read');
+
+static const AppPermissionsDependabotSecrets write = AppPermissionsDependabotSecrets._('write');
+
+static const List<AppPermissionsDependabotSecrets> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsDependabotSecrets && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsDependabotSecrets($value)'; } 
+ }
+/// The level of permission to grant the access token for deployments and deployment statuses.
+final class AppPermissionsDeployments {const AppPermissionsDeployments._(this.value);
+
+factory AppPermissionsDeployments.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsDeployments._(json),
+}; }
+
+static const AppPermissionsDeployments read = AppPermissionsDeployments._('read');
+
+static const AppPermissionsDeployments write = AppPermissionsDeployments._('write');
+
+static const List<AppPermissionsDeployments> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsDeployments && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsDeployments($value)'; } 
+ }
+/// The level of permission to grant the access token for discussions and related comments and labels.
+final class AppPermissionsDiscussions {const AppPermissionsDiscussions._(this.value);
+
+factory AppPermissionsDiscussions.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsDiscussions._(json),
+}; }
+
+static const AppPermissionsDiscussions read = AppPermissionsDiscussions._('read');
+
+static const AppPermissionsDiscussions write = AppPermissionsDiscussions._('write');
+
+static const List<AppPermissionsDiscussions> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsDiscussions && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsDiscussions($value)'; } 
+ }
+/// The level of permission to grant the access token for managing repository environments.
+final class AppPermissionsEnvironments {const AppPermissionsEnvironments._(this.value);
+
+factory AppPermissionsEnvironments.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsEnvironments._(json),
+}; }
+
+static const AppPermissionsEnvironments read = AppPermissionsEnvironments._('read');
+
+static const AppPermissionsEnvironments write = AppPermissionsEnvironments._('write');
+
+static const List<AppPermissionsEnvironments> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsEnvironments && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsEnvironments($value)'; } 
+ }
+/// The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
+final class AppPermissionsIssues {const AppPermissionsIssues._(this.value);
+
+factory AppPermissionsIssues.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsIssues._(json),
+}; }
+
+static const AppPermissionsIssues read = AppPermissionsIssues._('read');
+
+static const AppPermissionsIssues write = AppPermissionsIssues._('write');
+
+static const List<AppPermissionsIssues> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsIssues && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsIssues($value)'; } 
+ }
+/// The level of permission to grant the access token to manage the merge queues for a repository.
+final class AppPermissionsMergeQueues {const AppPermissionsMergeQueues._(this.value);
+
+factory AppPermissionsMergeQueues.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsMergeQueues._(json),
+}; }
+
+static const AppPermissionsMergeQueues read = AppPermissionsMergeQueues._('read');
+
+static const AppPermissionsMergeQueues write = AppPermissionsMergeQueues._('write');
+
+static const List<AppPermissionsMergeQueues> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsMergeQueues && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsMergeQueues($value)'; } 
+ }
+/// The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
+final class AppPermissionsMetadata {const AppPermissionsMetadata._(this.value);
+
+factory AppPermissionsMetadata.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsMetadata._(json),
+}; }
+
+static const AppPermissionsMetadata read = AppPermissionsMetadata._('read');
+
+static const AppPermissionsMetadata write = AppPermissionsMetadata._('write');
+
+static const List<AppPermissionsMetadata> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsMetadata && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsMetadata($value)'; } 
+ }
+/// The level of permission to grant the access token for packages published to GitHub Packages.
+final class AppPermissionsPackages {const AppPermissionsPackages._(this.value);
+
+factory AppPermissionsPackages.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsPackages._(json),
+}; }
+
+static const AppPermissionsPackages read = AppPermissionsPackages._('read');
+
+static const AppPermissionsPackages write = AppPermissionsPackages._('write');
+
+static const List<AppPermissionsPackages> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsPackages && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsPackages($value)'; } 
+ }
+/// The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
+final class AppPermissionsPages {const AppPermissionsPages._(this.value);
+
+factory AppPermissionsPages.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsPages._(json),
+}; }
+
+static const AppPermissionsPages read = AppPermissionsPages._('read');
+
+static const AppPermissionsPages write = AppPermissionsPages._('write');
+
+static const List<AppPermissionsPages> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsPages && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsPages($value)'; } 
+ }
+/// The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
+final class AppPermissionsPullRequests {const AppPermissionsPullRequests._(this.value);
+
+factory AppPermissionsPullRequests.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsPullRequests._(json),
+}; }
+
+static const AppPermissionsPullRequests read = AppPermissionsPullRequests._('read');
+
+static const AppPermissionsPullRequests write = AppPermissionsPullRequests._('write');
+
+static const List<AppPermissionsPullRequests> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsPullRequests && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsPullRequests($value)'; } 
+ }
+/// The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
+final class AppPermissionsRepositoryCustomProperties {const AppPermissionsRepositoryCustomProperties._(this.value);
+
+factory AppPermissionsRepositoryCustomProperties.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsRepositoryCustomProperties._(json),
+}; }
+
+static const AppPermissionsRepositoryCustomProperties read = AppPermissionsRepositoryCustomProperties._('read');
+
+static const AppPermissionsRepositoryCustomProperties write = AppPermissionsRepositoryCustomProperties._('write');
+
+static const List<AppPermissionsRepositoryCustomProperties> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsRepositoryCustomProperties && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsRepositoryCustomProperties($value)'; } 
+ }
+/// The level of permission to grant the access token to manage the post-receive hooks for a repository.
+final class AppPermissionsRepositoryHooks {const AppPermissionsRepositoryHooks._(this.value);
+
+factory AppPermissionsRepositoryHooks.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsRepositoryHooks._(json),
+}; }
+
+static const AppPermissionsRepositoryHooks read = AppPermissionsRepositoryHooks._('read');
+
+static const AppPermissionsRepositoryHooks write = AppPermissionsRepositoryHooks._('write');
+
+static const List<AppPermissionsRepositoryHooks> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsRepositoryHooks && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsRepositoryHooks($value)'; } 
+ }
+/// The level of permission to grant the access token to manage repository projects, columns, and cards.
+final class AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects._(this.value);
+
+factory AppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  'admin' => admin,
+  _ => AppPermissionsRepositoryProjects._(json),
+}; }
+
+static const AppPermissionsRepositoryProjects read = AppPermissionsRepositoryProjects._('read');
+
+static const AppPermissionsRepositoryProjects write = AppPermissionsRepositoryProjects._('write');
+
+static const AppPermissionsRepositoryProjects admin = AppPermissionsRepositoryProjects._('admin');
+
+static const List<AppPermissionsRepositoryProjects> values = [read, write, admin];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsRepositoryProjects && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsRepositoryProjects($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage secret scanning alerts.
+final class AppPermissionsSecretScanningAlerts {const AppPermissionsSecretScanningAlerts._(this.value);
+
+factory AppPermissionsSecretScanningAlerts.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsSecretScanningAlerts._(json),
+}; }
+
+static const AppPermissionsSecretScanningAlerts read = AppPermissionsSecretScanningAlerts._('read');
+
+static const AppPermissionsSecretScanningAlerts write = AppPermissionsSecretScanningAlerts._('write');
+
+static const List<AppPermissionsSecretScanningAlerts> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsSecretScanningAlerts && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsSecretScanningAlerts($value)'; } 
+ }
+/// The level of permission to grant the access token to manage repository secrets.
+final class AppPermissionsSecrets {const AppPermissionsSecrets._(this.value);
+
+factory AppPermissionsSecrets.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsSecrets._(json),
+}; }
+
+static const AppPermissionsSecrets read = AppPermissionsSecrets._('read');
+
+static const AppPermissionsSecrets write = AppPermissionsSecrets._('write');
+
+static const List<AppPermissionsSecrets> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsSecrets && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsSecrets($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage security events like code scanning alerts.
+final class AppPermissionsSecurityEvents {const AppPermissionsSecurityEvents._(this.value);
+
+factory AppPermissionsSecurityEvents.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsSecurityEvents._(json),
+}; }
+
+static const AppPermissionsSecurityEvents read = AppPermissionsSecurityEvents._('read');
+
+static const AppPermissionsSecurityEvents write = AppPermissionsSecurityEvents._('write');
+
+static const List<AppPermissionsSecurityEvents> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsSecurityEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsSecurityEvents($value)'; } 
+ }
+/// The level of permission to grant the access token to manage just a single file.
+final class AppPermissionsSingleFile {const AppPermissionsSingleFile._(this.value);
+
+factory AppPermissionsSingleFile.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsSingleFile._(json),
+}; }
+
+static const AppPermissionsSingleFile read = AppPermissionsSingleFile._('read');
+
+static const AppPermissionsSingleFile write = AppPermissionsSingleFile._('write');
+
+static const List<AppPermissionsSingleFile> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsSingleFile && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsSingleFile($value)'; } 
+ }
+/// The level of permission to grant the access token for commit statuses.
+final class AppPermissionsStatuses {const AppPermissionsStatuses._(this.value);
+
+factory AppPermissionsStatuses.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsStatuses._(json),
+}; }
+
+static const AppPermissionsStatuses read = AppPermissionsStatuses._('read');
+
+static const AppPermissionsStatuses write = AppPermissionsStatuses._('write');
+
+static const List<AppPermissionsStatuses> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsStatuses && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsStatuses($value)'; } 
+ }
+/// The level of permission to grant the access token to manage Dependabot alerts.
+final class AppPermissionsVulnerabilityAlerts {const AppPermissionsVulnerabilityAlerts._(this.value);
+
+factory AppPermissionsVulnerabilityAlerts.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsVulnerabilityAlerts._(json),
+}; }
+
+static const AppPermissionsVulnerabilityAlerts read = AppPermissionsVulnerabilityAlerts._('read');
+
+static const AppPermissionsVulnerabilityAlerts write = AppPermissionsVulnerabilityAlerts._('write');
+
+static const List<AppPermissionsVulnerabilityAlerts> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsVulnerabilityAlerts && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsVulnerabilityAlerts($value)'; } 
+ }
+/// The level of permission to grant the access token to update GitHub Actions workflow files.
+final class AppPermissionsWorkflows {const AppPermissionsWorkflows._(this.value);
+
+factory AppPermissionsWorkflows.fromJson(String json) { return switch (json) {
+  'write' => write,
+  _ => AppPermissionsWorkflows._(json),
+}; }
+
+static const AppPermissionsWorkflows write = AppPermissionsWorkflows._('write');
+
+static const List<AppPermissionsWorkflows> values = [write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsWorkflows && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsWorkflows($value)'; } 
+ }
+/// The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
+final class AppPermissionsCustomPropertiesForOrganizations {const AppPermissionsCustomPropertiesForOrganizations._(this.value);
+
+factory AppPermissionsCustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsCustomPropertiesForOrganizations._(json),
+}; }
+
+static const AppPermissionsCustomPropertiesForOrganizations read = AppPermissionsCustomPropertiesForOrganizations._('read');
+
+static const AppPermissionsCustomPropertiesForOrganizations write = AppPermissionsCustomPropertiesForOrganizations._('write');
+
+static const List<AppPermissionsCustomPropertiesForOrganizations> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsCustomPropertiesForOrganizations && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsCustomPropertiesForOrganizations($value)'; } 
+ }
+/// The level of permission to grant the access token for organization teams and members.
+final class AppPermissionsMembers {const AppPermissionsMembers._(this.value);
+
+factory AppPermissionsMembers.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsMembers._(json),
+}; }
+
+static const AppPermissionsMembers read = AppPermissionsMembers._('read');
+
+static const AppPermissionsMembers write = AppPermissionsMembers._('write');
+
+static const List<AppPermissionsMembers> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsMembers && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsMembers($value)'; } 
+ }
+/// The level of permission to grant the access token to manage access to an organization.
+final class AppPermissionsOrganizationAdministration {const AppPermissionsOrganizationAdministration._(this.value);
+
+factory AppPermissionsOrganizationAdministration.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationAdministration._(json),
+}; }
+
+static const AppPermissionsOrganizationAdministration read = AppPermissionsOrganizationAdministration._('read');
+
+static const AppPermissionsOrganizationAdministration write = AppPermissionsOrganizationAdministration._('write');
+
+static const List<AppPermissionsOrganizationAdministration> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationAdministration && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationAdministration($value)'; } 
+ }
+/// The level of permission to grant the access token for custom repository roles management.
+final class AppPermissionsOrganizationCustomRoles {const AppPermissionsOrganizationCustomRoles._(this.value);
+
+factory AppPermissionsOrganizationCustomRoles.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationCustomRoles._(json),
+}; }
+
+static const AppPermissionsOrganizationCustomRoles read = AppPermissionsOrganizationCustomRoles._('read');
+
+static const AppPermissionsOrganizationCustomRoles write = AppPermissionsOrganizationCustomRoles._('write');
+
+static const List<AppPermissionsOrganizationCustomRoles> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationCustomRoles && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationCustomRoles($value)'; } 
+ }
+/// The level of permission to grant the access token for custom organization roles management.
+final class AppPermissionsOrganizationCustomOrgRoles {const AppPermissionsOrganizationCustomOrgRoles._(this.value);
+
+factory AppPermissionsOrganizationCustomOrgRoles.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationCustomOrgRoles._(json),
+}; }
+
+static const AppPermissionsOrganizationCustomOrgRoles read = AppPermissionsOrganizationCustomOrgRoles._('read');
+
+static const AppPermissionsOrganizationCustomOrgRoles write = AppPermissionsOrganizationCustomOrgRoles._('write');
+
+static const List<AppPermissionsOrganizationCustomOrgRoles> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationCustomOrgRoles && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationCustomOrgRoles($value)'; } 
+ }
+/// The level of permission to grant the access token for repository custom properties management at the organization level.
+final class AppPermissionsOrganizationCustomProperties {const AppPermissionsOrganizationCustomProperties._(this.value);
+
+factory AppPermissionsOrganizationCustomProperties.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  'admin' => admin,
+  _ => AppPermissionsOrganizationCustomProperties._(json),
+}; }
+
+static const AppPermissionsOrganizationCustomProperties read = AppPermissionsOrganizationCustomProperties._('read');
+
+static const AppPermissionsOrganizationCustomProperties write = AppPermissionsOrganizationCustomProperties._('write');
+
+static const AppPermissionsOrganizationCustomProperties admin = AppPermissionsOrganizationCustomProperties._('admin');
+
+static const List<AppPermissionsOrganizationCustomProperties> values = [read, write, admin];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationCustomProperties && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationCustomProperties($value)'; } 
+ }
+/// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
+final class AppPermissionsOrganizationCopilotSeatManagement {const AppPermissionsOrganizationCopilotSeatManagement._(this.value);
+
+factory AppPermissionsOrganizationCopilotSeatManagement.fromJson(String json) { return switch (json) {
+  'write' => write,
+  _ => AppPermissionsOrganizationCopilotSeatManagement._(json),
+}; }
+
+static const AppPermissionsOrganizationCopilotSeatManagement write = AppPermissionsOrganizationCopilotSeatManagement._('write');
+
+static const List<AppPermissionsOrganizationCopilotSeatManagement> values = [write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationCopilotSeatManagement && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationCopilotSeatManagement($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage announcement banners for an organization.
+final class AppPermissionsOrganizationAnnouncementBanners {const AppPermissionsOrganizationAnnouncementBanners._(this.value);
+
+factory AppPermissionsOrganizationAnnouncementBanners.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationAnnouncementBanners._(json),
+}; }
+
+static const AppPermissionsOrganizationAnnouncementBanners read = AppPermissionsOrganizationAnnouncementBanners._('read');
+
+static const AppPermissionsOrganizationAnnouncementBanners write = AppPermissionsOrganizationAnnouncementBanners._('write');
+
+static const List<AppPermissionsOrganizationAnnouncementBanners> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationAnnouncementBanners && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationAnnouncementBanners($value)'; } 
+ }
+/// The level of permission to grant the access token to view events triggered by an activity in an organization.
+final class AppPermissionsOrganizationEvents {const AppPermissionsOrganizationEvents._(this.value);
+
+factory AppPermissionsOrganizationEvents.fromJson(String json) { return switch (json) {
+  'read' => read,
+  _ => AppPermissionsOrganizationEvents._(json),
+}; }
+
+static const AppPermissionsOrganizationEvents read = AppPermissionsOrganizationEvents._('read');
+
+static const List<AppPermissionsOrganizationEvents> values = [read];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationEvents($value)'; } 
+ }
+/// The level of permission to grant the access token to manage the post-receive hooks for an organization.
+final class AppPermissionsOrganizationHooks {const AppPermissionsOrganizationHooks._(this.value);
+
+factory AppPermissionsOrganizationHooks.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationHooks._(json),
+}; }
+
+static const AppPermissionsOrganizationHooks read = AppPermissionsOrganizationHooks._('read');
+
+static const AppPermissionsOrganizationHooks write = AppPermissionsOrganizationHooks._('write');
+
+static const List<AppPermissionsOrganizationHooks> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationHooks && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationHooks($value)'; } 
+ }
+/// The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
+final class AppPermissionsOrganizationPersonalAccessTokens {const AppPermissionsOrganizationPersonalAccessTokens._(this.value);
+
+factory AppPermissionsOrganizationPersonalAccessTokens.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationPersonalAccessTokens._(json),
+}; }
+
+static const AppPermissionsOrganizationPersonalAccessTokens read = AppPermissionsOrganizationPersonalAccessTokens._('read');
+
+static const AppPermissionsOrganizationPersonalAccessTokens write = AppPermissionsOrganizationPersonalAccessTokens._('write');
+
+static const List<AppPermissionsOrganizationPersonalAccessTokens> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationPersonalAccessTokens && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationPersonalAccessTokens($value)'; } 
+ }
+/// The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
+final class AppPermissionsOrganizationPersonalAccessTokenRequests {const AppPermissionsOrganizationPersonalAccessTokenRequests._(this.value);
+
+factory AppPermissionsOrganizationPersonalAccessTokenRequests.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationPersonalAccessTokenRequests._(json),
+}; }
+
+static const AppPermissionsOrganizationPersonalAccessTokenRequests read = AppPermissionsOrganizationPersonalAccessTokenRequests._('read');
+
+static const AppPermissionsOrganizationPersonalAccessTokenRequests write = AppPermissionsOrganizationPersonalAccessTokenRequests._('write');
+
+static const List<AppPermissionsOrganizationPersonalAccessTokenRequests> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationPersonalAccessTokenRequests && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationPersonalAccessTokenRequests($value)'; } 
+ }
+/// The level of permission to grant the access token for viewing an organization's plan.
+final class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan._(this.value);
+
+factory AppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
+  'read' => read,
+  _ => AppPermissionsOrganizationPlan._(json),
+}; }
+
+static const AppPermissionsOrganizationPlan read = AppPermissionsOrganizationPlan._('read');
+
+static const List<AppPermissionsOrganizationPlan> values = [read];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationPlan && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationPlan($value)'; } 
+ }
+/// The level of permission to grant the access token to manage organization projects and projects public preview (where available).
+final class AppPermissionsOrganizationProjects {const AppPermissionsOrganizationProjects._(this.value);
+
+factory AppPermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  'admin' => admin,
+  _ => AppPermissionsOrganizationProjects._(json),
+}; }
+
+static const AppPermissionsOrganizationProjects read = AppPermissionsOrganizationProjects._('read');
+
+static const AppPermissionsOrganizationProjects write = AppPermissionsOrganizationProjects._('write');
+
+static const AppPermissionsOrganizationProjects admin = AppPermissionsOrganizationProjects._('admin');
+
+static const List<AppPermissionsOrganizationProjects> values = [read, write, admin];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationProjects && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationProjects($value)'; } 
+ }
+/// The level of permission to grant the access token for organization packages published to GitHub Packages.
+final class AppPermissionsOrganizationPackages {const AppPermissionsOrganizationPackages._(this.value);
+
+factory AppPermissionsOrganizationPackages.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationPackages._(json),
+}; }
+
+static const AppPermissionsOrganizationPackages read = AppPermissionsOrganizationPackages._('read');
+
+static const AppPermissionsOrganizationPackages write = AppPermissionsOrganizationPackages._('write');
+
+static const List<AppPermissionsOrganizationPackages> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationPackages && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationPackages($value)'; } 
+ }
+/// The level of permission to grant the access token to manage organization secrets.
+final class AppPermissionsOrganizationSecrets {const AppPermissionsOrganizationSecrets._(this.value);
+
+factory AppPermissionsOrganizationSecrets.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationSecrets._(json),
+}; }
+
+static const AppPermissionsOrganizationSecrets read = AppPermissionsOrganizationSecrets._('read');
+
+static const AppPermissionsOrganizationSecrets write = AppPermissionsOrganizationSecrets._('write');
+
+static const List<AppPermissionsOrganizationSecrets> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationSecrets && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationSecrets($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
+final class AppPermissionsOrganizationSelfHostedRunners {const AppPermissionsOrganizationSelfHostedRunners._(this.value);
+
+factory AppPermissionsOrganizationSelfHostedRunners.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationSelfHostedRunners._(json),
+}; }
+
+static const AppPermissionsOrganizationSelfHostedRunners read = AppPermissionsOrganizationSelfHostedRunners._('read');
+
+static const AppPermissionsOrganizationSelfHostedRunners write = AppPermissionsOrganizationSelfHostedRunners._('write');
+
+static const List<AppPermissionsOrganizationSelfHostedRunners> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationSelfHostedRunners && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationSelfHostedRunners($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage users blocked by the organization.
+final class AppPermissionsOrganizationUserBlocking {const AppPermissionsOrganizationUserBlocking._(this.value);
+
+factory AppPermissionsOrganizationUserBlocking.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsOrganizationUserBlocking._(json),
+}; }
+
+static const AppPermissionsOrganizationUserBlocking read = AppPermissionsOrganizationUserBlocking._('read');
+
+static const AppPermissionsOrganizationUserBlocking write = AppPermissionsOrganizationUserBlocking._('write');
+
+static const List<AppPermissionsOrganizationUserBlocking> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsOrganizationUserBlocking && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsOrganizationUserBlocking($value)'; } 
+ }
+/// The level of permission to grant the access token to manage the email addresses belonging to a user.
+final class AppPermissionsEmailAddresses {const AppPermissionsEmailAddresses._(this.value);
+
+factory AppPermissionsEmailAddresses.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsEmailAddresses._(json),
+}; }
+
+static const AppPermissionsEmailAddresses read = AppPermissionsEmailAddresses._('read');
+
+static const AppPermissionsEmailAddresses write = AppPermissionsEmailAddresses._('write');
+
+static const List<AppPermissionsEmailAddresses> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsEmailAddresses && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsEmailAddresses($value)'; } 
+ }
+/// The level of permission to grant the access token to manage the followers belonging to a user.
+final class AppPermissionsFollowers {const AppPermissionsFollowers._(this.value);
+
+factory AppPermissionsFollowers.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsFollowers._(json),
+}; }
+
+static const AppPermissionsFollowers read = AppPermissionsFollowers._('read');
+
+static const AppPermissionsFollowers write = AppPermissionsFollowers._('write');
+
+static const List<AppPermissionsFollowers> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsFollowers && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsFollowers($value)'; } 
+ }
+/// The level of permission to grant the access token to manage git SSH keys.
+final class AppPermissionsGitSshKeys {const AppPermissionsGitSshKeys._(this.value);
+
+factory AppPermissionsGitSshKeys.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsGitSshKeys._(json),
+}; }
+
+static const AppPermissionsGitSshKeys read = AppPermissionsGitSshKeys._('read');
+
+static const AppPermissionsGitSshKeys write = AppPermissionsGitSshKeys._('write');
+
+static const List<AppPermissionsGitSshKeys> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsGitSshKeys && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsGitSshKeys($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+final class AppPermissionsGpgKeys {const AppPermissionsGpgKeys._(this.value);
+
+factory AppPermissionsGpgKeys.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsGpgKeys._(json),
+}; }
+
+static const AppPermissionsGpgKeys read = AppPermissionsGpgKeys._('read');
+
+static const AppPermissionsGpgKeys write = AppPermissionsGpgKeys._('write');
+
+static const List<AppPermissionsGpgKeys> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsGpgKeys && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsGpgKeys($value)'; } 
+ }
+/// The level of permission to grant the access token to view and manage interaction limits on a repository.
+final class AppPermissionsInteractionLimits {const AppPermissionsInteractionLimits._(this.value);
+
+factory AppPermissionsInteractionLimits.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsInteractionLimits._(json),
+}; }
+
+static const AppPermissionsInteractionLimits read = AppPermissionsInteractionLimits._('read');
+
+static const AppPermissionsInteractionLimits write = AppPermissionsInteractionLimits._('write');
+
+static const List<AppPermissionsInteractionLimits> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsInteractionLimits && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsInteractionLimits($value)'; } 
+ }
+/// The level of permission to grant the access token to manage the profile settings belonging to a user.
+final class AppPermissionsProfile {const AppPermissionsProfile._(this.value);
+
+factory AppPermissionsProfile.fromJson(String json) { return switch (json) {
+  'write' => write,
+  _ => AppPermissionsProfile._(json),
+}; }
+
+static const AppPermissionsProfile write = AppPermissionsProfile._('write');
+
+static const List<AppPermissionsProfile> values = [write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsProfile && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsProfile($value)'; } 
+ }
+/// The level of permission to grant the access token to list and manage repositories a user is starring.
+final class AppPermissionsStarring {const AppPermissionsStarring._(this.value);
+
+factory AppPermissionsStarring.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => AppPermissionsStarring._(json),
+}; }
+
+static const AppPermissionsStarring read = AppPermissionsStarring._('read');
+
+static const AppPermissionsStarring write = AppPermissionsStarring._('write');
+
+static const List<AppPermissionsStarring> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsStarring && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsStarring($value)'; } 
+ }
+/// The level of permission to grant the access token for organization custom properties management at the enterprise level.
+final class AppPermissionsEnterpriseCustomPropertiesForOrganizations {const AppPermissionsEnterpriseCustomPropertiesForOrganizations._(this.value);
+
+factory AppPermissionsEnterpriseCustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  'admin' => admin,
+  _ => AppPermissionsEnterpriseCustomPropertiesForOrganizations._(json),
+}; }
+
+static const AppPermissionsEnterpriseCustomPropertiesForOrganizations read = AppPermissionsEnterpriseCustomPropertiesForOrganizations._('read');
+
+static const AppPermissionsEnterpriseCustomPropertiesForOrganizations write = AppPermissionsEnterpriseCustomPropertiesForOrganizations._('write');
+
+static const AppPermissionsEnterpriseCustomPropertiesForOrganizations admin = AppPermissionsEnterpriseCustomPropertiesForOrganizations._('admin');
+
+static const List<AppPermissionsEnterpriseCustomPropertiesForOrganizations> values = [read, write, admin];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AppPermissionsEnterpriseCustomPropertiesForOrganizations && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AppPermissionsEnterpriseCustomPropertiesForOrganizations($value)'; } 
+ }
+/// The permissions granted to the user access token.
+final class AppPermissions {const AppPermissions({this.actions, this.administration, this.artifactMetadata, this.attestations, this.checks, this.codespaces, this.contents, this.dependabotSecrets, this.deployments, this.discussions, this.environments, this.issues, this.mergeQueues, this.metadata, this.packages, this.pages, this.pullRequests, this.repositoryCustomProperties, this.repositoryHooks, this.repositoryProjects, this.secretScanningAlerts, this.secrets, this.securityEvents, this.singleFile, this.statuses, this.vulnerabilityAlerts, this.workflows, this.customPropertiesForOrganizations, this.members, this.organizationAdministration, this.organizationCustomRoles, this.organizationCustomOrgRoles, this.organizationCustomProperties, this.organizationCopilotSeatManagement, this.organizationAnnouncementBanners, this.organizationEvents, this.organizationHooks, this.organizationPersonalAccessTokens, this.organizationPersonalAccessTokenRequests, this.organizationPlan, this.organizationProjects, this.organizationPackages, this.organizationSecrets, this.organizationSelfHostedRunners, this.organizationUserBlocking, this.emailAddresses, this.followers, this.gitSshKeys, this.gpgKeys, this.interactionLimits, this.profile, this.starring, this.enterpriseCustomPropertiesForOrganizations, });
+
+factory AppPermissions.fromJson(Map<String, dynamic> json) { return AppPermissions(
+  actions: json['actions'] != null ? AppPermissionsActions.fromJson(json['actions'] as String) : null,
+  administration: json['administration'] != null ? AppPermissionsAdministration.fromJson(json['administration'] as String) : null,
+  artifactMetadata: json['artifact_metadata'] != null ? AppPermissionsArtifactMetadata.fromJson(json['artifact_metadata'] as String) : null,
+  attestations: json['attestations'] != null ? AppPermissionsAttestations.fromJson(json['attestations'] as String) : null,
+  checks: json['checks'] != null ? AppPermissionsChecks.fromJson(json['checks'] as String) : null,
+  codespaces: json['codespaces'] != null ? AppPermissionsCodespaces.fromJson(json['codespaces'] as String) : null,
+  contents: json['contents'] != null ? AppPermissionsContents.fromJson(json['contents'] as String) : null,
+  dependabotSecrets: json['dependabot_secrets'] != null ? AppPermissionsDependabotSecrets.fromJson(json['dependabot_secrets'] as String) : null,
+  deployments: json['deployments'] != null ? AppPermissionsDeployments.fromJson(json['deployments'] as String) : null,
+  discussions: json['discussions'] != null ? AppPermissionsDiscussions.fromJson(json['discussions'] as String) : null,
+  environments: json['environments'] != null ? AppPermissionsEnvironments.fromJson(json['environments'] as String) : null,
+  issues: json['issues'] != null ? AppPermissionsIssues.fromJson(json['issues'] as String) : null,
+  mergeQueues: json['merge_queues'] != null ? AppPermissionsMergeQueues.fromJson(json['merge_queues'] as String) : null,
+  metadata: json['metadata'] != null ? AppPermissionsMetadata.fromJson(json['metadata'] as String) : null,
+  packages: json['packages'] != null ? AppPermissionsPackages.fromJson(json['packages'] as String) : null,
+  pages: json['pages'] != null ? AppPermissionsPages.fromJson(json['pages'] as String) : null,
+  pullRequests: json['pull_requests'] != null ? AppPermissionsPullRequests.fromJson(json['pull_requests'] as String) : null,
+  repositoryCustomProperties: json['repository_custom_properties'] != null ? AppPermissionsRepositoryCustomProperties.fromJson(json['repository_custom_properties'] as String) : null,
+  repositoryHooks: json['repository_hooks'] != null ? AppPermissionsRepositoryHooks.fromJson(json['repository_hooks'] as String) : null,
+  repositoryProjects: json['repository_projects'] != null ? AppPermissionsRepositoryProjects.fromJson(json['repository_projects'] as String) : null,
+  secretScanningAlerts: json['secret_scanning_alerts'] != null ? AppPermissionsSecretScanningAlerts.fromJson(json['secret_scanning_alerts'] as String) : null,
+  secrets: json['secrets'] != null ? AppPermissionsSecrets.fromJson(json['secrets'] as String) : null,
+  securityEvents: json['security_events'] != null ? AppPermissionsSecurityEvents.fromJson(json['security_events'] as String) : null,
+  singleFile: json['single_file'] != null ? AppPermissionsSingleFile.fromJson(json['single_file'] as String) : null,
+  statuses: json['statuses'] != null ? AppPermissionsStatuses.fromJson(json['statuses'] as String) : null,
+  vulnerabilityAlerts: json['vulnerability_alerts'] != null ? AppPermissionsVulnerabilityAlerts.fromJson(json['vulnerability_alerts'] as String) : null,
+  workflows: json['workflows'] != null ? AppPermissionsWorkflows.fromJson(json['workflows'] as String) : null,
+  customPropertiesForOrganizations: json['custom_properties_for_organizations'] != null ? AppPermissionsCustomPropertiesForOrganizations.fromJson(json['custom_properties_for_organizations'] as String) : null,
+  members: json['members'] != null ? AppPermissionsMembers.fromJson(json['members'] as String) : null,
+  organizationAdministration: json['organization_administration'] != null ? AppPermissionsOrganizationAdministration.fromJson(json['organization_administration'] as String) : null,
+  organizationCustomRoles: json['organization_custom_roles'] != null ? AppPermissionsOrganizationCustomRoles.fromJson(json['organization_custom_roles'] as String) : null,
+  organizationCustomOrgRoles: json['organization_custom_org_roles'] != null ? AppPermissionsOrganizationCustomOrgRoles.fromJson(json['organization_custom_org_roles'] as String) : null,
+  organizationCustomProperties: json['organization_custom_properties'] != null ? AppPermissionsOrganizationCustomProperties.fromJson(json['organization_custom_properties'] as String) : null,
+  organizationCopilotSeatManagement: json['organization_copilot_seat_management'] != null ? AppPermissionsOrganizationCopilotSeatManagement.fromJson(json['organization_copilot_seat_management'] as String) : null,
+  organizationAnnouncementBanners: json['organization_announcement_banners'] != null ? AppPermissionsOrganizationAnnouncementBanners.fromJson(json['organization_announcement_banners'] as String) : null,
+  organizationEvents: json['organization_events'] != null ? AppPermissionsOrganizationEvents.fromJson(json['organization_events'] as String) : null,
+  organizationHooks: json['organization_hooks'] != null ? AppPermissionsOrganizationHooks.fromJson(json['organization_hooks'] as String) : null,
+  organizationPersonalAccessTokens: json['organization_personal_access_tokens'] != null ? AppPermissionsOrganizationPersonalAccessTokens.fromJson(json['organization_personal_access_tokens'] as String) : null,
+  organizationPersonalAccessTokenRequests: json['organization_personal_access_token_requests'] != null ? AppPermissionsOrganizationPersonalAccessTokenRequests.fromJson(json['organization_personal_access_token_requests'] as String) : null,
+  organizationPlan: json['organization_plan'] != null ? AppPermissionsOrganizationPlan.fromJson(json['organization_plan'] as String) : null,
+  organizationProjects: json['organization_projects'] != null ? AppPermissionsOrganizationProjects.fromJson(json['organization_projects'] as String) : null,
+  organizationPackages: json['organization_packages'] != null ? AppPermissionsOrganizationPackages.fromJson(json['organization_packages'] as String) : null,
+  organizationSecrets: json['organization_secrets'] != null ? AppPermissionsOrganizationSecrets.fromJson(json['organization_secrets'] as String) : null,
+  organizationSelfHostedRunners: json['organization_self_hosted_runners'] != null ? AppPermissionsOrganizationSelfHostedRunners.fromJson(json['organization_self_hosted_runners'] as String) : null,
+  organizationUserBlocking: json['organization_user_blocking'] != null ? AppPermissionsOrganizationUserBlocking.fromJson(json['organization_user_blocking'] as String) : null,
+  emailAddresses: json['email_addresses'] != null ? AppPermissionsEmailAddresses.fromJson(json['email_addresses'] as String) : null,
+  followers: json['followers'] != null ? AppPermissionsFollowers.fromJson(json['followers'] as String) : null,
+  gitSshKeys: json['git_ssh_keys'] != null ? AppPermissionsGitSshKeys.fromJson(json['git_ssh_keys'] as String) : null,
+  gpgKeys: json['gpg_keys'] != null ? AppPermissionsGpgKeys.fromJson(json['gpg_keys'] as String) : null,
+  interactionLimits: json['interaction_limits'] != null ? AppPermissionsInteractionLimits.fromJson(json['interaction_limits'] as String) : null,
+  profile: json['profile'] != null ? AppPermissionsProfile.fromJson(json['profile'] as String) : null,
+  starring: json['starring'] != null ? AppPermissionsStarring.fromJson(json['starring'] as String) : null,
+  enterpriseCustomPropertiesForOrganizations: json['enterprise_custom_properties_for_organizations'] != null ? AppPermissionsEnterpriseCustomPropertiesForOrganizations.fromJson(json['enterprise_custom_properties_for_organizations'] as String) : null,
+); }
+
+/// The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
+final AppPermissionsActions? actions;
+
+/// The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
+final AppPermissionsAdministration? administration;
+
+/// The level of permission to grant the access token to create and retrieve build artifact metadata records.
+final AppPermissionsArtifactMetadata? artifactMetadata;
+
+/// The level of permission to create and retrieve the access token for repository attestations.
+final AppPermissionsAttestations? attestations;
+
+/// The level of permission to grant the access token for checks on code.
+final AppPermissionsChecks? checks;
+
+/// The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+final AppPermissionsCodespaces? codespaces;
+
+/// The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
+final AppPermissionsContents? contents;
+
+/// The level of permission to grant the access token to manage Dependabot secrets.
+final AppPermissionsDependabotSecrets? dependabotSecrets;
+
+/// The level of permission to grant the access token for deployments and deployment statuses.
+final AppPermissionsDeployments? deployments;
+
+/// The level of permission to grant the access token for discussions and related comments and labels.
+final AppPermissionsDiscussions? discussions;
+
+/// The level of permission to grant the access token for managing repository environments.
+final AppPermissionsEnvironments? environments;
+
+/// The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
+final AppPermissionsIssues? issues;
+
+/// The level of permission to grant the access token to manage the merge queues for a repository.
+final AppPermissionsMergeQueues? mergeQueues;
+
+/// The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
+final AppPermissionsMetadata? metadata;
+
+/// The level of permission to grant the access token for packages published to GitHub Packages.
+final AppPermissionsPackages? packages;
+
+/// The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
+final AppPermissionsPages? pages;
+
+/// The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
+final AppPermissionsPullRequests? pullRequests;
+
+/// The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
+final AppPermissionsRepositoryCustomProperties? repositoryCustomProperties;
+
+/// The level of permission to grant the access token to manage the post-receive hooks for a repository.
+final AppPermissionsRepositoryHooks? repositoryHooks;
+
+/// The level of permission to grant the access token to manage repository projects, columns, and cards.
+final AppPermissionsRepositoryProjects? repositoryProjects;
+
+/// The level of permission to grant the access token to view and manage secret scanning alerts.
+final AppPermissionsSecretScanningAlerts? secretScanningAlerts;
+
+/// The level of permission to grant the access token to manage repository secrets.
+final AppPermissionsSecrets? secrets;
+
+/// The level of permission to grant the access token to view and manage security events like code scanning alerts.
+final AppPermissionsSecurityEvents? securityEvents;
+
+/// The level of permission to grant the access token to manage just a single file.
+final AppPermissionsSingleFile? singleFile;
+
+/// The level of permission to grant the access token for commit statuses.
+final AppPermissionsStatuses? statuses;
+
+/// The level of permission to grant the access token to manage Dependabot alerts.
+final AppPermissionsVulnerabilityAlerts? vulnerabilityAlerts;
+
+/// The level of permission to grant the access token to update GitHub Actions workflow files.
+final AppPermissionsWorkflows? workflows;
+
+/// The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
+final AppPermissionsCustomPropertiesForOrganizations? customPropertiesForOrganizations;
+
+/// The level of permission to grant the access token for organization teams and members.
+final AppPermissionsMembers? members;
+
+/// The level of permission to grant the access token to manage access to an organization.
+final AppPermissionsOrganizationAdministration? organizationAdministration;
+
+/// The level of permission to grant the access token for custom repository roles management.
+final AppPermissionsOrganizationCustomRoles? organizationCustomRoles;
+
+/// The level of permission to grant the access token for custom organization roles management.
+final AppPermissionsOrganizationCustomOrgRoles? organizationCustomOrgRoles;
+
+/// The level of permission to grant the access token for repository custom properties management at the organization level.
+final AppPermissionsOrganizationCustomProperties? organizationCustomProperties;
+
+/// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
+final AppPermissionsOrganizationCopilotSeatManagement? organizationCopilotSeatManagement;
+
+/// The level of permission to grant the access token to view and manage announcement banners for an organization.
+final AppPermissionsOrganizationAnnouncementBanners? organizationAnnouncementBanners;
+
+/// The level of permission to grant the access token to view events triggered by an activity in an organization.
+final AppPermissionsOrganizationEvents? organizationEvents;
+
+/// The level of permission to grant the access token to manage the post-receive hooks for an organization.
+final AppPermissionsOrganizationHooks? organizationHooks;
+
+/// The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
+final AppPermissionsOrganizationPersonalAccessTokens? organizationPersonalAccessTokens;
+
+/// The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
+final AppPermissionsOrganizationPersonalAccessTokenRequests? organizationPersonalAccessTokenRequests;
+
+/// The level of permission to grant the access token for viewing an organization's plan.
+final AppPermissionsOrganizationPlan? organizationPlan;
+
+/// The level of permission to grant the access token to manage organization projects and projects public preview (where available).
+final AppPermissionsOrganizationProjects? organizationProjects;
+
+/// The level of permission to grant the access token for organization packages published to GitHub Packages.
+final AppPermissionsOrganizationPackages? organizationPackages;
+
+/// The level of permission to grant the access token to manage organization secrets.
+final AppPermissionsOrganizationSecrets? organizationSecrets;
+
+/// The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
+final AppPermissionsOrganizationSelfHostedRunners? organizationSelfHostedRunners;
+
+/// The level of permission to grant the access token to view and manage users blocked by the organization.
+final AppPermissionsOrganizationUserBlocking? organizationUserBlocking;
+
+/// The level of permission to grant the access token to manage the email addresses belonging to a user.
+final AppPermissionsEmailAddresses? emailAddresses;
+
+/// The level of permission to grant the access token to manage the followers belonging to a user.
+final AppPermissionsFollowers? followers;
+
+/// The level of permission to grant the access token to manage git SSH keys.
+final AppPermissionsGitSshKeys? gitSshKeys;
+
+/// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+final AppPermissionsGpgKeys? gpgKeys;
+
+/// The level of permission to grant the access token to view and manage interaction limits on a repository.
+final AppPermissionsInteractionLimits? interactionLimits;
+
+/// The level of permission to grant the access token to manage the profile settings belonging to a user.
+final AppPermissionsProfile? profile;
+
+/// The level of permission to grant the access token to list and manage repositories a user is starring.
+final AppPermissionsStarring? starring;
+
+/// The level of permission to grant the access token for organization custom properties management at the enterprise level.
+final AppPermissionsEnterpriseCustomPropertiesForOrganizations? enterpriseCustomPropertiesForOrganizations;
+
+Map<String, dynamic> toJson() { return {
+  if (actions != null) 'actions': actions?.toJson(),
+  if (administration != null) 'administration': administration?.toJson(),
+  if (artifactMetadata != null) 'artifact_metadata': artifactMetadata?.toJson(),
+  if (attestations != null) 'attestations': attestations?.toJson(),
+  if (checks != null) 'checks': checks?.toJson(),
+  if (codespaces != null) 'codespaces': codespaces?.toJson(),
+  if (contents != null) 'contents': contents?.toJson(),
+  if (dependabotSecrets != null) 'dependabot_secrets': dependabotSecrets?.toJson(),
+  if (deployments != null) 'deployments': deployments?.toJson(),
+  if (discussions != null) 'discussions': discussions?.toJson(),
+  if (environments != null) 'environments': environments?.toJson(),
+  if (issues != null) 'issues': issues?.toJson(),
+  if (mergeQueues != null) 'merge_queues': mergeQueues?.toJson(),
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  if (packages != null) 'packages': packages?.toJson(),
+  if (pages != null) 'pages': pages?.toJson(),
+  if (pullRequests != null) 'pull_requests': pullRequests?.toJson(),
+  if (repositoryCustomProperties != null) 'repository_custom_properties': repositoryCustomProperties?.toJson(),
+  if (repositoryHooks != null) 'repository_hooks': repositoryHooks?.toJson(),
+  if (repositoryProjects != null) 'repository_projects': repositoryProjects?.toJson(),
+  if (secretScanningAlerts != null) 'secret_scanning_alerts': secretScanningAlerts?.toJson(),
+  if (secrets != null) 'secrets': secrets?.toJson(),
+  if (securityEvents != null) 'security_events': securityEvents?.toJson(),
+  if (singleFile != null) 'single_file': singleFile?.toJson(),
+  if (statuses != null) 'statuses': statuses?.toJson(),
+  if (vulnerabilityAlerts != null) 'vulnerability_alerts': vulnerabilityAlerts?.toJson(),
+  if (workflows != null) 'workflows': workflows?.toJson(),
+  if (customPropertiesForOrganizations != null) 'custom_properties_for_organizations': customPropertiesForOrganizations?.toJson(),
+  if (members != null) 'members': members?.toJson(),
+  if (organizationAdministration != null) 'organization_administration': organizationAdministration?.toJson(),
+  if (organizationCustomRoles != null) 'organization_custom_roles': organizationCustomRoles?.toJson(),
+  if (organizationCustomOrgRoles != null) 'organization_custom_org_roles': organizationCustomOrgRoles?.toJson(),
+  if (organizationCustomProperties != null) 'organization_custom_properties': organizationCustomProperties?.toJson(),
+  if (organizationCopilotSeatManagement != null) 'organization_copilot_seat_management': organizationCopilotSeatManagement?.toJson(),
+  if (organizationAnnouncementBanners != null) 'organization_announcement_banners': organizationAnnouncementBanners?.toJson(),
+  if (organizationEvents != null) 'organization_events': organizationEvents?.toJson(),
+  if (organizationHooks != null) 'organization_hooks': organizationHooks?.toJson(),
+  if (organizationPersonalAccessTokens != null) 'organization_personal_access_tokens': organizationPersonalAccessTokens?.toJson(),
+  if (organizationPersonalAccessTokenRequests != null) 'organization_personal_access_token_requests': organizationPersonalAccessTokenRequests?.toJson(),
+  if (organizationPlan != null) 'organization_plan': organizationPlan?.toJson(),
+  if (organizationProjects != null) 'organization_projects': organizationProjects?.toJson(),
+  if (organizationPackages != null) 'organization_packages': organizationPackages?.toJson(),
+  if (organizationSecrets != null) 'organization_secrets': organizationSecrets?.toJson(),
+  if (organizationSelfHostedRunners != null) 'organization_self_hosted_runners': organizationSelfHostedRunners?.toJson(),
+  if (organizationUserBlocking != null) 'organization_user_blocking': organizationUserBlocking?.toJson(),
+  if (emailAddresses != null) 'email_addresses': emailAddresses?.toJson(),
+  if (followers != null) 'followers': followers?.toJson(),
+  if (gitSshKeys != null) 'git_ssh_keys': gitSshKeys?.toJson(),
+  if (gpgKeys != null) 'gpg_keys': gpgKeys?.toJson(),
+  if (interactionLimits != null) 'interaction_limits': interactionLimits?.toJson(),
+  if (profile != null) 'profile': profile?.toJson(),
+  if (starring != null) 'starring': starring?.toJson(),
+  if (enterpriseCustomPropertiesForOrganizations != null) 'enterprise_custom_properties_for_organizations': enterpriseCustomPropertiesForOrganizations?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AppPermissions copyWith({AppPermissionsActions Function()? actions, AppPermissionsAdministration Function()? administration, AppPermissionsArtifactMetadata Function()? artifactMetadata, AppPermissionsAttestations Function()? attestations, AppPermissionsChecks Function()? checks, AppPermissionsCodespaces Function()? codespaces, AppPermissionsContents Function()? contents, AppPermissionsDependabotSecrets Function()? dependabotSecrets, AppPermissionsDeployments Function()? deployments, AppPermissionsDiscussions Function()? discussions, AppPermissionsEnvironments Function()? environments, AppPermissionsIssues Function()? issues, AppPermissionsMergeQueues Function()? mergeQueues, AppPermissionsMetadata Function()? metadata, AppPermissionsPackages Function()? packages, AppPermissionsPages Function()? pages, AppPermissionsPullRequests Function()? pullRequests, AppPermissionsRepositoryCustomProperties Function()? repositoryCustomProperties, AppPermissionsRepositoryHooks Function()? repositoryHooks, AppPermissionsRepositoryProjects Function()? repositoryProjects, AppPermissionsSecretScanningAlerts Function()? secretScanningAlerts, AppPermissionsSecrets Function()? secrets, AppPermissionsSecurityEvents Function()? securityEvents, AppPermissionsSingleFile Function()? singleFile, AppPermissionsStatuses Function()? statuses, AppPermissionsVulnerabilityAlerts Function()? vulnerabilityAlerts, AppPermissionsWorkflows Function()? workflows, AppPermissionsCustomPropertiesForOrganizations Function()? customPropertiesForOrganizations, AppPermissionsMembers Function()? members, AppPermissionsOrganizationAdministration Function()? organizationAdministration, AppPermissionsOrganizationCustomRoles Function()? organizationCustomRoles, AppPermissionsOrganizationCustomOrgRoles Function()? organizationCustomOrgRoles, AppPermissionsOrganizationCustomProperties Function()? organizationCustomProperties, AppPermissionsOrganizationCopilotSeatManagement Function()? organizationCopilotSeatManagement, AppPermissionsOrganizationAnnouncementBanners Function()? organizationAnnouncementBanners, AppPermissionsOrganizationEvents Function()? organizationEvents, AppPermissionsOrganizationHooks Function()? organizationHooks, AppPermissionsOrganizationPersonalAccessTokens Function()? organizationPersonalAccessTokens, AppPermissionsOrganizationPersonalAccessTokenRequests Function()? organizationPersonalAccessTokenRequests, AppPermissionsOrganizationPlan Function()? organizationPlan, AppPermissionsOrganizationProjects Function()? organizationProjects, AppPermissionsOrganizationPackages Function()? organizationPackages, AppPermissionsOrganizationSecrets Function()? organizationSecrets, AppPermissionsOrganizationSelfHostedRunners Function()? organizationSelfHostedRunners, AppPermissionsOrganizationUserBlocking Function()? organizationUserBlocking, AppPermissionsEmailAddresses Function()? emailAddresses, AppPermissionsFollowers Function()? followers, AppPermissionsGitSshKeys Function()? gitSshKeys, AppPermissionsGpgKeys Function()? gpgKeys, AppPermissionsInteractionLimits Function()? interactionLimits, AppPermissionsProfile Function()? profile, AppPermissionsStarring Function()? starring, AppPermissionsEnterpriseCustomPropertiesForOrganizations Function()? enterpriseCustomPropertiesForOrganizations, }) { return AppPermissions(
+  actions: actions != null ? actions() : this.actions,
+  administration: administration != null ? administration() : this.administration,
+  artifactMetadata: artifactMetadata != null ? artifactMetadata() : this.artifactMetadata,
+  attestations: attestations != null ? attestations() : this.attestations,
+  checks: checks != null ? checks() : this.checks,
+  codespaces: codespaces != null ? codespaces() : this.codespaces,
+  contents: contents != null ? contents() : this.contents,
+  dependabotSecrets: dependabotSecrets != null ? dependabotSecrets() : this.dependabotSecrets,
+  deployments: deployments != null ? deployments() : this.deployments,
+  discussions: discussions != null ? discussions() : this.discussions,
+  environments: environments != null ? environments() : this.environments,
+  issues: issues != null ? issues() : this.issues,
+  mergeQueues: mergeQueues != null ? mergeQueues() : this.mergeQueues,
+  metadata: metadata != null ? metadata() : this.metadata,
+  packages: packages != null ? packages() : this.packages,
+  pages: pages != null ? pages() : this.pages,
+  pullRequests: pullRequests != null ? pullRequests() : this.pullRequests,
+  repositoryCustomProperties: repositoryCustomProperties != null ? repositoryCustomProperties() : this.repositoryCustomProperties,
+  repositoryHooks: repositoryHooks != null ? repositoryHooks() : this.repositoryHooks,
+  repositoryProjects: repositoryProjects != null ? repositoryProjects() : this.repositoryProjects,
+  secretScanningAlerts: secretScanningAlerts != null ? secretScanningAlerts() : this.secretScanningAlerts,
+  secrets: secrets != null ? secrets() : this.secrets,
+  securityEvents: securityEvents != null ? securityEvents() : this.securityEvents,
+  singleFile: singleFile != null ? singleFile() : this.singleFile,
+  statuses: statuses != null ? statuses() : this.statuses,
+  vulnerabilityAlerts: vulnerabilityAlerts != null ? vulnerabilityAlerts() : this.vulnerabilityAlerts,
+  workflows: workflows != null ? workflows() : this.workflows,
+  customPropertiesForOrganizations: customPropertiesForOrganizations != null ? customPropertiesForOrganizations() : this.customPropertiesForOrganizations,
+  members: members != null ? members() : this.members,
+  organizationAdministration: organizationAdministration != null ? organizationAdministration() : this.organizationAdministration,
+  organizationCustomRoles: organizationCustomRoles != null ? organizationCustomRoles() : this.organizationCustomRoles,
+  organizationCustomOrgRoles: organizationCustomOrgRoles != null ? organizationCustomOrgRoles() : this.organizationCustomOrgRoles,
+  organizationCustomProperties: organizationCustomProperties != null ? organizationCustomProperties() : this.organizationCustomProperties,
+  organizationCopilotSeatManagement: organizationCopilotSeatManagement != null ? organizationCopilotSeatManagement() : this.organizationCopilotSeatManagement,
+  organizationAnnouncementBanners: organizationAnnouncementBanners != null ? organizationAnnouncementBanners() : this.organizationAnnouncementBanners,
+  organizationEvents: organizationEvents != null ? organizationEvents() : this.organizationEvents,
+  organizationHooks: organizationHooks != null ? organizationHooks() : this.organizationHooks,
+  organizationPersonalAccessTokens: organizationPersonalAccessTokens != null ? organizationPersonalAccessTokens() : this.organizationPersonalAccessTokens,
+  organizationPersonalAccessTokenRequests: organizationPersonalAccessTokenRequests != null ? organizationPersonalAccessTokenRequests() : this.organizationPersonalAccessTokenRequests,
+  organizationPlan: organizationPlan != null ? organizationPlan() : this.organizationPlan,
+  organizationProjects: organizationProjects != null ? organizationProjects() : this.organizationProjects,
+  organizationPackages: organizationPackages != null ? organizationPackages() : this.organizationPackages,
+  organizationSecrets: organizationSecrets != null ? organizationSecrets() : this.organizationSecrets,
+  organizationSelfHostedRunners: organizationSelfHostedRunners != null ? organizationSelfHostedRunners() : this.organizationSelfHostedRunners,
+  organizationUserBlocking: organizationUserBlocking != null ? organizationUserBlocking() : this.organizationUserBlocking,
+  emailAddresses: emailAddresses != null ? emailAddresses() : this.emailAddresses,
+  followers: followers != null ? followers() : this.followers,
+  gitSshKeys: gitSshKeys != null ? gitSshKeys() : this.gitSshKeys,
+  gpgKeys: gpgKeys != null ? gpgKeys() : this.gpgKeys,
+  interactionLimits: interactionLimits != null ? interactionLimits() : this.interactionLimits,
+  profile: profile != null ? profile() : this.profile,
+  starring: starring != null ? starring() : this.starring,
+  enterpriseCustomPropertiesForOrganizations: enterpriseCustomPropertiesForOrganizations != null ? enterpriseCustomPropertiesForOrganizations() : this.enterpriseCustomPropertiesForOrganizations,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AppPermissions &&
+          actions == other.actions &&
+          administration == other.administration &&
+          artifactMetadata == other.artifactMetadata &&
+          attestations == other.attestations &&
+          checks == other.checks &&
+          codespaces == other.codespaces &&
+          contents == other.contents &&
+          dependabotSecrets == other.dependabotSecrets &&
+          deployments == other.deployments &&
+          discussions == other.discussions &&
+          environments == other.environments &&
+          issues == other.issues &&
+          mergeQueues == other.mergeQueues &&
+          metadata == other.metadata &&
+          packages == other.packages &&
+          pages == other.pages &&
+          pullRequests == other.pullRequests &&
+          repositoryCustomProperties == other.repositoryCustomProperties &&
+          repositoryHooks == other.repositoryHooks &&
+          repositoryProjects == other.repositoryProjects &&
+          secretScanningAlerts == other.secretScanningAlerts &&
+          secrets == other.secrets &&
+          securityEvents == other.securityEvents &&
+          singleFile == other.singleFile &&
+          statuses == other.statuses &&
+          vulnerabilityAlerts == other.vulnerabilityAlerts &&
+          workflows == other.workflows &&
+          customPropertiesForOrganizations == other.customPropertiesForOrganizations &&
+          members == other.members &&
+          organizationAdministration == other.organizationAdministration &&
+          organizationCustomRoles == other.organizationCustomRoles &&
+          organizationCustomOrgRoles == other.organizationCustomOrgRoles &&
+          organizationCustomProperties == other.organizationCustomProperties &&
+          organizationCopilotSeatManagement == other.organizationCopilotSeatManagement &&
+          organizationAnnouncementBanners == other.organizationAnnouncementBanners &&
+          organizationEvents == other.organizationEvents &&
+          organizationHooks == other.organizationHooks &&
+          organizationPersonalAccessTokens == other.organizationPersonalAccessTokens &&
+          organizationPersonalAccessTokenRequests == other.organizationPersonalAccessTokenRequests &&
+          organizationPlan == other.organizationPlan &&
+          organizationProjects == other.organizationProjects &&
+          organizationPackages == other.organizationPackages &&
+          organizationSecrets == other.organizationSecrets &&
+          organizationSelfHostedRunners == other.organizationSelfHostedRunners &&
+          organizationUserBlocking == other.organizationUserBlocking &&
+          emailAddresses == other.emailAddresses &&
+          followers == other.followers &&
+          gitSshKeys == other.gitSshKeys &&
+          gpgKeys == other.gpgKeys &&
+          interactionLimits == other.interactionLimits &&
+          profile == other.profile &&
+          starring == other.starring &&
+          enterpriseCustomPropertiesForOrganizations == other.enterpriseCustomPropertiesForOrganizations; } 
+@override int get hashCode { return Object.hashAll([actions, administration, artifactMetadata, attestations, checks, codespaces, contents, dependabotSecrets, deployments, discussions, environments, issues, mergeQueues, metadata, packages, pages, pullRequests, repositoryCustomProperties, repositoryHooks, repositoryProjects, secretScanningAlerts, secrets, securityEvents, singleFile, statuses, vulnerabilityAlerts, workflows, customPropertiesForOrganizations, members, organizationAdministration, organizationCustomRoles, organizationCustomOrgRoles, organizationCustomProperties, organizationCopilotSeatManagement, organizationAnnouncementBanners, organizationEvents, organizationHooks, organizationPersonalAccessTokens, organizationPersonalAccessTokenRequests, organizationPlan, organizationProjects, organizationPackages, organizationSecrets, organizationSelfHostedRunners, organizationUserBlocking, emailAddresses, followers, gitSshKeys, gpgKeys, interactionLimits, profile, starring, enterpriseCustomPropertiesForOrganizations]); } 
+@override String toString() { return 'AppPermissions(actions: $actions, administration: $administration, artifactMetadata: $artifactMetadata, attestations: $attestations, checks: $checks, codespaces: $codespaces, contents: $contents, dependabotSecrets: $dependabotSecrets, deployments: $deployments, discussions: $discussions, environments: $environments, issues: $issues, mergeQueues: $mergeQueues, metadata: $metadata, packages: $packages, pages: $pages, pullRequests: $pullRequests, repositoryCustomProperties: $repositoryCustomProperties, repositoryHooks: $repositoryHooks, repositoryProjects: $repositoryProjects, secretScanningAlerts: $secretScanningAlerts, secrets: $secrets, securityEvents: $securityEvents, singleFile: $singleFile, statuses: $statuses, vulnerabilityAlerts: $vulnerabilityAlerts, workflows: $workflows, customPropertiesForOrganizations: $customPropertiesForOrganizations, members: $members, organizationAdministration: $organizationAdministration, organizationCustomRoles: $organizationCustomRoles, organizationCustomOrgRoles: $organizationCustomOrgRoles, organizationCustomProperties: $organizationCustomProperties, organizationCopilotSeatManagement: $organizationCopilotSeatManagement, organizationAnnouncementBanners: $organizationAnnouncementBanners, organizationEvents: $organizationEvents, organizationHooks: $organizationHooks, organizationPersonalAccessTokens: $organizationPersonalAccessTokens, organizationPersonalAccessTokenRequests: $organizationPersonalAccessTokenRequests, organizationPlan: $organizationPlan, organizationProjects: $organizationProjects, organizationPackages: $organizationPackages, organizationSecrets: $organizationSecrets, organizationSelfHostedRunners: $organizationSelfHostedRunners, organizationUserBlocking: $organizationUserBlocking, emailAddresses: $emailAddresses, followers: $followers, gitSshKeys: $gitSshKeys, gpgKeys: $gpgKeys, interactionLimits: $interactionLimits, profile: $profile, starring: $starring, enterpriseCustomPropertiesForOrganizations: $enterpriseCustomPropertiesForOrganizations)'; } 
+ }

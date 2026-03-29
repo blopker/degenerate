@@ -1,0 +1,284 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByCacheHitStatusQueryType {const RadarGetDnsSummaryByCacheHitStatusQueryType._(this.value);
+
+factory RadarGetDnsSummaryByCacheHitStatusQueryType.fromJson(String json) { return switch (json) {
+  'A' => a,
+  'AAAA' => aaaa,
+  'A6' => a6,
+  'AFSDB' => afsdb,
+  'ANY' => any,
+  'APL' => apl,
+  'ATMA' => atma,
+  'AXFR' => axfr,
+  'CAA' => caa,
+  'CDNSKEY' => cdnskey,
+  'CDS' => cds,
+  'CERT' => cert,
+  'CNAME' => cname,
+  'CSYNC' => csync,
+  'DHCID' => dhcid,
+  'DLV' => dlv,
+  'DNAME' => dname,
+  'DNSKEY' => dnskey,
+  'DOA' => doa,
+  'DS' => ds,
+  'EID' => eid,
+  'EUI48' => eui48,
+  'EUI64' => eui64,
+  'GPOS' => gpos,
+  'GID' => gid,
+  'HINFO' => hinfo,
+  'HIP' => hip,
+  'HTTPS' => https,
+  'IPSECKEY' => ipseckey,
+  'ISDN' => isdn,
+  'IXFR' => ixfr,
+  'KEY' => key,
+  'KX' => kx,
+  'L32' => l32,
+  'L64' => l64,
+  'LOC' => loc,
+  'LP' => lp,
+  'MAILA' => maila,
+  'MAILB' => mailb,
+  'MB' => mb,
+  'MD' => md,
+  'MF' => mf,
+  'MG' => mg,
+  'MINFO' => minfo,
+  'MR' => mr,
+  'MX' => mx,
+  'NAPTR' => naptr,
+  'NB' => nb,
+  'NBSTAT' => nbstat,
+  'NID' => nid,
+  'NIMLOC' => nimloc,
+  'NINFO' => ninfo,
+  'NS' => ns,
+  'NSAP' => nsap,
+  'NSEC' => nsec,
+  'NSEC3' => nsec3,
+  'NSEC3PARAM' => nsec3Param,
+  'NULL' => $null,
+  'NXT' => nxt,
+  'OPENPGPKEY' => openpgpkey,
+  'OPT' => opt,
+  'PTR' => ptr,
+  'PX' => px,
+  'RKEY' => rkey,
+  'RP' => rp,
+  'RRSIG' => rrsig,
+  'RT' => rt,
+  'SIG' => sig,
+  'SINK' => sink,
+  'SMIMEA' => smimea,
+  'SOA' => soa,
+  'SPF' => spf,
+  'SRV' => srv,
+  'SSHFP' => sshfp,
+  'SVCB' => svcb,
+  'TA' => ta,
+  'TALINK' => talink,
+  'TKEY' => tkey,
+  'TLSA' => tlsa,
+  'TSIG' => tsig,
+  'TXT' => txt,
+  'UINFO' => uinfo,
+  'UID' => uid,
+  'UNSPEC' => unspec,
+  'URI' => uri,
+  'WKS' => wks,
+  'X25' => x25,
+  'ZONEMD' => zonemd,
+  _ => RadarGetDnsSummaryByCacheHitStatusQueryType._(json),
+}; }
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType a = RadarGetDnsSummaryByCacheHitStatusQueryType._('A');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType aaaa = RadarGetDnsSummaryByCacheHitStatusQueryType._('AAAA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType a6 = RadarGetDnsSummaryByCacheHitStatusQueryType._('A6');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType afsdb = RadarGetDnsSummaryByCacheHitStatusQueryType._('AFSDB');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType any = RadarGetDnsSummaryByCacheHitStatusQueryType._('ANY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType apl = RadarGetDnsSummaryByCacheHitStatusQueryType._('APL');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType atma = RadarGetDnsSummaryByCacheHitStatusQueryType._('ATMA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType axfr = RadarGetDnsSummaryByCacheHitStatusQueryType._('AXFR');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType caa = RadarGetDnsSummaryByCacheHitStatusQueryType._('CAA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType cdnskey = RadarGetDnsSummaryByCacheHitStatusQueryType._('CDNSKEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType cds = RadarGetDnsSummaryByCacheHitStatusQueryType._('CDS');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType cert = RadarGetDnsSummaryByCacheHitStatusQueryType._('CERT');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType cname = RadarGetDnsSummaryByCacheHitStatusQueryType._('CNAME');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType csync = RadarGetDnsSummaryByCacheHitStatusQueryType._('CSYNC');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType dhcid = RadarGetDnsSummaryByCacheHitStatusQueryType._('DHCID');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType dlv = RadarGetDnsSummaryByCacheHitStatusQueryType._('DLV');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType dname = RadarGetDnsSummaryByCacheHitStatusQueryType._('DNAME');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType dnskey = RadarGetDnsSummaryByCacheHitStatusQueryType._('DNSKEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType doa = RadarGetDnsSummaryByCacheHitStatusQueryType._('DOA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ds = RadarGetDnsSummaryByCacheHitStatusQueryType._('DS');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType eid = RadarGetDnsSummaryByCacheHitStatusQueryType._('EID');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType eui48 = RadarGetDnsSummaryByCacheHitStatusQueryType._('EUI48');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType eui64 = RadarGetDnsSummaryByCacheHitStatusQueryType._('EUI64');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType gpos = RadarGetDnsSummaryByCacheHitStatusQueryType._('GPOS');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType gid = RadarGetDnsSummaryByCacheHitStatusQueryType._('GID');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType hinfo = RadarGetDnsSummaryByCacheHitStatusQueryType._('HINFO');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType hip = RadarGetDnsSummaryByCacheHitStatusQueryType._('HIP');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType https = RadarGetDnsSummaryByCacheHitStatusQueryType._('HTTPS');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ipseckey = RadarGetDnsSummaryByCacheHitStatusQueryType._('IPSECKEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType isdn = RadarGetDnsSummaryByCacheHitStatusQueryType._('ISDN');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ixfr = RadarGetDnsSummaryByCacheHitStatusQueryType._('IXFR');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType key = RadarGetDnsSummaryByCacheHitStatusQueryType._('KEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType kx = RadarGetDnsSummaryByCacheHitStatusQueryType._('KX');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType l32 = RadarGetDnsSummaryByCacheHitStatusQueryType._('L32');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType l64 = RadarGetDnsSummaryByCacheHitStatusQueryType._('L64');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType loc = RadarGetDnsSummaryByCacheHitStatusQueryType._('LOC');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType lp = RadarGetDnsSummaryByCacheHitStatusQueryType._('LP');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType maila = RadarGetDnsSummaryByCacheHitStatusQueryType._('MAILA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType mailb = RadarGetDnsSummaryByCacheHitStatusQueryType._('MAILB');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType mb = RadarGetDnsSummaryByCacheHitStatusQueryType._('MB');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType md = RadarGetDnsSummaryByCacheHitStatusQueryType._('MD');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType mf = RadarGetDnsSummaryByCacheHitStatusQueryType._('MF');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType mg = RadarGetDnsSummaryByCacheHitStatusQueryType._('MG');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType minfo = RadarGetDnsSummaryByCacheHitStatusQueryType._('MINFO');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType mr = RadarGetDnsSummaryByCacheHitStatusQueryType._('MR');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType mx = RadarGetDnsSummaryByCacheHitStatusQueryType._('MX');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType naptr = RadarGetDnsSummaryByCacheHitStatusQueryType._('NAPTR');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nb = RadarGetDnsSummaryByCacheHitStatusQueryType._('NB');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nbstat = RadarGetDnsSummaryByCacheHitStatusQueryType._('NBSTAT');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nid = RadarGetDnsSummaryByCacheHitStatusQueryType._('NID');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nimloc = RadarGetDnsSummaryByCacheHitStatusQueryType._('NIMLOC');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ninfo = RadarGetDnsSummaryByCacheHitStatusQueryType._('NINFO');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ns = RadarGetDnsSummaryByCacheHitStatusQueryType._('NS');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nsap = RadarGetDnsSummaryByCacheHitStatusQueryType._('NSAP');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nsec = RadarGetDnsSummaryByCacheHitStatusQueryType._('NSEC');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nsec3 = RadarGetDnsSummaryByCacheHitStatusQueryType._('NSEC3');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nsec3Param = RadarGetDnsSummaryByCacheHitStatusQueryType._('NSEC3PARAM');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType $null = RadarGetDnsSummaryByCacheHitStatusQueryType._('NULL');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType nxt = RadarGetDnsSummaryByCacheHitStatusQueryType._('NXT');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType openpgpkey = RadarGetDnsSummaryByCacheHitStatusQueryType._('OPENPGPKEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType opt = RadarGetDnsSummaryByCacheHitStatusQueryType._('OPT');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ptr = RadarGetDnsSummaryByCacheHitStatusQueryType._('PTR');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType px = RadarGetDnsSummaryByCacheHitStatusQueryType._('PX');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType rkey = RadarGetDnsSummaryByCacheHitStatusQueryType._('RKEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType rp = RadarGetDnsSummaryByCacheHitStatusQueryType._('RP');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType rrsig = RadarGetDnsSummaryByCacheHitStatusQueryType._('RRSIG');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType rt = RadarGetDnsSummaryByCacheHitStatusQueryType._('RT');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType sig = RadarGetDnsSummaryByCacheHitStatusQueryType._('SIG');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType sink = RadarGetDnsSummaryByCacheHitStatusQueryType._('SINK');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType smimea = RadarGetDnsSummaryByCacheHitStatusQueryType._('SMIMEA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType soa = RadarGetDnsSummaryByCacheHitStatusQueryType._('SOA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType spf = RadarGetDnsSummaryByCacheHitStatusQueryType._('SPF');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType srv = RadarGetDnsSummaryByCacheHitStatusQueryType._('SRV');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType sshfp = RadarGetDnsSummaryByCacheHitStatusQueryType._('SSHFP');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType svcb = RadarGetDnsSummaryByCacheHitStatusQueryType._('SVCB');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType ta = RadarGetDnsSummaryByCacheHitStatusQueryType._('TA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType talink = RadarGetDnsSummaryByCacheHitStatusQueryType._('TALINK');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType tkey = RadarGetDnsSummaryByCacheHitStatusQueryType._('TKEY');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType tlsa = RadarGetDnsSummaryByCacheHitStatusQueryType._('TLSA');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType tsig = RadarGetDnsSummaryByCacheHitStatusQueryType._('TSIG');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType txt = RadarGetDnsSummaryByCacheHitStatusQueryType._('TXT');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType uinfo = RadarGetDnsSummaryByCacheHitStatusQueryType._('UINFO');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType uid = RadarGetDnsSummaryByCacheHitStatusQueryType._('UID');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType unspec = RadarGetDnsSummaryByCacheHitStatusQueryType._('UNSPEC');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType uri = RadarGetDnsSummaryByCacheHitStatusQueryType._('URI');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType wks = RadarGetDnsSummaryByCacheHitStatusQueryType._('WKS');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType x25 = RadarGetDnsSummaryByCacheHitStatusQueryType._('X25');
+
+static const RadarGetDnsSummaryByCacheHitStatusQueryType zonemd = RadarGetDnsSummaryByCacheHitStatusQueryType._('ZONEMD');
+
+static const List<RadarGetDnsSummaryByCacheHitStatusQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByCacheHitStatusQueryType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByCacheHitStatusQueryType($value)'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'firewall_filters_components_schemas_paused.dart';/// A value that is one of: `FirewallFiltersComponentsSchemasPaused`.
+sealed class FiltersListFiltersPaused {const FiltersListFiltersPaused();
+
+factory FiltersListFiltersPaused.fromJson(Map<String, dynamic> json) {   return FiltersListFiltersPaused$Unknown(json); }
+
+/// The underlying raw value.
+dynamic get value;
+dynamic toJson() { return value; } 
+ }
+final class FiltersListFiltersPausedFirewallFiltersComponentsSchemasPaused extends FiltersListFiltersPaused {const FiltersListFiltersPausedFirewallFiltersComponentsSchemasPaused(this._value);
+
+final FirewallFiltersComponentsSchemasPaused _value;
+
+@override FirewallFiltersComponentsSchemasPaused get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FiltersListFiltersPausedFirewallFiltersComponentsSchemasPaused && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'FiltersListFiltersPaused.firewallFiltersComponentsSchemasPaused($_value)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+final class FiltersListFiltersPaused$Unknown extends FiltersListFiltersPaused {const FiltersListFiltersPaused$Unknown(this._value);
+
+final dynamic _value;
+
+@override dynamic get value { return _value ?? ''; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FiltersListFiltersPaused$Unknown && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'FiltersListFiltersPaused.unknown($_value)'; } 
+ }

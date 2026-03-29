@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'job.dart';final class ActionsListJobsForWorkflowRunAttemptResponse {const ActionsListJobsForWorkflowRunAttemptResponse({required this.totalCount, required this.jobs, });
+
+factory ActionsListJobsForWorkflowRunAttemptResponse.fromJson(Map<String, dynamic> json) { return ActionsListJobsForWorkflowRunAttemptResponse(
+  totalCount: (json['total_count'] as num).toInt(),
+  jobs: (json['jobs'] as List<dynamic>).map((e) => Job.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final int totalCount;
+
+final List<Job> jobs;
+
+Map<String, dynamic> toJson() { return {
+  'total_count': totalCount,
+  'jobs': jobs.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('jobs'); } 
+ActionsListJobsForWorkflowRunAttemptResponse copyWith({int? totalCount, List<Job>? jobs, }) { return ActionsListJobsForWorkflowRunAttemptResponse(
+  totalCount: totalCount ?? this.totalCount,
+  jobs: jobs ?? this.jobs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsListJobsForWorkflowRunAttemptResponse &&
+          totalCount == other.totalCount &&
+          listEquals(jobs, other.jobs); } 
+@override int get hashCode { return Object.hash(totalCount, Object.hashAll(jobs)); } 
+@override String toString() { return 'ActionsListJobsForWorkflowRunAttemptResponse(totalCount: $totalCount, jobs: $jobs)'; } 
+ }

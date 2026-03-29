@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
+
+factory PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) { return switch (json) {
+  '0' => $0,
+  '1' => $1,
+  '2' => $2,
+  '3' => $3,
+  '4' => $4,
+  'A' => a,
+  _ => PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(json),
+}; }
+
+static const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $0 = PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('0');
+
+static const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $1 = PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('1');
+
+static const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $2 = PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('2');
+
+static const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $3 = PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('3');
+
+static const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $4 = PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('4');
+
+static const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo a = PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('A');
+
+static const List<PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo> values = [$0, $1, $2, $3, $4, a];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)'; } 
+ }
+final class PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires {const PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
+
+factory PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) { return PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires(
+  cbAvalgo: PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(json['cb_avalgo'] as String),
+  cbExemption: json['cb_exemption'] as String?,
+  cbScore: json['cb_score'] != null ? (json['cb_score'] as num).toInt() : null,
+); }
+
+final PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo cbAvalgo;
+
+final String? cbExemption;
+
+final int? cbScore;
+
+Map<String, dynamic> toJson() { return {
+  'cb_avalgo': cbAvalgo.toJson(),
+  'cb_exemption': ?cbExemption,
+  'cb_score': ?cbScore,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('cb_avalgo'); } 
+PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires copyWith({PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancairesCbAvalgo? cbAvalgo, String Function()? cbExemption, int Function()? cbScore, }) { return PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires(
+  cbAvalgo: cbAvalgo ?? this.cbAvalgo,
+  cbExemption: cbExemption != null ? cbExemption() : this.cbExemption,
+  cbScore: cbScore != null ? cbScore() : this.cbScore,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires &&
+          cbAvalgo == other.cbAvalgo &&
+          cbExemption == other.cbExemption &&
+          cbScore == other.cbScore; } 
+@override int get hashCode { return Object.hash(cbAvalgo, cbExemption, cbScore); } 
+@override String toString() { return 'PaymentIntentParam3ThreeDSecureNetworkOptionsCartesBancaires(cbAvalgo: $cbAvalgo, cbExemption: $cbExemption, cbScore: $cbScore)'; } 
+ }

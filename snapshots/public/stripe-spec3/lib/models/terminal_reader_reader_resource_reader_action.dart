@@ -1,0 +1,157 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'terminal_reader_reader_resource_collect_inputs_action.dart';import 'terminal_reader_reader_resource_collect_payment_method_action.dart';import 'terminal_reader_reader_resource_confirm_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_payment_intent_action.dart';import 'terminal_reader_reader_resource_process_setup_intent_action.dart';import 'terminal_reader_reader_resource_refund_payment_action.dart';import 'terminal_reader_reader_resource_set_reader_display_action.dart';/// Status of the action performed by the reader.
+final class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus._(this.value);
+
+factory TerminalReaderReaderResourceReaderActionStatus.fromJson(String json) { return switch (json) {
+  'failed' => failed,
+  'in_progress' => inProgress,
+  'succeeded' => succeeded,
+  _ => TerminalReaderReaderResourceReaderActionStatus._(json),
+}; }
+
+static const TerminalReaderReaderResourceReaderActionStatus failed = TerminalReaderReaderResourceReaderActionStatus._('failed');
+
+static const TerminalReaderReaderResourceReaderActionStatus inProgress = TerminalReaderReaderResourceReaderActionStatus._('in_progress');
+
+static const TerminalReaderReaderResourceReaderActionStatus succeeded = TerminalReaderReaderResourceReaderActionStatus._('succeeded');
+
+static const List<TerminalReaderReaderResourceReaderActionStatus> values = [failed, inProgress, succeeded];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TerminalReaderReaderResourceReaderActionStatus($value)'; } 
+ }
+/// Type of action performed by the reader.
+final class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType._(this.value);
+
+factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) { return switch (json) {
+  'collect_inputs' => collectInputs,
+  'collect_payment_method' => collectPaymentMethod,
+  'confirm_payment_intent' => confirmPaymentIntent,
+  'process_payment_intent' => processPaymentIntent,
+  'process_setup_intent' => processSetupIntent,
+  'refund_payment' => refundPayment,
+  'set_reader_display' => setReaderDisplay,
+  _ => TerminalReaderReaderResourceReaderActionType._(json),
+}; }
+
+static const TerminalReaderReaderResourceReaderActionType collectInputs = TerminalReaderReaderResourceReaderActionType._('collect_inputs');
+
+static const TerminalReaderReaderResourceReaderActionType collectPaymentMethod = TerminalReaderReaderResourceReaderActionType._('collect_payment_method');
+
+static const TerminalReaderReaderResourceReaderActionType confirmPaymentIntent = TerminalReaderReaderResourceReaderActionType._('confirm_payment_intent');
+
+static const TerminalReaderReaderResourceReaderActionType processPaymentIntent = TerminalReaderReaderResourceReaderActionType._('process_payment_intent');
+
+static const TerminalReaderReaderResourceReaderActionType processSetupIntent = TerminalReaderReaderResourceReaderActionType._('process_setup_intent');
+
+static const TerminalReaderReaderResourceReaderActionType refundPayment = TerminalReaderReaderResourceReaderActionType._('refund_payment');
+
+static const TerminalReaderReaderResourceReaderActionType setReaderDisplay = TerminalReaderReaderResourceReaderActionType._('set_reader_display');
+
+static const List<TerminalReaderReaderResourceReaderActionType> values = [collectInputs, collectPaymentMethod, confirmPaymentIntent, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TerminalReaderReaderResourceReaderActionType($value)'; } 
+ }
+/// Represents an action performed by the reader
+final class TerminalReaderReaderResourceReaderAction {const TerminalReaderReaderResourceReaderAction({this.collectInputs, this.collectPaymentMethod, this.confirmPaymentIntent, this.failureCode, this.failureMessage, this.processPaymentIntent, this.processSetupIntent, this.refundPayment, this.setReaderDisplay, required this.status, required this.type, });
+
+factory TerminalReaderReaderResourceReaderAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceReaderAction(
+  collectInputs: json['collect_inputs'] != null ? TerminalReaderReaderResourceCollectInputsAction.fromJson(json['collect_inputs'] as Map<String, dynamic>) : null,
+  collectPaymentMethod: json['collect_payment_method'] != null ? TerminalReaderReaderResourceCollectPaymentMethodAction.fromJson(json['collect_payment_method'] as Map<String, dynamic>) : null,
+  confirmPaymentIntent: json['confirm_payment_intent'] != null ? TerminalReaderReaderResourceConfirmPaymentIntentAction.fromJson(json['confirm_payment_intent'] as Map<String, dynamic>) : null,
+  failureCode: json['failure_code'] as String?,
+  failureMessage: json['failure_message'] as String?,
+  processPaymentIntent: json['process_payment_intent'] != null ? TerminalReaderReaderResourceProcessPaymentIntentAction.fromJson(json['process_payment_intent'] as Map<String, dynamic>) : null,
+  processSetupIntent: json['process_setup_intent'] != null ? TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(json['process_setup_intent'] as Map<String, dynamic>) : null,
+  refundPayment: json['refund_payment'] != null ? TerminalReaderReaderResourceRefundPaymentAction.fromJson(json['refund_payment'] as Map<String, dynamic>) : null,
+  setReaderDisplay: json['set_reader_display'] != null ? TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(json['set_reader_display'] as Map<String, dynamic>) : null,
+  status: TerminalReaderReaderResourceReaderActionStatus.fromJson(json['status'] as String),
+  type: TerminalReaderReaderResourceReaderActionType.fromJson(json['type'] as String),
+); }
+
+final TerminalReaderReaderResourceCollectInputsAction? collectInputs;
+
+final TerminalReaderReaderResourceCollectPaymentMethodAction? collectPaymentMethod;
+
+final TerminalReaderReaderResourceConfirmPaymentIntentAction? confirmPaymentIntent;
+
+/// Failure code, only set if status is `failed`.
+final String? failureCode;
+
+/// Detailed failure message, only set if status is `failed`.
+final String? failureMessage;
+
+final TerminalReaderReaderResourceProcessPaymentIntentAction? processPaymentIntent;
+
+final TerminalReaderReaderResourceProcessSetupIntentAction? processSetupIntent;
+
+final TerminalReaderReaderResourceRefundPaymentAction? refundPayment;
+
+final TerminalReaderReaderResourceSetReaderDisplayAction? setReaderDisplay;
+
+/// Status of the action performed by the reader.
+final TerminalReaderReaderResourceReaderActionStatus status;
+
+/// Type of action performed by the reader.
+final TerminalReaderReaderResourceReaderActionType type;
+
+Map<String, dynamic> toJson() { return {
+  if (collectInputs != null) 'collect_inputs': collectInputs?.toJson(),
+  if (collectPaymentMethod != null) 'collect_payment_method': collectPaymentMethod?.toJson(),
+  if (confirmPaymentIntent != null) 'confirm_payment_intent': confirmPaymentIntent?.toJson(),
+  'failure_code': ?failureCode,
+  'failure_message': ?failureMessage,
+  if (processPaymentIntent != null) 'process_payment_intent': processPaymentIntent?.toJson(),
+  if (processSetupIntent != null) 'process_setup_intent': processSetupIntent?.toJson(),
+  if (refundPayment != null) 'refund_payment': refundPayment?.toJson(),
+  if (setReaderDisplay != null) 'set_reader_display': setReaderDisplay?.toJson(),
+  'status': status.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') &&
+      json.containsKey('type'); } 
+TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceCollectInputsAction Function()? collectInputs, TerminalReaderReaderResourceCollectPaymentMethodAction Function()? collectPaymentMethod, TerminalReaderReaderResourceConfirmPaymentIntentAction Function()? confirmPaymentIntent, String? Function()? failureCode, String? Function()? failureMessage, TerminalReaderReaderResourceProcessPaymentIntentAction Function()? processPaymentIntent, TerminalReaderReaderResourceProcessSetupIntentAction Function()? processSetupIntent, TerminalReaderReaderResourceRefundPaymentAction Function()? refundPayment, TerminalReaderReaderResourceSetReaderDisplayAction Function()? setReaderDisplay, TerminalReaderReaderResourceReaderActionStatus? status, TerminalReaderReaderResourceReaderActionType? type, }) { return TerminalReaderReaderResourceReaderAction(
+  collectInputs: collectInputs != null ? collectInputs() : this.collectInputs,
+  collectPaymentMethod: collectPaymentMethod != null ? collectPaymentMethod() : this.collectPaymentMethod,
+  confirmPaymentIntent: confirmPaymentIntent != null ? confirmPaymentIntent() : this.confirmPaymentIntent,
+  failureCode: failureCode != null ? failureCode() : this.failureCode,
+  failureMessage: failureMessage != null ? failureMessage() : this.failureMessage,
+  processPaymentIntent: processPaymentIntent != null ? processPaymentIntent() : this.processPaymentIntent,
+  processSetupIntent: processSetupIntent != null ? processSetupIntent() : this.processSetupIntent,
+  refundPayment: refundPayment != null ? refundPayment() : this.refundPayment,
+  setReaderDisplay: setReaderDisplay != null ? setReaderDisplay() : this.setReaderDisplay,
+  status: status ?? this.status,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TerminalReaderReaderResourceReaderAction &&
+          collectInputs == other.collectInputs &&
+          collectPaymentMethod == other.collectPaymentMethod &&
+          confirmPaymentIntent == other.confirmPaymentIntent &&
+          failureCode == other.failureCode &&
+          failureMessage == other.failureMessage &&
+          processPaymentIntent == other.processPaymentIntent &&
+          processSetupIntent == other.processSetupIntent &&
+          refundPayment == other.refundPayment &&
+          setReaderDisplay == other.setReaderDisplay &&
+          status == other.status &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(collectInputs, collectPaymentMethod, confirmPaymentIntent, failureCode, failureMessage, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay, status, type); } 
+@override String toString() { return 'TerminalReaderReaderResourceReaderAction(collectInputs: $collectInputs, collectPaymentMethod: $collectPaymentMethod, confirmPaymentIntent: $confirmPaymentIntent, failureCode: $failureCode, failureMessage: $failureMessage, processPaymentIntent: $processPaymentIntent, processSetupIntent: $processSetupIntent, refundPayment: $refundPayment, setReaderDisplay: $setReaderDisplay, status: $status, type: $type)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullsUpdateBranchResponse202 {const PullsUpdateBranchResponse202({this.message, this.url, });
+
+factory PullsUpdateBranchResponse202.fromJson(Map<String, dynamic> json) { return PullsUpdateBranchResponse202(
+  message: json['message'] as String?,
+  url: json['url'] as String?,
+); }
+
+final String? message;
+
+final String? url;
+
+Map<String, dynamic> toJson() { return {
+  'message': ?message,
+  'url': ?url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PullsUpdateBranchResponse202 copyWith({String Function()? message, String Function()? url, }) { return PullsUpdateBranchResponse202(
+  message: message != null ? message() : this.message,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullsUpdateBranchResponse202 &&
+          message == other.message &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(message, url); } 
+@override String toString() { return 'PullsUpdateBranchResponse202(message: $message, url: $url)'; } 
+ }

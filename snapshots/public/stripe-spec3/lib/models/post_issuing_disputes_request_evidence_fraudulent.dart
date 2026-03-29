@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fraudulent.dart';final class PostIssuingDisputesRequestEvidenceFraudulentVariant2 {const PostIssuingDisputesRequestEvidenceFraudulentVariant2._(this.value);
+
+factory PostIssuingDisputesRequestEvidenceFraudulentVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostIssuingDisputesRequestEvidenceFraudulentVariant2._(json),
+}; }
+
+static const PostIssuingDisputesRequestEvidenceFraudulentVariant2 $empty = PostIssuingDisputesRequestEvidenceFraudulentVariant2._('');
+
+static const List<PostIssuingDisputesRequestEvidenceFraudulentVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingDisputesRequestEvidenceFraudulentVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingDisputesRequestEvidenceFraudulentVariant2($value)'; } 
+ }
+typedef PostIssuingDisputesRequestEvidenceFraudulent = OneOf2<Fraudulent,PostIssuingDisputesRequestEvidenceFraudulentVariant2>;

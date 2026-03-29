@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class OrgsSetImmutableReleasesSettingsRepositoriesRequest {const OrgsSetImmutableReleasesSettingsRepositoriesRequest({required this.selectedRepositoryIds});
+
+factory OrgsSetImmutableReleasesSettingsRepositoriesRequest.fromJson(Map<String, dynamic> json) { return OrgsSetImmutableReleasesSettingsRepositoriesRequest(
+  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+); }
+
+/// An array of repository ids for which immutable releases enforcement should be applied. You can only provide a list of repository ids when the `enforced_repositories` is set to `selected`. You can add and remove individual repositories using the [Enable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization) and [Disable a selected repository for immutable releases in an organization](https://docs.github.com/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization) endpoints.
+final List<int> selectedRepositoryIds;
+
+Map<String, dynamic> toJson() { return {
+  'selected_repository_ids': selectedRepositoryIds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_repository_ids'); } 
+OrgsSetImmutableReleasesSettingsRepositoriesRequest copyWith({List<int>? selectedRepositoryIds}) { return OrgsSetImmutableReleasesSettingsRepositoriesRequest(
+  selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgsSetImmutableReleasesSettingsRepositoriesRequest &&
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override String toString() { return 'OrgsSetImmutableReleasesSettingsRepositoriesRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_links_request_invoice_creation_invoice_data.dart';/// Generate a post-purchase Invoice for one-time payments.
+final class PostPaymentLinksRequestInvoiceCreation {const PostPaymentLinksRequestInvoiceCreation({required this.enabled, this.invoiceData, });
+
+factory PostPaymentLinksRequestInvoiceCreation.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestInvoiceCreation(
+  enabled: json['enabled'] as bool,
+  invoiceData: json['invoice_data'] != null ? PostPaymentLinksRequestInvoiceCreationInvoiceData.fromJson(json['invoice_data'] as Map<String, dynamic>) : null,
+); }
+
+final bool enabled;
+
+final PostPaymentLinksRequestInvoiceCreationInvoiceData? invoiceData;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  if (invoiceData != null) 'invoice_data': invoiceData?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PostPaymentLinksRequestInvoiceCreation copyWith({bool? enabled, PostPaymentLinksRequestInvoiceCreationInvoiceData Function()? invoiceData, }) { return PostPaymentLinksRequestInvoiceCreation(
+  enabled: enabled ?? this.enabled,
+  invoiceData: invoiceData != null ? invoiceData() : this.invoiceData,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksRequestInvoiceCreation &&
+          enabled == other.enabled &&
+          invoiceData == other.invoiceData; } 
+@override int get hashCode { return Object.hash(enabled, invoiceData); } 
+@override String toString() { return 'PostPaymentLinksRequestInvoiceCreation(enabled: $enabled, invoiceData: $invoiceData)'; } 
+ }

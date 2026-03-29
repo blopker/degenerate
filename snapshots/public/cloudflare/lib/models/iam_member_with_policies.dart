@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_email.dart';import 'iam_list_member_policy.dart';import 'iam_member_with_policies_user.dart';import 'iam_membership_components_schemas_identifier.dart';import 'iam_role.dart';final class IamMemberWithPolicies {const IamMemberWithPolicies({this.email, this.id, this.policies, this.roles, this.status, this.user, });
+
+factory IamMemberWithPolicies.fromJson(Map<String, dynamic> json) { return IamMemberWithPolicies(
+  email: json['email'] != null ? IamEmail.fromJson(json['email'] as String) : null,
+  id: json['id'] != null ? IamMembershipComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => IamListMemberPolicy.fromJson(e as Map<String, dynamic>)).toList(),
+  roles: (json['roles'] as List<dynamic>?)?.map((e) => IamRole.fromJson(e as Map<String, dynamic>)).toList(),
+  status: json['status'],
+  user: json['user'] != null ? IamMemberWithPoliciesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+/// The contact email address of the user.
+final IamEmail? email;
+
+final IamMembershipComponentsSchemasIdentifier? id;
+
+/// Access policy for the membership
+final List<IamListMemberPolicy>? policies;
+
+/// Roles assigned to this Member.
+final List<IamRole>? roles;
+
+/// A member's status in the account.
+final dynamic status;
+
+/// Details of the user associated to the membership.
+final IamMemberWithPoliciesUser? user;
+
+Map<String, dynamic> toJson() { return {
+  if (email != null) 'email': email?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
+  if (roles != null) 'roles': roles?.map((e) => e.toJson()).toList(),
+  'status': ?status,
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IamMemberWithPolicies copyWith({IamEmail Function()? email, IamMembershipComponentsSchemasIdentifier Function()? id, List<IamListMemberPolicy> Function()? policies, List<IamRole> Function()? roles, dynamic Function()? status, IamMemberWithPoliciesUser Function()? user, }) { return IamMemberWithPolicies(
+  email: email != null ? email() : this.email,
+  id: id != null ? id() : this.id,
+  policies: policies != null ? policies() : this.policies,
+  roles: roles != null ? roles() : this.roles,
+  status: status != null ? status() : this.status,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IamMemberWithPolicies &&
+          email == other.email &&
+          id == other.id &&
+          listEquals(policies, other.policies) &&
+          listEquals(roles, other.roles) &&
+          status == other.status &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(email, id, Object.hashAll(policies ?? const []), Object.hashAll(roles ?? const []), status, user); } 
+@override String toString() { return 'IamMemberWithPolicies(email: $email, id: $id, policies: $policies, roles: $roles, status: $status, user: $user)'; } 
+ }

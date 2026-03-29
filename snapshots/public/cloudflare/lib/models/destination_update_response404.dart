@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destination_update_response404_errors.dart';import 'destination_update_response404_messages.dart';final class DestinationUpdateResponse404 {const DestinationUpdateResponse404({required this.errors, required this.messages, required this.success, });
+
+factory DestinationUpdateResponse404.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponse404(
+  errors: (json['errors'] as List<dynamic>).map((e) => DestinationUpdateResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationUpdateResponse404Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<DestinationUpdateResponse404Errors> errors;
+
+final List<DestinationUpdateResponse404Messages> messages;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+DestinationUpdateResponse404 copyWith({List<DestinationUpdateResponse404Errors>? errors, List<DestinationUpdateResponse404Messages>? messages, bool? success, }) { return DestinationUpdateResponse404(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DestinationUpdateResponse404 &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success); } 
+@override String toString() { return 'DestinationUpdateResponse404(errors: $errors, messages: $messages, success: $success)'; } 
+ }

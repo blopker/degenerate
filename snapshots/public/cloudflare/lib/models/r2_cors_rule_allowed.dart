@@ -1,0 +1,73 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class R2CorsRuleAllowedMethods {const R2CorsRuleAllowedMethods._(this.value);
+
+factory R2CorsRuleAllowedMethods.fromJson(String json) { return switch (json) {
+  'GET' => $get,
+  'PUT' => put,
+  'POST' => post,
+  'DELETE' => delete,
+  'HEAD' => head,
+  _ => R2CorsRuleAllowedMethods._(json),
+}; }
+
+static const R2CorsRuleAllowedMethods $get = R2CorsRuleAllowedMethods._('GET');
+
+static const R2CorsRuleAllowedMethods put = R2CorsRuleAllowedMethods._('PUT');
+
+static const R2CorsRuleAllowedMethods post = R2CorsRuleAllowedMethods._('POST');
+
+static const R2CorsRuleAllowedMethods delete = R2CorsRuleAllowedMethods._('DELETE');
+
+static const R2CorsRuleAllowedMethods head = R2CorsRuleAllowedMethods._('HEAD');
+
+static const List<R2CorsRuleAllowedMethods> values = [$get, put, post, delete, head];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is R2CorsRuleAllowedMethods && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'R2CorsRuleAllowedMethods($value)'; } 
+ }
+/// Object specifying allowed origins, methods and headers for this CORS rule.
+final class R2CorsRuleAllowed {const R2CorsRuleAllowed({this.headers, required this.methods, required this.origins, });
+
+factory R2CorsRuleAllowed.fromJson(Map<String, dynamic> json) { return R2CorsRuleAllowed(
+  headers: (json['headers'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  methods: (json['methods'] as List<dynamic>).map((e) => R2CorsRuleAllowedMethods.fromJson(e as String)).toList(),
+  origins: (json['origins'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// Specifies the value for the Access-Control-Allow-Headers header R2 sets when requesting objects in this bucket from a browser. Cross-origin requests that include custom headers (e.g. x-user-id) should specify these headers as AllowedHeaders.
+final List<String>? headers;
+
+/// Specifies the value for the Access-Control-Allow-Methods header R2 sets when requesting objects in a bucket from a browser.
+final List<R2CorsRuleAllowedMethods> methods;
+
+/// Specifies the value for the Access-Control-Allow-Origin header R2 sets when requesting objects in a bucket from a browser.
+final List<String> origins;
+
+Map<String, dynamic> toJson() { return {
+  'headers': ?headers,
+  'methods': methods.map((e) => e.toJson()).toList(),
+  'origins': origins,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('methods') &&
+      json.containsKey('origins'); } 
+R2CorsRuleAllowed copyWith({List<String> Function()? headers, List<R2CorsRuleAllowedMethods>? methods, List<String>? origins, }) { return R2CorsRuleAllowed(
+  headers: headers != null ? headers() : this.headers,
+  methods: methods ?? this.methods,
+  origins: origins ?? this.origins,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2CorsRuleAllowed &&
+          listEquals(headers, other.headers) &&
+          listEquals(methods, other.methods) &&
+          listEquals(origins, other.origins); } 
+@override int get hashCode { return Object.hash(Object.hashAll(headers ?? const []), Object.hashAll(methods), Object.hashAll(origins)); } 
+@override String toString() { return 'R2CorsRuleAllowed(headers: $headers, methods: $methods, origins: $origins)'; } 
+ }

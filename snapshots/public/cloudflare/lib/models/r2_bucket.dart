@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'r2_bucket_location.dart';import 'r2_bucket_name.dart';import 'r2_jurisdiction.dart';import 'r2_storage_class.dart';/// A single R2 bucket.
+final class R2Bucket {const R2Bucket({this.creationDate, this.jurisdiction, this.location, this.name, this.storageClass, });
+
+factory R2Bucket.fromJson(Map<String, dynamic> json) { return R2Bucket(
+  creationDate: json['creation_date'] as String?,
+  jurisdiction: json['jurisdiction'] != null ? R2Jurisdiction.fromJson(json['jurisdiction'] as String) : null,
+  location: json['location'] != null ? R2BucketLocation.fromJson(json['location'] as String) : null,
+  name: json['name'] != null ? R2BucketName.fromJson(json['name'] as String) : null,
+  storageClass: json['storage_class'] != null ? R2StorageClass.fromJson(json['storage_class'] as String) : null,
+); }
+
+/// Creation timestamp.
+final String? creationDate;
+
+final R2Jurisdiction? jurisdiction;
+
+final R2BucketLocation? location;
+
+final R2BucketName? name;
+
+final R2StorageClass? storageClass;
+
+Map<String, dynamic> toJson() { return {
+  'creation_date': ?creationDate,
+  if (jurisdiction != null) 'jurisdiction': jurisdiction?.toJson(),
+  if (location != null) 'location': location?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (storageClass != null) 'storage_class': storageClass?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2Bucket copyWith({String Function()? creationDate, R2Jurisdiction Function()? jurisdiction, R2BucketLocation Function()? location, R2BucketName Function()? name, R2StorageClass Function()? storageClass, }) { return R2Bucket(
+  creationDate: creationDate != null ? creationDate() : this.creationDate,
+  jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
+  location: location != null ? location() : this.location,
+  name: name != null ? name() : this.name,
+  storageClass: storageClass != null ? storageClass() : this.storageClass,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2Bucket &&
+          creationDate == other.creationDate &&
+          jurisdiction == other.jurisdiction &&
+          location == other.location &&
+          name == other.name &&
+          storageClass == other.storageClass; } 
+@override int get hashCode { return Object.hash(creationDate, jurisdiction, location, name, storageClass); } 
+@override String toString() { return 'R2Bucket(creationDate: $creationDate, jurisdiction: $jurisdiction, location: $location, name: $name, storageClass: $storageClass)'; } 
+ }

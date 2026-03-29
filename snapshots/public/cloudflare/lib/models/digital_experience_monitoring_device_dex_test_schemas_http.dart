@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_device_dex_test_schemas_data.dart';import 'digital_experience_monitoring_dex_target_policy.dart';import 'digital_experience_monitoring_schemas_test_id.dart';/// Additional details about the test.
+extension type const DigitalExperienceMonitoringDeviceDexTestSchemasDescription(String value) {
+factory DigitalExperienceMonitoringDeviceDexTestSchemasDescription.fromJson(String json) => DigitalExperienceMonitoringDeviceDexTestSchemasDescription(json);
+
+String toJson() => value;
+
+}
+/// Determines whether or not the test is active.
+extension type const DigitalExperienceMonitoringDeviceDexTestSchemasEnabled(bool value) {
+factory DigitalExperienceMonitoringDeviceDexTestSchemasEnabled.fromJson(bool json) => DigitalExperienceMonitoringDeviceDexTestSchemasEnabled(json);
+
+bool toJson() => value;
+
+}
+/// How often the test will run.
+extension type const DigitalExperienceMonitoringDeviceDexTestSchemasInterval(String value) {
+factory DigitalExperienceMonitoringDeviceDexTestSchemasInterval.fromJson(String json) => DigitalExperienceMonitoringDeviceDexTestSchemasInterval(json);
+
+String toJson() => value;
+
+}
+/// The name of the DEX test. Must be unique.
+extension type const DigitalExperienceMonitoringDeviceDexTestSchemasName(String value) {
+factory DigitalExperienceMonitoringDeviceDexTestSchemasName.fromJson(String json) => DigitalExperienceMonitoringDeviceDexTestSchemasName(json);
+
+String toJson() => value;
+
+}
+final class DigitalExperienceMonitoringDeviceDexTestSchemasHttp {const DigitalExperienceMonitoringDeviceDexTestSchemasHttp({required this.data, this.description, required this.enabled, required this.interval, required this.name, this.targetPolicies, this.targeted, this.testId, });
+
+factory DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttp(
+  data: DigitalExperienceMonitoringDeviceDexTestSchemasData.fromJson(json['data'] as Map<String, dynamic>),
+  description: json['description'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasDescription.fromJson(json['description'] as String) : null,
+  enabled: DigitalExperienceMonitoringDeviceDexTestSchemasEnabled.fromJson(json['enabled'] as bool),
+  interval: DigitalExperienceMonitoringDeviceDexTestSchemasInterval.fromJson(json['interval'] as String),
+  name: DigitalExperienceMonitoringDeviceDexTestSchemasName.fromJson(json['name'] as String),
+  targetPolicies: (json['target_policies'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDexTargetPolicy.fromJson(e as Map<String, dynamic>)).toList(),
+  targeted: json['targeted'] as bool?,
+  testId: json['test_id'] != null ? DigitalExperienceMonitoringSchemasTestId.fromJson(json['test_id'] as String) : null,
+); }
+
+final DigitalExperienceMonitoringDeviceDexTestSchemasData data;
+
+/// Additional details about the test.
+final DigitalExperienceMonitoringDeviceDexTestSchemasDescription? description;
+
+/// Determines whether or not the test is active.
+final DigitalExperienceMonitoringDeviceDexTestSchemasEnabled enabled;
+
+final DigitalExperienceMonitoringDeviceDexTestSchemasInterval interval;
+
+final DigitalExperienceMonitoringDeviceDexTestSchemasName name;
+
+final List<DigitalExperienceMonitoringDexTargetPolicy>? targetPolicies;
+
+final bool? targeted;
+
+final DigitalExperienceMonitoringSchemasTestId? testId;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  'enabled': enabled.toJson(),
+  'interval': interval.toJson(),
+  'name': name.toJson(),
+  if (targetPolicies != null) 'target_policies': targetPolicies?.map((e) => e.toJson()).toList(),
+  'targeted': ?targeted,
+  if (testId != null) 'test_id': testId?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+      json.containsKey('enabled') &&
+      json.containsKey('interval') &&
+      json.containsKey('name'); } 
+DigitalExperienceMonitoringDeviceDexTestSchemasHttp copyWith({DigitalExperienceMonitoringDeviceDexTestSchemasData? data, DigitalExperienceMonitoringDeviceDexTestSchemasDescription Function()? description, DigitalExperienceMonitoringDeviceDexTestSchemasEnabled? enabled, DigitalExperienceMonitoringDeviceDexTestSchemasInterval? interval, DigitalExperienceMonitoringDeviceDexTestSchemasName? name, List<DigitalExperienceMonitoringDexTargetPolicy> Function()? targetPolicies, bool Function()? targeted, DigitalExperienceMonitoringSchemasTestId Function()? testId, }) { return DigitalExperienceMonitoringDeviceDexTestSchemasHttp(
+  data: data ?? this.data,
+  description: description != null ? description() : this.description,
+  enabled: enabled ?? this.enabled,
+  interval: interval ?? this.interval,
+  name: name ?? this.name,
+  targetPolicies: targetPolicies != null ? targetPolicies() : this.targetPolicies,
+  targeted: targeted != null ? targeted() : this.targeted,
+  testId: testId != null ? testId() : this.testId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringDeviceDexTestSchemasHttp &&
+          data == other.data &&
+          description == other.description &&
+          enabled == other.enabled &&
+          interval == other.interval &&
+          name == other.name &&
+          listEquals(targetPolicies, other.targetPolicies) &&
+          targeted == other.targeted &&
+          testId == other.testId; } 
+@override int get hashCode { return Object.hash(data, description, enabled, interval, name, Object.hashAll(targetPolicies ?? const []), targeted, testId); } 
+@override String toString() { return 'DigitalExperienceMonitoringDeviceDexTestSchemasHttp(data: $data, description: $description, enabled: $enabled, interval: $interval, name: $name, targetPolicies: $targetPolicies, targeted: $targeted, testId: $testId)'; } 
+ }

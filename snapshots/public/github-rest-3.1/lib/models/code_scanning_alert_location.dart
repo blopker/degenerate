@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Describe a region within a file for the alert.
+final class CodeScanningAlertLocation {const CodeScanningAlertLocation({this.path, this.startLine, this.endLine, this.startColumn, this.endColumn, });
+
+factory CodeScanningAlertLocation.fromJson(Map<String, dynamic> json) { return CodeScanningAlertLocation(
+  path: json['path'] as String?,
+  startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
+  endLine: json['end_line'] != null ? (json['end_line'] as num).toInt() : null,
+  startColumn: json['start_column'] != null ? (json['start_column'] as num).toInt() : null,
+  endColumn: json['end_column'] != null ? (json['end_column'] as num).toInt() : null,
+); }
+
+final String? path;
+
+final int? startLine;
+
+final int? endLine;
+
+final int? startColumn;
+
+final int? endColumn;
+
+Map<String, dynamic> toJson() { return {
+  'path': ?path,
+  'start_line': ?startLine,
+  'end_line': ?endLine,
+  'start_column': ?startColumn,
+  'end_column': ?endColumn,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodeScanningAlertLocation copyWith({String Function()? path, int Function()? startLine, int Function()? endLine, int Function()? startColumn, int Function()? endColumn, }) { return CodeScanningAlertLocation(
+  path: path != null ? path() : this.path,
+  startLine: startLine != null ? startLine() : this.startLine,
+  endLine: endLine != null ? endLine() : this.endLine,
+  startColumn: startColumn != null ? startColumn() : this.startColumn,
+  endColumn: endColumn != null ? endColumn() : this.endColumn,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeScanningAlertLocation &&
+          path == other.path &&
+          startLine == other.startLine &&
+          endLine == other.endLine &&
+          startColumn == other.startColumn &&
+          endColumn == other.endColumn; } 
+@override int get hashCode { return Object.hash(path, startLine, endLine, startColumn, endColumn); } 
+@override String toString() { return 'CodeScanningAlertLocation(path: $path, startLine: $startLine, endLine: $endLine, startColumn: $startColumn, endColumn: $endColumn)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_list_custom_domains_response_domains.dart';final class R2ListCustomDomainsResponse {const R2ListCustomDomainsResponse({required this.domains});
+
+factory R2ListCustomDomainsResponse.fromJson(Map<String, dynamic> json) { return R2ListCustomDomainsResponse(
+  domains: (json['domains'] as List<dynamic>).map((e) => R2ListCustomDomainsResponseDomains.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<R2ListCustomDomainsResponseDomains> domains;
+
+Map<String, dynamic> toJson() { return {
+  'domains': domains.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('domains'); } 
+R2ListCustomDomainsResponse copyWith({List<R2ListCustomDomainsResponseDomains>? domains}) { return R2ListCustomDomainsResponse(
+  domains: domains ?? this.domains,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2ListCustomDomainsResponse &&
+          listEquals(domains, other.domains); } 
+@override int get hashCode { return Object.hashAll(domains).hashCode; } 
+@override String toString() { return 'R2ListCustomDomainsResponse(domains: $domains)'; } 
+ }

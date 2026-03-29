@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_embeddings_text.dart';final class TextEmbeddings {const TextEmbeddings({required this.text});
+
+factory TextEmbeddings.fromJson(Map<String, dynamic> json) { return TextEmbeddings(
+  text: OneOf2.parse(json['text'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),),
+); }
+
+final TextEmbeddingsText text;
+
+Map<String, dynamic> toJson() { return {
+  'text': text.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'); } 
+TextEmbeddings copyWith({TextEmbeddingsText? text}) { return TextEmbeddings(
+  text: text ?? this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TextEmbeddings &&
+          text == other.text; } 
+@override int get hashCode { return text.hashCode; } 
+@override String toString() { return 'TextEmbeddings(text: $text)'; } 
+ }

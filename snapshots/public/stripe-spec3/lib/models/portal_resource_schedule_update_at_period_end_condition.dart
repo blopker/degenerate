@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of condition.
+final class PortalResourceScheduleUpdateAtPeriodEndConditionType {const PortalResourceScheduleUpdateAtPeriodEndConditionType._(this.value);
+
+factory PortalResourceScheduleUpdateAtPeriodEndConditionType.fromJson(String json) { return switch (json) {
+  'decreasing_item_amount' => decreasingItemAmount,
+  'shortening_interval' => shorteningInterval,
+  _ => PortalResourceScheduleUpdateAtPeriodEndConditionType._(json),
+}; }
+
+static const PortalResourceScheduleUpdateAtPeriodEndConditionType decreasingItemAmount = PortalResourceScheduleUpdateAtPeriodEndConditionType._('decreasing_item_amount');
+
+static const PortalResourceScheduleUpdateAtPeriodEndConditionType shorteningInterval = PortalResourceScheduleUpdateAtPeriodEndConditionType._('shortening_interval');
+
+static const List<PortalResourceScheduleUpdateAtPeriodEndConditionType> values = [decreasingItemAmount, shorteningInterval];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PortalResourceScheduleUpdateAtPeriodEndConditionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PortalResourceScheduleUpdateAtPeriodEndConditionType($value)'; } 
+ }
+/// 
+final class PortalResourceScheduleUpdateAtPeriodEndCondition {const PortalResourceScheduleUpdateAtPeriodEndCondition({required this.type});
+
+factory PortalResourceScheduleUpdateAtPeriodEndCondition.fromJson(Map<String, dynamic> json) { return PortalResourceScheduleUpdateAtPeriodEndCondition(
+  type: PortalResourceScheduleUpdateAtPeriodEndConditionType.fromJson(json['type'] as String),
+); }
+
+/// The type of condition.
+final PortalResourceScheduleUpdateAtPeriodEndConditionType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PortalResourceScheduleUpdateAtPeriodEndCondition copyWith({PortalResourceScheduleUpdateAtPeriodEndConditionType? type}) { return PortalResourceScheduleUpdateAtPeriodEndCondition(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PortalResourceScheduleUpdateAtPeriodEndCondition &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'PortalResourceScheduleUpdateAtPeriodEndCondition(type: $type)'; } 
+ }

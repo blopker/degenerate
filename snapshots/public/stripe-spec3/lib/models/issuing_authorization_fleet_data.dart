@@ -1,0 +1,102 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_authorization_fleet_data_cardholder_prompt_data.dart';import 'issuing_authorization_fleet_data_reported_breakdown.dart';/// The type of purchase.
+final class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType._(this.value);
+
+factory IssuingAuthorizationFleetDataPurchaseType.fromJson(String json) { return switch (json) {
+  'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
+  'fuel_purchase' => fuelPurchase,
+  'non_fuel_purchase' => nonFuelPurchase,
+  _ => IssuingAuthorizationFleetDataPurchaseType._(json),
+}; }
+
+static const IssuingAuthorizationFleetDataPurchaseType fuelAndNonFuelPurchase = IssuingAuthorizationFleetDataPurchaseType._('fuel_and_non_fuel_purchase');
+
+static const IssuingAuthorizationFleetDataPurchaseType fuelPurchase = IssuingAuthorizationFleetDataPurchaseType._('fuel_purchase');
+
+static const IssuingAuthorizationFleetDataPurchaseType nonFuelPurchase = IssuingAuthorizationFleetDataPurchaseType._('non_fuel_purchase');
+
+static const List<IssuingAuthorizationFleetDataPurchaseType> values = [fuelAndNonFuelPurchase, fuelPurchase, nonFuelPurchase];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingAuthorizationFleetDataPurchaseType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingAuthorizationFleetDataPurchaseType($value)'; } 
+ }
+/// The type of fuel service.
+final class IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType._(this.value);
+
+factory IssuingAuthorizationFleetDataServiceType.fromJson(String json) { return switch (json) {
+  'full_service' => fullService,
+  'non_fuel_transaction' => nonFuelTransaction,
+  'self_service' => selfService,
+  _ => IssuingAuthorizationFleetDataServiceType._(json),
+}; }
+
+static const IssuingAuthorizationFleetDataServiceType fullService = IssuingAuthorizationFleetDataServiceType._('full_service');
+
+static const IssuingAuthorizationFleetDataServiceType nonFuelTransaction = IssuingAuthorizationFleetDataServiceType._('non_fuel_transaction');
+
+static const IssuingAuthorizationFleetDataServiceType selfService = IssuingAuthorizationFleetDataServiceType._('self_service');
+
+static const List<IssuingAuthorizationFleetDataServiceType> values = [fullService, nonFuelTransaction, selfService];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingAuthorizationFleetDataServiceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingAuthorizationFleetDataServiceType($value)'; } 
+ }
+/// 
+final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
+
+factory IssuingAuthorizationFleetData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetData(
+  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
+  purchaseType: json['purchase_type'] != null ? IssuingAuthorizationFleetDataPurchaseType.fromJson(json['purchase_type'] as String) : null,
+  reportedBreakdown: json['reported_breakdown'] != null ? IssuingAuthorizationFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
+  serviceType: json['service_type'] != null ? IssuingAuthorizationFleetDataServiceType.fromJson(json['service_type'] as String) : null,
+); }
+
+/// Answers to prompts presented to the cardholder at the point of sale. Prompted fields vary depending on the configuration of your physical fleet cards. Typical points of sale support only numeric entry.
+final IssuingAuthorizationFleetDataCardholderPromptData? cardholderPromptData;
+
+/// The type of purchase.
+final IssuingAuthorizationFleetDataPurchaseType? purchaseType;
+
+/// More information about the total amount. Typically this information is received from the merchant after the authorization has been approved and the fuel dispensed. This information is not guaranteed to be accurate as some merchants may provide unreliable data.
+final IssuingAuthorizationFleetDataReportedBreakdown? reportedBreakdown;
+
+/// The type of fuel service.
+final IssuingAuthorizationFleetDataServiceType? serviceType;
+
+Map<String, dynamic> toJson() { return {
+  if (cardholderPromptData != null) 'cardholder_prompt_data': cardholderPromptData?.toJson(),
+  if (purchaseType != null) 'purchase_type': purchaseType?.toJson(),
+  if (reportedBreakdown != null) 'reported_breakdown': reportedBreakdown?.toJson(),
+  if (serviceType != null) 'service_type': serviceType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuingAuthorizationFleetData copyWith({IssuingAuthorizationFleetDataCardholderPromptData? Function()? cardholderPromptData, IssuingAuthorizationFleetDataPurchaseType? Function()? purchaseType, IssuingAuthorizationFleetDataReportedBreakdown? Function()? reportedBreakdown, IssuingAuthorizationFleetDataServiceType? Function()? serviceType, }) { return IssuingAuthorizationFleetData(
+  cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
+  purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
+  reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,
+  serviceType: serviceType != null ? serviceType() : this.serviceType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingAuthorizationFleetData &&
+          cardholderPromptData == other.cardholderPromptData &&
+          purchaseType == other.purchaseType &&
+          reportedBreakdown == other.reportedBreakdown &&
+          serviceType == other.serviceType; } 
+@override int get hashCode { return Object.hash(cardholderPromptData, purchaseType, reportedBreakdown, serviceType); } 
+@override String toString() { return 'IssuingAuthorizationFleetData(cardholderPromptData: $cardholderPromptData, purchaseType: $purchaseType, reportedBreakdown: $reportedBreakdown, serviceType: $serviceType)'; } 
+ }

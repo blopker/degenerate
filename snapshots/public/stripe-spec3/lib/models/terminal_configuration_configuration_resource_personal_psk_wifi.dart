@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class TerminalConfigurationConfigurationResourcePersonalPskWifi {const TerminalConfigurationConfigurationResourcePersonalPskWifi({required this.password, required this.ssid, });
+
+factory TerminalConfigurationConfigurationResourcePersonalPskWifi.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourcePersonalPskWifi(
+  password: json['password'] as String,
+  ssid: json['ssid'] as String,
+); }
+
+/// Password for connecting to the WiFi network
+final String password;
+
+/// Name of the WiFi network
+final String ssid;
+
+Map<String, dynamic> toJson() { return {
+  'password': password,
+  'ssid': ssid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('password') && json['password'] is String &&
+      json.containsKey('ssid') && json['ssid'] is String; } 
+TerminalConfigurationConfigurationResourcePersonalPskWifi copyWith({String? password, String? ssid, }) { return TerminalConfigurationConfigurationResourcePersonalPskWifi(
+  password: password ?? this.password,
+  ssid: ssid ?? this.ssid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TerminalConfigurationConfigurationResourcePersonalPskWifi &&
+          password == other.password &&
+          ssid == other.ssid; } 
+@override int get hashCode { return Object.hash(password, ssid); } 
+@override String toString() { return 'TerminalConfigurationConfigurationResourcePersonalPskWifi(password: $password, ssid: $ssid)'; } 
+ }

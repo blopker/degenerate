@@ -1,0 +1,141 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common66.dart';import '../models/stream_caption_basic_upload.dart';import '../models/stream_identifier.dart';import '../models/stream_language.dart';import '../models/stream_schemas_identifier.dart';/// StreamSubtitlesCaptionsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class StreamSubtitlesCaptionsApi with ApiExecutor {const StreamSubtitlesCaptionsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List captions or subtitles
+///
+/// Lists the available captions or subtitles for a specific video.
+///
+/// `GET /accounts/{account_id}/stream/{identifier}/captions`
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsListCaptionsOrSubtitles({required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List captions or subtitles for a provided language
+///
+/// Lists the captions or subtitles for provided language.
+///
+/// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}`
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGetCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Upload captions or subtitles
+///
+/// Uploads the caption or subtitle file to the endpoint for a specific BCP47 language. One caption or subtitle file per language is allowed.
+///
+/// `PUT /accounts/{account_id}/stream/{identifier}/captions/{language}`
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsUploadCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, required StreamCaptionBasicUpload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
+  headers: headers,
+  body: [
+    ApiMultipartField.text('file', body.file),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete captions or subtitles
+///
+/// Removes the captions or subtitles from a video.
+///
+/// `DELETE /accounts/{account_id}/stream/{identifier}/captions/{language}`
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsDeleteCaptionsOrSubtitles({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Generate captions or subtitles for a provided language via AI
+///
+/// Generate captions or subtitles for provided language via AI.
+///
+/// `POST /accounts/{account_id}/stream/{identifier}/captions/{language}/generate`
+Future<ApiResult<ResponseCommon66, Never>> streamSubtitlesCaptionsGenerateCaptionOrSubtitleForLanguage({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/generate',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Return WebVTT captions for a provided language
+///
+/// Return WebVTT captions for a provided language.
+///
+/// `GET /accounts/{account_id}/stream/{identifier}/captions/{language}/vtt`
+Future<ApiResult<String, Never>> streamSubtitlesCaptionsGetVttCaptionOrSubtitle({required StreamLanguage language, required StreamIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/stream/${Uri.encodeComponent(identifier.toString())}/captions/${Uri.encodeComponent(language.toString())}/vtt',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return response.body;
+  },
+);
+ } 
+ }

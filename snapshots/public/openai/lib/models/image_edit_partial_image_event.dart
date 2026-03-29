@@ -1,0 +1,235 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the event. Always `image_edit.partial_image`.
+/// 
+final class ImageEditPartialImageEventType {const ImageEditPartialImageEventType._(this.value);
+
+factory ImageEditPartialImageEventType.fromJson(String json) { return switch (json) {
+  'image_edit.partial_image' => imageEditPartialImage,
+  _ => ImageEditPartialImageEventType._(json),
+}; }
+
+static const ImageEditPartialImageEventType imageEditPartialImage = ImageEditPartialImageEventType._('image_edit.partial_image');
+
+static const List<ImageEditPartialImageEventType> values = [imageEditPartialImage];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImageEditPartialImageEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImageEditPartialImageEventType($value)'; } 
+ }
+/// The size of the requested edited image.
+/// 
+final class ImageEditPartialImageEventSize {const ImageEditPartialImageEventSize._(this.value);
+
+factory ImageEditPartialImageEventSize.fromJson(String json) { return switch (json) {
+  '1024x1024' => $1024x1024,
+  '1024x1536' => $1024x1536,
+  '1536x1024' => $1536x1024,
+  'auto' => auto,
+  _ => ImageEditPartialImageEventSize._(json),
+}; }
+
+static const ImageEditPartialImageEventSize $1024x1024 = ImageEditPartialImageEventSize._('1024x1024');
+
+static const ImageEditPartialImageEventSize $1024x1536 = ImageEditPartialImageEventSize._('1024x1536');
+
+static const ImageEditPartialImageEventSize $1536x1024 = ImageEditPartialImageEventSize._('1536x1024');
+
+static const ImageEditPartialImageEventSize auto = ImageEditPartialImageEventSize._('auto');
+
+static const List<ImageEditPartialImageEventSize> values = [$1024x1024, $1024x1536, $1536x1024, auto];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImageEditPartialImageEventSize && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImageEditPartialImageEventSize($value)'; } 
+ }
+/// The quality setting for the requested edited image.
+/// 
+final class ImageEditPartialImageEventQuality {const ImageEditPartialImageEventQuality._(this.value);
+
+factory ImageEditPartialImageEventQuality.fromJson(String json) { return switch (json) {
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  'auto' => auto,
+  _ => ImageEditPartialImageEventQuality._(json),
+}; }
+
+static const ImageEditPartialImageEventQuality low = ImageEditPartialImageEventQuality._('low');
+
+static const ImageEditPartialImageEventQuality medium = ImageEditPartialImageEventQuality._('medium');
+
+static const ImageEditPartialImageEventQuality high = ImageEditPartialImageEventQuality._('high');
+
+static const ImageEditPartialImageEventQuality auto = ImageEditPartialImageEventQuality._('auto');
+
+static const List<ImageEditPartialImageEventQuality> values = [low, medium, high, auto];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImageEditPartialImageEventQuality && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImageEditPartialImageEventQuality($value)'; } 
+ }
+/// The background setting for the requested edited image.
+/// 
+final class ImageEditPartialImageEventBackground {const ImageEditPartialImageEventBackground._(this.value);
+
+factory ImageEditPartialImageEventBackground.fromJson(String json) { return switch (json) {
+  'transparent' => transparent,
+  'opaque' => opaque,
+  'auto' => auto,
+  _ => ImageEditPartialImageEventBackground._(json),
+}; }
+
+static const ImageEditPartialImageEventBackground transparent = ImageEditPartialImageEventBackground._('transparent');
+
+static const ImageEditPartialImageEventBackground opaque = ImageEditPartialImageEventBackground._('opaque');
+
+static const ImageEditPartialImageEventBackground auto = ImageEditPartialImageEventBackground._('auto');
+
+static const List<ImageEditPartialImageEventBackground> values = [transparent, opaque, auto];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImageEditPartialImageEventBackground && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImageEditPartialImageEventBackground($value)'; } 
+ }
+/// The output format for the requested edited image.
+/// 
+final class ImageEditPartialImageEventOutputFormat {const ImageEditPartialImageEventOutputFormat._(this.value);
+
+factory ImageEditPartialImageEventOutputFormat.fromJson(String json) { return switch (json) {
+  'png' => png,
+  'webp' => webp,
+  'jpeg' => jpeg,
+  _ => ImageEditPartialImageEventOutputFormat._(json),
+}; }
+
+static const ImageEditPartialImageEventOutputFormat png = ImageEditPartialImageEventOutputFormat._('png');
+
+static const ImageEditPartialImageEventOutputFormat webp = ImageEditPartialImageEventOutputFormat._('webp');
+
+static const ImageEditPartialImageEventOutputFormat jpeg = ImageEditPartialImageEventOutputFormat._('jpeg');
+
+static const List<ImageEditPartialImageEventOutputFormat> values = [png, webp, jpeg];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImageEditPartialImageEventOutputFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImageEditPartialImageEventOutputFormat($value)'; } 
+ }
+/// Emitted when a partial image is available during image editing streaming.
+/// 
+final class ImageEditPartialImageEvent {const ImageEditPartialImageEvent({required this.type, required this.b64Json, required this.createdAt, required this.size, required this.quality, required this.background, required this.outputFormat, required this.partialImageIndex, });
+
+factory ImageEditPartialImageEvent.fromJson(Map<String, dynamic> json) { return ImageEditPartialImageEvent(
+  type: ImageEditPartialImageEventType.fromJson(json['type'] as String),
+  b64Json: json['b64_json'] as String,
+  createdAt: (json['created_at'] as num).toInt(),
+  size: ImageEditPartialImageEventSize.fromJson(json['size'] as String),
+  quality: ImageEditPartialImageEventQuality.fromJson(json['quality'] as String),
+  background: ImageEditPartialImageEventBackground.fromJson(json['background'] as String),
+  outputFormat: ImageEditPartialImageEventOutputFormat.fromJson(json['output_format'] as String),
+  partialImageIndex: (json['partial_image_index'] as num).toInt(),
+); }
+
+/// The type of the event. Always `image_edit.partial_image`.
+/// 
+final ImageEditPartialImageEventType type;
+
+/// Base64-encoded partial image data, suitable for rendering as an image.
+/// 
+final String b64Json;
+
+/// The Unix timestamp when the event was created.
+/// 
+final int createdAt;
+
+/// The size of the requested edited image.
+/// 
+final ImageEditPartialImageEventSize size;
+
+/// The quality setting for the requested edited image.
+/// 
+final ImageEditPartialImageEventQuality quality;
+
+/// The background setting for the requested edited image.
+/// 
+final ImageEditPartialImageEventBackground background;
+
+/// The output format for the requested edited image.
+/// 
+final ImageEditPartialImageEventOutputFormat outputFormat;
+
+/// 0-based index for the partial image (streaming).
+/// 
+final int partialImageIndex;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'b64_json': b64Json,
+  'created_at': createdAt,
+  'size': size.toJson(),
+  'quality': quality.toJson(),
+  'background': background.toJson(),
+  'output_format': outputFormat.toJson(),
+  'partial_image_index': partialImageIndex,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('b64_json') && json['b64_json'] is String &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('size') &&
+      json.containsKey('quality') &&
+      json.containsKey('background') &&
+      json.containsKey('output_format') &&
+      json.containsKey('partial_image_index') && json['partial_image_index'] is num; } 
+ImageEditPartialImageEvent copyWith({ImageEditPartialImageEventType? type, String? b64Json, int? createdAt, ImageEditPartialImageEventSize? size, ImageEditPartialImageEventQuality? quality, ImageEditPartialImageEventBackground? background, ImageEditPartialImageEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageEditPartialImageEvent(
+  type: type ?? this.type,
+  b64Json: b64Json ?? this.b64Json,
+  createdAt: createdAt ?? this.createdAt,
+  size: size ?? this.size,
+  quality: quality ?? this.quality,
+  background: background ?? this.background,
+  outputFormat: outputFormat ?? this.outputFormat,
+  partialImageIndex: partialImageIndex ?? this.partialImageIndex,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ImageEditPartialImageEvent &&
+          type == other.type &&
+          b64Json == other.b64Json &&
+          createdAt == other.createdAt &&
+          size == other.size &&
+          quality == other.quality &&
+          background == other.background &&
+          outputFormat == other.outputFormat &&
+          partialImageIndex == other.partialImageIndex; } 
+@override int get hashCode { return Object.hash(type, b64Json, createdAt, size, quality, background, outputFormat, partialImageIndex); } 
+@override String toString() { return 'ImageEditPartialImageEvent(type: $type, b64Json: $b64Json, createdAt: $createdAt, size: $size, quality: $quality, background: $background, outputFormat: $outputFormat, partialImageIndex: $partialImageIndex)'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostEventCreateBulkRequestDataIndicators {const PostEventCreateBulkRequestDataIndicators({required this.indicatorType, required this.value, });
+
+factory PostEventCreateBulkRequestDataIndicators.fromJson(Map<String, dynamic> json) { return PostEventCreateBulkRequestDataIndicators(
+  indicatorType: json['indicatorType'] as String,
+  value: json['value'] as String,
+); }
+
+/// The type of indicator (e.g., DOMAIN, IP, JA3, HASH)
+final String indicatorType;
+
+/// The indicator value (e.g., domain name, IP address, hash)
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'indicatorType': indicatorType,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicatorType') && json['indicatorType'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+PostEventCreateBulkRequestDataIndicators copyWith({String? indicatorType, String? value, }) { return PostEventCreateBulkRequestDataIndicators(
+  indicatorType: indicatorType ?? this.indicatorType,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostEventCreateBulkRequestDataIndicators &&
+          indicatorType == other.indicatorType &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(indicatorType, value); } 
+@override String toString() { return 'PostEventCreateBulkRequestDataIndicators(indicatorType: $indicatorType, value: $value)'; } 
+ }

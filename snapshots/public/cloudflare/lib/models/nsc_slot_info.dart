@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'nsc_account_tag.dart';import 'nsc_facility_info.dart';final class NscSlotInfo {const NscSlotInfo({this.account, required this.facility, required this.id, required this.occupied, required this.site, required this.speed, });
+
+factory NscSlotInfo.fromJson(Map<String, dynamic> json) { return NscSlotInfo(
+  account: json['account'] != null ? NscAccountTag.fromJson(json['account'] as String) : null,
+  facility: NscFacilityInfo.fromJson(json['facility'] as Map<String, dynamic>),
+  id: json['id'] as String,
+  occupied: json['occupied'] as bool,
+  site: json['site'] as String,
+  speed: json['speed'] as String,
+); }
+
+/// Customer account tag
+final NscAccountTag? account;
+
+final NscFacilityInfo facility;
+
+/// Slot ID
+final String id;
+
+/// Whether the slot is occupied or not
+final bool occupied;
+
+final String site;
+
+final String speed;
+
+Map<String, dynamic> toJson() { return {
+  if (account != null) 'account': account?.toJson(),
+  'facility': facility.toJson(),
+  'id': id,
+  'occupied': occupied,
+  'site': site,
+  'speed': speed,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('facility') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('occupied') && json['occupied'] is bool &&
+      json.containsKey('site') && json['site'] is String &&
+      json.containsKey('speed') && json['speed'] is String; } 
+NscSlotInfo copyWith({NscAccountTag Function()? account, NscFacilityInfo? facility, String? id, bool? occupied, String? site, String? speed, }) { return NscSlotInfo(
+  account: account != null ? account() : this.account,
+  facility: facility ?? this.facility,
+  id: id ?? this.id,
+  occupied: occupied ?? this.occupied,
+  site: site ?? this.site,
+  speed: speed ?? this.speed,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NscSlotInfo &&
+          account == other.account &&
+          facility == other.facility &&
+          id == other.id &&
+          occupied == other.occupied &&
+          site == other.site &&
+          speed == other.speed; } 
+@override int get hashCode { return Object.hash(account, facility, id, occupied, site, speed); } 
+@override String toString() { return 'NscSlotInfo(account: $account, facility: $facility, id: $id, occupied: $occupied, site: $site, speed: $speed)'; } 
+ }

@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_delete_gateway_dynamic_route_response_result_elements_conditional_outputs.dart';import 'aig_config_delete_gateway_dynamic_route_response_result_elements_conditional_properties.dart';final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType._(this.value);
+
+factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(String json) { return switch (json) {
+  'conditional' => conditional,
+  _ => AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType._(json),
+}; }
+
+static const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType conditional = AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType._('conditional');
+
+static const List<AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType> values = [conditional];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType($value)'; } 
+ }
+final class AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional {const AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional({required this.id, required this.outputs, required this.properties, required this.type, });
+
+factory AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional(
+  id: json['id'] as String,
+  outputs: AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
+  properties: AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties.fromJson(json['properties'] as Map<String, dynamic>),
+  type: AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType.fromJson(json['type'] as String),
+); }
+
+final String id;
+
+final AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalOutputs outputs;
+
+final AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties properties;
+
+final AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType type;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'outputs': outputs.toJson(),
+  'properties': properties.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('outputs') &&
+      json.containsKey('properties') &&
+      json.containsKey('type'); } 
+AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional copyWith({String? id, AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalOutputs? outputs, AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalProperties? properties, AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditionalType? type, }) { return AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional(
+  id: id ?? this.id,
+  outputs: outputs ?? this.outputs,
+  properties: properties ?? this.properties,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional &&
+          id == other.id &&
+          outputs == other.outputs &&
+          properties == other.properties &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(id, outputs, properties, type); } 
+@override String toString() { return 'AigConfigDeleteGatewayDynamicRouteResponseResultElementsConditional(id: $id, outputs: $outputs, properties: $properties, type: $type)'; } 
+ }

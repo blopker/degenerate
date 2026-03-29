@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2 {const PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2._(this.value);
+
+factory PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2._(json),
+}; }
+
+static const PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2 $empty = PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2._('');
+
+static const List<PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2($value)'; } 
+ }
+typedef PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadata = OneOf2<Map<String,String>,PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2>;

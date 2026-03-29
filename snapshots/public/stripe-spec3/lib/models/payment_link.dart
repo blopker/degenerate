@@ -1,0 +1,545 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'deleted_application.dart';import 'payment_link_application.dart';import 'payment_link_consent_collection.dart';import 'payment_link_invoice_creation.dart';import 'payment_link_line_items.dart';import 'payment_link_on_behalf_of.dart';import 'payment_link_payment_intent_data.dart';import 'payment_link_restrictions.dart';import 'payment_link_shipping_address_collection.dart';import 'payment_link_subscription_data.dart';import 'payment_link_transfer_data.dart';import 'payment_links_resource_after_completion.dart';import 'payment_links_resource_automatic_tax.dart';import 'payment_links_resource_custom_fields.dart';import 'payment_links_resource_custom_text.dart';import 'payment_links_resource_name_collection.dart';import 'payment_links_resource_optional_item.dart';import 'payment_links_resource_phone_number_collection.dart';import 'payment_links_resource_shipping_option.dart';import 'payment_links_resource_tax_id_collection.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
+final class PaymentLinkBillingAddressCollection {const PaymentLinkBillingAddressCollection._(this.value);
+
+factory PaymentLinkBillingAddressCollection.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'required' => $required,
+  _ => PaymentLinkBillingAddressCollection._(json),
+}; }
+
+static const PaymentLinkBillingAddressCollection auto = PaymentLinkBillingAddressCollection._('auto');
+
+static const PaymentLinkBillingAddressCollection $required = PaymentLinkBillingAddressCollection._('required');
+
+static const List<PaymentLinkBillingAddressCollection> values = [auto, $required];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinkBillingAddressCollection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinkBillingAddressCollection($value)'; } 
+ }
+/// Configuration for Customer creation during checkout.
+final class PaymentLinkCustomerCreation {const PaymentLinkCustomerCreation._(this.value);
+
+factory PaymentLinkCustomerCreation.fromJson(String json) { return switch (json) {
+  'always' => always,
+  'if_required' => ifRequired,
+  _ => PaymentLinkCustomerCreation._(json),
+}; }
+
+static const PaymentLinkCustomerCreation always = PaymentLinkCustomerCreation._('always');
+
+static const PaymentLinkCustomerCreation ifRequired = PaymentLinkCustomerCreation._('if_required');
+
+static const List<PaymentLinkCustomerCreation> values = [always, ifRequired];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinkCustomerCreation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinkCustomerCreation($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class PaymentLinkObject {const PaymentLinkObject._(this.value);
+
+factory PaymentLinkObject.fromJson(String json) { return switch (json) {
+  'payment_link' => paymentLink,
+  _ => PaymentLinkObject._(json),
+}; }
+
+static const PaymentLinkObject paymentLink = PaymentLinkObject._('payment_link');
+
+static const List<PaymentLinkObject> values = [paymentLink];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinkObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinkObject($value)'; } 
+ }
+/// Configuration for collecting a payment method during checkout. Defaults to `always`.
+final class PaymentLinkPaymentMethodCollection {const PaymentLinkPaymentMethodCollection._(this.value);
+
+factory PaymentLinkPaymentMethodCollection.fromJson(String json) { return switch (json) {
+  'always' => always,
+  'if_required' => ifRequired,
+  _ => PaymentLinkPaymentMethodCollection._(json),
+}; }
+
+static const PaymentLinkPaymentMethodCollection always = PaymentLinkPaymentMethodCollection._('always');
+
+static const PaymentLinkPaymentMethodCollection ifRequired = PaymentLinkPaymentMethodCollection._('if_required');
+
+static const List<PaymentLinkPaymentMethodCollection> values = [always, ifRequired];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinkPaymentMethodCollection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinkPaymentMethodCollection($value)'; } 
+ }
+final class PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes._(this.value);
+
+factory PaymentLinkPaymentMethodTypes.fromJson(String json) { return switch (json) {
+  'affirm' => affirm,
+  'afterpay_clearpay' => afterpayClearpay,
+  'alipay' => alipay,
+  'alma' => alma,
+  'au_becs_debit' => auBecsDebit,
+  'bacs_debit' => bacsDebit,
+  'bancontact' => bancontact,
+  'billie' => billie,
+  'blik' => blik,
+  'boleto' => boleto,
+  'card' => card,
+  'cashapp' => cashapp,
+  'eps' => eps,
+  'fpx' => fpx,
+  'giropay' => giropay,
+  'grabpay' => grabpay,
+  'ideal' => ideal,
+  'klarna' => klarna,
+  'konbini' => konbini,
+  'link' => link,
+  'mb_way' => mbWay,
+  'mobilepay' => mobilepay,
+  'multibanco' => multibanco,
+  'oxxo' => oxxo,
+  'p24' => p24,
+  'pay_by_bank' => payByBank,
+  'paynow' => paynow,
+  'paypal' => paypal,
+  'payto' => payto,
+  'pix' => pix,
+  'promptpay' => promptpay,
+  'satispay' => satispay,
+  'sepa_debit' => sepaDebit,
+  'sofort' => sofort,
+  'swish' => swish,
+  'twint' => twint,
+  'us_bank_account' => usBankAccount,
+  'wechat_pay' => wechatPay,
+  'zip' => zip,
+  _ => PaymentLinkPaymentMethodTypes._(json),
+}; }
+
+static const PaymentLinkPaymentMethodTypes affirm = PaymentLinkPaymentMethodTypes._('affirm');
+
+static const PaymentLinkPaymentMethodTypes afterpayClearpay = PaymentLinkPaymentMethodTypes._('afterpay_clearpay');
+
+static const PaymentLinkPaymentMethodTypes alipay = PaymentLinkPaymentMethodTypes._('alipay');
+
+static const PaymentLinkPaymentMethodTypes alma = PaymentLinkPaymentMethodTypes._('alma');
+
+static const PaymentLinkPaymentMethodTypes auBecsDebit = PaymentLinkPaymentMethodTypes._('au_becs_debit');
+
+static const PaymentLinkPaymentMethodTypes bacsDebit = PaymentLinkPaymentMethodTypes._('bacs_debit');
+
+static const PaymentLinkPaymentMethodTypes bancontact = PaymentLinkPaymentMethodTypes._('bancontact');
+
+static const PaymentLinkPaymentMethodTypes billie = PaymentLinkPaymentMethodTypes._('billie');
+
+static const PaymentLinkPaymentMethodTypes blik = PaymentLinkPaymentMethodTypes._('blik');
+
+static const PaymentLinkPaymentMethodTypes boleto = PaymentLinkPaymentMethodTypes._('boleto');
+
+static const PaymentLinkPaymentMethodTypes card = PaymentLinkPaymentMethodTypes._('card');
+
+static const PaymentLinkPaymentMethodTypes cashapp = PaymentLinkPaymentMethodTypes._('cashapp');
+
+static const PaymentLinkPaymentMethodTypes eps = PaymentLinkPaymentMethodTypes._('eps');
+
+static const PaymentLinkPaymentMethodTypes fpx = PaymentLinkPaymentMethodTypes._('fpx');
+
+static const PaymentLinkPaymentMethodTypes giropay = PaymentLinkPaymentMethodTypes._('giropay');
+
+static const PaymentLinkPaymentMethodTypes grabpay = PaymentLinkPaymentMethodTypes._('grabpay');
+
+static const PaymentLinkPaymentMethodTypes ideal = PaymentLinkPaymentMethodTypes._('ideal');
+
+static const PaymentLinkPaymentMethodTypes klarna = PaymentLinkPaymentMethodTypes._('klarna');
+
+static const PaymentLinkPaymentMethodTypes konbini = PaymentLinkPaymentMethodTypes._('konbini');
+
+static const PaymentLinkPaymentMethodTypes link = PaymentLinkPaymentMethodTypes._('link');
+
+static const PaymentLinkPaymentMethodTypes mbWay = PaymentLinkPaymentMethodTypes._('mb_way');
+
+static const PaymentLinkPaymentMethodTypes mobilepay = PaymentLinkPaymentMethodTypes._('mobilepay');
+
+static const PaymentLinkPaymentMethodTypes multibanco = PaymentLinkPaymentMethodTypes._('multibanco');
+
+static const PaymentLinkPaymentMethodTypes oxxo = PaymentLinkPaymentMethodTypes._('oxxo');
+
+static const PaymentLinkPaymentMethodTypes p24 = PaymentLinkPaymentMethodTypes._('p24');
+
+static const PaymentLinkPaymentMethodTypes payByBank = PaymentLinkPaymentMethodTypes._('pay_by_bank');
+
+static const PaymentLinkPaymentMethodTypes paynow = PaymentLinkPaymentMethodTypes._('paynow');
+
+static const PaymentLinkPaymentMethodTypes paypal = PaymentLinkPaymentMethodTypes._('paypal');
+
+static const PaymentLinkPaymentMethodTypes payto = PaymentLinkPaymentMethodTypes._('payto');
+
+static const PaymentLinkPaymentMethodTypes pix = PaymentLinkPaymentMethodTypes._('pix');
+
+static const PaymentLinkPaymentMethodTypes promptpay = PaymentLinkPaymentMethodTypes._('promptpay');
+
+static const PaymentLinkPaymentMethodTypes satispay = PaymentLinkPaymentMethodTypes._('satispay');
+
+static const PaymentLinkPaymentMethodTypes sepaDebit = PaymentLinkPaymentMethodTypes._('sepa_debit');
+
+static const PaymentLinkPaymentMethodTypes sofort = PaymentLinkPaymentMethodTypes._('sofort');
+
+static const PaymentLinkPaymentMethodTypes swish = PaymentLinkPaymentMethodTypes._('swish');
+
+static const PaymentLinkPaymentMethodTypes twint = PaymentLinkPaymentMethodTypes._('twint');
+
+static const PaymentLinkPaymentMethodTypes usBankAccount = PaymentLinkPaymentMethodTypes._('us_bank_account');
+
+static const PaymentLinkPaymentMethodTypes wechatPay = PaymentLinkPaymentMethodTypes._('wechat_pay');
+
+static const PaymentLinkPaymentMethodTypes zip = PaymentLinkPaymentMethodTypes._('zip');
+
+static const List<PaymentLinkPaymentMethodTypes> values = [affirm, afterpayClearpay, alipay, alma, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, eps, fpx, giropay, grabpay, ideal, klarna, konbini, link, mbWay, mobilepay, multibanco, oxxo, p24, payByBank, paynow, paypal, payto, pix, promptpay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinkPaymentMethodTypes && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinkPaymentMethodTypes($value)'; } 
+ }
+/// Indicates the type of transaction being performed which customizes relevant text on the page, such as the submit button.
+final class PaymentLinkSubmitType {const PaymentLinkSubmitType._(this.value);
+
+factory PaymentLinkSubmitType.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'book' => book,
+  'donate' => donate,
+  'pay' => pay,
+  'subscribe' => subscribe,
+  _ => PaymentLinkSubmitType._(json),
+}; }
+
+static const PaymentLinkSubmitType auto = PaymentLinkSubmitType._('auto');
+
+static const PaymentLinkSubmitType book = PaymentLinkSubmitType._('book');
+
+static const PaymentLinkSubmitType donate = PaymentLinkSubmitType._('donate');
+
+static const PaymentLinkSubmitType pay = PaymentLinkSubmitType._('pay');
+
+static const PaymentLinkSubmitType subscribe = PaymentLinkSubmitType._('subscribe');
+
+static const List<PaymentLinkSubmitType> values = [auto, book, donate, pay, subscribe];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentLinkSubmitType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentLinkSubmitType($value)'; } 
+ }
+/// A payment link is a shareable URL that will take your customers to a hosted payment page. A payment link can be shared and used multiple times.
+/// 
+/// When a customer opens a payment link it will open a new [checkout session](https://docs.stripe.com/api/checkout/sessions) to render the payment page. You can use [checkout session events](https://docs.stripe.com/api/events/types#event_types-checkout.session.completed) to track payments through payment links.
+/// 
+/// Related guide: [Payment Links API](https://docs.stripe.com/payment-links)
+final class PaymentLink {const PaymentLink({required this.active, required this.afterCompletion, required this.allowPromotionCodes, this.application, this.applicationFeeAmount, this.applicationFeePercent, required this.automaticTax, required this.billingAddressCollection, this.consentCollection, required this.currency, required this.customFields, required this.customText, required this.customerCreation, required this.id, this.inactiveMessage, this.invoiceCreation, this.lineItems, required this.livemode, required this.metadata, this.nameCollection, required this.object, this.onBehalfOf, this.optionalItems, this.paymentIntentData, required this.paymentMethodCollection, this.paymentMethodTypes, required this.phoneNumberCollection, this.restrictions, this.shippingAddressCollection, required this.shippingOptions, required this.submitType, this.subscriptionData, required this.taxIdCollection, this.transferData, required this.url, });
+
+factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
+  active: json['active'] as bool,
+  afterCompletion: PaymentLinksResourceAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
+  allowPromotionCodes: json['allow_promotion_codes'] as bool,
+  application: json['application'] != null ? OneOf3.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedApplication.fromJson(v as Map<String, dynamic>),) : null,
+  applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
+  applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
+  automaticTax: PaymentLinksResourceAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
+  billingAddressCollection: PaymentLinkBillingAddressCollection.fromJson(json['billing_address_collection'] as String),
+  consentCollection: json['consent_collection'] != null ? PaymentLinkConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
+  currency: json['currency'] as String,
+  customFields: (json['custom_fields'] as List<dynamic>).map((e) => PaymentLinksResourceCustomFields.fromJson(e as Map<String, dynamic>)).toList(),
+  customText: PaymentLinksResourceCustomText.fromJson(json['custom_text'] as Map<String, dynamic>),
+  customerCreation: PaymentLinkCustomerCreation.fromJson(json['customer_creation'] as String),
+  id: json['id'] as String,
+  inactiveMessage: json['inactive_message'] as String?,
+  invoiceCreation: json['invoice_creation'] != null ? PaymentLinkInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
+  lineItems: json['line_items'] != null ? PaymentLinkLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
+  livemode: json['livemode'] as bool,
+  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  nameCollection: json['name_collection'] != null ? PaymentLinksResourceNameCollection.fromJson(json['name_collection'] as Map<String, dynamic>) : null,
+  object: PaymentLinkObject.fromJson(json['object'] as String),
+  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
+  optionalItems: (json['optional_items'] as List<dynamic>?)?.map((e) => PaymentLinksResourceOptionalItem.fromJson(e as Map<String, dynamic>)).toList(),
+  paymentIntentData: json['payment_intent_data'] != null ? PaymentLinkPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>) : null,
+  paymentMethodCollection: PaymentLinkPaymentMethodCollection.fromJson(json['payment_method_collection'] as String),
+  paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => PaymentLinkPaymentMethodTypes.fromJson(e as String)).toList(),
+  phoneNumberCollection: PaymentLinksResourcePhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>),
+  restrictions: json['restrictions'] != null ? PaymentLinkRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
+  shippingAddressCollection: json['shipping_address_collection'] != null ? PaymentLinkShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
+  shippingOptions: (json['shipping_options'] as List<dynamic>).map((e) => PaymentLinksResourceShippingOption.fromJson(e as Map<String, dynamic>)).toList(),
+  submitType: PaymentLinkSubmitType.fromJson(json['submit_type'] as String),
+  subscriptionData: json['subscription_data'] != null ? PaymentLinkSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
+  taxIdCollection: PaymentLinksResourceTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>),
+  transferData: json['transfer_data'] != null ? PaymentLinkTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  url: json['url'] as String,
+); }
+
+/// Whether the payment link's `url` is active. If `false`, customers visiting the URL will be shown a page saying that the link has been deactivated.
+final bool active;
+
+final PaymentLinksResourceAfterCompletion afterCompletion;
+
+/// Whether user redeemable promotion codes are enabled.
+final bool allowPromotionCodes;
+
+/// The ID of the Connect application that created the Payment Link.
+final PaymentLinkApplication? application;
+
+/// The amount of the application fee (if any) that will be requested to be applied to the payment and transferred to the application owner's Stripe account.
+final int? applicationFeeAmount;
+
+/// This represents the percentage of the subscription invoice total that will be transferred to the application owner's Stripe account.
+final double? applicationFeePercent;
+
+final PaymentLinksResourceAutomaticTax automaticTax;
+
+/// Configuration for collecting the customer's billing address. Defaults to `auto`.
+final PaymentLinkBillingAddressCollection billingAddressCollection;
+
+/// When set, provides configuration to gather active consent from customers.
+final PaymentLinkConsentCollection? consentCollection;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// Collect additional information from your customer using custom fields. Up to 3 fields are supported. You can't set this parameter if `ui_mode` is `custom`.
+final List<PaymentLinksResourceCustomFields> customFields;
+
+final PaymentLinksResourceCustomText customText;
+
+/// Configuration for Customer creation during checkout.
+final PaymentLinkCustomerCreation customerCreation;
+
+/// Unique identifier for the object.
+final String id;
+
+/// The custom message to be displayed to a customer when a payment link is no longer active.
+final String? inactiveMessage;
+
+/// Configuration for creating invoice for payment mode payment links.
+final PaymentLinkInvoiceCreation? invoiceCreation;
+
+/// The line items representing what is being sold.
+final PaymentLinkLineItems? lineItems;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String> metadata;
+
+final PaymentLinksResourceNameCollection? nameCollection;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final PaymentLinkObject object;
+
+/// The account on behalf of which to charge. See the [Connect documentation](https://support.stripe.com/questions/sending-invoices-on-behalf-of-connected-accounts) for details.
+final PaymentLinkOnBehalfOf? onBehalfOf;
+
+/// The optional items presented to the customer at checkout.
+final List<PaymentLinksResourceOptionalItem>? optionalItems;
+
+/// Indicates the parameters to be passed to PaymentIntent creation during checkout.
+final PaymentLinkPaymentIntentData? paymentIntentData;
+
+/// Configuration for collecting a payment method during checkout. Defaults to `always`.
+final PaymentLinkPaymentMethodCollection paymentMethodCollection;
+
+/// The list of payment method types that customers can use. When `null`, Stripe will dynamically show relevant payment methods you've enabled in your [payment method settings](https://dashboard.stripe.com/settings/payment_methods).
+final List<PaymentLinkPaymentMethodTypes>? paymentMethodTypes;
+
+final PaymentLinksResourcePhoneNumberCollection phoneNumberCollection;
+
+/// Settings that restrict the usage of a payment link.
+final PaymentLinkRestrictions? restrictions;
+
+/// Configuration for collecting the customer's shipping address.
+final PaymentLinkShippingAddressCollection? shippingAddressCollection;
+
+/// The shipping rate options applied to the session.
+final List<PaymentLinksResourceShippingOption> shippingOptions;
+
+/// Indicates the type of transaction being performed which customizes relevant text on the page, such as the submit button.
+final PaymentLinkSubmitType submitType;
+
+/// When creating a subscription, the specified configuration data will be used. There must be at least one line item with a recurring price to use `subscription_data`.
+final PaymentLinkSubscriptionData? subscriptionData;
+
+final PaymentLinksResourceTaxIdCollection taxIdCollection;
+
+/// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to.
+final PaymentLinkTransferData? transferData;
+
+/// The public URL that can be shared with customers.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'active': active,
+  'after_completion': afterCompletion.toJson(),
+  'allow_promotion_codes': allowPromotionCodes,
+  if (application != null) 'application': application?.toJson(),
+  'application_fee_amount': ?applicationFeeAmount,
+  'application_fee_percent': ?applicationFeePercent,
+  'automatic_tax': automaticTax.toJson(),
+  'billing_address_collection': billingAddressCollection.toJson(),
+  if (consentCollection != null) 'consent_collection': consentCollection?.toJson(),
+  'currency': currency,
+  'custom_fields': customFields.map((e) => e.toJson()).toList(),
+  'custom_text': customText.toJson(),
+  'customer_creation': customerCreation.toJson(),
+  'id': id,
+  'inactive_message': ?inactiveMessage,
+  if (invoiceCreation != null) 'invoice_creation': invoiceCreation?.toJson(),
+  if (lineItems != null) 'line_items': lineItems?.toJson(),
+  'livemode': livemode,
+  'metadata': metadata,
+  if (nameCollection != null) 'name_collection': nameCollection?.toJson(),
+  'object': object.toJson(),
+  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
+  if (optionalItems != null) 'optional_items': optionalItems?.map((e) => e.toJson()).toList(),
+  if (paymentIntentData != null) 'payment_intent_data': paymentIntentData?.toJson(),
+  'payment_method_collection': paymentMethodCollection.toJson(),
+  if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.map((e) => e.toJson()).toList(),
+  'phone_number_collection': phoneNumberCollection.toJson(),
+  if (restrictions != null) 'restrictions': restrictions?.toJson(),
+  if (shippingAddressCollection != null) 'shipping_address_collection': shippingAddressCollection?.toJson(),
+  'shipping_options': shippingOptions.map((e) => e.toJson()).toList(),
+  'submit_type': submitType.toJson(),
+  if (subscriptionData != null) 'subscription_data': subscriptionData?.toJson(),
+  'tax_id_collection': taxIdCollection.toJson(),
+  if (transferData != null) 'transfer_data': transferData?.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+      json.containsKey('after_completion') &&
+      json.containsKey('allow_promotion_codes') && json['allow_promotion_codes'] is bool &&
+      json.containsKey('automatic_tax') &&
+      json.containsKey('billing_address_collection') &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('custom_fields') &&
+      json.containsKey('custom_text') &&
+      json.containsKey('customer_creation') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('metadata') &&
+      json.containsKey('object') &&
+      json.containsKey('payment_method_collection') &&
+      json.containsKey('phone_number_collection') &&
+      json.containsKey('shipping_options') &&
+      json.containsKey('submit_type') &&
+      json.containsKey('tax_id_collection') &&
+      json.containsKey('url') && json['url'] is String; } 
+PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, PaymentLinkApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, PaymentLinkConsentCollection? Function()? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, String? Function()? inactiveMessage, PaymentLinkInvoiceCreation? Function()? invoiceCreation, PaymentLinkLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection Function()? nameCollection, PaymentLinkObject? object, PaymentLinkOnBehalfOf? Function()? onBehalfOf, List<PaymentLinksResourceOptionalItem>? Function()? optionalItems, PaymentLinkPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, PaymentLinkRestrictions? Function()? restrictions, PaymentLinkShippingAddressCollection? Function()? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, PaymentLinkSubscriptionData? Function()? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, PaymentLinkTransferData? Function()? transferData, String? url, }) { return PaymentLink(
+  active: active ?? this.active,
+  afterCompletion: afterCompletion ?? this.afterCompletion,
+  allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,
+  application: application != null ? application() : this.application,
+  applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
+  applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
+  automaticTax: automaticTax ?? this.automaticTax,
+  billingAddressCollection: billingAddressCollection ?? this.billingAddressCollection,
+  consentCollection: consentCollection != null ? consentCollection() : this.consentCollection,
+  currency: currency ?? this.currency,
+  customFields: customFields ?? this.customFields,
+  customText: customText ?? this.customText,
+  customerCreation: customerCreation ?? this.customerCreation,
+  id: id ?? this.id,
+  inactiveMessage: inactiveMessage != null ? inactiveMessage() : this.inactiveMessage,
+  invoiceCreation: invoiceCreation != null ? invoiceCreation() : this.invoiceCreation,
+  lineItems: lineItems != null ? lineItems() : this.lineItems,
+  livemode: livemode ?? this.livemode,
+  metadata: metadata ?? this.metadata,
+  nameCollection: nameCollection != null ? nameCollection() : this.nameCollection,
+  object: object ?? this.object,
+  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  optionalItems: optionalItems != null ? optionalItems() : this.optionalItems,
+  paymentIntentData: paymentIntentData != null ? paymentIntentData() : this.paymentIntentData,
+  paymentMethodCollection: paymentMethodCollection ?? this.paymentMethodCollection,
+  paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,
+  phoneNumberCollection: phoneNumberCollection ?? this.phoneNumberCollection,
+  restrictions: restrictions != null ? restrictions() : this.restrictions,
+  shippingAddressCollection: shippingAddressCollection != null ? shippingAddressCollection() : this.shippingAddressCollection,
+  shippingOptions: shippingOptions ?? this.shippingOptions,
+  submitType: submitType ?? this.submitType,
+  subscriptionData: subscriptionData != null ? subscriptionData() : this.subscriptionData,
+  taxIdCollection: taxIdCollection ?? this.taxIdCollection,
+  transferData: transferData != null ? transferData() : this.transferData,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentLink &&
+          active == other.active &&
+          afterCompletion == other.afterCompletion &&
+          allowPromotionCodes == other.allowPromotionCodes &&
+          application == other.application &&
+          applicationFeeAmount == other.applicationFeeAmount &&
+          applicationFeePercent == other.applicationFeePercent &&
+          automaticTax == other.automaticTax &&
+          billingAddressCollection == other.billingAddressCollection &&
+          consentCollection == other.consentCollection &&
+          currency == other.currency &&
+          listEquals(customFields, other.customFields) &&
+          customText == other.customText &&
+          customerCreation == other.customerCreation &&
+          id == other.id &&
+          inactiveMessage == other.inactiveMessage &&
+          invoiceCreation == other.invoiceCreation &&
+          lineItems == other.lineItems &&
+          livemode == other.livemode &&
+          metadata == other.metadata &&
+          nameCollection == other.nameCollection &&
+          object == other.object &&
+          onBehalfOf == other.onBehalfOf &&
+          listEquals(optionalItems, other.optionalItems) &&
+          paymentIntentData == other.paymentIntentData &&
+          paymentMethodCollection == other.paymentMethodCollection &&
+          listEquals(paymentMethodTypes, other.paymentMethodTypes) &&
+          phoneNumberCollection == other.phoneNumberCollection &&
+          restrictions == other.restrictions &&
+          shippingAddressCollection == other.shippingAddressCollection &&
+          listEquals(shippingOptions, other.shippingOptions) &&
+          submitType == other.submitType &&
+          subscriptionData == other.subscriptionData &&
+          taxIdCollection == other.taxIdCollection &&
+          transferData == other.transferData &&
+          url == other.url; } 
+@override int get hashCode { return Object.hashAll([active, afterCompletion, allowPromotionCodes, application, applicationFeeAmount, applicationFeePercent, automaticTax, billingAddressCollection, consentCollection, currency, Object.hashAll(customFields), customText, customerCreation, id, inactiveMessage, invoiceCreation, lineItems, livemode, metadata, nameCollection, object, onBehalfOf, Object.hashAll(optionalItems ?? const []), paymentIntentData, paymentMethodCollection, Object.hashAll(paymentMethodTypes ?? const []), phoneNumberCollection, restrictions, shippingAddressCollection, Object.hashAll(shippingOptions), submitType, subscriptionData, taxIdCollection, transferData, url]); } 
+@override String toString() { return 'PaymentLink(active: $active, afterCompletion: $afterCompletion, allowPromotionCodes: $allowPromotionCodes, application: $application, applicationFeeAmount: $applicationFeeAmount, applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingAddressCollection: $billingAddressCollection, consentCollection: $consentCollection, currency: $currency, customFields: $customFields, customText: $customText, customerCreation: $customerCreation, id: $id, inactiveMessage: $inactiveMessage, invoiceCreation: $invoiceCreation, lineItems: $lineItems, livemode: $livemode, metadata: $metadata, nameCollection: $nameCollection, object: $object, onBehalfOf: $onBehalfOf, optionalItems: $optionalItems, paymentIntentData: $paymentIntentData, paymentMethodCollection: $paymentMethodCollection, paymentMethodTypes: $paymentMethodTypes, phoneNumberCollection: $phoneNumberCollection, restrictions: $restrictions, shippingAddressCollection: $shippingAddressCollection, shippingOptions: $shippingOptions, submitType: $submitType, subscriptionData: $subscriptionData, taxIdCollection: $taxIdCollection, transferData: $transferData, url: $url)'; } 
+ }

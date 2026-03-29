@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'repository_rule_required_deployments_parameters.dart';final class RepositoryRuleRequiredDeploymentsType {const RepositoryRuleRequiredDeploymentsType._(this.value);
+
+factory RepositoryRuleRequiredDeploymentsType.fromJson(String json) { return switch (json) {
+  'required_deployments' => requiredDeployments,
+  _ => RepositoryRuleRequiredDeploymentsType._(json),
+}; }
+
+static const RepositoryRuleRequiredDeploymentsType requiredDeployments = RepositoryRuleRequiredDeploymentsType._('required_deployments');
+
+static const List<RepositoryRuleRequiredDeploymentsType> values = [requiredDeployments];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRuleRequiredDeploymentsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRuleRequiredDeploymentsType($value)'; } 
+ }
+/// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
+final class RepositoryRuleRequiredDeployments {const RepositoryRuleRequiredDeployments({required this.type, this.parameters, });
+
+factory RepositoryRuleRequiredDeployments.fromJson(Map<String, dynamic> json) { return RepositoryRuleRequiredDeployments(
+  type: RepositoryRuleRequiredDeploymentsType.fromJson(json['type'] as String),
+  parameters: json['parameters'] != null ? RepositoryRuleRequiredDeploymentsParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+); }
+
+final RepositoryRuleRequiredDeploymentsType type;
+
+final RepositoryRuleRequiredDeploymentsParameters? parameters;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  if (parameters != null) 'parameters': parameters?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+RepositoryRuleRequiredDeployments copyWith({RepositoryRuleRequiredDeploymentsType? type, RepositoryRuleRequiredDeploymentsParameters Function()? parameters, }) { return RepositoryRuleRequiredDeployments(
+  type: type ?? this.type,
+  parameters: parameters != null ? parameters() : this.parameters,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRuleRequiredDeployments &&
+          type == other.type &&
+          parameters == other.parameters; } 
+@override int get hashCode { return Object.hash(type, parameters); } 
+@override String toString() { return 'RepositoryRuleRequiredDeployments(type: $type, parameters: $parameters)'; } 
+ }

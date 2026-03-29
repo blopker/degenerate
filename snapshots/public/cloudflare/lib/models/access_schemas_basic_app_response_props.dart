@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_schemas_aud.dart';import 'access_schemas_scim_config.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessSchemasBasicAppResponseProps {const AccessSchemasBasicAppResponseProps({this.aud, this.createdAt, this.id, this.scimConfig, this.updatedAt, });
+
+factory AccessSchemasBasicAppResponseProps.fromJson(Map<String, dynamic> json) { return AccessSchemasBasicAppResponseProps(
+  aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
+  scimConfig: json['scim_config'] != null ? AccessSchemasScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+/// Audience tag.
+final AccessSchemasAud? aud;
+
+final AccessTimestamp? createdAt;
+
+final AccessUuid? id;
+
+final AccessSchemasScimConfig? scimConfig;
+
+final AccessTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (aud != null) 'aud': aud?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessSchemasBasicAppResponseProps copyWith({AccessSchemasAud Function()? aud, AccessTimestamp Function()? createdAt, AccessUuid Function()? id, AccessSchemasScimConfig Function()? scimConfig, AccessTimestamp Function()? updatedAt, }) { return AccessSchemasBasicAppResponseProps(
+  aud: aud != null ? aud() : this.aud,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  id: id != null ? id() : this.id,
+  scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessSchemasBasicAppResponseProps &&
+          aud == other.aud &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          scimConfig == other.scimConfig &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(aud, createdAt, id, scimConfig, updatedAt); } 
+@override String toString() { return 'AccessSchemasBasicAppResponseProps(aud: $aud, createdAt: $createdAt, id: $id, scimConfig: $scimConfig, updatedAt: $updatedAt)'; } 
+ }

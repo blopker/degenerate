@@ -1,0 +1,169 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_firewall_rules_components_schemas_id.dart';/// When true, indicates that the firewall rule is currently paused.
+extension type const FirewallComponentsSchemasPaused(bool value) {
+factory FirewallComponentsSchemasPaused.fromJson(bool json) => FirewallComponentsSchemasPaused(json);
+
+bool toJson() => value;
+
+}
+/// The priority of the rule. Optional value used to define the processing order. A lower number indicates a higher priority. If not provided, rules with a defined priority will be processed before rules without a priority.
+extension type const FirewallComponentsSchemasPriority(double value) {
+factory FirewallComponentsSchemasPriority.fromJson(num json) => FirewallComponentsSchemasPriority(json.toDouble());
+
+num toJson() => value;
+
+}
+/// An informative summary of the firewall rule.
+extension type const FirewallFirewallRulesComponentsSchemasDescription(String value) {
+factory FirewallFirewallRulesComponentsSchemasDescription.fromJson(String json) => FirewallFirewallRulesComponentsSchemasDescription(json);
+
+String toJson() => value;
+
+}
+/// A short reference tag. Allows you to select related firewall rules.
+extension type const FirewallRef(String value) {
+factory FirewallRef.fromJson(String json) => FirewallRef(json);
+
+String toJson() => value;
+
+}
+/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
+final class FirewallSchemasAction {const FirewallSchemasAction._(this.value);
+
+factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
+  'block' => block,
+  'challenge' => challenge,
+  'js_challenge' => jsChallenge,
+  'managed_challenge' => managedChallenge,
+  'allow' => allow,
+  'log' => log,
+  'bypass' => bypass,
+  _ => FirewallSchemasAction._(json),
+}; }
+
+static const FirewallSchemasAction block = FirewallSchemasAction._('block');
+
+static const FirewallSchemasAction challenge = FirewallSchemasAction._('challenge');
+
+static const FirewallSchemasAction jsChallenge = FirewallSchemasAction._('js_challenge');
+
+static const FirewallSchemasAction managedChallenge = FirewallSchemasAction._('managed_challenge');
+
+static const FirewallSchemasAction allow = FirewallSchemasAction._('allow');
+
+static const FirewallSchemasAction log = FirewallSchemasAction._('log');
+
+static const FirewallSchemasAction bypass = FirewallSchemasAction._('bypass');
+
+static const List<FirewallSchemasAction> values = [block, challenge, jsChallenge, managedChallenge, allow, log, bypass];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FirewallSchemasAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FirewallSchemasAction($value)'; } 
+ }
+/// A list of products to bypass for a request when using the `bypass` action.
+final class FirewallProducts2 {const FirewallProducts2._(this.value);
+
+factory FirewallProducts2.fromJson(String json) { return switch (json) {
+  'zoneLockdown' => zoneLockdown,
+  'uaBlock' => uaBlock,
+  'bic' => bic,
+  'hot' => hot,
+  'securityLevel' => securityLevel,
+  'rateLimit' => rateLimit,
+  'waf' => waf,
+  _ => FirewallProducts2._(json),
+}; }
+
+static const FirewallProducts2 zoneLockdown = FirewallProducts2._('zoneLockdown');
+
+static const FirewallProducts2 uaBlock = FirewallProducts2._('uaBlock');
+
+static const FirewallProducts2 bic = FirewallProducts2._('bic');
+
+static const FirewallProducts2 hot = FirewallProducts2._('hot');
+
+static const FirewallProducts2 securityLevel = FirewallProducts2._('securityLevel');
+
+static const FirewallProducts2 rateLimit = FirewallProducts2._('rateLimit');
+
+static const FirewallProducts2 waf = FirewallProducts2._('waf');
+
+static const List<FirewallProducts2> values = [zoneLockdown, uaBlock, bic, hot, securityLevel, rateLimit, waf];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FirewallProducts2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FirewallProducts2($value)'; } 
+ }
+final class FirewallFilterRuleBase {const FirewallFilterRuleBase({this.action, this.description, this.id, this.paused, this.priority, this.products, this.ref, });
+
+factory FirewallFilterRuleBase.fromJson(Map<String, dynamic> json) { return FirewallFilterRuleBase(
+  action: json['action'] != null ? FirewallSchemasAction.fromJson(json['action'] as String) : null,
+  description: json['description'] != null ? FirewallFirewallRulesComponentsSchemasDescription.fromJson(json['description'] as String) : null,
+  id: json['id'] != null ? FirewallFirewallRulesComponentsSchemasId.fromJson(json['id'] as String) : null,
+  paused: json['paused'] != null ? FirewallComponentsSchemasPaused.fromJson(json['paused'] as bool) : null,
+  priority: json['priority'] != null ? FirewallComponentsSchemasPriority.fromJson(json['priority'] as num) : null,
+  products: (json['products'] as List<dynamic>?)?.map((e) => FirewallProducts2.fromJson(e as String)).toList(),
+  ref: json['ref'] != null ? FirewallRef.fromJson(json['ref'] as String) : null,
+); }
+
+final FirewallSchemasAction? action;
+
+final FirewallFirewallRulesComponentsSchemasDescription? description;
+
+final FirewallFirewallRulesComponentsSchemasId? id;
+
+/// When true, indicates that the firewall rule is currently paused.
+final FirewallComponentsSchemasPaused? paused;
+
+/// The priority of the rule. Optional value used to define the processing order. A lower number indicates a higher priority. If not provided, rules with a defined priority will be processed before rules without a priority.
+final FirewallComponentsSchemasPriority? priority;
+
+final List<FirewallProducts2>? products;
+
+final FirewallRef? ref;
+
+Map<String, dynamic> toJson() { return {
+  if (action != null) 'action': action?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (paused != null) 'paused': paused?.toJson(),
+  if (priority != null) 'priority': priority?.toJson(),
+  if (products != null) 'products': products?.map((e) => e.toJson()).toList(),
+  if (ref != null) 'ref': ref?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FirewallFilterRuleBase copyWith({FirewallSchemasAction Function()? action, FirewallFirewallRulesComponentsSchemasDescription Function()? description, FirewallFirewallRulesComponentsSchemasId Function()? id, FirewallComponentsSchemasPaused Function()? paused, FirewallComponentsSchemasPriority Function()? priority, List<FirewallProducts2> Function()? products, FirewallRef Function()? ref, }) { return FirewallFilterRuleBase(
+  action: action != null ? action() : this.action,
+  description: description != null ? description() : this.description,
+  id: id != null ? id() : this.id,
+  paused: paused != null ? paused() : this.paused,
+  priority: priority != null ? priority() : this.priority,
+  products: products != null ? products() : this.products,
+  ref: ref != null ? ref() : this.ref,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FirewallFilterRuleBase &&
+          action == other.action &&
+          description == other.description &&
+          id == other.id &&
+          paused == other.paused &&
+          priority == other.priority &&
+          listEquals(products, other.products) &&
+          ref == other.ref; } 
+@override int get hashCode { return Object.hash(action, description, id, paused, priority, Object.hashAll(products ?? const []), ref); } 
+@override String toString() { return 'FirewallFilterRuleBase(action: $action, description: $description, id: $id, paused: $paused, priority: $priority, products: $products, ref: $ref)'; } 
+ }

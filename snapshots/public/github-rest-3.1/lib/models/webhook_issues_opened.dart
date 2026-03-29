@@ -1,0 +1,90 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_issues_opened_changes.dart';import 'webhook_issues_opened_issue.dart';final class WebhookIssuesOpenedAction {const WebhookIssuesOpenedAction._(this.value);
+
+factory WebhookIssuesOpenedAction.fromJson(String json) { return switch (json) {
+  'opened' => opened,
+  _ => WebhookIssuesOpenedAction._(json),
+}; }
+
+static const WebhookIssuesOpenedAction opened = WebhookIssuesOpenedAction._('opened');
+
+static const List<WebhookIssuesOpenedAction> values = [opened];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookIssuesOpenedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookIssuesOpenedAction($value)'; } 
+ }
+final class WebhookIssuesOpened {const WebhookIssuesOpened({required this.action, this.changes, this.enterprise, this.installation, required this.issue, this.organization, required this.repository, required this.sender, });
+
+factory WebhookIssuesOpened.fromJson(Map<String, dynamic> json) { return WebhookIssuesOpened(
+  action: WebhookIssuesOpenedAction.fromJson(json['action'] as String),
+  changes: json['changes'] != null ? WebhookIssuesOpenedChanges.fromJson(json['changes'] as Map<String, dynamic>) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  issue: WebhookIssuesOpenedIssue.fromJson(json['issue'] as Map<String, dynamic>),
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookIssuesOpenedAction action;
+
+final WebhookIssuesOpenedChanges? changes;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+/// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
+final WebhookIssuesOpenedIssue issue;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (changes != null) 'changes': changes?.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'issue': issue.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'repository': repository.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('issue') &&
+      json.containsKey('repository') &&
+      json.containsKey('sender'); } 
+WebhookIssuesOpened copyWith({WebhookIssuesOpenedAction? action, WebhookIssuesOpenedChanges Function()? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhookIssuesOpenedIssue? issue, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesOpened(
+  action: action ?? this.action,
+  changes: changes != null ? changes() : this.changes,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  issue: issue ?? this.issue,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository ?? this.repository,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssuesOpened &&
+          action == other.action &&
+          changes == other.changes &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          issue == other.issue &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, changes, enterprise, installation, issue, organization, repository, sender); } 
+@override String toString() { return 'WebhookIssuesOpened(action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, issue: $issue, organization: $organization, repository: $repository, sender: $sender)'; } 
+ }

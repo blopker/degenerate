@@ -1,0 +1,231 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_request_account_tax_ids.dart';import 'post_invoices_invoice_request_automatic_tax.dart';import 'post_invoices_invoice_request_custom_fields.dart';import 'post_invoices_invoice_request_custom_fields_variant1.dart';import 'post_invoices_invoice_request_default_source.dart';import 'post_invoices_invoice_request_default_tax_rates.dart';import 'post_invoices_invoice_request_discounts.dart';import 'post_invoices_invoice_request_discounts_variant1.dart';import 'post_invoices_invoice_request_effective_at.dart';import 'post_invoices_invoice_request_issuer.dart';import 'post_invoices_invoice_request_metadata.dart';import 'post_invoices_invoice_request_number.dart';import 'post_invoices_invoice_request_on_behalf_of.dart';import 'post_invoices_invoice_request_payment_settings.dart';import 'post_invoices_invoice_request_rendering.dart';import 'post_invoices_invoice_request_shipping_cost.dart';import 'post_invoices_invoice_request_shipping_details.dart';import 'post_invoices_invoice_request_transfer_data.dart';import 'recipient_shipping_with_optional_fields_address.dart';import 'shipping_cost.dart';import 'transfer_data_specs2.dart';/// Either `charge_automatically` or `send_invoice`. This field can be updated only on `draft` invoices.
+final class PostInvoicesInvoiceRequestCollectionMethod {const PostInvoicesInvoiceRequestCollectionMethod._(this.value);
+
+factory PostInvoicesInvoiceRequestCollectionMethod.fromJson(String json) { return switch (json) {
+  'charge_automatically' => chargeAutomatically,
+  'send_invoice' => sendInvoice,
+  _ => PostInvoicesInvoiceRequestCollectionMethod._(json),
+}; }
+
+static const PostInvoicesInvoiceRequestCollectionMethod chargeAutomatically = PostInvoicesInvoiceRequestCollectionMethod._('charge_automatically');
+
+static const PostInvoicesInvoiceRequestCollectionMethod sendInvoice = PostInvoicesInvoiceRequestCollectionMethod._('send_invoice');
+
+static const List<PostInvoicesInvoiceRequestCollectionMethod> values = [chargeAutomatically, sendInvoice];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestCollectionMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceRequestCollectionMethod($value)'; } 
+ }
+final class PostInvoicesInvoiceRequest {const PostInvoicesInvoiceRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.customFields, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.transferData, });
+
+factory PostInvoicesInvoiceRequest.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceRequest(
+  accountTaxIds: json['account_tax_ids'] != null ? OneOf2.parse(json['account_tax_ids'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceRequestAccountTaxIdsVariant2.fromJson(v as String),) : null,
+  applicationFeeAmount: json['application_fee_amount'] != null ? (json['application_fee_amount'] as num).toInt() : null,
+  autoAdvance: json['auto_advance'] as bool?,
+  automaticTax: json['automatic_tax'] != null ? PostInvoicesInvoiceRequestAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
+  automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
+  collectionMethod: json['collection_method'] != null ? PostInvoicesInvoiceRequestCollectionMethod.fromJson(json['collection_method'] as String) : null,
+  customFields: json['custom_fields'] != null ? OneOf2.parse(json['custom_fields'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceRequestCustomFieldsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceRequestCustomFieldsVariant2.fromJson(v as String),) : null,
+  daysUntilDue: json['days_until_due'] != null ? (json['days_until_due'] as num).toInt() : null,
+  defaultPaymentMethod: json['default_payment_method'] as String?,
+  defaultSource: json['default_source'] != null ? OneOf2.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestDefaultSourceVariant2.fromJson(v as String),) : null,
+  defaultTaxRates: json['default_tax_rates'] != null ? OneOf2.parse(json['default_tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesInvoiceRequestDefaultTaxRatesVariant2.fromJson(v as String),) : null,
+  description: json['description'] as String?,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesInvoiceRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesInvoiceRequestDiscountsVariant2.fromJson(v as String),) : null,
+  dueDate: json['due_date'] != null ? (json['due_date'] as num).toInt() : null,
+  effectiveAt: json['effective_at'] != null ? OneOf2.parse(json['effective_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostInvoicesInvoiceRequestEffectiveAtVariant2.fromJson(v as String),) : null,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  footer: json['footer'] as String?,
+  issuer: json['issuer'] != null ? PostInvoicesInvoiceRequestIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostInvoicesInvoiceRequestMetadataVariant2.fromJson(v as String),) : null,
+  number: json['number'] != null ? OneOf2.parse(json['number'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestNumberVariant2.fromJson(v as String),) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => PostInvoicesInvoiceRequestOnBehalfOfVariant2.fromJson(v as String),) : null,
+  paymentSettings: json['payment_settings'] != null ? PostInvoicesInvoiceRequestPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
+  rendering: json['rendering'] != null ? PostInvoicesInvoiceRequestRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? OneOf2.parse(json['shipping_cost'], fromA: (v) => ShippingCost.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesInvoiceRequestShippingCostVariant2.fromJson(v as String),) : null,
+  shippingDetails: json['shipping_details'] != null ? OneOf2.parse(json['shipping_details'], fromA: (v) => RecipientShippingWithOptionalFieldsAddress.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesInvoiceRequestShippingDetailsVariant2.fromJson(v as String),) : null,
+  statementDescriptor: json['statement_descriptor'] as String?,
+  transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs2.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesInvoiceRequestTransferDataVariant2.fromJson(v as String),) : null,
+); }
+
+/// The account tax IDs associated with the invoice. Only editable when the invoice is a draft.
+final PostInvoicesInvoiceRequestAccountTaxIds? accountTaxIds;
+
+/// A fee in cents (or local equivalent) that will be applied to the invoice and transferred to the application owner's Stripe account. The request must be made with an OAuth key or the Stripe-Account header in order to take an application fee. For more information, see the application fees [documentation](https://docs.stripe.com/billing/invoices/connect#collecting-fees).
+final int? applicationFeeAmount;
+
+/// Controls whether Stripe performs [automatic collection](https://docs.stripe.com/invoicing/integration/automatic-advancement-collection) of the invoice.
+final bool? autoAdvance;
+
+/// Settings for automatic tax lookup for this invoice.
+final PostInvoicesInvoiceRequestAutomaticTax? automaticTax;
+
+/// The time when this invoice should be scheduled to finalize (up to 5 years in the future). The invoice is finalized at this time if it's still in draft state. To turn off automatic finalization, set `auto_advance` to false.
+final int? automaticallyFinalizesAt;
+
+/// Either `charge_automatically` or `send_invoice`. This field can be updated only on `draft` invoices.
+final PostInvoicesInvoiceRequestCollectionMethod? collectionMethod;
+
+/// A list of up to 4 custom fields to be displayed on the invoice. If a value for `custom_fields` is specified, the list specified will replace the existing custom field list on this invoice. Pass an empty string to remove previously-defined fields.
+final PostInvoicesInvoiceRequestCustomFields? customFields;
+
+/// The number of days from which the invoice is created until it is due. Only valid for invoices where `collection_method=send_invoice`. This field can only be updated on `draft` invoices.
+final int? daysUntilDue;
+
+/// ID of the default payment method for the invoice. It must belong to the customer associated with the invoice. If not set, defaults to the subscription's default payment method, if any, or to the default payment method in the customer's invoice settings.
+final String? defaultPaymentMethod;
+
+/// ID of the default payment source for the invoice. It must belong to the customer associated with the invoice and be in a chargeable state. If not set, defaults to the subscription's default source, if any, or to the customer's default source.
+final PostInvoicesInvoiceRequestDefaultSource? defaultSource;
+
+/// The tax rates that will apply to any line item that does not have `tax_rates` set. Pass an empty string to remove previously-defined tax rates.
+final PostInvoicesInvoiceRequestDefaultTaxRates? defaultTaxRates;
+
+/// An arbitrary string attached to the object. Often useful for displaying to users. Referenced as 'memo' in the Dashboard.
+final String? description;
+
+/// The discounts that will apply to the invoice. Pass an empty string to remove previously-defined discounts.
+final PostInvoicesInvoiceRequestDiscounts? discounts;
+
+/// The date on which payment for this invoice is due. Only valid for invoices where `collection_method=send_invoice`. This field can only be updated on `draft` invoices.
+final int? dueDate;
+
+/// The date when this invoice is in effect. Same as `finalized_at` unless overwritten. When defined, this value replaces the system-generated 'Date of issue' printed on the invoice PDF and receipt.
+final PostInvoicesInvoiceRequestEffectiveAt? effectiveAt;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Footer to be displayed on the invoice.
+final String? footer;
+
+/// The connected account that issues the invoice. The invoice is presented with the branding and support information of the specified account.
+final PostInvoicesInvoiceRequestIssuer? issuer;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostInvoicesInvoiceRequestMetadata? metadata;
+
+/// Set the number for this invoice. If no number is present then a number will be assigned automatically when the invoice is finalized. In many markets, regulations require invoices to be unique, sequential and / or gapless. You are responsible for ensuring this is true across all your different invoicing systems in the event that you edit the invoice number using our API. If you use only Stripe for your invoices and do not change invoice numbers, Stripe handles this aspect of compliance for you automatically.
+final PostInvoicesInvoiceRequestNumber? number;
+
+/// The account (if any) for which the funds of the invoice payment are intended. If set, the invoice will be presented with the branding and support information of the specified account. See the [Invoices with Connect](https://docs.stripe.com/billing/invoices/connect) documentation for details.
+final PostInvoicesInvoiceRequestOnBehalfOf? onBehalfOf;
+
+/// Configuration settings for the PaymentIntent that is generated when the invoice is finalized.
+final PostInvoicesInvoiceRequestPaymentSettings? paymentSettings;
+
+/// The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
+final PostInvoicesInvoiceRequestRendering? rendering;
+
+/// Settings for the cost of shipping for this invoice.
+final PostInvoicesInvoiceRequestShippingCost? shippingCost;
+
+/// Shipping details for the invoice. The Invoice PDF will use the `shipping_details` value if it is set, otherwise the PDF will render the shipping address from the customer.
+final PostInvoicesInvoiceRequestShippingDetails? shippingDetails;
+
+/// Extra information about a charge for the customer's credit card statement. It must contain at least one letter. If not specified and this invoice is part of a subscription, the default `statement_descriptor` will be set to the first subscription item's product's `statement_descriptor`.
+final String? statementDescriptor;
+
+/// If specified, the funds from the invoice will be transferred to the destination and the ID of the resulting transfer will be found on the invoice's charge. This will be unset if you POST an empty value.
+final PostInvoicesInvoiceRequestTransferData? transferData;
+
+Map<String, dynamic> toJson() { return {
+  if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.toJson(),
+  'application_fee_amount': ?applicationFeeAmount,
+  'auto_advance': ?autoAdvance,
+  if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
+  'automatically_finalizes_at': ?automaticallyFinalizesAt,
+  if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
+  if (customFields != null) 'custom_fields': customFields?.toJson(),
+  'days_until_due': ?daysUntilDue,
+  'default_payment_method': ?defaultPaymentMethod,
+  if (defaultSource != null) 'default_source': defaultSource?.toJson(),
+  if (defaultTaxRates != null) 'default_tax_rates': defaultTaxRates?.toJson(),
+  'description': ?description,
+  if (discounts != null) 'discounts': discounts?.toJson(),
+  'due_date': ?dueDate,
+  if (effectiveAt != null) 'effective_at': effectiveAt?.toJson(),
+  'expand': ?expand,
+  'footer': ?footer,
+  if (issuer != null) 'issuer': issuer?.toJson(),
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  if (number != null) 'number': number?.toJson(),
+  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
+  if (paymentSettings != null) 'payment_settings': paymentSettings?.toJson(),
+  if (rendering != null) 'rendering': rendering?.toJson(),
+  if (shippingCost != null) 'shipping_cost': shippingCost?.toJson(),
+  if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
+  'statement_descriptor': ?statementDescriptor,
+  if (transferData != null) 'transfer_data': transferData?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostInvoicesInvoiceRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds Function()? accountTaxIds, int Function()? applicationFeeAmount, bool Function()? autoAdvance, PostInvoicesInvoiceRequestAutomaticTax Function()? automaticTax, int Function()? automaticallyFinalizesAt, PostInvoicesInvoiceRequestCollectionMethod Function()? collectionMethod, PostInvoicesInvoiceRequestCustomFields Function()? customFields, int Function()? daysUntilDue, String Function()? defaultPaymentMethod, PostInvoicesInvoiceRequestDefaultSource Function()? defaultSource, PostInvoicesInvoiceRequestDefaultTaxRates Function()? defaultTaxRates, String Function()? description, PostInvoicesInvoiceRequestDiscounts Function()? discounts, int Function()? dueDate, PostInvoicesInvoiceRequestEffectiveAt Function()? effectiveAt, List<String> Function()? expand, String Function()? footer, PostInvoicesInvoiceRequestIssuer Function()? issuer, PostInvoicesInvoiceRequestMetadata Function()? metadata, PostInvoicesInvoiceRequestNumber Function()? number, PostInvoicesInvoiceRequestOnBehalfOf Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings Function()? paymentSettings, PostInvoicesInvoiceRequestRendering Function()? rendering, PostInvoicesInvoiceRequestShippingCost Function()? shippingCost, PostInvoicesInvoiceRequestShippingDetails Function()? shippingDetails, String Function()? statementDescriptor, PostInvoicesInvoiceRequestTransferData Function()? transferData, }) { return PostInvoicesInvoiceRequest(
+  accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
+  applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,
+  autoAdvance: autoAdvance != null ? autoAdvance() : this.autoAdvance,
+  automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
+  automaticallyFinalizesAt: automaticallyFinalizesAt != null ? automaticallyFinalizesAt() : this.automaticallyFinalizesAt,
+  collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
+  customFields: customFields != null ? customFields() : this.customFields,
+  daysUntilDue: daysUntilDue != null ? daysUntilDue() : this.daysUntilDue,
+  defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,
+  defaultSource: defaultSource != null ? defaultSource() : this.defaultSource,
+  defaultTaxRates: defaultTaxRates != null ? defaultTaxRates() : this.defaultTaxRates,
+  description: description != null ? description() : this.description,
+  discounts: discounts != null ? discounts() : this.discounts,
+  dueDate: dueDate != null ? dueDate() : this.dueDate,
+  effectiveAt: effectiveAt != null ? effectiveAt() : this.effectiveAt,
+  expand: expand != null ? expand() : this.expand,
+  footer: footer != null ? footer() : this.footer,
+  issuer: issuer != null ? issuer() : this.issuer,
+  metadata: metadata != null ? metadata() : this.metadata,
+  number: number != null ? number() : this.number,
+  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  paymentSettings: paymentSettings != null ? paymentSettings() : this.paymentSettings,
+  rendering: rendering != null ? rendering() : this.rendering,
+  shippingCost: shippingCost != null ? shippingCost() : this.shippingCost,
+  shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
+  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+  transferData: transferData != null ? transferData() : this.transferData,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesInvoiceRequest &&
+          accountTaxIds == other.accountTaxIds &&
+          applicationFeeAmount == other.applicationFeeAmount &&
+          autoAdvance == other.autoAdvance &&
+          automaticTax == other.automaticTax &&
+          automaticallyFinalizesAt == other.automaticallyFinalizesAt &&
+          collectionMethod == other.collectionMethod &&
+          customFields == other.customFields &&
+          daysUntilDue == other.daysUntilDue &&
+          defaultPaymentMethod == other.defaultPaymentMethod &&
+          defaultSource == other.defaultSource &&
+          defaultTaxRates == other.defaultTaxRates &&
+          description == other.description &&
+          discounts == other.discounts &&
+          dueDate == other.dueDate &&
+          effectiveAt == other.effectiveAt &&
+          listEquals(expand, other.expand) &&
+          footer == other.footer &&
+          issuer == other.issuer &&
+          metadata == other.metadata &&
+          number == other.number &&
+          onBehalfOf == other.onBehalfOf &&
+          paymentSettings == other.paymentSettings &&
+          rendering == other.rendering &&
+          shippingCost == other.shippingCost &&
+          shippingDetails == other.shippingDetails &&
+          statementDescriptor == other.statementDescriptor &&
+          transferData == other.transferData; } 
+@override int get hashCode { return Object.hashAll([accountTaxIds, applicationFeeAmount, autoAdvance, automaticTax, automaticallyFinalizesAt, collectionMethod, customFields, daysUntilDue, defaultPaymentMethod, defaultSource, defaultTaxRates, description, discounts, dueDate, effectiveAt, Object.hashAll(expand ?? const []), footer, issuer, metadata, number, onBehalfOf, paymentSettings, rendering, shippingCost, shippingDetails, statementDescriptor, transferData]); } 
+@override String toString() { return 'PostInvoicesInvoiceRequest(accountTaxIds: $accountTaxIds, applicationFeeAmount: $applicationFeeAmount, autoAdvance: $autoAdvance, automaticTax: $automaticTax, automaticallyFinalizesAt: $automaticallyFinalizesAt, collectionMethod: $collectionMethod, customFields: $customFields, daysUntilDue: $daysUntilDue, defaultPaymentMethod: $defaultPaymentMethod, defaultSource: $defaultSource, defaultTaxRates: $defaultTaxRates, description: $description, discounts: $discounts, dueDate: $dueDate, effectiveAt: $effectiveAt, expand: $expand, footer: $footer, issuer: $issuer, metadata: $metadata, number: $number, onBehalfOf: $onBehalfOf, paymentSettings: $paymentSettings, rendering: $rendering, shippingCost: $shippingCost, shippingDetails: $shippingDetails, statementDescriptor: $statementDescriptor, transferData: $transferData)'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RepositoryAdvisoryCvss {const RepositoryAdvisoryCvss({required this.vectorString, required this.score, });
+
+factory RepositoryAdvisoryCvss.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryCvss(
+  vectorString: json['vector_string'] as String?,
+  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
+); }
+
+/// The CVSS vector.
+final String? vectorString;
+
+/// The CVSS score.
+final double? score;
+
+Map<String, dynamic> toJson() { return {
+  'vector_string': ?vectorString,
+  'score': ?score,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('vector_string') && json['vector_string'] is String &&
+      json.containsKey('score') && json['score'] is num; } 
+RepositoryAdvisoryCvss copyWith({String? Function()? vectorString, double? Function()? score, }) { return RepositoryAdvisoryCvss(
+  vectorString: vectorString != null ? vectorString() : this.vectorString,
+  score: score != null ? score() : this.score,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryAdvisoryCvss &&
+          vectorString == other.vectorString &&
+          score == other.score; } 
+@override int get hashCode { return Object.hash(vectorString, score); } 
+@override String toString() { return 'RepositoryAdvisoryCvss(vectorString: $vectorString, score: $score)'; } 
+ }

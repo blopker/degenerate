@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentMethodOptionsParam55ProductDescriptionVariant2 {const PaymentMethodOptionsParam55ProductDescriptionVariant2._(this.value);
+
+factory PaymentMethodOptionsParam55ProductDescriptionVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PaymentMethodOptionsParam55ProductDescriptionVariant2._(json),
+}; }
+
+static const PaymentMethodOptionsParam55ProductDescriptionVariant2 $empty = PaymentMethodOptionsParam55ProductDescriptionVariant2._('');
+
+static const List<PaymentMethodOptionsParam55ProductDescriptionVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam55ProductDescriptionVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam55ProductDescriptionVariant2($value)'; } 
+ }
+typedef PaymentMethodOptionsParam55ProductDescription = OneOf2<String,PaymentMethodOptionsParam55ProductDescriptionVariant2>;

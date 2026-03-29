@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_card_processing.dart';/// Type of the payment method for which payment is in `processing` state, one of `card`.
+final class PaymentIntentProcessingType {const PaymentIntentProcessingType._(this.value);
+
+factory PaymentIntentProcessingType.fromJson(String json) { return switch (json) {
+  'card' => card,
+  _ => PaymentIntentProcessingType._(json),
+}; }
+
+static const PaymentIntentProcessingType card = PaymentIntentProcessingType._('card');
+
+static const List<PaymentIntentProcessingType> values = [card];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentProcessingType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentProcessingType($value)'; } 
+ }
+/// 
+final class PaymentIntentProcessing {const PaymentIntentProcessing({this.card, required this.type, });
+
+factory PaymentIntentProcessing.fromJson(Map<String, dynamic> json) { return PaymentIntentProcessing(
+  card: json['card'] != null ? PaymentIntentCardProcessing.fromJson(json['card'] as Map<String, dynamic>) : null,
+  type: PaymentIntentProcessingType.fromJson(json['type'] as String),
+); }
+
+final PaymentIntentCardProcessing? card;
+
+/// Type of the payment method for which payment is in `processing` state, one of `card`.
+final PaymentIntentProcessingType type;
+
+Map<String, dynamic> toJson() { return {
+  if (card != null) 'card': card?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PaymentIntentProcessing copyWith({PaymentIntentCardProcessing Function()? card, PaymentIntentProcessingType? type, }) { return PaymentIntentProcessing(
+  card: card != null ? card() : this.card,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentProcessing &&
+          card == other.card &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(card, type); } 
+@override String toString() { return 'PaymentIntentProcessing(card: $card, type: $type)'; } 
+ }

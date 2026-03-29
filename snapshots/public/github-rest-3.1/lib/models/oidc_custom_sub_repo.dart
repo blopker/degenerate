@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Actions OIDC subject customization for a repository
+final class OidcCustomSubRepo {const OidcCustomSubRepo({required this.useDefault, this.includeClaimKeys, });
+
+factory OidcCustomSubRepo.fromJson(Map<String, dynamic> json) { return OidcCustomSubRepo(
+  useDefault: json['use_default'] as bool,
+  includeClaimKeys: (json['include_claim_keys'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
+final bool useDefault;
+
+/// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+final List<String>? includeClaimKeys;
+
+Map<String, dynamic> toJson() { return {
+  'use_default': useDefault,
+  'include_claim_keys': ?includeClaimKeys,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('use_default') && json['use_default'] is bool; } 
+OidcCustomSubRepo copyWith({bool? useDefault, List<String> Function()? includeClaimKeys, }) { return OidcCustomSubRepo(
+  useDefault: useDefault ?? this.useDefault,
+  includeClaimKeys: includeClaimKeys != null ? includeClaimKeys() : this.includeClaimKeys,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OidcCustomSubRepo &&
+          useDefault == other.useDefault &&
+          listEquals(includeClaimKeys, other.includeClaimKeys); } 
+@override int get hashCode { return Object.hash(useDefault, Object.hashAll(includeClaimKeys ?? const [])); } 
+@override String toString() { return 'OidcCustomSubRepo(useDefault: $useDefault, includeClaimKeys: $includeClaimKeys)'; } 
+ }

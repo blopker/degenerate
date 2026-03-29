@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_single_member.dart';final class BatchCreateMembersRequest {const BatchCreateMembersRequest({required this.members});
+
+factory BatchCreateMembersRequest.fromJson(Map<String, dynamic> json) { return BatchCreateMembersRequest(
+  members: (json['members'] as List<dynamic>).map((e) => CreateSingleMember.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<CreateSingleMember> members;
+
+Map<String, dynamic> toJson() { return {
+  'members': members.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('members'); } 
+BatchCreateMembersRequest copyWith({List<CreateSingleMember>? members}) { return BatchCreateMembersRequest(
+  members: members ?? this.members,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BatchCreateMembersRequest &&
+          listEquals(members, other.members); } 
+@override int get hashCode { return Object.hashAll(members).hashCode; } 
+@override String toString() { return 'BatchCreateMembersRequest(members: $members)'; } 
+ }

@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deployment_branch_policy_settings.dart';import 'repos_create_or_update_environment_request_reviewers.dart';import 'wait_timer.dart';/// Whether or not a user who created the job is prevented from approving their own job.
+extension type const PreventSelfReview(bool value) {
+factory PreventSelfReview.fromJson(bool json) => PreventSelfReview(json);
+
+bool toJson() => value;
+
+}
+final class ReposCreateOrUpdateEnvironmentRequest {const ReposCreateOrUpdateEnvironmentRequest({this.waitTimer, this.preventSelfReview, this.reviewers, this.deploymentBranchPolicy, });
+
+factory ReposCreateOrUpdateEnvironmentRequest.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateEnvironmentRequest(
+  waitTimer: json['wait_timer'] != null ? WaitTimer.fromJson(json['wait_timer'] as num) : null,
+  preventSelfReview: json['prevent_self_review'] != null ? PreventSelfReview.fromJson(json['prevent_self_review'] as bool) : null,
+  reviewers: (json['reviewers'] as List<dynamic>?)?.map((e) => ReposCreateOrUpdateEnvironmentRequestReviewers.fromJson(e as Map<String, dynamic>)).toList(),
+  deploymentBranchPolicy: json['deployment_branch_policy'] != null ? DeploymentBranchPolicySettings.fromJson(json['deployment_branch_policy'] as Map<String, dynamic>) : null,
+); }
+
+/// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
+final WaitTimer? waitTimer;
+
+/// Whether or not a user who created the job is prevented from approving their own job.
+final PreventSelfReview? preventSelfReview;
+
+/// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+final List<ReposCreateOrUpdateEnvironmentRequestReviewers>? reviewers;
+
+final DeploymentBranchPolicySettings? deploymentBranchPolicy;
+
+Map<String, dynamic> toJson() { return {
+  if (waitTimer != null) 'wait_timer': waitTimer?.toJson(),
+  if (preventSelfReview != null) 'prevent_self_review': preventSelfReview?.toJson(),
+  if (reviewers != null) 'reviewers': reviewers?.map((e) => e.toJson()).toList(),
+  if (deploymentBranchPolicy != null) 'deployment_branch_policy': deploymentBranchPolicy?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposCreateOrUpdateEnvironmentRequest copyWith({WaitTimer Function()? waitTimer, PreventSelfReview Function()? preventSelfReview, List<ReposCreateOrUpdateEnvironmentRequestReviewers>? Function()? reviewers, DeploymentBranchPolicySettings Function()? deploymentBranchPolicy, }) { return ReposCreateOrUpdateEnvironmentRequest(
+  waitTimer: waitTimer != null ? waitTimer() : this.waitTimer,
+  preventSelfReview: preventSelfReview != null ? preventSelfReview() : this.preventSelfReview,
+  reviewers: reviewers != null ? reviewers() : this.reviewers,
+  deploymentBranchPolicy: deploymentBranchPolicy != null ? deploymentBranchPolicy() : this.deploymentBranchPolicy,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposCreateOrUpdateEnvironmentRequest &&
+          waitTimer == other.waitTimer &&
+          preventSelfReview == other.preventSelfReview &&
+          listEquals(reviewers, other.reviewers) &&
+          deploymentBranchPolicy == other.deploymentBranchPolicy; } 
+@override int get hashCode { return Object.hash(waitTimer, preventSelfReview, Object.hashAll(reviewers ?? const []), deploymentBranchPolicy); } 
+@override String toString() { return 'ReposCreateOrUpdateEnvironmentRequest(waitTimer: $waitTimer, preventSelfReview: $preventSelfReview, reviewers: $reviewers, deploymentBranchPolicy: $deploymentBranchPolicy)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto {const PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto({required this.taxId});
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto(
+  taxId: json['tax_id'] as String,
+); }
+
+final String taxId;
+
+Map<String, dynamic> toJson() { return {
+  'tax_id': taxId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_id') && json['tax_id'] is String; } 
+PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto copyWith({String? taxId}) { return PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto(
+  taxId: taxId ?? this.taxId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto &&
+          taxId == other.taxId; } 
+@override int get hashCode { return taxId.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodDataBoleto(taxId: $taxId)'; } 
+ }

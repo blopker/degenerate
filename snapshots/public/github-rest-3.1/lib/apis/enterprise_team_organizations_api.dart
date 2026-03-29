@@ -1,0 +1,146 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/enterprise_team_organizations_bulk_add_request.dart';import '../models/enterprise_team_organizations_bulk_remove_request.dart';import '../models/organization_simple.dart';/// EnterpriseTeamOrganizationsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class EnterpriseTeamOrganizationsApi with ApiExecutor {const EnterpriseTeamOrganizationsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get organization assignments
+///
+/// Get all organizations assigned to an enterprise team
+///
+/// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations`
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsGetAssignments({required String enterprise, required String enterpriseTeam, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Add organization assignments
+///
+/// Assign an enterprise team to multiple organizations.
+///
+/// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add`
+Future<ApiResult<List<OrganizationSimple>, Never>> enterpriseTeamOrganizationsBulkAdd({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkAddRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/add',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Remove organization assignments
+///
+/// Unassign an enterprise team from multiple organizations.
+///
+/// `POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove`
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsBulkRemove({required String enterprise, required String enterpriseTeam, required EnterpriseTeamOrganizationsBulkRemoveRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/remove',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get organization assignment
+///
+/// Check if an enterprise team is assigned to an organization
+///
+/// `GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsGetAssignment({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OrganizationSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Add an organization assignment
+///
+/// Assign an enterprise team to an organization.
+///
+/// `PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
+Future<ApiResult<OrganizationSimple, Never>> enterpriseTeamOrganizationsAdd({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OrganizationSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete an organization assignment
+///
+/// Unassign an enterprise team from an organization.
+///
+/// `DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}`
+Future<ApiResult<void, Never>> enterpriseTeamOrganizationsDelete({required String enterprise, required String enterpriseTeam, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/teams/${Uri.encodeComponent(enterpriseTeam)}/organizations/${Uri.encodeComponent(org)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+ }

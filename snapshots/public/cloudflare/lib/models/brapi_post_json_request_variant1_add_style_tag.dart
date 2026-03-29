@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class BrapiPostJsonRequestVariant1AddStyleTag {const BrapiPostJsonRequestVariant1AddStyleTag({this.content, this.url, });
+
+factory BrapiPostJsonRequestVariant1AddStyleTag.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant1AddStyleTag(
+  content: json['content'] as String?,
+  url: json['url'] as String?,
+); }
+
+final String? content;
+
+final String? url;
+
+Map<String, dynamic> toJson() { return {
+  'content': ?content,
+  'url': ?url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+BrapiPostJsonRequestVariant1AddStyleTag copyWith({String Function()? content, String Function()? url, }) { return BrapiPostJsonRequestVariant1AddStyleTag(
+  content: content != null ? content() : this.content,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BrapiPostJsonRequestVariant1AddStyleTag &&
+          content == other.content &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(content, url); } 
+@override String toString() { return 'BrapiPostJsonRequestVariant1AddStyleTag(content: $content, url: $url)'; } 
+ }

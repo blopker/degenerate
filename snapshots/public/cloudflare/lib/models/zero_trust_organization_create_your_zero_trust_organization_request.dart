@@ -1,0 +1,114 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_authenticate_via_warp.dart';import 'access_auth_domain.dart';import 'access_auto_redirect_to_identity.dart';import 'access_deny_unmatched_requests.dart';import 'access_is_ui_read_only.dart';import 'access_login_design.dart';import 'access_mfa_required_for_all_apps.dart';import 'access_name.dart';import 'access_org_mfa_config.dart';import 'access_session_duration.dart';import 'access_ui_read_only_toggle_reason.dart';import 'access_user_seat_expiration_inactive_time.dart';import 'access_warp_auth_session_duration.dart';final class ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest {const ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest({this.allowAuthenticateViaWarp, required this.authDomain, this.autoRedirectToIdentity, this.denyUnmatchedRequests, this.denyUnmatchedRequestsExemptedZoneNames, this.isUiReadOnly, this.loginDesign, this.mfaConfig, this.mfaRequiredForAllApps, required this.name, this.sessionDuration, this.uiReadOnlyToggleReason, this.userSeatExpirationInactiveTime, this.warpAuthSessionDuration, });
+
+factory ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(
+  allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,
+  authDomain: AccessAuthDomain.fromJson(json['auth_domain'] as String),
+  autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
+  denyUnmatchedRequests: json['deny_unmatched_requests'] != null ? AccessDenyUnmatchedRequests.fromJson(json['deny_unmatched_requests'] as bool) : null,
+  denyUnmatchedRequestsExemptedZoneNames: (json['deny_unmatched_requests_exempted_zone_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  isUiReadOnly: json['is_ui_read_only'] != null ? AccessIsUiReadOnly.fromJson(json['is_ui_read_only'] as bool) : null,
+  loginDesign: json['login_design'] != null ? AccessLoginDesign.fromJson(json['login_design'] as Map<String, dynamic>) : null,
+  mfaConfig: json['mfa_config'] != null ? AccessOrgMfaConfig.fromJson(json['mfa_config'] as Map<String, dynamic>) : null,
+  mfaRequiredForAllApps: json['mfa_required_for_all_apps'] != null ? AccessMfaRequiredForAllApps.fromJson(json['mfa_required_for_all_apps'] as bool) : null,
+  name: AccessName.fromJson(json['name'] as String),
+  sessionDuration: json['session_duration'] != null ? AccessSessionDuration.fromJson(json['session_duration'] as String) : null,
+  uiReadOnlyToggleReason: json['ui_read_only_toggle_reason'] != null ? AccessUiReadOnlyToggleReason.fromJson(json['ui_read_only_toggle_reason'] as String) : null,
+  userSeatExpirationInactiveTime: json['user_seat_expiration_inactive_time'] != null ? AccessUserSeatExpirationInactiveTime.fromJson(json['user_seat_expiration_inactive_time'] as String) : null,
+  warpAuthSessionDuration: json['warp_auth_session_duration'] != null ? AccessWarpAuthSessionDuration.fromJson(json['warp_auth_session_duration'] as String) : null,
+); }
+
+/// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
+final AccessAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
+
+/// The unique subdomain assigned to your Zero Trust organization.
+final AccessAuthDomain authDomain;
+
+/// When set to `true`, users skip the identity provider selection step during login.
+final AccessAutoRedirectToIdentity? autoRedirectToIdentity;
+
+/// Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.
+final AccessDenyUnmatchedRequests? denyUnmatchedRequests;
+
+/// Contains zone names to exempt from the `deny_unmatched_requests` feature. Requests to a subdomain in an exempted zone will block unauthenticated traffic by default if there is a configured Access application and policy that matches the request.
+final List<String>? denyUnmatchedRequestsExemptedZoneNames;
+
+/// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
+final AccessIsUiReadOnly? isUiReadOnly;
+
+final AccessLoginDesign? loginDesign;
+
+final AccessOrgMfaConfig? mfaConfig;
+
+/// Determines whether global MFA settings apply to applications by default. The organization must have MFA enabled with at least one authentication method and a session duration configured.
+final AccessMfaRequiredForAllApps? mfaRequiredForAllApps;
+
+/// The name of your Zero Trust organization.
+final AccessName name;
+
+/// The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
+final AccessSessionDuration? sessionDuration;
+
+/// A description of the reason why the UI read only field is being toggled.
+final AccessUiReadOnlyToggleReason? uiReadOnlyToggleReason;
+
+/// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
+final AccessUserSeatExpirationInactiveTime? userSeatExpirationInactiveTime;
+
+/// The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.
+final AccessWarpAuthSessionDuration? warpAuthSessionDuration;
+
+Map<String, dynamic> toJson() { return {
+  if (allowAuthenticateViaWarp != null) 'allow_authenticate_via_warp': allowAuthenticateViaWarp?.toJson(),
+  'auth_domain': authDomain.toJson(),
+  if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
+  if (denyUnmatchedRequests != null) 'deny_unmatched_requests': denyUnmatchedRequests?.toJson(),
+  'deny_unmatched_requests_exempted_zone_names': ?denyUnmatchedRequestsExemptedZoneNames,
+  if (isUiReadOnly != null) 'is_ui_read_only': isUiReadOnly?.toJson(),
+  if (loginDesign != null) 'login_design': loginDesign?.toJson(),
+  if (mfaConfig != null) 'mfa_config': mfaConfig?.toJson(),
+  if (mfaRequiredForAllApps != null) 'mfa_required_for_all_apps': mfaRequiredForAllApps?.toJson(),
+  'name': name.toJson(),
+  if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
+  if (uiReadOnlyToggleReason != null) 'ui_read_only_toggle_reason': uiReadOnlyToggleReason?.toJson(),
+  if (userSeatExpirationInactiveTime != null) 'user_seat_expiration_inactive_time': userSeatExpirationInactiveTime?.toJson(),
+  if (warpAuthSessionDuration != null) 'warp_auth_session_duration': warpAuthSessionDuration?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_domain') &&
+      json.containsKey('name'); } 
+ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest copyWith({AccessAllowAuthenticateViaWarp Function()? allowAuthenticateViaWarp, AccessAuthDomain? authDomain, AccessAutoRedirectToIdentity Function()? autoRedirectToIdentity, AccessDenyUnmatchedRequests Function()? denyUnmatchedRequests, List<String> Function()? denyUnmatchedRequestsExemptedZoneNames, AccessIsUiReadOnly Function()? isUiReadOnly, AccessLoginDesign Function()? loginDesign, AccessOrgMfaConfig Function()? mfaConfig, AccessMfaRequiredForAllApps Function()? mfaRequiredForAllApps, AccessName? name, AccessSessionDuration Function()? sessionDuration, AccessUiReadOnlyToggleReason Function()? uiReadOnlyToggleReason, AccessUserSeatExpirationInactiveTime Function()? userSeatExpirationInactiveTime, AccessWarpAuthSessionDuration Function()? warpAuthSessionDuration, }) { return ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(
+  allowAuthenticateViaWarp: allowAuthenticateViaWarp != null ? allowAuthenticateViaWarp() : this.allowAuthenticateViaWarp,
+  authDomain: authDomain ?? this.authDomain,
+  autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
+  denyUnmatchedRequests: denyUnmatchedRequests != null ? denyUnmatchedRequests() : this.denyUnmatchedRequests,
+  denyUnmatchedRequestsExemptedZoneNames: denyUnmatchedRequestsExemptedZoneNames != null ? denyUnmatchedRequestsExemptedZoneNames() : this.denyUnmatchedRequestsExemptedZoneNames,
+  isUiReadOnly: isUiReadOnly != null ? isUiReadOnly() : this.isUiReadOnly,
+  loginDesign: loginDesign != null ? loginDesign() : this.loginDesign,
+  mfaConfig: mfaConfig != null ? mfaConfig() : this.mfaConfig,
+  mfaRequiredForAllApps: mfaRequiredForAllApps != null ? mfaRequiredForAllApps() : this.mfaRequiredForAllApps,
+  name: name ?? this.name,
+  sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
+  uiReadOnlyToggleReason: uiReadOnlyToggleReason != null ? uiReadOnlyToggleReason() : this.uiReadOnlyToggleReason,
+  userSeatExpirationInactiveTime: userSeatExpirationInactiveTime != null ? userSeatExpirationInactiveTime() : this.userSeatExpirationInactiveTime,
+  warpAuthSessionDuration: warpAuthSessionDuration != null ? warpAuthSessionDuration() : this.warpAuthSessionDuration,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest &&
+          allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
+          authDomain == other.authDomain &&
+          autoRedirectToIdentity == other.autoRedirectToIdentity &&
+          denyUnmatchedRequests == other.denyUnmatchedRequests &&
+          listEquals(denyUnmatchedRequestsExemptedZoneNames, other.denyUnmatchedRequestsExemptedZoneNames) &&
+          isUiReadOnly == other.isUiReadOnly &&
+          loginDesign == other.loginDesign &&
+          mfaConfig == other.mfaConfig &&
+          mfaRequiredForAllApps == other.mfaRequiredForAllApps &&
+          name == other.name &&
+          sessionDuration == other.sessionDuration &&
+          uiReadOnlyToggleReason == other.uiReadOnlyToggleReason &&
+          userSeatExpirationInactiveTime == other.userSeatExpirationInactiveTime &&
+          warpAuthSessionDuration == other.warpAuthSessionDuration; } 
+@override int get hashCode { return Object.hash(allowAuthenticateViaWarp, authDomain, autoRedirectToIdentity, denyUnmatchedRequests, Object.hashAll(denyUnmatchedRequestsExemptedZoneNames ?? const []), isUiReadOnly, loginDesign, mfaConfig, mfaRequiredForAllApps, name, sessionDuration, uiReadOnlyToggleReason, userSeatExpirationInactiveTime, warpAuthSessionDuration); } 
+@override String toString() { return 'ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, authDomain: $authDomain, autoRedirectToIdentity: $autoRedirectToIdentity, denyUnmatchedRequests: $denyUnmatchedRequests, denyUnmatchedRequestsExemptedZoneNames: $denyUnmatchedRequestsExemptedZoneNames, isUiReadOnly: $isUiReadOnly, loginDesign: $loginDesign, mfaConfig: $mfaConfig, mfaRequiredForAllApps: $mfaRequiredForAllApps, name: $name, sessionDuration: $sessionDuration, uiReadOnlyToggleReason: $uiReadOnlyToggleReason, userSeatExpirationInactiveTime: $userSeatExpirationInactiveTime, warpAuthSessionDuration: $warpAuthSessionDuration)'; } 
+ }

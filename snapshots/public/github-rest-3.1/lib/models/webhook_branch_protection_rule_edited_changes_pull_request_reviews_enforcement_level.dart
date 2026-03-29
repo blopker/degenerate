@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom {const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(this.value);
+
+factory WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'non_admins' => nonAdmins,
+  'everyone' => everyone,
+  _ => WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._(json),
+}; }
+
+static const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom off = WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._('off');
+
+static const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom nonAdmins = WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._('non_admins');
+
+static const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom everyone = WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom._('everyone');
+
+static const List<WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom> values = [off, nonAdmins, everyone];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom($value)'; } 
+ }
+final class WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel {const WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel({required this.from});
+
+factory WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel(
+  from: WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom.fromJson(json['from'] as String),
+); }
+
+final WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from'); } 
+WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel copyWith({WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevelFrom? from}) { return WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel(from: $from)'; } 
+ }

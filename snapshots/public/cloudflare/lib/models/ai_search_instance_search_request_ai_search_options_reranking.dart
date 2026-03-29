@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel {const AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel._(this.value);
+
+factory AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel.fromJson(String json) { return switch (json) {
+  '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
+  '' => $empty,
+  _ => AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel._(json),
+}; }
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel cfBaaiBgeRerankerBase = AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel._('@cf/baai/bge-reranker-base');
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel $empty = AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel._('');
+
+static const List<AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel> values = [cfBaaiBgeRerankerBase, $empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel($value)'; } 
+ }
+final class AiSearchInstanceSearchRequestAiSearchOptionsReranking {const AiSearchInstanceSearchRequestAiSearchOptionsReranking({this.enabled, this.matchThreshold = 0.4, this.model, });
+
+factory AiSearchInstanceSearchRequestAiSearchOptionsReranking.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsReranking(
+  enabled: json['enabled'] as bool?,
+  matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
+  model: json['model'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel.fromJson(json['model'] as String) : null,
+); }
+
+final bool? enabled;
+
+final double matchThreshold;
+
+final AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel? model;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': ?enabled,
+  'match_threshold': matchThreshold,
+  if (model != null) 'model': model?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AiSearchInstanceSearchRequestAiSearchOptionsReranking copyWith({bool Function()? enabled, double Function()? matchThreshold, AiSearchInstanceSearchRequestAiSearchOptionsRerankingModel Function()? model, }) { return AiSearchInstanceSearchRequestAiSearchOptionsReranking(
+  enabled: enabled != null ? enabled() : this.enabled,
+  matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,
+  model: model != null ? model() : this.model,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchInstanceSearchRequestAiSearchOptionsReranking &&
+          enabled == other.enabled &&
+          matchThreshold == other.matchThreshold &&
+          model == other.model; } 
+@override int get hashCode { return Object.hash(enabled, matchThreshold, model); } 
+@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsReranking(enabled: $enabled, matchThreshold: $matchThreshold, model: $model)'; } 
+ }

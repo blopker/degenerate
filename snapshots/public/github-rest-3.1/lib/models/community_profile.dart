@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'community_profile_files.dart';/// Community Profile
+final class CommunityProfile {const CommunityProfile({required this.healthPercentage, required this.description, required this.documentation, required this.files, required this.updatedAt, this.contentReportsEnabled, });
+
+factory CommunityProfile.fromJson(Map<String, dynamic> json) { return CommunityProfile(
+  healthPercentage: (json['health_percentage'] as num).toInt(),
+  description: json['description'] as String?,
+  documentation: json['documentation'] as String?,
+  files: CommunityProfileFiles.fromJson(json['files'] as Map<String, dynamic>),
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  contentReportsEnabled: json['content_reports_enabled'] as bool?,
+); }
+
+final int healthPercentage;
+
+final String? description;
+
+final String? documentation;
+
+final CommunityProfileFiles files;
+
+final DateTime? updatedAt;
+
+final bool? contentReportsEnabled;
+
+Map<String, dynamic> toJson() { return {
+  'health_percentage': healthPercentage,
+  'description': ?description,
+  'documentation': ?documentation,
+  'files': files.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'content_reports_enabled': ?contentReportsEnabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('health_percentage') && json['health_percentage'] is num &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('documentation') && json['documentation'] is String &&
+      json.containsKey('files') &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+CommunityProfile copyWith({int? healthPercentage, String? Function()? description, String? Function()? documentation, CommunityProfileFiles? files, DateTime? Function()? updatedAt, bool Function()? contentReportsEnabled, }) { return CommunityProfile(
+  healthPercentage: healthPercentage ?? this.healthPercentage,
+  description: description != null ? description() : this.description,
+  documentation: documentation != null ? documentation() : this.documentation,
+  files: files ?? this.files,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  contentReportsEnabled: contentReportsEnabled != null ? contentReportsEnabled() : this.contentReportsEnabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CommunityProfile &&
+          healthPercentage == other.healthPercentage &&
+          description == other.description &&
+          documentation == other.documentation &&
+          files == other.files &&
+          updatedAt == other.updatedAt &&
+          contentReportsEnabled == other.contentReportsEnabled; } 
+@override int get hashCode { return Object.hash(healthPercentage, description, documentation, files, updatedAt, contentReportsEnabled); } 
+@override String toString() { return 'CommunityProfile(healthPercentage: $healthPercentage, description: $description, documentation: $documentation, files: $files, updatedAt: $updatedAt, contentReportsEnabled: $contentReportsEnabled)'; } 
+ }

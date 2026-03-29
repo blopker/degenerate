@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'projects_add_field_for_user_request_iteration.dart';import 'projects_add_field_for_user_request_single_select.dart';import 'projects_add_field_for_user_request_variant1.dart';typedef ProjectsAddFieldForUserRequest = OneOf3<ProjectsAddFieldForUserRequestVariant1,ProjectsAddFieldForUserRequestSingleSelect,ProjectsAddFieldForUserRequestIteration>;

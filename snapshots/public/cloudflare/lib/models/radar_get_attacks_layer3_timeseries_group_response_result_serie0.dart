@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0 {const RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0({required this.timestamps});
+
+factory RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0(
+  timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
+); }
+
+final List<DateTime> timestamps;
+
+Map<String, dynamic> toJson() { return {
+  'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamps'); } 
+RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0 copyWith({List<DateTime>? timestamps}) { return RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0(
+  timestamps: timestamps ?? this.timestamps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0 &&
+          listEquals(timestamps, other.timestamps); } 
+@override int get hashCode { return Object.hashAll(timestamps).hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupResponseResultSerie0(timestamps: $timestamps)'; } 
+ }

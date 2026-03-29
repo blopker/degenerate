@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_leaked_credential_checks_timeseries_group_response_result_meta.dart';import 'radar_get_leaked_credential_checks_timeseries_group_response_result_serie0.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult {const RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult({required this.meta, required this.serie0, });
+
+factory RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult(
+  meta: RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  serie0: RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta meta;
+
+final RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0 serie0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'serie_0': serie0.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('serie_0'); } 
+RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult copyWith({RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultMeta? meta, RadarGetLeakedCredentialChecksTimeseriesGroupResponseResultSerie0? serie0, }) { return RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult(
+  meta: meta ?? this.meta,
+  serie0: serie0 ?? this.serie0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult &&
+          meta == other.meta &&
+          serie0 == other.serie0; } 
+@override int get hashCode { return Object.hash(meta, serie0); } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupResponseResult(meta: $meta, serie0: $serie0)'; } 
+ }

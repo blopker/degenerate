@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'invoice.dart';/// 
+final class BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided {const BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided({required this.invoice, required this.invoiceLineItem, });
+
+factory BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided(
+  invoice: OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),),
+  invoiceLineItem: json['invoice_line_item'] as String,
+); }
+
+/// The invoice to which the reinstated billing credits were originally applied.
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice invoice;
+
+/// The invoice line item to which the reinstated billing credits were originally applied.
+final String invoiceLineItem;
+
+Map<String, dynamic> toJson() { return {
+  'invoice': invoice.toJson(),
+  'invoice_line_item': invoiceLineItem,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') &&
+      json.containsKey('invoice_line_item') && json['invoice_line_item'] is String; } 
+BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided copyWith({BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, String? invoiceLineItem, }) { return BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided(
+  invoice: invoice ?? this.invoice,
+  invoiceLineItem: invoiceLineItem ?? this.invoiceLineItem,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided &&
+          invoice == other.invoice &&
+          invoiceLineItem == other.invoiceLineItem; } 
+@override int get hashCode { return Object.hash(invoice, invoiceLineItem); } 
+@override String toString() { return 'BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided(invoice: $invoice, invoiceLineItem: $invoiceLineItem)'; } 
+ }

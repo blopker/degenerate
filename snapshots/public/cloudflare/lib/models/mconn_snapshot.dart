@@ -1,0 +1,1205 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_snapshot_bond.dart';import 'mconn_snapshot_dhcp_lease.dart';import 'mconn_snapshot_disk.dart';import 'mconn_snapshot_interface.dart';import 'mconn_snapshot_mount.dart';import 'mconn_snapshot_netdev.dart';import 'mconn_snapshot_thermal.dart';import 'mconn_snapshot_tunnel.dart';/// Snapshot
+final class MconnSnapshot {const MconnSnapshot({this.bonds, required this.countReclaimFailures, required this.countReclaimedPaths, required this.countRecordFailed, required this.countTransmitFailures, this.cpuCount, this.cpuPressure10s, this.cpuPressure60s, this.cpuPressure300s, this.cpuPressureTotalUs, this.cpuTimeGuestMs, this.cpuTimeGuestNiceMs, this.cpuTimeIdleMs, this.cpuTimeIowaitMs, this.cpuTimeIrqMs, this.cpuTimeNiceMs, this.cpuTimeSoftirqMs, this.cpuTimeStealMs, this.cpuTimeSystemMs, this.cpuTimeUserMs, this.dhcpLeases, this.disks, this.haState, this.haValue, this.interfaces, this.ioPressureFull10s, this.ioPressureFull60s, this.ioPressureFull300s, this.ioPressureFullTotalUs, this.ioPressureSome10s, this.ioPressureSome60s, this.ioPressureSome300s, this.ioPressureSomeTotalUs, this.kernelBtime, this.kernelCtxt, this.kernelProcesses, this.kernelProcessesBlocked, this.kernelProcessesRunning, this.loadAverage1m, this.loadAverage5m, this.loadAverage15m, this.loadAverageCur, this.loadAverageMax, this.memoryActiveBytes, this.memoryAnonHugepagesBytes, this.memoryAnonPagesBytes, this.memoryAvailableBytes, this.memoryBounceBytes, this.memoryBuffersBytes, this.memoryCachedBytes, this.memoryCmaFreeBytes, this.memoryCmaTotalBytes, this.memoryCommitLimitBytes, this.memoryCommittedAsBytes, this.memoryDirtyBytes, this.memoryFreeBytes, this.memoryHighFreeBytes, this.memoryHighTotalBytes, this.memoryHugepagesFree, this.memoryHugepagesRsvd, this.memoryHugepagesSurp, this.memoryHugepagesTotal, this.memoryHugepagesizeBytes, this.memoryInactiveBytes, this.memoryKReclaimableBytes, this.memoryKernelStackBytes, this.memoryLowFreeBytes, this.memoryLowTotalBytes, this.memoryMappedBytes, this.memoryPageTablesBytes, this.memoryPerCpuBytes, this.memoryPressureFull10s, this.memoryPressureFull60s, this.memoryPressureFull300s, this.memoryPressureFullTotalUs, this.memoryPressureSome10s, this.memoryPressureSome60s, this.memoryPressureSome300s, this.memoryPressureSomeTotalUs, this.memorySReclaimableBytes, this.memorySUnreclaimBytes, this.memorySecondaryPageTablesBytes, this.memoryShmemBytes, this.memoryShmemHugepagesBytes, this.memoryShmemPmdMappedBytes, this.memorySlabBytes, this.memorySwapCachedBytes, this.memorySwapFreeBytes, this.memorySwapTotalBytes, this.memoryTotalBytes, this.memoryVmallocChunkBytes, this.memoryVmallocTotalBytes, this.memoryVmallocUsedBytes, this.memoryWritebackBytes, this.memoryWritebackTmpBytes, this.memoryZSwapBytes, this.memoryZSwappedBytes, this.mounts, this.netdevs, this.snmpIcmpInAddrMaskReps, this.snmpIcmpInAddrMasks, this.snmpIcmpInCsumErrors, this.snmpIcmpInDestUnreachs, this.snmpIcmpInEchoReps, this.snmpIcmpInEchos, this.snmpIcmpInErrors, this.snmpIcmpInMsgs, this.snmpIcmpInParmProbs, this.snmpIcmpInRedirects, this.snmpIcmpInSrcQuenchs, this.snmpIcmpInTimeExcds, this.snmpIcmpInTimestampReps, this.snmpIcmpInTimestamps, this.snmpIcmpOutAddrMaskReps, this.snmpIcmpOutAddrMasks, this.snmpIcmpOutDestUnreachs, this.snmpIcmpOutEchoReps, this.snmpIcmpOutEchos, this.snmpIcmpOutErrors, this.snmpIcmpOutMsgs, this.snmpIcmpOutParmProbs, this.snmpIcmpOutRedirects, this.snmpIcmpOutSrcQuenchs, this.snmpIcmpOutTimeExcds, this.snmpIcmpOutTimestampReps, this.snmpIcmpOutTimestamps, this.snmpIpDefaultTtl, this.snmpIpForwDatagrams, this.snmpIpForwardingEnabled, this.snmpIpFragCreates, this.snmpIpFragFails, this.snmpIpFragOks, this.snmpIpInAddrErrors, this.snmpIpInDelivers, this.snmpIpInDiscards, this.snmpIpInHdrErrors, this.snmpIpInReceives, this.snmpIpInUnknownProtos, this.snmpIpOutDiscards, this.snmpIpOutNoRoutes, this.snmpIpOutRequests, this.snmpIpReasmFails, this.snmpIpReasmOks, this.snmpIpReasmReqds, this.snmpIpReasmTimeout, this.snmpTcpActiveOpens, this.snmpTcpAttemptFails, this.snmpTcpCurrEstab, this.snmpTcpEstabResets, this.snmpTcpInCsumErrors, this.snmpTcpInErrs, this.snmpTcpInSegs, this.snmpTcpMaxConn, this.snmpTcpOutRsts, this.snmpTcpOutSegs, this.snmpTcpPassiveOpens, this.snmpTcpRetransSegs, this.snmpTcpRtoMax, this.snmpTcpRtoMin, this.snmpUdpInDatagrams, this.snmpUdpInErrors, this.snmpUdpNoPorts, this.snmpUdpOutDatagrams, this.systemBootTimeS, required this.t, this.thermals, this.tunnels, this.uptimeIdleMs, this.uptimeTotalMs, required this.v, });
+
+factory MconnSnapshot.fromJson(Map<String, dynamic> json) { return MconnSnapshot(
+  bonds: (json['bonds'] as List<dynamic>?)?.map((e) => MconnSnapshotBond.fromJson(e as Map<String, dynamic>)).toList(),
+  countReclaimFailures: (json['count_reclaim_failures'] as num).toDouble(),
+  countReclaimedPaths: (json['count_reclaimed_paths'] as num).toDouble(),
+  countRecordFailed: (json['count_record_failed'] as num).toDouble(),
+  countTransmitFailures: (json['count_transmit_failures'] as num).toDouble(),
+  cpuCount: json['cpu_count'] != null ? (json['cpu_count'] as num).toDouble() : null,
+  cpuPressure10s: json['cpu_pressure_10s'] != null ? (json['cpu_pressure_10s'] as num).toDouble() : null,
+  cpuPressure60s: json['cpu_pressure_60s'] != null ? (json['cpu_pressure_60s'] as num).toDouble() : null,
+  cpuPressure300s: json['cpu_pressure_300s'] != null ? (json['cpu_pressure_300s'] as num).toDouble() : null,
+  cpuPressureTotalUs: json['cpu_pressure_total_us'] != null ? (json['cpu_pressure_total_us'] as num).toDouble() : null,
+  cpuTimeGuestMs: json['cpu_time_guest_ms'] != null ? (json['cpu_time_guest_ms'] as num).toDouble() : null,
+  cpuTimeGuestNiceMs: json['cpu_time_guest_nice_ms'] != null ? (json['cpu_time_guest_nice_ms'] as num).toDouble() : null,
+  cpuTimeIdleMs: json['cpu_time_idle_ms'] != null ? (json['cpu_time_idle_ms'] as num).toDouble() : null,
+  cpuTimeIowaitMs: json['cpu_time_iowait_ms'] != null ? (json['cpu_time_iowait_ms'] as num).toDouble() : null,
+  cpuTimeIrqMs: json['cpu_time_irq_ms'] != null ? (json['cpu_time_irq_ms'] as num).toDouble() : null,
+  cpuTimeNiceMs: json['cpu_time_nice_ms'] != null ? (json['cpu_time_nice_ms'] as num).toDouble() : null,
+  cpuTimeSoftirqMs: json['cpu_time_softirq_ms'] != null ? (json['cpu_time_softirq_ms'] as num).toDouble() : null,
+  cpuTimeStealMs: json['cpu_time_steal_ms'] != null ? (json['cpu_time_steal_ms'] as num).toDouble() : null,
+  cpuTimeSystemMs: json['cpu_time_system_ms'] != null ? (json['cpu_time_system_ms'] as num).toDouble() : null,
+  cpuTimeUserMs: json['cpu_time_user_ms'] != null ? (json['cpu_time_user_ms'] as num).toDouble() : null,
+  dhcpLeases: (json['dhcp_leases'] as List<dynamic>?)?.map((e) => MconnSnapshotDhcpLease.fromJson(e as Map<String, dynamic>)).toList(),
+  disks: (json['disks'] as List<dynamic>?)?.map((e) => MconnSnapshotDisk.fromJson(e as Map<String, dynamic>)).toList(),
+  haState: json['ha_state'] as String?,
+  haValue: json['ha_value'] != null ? (json['ha_value'] as num).toDouble() : null,
+  interfaces: (json['interfaces'] as List<dynamic>?)?.map((e) => MconnSnapshotInterface.fromJson(e as Map<String, dynamic>)).toList(),
+  ioPressureFull10s: json['io_pressure_full_10s'] != null ? (json['io_pressure_full_10s'] as num).toDouble() : null,
+  ioPressureFull60s: json['io_pressure_full_60s'] != null ? (json['io_pressure_full_60s'] as num).toDouble() : null,
+  ioPressureFull300s: json['io_pressure_full_300s'] != null ? (json['io_pressure_full_300s'] as num).toDouble() : null,
+  ioPressureFullTotalUs: json['io_pressure_full_total_us'] != null ? (json['io_pressure_full_total_us'] as num).toDouble() : null,
+  ioPressureSome10s: json['io_pressure_some_10s'] != null ? (json['io_pressure_some_10s'] as num).toDouble() : null,
+  ioPressureSome60s: json['io_pressure_some_60s'] != null ? (json['io_pressure_some_60s'] as num).toDouble() : null,
+  ioPressureSome300s: json['io_pressure_some_300s'] != null ? (json['io_pressure_some_300s'] as num).toDouble() : null,
+  ioPressureSomeTotalUs: json['io_pressure_some_total_us'] != null ? (json['io_pressure_some_total_us'] as num).toDouble() : null,
+  kernelBtime: json['kernel_btime'] != null ? (json['kernel_btime'] as num).toDouble() : null,
+  kernelCtxt: json['kernel_ctxt'] != null ? (json['kernel_ctxt'] as num).toDouble() : null,
+  kernelProcesses: json['kernel_processes'] != null ? (json['kernel_processes'] as num).toDouble() : null,
+  kernelProcessesBlocked: json['kernel_processes_blocked'] != null ? (json['kernel_processes_blocked'] as num).toDouble() : null,
+  kernelProcessesRunning: json['kernel_processes_running'] != null ? (json['kernel_processes_running'] as num).toDouble() : null,
+  loadAverage1m: json['load_average_1m'] != null ? (json['load_average_1m'] as num).toDouble() : null,
+  loadAverage5m: json['load_average_5m'] != null ? (json['load_average_5m'] as num).toDouble() : null,
+  loadAverage15m: json['load_average_15m'] != null ? (json['load_average_15m'] as num).toDouble() : null,
+  loadAverageCur: json['load_average_cur'] != null ? (json['load_average_cur'] as num).toDouble() : null,
+  loadAverageMax: json['load_average_max'] != null ? (json['load_average_max'] as num).toDouble() : null,
+  memoryActiveBytes: json['memory_active_bytes'] != null ? (json['memory_active_bytes'] as num).toDouble() : null,
+  memoryAnonHugepagesBytes: json['memory_anon_hugepages_bytes'] != null ? (json['memory_anon_hugepages_bytes'] as num).toDouble() : null,
+  memoryAnonPagesBytes: json['memory_anon_pages_bytes'] != null ? (json['memory_anon_pages_bytes'] as num).toDouble() : null,
+  memoryAvailableBytes: json['memory_available_bytes'] != null ? (json['memory_available_bytes'] as num).toDouble() : null,
+  memoryBounceBytes: json['memory_bounce_bytes'] != null ? (json['memory_bounce_bytes'] as num).toDouble() : null,
+  memoryBuffersBytes: json['memory_buffers_bytes'] != null ? (json['memory_buffers_bytes'] as num).toDouble() : null,
+  memoryCachedBytes: json['memory_cached_bytes'] != null ? (json['memory_cached_bytes'] as num).toDouble() : null,
+  memoryCmaFreeBytes: json['memory_cma_free_bytes'] != null ? (json['memory_cma_free_bytes'] as num).toDouble() : null,
+  memoryCmaTotalBytes: json['memory_cma_total_bytes'] != null ? (json['memory_cma_total_bytes'] as num).toDouble() : null,
+  memoryCommitLimitBytes: json['memory_commit_limit_bytes'] != null ? (json['memory_commit_limit_bytes'] as num).toDouble() : null,
+  memoryCommittedAsBytes: json['memory_committed_as_bytes'] != null ? (json['memory_committed_as_bytes'] as num).toDouble() : null,
+  memoryDirtyBytes: json['memory_dirty_bytes'] != null ? (json['memory_dirty_bytes'] as num).toDouble() : null,
+  memoryFreeBytes: json['memory_free_bytes'] != null ? (json['memory_free_bytes'] as num).toDouble() : null,
+  memoryHighFreeBytes: json['memory_high_free_bytes'] != null ? (json['memory_high_free_bytes'] as num).toDouble() : null,
+  memoryHighTotalBytes: json['memory_high_total_bytes'] != null ? (json['memory_high_total_bytes'] as num).toDouble() : null,
+  memoryHugepagesFree: json['memory_hugepages_free'] != null ? (json['memory_hugepages_free'] as num).toDouble() : null,
+  memoryHugepagesRsvd: json['memory_hugepages_rsvd'] != null ? (json['memory_hugepages_rsvd'] as num).toDouble() : null,
+  memoryHugepagesSurp: json['memory_hugepages_surp'] != null ? (json['memory_hugepages_surp'] as num).toDouble() : null,
+  memoryHugepagesTotal: json['memory_hugepages_total'] != null ? (json['memory_hugepages_total'] as num).toDouble() : null,
+  memoryHugepagesizeBytes: json['memory_hugepagesize_bytes'] != null ? (json['memory_hugepagesize_bytes'] as num).toDouble() : null,
+  memoryInactiveBytes: json['memory_inactive_bytes'] != null ? (json['memory_inactive_bytes'] as num).toDouble() : null,
+  memoryKReclaimableBytes: json['memory_k_reclaimable_bytes'] != null ? (json['memory_k_reclaimable_bytes'] as num).toDouble() : null,
+  memoryKernelStackBytes: json['memory_kernel_stack_bytes'] != null ? (json['memory_kernel_stack_bytes'] as num).toDouble() : null,
+  memoryLowFreeBytes: json['memory_low_free_bytes'] != null ? (json['memory_low_free_bytes'] as num).toDouble() : null,
+  memoryLowTotalBytes: json['memory_low_total_bytes'] != null ? (json['memory_low_total_bytes'] as num).toDouble() : null,
+  memoryMappedBytes: json['memory_mapped_bytes'] != null ? (json['memory_mapped_bytes'] as num).toDouble() : null,
+  memoryPageTablesBytes: json['memory_page_tables_bytes'] != null ? (json['memory_page_tables_bytes'] as num).toDouble() : null,
+  memoryPerCpuBytes: json['memory_per_cpu_bytes'] != null ? (json['memory_per_cpu_bytes'] as num).toDouble() : null,
+  memoryPressureFull10s: json['memory_pressure_full_10s'] != null ? (json['memory_pressure_full_10s'] as num).toDouble() : null,
+  memoryPressureFull60s: json['memory_pressure_full_60s'] != null ? (json['memory_pressure_full_60s'] as num).toDouble() : null,
+  memoryPressureFull300s: json['memory_pressure_full_300s'] != null ? (json['memory_pressure_full_300s'] as num).toDouble() : null,
+  memoryPressureFullTotalUs: json['memory_pressure_full_total_us'] != null ? (json['memory_pressure_full_total_us'] as num).toDouble() : null,
+  memoryPressureSome10s: json['memory_pressure_some_10s'] != null ? (json['memory_pressure_some_10s'] as num).toDouble() : null,
+  memoryPressureSome60s: json['memory_pressure_some_60s'] != null ? (json['memory_pressure_some_60s'] as num).toDouble() : null,
+  memoryPressureSome300s: json['memory_pressure_some_300s'] != null ? (json['memory_pressure_some_300s'] as num).toDouble() : null,
+  memoryPressureSomeTotalUs: json['memory_pressure_some_total_us'] != null ? (json['memory_pressure_some_total_us'] as num).toDouble() : null,
+  memorySReclaimableBytes: json['memory_s_reclaimable_bytes'] != null ? (json['memory_s_reclaimable_bytes'] as num).toDouble() : null,
+  memorySUnreclaimBytes: json['memory_s_unreclaim_bytes'] != null ? (json['memory_s_unreclaim_bytes'] as num).toDouble() : null,
+  memorySecondaryPageTablesBytes: json['memory_secondary_page_tables_bytes'] != null ? (json['memory_secondary_page_tables_bytes'] as num).toDouble() : null,
+  memoryShmemBytes: json['memory_shmem_bytes'] != null ? (json['memory_shmem_bytes'] as num).toDouble() : null,
+  memoryShmemHugepagesBytes: json['memory_shmem_hugepages_bytes'] != null ? (json['memory_shmem_hugepages_bytes'] as num).toDouble() : null,
+  memoryShmemPmdMappedBytes: json['memory_shmem_pmd_mapped_bytes'] != null ? (json['memory_shmem_pmd_mapped_bytes'] as num).toDouble() : null,
+  memorySlabBytes: json['memory_slab_bytes'] != null ? (json['memory_slab_bytes'] as num).toDouble() : null,
+  memorySwapCachedBytes: json['memory_swap_cached_bytes'] != null ? (json['memory_swap_cached_bytes'] as num).toDouble() : null,
+  memorySwapFreeBytes: json['memory_swap_free_bytes'] != null ? (json['memory_swap_free_bytes'] as num).toDouble() : null,
+  memorySwapTotalBytes: json['memory_swap_total_bytes'] != null ? (json['memory_swap_total_bytes'] as num).toDouble() : null,
+  memoryTotalBytes: json['memory_total_bytes'] != null ? (json['memory_total_bytes'] as num).toDouble() : null,
+  memoryVmallocChunkBytes: json['memory_vmalloc_chunk_bytes'] != null ? (json['memory_vmalloc_chunk_bytes'] as num).toDouble() : null,
+  memoryVmallocTotalBytes: json['memory_vmalloc_total_bytes'] != null ? (json['memory_vmalloc_total_bytes'] as num).toDouble() : null,
+  memoryVmallocUsedBytes: json['memory_vmalloc_used_bytes'] != null ? (json['memory_vmalloc_used_bytes'] as num).toDouble() : null,
+  memoryWritebackBytes: json['memory_writeback_bytes'] != null ? (json['memory_writeback_bytes'] as num).toDouble() : null,
+  memoryWritebackTmpBytes: json['memory_writeback_tmp_bytes'] != null ? (json['memory_writeback_tmp_bytes'] as num).toDouble() : null,
+  memoryZSwapBytes: json['memory_z_swap_bytes'] != null ? (json['memory_z_swap_bytes'] as num).toDouble() : null,
+  memoryZSwappedBytes: json['memory_z_swapped_bytes'] != null ? (json['memory_z_swapped_bytes'] as num).toDouble() : null,
+  mounts: (json['mounts'] as List<dynamic>?)?.map((e) => MconnSnapshotMount.fromJson(e as Map<String, dynamic>)).toList(),
+  netdevs: (json['netdevs'] as List<dynamic>?)?.map((e) => MconnSnapshotNetdev.fromJson(e as Map<String, dynamic>)).toList(),
+  snmpIcmpInAddrMaskReps: json['snmp_icmp_in_addr_mask_reps'] != null ? (json['snmp_icmp_in_addr_mask_reps'] as num).toDouble() : null,
+  snmpIcmpInAddrMasks: json['snmp_icmp_in_addr_masks'] != null ? (json['snmp_icmp_in_addr_masks'] as num).toDouble() : null,
+  snmpIcmpInCsumErrors: json['snmp_icmp_in_csum_errors'] != null ? (json['snmp_icmp_in_csum_errors'] as num).toDouble() : null,
+  snmpIcmpInDestUnreachs: json['snmp_icmp_in_dest_unreachs'] != null ? (json['snmp_icmp_in_dest_unreachs'] as num).toDouble() : null,
+  snmpIcmpInEchoReps: json['snmp_icmp_in_echo_reps'] != null ? (json['snmp_icmp_in_echo_reps'] as num).toDouble() : null,
+  snmpIcmpInEchos: json['snmp_icmp_in_echos'] != null ? (json['snmp_icmp_in_echos'] as num).toDouble() : null,
+  snmpIcmpInErrors: json['snmp_icmp_in_errors'] != null ? (json['snmp_icmp_in_errors'] as num).toDouble() : null,
+  snmpIcmpInMsgs: json['snmp_icmp_in_msgs'] != null ? (json['snmp_icmp_in_msgs'] as num).toDouble() : null,
+  snmpIcmpInParmProbs: json['snmp_icmp_in_parm_probs'] != null ? (json['snmp_icmp_in_parm_probs'] as num).toDouble() : null,
+  snmpIcmpInRedirects: json['snmp_icmp_in_redirects'] != null ? (json['snmp_icmp_in_redirects'] as num).toDouble() : null,
+  snmpIcmpInSrcQuenchs: json['snmp_icmp_in_src_quenchs'] != null ? (json['snmp_icmp_in_src_quenchs'] as num).toDouble() : null,
+  snmpIcmpInTimeExcds: json['snmp_icmp_in_time_excds'] != null ? (json['snmp_icmp_in_time_excds'] as num).toDouble() : null,
+  snmpIcmpInTimestampReps: json['snmp_icmp_in_timestamp_reps'] != null ? (json['snmp_icmp_in_timestamp_reps'] as num).toDouble() : null,
+  snmpIcmpInTimestamps: json['snmp_icmp_in_timestamps'] != null ? (json['snmp_icmp_in_timestamps'] as num).toDouble() : null,
+  snmpIcmpOutAddrMaskReps: json['snmp_icmp_out_addr_mask_reps'] != null ? (json['snmp_icmp_out_addr_mask_reps'] as num).toDouble() : null,
+  snmpIcmpOutAddrMasks: json['snmp_icmp_out_addr_masks'] != null ? (json['snmp_icmp_out_addr_masks'] as num).toDouble() : null,
+  snmpIcmpOutDestUnreachs: json['snmp_icmp_out_dest_unreachs'] != null ? (json['snmp_icmp_out_dest_unreachs'] as num).toDouble() : null,
+  snmpIcmpOutEchoReps: json['snmp_icmp_out_echo_reps'] != null ? (json['snmp_icmp_out_echo_reps'] as num).toDouble() : null,
+  snmpIcmpOutEchos: json['snmp_icmp_out_echos'] != null ? (json['snmp_icmp_out_echos'] as num).toDouble() : null,
+  snmpIcmpOutErrors: json['snmp_icmp_out_errors'] != null ? (json['snmp_icmp_out_errors'] as num).toDouble() : null,
+  snmpIcmpOutMsgs: json['snmp_icmp_out_msgs'] != null ? (json['snmp_icmp_out_msgs'] as num).toDouble() : null,
+  snmpIcmpOutParmProbs: json['snmp_icmp_out_parm_probs'] != null ? (json['snmp_icmp_out_parm_probs'] as num).toDouble() : null,
+  snmpIcmpOutRedirects: json['snmp_icmp_out_redirects'] != null ? (json['snmp_icmp_out_redirects'] as num).toDouble() : null,
+  snmpIcmpOutSrcQuenchs: json['snmp_icmp_out_src_quenchs'] != null ? (json['snmp_icmp_out_src_quenchs'] as num).toDouble() : null,
+  snmpIcmpOutTimeExcds: json['snmp_icmp_out_time_excds'] != null ? (json['snmp_icmp_out_time_excds'] as num).toDouble() : null,
+  snmpIcmpOutTimestampReps: json['snmp_icmp_out_timestamp_reps'] != null ? (json['snmp_icmp_out_timestamp_reps'] as num).toDouble() : null,
+  snmpIcmpOutTimestamps: json['snmp_icmp_out_timestamps'] != null ? (json['snmp_icmp_out_timestamps'] as num).toDouble() : null,
+  snmpIpDefaultTtl: json['snmp_ip_default_ttl'] != null ? (json['snmp_ip_default_ttl'] as num).toDouble() : null,
+  snmpIpForwDatagrams: json['snmp_ip_forw_datagrams'] != null ? (json['snmp_ip_forw_datagrams'] as num).toDouble() : null,
+  snmpIpForwardingEnabled: json['snmp_ip_forwarding_enabled'] as bool?,
+  snmpIpFragCreates: json['snmp_ip_frag_creates'] != null ? (json['snmp_ip_frag_creates'] as num).toDouble() : null,
+  snmpIpFragFails: json['snmp_ip_frag_fails'] != null ? (json['snmp_ip_frag_fails'] as num).toDouble() : null,
+  snmpIpFragOks: json['snmp_ip_frag_oks'] != null ? (json['snmp_ip_frag_oks'] as num).toDouble() : null,
+  snmpIpInAddrErrors: json['snmp_ip_in_addr_errors'] != null ? (json['snmp_ip_in_addr_errors'] as num).toDouble() : null,
+  snmpIpInDelivers: json['snmp_ip_in_delivers'] != null ? (json['snmp_ip_in_delivers'] as num).toDouble() : null,
+  snmpIpInDiscards: json['snmp_ip_in_discards'] != null ? (json['snmp_ip_in_discards'] as num).toDouble() : null,
+  snmpIpInHdrErrors: json['snmp_ip_in_hdr_errors'] != null ? (json['snmp_ip_in_hdr_errors'] as num).toDouble() : null,
+  snmpIpInReceives: json['snmp_ip_in_receives'] != null ? (json['snmp_ip_in_receives'] as num).toDouble() : null,
+  snmpIpInUnknownProtos: json['snmp_ip_in_unknown_protos'] != null ? (json['snmp_ip_in_unknown_protos'] as num).toDouble() : null,
+  snmpIpOutDiscards: json['snmp_ip_out_discards'] != null ? (json['snmp_ip_out_discards'] as num).toDouble() : null,
+  snmpIpOutNoRoutes: json['snmp_ip_out_no_routes'] != null ? (json['snmp_ip_out_no_routes'] as num).toDouble() : null,
+  snmpIpOutRequests: json['snmp_ip_out_requests'] != null ? (json['snmp_ip_out_requests'] as num).toDouble() : null,
+  snmpIpReasmFails: json['snmp_ip_reasm_fails'] != null ? (json['snmp_ip_reasm_fails'] as num).toDouble() : null,
+  snmpIpReasmOks: json['snmp_ip_reasm_oks'] != null ? (json['snmp_ip_reasm_oks'] as num).toDouble() : null,
+  snmpIpReasmReqds: json['snmp_ip_reasm_reqds'] != null ? (json['snmp_ip_reasm_reqds'] as num).toDouble() : null,
+  snmpIpReasmTimeout: json['snmp_ip_reasm_timeout'] != null ? (json['snmp_ip_reasm_timeout'] as num).toDouble() : null,
+  snmpTcpActiveOpens: json['snmp_tcp_active_opens'] != null ? (json['snmp_tcp_active_opens'] as num).toDouble() : null,
+  snmpTcpAttemptFails: json['snmp_tcp_attempt_fails'] != null ? (json['snmp_tcp_attempt_fails'] as num).toDouble() : null,
+  snmpTcpCurrEstab: json['snmp_tcp_curr_estab'] != null ? (json['snmp_tcp_curr_estab'] as num).toDouble() : null,
+  snmpTcpEstabResets: json['snmp_tcp_estab_resets'] != null ? (json['snmp_tcp_estab_resets'] as num).toDouble() : null,
+  snmpTcpInCsumErrors: json['snmp_tcp_in_csum_errors'] != null ? (json['snmp_tcp_in_csum_errors'] as num).toDouble() : null,
+  snmpTcpInErrs: json['snmp_tcp_in_errs'] != null ? (json['snmp_tcp_in_errs'] as num).toDouble() : null,
+  snmpTcpInSegs: json['snmp_tcp_in_segs'] != null ? (json['snmp_tcp_in_segs'] as num).toDouble() : null,
+  snmpTcpMaxConn: json['snmp_tcp_max_conn'] != null ? (json['snmp_tcp_max_conn'] as num).toDouble() : null,
+  snmpTcpOutRsts: json['snmp_tcp_out_rsts'] != null ? (json['snmp_tcp_out_rsts'] as num).toDouble() : null,
+  snmpTcpOutSegs: json['snmp_tcp_out_segs'] != null ? (json['snmp_tcp_out_segs'] as num).toDouble() : null,
+  snmpTcpPassiveOpens: json['snmp_tcp_passive_opens'] != null ? (json['snmp_tcp_passive_opens'] as num).toDouble() : null,
+  snmpTcpRetransSegs: json['snmp_tcp_retrans_segs'] != null ? (json['snmp_tcp_retrans_segs'] as num).toDouble() : null,
+  snmpTcpRtoMax: json['snmp_tcp_rto_max'] != null ? (json['snmp_tcp_rto_max'] as num).toDouble() : null,
+  snmpTcpRtoMin: json['snmp_tcp_rto_min'] != null ? (json['snmp_tcp_rto_min'] as num).toDouble() : null,
+  snmpUdpInDatagrams: json['snmp_udp_in_datagrams'] != null ? (json['snmp_udp_in_datagrams'] as num).toDouble() : null,
+  snmpUdpInErrors: json['snmp_udp_in_errors'] != null ? (json['snmp_udp_in_errors'] as num).toDouble() : null,
+  snmpUdpNoPorts: json['snmp_udp_no_ports'] != null ? (json['snmp_udp_no_ports'] as num).toDouble() : null,
+  snmpUdpOutDatagrams: json['snmp_udp_out_datagrams'] != null ? (json['snmp_udp_out_datagrams'] as num).toDouble() : null,
+  systemBootTimeS: json['system_boot_time_s'] != null ? (json['system_boot_time_s'] as num).toDouble() : null,
+  t: (json['t'] as num).toDouble(),
+  thermals: (json['thermals'] as List<dynamic>?)?.map((e) => MconnSnapshotThermal.fromJson(e as Map<String, dynamic>)).toList(),
+  tunnels: (json['tunnels'] as List<dynamic>?)?.map((e) => MconnSnapshotTunnel.fromJson(e as Map<String, dynamic>)).toList(),
+  uptimeIdleMs: json['uptime_idle_ms'] != null ? (json['uptime_idle_ms'] as num).toDouble() : null,
+  uptimeTotalMs: json['uptime_total_ms'] != null ? (json['uptime_total_ms'] as num).toDouble() : null,
+  v: json['v'] as String,
+); }
+
+final List<MconnSnapshotBond>? bonds;
+
+/// Count of failures to reclaim space
+final double countReclaimFailures;
+
+/// Count of reclaimed paths
+final double countReclaimedPaths;
+
+/// Count of failed snapshot recordings
+final double countRecordFailed;
+
+/// Count of failed snapshot transmissions
+final double countTransmitFailures;
+
+/// Count of processors/cores
+final double? cpuCount;
+
+/// Percentage of time over a 10 second window that tasks were stalled
+final double? cpuPressure10s;
+
+/// Percentage of time over a 1 minute window that tasks were stalled
+final double? cpuPressure60s;
+
+/// Percentage of time over a 5 minute window that tasks were stalled
+final double? cpuPressure300s;
+
+/// Total stall time (microseconds)
+final double? cpuPressureTotalUs;
+
+/// Time spent running a virtual CPU or guest OS (milliseconds)
+final double? cpuTimeGuestMs;
+
+/// Time spent running a niced guest (milliseconds)
+final double? cpuTimeGuestNiceMs;
+
+/// Time spent in idle state (milliseconds)
+final double? cpuTimeIdleMs;
+
+/// Time spent wait for I/O to complete (milliseconds)
+final double? cpuTimeIowaitMs;
+
+/// Time spent servicing interrupts (milliseconds)
+final double? cpuTimeIrqMs;
+
+/// Time spent in low-priority user mode (milliseconds)
+final double? cpuTimeNiceMs;
+
+/// Time spent servicing softirqs (milliseconds)
+final double? cpuTimeSoftirqMs;
+
+/// Time stolen (milliseconds)
+final double? cpuTimeStealMs;
+
+/// Time spent in system mode (milliseconds)
+final double? cpuTimeSystemMs;
+
+/// Time spent in user mode (milliseconds)
+final double? cpuTimeUserMs;
+
+final List<MconnSnapshotDhcpLease>? dhcpLeases;
+
+final List<MconnSnapshotDisk>? disks;
+
+/// Name of high availability state
+final String? haState;
+
+/// Numeric value associated with high availability state (0 = disabled, 1 = active, 2 = standby, 3 = stopped, 4 = fault)
+final double? haValue;
+
+final List<MconnSnapshotInterface>? interfaces;
+
+/// Percentage of time over a 10 second window that all tasks were stalled
+final double? ioPressureFull10s;
+
+/// Percentage of time over a 1 minute window that all tasks were stalled
+final double? ioPressureFull60s;
+
+/// Percentage of time over a 5 minute window that all tasks were stalled
+final double? ioPressureFull300s;
+
+/// Total stall time (microseconds)
+final double? ioPressureFullTotalUs;
+
+/// Percentage of time over a 10 second window that some tasks were stalled
+final double? ioPressureSome10s;
+
+/// Percentage of time over a 1 minute window that some tasks were stalled
+final double? ioPressureSome60s;
+
+/// Percentage of time over a 3 minute window that some tasks were stalled
+final double? ioPressureSome300s;
+
+/// Total stall time (microseconds)
+final double? ioPressureSomeTotalUs;
+
+/// Boot time (seconds since Unix epoch)
+final double? kernelBtime;
+
+/// Number of context switches that the system underwent
+final double? kernelCtxt;
+
+/// Number of forks since boot
+final double? kernelProcesses;
+
+/// Number of processes blocked waiting for I/O
+final double? kernelProcessesBlocked;
+
+/// Number of processes in runnable state
+final double? kernelProcessesRunning;
+
+/// The one-minute load average
+final double? loadAverage1m;
+
+/// The five-minute load average
+final double? loadAverage5m;
+
+/// The fifteen-minute load average
+final double? loadAverage15m;
+
+/// Number of currently runnable kernel scheduling entities
+final double? loadAverageCur;
+
+/// Number of kernel scheduling entities that currently exist on the system
+final double? loadAverageMax;
+
+/// Memory that has been used more recently
+final double? memoryActiveBytes;
+
+/// Non-file backed huge pages mapped into user-space page tables
+final double? memoryAnonHugepagesBytes;
+
+/// Non-file backed pages mapped into user-space page tables
+final double? memoryAnonPagesBytes;
+
+/// Estimate of how much memory is available for starting new applications
+final double? memoryAvailableBytes;
+
+/// Memory used for block device bounce buffers
+final double? memoryBounceBytes;
+
+/// Relatively temporary storage for raw disk blocks
+final double? memoryBuffersBytes;
+
+/// In-memory cache for files read from the disk
+final double? memoryCachedBytes;
+
+/// Free CMA (Contiguous Memory Allocator) pages
+final double? memoryCmaFreeBytes;
+
+/// Total CMA (Contiguous Memory Allocator) pages
+final double? memoryCmaTotalBytes;
+
+/// Total amount of memory currently available to be allocated on the system
+final double? memoryCommitLimitBytes;
+
+/// Amount of memory presently allocated on the system
+final double? memoryCommittedAsBytes;
+
+/// Memory which is waiting to get written back to the disk
+final double? memoryDirtyBytes;
+
+/// The sum of LowFree and HighFree
+final double? memoryFreeBytes;
+
+/// Amount of free highmem
+final double? memoryHighFreeBytes;
+
+/// Total amount of highmem
+final double? memoryHighTotalBytes;
+
+/// The number of huge pages in the pool that are not yet allocated
+final double? memoryHugepagesFree;
+
+/// Number of huge pages for which a commitment has been made, but no allocation has yet been made
+final double? memoryHugepagesRsvd;
+
+/// Number of huge pages in the pool above the threshold
+final double? memoryHugepagesSurp;
+
+/// The size of the pool of huge pages
+final double? memoryHugepagesTotal;
+
+/// The size of huge pages
+final double? memoryHugepagesizeBytes;
+
+/// Memory which has been less recently used
+final double? memoryInactiveBytes;
+
+/// Kernel allocations that the kernel will attempt to reclaim under memory pressure
+final double? memoryKReclaimableBytes;
+
+/// Amount of memory allocated to kernel stacks
+final double? memoryKernelStackBytes;
+
+/// Amount of free lowmem
+final double? memoryLowFreeBytes;
+
+/// Total amount of lowmem
+final double? memoryLowTotalBytes;
+
+/// Files which have been mapped into memory
+final double? memoryMappedBytes;
+
+/// Amount of memory dedicated to the lowest level of page tables
+final double? memoryPageTablesBytes;
+
+/// Memory allocated to the per-cpu alloctor used to back per-cpu allocations
+final double? memoryPerCpuBytes;
+
+/// Percentage of time over a 10 second window that all tasks were stalled
+final double? memoryPressureFull10s;
+
+/// Percentage of time over a 1 minute window that all tasks were stalled
+final double? memoryPressureFull60s;
+
+/// Percentage of time over a 5 minute window that all tasks were stalled
+final double? memoryPressureFull300s;
+
+/// Total stall time (microseconds)
+final double? memoryPressureFullTotalUs;
+
+/// Percentage of time over a 10 second window that some tasks were stalled
+final double? memoryPressureSome10s;
+
+/// Percentage of time over a 1 minute window that some tasks were stalled
+final double? memoryPressureSome60s;
+
+/// Percentage of time over a 5 minute window that some tasks were stalled
+final double? memoryPressureSome300s;
+
+/// Total stall time (microseconds)
+final double? memoryPressureSomeTotalUs;
+
+/// Part of slab that can be reclaimed on memory pressure
+final double? memorySReclaimableBytes;
+
+/// Part of slab that cannot be reclaimed on memory pressure
+final double? memorySUnreclaimBytes;
+
+/// Amount of memory dedicated to the lowest level of page tables
+final double? memorySecondaryPageTablesBytes;
+
+/// Amount of memory consumed by tmpfs
+final double? memoryShmemBytes;
+
+/// Memory used by shmem and tmpfs, allocated with huge pages
+final double? memoryShmemHugepagesBytes;
+
+/// Shared memory mapped into user space with huge pages
+final double? memoryShmemPmdMappedBytes;
+
+/// In-kernel data structures cache
+final double? memorySlabBytes;
+
+/// Memory swapped out and back in while still in swap file
+final double? memorySwapCachedBytes;
+
+/// Amount of swap space that is currently unused
+final double? memorySwapFreeBytes;
+
+/// Total amount of swap space available
+final double? memorySwapTotalBytes;
+
+/// Total usable RAM
+final double? memoryTotalBytes;
+
+/// Largest contiguous block of vmalloc area which is free
+final double? memoryVmallocChunkBytes;
+
+/// Total size of vmalloc memory area
+final double? memoryVmallocTotalBytes;
+
+/// Amount of vmalloc area which is used
+final double? memoryVmallocUsedBytes;
+
+/// Memory which is actively being written back to the disk
+final double? memoryWritebackBytes;
+
+/// Memory used by FUSE for temporary writeback buffers
+final double? memoryWritebackTmpBytes;
+
+/// Memory consumed by the zswap backend, compressed
+final double? memoryZSwapBytes;
+
+/// Amount of anonymous memory stored in zswap, uncompressed
+final double? memoryZSwappedBytes;
+
+final List<MconnSnapshotMount>? mounts;
+
+final List<MconnSnapshotNetdev>? netdevs;
+
+/// Number of ICMP Address Mask Reply messages received
+final double? snmpIcmpInAddrMaskReps;
+
+/// Number of ICMP Address Mask Request messages received
+final double? snmpIcmpInAddrMasks;
+
+/// Number of ICMP messages received with bad checksums
+final double? snmpIcmpInCsumErrors;
+
+/// Number of ICMP Destination Unreachable messages received
+final double? snmpIcmpInDestUnreachs;
+
+/// Number of ICMP Echo Reply messages received
+final double? snmpIcmpInEchoReps;
+
+/// Number of ICMP Echo (request) messages received
+final double? snmpIcmpInEchos;
+
+/// Number of ICMP messages received with ICMP-specific errors
+final double? snmpIcmpInErrors;
+
+/// Number of ICMP messages received
+final double? snmpIcmpInMsgs;
+
+/// Number of ICMP Parameter Problem messages received
+final double? snmpIcmpInParmProbs;
+
+/// Number of ICMP Redirect messages received
+final double? snmpIcmpInRedirects;
+
+/// Number of ICMP Source Quench messages received
+final double? snmpIcmpInSrcQuenchs;
+
+/// Number of ICMP Time Exceeded messages received
+final double? snmpIcmpInTimeExcds;
+
+/// Number of ICMP Address Mask Request messages received
+final double? snmpIcmpInTimestampReps;
+
+/// Number of ICMP Timestamp (request) messages received
+final double? snmpIcmpInTimestamps;
+
+/// Number of ICMP Address Mask Reply messages sent
+final double? snmpIcmpOutAddrMaskReps;
+
+/// Number of ICMP Address Mask Request messages sent
+final double? snmpIcmpOutAddrMasks;
+
+/// Number of ICMP Destination Unreachable messages sent
+final double? snmpIcmpOutDestUnreachs;
+
+/// Number of ICMP Echo Reply messages sent
+final double? snmpIcmpOutEchoReps;
+
+/// Number of ICMP Echo (request) messages sent
+final double? snmpIcmpOutEchos;
+
+/// Number of ICMP messages which this entity did not send due to ICMP-specific errors
+final double? snmpIcmpOutErrors;
+
+/// Number of ICMP messages attempted to send
+final double? snmpIcmpOutMsgs;
+
+/// Number of ICMP Parameter Problem messages sent
+final double? snmpIcmpOutParmProbs;
+
+/// Number of ICMP Redirect messages sent
+final double? snmpIcmpOutRedirects;
+
+/// Number of ICMP Source Quench messages sent
+final double? snmpIcmpOutSrcQuenchs;
+
+/// Number of ICMP Time Exceeded messages sent
+final double? snmpIcmpOutTimeExcds;
+
+/// Number of ICMP Timestamp Reply messages sent
+final double? snmpIcmpOutTimestampReps;
+
+/// Number of ICMP Timestamp (request) messages sent
+final double? snmpIcmpOutTimestamps;
+
+/// Default value of the Time-To-Live field of the IP header
+final double? snmpIpDefaultTtl;
+
+/// Number of datagrams forwarded to their final destination
+final double? snmpIpForwDatagrams;
+
+/// Set when acting as an IP gateway
+final bool? snmpIpForwardingEnabled;
+
+/// Number of datagrams generated by fragmentation
+final double? snmpIpFragCreates;
+
+/// Number of datagrams discarded because fragmentation failed
+final double? snmpIpFragFails;
+
+/// Number of datagrams successfully fragmented
+final double? snmpIpFragOks;
+
+/// Number of input datagrams discarded due to errors in the IP address
+final double? snmpIpInAddrErrors;
+
+/// Number of input datagrams successfully delivered to IP user-protocols
+final double? snmpIpInDelivers;
+
+/// Number of input datagrams otherwise discarded
+final double? snmpIpInDiscards;
+
+/// Number of input datagrams discarded due to errors in the IP header
+final double? snmpIpInHdrErrors;
+
+/// Number of input datagrams received from interfaces
+final double? snmpIpInReceives;
+
+/// Number of input datagrams discarded due unknown or unsupported protocol
+final double? snmpIpInUnknownProtos;
+
+/// Number of output datagrams otherwise discarded
+final double? snmpIpOutDiscards;
+
+/// Number of output datagrams discarded because no route matched
+final double? snmpIpOutNoRoutes;
+
+/// Number of datagrams supplied for transmission
+final double? snmpIpOutRequests;
+
+/// Number of failures detected by the reassembly algorithm
+final double? snmpIpReasmFails;
+
+/// Number of datagrams successfully reassembled
+final double? snmpIpReasmOks;
+
+/// Number of fragments received which needed to be reassembled
+final double? snmpIpReasmReqds;
+
+/// Number of seconds fragments are held while awaiting reassembly
+final double? snmpIpReasmTimeout;
+
+/// Number of times TCP transitions to SYN-SENT from CLOSED
+final double? snmpTcpActiveOpens;
+
+/// Number of times TCP transitions to CLOSED from SYN-SENT or SYN-RCVD, plus transitions to LISTEN from SYN-RCVD
+final double? snmpTcpAttemptFails;
+
+/// Number of TCP connections in ESTABLISHED or CLOSE-WAIT
+final double? snmpTcpCurrEstab;
+
+/// Number of times TCP transitions to CLOSED from ESTABLISHED or CLOSE-WAIT
+final double? snmpTcpEstabResets;
+
+/// Number of TCP segments received with checksum errors
+final double? snmpTcpInCsumErrors;
+
+/// Number of TCP segments received in error
+final double? snmpTcpInErrs;
+
+/// Number of TCP segments received
+final double? snmpTcpInSegs;
+
+/// Limit on the total number of TCP connections
+final double? snmpTcpMaxConn;
+
+/// Number of TCP segments sent with RST flag
+final double? snmpTcpOutRsts;
+
+/// Number of TCP segments sent
+final double? snmpTcpOutSegs;
+
+/// Number of times TCP transitions to SYN-RCVD from LISTEN
+final double? snmpTcpPassiveOpens;
+
+/// Number of TCP segments retransmitted
+final double? snmpTcpRetransSegs;
+
+/// Maximum value permitted by a TCP implementation for the retransmission timeout (milliseconds)
+final double? snmpTcpRtoMax;
+
+/// Minimum value permitted by a TCP implementation for the retransmission timeout (milliseconds)
+final double? snmpTcpRtoMin;
+
+/// Number of UDP datagrams delivered to UDP applications
+final double? snmpUdpInDatagrams;
+
+/// Number of UDP datagrams failed to be delivered for reasons other than lack of application at the destination port
+final double? snmpUdpInErrors;
+
+/// Number of UDP datagrams received for which there was not application at the destination port
+final double? snmpUdpNoPorts;
+
+/// Number of UDP datagrams sent
+final double? snmpUdpOutDatagrams;
+
+/// Boottime of the system (seconds since the Unix epoch)
+final double? systemBootTimeS;
+
+/// Time the Snapshot was recorded (seconds since the Unix epoch)
+final double t;
+
+final List<MconnSnapshotThermal>? thermals;
+
+final List<MconnSnapshotTunnel>? tunnels;
+
+/// Sum of how much time each core has spent idle
+final double? uptimeIdleMs;
+
+/// Uptime of the system, including time spent in suspend
+final double? uptimeTotalMs;
+
+/// Version
+final String v;
+
+Map<String, dynamic> toJson() { return {
+  if (bonds != null) 'bonds': bonds?.map((e) => e.toJson()).toList(),
+  'count_reclaim_failures': countReclaimFailures,
+  'count_reclaimed_paths': countReclaimedPaths,
+  'count_record_failed': countRecordFailed,
+  'count_transmit_failures': countTransmitFailures,
+  'cpu_count': ?cpuCount,
+  'cpu_pressure_10s': ?cpuPressure10s,
+  'cpu_pressure_60s': ?cpuPressure60s,
+  'cpu_pressure_300s': ?cpuPressure300s,
+  'cpu_pressure_total_us': ?cpuPressureTotalUs,
+  'cpu_time_guest_ms': ?cpuTimeGuestMs,
+  'cpu_time_guest_nice_ms': ?cpuTimeGuestNiceMs,
+  'cpu_time_idle_ms': ?cpuTimeIdleMs,
+  'cpu_time_iowait_ms': ?cpuTimeIowaitMs,
+  'cpu_time_irq_ms': ?cpuTimeIrqMs,
+  'cpu_time_nice_ms': ?cpuTimeNiceMs,
+  'cpu_time_softirq_ms': ?cpuTimeSoftirqMs,
+  'cpu_time_steal_ms': ?cpuTimeStealMs,
+  'cpu_time_system_ms': ?cpuTimeSystemMs,
+  'cpu_time_user_ms': ?cpuTimeUserMs,
+  if (dhcpLeases != null) 'dhcp_leases': dhcpLeases?.map((e) => e.toJson()).toList(),
+  if (disks != null) 'disks': disks?.map((e) => e.toJson()).toList(),
+  'ha_state': ?haState,
+  'ha_value': ?haValue,
+  if (interfaces != null) 'interfaces': interfaces?.map((e) => e.toJson()).toList(),
+  'io_pressure_full_10s': ?ioPressureFull10s,
+  'io_pressure_full_60s': ?ioPressureFull60s,
+  'io_pressure_full_300s': ?ioPressureFull300s,
+  'io_pressure_full_total_us': ?ioPressureFullTotalUs,
+  'io_pressure_some_10s': ?ioPressureSome10s,
+  'io_pressure_some_60s': ?ioPressureSome60s,
+  'io_pressure_some_300s': ?ioPressureSome300s,
+  'io_pressure_some_total_us': ?ioPressureSomeTotalUs,
+  'kernel_btime': ?kernelBtime,
+  'kernel_ctxt': ?kernelCtxt,
+  'kernel_processes': ?kernelProcesses,
+  'kernel_processes_blocked': ?kernelProcessesBlocked,
+  'kernel_processes_running': ?kernelProcessesRunning,
+  'load_average_1m': ?loadAverage1m,
+  'load_average_5m': ?loadAverage5m,
+  'load_average_15m': ?loadAverage15m,
+  'load_average_cur': ?loadAverageCur,
+  'load_average_max': ?loadAverageMax,
+  'memory_active_bytes': ?memoryActiveBytes,
+  'memory_anon_hugepages_bytes': ?memoryAnonHugepagesBytes,
+  'memory_anon_pages_bytes': ?memoryAnonPagesBytes,
+  'memory_available_bytes': ?memoryAvailableBytes,
+  'memory_bounce_bytes': ?memoryBounceBytes,
+  'memory_buffers_bytes': ?memoryBuffersBytes,
+  'memory_cached_bytes': ?memoryCachedBytes,
+  'memory_cma_free_bytes': ?memoryCmaFreeBytes,
+  'memory_cma_total_bytes': ?memoryCmaTotalBytes,
+  'memory_commit_limit_bytes': ?memoryCommitLimitBytes,
+  'memory_committed_as_bytes': ?memoryCommittedAsBytes,
+  'memory_dirty_bytes': ?memoryDirtyBytes,
+  'memory_free_bytes': ?memoryFreeBytes,
+  'memory_high_free_bytes': ?memoryHighFreeBytes,
+  'memory_high_total_bytes': ?memoryHighTotalBytes,
+  'memory_hugepages_free': ?memoryHugepagesFree,
+  'memory_hugepages_rsvd': ?memoryHugepagesRsvd,
+  'memory_hugepages_surp': ?memoryHugepagesSurp,
+  'memory_hugepages_total': ?memoryHugepagesTotal,
+  'memory_hugepagesize_bytes': ?memoryHugepagesizeBytes,
+  'memory_inactive_bytes': ?memoryInactiveBytes,
+  'memory_k_reclaimable_bytes': ?memoryKReclaimableBytes,
+  'memory_kernel_stack_bytes': ?memoryKernelStackBytes,
+  'memory_low_free_bytes': ?memoryLowFreeBytes,
+  'memory_low_total_bytes': ?memoryLowTotalBytes,
+  'memory_mapped_bytes': ?memoryMappedBytes,
+  'memory_page_tables_bytes': ?memoryPageTablesBytes,
+  'memory_per_cpu_bytes': ?memoryPerCpuBytes,
+  'memory_pressure_full_10s': ?memoryPressureFull10s,
+  'memory_pressure_full_60s': ?memoryPressureFull60s,
+  'memory_pressure_full_300s': ?memoryPressureFull300s,
+  'memory_pressure_full_total_us': ?memoryPressureFullTotalUs,
+  'memory_pressure_some_10s': ?memoryPressureSome10s,
+  'memory_pressure_some_60s': ?memoryPressureSome60s,
+  'memory_pressure_some_300s': ?memoryPressureSome300s,
+  'memory_pressure_some_total_us': ?memoryPressureSomeTotalUs,
+  'memory_s_reclaimable_bytes': ?memorySReclaimableBytes,
+  'memory_s_unreclaim_bytes': ?memorySUnreclaimBytes,
+  'memory_secondary_page_tables_bytes': ?memorySecondaryPageTablesBytes,
+  'memory_shmem_bytes': ?memoryShmemBytes,
+  'memory_shmem_hugepages_bytes': ?memoryShmemHugepagesBytes,
+  'memory_shmem_pmd_mapped_bytes': ?memoryShmemPmdMappedBytes,
+  'memory_slab_bytes': ?memorySlabBytes,
+  'memory_swap_cached_bytes': ?memorySwapCachedBytes,
+  'memory_swap_free_bytes': ?memorySwapFreeBytes,
+  'memory_swap_total_bytes': ?memorySwapTotalBytes,
+  'memory_total_bytes': ?memoryTotalBytes,
+  'memory_vmalloc_chunk_bytes': ?memoryVmallocChunkBytes,
+  'memory_vmalloc_total_bytes': ?memoryVmallocTotalBytes,
+  'memory_vmalloc_used_bytes': ?memoryVmallocUsedBytes,
+  'memory_writeback_bytes': ?memoryWritebackBytes,
+  'memory_writeback_tmp_bytes': ?memoryWritebackTmpBytes,
+  'memory_z_swap_bytes': ?memoryZSwapBytes,
+  'memory_z_swapped_bytes': ?memoryZSwappedBytes,
+  if (mounts != null) 'mounts': mounts?.map((e) => e.toJson()).toList(),
+  if (netdevs != null) 'netdevs': netdevs?.map((e) => e.toJson()).toList(),
+  'snmp_icmp_in_addr_mask_reps': ?snmpIcmpInAddrMaskReps,
+  'snmp_icmp_in_addr_masks': ?snmpIcmpInAddrMasks,
+  'snmp_icmp_in_csum_errors': ?snmpIcmpInCsumErrors,
+  'snmp_icmp_in_dest_unreachs': ?snmpIcmpInDestUnreachs,
+  'snmp_icmp_in_echo_reps': ?snmpIcmpInEchoReps,
+  'snmp_icmp_in_echos': ?snmpIcmpInEchos,
+  'snmp_icmp_in_errors': ?snmpIcmpInErrors,
+  'snmp_icmp_in_msgs': ?snmpIcmpInMsgs,
+  'snmp_icmp_in_parm_probs': ?snmpIcmpInParmProbs,
+  'snmp_icmp_in_redirects': ?snmpIcmpInRedirects,
+  'snmp_icmp_in_src_quenchs': ?snmpIcmpInSrcQuenchs,
+  'snmp_icmp_in_time_excds': ?snmpIcmpInTimeExcds,
+  'snmp_icmp_in_timestamp_reps': ?snmpIcmpInTimestampReps,
+  'snmp_icmp_in_timestamps': ?snmpIcmpInTimestamps,
+  'snmp_icmp_out_addr_mask_reps': ?snmpIcmpOutAddrMaskReps,
+  'snmp_icmp_out_addr_masks': ?snmpIcmpOutAddrMasks,
+  'snmp_icmp_out_dest_unreachs': ?snmpIcmpOutDestUnreachs,
+  'snmp_icmp_out_echo_reps': ?snmpIcmpOutEchoReps,
+  'snmp_icmp_out_echos': ?snmpIcmpOutEchos,
+  'snmp_icmp_out_errors': ?snmpIcmpOutErrors,
+  'snmp_icmp_out_msgs': ?snmpIcmpOutMsgs,
+  'snmp_icmp_out_parm_probs': ?snmpIcmpOutParmProbs,
+  'snmp_icmp_out_redirects': ?snmpIcmpOutRedirects,
+  'snmp_icmp_out_src_quenchs': ?snmpIcmpOutSrcQuenchs,
+  'snmp_icmp_out_time_excds': ?snmpIcmpOutTimeExcds,
+  'snmp_icmp_out_timestamp_reps': ?snmpIcmpOutTimestampReps,
+  'snmp_icmp_out_timestamps': ?snmpIcmpOutTimestamps,
+  'snmp_ip_default_ttl': ?snmpIpDefaultTtl,
+  'snmp_ip_forw_datagrams': ?snmpIpForwDatagrams,
+  'snmp_ip_forwarding_enabled': ?snmpIpForwardingEnabled,
+  'snmp_ip_frag_creates': ?snmpIpFragCreates,
+  'snmp_ip_frag_fails': ?snmpIpFragFails,
+  'snmp_ip_frag_oks': ?snmpIpFragOks,
+  'snmp_ip_in_addr_errors': ?snmpIpInAddrErrors,
+  'snmp_ip_in_delivers': ?snmpIpInDelivers,
+  'snmp_ip_in_discards': ?snmpIpInDiscards,
+  'snmp_ip_in_hdr_errors': ?snmpIpInHdrErrors,
+  'snmp_ip_in_receives': ?snmpIpInReceives,
+  'snmp_ip_in_unknown_protos': ?snmpIpInUnknownProtos,
+  'snmp_ip_out_discards': ?snmpIpOutDiscards,
+  'snmp_ip_out_no_routes': ?snmpIpOutNoRoutes,
+  'snmp_ip_out_requests': ?snmpIpOutRequests,
+  'snmp_ip_reasm_fails': ?snmpIpReasmFails,
+  'snmp_ip_reasm_oks': ?snmpIpReasmOks,
+  'snmp_ip_reasm_reqds': ?snmpIpReasmReqds,
+  'snmp_ip_reasm_timeout': ?snmpIpReasmTimeout,
+  'snmp_tcp_active_opens': ?snmpTcpActiveOpens,
+  'snmp_tcp_attempt_fails': ?snmpTcpAttemptFails,
+  'snmp_tcp_curr_estab': ?snmpTcpCurrEstab,
+  'snmp_tcp_estab_resets': ?snmpTcpEstabResets,
+  'snmp_tcp_in_csum_errors': ?snmpTcpInCsumErrors,
+  'snmp_tcp_in_errs': ?snmpTcpInErrs,
+  'snmp_tcp_in_segs': ?snmpTcpInSegs,
+  'snmp_tcp_max_conn': ?snmpTcpMaxConn,
+  'snmp_tcp_out_rsts': ?snmpTcpOutRsts,
+  'snmp_tcp_out_segs': ?snmpTcpOutSegs,
+  'snmp_tcp_passive_opens': ?snmpTcpPassiveOpens,
+  'snmp_tcp_retrans_segs': ?snmpTcpRetransSegs,
+  'snmp_tcp_rto_max': ?snmpTcpRtoMax,
+  'snmp_tcp_rto_min': ?snmpTcpRtoMin,
+  'snmp_udp_in_datagrams': ?snmpUdpInDatagrams,
+  'snmp_udp_in_errors': ?snmpUdpInErrors,
+  'snmp_udp_no_ports': ?snmpUdpNoPorts,
+  'snmp_udp_out_datagrams': ?snmpUdpOutDatagrams,
+  'system_boot_time_s': ?systemBootTimeS,
+  't': t,
+  if (thermals != null) 'thermals': thermals?.map((e) => e.toJson()).toList(),
+  if (tunnels != null) 'tunnels': tunnels?.map((e) => e.toJson()).toList(),
+  'uptime_idle_ms': ?uptimeIdleMs,
+  'uptime_total_ms': ?uptimeTotalMs,
+  'v': v,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('count_reclaim_failures') && json['count_reclaim_failures'] is num &&
+      json.containsKey('count_reclaimed_paths') && json['count_reclaimed_paths'] is num &&
+      json.containsKey('count_record_failed') && json['count_record_failed'] is num &&
+      json.containsKey('count_transmit_failures') && json['count_transmit_failures'] is num &&
+      json.containsKey('t') && json['t'] is num &&
+      json.containsKey('v') && json['v'] is String; } 
+MconnSnapshot copyWith({List<MconnSnapshotBond> Function()? bonds, double? countReclaimFailures, double? countReclaimedPaths, double? countRecordFailed, double? countTransmitFailures, double Function()? cpuCount, double Function()? cpuPressure10s, double Function()? cpuPressure60s, double Function()? cpuPressure300s, double Function()? cpuPressureTotalUs, double Function()? cpuTimeGuestMs, double Function()? cpuTimeGuestNiceMs, double Function()? cpuTimeIdleMs, double Function()? cpuTimeIowaitMs, double Function()? cpuTimeIrqMs, double Function()? cpuTimeNiceMs, double Function()? cpuTimeSoftirqMs, double Function()? cpuTimeStealMs, double Function()? cpuTimeSystemMs, double Function()? cpuTimeUserMs, List<MconnSnapshotDhcpLease> Function()? dhcpLeases, List<MconnSnapshotDisk> Function()? disks, String Function()? haState, double Function()? haValue, List<MconnSnapshotInterface> Function()? interfaces, double Function()? ioPressureFull10s, double Function()? ioPressureFull60s, double Function()? ioPressureFull300s, double Function()? ioPressureFullTotalUs, double Function()? ioPressureSome10s, double Function()? ioPressureSome60s, double Function()? ioPressureSome300s, double Function()? ioPressureSomeTotalUs, double Function()? kernelBtime, double Function()? kernelCtxt, double Function()? kernelProcesses, double Function()? kernelProcessesBlocked, double Function()? kernelProcessesRunning, double Function()? loadAverage1m, double Function()? loadAverage5m, double Function()? loadAverage15m, double Function()? loadAverageCur, double Function()? loadAverageMax, double Function()? memoryActiveBytes, double Function()? memoryAnonHugepagesBytes, double Function()? memoryAnonPagesBytes, double Function()? memoryAvailableBytes, double Function()? memoryBounceBytes, double Function()? memoryBuffersBytes, double Function()? memoryCachedBytes, double Function()? memoryCmaFreeBytes, double Function()? memoryCmaTotalBytes, double Function()? memoryCommitLimitBytes, double Function()? memoryCommittedAsBytes, double Function()? memoryDirtyBytes, double Function()? memoryFreeBytes, double Function()? memoryHighFreeBytes, double Function()? memoryHighTotalBytes, double Function()? memoryHugepagesFree, double Function()? memoryHugepagesRsvd, double Function()? memoryHugepagesSurp, double Function()? memoryHugepagesTotal, double Function()? memoryHugepagesizeBytes, double Function()? memoryInactiveBytes, double Function()? memoryKReclaimableBytes, double Function()? memoryKernelStackBytes, double Function()? memoryLowFreeBytes, double Function()? memoryLowTotalBytes, double Function()? memoryMappedBytes, double Function()? memoryPageTablesBytes, double Function()? memoryPerCpuBytes, double Function()? memoryPressureFull10s, double Function()? memoryPressureFull60s, double Function()? memoryPressureFull300s, double Function()? memoryPressureFullTotalUs, double Function()? memoryPressureSome10s, double Function()? memoryPressureSome60s, double Function()? memoryPressureSome300s, double Function()? memoryPressureSomeTotalUs, double Function()? memorySReclaimableBytes, double Function()? memorySUnreclaimBytes, double Function()? memorySecondaryPageTablesBytes, double Function()? memoryShmemBytes, double Function()? memoryShmemHugepagesBytes, double Function()? memoryShmemPmdMappedBytes, double Function()? memorySlabBytes, double Function()? memorySwapCachedBytes, double Function()? memorySwapFreeBytes, double Function()? memorySwapTotalBytes, double Function()? memoryTotalBytes, double Function()? memoryVmallocChunkBytes, double Function()? memoryVmallocTotalBytes, double Function()? memoryVmallocUsedBytes, double Function()? memoryWritebackBytes, double Function()? memoryWritebackTmpBytes, double Function()? memoryZSwapBytes, double Function()? memoryZSwappedBytes, List<MconnSnapshotMount> Function()? mounts, List<MconnSnapshotNetdev> Function()? netdevs, double Function()? snmpIcmpInAddrMaskReps, double Function()? snmpIcmpInAddrMasks, double Function()? snmpIcmpInCsumErrors, double Function()? snmpIcmpInDestUnreachs, double Function()? snmpIcmpInEchoReps, double Function()? snmpIcmpInEchos, double Function()? snmpIcmpInErrors, double Function()? snmpIcmpInMsgs, double Function()? snmpIcmpInParmProbs, double Function()? snmpIcmpInRedirects, double Function()? snmpIcmpInSrcQuenchs, double Function()? snmpIcmpInTimeExcds, double Function()? snmpIcmpInTimestampReps, double Function()? snmpIcmpInTimestamps, double Function()? snmpIcmpOutAddrMaskReps, double Function()? snmpIcmpOutAddrMasks, double Function()? snmpIcmpOutDestUnreachs, double Function()? snmpIcmpOutEchoReps, double Function()? snmpIcmpOutEchos, double Function()? snmpIcmpOutErrors, double Function()? snmpIcmpOutMsgs, double Function()? snmpIcmpOutParmProbs, double Function()? snmpIcmpOutRedirects, double Function()? snmpIcmpOutSrcQuenchs, double Function()? snmpIcmpOutTimeExcds, double Function()? snmpIcmpOutTimestampReps, double Function()? snmpIcmpOutTimestamps, double Function()? snmpIpDefaultTtl, double Function()? snmpIpForwDatagrams, bool Function()? snmpIpForwardingEnabled, double Function()? snmpIpFragCreates, double Function()? snmpIpFragFails, double Function()? snmpIpFragOks, double Function()? snmpIpInAddrErrors, double Function()? snmpIpInDelivers, double Function()? snmpIpInDiscards, double Function()? snmpIpInHdrErrors, double Function()? snmpIpInReceives, double Function()? snmpIpInUnknownProtos, double Function()? snmpIpOutDiscards, double Function()? snmpIpOutNoRoutes, double Function()? snmpIpOutRequests, double Function()? snmpIpReasmFails, double Function()? snmpIpReasmOks, double Function()? snmpIpReasmReqds, double Function()? snmpIpReasmTimeout, double Function()? snmpTcpActiveOpens, double Function()? snmpTcpAttemptFails, double Function()? snmpTcpCurrEstab, double Function()? snmpTcpEstabResets, double Function()? snmpTcpInCsumErrors, double Function()? snmpTcpInErrs, double Function()? snmpTcpInSegs, double Function()? snmpTcpMaxConn, double Function()? snmpTcpOutRsts, double Function()? snmpTcpOutSegs, double Function()? snmpTcpPassiveOpens, double Function()? snmpTcpRetransSegs, double Function()? snmpTcpRtoMax, double Function()? snmpTcpRtoMin, double Function()? snmpUdpInDatagrams, double Function()? snmpUdpInErrors, double Function()? snmpUdpNoPorts, double Function()? snmpUdpOutDatagrams, double Function()? systemBootTimeS, double? t, List<MconnSnapshotThermal> Function()? thermals, List<MconnSnapshotTunnel> Function()? tunnels, double Function()? uptimeIdleMs, double Function()? uptimeTotalMs, String? v, }) { return MconnSnapshot(
+  bonds: bonds != null ? bonds() : this.bonds,
+  countReclaimFailures: countReclaimFailures ?? this.countReclaimFailures,
+  countReclaimedPaths: countReclaimedPaths ?? this.countReclaimedPaths,
+  countRecordFailed: countRecordFailed ?? this.countRecordFailed,
+  countTransmitFailures: countTransmitFailures ?? this.countTransmitFailures,
+  cpuCount: cpuCount != null ? cpuCount() : this.cpuCount,
+  cpuPressure10s: cpuPressure10s != null ? cpuPressure10s() : this.cpuPressure10s,
+  cpuPressure60s: cpuPressure60s != null ? cpuPressure60s() : this.cpuPressure60s,
+  cpuPressure300s: cpuPressure300s != null ? cpuPressure300s() : this.cpuPressure300s,
+  cpuPressureTotalUs: cpuPressureTotalUs != null ? cpuPressureTotalUs() : this.cpuPressureTotalUs,
+  cpuTimeGuestMs: cpuTimeGuestMs != null ? cpuTimeGuestMs() : this.cpuTimeGuestMs,
+  cpuTimeGuestNiceMs: cpuTimeGuestNiceMs != null ? cpuTimeGuestNiceMs() : this.cpuTimeGuestNiceMs,
+  cpuTimeIdleMs: cpuTimeIdleMs != null ? cpuTimeIdleMs() : this.cpuTimeIdleMs,
+  cpuTimeIowaitMs: cpuTimeIowaitMs != null ? cpuTimeIowaitMs() : this.cpuTimeIowaitMs,
+  cpuTimeIrqMs: cpuTimeIrqMs != null ? cpuTimeIrqMs() : this.cpuTimeIrqMs,
+  cpuTimeNiceMs: cpuTimeNiceMs != null ? cpuTimeNiceMs() : this.cpuTimeNiceMs,
+  cpuTimeSoftirqMs: cpuTimeSoftirqMs != null ? cpuTimeSoftirqMs() : this.cpuTimeSoftirqMs,
+  cpuTimeStealMs: cpuTimeStealMs != null ? cpuTimeStealMs() : this.cpuTimeStealMs,
+  cpuTimeSystemMs: cpuTimeSystemMs != null ? cpuTimeSystemMs() : this.cpuTimeSystemMs,
+  cpuTimeUserMs: cpuTimeUserMs != null ? cpuTimeUserMs() : this.cpuTimeUserMs,
+  dhcpLeases: dhcpLeases != null ? dhcpLeases() : this.dhcpLeases,
+  disks: disks != null ? disks() : this.disks,
+  haState: haState != null ? haState() : this.haState,
+  haValue: haValue != null ? haValue() : this.haValue,
+  interfaces: interfaces != null ? interfaces() : this.interfaces,
+  ioPressureFull10s: ioPressureFull10s != null ? ioPressureFull10s() : this.ioPressureFull10s,
+  ioPressureFull60s: ioPressureFull60s != null ? ioPressureFull60s() : this.ioPressureFull60s,
+  ioPressureFull300s: ioPressureFull300s != null ? ioPressureFull300s() : this.ioPressureFull300s,
+  ioPressureFullTotalUs: ioPressureFullTotalUs != null ? ioPressureFullTotalUs() : this.ioPressureFullTotalUs,
+  ioPressureSome10s: ioPressureSome10s != null ? ioPressureSome10s() : this.ioPressureSome10s,
+  ioPressureSome60s: ioPressureSome60s != null ? ioPressureSome60s() : this.ioPressureSome60s,
+  ioPressureSome300s: ioPressureSome300s != null ? ioPressureSome300s() : this.ioPressureSome300s,
+  ioPressureSomeTotalUs: ioPressureSomeTotalUs != null ? ioPressureSomeTotalUs() : this.ioPressureSomeTotalUs,
+  kernelBtime: kernelBtime != null ? kernelBtime() : this.kernelBtime,
+  kernelCtxt: kernelCtxt != null ? kernelCtxt() : this.kernelCtxt,
+  kernelProcesses: kernelProcesses != null ? kernelProcesses() : this.kernelProcesses,
+  kernelProcessesBlocked: kernelProcessesBlocked != null ? kernelProcessesBlocked() : this.kernelProcessesBlocked,
+  kernelProcessesRunning: kernelProcessesRunning != null ? kernelProcessesRunning() : this.kernelProcessesRunning,
+  loadAverage1m: loadAverage1m != null ? loadAverage1m() : this.loadAverage1m,
+  loadAverage5m: loadAverage5m != null ? loadAverage5m() : this.loadAverage5m,
+  loadAverage15m: loadAverage15m != null ? loadAverage15m() : this.loadAverage15m,
+  loadAverageCur: loadAverageCur != null ? loadAverageCur() : this.loadAverageCur,
+  loadAverageMax: loadAverageMax != null ? loadAverageMax() : this.loadAverageMax,
+  memoryActiveBytes: memoryActiveBytes != null ? memoryActiveBytes() : this.memoryActiveBytes,
+  memoryAnonHugepagesBytes: memoryAnonHugepagesBytes != null ? memoryAnonHugepagesBytes() : this.memoryAnonHugepagesBytes,
+  memoryAnonPagesBytes: memoryAnonPagesBytes != null ? memoryAnonPagesBytes() : this.memoryAnonPagesBytes,
+  memoryAvailableBytes: memoryAvailableBytes != null ? memoryAvailableBytes() : this.memoryAvailableBytes,
+  memoryBounceBytes: memoryBounceBytes != null ? memoryBounceBytes() : this.memoryBounceBytes,
+  memoryBuffersBytes: memoryBuffersBytes != null ? memoryBuffersBytes() : this.memoryBuffersBytes,
+  memoryCachedBytes: memoryCachedBytes != null ? memoryCachedBytes() : this.memoryCachedBytes,
+  memoryCmaFreeBytes: memoryCmaFreeBytes != null ? memoryCmaFreeBytes() : this.memoryCmaFreeBytes,
+  memoryCmaTotalBytes: memoryCmaTotalBytes != null ? memoryCmaTotalBytes() : this.memoryCmaTotalBytes,
+  memoryCommitLimitBytes: memoryCommitLimitBytes != null ? memoryCommitLimitBytes() : this.memoryCommitLimitBytes,
+  memoryCommittedAsBytes: memoryCommittedAsBytes != null ? memoryCommittedAsBytes() : this.memoryCommittedAsBytes,
+  memoryDirtyBytes: memoryDirtyBytes != null ? memoryDirtyBytes() : this.memoryDirtyBytes,
+  memoryFreeBytes: memoryFreeBytes != null ? memoryFreeBytes() : this.memoryFreeBytes,
+  memoryHighFreeBytes: memoryHighFreeBytes != null ? memoryHighFreeBytes() : this.memoryHighFreeBytes,
+  memoryHighTotalBytes: memoryHighTotalBytes != null ? memoryHighTotalBytes() : this.memoryHighTotalBytes,
+  memoryHugepagesFree: memoryHugepagesFree != null ? memoryHugepagesFree() : this.memoryHugepagesFree,
+  memoryHugepagesRsvd: memoryHugepagesRsvd != null ? memoryHugepagesRsvd() : this.memoryHugepagesRsvd,
+  memoryHugepagesSurp: memoryHugepagesSurp != null ? memoryHugepagesSurp() : this.memoryHugepagesSurp,
+  memoryHugepagesTotal: memoryHugepagesTotal != null ? memoryHugepagesTotal() : this.memoryHugepagesTotal,
+  memoryHugepagesizeBytes: memoryHugepagesizeBytes != null ? memoryHugepagesizeBytes() : this.memoryHugepagesizeBytes,
+  memoryInactiveBytes: memoryInactiveBytes != null ? memoryInactiveBytes() : this.memoryInactiveBytes,
+  memoryKReclaimableBytes: memoryKReclaimableBytes != null ? memoryKReclaimableBytes() : this.memoryKReclaimableBytes,
+  memoryKernelStackBytes: memoryKernelStackBytes != null ? memoryKernelStackBytes() : this.memoryKernelStackBytes,
+  memoryLowFreeBytes: memoryLowFreeBytes != null ? memoryLowFreeBytes() : this.memoryLowFreeBytes,
+  memoryLowTotalBytes: memoryLowTotalBytes != null ? memoryLowTotalBytes() : this.memoryLowTotalBytes,
+  memoryMappedBytes: memoryMappedBytes != null ? memoryMappedBytes() : this.memoryMappedBytes,
+  memoryPageTablesBytes: memoryPageTablesBytes != null ? memoryPageTablesBytes() : this.memoryPageTablesBytes,
+  memoryPerCpuBytes: memoryPerCpuBytes != null ? memoryPerCpuBytes() : this.memoryPerCpuBytes,
+  memoryPressureFull10s: memoryPressureFull10s != null ? memoryPressureFull10s() : this.memoryPressureFull10s,
+  memoryPressureFull60s: memoryPressureFull60s != null ? memoryPressureFull60s() : this.memoryPressureFull60s,
+  memoryPressureFull300s: memoryPressureFull300s != null ? memoryPressureFull300s() : this.memoryPressureFull300s,
+  memoryPressureFullTotalUs: memoryPressureFullTotalUs != null ? memoryPressureFullTotalUs() : this.memoryPressureFullTotalUs,
+  memoryPressureSome10s: memoryPressureSome10s != null ? memoryPressureSome10s() : this.memoryPressureSome10s,
+  memoryPressureSome60s: memoryPressureSome60s != null ? memoryPressureSome60s() : this.memoryPressureSome60s,
+  memoryPressureSome300s: memoryPressureSome300s != null ? memoryPressureSome300s() : this.memoryPressureSome300s,
+  memoryPressureSomeTotalUs: memoryPressureSomeTotalUs != null ? memoryPressureSomeTotalUs() : this.memoryPressureSomeTotalUs,
+  memorySReclaimableBytes: memorySReclaimableBytes != null ? memorySReclaimableBytes() : this.memorySReclaimableBytes,
+  memorySUnreclaimBytes: memorySUnreclaimBytes != null ? memorySUnreclaimBytes() : this.memorySUnreclaimBytes,
+  memorySecondaryPageTablesBytes: memorySecondaryPageTablesBytes != null ? memorySecondaryPageTablesBytes() : this.memorySecondaryPageTablesBytes,
+  memoryShmemBytes: memoryShmemBytes != null ? memoryShmemBytes() : this.memoryShmemBytes,
+  memoryShmemHugepagesBytes: memoryShmemHugepagesBytes != null ? memoryShmemHugepagesBytes() : this.memoryShmemHugepagesBytes,
+  memoryShmemPmdMappedBytes: memoryShmemPmdMappedBytes != null ? memoryShmemPmdMappedBytes() : this.memoryShmemPmdMappedBytes,
+  memorySlabBytes: memorySlabBytes != null ? memorySlabBytes() : this.memorySlabBytes,
+  memorySwapCachedBytes: memorySwapCachedBytes != null ? memorySwapCachedBytes() : this.memorySwapCachedBytes,
+  memorySwapFreeBytes: memorySwapFreeBytes != null ? memorySwapFreeBytes() : this.memorySwapFreeBytes,
+  memorySwapTotalBytes: memorySwapTotalBytes != null ? memorySwapTotalBytes() : this.memorySwapTotalBytes,
+  memoryTotalBytes: memoryTotalBytes != null ? memoryTotalBytes() : this.memoryTotalBytes,
+  memoryVmallocChunkBytes: memoryVmallocChunkBytes != null ? memoryVmallocChunkBytes() : this.memoryVmallocChunkBytes,
+  memoryVmallocTotalBytes: memoryVmallocTotalBytes != null ? memoryVmallocTotalBytes() : this.memoryVmallocTotalBytes,
+  memoryVmallocUsedBytes: memoryVmallocUsedBytes != null ? memoryVmallocUsedBytes() : this.memoryVmallocUsedBytes,
+  memoryWritebackBytes: memoryWritebackBytes != null ? memoryWritebackBytes() : this.memoryWritebackBytes,
+  memoryWritebackTmpBytes: memoryWritebackTmpBytes != null ? memoryWritebackTmpBytes() : this.memoryWritebackTmpBytes,
+  memoryZSwapBytes: memoryZSwapBytes != null ? memoryZSwapBytes() : this.memoryZSwapBytes,
+  memoryZSwappedBytes: memoryZSwappedBytes != null ? memoryZSwappedBytes() : this.memoryZSwappedBytes,
+  mounts: mounts != null ? mounts() : this.mounts,
+  netdevs: netdevs != null ? netdevs() : this.netdevs,
+  snmpIcmpInAddrMaskReps: snmpIcmpInAddrMaskReps != null ? snmpIcmpInAddrMaskReps() : this.snmpIcmpInAddrMaskReps,
+  snmpIcmpInAddrMasks: snmpIcmpInAddrMasks != null ? snmpIcmpInAddrMasks() : this.snmpIcmpInAddrMasks,
+  snmpIcmpInCsumErrors: snmpIcmpInCsumErrors != null ? snmpIcmpInCsumErrors() : this.snmpIcmpInCsumErrors,
+  snmpIcmpInDestUnreachs: snmpIcmpInDestUnreachs != null ? snmpIcmpInDestUnreachs() : this.snmpIcmpInDestUnreachs,
+  snmpIcmpInEchoReps: snmpIcmpInEchoReps != null ? snmpIcmpInEchoReps() : this.snmpIcmpInEchoReps,
+  snmpIcmpInEchos: snmpIcmpInEchos != null ? snmpIcmpInEchos() : this.snmpIcmpInEchos,
+  snmpIcmpInErrors: snmpIcmpInErrors != null ? snmpIcmpInErrors() : this.snmpIcmpInErrors,
+  snmpIcmpInMsgs: snmpIcmpInMsgs != null ? snmpIcmpInMsgs() : this.snmpIcmpInMsgs,
+  snmpIcmpInParmProbs: snmpIcmpInParmProbs != null ? snmpIcmpInParmProbs() : this.snmpIcmpInParmProbs,
+  snmpIcmpInRedirects: snmpIcmpInRedirects != null ? snmpIcmpInRedirects() : this.snmpIcmpInRedirects,
+  snmpIcmpInSrcQuenchs: snmpIcmpInSrcQuenchs != null ? snmpIcmpInSrcQuenchs() : this.snmpIcmpInSrcQuenchs,
+  snmpIcmpInTimeExcds: snmpIcmpInTimeExcds != null ? snmpIcmpInTimeExcds() : this.snmpIcmpInTimeExcds,
+  snmpIcmpInTimestampReps: snmpIcmpInTimestampReps != null ? snmpIcmpInTimestampReps() : this.snmpIcmpInTimestampReps,
+  snmpIcmpInTimestamps: snmpIcmpInTimestamps != null ? snmpIcmpInTimestamps() : this.snmpIcmpInTimestamps,
+  snmpIcmpOutAddrMaskReps: snmpIcmpOutAddrMaskReps != null ? snmpIcmpOutAddrMaskReps() : this.snmpIcmpOutAddrMaskReps,
+  snmpIcmpOutAddrMasks: snmpIcmpOutAddrMasks != null ? snmpIcmpOutAddrMasks() : this.snmpIcmpOutAddrMasks,
+  snmpIcmpOutDestUnreachs: snmpIcmpOutDestUnreachs != null ? snmpIcmpOutDestUnreachs() : this.snmpIcmpOutDestUnreachs,
+  snmpIcmpOutEchoReps: snmpIcmpOutEchoReps != null ? snmpIcmpOutEchoReps() : this.snmpIcmpOutEchoReps,
+  snmpIcmpOutEchos: snmpIcmpOutEchos != null ? snmpIcmpOutEchos() : this.snmpIcmpOutEchos,
+  snmpIcmpOutErrors: snmpIcmpOutErrors != null ? snmpIcmpOutErrors() : this.snmpIcmpOutErrors,
+  snmpIcmpOutMsgs: snmpIcmpOutMsgs != null ? snmpIcmpOutMsgs() : this.snmpIcmpOutMsgs,
+  snmpIcmpOutParmProbs: snmpIcmpOutParmProbs != null ? snmpIcmpOutParmProbs() : this.snmpIcmpOutParmProbs,
+  snmpIcmpOutRedirects: snmpIcmpOutRedirects != null ? snmpIcmpOutRedirects() : this.snmpIcmpOutRedirects,
+  snmpIcmpOutSrcQuenchs: snmpIcmpOutSrcQuenchs != null ? snmpIcmpOutSrcQuenchs() : this.snmpIcmpOutSrcQuenchs,
+  snmpIcmpOutTimeExcds: snmpIcmpOutTimeExcds != null ? snmpIcmpOutTimeExcds() : this.snmpIcmpOutTimeExcds,
+  snmpIcmpOutTimestampReps: snmpIcmpOutTimestampReps != null ? snmpIcmpOutTimestampReps() : this.snmpIcmpOutTimestampReps,
+  snmpIcmpOutTimestamps: snmpIcmpOutTimestamps != null ? snmpIcmpOutTimestamps() : this.snmpIcmpOutTimestamps,
+  snmpIpDefaultTtl: snmpIpDefaultTtl != null ? snmpIpDefaultTtl() : this.snmpIpDefaultTtl,
+  snmpIpForwDatagrams: snmpIpForwDatagrams != null ? snmpIpForwDatagrams() : this.snmpIpForwDatagrams,
+  snmpIpForwardingEnabled: snmpIpForwardingEnabled != null ? snmpIpForwardingEnabled() : this.snmpIpForwardingEnabled,
+  snmpIpFragCreates: snmpIpFragCreates != null ? snmpIpFragCreates() : this.snmpIpFragCreates,
+  snmpIpFragFails: snmpIpFragFails != null ? snmpIpFragFails() : this.snmpIpFragFails,
+  snmpIpFragOks: snmpIpFragOks != null ? snmpIpFragOks() : this.snmpIpFragOks,
+  snmpIpInAddrErrors: snmpIpInAddrErrors != null ? snmpIpInAddrErrors() : this.snmpIpInAddrErrors,
+  snmpIpInDelivers: snmpIpInDelivers != null ? snmpIpInDelivers() : this.snmpIpInDelivers,
+  snmpIpInDiscards: snmpIpInDiscards != null ? snmpIpInDiscards() : this.snmpIpInDiscards,
+  snmpIpInHdrErrors: snmpIpInHdrErrors != null ? snmpIpInHdrErrors() : this.snmpIpInHdrErrors,
+  snmpIpInReceives: snmpIpInReceives != null ? snmpIpInReceives() : this.snmpIpInReceives,
+  snmpIpInUnknownProtos: snmpIpInUnknownProtos != null ? snmpIpInUnknownProtos() : this.snmpIpInUnknownProtos,
+  snmpIpOutDiscards: snmpIpOutDiscards != null ? snmpIpOutDiscards() : this.snmpIpOutDiscards,
+  snmpIpOutNoRoutes: snmpIpOutNoRoutes != null ? snmpIpOutNoRoutes() : this.snmpIpOutNoRoutes,
+  snmpIpOutRequests: snmpIpOutRequests != null ? snmpIpOutRequests() : this.snmpIpOutRequests,
+  snmpIpReasmFails: snmpIpReasmFails != null ? snmpIpReasmFails() : this.snmpIpReasmFails,
+  snmpIpReasmOks: snmpIpReasmOks != null ? snmpIpReasmOks() : this.snmpIpReasmOks,
+  snmpIpReasmReqds: snmpIpReasmReqds != null ? snmpIpReasmReqds() : this.snmpIpReasmReqds,
+  snmpIpReasmTimeout: snmpIpReasmTimeout != null ? snmpIpReasmTimeout() : this.snmpIpReasmTimeout,
+  snmpTcpActiveOpens: snmpTcpActiveOpens != null ? snmpTcpActiveOpens() : this.snmpTcpActiveOpens,
+  snmpTcpAttemptFails: snmpTcpAttemptFails != null ? snmpTcpAttemptFails() : this.snmpTcpAttemptFails,
+  snmpTcpCurrEstab: snmpTcpCurrEstab != null ? snmpTcpCurrEstab() : this.snmpTcpCurrEstab,
+  snmpTcpEstabResets: snmpTcpEstabResets != null ? snmpTcpEstabResets() : this.snmpTcpEstabResets,
+  snmpTcpInCsumErrors: snmpTcpInCsumErrors != null ? snmpTcpInCsumErrors() : this.snmpTcpInCsumErrors,
+  snmpTcpInErrs: snmpTcpInErrs != null ? snmpTcpInErrs() : this.snmpTcpInErrs,
+  snmpTcpInSegs: snmpTcpInSegs != null ? snmpTcpInSegs() : this.snmpTcpInSegs,
+  snmpTcpMaxConn: snmpTcpMaxConn != null ? snmpTcpMaxConn() : this.snmpTcpMaxConn,
+  snmpTcpOutRsts: snmpTcpOutRsts != null ? snmpTcpOutRsts() : this.snmpTcpOutRsts,
+  snmpTcpOutSegs: snmpTcpOutSegs != null ? snmpTcpOutSegs() : this.snmpTcpOutSegs,
+  snmpTcpPassiveOpens: snmpTcpPassiveOpens != null ? snmpTcpPassiveOpens() : this.snmpTcpPassiveOpens,
+  snmpTcpRetransSegs: snmpTcpRetransSegs != null ? snmpTcpRetransSegs() : this.snmpTcpRetransSegs,
+  snmpTcpRtoMax: snmpTcpRtoMax != null ? snmpTcpRtoMax() : this.snmpTcpRtoMax,
+  snmpTcpRtoMin: snmpTcpRtoMin != null ? snmpTcpRtoMin() : this.snmpTcpRtoMin,
+  snmpUdpInDatagrams: snmpUdpInDatagrams != null ? snmpUdpInDatagrams() : this.snmpUdpInDatagrams,
+  snmpUdpInErrors: snmpUdpInErrors != null ? snmpUdpInErrors() : this.snmpUdpInErrors,
+  snmpUdpNoPorts: snmpUdpNoPorts != null ? snmpUdpNoPorts() : this.snmpUdpNoPorts,
+  snmpUdpOutDatagrams: snmpUdpOutDatagrams != null ? snmpUdpOutDatagrams() : this.snmpUdpOutDatagrams,
+  systemBootTimeS: systemBootTimeS != null ? systemBootTimeS() : this.systemBootTimeS,
+  t: t ?? this.t,
+  thermals: thermals != null ? thermals() : this.thermals,
+  tunnels: tunnels != null ? tunnels() : this.tunnels,
+  uptimeIdleMs: uptimeIdleMs != null ? uptimeIdleMs() : this.uptimeIdleMs,
+  uptimeTotalMs: uptimeTotalMs != null ? uptimeTotalMs() : this.uptimeTotalMs,
+  v: v ?? this.v,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnSnapshot &&
+          listEquals(bonds, other.bonds) &&
+          countReclaimFailures == other.countReclaimFailures &&
+          countReclaimedPaths == other.countReclaimedPaths &&
+          countRecordFailed == other.countRecordFailed &&
+          countTransmitFailures == other.countTransmitFailures &&
+          cpuCount == other.cpuCount &&
+          cpuPressure10s == other.cpuPressure10s &&
+          cpuPressure60s == other.cpuPressure60s &&
+          cpuPressure300s == other.cpuPressure300s &&
+          cpuPressureTotalUs == other.cpuPressureTotalUs &&
+          cpuTimeGuestMs == other.cpuTimeGuestMs &&
+          cpuTimeGuestNiceMs == other.cpuTimeGuestNiceMs &&
+          cpuTimeIdleMs == other.cpuTimeIdleMs &&
+          cpuTimeIowaitMs == other.cpuTimeIowaitMs &&
+          cpuTimeIrqMs == other.cpuTimeIrqMs &&
+          cpuTimeNiceMs == other.cpuTimeNiceMs &&
+          cpuTimeSoftirqMs == other.cpuTimeSoftirqMs &&
+          cpuTimeStealMs == other.cpuTimeStealMs &&
+          cpuTimeSystemMs == other.cpuTimeSystemMs &&
+          cpuTimeUserMs == other.cpuTimeUserMs &&
+          listEquals(dhcpLeases, other.dhcpLeases) &&
+          listEquals(disks, other.disks) &&
+          haState == other.haState &&
+          haValue == other.haValue &&
+          listEquals(interfaces, other.interfaces) &&
+          ioPressureFull10s == other.ioPressureFull10s &&
+          ioPressureFull60s == other.ioPressureFull60s &&
+          ioPressureFull300s == other.ioPressureFull300s &&
+          ioPressureFullTotalUs == other.ioPressureFullTotalUs &&
+          ioPressureSome10s == other.ioPressureSome10s &&
+          ioPressureSome60s == other.ioPressureSome60s &&
+          ioPressureSome300s == other.ioPressureSome300s &&
+          ioPressureSomeTotalUs == other.ioPressureSomeTotalUs &&
+          kernelBtime == other.kernelBtime &&
+          kernelCtxt == other.kernelCtxt &&
+          kernelProcesses == other.kernelProcesses &&
+          kernelProcessesBlocked == other.kernelProcessesBlocked &&
+          kernelProcessesRunning == other.kernelProcessesRunning &&
+          loadAverage1m == other.loadAverage1m &&
+          loadAverage5m == other.loadAverage5m &&
+          loadAverage15m == other.loadAverage15m &&
+          loadAverageCur == other.loadAverageCur &&
+          loadAverageMax == other.loadAverageMax &&
+          memoryActiveBytes == other.memoryActiveBytes &&
+          memoryAnonHugepagesBytes == other.memoryAnonHugepagesBytes &&
+          memoryAnonPagesBytes == other.memoryAnonPagesBytes &&
+          memoryAvailableBytes == other.memoryAvailableBytes &&
+          memoryBounceBytes == other.memoryBounceBytes &&
+          memoryBuffersBytes == other.memoryBuffersBytes &&
+          memoryCachedBytes == other.memoryCachedBytes &&
+          memoryCmaFreeBytes == other.memoryCmaFreeBytes &&
+          memoryCmaTotalBytes == other.memoryCmaTotalBytes &&
+          memoryCommitLimitBytes == other.memoryCommitLimitBytes &&
+          memoryCommittedAsBytes == other.memoryCommittedAsBytes &&
+          memoryDirtyBytes == other.memoryDirtyBytes &&
+          memoryFreeBytes == other.memoryFreeBytes &&
+          memoryHighFreeBytes == other.memoryHighFreeBytes &&
+          memoryHighTotalBytes == other.memoryHighTotalBytes &&
+          memoryHugepagesFree == other.memoryHugepagesFree &&
+          memoryHugepagesRsvd == other.memoryHugepagesRsvd &&
+          memoryHugepagesSurp == other.memoryHugepagesSurp &&
+          memoryHugepagesTotal == other.memoryHugepagesTotal &&
+          memoryHugepagesizeBytes == other.memoryHugepagesizeBytes &&
+          memoryInactiveBytes == other.memoryInactiveBytes &&
+          memoryKReclaimableBytes == other.memoryKReclaimableBytes &&
+          memoryKernelStackBytes == other.memoryKernelStackBytes &&
+          memoryLowFreeBytes == other.memoryLowFreeBytes &&
+          memoryLowTotalBytes == other.memoryLowTotalBytes &&
+          memoryMappedBytes == other.memoryMappedBytes &&
+          memoryPageTablesBytes == other.memoryPageTablesBytes &&
+          memoryPerCpuBytes == other.memoryPerCpuBytes &&
+          memoryPressureFull10s == other.memoryPressureFull10s &&
+          memoryPressureFull60s == other.memoryPressureFull60s &&
+          memoryPressureFull300s == other.memoryPressureFull300s &&
+          memoryPressureFullTotalUs == other.memoryPressureFullTotalUs &&
+          memoryPressureSome10s == other.memoryPressureSome10s &&
+          memoryPressureSome60s == other.memoryPressureSome60s &&
+          memoryPressureSome300s == other.memoryPressureSome300s &&
+          memoryPressureSomeTotalUs == other.memoryPressureSomeTotalUs &&
+          memorySReclaimableBytes == other.memorySReclaimableBytes &&
+          memorySUnreclaimBytes == other.memorySUnreclaimBytes &&
+          memorySecondaryPageTablesBytes == other.memorySecondaryPageTablesBytes &&
+          memoryShmemBytes == other.memoryShmemBytes &&
+          memoryShmemHugepagesBytes == other.memoryShmemHugepagesBytes &&
+          memoryShmemPmdMappedBytes == other.memoryShmemPmdMappedBytes &&
+          memorySlabBytes == other.memorySlabBytes &&
+          memorySwapCachedBytes == other.memorySwapCachedBytes &&
+          memorySwapFreeBytes == other.memorySwapFreeBytes &&
+          memorySwapTotalBytes == other.memorySwapTotalBytes &&
+          memoryTotalBytes == other.memoryTotalBytes &&
+          memoryVmallocChunkBytes == other.memoryVmallocChunkBytes &&
+          memoryVmallocTotalBytes == other.memoryVmallocTotalBytes &&
+          memoryVmallocUsedBytes == other.memoryVmallocUsedBytes &&
+          memoryWritebackBytes == other.memoryWritebackBytes &&
+          memoryWritebackTmpBytes == other.memoryWritebackTmpBytes &&
+          memoryZSwapBytes == other.memoryZSwapBytes &&
+          memoryZSwappedBytes == other.memoryZSwappedBytes &&
+          listEquals(mounts, other.mounts) &&
+          listEquals(netdevs, other.netdevs) &&
+          snmpIcmpInAddrMaskReps == other.snmpIcmpInAddrMaskReps &&
+          snmpIcmpInAddrMasks == other.snmpIcmpInAddrMasks &&
+          snmpIcmpInCsumErrors == other.snmpIcmpInCsumErrors &&
+          snmpIcmpInDestUnreachs == other.snmpIcmpInDestUnreachs &&
+          snmpIcmpInEchoReps == other.snmpIcmpInEchoReps &&
+          snmpIcmpInEchos == other.snmpIcmpInEchos &&
+          snmpIcmpInErrors == other.snmpIcmpInErrors &&
+          snmpIcmpInMsgs == other.snmpIcmpInMsgs &&
+          snmpIcmpInParmProbs == other.snmpIcmpInParmProbs &&
+          snmpIcmpInRedirects == other.snmpIcmpInRedirects &&
+          snmpIcmpInSrcQuenchs == other.snmpIcmpInSrcQuenchs &&
+          snmpIcmpInTimeExcds == other.snmpIcmpInTimeExcds &&
+          snmpIcmpInTimestampReps == other.snmpIcmpInTimestampReps &&
+          snmpIcmpInTimestamps == other.snmpIcmpInTimestamps &&
+          snmpIcmpOutAddrMaskReps == other.snmpIcmpOutAddrMaskReps &&
+          snmpIcmpOutAddrMasks == other.snmpIcmpOutAddrMasks &&
+          snmpIcmpOutDestUnreachs == other.snmpIcmpOutDestUnreachs &&
+          snmpIcmpOutEchoReps == other.snmpIcmpOutEchoReps &&
+          snmpIcmpOutEchos == other.snmpIcmpOutEchos &&
+          snmpIcmpOutErrors == other.snmpIcmpOutErrors &&
+          snmpIcmpOutMsgs == other.snmpIcmpOutMsgs &&
+          snmpIcmpOutParmProbs == other.snmpIcmpOutParmProbs &&
+          snmpIcmpOutRedirects == other.snmpIcmpOutRedirects &&
+          snmpIcmpOutSrcQuenchs == other.snmpIcmpOutSrcQuenchs &&
+          snmpIcmpOutTimeExcds == other.snmpIcmpOutTimeExcds &&
+          snmpIcmpOutTimestampReps == other.snmpIcmpOutTimestampReps &&
+          snmpIcmpOutTimestamps == other.snmpIcmpOutTimestamps &&
+          snmpIpDefaultTtl == other.snmpIpDefaultTtl &&
+          snmpIpForwDatagrams == other.snmpIpForwDatagrams &&
+          snmpIpForwardingEnabled == other.snmpIpForwardingEnabled &&
+          snmpIpFragCreates == other.snmpIpFragCreates &&
+          snmpIpFragFails == other.snmpIpFragFails &&
+          snmpIpFragOks == other.snmpIpFragOks &&
+          snmpIpInAddrErrors == other.snmpIpInAddrErrors &&
+          snmpIpInDelivers == other.snmpIpInDelivers &&
+          snmpIpInDiscards == other.snmpIpInDiscards &&
+          snmpIpInHdrErrors == other.snmpIpInHdrErrors &&
+          snmpIpInReceives == other.snmpIpInReceives &&
+          snmpIpInUnknownProtos == other.snmpIpInUnknownProtos &&
+          snmpIpOutDiscards == other.snmpIpOutDiscards &&
+          snmpIpOutNoRoutes == other.snmpIpOutNoRoutes &&
+          snmpIpOutRequests == other.snmpIpOutRequests &&
+          snmpIpReasmFails == other.snmpIpReasmFails &&
+          snmpIpReasmOks == other.snmpIpReasmOks &&
+          snmpIpReasmReqds == other.snmpIpReasmReqds &&
+          snmpIpReasmTimeout == other.snmpIpReasmTimeout &&
+          snmpTcpActiveOpens == other.snmpTcpActiveOpens &&
+          snmpTcpAttemptFails == other.snmpTcpAttemptFails &&
+          snmpTcpCurrEstab == other.snmpTcpCurrEstab &&
+          snmpTcpEstabResets == other.snmpTcpEstabResets &&
+          snmpTcpInCsumErrors == other.snmpTcpInCsumErrors &&
+          snmpTcpInErrs == other.snmpTcpInErrs &&
+          snmpTcpInSegs == other.snmpTcpInSegs &&
+          snmpTcpMaxConn == other.snmpTcpMaxConn &&
+          snmpTcpOutRsts == other.snmpTcpOutRsts &&
+          snmpTcpOutSegs == other.snmpTcpOutSegs &&
+          snmpTcpPassiveOpens == other.snmpTcpPassiveOpens &&
+          snmpTcpRetransSegs == other.snmpTcpRetransSegs &&
+          snmpTcpRtoMax == other.snmpTcpRtoMax &&
+          snmpTcpRtoMin == other.snmpTcpRtoMin &&
+          snmpUdpInDatagrams == other.snmpUdpInDatagrams &&
+          snmpUdpInErrors == other.snmpUdpInErrors &&
+          snmpUdpNoPorts == other.snmpUdpNoPorts &&
+          snmpUdpOutDatagrams == other.snmpUdpOutDatagrams &&
+          systemBootTimeS == other.systemBootTimeS &&
+          t == other.t &&
+          listEquals(thermals, other.thermals) &&
+          listEquals(tunnels, other.tunnels) &&
+          uptimeIdleMs == other.uptimeIdleMs &&
+          uptimeTotalMs == other.uptimeTotalMs &&
+          v == other.v; } 
+@override int get hashCode { return Object.hashAll([Object.hashAll(bonds ?? const []), countReclaimFailures, countReclaimedPaths, countRecordFailed, countTransmitFailures, cpuCount, cpuPressure10s, cpuPressure60s, cpuPressure300s, cpuPressureTotalUs, cpuTimeGuestMs, cpuTimeGuestNiceMs, cpuTimeIdleMs, cpuTimeIowaitMs, cpuTimeIrqMs, cpuTimeNiceMs, cpuTimeSoftirqMs, cpuTimeStealMs, cpuTimeSystemMs, cpuTimeUserMs, Object.hashAll(dhcpLeases ?? const []), Object.hashAll(disks ?? const []), haState, haValue, Object.hashAll(interfaces ?? const []), ioPressureFull10s, ioPressureFull60s, ioPressureFull300s, ioPressureFullTotalUs, ioPressureSome10s, ioPressureSome60s, ioPressureSome300s, ioPressureSomeTotalUs, kernelBtime, kernelCtxt, kernelProcesses, kernelProcessesBlocked, kernelProcessesRunning, loadAverage1m, loadAverage5m, loadAverage15m, loadAverageCur, loadAverageMax, memoryActiveBytes, memoryAnonHugepagesBytes, memoryAnonPagesBytes, memoryAvailableBytes, memoryBounceBytes, memoryBuffersBytes, memoryCachedBytes, memoryCmaFreeBytes, memoryCmaTotalBytes, memoryCommitLimitBytes, memoryCommittedAsBytes, memoryDirtyBytes, memoryFreeBytes, memoryHighFreeBytes, memoryHighTotalBytes, memoryHugepagesFree, memoryHugepagesRsvd, memoryHugepagesSurp, memoryHugepagesTotal, memoryHugepagesizeBytes, memoryInactiveBytes, memoryKReclaimableBytes, memoryKernelStackBytes, memoryLowFreeBytes, memoryLowTotalBytes, memoryMappedBytes, memoryPageTablesBytes, memoryPerCpuBytes, memoryPressureFull10s, memoryPressureFull60s, memoryPressureFull300s, memoryPressureFullTotalUs, memoryPressureSome10s, memoryPressureSome60s, memoryPressureSome300s, memoryPressureSomeTotalUs, memorySReclaimableBytes, memorySUnreclaimBytes, memorySecondaryPageTablesBytes, memoryShmemBytes, memoryShmemHugepagesBytes, memoryShmemPmdMappedBytes, memorySlabBytes, memorySwapCachedBytes, memorySwapFreeBytes, memorySwapTotalBytes, memoryTotalBytes, memoryVmallocChunkBytes, memoryVmallocTotalBytes, memoryVmallocUsedBytes, memoryWritebackBytes, memoryWritebackTmpBytes, memoryZSwapBytes, memoryZSwappedBytes, Object.hashAll(mounts ?? const []), Object.hashAll(netdevs ?? const []), snmpIcmpInAddrMaskReps, snmpIcmpInAddrMasks, snmpIcmpInCsumErrors, snmpIcmpInDestUnreachs, snmpIcmpInEchoReps, snmpIcmpInEchos, snmpIcmpInErrors, snmpIcmpInMsgs, snmpIcmpInParmProbs, snmpIcmpInRedirects, snmpIcmpInSrcQuenchs, snmpIcmpInTimeExcds, snmpIcmpInTimestampReps, snmpIcmpInTimestamps, snmpIcmpOutAddrMaskReps, snmpIcmpOutAddrMasks, snmpIcmpOutDestUnreachs, snmpIcmpOutEchoReps, snmpIcmpOutEchos, snmpIcmpOutErrors, snmpIcmpOutMsgs, snmpIcmpOutParmProbs, snmpIcmpOutRedirects, snmpIcmpOutSrcQuenchs, snmpIcmpOutTimeExcds, snmpIcmpOutTimestampReps, snmpIcmpOutTimestamps, snmpIpDefaultTtl, snmpIpForwDatagrams, snmpIpForwardingEnabled, snmpIpFragCreates, snmpIpFragFails, snmpIpFragOks, snmpIpInAddrErrors, snmpIpInDelivers, snmpIpInDiscards, snmpIpInHdrErrors, snmpIpInReceives, snmpIpInUnknownProtos, snmpIpOutDiscards, snmpIpOutNoRoutes, snmpIpOutRequests, snmpIpReasmFails, snmpIpReasmOks, snmpIpReasmReqds, snmpIpReasmTimeout, snmpTcpActiveOpens, snmpTcpAttemptFails, snmpTcpCurrEstab, snmpTcpEstabResets, snmpTcpInCsumErrors, snmpTcpInErrs, snmpTcpInSegs, snmpTcpMaxConn, snmpTcpOutRsts, snmpTcpOutSegs, snmpTcpPassiveOpens, snmpTcpRetransSegs, snmpTcpRtoMax, snmpTcpRtoMin, snmpUdpInDatagrams, snmpUdpInErrors, snmpUdpNoPorts, snmpUdpOutDatagrams, systemBootTimeS, t, Object.hashAll(thermals ?? const []), Object.hashAll(tunnels ?? const []), uptimeIdleMs, uptimeTotalMs, v]); } 
+@override String toString() { return 'MconnSnapshot(bonds: $bonds, countReclaimFailures: $countReclaimFailures, countReclaimedPaths: $countReclaimedPaths, countRecordFailed: $countRecordFailed, countTransmitFailures: $countTransmitFailures, cpuCount: $cpuCount, cpuPressure10s: $cpuPressure10s, cpuPressure60s: $cpuPressure60s, cpuPressure300s: $cpuPressure300s, cpuPressureTotalUs: $cpuPressureTotalUs, cpuTimeGuestMs: $cpuTimeGuestMs, cpuTimeGuestNiceMs: $cpuTimeGuestNiceMs, cpuTimeIdleMs: $cpuTimeIdleMs, cpuTimeIowaitMs: $cpuTimeIowaitMs, cpuTimeIrqMs: $cpuTimeIrqMs, cpuTimeNiceMs: $cpuTimeNiceMs, cpuTimeSoftirqMs: $cpuTimeSoftirqMs, cpuTimeStealMs: $cpuTimeStealMs, cpuTimeSystemMs: $cpuTimeSystemMs, cpuTimeUserMs: $cpuTimeUserMs, dhcpLeases: $dhcpLeases, disks: $disks, haState: $haState, haValue: $haValue, interfaces: $interfaces, ioPressureFull10s: $ioPressureFull10s, ioPressureFull60s: $ioPressureFull60s, ioPressureFull300s: $ioPressureFull300s, ioPressureFullTotalUs: $ioPressureFullTotalUs, ioPressureSome10s: $ioPressureSome10s, ioPressureSome60s: $ioPressureSome60s, ioPressureSome300s: $ioPressureSome300s, ioPressureSomeTotalUs: $ioPressureSomeTotalUs, kernelBtime: $kernelBtime, kernelCtxt: $kernelCtxt, kernelProcesses: $kernelProcesses, kernelProcessesBlocked: $kernelProcessesBlocked, kernelProcessesRunning: $kernelProcessesRunning, loadAverage1m: $loadAverage1m, loadAverage5m: $loadAverage5m, loadAverage15m: $loadAverage15m, loadAverageCur: $loadAverageCur, loadAverageMax: $loadAverageMax, memoryActiveBytes: $memoryActiveBytes, memoryAnonHugepagesBytes: $memoryAnonHugepagesBytes, memoryAnonPagesBytes: $memoryAnonPagesBytes, memoryAvailableBytes: $memoryAvailableBytes, memoryBounceBytes: $memoryBounceBytes, memoryBuffersBytes: $memoryBuffersBytes, memoryCachedBytes: $memoryCachedBytes, memoryCmaFreeBytes: $memoryCmaFreeBytes, memoryCmaTotalBytes: $memoryCmaTotalBytes, memoryCommitLimitBytes: $memoryCommitLimitBytes, memoryCommittedAsBytes: $memoryCommittedAsBytes, memoryDirtyBytes: $memoryDirtyBytes, memoryFreeBytes: $memoryFreeBytes, memoryHighFreeBytes: $memoryHighFreeBytes, memoryHighTotalBytes: $memoryHighTotalBytes, memoryHugepagesFree: $memoryHugepagesFree, memoryHugepagesRsvd: $memoryHugepagesRsvd, memoryHugepagesSurp: $memoryHugepagesSurp, memoryHugepagesTotal: $memoryHugepagesTotal, memoryHugepagesizeBytes: $memoryHugepagesizeBytes, memoryInactiveBytes: $memoryInactiveBytes, memoryKReclaimableBytes: $memoryKReclaimableBytes, memoryKernelStackBytes: $memoryKernelStackBytes, memoryLowFreeBytes: $memoryLowFreeBytes, memoryLowTotalBytes: $memoryLowTotalBytes, memoryMappedBytes: $memoryMappedBytes, memoryPageTablesBytes: $memoryPageTablesBytes, memoryPerCpuBytes: $memoryPerCpuBytes, memoryPressureFull10s: $memoryPressureFull10s, memoryPressureFull60s: $memoryPressureFull60s, memoryPressureFull300s: $memoryPressureFull300s, memoryPressureFullTotalUs: $memoryPressureFullTotalUs, memoryPressureSome10s: $memoryPressureSome10s, memoryPressureSome60s: $memoryPressureSome60s, memoryPressureSome300s: $memoryPressureSome300s, memoryPressureSomeTotalUs: $memoryPressureSomeTotalUs, memorySReclaimableBytes: $memorySReclaimableBytes, memorySUnreclaimBytes: $memorySUnreclaimBytes, memorySecondaryPageTablesBytes: $memorySecondaryPageTablesBytes, memoryShmemBytes: $memoryShmemBytes, memoryShmemHugepagesBytes: $memoryShmemHugepagesBytes, memoryShmemPmdMappedBytes: $memoryShmemPmdMappedBytes, memorySlabBytes: $memorySlabBytes, memorySwapCachedBytes: $memorySwapCachedBytes, memorySwapFreeBytes: $memorySwapFreeBytes, memorySwapTotalBytes: $memorySwapTotalBytes, memoryTotalBytes: $memoryTotalBytes, memoryVmallocChunkBytes: $memoryVmallocChunkBytes, memoryVmallocTotalBytes: $memoryVmallocTotalBytes, memoryVmallocUsedBytes: $memoryVmallocUsedBytes, memoryWritebackBytes: $memoryWritebackBytes, memoryWritebackTmpBytes: $memoryWritebackTmpBytes, memoryZSwapBytes: $memoryZSwapBytes, memoryZSwappedBytes: $memoryZSwappedBytes, mounts: $mounts, netdevs: $netdevs, snmpIcmpInAddrMaskReps: $snmpIcmpInAddrMaskReps, snmpIcmpInAddrMasks: $snmpIcmpInAddrMasks, snmpIcmpInCsumErrors: $snmpIcmpInCsumErrors, snmpIcmpInDestUnreachs: $snmpIcmpInDestUnreachs, snmpIcmpInEchoReps: $snmpIcmpInEchoReps, snmpIcmpInEchos: $snmpIcmpInEchos, snmpIcmpInErrors: $snmpIcmpInErrors, snmpIcmpInMsgs: $snmpIcmpInMsgs, snmpIcmpInParmProbs: $snmpIcmpInParmProbs, snmpIcmpInRedirects: $snmpIcmpInRedirects, snmpIcmpInSrcQuenchs: $snmpIcmpInSrcQuenchs, snmpIcmpInTimeExcds: $snmpIcmpInTimeExcds, snmpIcmpInTimestampReps: $snmpIcmpInTimestampReps, snmpIcmpInTimestamps: $snmpIcmpInTimestamps, snmpIcmpOutAddrMaskReps: $snmpIcmpOutAddrMaskReps, snmpIcmpOutAddrMasks: $snmpIcmpOutAddrMasks, snmpIcmpOutDestUnreachs: $snmpIcmpOutDestUnreachs, snmpIcmpOutEchoReps: $snmpIcmpOutEchoReps, snmpIcmpOutEchos: $snmpIcmpOutEchos, snmpIcmpOutErrors: $snmpIcmpOutErrors, snmpIcmpOutMsgs: $snmpIcmpOutMsgs, snmpIcmpOutParmProbs: $snmpIcmpOutParmProbs, snmpIcmpOutRedirects: $snmpIcmpOutRedirects, snmpIcmpOutSrcQuenchs: $snmpIcmpOutSrcQuenchs, snmpIcmpOutTimeExcds: $snmpIcmpOutTimeExcds, snmpIcmpOutTimestampReps: $snmpIcmpOutTimestampReps, snmpIcmpOutTimestamps: $snmpIcmpOutTimestamps, snmpIpDefaultTtl: $snmpIpDefaultTtl, snmpIpForwDatagrams: $snmpIpForwDatagrams, snmpIpForwardingEnabled: $snmpIpForwardingEnabled, snmpIpFragCreates: $snmpIpFragCreates, snmpIpFragFails: $snmpIpFragFails, snmpIpFragOks: $snmpIpFragOks, snmpIpInAddrErrors: $snmpIpInAddrErrors, snmpIpInDelivers: $snmpIpInDelivers, snmpIpInDiscards: $snmpIpInDiscards, snmpIpInHdrErrors: $snmpIpInHdrErrors, snmpIpInReceives: $snmpIpInReceives, snmpIpInUnknownProtos: $snmpIpInUnknownProtos, snmpIpOutDiscards: $snmpIpOutDiscards, snmpIpOutNoRoutes: $snmpIpOutNoRoutes, snmpIpOutRequests: $snmpIpOutRequests, snmpIpReasmFails: $snmpIpReasmFails, snmpIpReasmOks: $snmpIpReasmOks, snmpIpReasmReqds: $snmpIpReasmReqds, snmpIpReasmTimeout: $snmpIpReasmTimeout, snmpTcpActiveOpens: $snmpTcpActiveOpens, snmpTcpAttemptFails: $snmpTcpAttemptFails, snmpTcpCurrEstab: $snmpTcpCurrEstab, snmpTcpEstabResets: $snmpTcpEstabResets, snmpTcpInCsumErrors: $snmpTcpInCsumErrors, snmpTcpInErrs: $snmpTcpInErrs, snmpTcpInSegs: $snmpTcpInSegs, snmpTcpMaxConn: $snmpTcpMaxConn, snmpTcpOutRsts: $snmpTcpOutRsts, snmpTcpOutSegs: $snmpTcpOutSegs, snmpTcpPassiveOpens: $snmpTcpPassiveOpens, snmpTcpRetransSegs: $snmpTcpRetransSegs, snmpTcpRtoMax: $snmpTcpRtoMax, snmpTcpRtoMin: $snmpTcpRtoMin, snmpUdpInDatagrams: $snmpUdpInDatagrams, snmpUdpInErrors: $snmpUdpInErrors, snmpUdpNoPorts: $snmpUdpNoPorts, snmpUdpOutDatagrams: $snmpUdpOutDatagrams, systemBootTimeS: $systemBootTimeS, t: $t, thermals: $thermals, tunnels: $tunnels, uptimeIdleMs: $uptimeIdleMs, uptimeTotalMs: $uptimeTotalMs, v: $v)'; } 
+ }

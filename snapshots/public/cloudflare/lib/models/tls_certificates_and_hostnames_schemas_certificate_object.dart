@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tls_certificates_and_hostnames_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_status.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';final class TlsCertificatesAndHostnamesSchemasCertificateObject {const TlsCertificatesAndHostnamesSchemasCertificateObject({this.certificate, this.expiresOn, this.id, this.issuer, this.serialNumber, this.signature, this.status, this.uploadedOn, });
+
+factory TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesSchemasCertificateObject(
+  certificate: json['certificate'] != null ? TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate.fromJson(json['certificate'] as String) : null,
+  expiresOn: json['expires_on'] != null ? TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn.fromJson(json['expires_on'] as String) : null,
+  id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
+  issuer: json['issuer'] != null ? TlsCertificatesAndHostnamesIssuer.fromJson(json['issuer'] as String) : null,
+  serialNumber: json['serial_number'] != null ? TlsCertificatesAndHostnamesSerialNumber.fromJson(json['serial_number'] as String) : null,
+  signature: json['signature'] != null ? TlsCertificatesAndHostnamesSignature.fromJson(json['signature'] as String) : null,
+  status: json['status'] != null ? TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus.fromJson(json['status'] as String) : null,
+  uploadedOn: json['uploaded_on'] != null ? TlsCertificatesAndHostnamesComponentsSchemasUploadedOn.fromJson(json['uploaded_on'] as String) : null,
+); }
+
+/// The hostname certificate.
+final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate? certificate;
+
+/// The date when the certificate expires.
+final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn? expiresOn;
+
+/// Identifier.
+final TlsCertificatesAndHostnamesIdentifier? id;
+
+/// The certificate authority that issued the certificate.
+final TlsCertificatesAndHostnamesIssuer? issuer;
+
+final TlsCertificatesAndHostnamesSerialNumber? serialNumber;
+
+final TlsCertificatesAndHostnamesSignature? signature;
+
+/// Status of the certificate or the association.
+final TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus? status;
+
+/// The time when the certificate was uploaded.
+final TlsCertificatesAndHostnamesComponentsSchemasUploadedOn? uploadedOn;
+
+Map<String, dynamic> toJson() { return {
+  if (certificate != null) 'certificate': certificate?.toJson(),
+  if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (issuer != null) 'issuer': issuer?.toJson(),
+  if (serialNumber != null) 'serial_number': serialNumber?.toJson(),
+  if (signature != null) 'signature': signature?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (uploadedOn != null) 'uploaded_on': uploadedOn?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TlsCertificatesAndHostnamesSchemasCertificateObject copyWith({TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate Function()? certificate, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasExpiresOn Function()? expiresOn, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesIssuer Function()? issuer, TlsCertificatesAndHostnamesSerialNumber Function()? serialNumber, TlsCertificatesAndHostnamesSignature Function()? signature, TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus Function()? status, TlsCertificatesAndHostnamesComponentsSchemasUploadedOn Function()? uploadedOn, }) { return TlsCertificatesAndHostnamesSchemasCertificateObject(
+  certificate: certificate != null ? certificate() : this.certificate,
+  expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
+  id: id != null ? id() : this.id,
+  issuer: issuer != null ? issuer() : this.issuer,
+  serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
+  signature: signature != null ? signature() : this.signature,
+  status: status != null ? status() : this.status,
+  uploadedOn: uploadedOn != null ? uploadedOn() : this.uploadedOn,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesSchemasCertificateObject &&
+          certificate == other.certificate &&
+          expiresOn == other.expiresOn &&
+          id == other.id &&
+          issuer == other.issuer &&
+          serialNumber == other.serialNumber &&
+          signature == other.signature &&
+          status == other.status &&
+          uploadedOn == other.uploadedOn; } 
+@override int get hashCode { return Object.hash(certificate, expiresOn, id, issuer, serialNumber, signature, status, uploadedOn); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesSchemasCertificateObject(certificate: $certificate, expiresOn: $expiresOn, id: $id, issuer: $issuer, serialNumber: $serialNumber, signature: $signature, status: $status, uploadedOn: $uploadedOn)'; } 
+ }

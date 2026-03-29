@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTaxRegistrationsRequestCountryOptionsCmType {const PostTaxRegistrationsRequestCountryOptionsCmType._(this.value);
+
+factory PostTaxRegistrationsRequestCountryOptionsCmType.fromJson(String json) { return switch (json) {
+  'simplified' => simplified,
+  _ => PostTaxRegistrationsRequestCountryOptionsCmType._(json),
+}; }
+
+static const PostTaxRegistrationsRequestCountryOptionsCmType simplified = PostTaxRegistrationsRequestCountryOptionsCmType._('simplified');
+
+static const List<PostTaxRegistrationsRequestCountryOptionsCmType> values = [simplified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsCmType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsCmType($value)'; } 
+ }
+final class PostTaxRegistrationsRequestCountryOptionsCm {const PostTaxRegistrationsRequestCountryOptionsCm({required this.type});
+
+factory PostTaxRegistrationsRequestCountryOptionsCm.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsCm(
+  type: PostTaxRegistrationsRequestCountryOptionsCmType.fromJson(json['type'] as String),
+); }
+
+final PostTaxRegistrationsRequestCountryOptionsCmType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostTaxRegistrationsRequestCountryOptionsCm copyWith({PostTaxRegistrationsRequestCountryOptionsCmType? type}) { return PostTaxRegistrationsRequestCountryOptionsCm(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTaxRegistrationsRequestCountryOptionsCm &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsCm(type: $type)'; } 
+ }

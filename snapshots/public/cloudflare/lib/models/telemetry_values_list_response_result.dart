@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TelemetryValuesListResponseResultType {const TelemetryValuesListResponseResultType._(this.value);
+
+factory TelemetryValuesListResponseResultType.fromJson(String json) { return switch (json) {
+  'string' => string,
+  'boolean' => boolean,
+  'number' => number,
+  _ => TelemetryValuesListResponseResultType._(json),
+}; }
+
+static const TelemetryValuesListResponseResultType string = TelemetryValuesListResponseResultType._('string');
+
+static const TelemetryValuesListResponseResultType boolean = TelemetryValuesListResponseResultType._('boolean');
+
+static const TelemetryValuesListResponseResultType number = TelemetryValuesListResponseResultType._('number');
+
+static const List<TelemetryValuesListResponseResultType> values = [string, boolean, number];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TelemetryValuesListResponseResultType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TelemetryValuesListResponseResultType($value)'; } 
+ }
+final class TelemetryValuesListResponseResult {const TelemetryValuesListResponseResult({required this.dataset, required this.key, required this.type, required this.value, });
+
+factory TelemetryValuesListResponseResult.fromJson(Map<String, dynamic> json) { return TelemetryValuesListResponseResult(
+  dataset: json['dataset'] as String,
+  key: json['key'] as String,
+  type: TelemetryValuesListResponseResultType.fromJson(json['type'] as String),
+  value: json['value'],
+); }
+
+final String dataset;
+
+final String key;
+
+final TelemetryValuesListResponseResultType type;
+
+/// One of: String, double, bool
+final dynamic value;
+
+Map<String, dynamic> toJson() { return {
+  'dataset': dataset,
+  'key': key,
+  'type': type.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataset') && json['dataset'] is String &&
+      json.containsKey('key') && json['key'] is String &&
+      json.containsKey('type') &&
+      json.containsKey('value'); } 
+TelemetryValuesListResponseResult copyWith({String? dataset, String? key, TelemetryValuesListResponseResultType? type, dynamic value, }) { return TelemetryValuesListResponseResult(
+  dataset: dataset ?? this.dataset,
+  key: key ?? this.key,
+  type: type ?? this.type,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TelemetryValuesListResponseResult &&
+          dataset == other.dataset &&
+          key == other.key &&
+          type == other.type &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(dataset, key, type, value); } 
+@override String toString() { return 'TelemetryValuesListResponseResult(dataset: $dataset, key: $key, type: $type, value: $value)'; } 
+ }

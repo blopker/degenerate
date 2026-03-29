@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param3.dart';import 'amount_details_tax_param3.dart';import 'post_payment_intents_intent_capture_request_amount_details_discount_amount.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items.dart';import 'post_payment_intents_intent_capture_request_amount_details_line_items_variant1.dart';import 'post_payment_intents_intent_capture_request_amount_details_shipping.dart';import 'post_payment_intents_intent_capture_request_amount_details_tax.dart';/// Provides industry-specific information about the amount.
+final class PostPaymentIntentsIntentCaptureRequestAmountDetails {const PostPaymentIntentsIntentCaptureRequestAmountDetails({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
+
+factory PostPaymentIntentsIntentCaptureRequestAmountDetails.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
+  discountAmount: json['discount_amount'] != null ? OneOf2.parse(json['discount_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmountVariant2.fromJson(v as String),) : null,
+  enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
+  lineItems: json['line_items'] != null ? OneOf2.parse(json['line_items'], fromA: (v) => (v as List<dynamic>).map((e) => PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItemsVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => AmountDetailsShippingParam3.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentCaptureRequestAmountDetailsShippingVariant2.fromJson(v as String),) : null,
+  tax: json['tax'] != null ? OneOf2.parse(json['tax'], fromA: (v) => AmountDetailsTaxParam3.fromJson(v as Map<String, dynamic>), fromB: (v) => PostPaymentIntentsIntentCaptureRequestAmountDetailsTaxVariant2.fromJson(v as String),) : null,
+); }
+
+final PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount? discountAmount;
+
+final bool? enforceArithmeticValidation;
+
+final PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems? lineItems;
+
+final PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping? shipping;
+
+final PostPaymentIntentsIntentCaptureRequestAmountDetailsTax? tax;
+
+Map<String, dynamic> toJson() { return {
+  if (discountAmount != null) 'discount_amount': discountAmount?.toJson(),
+  'enforce_arithmetic_validation': ?enforceArithmeticValidation,
+  if (lineItems != null) 'line_items': lineItems?.toJson(),
+  if (shipping != null) 'shipping': shipping?.toJson(),
+  if (tax != null) 'tax': tax?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsIntentCaptureRequestAmountDetails copyWith({PostPaymentIntentsIntentCaptureRequestAmountDetailsDiscountAmount Function()? discountAmount, bool Function()? enforceArithmeticValidation, PostPaymentIntentsIntentCaptureRequestAmountDetailsLineItems Function()? lineItems, PostPaymentIntentsIntentCaptureRequestAmountDetailsShipping Function()? shipping, PostPaymentIntentsIntentCaptureRequestAmountDetailsTax Function()? tax, }) { return PostPaymentIntentsIntentCaptureRequestAmountDetails(
+  discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
+  enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,
+  lineItems: lineItems != null ? lineItems() : this.lineItems,
+  shipping: shipping != null ? shipping() : this.shipping,
+  tax: tax != null ? tax() : this.tax,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentIntentsIntentCaptureRequestAmountDetails &&
+          discountAmount == other.discountAmount &&
+          enforceArithmeticValidation == other.enforceArithmeticValidation &&
+          lineItems == other.lineItems &&
+          shipping == other.shipping &&
+          tax == other.tax; } 
+@override int get hashCode { return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax); } 
+@override String toString() { return 'PostPaymentIntentsIntentCaptureRequestAmountDetails(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)'; } 
+ }

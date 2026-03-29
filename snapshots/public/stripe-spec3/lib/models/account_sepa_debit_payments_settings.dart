@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class AccountSepaDebitPaymentsSettings {const AccountSepaDebitPaymentsSettings({this.creditorId});
+
+factory AccountSepaDebitPaymentsSettings.fromJson(Map<String, dynamic> json) { return AccountSepaDebitPaymentsSettings(
+  creditorId: json['creditor_id'] as String?,
+); }
+
+/// SEPA creditor identifier that identifies the company making the payment.
+final String? creditorId;
+
+Map<String, dynamic> toJson() { return {
+  'creditor_id': ?creditorId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountSepaDebitPaymentsSettings copyWith({String Function()? creditorId}) { return AccountSepaDebitPaymentsSettings(
+  creditorId: creditorId != null ? creditorId() : this.creditorId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountSepaDebitPaymentsSettings &&
+          creditorId == other.creditorId; } 
+@override int get hashCode { return creditorId.hashCode; } 
+@override String toString() { return 'AccountSepaDebitPaymentsSettings(creditorId: $creditorId)'; } 
+ }

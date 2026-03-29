@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod._(this.value);
+
+factory ReposGetOrgRuleSuitesTimePeriod.fromJson(String json) { return switch (json) {
+  'hour' => hour,
+  'day' => day,
+  'week' => week,
+  'month' => month,
+  _ => ReposGetOrgRuleSuitesTimePeriod._(json),
+}; }
+
+static const ReposGetOrgRuleSuitesTimePeriod hour = ReposGetOrgRuleSuitesTimePeriod._('hour');
+
+static const ReposGetOrgRuleSuitesTimePeriod day = ReposGetOrgRuleSuitesTimePeriod._('day');
+
+static const ReposGetOrgRuleSuitesTimePeriod week = ReposGetOrgRuleSuitesTimePeriod._('week');
+
+static const ReposGetOrgRuleSuitesTimePeriod month = ReposGetOrgRuleSuitesTimePeriod._('month');
+
+static const List<ReposGetOrgRuleSuitesTimePeriod> values = [hour, day, week, month];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReposGetOrgRuleSuitesTimePeriod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReposGetOrgRuleSuitesTimePeriod($value)'; } 
+ }

@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'stream_audio_default.dart';import 'stream_audio_label.dart';final class StreamEditAudioTrack {const StreamEditAudioTrack({this.$default, this.label, });
+
+factory StreamEditAudioTrack.fromJson(Map<String, dynamic> json) { return StreamEditAudioTrack(
+  $default: json['default'] != null ? StreamAudioDefault.fromJson(json['default'] as bool) : null,
+  label: json['label'] != null ? StreamAudioLabel.fromJson(json['label'] as String) : null,
+); }
+
+/// Denotes whether the audio track will be played by default in a player.
+final StreamAudioDefault? $default;
+
+/// A string to uniquely identify the track amongst other audio track labels for the specified video.
+final StreamAudioLabel? label;
+
+Map<String, dynamic> toJson() { return {
+  if ($default != null) 'default': $default?.toJson(),
+  if (label != null) 'label': label?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamEditAudioTrack copyWith({StreamAudioDefault Function()? $default, StreamAudioLabel Function()? label, }) { return StreamEditAudioTrack(
+  $default: $default != null ? $default() : this.$default,
+  label: label != null ? label() : this.label,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamEditAudioTrack &&
+          $default == other.$default &&
+          label == other.label; } 
+@override int get hashCode { return Object.hash($default, label); } 
+@override String toString() { return 'StreamEditAudioTrack(\$default: ${$default}, label: $label)'; } 
+ }

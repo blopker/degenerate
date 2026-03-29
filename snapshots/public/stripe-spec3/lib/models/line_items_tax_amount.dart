@@ -1,0 +1,110 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tax_rate.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
+final class LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason._(this.value);
+
+factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) { return switch (json) {
+  'customer_exempt' => customerExempt,
+  'not_collecting' => notCollecting,
+  'not_subject_to_tax' => notSubjectToTax,
+  'not_supported' => notSupported,
+  'portion_product_exempt' => portionProductExempt,
+  'portion_reduced_rated' => portionReducedRated,
+  'portion_standard_rated' => portionStandardRated,
+  'product_exempt' => productExempt,
+  'product_exempt_holiday' => productExemptHoliday,
+  'proportionally_rated' => proportionallyRated,
+  'reduced_rated' => reducedRated,
+  'reverse_charge' => reverseCharge,
+  'standard_rated' => standardRated,
+  'taxable_basis_reduced' => taxableBasisReduced,
+  'zero_rated' => zeroRated,
+  _ => LineItemsTaxAmountTaxabilityReason._(json),
+}; }
+
+static const LineItemsTaxAmountTaxabilityReason customerExempt = LineItemsTaxAmountTaxabilityReason._('customer_exempt');
+
+static const LineItemsTaxAmountTaxabilityReason notCollecting = LineItemsTaxAmountTaxabilityReason._('not_collecting');
+
+static const LineItemsTaxAmountTaxabilityReason notSubjectToTax = LineItemsTaxAmountTaxabilityReason._('not_subject_to_tax');
+
+static const LineItemsTaxAmountTaxabilityReason notSupported = LineItemsTaxAmountTaxabilityReason._('not_supported');
+
+static const LineItemsTaxAmountTaxabilityReason portionProductExempt = LineItemsTaxAmountTaxabilityReason._('portion_product_exempt');
+
+static const LineItemsTaxAmountTaxabilityReason portionReducedRated = LineItemsTaxAmountTaxabilityReason._('portion_reduced_rated');
+
+static const LineItemsTaxAmountTaxabilityReason portionStandardRated = LineItemsTaxAmountTaxabilityReason._('portion_standard_rated');
+
+static const LineItemsTaxAmountTaxabilityReason productExempt = LineItemsTaxAmountTaxabilityReason._('product_exempt');
+
+static const LineItemsTaxAmountTaxabilityReason productExemptHoliday = LineItemsTaxAmountTaxabilityReason._('product_exempt_holiday');
+
+static const LineItemsTaxAmountTaxabilityReason proportionallyRated = LineItemsTaxAmountTaxabilityReason._('proportionally_rated');
+
+static const LineItemsTaxAmountTaxabilityReason reducedRated = LineItemsTaxAmountTaxabilityReason._('reduced_rated');
+
+static const LineItemsTaxAmountTaxabilityReason reverseCharge = LineItemsTaxAmountTaxabilityReason._('reverse_charge');
+
+static const LineItemsTaxAmountTaxabilityReason standardRated = LineItemsTaxAmountTaxabilityReason._('standard_rated');
+
+static const LineItemsTaxAmountTaxabilityReason taxableBasisReduced = LineItemsTaxAmountTaxabilityReason._('taxable_basis_reduced');
+
+static const LineItemsTaxAmountTaxabilityReason zeroRated = LineItemsTaxAmountTaxabilityReason._('zero_rated');
+
+static const List<LineItemsTaxAmountTaxabilityReason> values = [customerExempt, notCollecting, notSubjectToTax, notSupported, portionProductExempt, portionReducedRated, portionStandardRated, productExempt, productExemptHoliday, proportionallyRated, reducedRated, reverseCharge, standardRated, taxableBasisReduced, zeroRated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is LineItemsTaxAmountTaxabilityReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'LineItemsTaxAmountTaxabilityReason($value)'; } 
+ }
+/// 
+final class LineItemsTaxAmount {const LineItemsTaxAmount({required this.amount, required this.rate, this.taxabilityReason, this.taxableAmount, });
+
+factory LineItemsTaxAmount.fromJson(Map<String, dynamic> json) { return LineItemsTaxAmount(
+  amount: (json['amount'] as num).toInt(),
+  rate: TaxRate.fromJson(json['rate'] as Map<String, dynamic>),
+  taxabilityReason: json['taxability_reason'] != null ? LineItemsTaxAmountTaxabilityReason.fromJson(json['taxability_reason'] as String) : null,
+  taxableAmount: json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null,
+); }
+
+/// Amount of tax applied for this rate.
+final int amount;
+
+final TaxRate rate;
+
+/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
+final LineItemsTaxAmountTaxabilityReason? taxabilityReason;
+
+/// The amount on which tax is calculated, in cents (or local equivalent).
+final int? taxableAmount;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'rate': rate.toJson(),
+  if (taxabilityReason != null) 'taxability_reason': taxabilityReason?.toJson(),
+  'taxable_amount': ?taxableAmount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('rate'); } 
+LineItemsTaxAmount copyWith({int? amount, TaxRate? rate, LineItemsTaxAmountTaxabilityReason? Function()? taxabilityReason, int? Function()? taxableAmount, }) { return LineItemsTaxAmount(
+  amount: amount ?? this.amount,
+  rate: rate ?? this.rate,
+  taxabilityReason: taxabilityReason != null ? taxabilityReason() : this.taxabilityReason,
+  taxableAmount: taxableAmount != null ? taxableAmount() : this.taxableAmount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LineItemsTaxAmount &&
+          amount == other.amount &&
+          rate == other.rate &&
+          taxabilityReason == other.taxabilityReason &&
+          taxableAmount == other.taxableAmount; } 
+@override int get hashCode { return Object.hash(amount, rate, taxabilityReason, taxableAmount); } 
+@override String toString() { return 'LineItemsTaxAmount(amount: $amount, rate: $rate, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
+ }

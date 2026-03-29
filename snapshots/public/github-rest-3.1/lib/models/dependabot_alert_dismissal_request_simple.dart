@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dependabot_alert_dismissal_request_simple_requester.dart';/// The current status of the dismissal request.
+final class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus._(this.value);
+
+factory DependabotAlertDismissalRequestSimpleStatus.fromJson(String json) { return switch (json) {
+  'pending' => pending,
+  'approved' => approved,
+  'rejected' => rejected,
+  'cancelled' => cancelled,
+  _ => DependabotAlertDismissalRequestSimpleStatus._(json),
+}; }
+
+static const DependabotAlertDismissalRequestSimpleStatus pending = DependabotAlertDismissalRequestSimpleStatus._('pending');
+
+static const DependabotAlertDismissalRequestSimpleStatus approved = DependabotAlertDismissalRequestSimpleStatus._('approved');
+
+static const DependabotAlertDismissalRequestSimpleStatus rejected = DependabotAlertDismissalRequestSimpleStatus._('rejected');
+
+static const DependabotAlertDismissalRequestSimpleStatus cancelled = DependabotAlertDismissalRequestSimpleStatus._('cancelled');
+
+static const List<DependabotAlertDismissalRequestSimpleStatus> values = [pending, approved, rejected, cancelled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DependabotAlertDismissalRequestSimpleStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DependabotAlertDismissalRequestSimpleStatus($value)'; } 
+ }
+/// Information about an active dismissal request for this Dependabot alert.
+final class DependabotAlertDismissalRequestSimple {const DependabotAlertDismissalRequestSimple({this.id, this.status, this.requester, this.createdAt, this.url, });
+
+factory DependabotAlertDismissalRequestSimple.fromJson(Map<String, dynamic> json) { return DependabotAlertDismissalRequestSimple(
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  status: json['status'] != null ? DependabotAlertDismissalRequestSimpleStatus.fromJson(json['status'] as String) : null,
+  requester: json['requester'] != null ? DependabotAlertDismissalRequestSimpleRequester.fromJson(json['requester'] as Map<String, dynamic>) : null,
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
+); }
+
+/// The unique identifier of the dismissal request.
+final int? id;
+
+/// The current status of the dismissal request.
+final DependabotAlertDismissalRequestSimpleStatus? status;
+
+/// The user who requested the dismissal.
+final DependabotAlertDismissalRequestSimpleRequester? requester;
+
+/// The date and time when the dismissal request was created.
+final DateTime? createdAt;
+
+/// The API URL to get more information about this dismissal request.
+final Uri? url;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  if (status != null) 'status': status?.toJson(),
+  if (requester != null) 'requester': requester?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  if (url != null) 'url': url?.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DependabotAlertDismissalRequestSimple copyWith({int Function()? id, DependabotAlertDismissalRequestSimpleStatus Function()? status, DependabotAlertDismissalRequestSimpleRequester Function()? requester, DateTime Function()? createdAt, Uri Function()? url, }) { return DependabotAlertDismissalRequestSimple(
+  id: id != null ? id() : this.id,
+  status: status != null ? status() : this.status,
+  requester: requester != null ? requester() : this.requester,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DependabotAlertDismissalRequestSimple &&
+          id == other.id &&
+          status == other.status &&
+          requester == other.requester &&
+          createdAt == other.createdAt &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(id, status, requester, createdAt, url); } 
+@override String toString() { return 'DependabotAlertDismissalRequestSimple(id: $id, status: $status, requester: $requester, createdAt: $createdAt, url: $url)'; } 
+ }

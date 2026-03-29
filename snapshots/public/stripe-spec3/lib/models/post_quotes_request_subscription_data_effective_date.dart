@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesRequestSubscriptionDataEffectiveDateVariant1 {const PostQuotesRequestSubscriptionDataEffectiveDateVariant1._(this.value);
+
+factory PostQuotesRequestSubscriptionDataEffectiveDateVariant1.fromJson(String json) { return switch (json) {
+  'current_period_end' => currentPeriodEnd,
+  _ => PostQuotesRequestSubscriptionDataEffectiveDateVariant1._(json),
+}; }
+
+static const PostQuotesRequestSubscriptionDataEffectiveDateVariant1 currentPeriodEnd = PostQuotesRequestSubscriptionDataEffectiveDateVariant1._('current_period_end');
+
+static const List<PostQuotesRequestSubscriptionDataEffectiveDateVariant1> values = [currentPeriodEnd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostQuotesRequestSubscriptionDataEffectiveDateVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostQuotesRequestSubscriptionDataEffectiveDateVariant1($value)'; } 
+ }
+final class PostQuotesRequestSubscriptionDataEffectiveDateVariant3 {const PostQuotesRequestSubscriptionDataEffectiveDateVariant3._(this.value);
+
+factory PostQuotesRequestSubscriptionDataEffectiveDateVariant3.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostQuotesRequestSubscriptionDataEffectiveDateVariant3._(json),
+}; }
+
+static const PostQuotesRequestSubscriptionDataEffectiveDateVariant3 $empty = PostQuotesRequestSubscriptionDataEffectiveDateVariant3._('');
+
+static const List<PostQuotesRequestSubscriptionDataEffectiveDateVariant3> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostQuotesRequestSubscriptionDataEffectiveDateVariant3 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostQuotesRequestSubscriptionDataEffectiveDateVariant3($value)'; } 
+ }
+typedef PostQuotesRequestSubscriptionDataEffectiveDate = OneOf3<PostQuotesRequestSubscriptionDataEffectiveDateVariant1,int,PostQuotesRequestSubscriptionDataEffectiveDateVariant3>;

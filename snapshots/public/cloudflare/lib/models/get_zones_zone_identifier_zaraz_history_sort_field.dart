@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetZonesZoneIdentifierZarazHistorySortField {const GetZonesZoneIdentifierZarazHistorySortField._(this.value);
+
+factory GetZonesZoneIdentifierZarazHistorySortField.fromJson(String json) { return switch (json) {
+  'id' => id,
+  'user_id' => userId,
+  'description' => description,
+  'created_at' => createdAt,
+  'updated_at' => updatedAt,
+  _ => GetZonesZoneIdentifierZarazHistorySortField._(json),
+}; }
+
+static const GetZonesZoneIdentifierZarazHistorySortField id = GetZonesZoneIdentifierZarazHistorySortField._('id');
+
+static const GetZonesZoneIdentifierZarazHistorySortField userId = GetZonesZoneIdentifierZarazHistorySortField._('user_id');
+
+static const GetZonesZoneIdentifierZarazHistorySortField description = GetZonesZoneIdentifierZarazHistorySortField._('description');
+
+static const GetZonesZoneIdentifierZarazHistorySortField createdAt = GetZonesZoneIdentifierZarazHistorySortField._('created_at');
+
+static const GetZonesZoneIdentifierZarazHistorySortField updatedAt = GetZonesZoneIdentifierZarazHistorySortField._('updated_at');
+
+static const List<GetZonesZoneIdentifierZarazHistorySortField> values = [id, userId, description, createdAt, updatedAt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetZonesZoneIdentifierZarazHistorySortField && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetZonesZoneIdentifierZarazHistorySortField($value)'; } 
+ }

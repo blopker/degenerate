@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'pages_plain_text_env_var.dart';import 'pages_secret_text_env_var.dart';sealed class PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValue();
+
+/// Deserialize from JSON, dispatching on the `type` discriminator.
+factory PagesDeploymentConfigValuesRequestEnvVarsValue.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+  'plain_text' => PagesDeploymentConfigValuesRequestEnvVarsValuePlainText.fromJson(json),
+  'secret_text' => PagesDeploymentConfigValuesRequestEnvVarsValueSecretText.fromJson(json),
+  _ => PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown(json),
+}; }
+
+/// The discriminator value identifying this variant.
+String get type;
+Map<String, dynamic> toJson();
+/// Whether this variant is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown; } 
+ }
+final class PagesDeploymentConfigValuesRequestEnvVarsValuePlainText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(this.pagesPlainTextEnvVar);
+
+factory PagesDeploymentConfigValuesRequestEnvVarsValuePlainText.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(PagesPlainTextEnvVar.fromJson(json)); }
+
+final PagesPlainTextEnvVar pagesPlainTextEnvVar;
+
+@override String get type { return 'plain_text'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...pagesPlainTextEnvVar.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDeploymentConfigValuesRequestEnvVarsValuePlainText && pagesPlainTextEnvVar == other.pagesPlainTextEnvVar; } 
+@override int get hashCode { return pagesPlainTextEnvVar.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValuePlainText(pagesPlainTextEnvVar: $pagesPlainTextEnvVar)'; } 
+ }
+final class PagesDeploymentConfigValuesRequestEnvVarsValueSecretText extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(this.pagesSecretTextEnvVar);
+
+factory PagesDeploymentConfigValuesRequestEnvVarsValueSecretText.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(PagesSecretTextEnvVar.fromJson(json)); }
+
+final PagesSecretTextEnvVar pagesSecretTextEnvVar;
+
+@override String get type { return 'secret_text'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...pagesSecretTextEnvVar.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDeploymentConfigValuesRequestEnvVarsValueSecretText && pagesSecretTextEnvVar == other.pagesSecretTextEnvVar; } 
+@override int get hashCode { return pagesSecretTextEnvVar.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValueSecretText(pagesSecretTextEnvVar: $pagesSecretTextEnvVar)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+/// Returned when the server sends a discriminator value that this client does not recognize.
+final class PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown extends PagesDeploymentConfigValuesRequestEnvVarsValue {const PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown(this.json);
+
+final Map<String, dynamic> json;
+
+@override String get type { return json['type'] as String? ?? ''; } 
+@override Map<String, dynamic> toJson() { return json; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDeploymentConfigValuesRequestEnvVarsValue$Unknown && json == other.json; } 
+@override int get hashCode { return json.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesRequestEnvVarsValue.unknown($json)'; } 
+ }

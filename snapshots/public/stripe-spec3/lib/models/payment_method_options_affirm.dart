@@ -1,0 +1,95 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Controls when the funds will be captured from the customer's account.
+final class PaymentMethodOptionsAffirmCaptureMethod {const PaymentMethodOptionsAffirmCaptureMethod._(this.value);
+
+factory PaymentMethodOptionsAffirmCaptureMethod.fromJson(String json) { return switch (json) {
+  'manual' => manual,
+  _ => PaymentMethodOptionsAffirmCaptureMethod._(json),
+}; }
+
+static const PaymentMethodOptionsAffirmCaptureMethod manual = PaymentMethodOptionsAffirmCaptureMethod._('manual');
+
+static const List<PaymentMethodOptionsAffirmCaptureMethod> values = [manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsAffirmCaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsAffirmCaptureMethod($value)'; } 
+ }
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final class PaymentMethodOptionsAffirmSetupFutureUsage {const PaymentMethodOptionsAffirmSetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsAffirmSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentMethodOptionsAffirmSetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsAffirmSetupFutureUsage none = PaymentMethodOptionsAffirmSetupFutureUsage._('none');
+
+static const List<PaymentMethodOptionsAffirmSetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsAffirmSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsAffirmSetupFutureUsage($value)'; } 
+ }
+/// 
+final class PaymentMethodOptionsAffirm {const PaymentMethodOptionsAffirm({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
+
+factory PaymentMethodOptionsAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsAffirm(
+  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsAffirmCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  preferredLocale: json['preferred_locale'] as String?,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsAffirmSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+/// Controls when the funds will be captured from the customer's account.
+final PaymentMethodOptionsAffirmCaptureMethod? captureMethod;
+
+/// Preferred language of the Affirm authorization page that the customer is redirected to.
+final String? preferredLocale;
+
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final PaymentMethodOptionsAffirmSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  'preferred_locale': ?preferredLocale,
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsAffirm copyWith({PaymentMethodOptionsAffirmCaptureMethod Function()? captureMethod, String Function()? preferredLocale, PaymentMethodOptionsAffirmSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsAffirm(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsAffirm &&
+          captureMethod == other.captureMethod &&
+          preferredLocale == other.preferredLocale &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(captureMethod, preferredLocale, setupFutureUsage); } 
+@override String toString() { return 'PaymentMethodOptionsAffirm(captureMethod: $captureMethod, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage)'; } 
+ }

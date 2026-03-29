@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CreateAppRequest {const CreateAppRequest({required this.name});
+
+factory CreateAppRequest.fromJson(Map<String, dynamic> json) { return CreateAppRequest(
+  name: json['name'] as String,
+); }
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+CreateAppRequest copyWith({String? name}) { return CreateAppRequest(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateAppRequest &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'CreateAppRequest(name: $name)'; } 
+ }

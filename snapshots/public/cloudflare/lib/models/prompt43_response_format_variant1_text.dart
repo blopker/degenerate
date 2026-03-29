@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Prompt43ResponseFormatVariant1TextType {const Prompt43ResponseFormatVariant1TextType._(this.value);
+
+factory Prompt43ResponseFormatVariant1TextType.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => Prompt43ResponseFormatVariant1TextType._(json),
+}; }
+
+static const Prompt43ResponseFormatVariant1TextType text = Prompt43ResponseFormatVariant1TextType._('text');
+
+static const List<Prompt43ResponseFormatVariant1TextType> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Prompt43ResponseFormatVariant1TextType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Prompt43ResponseFormatVariant1TextType($value)'; } 
+ }
+final class Prompt43ResponseFormatVariant1Text {const Prompt43ResponseFormatVariant1Text({required this.type});
+
+factory Prompt43ResponseFormatVariant1Text.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1Text(
+  type: Prompt43ResponseFormatVariant1TextType.fromJson(json['type'] as String),
+); }
+
+final Prompt43ResponseFormatVariant1TextType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+Prompt43ResponseFormatVariant1Text copyWith({Prompt43ResponseFormatVariant1TextType? type}) { return Prompt43ResponseFormatVariant1Text(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt43ResponseFormatVariant1Text &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'Prompt43ResponseFormatVariant1Text(type: $type)'; } 
+ }

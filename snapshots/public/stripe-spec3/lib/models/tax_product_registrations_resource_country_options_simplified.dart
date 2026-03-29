@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Type of registration in `country`.
+final class TaxProductRegistrationsResourceCountryOptionsSimplifiedType {const TaxProductRegistrationsResourceCountryOptionsSimplifiedType._(this.value);
+
+factory TaxProductRegistrationsResourceCountryOptionsSimplifiedType.fromJson(String json) { return switch (json) {
+  'simplified' => simplified,
+  _ => TaxProductRegistrationsResourceCountryOptionsSimplifiedType._(json),
+}; }
+
+static const TaxProductRegistrationsResourceCountryOptionsSimplifiedType simplified = TaxProductRegistrationsResourceCountryOptionsSimplifiedType._('simplified');
+
+static const List<TaxProductRegistrationsResourceCountryOptionsSimplifiedType> values = [simplified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxProductRegistrationsResourceCountryOptionsSimplifiedType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsSimplifiedType($value)'; } 
+ }
+/// 
+final class TaxProductRegistrationsResourceCountryOptionsSimplified {const TaxProductRegistrationsResourceCountryOptionsSimplified({required this.type});
+
+factory TaxProductRegistrationsResourceCountryOptionsSimplified.fromJson(Map<String, dynamic> json) { return TaxProductRegistrationsResourceCountryOptionsSimplified(
+  type: TaxProductRegistrationsResourceCountryOptionsSimplifiedType.fromJson(json['type'] as String),
+); }
+
+/// Type of registration in `country`.
+final TaxProductRegistrationsResourceCountryOptionsSimplifiedType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+TaxProductRegistrationsResourceCountryOptionsSimplified copyWith({TaxProductRegistrationsResourceCountryOptionsSimplifiedType? type}) { return TaxProductRegistrationsResourceCountryOptionsSimplified(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxProductRegistrationsResourceCountryOptionsSimplified &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'TaxProductRegistrationsResourceCountryOptionsSimplified(type: $type)'; } 
+ }

@@ -1,0 +1,99 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'magic_health_check_base.dart';import 'magic_interconnect_components_schemas_description.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';import 'magic_schemas_mtu.dart';/// The name of the interconnect. The name cannot share a name with other tunnels.
+extension type const MagicComponentsSchemasName(String value) {
+factory MagicComponentsSchemasName.fromJson(String json) => MagicComponentsSchemasName(json);
+
+String toJson() => value;
+
+}
+final class MagicInterconnect {const MagicInterconnect({this.automaticReturnRouting, this.coloName, this.createdOn, this.description, this.gre, this.healthCheck, this.id, this.interfaceAddress, this.interfaceAddress6, this.modifiedOn, this.mtu, this.name, });
+
+factory MagicInterconnect.fromJson(Map<String, dynamic> json) { return MagicInterconnect(
+  automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
+  coloName: json['colo_name'] != null ? MagicComponentsSchemasName.fromJson(json['colo_name'] as String) : null,
+  createdOn: json['created_on'] != null ? MagicSchemasCreatedOn.fromJson(json['created_on'] as String) : null,
+  description: json['description'] != null ? MagicInterconnectComponentsSchemasDescription.fromJson(json['description'] as String) : null,
+  gre: json['gre'] != null ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>) : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? MagicSchemasIdentifier.fromJson(json['id'] as String) : null,
+  interfaceAddress: json['interface_address'] != null ? MagicInterfaceAddress.fromJson(json['interface_address'] as String) : null,
+  interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
+  modifiedOn: json['modified_on'] != null ? MagicSchemasModifiedOn.fromJson(json['modified_on'] as String) : null,
+  mtu: json['mtu'] != null ? MagicSchemasMtu.fromJson(json['mtu'] as num) : null,
+  name: json['name'] != null ? MagicComponentsSchemasName.fromJson(json['name'] as String) : null,
+); }
+
+/// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
+final MagicAutomaticReturnRouting? automaticReturnRouting;
+
+/// The name of the interconnect. The name cannot share a name with other tunnels.
+final MagicComponentsSchemasName? coloName;
+
+final MagicSchemasCreatedOn? createdOn;
+
+final MagicInterconnectComponentsSchemasDescription? description;
+
+final MagicGre? gre;
+
+final MagicHealthCheckBase? healthCheck;
+
+final MagicSchemasIdentifier? id;
+
+final MagicInterfaceAddress? interfaceAddress;
+
+final MagicInterfaceAddress6? interfaceAddress6;
+
+final MagicSchemasModifiedOn? modifiedOn;
+
+final MagicSchemasMtu? mtu;
+
+/// The name of the interconnect. The name cannot share a name with other tunnels.
+final MagicComponentsSchemasName? name;
+
+Map<String, dynamic> toJson() { return {
+  if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
+  if (coloName != null) 'colo_name': coloName?.toJson(),
+  if (createdOn != null) 'created_on': createdOn?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (gre != null) 'gre': gre?.toJson(),
+  if (healthCheck != null) 'health_check': healthCheck?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (interfaceAddress != null) 'interface_address': interfaceAddress?.toJson(),
+  if (interfaceAddress6 != null) 'interface_address6': interfaceAddress6?.toJson(),
+  if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
+  if (mtu != null) 'mtu': mtu?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicInterconnect copyWith({MagicAutomaticReturnRouting Function()? automaticReturnRouting, MagicComponentsSchemasName Function()? coloName, MagicSchemasCreatedOn Function()? createdOn, MagicInterconnectComponentsSchemasDescription Function()? description, MagicGre Function()? gre, MagicHealthCheckBase Function()? healthCheck, MagicSchemasIdentifier Function()? id, MagicInterfaceAddress Function()? interfaceAddress, MagicInterfaceAddress6 Function()? interfaceAddress6, MagicSchemasModifiedOn Function()? modifiedOn, MagicSchemasMtu Function()? mtu, MagicComponentsSchemasName Function()? name, }) { return MagicInterconnect(
+  automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
+  coloName: coloName != null ? coloName() : this.coloName,
+  createdOn: createdOn != null ? createdOn() : this.createdOn,
+  description: description != null ? description() : this.description,
+  gre: gre != null ? gre() : this.gre,
+  healthCheck: healthCheck != null ? healthCheck() : this.healthCheck,
+  id: id != null ? id() : this.id,
+  interfaceAddress: interfaceAddress != null ? interfaceAddress() : this.interfaceAddress,
+  interfaceAddress6: interfaceAddress6 != null ? interfaceAddress6() : this.interfaceAddress6,
+  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  mtu: mtu != null ? mtu() : this.mtu,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicInterconnect &&
+          automaticReturnRouting == other.automaticReturnRouting &&
+          coloName == other.coloName &&
+          createdOn == other.createdOn &&
+          description == other.description &&
+          gre == other.gre &&
+          healthCheck == other.healthCheck &&
+          id == other.id &&
+          interfaceAddress == other.interfaceAddress &&
+          interfaceAddress6 == other.interfaceAddress6 &&
+          modifiedOn == other.modifiedOn &&
+          mtu == other.mtu &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(automaticReturnRouting, coloName, createdOn, description, gre, healthCheck, id, interfaceAddress, interfaceAddress6, modifiedOn, mtu, name); } 
+@override String toString() { return 'MagicInterconnect(automaticReturnRouting: $automaticReturnRouting, coloName: $coloName, createdOn: $createdOn, description: $description, gre: $gre, healthCheck: $healthCheck, id: $id, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, modifiedOn: $modifiedOn, mtu: $mtu, name: $name)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// If set, the event will override the waiting room's `total_active_users` property while it is active. If null, the event will inherit it. This can only be set if the event's `new_users_per_minute` property is also set.
+extension type const WaitingroomEventTotalActiveUsers(int value) {
+factory WaitingroomEventTotalActiveUsers.fromJson(num json) => WaitingroomEventTotalActiveUsers(json.toInt());
+
+num toJson() => value;
+
+}

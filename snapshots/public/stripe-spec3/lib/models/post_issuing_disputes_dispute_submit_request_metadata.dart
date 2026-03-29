@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingDisputesDisputeSubmitRequestMetadataVariant2 {const PostIssuingDisputesDisputeSubmitRequestMetadataVariant2._(this.value);
+
+factory PostIssuingDisputesDisputeSubmitRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostIssuingDisputesDisputeSubmitRequestMetadataVariant2._(json),
+}; }
+
+static const PostIssuingDisputesDisputeSubmitRequestMetadataVariant2 $empty = PostIssuingDisputesDisputeSubmitRequestMetadataVariant2._('');
+
+static const List<PostIssuingDisputesDisputeSubmitRequestMetadataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingDisputesDisputeSubmitRequestMetadataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingDisputesDisputeSubmitRequestMetadataVariant2($value)'; } 
+ }
+typedef PostIssuingDisputesDisputeSubmitRequestMetadata = OneOf2<Map<String,String>,PostIssuingDisputesDisputeSubmitRequestMetadataVariant2>;

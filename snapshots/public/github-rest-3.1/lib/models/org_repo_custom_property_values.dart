@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_property_value.dart';/// List of custom property values for a repository
+final class OrgRepoCustomPropertyValues {const OrgRepoCustomPropertyValues({required this.repositoryId, required this.repositoryName, required this.repositoryFullName, required this.properties, });
+
+factory OrgRepoCustomPropertyValues.fromJson(Map<String, dynamic> json) { return OrgRepoCustomPropertyValues(
+  repositoryId: (json['repository_id'] as num).toInt(),
+  repositoryName: json['repository_name'] as String,
+  repositoryFullName: json['repository_full_name'] as String,
+  properties: (json['properties'] as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final int repositoryId;
+
+final String repositoryName;
+
+final String repositoryFullName;
+
+/// List of custom property names and associated values
+final List<CustomPropertyValue> properties;
+
+Map<String, dynamic> toJson() { return {
+  'repository_id': repositoryId,
+  'repository_name': repositoryName,
+  'repository_full_name': repositoryFullName,
+  'properties': properties.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_id') && json['repository_id'] is num &&
+      json.containsKey('repository_name') && json['repository_name'] is String &&
+      json.containsKey('repository_full_name') && json['repository_full_name'] is String &&
+      json.containsKey('properties'); } 
+OrgRepoCustomPropertyValues copyWith({int? repositoryId, String? repositoryName, String? repositoryFullName, List<CustomPropertyValue>? properties, }) { return OrgRepoCustomPropertyValues(
+  repositoryId: repositoryId ?? this.repositoryId,
+  repositoryName: repositoryName ?? this.repositoryName,
+  repositoryFullName: repositoryFullName ?? this.repositoryFullName,
+  properties: properties ?? this.properties,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgRepoCustomPropertyValues &&
+          repositoryId == other.repositoryId &&
+          repositoryName == other.repositoryName &&
+          repositoryFullName == other.repositoryFullName &&
+          listEquals(properties, other.properties); } 
+@override int get hashCode { return Object.hash(repositoryId, repositoryName, repositoryFullName, Object.hashAll(properties)); } 
+@override String toString() { return 'OrgRepoCustomPropertyValues(repositoryId: $repositoryId, repositoryName: $repositoryName, repositoryFullName: $repositoryFullName, properties: $properties)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_custom_text_position.dart';/// Custom text that should be displayed in place of the default terms of service agreement text.
+final class PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance {const PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance({this.paymentPagesCheckoutSessionCustomTextPosition});
+
+factory PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance(
+  paymentPagesCheckoutSessionCustomTextPosition: PaymentPagesCheckoutSessionCustomTextPosition.canParse(json) ? PaymentPagesCheckoutSessionCustomTextPosition.fromJson(json) : null,
+); }
+
+final PaymentPagesCheckoutSessionCustomTextPosition? paymentPagesCheckoutSessionCustomTextPosition;
+
+/// At least one variant must be present.
+bool get isValid { return paymentPagesCheckoutSessionCustomTextPosition != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentPagesCheckoutSessionCustomTextPosition?.toJson(),
+}; } 
+ }

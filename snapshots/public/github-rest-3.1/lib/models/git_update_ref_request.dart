@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GitUpdateRefRequest {const GitUpdateRefRequest({required this.sha, this.force = false, });
+
+factory GitUpdateRefRequest.fromJson(Map<String, dynamic> json) { return GitUpdateRefRequest(
+  sha: json['sha'] as String,
+  force: json.containsKey('force') ? json['force'] as bool : false,
+); }
+
+/// The SHA1 value to set this reference to
+final String sha;
+
+/// Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.
+final bool force;
+
+Map<String, dynamic> toJson() { return {
+  'sha': sha,
+  'force': force,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String; } 
+GitUpdateRefRequest copyWith({String? sha, bool Function()? force, }) { return GitUpdateRefRequest(
+  sha: sha ?? this.sha,
+  force: force != null ? force() : this.force,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GitUpdateRefRequest &&
+          sha == other.sha &&
+          force == other.force; } 
+@override int get hashCode { return Object.hash(sha, force); } 
+@override String toString() { return 'GitUpdateRefRequest(sha: $sha, force: $force)'; } 
+ }

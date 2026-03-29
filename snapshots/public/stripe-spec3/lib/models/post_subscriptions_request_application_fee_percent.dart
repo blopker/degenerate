@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionsRequestApplicationFeePercentVariant2 {const PostSubscriptionsRequestApplicationFeePercentVariant2._(this.value);
+
+factory PostSubscriptionsRequestApplicationFeePercentVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSubscriptionsRequestApplicationFeePercentVariant2._(json),
+}; }
+
+static const PostSubscriptionsRequestApplicationFeePercentVariant2 $empty = PostSubscriptionsRequestApplicationFeePercentVariant2._('');
+
+static const List<PostSubscriptionsRequestApplicationFeePercentVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsRequestApplicationFeePercentVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsRequestApplicationFeePercentVariant2($value)'; } 
+ }
+typedef PostSubscriptionsRequestApplicationFeePercent = OneOf2<double,PostSubscriptionsRequestApplicationFeePercentVariant2>;

@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodDataMbWay {const PostSetupIntentsIntentRequestPaymentMethodDataMbWay();
+
+factory PostSetupIntentsIntentRequestPaymentMethodDataMbWay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataMbWay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodDataMbWay copyWith() { return PostSetupIntentsIntentRequestPaymentMethodDataMbWay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataMbWay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataMbWay()'; } 
+ }

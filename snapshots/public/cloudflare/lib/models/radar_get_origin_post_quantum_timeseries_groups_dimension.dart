@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the origin post-quantum data dimension by which to group the results.
+final class RadarGetOriginPostQuantumTimeseriesGroupsDimension {const RadarGetOriginPostQuantumTimeseriesGroupsDimension._(this.value);
+
+factory RadarGetOriginPostQuantumTimeseriesGroupsDimension.fromJson(String json) { return switch (json) {
+  'KEY_AGREEMENT' => keyAgreement,
+  _ => RadarGetOriginPostQuantumTimeseriesGroupsDimension._(json),
+}; }
+
+static const RadarGetOriginPostQuantumTimeseriesGroupsDimension keyAgreement = RadarGetOriginPostQuantumTimeseriesGroupsDimension._('KEY_AGREEMENT');
+
+static const List<RadarGetOriginPostQuantumTimeseriesGroupsDimension> values = [keyAgreement];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetOriginPostQuantumTimeseriesGroupsDimension && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetOriginPostQuantumTimeseriesGroupsDimension($value)'; } 
+ }

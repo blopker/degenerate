@@ -1,0 +1,43 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_request_message_content_part_audio.dart';import 'chat_completion_request_message_content_part_file.dart';import 'chat_completion_request_message_content_part_image.dart';import 'chat_completion_request_message_content_part_text.dart';import 'chat_completion_request_user_message_content.dart';/// Messages sent by an end user, containing prompts or additional context
+/// information.
+/// 
+final class ChatCompletionRequestUserMessage {const ChatCompletionRequestUserMessage({required this.content, required this.role, this.name, });
+
+factory ChatCompletionRequestUserMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestUserMessage(
+  content: OneOf2.parse(json['content'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => ChatCompletionRequestMessageContentPartText.fromJson(v as Map<String, dynamic>), fromB: (v) => ChatCompletionRequestMessageContentPartImage.fromJson(v as Map<String, dynamic>), fromC: (v) => ChatCompletionRequestMessageContentPartAudio.fromJson(v as Map<String, dynamic>), fromD: (v) => ChatCompletionRequestMessageContentPartFile.fromJson(v as Map<String, dynamic>),)).toList(),),
+  role: json['role'] as String,
+  name: json['name'] as String?,
+); }
+
+/// The contents of the user message.
+/// 
+final ChatCompletionRequestUserMessageContent content;
+
+/// The role of the messages author, in this case `user`.
+final String role;
+
+/// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'content': content.toJson(),
+  'role': role,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content') &&
+      json.containsKey('role') && json['role'] is String; } 
+ChatCompletionRequestUserMessage copyWith({ChatCompletionRequestUserMessageContent? content, String? role, String Function()? name, }) { return ChatCompletionRequestUserMessage(
+  content: content ?? this.content,
+  role: role ?? this.role,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChatCompletionRequestUserMessage &&
+          content == other.content &&
+          role == other.role &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(content, role, name); } 
+@override String toString() { return 'ChatCompletionRequestUserMessage(content: $content, role: $role, name: $name)'; } 
+ }

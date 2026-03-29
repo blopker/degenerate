@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DlpDatasetUpdate {const DlpDatasetUpdate({this.caseSensitive, this.description, this.name, });
+
+factory DlpDatasetUpdate.fromJson(Map<String, dynamic> json) { return DlpDatasetUpdate(
+  caseSensitive: json['case_sensitive'] as bool?,
+  description: json['description'] as String?,
+  name: json['name'] as String?,
+); }
+
+/// Determines if the words should be matched in a case-sensitive manner.
+/// 
+/// Only required for custom word lists.
+final bool? caseSensitive;
+
+/// The description of the dataset.
+final String? description;
+
+/// The name of the dataset, must be unique.
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'case_sensitive': ?caseSensitive,
+  'description': ?description,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DlpDatasetUpdate copyWith({bool Function()? caseSensitive, String? Function()? description, String? Function()? name, }) { return DlpDatasetUpdate(
+  caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,
+  description: description != null ? description() : this.description,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpDatasetUpdate &&
+          caseSensitive == other.caseSensitive &&
+          description == other.description &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(caseSensitive, description, name); } 
+@override String toString() { return 'DlpDatasetUpdate(caseSensitive: $caseSensitive, description: $description, name: $name)'; } 
+ }

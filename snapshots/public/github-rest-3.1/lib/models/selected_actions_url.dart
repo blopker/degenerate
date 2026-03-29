@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+extension type const SelectedActionsUrl(String value) {
+factory SelectedActionsUrl.fromJson(String json) => SelectedActionsUrl(json);
+
+String toJson() => value;
+
+}

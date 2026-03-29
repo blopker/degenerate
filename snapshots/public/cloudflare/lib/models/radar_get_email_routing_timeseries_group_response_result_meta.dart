@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_timeseries_group_response_result_meta_confidence_info.dart';import 'radar_get_email_routing_timeseries_group_response_result_meta_date_range.dart';import 'radar_get_email_routing_timeseries_group_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval {const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval fifteenMinutes = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval oneHour = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval oneDay = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval oneWeek = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval oneMonth = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization {const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._(this.value);
+
+factory RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization percentage = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization min0Max = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization minMax = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization rawValues = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization percentageChange = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization rollingAverage = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization overlappedPercentage = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization ratio = RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetEmailRoutingTimeseriesGroupResponseResultMeta {const RadarGetEmailRoutingTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetEmailRoutingTimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupResponseResultMeta(
+  aggInterval: RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetEmailRoutingTimeseriesGroupResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetEmailRoutingTimeseriesGroupResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetEmailRoutingTimeseriesGroupResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval aggInterval;
+
+final RadarGetEmailRoutingTimeseriesGroupResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetEmailRoutingTimeseriesGroupResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetEmailRoutingTimeseriesGroupResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetEmailRoutingTimeseriesGroupResponseResultMeta copyWith({RadarGetEmailRoutingTimeseriesGroupResponseResultMetaAggInterval? aggInterval, RadarGetEmailRoutingTimeseriesGroupResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetEmailRoutingTimeseriesGroupResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetEmailRoutingTimeseriesGroupResponseResultMetaNormalization? normalization, List<RadarGetEmailRoutingTimeseriesGroupResponseResultMetaUnits>? units, }) { return RadarGetEmailRoutingTimeseriesGroupResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailRoutingTimeseriesGroupResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

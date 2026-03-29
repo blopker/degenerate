@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_value_variant4.dart';typedef WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue = OneOf4<bool,String,int,WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValueVariant4>;

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The user who performed the audit logged action.
+final class AuditLogActorUser {const AuditLogActorUser({this.id, this.email, });
+
+factory AuditLogActorUser.fromJson(Map<String, dynamic> json) { return AuditLogActorUser(
+  id: json['id'] as String?,
+  email: json['email'] as String?,
+); }
+
+/// The user id.
+final String? id;
+
+/// The user email.
+final String? email;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'email': ?email,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AuditLogActorUser copyWith({String Function()? id, String Function()? email, }) { return AuditLogActorUser(
+  id: id != null ? id() : this.id,
+  email: email != null ? email() : this.email,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AuditLogActorUser &&
+          id == other.id &&
+          email == other.email; } 
+@override int get hashCode { return Object.hash(id, email); } 
+@override String toString() { return 'AuditLogActorUser(id: $id, email: $email)'; } 
+ }

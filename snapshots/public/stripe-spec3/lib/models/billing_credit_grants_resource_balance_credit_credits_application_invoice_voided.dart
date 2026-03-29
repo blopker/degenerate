@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'billing_credit_grants_resource_balance_credits_application_invoice_voided.dart';/// Details of the invoice to which the reinstated credits were originally applied. Only present if `type` is `credits_application_invoice_voided`.
+final class BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided {const BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided({this.billingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided});
+
+factory BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided(
+  billingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided: BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.canParse(json) ? BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.fromJson(json) : null,
+); }
+
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided? billingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided;
+
+/// At least one variant must be present.
+bool get isValid { return billingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?billingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided?.toJson(),
+}; } 
+ }

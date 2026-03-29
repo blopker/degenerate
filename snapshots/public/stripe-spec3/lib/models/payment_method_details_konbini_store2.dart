@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_konbini_store.dart';/// If the payment succeeded, this contains the details of the convenience store where the payment was completed.
+final class PaymentMethodDetailsKonbiniStore2 {const PaymentMethodDetailsKonbiniStore2({this.paymentMethodDetailsKonbiniStore});
+
+factory PaymentMethodDetailsKonbiniStore2.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKonbiniStore2(
+  paymentMethodDetailsKonbiniStore: PaymentMethodDetailsKonbiniStore.canParse(json) ? PaymentMethodDetailsKonbiniStore.fromJson(json) : null,
+); }
+
+final PaymentMethodDetailsKonbiniStore? paymentMethodDetailsKonbiniStore;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodDetailsKonbiniStore != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodDetailsKonbiniStore?.toJson(),
+}; } 
+ }

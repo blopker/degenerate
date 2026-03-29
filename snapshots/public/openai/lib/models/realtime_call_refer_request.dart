@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Parameters required to transfer a SIP call to a new destination using the
+/// Realtime API.
+final class RealtimeCallReferRequest {const RealtimeCallReferRequest({required this.targetUri});
+
+factory RealtimeCallReferRequest.fromJson(Map<String, dynamic> json) { return RealtimeCallReferRequest(
+  targetUri: json['target_uri'] as String,
+); }
+
+/// URI that should appear in the SIP Refer-To header. Supports values like
+/// `tel:+14155550123` or `sip:agent@example.com`.
+final String targetUri;
+
+Map<String, dynamic> toJson() { return {
+  'target_uri': targetUri,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_uri') && json['target_uri'] is String; } 
+RealtimeCallReferRequest copyWith({String? targetUri}) { return RealtimeCallReferRequest(
+  targetUri: targetUri ?? this.targetUri,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeCallReferRequest &&
+          targetUri == other.targetUri; } 
+@override int get hashCode { return targetUri.hashCode; } 
+@override String toString() { return 'RealtimeCallReferRequest(targetUri: $targetUri)'; } 
+ }

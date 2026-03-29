@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'shipping.dart';/// The customer's shipping information. Until the invoice is finalized, this field will equal `customer.shipping`. Once the invoice is finalized, this field will no longer be updated.
+final class InvoiceCustomerShipping {const InvoiceCustomerShipping({this.shipping});
+
+factory InvoiceCustomerShipping.fromJson(Map<String, dynamic> json) { return InvoiceCustomerShipping(
+  shipping: Shipping.canParse(json) ? Shipping.fromJson(json) : null,
+); }
+
+final Shipping? shipping;
+
+/// At least one variant must be present.
+bool get isValid { return shipping != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?shipping?.toJson(),
+}; } 
+ }

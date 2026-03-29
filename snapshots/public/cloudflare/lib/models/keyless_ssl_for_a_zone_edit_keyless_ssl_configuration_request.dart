@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_name_write.dart';import 'tls_certificates_and_hostnames_port.dart';/// Whether or not the Keyless SSL is on or off.
+extension type const TlsCertificatesAndHostnamesEnabledWrite(bool value) {
+factory TlsCertificatesAndHostnamesEnabledWrite.fromJson(bool json) => TlsCertificatesAndHostnamesEnabledWrite(json);
+
+bool toJson() => value;
+
+}
+final class KeylessSslForAZoneEditKeylessSslConfigurationRequest {const KeylessSslForAZoneEditKeylessSslConfigurationRequest({this.enabled, this.host, this.name, this.port, this.tunnel, });
+
+factory KeylessSslForAZoneEditKeylessSslConfigurationRequest.fromJson(Map<String, dynamic> json) { return KeylessSslForAZoneEditKeylessSslConfigurationRequest(
+  enabled: json['enabled'] != null ? TlsCertificatesAndHostnamesEnabledWrite.fromJson(json['enabled'] as bool) : null,
+  host: json['host'] != null ? TlsCertificatesAndHostnamesHost.fromJson(json['host'] as String) : null,
+  name: json['name'] != null ? TlsCertificatesAndHostnamesNameWrite.fromJson(json['name'] as String) : null,
+  port: json['port'] != null ? TlsCertificatesAndHostnamesPort.fromJson(json['port'] as num) : null,
+  tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
+); }
+
+/// Whether or not the Keyless SSL is on or off.
+final TlsCertificatesAndHostnamesEnabledWrite? enabled;
+
+/// The keyless SSL name.
+final TlsCertificatesAndHostnamesHost? host;
+
+/// The keyless SSL name.
+final TlsCertificatesAndHostnamesNameWrite? name;
+
+/// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
+final TlsCertificatesAndHostnamesPort? port;
+
+final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;
+
+Map<String, dynamic> toJson() { return {
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  if (host != null) 'host': host?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (port != null) 'port': port?.toJson(),
+  if (tunnel != null) 'tunnel': tunnel?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+KeylessSslForAZoneEditKeylessSslConfigurationRequest copyWith({TlsCertificatesAndHostnamesEnabledWrite Function()? enabled, TlsCertificatesAndHostnamesHost Function()? host, TlsCertificatesAndHostnamesNameWrite Function()? name, TlsCertificatesAndHostnamesPort Function()? port, TlsCertificatesAndHostnamesKeylessTunnel Function()? tunnel, }) { return KeylessSslForAZoneEditKeylessSslConfigurationRequest(
+  enabled: enabled != null ? enabled() : this.enabled,
+  host: host != null ? host() : this.host,
+  name: name != null ? name() : this.name,
+  port: port != null ? port() : this.port,
+  tunnel: tunnel != null ? tunnel() : this.tunnel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is KeylessSslForAZoneEditKeylessSslConfigurationRequest &&
+          enabled == other.enabled &&
+          host == other.host &&
+          name == other.name &&
+          port == other.port &&
+          tunnel == other.tunnel; } 
+@override int get hashCode { return Object.hash(enabled, host, name, port, tunnel); } 
+@override String toString() { return 'KeylessSslForAZoneEditKeylessSslConfigurationRequest(enabled: $enabled, host: $host, name: $name, port: $port, tunnel: $tunnel)'; } 
+ }

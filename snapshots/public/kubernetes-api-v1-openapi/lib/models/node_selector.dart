@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_selector_term.dart';/// A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
+final class NodeSelector {const NodeSelector({required this.nodeSelectorTerms});
+
+factory NodeSelector.fromJson(Map<String, dynamic> json) { return NodeSelector(
+  nodeSelectorTerms: (json['nodeSelectorTerms'] as List<dynamic>).map((e) => NodeSelectorTerm.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Required. A list of node selector terms. The terms are ORed.
+final List<NodeSelectorTerm> nodeSelectorTerms;
+
+Map<String, dynamic> toJson() { return {
+  'nodeSelectorTerms': nodeSelectorTerms.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('nodeSelectorTerms'); } 
+NodeSelector copyWith({List<NodeSelectorTerm>? nodeSelectorTerms}) { return NodeSelector(
+  nodeSelectorTerms: nodeSelectorTerms ?? this.nodeSelectorTerms,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NodeSelector &&
+          listEquals(nodeSelectorTerms, other.nodeSelectorTerms); } 
+@override int get hashCode { return Object.hashAll(nodeSelectorTerms).hashCode; } 
+@override String toString() { return 'NodeSelector(nodeSelectorTerms: $nodeSelectorTerms)'; } 
+ }

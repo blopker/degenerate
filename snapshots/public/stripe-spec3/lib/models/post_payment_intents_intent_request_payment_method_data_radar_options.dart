@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions {const PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions({this.session});
+
+factory PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions(
+  session: json['session'] as String?,
+); }
+
+final String? session;
+
+Map<String, dynamic> toJson() { return {
+  'session': ?session,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions copyWith({String Function()? session}) { return PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions(
+  session: session != null ? session() : this.session,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions &&
+          session == other.session; } 
+@override int get hashCode { return session.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataRadarOptions(session: $session)'; } 
+ }

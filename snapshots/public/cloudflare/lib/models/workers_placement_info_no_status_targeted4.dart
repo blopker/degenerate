@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_placement_target.dart';import 'workers_placement_target_variant1.dart';import 'workers_placement_target_variant2.dart';import 'workers_placement_target_variant3.dart';/// Targeted placement mode.
+final class WorkersPlacementInfoNoStatusTargeted4Mode {const WorkersPlacementInfoNoStatusTargeted4Mode._(this.value);
+
+factory WorkersPlacementInfoNoStatusTargeted4Mode.fromJson(String json) { return switch (json) {
+  'targeted' => targeted,
+  _ => WorkersPlacementInfoNoStatusTargeted4Mode._(json),
+}; }
+
+static const WorkersPlacementInfoNoStatusTargeted4Mode targeted = WorkersPlacementInfoNoStatusTargeted4Mode._('targeted');
+
+static const List<WorkersPlacementInfoNoStatusTargeted4Mode> values = [targeted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersPlacementInfoNoStatusTargeted4Mode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersPlacementInfoNoStatusTargeted4Mode($value)'; } 
+ }
+final class WorkersPlacementInfoNoStatusTargeted4 {const WorkersPlacementInfoNoStatusTargeted4({required this.mode, required this.target, });
+
+factory WorkersPlacementInfoNoStatusTargeted4.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusTargeted4(
+  mode: WorkersPlacementInfoNoStatusTargeted4Mode.fromJson(json['mode'] as String),
+  target: (json['target'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => WorkersPlacementTargetVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => WorkersPlacementTargetVariant2.fromJson(v as Map<String, dynamic>), fromC: (v) => WorkersPlacementTargetVariant3.fromJson(v as Map<String, dynamic>),)).toList(),
+); }
+
+/// Targeted placement mode.
+final WorkersPlacementInfoNoStatusTargeted4Mode mode;
+
+/// Array of placement targets (currently limited to single target).
+final List<WorkersPlacementTarget> target;
+
+Map<String, dynamic> toJson() { return {
+  'mode': mode.toJson(),
+  'target': target.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
+      json.containsKey('target'); } 
+WorkersPlacementInfoNoStatusTargeted4 copyWith({WorkersPlacementInfoNoStatusTargeted4Mode? mode, List<WorkersPlacementTarget>? target, }) { return WorkersPlacementInfoNoStatusTargeted4(
+  mode: mode ?? this.mode,
+  target: target ?? this.target,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersPlacementInfoNoStatusTargeted4 &&
+          mode == other.mode &&
+          listEquals(target, other.target); } 
+@override int get hashCode { return Object.hash(mode, Object.hashAll(target)); } 
+@override String toString() { return 'WorkersPlacementInfoNoStatusTargeted4(mode: $mode, target: $target)'; } 
+ }

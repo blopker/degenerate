@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomersCustomerBankAccountsIdRequestMetadataVariant2 {const PostCustomersCustomerBankAccountsIdRequestMetadataVariant2._(this.value);
+
+factory PostCustomersCustomerBankAccountsIdRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersCustomerBankAccountsIdRequestMetadataVariant2._(json),
+}; }
+
+static const PostCustomersCustomerBankAccountsIdRequestMetadataVariant2 $empty = PostCustomersCustomerBankAccountsIdRequestMetadataVariant2._('');
+
+static const List<PostCustomersCustomerBankAccountsIdRequestMetadataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerBankAccountsIdRequestMetadataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerBankAccountsIdRequestMetadataVariant2($value)'; } 
+ }
+typedef PostCustomersCustomerBankAccountsIdRequestMetadata = OneOf2<Map<String,String>,PostCustomersCustomerBankAccountsIdRequestMetadataVariant2>;

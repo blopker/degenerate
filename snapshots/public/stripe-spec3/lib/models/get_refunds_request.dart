@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetRefundsRequest {const GetRefundsRequest();
+
+factory GetRefundsRequest.fromJson(Map<String, dynamic> json) { return GetRefundsRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetRefundsRequest copyWith() { return GetRefundsRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetRefundsRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetRefundsRequest()'; } 
+ }

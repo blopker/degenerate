@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specify how long to cache a resource in the Cloudflare global
+/// network. *Edge Cache TTL* is not visible in response headers.
+/// 
+final class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId._(this.value);
+
+factory ZonesEdgeCacheTtlId.fromJson(String json) { return switch (json) {
+  'edge_cache_ttl' => edgeCacheTtl,
+  _ => ZonesEdgeCacheTtlId._(json),
+}; }
+
+static const ZonesEdgeCacheTtlId edgeCacheTtl = ZonesEdgeCacheTtlId._('edge_cache_ttl');
+
+static const List<ZonesEdgeCacheTtlId> values = [edgeCacheTtl];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesEdgeCacheTtlId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesEdgeCacheTtlId($value)'; } 
+ }
+final class ZonesEdgeCacheTtl {const ZonesEdgeCacheTtl({this.id, this.value, });
+
+factory ZonesEdgeCacheTtl.fromJson(Map<String, dynamic> json) { return ZonesEdgeCacheTtl(
+  id: json['id'] != null ? ZonesEdgeCacheTtlId.fromJson(json['id'] as String) : null,
+  value: json['value'] != null ? (json['value'] as num).toInt() : null,
+); }
+
+/// Specify how long to cache a resource in the Cloudflare global
+/// network. *Edge Cache TTL* is not visible in response headers.
+/// 
+final ZonesEdgeCacheTtlId? id;
+
+final int? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId Function()? id, int Function()? value, }) { return ZonesEdgeCacheTtl(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesEdgeCacheTtl &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ZonesEdgeCacheTtl(id: $id, value: $value)'; } 
+ }

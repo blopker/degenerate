@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'auto_code_interpreter_tool_param.dart';import 'code_interpreter_tool_container.dart';/// A tool that runs Python code to help generate a response to a prompt.
+/// 
+final class CodeInterpreterTool {const CodeInterpreterTool({required this.type, required this.container, });
+
+factory CodeInterpreterTool.fromJson(Map<String, dynamic> json) { return CodeInterpreterTool(
+  type: json['type'] as String,
+  container: OneOf2.parse(json['container'], fromA: (v) => v as String, fromB: (v) => AutoCodeInterpreterToolParam.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// The type of the code interpreter tool. Always `code_interpreter`.
+/// 
+final String type;
+
+/// The code interpreter container. Can be a container ID or an object that
+/// specifies uploaded file IDs to make available to your code, along with an
+/// optional `memory_limit` setting.
+/// 
+final CodeInterpreterToolContainer container;
+
+Map<String, dynamic> toJson() { return {
+  'type': type,
+  'container': container.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('container'); } 
+CodeInterpreterTool copyWith({String? type, CodeInterpreterToolContainer? container, }) { return CodeInterpreterTool(
+  type: type ?? this.type,
+  container: container ?? this.container,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeInterpreterTool &&
+          type == other.type &&
+          container == other.container; } 
+@override int get hashCode { return Object.hash(type, container); } 
+@override String toString() { return 'CodeInterpreterTool(type: $type, container: $container)'; } 
+ }

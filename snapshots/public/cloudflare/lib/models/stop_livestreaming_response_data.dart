@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class StopLivestreamingResponseData {const StopLivestreamingResponseData({this.message});
+
+factory StopLivestreamingResponseData.fromJson(Map<String, dynamic> json) { return StopLivestreamingResponseData(
+  message: json['message'] as String?,
+); }
+
+final String? message;
+
+Map<String, dynamic> toJson() { return {
+  'message': ?message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StopLivestreamingResponseData copyWith({String Function()? message}) { return StopLivestreamingResponseData(
+  message: message != null ? message() : this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StopLivestreamingResponseData &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'StopLivestreamingResponseData(message: $message)'; } 
+ }

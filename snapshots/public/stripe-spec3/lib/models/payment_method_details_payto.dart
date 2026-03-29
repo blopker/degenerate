@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodDetailsPayto {const PaymentMethodDetailsPayto({this.bsbNumber, this.last4, this.mandate, this.payId, });
+
+factory PaymentMethodDetailsPayto.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPayto(
+  bsbNumber: json['bsb_number'] as String?,
+  last4: json['last4'] as String?,
+  mandate: json['mandate'] as String?,
+  payId: json['pay_id'] as String?,
+); }
+
+/// Bank-State-Branch number of the bank account.
+final String? bsbNumber;
+
+/// Last four digits of the bank account number.
+final String? last4;
+
+/// ID of the mandate used to make this payment.
+final String? mandate;
+
+/// The PayID alias for the bank account.
+final String? payId;
+
+Map<String, dynamic> toJson() { return {
+  'bsb_number': ?bsbNumber,
+  'last4': ?last4,
+  'mandate': ?mandate,
+  'pay_id': ?payId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsPayto copyWith({String? Function()? bsbNumber, String? Function()? last4, String Function()? mandate, String? Function()? payId, }) { return PaymentMethodDetailsPayto(
+  bsbNumber: bsbNumber != null ? bsbNumber() : this.bsbNumber,
+  last4: last4 != null ? last4() : this.last4,
+  mandate: mandate != null ? mandate() : this.mandate,
+  payId: payId != null ? payId() : this.payId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsPayto &&
+          bsbNumber == other.bsbNumber &&
+          last4 == other.last4 &&
+          mandate == other.mandate &&
+          payId == other.payId; } 
+@override int get hashCode { return Object.hash(bsbNumber, last4, mandate, payId); } 
+@override String toString() { return 'PaymentMethodDetailsPayto(bsbNumber: $bsbNumber, last4: $last4, mandate: $mandate, payId: $payId)'; } 
+ }

@@ -1,0 +1,104 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'accounts_by_account_id_pipelines_deprecated_request_destination_batch.dart';import 'accounts_by_account_id_pipelines_deprecated_request_destination_compression.dart';import 'accounts_by_account_id_pipelines_deprecated_request_destination_credentials.dart';import 'accounts_by_account_id_pipelines_deprecated_request_destination_path.dart';/// Specifies the format of data to deliver.
+final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat._(this.value);
+
+factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat.fromJson(String json) { return switch (json) {
+  'json' => $json,
+  _ => AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat._(json),
+}; }
+
+static const AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat $json = AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat._('json');
+
+static const List<AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat> values = [$json];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat($value)'; } 
+ }
+/// Specifies the type of destination.
+final class AccountsByAccountIdPipelinesDeprecatedRequestDestinationType {const AccountsByAccountIdPipelinesDeprecatedRequestDestinationType._(this.value);
+
+factory AccountsByAccountIdPipelinesDeprecatedRequestDestinationType.fromJson(String json) { return switch (json) {
+  'r2' => r2,
+  _ => AccountsByAccountIdPipelinesDeprecatedRequestDestinationType._(json),
+}; }
+
+static const AccountsByAccountIdPipelinesDeprecatedRequestDestinationType r2 = AccountsByAccountIdPipelinesDeprecatedRequestDestinationType._('r2');
+
+static const List<AccountsByAccountIdPipelinesDeprecatedRequestDestinationType> values = [r2];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccountsByAccountIdPipelinesDeprecatedRequestDestinationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestDestinationType($value)'; } 
+ }
+final class AccountsByAccountIdPipelinesDeprecatedRequestDestination {const AccountsByAccountIdPipelinesDeprecatedRequestDestination({required this.batch, required this.compression, required this.credentials, required this.format, required this.path, required this.type, });
+
+factory AccountsByAccountIdPipelinesDeprecatedRequestDestination.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedRequestDestination(
+  batch: AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch.fromJson(json['batch'] as Map<String, dynamic>),
+  compression: AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression.fromJson(json['compression'] as Map<String, dynamic>),
+  credentials: AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
+  format: AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat.fromJson(json['format'] as String),
+  path: AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath.fromJson(json['path'] as Map<String, dynamic>),
+  type: AccountsByAccountIdPipelinesDeprecatedRequestDestinationType.fromJson(json['type'] as String),
+); }
+
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch batch;
+
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression compression;
+
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials credentials;
+
+/// Specifies the format of data to deliver.
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat format;
+
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath path;
+
+/// Specifies the type of destination.
+final AccountsByAccountIdPipelinesDeprecatedRequestDestinationType type;
+
+Map<String, dynamic> toJson() { return {
+  'batch': batch.toJson(),
+  'compression': compression.toJson(),
+  'credentials': credentials.toJson(),
+  'format': format.toJson(),
+  'path': path.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('batch') &&
+      json.containsKey('compression') &&
+      json.containsKey('credentials') &&
+      json.containsKey('format') &&
+      json.containsKey('path') &&
+      json.containsKey('type'); } 
+AccountsByAccountIdPipelinesDeprecatedRequestDestination copyWith({AccountsByAccountIdPipelinesDeprecatedRequestDestinationBatch? batch, AccountsByAccountIdPipelinesDeprecatedRequestDestinationCompression? compression, AccountsByAccountIdPipelinesDeprecatedRequestDestinationCredentials? credentials, AccountsByAccountIdPipelinesDeprecatedRequestDestinationFormat? format, AccountsByAccountIdPipelinesDeprecatedRequestDestinationPath? path, AccountsByAccountIdPipelinesDeprecatedRequestDestinationType? type, }) { return AccountsByAccountIdPipelinesDeprecatedRequestDestination(
+  batch: batch ?? this.batch,
+  compression: compression ?? this.compression,
+  credentials: credentials ?? this.credentials,
+  format: format ?? this.format,
+  path: path ?? this.path,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountsByAccountIdPipelinesDeprecatedRequestDestination &&
+          batch == other.batch &&
+          compression == other.compression &&
+          credentials == other.credentials &&
+          format == other.format &&
+          path == other.path &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(batch, compression, credentials, format, path, type); } 
+@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedRequestDestination(batch: $batch, compression: $compression, credentials: $credentials, format: $format, path: $path, type: $type)'; } 
+ }

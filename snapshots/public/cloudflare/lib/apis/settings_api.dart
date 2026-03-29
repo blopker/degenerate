@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/nsc_settings.dart';import '../models/nsc_settings_request.dart';/// SettingsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class SettingsApi with ApiExecutor {const SettingsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get the current settings for the active account
+///
+/// `GET /accounts/{account_id}/cni/settings`
+Future<ApiResult<NscSettings, Never>> getSettings({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/cni/settings',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return NscSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update the current settings for the active account
+///
+/// `PUT /accounts/{account_id}/cni/settings`
+Future<ApiResult<NscSettings, Never>> updateSettings({required String accountId, required NscSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/cni/settings',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return NscSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

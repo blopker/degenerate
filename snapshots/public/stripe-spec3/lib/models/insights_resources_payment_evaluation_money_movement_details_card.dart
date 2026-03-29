@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_money_movement_card.dart';/// Describes card money movement details for the payment evaluation.
+final class InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard {const InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard({this.insightsResourcesPaymentEvaluationMoneyMovementCard});
+
+factory InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard(
+  insightsResourcesPaymentEvaluationMoneyMovementCard: InsightsResourcesPaymentEvaluationMoneyMovementCard.canParse(json) ? InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(json) : null,
+); }
+
+final InsightsResourcesPaymentEvaluationMoneyMovementCard? insightsResourcesPaymentEvaluationMoneyMovementCard;
+
+/// At least one variant must be present.
+bool get isValid { return insightsResourcesPaymentEvaluationMoneyMovementCard != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?insightsResourcesPaymentEvaluationMoneyMovementCard?.toJson(),
+}; } 
+ }

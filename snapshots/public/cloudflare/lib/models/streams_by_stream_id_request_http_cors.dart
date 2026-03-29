@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the CORS options for the HTTP endpoint.
+final class StreamsByStreamIdRequestHttpCors {const StreamsByStreamIdRequestHttpCors({this.origins});
+
+factory StreamsByStreamIdRequestHttpCors.fromJson(Map<String, dynamic> json) { return StreamsByStreamIdRequestHttpCors(
+  origins: (json['origins'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+final List<String>? origins;
+
+Map<String, dynamic> toJson() { return {
+  'origins': ?origins,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamsByStreamIdRequestHttpCors copyWith({List<String> Function()? origins}) { return StreamsByStreamIdRequestHttpCors(
+  origins: origins != null ? origins() : this.origins,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamsByStreamIdRequestHttpCors &&
+          listEquals(origins, other.origins); } 
+@override int get hashCode { return Object.hashAll(origins ?? const []).hashCode; } 
+@override String toString() { return 'StreamsByStreamIdRequestHttpCors(origins: $origins)'; } 
+ }

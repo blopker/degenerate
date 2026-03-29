@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_payment_method_options.dart';/// Payment-method-specific configuration for this PaymentIntent.
+final class PaymentIntentPaymentMethodOptions2 {const PaymentIntentPaymentMethodOptions2({this.paymentIntentPaymentMethodOptions});
+
+factory PaymentIntentPaymentMethodOptions2.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptions2(
+  paymentIntentPaymentMethodOptions: PaymentIntentPaymentMethodOptions.canParse(json) ? PaymentIntentPaymentMethodOptions.fromJson(json) : null,
+); }
+
+final PaymentIntentPaymentMethodOptions? paymentIntentPaymentMethodOptions;
+
+/// At least one variant must be present.
+bool get isValid { return paymentIntentPaymentMethodOptions != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentIntentPaymentMethodOptions?.toJson(),
+}; } 
+ }

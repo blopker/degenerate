@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_custom_logo.dart';/// 
+final class PaymentMethodCustom {const PaymentMethodCustom({this.displayName, this.logo, required this.type, });
+
+factory PaymentMethodCustom.fromJson(Map<String, dynamic> json) { return PaymentMethodCustom(
+  displayName: json['display_name'] as String?,
+  logo: json['logo'] != null ? PaymentMethodCustomLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
+  type: json['type'] as String,
+); }
+
+/// Display name of the Dashboard-only CustomPaymentMethodType.
+final String? displayName;
+
+/// Contains information about the Dashboard-only CustomPaymentMethodType logo.
+final PaymentMethodCustomLogo? logo;
+
+/// ID of the Dashboard-only CustomPaymentMethodType. Not expandable.
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'display_name': ?displayName,
+  if (logo != null) 'logo': logo?.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+PaymentMethodCustom copyWith({String? Function()? displayName, PaymentMethodCustomLogo? Function()? logo, String? type, }) { return PaymentMethodCustom(
+  displayName: displayName != null ? displayName() : this.displayName,
+  logo: logo != null ? logo() : this.logo,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodCustom &&
+          displayName == other.displayName &&
+          logo == other.logo &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(displayName, logo, type); } 
+@override String toString() { return 'PaymentMethodCustom(displayName: $displayName, logo: $logo, type: $type)'; } 
+ }

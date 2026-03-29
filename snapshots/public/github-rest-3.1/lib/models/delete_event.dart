@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DeleteEvent {const DeleteEvent({required this.ref, required this.refType, required this.fullRef, required this.pusherType, });
+
+factory DeleteEvent.fromJson(Map<String, dynamic> json) { return DeleteEvent(
+  ref: json['ref'] as String,
+  refType: json['ref_type'] as String,
+  fullRef: json['full_ref'] as String,
+  pusherType: json['pusher_type'] as String,
+); }
+
+final String ref;
+
+final String refType;
+
+final String fullRef;
+
+final String pusherType;
+
+Map<String, dynamic> toJson() { return {
+  'ref': ref,
+  'ref_type': refType,
+  'full_ref': fullRef,
+  'pusher_type': pusherType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('ref_type') && json['ref_type'] is String &&
+      json.containsKey('full_ref') && json['full_ref'] is String &&
+      json.containsKey('pusher_type') && json['pusher_type'] is String; } 
+DeleteEvent copyWith({String? ref, String? refType, String? fullRef, String? pusherType, }) { return DeleteEvent(
+  ref: ref ?? this.ref,
+  refType: refType ?? this.refType,
+  fullRef: fullRef ?? this.fullRef,
+  pusherType: pusherType ?? this.pusherType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeleteEvent &&
+          ref == other.ref &&
+          refType == other.refType &&
+          fullRef == other.fullRef &&
+          pusherType == other.pusherType; } 
+@override int get hashCode { return Object.hash(ref, refType, fullRef, pusherType); } 
+@override String toString() { return 'DeleteEvent(ref: $ref, refType: $refType, fullRef: $fullRef, pusherType: $pusherType)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_dataset_populate_response_properties_datasets_items_properties_categories_properties_errors_items.dart';final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors({required this.items, required this.type, });
+
+factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors(
+  items: PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrorsItems.fromJson(json['items'] as Map<String, dynamic>),
+  type: json['type'] as String,
+); }
+
+final PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrorsItems items;
+
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'items': items.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('items') &&
+      json.containsKey('type') && json['type'] is String; } 
+PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrorsItems? items, String? type, }) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors(
+  items: items ?? this.items,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors &&
+          items == other.items &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(items, type); } 
+@override String toString() { return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesCategoriesPropertiesErrors(items: $items, type: $type)'; } 
+ }

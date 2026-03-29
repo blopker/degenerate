@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_addin_auth.dart';import 'dlp_addin_auth_no_auth.dart';import 'dlp_addin_auth_org.dart';final class DlpAddinAccountMapping {const DlpAddinAccountMapping({required this.addinIdentifierToken, required this.authRequirements, });
+
+factory DlpAddinAccountMapping.fromJson(Map<String, dynamic> json) { return DlpAddinAccountMapping(
+  addinIdentifierToken: json['addin_identifier_token'] as String,
+  authRequirements: OneOf2.parse(json['auth_requirements'], fromA: (v) => DlpAddinAuthOrg.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpAddinAuthNoAuth.fromJson(v as Map<String, dynamic>),),
+); }
+
+final String addinIdentifierToken;
+
+final DlpAddinAuth authRequirements;
+
+Map<String, dynamic> toJson() { return {
+  'addin_identifier_token': addinIdentifierToken,
+  'auth_requirements': authRequirements.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('addin_identifier_token') && json['addin_identifier_token'] is String &&
+      json.containsKey('auth_requirements'); } 
+DlpAddinAccountMapping copyWith({String? addinIdentifierToken, DlpAddinAuth? authRequirements, }) { return DlpAddinAccountMapping(
+  addinIdentifierToken: addinIdentifierToken ?? this.addinIdentifierToken,
+  authRequirements: authRequirements ?? this.authRequirements,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpAddinAccountMapping &&
+          addinIdentifierToken == other.addinIdentifierToken &&
+          authRequirements == other.authRequirements; } 
+@override int get hashCode { return Object.hash(addinIdentifierToken, authRequirements); } 
+@override String toString() { return 'DlpAddinAccountMapping(addinIdentifierToken: $addinIdentifierToken, authRequirements: $authRequirements)'; } 
+ }

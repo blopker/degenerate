@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_file_links_request_metadata.dart';final class PostFileLinksRequest {const PostFileLinksRequest({this.expand, this.expiresAt, required this.file, this.metadata, });
+
+factory PostFileLinksRequest.fromJson(Map<String, dynamic> json) { return PostFileLinksRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+  file: json['file'] as String,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostFileLinksRequestMetadataVariant2.fromJson(v as String),) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// The link isn't usable after this future timestamp.
+final int? expiresAt;
+
+/// The ID of the file. The file's `purpose` must be one of the following: `business_icon`, `business_logo`, `customer_signature`, `dispute_evidence`, `finance_report_run`, `financial_account_statement`, `identity_document_downloadable`, `issuing_regulatory_reporting`, `pci_document`, `selfie`, `sigma_scheduled_query`, `tax_document_user_upload`, `terminal_android_apk`, or `terminal_reader_splashscreen`.
+final String file;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostFileLinksRequestMetadata? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'expires_at': ?expiresAt,
+  'file': file,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
+PostFileLinksRequest copyWith({List<String> Function()? expand, int Function()? expiresAt, String? file, PostFileLinksRequestMetadata Function()? metadata, }) { return PostFileLinksRequest(
+  expand: expand != null ? expand() : this.expand,
+  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  file: file ?? this.file,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostFileLinksRequest &&
+          listEquals(expand, other.expand) &&
+          expiresAt == other.expiresAt &&
+          file == other.file &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), expiresAt, file, metadata); } 
+@override String toString() { return 'PostFileLinksRequest(expand: $expand, expiresAt: $expiresAt, file: $file, metadata: $metadata)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).
+extension type const LoadBalancingEnabled(bool value) {
+factory LoadBalancingEnabled.fromJson(bool json) => LoadBalancingEnabled(json);
+
+bool toJson() => value;
+
+}

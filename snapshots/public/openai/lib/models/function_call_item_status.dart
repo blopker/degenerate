@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class FunctionCallItemStatus {const FunctionCallItemStatus._(this.value);
+
+factory FunctionCallItemStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'completed' => completed,
+  'incomplete' => incomplete,
+  _ => FunctionCallItemStatus._(json),
+}; }
+
+static const FunctionCallItemStatus inProgress = FunctionCallItemStatus._('in_progress');
+
+static const FunctionCallItemStatus completed = FunctionCallItemStatus._('completed');
+
+static const FunctionCallItemStatus incomplete = FunctionCallItemStatus._('incomplete');
+
+static const List<FunctionCallItemStatus> values = [inProgress, completed, incomplete];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionCallItemStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FunctionCallItemStatus($value)'; } 
+ }

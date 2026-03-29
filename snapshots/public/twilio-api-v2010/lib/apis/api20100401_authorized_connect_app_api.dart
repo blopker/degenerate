@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_authorized_connect_app.dart';import '../models/list_authorized_connect_app_response.dart';/// Api20100401AuthorizedConnectAppApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401AuthorizedConnectAppApi with ApiExecutor {const Api20100401AuthorizedConnectAppApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Fetch an instance of an authorized-connect-app
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps/{ConnectAppSid}.json`
+Future<ApiResult<AccountAuthorizedConnectApp, Never>> fetchAuthorizedConnectApp({required String accountSid, required String connectAppSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/AuthorizedConnectApps/${Uri.encodeComponent(connectAppSid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountAuthorizedConnectApp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Retrieve a list of authorized-connect-apps belonging to the account used to make the request
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps.json`
+Future<ApiResult<ListAuthorizedConnectAppResponse, Never>> listAuthorizedConnectApp({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/AuthorizedConnectApps.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListAuthorizedConnectAppResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

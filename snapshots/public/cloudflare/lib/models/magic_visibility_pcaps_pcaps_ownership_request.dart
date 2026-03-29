@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_visibility_pcaps_pcaps_destination_conf.dart';final class MagicVisibilityPcapsPcapsOwnershipRequest {const MagicVisibilityPcapsPcapsOwnershipRequest({required this.destinationConf});
+
+factory MagicVisibilityPcapsPcapsOwnershipRequest.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsOwnershipRequest(
+  destinationConf: MagicVisibilityPcapsPcapsDestinationConf.fromJson(json['destination_conf'] as String),
+); }
+
+/// The full URI for the bucket. This field only applies to `full` packet captures.
+final MagicVisibilityPcapsPcapsDestinationConf destinationConf;
+
+Map<String, dynamic> toJson() { return {
+  'destination_conf': destinationConf.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
+MagicVisibilityPcapsPcapsOwnershipRequest copyWith({MagicVisibilityPcapsPcapsDestinationConf? destinationConf}) { return MagicVisibilityPcapsPcapsOwnershipRequest(
+  destinationConf: destinationConf ?? this.destinationConf,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicVisibilityPcapsPcapsOwnershipRequest &&
+          destinationConf == other.destinationConf; } 
+@override int get hashCode { return destinationConf.hashCode; } 
+@override String toString() { return 'MagicVisibilityPcapsPcapsOwnershipRequest(destinationConf: $destinationConf)'; } 
+ }

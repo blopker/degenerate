@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod.fromJson(String json) { return switch (json) {
+  'manual' => manual,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod manual = PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod._('manual');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod> values = [manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage._('none');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay {const PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay({this.captureMethod, this.setupFutureUsage, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay(
+  captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod? captureMethod;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsMobilepayCaptureMethod Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsMobilepaySetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay &&
+          captureMethod == other.captureMethod &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsMobilepay(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
+ }

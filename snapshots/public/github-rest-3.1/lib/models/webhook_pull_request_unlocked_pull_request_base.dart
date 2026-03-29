@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_pull_request_unlocked_pull_request_base_repo.dart';import 'webhook_pull_request_unlocked_pull_request_base_user.dart';final class WebhookPullRequestUnlockedPullRequestBase {const WebhookPullRequestUnlockedPullRequestBase({required this.label, required this.ref, required this.repo, required this.sha, required this.user, });
+
+factory WebhookPullRequestUnlockedPullRequestBase.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlockedPullRequestBase(
+  label: json['label'] as String,
+  ref: json['ref'] as String,
+  repo: WebhookPullRequestUnlockedPullRequestBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
+  sha: json['sha'] as String,
+  user: json['user'] != null ? WebhookPullRequestUnlockedPullRequestBaseUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+final String label;
+
+final String ref;
+
+/// A git repository
+final WebhookPullRequestUnlockedPullRequestBaseRepo repo;
+
+final String sha;
+
+final WebhookPullRequestUnlockedPullRequestBaseUser? user;
+
+Map<String, dynamic> toJson() { return {
+  'label': label,
+  'ref': ref,
+  'repo': repo.toJson(),
+  'sha': sha,
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
+      json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('repo') &&
+      json.containsKey('sha') && json['sha'] is String &&
+      json.containsKey('user'); } 
+WebhookPullRequestUnlockedPullRequestBase copyWith({String? label, String? ref, WebhookPullRequestUnlockedPullRequestBaseRepo? repo, String? sha, WebhookPullRequestUnlockedPullRequestBaseUser? Function()? user, }) { return WebhookPullRequestUnlockedPullRequestBase(
+  label: label ?? this.label,
+  ref: ref ?? this.ref,
+  repo: repo ?? this.repo,
+  sha: sha ?? this.sha,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestUnlockedPullRequestBase &&
+          label == other.label &&
+          ref == other.ref &&
+          repo == other.repo &&
+          sha == other.sha &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(label, ref, repo, sha, user); } 
+@override String toString() { return 'WebhookPullRequestUnlockedPullRequestBase(label: $label, ref: $ref, repo: $repo, sha: $sha, user: $user)'; } 
+ }

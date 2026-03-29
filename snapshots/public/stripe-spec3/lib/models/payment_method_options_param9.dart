@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_options_param9_routing.dart';final class PaymentMethodOptionsParam9CaptureMethod {const PaymentMethodOptionsParam9CaptureMethod._(this.value);
+
+factory PaymentMethodOptionsParam9CaptureMethod.fromJson(String json) { return switch (json) {
+  'manual' => manual,
+  'manual_preferred' => manualPreferred,
+  _ => PaymentMethodOptionsParam9CaptureMethod._(json),
+}; }
+
+static const PaymentMethodOptionsParam9CaptureMethod manual = PaymentMethodOptionsParam9CaptureMethod._('manual');
+
+static const PaymentMethodOptionsParam9CaptureMethod manualPreferred = PaymentMethodOptionsParam9CaptureMethod._('manual_preferred');
+
+static const List<PaymentMethodOptionsParam9CaptureMethod> values = [manual, manualPreferred];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam9CaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam9CaptureMethod($value)'; } 
+ }
+final class PaymentMethodOptionsParam9 {const PaymentMethodOptionsParam9({this.captureMethod, this.requestExtendedAuthorization, this.requestIncrementalAuthorizationSupport, this.routing, });
+
+factory PaymentMethodOptionsParam9.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam9(
+  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam9CaptureMethod.fromJson(json['capture_method'] as String) : null,
+  requestExtendedAuthorization: json['request_extended_authorization'] as bool?,
+  requestIncrementalAuthorizationSupport: json['request_incremental_authorization_support'] as bool?,
+  routing: json['routing'] != null ? PaymentMethodOptionsParam9Routing.fromJson(json['routing'] as Map<String, dynamic>) : null,
+); }
+
+final PaymentMethodOptionsParam9CaptureMethod? captureMethod;
+
+final bool? requestExtendedAuthorization;
+
+final bool? requestIncrementalAuthorizationSupport;
+
+final PaymentMethodOptionsParam9Routing? routing;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  'request_extended_authorization': ?requestExtendedAuthorization,
+  'request_incremental_authorization_support': ?requestIncrementalAuthorizationSupport,
+  if (routing != null) 'routing': routing?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam9 copyWith({PaymentMethodOptionsParam9CaptureMethod Function()? captureMethod, bool Function()? requestExtendedAuthorization, bool Function()? requestIncrementalAuthorizationSupport, PaymentMethodOptionsParam9Routing Function()? routing, }) { return PaymentMethodOptionsParam9(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  requestExtendedAuthorization: requestExtendedAuthorization != null ? requestExtendedAuthorization() : this.requestExtendedAuthorization,
+  requestIncrementalAuthorizationSupport: requestIncrementalAuthorizationSupport != null ? requestIncrementalAuthorizationSupport() : this.requestIncrementalAuthorizationSupport,
+  routing: routing != null ? routing() : this.routing,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam9 &&
+          captureMethod == other.captureMethod &&
+          requestExtendedAuthorization == other.requestExtendedAuthorization &&
+          requestIncrementalAuthorizationSupport == other.requestIncrementalAuthorizationSupport &&
+          routing == other.routing; } 
+@override int get hashCode { return Object.hash(captureMethod, requestExtendedAuthorization, requestIncrementalAuthorizationSupport, routing); } 
+@override String toString() { return 'PaymentMethodOptionsParam9(captureMethod: $captureMethod, requestExtendedAuthorization: $requestExtendedAuthorization, requestIncrementalAuthorizationSupport: $requestIncrementalAuthorizationSupport, routing: $routing)'; } 
+ }

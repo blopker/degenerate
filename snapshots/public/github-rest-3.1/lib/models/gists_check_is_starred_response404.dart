@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GistsCheckIsStarredResponse404 {const GistsCheckIsStarredResponse404();
+
+factory GistsCheckIsStarredResponse404.fromJson(Map<String, dynamic> json) { return GistsCheckIsStarredResponse404(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GistsCheckIsStarredResponse404 copyWith() { return GistsCheckIsStarredResponse404(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GistsCheckIsStarredResponse404; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GistsCheckIsStarredResponse404()'; } 
+ }

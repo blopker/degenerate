@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class AccountDeclineChargeOn {const AccountDeclineChargeOn({required this.avsFailure, required this.cvcFailure, });
+
+factory AccountDeclineChargeOn.fromJson(Map<String, dynamic> json) { return AccountDeclineChargeOn(
+  avsFailure: json['avs_failure'] as bool,
+  cvcFailure: json['cvc_failure'] as bool,
+); }
+
+/// Whether Stripe automatically declines charges with an incorrect ZIP or postal code. This setting only applies when a ZIP or postal code is provided and they fail bank verification.
+final bool avsFailure;
+
+/// Whether Stripe automatically declines charges with an incorrect CVC. This setting only applies when a CVC is provided and it fails bank verification.
+final bool cvcFailure;
+
+Map<String, dynamic> toJson() { return {
+  'avs_failure': avsFailure,
+  'cvc_failure': cvcFailure,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('avs_failure') && json['avs_failure'] is bool &&
+      json.containsKey('cvc_failure') && json['cvc_failure'] is bool; } 
+AccountDeclineChargeOn copyWith({bool? avsFailure, bool? cvcFailure, }) { return AccountDeclineChargeOn(
+  avsFailure: avsFailure ?? this.avsFailure,
+  cvcFailure: cvcFailure ?? this.cvcFailure,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountDeclineChargeOn &&
+          avsFailure == other.avsFailure &&
+          cvcFailure == other.cvcFailure; } 
+@override int get hashCode { return Object.hash(avsFailure, cvcFailure); } 
+@override String toString() { return 'AccountDeclineChargeOn(avsFailure: $avsFailure, cvcFailure: $cvcFailure)'; } 
+ }

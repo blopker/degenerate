@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_key.dart';import '../models/list_key_response.dart';import '../models/update_key_request.dart';/// Api20100401KeyApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401KeyApi with ApiExecutor {const Api20100401KeyApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// 
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
+Future<ApiResult<AccountKey, Never>> fetchKey({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// 
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
+Future<ApiResult<AccountKey, Never>> updateKey({required String accountSid, required String sid, UpdateKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  body: body == null ? null : [
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// 
+///
+/// `DELETE /2010-04-01/Accounts/{AccountSid}/Keys/{Sid}.json`
+Future<ApiResult<void, Never>> deleteKey({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// 
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Keys.json`
+Future<ApiResult<ListKeyResponse, Never>> listKey({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListKeyResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

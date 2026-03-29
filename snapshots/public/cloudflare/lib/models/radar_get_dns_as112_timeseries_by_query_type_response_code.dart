@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsAs112TimeseriesByQueryTypeResponseCode {const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._(this.value);
+
+factory RadarGetDnsAs112TimeseriesByQueryTypeResponseCode.fromJson(String json) { return switch (json) {
+  'NOERROR' => noerror,
+  'FORMERR' => formerr,
+  'SERVFAIL' => servfail,
+  'NXDOMAIN' => nxdomain,
+  'NOTIMP' => notimp,
+  'REFUSED' => refused,
+  'YXDOMAIN' => yxdomain,
+  'YXRRSET' => yxrrset,
+  'NXRRSET' => nxrrset,
+  'NOTAUTH' => notauth,
+  'NOTZONE' => notzone,
+  'BADSIG' => badsig,
+  'BADKEY' => badkey,
+  'BADTIME' => badtime,
+  'BADMODE' => badmode,
+  'BADNAME' => badname,
+  'BADALG' => badalg,
+  'BADTRUNC' => badtrunc,
+  'BADCOOKIE' => badcookie,
+  _ => RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode noerror = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('NOERROR');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode formerr = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('FORMERR');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode servfail = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('SERVFAIL');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode nxdomain = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('NXDOMAIN');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode notimp = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('NOTIMP');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode refused = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('REFUSED');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode yxdomain = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('YXDOMAIN');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode yxrrset = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('YXRRSET');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode nxrrset = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('NXRRSET');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode notauth = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('NOTAUTH');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode notzone = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('NOTZONE');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badsig = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADSIG');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badkey = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADKEY');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badtime = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADTIME');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badmode = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADMODE');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badname = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADNAME');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badalg = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADALG');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badtrunc = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADTRUNC');
+
+static const RadarGetDnsAs112TimeseriesByQueryTypeResponseCode badcookie = RadarGetDnsAs112TimeseriesByQueryTypeResponseCode._('BADCOOKIE');
+
+static const List<RadarGetDnsAs112TimeseriesByQueryTypeResponseCode> values = [noerror, formerr, servfail, nxdomain, notimp, refused, yxdomain, yxrrset, nxrrset, notauth, notzone, badsig, badkey, badtime, badmode, badname, badalg, badtrunc, badcookie];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesByQueryTypeResponseCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesByQueryTypeResponseCode($value)'; } 
+ }

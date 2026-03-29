@@ -1,0 +1,95 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_credit_notes_request_lines_tax_amounts.dart';import 'post_credit_notes_request_lines_tax_amounts_variant1.dart';import 'post_credit_notes_request_lines_tax_rates.dart';final class PostCreditNotesRequestLinesType {const PostCreditNotesRequestLinesType._(this.value);
+
+factory PostCreditNotesRequestLinesType.fromJson(String json) { return switch (json) {
+  'custom_line_item' => customLineItem,
+  'invoice_line_item' => invoiceLineItem,
+  _ => PostCreditNotesRequestLinesType._(json),
+}; }
+
+static const PostCreditNotesRequestLinesType customLineItem = PostCreditNotesRequestLinesType._('custom_line_item');
+
+static const PostCreditNotesRequestLinesType invoiceLineItem = PostCreditNotesRequestLinesType._('invoice_line_item');
+
+static const List<PostCreditNotesRequestLinesType> values = [customLineItem, invoiceLineItem];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCreditNotesRequestLinesType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCreditNotesRequestLinesType($value)'; } 
+ }
+final class PostCreditNotesRequestLines {const PostCreditNotesRequestLines({this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, required this.type, this.unitAmount, this.unitAmountDecimal, });
+
+factory PostCreditNotesRequestLines.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestLines(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  description: json['description'] as String?,
+  invoiceLineItem: json['invoice_line_item'] as String?,
+  quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
+  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostCreditNotesRequestLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostCreditNotesRequestLinesTaxAmountsVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostCreditNotesRequestLinesTaxRatesVariant2.fromJson(v as String),) : null,
+  type: PostCreditNotesRequestLinesType.fromJson(json['type'] as String),
+  unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
+  unitAmountDecimal: json['unit_amount_decimal'] as String?,
+); }
+
+final int? amount;
+
+final String? description;
+
+final String? invoiceLineItem;
+
+final int? quantity;
+
+final PostCreditNotesRequestLinesTaxAmounts? taxAmounts;
+
+final PostCreditNotesRequestLinesTaxRates? taxRates;
+
+final PostCreditNotesRequestLinesType type;
+
+final int? unitAmount;
+
+final String? unitAmountDecimal;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  'description': ?description,
+  'invoice_line_item': ?invoiceLineItem,
+  'quantity': ?quantity,
+  if (taxAmounts != null) 'tax_amounts': taxAmounts?.toJson(),
+  if (taxRates != null) 'tax_rates': taxRates?.toJson(),
+  'type': type.toJson(),
+  'unit_amount': ?unitAmount,
+  'unit_amount_decimal': ?unitAmountDecimal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostCreditNotesRequestLines copyWith({int Function()? amount, String Function()? description, String Function()? invoiceLineItem, int Function()? quantity, PostCreditNotesRequestLinesTaxAmounts Function()? taxAmounts, PostCreditNotesRequestLinesTaxRates Function()? taxRates, PostCreditNotesRequestLinesType? type, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostCreditNotesRequestLines(
+  amount: amount != null ? amount() : this.amount,
+  description: description != null ? description() : this.description,
+  invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,
+  quantity: quantity != null ? quantity() : this.quantity,
+  taxAmounts: taxAmounts != null ? taxAmounts() : this.taxAmounts,
+  taxRates: taxRates != null ? taxRates() : this.taxRates,
+  type: type ?? this.type,
+  unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
+  unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCreditNotesRequestLines &&
+          amount == other.amount &&
+          description == other.description &&
+          invoiceLineItem == other.invoiceLineItem &&
+          quantity == other.quantity &&
+          taxAmounts == other.taxAmounts &&
+          taxRates == other.taxRates &&
+          type == other.type &&
+          unitAmount == other.unitAmount &&
+          unitAmountDecimal == other.unitAmountDecimal; } 
+@override int get hashCode { return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal); } 
+@override String toString() { return 'PostCreditNotesRequestLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+ }

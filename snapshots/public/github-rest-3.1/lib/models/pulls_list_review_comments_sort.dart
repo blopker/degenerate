@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullsListReviewCommentsSort {const PullsListReviewCommentsSort._(this.value);
+
+factory PullsListReviewCommentsSort.fromJson(String json) { return switch (json) {
+  'created' => created,
+  'updated' => updated,
+  _ => PullsListReviewCommentsSort._(json),
+}; }
+
+static const PullsListReviewCommentsSort created = PullsListReviewCommentsSort._('created');
+
+static const PullsListReviewCommentsSort updated = PullsListReviewCommentsSort._('updated');
+
+static const List<PullsListReviewCommentsSort> values = [created, updated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PullsListReviewCommentsSort && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PullsListReviewCommentsSort($value)'; } 
+ }

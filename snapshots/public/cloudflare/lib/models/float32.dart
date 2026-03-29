@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Float32Type {const Float32Type._(this.value);
+
+factory Float32Type.fromJson(String json) { return switch (json) {
+  'float32' => float32,
+  _ => Float32Type._(json),
+}; }
+
+static const Float32Type float32 = Float32Type._('float32');
+
+static const List<Float32Type> values = [float32];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Float32Type && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Float32Type($value)'; } 
+ }
+final class Float32 {const Float32({required this.type});
+
+factory Float32.fromJson(Map<String, dynamic> json) { return Float32(
+  type: Float32Type.fromJson(json['type'] as String),
+); }
+
+final Float32Type type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+Float32 copyWith({Float32Type? type}) { return Float32(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Float32 &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'Float32(type: $type)'; } 
+ }

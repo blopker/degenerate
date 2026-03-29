@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_request_evidence.dart';import 'post_issuing_disputes_request_treasury.dart';final class PostIssuingDisputesRequest {const PostIssuingDisputesRequest({this.amount, this.evidence, this.expand, this.metadata, this.transaction, this.treasury, });
+
+factory PostIssuingDisputesRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesRequest(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  evidence: json['evidence'] != null ? PostIssuingDisputesRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  transaction: json['transaction'] as String?,
+  treasury: json['treasury'] != null ? PostIssuingDisputesRequestTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+); }
+
+/// The dispute amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). If not set, defaults to the full transaction amount.
+final int? amount;
+
+/// Evidence provided for the dispute.
+final PostIssuingDisputesRequestEvidence? evidence;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final Map<String,String>? metadata;
+
+/// The ID of the issuing transaction to create a dispute for. For transaction on Treasury FinancialAccounts, use `treasury.received_debit`.
+final String? transaction;
+
+/// Params for disputes related to Treasury FinancialAccounts
+final PostIssuingDisputesRequestTreasury? treasury;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  if (evidence != null) 'evidence': evidence?.toJson(),
+  'expand': ?expand,
+  'metadata': ?metadata,
+  'transaction': ?transaction,
+  if (treasury != null) 'treasury': treasury?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostIssuingDisputesRequest copyWith({int Function()? amount, PostIssuingDisputesRequestEvidence Function()? evidence, List<String> Function()? expand, Map<String, String> Function()? metadata, String Function()? transaction, PostIssuingDisputesRequestTreasury Function()? treasury, }) { return PostIssuingDisputesRequest(
+  amount: amount != null ? amount() : this.amount,
+  evidence: evidence != null ? evidence() : this.evidence,
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+  transaction: transaction != null ? transaction() : this.transaction,
+  treasury: treasury != null ? treasury() : this.treasury,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostIssuingDisputesRequest &&
+          amount == other.amount &&
+          evidence == other.evidence &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata &&
+          transaction == other.transaction &&
+          treasury == other.treasury; } 
+@override int get hashCode { return Object.hash(amount, evidence, Object.hashAll(expand ?? const []), metadata, transaction, treasury); } 
+@override String toString() { return 'PostIssuingDisputesRequest(amount: $amount, evidence: $evidence, expand: $expand, metadata: $metadata, transaction: $transaction, treasury: $treasury)'; } 
+ }

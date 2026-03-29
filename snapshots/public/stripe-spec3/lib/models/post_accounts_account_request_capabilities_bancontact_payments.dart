@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsAccountRequestCapabilitiesBancontactPayments {const PostAccountsAccountRequestCapabilitiesBancontactPayments({this.requested});
+
+factory PostAccountsAccountRequestCapabilitiesBancontactPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesBancontactPayments(
+  requested: json['requested'] as bool?,
+); }
+
+final bool? requested;
+
+Map<String, dynamic> toJson() { return {
+  'requested': ?requested,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountRequestCapabilitiesBancontactPayments copyWith({bool Function()? requested}) { return PostAccountsAccountRequestCapabilitiesBancontactPayments(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountRequestCapabilitiesBancontactPayments &&
+          requested == other.requested; } 
+@override int get hashCode { return requested.hashCode; } 
+@override String toString() { return 'PostAccountsAccountRequestCapabilitiesBancontactPayments(requested: $requested)'; } 
+ }

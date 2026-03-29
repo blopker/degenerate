@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class R2SippySourceProvider {const R2SippySourceProvider._(this.value);
+
+factory R2SippySourceProvider.fromJson(String json) { return switch (json) {
+  'aws' => aws,
+  'gcs' => gcs,
+  's3' => s3,
+  _ => R2SippySourceProvider._(json),
+}; }
+
+static const R2SippySourceProvider aws = R2SippySourceProvider._('aws');
+
+static const R2SippySourceProvider gcs = R2SippySourceProvider._('gcs');
+
+static const R2SippySourceProvider s3 = R2SippySourceProvider._('s3');
+
+static const List<R2SippySourceProvider> values = [aws, gcs, s3];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is R2SippySourceProvider && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'R2SippySourceProvider($value)'; } 
+ }
+/// Details about the configured source bucket.
+final class R2SippySource {const R2SippySource({this.bucket, this.bucketUrl, this.provider, this.region, });
+
+factory R2SippySource.fromJson(Map<String, dynamic> json) { return R2SippySource(
+  bucket: json['bucket'] as String?,
+  bucketUrl: json['bucketUrl'] as String?,
+  provider: json['provider'] != null ? R2SippySourceProvider.fromJson(json['provider'] as String) : null,
+  region: json['region'] as String?,
+); }
+
+/// Name of the bucket on the provider (AWS, GCS only).
+final String? bucket;
+
+/// S3-compatible URL (Generic S3-compatible providers only).
+final String? bucketUrl;
+
+final R2SippySourceProvider? provider;
+
+/// Region where the bucket resides (AWS only).
+final String? region;
+
+Map<String, dynamic> toJson() { return {
+  'bucket': ?bucket,
+  'bucketUrl': ?bucketUrl,
+  if (provider != null) 'provider': provider?.toJson(),
+  'region': ?region,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2SippySource copyWith({String? Function()? bucket, String? Function()? bucketUrl, R2SippySourceProvider Function()? provider, String? Function()? region, }) { return R2SippySource(
+  bucket: bucket != null ? bucket() : this.bucket,
+  bucketUrl: bucketUrl != null ? bucketUrl() : this.bucketUrl,
+  provider: provider != null ? provider() : this.provider,
+  region: region != null ? region() : this.region,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2SippySource &&
+          bucket == other.bucket &&
+          bucketUrl == other.bucketUrl &&
+          provider == other.provider &&
+          region == other.region; } 
+@override int get hashCode { return Object.hash(bucket, bucketUrl, provider, region); } 
+@override String toString() { return 'R2SippySource(bucket: $bucket, bucketUrl: $bucketUrl, provider: $provider, region: $region)'; } 
+ }

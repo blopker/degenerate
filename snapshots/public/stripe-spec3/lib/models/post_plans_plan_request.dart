@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_plans_plan_request_metadata.dart';final class PostPlansPlanRequest {const PostPlansPlanRequest({this.active, this.expand, this.metadata, this.nickname, this.product, this.trialPeriodDays, });
+
+factory PostPlansPlanRequest.fromJson(Map<String, dynamic> json) { return PostPlansPlanRequest(
+  active: json['active'] as bool?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPlansPlanRequestMetadataVariant2.fromJson(v as String),) : null,
+  nickname: json['nickname'] as String?,
+  product: json['product'] as String?,
+  trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
+); }
+
+/// Whether the plan is currently available for new subscriptions.
+final bool? active;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostPlansPlanRequestMetadata? metadata;
+
+/// A brief description of the plan, hidden from customers.
+final String? nickname;
+
+/// The product the plan belongs to. This cannot be changed once it has been used in a subscription or subscription schedule.
+final String? product;
+
+/// Default number of trial days when subscribing a customer to this plan using [`trial_from_plan=true`](https://docs.stripe.com/api#create_subscription-trial_from_plan).
+final int? trialPeriodDays;
+
+Map<String, dynamic> toJson() { return {
+  'active': ?active,
+  'expand': ?expand,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  'nickname': ?nickname,
+  'product': ?product,
+  'trial_period_days': ?trialPeriodDays,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPlansPlanRequest copyWith({bool Function()? active, List<String> Function()? expand, PostPlansPlanRequestMetadata Function()? metadata, String Function()? nickname, String Function()? product, int Function()? trialPeriodDays, }) { return PostPlansPlanRequest(
+  active: active != null ? active() : this.active,
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+  nickname: nickname != null ? nickname() : this.nickname,
+  product: product != null ? product() : this.product,
+  trialPeriodDays: trialPeriodDays != null ? trialPeriodDays() : this.trialPeriodDays,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPlansPlanRequest &&
+          active == other.active &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata &&
+          nickname == other.nickname &&
+          product == other.product &&
+          trialPeriodDays == other.trialPeriodDays; } 
+@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), metadata, nickname, product, trialPeriodDays); } 
+@override String toString() { return 'PostPlansPlanRequest(active: $active, expand: $expand, metadata: $metadata, nickname: $nickname, product: $product, trialPeriodDays: $trialPeriodDays)'; } 
+ }

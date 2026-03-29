@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior {const PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
+
+factory PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
+  'exclusive' => exclusive,
+  'inclusive' => inclusive,
+  'unspecified' => unspecified,
+  _ => PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior._(json),
+}; }
+
+static const PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior exclusive = PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior._('exclusive');
+
+static const PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior inclusive = PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior._('inclusive');
+
+static const PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior unspecified = PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior._('unspecified');
+
+static const List<PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior> values = [exclusive, inclusive, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior($value)'; } 
+ }
+final class PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue {const PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue({this.amount, this.taxBehavior, });
+
+factory PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  taxBehavior: json['tax_behavior'] != null ? PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+); }
+
+final int? amount;
+
+final PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior? taxBehavior;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue copyWith({int Function()? amount, PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValueTaxBehavior Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(
+  amount: amount != null ? amount() : this.amount,
+  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue &&
+          amount == other.amount &&
+          taxBehavior == other.taxBehavior; } 
+@override int get hashCode { return Object.hash(amount, taxBehavior); } 
+@override String toString() { return 'PostShippingRatesShippingRateTokenRequestFixedAmountCurrencyOptionsValue(amount: $amount, taxBehavior: $taxBehavior)'; } 
+ }

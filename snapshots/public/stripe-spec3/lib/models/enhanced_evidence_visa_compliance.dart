@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EnhancedEvidenceVisaCompliance {const EnhancedEvidenceVisaCompliance({this.feeAcknowledged});
+
+factory EnhancedEvidenceVisaCompliance.fromJson(Map<String, dynamic> json) { return EnhancedEvidenceVisaCompliance(
+  feeAcknowledged: json['fee_acknowledged'] as bool?,
+); }
+
+final bool? feeAcknowledged;
+
+Map<String, dynamic> toJson() { return {
+  'fee_acknowledged': ?feeAcknowledged,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EnhancedEvidenceVisaCompliance copyWith({bool Function()? feeAcknowledged}) { return EnhancedEvidenceVisaCompliance(
+  feeAcknowledged: feeAcknowledged != null ? feeAcknowledged() : this.feeAcknowledged,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EnhancedEvidenceVisaCompliance &&
+          feeAcknowledged == other.feeAcknowledged; } 
+@override int get hashCode { return feeAcknowledged.hashCode; } 
+@override String toString() { return 'EnhancedEvidenceVisaCompliance(feeAcknowledged: $feeAcknowledged)'; } 
+ }

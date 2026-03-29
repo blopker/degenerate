@@ -1,0 +1,61 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
+/// 
+final class RealtimeCreateClientSecretRequestExpiresAfterAnchor {const RealtimeCreateClientSecretRequestExpiresAfterAnchor._(this.value);
+
+factory RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(String json) { return switch (json) {
+  'created_at' => createdAt,
+  _ => RealtimeCreateClientSecretRequestExpiresAfterAnchor._(json),
+}; }
+
+static const RealtimeCreateClientSecretRequestExpiresAfterAnchor createdAt = RealtimeCreateClientSecretRequestExpiresAfterAnchor._('created_at');
+
+static const List<RealtimeCreateClientSecretRequestExpiresAfterAnchor> values = [createdAt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeCreateClientSecretRequestExpiresAfterAnchor && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeCreateClientSecretRequestExpiresAfterAnchor($value)'; } 
+ }
+/// Configuration for the client secret expiration. Expiration refers to the time after which
+/// a client secret will no longer be valid for creating sessions. The session itself may
+/// continue after that time once started. A secret can be used to create multiple sessions
+/// until it expires.
+/// 
+final class RealtimeCreateClientSecretRequestExpiresAfter {const RealtimeCreateClientSecretRequestExpiresAfter({this.anchor = RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt, this.seconds = 600, });
+
+factory RealtimeCreateClientSecretRequestExpiresAfter.fromJson(Map<String, dynamic> json) { return RealtimeCreateClientSecretRequestExpiresAfter(
+  anchor: json.containsKey('anchor') ? RealtimeCreateClientSecretRequestExpiresAfterAnchor.fromJson(json['anchor'] as String) : RealtimeCreateClientSecretRequestExpiresAfterAnchor.createdAt,
+  seconds: json.containsKey('seconds') ? (json['seconds'] as num).toInt() : 600,
+); }
+
+/// The anchor point for the client secret expiration, meaning that `seconds` will be added to the `created_at` time of the client secret to produce an expiration timestamp. Only `created_at` is currently supported.
+/// 
+final RealtimeCreateClientSecretRequestExpiresAfterAnchor anchor;
+
+/// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200` (2 hours). This default to 600 seconds (10 minutes) if not specified.
+/// 
+final int seconds;
+
+Map<String, dynamic> toJson() { return {
+  'anchor': anchor.toJson(),
+  'seconds': seconds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimeCreateClientSecretRequestExpiresAfter copyWith({RealtimeCreateClientSecretRequestExpiresAfterAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
+  anchor: anchor != null ? anchor() : this.anchor,
+  seconds: seconds != null ? seconds() : this.seconds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeCreateClientSecretRequestExpiresAfter &&
+          anchor == other.anchor &&
+          seconds == other.seconds; } 
+@override int get hashCode { return Object.hash(anchor, seconds); } 
+@override String toString() { return 'RealtimeCreateClientSecretRequestExpiresAfter(anchor: $anchor, seconds: $seconds)'; } 
+ }

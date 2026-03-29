@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DigitalExperienceMonitoringAggregateTimePeriodUnits {const DigitalExperienceMonitoringAggregateTimePeriodUnits._(this.value);
+
+factory DigitalExperienceMonitoringAggregateTimePeriodUnits.fromJson(String json) { return switch (json) {
+  'hours' => hours,
+  'days' => days,
+  'testRuns' => testRuns,
+  _ => DigitalExperienceMonitoringAggregateTimePeriodUnits._(json),
+}; }
+
+static const DigitalExperienceMonitoringAggregateTimePeriodUnits hours = DigitalExperienceMonitoringAggregateTimePeriodUnits._('hours');
+
+static const DigitalExperienceMonitoringAggregateTimePeriodUnits days = DigitalExperienceMonitoringAggregateTimePeriodUnits._('days');
+
+static const DigitalExperienceMonitoringAggregateTimePeriodUnits testRuns = DigitalExperienceMonitoringAggregateTimePeriodUnits._('testRuns');
+
+static const List<DigitalExperienceMonitoringAggregateTimePeriodUnits> values = [hours, days, testRuns];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DigitalExperienceMonitoringAggregateTimePeriodUnits && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DigitalExperienceMonitoringAggregateTimePeriodUnits($value)'; } 
+ }
+final class DigitalExperienceMonitoringAggregateTimePeriod {const DigitalExperienceMonitoringAggregateTimePeriod({required this.units, required this.value, });
+
+factory DigitalExperienceMonitoringAggregateTimePeriod.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringAggregateTimePeriod(
+  units: DigitalExperienceMonitoringAggregateTimePeriodUnits.fromJson(json['units'] as String),
+  value: (json['value'] as num).toInt(),
+); }
+
+final DigitalExperienceMonitoringAggregateTimePeriodUnits units;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'units': units.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('units') &&
+      json.containsKey('value') && json['value'] is num; } 
+DigitalExperienceMonitoringAggregateTimePeriod copyWith({DigitalExperienceMonitoringAggregateTimePeriodUnits? units, int? value, }) { return DigitalExperienceMonitoringAggregateTimePeriod(
+  units: units ?? this.units,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringAggregateTimePeriod &&
+          units == other.units &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(units, value); } 
+@override String toString() { return 'DigitalExperienceMonitoringAggregateTimePeriod(units: $units, value: $value)'; } 
+ }

@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_delta_content_text_annotations_file_citation_object.dart';import 'message_delta_content_text_annotations_file_path_object.dart';typedef MessageDeltaContentTextObjectTextAnnotations = OneOf2<MessageDeltaContentTextAnnotationsFileCitationObject,MessageDeltaContentTextAnnotationsFilePathObject>;

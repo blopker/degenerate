@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParamCaptureMethod {const PaymentMethodOptionsParamCaptureMethod._(this.value);
+
+factory PaymentMethodOptionsParamCaptureMethod.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'manual' => manual,
+  _ => PaymentMethodOptionsParamCaptureMethod._(json),
+}; }
+
+static const PaymentMethodOptionsParamCaptureMethod $empty = PaymentMethodOptionsParamCaptureMethod._('');
+
+static const PaymentMethodOptionsParamCaptureMethod manual = PaymentMethodOptionsParamCaptureMethod._('manual');
+
+static const List<PaymentMethodOptionsParamCaptureMethod> values = [$empty, manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParamCaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParamCaptureMethod($value)'; } 
+ }
+final class PaymentMethodOptionsParamSetupFutureUsage {const PaymentMethodOptionsParamSetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsParamSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentMethodOptionsParamSetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsParamSetupFutureUsage none = PaymentMethodOptionsParamSetupFutureUsage._('none');
+
+static const List<PaymentMethodOptionsParamSetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParamSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParamSetupFutureUsage($value)'; } 
+ }
+final class PaymentMethodOptionsParam {const PaymentMethodOptionsParam({this.captureMethod, this.preferredLocale, this.setupFutureUsage, });
+
+factory PaymentMethodOptionsParam.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam(
+  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParamCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  preferredLocale: json['preferred_locale'] as String?,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParamSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PaymentMethodOptionsParamCaptureMethod? captureMethod;
+
+final String? preferredLocale;
+
+final PaymentMethodOptionsParamSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  'preferred_locale': ?preferredLocale,
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam copyWith({PaymentMethodOptionsParamCaptureMethod Function()? captureMethod, String Function()? preferredLocale, PaymentMethodOptionsParamSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam &&
+          captureMethod == other.captureMethod &&
+          preferredLocale == other.preferredLocale &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(captureMethod, preferredLocale, setupFutureUsage); } 
+@override String toString() { return 'PaymentMethodOptionsParam(captureMethod: $captureMethod, preferredLocale: $preferredLocale, setupFutureUsage: $setupFutureUsage)'; } 
+ }

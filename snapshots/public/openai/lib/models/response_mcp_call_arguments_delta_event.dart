@@ -1,0 +1,81 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the event. Always 'response.mcp_call_arguments.delta'.
+final class ResponseMcpCallArgumentsDeltaEventType {const ResponseMcpCallArgumentsDeltaEventType._(this.value);
+
+factory ResponseMcpCallArgumentsDeltaEventType.fromJson(String json) { return switch (json) {
+  'response.mcp_call_arguments.delta' => responseMcpCallArgumentsDelta,
+  _ => ResponseMcpCallArgumentsDeltaEventType._(json),
+}; }
+
+static const ResponseMcpCallArgumentsDeltaEventType responseMcpCallArgumentsDelta = ResponseMcpCallArgumentsDeltaEventType._('response.mcp_call_arguments.delta');
+
+static const List<ResponseMcpCallArgumentsDeltaEventType> values = [responseMcpCallArgumentsDelta];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseMcpCallArgumentsDeltaEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseMcpCallArgumentsDeltaEventType($value)'; } 
+ }
+/// Emitted when there is a delta (partial update) to the arguments of an MCP tool call.
+/// 
+final class ResponseMcpCallArgumentsDeltaEvent {const ResponseMcpCallArgumentsDeltaEvent({required this.type, required this.outputIndex, required this.itemId, required this.delta, required this.sequenceNumber, });
+
+factory ResponseMcpCallArgumentsDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseMcpCallArgumentsDeltaEvent(
+  type: ResponseMcpCallArgumentsDeltaEventType.fromJson(json['type'] as String),
+  outputIndex: (json['output_index'] as num).toInt(),
+  itemId: json['item_id'] as String,
+  delta: json['delta'] as String,
+  sequenceNumber: (json['sequence_number'] as num).toInt(),
+); }
+
+/// The type of the event. Always 'response.mcp_call_arguments.delta'.
+final ResponseMcpCallArgumentsDeltaEventType type;
+
+/// The index of the output item in the response's output array.
+final int outputIndex;
+
+/// The unique identifier of the MCP tool call item being processed.
+final String itemId;
+
+/// A JSON string containing the partial update to the arguments for the MCP tool call.
+/// 
+final String delta;
+
+/// The sequence number of this event.
+final int sequenceNumber;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'output_index': outputIndex,
+  'item_id': itemId,
+  'delta': delta,
+  'sequence_number': sequenceNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('output_index') && json['output_index'] is num &&
+      json.containsKey('item_id') && json['item_id'] is String &&
+      json.containsKey('delta') && json['delta'] is String &&
+      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
+ResponseMcpCallArgumentsDeltaEvent copyWith({ResponseMcpCallArgumentsDeltaEventType? type, int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseMcpCallArgumentsDeltaEvent(
+  type: type ?? this.type,
+  outputIndex: outputIndex ?? this.outputIndex,
+  itemId: itemId ?? this.itemId,
+  delta: delta ?? this.delta,
+  sequenceNumber: sequenceNumber ?? this.sequenceNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseMcpCallArgumentsDeltaEvent &&
+          type == other.type &&
+          outputIndex == other.outputIndex &&
+          itemId == other.itemId &&
+          delta == other.delta &&
+          sequenceNumber == other.sequenceNumber; } 
+@override int get hashCode { return Object.hash(type, outputIndex, itemId, delta, sequenceNumber); } 
+@override String toString() { return 'ResponseMcpCallArgumentsDeltaEvent(type: $type, outputIndex: $outputIndex, itemId: $itemId, delta: $delta, sequenceNumber: $sequenceNumber)'; } 
+ }

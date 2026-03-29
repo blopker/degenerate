@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_number.dart';final class WebhookPullRequestReadyForReviewAction {const WebhookPullRequestReadyForReviewAction._(this.value);
+
+factory WebhookPullRequestReadyForReviewAction.fromJson(String json) { return switch (json) {
+  'ready_for_review' => readyForReview,
+  _ => WebhookPullRequestReadyForReviewAction._(json),
+}; }
+
+static const WebhookPullRequestReadyForReviewAction readyForReview = WebhookPullRequestReadyForReviewAction._('ready_for_review');
+
+static const List<WebhookPullRequestReadyForReviewAction> values = [readyForReview];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookPullRequestReadyForReviewAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReadyForReviewAction($value)'; } 
+ }
+final class WebhookPullRequestReadyForReview {const WebhookPullRequestReadyForReview({required this.action, this.enterprise, this.installation, required this.number, this.organization, required this.pullRequest, required this.repository, required this.sender, });
+
+factory WebhookPullRequestReadyForReview.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReadyForReview(
+  action: WebhookPullRequestReadyForReviewAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  number: WebhooksNumber.fromJson(json['number'] as num),
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  pullRequest: PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookPullRequestReadyForReviewAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+/// The pull request number.
+final WebhooksNumber number;
+
+final OrganizationSimpleWebhooks? organization;
+
+final PullRequest pullRequest;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'number': number.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'pull_request': pullRequest.toJson(),
+  'repository': repository.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('number') &&
+      json.containsKey('pull_request') &&
+      json.containsKey('repository') &&
+      json.containsKey('sender'); } 
+WebhookPullRequestReadyForReview copyWith({WebhookPullRequestReadyForReviewAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookPullRequestReadyForReview(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  number: number ?? this.number,
+  organization: organization != null ? organization() : this.organization,
+  pullRequest: pullRequest ?? this.pullRequest,
+  repository: repository ?? this.repository,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReadyForReview &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          number == other.number &&
+          organization == other.organization &&
+          pullRequest == other.pullRequest &&
+          repository == other.repository &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, number, organization, pullRequest, repository, sender); } 
+@override String toString() { return 'WebhookPullRequestReadyForReview(action: $action, enterprise: $enterprise, installation: $installation, number: $number, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender)'; } 
+ }

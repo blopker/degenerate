@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts {const PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts._(this.value);
+
+factory PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
+  'included' => included,
+  'itemized' => itemized,
+  _ => PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts._(json),
+}; }
+
+static const PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts included = PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts._('included');
+
+static const PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts itemized = PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts._('itemized');
+
+static const List<PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts> values = [included, itemized];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts($value)'; } 
+ }
+final class PostSubscriptionsRequestBillingModeFlexible {const PostSubscriptionsRequestBillingModeFlexible({this.prorationDiscounts});
+
+factory PostSubscriptionsRequestBillingModeFlexible.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestBillingModeFlexible(
+  prorationDiscounts: json['proration_discounts'] != null ? PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,
+); }
+
+final PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts? prorationDiscounts;
+
+Map<String, dynamic> toJson() { return {
+  if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSubscriptionsRequestBillingModeFlexible copyWith({PostSubscriptionsRequestBillingModeFlexibleProrationDiscounts Function()? prorationDiscounts}) { return PostSubscriptionsRequestBillingModeFlexible(
+  prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionsRequestBillingModeFlexible &&
+          prorationDiscounts == other.prorationDiscounts; } 
+@override int get hashCode { return prorationDiscounts.hashCode; } 
+@override String toString() { return 'PostSubscriptionsRequestBillingModeFlexible(prorationDiscounts: $prorationDiscounts)'; } 
+ }

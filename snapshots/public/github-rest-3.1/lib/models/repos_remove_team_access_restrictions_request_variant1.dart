@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposRemoveTeamAccessRestrictionsRequestVariant1 {const ReposRemoveTeamAccessRestrictionsRequestVariant1({required this.teams});
+
+factory ReposRemoveTeamAccessRestrictionsRequestVariant1.fromJson(Map<String, dynamic> json) { return ReposRemoveTeamAccessRestrictionsRequestVariant1(
+  teams: (json['teams'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// The slug values for teams
+final List<String> teams;
+
+Map<String, dynamic> toJson() { return {
+  'teams': teams,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('teams'); } 
+ReposRemoveTeamAccessRestrictionsRequestVariant1 copyWith({List<String>? teams}) { return ReposRemoveTeamAccessRestrictionsRequestVariant1(
+  teams: teams ?? this.teams,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposRemoveTeamAccessRestrictionsRequestVariant1 &&
+          listEquals(teams, other.teams); } 
+@override int get hashCode { return Object.hashAll(teams).hashCode; } 
+@override String toString() { return 'ReposRemoveTeamAccessRestrictionsRequestVariant1(teams: $teams)'; } 
+ }

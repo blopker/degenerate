@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_asn_configuration.dart';import 'firewall_cidr_configuration.dart';import 'firewall_country_configuration.dart';import 'firewall_ip_configuration.dart';import 'firewall_ipv6_configuration.dart';typedef FirewallConfiguration = OneOf5<FirewallIpConfiguration,FirewallIpv6Configuration,FirewallCidrConfiguration,FirewallAsnConfiguration,FirewallCountryConfiguration>;

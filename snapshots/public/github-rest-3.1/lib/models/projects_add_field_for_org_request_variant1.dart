@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ProjectsAddFieldForOrgRequestVariant1 {const ProjectsAddFieldForOrgRequestVariant1({required this.issueFieldId});
+
+factory ProjectsAddFieldForOrgRequestVariant1.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForOrgRequestVariant1(
+  issueFieldId: (json['issue_field_id'] as num).toInt(),
+); }
+
+/// The ID of the IssueField to create the field for.
+final int issueFieldId;
+
+Map<String, dynamic> toJson() { return {
+  'issue_field_id': issueFieldId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue_field_id') && json['issue_field_id'] is num; } 
+ProjectsAddFieldForOrgRequestVariant1 copyWith({int? issueFieldId}) { return ProjectsAddFieldForOrgRequestVariant1(
+  issueFieldId: issueFieldId ?? this.issueFieldId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProjectsAddFieldForOrgRequestVariant1 &&
+          issueFieldId == other.issueFieldId; } 
+@override int get hashCode { return issueFieldId.hashCode; } 
+@override String toString() { return 'ProjectsAddFieldForOrgRequestVariant1(issueFieldId: $issueFieldId)'; } 
+ }

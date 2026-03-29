@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'account_capability_future_requirements.dart';import 'account_capability_requirements.dart';import 'capability_account.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class CapabilityObject {const CapabilityObject._(this.value);
+
+factory CapabilityObject.fromJson(String json) { return switch (json) {
+  'capability' => capability,
+  _ => CapabilityObject._(json),
+}; }
+
+static const CapabilityObject capability = CapabilityObject._('capability');
+
+static const List<CapabilityObject> values = [capability];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CapabilityObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CapabilityObject($value)'; } 
+ }
+/// The status of the capability.
+final class CapabilityStatus {const CapabilityStatus._(this.value);
+
+factory CapabilityStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'inactive' => inactive,
+  'pending' => pending,
+  'unrequested' => unrequested,
+  _ => CapabilityStatus._(json),
+}; }
+
+static const CapabilityStatus active = CapabilityStatus._('active');
+
+static const CapabilityStatus inactive = CapabilityStatus._('inactive');
+
+static const CapabilityStatus pending = CapabilityStatus._('pending');
+
+static const CapabilityStatus unrequested = CapabilityStatus._('unrequested');
+
+static const List<CapabilityStatus> values = [active, inactive, pending, unrequested];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CapabilityStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CapabilityStatus($value)'; } 
+ }
+/// This is an object representing a capability for a Stripe account.
+/// 
+/// Related guide: [Account capabilities](https://docs.stripe.com/connect/account-capabilities)
+final class Capability {const Capability({required this.account, this.futureRequirements, required this.id, required this.object, required this.requested, this.requestedAt, this.requirements, required this.status, });
+
+factory Capability.fromJson(Map<String, dynamic> json) { return Capability(
+  account: OneOf2.parse(json['account'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+  futureRequirements: json['future_requirements'] != null ? AccountCapabilityFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
+  id: json['id'] as String,
+  object: CapabilityObject.fromJson(json['object'] as String),
+  requested: json['requested'] as bool,
+  requestedAt: json['requested_at'] != null ? (json['requested_at'] as num).toInt() : null,
+  requirements: json['requirements'] != null ? AccountCapabilityRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
+  status: CapabilityStatus.fromJson(json['status'] as String),
+); }
+
+/// The account for which the capability enables functionality.
+final CapabilityAccount account;
+
+final AccountCapabilityFutureRequirements? futureRequirements;
+
+/// The identifier for the capability.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final CapabilityObject object;
+
+/// Whether the capability has been requested.
+final bool requested;
+
+/// Time at which the capability was requested. Measured in seconds since the Unix epoch.
+final int? requestedAt;
+
+final AccountCapabilityRequirements? requirements;
+
+/// The status of the capability.
+final CapabilityStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'account': account.toJson(),
+  if (futureRequirements != null) 'future_requirements': futureRequirements?.toJson(),
+  'id': id,
+  'object': object.toJson(),
+  'requested': requested,
+  'requested_at': ?requestedAt,
+  if (requirements != null) 'requirements': requirements?.toJson(),
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('requested') && json['requested'] is bool &&
+      json.containsKey('status'); } 
+Capability copyWith({CapabilityAccount? account, AccountCapabilityFutureRequirements Function()? futureRequirements, String? id, CapabilityObject? object, bool? requested, int? Function()? requestedAt, AccountCapabilityRequirements Function()? requirements, CapabilityStatus? status, }) { return Capability(
+  account: account ?? this.account,
+  futureRequirements: futureRequirements != null ? futureRequirements() : this.futureRequirements,
+  id: id ?? this.id,
+  object: object ?? this.object,
+  requested: requested ?? this.requested,
+  requestedAt: requestedAt != null ? requestedAt() : this.requestedAt,
+  requirements: requirements != null ? requirements() : this.requirements,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Capability &&
+          account == other.account &&
+          futureRequirements == other.futureRequirements &&
+          id == other.id &&
+          object == other.object &&
+          requested == other.requested &&
+          requestedAt == other.requestedAt &&
+          requirements == other.requirements &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(account, futureRequirements, id, object, requested, requestedAt, requirements, status); } 
+@override String toString() { return 'Capability(account: $account, futureRequirements: $futureRequirements, id: $id, object: $object, requested: $requested, requestedAt: $requestedAt, requirements: $requirements, status: $status)'; } 
+ }

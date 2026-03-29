@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_domain_categories_data.dart';final class UrlscannerGetScanResponse2MetaProcessorsDomainCategories {const UrlscannerGetScanResponse2MetaProcessorsDomainCategories({required this.data});
+
+factory UrlscannerGetScanResponse2MetaProcessorsDomainCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategories(
+  data: (json['data'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData> data;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
+UrlscannerGetScanResponse2MetaProcessorsDomainCategories copyWith({List<UrlscannerGetScanResponse2MetaProcessorsDomainCategoriesData>? data}) { return UrlscannerGetScanResponse2MetaProcessorsDomainCategories(
+  data: data ?? this.data,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2MetaProcessorsDomainCategories &&
+          listEquals(data, other.data); } 
+@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsDomainCategories(data: $data)'; } 
+ }

@@ -1,0 +1,111 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._(this.value);
+
+factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo.fromJson(String json) { return switch (json) {
+  'geographic_location' => geographicLocation,
+  'inappropriate' => inappropriate,
+  'network_name' => networkName,
+  'non_binary_image' => nonBinaryImage,
+  'non_fiat_currency' => nonFiatCurrency,
+  'other' => $other,
+  'other_entity' => otherEntity,
+  'promotional_material' => promotionalMaterial,
+  _ => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._(json),
+}; }
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo geographicLocation = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('geographic_location');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo inappropriate = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('inappropriate');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo networkName = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('network_name');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo nonBinaryImage = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('non_binary_image');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo nonFiatCurrency = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('non_fiat_currency');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo $other = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('other');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo otherEntity = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('other_entity');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo promotionalMaterial = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo._('promotional_material');
+
+static const List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo> values = [geographicLocation, inappropriate, networkName, nonBinaryImage, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo($value)'; } 
+ }
+final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._(this.value);
+
+factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText.fromJson(String json) { return switch (json) {
+  'geographic_location' => geographicLocation,
+  'inappropriate' => inappropriate,
+  'network_name' => networkName,
+  'non_fiat_currency' => nonFiatCurrency,
+  'other' => $other,
+  'other_entity' => otherEntity,
+  'promotional_material' => promotionalMaterial,
+  _ => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._(json),
+}; }
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText geographicLocation = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('geographic_location');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText inappropriate = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('inappropriate');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText networkName = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('network_name');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText nonFiatCurrency = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('non_fiat_currency');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText $other = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('other');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText otherEntity = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('other_entity');
+
+static const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText promotionalMaterial = PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText._('promotional_material');
+
+static const List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText> values = [geographicLocation, inappropriate, networkName, nonFiatCurrency, $other, otherEntity, promotionalMaterial];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText($value)'; } 
+ }
+/// The reason(s) the personalization design was rejected.
+final class PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons {const PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons({this.cardLogo, this.carrierText, });
+
+factory PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons(
+  cardLogo: (json['card_logo'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo.fromJson(e as String)).toList(),
+  carrierText: (json['carrier_text'] as List<dynamic>?)?.map((e) => PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText.fromJson(e as String)).toList(),
+); }
+
+final List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo>? cardLogo;
+
+final List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText>? carrierText;
+
+Map<String, dynamic> toJson() { return {
+  if (cardLogo != null) 'card_logo': cardLogo?.map((e) => e.toJson()).toList(),
+  if (carrierText != null) 'carrier_text': carrierText?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons copyWith({List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCardLogo> Function()? cardLogo, List<PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasonsCarrierText> Function()? carrierText, }) { return PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons(
+  cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
+  carrierText: carrierText != null ? carrierText() : this.carrierText,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons &&
+          listEquals(cardLogo, other.cardLogo) &&
+          listEquals(carrierText, other.carrierText); } 
+@override int get hashCode { return Object.hash(Object.hashAll(cardLogo ?? const []), Object.hashAll(carrierText ?? const [])); } 
+@override String toString() { return 'PostTestHelpersIssuingPersonalizationDesignsPersonalizationDesignRejectRequestRejectionReasons(cardLogo: $cardLogo, carrierText: $carrierText)'; } 
+ }

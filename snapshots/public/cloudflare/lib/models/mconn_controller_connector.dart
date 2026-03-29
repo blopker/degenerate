@@ -1,0 +1,118 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mconn_account_id.dart';import 'mconn_day_of_week.dart';import 'mconn_embargo_date.dart';import 'mconn_uuid.dart';final class MconnControllerConnector {const MconnControllerConnector({required this.accountId, required this.activated, this.cloudflaredTunnelToken, this.cohortDesiredVersion, this.desiredVersion, required this.id, required this.interruptWindowDaysOfWeek, required this.interruptWindowDurationHours, required this.interruptWindowEmbargoDates, required this.interruptWindowHourOfDay, this.lastHeartbeat, this.lastSeenVersion, this.pinnedVersion, required this.timezone, required this.upgradeAsap, });
+
+factory MconnControllerConnector.fromJson(Map<String, dynamic> json) { return MconnControllerConnector(
+  accountId: MconnAccountId.fromJson(json['account_id'] as String),
+  activated: json['activated'] as bool,
+  cloudflaredTunnelToken: json['cloudflared_tunnel_token'] as String?,
+  cohortDesiredVersion: json['cohort_desired_version'] as String?,
+  desiredVersion: json['desired_version'] as String?,
+  id: MconnUuid.fromJson(json['id'] as String),
+  interruptWindowDaysOfWeek: (json['interrupt_window_days_of_week'] as List<dynamic>).map((e) => MconnDayOfWeek.fromJson(e as String)).toList(),
+  interruptWindowDurationHours: (json['interrupt_window_duration_hours'] as num).toDouble(),
+  interruptWindowEmbargoDates: (json['interrupt_window_embargo_dates'] as List<dynamic>).map((e) => MconnEmbargoDate.fromJson(e as String)).toList(),
+  interruptWindowHourOfDay: (json['interrupt_window_hour_of_day'] as num).toDouble(),
+  lastHeartbeat: json['last_heartbeat'] as String?,
+  lastSeenVersion: json['last_seen_version'] as String?,
+  pinnedVersion: json['pinned_version'] as String?,
+  timezone: json['timezone'] as String,
+  upgradeAsap: json['upgrade_asap'] as bool,
+); }
+
+/// Account identifier
+final MconnAccountId accountId;
+
+final bool activated;
+
+final String? cloudflaredTunnelToken;
+
+final String? cohortDesiredVersion;
+
+final String? desiredVersion;
+
+final MconnUuid id;
+
+/// Allowed days of the week for upgrades. Default is all days.
+final List<MconnDayOfWeek> interruptWindowDaysOfWeek;
+
+final double interruptWindowDurationHours;
+
+/// List of dates (YYYY-MM-DD) when upgrades are blocked.
+final List<MconnEmbargoDate> interruptWindowEmbargoDates;
+
+final double interruptWindowHourOfDay;
+
+final String? lastHeartbeat;
+
+final String? lastSeenVersion;
+
+final String? pinnedVersion;
+
+final String timezone;
+
+final bool upgradeAsap;
+
+Map<String, dynamic> toJson() { return {
+  'account_id': accountId.toJson(),
+  'activated': activated,
+  'cloudflared_tunnel_token': ?cloudflaredTunnelToken,
+  'cohort_desired_version': ?cohortDesiredVersion,
+  'desired_version': ?desiredVersion,
+  'id': id.toJson(),
+  'interrupt_window_days_of_week': interruptWindowDaysOfWeek.map((e) => e.toJson()).toList(),
+  'interrupt_window_duration_hours': interruptWindowDurationHours,
+  'interrupt_window_embargo_dates': interruptWindowEmbargoDates.map((e) => e.toJson()).toList(),
+  'interrupt_window_hour_of_day': interruptWindowHourOfDay,
+  'last_heartbeat': ?lastHeartbeat,
+  'last_seen_version': ?lastSeenVersion,
+  'pinned_version': ?pinnedVersion,
+  'timezone': timezone,
+  'upgrade_asap': upgradeAsap,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+      json.containsKey('activated') && json['activated'] is bool &&
+      json.containsKey('id') &&
+      json.containsKey('interrupt_window_days_of_week') &&
+      json.containsKey('interrupt_window_duration_hours') && json['interrupt_window_duration_hours'] is num &&
+      json.containsKey('interrupt_window_embargo_dates') &&
+      json.containsKey('interrupt_window_hour_of_day') && json['interrupt_window_hour_of_day'] is num &&
+      json.containsKey('timezone') && json['timezone'] is String &&
+      json.containsKey('upgrade_asap') && json['upgrade_asap'] is bool; } 
+MconnControllerConnector copyWith({MconnAccountId? accountId, bool? activated, String Function()? cloudflaredTunnelToken, String Function()? cohortDesiredVersion, String Function()? desiredVersion, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String Function()? lastHeartbeat, String Function()? lastSeenVersion, String Function()? pinnedVersion, String? timezone, bool? upgradeAsap, }) { return MconnControllerConnector(
+  accountId: accountId ?? this.accountId,
+  activated: activated ?? this.activated,
+  cloudflaredTunnelToken: cloudflaredTunnelToken != null ? cloudflaredTunnelToken() : this.cloudflaredTunnelToken,
+  cohortDesiredVersion: cohortDesiredVersion != null ? cohortDesiredVersion() : this.cohortDesiredVersion,
+  desiredVersion: desiredVersion != null ? desiredVersion() : this.desiredVersion,
+  id: id ?? this.id,
+  interruptWindowDaysOfWeek: interruptWindowDaysOfWeek ?? this.interruptWindowDaysOfWeek,
+  interruptWindowDurationHours: interruptWindowDurationHours ?? this.interruptWindowDurationHours,
+  interruptWindowEmbargoDates: interruptWindowEmbargoDates ?? this.interruptWindowEmbargoDates,
+  interruptWindowHourOfDay: interruptWindowHourOfDay ?? this.interruptWindowHourOfDay,
+  lastHeartbeat: lastHeartbeat != null ? lastHeartbeat() : this.lastHeartbeat,
+  lastSeenVersion: lastSeenVersion != null ? lastSeenVersion() : this.lastSeenVersion,
+  pinnedVersion: pinnedVersion != null ? pinnedVersion() : this.pinnedVersion,
+  timezone: timezone ?? this.timezone,
+  upgradeAsap: upgradeAsap ?? this.upgradeAsap,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnControllerConnector &&
+          accountId == other.accountId &&
+          activated == other.activated &&
+          cloudflaredTunnelToken == other.cloudflaredTunnelToken &&
+          cohortDesiredVersion == other.cohortDesiredVersion &&
+          desiredVersion == other.desiredVersion &&
+          id == other.id &&
+          listEquals(interruptWindowDaysOfWeek, other.interruptWindowDaysOfWeek) &&
+          interruptWindowDurationHours == other.interruptWindowDurationHours &&
+          listEquals(interruptWindowEmbargoDates, other.interruptWindowEmbargoDates) &&
+          interruptWindowHourOfDay == other.interruptWindowHourOfDay &&
+          lastHeartbeat == other.lastHeartbeat &&
+          lastSeenVersion == other.lastSeenVersion &&
+          pinnedVersion == other.pinnedVersion &&
+          timezone == other.timezone &&
+          upgradeAsap == other.upgradeAsap; } 
+@override int get hashCode { return Object.hash(accountId, activated, cloudflaredTunnelToken, cohortDesiredVersion, desiredVersion, id, Object.hashAll(interruptWindowDaysOfWeek), interruptWindowDurationHours, Object.hashAll(interruptWindowEmbargoDates), interruptWindowHourOfDay, lastHeartbeat, lastSeenVersion, pinnedVersion, timezone, upgradeAsap); } 
+@override String toString() { return 'MconnControllerConnector(accountId: $accountId, activated: $activated, cloudflaredTunnelToken: $cloudflaredTunnelToken, cohortDesiredVersion: $cohortDesiredVersion, desiredVersion: $desiredVersion, id: $id, interruptWindowDaysOfWeek: $interruptWindowDaysOfWeek, interruptWindowDurationHours: $interruptWindowDurationHours, interruptWindowEmbargoDates: $interruptWindowEmbargoDates, interruptWindowHourOfDay: $interruptWindowHourOfDay, lastHeartbeat: $lastHeartbeat, lastSeenVersion: $lastSeenVersion, pinnedVersion: $pinnedVersion, timezone: $timezone, upgradeAsap: $upgradeAsap)'; } 
+ }

@@ -1,0 +1,235 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'destination_details_unimplemented.dart';import 'refund_destination_details_blik.dart';import 'refund_destination_details_br_bank_transfer.dart';import 'refund_destination_details_card.dart';import 'refund_destination_details_crypto.dart';import 'refund_destination_details_eu_bank_transfer.dart';import 'refund_destination_details_gb_bank_transfer.dart';import 'refund_destination_details_jp_bank_transfer.dart';import 'refund_destination_details_mb_way.dart';import 'refund_destination_details_multibanco.dart';import 'refund_destination_details_mx_bank_transfer.dart';import 'refund_destination_details_p24.dart';import 'refund_destination_details_paypal.dart';import 'refund_destination_details_swish.dart';import 'refund_destination_details_th_bank_transfer.dart';import 'refund_destination_details_us_bank_transfer.dart';/// 
+final class RefundDestinationDetails {const RefundDestinationDetails({this.affirm, this.afterpayClearpay, this.alipay, this.alma, this.amazonPay, this.auBankTransfer, this.blik, this.brBankTransfer, this.card, this.cashapp, this.crypto, this.customerCashBalance, this.eps, this.euBankTransfer, this.gbBankTransfer, this.giropay, this.grabpay, this.jpBankTransfer, this.klarna, this.mbWay, this.multibanco, this.mxBankTransfer, this.nzBankTransfer, this.p24, this.paynow, this.paypal, this.pix, this.revolut, this.sofort, this.swish, this.thBankTransfer, this.twint, required this.type, this.usBankTransfer, this.wechatPay, this.zip, });
+
+factory RefundDestinationDetails.fromJson(Map<String, dynamic> json) { return RefundDestinationDetails(
+  affirm: json['affirm'] != null ? DestinationDetailsUnimplemented.fromJson(json['affirm'] as Map<String, dynamic>) : null,
+  afterpayClearpay: json['afterpay_clearpay'] != null ? DestinationDetailsUnimplemented.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? DestinationDetailsUnimplemented.fromJson(json['alipay'] as Map<String, dynamic>) : null,
+  alma: json['alma'] != null ? DestinationDetailsUnimplemented.fromJson(json['alma'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? DestinationDetailsUnimplemented.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBankTransfer: json['au_bank_transfer'] != null ? DestinationDetailsUnimplemented.fromJson(json['au_bank_transfer'] as Map<String, dynamic>) : null,
+  blik: json['blik'] != null ? RefundDestinationDetailsBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
+  brBankTransfer: json['br_bank_transfer'] != null ? RefundDestinationDetailsBrBankTransfer.fromJson(json['br_bank_transfer'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? RefundDestinationDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? DestinationDetailsUnimplemented.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  crypto: json['crypto'] != null ? RefundDestinationDetailsCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
+  customerCashBalance: json['customer_cash_balance'] != null ? DestinationDetailsUnimplemented.fromJson(json['customer_cash_balance'] as Map<String, dynamic>) : null,
+  eps: json['eps'] != null ? DestinationDetailsUnimplemented.fromJson(json['eps'] as Map<String, dynamic>) : null,
+  euBankTransfer: json['eu_bank_transfer'] != null ? RefundDestinationDetailsEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
+  gbBankTransfer: json['gb_bank_transfer'] != null ? RefundDestinationDetailsGbBankTransfer.fromJson(json['gb_bank_transfer'] as Map<String, dynamic>) : null,
+  giropay: json['giropay'] != null ? DestinationDetailsUnimplemented.fromJson(json['giropay'] as Map<String, dynamic>) : null,
+  grabpay: json['grabpay'] != null ? DestinationDetailsUnimplemented.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
+  jpBankTransfer: json['jp_bank_transfer'] != null ? RefundDestinationDetailsJpBankTransfer.fromJson(json['jp_bank_transfer'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? DestinationDetailsUnimplemented.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  mbWay: json['mb_way'] != null ? RefundDestinationDetailsMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
+  multibanco: json['multibanco'] != null ? RefundDestinationDetailsMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
+  mxBankTransfer: json['mx_bank_transfer'] != null ? RefundDestinationDetailsMxBankTransfer.fromJson(json['mx_bank_transfer'] as Map<String, dynamic>) : null,
+  nzBankTransfer: json['nz_bank_transfer'] != null ? DestinationDetailsUnimplemented.fromJson(json['nz_bank_transfer'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? RefundDestinationDetailsP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  paynow: json['paynow'] != null ? DestinationDetailsUnimplemented.fromJson(json['paynow'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? RefundDestinationDetailsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  pix: json['pix'] != null ? DestinationDetailsUnimplemented.fromJson(json['pix'] as Map<String, dynamic>) : null,
+  revolut: json['revolut'] != null ? DestinationDetailsUnimplemented.fromJson(json['revolut'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? DestinationDetailsUnimplemented.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  swish: json['swish'] != null ? RefundDestinationDetailsSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
+  thBankTransfer: json['th_bank_transfer'] != null ? RefundDestinationDetailsThBankTransfer.fromJson(json['th_bank_transfer'] as Map<String, dynamic>) : null,
+  twint: json['twint'] != null ? DestinationDetailsUnimplemented.fromJson(json['twint'] as Map<String, dynamic>) : null,
+  type: json['type'] as String,
+  usBankTransfer: json['us_bank_transfer'] != null ? RefundDestinationDetailsUsBankTransfer.fromJson(json['us_bank_transfer'] as Map<String, dynamic>) : null,
+  wechatPay: json['wechat_pay'] != null ? DestinationDetailsUnimplemented.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
+  zip: json['zip'] != null ? DestinationDetailsUnimplemented.fromJson(json['zip'] as Map<String, dynamic>) : null,
+); }
+
+final DestinationDetailsUnimplemented? affirm;
+
+final DestinationDetailsUnimplemented? afterpayClearpay;
+
+final DestinationDetailsUnimplemented? alipay;
+
+final DestinationDetailsUnimplemented? alma;
+
+final DestinationDetailsUnimplemented? amazonPay;
+
+final DestinationDetailsUnimplemented? auBankTransfer;
+
+final RefundDestinationDetailsBlik? blik;
+
+final RefundDestinationDetailsBrBankTransfer? brBankTransfer;
+
+final RefundDestinationDetailsCard? card;
+
+final DestinationDetailsUnimplemented? cashapp;
+
+final RefundDestinationDetailsCrypto? crypto;
+
+final DestinationDetailsUnimplemented? customerCashBalance;
+
+final DestinationDetailsUnimplemented? eps;
+
+final RefundDestinationDetailsEuBankTransfer? euBankTransfer;
+
+final RefundDestinationDetailsGbBankTransfer? gbBankTransfer;
+
+final DestinationDetailsUnimplemented? giropay;
+
+final DestinationDetailsUnimplemented? grabpay;
+
+final RefundDestinationDetailsJpBankTransfer? jpBankTransfer;
+
+final DestinationDetailsUnimplemented? klarna;
+
+final RefundDestinationDetailsMbWay? mbWay;
+
+final RefundDestinationDetailsMultibanco? multibanco;
+
+final RefundDestinationDetailsMxBankTransfer? mxBankTransfer;
+
+final DestinationDetailsUnimplemented? nzBankTransfer;
+
+final RefundDestinationDetailsP24? p24;
+
+final DestinationDetailsUnimplemented? paynow;
+
+final RefundDestinationDetailsPaypal? paypal;
+
+final DestinationDetailsUnimplemented? pix;
+
+final DestinationDetailsUnimplemented? revolut;
+
+final DestinationDetailsUnimplemented? sofort;
+
+final RefundDestinationDetailsSwish? swish;
+
+final RefundDestinationDetailsThBankTransfer? thBankTransfer;
+
+final DestinationDetailsUnimplemented? twint;
+
+/// The type of transaction-specific details of the payment method used in the refund (e.g., `card`). An additional hash is included on `destination_details` with a name matching this value. It contains information specific to the refund transaction.
+final String type;
+
+final RefundDestinationDetailsUsBankTransfer? usBankTransfer;
+
+final DestinationDetailsUnimplemented? wechatPay;
+
+final DestinationDetailsUnimplemented? zip;
+
+Map<String, dynamic> toJson() { return {
+  if (affirm != null) 'affirm': affirm?.toJson(),
+  if (afterpayClearpay != null) 'afterpay_clearpay': afterpayClearpay?.toJson(),
+  if (alipay != null) 'alipay': alipay?.toJson(),
+  if (alma != null) 'alma': alma?.toJson(),
+  if (amazonPay != null) 'amazon_pay': amazonPay?.toJson(),
+  if (auBankTransfer != null) 'au_bank_transfer': auBankTransfer?.toJson(),
+  if (blik != null) 'blik': blik?.toJson(),
+  if (brBankTransfer != null) 'br_bank_transfer': brBankTransfer?.toJson(),
+  if (card != null) 'card': card?.toJson(),
+  if (cashapp != null) 'cashapp': cashapp?.toJson(),
+  if (crypto != null) 'crypto': crypto?.toJson(),
+  if (customerCashBalance != null) 'customer_cash_balance': customerCashBalance?.toJson(),
+  if (eps != null) 'eps': eps?.toJson(),
+  if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
+  if (gbBankTransfer != null) 'gb_bank_transfer': gbBankTransfer?.toJson(),
+  if (giropay != null) 'giropay': giropay?.toJson(),
+  if (grabpay != null) 'grabpay': grabpay?.toJson(),
+  if (jpBankTransfer != null) 'jp_bank_transfer': jpBankTransfer?.toJson(),
+  if (klarna != null) 'klarna': klarna?.toJson(),
+  if (mbWay != null) 'mb_way': mbWay?.toJson(),
+  if (multibanco != null) 'multibanco': multibanco?.toJson(),
+  if (mxBankTransfer != null) 'mx_bank_transfer': mxBankTransfer?.toJson(),
+  if (nzBankTransfer != null) 'nz_bank_transfer': nzBankTransfer?.toJson(),
+  if (p24 != null) 'p24': p24?.toJson(),
+  if (paynow != null) 'paynow': paynow?.toJson(),
+  if (paypal != null) 'paypal': paypal?.toJson(),
+  if (pix != null) 'pix': pix?.toJson(),
+  if (revolut != null) 'revolut': revolut?.toJson(),
+  if (sofort != null) 'sofort': sofort?.toJson(),
+  if (swish != null) 'swish': swish?.toJson(),
+  if (thBankTransfer != null) 'th_bank_transfer': thBankTransfer?.toJson(),
+  if (twint != null) 'twint': twint?.toJson(),
+  'type': type,
+  if (usBankTransfer != null) 'us_bank_transfer': usBankTransfer?.toJson(),
+  if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
+  if (zip != null) 'zip': zip?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+RefundDestinationDetails copyWith({DestinationDetailsUnimplemented Function()? affirm, DestinationDetailsUnimplemented Function()? afterpayClearpay, DestinationDetailsUnimplemented Function()? alipay, DestinationDetailsUnimplemented Function()? alma, DestinationDetailsUnimplemented Function()? amazonPay, DestinationDetailsUnimplemented Function()? auBankTransfer, RefundDestinationDetailsBlik Function()? blik, RefundDestinationDetailsBrBankTransfer Function()? brBankTransfer, RefundDestinationDetailsCard Function()? card, DestinationDetailsUnimplemented Function()? cashapp, RefundDestinationDetailsCrypto Function()? crypto, DestinationDetailsUnimplemented Function()? customerCashBalance, DestinationDetailsUnimplemented Function()? eps, RefundDestinationDetailsEuBankTransfer Function()? euBankTransfer, RefundDestinationDetailsGbBankTransfer Function()? gbBankTransfer, DestinationDetailsUnimplemented Function()? giropay, DestinationDetailsUnimplemented Function()? grabpay, RefundDestinationDetailsJpBankTransfer Function()? jpBankTransfer, DestinationDetailsUnimplemented Function()? klarna, RefundDestinationDetailsMbWay Function()? mbWay, RefundDestinationDetailsMultibanco Function()? multibanco, RefundDestinationDetailsMxBankTransfer Function()? mxBankTransfer, DestinationDetailsUnimplemented Function()? nzBankTransfer, RefundDestinationDetailsP24 Function()? p24, DestinationDetailsUnimplemented Function()? paynow, RefundDestinationDetailsPaypal Function()? paypal, DestinationDetailsUnimplemented Function()? pix, DestinationDetailsUnimplemented Function()? revolut, DestinationDetailsUnimplemented Function()? sofort, RefundDestinationDetailsSwish Function()? swish, RefundDestinationDetailsThBankTransfer Function()? thBankTransfer, DestinationDetailsUnimplemented Function()? twint, String? type, RefundDestinationDetailsUsBankTransfer Function()? usBankTransfer, DestinationDetailsUnimplemented Function()? wechatPay, DestinationDetailsUnimplemented Function()? zip, }) { return RefundDestinationDetails(
+  affirm: affirm != null ? affirm() : this.affirm,
+  afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
+  alipay: alipay != null ? alipay() : this.alipay,
+  alma: alma != null ? alma() : this.alma,
+  amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
+  auBankTransfer: auBankTransfer != null ? auBankTransfer() : this.auBankTransfer,
+  blik: blik != null ? blik() : this.blik,
+  brBankTransfer: brBankTransfer != null ? brBankTransfer() : this.brBankTransfer,
+  card: card != null ? card() : this.card,
+  cashapp: cashapp != null ? cashapp() : this.cashapp,
+  crypto: crypto != null ? crypto() : this.crypto,
+  customerCashBalance: customerCashBalance != null ? customerCashBalance() : this.customerCashBalance,
+  eps: eps != null ? eps() : this.eps,
+  euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
+  gbBankTransfer: gbBankTransfer != null ? gbBankTransfer() : this.gbBankTransfer,
+  giropay: giropay != null ? giropay() : this.giropay,
+  grabpay: grabpay != null ? grabpay() : this.grabpay,
+  jpBankTransfer: jpBankTransfer != null ? jpBankTransfer() : this.jpBankTransfer,
+  klarna: klarna != null ? klarna() : this.klarna,
+  mbWay: mbWay != null ? mbWay() : this.mbWay,
+  multibanco: multibanco != null ? multibanco() : this.multibanco,
+  mxBankTransfer: mxBankTransfer != null ? mxBankTransfer() : this.mxBankTransfer,
+  nzBankTransfer: nzBankTransfer != null ? nzBankTransfer() : this.nzBankTransfer,
+  p24: p24 != null ? p24() : this.p24,
+  paynow: paynow != null ? paynow() : this.paynow,
+  paypal: paypal != null ? paypal() : this.paypal,
+  pix: pix != null ? pix() : this.pix,
+  revolut: revolut != null ? revolut() : this.revolut,
+  sofort: sofort != null ? sofort() : this.sofort,
+  swish: swish != null ? swish() : this.swish,
+  thBankTransfer: thBankTransfer != null ? thBankTransfer() : this.thBankTransfer,
+  twint: twint != null ? twint() : this.twint,
+  type: type ?? this.type,
+  usBankTransfer: usBankTransfer != null ? usBankTransfer() : this.usBankTransfer,
+  wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
+  zip: zip != null ? zip() : this.zip,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RefundDestinationDetails &&
+          affirm == other.affirm &&
+          afterpayClearpay == other.afterpayClearpay &&
+          alipay == other.alipay &&
+          alma == other.alma &&
+          amazonPay == other.amazonPay &&
+          auBankTransfer == other.auBankTransfer &&
+          blik == other.blik &&
+          brBankTransfer == other.brBankTransfer &&
+          card == other.card &&
+          cashapp == other.cashapp &&
+          crypto == other.crypto &&
+          customerCashBalance == other.customerCashBalance &&
+          eps == other.eps &&
+          euBankTransfer == other.euBankTransfer &&
+          gbBankTransfer == other.gbBankTransfer &&
+          giropay == other.giropay &&
+          grabpay == other.grabpay &&
+          jpBankTransfer == other.jpBankTransfer &&
+          klarna == other.klarna &&
+          mbWay == other.mbWay &&
+          multibanco == other.multibanco &&
+          mxBankTransfer == other.mxBankTransfer &&
+          nzBankTransfer == other.nzBankTransfer &&
+          p24 == other.p24 &&
+          paynow == other.paynow &&
+          paypal == other.paypal &&
+          pix == other.pix &&
+          revolut == other.revolut &&
+          sofort == other.sofort &&
+          swish == other.swish &&
+          thBankTransfer == other.thBankTransfer &&
+          twint == other.twint &&
+          type == other.type &&
+          usBankTransfer == other.usBankTransfer &&
+          wechatPay == other.wechatPay &&
+          zip == other.zip; } 
+@override int get hashCode { return Object.hashAll([affirm, afterpayClearpay, alipay, alma, amazonPay, auBankTransfer, blik, brBankTransfer, card, cashapp, crypto, customerCashBalance, eps, euBankTransfer, gbBankTransfer, giropay, grabpay, jpBankTransfer, klarna, mbWay, multibanco, mxBankTransfer, nzBankTransfer, p24, paynow, paypal, pix, revolut, sofort, swish, thBankTransfer, twint, type, usBankTransfer, wechatPay, zip]); } 
+@override String toString() { return 'RefundDestinationDetails(affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, alma: $alma, amazonPay: $amazonPay, auBankTransfer: $auBankTransfer, blik: $blik, brBankTransfer: $brBankTransfer, card: $card, cashapp: $cashapp, crypto: $crypto, customerCashBalance: $customerCashBalance, eps: $eps, euBankTransfer: $euBankTransfer, gbBankTransfer: $gbBankTransfer, giropay: $giropay, grabpay: $grabpay, jpBankTransfer: $jpBankTransfer, klarna: $klarna, mbWay: $mbWay, multibanco: $multibanco, mxBankTransfer: $mxBankTransfer, nzBankTransfer: $nzBankTransfer, p24: $p24, paynow: $paynow, paypal: $paypal, pix: $pix, revolut: $revolut, sofort: $sofort, swish: $swish, thBankTransfer: $thBankTransfer, twint: $twint, type: $type, usBankTransfer: $usBankTransfer, wechatPay: $wechatPay, zip: $zip)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class IssuesSetLabelsRequestVariant1 {const IssuesSetLabelsRequestVariant1({this.labels});
+
+factory IssuesSetLabelsRequestVariant1.fromJson(Map<String, dynamic> json) { return IssuesSetLabelsRequestVariant1(
+  labels: (json['labels'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The names of the labels to set for the issue. The labels you set replace any existing labels. You can pass an empty array to remove all labels. Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key. You can also add labels to the existing labels for an issue. For more information, see "[Add labels to an issue](https://docs.github.com/rest/issues/labels#add-labels-to-an-issue)."
+final List<String>? labels;
+
+Map<String, dynamic> toJson() { return {
+  'labels': ?labels,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuesSetLabelsRequestVariant1 copyWith({List<String> Function()? labels}) { return IssuesSetLabelsRequestVariant1(
+  labels: labels != null ? labels() : this.labels,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuesSetLabelsRequestVariant1 &&
+          listEquals(labels, other.labels); } 
+@override int get hashCode { return Object.hashAll(labels ?? const []).hashCode; } 
+@override String toString() { return 'IssuesSetLabelsRequestVariant1(labels: $labels)'; } 
+ }

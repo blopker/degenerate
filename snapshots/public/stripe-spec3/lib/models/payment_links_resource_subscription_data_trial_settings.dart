@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'subscriptions_trials_resource_trial_settings.dart';/// Settings related to subscription trials.
+final class PaymentLinksResourceSubscriptionDataTrialSettings {const PaymentLinksResourceSubscriptionDataTrialSettings({this.subscriptionsTrialsResourceTrialSettings});
+
+factory PaymentLinksResourceSubscriptionDataTrialSettings.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceSubscriptionDataTrialSettings(
+  subscriptionsTrialsResourceTrialSettings: SubscriptionsTrialsResourceTrialSettings.canParse(json) ? SubscriptionsTrialsResourceTrialSettings.fromJson(json) : null,
+); }
+
+final SubscriptionsTrialsResourceTrialSettings? subscriptionsTrialsResourceTrialSettings;
+
+/// At least one variant must be present.
+bool get isValid { return subscriptionsTrialsResourceTrialSettings != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?subscriptionsTrialsResourceTrialSettings?.toJson(),
+}; } 
+ }

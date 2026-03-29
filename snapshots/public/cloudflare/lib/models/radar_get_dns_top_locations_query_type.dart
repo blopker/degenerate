@@ -1,0 +1,284 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsTopLocationsQueryType {const RadarGetDnsTopLocationsQueryType._(this.value);
+
+factory RadarGetDnsTopLocationsQueryType.fromJson(String json) { return switch (json) {
+  'A' => a,
+  'AAAA' => aaaa,
+  'A6' => a6,
+  'AFSDB' => afsdb,
+  'ANY' => any,
+  'APL' => apl,
+  'ATMA' => atma,
+  'AXFR' => axfr,
+  'CAA' => caa,
+  'CDNSKEY' => cdnskey,
+  'CDS' => cds,
+  'CERT' => cert,
+  'CNAME' => cname,
+  'CSYNC' => csync,
+  'DHCID' => dhcid,
+  'DLV' => dlv,
+  'DNAME' => dname,
+  'DNSKEY' => dnskey,
+  'DOA' => doa,
+  'DS' => ds,
+  'EID' => eid,
+  'EUI48' => eui48,
+  'EUI64' => eui64,
+  'GPOS' => gpos,
+  'GID' => gid,
+  'HINFO' => hinfo,
+  'HIP' => hip,
+  'HTTPS' => https,
+  'IPSECKEY' => ipseckey,
+  'ISDN' => isdn,
+  'IXFR' => ixfr,
+  'KEY' => key,
+  'KX' => kx,
+  'L32' => l32,
+  'L64' => l64,
+  'LOC' => loc,
+  'LP' => lp,
+  'MAILA' => maila,
+  'MAILB' => mailb,
+  'MB' => mb,
+  'MD' => md,
+  'MF' => mf,
+  'MG' => mg,
+  'MINFO' => minfo,
+  'MR' => mr,
+  'MX' => mx,
+  'NAPTR' => naptr,
+  'NB' => nb,
+  'NBSTAT' => nbstat,
+  'NID' => nid,
+  'NIMLOC' => nimloc,
+  'NINFO' => ninfo,
+  'NS' => ns,
+  'NSAP' => nsap,
+  'NSEC' => nsec,
+  'NSEC3' => nsec3,
+  'NSEC3PARAM' => nsec3Param,
+  'NULL' => $null,
+  'NXT' => nxt,
+  'OPENPGPKEY' => openpgpkey,
+  'OPT' => opt,
+  'PTR' => ptr,
+  'PX' => px,
+  'RKEY' => rkey,
+  'RP' => rp,
+  'RRSIG' => rrsig,
+  'RT' => rt,
+  'SIG' => sig,
+  'SINK' => sink,
+  'SMIMEA' => smimea,
+  'SOA' => soa,
+  'SPF' => spf,
+  'SRV' => srv,
+  'SSHFP' => sshfp,
+  'SVCB' => svcb,
+  'TA' => ta,
+  'TALINK' => talink,
+  'TKEY' => tkey,
+  'TLSA' => tlsa,
+  'TSIG' => tsig,
+  'TXT' => txt,
+  'UINFO' => uinfo,
+  'UID' => uid,
+  'UNSPEC' => unspec,
+  'URI' => uri,
+  'WKS' => wks,
+  'X25' => x25,
+  'ZONEMD' => zonemd,
+  _ => RadarGetDnsTopLocationsQueryType._(json),
+}; }
+
+static const RadarGetDnsTopLocationsQueryType a = RadarGetDnsTopLocationsQueryType._('A');
+
+static const RadarGetDnsTopLocationsQueryType aaaa = RadarGetDnsTopLocationsQueryType._('AAAA');
+
+static const RadarGetDnsTopLocationsQueryType a6 = RadarGetDnsTopLocationsQueryType._('A6');
+
+static const RadarGetDnsTopLocationsQueryType afsdb = RadarGetDnsTopLocationsQueryType._('AFSDB');
+
+static const RadarGetDnsTopLocationsQueryType any = RadarGetDnsTopLocationsQueryType._('ANY');
+
+static const RadarGetDnsTopLocationsQueryType apl = RadarGetDnsTopLocationsQueryType._('APL');
+
+static const RadarGetDnsTopLocationsQueryType atma = RadarGetDnsTopLocationsQueryType._('ATMA');
+
+static const RadarGetDnsTopLocationsQueryType axfr = RadarGetDnsTopLocationsQueryType._('AXFR');
+
+static const RadarGetDnsTopLocationsQueryType caa = RadarGetDnsTopLocationsQueryType._('CAA');
+
+static const RadarGetDnsTopLocationsQueryType cdnskey = RadarGetDnsTopLocationsQueryType._('CDNSKEY');
+
+static const RadarGetDnsTopLocationsQueryType cds = RadarGetDnsTopLocationsQueryType._('CDS');
+
+static const RadarGetDnsTopLocationsQueryType cert = RadarGetDnsTopLocationsQueryType._('CERT');
+
+static const RadarGetDnsTopLocationsQueryType cname = RadarGetDnsTopLocationsQueryType._('CNAME');
+
+static const RadarGetDnsTopLocationsQueryType csync = RadarGetDnsTopLocationsQueryType._('CSYNC');
+
+static const RadarGetDnsTopLocationsQueryType dhcid = RadarGetDnsTopLocationsQueryType._('DHCID');
+
+static const RadarGetDnsTopLocationsQueryType dlv = RadarGetDnsTopLocationsQueryType._('DLV');
+
+static const RadarGetDnsTopLocationsQueryType dname = RadarGetDnsTopLocationsQueryType._('DNAME');
+
+static const RadarGetDnsTopLocationsQueryType dnskey = RadarGetDnsTopLocationsQueryType._('DNSKEY');
+
+static const RadarGetDnsTopLocationsQueryType doa = RadarGetDnsTopLocationsQueryType._('DOA');
+
+static const RadarGetDnsTopLocationsQueryType ds = RadarGetDnsTopLocationsQueryType._('DS');
+
+static const RadarGetDnsTopLocationsQueryType eid = RadarGetDnsTopLocationsQueryType._('EID');
+
+static const RadarGetDnsTopLocationsQueryType eui48 = RadarGetDnsTopLocationsQueryType._('EUI48');
+
+static const RadarGetDnsTopLocationsQueryType eui64 = RadarGetDnsTopLocationsQueryType._('EUI64');
+
+static const RadarGetDnsTopLocationsQueryType gpos = RadarGetDnsTopLocationsQueryType._('GPOS');
+
+static const RadarGetDnsTopLocationsQueryType gid = RadarGetDnsTopLocationsQueryType._('GID');
+
+static const RadarGetDnsTopLocationsQueryType hinfo = RadarGetDnsTopLocationsQueryType._('HINFO');
+
+static const RadarGetDnsTopLocationsQueryType hip = RadarGetDnsTopLocationsQueryType._('HIP');
+
+static const RadarGetDnsTopLocationsQueryType https = RadarGetDnsTopLocationsQueryType._('HTTPS');
+
+static const RadarGetDnsTopLocationsQueryType ipseckey = RadarGetDnsTopLocationsQueryType._('IPSECKEY');
+
+static const RadarGetDnsTopLocationsQueryType isdn = RadarGetDnsTopLocationsQueryType._('ISDN');
+
+static const RadarGetDnsTopLocationsQueryType ixfr = RadarGetDnsTopLocationsQueryType._('IXFR');
+
+static const RadarGetDnsTopLocationsQueryType key = RadarGetDnsTopLocationsQueryType._('KEY');
+
+static const RadarGetDnsTopLocationsQueryType kx = RadarGetDnsTopLocationsQueryType._('KX');
+
+static const RadarGetDnsTopLocationsQueryType l32 = RadarGetDnsTopLocationsQueryType._('L32');
+
+static const RadarGetDnsTopLocationsQueryType l64 = RadarGetDnsTopLocationsQueryType._('L64');
+
+static const RadarGetDnsTopLocationsQueryType loc = RadarGetDnsTopLocationsQueryType._('LOC');
+
+static const RadarGetDnsTopLocationsQueryType lp = RadarGetDnsTopLocationsQueryType._('LP');
+
+static const RadarGetDnsTopLocationsQueryType maila = RadarGetDnsTopLocationsQueryType._('MAILA');
+
+static const RadarGetDnsTopLocationsQueryType mailb = RadarGetDnsTopLocationsQueryType._('MAILB');
+
+static const RadarGetDnsTopLocationsQueryType mb = RadarGetDnsTopLocationsQueryType._('MB');
+
+static const RadarGetDnsTopLocationsQueryType md = RadarGetDnsTopLocationsQueryType._('MD');
+
+static const RadarGetDnsTopLocationsQueryType mf = RadarGetDnsTopLocationsQueryType._('MF');
+
+static const RadarGetDnsTopLocationsQueryType mg = RadarGetDnsTopLocationsQueryType._('MG');
+
+static const RadarGetDnsTopLocationsQueryType minfo = RadarGetDnsTopLocationsQueryType._('MINFO');
+
+static const RadarGetDnsTopLocationsQueryType mr = RadarGetDnsTopLocationsQueryType._('MR');
+
+static const RadarGetDnsTopLocationsQueryType mx = RadarGetDnsTopLocationsQueryType._('MX');
+
+static const RadarGetDnsTopLocationsQueryType naptr = RadarGetDnsTopLocationsQueryType._('NAPTR');
+
+static const RadarGetDnsTopLocationsQueryType nb = RadarGetDnsTopLocationsQueryType._('NB');
+
+static const RadarGetDnsTopLocationsQueryType nbstat = RadarGetDnsTopLocationsQueryType._('NBSTAT');
+
+static const RadarGetDnsTopLocationsQueryType nid = RadarGetDnsTopLocationsQueryType._('NID');
+
+static const RadarGetDnsTopLocationsQueryType nimloc = RadarGetDnsTopLocationsQueryType._('NIMLOC');
+
+static const RadarGetDnsTopLocationsQueryType ninfo = RadarGetDnsTopLocationsQueryType._('NINFO');
+
+static const RadarGetDnsTopLocationsQueryType ns = RadarGetDnsTopLocationsQueryType._('NS');
+
+static const RadarGetDnsTopLocationsQueryType nsap = RadarGetDnsTopLocationsQueryType._('NSAP');
+
+static const RadarGetDnsTopLocationsQueryType nsec = RadarGetDnsTopLocationsQueryType._('NSEC');
+
+static const RadarGetDnsTopLocationsQueryType nsec3 = RadarGetDnsTopLocationsQueryType._('NSEC3');
+
+static const RadarGetDnsTopLocationsQueryType nsec3Param = RadarGetDnsTopLocationsQueryType._('NSEC3PARAM');
+
+static const RadarGetDnsTopLocationsQueryType $null = RadarGetDnsTopLocationsQueryType._('NULL');
+
+static const RadarGetDnsTopLocationsQueryType nxt = RadarGetDnsTopLocationsQueryType._('NXT');
+
+static const RadarGetDnsTopLocationsQueryType openpgpkey = RadarGetDnsTopLocationsQueryType._('OPENPGPKEY');
+
+static const RadarGetDnsTopLocationsQueryType opt = RadarGetDnsTopLocationsQueryType._('OPT');
+
+static const RadarGetDnsTopLocationsQueryType ptr = RadarGetDnsTopLocationsQueryType._('PTR');
+
+static const RadarGetDnsTopLocationsQueryType px = RadarGetDnsTopLocationsQueryType._('PX');
+
+static const RadarGetDnsTopLocationsQueryType rkey = RadarGetDnsTopLocationsQueryType._('RKEY');
+
+static const RadarGetDnsTopLocationsQueryType rp = RadarGetDnsTopLocationsQueryType._('RP');
+
+static const RadarGetDnsTopLocationsQueryType rrsig = RadarGetDnsTopLocationsQueryType._('RRSIG');
+
+static const RadarGetDnsTopLocationsQueryType rt = RadarGetDnsTopLocationsQueryType._('RT');
+
+static const RadarGetDnsTopLocationsQueryType sig = RadarGetDnsTopLocationsQueryType._('SIG');
+
+static const RadarGetDnsTopLocationsQueryType sink = RadarGetDnsTopLocationsQueryType._('SINK');
+
+static const RadarGetDnsTopLocationsQueryType smimea = RadarGetDnsTopLocationsQueryType._('SMIMEA');
+
+static const RadarGetDnsTopLocationsQueryType soa = RadarGetDnsTopLocationsQueryType._('SOA');
+
+static const RadarGetDnsTopLocationsQueryType spf = RadarGetDnsTopLocationsQueryType._('SPF');
+
+static const RadarGetDnsTopLocationsQueryType srv = RadarGetDnsTopLocationsQueryType._('SRV');
+
+static const RadarGetDnsTopLocationsQueryType sshfp = RadarGetDnsTopLocationsQueryType._('SSHFP');
+
+static const RadarGetDnsTopLocationsQueryType svcb = RadarGetDnsTopLocationsQueryType._('SVCB');
+
+static const RadarGetDnsTopLocationsQueryType ta = RadarGetDnsTopLocationsQueryType._('TA');
+
+static const RadarGetDnsTopLocationsQueryType talink = RadarGetDnsTopLocationsQueryType._('TALINK');
+
+static const RadarGetDnsTopLocationsQueryType tkey = RadarGetDnsTopLocationsQueryType._('TKEY');
+
+static const RadarGetDnsTopLocationsQueryType tlsa = RadarGetDnsTopLocationsQueryType._('TLSA');
+
+static const RadarGetDnsTopLocationsQueryType tsig = RadarGetDnsTopLocationsQueryType._('TSIG');
+
+static const RadarGetDnsTopLocationsQueryType txt = RadarGetDnsTopLocationsQueryType._('TXT');
+
+static const RadarGetDnsTopLocationsQueryType uinfo = RadarGetDnsTopLocationsQueryType._('UINFO');
+
+static const RadarGetDnsTopLocationsQueryType uid = RadarGetDnsTopLocationsQueryType._('UID');
+
+static const RadarGetDnsTopLocationsQueryType unspec = RadarGetDnsTopLocationsQueryType._('UNSPEC');
+
+static const RadarGetDnsTopLocationsQueryType uri = RadarGetDnsTopLocationsQueryType._('URI');
+
+static const RadarGetDnsTopLocationsQueryType wks = RadarGetDnsTopLocationsQueryType._('WKS');
+
+static const RadarGetDnsTopLocationsQueryType x25 = RadarGetDnsTopLocationsQueryType._('X25');
+
+static const RadarGetDnsTopLocationsQueryType zonemd = RadarGetDnsTopLocationsQueryType._('ZONEMD');
+
+static const List<RadarGetDnsTopLocationsQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsTopLocationsQueryType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsTopLocationsQueryType($value)'; } 
+ }

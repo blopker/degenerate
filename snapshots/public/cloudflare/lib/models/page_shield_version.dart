@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'page_shield_cryptomining_score.dart';import 'page_shield_dataflow_score.dart';import 'page_shield_fetched_at.dart';import 'page_shield_hash.dart';import 'page_shield_js_integrity_score.dart';import 'page_shield_magecart_score.dart';import 'page_shield_malware_score.dart';import 'page_shield_obfuscation_score.dart';/// The version of the analyzed script.
+final class PageShieldVersion {const PageShieldVersion({this.cryptominingScore, this.dataflowScore, this.fetchedAt, this.hash, this.jsIntegrityScore, this.magecartScore, this.malwareScore, this.obfuscationScore, });
+
+factory PageShieldVersion.fromJson(Map<String, dynamic> json) { return PageShieldVersion(
+  cryptominingScore: json['cryptomining_score'] != null ? PageShieldCryptominingScore.fromJson(json['cryptomining_score'] as num) : null,
+  dataflowScore: json['dataflow_score'] != null ? PageShieldDataflowScore.fromJson(json['dataflow_score'] as num) : null,
+  fetchedAt: json['fetched_at'] != null ? PageShieldFetchedAt.fromJson(json['fetched_at'] as String) : null,
+  hash: json['hash'] != null ? PageShieldHash.fromJson(json['hash'] as String) : null,
+  jsIntegrityScore: json['js_integrity_score'] != null ? PageShieldJsIntegrityScore.fromJson(json['js_integrity_score'] as num) : null,
+  magecartScore: json['magecart_score'] != null ? PageShieldMagecartScore.fromJson(json['magecart_score'] as num) : null,
+  malwareScore: json['malware_score'] != null ? PageShieldMalwareScore.fromJson(json['malware_score'] as num) : null,
+  obfuscationScore: json['obfuscation_score'] != null ? PageShieldObfuscationScore.fromJson(json['obfuscation_score'] as num) : null,
+); }
+
+/// The cryptomining score of the JavaScript content.
+final PageShieldCryptominingScore? cryptominingScore;
+
+/// The dataflow score of the JavaScript content.
+final PageShieldDataflowScore? dataflowScore;
+
+/// The timestamp of when the script was last fetched.
+final PageShieldFetchedAt? fetchedAt;
+
+/// The computed hash of the analyzed script.
+final PageShieldHash? hash;
+
+/// The integrity score of the JavaScript content.
+final PageShieldJsIntegrityScore? jsIntegrityScore;
+
+/// The magecart score of the JavaScript content.
+final PageShieldMagecartScore? magecartScore;
+
+/// The malware score of the JavaScript content.
+final PageShieldMalwareScore? malwareScore;
+
+/// The obfuscation score of the JavaScript content.
+final PageShieldObfuscationScore? obfuscationScore;
+
+Map<String, dynamic> toJson() { return {
+  if (cryptominingScore != null) 'cryptomining_score': cryptominingScore?.toJson(),
+  if (dataflowScore != null) 'dataflow_score': dataflowScore?.toJson(),
+  if (fetchedAt != null) 'fetched_at': fetchedAt?.toJson(),
+  if (hash != null) 'hash': hash?.toJson(),
+  if (jsIntegrityScore != null) 'js_integrity_score': jsIntegrityScore?.toJson(),
+  if (magecartScore != null) 'magecart_score': magecartScore?.toJson(),
+  if (malwareScore != null) 'malware_score': malwareScore?.toJson(),
+  if (obfuscationScore != null) 'obfuscation_score': obfuscationScore?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PageShieldVersion copyWith({PageShieldCryptominingScore? Function()? cryptominingScore, PageShieldDataflowScore? Function()? dataflowScore, PageShieldFetchedAt? Function()? fetchedAt, PageShieldHash? Function()? hash, PageShieldJsIntegrityScore? Function()? jsIntegrityScore, PageShieldMagecartScore? Function()? magecartScore, PageShieldMalwareScore? Function()? malwareScore, PageShieldObfuscationScore? Function()? obfuscationScore, }) { return PageShieldVersion(
+  cryptominingScore: cryptominingScore != null ? cryptominingScore() : this.cryptominingScore,
+  dataflowScore: dataflowScore != null ? dataflowScore() : this.dataflowScore,
+  fetchedAt: fetchedAt != null ? fetchedAt() : this.fetchedAt,
+  hash: hash != null ? hash() : this.hash,
+  jsIntegrityScore: jsIntegrityScore != null ? jsIntegrityScore() : this.jsIntegrityScore,
+  magecartScore: magecartScore != null ? magecartScore() : this.magecartScore,
+  malwareScore: malwareScore != null ? malwareScore() : this.malwareScore,
+  obfuscationScore: obfuscationScore != null ? obfuscationScore() : this.obfuscationScore,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PageShieldVersion &&
+          cryptominingScore == other.cryptominingScore &&
+          dataflowScore == other.dataflowScore &&
+          fetchedAt == other.fetchedAt &&
+          hash == other.hash &&
+          jsIntegrityScore == other.jsIntegrityScore &&
+          magecartScore == other.magecartScore &&
+          malwareScore == other.malwareScore &&
+          obfuscationScore == other.obfuscationScore; } 
+@override int get hashCode { return Object.hash(cryptominingScore, dataflowScore, fetchedAt, hash, jsIntegrityScore, magecartScore, malwareScore, obfuscationScore); } 
+@override String toString() { return 'PageShieldVersion(cryptominingScore: $cryptominingScore, dataflowScore: $dataflowScore, fetchedAt: $fetchedAt, hash: $hash, jsIntegrityScore: $jsIntegrityScore, magecartScore: $magecartScore, malwareScore: $malwareScore, obfuscationScore: $obfuscationScore)'; } 
+ }

@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'reasoning_effort.dart';/// The sampling parameters for the model.
+final class GraderScoreModelSamplingParams {const GraderScoreModelSamplingParams({this.seed, this.topP, this.temperature, this.maxCompletionsTokens, this.reasoningEffort, });
+
+factory GraderScoreModelSamplingParams.fromJson(Map<String, dynamic> json) { return GraderScoreModelSamplingParams(
+  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  maxCompletionsTokens: json['max_completions_tokens'] != null ? (json['max_completions_tokens'] as num).toInt() : null,
+  reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
+); }
+
+/// A seed value to initialize the randomness, during sampling.
+/// 
+final int? seed;
+
+/// An alternative to temperature for nucleus sampling; 1.0 includes all tokens.
+/// 
+final double? topP;
+
+/// A higher temperature increases randomness in the outputs.
+/// 
+final double? temperature;
+
+/// The maximum number of tokens the grader model may generate in its response.
+/// 
+final int? maxCompletionsTokens;
+
+final ReasoningEffort? reasoningEffort;
+
+Map<String, dynamic> toJson() { return {
+  'seed': ?seed,
+  'top_p': ?topP,
+  'temperature': ?temperature,
+  'max_completions_tokens': ?maxCompletionsTokens,
+  if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GraderScoreModelSamplingParams copyWith({int? Function()? seed, double? Function()? topP, double? Function()? temperature, int? Function()? maxCompletionsTokens, ReasoningEffort? Function()? reasoningEffort, }) { return GraderScoreModelSamplingParams(
+  seed: seed != null ? seed() : this.seed,
+  topP: topP != null ? topP() : this.topP,
+  temperature: temperature != null ? temperature() : this.temperature,
+  maxCompletionsTokens: maxCompletionsTokens != null ? maxCompletionsTokens() : this.maxCompletionsTokens,
+  reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GraderScoreModelSamplingParams &&
+          seed == other.seed &&
+          topP == other.topP &&
+          temperature == other.temperature &&
+          maxCompletionsTokens == other.maxCompletionsTokens &&
+          reasoningEffort == other.reasoningEffort; } 
+@override int get hashCode { return Object.hash(seed, topP, temperature, maxCompletionsTokens, reasoningEffort); } 
+@override String toString() { return 'GraderScoreModelSamplingParams(seed: $seed, topP: $topP, temperature: $temperature, maxCompletionsTokens: $maxCompletionsTokens, reasoningEffort: $reasoningEffort)'; } 
+ }

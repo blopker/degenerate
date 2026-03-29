@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ActivityListReposStarredByUserDirection {const ActivityListReposStarredByUserDirection._(this.value);
+
+factory ActivityListReposStarredByUserDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => ActivityListReposStarredByUserDirection._(json),
+}; }
+
+static const ActivityListReposStarredByUserDirection asc = ActivityListReposStarredByUserDirection._('asc');
+
+static const ActivityListReposStarredByUserDirection desc = ActivityListReposStarredByUserDirection._('desc');
+
+static const List<ActivityListReposStarredByUserDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActivityListReposStarredByUserDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActivityListReposStarredByUserDirection($value)'; } 
+ }

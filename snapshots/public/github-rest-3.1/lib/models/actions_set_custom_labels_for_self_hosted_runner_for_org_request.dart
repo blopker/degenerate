@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest {const ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest({required this.labels});
+
+factory ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest(
+  labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels.
+final List<String> labels;
+
+Map<String, dynamic> toJson() { return {
+  'labels': labels,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('labels'); } 
+ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest copyWith({List<String>? labels}) { return ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest(
+  labels: labels ?? this.labels,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest &&
+          listEquals(labels, other.labels); } 
+@override int get hashCode { return Object.hashAll(labels).hashCode; } 
+@override String toString() { return 'ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest(labels: $labels)'; } 
+ }

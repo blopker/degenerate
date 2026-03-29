@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'repos_create_attestation_request_bundle.dart';final class ReposCreateAttestationRequest {const ReposCreateAttestationRequest({required this.bundle});
+
+factory ReposCreateAttestationRequest.fromJson(Map<String, dynamic> json) { return ReposCreateAttestationRequest(
+  bundle: ReposCreateAttestationRequestBundle.fromJson(json['bundle'] as Map<String, dynamic>),
+); }
+
+/// The attestation's Sigstore Bundle.
+/// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+final ReposCreateAttestationRequestBundle bundle;
+
+Map<String, dynamic> toJson() { return {
+  'bundle': bundle.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bundle'); } 
+ReposCreateAttestationRequest copyWith({ReposCreateAttestationRequestBundle? bundle}) { return ReposCreateAttestationRequest(
+  bundle: bundle ?? this.bundle,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposCreateAttestationRequest &&
+          bundle == other.bundle; } 
+@override int get hashCode { return bundle.hashCode; } 
+@override String toString() { return 'ReposCreateAttestationRequest(bundle: $bundle)'; } 
+ }

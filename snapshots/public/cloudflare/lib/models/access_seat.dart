@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_access_seat.dart';import 'access_gateway_seat.dart';import 'access_seat_uid.dart';final class AccessSeat {const AccessSeat({required this.accessSeat, required this.gatewaySeat, required this.seatUid, });
+
+factory AccessSeat.fromJson(Map<String, dynamic> json) { return AccessSeat(
+  accessSeat: AccessAccessSeat.fromJson(json['access_seat'] as bool),
+  gatewaySeat: AccessGatewaySeat.fromJson(json['gateway_seat'] as bool),
+  seatUid: AccessSeatUid.fromJson(json['seat_uid'] as String),
+); }
+
+/// True if the seat is part of Access.
+final AccessAccessSeat accessSeat;
+
+/// True if the seat is part of Gateway.
+final AccessGatewaySeat gatewaySeat;
+
+final AccessSeatUid seatUid;
+
+Map<String, dynamic> toJson() { return {
+  'access_seat': accessSeat.toJson(),
+  'gateway_seat': gatewaySeat.toJson(),
+  'seat_uid': seatUid.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_seat') &&
+      json.containsKey('gateway_seat') &&
+      json.containsKey('seat_uid'); } 
+AccessSeat copyWith({AccessAccessSeat? accessSeat, AccessGatewaySeat? gatewaySeat, AccessSeatUid? seatUid, }) { return AccessSeat(
+  accessSeat: accessSeat ?? this.accessSeat,
+  gatewaySeat: gatewaySeat ?? this.gatewaySeat,
+  seatUid: seatUid ?? this.seatUid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessSeat &&
+          accessSeat == other.accessSeat &&
+          gatewaySeat == other.gatewaySeat &&
+          seatUid == other.seatUid; } 
+@override int get hashCode { return Object.hash(accessSeat, gatewaySeat, seatUid); } 
+@override String toString() { return 'AccessSeat(accessSeat: $accessSeat, gatewaySeat: $gatewaySeat, seatUid: $seatUid)'; } 
+ }

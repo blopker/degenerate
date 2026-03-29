@@ -1,0 +1,117 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'vector_store_file_batch_object_file_counts.dart';/// The object type, which is always `vector_store.file_batch`.
+final class VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject._(this.value);
+
+factory VectorStoreFileBatchObjectObject.fromJson(String json) { return switch (json) {
+  'vector_store.files_batch' => vectorStoreFilesBatch,
+  _ => VectorStoreFileBatchObjectObject._(json),
+}; }
+
+static const VectorStoreFileBatchObjectObject vectorStoreFilesBatch = VectorStoreFileBatchObjectObject._('vector_store.files_batch');
+
+static const List<VectorStoreFileBatchObjectObject> values = [vectorStoreFilesBatch];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is VectorStoreFileBatchObjectObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'VectorStoreFileBatchObjectObject($value)'; } 
+ }
+/// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
+final class VectorStoreFileBatchObjectStatus {const VectorStoreFileBatchObjectStatus._(this.value);
+
+factory VectorStoreFileBatchObjectStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'completed' => completed,
+  'cancelled' => cancelled,
+  'failed' => failed,
+  _ => VectorStoreFileBatchObjectStatus._(json),
+}; }
+
+static const VectorStoreFileBatchObjectStatus inProgress = VectorStoreFileBatchObjectStatus._('in_progress');
+
+static const VectorStoreFileBatchObjectStatus completed = VectorStoreFileBatchObjectStatus._('completed');
+
+static const VectorStoreFileBatchObjectStatus cancelled = VectorStoreFileBatchObjectStatus._('cancelled');
+
+static const VectorStoreFileBatchObjectStatus failed = VectorStoreFileBatchObjectStatus._('failed');
+
+static const List<VectorStoreFileBatchObjectStatus> values = [inProgress, completed, cancelled, failed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is VectorStoreFileBatchObjectStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'VectorStoreFileBatchObjectStatus($value)'; } 
+ }
+/// A batch of files attached to a vector store.
+final class VectorStoreFileBatchObject {const VectorStoreFileBatchObject({required this.id, required this.object, required this.createdAt, required this.vectorStoreId, required this.status, required this.fileCounts, });
+
+factory VectorStoreFileBatchObject.fromJson(Map<String, dynamic> json) { return VectorStoreFileBatchObject(
+  id: json['id'] as String,
+  object: VectorStoreFileBatchObjectObject.fromJson(json['object'] as String),
+  createdAt: (json['created_at'] as num).toInt(),
+  vectorStoreId: json['vector_store_id'] as String,
+  status: VectorStoreFileBatchObjectStatus.fromJson(json['status'] as String),
+  fileCounts: VectorStoreFileBatchObjectFileCounts.fromJson(json['file_counts'] as Map<String, dynamic>),
+); }
+
+/// The identifier, which can be referenced in API endpoints.
+final String id;
+
+/// The object type, which is always `vector_store.file_batch`.
+final VectorStoreFileBatchObjectObject object;
+
+/// The Unix timestamp (in seconds) for when the vector store files batch was created.
+final int createdAt;
+
+/// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+final String vectorStoreId;
+
+/// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
+final VectorStoreFileBatchObjectStatus status;
+
+final VectorStoreFileBatchObjectFileCounts fileCounts;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'created_at': createdAt,
+  'vector_store_id': vectorStoreId,
+  'status': status.toJson(),
+  'file_counts': fileCounts.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('vector_store_id') && json['vector_store_id'] is String &&
+      json.containsKey('status') &&
+      json.containsKey('file_counts'); } 
+VectorStoreFileBatchObject copyWith({String? id, VectorStoreFileBatchObjectObject? object, int? createdAt, String? vectorStoreId, VectorStoreFileBatchObjectStatus? status, VectorStoreFileBatchObjectFileCounts? fileCounts, }) { return VectorStoreFileBatchObject(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  createdAt: createdAt ?? this.createdAt,
+  vectorStoreId: vectorStoreId ?? this.vectorStoreId,
+  status: status ?? this.status,
+  fileCounts: fileCounts ?? this.fileCounts,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VectorStoreFileBatchObject &&
+          id == other.id &&
+          object == other.object &&
+          createdAt == other.createdAt &&
+          vectorStoreId == other.vectorStoreId &&
+          status == other.status &&
+          fileCounts == other.fileCounts; } 
+@override int get hashCode { return Object.hash(id, object, createdAt, vectorStoreId, status, fileCounts); } 
+@override String toString() { return 'VectorStoreFileBatchObject(id: $id, object: $object, createdAt: $createdAt, vectorStoreId: $vectorStoreId, status: $status, fileCounts: $fileCounts)'; } 
+ }

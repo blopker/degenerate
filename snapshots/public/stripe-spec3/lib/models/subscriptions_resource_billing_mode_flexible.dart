@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Controls how invoices and invoice items display proration amounts and discount amounts.
+final class SubscriptionsResourceBillingModeFlexibleProrationDiscounts {const SubscriptionsResourceBillingModeFlexibleProrationDiscounts._(this.value);
+
+factory SubscriptionsResourceBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
+  'included' => included,
+  'itemized' => itemized,
+  _ => SubscriptionsResourceBillingModeFlexibleProrationDiscounts._(json),
+}; }
+
+static const SubscriptionsResourceBillingModeFlexibleProrationDiscounts included = SubscriptionsResourceBillingModeFlexibleProrationDiscounts._('included');
+
+static const SubscriptionsResourceBillingModeFlexibleProrationDiscounts itemized = SubscriptionsResourceBillingModeFlexibleProrationDiscounts._('itemized');
+
+static const List<SubscriptionsResourceBillingModeFlexibleProrationDiscounts> values = [included, itemized];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SubscriptionsResourceBillingModeFlexibleProrationDiscounts && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SubscriptionsResourceBillingModeFlexibleProrationDiscounts($value)'; } 
+ }
+/// 
+final class SubscriptionsResourceBillingModeFlexible {const SubscriptionsResourceBillingModeFlexible({this.prorationDiscounts});
+
+factory SubscriptionsResourceBillingModeFlexible.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingModeFlexible(
+  prorationDiscounts: json['proration_discounts'] != null ? SubscriptionsResourceBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,
+); }
+
+/// Controls how invoices and invoice items display proration amounts and discount amounts.
+final SubscriptionsResourceBillingModeFlexibleProrationDiscounts? prorationDiscounts;
+
+Map<String, dynamic> toJson() { return {
+  if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SubscriptionsResourceBillingModeFlexible copyWith({SubscriptionsResourceBillingModeFlexibleProrationDiscounts Function()? prorationDiscounts}) { return SubscriptionsResourceBillingModeFlexible(
+  prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SubscriptionsResourceBillingModeFlexible &&
+          prorationDiscounts == other.prorationDiscounts; } 
+@override int get hashCode { return prorationDiscounts.hashCode; } 
+@override String toString() { return 'SubscriptionsResourceBillingModeFlexible(prorationDiscounts: $prorationDiscounts)'; } 
+ }

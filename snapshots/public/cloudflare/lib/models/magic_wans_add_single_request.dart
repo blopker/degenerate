@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_port.dart';import 'magic_vlan_tag.dart';import 'magic_wan_static_addressing.dart';final class MagicWansAddSingleRequest {const MagicWansAddSingleRequest({this.name, required this.physport, this.priority, this.staticAddressing, this.vlanTag, });
+
+factory MagicWansAddSingleRequest.fromJson(Map<String, dynamic> json) { return MagicWansAddSingleRequest(
+  name: json['name'] as String?,
+  physport: MagicPort.fromJson(json['physport'] as num),
+  priority: json['priority'] != null ? (json['priority'] as num).toInt() : null,
+  staticAddressing: json['static_addressing'] != null ? MagicWanStaticAddressing.fromJson(json['static_addressing'] as Map<String, dynamic>) : null,
+  vlanTag: json['vlan_tag'] != null ? MagicVlanTag.fromJson(json['vlan_tag'] as num) : null,
+); }
+
+final String? name;
+
+final MagicPort physport;
+
+final int? priority;
+
+final MagicWanStaticAddressing? staticAddressing;
+
+/// VLAN ID. Use zero for untagged.
+final MagicVlanTag? vlanTag;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  'physport': physport.toJson(),
+  'priority': ?priority,
+  if (staticAddressing != null) 'static_addressing': staticAddressing?.toJson(),
+  if (vlanTag != null) 'vlan_tag': vlanTag?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('physport'); } 
+MagicWansAddSingleRequest copyWith({String Function()? name, MagicPort? physport, int Function()? priority, MagicWanStaticAddressing Function()? staticAddressing, MagicVlanTag Function()? vlanTag, }) { return MagicWansAddSingleRequest(
+  name: name != null ? name() : this.name,
+  physport: physport ?? this.physport,
+  priority: priority != null ? priority() : this.priority,
+  staticAddressing: staticAddressing != null ? staticAddressing() : this.staticAddressing,
+  vlanTag: vlanTag != null ? vlanTag() : this.vlanTag,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicWansAddSingleRequest &&
+          name == other.name &&
+          physport == other.physport &&
+          priority == other.priority &&
+          staticAddressing == other.staticAddressing &&
+          vlanTag == other.vlanTag; } 
+@override int get hashCode { return Object.hash(name, physport, priority, staticAddressing, vlanTag); } 
+@override String toString() { return 'MagicWansAddSingleRequest(name: $name, physport: $physport, priority: $priority, staticAddressing: $staticAddressing, vlanTag: $vlanTag)'; } 
+ }

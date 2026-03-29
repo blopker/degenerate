@@ -1,0 +1,87 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_connection_id.dart';import 'tunnel_schemas_connection.dart';import 'tunnel_version.dart';/// The cloudflared OS architecture used to establish this connection.
+extension type const TunnelArch(String value) {
+factory TunnelArch.fromJson(String json) => TunnelArch(json);
+
+String toJson() => value;
+
+}
+/// The version of the remote tunnel configuration. Used internally to sync cloudflared with the Zero Trust dashboard.
+extension type const TunnelConfigVersion(int value) {
+factory TunnelConfigVersion.fromJson(num json) => TunnelConfigVersion(json.toInt());
+
+num toJson() => value;
+
+}
+/// Timestamp of when the tunnel connection was started.
+extension type TunnelRunAt(DateTime value) {
+factory TunnelRunAt.fromJson(String json) => TunnelRunAt(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// A client (typically cloudflared) that maintains connections to a Cloudflare data center.
+final class TunnelTunnelClient {const TunnelTunnelClient({this.arch, this.configVersion, this.conns, this.features, this.id, this.runAt, this.version, });
+
+factory TunnelTunnelClient.fromJson(Map<String, dynamic> json) { return TunnelTunnelClient(
+  arch: json['arch'] != null ? TunnelArch.fromJson(json['arch'] as String) : null,
+  configVersion: json['config_version'] != null ? TunnelConfigVersion.fromJson(json['config_version'] as num) : null,
+  conns: (json['conns'] as List<dynamic>?)?.map((e) => TunnelSchemasConnection.fromJson(e as Map<String, dynamic>)).toList(),
+  features: (json['features'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  id: json['id'] != null ? TunnelConnectionId.fromJson(json['id'] as String) : null,
+  runAt: json['run_at'] != null ? TunnelRunAt.fromJson(json['run_at'] as String) : null,
+  version: json['version'] != null ? TunnelVersion.fromJson(json['version'] as String) : null,
+); }
+
+/// The cloudflared OS architecture used to establish this connection.
+final TunnelArch? arch;
+
+/// The version of the remote tunnel configuration. Used internally to sync cloudflared with the Zero Trust dashboard.
+final TunnelConfigVersion? configVersion;
+
+/// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+final List<TunnelSchemasConnection>? conns;
+
+/// Features enabled for the Cloudflare Tunnel.
+final List<String>? features;
+
+/// UUID of the Cloudflare Tunnel connection.
+final TunnelConnectionId? id;
+
+/// Timestamp of when the tunnel connection was started.
+final TunnelRunAt? runAt;
+
+final TunnelVersion? version;
+
+Map<String, dynamic> toJson() { return {
+  if (arch != null) 'arch': arch?.toJson(),
+  if (configVersion != null) 'config_version': configVersion?.toJson(),
+  if (conns != null) 'conns': conns?.map((e) => e.toJson()).toList(),
+  'features': ?features,
+  if (id != null) 'id': id?.toJson(),
+  if (runAt != null) 'run_at': runAt?.toJson(),
+  if (version != null) 'version': version?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TunnelTunnelClient copyWith({TunnelArch Function()? arch, TunnelConfigVersion Function()? configVersion, List<TunnelSchemasConnection> Function()? conns, List<String> Function()? features, TunnelConnectionId Function()? id, TunnelRunAt Function()? runAt, TunnelVersion Function()? version, }) { return TunnelTunnelClient(
+  arch: arch != null ? arch() : this.arch,
+  configVersion: configVersion != null ? configVersion() : this.configVersion,
+  conns: conns != null ? conns() : this.conns,
+  features: features != null ? features() : this.features,
+  id: id != null ? id() : this.id,
+  runAt: runAt != null ? runAt() : this.runAt,
+  version: version != null ? version() : this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TunnelTunnelClient &&
+          arch == other.arch &&
+          configVersion == other.configVersion &&
+          listEquals(conns, other.conns) &&
+          listEquals(features, other.features) &&
+          id == other.id &&
+          runAt == other.runAt &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(arch, configVersion, Object.hashAll(conns ?? const []), Object.hashAll(features ?? const []), id, runAt, version); } 
+@override String toString() { return 'TunnelTunnelClient(arch: $arch, configVersion: $configVersion, conns: $conns, features: $features, id: $id, runAt: $runAt, version: $version)'; } 
+ }

@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The outcome type. Always `exit`.
+final class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType._(this.value);
+
+factory FunctionShellCallOutputExitOutcomeType.fromJson(String json) { return switch (json) {
+  'exit' => exit,
+  _ => FunctionShellCallOutputExitOutcomeType._(json),
+}; }
+
+static const FunctionShellCallOutputExitOutcomeType exit = FunctionShellCallOutputExitOutcomeType._('exit');
+
+static const List<FunctionShellCallOutputExitOutcomeType> values = [exit];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionShellCallOutputExitOutcomeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FunctionShellCallOutputExitOutcomeType($value)'; } 
+ }
+/// Indicates that the shell commands finished and returned an exit code.
+final class FunctionShellCallOutputExitOutcome {const FunctionShellCallOutputExitOutcome({this.type = FunctionShellCallOutputExitOutcomeType.exit, required this.exitCode, });
+
+factory FunctionShellCallOutputExitOutcome.fromJson(Map<String, dynamic> json) { return FunctionShellCallOutputExitOutcome(
+  type: FunctionShellCallOutputExitOutcomeType.fromJson(json['type'] as String),
+  exitCode: (json['exit_code'] as num).toInt(),
+); }
+
+/// The outcome type. Always `exit`.
+final FunctionShellCallOutputExitOutcomeType type;
+
+/// Exit code from the shell process.
+final int exitCode;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'exit_code': exitCode,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('exit_code') && json['exit_code'] is num; } 
+FunctionShellCallOutputExitOutcome copyWith({FunctionShellCallOutputExitOutcomeType? type, int? exitCode, }) { return FunctionShellCallOutputExitOutcome(
+  type: type ?? this.type,
+  exitCode: exitCode ?? this.exitCode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FunctionShellCallOutputExitOutcome &&
+          type == other.type &&
+          exitCode == other.exitCode; } 
+@override int get hashCode { return Object.hash(type, exitCode); } 
+@override String toString() { return 'FunctionShellCallOutputExitOutcome(type: $type, exitCode: $exitCode)'; } 
+ }

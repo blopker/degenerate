@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PortalInvoiceList {const PortalInvoiceList({required this.enabled});
+
+factory PortalInvoiceList.fromJson(Map<String, dynamic> json) { return PortalInvoiceList(
+  enabled: json['enabled'] as bool,
+); }
+
+/// Whether the feature is enabled.
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PortalInvoiceList copyWith({bool? enabled}) { return PortalInvoiceList(
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PortalInvoiceList &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'PortalInvoiceList(enabled: $enabled)'; } 
+ }

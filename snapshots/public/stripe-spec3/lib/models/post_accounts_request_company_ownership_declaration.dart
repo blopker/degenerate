@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsRequestCompanyOwnershipDeclaration {const PostAccountsRequestCompanyOwnershipDeclaration({this.date, this.ip, this.userAgent, });
+
+factory PostAccountsRequestCompanyOwnershipDeclaration.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCompanyOwnershipDeclaration(
+  date: json['date'] != null ? (json['date'] as num).toInt() : null,
+  ip: json['ip'] as String?,
+  userAgent: json['user_agent'] as String?,
+); }
+
+final int? date;
+
+final String? ip;
+
+final String? userAgent;
+
+Map<String, dynamic> toJson() { return {
+  'date': ?date,
+  'ip': ?ip,
+  'user_agent': ?userAgent,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsRequestCompanyOwnershipDeclaration copyWith({int Function()? date, String Function()? ip, String Function()? userAgent, }) { return PostAccountsRequestCompanyOwnershipDeclaration(
+  date: date != null ? date() : this.date,
+  ip: ip != null ? ip() : this.ip,
+  userAgent: userAgent != null ? userAgent() : this.userAgent,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsRequestCompanyOwnershipDeclaration &&
+          date == other.date &&
+          ip == other.ip &&
+          userAgent == other.userAgent; } 
+@override int get hashCode { return Object.hash(date, ip, userAgent); } 
+@override String toString() { return 'PostAccountsRequestCompanyOwnershipDeclaration(date: $date, ip: $ip, userAgent: $userAgent)'; } 
+ }

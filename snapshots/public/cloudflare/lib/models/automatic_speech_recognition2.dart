@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'automatic_speech_recognition2_words.dart';final class AutomaticSpeechRecognition2 {const AutomaticSpeechRecognition2({required this.text, this.vtt, this.wordCount, this.words, });
+
+factory AutomaticSpeechRecognition2.fromJson(Map<String, dynamic> json) { return AutomaticSpeechRecognition2(
+  text: json['text'] as String,
+  vtt: json['vtt'] as String?,
+  wordCount: json['word_count'] != null ? (json['word_count'] as num).toDouble() : null,
+  words: (json['words'] as List<dynamic>?)?.map((e) => AutomaticSpeechRecognition2Words.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The transcription
+final String text;
+
+final String? vtt;
+
+final double? wordCount;
+
+final List<AutomaticSpeechRecognition2Words>? words;
+
+Map<String, dynamic> toJson() { return {
+  'text': text,
+  'vtt': ?vtt,
+  'word_count': ?wordCount,
+  if (words != null) 'words': words?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
+AutomaticSpeechRecognition2 copyWith({String? text, String Function()? vtt, double Function()? wordCount, List<AutomaticSpeechRecognition2Words> Function()? words, }) { return AutomaticSpeechRecognition2(
+  text: text ?? this.text,
+  vtt: vtt != null ? vtt() : this.vtt,
+  wordCount: wordCount != null ? wordCount() : this.wordCount,
+  words: words != null ? words() : this.words,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AutomaticSpeechRecognition2 &&
+          text == other.text &&
+          vtt == other.vtt &&
+          wordCount == other.wordCount &&
+          listEquals(words, other.words); } 
+@override int get hashCode { return Object.hash(text, vtt, wordCount, Object.hashAll(words ?? const [])); } 
+@override String toString() { return 'AutomaticSpeechRecognition2(text: $text, vtt: $vtt, wordCount: $wordCount, words: $words)'; } 
+ }

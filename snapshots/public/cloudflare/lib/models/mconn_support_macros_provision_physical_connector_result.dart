@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mconn_support_connector.dart';final class MconnSupportMacrosProvisionPhysicalConnectorResult {const MconnSupportMacrosProvisionPhysicalConnectorResult({required this.connector});
+
+factory MconnSupportMacrosProvisionPhysicalConnectorResult.fromJson(Map<String, dynamic> json) { return MconnSupportMacrosProvisionPhysicalConnectorResult(
+  connector: MconnSupportConnector.fromJson(json['connector'] as Map<String, dynamic>),
+); }
+
+final MconnSupportConnector connector;
+
+Map<String, dynamic> toJson() { return {
+  'connector': connector.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('connector'); } 
+MconnSupportMacrosProvisionPhysicalConnectorResult copyWith({MconnSupportConnector? connector}) { return MconnSupportMacrosProvisionPhysicalConnectorResult(
+  connector: connector ?? this.connector,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnSupportMacrosProvisionPhysicalConnectorResult &&
+          connector == other.connector; } 
+@override int get hashCode { return connector.hashCode; } 
+@override String toString() { return 'MconnSupportMacrosProvisionPhysicalConnectorResult(connector: $connector)'; } 
+ }

@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7SummaryMitigationProduct {const RadarGetAttacksLayer7SummaryMitigationProduct._(this.value);
+
+factory RadarGetAttacksLayer7SummaryMitigationProduct.fromJson(String json) { return switch (json) {
+  'DDOS' => ddos,
+  'WAF' => waf,
+  'BOT_MANAGEMENT' => botManagement,
+  'ACCESS_RULES' => accessRules,
+  'IP_REPUTATION' => ipReputation,
+  'API_SHIELD' => apiShield,
+  'DATA_LOSS_PREVENTION' => dataLossPrevention,
+  _ => RadarGetAttacksLayer7SummaryMitigationProduct._(json),
+}; }
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct ddos = RadarGetAttacksLayer7SummaryMitigationProduct._('DDOS');
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct waf = RadarGetAttacksLayer7SummaryMitigationProduct._('WAF');
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct botManagement = RadarGetAttacksLayer7SummaryMitigationProduct._('BOT_MANAGEMENT');
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct accessRules = RadarGetAttacksLayer7SummaryMitigationProduct._('ACCESS_RULES');
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct ipReputation = RadarGetAttacksLayer7SummaryMitigationProduct._('IP_REPUTATION');
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct apiShield = RadarGetAttacksLayer7SummaryMitigationProduct._('API_SHIELD');
+
+static const RadarGetAttacksLayer7SummaryMitigationProduct dataLossPrevention = RadarGetAttacksLayer7SummaryMitigationProduct._('DATA_LOSS_PREVENTION');
+
+static const List<RadarGetAttacksLayer7SummaryMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryMitigationProduct && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7SummaryMitigationProduct($value)'; } 
+ }

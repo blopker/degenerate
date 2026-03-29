@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'brapi_post_pdf_response429_errors.dart';final class BrapiPostPdfResponse429 {const BrapiPostPdfResponse429({this.errors, required this.success, });
+
+factory BrapiPostPdfResponse429.fromJson(Map<String, dynamic> json) { return BrapiPostPdfResponse429(
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => BrapiPostPdfResponse429Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<BrapiPostPdfResponse429Errors>? errors;
+
+/// Response status
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
+BrapiPostPdfResponse429 copyWith({List<BrapiPostPdfResponse429Errors> Function()? errors, bool? success, }) { return BrapiPostPdfResponse429(
+  errors: errors != null ? errors() : this.errors,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BrapiPostPdfResponse429 &&
+          listEquals(errors, other.errors) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), success); } 
+@override String toString() { return 'BrapiPostPdfResponse429(errors: $errors, success: $success)'; } 
+ }

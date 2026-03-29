@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the event. Always `speech.audio.delta`.
+/// 
+final class SpeechAudioDeltaEventType {const SpeechAudioDeltaEventType._(this.value);
+
+factory SpeechAudioDeltaEventType.fromJson(String json) { return switch (json) {
+  'speech.audio.delta' => speechAudioDelta,
+  _ => SpeechAudioDeltaEventType._(json),
+}; }
+
+static const SpeechAudioDeltaEventType speechAudioDelta = SpeechAudioDeltaEventType._('speech.audio.delta');
+
+static const List<SpeechAudioDeltaEventType> values = [speechAudioDelta];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SpeechAudioDeltaEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SpeechAudioDeltaEventType($value)'; } 
+ }
+/// Emitted for each chunk of audio data generated during speech synthesis.
+final class SpeechAudioDeltaEvent {const SpeechAudioDeltaEvent({required this.type, required this.audio, });
+
+factory SpeechAudioDeltaEvent.fromJson(Map<String, dynamic> json) { return SpeechAudioDeltaEvent(
+  type: SpeechAudioDeltaEventType.fromJson(json['type'] as String),
+  audio: json['audio'] as String,
+); }
+
+/// The type of the event. Always `speech.audio.delta`.
+/// 
+final SpeechAudioDeltaEventType type;
+
+/// A chunk of Base64-encoded audio data.
+/// 
+final String audio;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'audio': audio,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('audio') && json['audio'] is String; } 
+SpeechAudioDeltaEvent copyWith({SpeechAudioDeltaEventType? type, String? audio, }) { return SpeechAudioDeltaEvent(
+  type: type ?? this.type,
+  audio: audio ?? this.audio,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SpeechAudioDeltaEvent &&
+          type == other.type &&
+          audio == other.audio; } 
+@override int get hashCode { return Object.hash(type, audio); } 
+@override String toString() { return 'SpeechAudioDeltaEvent(type: $type, audio: $audio)'; } 
+ }

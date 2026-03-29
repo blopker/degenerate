@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_account_sessions_request_components_account_management_features.dart';final class PostAccountSessionsRequestComponentsAccountManagement {const PostAccountSessionsRequestComponentsAccountManagement({required this.enabled, this.features, });
+
+factory PostAccountSessionsRequestComponentsAccountManagement.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsAccountManagement(
+  enabled: json['enabled'] as bool,
+  features: json['features'] != null ? PostAccountSessionsRequestComponentsAccountManagementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
+); }
+
+final bool enabled;
+
+final PostAccountSessionsRequestComponentsAccountManagementFeatures? features;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  if (features != null) 'features': features?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PostAccountSessionsRequestComponentsAccountManagement copyWith({bool? enabled, PostAccountSessionsRequestComponentsAccountManagementFeatures Function()? features, }) { return PostAccountSessionsRequestComponentsAccountManagement(
+  enabled: enabled ?? this.enabled,
+  features: features != null ? features() : this.features,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountSessionsRequestComponentsAccountManagement &&
+          enabled == other.enabled &&
+          features == other.features; } 
+@override int get hashCode { return Object.hash(enabled, features); } 
+@override String toString() { return 'PostAccountSessionsRequestComponentsAccountManagement(enabled: $enabled, features: $features)'; } 
+ }

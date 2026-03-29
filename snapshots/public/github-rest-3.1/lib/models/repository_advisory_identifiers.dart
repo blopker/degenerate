@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of identifier.
+final class RepositoryAdvisoryIdentifiersType {const RepositoryAdvisoryIdentifiersType._(this.value);
+
+factory RepositoryAdvisoryIdentifiersType.fromJson(String json) { return switch (json) {
+  'CVE' => cve,
+  'GHSA' => ghsa,
+  _ => RepositoryAdvisoryIdentifiersType._(json),
+}; }
+
+static const RepositoryAdvisoryIdentifiersType cve = RepositoryAdvisoryIdentifiersType._('CVE');
+
+static const RepositoryAdvisoryIdentifiersType ghsa = RepositoryAdvisoryIdentifiersType._('GHSA');
+
+static const List<RepositoryAdvisoryIdentifiersType> values = [cve, ghsa];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryAdvisoryIdentifiersType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryAdvisoryIdentifiersType($value)'; } 
+ }
+final class RepositoryAdvisoryIdentifiers {const RepositoryAdvisoryIdentifiers({required this.type, required this.value, });
+
+factory RepositoryAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryIdentifiers(
+  type: RepositoryAdvisoryIdentifiersType.fromJson(json['type'] as String),
+  value: json['value'] as String,
+); }
+
+/// The type of identifier.
+final RepositoryAdvisoryIdentifiersType type;
+
+/// The identifier value.
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String; } 
+RepositoryAdvisoryIdentifiers copyWith({RepositoryAdvisoryIdentifiersType? type, String? value, }) { return RepositoryAdvisoryIdentifiers(
+  type: type ?? this.type,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryAdvisoryIdentifiers &&
+          type == other.type &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(type, value); } 
+@override String toString() { return 'RepositoryAdvisoryIdentifiers(type: $type, value: $value)'; } 
+ }

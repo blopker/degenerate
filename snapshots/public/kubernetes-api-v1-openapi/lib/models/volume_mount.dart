@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// VolumeMount describes a mounting of a Volume within a container.
+final class VolumeMount {const VolumeMount({this.mountPath = '', this.mountPropagation, this.name = '', this.readOnly, this.recursiveReadOnly, this.subPath, this.subPathExpr, });
+
+factory VolumeMount.fromJson(Map<String, dynamic> json) { return VolumeMount(
+  mountPath: json['mountPath'] as String,
+  mountPropagation: json['mountPropagation'] as String?,
+  name: json['name'] as String,
+  readOnly: json['readOnly'] as bool?,
+  recursiveReadOnly: json['recursiveReadOnly'] as String?,
+  subPath: json['subPath'] as String?,
+  subPathExpr: json['subPathExpr'] as String?,
+); }
+
+/// Path within the container at which the volume should be mounted.  Must not contain ':'.
+final String mountPath;
+
+/// mountPropagation determines how mounts are propagated from the host to container and the other way around. When not set, MountPropagationNone is used. This field is beta in 1.10. When RecursiveReadOnly is set to IfPossible or to Enabled, MountPropagation must be None or unspecified (which defaults to None).
+final String? mountPropagation;
+
+/// This must match the Name of a Volume.
+final String name;
+
+/// Mounted read-only if true, read-write otherwise (false or unspecified). Defaults to false.
+final bool? readOnly;
+
+/// RecursiveReadOnly specifies whether read-only mounts should be handled recursively.
+/// 
+/// If ReadOnly is false, this field has no meaning and must be unspecified.
+/// 
+/// If ReadOnly is true, and this field is set to Disabled, the mount is not made recursively read-only.  If this field is set to IfPossible, the mount is made recursively read-only, if it is supported by the container runtime.  If this field is set to Enabled, the mount is made recursively read-only if it is supported by the container runtime, otherwise the pod will not be started and an error will be generated to indicate the reason.
+/// 
+/// If this field is set to IfPossible or Enabled, MountPropagation must be set to None (or be unspecified, which defaults to None).
+/// 
+/// If this field is not specified, it is treated as an equivalent of Disabled.
+final String? recursiveReadOnly;
+
+/// Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
+final String? subPath;
+
+/// Expanded path within the volume from which the container's volume should be mounted. Behaves similarly to SubPath but environment variable references $(VAR_NAME) are expanded using the container's environment. Defaults to "" (volume's root). SubPathExpr and SubPath are mutually exclusive.
+final String? subPathExpr;
+
+Map<String, dynamic> toJson() { return {
+  'mountPath': mountPath,
+  'mountPropagation': ?mountPropagation,
+  'name': name,
+  'readOnly': ?readOnly,
+  'recursiveReadOnly': ?recursiveReadOnly,
+  'subPath': ?subPath,
+  'subPathExpr': ?subPathExpr,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mountPath') && json['mountPath'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+VolumeMount copyWith({String? mountPath, String Function()? mountPropagation, String? name, bool Function()? readOnly, String Function()? recursiveReadOnly, String Function()? subPath, String Function()? subPathExpr, }) { return VolumeMount(
+  mountPath: mountPath ?? this.mountPath,
+  mountPropagation: mountPropagation != null ? mountPropagation() : this.mountPropagation,
+  name: name ?? this.name,
+  readOnly: readOnly != null ? readOnly() : this.readOnly,
+  recursiveReadOnly: recursiveReadOnly != null ? recursiveReadOnly() : this.recursiveReadOnly,
+  subPath: subPath != null ? subPath() : this.subPath,
+  subPathExpr: subPathExpr != null ? subPathExpr() : this.subPathExpr,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VolumeMount &&
+          mountPath == other.mountPath &&
+          mountPropagation == other.mountPropagation &&
+          name == other.name &&
+          readOnly == other.readOnly &&
+          recursiveReadOnly == other.recursiveReadOnly &&
+          subPath == other.subPath &&
+          subPathExpr == other.subPathExpr; } 
+@override int get hashCode { return Object.hash(mountPath, mountPropagation, name, readOnly, recursiveReadOnly, subPath, subPathExpr); } 
+@override String toString() { return 'VolumeMount(mountPath: $mountPath, mountPropagation: $mountPropagation, name: $name, readOnly: $readOnly, recursiveReadOnly: $recursiveReadOnly, subPath: $subPath, subPathExpr: $subPathExpr)'; } 
+ }

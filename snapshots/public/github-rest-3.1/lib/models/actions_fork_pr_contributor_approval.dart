@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The policy that controls when fork PR workflows require approval from a maintainer.
+final class ActionsForkPrContributorApprovalApprovalPolicy {const ActionsForkPrContributorApprovalApprovalPolicy._(this.value);
+
+factory ActionsForkPrContributorApprovalApprovalPolicy.fromJson(String json) { return switch (json) {
+  'first_time_contributors_new_to_github' => firstTimeContributorsNewToGithub,
+  'first_time_contributors' => firstTimeContributors,
+  'all_external_contributors' => allExternalContributors,
+  _ => ActionsForkPrContributorApprovalApprovalPolicy._(json),
+}; }
+
+static const ActionsForkPrContributorApprovalApprovalPolicy firstTimeContributorsNewToGithub = ActionsForkPrContributorApprovalApprovalPolicy._('first_time_contributors_new_to_github');
+
+static const ActionsForkPrContributorApprovalApprovalPolicy firstTimeContributors = ActionsForkPrContributorApprovalApprovalPolicy._('first_time_contributors');
+
+static const ActionsForkPrContributorApprovalApprovalPolicy allExternalContributors = ActionsForkPrContributorApprovalApprovalPolicy._('all_external_contributors');
+
+static const List<ActionsForkPrContributorApprovalApprovalPolicy> values = [firstTimeContributorsNewToGithub, firstTimeContributors, allExternalContributors];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActionsForkPrContributorApprovalApprovalPolicy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActionsForkPrContributorApprovalApprovalPolicy($value)'; } 
+ }
+final class ActionsForkPrContributorApproval {const ActionsForkPrContributorApproval({required this.approvalPolicy});
+
+factory ActionsForkPrContributorApproval.fromJson(Map<String, dynamic> json) { return ActionsForkPrContributorApproval(
+  approvalPolicy: ActionsForkPrContributorApprovalApprovalPolicy.fromJson(json['approval_policy'] as String),
+); }
+
+/// The policy that controls when fork PR workflows require approval from a maintainer.
+final ActionsForkPrContributorApprovalApprovalPolicy approvalPolicy;
+
+Map<String, dynamic> toJson() { return {
+  'approval_policy': approvalPolicy.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('approval_policy'); } 
+ActionsForkPrContributorApproval copyWith({ActionsForkPrContributorApprovalApprovalPolicy? approvalPolicy}) { return ActionsForkPrContributorApproval(
+  approvalPolicy: approvalPolicy ?? this.approvalPolicy,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsForkPrContributorApproval &&
+          approvalPolicy == other.approvalPolicy; } 
+@override int get hashCode { return approvalPolicy.hashCode; } 
+@override String toString() { return 'ActionsForkPrContributorApproval(approvalPolicy: $approvalPolicy)'; } 
+ }

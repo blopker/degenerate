@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_post_gateway_dynamic_route_version_response_result.dart';final class AigConfigPostGatewayDynamicRouteVersionResponse {const AigConfigPostGatewayDynamicRouteVersionResponse({required this.result, required this.success, });
+
+factory AigConfigPostGatewayDynamicRouteVersionResponse.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponse(
+  result: AigConfigPostGatewayDynamicRouteVersionResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final AigConfigPostGatewayDynamicRouteVersionResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AigConfigPostGatewayDynamicRouteVersionResponse copyWith({AigConfigPostGatewayDynamicRouteVersionResponseResult? result, bool? success, }) { return AigConfigPostGatewayDynamicRouteVersionResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteVersionResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponse(result: $result, success: $success)'; } 
+ }

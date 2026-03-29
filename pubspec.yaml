@@ -10,13 +10,10 @@ workspace:
   - snapshots/public/*
   - test/wire/*
   - example
-  - example/petstore_client
-
-dependencies:
-  degenerate:
-    path: packages/degenerate
+  - example_workspace
 
 dev_dependencies:
+  degenerate:
   code_builder: ^4.10.0
   dart_style: ^3.0.0
   lints: ^6.0.0

@@ -1,0 +1,127 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The ACH network code that resulted in this block.
+final class PaymentMethodUsBankAccountBlockedNetworkCode {const PaymentMethodUsBankAccountBlockedNetworkCode._(this.value);
+
+factory PaymentMethodUsBankAccountBlockedNetworkCode.fromJson(String json) { return switch (json) {
+  'R02' => r02,
+  'R03' => r03,
+  'R04' => r04,
+  'R05' => r05,
+  'R07' => r07,
+  'R08' => r08,
+  'R10' => r10,
+  'R11' => r11,
+  'R16' => r16,
+  'R20' => r20,
+  'R29' => r29,
+  'R31' => r31,
+  _ => PaymentMethodUsBankAccountBlockedNetworkCode._(json),
+}; }
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r02 = PaymentMethodUsBankAccountBlockedNetworkCode._('R02');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r03 = PaymentMethodUsBankAccountBlockedNetworkCode._('R03');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r04 = PaymentMethodUsBankAccountBlockedNetworkCode._('R04');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r05 = PaymentMethodUsBankAccountBlockedNetworkCode._('R05');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r07 = PaymentMethodUsBankAccountBlockedNetworkCode._('R07');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r08 = PaymentMethodUsBankAccountBlockedNetworkCode._('R08');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r10 = PaymentMethodUsBankAccountBlockedNetworkCode._('R10');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r11 = PaymentMethodUsBankAccountBlockedNetworkCode._('R11');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r16 = PaymentMethodUsBankAccountBlockedNetworkCode._('R16');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r20 = PaymentMethodUsBankAccountBlockedNetworkCode._('R20');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r29 = PaymentMethodUsBankAccountBlockedNetworkCode._('R29');
+
+static const PaymentMethodUsBankAccountBlockedNetworkCode r31 = PaymentMethodUsBankAccountBlockedNetworkCode._('R31');
+
+static const List<PaymentMethodUsBankAccountBlockedNetworkCode> values = [r02, r03, r04, r05, r07, r08, r10, r11, r16, r20, r29, r31];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodUsBankAccountBlockedNetworkCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodUsBankAccountBlockedNetworkCode($value)'; } 
+ }
+/// The reason why this PaymentMethod's fingerprint has been blocked
+final class PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason._(this.value);
+
+factory PaymentMethodUsBankAccountBlockedReason.fromJson(String json) { return switch (json) {
+  'bank_account_closed' => bankAccountClosed,
+  'bank_account_frozen' => bankAccountFrozen,
+  'bank_account_invalid_details' => bankAccountInvalidDetails,
+  'bank_account_restricted' => bankAccountRestricted,
+  'bank_account_unusable' => bankAccountUnusable,
+  'debit_not_authorized' => debitNotAuthorized,
+  'tokenized_account_number_deactivated' => tokenizedAccountNumberDeactivated,
+  _ => PaymentMethodUsBankAccountBlockedReason._(json),
+}; }
+
+static const PaymentMethodUsBankAccountBlockedReason bankAccountClosed = PaymentMethodUsBankAccountBlockedReason._('bank_account_closed');
+
+static const PaymentMethodUsBankAccountBlockedReason bankAccountFrozen = PaymentMethodUsBankAccountBlockedReason._('bank_account_frozen');
+
+static const PaymentMethodUsBankAccountBlockedReason bankAccountInvalidDetails = PaymentMethodUsBankAccountBlockedReason._('bank_account_invalid_details');
+
+static const PaymentMethodUsBankAccountBlockedReason bankAccountRestricted = PaymentMethodUsBankAccountBlockedReason._('bank_account_restricted');
+
+static const PaymentMethodUsBankAccountBlockedReason bankAccountUnusable = PaymentMethodUsBankAccountBlockedReason._('bank_account_unusable');
+
+static const PaymentMethodUsBankAccountBlockedReason debitNotAuthorized = PaymentMethodUsBankAccountBlockedReason._('debit_not_authorized');
+
+static const PaymentMethodUsBankAccountBlockedReason tokenizedAccountNumberDeactivated = PaymentMethodUsBankAccountBlockedReason._('tokenized_account_number_deactivated');
+
+static const List<PaymentMethodUsBankAccountBlockedReason> values = [bankAccountClosed, bankAccountFrozen, bankAccountInvalidDetails, bankAccountRestricted, bankAccountUnusable, debitNotAuthorized, tokenizedAccountNumberDeactivated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodUsBankAccountBlockedReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodUsBankAccountBlockedReason($value)'; } 
+ }
+/// 
+final class PaymentMethodUsBankAccountBlocked {const PaymentMethodUsBankAccountBlocked({this.networkCode, this.reason, });
+
+factory PaymentMethodUsBankAccountBlocked.fromJson(Map<String, dynamic> json) { return PaymentMethodUsBankAccountBlocked(
+  networkCode: json['network_code'] != null ? PaymentMethodUsBankAccountBlockedNetworkCode.fromJson(json['network_code'] as String) : null,
+  reason: json['reason'] != null ? PaymentMethodUsBankAccountBlockedReason.fromJson(json['reason'] as String) : null,
+); }
+
+/// The ACH network code that resulted in this block.
+final PaymentMethodUsBankAccountBlockedNetworkCode? networkCode;
+
+/// The reason why this PaymentMethod's fingerprint has been blocked
+final PaymentMethodUsBankAccountBlockedReason? reason;
+
+Map<String, dynamic> toJson() { return {
+  if (networkCode != null) 'network_code': networkCode?.toJson(),
+  if (reason != null) 'reason': reason?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodUsBankAccountBlocked copyWith({PaymentMethodUsBankAccountBlockedNetworkCode? Function()? networkCode, PaymentMethodUsBankAccountBlockedReason? Function()? reason, }) { return PaymentMethodUsBankAccountBlocked(
+  networkCode: networkCode != null ? networkCode() : this.networkCode,
+  reason: reason != null ? reason() : this.reason,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodUsBankAccountBlocked &&
+          networkCode == other.networkCode &&
+          reason == other.reason; } 
+@override int get hashCode { return Object.hash(networkCode, reason); } 
+@override String toString() { return 'PaymentMethodUsBankAccountBlocked(networkCode: $networkCode, reason: $reason)'; } 
+ }

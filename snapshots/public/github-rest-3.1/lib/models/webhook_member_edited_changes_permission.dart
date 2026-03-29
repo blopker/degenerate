@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookMemberEditedChangesPermission {const WebhookMemberEditedChangesPermission({this.from, this.to, });
+
+factory WebhookMemberEditedChangesPermission.fromJson(Map<String, dynamic> json) { return WebhookMemberEditedChangesPermission(
+  from: json['from'] as String?,
+  to: json['to'] as String?,
+); }
+
+final String? from;
+
+final String? to;
+
+Map<String, dynamic> toJson() { return {
+  'from': ?from,
+  'to': ?to,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookMemberEditedChangesPermission copyWith({String? Function()? from, String? Function()? to, }) { return WebhookMemberEditedChangesPermission(
+  from: from != null ? from() : this.from,
+  to: to != null ? to() : this.to,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookMemberEditedChangesPermission &&
+          from == other.from &&
+          to == other.to; } 
+@override int get hashCode { return Object.hash(from, to); } 
+@override String toString() { return 'WebhookMemberEditedChangesPermission(from: $from, to: $to)'; } 
+ }

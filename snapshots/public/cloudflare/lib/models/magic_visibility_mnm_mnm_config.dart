@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config_default_sampling.dart';import 'magic_visibility_mnm_mnm_config_name.dart';import 'magic_visibility_mnm_mnm_config_router_ip.dart';import 'magic_visibility_mnm_mnm_config_warp_device.dart';final class MagicVisibilityMnmMnmConfig {const MagicVisibilityMnmMnmConfig({required this.defaultSampling, required this.name, required this.routerIps, required this.warpDevices, });
+
+factory MagicVisibilityMnmMnmConfig.fromJson(Map<String, dynamic> json) { return MagicVisibilityMnmMnmConfig(
+  defaultSampling: MagicVisibilityMnmMnmConfigDefaultSampling.fromJson(json['default_sampling'] as num),
+  name: MagicVisibilityMnmMnmConfigName.fromJson(json['name'] as String),
+  routerIps: (json['router_ips'] as List<dynamic>).map((e) => MagicVisibilityMnmMnmConfigRouterIp.fromJson(e as String)).toList(),
+  warpDevices: (json['warp_devices'] as List<dynamic>).map((e) => MagicVisibilityMnmMnmConfigWarpDevice.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final MagicVisibilityMnmMnmConfigDefaultSampling defaultSampling;
+
+final MagicVisibilityMnmMnmConfigName name;
+
+final List<MagicVisibilityMnmMnmConfigRouterIp> routerIps;
+
+final List<MagicVisibilityMnmMnmConfigWarpDevice> warpDevices;
+
+Map<String, dynamic> toJson() { return {
+  'default_sampling': defaultSampling.toJson(),
+  'name': name.toJson(),
+  'router_ips': routerIps.map((e) => e.toJson()).toList(),
+  'warp_devices': warpDevices.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_sampling') &&
+      json.containsKey('name') &&
+      json.containsKey('router_ips') &&
+      json.containsKey('warp_devices'); } 
+MagicVisibilityMnmMnmConfig copyWith({MagicVisibilityMnmMnmConfigDefaultSampling? defaultSampling, MagicVisibilityMnmMnmConfigName? name, List<MagicVisibilityMnmMnmConfigRouterIp>? routerIps, List<MagicVisibilityMnmMnmConfigWarpDevice>? warpDevices, }) { return MagicVisibilityMnmMnmConfig(
+  defaultSampling: defaultSampling ?? this.defaultSampling,
+  name: name ?? this.name,
+  routerIps: routerIps ?? this.routerIps,
+  warpDevices: warpDevices ?? this.warpDevices,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicVisibilityMnmMnmConfig &&
+          defaultSampling == other.defaultSampling &&
+          name == other.name &&
+          listEquals(routerIps, other.routerIps) &&
+          listEquals(warpDevices, other.warpDevices); } 
+@override int get hashCode { return Object.hash(defaultSampling, name, Object.hashAll(routerIps), Object.hashAll(warpDevices)); } 
+@override String toString() { return 'MagicVisibilityMnmMnmConfig(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)'; } 
+ }

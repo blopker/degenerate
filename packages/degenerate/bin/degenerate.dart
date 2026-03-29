@@ -4,8 +4,6 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:degenerate/src/generator.dart';
 
-const String version = '0.1.5';
-
 ArgParser buildParser() {
   return ArgParser()
     ..addOption(
@@ -17,27 +15,30 @@ ArgParser buildParser() {
     ..addOption(
       'output',
       abbr: 'o',
-      help: 'Output directory.',
+      help:
+          'Output directory.\n'
+          '(default: lib/<name>, or packages/<name> with --workspace)',
       valueHelp: 'dir',
-      defaultsTo: 'lib/src/generated',
     )
     ..addOption(
       'name',
       abbr: 'n',
-      help: 'Package name (default: inferred from spec title).',
+      help: 'Package name (default: api_client).',
       valueHelp: 'name',
     )
     ..addMultiOption(
       'tag',
       abbr: 't',
-      help: 'Only include API groups matching these tags (substring match).\n'
+      help:
+          'Only include API groups matching these tags (substring match).\n'
           'Can be specified multiple times.',
       valueHelp: 'pattern',
     )
     ..addMultiOption(
       'path',
       abbr: 'p',
-      help: 'Only include operations whose path starts with this prefix.\n'
+      help:
+          'Only include operations whose path starts with this prefix.\n'
           'Can be specified multiple times.',
       valueHelp: 'prefix',
     )
@@ -68,27 +69,21 @@ ArgParser buildParser() {
     )
     ..addFlag(
       'workspace',
-      help: 'Add resolution: workspace to the generated pubspec.yaml\n'
-          'for use in a Dart workspace (monorepo).',
+      help:
+          'Generate a standalone package with pubspec.yaml\n'
+          '(includes resolution: workspace for Dart workspaces).\n'
+          'Default output: packages/<name>.',
       defaultsTo: false,
       negatable: false,
     )
-    ..addFlag(
-      'help',
-      abbr: 'h',
-      help: 'Show this help.',
-      negatable: false,
-    )
-    ..addFlag(
-      'version',
-      help: 'Print the tool version.',
-      negatable: false,
-    );
+    ..addFlag('help', abbr: 'h', help: 'Show this help.', negatable: false)
+    ..addFlag('version', help: 'Print the tool version.', negatable: false);
 }
 
 void printUsage(ArgParser argParser) {
   stderr.writeln(
-      'degenerate -Generate a Dart client from an OpenAPI specification.');
+    'degenerate - Generate a Dart client from an OpenAPI specification.',
+  );
   stderr.writeln();
   stderr.writeln('Usage:');
   stderr.writeln('  degenerate [options]');
@@ -109,7 +104,7 @@ Future<void> main(List<String> arguments) async {
     }
 
     if (results.flag('version')) {
-      print('degenerate version: $version');
+      print('degenerate version: $packageVersion');
       return;
     }
 
@@ -131,11 +126,11 @@ Future<void> main(List<String> arguments) async {
       }
     }
 
-    final outputDir = results.option('output') ?? 'lib/src/generated';
+    final workspace = results.flag('workspace');
 
     final config = GeneratorConfig(
       inputPath: input,
-      outputDir: outputDir,
+      outputDir: results.option('output'),
       packageName: results.option('name'),
       includeDeprecated: results.flag('include-deprecated'),
       tags: results.multiOption('tag'),
@@ -143,12 +138,37 @@ Future<void> main(List<String> arguments) async {
       clean: results.flag('clean'),
       verbose: results.flag('verbose'),
       dryRun: results.flag('dry-run'),
-      workspace: results.flag('workspace'),
+      workspace: workspace,
       stdinContent: stdinContent,
     );
 
     final generator = Generator(config);
     await generator.generate();
+
+    if (!results.flag('dry-run')) {
+      final name = config.resolvedPackageName!;
+      stderr.writeln();
+      if (workspace) {
+        stderr.writeln('Add to your pubspec.yaml:');
+        stderr.writeln();
+        stderr.writeln('workspace:');
+        stderr.writeln('  - ${config.resolvedOutputDir}');
+        stderr.writeln();
+        stderr.writeln('dependencies:');
+        stderr.writeln('  $name:');
+        stderr.writeln(
+          '  degenerate_http: ^$packageVersion  # or degenerate_dio',
+        );
+      } else {
+        stderr.writeln('Add to your pubspec.yaml:');
+        stderr.writeln();
+        stderr.writeln('dependencies:');
+        stderr.writeln(
+          '  degenerate_http: ^$packageVersion  # or degenerate_dio',
+        );
+        stderr.writeln('  degenerate_runtime: ^$packageVersion');
+      }
+    }
   } on FormatException catch (e) {
     stderr.writeln('Error: ${e.message}');
     stderr.writeln();

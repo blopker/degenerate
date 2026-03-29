@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoice_payment_method_options_payto.dart';/// If paying by `payto`, this sub-hash contains details about the PayTo payment method options to pass to the invoice’s PaymentIntent.
+final class InvoicesPaymentMethodOptionsPayto {const InvoicesPaymentMethodOptionsPayto({this.invoicePaymentMethodOptionsPayto});
+
+factory InvoicesPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return InvoicesPaymentMethodOptionsPayto(
+  invoicePaymentMethodOptionsPayto: InvoicePaymentMethodOptionsPayto.canParse(json) ? InvoicePaymentMethodOptionsPayto.fromJson(json) : null,
+); }
+
+final InvoicePaymentMethodOptionsPayto? invoicePaymentMethodOptionsPayto;
+
+/// At least one variant must be present.
+bool get isValid { return invoicePaymentMethodOptionsPayto != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?invoicePaymentMethodOptionsPayto?.toJson(),
+}; } 
+ }

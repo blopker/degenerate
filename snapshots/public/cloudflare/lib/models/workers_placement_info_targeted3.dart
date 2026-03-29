@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Targeted placement mode.
+final class WorkersPlacementInfoTargeted3Mode {const WorkersPlacementInfoTargeted3Mode._(this.value);
+
+factory WorkersPlacementInfoTargeted3Mode.fromJson(String json) { return switch (json) {
+  'targeted' => targeted,
+  _ => WorkersPlacementInfoTargeted3Mode._(json),
+}; }
+
+static const WorkersPlacementInfoTargeted3Mode targeted = WorkersPlacementInfoTargeted3Mode._('targeted');
+
+static const List<WorkersPlacementInfoTargeted3Mode> values = [targeted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersPlacementInfoTargeted3Mode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersPlacementInfoTargeted3Mode($value)'; } 
+ }
+final class WorkersPlacementInfoTargeted3 {const WorkersPlacementInfoTargeted3({required this.host, required this.mode, });
+
+factory WorkersPlacementInfoTargeted3.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoTargeted3(
+  host: json['host'] as String,
+  mode: WorkersPlacementInfoTargeted3Mode.fromJson(json['mode'] as String),
+); }
+
+/// TCP host and port for targeted placement.
+final String host;
+
+/// Targeted placement mode.
+final WorkersPlacementInfoTargeted3Mode mode;
+
+Map<String, dynamic> toJson() { return {
+  'host': host,
+  'mode': mode.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String &&
+      json.containsKey('mode'); } 
+WorkersPlacementInfoTargeted3 copyWith({String? host, WorkersPlacementInfoTargeted3Mode? mode, }) { return WorkersPlacementInfoTargeted3(
+  host: host ?? this.host,
+  mode: mode ?? this.mode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersPlacementInfoTargeted3 &&
+          host == other.host &&
+          mode == other.mode; } 
+@override int get hashCode { return Object.hash(host, mode); } 
+@override String toString() { return 'WorkersPlacementInfoTargeted3(host: $host, mode: $mode)'; } 
+ }

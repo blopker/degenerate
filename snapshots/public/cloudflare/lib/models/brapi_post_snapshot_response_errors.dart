@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class BrapiPostSnapshotResponseErrors {const BrapiPostSnapshotResponseErrors({required this.code, required this.message, });
+
+factory BrapiPostSnapshotResponseErrors.fromJson(Map<String, dynamic> json) { return BrapiPostSnapshotResponseErrors(
+  code: (json['code'] as num).toDouble(),
+  message: json['message'] as String,
+); }
+
+/// Error code
+final double code;
+
+/// Error Message
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String; } 
+BrapiPostSnapshotResponseErrors copyWith({double? code, String? message, }) { return BrapiPostSnapshotResponseErrors(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BrapiPostSnapshotResponseErrors &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'BrapiPostSnapshotResponseErrors(code: $code, message: $message)'; } 
+ }

@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class BillingCreditGrantsResourceMonetaryAmount {const BillingCreditGrantsResourceMonetaryAmount({required this.currency, required this.value, });
+
+factory BillingCreditGrantsResourceMonetaryAmount.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceMonetaryAmount(
+  currency: json['currency'] as String,
+  value: (json['value'] as num).toInt(),
+); }
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// A positive integer representing the amount.
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'currency': currency,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('value') && json['value'] is num; } 
+BillingCreditGrantsResourceMonetaryAmount copyWith({String? currency, int? value, }) { return BillingCreditGrantsResourceMonetaryAmount(
+  currency: currency ?? this.currency,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingCreditGrantsResourceMonetaryAmount &&
+          currency == other.currency &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(currency, value); } 
+@override String toString() { return 'BillingCreditGrantsResourceMonetaryAmount(currency: $currency, value: $value)'; } 
+ }

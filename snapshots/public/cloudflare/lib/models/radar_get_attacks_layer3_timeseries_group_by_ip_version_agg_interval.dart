@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval._(this.value);
+
+factory RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval.fromJson(String json) { return switch (json) {
+  '15m' => $15m,
+  '1h' => $1h,
+  '1d' => $1d,
+  '1w' => $1w,
+  _ => RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval._(json),
+}; }
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval $15m = RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval._('15m');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval $1h = RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval._('1h');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval $1d = RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval._('1d');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval $1w = RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval._('1w');
+
+static const List<RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval> values = [$15m, $1h, $1d, $1w];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIpVersionAggInterval($value)'; } 
+ }

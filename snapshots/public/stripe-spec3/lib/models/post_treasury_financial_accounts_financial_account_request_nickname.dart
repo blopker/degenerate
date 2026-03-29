@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2 {const PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2._(this.value);
+
+factory PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2._(json),
+}; }
+
+static const PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2 $empty = PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2._('');
+
+static const List<PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2($value)'; } 
+ }
+typedef PostTreasuryFinancialAccountsFinancialAccountRequestNickname = OneOf2<String,PostTreasuryFinancialAccountsFinancialAccountRequestNicknameVariant2>;

@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference._(this.value);
+
+factory PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off' => off,
+  'on' => $on,
+  _ => PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference._(json),
+}; }
+
+static const PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference none = PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference._('none');
+
+static const PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference off = PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference._('off');
+
+static const PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference $on = PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference._('on');
+
+static const List<PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference> values = [none, off, $on];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference($value)'; } 
+ }
+final class PostPaymentMethodConfigurationsRequestApplePayDisplayPreference {const PostPaymentMethodConfigurationsRequestApplePayDisplayPreference({this.preference});
+
+factory PostPaymentMethodConfigurationsRequestApplePayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestApplePayDisplayPreference(
+  preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
+); }
+
+final PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference? preference;
+
+Map<String, dynamic> toJson() { return {
+  if (preference != null) 'preference': preference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsRequestApplePayDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestApplePayDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsRequestApplePayDisplayPreference(
+  preference: preference != null ? preference() : this.preference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsRequestApplePayDisplayPreference &&
+          preference == other.preference; } 
+@override int get hashCode { return preference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestApplePayDisplayPreference(preference: $preference)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodespaceRuntimeConstraints {const CodespaceRuntimeConstraints({this.allowedPortPrivacySettings});
+
+factory CodespaceRuntimeConstraints.fromJson(Map<String, dynamic> json) { return CodespaceRuntimeConstraints(
+  allowedPortPrivacySettings: (json['allowed_port_privacy_settings'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The privacy settings a user can select from when forwarding a port.
+final List<String>? allowedPortPrivacySettings;
+
+Map<String, dynamic> toJson() { return {
+  'allowed_port_privacy_settings': ?allowedPortPrivacySettings,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodespaceRuntimeConstraints copyWith({List<String>? Function()? allowedPortPrivacySettings}) { return CodespaceRuntimeConstraints(
+  allowedPortPrivacySettings: allowedPortPrivacySettings != null ? allowedPortPrivacySettings() : this.allowedPortPrivacySettings,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodespaceRuntimeConstraints &&
+          listEquals(allowedPortPrivacySettings, other.allowedPortPrivacySettings); } 
+@override int get hashCode { return Object.hashAll(allowedPortPrivacySettings ?? const []).hashCode; } 
+@override String toString() { return 'CodespaceRuntimeConstraints(allowedPortPrivacySettings: $allowedPortPrivacySettings)'; } 
+ }

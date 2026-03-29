@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'person_us_cfpb_data.dart';/// Demographic data related to the person.
+final class PersonUsCfpbData2 {const PersonUsCfpbData2({this.personUsCfpbData});
+
+factory PersonUsCfpbData2.fromJson(Map<String, dynamic> json) { return PersonUsCfpbData2(
+  personUsCfpbData: PersonUsCfpbData.canParse(json) ? PersonUsCfpbData.fromJson(json) : null,
+); }
+
+final PersonUsCfpbData? personUsCfpbData;
+
+/// At least one variant must be present.
+bool get isValid { return personUsCfpbData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?personUsCfpbData?.toJson(),
+}; } 
+ }

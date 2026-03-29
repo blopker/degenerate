@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param17_mandate_options_reference_prefix.dart';final class PaymentIntentPaymentMethodOptionsParam17MandateOptions {const PaymentIntentPaymentMethodOptionsParam17MandateOptions({this.referencePrefix});
+
+factory PaymentIntentPaymentMethodOptionsParam17MandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam17MandateOptions(
+  referencePrefix: json['reference_prefix'] != null ? OneOf2.parse(json['reference_prefix'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParam17MandateOptionsReferencePrefixVariant2.fromJson(v as String),) : null,
+); }
+
+final PaymentIntentPaymentMethodOptionsParam17MandateOptionsReferencePrefix? referencePrefix;
+
+Map<String, dynamic> toJson() { return {
+  if (referencePrefix != null) 'reference_prefix': referencePrefix?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsParam17MandateOptions copyWith({PaymentIntentPaymentMethodOptionsParam17MandateOptionsReferencePrefix Function()? referencePrefix}) { return PaymentIntentPaymentMethodOptionsParam17MandateOptions(
+  referencePrefix: referencePrefix != null ? referencePrefix() : this.referencePrefix,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParam17MandateOptions &&
+          referencePrefix == other.referencePrefix; } 
+@override int get hashCode { return referencePrefix.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam17MandateOptions(referencePrefix: $referencePrefix)'; } 
+ }

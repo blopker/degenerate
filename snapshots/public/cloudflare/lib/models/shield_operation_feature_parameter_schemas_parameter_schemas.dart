@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'shield_parameter_schemas_definition.dart';import 'shield_timestamp.dart';final class ShieldOperationFeatureParameterSchemasParameterSchemas {const ShieldOperationFeatureParameterSchemasParameterSchemas({this.lastUpdated, this.parameterSchemas, });
+
+factory ShieldOperationFeatureParameterSchemasParameterSchemas.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureParameterSchemasParameterSchemas(
+  lastUpdated: json['last_updated'] != null ? ShieldTimestamp.fromJson(json['last_updated'] as String) : null,
+  parameterSchemas: json['parameter_schemas'] != null ? ShieldParameterSchemasDefinition.fromJson(json['parameter_schemas'] as Map<String, dynamic>) : null,
+); }
+
+final ShieldTimestamp? lastUpdated;
+
+final ShieldParameterSchemasDefinition? parameterSchemas;
+
+Map<String, dynamic> toJson() { return {
+  if (lastUpdated != null) 'last_updated': lastUpdated?.toJson(),
+  if (parameterSchemas != null) 'parameter_schemas': parameterSchemas?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ShieldOperationFeatureParameterSchemasParameterSchemas copyWith({ShieldTimestamp Function()? lastUpdated, ShieldParameterSchemasDefinition Function()? parameterSchemas, }) { return ShieldOperationFeatureParameterSchemasParameterSchemas(
+  lastUpdated: lastUpdated != null ? lastUpdated() : this.lastUpdated,
+  parameterSchemas: parameterSchemas != null ? parameterSchemas() : this.parameterSchemas,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ShieldOperationFeatureParameterSchemasParameterSchemas &&
+          lastUpdated == other.lastUpdated &&
+          parameterSchemas == other.parameterSchemas; } 
+@override int get hashCode { return Object.hash(lastUpdated, parameterSchemas); } 
+@override String toString() { return 'ShieldOperationFeatureParameterSchemasParameterSchemas(lastUpdated: $lastUpdated, parameterSchemas: $parameterSchemas)'; } 
+ }

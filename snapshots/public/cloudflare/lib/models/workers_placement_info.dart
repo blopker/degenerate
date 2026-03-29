@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_placement_info_smart.dart';import 'workers_placement_info_targeted.dart';import 'workers_placement_info_targeted2.dart';import 'workers_placement_info_targeted3.dart';import 'workers_placement_info_targeted4.dart';import 'workers_placement_info_variant2.dart';import 'workers_placement_info_variant3.dart';import 'workers_placement_info_variant4.dart';typedef WorkersPlacementInfo = OneOf8<WorkersPlacementInfoSmart,WorkersPlacementInfoVariant2,WorkersPlacementInfoVariant3,WorkersPlacementInfoVariant4,WorkersPlacementInfoTargeted,WorkersPlacementInfoTargeted2,WorkersPlacementInfoTargeted3,WorkersPlacementInfoTargeted4>;

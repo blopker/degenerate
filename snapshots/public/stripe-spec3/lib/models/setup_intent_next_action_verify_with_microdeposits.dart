@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
+final class SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType {const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(this.value);
+
+factory SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(String json) { return switch (json) {
+  'amounts' => amounts,
+  'descriptor_code' => descriptorCode,
+  _ => SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._(json),
+}; }
+
+static const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType amounts = SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._('amounts');
+
+static const SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType descriptorCode = SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType._('descriptor_code');
+
+static const List<SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType> values = [amounts, descriptorCode];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType($value)'; } 
+ }
+/// 
+final class SetupIntentNextActionVerifyWithMicrodeposits {const SetupIntentNextActionVerifyWithMicrodeposits({required this.arrivalDate, required this.hostedVerificationUrl, this.microdepositType, });
+
+factory SetupIntentNextActionVerifyWithMicrodeposits.fromJson(Map<String, dynamic> json) { return SetupIntentNextActionVerifyWithMicrodeposits(
+  arrivalDate: (json['arrival_date'] as num).toInt(),
+  hostedVerificationUrl: json['hosted_verification_url'] as String,
+  microdepositType: json['microdeposit_type'] != null ? SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType.fromJson(json['microdeposit_type'] as String) : null,
+); }
+
+/// The timestamp when the microdeposits are expected to land.
+final int arrivalDate;
+
+/// The URL for the hosted verification page, which allows customers to verify their bank account.
+final String hostedVerificationUrl;
+
+/// The type of the microdeposit sent to the customer. Used to distinguish between different verification methods.
+final SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType? microdepositType;
+
+Map<String, dynamic> toJson() { return {
+  'arrival_date': arrivalDate,
+  'hosted_verification_url': hostedVerificationUrl,
+  if (microdepositType != null) 'microdeposit_type': microdepositType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('arrival_date') && json['arrival_date'] is num &&
+      json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String; } 
+SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, SetupIntentNextActionVerifyWithMicrodepositsMicrodepositType? Function()? microdepositType, }) { return SetupIntentNextActionVerifyWithMicrodeposits(
+  arrivalDate: arrivalDate ?? this.arrivalDate,
+  hostedVerificationUrl: hostedVerificationUrl ?? this.hostedVerificationUrl,
+  microdepositType: microdepositType != null ? microdepositType() : this.microdepositType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SetupIntentNextActionVerifyWithMicrodeposits &&
+          arrivalDate == other.arrivalDate &&
+          hostedVerificationUrl == other.hostedVerificationUrl &&
+          microdepositType == other.microdepositType; } 
+@override int get hashCode { return Object.hash(arrivalDate, hostedVerificationUrl, microdepositType); } 
+@override String toString() { return 'SetupIntentNextActionVerifyWithMicrodeposits(arrivalDate: $arrivalDate, hostedVerificationUrl: $hostedVerificationUrl, microdepositType: $microdepositType)'; } 
+ }

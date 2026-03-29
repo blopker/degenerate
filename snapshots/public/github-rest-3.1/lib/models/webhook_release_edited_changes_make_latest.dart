@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookReleaseEditedChangesMakeLatest {const WebhookReleaseEditedChangesMakeLatest({required this.to});
+
+factory WebhookReleaseEditedChangesMakeLatest.fromJson(Map<String, dynamic> json) { return WebhookReleaseEditedChangesMakeLatest(
+  to: json['to'] as bool,
+); }
+
+/// Whether this release was explicitly `edited` to be the latest.
+final bool to;
+
+Map<String, dynamic> toJson() { return {
+  'to': to,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('to') && json['to'] is bool; } 
+WebhookReleaseEditedChangesMakeLatest copyWith({bool? to}) { return WebhookReleaseEditedChangesMakeLatest(
+  to: to ?? this.to,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookReleaseEditedChangesMakeLatest &&
+          to == other.to; } 
+@override int get hashCode { return to.hashCode; } 
+@override String toString() { return 'WebhookReleaseEditedChangesMakeLatest(to: $to)'; } 
+ }

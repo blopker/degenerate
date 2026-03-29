@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RealtimekitLivestreamingConfig {const RealtimekitLivestreamingConfig({this.rtmpUrl});
+
+factory RealtimekitLivestreamingConfig.fromJson(Map<String, dynamic> json) { return RealtimekitLivestreamingConfig(
+  rtmpUrl: json['rtmp_url'] != null ? Uri.parse(json['rtmp_url'] as String) : null,
+); }
+
+/// RTMP URL to stream to
+final Uri? rtmpUrl;
+
+Map<String, dynamic> toJson() { return {
+  if (rtmpUrl != null) 'rtmp_url': rtmpUrl?.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitLivestreamingConfig copyWith({Uri Function()? rtmpUrl}) { return RealtimekitLivestreamingConfig(
+  rtmpUrl: rtmpUrl != null ? rtmpUrl() : this.rtmpUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitLivestreamingConfig &&
+          rtmpUrl == other.rtmpUrl; } 
+@override int get hashCode { return rtmpUrl.hashCode; } 
+@override String toString() { return 'RealtimekitLivestreamingConfig(rtmpUrl: $rtmpUrl)'; } 
+ }

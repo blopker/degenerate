@@ -1,0 +1,106 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class FileDetailEnum {const FileDetailEnum._(this.value);
+
+factory FileDetailEnum.fromJson(String json) { return switch (json) {
+  'high' => high,
+  'low' => low,
+  _ => FileDetailEnum._(json),
+}; }
+
+static const FileDetailEnum high = FileDetailEnum._('high');
+
+static const FileDetailEnum low = FileDetailEnum._('low');
+
+static const List<FileDetailEnum> values = [high, low];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FileDetailEnum && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FileDetailEnum($value)'; } 
+ }
+/// The type of the input item. Always `input_file`.
+final class InputFileContentParamType {const InputFileContentParamType._(this.value);
+
+factory InputFileContentParamType.fromJson(String json) { return switch (json) {
+  'input_file' => inputFile,
+  _ => InputFileContentParamType._(json),
+}; }
+
+static const InputFileContentParamType inputFile = InputFileContentParamType._('input_file');
+
+static const List<InputFileContentParamType> values = [inputFile];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InputFileContentParamType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InputFileContentParamType($value)'; } 
+ }
+/// A file input to the model.
+final class InputFileContentParam {const InputFileContentParam({this.type = InputFileContentParamType.inputFile, this.fileId, this.filename, this.fileData, this.fileUrl, this.detail, });
+
+factory InputFileContentParam.fromJson(Map<String, dynamic> json) { return InputFileContentParam(
+  type: InputFileContentParamType.fromJson(json['type'] as String),
+  fileId: json['file_id'] as String?,
+  filename: json['filename'] as String?,
+  fileData: json['file_data'] as String?,
+  fileUrl: json['file_url'] as String?,
+  detail: json['detail'] != null ? FileDetailEnum.fromJson(json['detail'] as String) : null,
+); }
+
+/// The type of the input item. Always `input_file`.
+final InputFileContentParamType type;
+
+/// The ID of the file to be sent to the model.
+final String? fileId;
+
+/// The name of the file to be sent to the model.
+final String? filename;
+
+/// The base64-encoded data of the file to be sent to the model.
+final String? fileData;
+
+/// The URL of the file to be sent to the model.
+final String? fileUrl;
+
+/// The detail level of the file to be sent to the model. One of `high` or `low`. Defaults to `high`.
+final FileDetailEnum? detail;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'file_id': ?fileId,
+  'filename': ?filename,
+  'file_data': ?fileData,
+  'file_url': ?fileUrl,
+  if (detail != null) 'detail': detail?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+InputFileContentParam copyWith({InputFileContentParamType? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum Function()? detail, }) { return InputFileContentParam(
+  type: type ?? this.type,
+  fileId: fileId != null ? fileId() : this.fileId,
+  filename: filename != null ? filename() : this.filename,
+  fileData: fileData != null ? fileData() : this.fileData,
+  fileUrl: fileUrl != null ? fileUrl() : this.fileUrl,
+  detail: detail != null ? detail() : this.detail,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InputFileContentParam &&
+          type == other.type &&
+          fileId == other.fileId &&
+          filename == other.filename &&
+          fileData == other.fileData &&
+          fileUrl == other.fileUrl &&
+          detail == other.detail; } 
+@override int get hashCode { return Object.hash(type, fileId, filename, fileData, fileUrl, detail); } 
+@override String toString() { return 'InputFileContentParam(type: $type, fileId: $fileId, filename: $filename, fileData: $fileData, fileUrl: $fileUrl, detail: $detail)'; } 
+ }

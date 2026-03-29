@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A Refund object returned by the Terminal refunds API.
+final class TerminalRefund {const TerminalRefund();
+
+factory TerminalRefund.fromJson(Map<String, dynamic> json) { return TerminalRefund(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TerminalRefund copyWith() { return TerminalRefund(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is TerminalRefund; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'TerminalRefund()'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoices_resource_from_invoice.dart';/// Details of the invoice that was cloned. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.
+final class InvoiceFromInvoice {const InvoiceFromInvoice({this.invoicesResourceFromInvoice});
+
+factory InvoiceFromInvoice.fromJson(Map<String, dynamic> json) { return InvoiceFromInvoice(
+  invoicesResourceFromInvoice: InvoicesResourceFromInvoice.canParse(json) ? InvoicesResourceFromInvoice.fromJson(json) : null,
+); }
+
+final InvoicesResourceFromInvoice? invoicesResourceFromInvoice;
+
+/// At least one variant must be present.
+bool get isValid { return invoicesResourceFromInvoice != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?invoicesResourceFromInvoice?.toJson(),
+}; } 
+ }

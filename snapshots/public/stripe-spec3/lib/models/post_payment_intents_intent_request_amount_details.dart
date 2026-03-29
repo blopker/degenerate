@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param.dart';final class PostPaymentIntentsIntentRequestAmountDetailsVariant2 {const PostPaymentIntentsIntentRequestAmountDetailsVariant2._(this.value);
+
+factory PostPaymentIntentsIntentRequestAmountDetailsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsIntentRequestAmountDetailsVariant2._(json),
+}; }
+
+static const PostPaymentIntentsIntentRequestAmountDetailsVariant2 $empty = PostPaymentIntentsIntentRequestAmountDetailsVariant2._('');
+
+static const List<PostPaymentIntentsIntentRequestAmountDetailsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestAmountDetailsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentRequestAmountDetailsVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsIntentRequestAmountDetails = OneOf2<AmountDetailsParam,PostPaymentIntentsIntentRequestAmountDetailsVariant2>;

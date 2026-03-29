@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_setup_intents_request_payment_method_options_sepa_debit_mandate_options.dart';final class PostSetupIntentsRequestPaymentMethodOptionsSepaDebit {const PostSetupIntentsRequestPaymentMethodOptionsSepaDebit({this.mandateOptions});
+
+factory PostSetupIntentsRequestPaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsSepaDebit(
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+); }
+
+final PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions? mandateOptions;
+
+Map<String, dynamic> toJson() { return {
+  if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsRequestPaymentMethodOptionsSepaDebit copyWith({PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptions Function()? mandateOptions}) { return PostSetupIntentsRequestPaymentMethodOptionsSepaDebit(
+  mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodOptionsSepaDebit &&
+          mandateOptions == other.mandateOptions; } 
+@override int get hashCode { return mandateOptions.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsSepaDebit(mandateOptions: $mandateOptions)'; } 
+ }

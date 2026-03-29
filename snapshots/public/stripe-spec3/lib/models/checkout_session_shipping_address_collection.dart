@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_shipping_address_collection.dart';/// When set, provides configuration for Checkout to collect a shipping address from a customer.
+final class CheckoutSessionShippingAddressCollection {const CheckoutSessionShippingAddressCollection({this.paymentPagesCheckoutSessionShippingAddressCollection});
+
+factory CheckoutSessionShippingAddressCollection.fromJson(Map<String, dynamic> json) { return CheckoutSessionShippingAddressCollection(
+  paymentPagesCheckoutSessionShippingAddressCollection: PaymentPagesCheckoutSessionShippingAddressCollection.canParse(json) ? PaymentPagesCheckoutSessionShippingAddressCollection.fromJson(json) : null,
+); }
+
+final PaymentPagesCheckoutSessionShippingAddressCollection? paymentPagesCheckoutSessionShippingAddressCollection;
+
+/// At least one variant must be present.
+bool get isValid { return paymentPagesCheckoutSessionShippingAddressCollection != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentPagesCheckoutSessionShippingAddressCollection?.toJson(),
+}; } 
+ }

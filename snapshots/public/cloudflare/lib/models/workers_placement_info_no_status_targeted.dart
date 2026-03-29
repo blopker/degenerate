@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Targeted placement mode.
+final class WorkersPlacementInfoNoStatusTargetedMode {const WorkersPlacementInfoNoStatusTargetedMode._(this.value);
+
+factory WorkersPlacementInfoNoStatusTargetedMode.fromJson(String json) { return switch (json) {
+  'targeted' => targeted,
+  _ => WorkersPlacementInfoNoStatusTargetedMode._(json),
+}; }
+
+static const WorkersPlacementInfoNoStatusTargetedMode targeted = WorkersPlacementInfoNoStatusTargetedMode._('targeted');
+
+static const List<WorkersPlacementInfoNoStatusTargetedMode> values = [targeted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersPlacementInfoNoStatusTargetedMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersPlacementInfoNoStatusTargetedMode($value)'; } 
+ }
+final class WorkersPlacementInfoNoStatusTargeted {const WorkersPlacementInfoNoStatusTargeted({required this.mode, required this.region, });
+
+factory WorkersPlacementInfoNoStatusTargeted.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusTargeted(
+  mode: WorkersPlacementInfoNoStatusTargetedMode.fromJson(json['mode'] as String),
+  region: json['region'] as String,
+); }
+
+/// Targeted placement mode.
+final WorkersPlacementInfoNoStatusTargetedMode mode;
+
+/// Cloud region for targeted placement in format 'provider:region'.
+final String region;
+
+Map<String, dynamic> toJson() { return {
+  'mode': mode.toJson(),
+  'region': region,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') &&
+      json.containsKey('region') && json['region'] is String; } 
+WorkersPlacementInfoNoStatusTargeted copyWith({WorkersPlacementInfoNoStatusTargetedMode? mode, String? region, }) { return WorkersPlacementInfoNoStatusTargeted(
+  mode: mode ?? this.mode,
+  region: region ?? this.region,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersPlacementInfoNoStatusTargeted &&
+          mode == other.mode &&
+          region == other.region; } 
+@override int get hashCode { return Object.hash(mode, region); } 
+@override String toString() { return 'WorkersPlacementInfoNoStatusTargeted(mode: $mode, region: $region)'; } 
+ }

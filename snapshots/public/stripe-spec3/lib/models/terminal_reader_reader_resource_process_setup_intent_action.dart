@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'setup_intent.dart';import 'terminal_reader_reader_resource_process_setup_config.dart';import 'terminal_reader_reader_resource_process_setup_intent_action_setup_intent.dart';/// Represents a reader action to process a setup intent
+final class TerminalReaderReaderResourceProcessSetupIntentAction {const TerminalReaderReaderResourceProcessSetupIntentAction({this.generatedCard, this.processConfig, required this.setupIntent, });
+
+factory TerminalReaderReaderResourceProcessSetupIntentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceProcessSetupIntentAction(
+  generatedCard: json['generated_card'] as String?,
+  processConfig: json['process_config'] != null ? TerminalReaderReaderResourceProcessSetupConfig.fromJson(json['process_config'] as Map<String, dynamic>) : null,
+  setupIntent: OneOf2.parse(json['setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// ID of a card PaymentMethod generated from the card_present PaymentMethod that may be attached to a Customer for future transactions. Only present if it was possible to generate a card PaymentMethod.
+final String? generatedCard;
+
+final TerminalReaderReaderResourceProcessSetupConfig? processConfig;
+
+/// Most recent SetupIntent processed by the reader.
+final TerminalReaderReaderResourceProcessSetupIntentActionSetupIntent setupIntent;
+
+Map<String, dynamic> toJson() { return {
+  'generated_card': ?generatedCard,
+  if (processConfig != null) 'process_config': processConfig?.toJson(),
+  'setup_intent': setupIntent.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('setup_intent'); } 
+TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String Function()? generatedCard, TerminalReaderReaderResourceProcessSetupConfig Function()? processConfig, TerminalReaderReaderResourceProcessSetupIntentActionSetupIntent? setupIntent, }) { return TerminalReaderReaderResourceProcessSetupIntentAction(
+  generatedCard: generatedCard != null ? generatedCard() : this.generatedCard,
+  processConfig: processConfig != null ? processConfig() : this.processConfig,
+  setupIntent: setupIntent ?? this.setupIntent,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TerminalReaderReaderResourceProcessSetupIntentAction &&
+          generatedCard == other.generatedCard &&
+          processConfig == other.processConfig &&
+          setupIntent == other.setupIntent; } 
+@override int get hashCode { return Object.hash(generatedCard, processConfig, setupIntent); } 
+@override String toString() { return 'TerminalReaderReaderResourceProcessSetupIntentAction(generatedCard: $generatedCard, processConfig: $processConfig, setupIntent: $setupIntent)'; } 
+ }

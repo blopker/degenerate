@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_deployment_status_created_workflow_run_pull_requests_head_repo.dart';final class WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead {const WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead({required this.ref, required this.repo, required this.sha, });
+
+factory WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead(
+  ref: json['ref'] as String,
+  repo: WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHeadRepo.fromJson(json['repo'] as Map<String, dynamic>),
+  sha: json['sha'] as String,
+); }
+
+final String ref;
+
+final WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHeadRepo repo;
+
+final String sha;
+
+Map<String, dynamic> toJson() { return {
+  'ref': ref,
+  'repo': repo.toJson(),
+  'sha': sha,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('repo') &&
+      json.containsKey('sha') && json['sha'] is String; } 
+WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead copyWith({String? ref, WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHeadRepo? repo, String? sha, }) { return WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead(
+  ref: ref ?? this.ref,
+  repo: repo ?? this.repo,
+  sha: sha ?? this.sha,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead &&
+          ref == other.ref &&
+          repo == other.repo &&
+          sha == other.sha; } 
+@override int get hashCode { return Object.hash(ref, repo, sha); } 
+@override String toString() { return 'WebhookDeploymentStatusCreatedWorkflowRunPullRequestsHead(ref: $ref, repo: $repo, sha: $sha)'; } 
+ }

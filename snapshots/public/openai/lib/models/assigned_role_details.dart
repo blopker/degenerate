@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Detailed information about a role assignment entry returned when listing assignments.
+final class AssignedRoleDetails {const AssignedRoleDetails({required this.id, required this.name, required this.permissions, required this.resourceType, required this.predefinedRole, required this.description, required this.createdAt, required this.updatedAt, required this.createdBy, required this.createdByUserObj, required this.metadata, });
+
+factory AssignedRoleDetails.fromJson(Map<String, dynamic> json) { return AssignedRoleDetails(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
+  resourceType: json['resource_type'] as String,
+  predefinedRole: json['predefined_role'] as bool,
+  description: json['description'] as String?,
+  createdAt: json['created_at'] != null ? (json['created_at'] as num).toInt() : null,
+  updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
+  createdBy: json['created_by'] as String?,
+  createdByUserObj: (json['created_by_user_obj'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+); }
+
+/// Identifier for the role.
+final String id;
+
+/// Name of the role.
+final String name;
+
+/// Permissions associated with the role.
+final List<String> permissions;
+
+/// Resource type the role applies to.
+final String resourceType;
+
+/// Whether the role is predefined by OpenAI.
+final bool predefinedRole;
+
+/// Description of the role.
+final String? description;
+
+/// When the role was created.
+final int? createdAt;
+
+/// When the role was last updated.
+final int? updatedAt;
+
+/// Identifier of the actor who created the role.
+final String? createdBy;
+
+/// User details for the actor that created the role, when available.
+final Map<String,dynamic>? createdByUserObj;
+
+/// Arbitrary metadata stored on the role.
+final Map<String,dynamic>? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'name': name,
+  'permissions': permissions,
+  'resource_type': resourceType,
+  'predefined_role': predefinedRole,
+  'description': ?description,
+  'created_at': ?createdAt,
+  'updated_at': ?updatedAt,
+  'created_by': ?createdBy,
+  'created_by_user_obj': ?createdByUserObj,
+  'metadata': ?metadata,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('permissions') &&
+      json.containsKey('resource_type') && json['resource_type'] is String &&
+      json.containsKey('predefined_role') && json['predefined_role'] is bool &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('updated_at') && json['updated_at'] is num &&
+      json.containsKey('created_by') && json['created_by'] is String &&
+      json.containsKey('created_by_user_obj') &&
+      json.containsKey('metadata'); } 
+AssignedRoleDetails copyWith({String? id, String? name, List<String>? permissions, String? resourceType, bool? predefinedRole, String? Function()? description, int? Function()? createdAt, int? Function()? updatedAt, String? Function()? createdBy, Map<String, dynamic>? Function()? createdByUserObj, Map<String, dynamic>? Function()? metadata, }) { return AssignedRoleDetails(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  permissions: permissions ?? this.permissions,
+  resourceType: resourceType ?? this.resourceType,
+  predefinedRole: predefinedRole ?? this.predefinedRole,
+  description: description != null ? description() : this.description,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  createdBy: createdBy != null ? createdBy() : this.createdBy,
+  createdByUserObj: createdByUserObj != null ? createdByUserObj() : this.createdByUserObj,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AssignedRoleDetails &&
+          id == other.id &&
+          name == other.name &&
+          listEquals(permissions, other.permissions) &&
+          resourceType == other.resourceType &&
+          predefinedRole == other.predefinedRole &&
+          description == other.description &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          createdBy == other.createdBy &&
+          createdByUserObj == other.createdByUserObj &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(id, name, Object.hashAll(permissions), resourceType, predefinedRole, description, createdAt, updatedAt, createdBy, createdByUserObj, metadata); } 
+@override String toString() { return 'AssignedRoleDetails(id: $id, name: $name, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, createdBy: $createdBy, createdByUserObj: $createdByUserObj, metadata: $metadata)'; } 
+ }

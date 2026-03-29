@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_create_tree_request_tree.dart';final class GitCreateTreeRequest {const GitCreateTreeRequest({required this.tree, this.baseTree, });
+
+factory GitCreateTreeRequest.fromJson(Map<String, dynamic> json) { return GitCreateTreeRequest(
+  tree: (json['tree'] as List<dynamic>).map((e) => GitCreateTreeRequestTree.fromJson(e as Map<String, dynamic>)).toList(),
+  baseTree: json['base_tree'] as String?,
+); }
+
+/// Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
+final List<GitCreateTreeRequestTree> tree;
+
+/// The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by `base_tree` and entries defined in the `tree` parameter. Entries defined in the `tree` parameter will overwrite items from `base_tree` with the same `path`. If you're creating new changes on a branch, then normally you'd set `base_tree` to the SHA1 of the Git tree object of the current latest commit on the branch you're working on.
+/// If not provided, GitHub will create a new Git tree object from only the entries defined in the `tree` parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit's tree and were not defined in the `tree` parameter will be listed as deleted by the new commit.
+final String? baseTree;
+
+Map<String, dynamic> toJson() { return {
+  'tree': tree.map((e) => e.toJson()).toList(),
+  'base_tree': ?baseTree,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('tree'); } 
+GitCreateTreeRequest copyWith({List<GitCreateTreeRequestTree>? tree, String Function()? baseTree, }) { return GitCreateTreeRequest(
+  tree: tree ?? this.tree,
+  baseTree: baseTree != null ? baseTree() : this.baseTree,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GitCreateTreeRequest &&
+          listEquals(tree, other.tree) &&
+          baseTree == other.baseTree; } 
+@override int get hashCode { return Object.hash(Object.hashAll(tree), baseTree); } 
+@override String toString() { return 'GitCreateTreeRequest(tree: $tree, baseTree: $baseTree)'; } 
+ }

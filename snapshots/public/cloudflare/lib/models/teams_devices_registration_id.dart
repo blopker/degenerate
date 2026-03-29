@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
+extension type const TeamsDevicesRegistrationId(String value) {
+factory TeamsDevicesRegistrationId.fromJson(String json) => TeamsDevicesRegistrationId(json);
+
+String toJson() => value;
+
+}

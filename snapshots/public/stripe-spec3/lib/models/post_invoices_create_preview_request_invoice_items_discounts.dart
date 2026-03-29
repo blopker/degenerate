@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_invoice_items_discounts_variant1.dart';final class PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2 {const PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2._(this.value);
+
+factory PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2._(json),
+}; }
+
+static const PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2 $empty = PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2._('');
+
+static const List<PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2($value)'; } 
+ }
+typedef PostInvoicesCreatePreviewRequestInvoiceItemsDiscounts = OneOf2<List<PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant1>,PostInvoicesCreatePreviewRequestInvoiceItemsDiscountsVariant2>;

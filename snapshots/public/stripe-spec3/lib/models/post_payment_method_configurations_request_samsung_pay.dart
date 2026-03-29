@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_request_samsung_pay_display_preference.dart';/// Samsung Pay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage local wallet available in South Korea.
+final class PostPaymentMethodConfigurationsRequestSamsungPay {const PostPaymentMethodConfigurationsRequestSamsungPay({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsRequestSamsungPay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSamsungPay(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSamsungPayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsRequestSamsungPayDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsRequestSamsungPay copyWith({PostPaymentMethodConfigurationsRequestSamsungPayDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestSamsungPay(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsRequestSamsungPay &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestSamsungPay(displayPreference: $displayPreference)'; } 
+ }

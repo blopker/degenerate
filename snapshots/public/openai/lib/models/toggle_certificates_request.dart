@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ToggleCertificatesRequest {const ToggleCertificatesRequest({required this.certificateIds});
+
+factory ToggleCertificatesRequest.fromJson(Map<String, dynamic> json) { return ToggleCertificatesRequest(
+  certificateIds: (json['certificate_ids'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final List<String> certificateIds;
+
+Map<String, dynamic> toJson() { return {
+  'certificate_ids': certificateIds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_ids'); } 
+ToggleCertificatesRequest copyWith({List<String>? certificateIds}) { return ToggleCertificatesRequest(
+  certificateIds: certificateIds ?? this.certificateIds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ToggleCertificatesRequest &&
+          listEquals(certificateIds, other.certificateIds); } 
+@override int get hashCode { return Object.hashAll(certificateIds).hashCode; } 
+@override String toString() { return 'ToggleCertificatesRequest(certificateIds: $certificateIds)'; } 
+ }

@@ -1,0 +1,104 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'teams_devices_policy_summary.dart';import 'teams_devices_registration_device_details.dart';import 'teams_devices_user.dart';/// A WARP configuration tied to a single user. Multiple registrations can be created from a single WARP device.
+final class TeamsDevicesRegistration {const TeamsDevicesRegistration({required this.createdAt, this.deletedAt, required this.device, required this.id, required this.key, this.keyType, required this.lastSeenAt, this.policy, this.revokedAt, this.tunnelType, required this.updatedAt, this.user, });
+
+factory TeamsDevicesRegistration.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistration(
+  createdAt: json['created_at'] as String,
+  deletedAt: json['deleted_at'] as String?,
+  device: TeamsDevicesRegistrationDeviceDetails.fromJson(json['device'] as Map<String, dynamic>),
+  id: json['id'] as String,
+  key: json['key'] as String,
+  keyType: json['key_type'] as String?,
+  lastSeenAt: json['last_seen_at'] as String,
+  policy: json['policy'] != null ? TeamsDevicesPolicySummary.fromJson(json['policy'] as Map<String, dynamic>) : null,
+  revokedAt: json['revoked_at'] as String?,
+  tunnelType: json['tunnel_type'] as String?,
+  updatedAt: json['updated_at'] as String,
+  user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+/// The RFC3339 timestamp when the registration was created.
+final String createdAt;
+
+/// The RFC3339 timestamp when the registration was deleted.
+final String? deletedAt;
+
+final TeamsDevicesRegistrationDeviceDetails device;
+
+/// The ID of the registration.
+final String id;
+
+/// The public key used to connect to the Cloudflare network.
+final String key;
+
+/// The type of encryption key used by the WARP client for the active key. Currently 'curve25519' for WireGuard and 'secp256r1' for MASQUE.
+final String? keyType;
+
+/// The RFC3339 timestamp when the registration was last seen.
+final String lastSeenAt;
+
+final TeamsDevicesPolicySummary? policy;
+
+/// The RFC3339 timestamp when the registration was revoked.
+final String? revokedAt;
+
+/// Type of the tunnel - wireguard or masque.
+final String? tunnelType;
+
+/// The RFC3339 timestamp when the registration was last updated.
+final String updatedAt;
+
+final TeamsDevicesUser? user;
+
+Map<String, dynamic> toJson() { return {
+  'created_at': createdAt,
+  'deleted_at': ?deletedAt,
+  'device': device.toJson(),
+  'id': id,
+  'key': key,
+  'key_type': ?keyType,
+  'last_seen_at': lastSeenAt,
+  if (policy != null) 'policy': policy?.toJson(),
+  'revoked_at': ?revokedAt,
+  'tunnel_type': ?tunnelType,
+  'updated_at': updatedAt,
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('device') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('key') && json['key'] is String &&
+      json.containsKey('last_seen_at') && json['last_seen_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+TeamsDevicesRegistration copyWith({String? createdAt, String? Function()? deletedAt, TeamsDevicesRegistrationDeviceDetails? device, String? id, String? key, String? Function()? keyType, String? lastSeenAt, TeamsDevicesPolicySummary Function()? policy, String? Function()? revokedAt, String? Function()? tunnelType, String? updatedAt, TeamsDevicesUser Function()? user, }) { return TeamsDevicesRegistration(
+  createdAt: createdAt ?? this.createdAt,
+  deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
+  device: device ?? this.device,
+  id: id ?? this.id,
+  key: key ?? this.key,
+  keyType: keyType != null ? keyType() : this.keyType,
+  lastSeenAt: lastSeenAt ?? this.lastSeenAt,
+  policy: policy != null ? policy() : this.policy,
+  revokedAt: revokedAt != null ? revokedAt() : this.revokedAt,
+  tunnelType: tunnelType != null ? tunnelType() : this.tunnelType,
+  updatedAt: updatedAt ?? this.updatedAt,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesRegistration &&
+          createdAt == other.createdAt &&
+          deletedAt == other.deletedAt &&
+          device == other.device &&
+          id == other.id &&
+          key == other.key &&
+          keyType == other.keyType &&
+          lastSeenAt == other.lastSeenAt &&
+          policy == other.policy &&
+          revokedAt == other.revokedAt &&
+          tunnelType == other.tunnelType &&
+          updatedAt == other.updatedAt &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(createdAt, deletedAt, device, id, key, keyType, lastSeenAt, policy, revokedAt, tunnelType, updatedAt, user); } 
+@override String toString() { return 'TeamsDevicesRegistration(createdAt: $createdAt, deletedAt: $deletedAt, device: $device, id: $id, key: $key, keyType: $keyType, lastSeenAt: $lastSeenAt, policy: $policy, revokedAt: $revokedAt, tunnelType: $tunnelType, updatedAt: $updatedAt, user: $user)'; } 
+ }

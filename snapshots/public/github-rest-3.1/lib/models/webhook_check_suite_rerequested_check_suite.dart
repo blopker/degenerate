@@ -1,0 +1,225 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_rerequested_check_suite_app.dart';import 'webhook_check_suite_rerequested_check_suite_head_commit.dart';import 'webhook_check_suite_rerequested_check_suite_pull_requests.dart';/// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
+final class WebhookCheckSuiteRerequestedCheckSuiteConclusion {const WebhookCheckSuiteRerequestedCheckSuiteConclusion._(this.value);
+
+factory WebhookCheckSuiteRerequestedCheckSuiteConclusion.fromJson(String json) { return switch (json) {
+  'success' => success,
+  'failure' => failure,
+  'neutral' => neutral,
+  'cancelled' => cancelled,
+  'timed_out' => timedOut,
+  'action_required' => actionRequired,
+  'stale' => stale,
+  'null' => $null,
+  _ => WebhookCheckSuiteRerequestedCheckSuiteConclusion._(json),
+}; }
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion success = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('success');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion failure = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('failure');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion neutral = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('neutral');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion cancelled = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('cancelled');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion timedOut = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('timed_out');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion actionRequired = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('action_required');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion stale = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('stale');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteConclusion $null = WebhookCheckSuiteRerequestedCheckSuiteConclusion._('null');
+
+static const List<WebhookCheckSuiteRerequestedCheckSuiteConclusion> values = [success, failure, neutral, cancelled, timedOut, actionRequired, stale, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookCheckSuiteRerequestedCheckSuiteConclusion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteConclusion($value)'; } 
+ }
+/// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
+final class WebhookCheckSuiteRerequestedCheckSuiteStatus {const WebhookCheckSuiteRerequestedCheckSuiteStatus._(this.value);
+
+factory WebhookCheckSuiteRerequestedCheckSuiteStatus.fromJson(String json) { return switch (json) {
+  'requested' => requested,
+  'in_progress' => inProgress,
+  'completed' => completed,
+  'queued' => queued,
+  'null' => $null,
+  _ => WebhookCheckSuiteRerequestedCheckSuiteStatus._(json),
+}; }
+
+static const WebhookCheckSuiteRerequestedCheckSuiteStatus requested = WebhookCheckSuiteRerequestedCheckSuiteStatus._('requested');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteStatus inProgress = WebhookCheckSuiteRerequestedCheckSuiteStatus._('in_progress');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteStatus completed = WebhookCheckSuiteRerequestedCheckSuiteStatus._('completed');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteStatus queued = WebhookCheckSuiteRerequestedCheckSuiteStatus._('queued');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteStatus $null = WebhookCheckSuiteRerequestedCheckSuiteStatus._('null');
+
+static const List<WebhookCheckSuiteRerequestedCheckSuiteStatus> values = [requested, inProgress, completed, queued, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookCheckSuiteRerequestedCheckSuiteStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteStatus($value)'; } 
+ }
+/// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).
+final class WebhookCheckSuiteRerequestedCheckSuite {const WebhookCheckSuiteRerequestedCheckSuite({required this.after, required this.app, required this.before, required this.checkRunsUrl, required this.conclusion, required this.createdAt, required this.headBranch, required this.headCommit, required this.headSha, required this.id, required this.latestCheckRunsCount, required this.nodeId, required this.pullRequests, this.rerequestable, this.runsRerequestable, required this.status, required this.updatedAt, required this.url, });
+
+factory WebhookCheckSuiteRerequestedCheckSuite.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuite(
+  after: json['after'] as String?,
+  app: WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(json['app'] as Map<String, dynamic>),
+  before: json['before'] as String?,
+  checkRunsUrl: Uri.parse(json['check_runs_url'] as String),
+  conclusion: json['conclusion'] != null ? WebhookCheckSuiteRerequestedCheckSuiteConclusion.fromJson(json['conclusion'] as String) : null,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  headBranch: json['head_branch'] as String?,
+  headCommit: WebhookCheckSuiteRerequestedCheckSuiteHeadCommit.fromJson(json['head_commit'] as Map<String, dynamic>),
+  headSha: json['head_sha'] as String,
+  id: (json['id'] as num).toInt(),
+  latestCheckRunsCount: (json['latest_check_runs_count'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  pullRequests: (json['pull_requests'] as List<dynamic>).map((e) => WebhookCheckSuiteRerequestedCheckSuitePullRequests.fromJson(e as Map<String, dynamic>)).toList(),
+  rerequestable: json['rerequestable'] as bool?,
+  runsRerequestable: json['runs_rerequestable'] as bool?,
+  status: json['status'] != null ? WebhookCheckSuiteRerequestedCheckSuiteStatus.fromJson(json['status'] as String) : null,
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  url: Uri.parse(json['url'] as String),
+); }
+
+final String? after;
+
+/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+final WebhookCheckSuiteRerequestedCheckSuiteApp app;
+
+final String? before;
+
+final Uri checkRunsUrl;
+
+/// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
+final WebhookCheckSuiteRerequestedCheckSuiteConclusion? conclusion;
+
+final DateTime createdAt;
+
+/// The head branch name the changes are on.
+final String? headBranch;
+
+final WebhookCheckSuiteRerequestedCheckSuiteHeadCommit headCommit;
+
+/// The SHA of the head commit that is being checked.
+final String headSha;
+
+final int id;
+
+final int latestCheckRunsCount;
+
+final String nodeId;
+
+/// An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
+final List<WebhookCheckSuiteRerequestedCheckSuitePullRequests> pullRequests;
+
+final bool? rerequestable;
+
+final bool? runsRerequestable;
+
+/// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
+final WebhookCheckSuiteRerequestedCheckSuiteStatus? status;
+
+final DateTime updatedAt;
+
+/// URL that points to the check suite API resource.
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'after': ?after,
+  'app': app.toJson(),
+  'before': ?before,
+  'check_runs_url': checkRunsUrl.toString(),
+  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'created_at': createdAt.toIso8601String(),
+  'head_branch': ?headBranch,
+  'head_commit': headCommit.toJson(),
+  'head_sha': headSha,
+  'id': id,
+  'latest_check_runs_count': latestCheckRunsCount,
+  'node_id': nodeId,
+  'pull_requests': pullRequests.map((e) => e.toJson()).toList(),
+  'rerequestable': ?rerequestable,
+  'runs_rerequestable': ?runsRerequestable,
+  if (status != null) 'status': status?.toJson(),
+  'updated_at': updatedAt.toIso8601String(),
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('after') && json['after'] is String &&
+      json.containsKey('app') &&
+      json.containsKey('before') && json['before'] is String &&
+      json.containsKey('check_runs_url') && json['check_runs_url'] is String &&
+      json.containsKey('conclusion') &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('head_branch') && json['head_branch'] is String &&
+      json.containsKey('head_commit') &&
+      json.containsKey('head_sha') && json['head_sha'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('latest_check_runs_count') && json['latest_check_runs_count'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('pull_requests') &&
+      json.containsKey('status') &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookCheckSuiteRerequestedCheckSuite copyWith({String? Function()? after, WebhookCheckSuiteRerequestedCheckSuiteApp? app, String? Function()? before, Uri? checkRunsUrl, WebhookCheckSuiteRerequestedCheckSuiteConclusion? Function()? conclusion, DateTime? createdAt, String? Function()? headBranch, WebhookCheckSuiteRerequestedCheckSuiteHeadCommit? headCommit, String? headSha, int? id, int? latestCheckRunsCount, String? nodeId, List<WebhookCheckSuiteRerequestedCheckSuitePullRequests>? pullRequests, bool Function()? rerequestable, bool Function()? runsRerequestable, WebhookCheckSuiteRerequestedCheckSuiteStatus? Function()? status, DateTime? updatedAt, Uri? url, }) { return WebhookCheckSuiteRerequestedCheckSuite(
+  after: after != null ? after() : this.after,
+  app: app ?? this.app,
+  before: before != null ? before() : this.before,
+  checkRunsUrl: checkRunsUrl ?? this.checkRunsUrl,
+  conclusion: conclusion != null ? conclusion() : this.conclusion,
+  createdAt: createdAt ?? this.createdAt,
+  headBranch: headBranch != null ? headBranch() : this.headBranch,
+  headCommit: headCommit ?? this.headCommit,
+  headSha: headSha ?? this.headSha,
+  id: id ?? this.id,
+  latestCheckRunsCount: latestCheckRunsCount ?? this.latestCheckRunsCount,
+  nodeId: nodeId ?? this.nodeId,
+  pullRequests: pullRequests ?? this.pullRequests,
+  rerequestable: rerequestable != null ? rerequestable() : this.rerequestable,
+  runsRerequestable: runsRerequestable != null ? runsRerequestable() : this.runsRerequestable,
+  status: status != null ? status() : this.status,
+  updatedAt: updatedAt ?? this.updatedAt,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookCheckSuiteRerequestedCheckSuite &&
+          after == other.after &&
+          app == other.app &&
+          before == other.before &&
+          checkRunsUrl == other.checkRunsUrl &&
+          conclusion == other.conclusion &&
+          createdAt == other.createdAt &&
+          headBranch == other.headBranch &&
+          headCommit == other.headCommit &&
+          headSha == other.headSha &&
+          id == other.id &&
+          latestCheckRunsCount == other.latestCheckRunsCount &&
+          nodeId == other.nodeId &&
+          listEquals(pullRequests, other.pullRequests) &&
+          rerequestable == other.rerequestable &&
+          runsRerequestable == other.runsRerequestable &&
+          status == other.status &&
+          updatedAt == other.updatedAt &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(after, app, before, checkRunsUrl, conclusion, createdAt, headBranch, headCommit, headSha, id, latestCheckRunsCount, nodeId, Object.hashAll(pullRequests), rerequestable, runsRerequestable, status, updatedAt, url); } 
+@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuite(after: $after, app: $app, before: $before, checkRunsUrl: $checkRunsUrl, conclusion: $conclusion, createdAt: $createdAt, headBranch: $headBranch, headCommit: $headCommit, headSha: $headSha, id: $id, latestCheckRunsCount: $latestCheckRunsCount, nodeId: $nodeId, pullRequests: $pullRequests, rerequestable: $rerequestable, runsRerequestable: $runsRerequestable, status: $status, updatedAt: $updatedAt, url: $url)'; } 
+ }

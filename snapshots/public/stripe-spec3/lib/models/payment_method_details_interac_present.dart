@@ -1,0 +1,188 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_interac_present_receipt2.dart';/// How card details were read in this transaction.
+final class PaymentMethodDetailsInteracPresentReadMethod {const PaymentMethodDetailsInteracPresentReadMethod._(this.value);
+
+factory PaymentMethodDetailsInteracPresentReadMethod.fromJson(String json) { return switch (json) {
+  'contact_emv' => contactEmv,
+  'contactless_emv' => contactlessEmv,
+  'contactless_magstripe_mode' => contactlessMagstripeMode,
+  'magnetic_stripe_fallback' => magneticStripeFallback,
+  'magnetic_stripe_track2' => magneticStripeTrack2,
+  _ => PaymentMethodDetailsInteracPresentReadMethod._(json),
+}; }
+
+static const PaymentMethodDetailsInteracPresentReadMethod contactEmv = PaymentMethodDetailsInteracPresentReadMethod._('contact_emv');
+
+static const PaymentMethodDetailsInteracPresentReadMethod contactlessEmv = PaymentMethodDetailsInteracPresentReadMethod._('contactless_emv');
+
+static const PaymentMethodDetailsInteracPresentReadMethod contactlessMagstripeMode = PaymentMethodDetailsInteracPresentReadMethod._('contactless_magstripe_mode');
+
+static const PaymentMethodDetailsInteracPresentReadMethod magneticStripeFallback = PaymentMethodDetailsInteracPresentReadMethod._('magnetic_stripe_fallback');
+
+static const PaymentMethodDetailsInteracPresentReadMethod magneticStripeTrack2 = PaymentMethodDetailsInteracPresentReadMethod._('magnetic_stripe_track2');
+
+static const List<PaymentMethodDetailsInteracPresentReadMethod> values = [contactEmv, contactlessEmv, contactlessMagstripeMode, magneticStripeFallback, magneticStripeTrack2];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsInteracPresentReadMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsInteracPresentReadMethod($value)'; } 
+ }
+/// 
+final class PaymentMethodDetailsInteracPresent {const PaymentMethodDetailsInteracPresent({this.brand, this.cardholderName, this.country, this.description, this.emvAuthData, required this.expMonth, required this.expYear, this.fingerprint, this.funding, this.generatedCard, this.issuer, this.last4, this.location, this.network, this.networkTransactionId, this.preferredLocales, this.readMethod, this.reader, this.receipt, });
+
+factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsInteracPresent(
+  brand: json['brand'] as String?,
+  cardholderName: json['cardholder_name'] as String?,
+  country: json['country'] as String?,
+  description: json['description'] as String?,
+  emvAuthData: json['emv_auth_data'] as String?,
+  expMonth: (json['exp_month'] as num).toInt(),
+  expYear: (json['exp_year'] as num).toInt(),
+  fingerprint: json['fingerprint'] as String?,
+  funding: json['funding'] as String?,
+  generatedCard: json['generated_card'] as String?,
+  issuer: json['issuer'] as String?,
+  last4: json['last4'] as String?,
+  location: json['location'] as String?,
+  network: json['network'] as String?,
+  networkTransactionId: json['network_transaction_id'] as String?,
+  preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  readMethod: json['read_method'] != null ? PaymentMethodDetailsInteracPresentReadMethod.fromJson(json['read_method'] as String) : null,
+  reader: json['reader'] as String?,
+  receipt: json['receipt'] != null ? PaymentMethodDetailsInteracPresentReceipt2.fromJson(json['receipt'] as Map<String, dynamic>) : null,
+); }
+
+/// Card brand. Can be `interac`, `mastercard` or `visa`.
+final String? brand;
+
+/// The cardholder name as read from the card, in [ISO 7813](https://en.wikipedia.org/wiki/ISO/IEC_7813) format. May include alphanumeric characters, special characters and first/last name separator (`/`). In some cases, the cardholder name may not be available depending on how the issuer has configured the card. Cardholder name is typically not available on swipe or contactless payments, such as those made with Apple Pay and Google Pay.
+final String? cardholderName;
+
+/// Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you've collected.
+final String? country;
+
+/// A high-level description of the type of cards issued in this range.
+final String? description;
+
+/// Authorization response cryptogram.
+final String? emvAuthData;
+
+/// Two-digit number representing the card's expiration month.
+final int expMonth;
+
+/// Four-digit number representing the card's expiration year.
+final int expYear;
+
+/// Uniquely identifies this particular card number. You can use this attribute to check whether two customers who’ve signed up with you are using the same card number, for example. For payment methods that tokenize card information (Apple Pay, Google Pay), the tokenized number might be provided instead of the underlying card number.
+/// 
+/// *As of May 1, 2021, card fingerprint in India for Connect changed to allow two fingerprints for the same card---one for India and one for the rest of the world.*
+final String? fingerprint;
+
+/// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
+final String? funding;
+
+/// ID of a card PaymentMethod generated from the card_present PaymentMethod that may be attached to a Customer for future transactions. Only present if it was possible to generate a card PaymentMethod.
+final String? generatedCard;
+
+/// The name of the card's issuing bank.
+final String? issuer;
+
+/// The last four digits of the card.
+final String? last4;
+
+/// ID of the [location](https://docs.stripe.com/api/terminal/locations) that this transaction's reader is assigned to.
+final String? location;
+
+/// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
+final String? network;
+
+/// This is used by the financial networks to identify a transaction. Visa calls this the Transaction ID, Mastercard calls this the Trace ID, and American Express calls this the Acquirer Reference Data. This value will be present if it is returned by the financial network in the authorization response, and null otherwise.
+final String? networkTransactionId;
+
+/// The languages that the issuing bank recommends using for localizing any customer-facing text, as read from the card. Referenced from EMV tag 5F2D, data encoded on the card's chip.
+final List<String>? preferredLocales;
+
+/// How card details were read in this transaction.
+final PaymentMethodDetailsInteracPresentReadMethod? readMethod;
+
+/// ID of the [reader](https://docs.stripe.com/api/terminal/readers) this transaction was made on.
+final String? reader;
+
+/// A collection of fields required to be displayed on receipts. Only required for EMV transactions.
+final PaymentMethodDetailsInteracPresentReceipt2? receipt;
+
+Map<String, dynamic> toJson() { return {
+  'brand': ?brand,
+  'cardholder_name': ?cardholderName,
+  'country': ?country,
+  'description': ?description,
+  'emv_auth_data': ?emvAuthData,
+  'exp_month': expMonth,
+  'exp_year': expYear,
+  'fingerprint': ?fingerprint,
+  'funding': ?funding,
+  'generated_card': ?generatedCard,
+  'issuer': ?issuer,
+  'last4': ?last4,
+  'location': ?location,
+  'network': ?network,
+  'network_transaction_id': ?networkTransactionId,
+  'preferred_locales': ?preferredLocales,
+  if (readMethod != null) 'read_method': readMethod?.toJson(),
+  'reader': ?reader,
+  if (receipt != null) 'receipt': receipt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num; } 
+PaymentMethodDetailsInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, String? Function()? emvAuthData, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? generatedCard, String? Function()? issuer, String? Function()? last4, String Function()? location, String? Function()? network, String? Function()? networkTransactionId, List<String>? Function()? preferredLocales, PaymentMethodDetailsInteracPresentReadMethod? Function()? readMethod, String Function()? reader, PaymentMethodDetailsInteracPresentReceipt2? Function()? receipt, }) { return PaymentMethodDetailsInteracPresent(
+  brand: brand != null ? brand() : this.brand,
+  cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
+  country: country != null ? country() : this.country,
+  description: description != null ? description() : this.description,
+  emvAuthData: emvAuthData != null ? emvAuthData() : this.emvAuthData,
+  expMonth: expMonth ?? this.expMonth,
+  expYear: expYear ?? this.expYear,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  funding: funding != null ? funding() : this.funding,
+  generatedCard: generatedCard != null ? generatedCard() : this.generatedCard,
+  issuer: issuer != null ? issuer() : this.issuer,
+  last4: last4 != null ? last4() : this.last4,
+  location: location != null ? location() : this.location,
+  network: network != null ? network() : this.network,
+  networkTransactionId: networkTransactionId != null ? networkTransactionId() : this.networkTransactionId,
+  preferredLocales: preferredLocales != null ? preferredLocales() : this.preferredLocales,
+  readMethod: readMethod != null ? readMethod() : this.readMethod,
+  reader: reader != null ? reader() : this.reader,
+  receipt: receipt != null ? receipt() : this.receipt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsInteracPresent &&
+          brand == other.brand &&
+          cardholderName == other.cardholderName &&
+          country == other.country &&
+          description == other.description &&
+          emvAuthData == other.emvAuthData &&
+          expMonth == other.expMonth &&
+          expYear == other.expYear &&
+          fingerprint == other.fingerprint &&
+          funding == other.funding &&
+          generatedCard == other.generatedCard &&
+          issuer == other.issuer &&
+          last4 == other.last4 &&
+          location == other.location &&
+          network == other.network &&
+          networkTransactionId == other.networkTransactionId &&
+          listEquals(preferredLocales, other.preferredLocales) &&
+          readMethod == other.readMethod &&
+          reader == other.reader &&
+          receipt == other.receipt; } 
+@override int get hashCode { return Object.hash(brand, cardholderName, country, description, emvAuthData, expMonth, expYear, fingerprint, funding, generatedCard, issuer, last4, location, network, networkTransactionId, Object.hashAll(preferredLocales ?? const []), readMethod, reader, receipt); } 
+@override String toString() { return 'PaymentMethodDetailsInteracPresent(brand: $brand, cardholderName: $cardholderName, country: $country, description: $description, emvAuthData: $emvAuthData, expMonth: $expMonth, expYear: $expYear, fingerprint: $fingerprint, funding: $funding, generatedCard: $generatedCard, issuer: $issuer, last4: $last4, location: $location, network: $network, networkTransactionId: $networkTransactionId, preferredLocales: $preferredLocales, readMethod: $readMethod, reader: $reader, receipt: $receipt)'; } 
+ }

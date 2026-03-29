@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'digital_experience_monitoring_timestamp.dart';import 'digital_experience_monitoring_uuid.dart';/// The state of the WARP toggle.
+final class DigitalExperienceMonitoringWarpToggleChangeEventToggle {const DigitalExperienceMonitoringWarpToggleChangeEventToggle._(this.value);
+
+factory DigitalExperienceMonitoringWarpToggleChangeEventToggle.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => DigitalExperienceMonitoringWarpToggleChangeEventToggle._(json),
+}; }
+
+static const DigitalExperienceMonitoringWarpToggleChangeEventToggle $on = DigitalExperienceMonitoringWarpToggleChangeEventToggle._('on');
+
+static const DigitalExperienceMonitoringWarpToggleChangeEventToggle off = DigitalExperienceMonitoringWarpToggleChangeEventToggle._('off');
+
+static const List<DigitalExperienceMonitoringWarpToggleChangeEventToggle> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DigitalExperienceMonitoringWarpToggleChangeEventToggle && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DigitalExperienceMonitoringWarpToggleChangeEventToggle($value)'; } 
+ }
+final class DigitalExperienceMonitoringWarpToggleChangeEvent {const DigitalExperienceMonitoringWarpToggleChangeEvent({this.accountName, this.accountTag, this.deviceId, this.deviceRegistration, this.hostname, this.serialNumber, this.timestamp, this.toggle, this.userEmail, });
+
+factory DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpToggleChangeEvent(
+  accountName: json['account_name'] as String?,
+  accountTag: json['account_tag'] as String?,
+  deviceId: json['device_id'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_id'] as String) : null,
+  deviceRegistration: json['device_registration'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['device_registration'] as String) : null,
+  hostname: json['hostname'] as String?,
+  serialNumber: json['serial_number'] as String?,
+  timestamp: json['timestamp'] != null ? DigitalExperienceMonitoringTimestamp.fromJson(json['timestamp'] as String) : null,
+  toggle: json['toggle'] != null ? DigitalExperienceMonitoringWarpToggleChangeEventToggle.fromJson(json['toggle'] as String) : null,
+  userEmail: json['user_email'] as String?,
+); }
+
+/// The account name.
+final String? accountName;
+
+/// The public account identifier.
+final String? accountTag;
+
+/// API Resource UUID tag.
+final DigitalExperienceMonitoringUuid? deviceId;
+
+/// API Resource UUID tag.
+final DigitalExperienceMonitoringUuid? deviceRegistration;
+
+/// The hostname of the machine the event is from
+final String? hostname;
+
+/// The serial number of the machine the event is from
+final String? serialNumber;
+
+/// Timestamp in ISO format
+final DigitalExperienceMonitoringTimestamp? timestamp;
+
+/// The state of the WARP toggle.
+final DigitalExperienceMonitoringWarpToggleChangeEventToggle? toggle;
+
+/// Email tied to the device
+final String? userEmail;
+
+Map<String, dynamic> toJson() { return {
+  'account_name': ?accountName,
+  'account_tag': ?accountTag,
+  if (deviceId != null) 'device_id': deviceId?.toJson(),
+  if (deviceRegistration != null) 'device_registration': deviceRegistration?.toJson(),
+  'hostname': ?hostname,
+  'serial_number': ?serialNumber,
+  if (timestamp != null) 'timestamp': timestamp?.toJson(),
+  if (toggle != null) 'toggle': toggle?.toJson(),
+  'user_email': ?userEmail,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DigitalExperienceMonitoringWarpToggleChangeEvent copyWith({String Function()? accountName, String Function()? accountTag, DigitalExperienceMonitoringUuid Function()? deviceId, DigitalExperienceMonitoringUuid Function()? deviceRegistration, String Function()? hostname, String Function()? serialNumber, DigitalExperienceMonitoringTimestamp Function()? timestamp, DigitalExperienceMonitoringWarpToggleChangeEventToggle Function()? toggle, String Function()? userEmail, }) { return DigitalExperienceMonitoringWarpToggleChangeEvent(
+  accountName: accountName != null ? accountName() : this.accountName,
+  accountTag: accountTag != null ? accountTag() : this.accountTag,
+  deviceId: deviceId != null ? deviceId() : this.deviceId,
+  deviceRegistration: deviceRegistration != null ? deviceRegistration() : this.deviceRegistration,
+  hostname: hostname != null ? hostname() : this.hostname,
+  serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
+  timestamp: timestamp != null ? timestamp() : this.timestamp,
+  toggle: toggle != null ? toggle() : this.toggle,
+  userEmail: userEmail != null ? userEmail() : this.userEmail,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringWarpToggleChangeEvent &&
+          accountName == other.accountName &&
+          accountTag == other.accountTag &&
+          deviceId == other.deviceId &&
+          deviceRegistration == other.deviceRegistration &&
+          hostname == other.hostname &&
+          serialNumber == other.serialNumber &&
+          timestamp == other.timestamp &&
+          toggle == other.toggle &&
+          userEmail == other.userEmail; } 
+@override int get hashCode { return Object.hash(accountName, accountTag, deviceId, deviceRegistration, hostname, serialNumber, timestamp, toggle, userEmail); } 
+@override String toString() { return 'DigitalExperienceMonitoringWarpToggleChangeEvent(accountName: $accountName, accountTag: $accountTag, deviceId: $deviceId, deviceRegistration: $deviceRegistration, hostname: $hostname, serialNumber: $serialNumber, timestamp: $timestamp, toggle: $toggle, userEmail: $userEmail)'; } 
+ }

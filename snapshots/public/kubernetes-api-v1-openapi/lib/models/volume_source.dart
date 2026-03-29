@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'volume_file.dart';/// DownwardAPIVolumeSource represents a volume containing downward API info. Downward API volumes support ownership management and SELinux relabeling.
+final class VolumeSource {const VolumeSource({this.defaultMode, this.items, });
+
+factory VolumeSource.fromJson(Map<String, dynamic> json) { return VolumeSource(
+  defaultMode: json['defaultMode'] != null ? (json['defaultMode'] as num).toInt() : null,
+  items: (json['items'] as List<dynamic>?)?.map((e) => VolumeFile.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Optional: mode bits to use on created files by default. Must be a Optional: mode bits used to set permissions on created files by default. Must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+final int? defaultMode;
+
+/// Items is a list of downward API volume file
+final List<VolumeFile>? items;
+
+Map<String, dynamic> toJson() { return {
+  'defaultMode': ?defaultMode,
+  if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+VolumeSource copyWith({int Function()? defaultMode, List<VolumeFile> Function()? items, }) { return VolumeSource(
+  defaultMode: defaultMode != null ? defaultMode() : this.defaultMode,
+  items: items != null ? items() : this.items,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VolumeSource &&
+          defaultMode == other.defaultMode &&
+          listEquals(items, other.items); } 
+@override int get hashCode { return Object.hash(defaultMode, Object.hashAll(items ?? const [])); } 
+@override String toString() { return 'VolumeSource(defaultMode: $defaultMode, items: $items)'; } 
+ }

@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Filename generation strategy.
+final class CloudflarePipelinesR2TablePublicFileNamingStrategy {const CloudflarePipelinesR2TablePublicFileNamingStrategy._(this.value);
+
+factory CloudflarePipelinesR2TablePublicFileNamingStrategy.fromJson(String json) { return switch (json) {
+  'serial' => serial,
+  'uuid' => uuid,
+  'uuid_v7' => uuidV7,
+  'ulid' => ulid,
+  _ => CloudflarePipelinesR2TablePublicFileNamingStrategy._(json),
+}; }
+
+static const CloudflarePipelinesR2TablePublicFileNamingStrategy serial = CloudflarePipelinesR2TablePublicFileNamingStrategy._('serial');
+
+static const CloudflarePipelinesR2TablePublicFileNamingStrategy uuid = CloudflarePipelinesR2TablePublicFileNamingStrategy._('uuid');
+
+static const CloudflarePipelinesR2TablePublicFileNamingStrategy uuidV7 = CloudflarePipelinesR2TablePublicFileNamingStrategy._('uuid_v7');
+
+static const CloudflarePipelinesR2TablePublicFileNamingStrategy ulid = CloudflarePipelinesR2TablePublicFileNamingStrategy._('ulid');
+
+static const List<CloudflarePipelinesR2TablePublicFileNamingStrategy> values = [serial, uuid, uuidV7, ulid];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CloudflarePipelinesR2TablePublicFileNamingStrategy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesR2TablePublicFileNamingStrategy($value)'; } 
+ }
+/// Controls filename prefix/suffix and strategy.
+final class CloudflarePipelinesR2TablePublicFileNaming {const CloudflarePipelinesR2TablePublicFileNaming({this.prefix, this.strategy, this.suffix, });
+
+factory CloudflarePipelinesR2TablePublicFileNaming.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesR2TablePublicFileNaming(
+  prefix: json['prefix'] as String?,
+  strategy: json['strategy'] != null ? CloudflarePipelinesR2TablePublicFileNamingStrategy.fromJson(json['strategy'] as String) : null,
+  suffix: json['suffix'] as String?,
+); }
+
+/// The prefix to use in file name. i.e prefix-`<uuid>`.parquet
+final String? prefix;
+
+/// Filename generation strategy.
+final CloudflarePipelinesR2TablePublicFileNamingStrategy? strategy;
+
+/// This will overwrite the default file suffix. i.e .parquet, use with caution
+final String? suffix;
+
+Map<String, dynamic> toJson() { return {
+  'prefix': ?prefix,
+  if (strategy != null) 'strategy': strategy?.toJson(),
+  'suffix': ?suffix,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CloudflarePipelinesR2TablePublicFileNaming copyWith({String Function()? prefix, CloudflarePipelinesR2TablePublicFileNamingStrategy Function()? strategy, String Function()? suffix, }) { return CloudflarePipelinesR2TablePublicFileNaming(
+  prefix: prefix != null ? prefix() : this.prefix,
+  strategy: strategy != null ? strategy() : this.strategy,
+  suffix: suffix != null ? suffix() : this.suffix,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudflarePipelinesR2TablePublicFileNaming &&
+          prefix == other.prefix &&
+          strategy == other.strategy &&
+          suffix == other.suffix; } 
+@override int get hashCode { return Object.hash(prefix, strategy, suffix); } 
+@override String toString() { return 'CloudflarePipelinesR2TablePublicFileNaming(prefix: $prefix, strategy: $strategy, suffix: $suffix)'; } 
+ }

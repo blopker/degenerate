@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'chat_completion_request_message_content_part_image_image_url.dart';/// The type of the content part.
+final class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType._(this.value);
+
+factory ChatCompletionRequestMessageContentPartImageType.fromJson(String json) { return switch (json) {
+  'image_url' => imageUrl,
+  _ => ChatCompletionRequestMessageContentPartImageType._(json),
+}; }
+
+static const ChatCompletionRequestMessageContentPartImageType imageUrl = ChatCompletionRequestMessageContentPartImageType._('image_url');
+
+static const List<ChatCompletionRequestMessageContentPartImageType> values = [imageUrl];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ChatCompletionRequestMessageContentPartImageType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ChatCompletionRequestMessageContentPartImageType($value)'; } 
+ }
+/// Learn about [image inputs](/docs/guides/vision).
+/// 
+final class ChatCompletionRequestMessageContentPartImage {const ChatCompletionRequestMessageContentPartImage({required this.type, required this.imageUrl, });
+
+factory ChatCompletionRequestMessageContentPartImage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartImage(
+  type: ChatCompletionRequestMessageContentPartImageType.fromJson(json['type'] as String),
+  imageUrl: ChatCompletionRequestMessageContentPartImageImageUrl.fromJson(json['image_url'] as Map<String, dynamic>),
+); }
+
+/// The type of the content part.
+final ChatCompletionRequestMessageContentPartImageType type;
+
+final ChatCompletionRequestMessageContentPartImageImageUrl imageUrl;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'image_url': imageUrl.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('image_url'); } 
+ChatCompletionRequestMessageContentPartImage copyWith({ChatCompletionRequestMessageContentPartImageType? type, ChatCompletionRequestMessageContentPartImageImageUrl? imageUrl, }) { return ChatCompletionRequestMessageContentPartImage(
+  type: type ?? this.type,
+  imageUrl: imageUrl ?? this.imageUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChatCompletionRequestMessageContentPartImage &&
+          type == other.type &&
+          imageUrl == other.imageUrl; } 
+@override int get hashCode { return Object.hash(type, imageUrl); } 
+@override String toString() { return 'ChatCompletionRequestMessageContentPartImage(type: $type, imageUrl: $imageUrl)'; } 
+ }

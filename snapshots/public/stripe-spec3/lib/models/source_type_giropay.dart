@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SourceTypeGiropay {const SourceTypeGiropay({this.bankCode, this.bankName, this.bic, this.statementDescriptor, });
+
+factory SourceTypeGiropay.fromJson(Map<String, dynamic> json) { return SourceTypeGiropay(
+  bankCode: json['bank_code'] as String?,
+  bankName: json['bank_name'] as String?,
+  bic: json['bic'] as String?,
+  statementDescriptor: json['statement_descriptor'] as String?,
+); }
+
+final String? bankCode;
+
+final String? bankName;
+
+final String? bic;
+
+final String? statementDescriptor;
+
+Map<String, dynamic> toJson() { return {
+  'bank_code': ?bankCode,
+  'bank_name': ?bankName,
+  'bic': ?bic,
+  'statement_descriptor': ?statementDescriptor,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SourceTypeGiropay copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, String? Function()? statementDescriptor, }) { return SourceTypeGiropay(
+  bankCode: bankCode != null ? bankCode() : this.bankCode,
+  bankName: bankName != null ? bankName() : this.bankName,
+  bic: bic != null ? bic() : this.bic,
+  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SourceTypeGiropay &&
+          bankCode == other.bankCode &&
+          bankName == other.bankName &&
+          bic == other.bic &&
+          statementDescriptor == other.statementDescriptor; } 
+@override int get hashCode { return Object.hash(bankCode, bankName, bic, statementDescriptor); } 
+@override String toString() { return 'SourceTypeGiropay(bankCode: $bankCode, bankName: $bankName, bic: $bic, statementDescriptor: $statementDescriptor)'; } 
+ }

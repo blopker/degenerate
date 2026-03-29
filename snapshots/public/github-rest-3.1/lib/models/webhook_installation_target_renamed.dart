@@ -1,0 +1,96 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_installation_target_renamed_account.dart';import 'webhook_installation_target_renamed_changes.dart';final class WebhookInstallationTargetRenamedAction {const WebhookInstallationTargetRenamedAction._(this.value);
+
+factory WebhookInstallationTargetRenamedAction.fromJson(String json) { return switch (json) {
+  'renamed' => renamed,
+  _ => WebhookInstallationTargetRenamedAction._(json),
+}; }
+
+static const WebhookInstallationTargetRenamedAction renamed = WebhookInstallationTargetRenamedAction._('renamed');
+
+static const List<WebhookInstallationTargetRenamedAction> values = [renamed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookInstallationTargetRenamedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookInstallationTargetRenamedAction($value)'; } 
+ }
+final class WebhookInstallationTargetRenamed {const WebhookInstallationTargetRenamed({required this.account, required this.action, required this.changes, this.enterprise, required this.installation, this.organization, this.repository, this.sender, required this.targetType, });
+
+factory WebhookInstallationTargetRenamed.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamed(
+  account: WebhookInstallationTargetRenamedAccount.fromJson(json['account'] as Map<String, dynamic>),
+  action: WebhookInstallationTargetRenamedAction.fromJson(json['action'] as String),
+  changes: WebhookInstallationTargetRenamedChanges.fromJson(json['changes'] as Map<String, dynamic>),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>),
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
+  targetType: json['target_type'] as String,
+); }
+
+final WebhookInstallationTargetRenamedAccount account;
+
+final WebhookInstallationTargetRenamedAction action;
+
+final WebhookInstallationTargetRenamedChanges changes;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks? repository;
+
+final SimpleUser? sender;
+
+final String targetType;
+
+Map<String, dynamic> toJson() { return {
+  'account': account.toJson(),
+  'action': action.toJson(),
+  'changes': changes.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  'installation': installation.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  if (repository != null) 'repository': repository?.toJson(),
+  if (sender != null) 'sender': sender?.toJson(),
+  'target_type': targetType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+      json.containsKey('action') &&
+      json.containsKey('changes') &&
+      json.containsKey('installation') &&
+      json.containsKey('target_type') && json['target_type'] is String; } 
+WebhookInstallationTargetRenamed copyWith({WebhookInstallationTargetRenamedAccount? account, WebhookInstallationTargetRenamedAction? action, WebhookInstallationTargetRenamedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser Function()? sender, String? targetType, }) { return WebhookInstallationTargetRenamed(
+  account: account ?? this.account,
+  action: action ?? this.action,
+  changes: changes ?? this.changes,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation ?? this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository != null ? repository() : this.repository,
+  sender: sender != null ? sender() : this.sender,
+  targetType: targetType ?? this.targetType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookInstallationTargetRenamed &&
+          account == other.account &&
+          action == other.action &&
+          changes == other.changes &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender &&
+          targetType == other.targetType; } 
+@override int get hashCode { return Object.hash(account, action, changes, enterprise, installation, organization, repository, sender, targetType); } 
+@override String toString() { return 'WebhookInstallationTargetRenamed(account: $account, action: $action, changes: $changes, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, targetType: $targetType)'; } 
+ }

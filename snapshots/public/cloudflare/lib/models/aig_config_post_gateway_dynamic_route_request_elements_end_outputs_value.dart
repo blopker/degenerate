@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue {const AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue({required this.elementId});
+
+factory AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue(
+  elementId: json['elementId'] as String,
+); }
+
+final String elementId;
+
+Map<String, dynamic> toJson() { return {
+  'elementId': elementId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
+AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue copyWith({String? elementId}) { return AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue(
+  elementId: elementId ?? this.elementId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue &&
+          elementId == other.elementId; } 
+@override int get hashCode { return elementId.hashCode; } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteRequestElementsEndOutputsValue(elementId: $elementId)'; } 
+ }

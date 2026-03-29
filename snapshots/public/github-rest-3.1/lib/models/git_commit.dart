@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'git_commit_author.dart';import 'git_commit_committer.dart';import 'git_commit_parents.dart';import 'git_commit_tree.dart';import 'git_commit_verification.dart';/// Low-level Git commit operations within a repository
+final class GitCommit {const GitCommit({required this.sha, required this.nodeId, required this.url, required this.author, required this.committer, required this.message, required this.tree, required this.parents, required this.verification, required this.htmlUrl, });
+
+factory GitCommit.fromJson(Map<String, dynamic> json) { return GitCommit(
+  sha: json['sha'] as String,
+  nodeId: json['node_id'] as String,
+  url: Uri.parse(json['url'] as String),
+  author: GitCommitAuthor.fromJson(json['author'] as Map<String, dynamic>),
+  committer: GitCommitCommitter.fromJson(json['committer'] as Map<String, dynamic>),
+  message: json['message'] as String,
+  tree: GitCommitTree.fromJson(json['tree'] as Map<String, dynamic>),
+  parents: (json['parents'] as List<dynamic>).map((e) => GitCommitParents.fromJson(e as Map<String, dynamic>)).toList(),
+  verification: GitCommitVerification.fromJson(json['verification'] as Map<String, dynamic>),
+  htmlUrl: Uri.parse(json['html_url'] as String),
+); }
+
+/// SHA for the commit
+final String sha;
+
+final String nodeId;
+
+final Uri url;
+
+/// Identifying information for the git-user
+final GitCommitAuthor author;
+
+/// Identifying information for the git-user
+final GitCommitCommitter committer;
+
+/// Message describing the purpose of the commit
+final String message;
+
+final GitCommitTree tree;
+
+final List<GitCommitParents> parents;
+
+final GitCommitVerification verification;
+
+final Uri htmlUrl;
+
+Map<String, dynamic> toJson() { return {
+  'sha': sha,
+  'node_id': nodeId,
+  'url': url.toString(),
+  'author': author.toJson(),
+  'committer': committer.toJson(),
+  'message': message,
+  'tree': tree.toJson(),
+  'parents': parents.map((e) => e.toJson()).toList(),
+  'verification': verification.toJson(),
+  'html_url': htmlUrl.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('author') &&
+      json.containsKey('committer') &&
+      json.containsKey('message') && json['message'] is String &&
+      json.containsKey('tree') &&
+      json.containsKey('parents') &&
+      json.containsKey('verification') &&
+      json.containsKey('html_url') && json['html_url'] is String; } 
+GitCommit copyWith({String? sha, String? nodeId, Uri? url, GitCommitAuthor? author, GitCommitCommitter? committer, String? message, GitCommitTree? tree, List<GitCommitParents>? parents, GitCommitVerification? verification, Uri? htmlUrl, }) { return GitCommit(
+  sha: sha ?? this.sha,
+  nodeId: nodeId ?? this.nodeId,
+  url: url ?? this.url,
+  author: author ?? this.author,
+  committer: committer ?? this.committer,
+  message: message ?? this.message,
+  tree: tree ?? this.tree,
+  parents: parents ?? this.parents,
+  verification: verification ?? this.verification,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GitCommit &&
+          sha == other.sha &&
+          nodeId == other.nodeId &&
+          url == other.url &&
+          author == other.author &&
+          committer == other.committer &&
+          message == other.message &&
+          tree == other.tree &&
+          listEquals(parents, other.parents) &&
+          verification == other.verification &&
+          htmlUrl == other.htmlUrl; } 
+@override int get hashCode { return Object.hash(sha, nodeId, url, author, committer, message, tree, Object.hashAll(parents), verification, htmlUrl); } 
+@override String toString() { return 'GitCommit(sha: $sha, nodeId: $nodeId, url: $url, author: $author, committer: $committer, message: $message, tree: $tree, parents: $parents, verification: $verification, htmlUrl: $htmlUrl)'; } 
+ }

@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'single_select_options_description.dart';import 'single_select_options_name.dart';/// An option for a single select field
+final class SingleSelectOptions {const SingleSelectOptions({required this.id, required this.name, required this.description, required this.color, });
+
+factory SingleSelectOptions.fromJson(Map<String, dynamic> json) { return SingleSelectOptions(
+  id: json['id'] as String,
+  name: SingleSelectOptionsName.fromJson(json['name'] as Map<String, dynamic>),
+  description: SingleSelectOptionsDescription.fromJson(json['description'] as Map<String, dynamic>),
+  color: json['color'] as String,
+); }
+
+/// The unique identifier of the option.
+final String id;
+
+/// The display name of the option, in raw text and HTML formats.
+final SingleSelectOptionsName name;
+
+/// The description of the option, in raw text and HTML formats.
+final SingleSelectOptionsDescription description;
+
+/// The color associated with the option.
+final String color;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'name': name.toJson(),
+  'description': description.toJson(),
+  'color': color,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') &&
+      json.containsKey('description') &&
+      json.containsKey('color') && json['color'] is String; } 
+SingleSelectOptions copyWith({String? id, SingleSelectOptionsName? name, SingleSelectOptionsDescription? description, String? color, }) { return SingleSelectOptions(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  description: description ?? this.description,
+  color: color ?? this.color,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SingleSelectOptions &&
+          id == other.id &&
+          name == other.name &&
+          description == other.description &&
+          color == other.color; } 
+@override int get hashCode { return Object.hash(id, name, description, color); } 
+@override String toString() { return 'SingleSelectOptions(id: $id, name: $name, description: $description, color: $color)'; } 
+ }

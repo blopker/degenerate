@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The secret scope type.
+final class SecretServiceResourceScopeType {const SecretServiceResourceScopeType._(this.value);
+
+factory SecretServiceResourceScopeType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'user' => user,
+  _ => SecretServiceResourceScopeType._(json),
+}; }
+
+static const SecretServiceResourceScopeType account = SecretServiceResourceScopeType._('account');
+
+static const SecretServiceResourceScopeType user = SecretServiceResourceScopeType._('user');
+
+static const List<SecretServiceResourceScopeType> values = [account, user];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretServiceResourceScopeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecretServiceResourceScopeType($value)'; } 
+ }
+/// 
+final class SecretServiceResourceScope {const SecretServiceResourceScope({required this.type, this.user, });
+
+factory SecretServiceResourceScope.fromJson(Map<String, dynamic> json) { return SecretServiceResourceScope(
+  type: SecretServiceResourceScopeType.fromJson(json['type'] as String),
+  user: json['user'] as String?,
+); }
+
+/// The secret scope type.
+final SecretServiceResourceScopeType type;
+
+/// The user ID, if type is set to "user"
+final String? user;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'user': ?user,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+SecretServiceResourceScope copyWith({SecretServiceResourceScopeType? type, String Function()? user, }) { return SecretServiceResourceScope(
+  type: type ?? this.type,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretServiceResourceScope &&
+          type == other.type &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(type, user); } 
+@override String toString() { return 'SecretServiceResourceScope(type: $type, user: $user)'; } 
+ }

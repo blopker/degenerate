@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetReportingReportRunsReportRunRequest {const GetReportingReportRunsReportRunRequest();
+
+factory GetReportingReportRunsReportRunRequest.fromJson(Map<String, dynamic> json) { return GetReportingReportRunsReportRunRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetReportingReportRunsReportRunRequest copyWith() { return GetReportingReportRunsReportRunRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetReportingReportRunsReportRunRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetReportingReportRunsReportRunRequest()'; } 
+ }

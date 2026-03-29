@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Prompt43ToolChoiceVariant1CustomCustom {const Prompt43ToolChoiceVariant1CustomCustom({required this.name});
+
+factory Prompt43ToolChoiceVariant1CustomCustom.fromJson(Map<String, dynamic> json) { return Prompt43ToolChoiceVariant1CustomCustom(
+  name: json['name'] as String,
+); }
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+Prompt43ToolChoiceVariant1CustomCustom copyWith({String? name}) { return Prompt43ToolChoiceVariant1CustomCustom(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt43ToolChoiceVariant1CustomCustom &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'Prompt43ToolChoiceVariant1CustomCustom(name: $name)'; } 
+ }

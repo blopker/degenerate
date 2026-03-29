@@ -1,0 +1,88 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the geolocation.
+final class RadarGetGeolocationDetailsResponseResultGeolocationParentParentType {const RadarGetGeolocationDetailsResponseResultGeolocationParentParentType._(this.value);
+
+factory RadarGetGeolocationDetailsResponseResultGeolocationParentParentType.fromJson(String json) { return switch (json) {
+  'CONTINENT' => continent,
+  'COUNTRY' => country,
+  'ADM1' => adm1,
+  _ => RadarGetGeolocationDetailsResponseResultGeolocationParentParentType._(json),
+}; }
+
+static const RadarGetGeolocationDetailsResponseResultGeolocationParentParentType continent = RadarGetGeolocationDetailsResponseResultGeolocationParentParentType._('CONTINENT');
+
+static const RadarGetGeolocationDetailsResponseResultGeolocationParentParentType country = RadarGetGeolocationDetailsResponseResultGeolocationParentParentType._('COUNTRY');
+
+static const RadarGetGeolocationDetailsResponseResultGeolocationParentParentType adm1 = RadarGetGeolocationDetailsResponseResultGeolocationParentParentType._('ADM1');
+
+static const List<RadarGetGeolocationDetailsResponseResultGeolocationParentParentType> values = [continent, country, adm1];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetGeolocationDetailsResponseResultGeolocationParentParentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetGeolocationDetailsResponseResultGeolocationParentParentType($value)'; } 
+ }
+final class RadarGetGeolocationDetailsResponseResultGeolocationParentParent {const RadarGetGeolocationDetailsResponseResultGeolocationParentParent({this.code, required this.geoId, required this.latitude, required this.longitude, required this.name, required this.type, });
+
+factory RadarGetGeolocationDetailsResponseResultGeolocationParentParent.fromJson(Map<String, dynamic> json) { return RadarGetGeolocationDetailsResponseResultGeolocationParentParent(
+  code: json['code'] as String?,
+  geoId: json['geoId'] as String,
+  latitude: json['latitude'] as String,
+  longitude: json['longitude'] as String,
+  name: json['name'] as String,
+  type: RadarGetGeolocationDetailsResponseResultGeolocationParentParentType.fromJson(json['type'] as String),
+); }
+
+final String? code;
+
+final String geoId;
+
+/// A numeric string.
+final String latitude;
+
+/// A numeric string.
+final String longitude;
+
+final String name;
+
+/// The type of the geolocation.
+final RadarGetGeolocationDetailsResponseResultGeolocationParentParentType type;
+
+Map<String, dynamic> toJson() { return {
+  'code': ?code,
+  'geoId': geoId,
+  'latitude': latitude,
+  'longitude': longitude,
+  'name': name,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('geoId') && json['geoId'] is String &&
+      json.containsKey('latitude') && json['latitude'] is String &&
+      json.containsKey('longitude') && json['longitude'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type'); } 
+RadarGetGeolocationDetailsResponseResultGeolocationParentParent copyWith({String Function()? code, String? geoId, String? latitude, String? longitude, String? name, RadarGetGeolocationDetailsResponseResultGeolocationParentParentType? type, }) { return RadarGetGeolocationDetailsResponseResultGeolocationParentParent(
+  code: code != null ? code() : this.code,
+  geoId: geoId ?? this.geoId,
+  latitude: latitude ?? this.latitude,
+  longitude: longitude ?? this.longitude,
+  name: name ?? this.name,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetGeolocationDetailsResponseResultGeolocationParentParent &&
+          code == other.code &&
+          geoId == other.geoId &&
+          latitude == other.latitude &&
+          longitude == other.longitude &&
+          name == other.name &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(code, geoId, latitude, longitude, name, type); } 
+@override String toString() { return 'RadarGetGeolocationDetailsResponseResultGeolocationParentParent(code: $code, geoId: $geoId, latitude: $latitude, longitude: $longitude, name: $name, type: $type)'; } 
+ }

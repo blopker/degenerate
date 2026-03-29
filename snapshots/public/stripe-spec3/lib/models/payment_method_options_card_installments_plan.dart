@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_card_installments_plan.dart';/// Installment plan selected for this PaymentIntent.
+final class PaymentMethodOptionsCardInstallmentsPlan {const PaymentMethodOptionsCardInstallmentsPlan({this.paymentMethodDetailsCardInstallmentsPlan});
+
+factory PaymentMethodOptionsCardInstallmentsPlan.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardInstallmentsPlan(
+  paymentMethodDetailsCardInstallmentsPlan: PaymentMethodDetailsCardInstallmentsPlan.canParse(json) ? PaymentMethodDetailsCardInstallmentsPlan.fromJson(json) : null,
+); }
+
+final PaymentMethodDetailsCardInstallmentsPlan? paymentMethodDetailsCardInstallmentsPlan;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodDetailsCardInstallmentsPlan != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodDetailsCardInstallmentsPlan?.toJson(),
+}; } 
+ }

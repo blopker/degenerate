@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetAppsSecretsFindScopeType {const GetAppsSecretsFindScopeType._(this.value);
+
+factory GetAppsSecretsFindScopeType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'user' => user,
+  _ => GetAppsSecretsFindScopeType._(json),
+}; }
+
+static const GetAppsSecretsFindScopeType account = GetAppsSecretsFindScopeType._('account');
+
+static const GetAppsSecretsFindScopeType user = GetAppsSecretsFindScopeType._('user');
+
+static const List<GetAppsSecretsFindScopeType> values = [account, user];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetAppsSecretsFindScopeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetAppsSecretsFindScopeType($value)'; } 
+ }
+final class GetAppsSecretsFindScope {const GetAppsSecretsFindScope({required this.type, this.user, });
+
+factory GetAppsSecretsFindScope.fromJson(Map<String, dynamic> json) { return GetAppsSecretsFindScope(
+  type: GetAppsSecretsFindScopeType.fromJson(json['type'] as String),
+  user: json['user'] as String?,
+); }
+
+final GetAppsSecretsFindScopeType type;
+
+final String? user;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'user': ?user,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+GetAppsSecretsFindScope copyWith({GetAppsSecretsFindScopeType? type, String Function()? user, }) { return GetAppsSecretsFindScope(
+  type: type ?? this.type,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetAppsSecretsFindScope &&
+          type == other.type &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(type, user); } 
+@override String toString() { return 'GetAppsSecretsFindScope(type: $type, user: $user)'; } 
+ }

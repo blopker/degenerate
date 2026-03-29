@@ -1,0 +1,75 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_subscriptions_subscription_exposed_id_request_cancellation_details_comment.dart';final class PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback {const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(this.value);
+
+factory PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'customer_service' => customerService,
+  'low_quality' => lowQuality,
+  'missing_features' => missingFeatures,
+  'other' => $other,
+  'switched_service' => switchedService,
+  'too_complex' => tooComplex,
+  'too_expensive' => tooExpensive,
+  'unused' => unused,
+  _ => PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._(json),
+}; }
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback $empty = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback customerService = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('customer_service');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback lowQuality = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('low_quality');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback missingFeatures = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('missing_features');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback $other = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('other');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback switchedService = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('switched_service');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback tooComplex = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('too_complex');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback tooExpensive = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('too_expensive');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback unused = PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback._('unused');
+
+static const List<PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback> values = [$empty, customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback($value)'; } 
+ }
+/// Details about why this subscription was cancelled
+final class PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails {const PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails({this.comment, this.feedback, });
+
+factory PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
+  comment: json['comment'] != null ? OneOf2.parse(json['comment'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsCommentVariant2.fromJson(v as String),) : null,
+  feedback: json['feedback'] != null ? PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback.fromJson(json['feedback'] as String) : null,
+); }
+
+final PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment? comment;
+
+final PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback? feedback;
+
+Map<String, dynamic> toJson() { return {
+  if (comment != null) 'comment': comment?.toJson(),
+  if (feedback != null) 'feedback': feedback?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails copyWith({PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsComment Function()? comment, PostSubscriptionsSubscriptionExposedIdRequestCancellationDetailsFeedback Function()? feedback, }) { return PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails(
+  comment: comment != null ? comment() : this.comment,
+  feedback: feedback != null ? feedback() : this.feedback,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails &&
+          comment == other.comment &&
+          feedback == other.feedback; } 
+@override int get hashCode { return Object.hash(comment, feedback); } 
+@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestCancellationDetails(comment: $comment, feedback: $feedback)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_shipping.dart';/// Shipping details for the payment evaluation.
+final class InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails {const InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails({this.insightsResourcesPaymentEvaluationShipping});
+
+factory InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails(
+  insightsResourcesPaymentEvaluationShipping: InsightsResourcesPaymentEvaluationShipping.canParse(json) ? InsightsResourcesPaymentEvaluationShipping.fromJson(json) : null,
+); }
+
+final InsightsResourcesPaymentEvaluationShipping? insightsResourcesPaymentEvaluationShipping;
+
+/// At least one variant must be present.
+bool get isValid { return insightsResourcesPaymentEvaluationShipping != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?insightsResourcesPaymentEvaluationShipping?.toJson(),
+}; } 
+ }

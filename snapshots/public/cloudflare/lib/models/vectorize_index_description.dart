@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the description of the index.
+extension type const VectorizeIndexDescription(String value) {
+factory VectorizeIndexDescription.fromJson(String json) => VectorizeIndexDescription(json);
+
+String toJson() => value;
+
+}

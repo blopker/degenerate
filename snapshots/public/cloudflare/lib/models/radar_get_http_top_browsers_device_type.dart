@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopBrowsersDeviceType {const RadarGetHttpTopBrowsersDeviceType._(this.value);
+
+factory RadarGetHttpTopBrowsersDeviceType.fromJson(String json) { return switch (json) {
+  'DESKTOP' => desktop,
+  'MOBILE' => mobile,
+  'OTHER' => $other,
+  _ => RadarGetHttpTopBrowsersDeviceType._(json),
+}; }
+
+static const RadarGetHttpTopBrowsersDeviceType desktop = RadarGetHttpTopBrowsersDeviceType._('DESKTOP');
+
+static const RadarGetHttpTopBrowsersDeviceType mobile = RadarGetHttpTopBrowsersDeviceType._('MOBILE');
+
+static const RadarGetHttpTopBrowsersDeviceType $other = RadarGetHttpTopBrowsersDeviceType._('OTHER');
+
+static const List<RadarGetHttpTopBrowsersDeviceType> values = [desktop, mobile, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTopBrowsersDeviceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopBrowsersDeviceType($value)'; } 
+ }

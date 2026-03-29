@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'address.dart';/// 
+final class PaymentPagesCheckoutSessionCheckoutAddressDetails {const PaymentPagesCheckoutSessionCheckoutAddressDetails({required this.address, required this.name, });
+
+factory PaymentPagesCheckoutSessionCheckoutAddressDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCheckoutAddressDetails(
+  address: Address.fromJson(json['address'] as Map<String, dynamic>),
+  name: json['name'] as String,
+); }
+
+final Address address;
+
+/// Customer name.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'address': address.toJson(),
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String; } 
+PaymentPagesCheckoutSessionCheckoutAddressDetails copyWith({Address? address, String? name, }) { return PaymentPagesCheckoutSessionCheckoutAddressDetails(
+  address: address ?? this.address,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionCheckoutAddressDetails &&
+          address == other.address &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(address, name); } 
+@override String toString() { return 'PaymentPagesCheckoutSessionCheckoutAddressDetails(address: $address, name: $name)'; } 
+ }

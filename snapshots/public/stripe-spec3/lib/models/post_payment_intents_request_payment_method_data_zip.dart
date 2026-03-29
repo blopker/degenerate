@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsRequestPaymentMethodDataZip {const PostPaymentIntentsRequestPaymentMethodDataZip();
+
+factory PostPaymentIntentsRequestPaymentMethodDataZip.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataZip(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsRequestPaymentMethodDataZip copyWith() { return PostPaymentIntentsRequestPaymentMethodDataZip(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsRequestPaymentMethodDataZip; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataZip()'; } 
+ }

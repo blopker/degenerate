@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class IssuesListForAuthenticatedUserFilter {const IssuesListForAuthenticatedUserFilter._(this.value);
+
+factory IssuesListForAuthenticatedUserFilter.fromJson(String json) { return switch (json) {
+  'assigned' => assigned,
+  'created' => created,
+  'mentioned' => mentioned,
+  'subscribed' => subscribed,
+  'repos' => repos,
+  'all' => all,
+  _ => IssuesListForAuthenticatedUserFilter._(json),
+}; }
+
+static const IssuesListForAuthenticatedUserFilter assigned = IssuesListForAuthenticatedUserFilter._('assigned');
+
+static const IssuesListForAuthenticatedUserFilter created = IssuesListForAuthenticatedUserFilter._('created');
+
+static const IssuesListForAuthenticatedUserFilter mentioned = IssuesListForAuthenticatedUserFilter._('mentioned');
+
+static const IssuesListForAuthenticatedUserFilter subscribed = IssuesListForAuthenticatedUserFilter._('subscribed');
+
+static const IssuesListForAuthenticatedUserFilter repos = IssuesListForAuthenticatedUserFilter._('repos');
+
+static const IssuesListForAuthenticatedUserFilter all = IssuesListForAuthenticatedUserFilter._('all');
+
+static const List<IssuesListForAuthenticatedUserFilter> values = [assigned, created, mentioned, subscribed, repos, all];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuesListForAuthenticatedUserFilter && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuesListForAuthenticatedUserFilter($value)'; } 
+ }

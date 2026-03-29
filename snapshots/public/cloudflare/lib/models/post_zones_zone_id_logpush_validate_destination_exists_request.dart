@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'logpush_destination_conf.dart';final class PostZonesZoneIdLogpushValidateDestinationExistsRequest {const PostZonesZoneIdLogpushValidateDestinationExistsRequest({required this.destinationConf});
+
+factory PostZonesZoneIdLogpushValidateDestinationExistsRequest.fromJson(Map<String, dynamic> json) { return PostZonesZoneIdLogpushValidateDestinationExistsRequest(
+  destinationConf: LogpushDestinationConf.fromJson(json['destination_conf'] as String),
+); }
+
+/// Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.
+final LogpushDestinationConf destinationConf;
+
+Map<String, dynamic> toJson() { return {
+  'destination_conf': destinationConf.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf'); } 
+PostZonesZoneIdLogpushValidateDestinationExistsRequest copyWith({LogpushDestinationConf? destinationConf}) { return PostZonesZoneIdLogpushValidateDestinationExistsRequest(
+  destinationConf: destinationConf ?? this.destinationConf,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostZonesZoneIdLogpushValidateDestinationExistsRequest &&
+          destinationConf == other.destinationConf; } 
+@override int get hashCode { return destinationConf.hashCode; } 
+@override String toString() { return 'PostZonesZoneIdLogpushValidateDestinationExistsRequest(destinationConf: $destinationConf)'; } 
+ }

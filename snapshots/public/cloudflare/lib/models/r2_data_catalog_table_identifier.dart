@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies a unique table identifier within a catalog.
+final class R2DataCatalogTableIdentifier {const R2DataCatalogTableIdentifier({required this.name, required this.namespace, });
+
+factory R2DataCatalogTableIdentifier.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableIdentifier(
+  name: json['name'] as String,
+  namespace: (json['namespace'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// Specifies the table name.
+final String name;
+
+/// Specifies the hierarchical namespace parts as an array of strings.
+/// For example, ["bronze", "analytics"] represents the namespace "bronze.analytics".
+/// 
+final List<String> namespace;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'namespace': namespace,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('namespace'); } 
+R2DataCatalogTableIdentifier copyWith({String? name, List<String>? namespace, }) { return R2DataCatalogTableIdentifier(
+  name: name ?? this.name,
+  namespace: namespace ?? this.namespace,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2DataCatalogTableIdentifier &&
+          name == other.name &&
+          listEquals(namespace, other.namespace); } 
+@override int get hashCode { return Object.hash(name, Object.hashAll(namespace)); } 
+@override String toString() { return 'R2DataCatalogTableIdentifier(name: $name, namespace: $namespace)'; } 
+ }

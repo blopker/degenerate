@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Video quality of participants
+final class RealtimekitUpdatePresetConfigMediaVideoQuality {const RealtimekitUpdatePresetConfigMediaVideoQuality._(this.value);
+
+factory RealtimekitUpdatePresetConfigMediaVideoQuality.fromJson(String json) { return switch (json) {
+  'hd' => hd,
+  'vga' => vga,
+  'qvga' => qvga,
+  _ => RealtimekitUpdatePresetConfigMediaVideoQuality._(json),
+}; }
+
+static const RealtimekitUpdatePresetConfigMediaVideoQuality hd = RealtimekitUpdatePresetConfigMediaVideoQuality._('hd');
+
+static const RealtimekitUpdatePresetConfigMediaVideoQuality vga = RealtimekitUpdatePresetConfigMediaVideoQuality._('vga');
+
+static const RealtimekitUpdatePresetConfigMediaVideoQuality qvga = RealtimekitUpdatePresetConfigMediaVideoQuality._('qvga');
+
+static const List<RealtimekitUpdatePresetConfigMediaVideoQuality> values = [hd, vga, qvga];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimekitUpdatePresetConfigMediaVideoQuality && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimekitUpdatePresetConfigMediaVideoQuality($value)'; } 
+ }
+/// Configuration options for participant videos
+final class RealtimekitUpdatePresetConfigMediaVideo {const RealtimekitUpdatePresetConfigMediaVideo({this.frameRate, this.quality, });
+
+factory RealtimekitUpdatePresetConfigMediaVideo.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMediaVideo(
+  frameRate: json['frame_rate'] != null ? (json['frame_rate'] as num).toInt() : null,
+  quality: json['quality'] != null ? RealtimekitUpdatePresetConfigMediaVideoQuality.fromJson(json['quality'] as String) : null,
+); }
+
+/// Frame rate of participants' video
+final int? frameRate;
+
+/// Video quality of participants
+final RealtimekitUpdatePresetConfigMediaVideoQuality? quality;
+
+Map<String, dynamic> toJson() { return {
+  'frame_rate': ?frameRate,
+  if (quality != null) 'quality': quality?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitUpdatePresetConfigMediaVideo copyWith({int Function()? frameRate, RealtimekitUpdatePresetConfigMediaVideoQuality Function()? quality, }) { return RealtimekitUpdatePresetConfigMediaVideo(
+  frameRate: frameRate != null ? frameRate() : this.frameRate,
+  quality: quality != null ? quality() : this.quality,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitUpdatePresetConfigMediaVideo &&
+          frameRate == other.frameRate &&
+          quality == other.quality; } 
+@override int get hashCode { return Object.hash(frameRate, quality); } 
+@override String toString() { return 'RealtimekitUpdatePresetConfigMediaVideo(frameRate: $frameRate, quality: $quality)'; } 
+ }

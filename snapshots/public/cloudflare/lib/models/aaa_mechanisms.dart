@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aaa_mechanisms_email.dart';import 'aaa_mechanisms_pagerduty.dart';import 'aaa_mechanisms_webhooks.dart';/// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
+final class AaaMechanisms {const AaaMechanisms({this.email, this.pagerduty, this.webhooks, });
+
+factory AaaMechanisms.fromJson(Map<String, dynamic> json) { return AaaMechanisms(
+  email: (json['email'] as List<dynamic>?)?.map((e) => AaaMechanismsEmail.fromJson(e as Map<String, dynamic>)).toList(),
+  pagerduty: (json['pagerduty'] as List<dynamic>?)?.map((e) => AaaMechanismsPagerduty.fromJson(e as Map<String, dynamic>)).toList(),
+  webhooks: (json['webhooks'] as List<dynamic>?)?.map((e) => AaaMechanismsWebhooks.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<AaaMechanismsEmail>? email;
+
+final List<AaaMechanismsPagerduty>? pagerduty;
+
+final List<AaaMechanismsWebhooks>? webhooks;
+
+Map<String, dynamic> toJson() { return {
+  if (email != null) 'email': email?.map((e) => e.toJson()).toList(),
+  if (pagerduty != null) 'pagerduty': pagerduty?.map((e) => e.toJson()).toList(),
+  if (webhooks != null) 'webhooks': webhooks?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AaaMechanisms copyWith({List<AaaMechanismsEmail> Function()? email, List<AaaMechanismsPagerduty> Function()? pagerduty, List<AaaMechanismsWebhooks> Function()? webhooks, }) { return AaaMechanisms(
+  email: email != null ? email() : this.email,
+  pagerduty: pagerduty != null ? pagerduty() : this.pagerduty,
+  webhooks: webhooks != null ? webhooks() : this.webhooks,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AaaMechanisms &&
+          listEquals(email, other.email) &&
+          listEquals(pagerduty, other.pagerduty) &&
+          listEquals(webhooks, other.webhooks); } 
+@override int get hashCode { return Object.hash(Object.hashAll(email ?? const []), Object.hashAll(pagerduty ?? const []), Object.hashAll(webhooks ?? const [])); } 
+@override String toString() { return 'AaaMechanisms(email: $email, pagerduty: $pagerduty, webhooks: $webhooks)'; } 
+ }

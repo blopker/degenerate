@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_checkout_sessions_session_request_shipping_options_variant1.dart';final class PostCheckoutSessionsSessionRequestShippingOptionsVariant2 {const PostCheckoutSessionsSessionRequestShippingOptionsVariant2._(this.value);
+
+factory PostCheckoutSessionsSessionRequestShippingOptionsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCheckoutSessionsSessionRequestShippingOptionsVariant2._(json),
+}; }
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant2 $empty = PostCheckoutSessionsSessionRequestShippingOptionsVariant2._('');
+
+static const List<PostCheckoutSessionsSessionRequestShippingOptionsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsSessionRequestShippingOptionsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant2($value)'; } 
+ }
+typedef PostCheckoutSessionsSessionRequestShippingOptions = OneOf2<List<PostCheckoutSessionsSessionRequestShippingOptionsVariant1>,PostCheckoutSessionsSessionRequestShippingOptionsVariant2>;

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ip_address.dart';final class MagicLanDhcpRelay {const MagicLanDhcpRelay({this.serverAddresses});
+
+factory MagicLanDhcpRelay.fromJson(Map<String, dynamic> json) { return MagicLanDhcpRelay(
+  serverAddresses: (json['server_addresses'] as List<dynamic>?)?.map((e) => MagicIpAddress.fromJson(e as String)).toList(),
+); }
+
+/// List of DHCP server IPs.
+final List<MagicIpAddress>? serverAddresses;
+
+Map<String, dynamic> toJson() { return {
+  if (serverAddresses != null) 'server_addresses': serverAddresses?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicLanDhcpRelay copyWith({List<MagicIpAddress> Function()? serverAddresses}) { return MagicLanDhcpRelay(
+  serverAddresses: serverAddresses != null ? serverAddresses() : this.serverAddresses,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicLanDhcpRelay &&
+          listEquals(serverAddresses, other.serverAddresses); } 
+@override int get hashCode { return Object.hashAll(serverAddresses ?? const []).hashCode; } 
+@override String toString() { return 'MagicLanDhcpRelay(serverAddresses: $serverAddresses)'; } 
+ }

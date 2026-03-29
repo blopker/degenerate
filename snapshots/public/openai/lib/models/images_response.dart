@@ -1,0 +1,175 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'image.dart';import 'image_gen_usage.dart';/// The background parameter used for the image generation. Either `transparent` or `opaque`.
+final class ImagesResponseBackground {const ImagesResponseBackground._(this.value);
+
+factory ImagesResponseBackground.fromJson(String json) { return switch (json) {
+  'transparent' => transparent,
+  'opaque' => opaque,
+  _ => ImagesResponseBackground._(json),
+}; }
+
+static const ImagesResponseBackground transparent = ImagesResponseBackground._('transparent');
+
+static const ImagesResponseBackground opaque = ImagesResponseBackground._('opaque');
+
+static const List<ImagesResponseBackground> values = [transparent, opaque];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImagesResponseBackground && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImagesResponseBackground($value)'; } 
+ }
+/// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
+final class ImagesResponseOutputFormat {const ImagesResponseOutputFormat._(this.value);
+
+factory ImagesResponseOutputFormat.fromJson(String json) { return switch (json) {
+  'png' => png,
+  'webp' => webp,
+  'jpeg' => jpeg,
+  _ => ImagesResponseOutputFormat._(json),
+}; }
+
+static const ImagesResponseOutputFormat png = ImagesResponseOutputFormat._('png');
+
+static const ImagesResponseOutputFormat webp = ImagesResponseOutputFormat._('webp');
+
+static const ImagesResponseOutputFormat jpeg = ImagesResponseOutputFormat._('jpeg');
+
+static const List<ImagesResponseOutputFormat> values = [png, webp, jpeg];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImagesResponseOutputFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImagesResponseOutputFormat($value)'; } 
+ }
+/// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
+final class ImagesResponseSize {const ImagesResponseSize._(this.value);
+
+factory ImagesResponseSize.fromJson(String json) { return switch (json) {
+  '1024x1024' => $1024x1024,
+  '1024x1536' => $1024x1536,
+  '1536x1024' => $1536x1024,
+  _ => ImagesResponseSize._(json),
+}; }
+
+static const ImagesResponseSize $1024x1024 = ImagesResponseSize._('1024x1024');
+
+static const ImagesResponseSize $1024x1536 = ImagesResponseSize._('1024x1536');
+
+static const ImagesResponseSize $1536x1024 = ImagesResponseSize._('1536x1024');
+
+static const List<ImagesResponseSize> values = [$1024x1024, $1024x1536, $1536x1024];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImagesResponseSize && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImagesResponseSize($value)'; } 
+ }
+/// The quality of the image generated. Either `low`, `medium`, or `high`.
+final class ImagesResponseQuality {const ImagesResponseQuality._(this.value);
+
+factory ImagesResponseQuality.fromJson(String json) { return switch (json) {
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  _ => ImagesResponseQuality._(json),
+}; }
+
+static const ImagesResponseQuality low = ImagesResponseQuality._('low');
+
+static const ImagesResponseQuality medium = ImagesResponseQuality._('medium');
+
+static const ImagesResponseQuality high = ImagesResponseQuality._('high');
+
+static const List<ImagesResponseQuality> values = [low, medium, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ImagesResponseQuality && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ImagesResponseQuality($value)'; } 
+ }
+/// The response from the image generation endpoint.
+final class ImagesResponse {const ImagesResponse({required this.created, this.data, this.background, this.outputFormat, this.size, this.quality, this.usage, });
+
+factory ImagesResponse.fromJson(Map<String, dynamic> json) { return ImagesResponse(
+  created: (json['created'] as num).toInt(),
+  data: (json['data'] as List<dynamic>?)?.map((e) => Image.fromJson(e as Map<String, dynamic>)).toList(),
+  background: json['background'] != null ? ImagesResponseBackground.fromJson(json['background'] as String) : null,
+  outputFormat: json['output_format'] != null ? ImagesResponseOutputFormat.fromJson(json['output_format'] as String) : null,
+  size: json['size'] != null ? ImagesResponseSize.fromJson(json['size'] as String) : null,
+  quality: json['quality'] != null ? ImagesResponseQuality.fromJson(json['quality'] as String) : null,
+  usage: json['usage'] != null ? ImageGenUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
+); }
+
+/// The Unix timestamp (in seconds) of when the image was created.
+final int created;
+
+/// The list of generated images.
+final List<Image>? data;
+
+/// The background parameter used for the image generation. Either `transparent` or `opaque`.
+final ImagesResponseBackground? background;
+
+/// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
+final ImagesResponseOutputFormat? outputFormat;
+
+/// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
+final ImagesResponseSize? size;
+
+/// The quality of the image generated. Either `low`, `medium`, or `high`.
+final ImagesResponseQuality? quality;
+
+final ImageGenUsage? usage;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
+  if (background != null) 'background': background?.toJson(),
+  if (outputFormat != null) 'output_format': outputFormat?.toJson(),
+  if (size != null) 'size': size?.toJson(),
+  if (quality != null) 'quality': quality?.toJson(),
+  if (usage != null) 'usage': usage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num; } 
+ImagesResponse copyWith({int? created, List<Image> Function()? data, ImagesResponseBackground Function()? background, ImagesResponseOutputFormat Function()? outputFormat, ImagesResponseSize Function()? size, ImagesResponseQuality Function()? quality, ImageGenUsage Function()? usage, }) { return ImagesResponse(
+  created: created ?? this.created,
+  data: data != null ? data() : this.data,
+  background: background != null ? background() : this.background,
+  outputFormat: outputFormat != null ? outputFormat() : this.outputFormat,
+  size: size != null ? size() : this.size,
+  quality: quality != null ? quality() : this.quality,
+  usage: usage != null ? usage() : this.usage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ImagesResponse &&
+          created == other.created &&
+          listEquals(data, other.data) &&
+          background == other.background &&
+          outputFormat == other.outputFormat &&
+          size == other.size &&
+          quality == other.quality &&
+          usage == other.usage; } 
+@override int get hashCode { return Object.hash(created, Object.hashAll(data ?? const []), background, outputFormat, size, quality, usage); } 
+@override String toString() { return 'ImagesResponse(created: $created, data: $data, background: $background, outputFormat: $outputFormat, size: $size, quality: $quality, usage: $usage)'; } 
+ }

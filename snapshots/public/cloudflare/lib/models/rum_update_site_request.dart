@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'rum_auto_install.dart';import 'rum_host.dart';import 'rum_zone_tag.dart';/// Enables or disables RUM. This option can be used only when auto_install is set to true.
+extension type const RumEnabled(bool value) {
+factory RumEnabled.fromJson(bool json) => RumEnabled(json);
+
+bool toJson() => value;
+
+}
+/// If enabled, the JavaScript snippet will not be injected for visitors from the EU.
+extension type const RumLite(bool value) {
+factory RumLite.fromJson(bool json) => RumLite(json);
+
+bool toJson() => value;
+
+}
+final class RumUpdateSiteRequest {const RumUpdateSiteRequest({this.autoInstall, this.enabled, this.host, this.lite, this.zoneTag, });
+
+factory RumUpdateSiteRequest.fromJson(Map<String, dynamic> json) { return RumUpdateSiteRequest(
+  autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,
+  enabled: json['enabled'] != null ? RumEnabled.fromJson(json['enabled'] as bool) : null,
+  host: json['host'] != null ? RumHost.fromJson(json['host'] as String) : null,
+  lite: json['lite'] != null ? RumLite.fromJson(json['lite'] as bool) : null,
+  zoneTag: json['zone_tag'] != null ? RumZoneTag.fromJson(json['zone_tag'] as String) : null,
+); }
+
+/// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
+final RumAutoInstall? autoInstall;
+
+/// Enables or disables RUM. This option can be used only when auto_install is set to true.
+final RumEnabled? enabled;
+
+/// The hostname to use for gray-clouded sites.
+final RumHost? host;
+
+/// If enabled, the JavaScript snippet will not be injected for visitors from the EU.
+final RumLite? lite;
+
+final RumZoneTag? zoneTag;
+
+Map<String, dynamic> toJson() { return {
+  if (autoInstall != null) 'auto_install': autoInstall?.toJson(),
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  if (host != null) 'host': host?.toJson(),
+  if (lite != null) 'lite': lite?.toJson(),
+  if (zoneTag != null) 'zone_tag': zoneTag?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RumUpdateSiteRequest copyWith({RumAutoInstall Function()? autoInstall, RumEnabled Function()? enabled, RumHost Function()? host, RumLite Function()? lite, RumZoneTag Function()? zoneTag, }) { return RumUpdateSiteRequest(
+  autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
+  enabled: enabled != null ? enabled() : this.enabled,
+  host: host != null ? host() : this.host,
+  lite: lite != null ? lite() : this.lite,
+  zoneTag: zoneTag != null ? zoneTag() : this.zoneTag,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RumUpdateSiteRequest &&
+          autoInstall == other.autoInstall &&
+          enabled == other.enabled &&
+          host == other.host &&
+          lite == other.lite &&
+          zoneTag == other.zoneTag; } 
+@override int get hashCode { return Object.hash(autoInstall, enabled, host, lite, zoneTag); } 
+@override String toString() { return 'RumUpdateSiteRequest(autoInstall: $autoInstall, enabled: $enabled, host: $host, lite: $lite, zoneTag: $zoneTag)'; } 
+ }

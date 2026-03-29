@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_update_webhook_request_config.dart';final class OrgsUpdateWebhookRequest {const OrgsUpdateWebhookRequest({this.config, this.events, this.active = true, this.name, });
+
+factory OrgsUpdateWebhookRequest.fromJson(Map<String, dynamic> json) { return OrgsUpdateWebhookRequest(
+  config: json['config'] != null ? OrgsUpdateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
+  events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  active: json.containsKey('active') ? json['active'] as bool : true,
+  name: json['name'] as String?,
+); }
+
+/// Key/value pairs to provide settings for this webhook.
+final OrgsUpdateWebhookRequestConfig? config;
+
+/// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
+final List<String>? events;
+
+/// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+final bool active;
+
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  if (config != null) 'config': config?.toJson(),
+  'events': ?events,
+  'active': active,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+OrgsUpdateWebhookRequest copyWith({OrgsUpdateWebhookRequestConfig Function()? config, List<String> Function()? events, bool Function()? active, String Function()? name, }) { return OrgsUpdateWebhookRequest(
+  config: config != null ? config() : this.config,
+  events: events != null ? events() : this.events,
+  active: active != null ? active() : this.active,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgsUpdateWebhookRequest &&
+          config == other.config &&
+          listEquals(events, other.events) &&
+          active == other.active &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(config, Object.hashAll(events ?? const []), active, name); } 
+@override String toString() { return 'OrgsUpdateWebhookRequest(config: $config, events: $events, active: $active, name: $name)'; } 
+ }

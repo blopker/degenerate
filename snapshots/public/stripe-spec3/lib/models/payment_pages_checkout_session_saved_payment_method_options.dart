@@ -1,0 +1,116 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._(this.value);
+
+factory PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(String json) { return switch (json) {
+  'always' => always,
+  'limited' => limited,
+  'unspecified' => unspecified,
+  _ => PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._(json),
+}; }
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters always = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._('always');
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters limited = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._('limited');
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters unspecified = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters._('unspecified');
+
+static const List<PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters> values = [always, limited, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters($value)'; } 
+ }
+/// Enable customers to choose if they wish to remove their saved payment methods. Disabled by default.
+final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove._(this.value);
+
+factory PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(String json) { return switch (json) {
+  'disabled' => disabled,
+  'enabled' => enabled,
+  _ => PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove._(json),
+}; }
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove disabled = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove._('disabled');
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove enabled = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove._('enabled');
+
+static const List<PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove> values = [disabled, enabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove($value)'; } 
+ }
+/// Enable customers to choose if they wish to save their payment method for future use. Disabled by default.
+final class PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave {const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave._(this.value);
+
+factory PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave.fromJson(String json) { return switch (json) {
+  'disabled' => disabled,
+  'enabled' => enabled,
+  _ => PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave._(json),
+}; }
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave disabled = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave._('disabled');
+
+static const PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave enabled = PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave._('enabled');
+
+static const List<PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave> values = [disabled, enabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave($value)'; } 
+ }
+/// 
+final class PaymentPagesCheckoutSessionSavedPaymentMethodOptions {const PaymentPagesCheckoutSessionSavedPaymentMethodOptions({this.allowRedisplayFilters, this.paymentMethodRemove, this.paymentMethodSave, });
+
+factory PaymentPagesCheckoutSessionSavedPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionSavedPaymentMethodOptions(
+  allowRedisplayFilters: (json['allow_redisplay_filters'] as List<dynamic>?)?.map((e) => PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters.fromJson(e as String)).toList(),
+  paymentMethodRemove: json['payment_method_remove'] != null ? PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove.fromJson(json['payment_method_remove'] as String) : null,
+  paymentMethodSave: json['payment_method_save'] != null ? PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave.fromJson(json['payment_method_save'] as String) : null,
+); }
+
+/// Uses the `allow_redisplay` value of each saved payment method to filter the set presented to a returning customer. By default, only saved payment methods with ’allow_redisplay: ‘always’ are shown in Checkout.
+final List<PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters>? allowRedisplayFilters;
+
+/// Enable customers to choose if they wish to remove their saved payment methods. Disabled by default.
+final PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove? paymentMethodRemove;
+
+/// Enable customers to choose if they wish to save their payment method for future use. Disabled by default.
+final PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave? paymentMethodSave;
+
+Map<String, dynamic> toJson() { return {
+  if (allowRedisplayFilters != null) 'allow_redisplay_filters': allowRedisplayFilters?.map((e) => e.toJson()).toList(),
+  if (paymentMethodRemove != null) 'payment_method_remove': paymentMethodRemove?.toJson(),
+  if (paymentMethodSave != null) 'payment_method_save': paymentMethodSave?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentPagesCheckoutSessionSavedPaymentMethodOptions copyWith({List<PaymentPagesCheckoutSessionSavedPaymentMethodOptionsAllowRedisplayFilters>? Function()? allowRedisplayFilters, PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodRemove? Function()? paymentMethodRemove, PaymentPagesCheckoutSessionSavedPaymentMethodOptionsPaymentMethodSave? Function()? paymentMethodSave, }) { return PaymentPagesCheckoutSessionSavedPaymentMethodOptions(
+  allowRedisplayFilters: allowRedisplayFilters != null ? allowRedisplayFilters() : this.allowRedisplayFilters,
+  paymentMethodRemove: paymentMethodRemove != null ? paymentMethodRemove() : this.paymentMethodRemove,
+  paymentMethodSave: paymentMethodSave != null ? paymentMethodSave() : this.paymentMethodSave,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionSavedPaymentMethodOptions &&
+          listEquals(allowRedisplayFilters, other.allowRedisplayFilters) &&
+          paymentMethodRemove == other.paymentMethodRemove &&
+          paymentMethodSave == other.paymentMethodSave; } 
+@override int get hashCode { return Object.hash(Object.hashAll(allowRedisplayFilters ?? const []), paymentMethodRemove, paymentMethodSave); } 
+@override String toString() { return 'PaymentPagesCheckoutSessionSavedPaymentMethodOptions(allowRedisplayFilters: $allowRedisplayFilters, paymentMethodRemove: $paymentMethodRemove, paymentMethodSave: $paymentMethodSave)'; } 
+ }

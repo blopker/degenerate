@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookInstallationTargetRenamedChangesLogin {const WebhookInstallationTargetRenamedChangesLogin({required this.from});
+
+factory WebhookInstallationTargetRenamedChangesLogin.fromJson(Map<String, dynamic> json) { return WebhookInstallationTargetRenamedChangesLogin(
+  from: json['from'] as String,
+); }
+
+final String from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+WebhookInstallationTargetRenamedChangesLogin copyWith({String? from}) { return WebhookInstallationTargetRenamedChangesLogin(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookInstallationTargetRenamedChangesLogin &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookInstallationTargetRenamedChangesLogin(from: $from)'; } 
+ }

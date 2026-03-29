@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetAccountAuditLogsActorContext {const GetAccountAuditLogsActorContext._(this.value);
+
+factory GetAccountAuditLogsActorContext.fromJson(String json) { return switch (json) {
+  'api_key' => apiKey,
+  'api_token' => apiToken,
+  'dash' => dash,
+  'oauth' => oauth,
+  'origin_ca_key' => originCaKey,
+  _ => GetAccountAuditLogsActorContext._(json),
+}; }
+
+static const GetAccountAuditLogsActorContext apiKey = GetAccountAuditLogsActorContext._('api_key');
+
+static const GetAccountAuditLogsActorContext apiToken = GetAccountAuditLogsActorContext._('api_token');
+
+static const GetAccountAuditLogsActorContext dash = GetAccountAuditLogsActorContext._('dash');
+
+static const GetAccountAuditLogsActorContext oauth = GetAccountAuditLogsActorContext._('oauth');
+
+static const GetAccountAuditLogsActorContext originCaKey = GetAccountAuditLogsActorContext._('origin_ca_key');
+
+static const List<GetAccountAuditLogsActorContext> values = [apiKey, apiToken, dash, oauth, originCaKey];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetAccountAuditLogsActorContext && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetAccountAuditLogsActorContext($value)'; } 
+ }

@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_permissions.dart';/// This property is used to set up permissions for various actions (e.g., update) on the CheckoutSession object.
+/// 
+/// For specific permissions, please refer to their dedicated subsections, such as `permissions.update_shipping_details`.
+final class CheckoutSessionPermissions {const CheckoutSessionPermissions({this.paymentPagesCheckoutSessionPermissions});
+
+factory CheckoutSessionPermissions.fromJson(Map<String, dynamic> json) { return CheckoutSessionPermissions(
+  paymentPagesCheckoutSessionPermissions: PaymentPagesCheckoutSessionPermissions.canParse(json) ? PaymentPagesCheckoutSessionPermissions.fromJson(json) : null,
+); }
+
+final PaymentPagesCheckoutSessionPermissions? paymentPagesCheckoutSessionPermissions;
+
+/// At least one variant must be present.
+bool get isValid { return paymentPagesCheckoutSessionPermissions != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentPagesCheckoutSessionPermissions?.toJson(),
+}; } 
+ }

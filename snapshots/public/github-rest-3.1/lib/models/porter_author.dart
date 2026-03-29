@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Porter Author
+final class PorterAuthor {const PorterAuthor({required this.id, required this.remoteId, required this.remoteName, required this.email, required this.name, required this.url, required this.importUrl, });
+
+factory PorterAuthor.fromJson(Map<String, dynamic> json) { return PorterAuthor(
+  id: (json['id'] as num).toInt(),
+  remoteId: json['remote_id'] as String,
+  remoteName: json['remote_name'] as String,
+  email: json['email'] as String,
+  name: json['name'] as String,
+  url: Uri.parse(json['url'] as String),
+  importUrl: Uri.parse(json['import_url'] as String),
+); }
+
+final int id;
+
+final String remoteId;
+
+final String remoteName;
+
+final String email;
+
+final String name;
+
+final Uri url;
+
+final Uri importUrl;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'remote_id': remoteId,
+  'remote_name': remoteName,
+  'email': email,
+  'name': name,
+  'url': url.toString(),
+  'import_url': importUrl.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('remote_id') && json['remote_id'] is String &&
+      json.containsKey('remote_name') && json['remote_name'] is String &&
+      json.containsKey('email') && json['email'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('import_url') && json['import_url'] is String; } 
+PorterAuthor copyWith({int? id, String? remoteId, String? remoteName, String? email, String? name, Uri? url, Uri? importUrl, }) { return PorterAuthor(
+  id: id ?? this.id,
+  remoteId: remoteId ?? this.remoteId,
+  remoteName: remoteName ?? this.remoteName,
+  email: email ?? this.email,
+  name: name ?? this.name,
+  url: url ?? this.url,
+  importUrl: importUrl ?? this.importUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PorterAuthor &&
+          id == other.id &&
+          remoteId == other.remoteId &&
+          remoteName == other.remoteName &&
+          email == other.email &&
+          name == other.name &&
+          url == other.url &&
+          importUrl == other.importUrl; } 
+@override int get hashCode { return Object.hash(id, remoteId, remoteName, email, name, url, importUrl); } 
+@override String toString() { return 'PorterAuthor(id: $id, remoteId: $remoteId, remoteName: $remoteName, email: $email, name: $name, url: $url, importUrl: $importUrl)'; } 
+ }

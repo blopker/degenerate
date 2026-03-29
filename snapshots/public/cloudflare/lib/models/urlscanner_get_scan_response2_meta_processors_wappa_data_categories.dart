@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories {const UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories({required this.name, required this.priority, });
+
+factory UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories(
+  name: json['name'] as String,
+  priority: (json['priority'] as num).toDouble(),
+); }
+
+final String name;
+
+final double priority;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'priority': priority,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('priority') && json['priority'] is num; } 
+UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories copyWith({String? name, double? priority, }) { return UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories(
+  name: name ?? this.name,
+  priority: priority ?? this.priority,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories &&
+          name == other.name &&
+          priority == other.priority; } 
+@override int get hashCode { return Object.hash(name, priority); } 
+@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsWappaDataCategories(name: $name, priority: $priority)'; } 
+ }

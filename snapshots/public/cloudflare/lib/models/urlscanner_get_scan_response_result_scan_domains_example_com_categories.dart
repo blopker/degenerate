@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_content.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_inherited.dart';import 'urlscanner_get_scan_response_result_scan_domains_example_com_categories_risks.dart';final class UrlscannerGetScanResponseResultScanDomainsExampleComCategories {const UrlscannerGetScanResponseResultScanDomainsExampleComCategories({this.content, required this.inherited, this.risks, });
+
+factory UrlscannerGetScanResponseResultScanDomainsExampleComCategories.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategories(
+  content: (json['content'] as List<dynamic>?)?.map((e) => UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesContent.fromJson(e as Map<String, dynamic>)).toList(),
+  inherited: UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited.fromJson(json['inherited'] as Map<String, dynamic>),
+  risks: (json['risks'] as List<dynamic>?)?.map((e) => UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesRisks.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesContent>? content;
+
+final UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited inherited;
+
+final List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesRisks>? risks;
+
+Map<String, dynamic> toJson() { return {
+  if (content != null) 'content': content?.map((e) => e.toJson()).toList(),
+  'inherited': inherited.toJson(),
+  if (risks != null) 'risks': risks?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('inherited'); } 
+UrlscannerGetScanResponseResultScanDomainsExampleComCategories copyWith({List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesContent> Function()? content, UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesInherited? inherited, List<UrlscannerGetScanResponseResultScanDomainsExampleComCategoriesRisks> Function()? risks, }) { return UrlscannerGetScanResponseResultScanDomainsExampleComCategories(
+  content: content != null ? content() : this.content,
+  inherited: inherited ?? this.inherited,
+  risks: risks != null ? risks() : this.risks,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponseResultScanDomainsExampleComCategories &&
+          listEquals(content, other.content) &&
+          inherited == other.inherited &&
+          listEquals(risks, other.risks); } 
+@override int get hashCode { return Object.hash(Object.hashAll(content ?? const []), inherited, Object.hashAll(risks ?? const [])); } 
+@override String toString() { return 'UrlscannerGetScanResponseResultScanDomainsExampleComCategories(content: $content, inherited: $inherited, risks: $risks)'; } 
+ }

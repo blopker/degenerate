@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_by_response_codes_response_result_meta_confidence_info.dart';import 'radar_get_dns_as112_timeseries_by_response_codes_response_result_meta_date_range.dart';import 'radar_get_dns_as112_timeseries_by_response_codes_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization {const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._(this.value);
+
+factory RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization percentage = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization min0Max = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization minMax = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization rawValues = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization percentageChange = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization rollingAverage = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization overlappedPercentage = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization ratio = RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta {const RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta(
+  confidenceInfo: RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta copyWith({RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaNormalization? normalization, List<RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMetaUnits>? units, }) { return RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta(
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesByResponseCodesResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

@@ -1,0 +1,149 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_search_request_ai_search_options_retrieval_boost_by.dart';final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod._(this.value);
+
+factory AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod.fromJson(String json) { return switch (json) {
+  'max' => max,
+  'rrf' => rrf,
+  _ => AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod._(json),
+}; }
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod max = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod._('max');
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod rrf = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod._('rrf');
+
+static const List<AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod> values = [max, rrf];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod($value)'; } 
+ }
+/// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
+final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode._(this.value);
+
+factory AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(String json) { return switch (json) {
+  'exact_match' => exactMatch,
+  'fuzzy_match' => fuzzyMatch,
+  _ => AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode._(json),
+}; }
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode exactMatch = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode._('exact_match');
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode fuzzyMatch = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode._('fuzzy_match');
+
+static const List<AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode> values = [exactMatch, fuzzyMatch];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode($value)'; } 
+ }
+final class AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType {const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._(this.value);
+
+factory AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType.fromJson(String json) { return switch (json) {
+  'vector' => vector,
+  'keyword' => keyword,
+  'hybrid' => hybrid,
+  _ => AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._(json),
+}; }
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType vector = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._('vector');
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType keyword = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._('keyword');
+
+static const AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType hybrid = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType._('hybrid');
+
+static const List<AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType> values = [vector, keyword, hybrid];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType($value)'; } 
+ }
+final class AiSearchInstanceSearchRequestAiSearchOptionsRetrieval {const AiSearchInstanceSearchRequestAiSearchOptionsRetrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });
+
+factory AiSearchInstanceSearchRequestAiSearchOptionsRetrieval.fromJson(Map<String, dynamic> json) { return AiSearchInstanceSearchRequestAiSearchOptionsRetrieval(
+  boostBy: (json['boost_by'] as List<dynamic>?)?.map((e) => AiSearchInstanceSearchRequestAiSearchOptionsRetrievalBoostBy.fromJson(e as Map<String, dynamic>)).toList(),
+  contextExpansion: json.containsKey('context_expansion') ? (json['context_expansion'] as num).toInt() : 0,
+  filters: (json['filters'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  fusionMethod: json['fusion_method'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod.fromJson(json['fusion_method'] as String) : null,
+  keywordMatchMode: json.containsKey('keyword_match_mode') ? AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.fromJson(json['keyword_match_mode'] as String) : AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode.exactMatch,
+  matchThreshold: json.containsKey('match_threshold') ? (json['match_threshold'] as num).toDouble() : 0.4,
+  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
+  retrievalType: json['retrieval_type'] != null ? AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType.fromJson(json['retrieval_type'] as String) : null,
+  returnOnFailure: json.containsKey('return_on_failure') ? json['return_on_failure'] as bool : true,
+); }
+
+/// Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to 'asc' for numeric fields, 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
+final List<AiSearchInstanceSearchRequestAiSearchOptionsRetrievalBoostBy>? boostBy;
+
+final int contextExpansion;
+
+final Map<String,dynamic>? filters;
+
+final AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod? fusionMethod;
+
+/// Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.
+final AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode keywordMatchMode;
+
+final double matchThreshold;
+
+final int maxNumResults;
+
+final AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType? retrievalType;
+
+final bool returnOnFailure;
+
+Map<String, dynamic> toJson() { return {
+  if (boostBy != null) 'boost_by': boostBy?.map((e) => e.toJson()).toList(),
+  'context_expansion': contextExpansion,
+  'filters': ?filters,
+  if (fusionMethod != null) 'fusion_method': fusionMethod?.toJson(),
+  'keyword_match_mode': keywordMatchMode.toJson(),
+  'match_threshold': matchThreshold,
+  'max_num_results': maxNumResults,
+  if (retrievalType != null) 'retrieval_type': retrievalType?.toJson(),
+  'return_on_failure': returnOnFailure,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AiSearchInstanceSearchRequestAiSearchOptionsRetrieval copyWith({List<AiSearchInstanceSearchRequestAiSearchOptionsRetrievalBoostBy> Function()? boostBy, int Function()? contextExpansion, Map<String, dynamic> Function()? filters, AiSearchInstanceSearchRequestAiSearchOptionsRetrievalFusionMethod Function()? fusionMethod, AiSearchInstanceSearchRequestAiSearchOptionsRetrievalKeywordMatchMode Function()? keywordMatchMode, double Function()? matchThreshold, int Function()? maxNumResults, AiSearchInstanceSearchRequestAiSearchOptionsRetrievalRetrievalType Function()? retrievalType, bool Function()? returnOnFailure, }) { return AiSearchInstanceSearchRequestAiSearchOptionsRetrieval(
+  boostBy: boostBy != null ? boostBy() : this.boostBy,
+  contextExpansion: contextExpansion != null ? contextExpansion() : this.contextExpansion,
+  filters: filters != null ? filters() : this.filters,
+  fusionMethod: fusionMethod != null ? fusionMethod() : this.fusionMethod,
+  keywordMatchMode: keywordMatchMode != null ? keywordMatchMode() : this.keywordMatchMode,
+  matchThreshold: matchThreshold != null ? matchThreshold() : this.matchThreshold,
+  maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
+  retrievalType: retrievalType != null ? retrievalType() : this.retrievalType,
+  returnOnFailure: returnOnFailure != null ? returnOnFailure() : this.returnOnFailure,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchInstanceSearchRequestAiSearchOptionsRetrieval &&
+          listEquals(boostBy, other.boostBy) &&
+          contextExpansion == other.contextExpansion &&
+          filters == other.filters &&
+          fusionMethod == other.fusionMethod &&
+          keywordMatchMode == other.keywordMatchMode &&
+          matchThreshold == other.matchThreshold &&
+          maxNumResults == other.maxNumResults &&
+          retrievalType == other.retrievalType &&
+          returnOnFailure == other.returnOnFailure; } 
+@override int get hashCode { return Object.hash(Object.hashAll(boostBy ?? const []), contextExpansion, filters, fusionMethod, keywordMatchMode, matchThreshold, maxNumResults, retrievalType, returnOnFailure); } 
+@override String toString() { return 'AiSearchInstanceSearchRequestAiSearchOptionsRetrieval(boostBy: $boostBy, contextExpansion: $contextExpansion, filters: $filters, fusionMethod: $fusionMethod, keywordMatchMode: $keywordMatchMode, matchThreshold: $matchThreshold, maxNumResults: $maxNumResults, retrievalType: $retrievalType, returnOnFailure: $returnOnFailure)'; } 
+ }

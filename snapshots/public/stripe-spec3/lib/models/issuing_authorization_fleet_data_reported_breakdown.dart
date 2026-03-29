@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_authorization_fleet_reported_breakdown.dart';/// More information about the total amount. Typically this information is received from the merchant after the authorization has been approved and the fuel dispensed. This information is not guaranteed to be accurate as some merchants may provide unreliable data.
+final class IssuingAuthorizationFleetDataReportedBreakdown {const IssuingAuthorizationFleetDataReportedBreakdown({this.issuingAuthorizationFleetReportedBreakdown});
+
+factory IssuingAuthorizationFleetDataReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetDataReportedBreakdown(
+  issuingAuthorizationFleetReportedBreakdown: IssuingAuthorizationFleetReportedBreakdown.canParse(json) ? IssuingAuthorizationFleetReportedBreakdown.fromJson(json) : null,
+); }
+
+final IssuingAuthorizationFleetReportedBreakdown? issuingAuthorizationFleetReportedBreakdown;
+
+/// At least one variant must be present.
+bool get isValid { return issuingAuthorizationFleetReportedBreakdown != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingAuthorizationFleetReportedBreakdown?.toJson(),
+}; } 
+ }

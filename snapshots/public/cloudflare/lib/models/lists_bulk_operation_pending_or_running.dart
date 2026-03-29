@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'lists_operation_id.dart';/// The current status of the asynchronous operation.
+final class ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus._(this.value);
+
+factory ListsBulkOperationPendingOrRunningStatus.fromJson(String json) { return switch (json) {
+  'pending' => pending,
+  'running' => running,
+  _ => ListsBulkOperationPendingOrRunningStatus._(json),
+}; }
+
+static const ListsBulkOperationPendingOrRunningStatus pending = ListsBulkOperationPendingOrRunningStatus._('pending');
+
+static const ListsBulkOperationPendingOrRunningStatus running = ListsBulkOperationPendingOrRunningStatus._('running');
+
+static const List<ListsBulkOperationPendingOrRunningStatus> values = [pending, running];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ListsBulkOperationPendingOrRunningStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ListsBulkOperationPendingOrRunningStatus($value)'; } 
+ }
+final class ListsBulkOperationPendingOrRunning {const ListsBulkOperationPendingOrRunning({required this.id, required this.status, });
+
+factory ListsBulkOperationPendingOrRunning.fromJson(Map<String, dynamic> json) { return ListsBulkOperationPendingOrRunning(
+  id: ListsOperationId.fromJson(json['id'] as String),
+  status: ListsBulkOperationPendingOrRunningStatus.fromJson(json['status'] as String),
+); }
+
+final ListsOperationId id;
+
+/// The current status of the asynchronous operation.
+final ListsBulkOperationPendingOrRunningStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('status'); } 
+ListsBulkOperationPendingOrRunning copyWith({ListsOperationId? id, ListsBulkOperationPendingOrRunningStatus? status, }) { return ListsBulkOperationPendingOrRunning(
+  id: id ?? this.id,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ListsBulkOperationPendingOrRunning &&
+          id == other.id &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(id, status); } 
+@override String toString() { return 'ListsBulkOperationPendingOrRunning(id: $id, status: $status)'; } 
+ }

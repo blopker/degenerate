@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByProtocolResponseCode {const RadarGetDnsSummaryByProtocolResponseCode._(this.value);
+
+factory RadarGetDnsSummaryByProtocolResponseCode.fromJson(String json) { return switch (json) {
+  'NOERROR' => noerror,
+  'FORMERR' => formerr,
+  'SERVFAIL' => servfail,
+  'NXDOMAIN' => nxdomain,
+  'NOTIMP' => notimp,
+  'REFUSED' => refused,
+  'YXDOMAIN' => yxdomain,
+  'YXRRSET' => yxrrset,
+  'NXRRSET' => nxrrset,
+  'NOTAUTH' => notauth,
+  'NOTZONE' => notzone,
+  'BADSIG' => badsig,
+  'BADKEY' => badkey,
+  'BADTIME' => badtime,
+  'BADMODE' => badmode,
+  'BADNAME' => badname,
+  'BADALG' => badalg,
+  'BADTRUNC' => badtrunc,
+  'BADCOOKIE' => badcookie,
+  _ => RadarGetDnsSummaryByProtocolResponseCode._(json),
+}; }
+
+static const RadarGetDnsSummaryByProtocolResponseCode noerror = RadarGetDnsSummaryByProtocolResponseCode._('NOERROR');
+
+static const RadarGetDnsSummaryByProtocolResponseCode formerr = RadarGetDnsSummaryByProtocolResponseCode._('FORMERR');
+
+static const RadarGetDnsSummaryByProtocolResponseCode servfail = RadarGetDnsSummaryByProtocolResponseCode._('SERVFAIL');
+
+static const RadarGetDnsSummaryByProtocolResponseCode nxdomain = RadarGetDnsSummaryByProtocolResponseCode._('NXDOMAIN');
+
+static const RadarGetDnsSummaryByProtocolResponseCode notimp = RadarGetDnsSummaryByProtocolResponseCode._('NOTIMP');
+
+static const RadarGetDnsSummaryByProtocolResponseCode refused = RadarGetDnsSummaryByProtocolResponseCode._('REFUSED');
+
+static const RadarGetDnsSummaryByProtocolResponseCode yxdomain = RadarGetDnsSummaryByProtocolResponseCode._('YXDOMAIN');
+
+static const RadarGetDnsSummaryByProtocolResponseCode yxrrset = RadarGetDnsSummaryByProtocolResponseCode._('YXRRSET');
+
+static const RadarGetDnsSummaryByProtocolResponseCode nxrrset = RadarGetDnsSummaryByProtocolResponseCode._('NXRRSET');
+
+static const RadarGetDnsSummaryByProtocolResponseCode notauth = RadarGetDnsSummaryByProtocolResponseCode._('NOTAUTH');
+
+static const RadarGetDnsSummaryByProtocolResponseCode notzone = RadarGetDnsSummaryByProtocolResponseCode._('NOTZONE');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badsig = RadarGetDnsSummaryByProtocolResponseCode._('BADSIG');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badkey = RadarGetDnsSummaryByProtocolResponseCode._('BADKEY');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badtime = RadarGetDnsSummaryByProtocolResponseCode._('BADTIME');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badmode = RadarGetDnsSummaryByProtocolResponseCode._('BADMODE');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badname = RadarGetDnsSummaryByProtocolResponseCode._('BADNAME');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badalg = RadarGetDnsSummaryByProtocolResponseCode._('BADALG');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badtrunc = RadarGetDnsSummaryByProtocolResponseCode._('BADTRUNC');
+
+static const RadarGetDnsSummaryByProtocolResponseCode badcookie = RadarGetDnsSummaryByProtocolResponseCode._('BADCOOKIE');
+
+static const List<RadarGetDnsSummaryByProtocolResponseCode> values = [noerror, formerr, servfail, nxdomain, notimp, refused, yxdomain, yxrrset, nxrrset, notauth, notzone, badsig, badkey, badtime, badmode, badname, badalg, badtrunc, badcookie];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByProtocolResponseCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByProtocolResponseCode($value)'; } 
+ }

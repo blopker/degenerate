@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetShippingRatesRequest {const GetShippingRatesRequest();
+
+factory GetShippingRatesRequest.fromJson(Map<String, dynamic> json) { return GetShippingRatesRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetShippingRatesRequest copyWith() { return GetShippingRatesRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetShippingRatesRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetShippingRatesRequest()'; } 
+ }

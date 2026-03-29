@@ -1,0 +1,124 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigCreateDatasetResponseResultFiltersKey {const AigConfigCreateDatasetResponseResultFiltersKey._(this.value);
+
+factory AigConfigCreateDatasetResponseResultFiltersKey.fromJson(String json) { return switch (json) {
+  'created_at' => createdAt,
+  'request_content_type' => requestContentType,
+  'response_content_type' => responseContentType,
+  'success' => success,
+  'cached' => cached,
+  'provider' => provider,
+  'model' => model,
+  'cost' => cost,
+  'tokens' => tokens,
+  'tokens_in' => tokensIn,
+  'tokens_out' => tokensOut,
+  'duration' => duration,
+  'feedback' => feedback,
+  _ => AigConfigCreateDatasetResponseResultFiltersKey._(json),
+}; }
+
+static const AigConfigCreateDatasetResponseResultFiltersKey createdAt = AigConfigCreateDatasetResponseResultFiltersKey._('created_at');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey requestContentType = AigConfigCreateDatasetResponseResultFiltersKey._('request_content_type');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey responseContentType = AigConfigCreateDatasetResponseResultFiltersKey._('response_content_type');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey success = AigConfigCreateDatasetResponseResultFiltersKey._('success');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey cached = AigConfigCreateDatasetResponseResultFiltersKey._('cached');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey provider = AigConfigCreateDatasetResponseResultFiltersKey._('provider');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey model = AigConfigCreateDatasetResponseResultFiltersKey._('model');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey cost = AigConfigCreateDatasetResponseResultFiltersKey._('cost');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey tokens = AigConfigCreateDatasetResponseResultFiltersKey._('tokens');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey tokensIn = AigConfigCreateDatasetResponseResultFiltersKey._('tokens_in');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey tokensOut = AigConfigCreateDatasetResponseResultFiltersKey._('tokens_out');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey duration = AigConfigCreateDatasetResponseResultFiltersKey._('duration');
+
+static const AigConfigCreateDatasetResponseResultFiltersKey feedback = AigConfigCreateDatasetResponseResultFiltersKey._('feedback');
+
+static const List<AigConfigCreateDatasetResponseResultFiltersKey> values = [createdAt, requestContentType, responseContentType, success, cached, provider, model, cost, tokens, tokensIn, tokensOut, duration, feedback];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigCreateDatasetResponseResultFiltersKey && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigCreateDatasetResponseResultFiltersKey($value)'; } 
+ }
+final class AigConfigCreateDatasetResponseResultFiltersOperator {const AigConfigCreateDatasetResponseResultFiltersOperator._(this.value);
+
+factory AigConfigCreateDatasetResponseResultFiltersOperator.fromJson(String json) { return switch (json) {
+  'eq' => eq,
+  'contains' => contains,
+  'lt' => lt,
+  'gt' => gt,
+  _ => AigConfigCreateDatasetResponseResultFiltersOperator._(json),
+}; }
+
+static const AigConfigCreateDatasetResponseResultFiltersOperator eq = AigConfigCreateDatasetResponseResultFiltersOperator._('eq');
+
+static const AigConfigCreateDatasetResponseResultFiltersOperator contains = AigConfigCreateDatasetResponseResultFiltersOperator._('contains');
+
+static const AigConfigCreateDatasetResponseResultFiltersOperator lt = AigConfigCreateDatasetResponseResultFiltersOperator._('lt');
+
+static const AigConfigCreateDatasetResponseResultFiltersOperator gt = AigConfigCreateDatasetResponseResultFiltersOperator._('gt');
+
+static const List<AigConfigCreateDatasetResponseResultFiltersOperator> values = [eq, contains, lt, gt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigCreateDatasetResponseResultFiltersOperator && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigCreateDatasetResponseResultFiltersOperator($value)'; } 
+ }
+final class AigConfigCreateDatasetResponseResultFilters {const AigConfigCreateDatasetResponseResultFilters({required this.key, required this.$operator, required this.value, });
+
+factory AigConfigCreateDatasetResponseResultFilters.fromJson(Map<String, dynamic> json) { return AigConfigCreateDatasetResponseResultFilters(
+  key: AigConfigCreateDatasetResponseResultFiltersKey.fromJson(json['key'] as String),
+  $operator: AigConfigCreateDatasetResponseResultFiltersOperator.fromJson(json['operator'] as String),
+  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+); }
+
+final AigConfigCreateDatasetResponseResultFiltersKey key;
+
+final AigConfigCreateDatasetResponseResultFiltersOperator $operator;
+
+final List<dynamic> value;
+
+Map<String, dynamic> toJson() { return {
+  'key': key.toJson(),
+  'operator': $operator.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
+      json.containsKey('operator') &&
+      json.containsKey('value'); } 
+AigConfigCreateDatasetResponseResultFilters copyWith({AigConfigCreateDatasetResponseResultFiltersKey? key, AigConfigCreateDatasetResponseResultFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigCreateDatasetResponseResultFilters(
+  key: key ?? this.key,
+  $operator: $operator ?? this.$operator,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigCreateDatasetResponseResultFilters &&
+          key == other.key &&
+          $operator == other.$operator &&
+          listEquals(value, other.value); } 
+@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
+@override String toString() { return 'AigConfigCreateDatasetResponseResultFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
+ }

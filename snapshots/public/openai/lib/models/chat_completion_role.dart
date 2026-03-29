@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The role of the author of a message
+final class ChatCompletionRole {const ChatCompletionRole._(this.value);
+
+factory ChatCompletionRole.fromJson(String json) { return switch (json) {
+  'developer' => developer,
+  'system' => system,
+  'user' => user,
+  'assistant' => assistant,
+  'tool' => tool,
+  'function' => function,
+  _ => ChatCompletionRole._(json),
+}; }
+
+static const ChatCompletionRole developer = ChatCompletionRole._('developer');
+
+static const ChatCompletionRole system = ChatCompletionRole._('system');
+
+static const ChatCompletionRole user = ChatCompletionRole._('user');
+
+static const ChatCompletionRole assistant = ChatCompletionRole._('assistant');
+
+static const ChatCompletionRole tool = ChatCompletionRole._('tool');
+
+static const ChatCompletionRole function = ChatCompletionRole._('function');
+
+static const List<ChatCompletionRole> values = [developer, system, user, assistant, tool, function];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ChatCompletionRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ChatCompletionRole($value)'; } 
+ }

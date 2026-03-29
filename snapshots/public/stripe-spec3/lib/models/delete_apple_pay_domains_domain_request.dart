@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DeleteApplePayDomainsDomainRequest {const DeleteApplePayDomainsDomainRequest();
+
+factory DeleteApplePayDomainsDomainRequest.fromJson(Map<String, dynamic> json) { return DeleteApplePayDomainsDomainRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DeleteApplePayDomainsDomainRequest copyWith() { return DeleteApplePayDomainsDomainRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is DeleteApplePayDomainsDomainRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'DeleteApplePayDomainsDomainRequest()'; } 
+ }

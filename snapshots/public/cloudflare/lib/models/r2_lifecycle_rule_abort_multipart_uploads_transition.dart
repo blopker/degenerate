@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'r2_lifecycle_age_condition.dart';/// Transition to abort ongoing multipart uploads.
+final class R2LifecycleRuleAbortMultipartUploadsTransition {const R2LifecycleRuleAbortMultipartUploadsTransition({this.condition});
+
+factory R2LifecycleRuleAbortMultipartUploadsTransition.fromJson(Map<String, dynamic> json) { return R2LifecycleRuleAbortMultipartUploadsTransition(
+  condition: json['condition'] != null ? R2LifecycleAgeCondition.fromJson(json['condition'] as Map<String, dynamic>) : null,
+); }
+
+final R2LifecycleAgeCondition? condition;
+
+Map<String, dynamic> toJson() { return {
+  if (condition != null) 'condition': condition?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2LifecycleRuleAbortMultipartUploadsTransition copyWith({R2LifecycleAgeCondition Function()? condition}) { return R2LifecycleRuleAbortMultipartUploadsTransition(
+  condition: condition != null ? condition() : this.condition,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2LifecycleRuleAbortMultipartUploadsTransition &&
+          condition == other.condition; } 
+@override int get hashCode { return condition.hashCode; } 
+@override String toString() { return 'R2LifecycleRuleAbortMultipartUploadsTransition(condition: $condition)'; } 
+ }

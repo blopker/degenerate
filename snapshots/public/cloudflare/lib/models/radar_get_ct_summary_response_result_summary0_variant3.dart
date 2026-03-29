@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetCtSummaryResponseResultSummary0Variant3 {const RadarGetCtSummaryResponseResultSummary0Variant3({required this.gt3dLte16d, required this.gt16dLte31d, required this.gt31dLte91d, required this.gt91dLte121d, required this.gt121d, required this.lte3d, });
+
+factory RadarGetCtSummaryResponseResultSummary0Variant3.fromJson(Map<String, dynamic> json) { return RadarGetCtSummaryResponseResultSummary0Variant3(
+  gt3dLte16d: json['gt_3d_lte_16d'] as String,
+  gt16dLte31d: json['gt_16d_lte_31d'] as String,
+  gt31dLte91d: json['gt_31d_lte_91d'] as String,
+  gt91dLte121d: json['gt_91d_lte_121d'] as String,
+  gt121d: json['gt_121d'] as String,
+  lte3d: json['lte_3d'] as String,
+); }
+
+final String gt3dLte16d;
+
+final String gt16dLte31d;
+
+final String gt31dLte91d;
+
+final String gt91dLte121d;
+
+final String gt121d;
+
+final String lte3d;
+
+Map<String, dynamic> toJson() { return {
+  'gt_3d_lte_16d': gt3dLte16d,
+  'gt_16d_lte_31d': gt16dLte31d,
+  'gt_31d_lte_91d': gt31dLte91d,
+  'gt_91d_lte_121d': gt91dLte121d,
+  'gt_121d': gt121d,
+  'lte_3d': lte3d,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('gt_3d_lte_16d') && json['gt_3d_lte_16d'] is String &&
+      json.containsKey('gt_16d_lte_31d') && json['gt_16d_lte_31d'] is String &&
+      json.containsKey('gt_31d_lte_91d') && json['gt_31d_lte_91d'] is String &&
+      json.containsKey('gt_91d_lte_121d') && json['gt_91d_lte_121d'] is String &&
+      json.containsKey('gt_121d') && json['gt_121d'] is String &&
+      json.containsKey('lte_3d') && json['lte_3d'] is String; } 
+RadarGetCtSummaryResponseResultSummary0Variant3 copyWith({String? gt3dLte16d, String? gt16dLte31d, String? gt31dLte91d, String? gt91dLte121d, String? gt121d, String? lte3d, }) { return RadarGetCtSummaryResponseResultSummary0Variant3(
+  gt3dLte16d: gt3dLte16d ?? this.gt3dLte16d,
+  gt16dLte31d: gt16dLte31d ?? this.gt16dLte31d,
+  gt31dLte91d: gt31dLte91d ?? this.gt31dLte91d,
+  gt91dLte121d: gt91dLte121d ?? this.gt91dLte121d,
+  gt121d: gt121d ?? this.gt121d,
+  lte3d: lte3d ?? this.lte3d,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetCtSummaryResponseResultSummary0Variant3 &&
+          gt3dLte16d == other.gt3dLte16d &&
+          gt16dLte31d == other.gt16dLte31d &&
+          gt31dLte91d == other.gt31dLte91d &&
+          gt91dLte121d == other.gt91dLte121d &&
+          gt121d == other.gt121d &&
+          lte3d == other.lte3d; } 
+@override int get hashCode { return Object.hash(gt3dLte16d, gt16dLte31d, gt31dLte91d, gt91dLte121d, gt121d, lte3d); } 
+@override String toString() { return 'RadarGetCtSummaryResponseResultSummary0Variant3(gt3dLte16d: $gt3dLte16d, gt16dLte31d: $gt16dLte31d, gt31dLte91d: $gt31dLte91d, gt91dLte121d: $gt91dLte121d, gt121d: $gt121d, lte3d: $lte3d)'; } 
+ }

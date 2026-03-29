@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, IN: India, SEAS: South East Asia, NEAS: North East Asia, ALL_REGIONS: all regions (BUSINESS and ENTERPRISE customers only).
+final class SmartshieldCheckRegions2 {const SmartshieldCheckRegions2._(this.value);
+
+factory SmartshieldCheckRegions2.fromJson(String json) { return switch (json) {
+  'WNAM' => wnam,
+  'ENAM' => enam,
+  'WEU' => weu,
+  'EEU' => eeu,
+  'NSAM' => nsam,
+  'SSAM' => ssam,
+  'OC' => oc,
+  'ME' => me,
+  'NAF' => naf,
+  'SAF' => saf,
+  'IN' => $in,
+  'SEAS' => seas,
+  'NEAS' => neas,
+  'ALL_REGIONS' => allRegions,
+  _ => SmartshieldCheckRegions2._(json),
+}; }
+
+static const SmartshieldCheckRegions2 wnam = SmartshieldCheckRegions2._('WNAM');
+
+static const SmartshieldCheckRegions2 enam = SmartshieldCheckRegions2._('ENAM');
+
+static const SmartshieldCheckRegions2 weu = SmartshieldCheckRegions2._('WEU');
+
+static const SmartshieldCheckRegions2 eeu = SmartshieldCheckRegions2._('EEU');
+
+static const SmartshieldCheckRegions2 nsam = SmartshieldCheckRegions2._('NSAM');
+
+static const SmartshieldCheckRegions2 ssam = SmartshieldCheckRegions2._('SSAM');
+
+static const SmartshieldCheckRegions2 oc = SmartshieldCheckRegions2._('OC');
+
+static const SmartshieldCheckRegions2 me = SmartshieldCheckRegions2._('ME');
+
+static const SmartshieldCheckRegions2 naf = SmartshieldCheckRegions2._('NAF');
+
+static const SmartshieldCheckRegions2 saf = SmartshieldCheckRegions2._('SAF');
+
+static const SmartshieldCheckRegions2 $in = SmartshieldCheckRegions2._('IN');
+
+static const SmartshieldCheckRegions2 seas = SmartshieldCheckRegions2._('SEAS');
+
+static const SmartshieldCheckRegions2 neas = SmartshieldCheckRegions2._('NEAS');
+
+static const SmartshieldCheckRegions2 allRegions = SmartshieldCheckRegions2._('ALL_REGIONS');
+
+static const List<SmartshieldCheckRegions2> values = [wnam, enam, weu, eeu, nsam, ssam, oc, me, naf, saf, $in, seas, neas, allRegions];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SmartshieldCheckRegions2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SmartshieldCheckRegions2($value)'; } 
+ }

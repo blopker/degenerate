@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SecurityAndAnalysisCodeSecurityStatus {const SecurityAndAnalysisCodeSecurityStatus._(this.value);
+
+factory SecurityAndAnalysisCodeSecurityStatus.fromJson(String json) { return switch (json) {
+  'enabled' => enabled,
+  'disabled' => disabled,
+  _ => SecurityAndAnalysisCodeSecurityStatus._(json),
+}; }
+
+static const SecurityAndAnalysisCodeSecurityStatus enabled = SecurityAndAnalysisCodeSecurityStatus._('enabled');
+
+static const SecurityAndAnalysisCodeSecurityStatus disabled = SecurityAndAnalysisCodeSecurityStatus._('disabled');
+
+static const List<SecurityAndAnalysisCodeSecurityStatus> values = [enabled, disabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecurityAndAnalysisCodeSecurityStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecurityAndAnalysisCodeSecurityStatus($value)'; } 
+ }
+final class SecurityAndAnalysisCodeSecurity {const SecurityAndAnalysisCodeSecurity({this.status});
+
+factory SecurityAndAnalysisCodeSecurity.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisCodeSecurity(
+  status: json['status'] != null ? SecurityAndAnalysisCodeSecurityStatus.fromJson(json['status'] as String) : null,
+); }
+
+final SecurityAndAnalysisCodeSecurityStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SecurityAndAnalysisCodeSecurity copyWith({SecurityAndAnalysisCodeSecurityStatus Function()? status}) { return SecurityAndAnalysisCodeSecurity(
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecurityAndAnalysisCodeSecurity &&
+          status == other.status; } 
+@override int get hashCode { return status.hashCode; } 
+@override String toString() { return 'SecurityAndAnalysisCodeSecurity(status: $status)'; } 
+ }

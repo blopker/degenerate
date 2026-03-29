@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_create_scan_response429_errors.dart';import 'urlscanner_create_scan_response429_messages.dart';final class UrlscannerCreateScanResponse429 {const UrlscannerCreateScanResponse429({required this.errors, required this.messages, required this.success, });
+
+factory UrlscannerCreateScanResponse429.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse429(
+  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerCreateScanResponse429Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => UrlscannerCreateScanResponse429Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<UrlscannerCreateScanResponse429Errors> errors;
+
+final List<UrlscannerCreateScanResponse429Messages> messages;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+UrlscannerCreateScanResponse429 copyWith({List<UrlscannerCreateScanResponse429Errors>? errors, List<UrlscannerCreateScanResponse429Messages>? messages, bool? success, }) { return UrlscannerCreateScanResponse429(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerCreateScanResponse429 &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success); } 
+@override String toString() { return 'UrlscannerCreateScanResponse429(errors: $errors, messages: $messages, success: $success)'; } 
+ }

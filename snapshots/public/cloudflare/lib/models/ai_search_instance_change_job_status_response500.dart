@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_instance_change_job_status_response500_errors.dart';final class AiSearchInstanceChangeJobStatusResponse500 {const AiSearchInstanceChangeJobStatusResponse500({required this.errors, required this.success, });
+
+factory AiSearchInstanceChangeJobStatusResponse500.fromJson(Map<String, dynamic> json) { return AiSearchInstanceChangeJobStatusResponse500(
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchInstanceChangeJobStatusResponse500Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<AiSearchInstanceChangeJobStatusResponse500Errors> errors;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AiSearchInstanceChangeJobStatusResponse500 copyWith({List<AiSearchInstanceChangeJobStatusResponse500Errors>? errors, bool? success, }) { return AiSearchInstanceChangeJobStatusResponse500(
+  errors: errors ?? this.errors,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchInstanceChangeJobStatusResponse500 &&
+          listEquals(errors, other.errors) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), success); } 
+@override String toString() { return 'AiSearchInstanceChangeJobStatusResponse500(errors: $errors, success: $success)'; } 
+ }

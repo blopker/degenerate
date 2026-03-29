@@ -1,0 +1,83 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_team_added_to_repository_repository.dart';import 'webhooks_team1.dart';final class WebhookTeamAddedToRepositoryAction {const WebhookTeamAddedToRepositoryAction._(this.value);
+
+factory WebhookTeamAddedToRepositoryAction.fromJson(String json) { return switch (json) {
+  'added_to_repository' => addedToRepository,
+  _ => WebhookTeamAddedToRepositoryAction._(json),
+}; }
+
+static const WebhookTeamAddedToRepositoryAction addedToRepository = WebhookTeamAddedToRepositoryAction._('added_to_repository');
+
+static const List<WebhookTeamAddedToRepositoryAction> values = [addedToRepository];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookTeamAddedToRepositoryAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookTeamAddedToRepositoryAction($value)'; } 
+ }
+final class WebhookTeamAddedToRepository {const WebhookTeamAddedToRepository({required this.action, this.enterprise, this.installation, required this.organization, this.repository, this.sender, required this.team, });
+
+factory WebhookTeamAddedToRepository.fromJson(Map<String, dynamic> json) { return WebhookTeamAddedToRepository(
+  action: WebhookTeamAddedToRepositoryAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
+  repository: json['repository'] != null ? WebhookTeamAddedToRepositoryRepository.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
+  team: WebhooksTeam1.fromJson(json['team'] as Map<String, dynamic>),
+); }
+
+final WebhookTeamAddedToRepositoryAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks organization;
+
+/// A git repository
+final WebhookTeamAddedToRepositoryRepository? repository;
+
+final SimpleUser? sender;
+
+final WebhooksTeam1 team;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'organization': organization.toJson(),
+  if (repository != null) 'repository': repository?.toJson(),
+  if (sender != null) 'sender': sender?.toJson(),
+  'team': team.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('organization') &&
+      json.containsKey('team'); } 
+WebhookTeamAddedToRepository copyWith({WebhookTeamAddedToRepositoryAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, WebhookTeamAddedToRepositoryRepository Function()? repository, SimpleUser Function()? sender, WebhooksTeam1? team, }) { return WebhookTeamAddedToRepository(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization ?? this.organization,
+  repository: repository != null ? repository() : this.repository,
+  sender: sender != null ? sender() : this.sender,
+  team: team ?? this.team,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookTeamAddedToRepository &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender &&
+          team == other.team; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender, team); } 
+@override String toString() { return 'WebhookTeamAddedToRepository(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, team: $team)'; } 
+ }

@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetRankingTopDomainsFormat {const RadarGetRankingTopDomainsFormat._(this.value);
+
+factory RadarGetRankingTopDomainsFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetRankingTopDomainsFormat._(json),
+}; }
+
+static const RadarGetRankingTopDomainsFormat $json = RadarGetRankingTopDomainsFormat._('JSON');
+
+static const RadarGetRankingTopDomainsFormat csv = RadarGetRankingTopDomainsFormat._('CSV');
+
+static const List<RadarGetRankingTopDomainsFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetRankingTopDomainsFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetRankingTopDomainsFormat($value)'; } 
+ }

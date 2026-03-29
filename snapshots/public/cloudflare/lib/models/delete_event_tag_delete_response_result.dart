@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DeleteEventTagDeleteResponseResult {const DeleteEventTagDeleteResponseResult({required this.success});
+
+factory DeleteEventTagDeleteResponseResult.fromJson(Map<String, dynamic> json) { return DeleteEventTagDeleteResponseResult(
+  success: json['success'] as bool,
+); }
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
+DeleteEventTagDeleteResponseResult copyWith({bool? success}) { return DeleteEventTagDeleteResponseResult(
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeleteEventTagDeleteResponseResult &&
+          success == other.success; } 
+@override int get hashCode { return success.hashCode; } 
+@override String toString() { return 'DeleteEventTagDeleteResponseResult(success: $success)'; } 
+ }

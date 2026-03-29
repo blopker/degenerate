@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_outcome.dart';/// Indicates the final outcome for the payment evaluation.
+final class RadarPaymentEvaluationOutcome {const RadarPaymentEvaluationOutcome({this.insightsResourcesPaymentEvaluationOutcome});
+
+factory RadarPaymentEvaluationOutcome.fromJson(Map<String, dynamic> json) { return RadarPaymentEvaluationOutcome(
+  insightsResourcesPaymentEvaluationOutcome: InsightsResourcesPaymentEvaluationOutcome.canParse(json) ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json) : null,
+); }
+
+final InsightsResourcesPaymentEvaluationOutcome? insightsResourcesPaymentEvaluationOutcome;
+
+/// At least one variant must be present.
+bool get isValid { return insightsResourcesPaymentEvaluationOutcome != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?insightsResourcesPaymentEvaluationOutcome?.toJson(),
+}; } 
+ }

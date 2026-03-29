@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostInvoicesRequestIssuerType {const PostInvoicesRequestIssuerType._(this.value);
+
+factory PostInvoicesRequestIssuerType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'self' => self,
+  _ => PostInvoicesRequestIssuerType._(json),
+}; }
+
+static const PostInvoicesRequestIssuerType account = PostInvoicesRequestIssuerType._('account');
+
+static const PostInvoicesRequestIssuerType self = PostInvoicesRequestIssuerType._('self');
+
+static const List<PostInvoicesRequestIssuerType> values = [account, self];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesRequestIssuerType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesRequestIssuerType($value)'; } 
+ }
+/// The connected account that issues the invoice. The invoice is presented with the branding and support information of the specified account.
+final class PostInvoicesRequestIssuer {const PostInvoicesRequestIssuer({this.account, required this.type, });
+
+factory PostInvoicesRequestIssuer.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestIssuer(
+  account: json['account'] as String?,
+  type: PostInvoicesRequestIssuerType.fromJson(json['type'] as String),
+); }
+
+final String? account;
+
+final PostInvoicesRequestIssuerType type;
+
+Map<String, dynamic> toJson() { return {
+  'account': ?account,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostInvoicesRequestIssuer copyWith({String Function()? account, PostInvoicesRequestIssuerType? type, }) { return PostInvoicesRequestIssuer(
+  account: account != null ? account() : this.account,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesRequestIssuer &&
+          account == other.account &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(account, type); } 
+@override String toString() { return 'PostInvoicesRequestIssuer(account: $account, type: $type)'; } 
+ }

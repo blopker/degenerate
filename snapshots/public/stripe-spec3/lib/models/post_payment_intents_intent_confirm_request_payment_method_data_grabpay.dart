@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay {const PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay();
+
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay copyWith() { return PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodDataGrabpay()'; } 
+ }

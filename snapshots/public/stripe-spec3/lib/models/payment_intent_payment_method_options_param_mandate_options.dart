@@ -1,0 +1,92 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param_mandate_options_custom_mandate_url.dart';final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule.fromJson(String json) { return switch (json) {
+  'combined' => combined,
+  'interval' => interval,
+  'sporadic' => sporadic,
+  _ => PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule combined = PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._('combined');
+
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule interval = PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._('interval');
+
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule sporadic = PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule._('sporadic');
+
+static const List<PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule> values = [combined, interval, sporadic];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType {const PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType.fromJson(String json) { return switch (json) {
+  'business' => business,
+  'personal' => personal,
+  _ => PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType business = PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType._('business');
+
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType personal = PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType._('personal');
+
+static const List<PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType> values = [business, personal];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParamMandateOptions {const PaymentIntentPaymentMethodOptionsParamMandateOptions({this.customMandateUrl, this.intervalDescription, this.paymentSchedule, this.transactionType, });
+
+factory PaymentIntentPaymentMethodOptionsParamMandateOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParamMandateOptions(
+  customMandateUrl: json['custom_mandate_url'] != null ? OneOf2.parse(json['custom_mandate_url'], fromA: (v) => v as String, fromB: (v) => PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrlVariant2.fromJson(v as String),) : null,
+  intervalDescription: json['interval_description'] as String?,
+  paymentSchedule: json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
+  transactionType: json['transaction_type'] != null ? PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,
+); }
+
+final PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrl? customMandateUrl;
+
+final String? intervalDescription;
+
+final PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule? paymentSchedule;
+
+final PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType? transactionType;
+
+Map<String, dynamic> toJson() { return {
+  if (customMandateUrl != null) 'custom_mandate_url': customMandateUrl?.toJson(),
+  'interval_description': ?intervalDescription,
+  if (paymentSchedule != null) 'payment_schedule': paymentSchedule?.toJson(),
+  if (transactionType != null) 'transaction_type': transactionType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsParamMandateOptions copyWith({PaymentIntentPaymentMethodOptionsParamMandateOptionsCustomMandateUrl Function()? customMandateUrl, String Function()? intervalDescription, PaymentIntentPaymentMethodOptionsParamMandateOptionsPaymentSchedule Function()? paymentSchedule, PaymentIntentPaymentMethodOptionsParamMandateOptionsTransactionType Function()? transactionType, }) { return PaymentIntentPaymentMethodOptionsParamMandateOptions(
+  customMandateUrl: customMandateUrl != null ? customMandateUrl() : this.customMandateUrl,
+  intervalDescription: intervalDescription != null ? intervalDescription() : this.intervalDescription,
+  paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,
+  transactionType: transactionType != null ? transactionType() : this.transactionType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParamMandateOptions &&
+          customMandateUrl == other.customMandateUrl &&
+          intervalDescription == other.intervalDescription &&
+          paymentSchedule == other.paymentSchedule &&
+          transactionType == other.transactionType; } 
+@override int get hashCode { return Object.hash(customMandateUrl, intervalDescription, paymentSchedule, transactionType); } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParamMandateOptions(customMandateUrl: $customMandateUrl, intervalDescription: $intervalDescription, paymentSchedule: $paymentSchedule, transactionType: $transactionType)'; } 
+ }

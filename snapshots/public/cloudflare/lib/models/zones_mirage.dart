@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
+/// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
+/// 
+final class ZonesMirageId {const ZonesMirageId._(this.value);
+
+factory ZonesMirageId.fromJson(String json) { return switch (json) {
+  'mirage' => mirage,
+  _ => ZonesMirageId._(json),
+}; }
+
+static const ZonesMirageId mirage = ZonesMirageId._('mirage');
+
+static const List<ZonesMirageId> values = [mirage];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesMirageId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesMirageId($value)'; } 
+ }
+final class ZonesMirage {const ZonesMirage({this.id, this.value, });
+
+factory ZonesMirage.fromJson(Map<String, dynamic> json) { return ZonesMirage(
+  id: json['id'] != null ? ZonesMirageId.fromJson(json['id'] as String) : null,
+  value: json['value'] != null ? ZonesMirageValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
+/// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
+/// 
+final ZonesMirageId? id;
+
+/// The status of Mirage.
+/// 
+final ZonesMirageValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesMirage copyWith({ZonesMirageId Function()? id, ZonesMirageValue Function()? value, }) { return ZonesMirage(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesMirage &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ZonesMirage(id: $id, value: $value)'; } 
+ }

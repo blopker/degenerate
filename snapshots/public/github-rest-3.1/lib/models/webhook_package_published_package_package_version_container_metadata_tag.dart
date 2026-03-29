@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPackagePublishedPackagePackageVersionContainerMetadataTag {const WebhookPackagePublishedPackagePackageVersionContainerMetadataTag({this.digest, this.name, });
+
+factory WebhookPackagePublishedPackagePackageVersionContainerMetadataTag.fromJson(Map<String, dynamic> json) { return WebhookPackagePublishedPackagePackageVersionContainerMetadataTag(
+  digest: json['digest'] as String?,
+  name: json['name'] as String?,
+); }
+
+final String? digest;
+
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'digest': ?digest,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookPackagePublishedPackagePackageVersionContainerMetadataTag copyWith({String Function()? digest, String Function()? name, }) { return WebhookPackagePublishedPackagePackageVersionContainerMetadataTag(
+  digest: digest != null ? digest() : this.digest,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPackagePublishedPackagePackageVersionContainerMetadataTag &&
+          digest == other.digest &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(digest, name); } 
+@override String toString() { return 'WebhookPackagePublishedPackagePackageVersionContainerMetadataTag(digest: $digest, name: $name)'; } 
+ }

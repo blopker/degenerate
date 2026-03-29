@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DlpNewDocumentFingerprint {const DlpNewDocumentFingerprint({this.description = '', required this.matchPercent, required this.name, });
+
+factory DlpNewDocumentFingerprint.fromJson(Map<String, dynamic> json) { return DlpNewDocumentFingerprint(
+  description: json.containsKey('description') ? json['description'] as String : '',
+  matchPercent: (json['match_percent'] as num).toInt(),
+  name: json['name'] as String,
+); }
+
+final String description;
+
+final int matchPercent;
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'description': description,
+  'match_percent': matchPercent,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('match_percent') && json['match_percent'] is num &&
+      json.containsKey('name') && json['name'] is String; } 
+DlpNewDocumentFingerprint copyWith({String Function()? description, int? matchPercent, String? name, }) { return DlpNewDocumentFingerprint(
+  description: description != null ? description() : this.description,
+  matchPercent: matchPercent ?? this.matchPercent,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpNewDocumentFingerprint &&
+          description == other.description &&
+          matchPercent == other.matchPercent &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(description, matchPercent, name); } 
+@override String toString() { return 'DlpNewDocumentFingerprint(description: $description, matchPercent: $matchPercent, name: $name)'; } 
+ }

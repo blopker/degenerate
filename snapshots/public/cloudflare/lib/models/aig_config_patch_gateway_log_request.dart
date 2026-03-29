@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigPatchGatewayLogRequest {const AigConfigPatchGatewayLogRequest({this.feedback, this.metadata, this.score, });
+
+factory AigConfigPatchGatewayLogRequest.fromJson(Map<String, dynamic> json) { return AigConfigPatchGatewayLogRequest(
+  feedback: json['feedback'] != null ? (json['feedback'] as num).toDouble() : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
+); }
+
+final double? feedback;
+
+final Map<String,dynamic>? metadata;
+
+final double? score;
+
+Map<String, dynamic> toJson() { return {
+  'feedback': ?feedback,
+  'metadata': ?metadata,
+  'score': ?score,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AigConfigPatchGatewayLogRequest copyWith({double? Function()? feedback, Map<String, dynamic>? Function()? metadata, double? Function()? score, }) { return AigConfigPatchGatewayLogRequest(
+  feedback: feedback != null ? feedback() : this.feedback,
+  metadata: metadata != null ? metadata() : this.metadata,
+  score: score != null ? score() : this.score,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPatchGatewayLogRequest &&
+          feedback == other.feedback &&
+          metadata == other.metadata &&
+          score == other.score; } 
+@override int get hashCode { return Object.hash(feedback, metadata, score); } 
+@override String toString() { return 'AigConfigPatchGatewayLogRequest(feedback: $feedback, metadata: $metadata, score: $score)'; } 
+ }

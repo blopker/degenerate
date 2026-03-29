@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Operating System.
+final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(this.value);
+
+factory TeamsDevicesUniqueClientIdInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
+  'android' => android,
+  'ios' => ios,
+  'chromeos' => chromeos,
+  _ => TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(json),
+}; }
+
+static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem android = TeamsDevicesUniqueClientIdInputRequestOperatingSystem._('android');
+
+static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem ios = TeamsDevicesUniqueClientIdInputRequestOperatingSystem._('ios');
+
+static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem chromeos = TeamsDevicesUniqueClientIdInputRequestOperatingSystem._('chromeos');
+
+static const List<TeamsDevicesUniqueClientIdInputRequestOperatingSystem> values = [android, ios, chromeos];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesUniqueClientIdInputRequestOperatingSystem($value)'; } 
+ }
+final class TeamsDevicesUniqueClientIdInputRequest {const TeamsDevicesUniqueClientIdInputRequest({required this.id, required this.operatingSystem, });
+
+factory TeamsDevicesUniqueClientIdInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesUniqueClientIdInputRequest(
+  id: json['id'] as String,
+  operatingSystem: TeamsDevicesUniqueClientIdInputRequestOperatingSystem.fromJson(json['operating_system'] as String),
+); }
+
+/// List ID.
+final String id;
+
+/// Operating System.
+final TeamsDevicesUniqueClientIdInputRequestOperatingSystem operatingSystem;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'operating_system': operatingSystem.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('operating_system'); } 
+TeamsDevicesUniqueClientIdInputRequest copyWith({String? id, TeamsDevicesUniqueClientIdInputRequestOperatingSystem? operatingSystem, }) { return TeamsDevicesUniqueClientIdInputRequest(
+  id: id ?? this.id,
+  operatingSystem: operatingSystem ?? this.operatingSystem,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesUniqueClientIdInputRequest &&
+          id == other.id &&
+          operatingSystem == other.operatingSystem; } 
+@override int get hashCode { return Object.hash(id, operatingSystem); } 
+@override String toString() { return 'TeamsDevicesUniqueClientIdInputRequest(id: $id, operatingSystem: $operatingSystem)'; } 
+ }

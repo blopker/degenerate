@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference {const PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference._(this.value);
+
+factory PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off' => off,
+  'on' => $on,
+  _ => PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference._(json),
+}; }
+
+static const PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference none = PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference._('none');
+
+static const PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference off = PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference._('off');
+
+static const PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference $on = PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference._('on');
+
+static const List<PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference> values = [none, off, $on];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference($value)'; } 
+ }
+final class PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference {const PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference({this.preference});
+
+factory PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference(
+  preference: json['preference'] != null ? PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
+); }
+
+final PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference? preference;
+
+Map<String, dynamic> toJson() { return {
+  if (preference != null) 'preference': preference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference copyWith({PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference(
+  preference: preference != null ? preference() : this.preference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference &&
+          preference == other.preference; } 
+@override int get hashCode { return preference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestRevolutPayDisplayPreference(preference: $preference)'; } 
+ }

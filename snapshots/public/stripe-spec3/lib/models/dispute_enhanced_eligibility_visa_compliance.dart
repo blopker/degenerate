@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Visa compliance eligibility status.
+final class DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus._(this.value);
+
+factory DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(String json) { return switch (json) {
+  'fee_acknowledged' => feeAcknowledged,
+  'requires_fee_acknowledgement' => requiresFeeAcknowledgement,
+  _ => DisputeEnhancedEligibilityVisaComplianceStatus._(json),
+}; }
+
+static const DisputeEnhancedEligibilityVisaComplianceStatus feeAcknowledged = DisputeEnhancedEligibilityVisaComplianceStatus._('fee_acknowledged');
+
+static const DisputeEnhancedEligibilityVisaComplianceStatus requiresFeeAcknowledgement = DisputeEnhancedEligibilityVisaComplianceStatus._('requires_fee_acknowledgement');
+
+static const List<DisputeEnhancedEligibilityVisaComplianceStatus> values = [feeAcknowledged, requiresFeeAcknowledgement];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DisputeEnhancedEligibilityVisaComplianceStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DisputeEnhancedEligibilityVisaComplianceStatus($value)'; } 
+ }
+/// 
+final class DisputeEnhancedEligibilityVisaCompliance {const DisputeEnhancedEligibilityVisaCompliance({required this.status});
+
+factory DisputeEnhancedEligibilityVisaCompliance.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEligibilityVisaCompliance(
+  status: DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(json['status'] as String),
+); }
+
+/// Visa compliance eligibility status.
+final DisputeEnhancedEligibilityVisaComplianceStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+DisputeEnhancedEligibilityVisaCompliance copyWith({DisputeEnhancedEligibilityVisaComplianceStatus? status}) { return DisputeEnhancedEligibilityVisaCompliance(
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DisputeEnhancedEligibilityVisaCompliance &&
+          status == other.status; } 
+@override int get hashCode { return status.hashCode; } 
+@override String toString() { return 'DisputeEnhancedEligibilityVisaCompliance(status: $status)'; } 
+ }

@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method_details_us_bank_account_mandate.dart';/// Account holder type: individual or company.
+final class PaymentMethodDetailsUsBankAccountAccountHolderType {const PaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);
+
+factory PaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+  'company' => company,
+  'individual' => individual,
+  _ => PaymentMethodDetailsUsBankAccountAccountHolderType._(json),
+}; }
+
+static const PaymentMethodDetailsUsBankAccountAccountHolderType company = PaymentMethodDetailsUsBankAccountAccountHolderType._('company');
+
+static const PaymentMethodDetailsUsBankAccountAccountHolderType individual = PaymentMethodDetailsUsBankAccountAccountHolderType._('individual');
+
+static const List<PaymentMethodDetailsUsBankAccountAccountHolderType> values = [company, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsUsBankAccountAccountHolderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsUsBankAccountAccountHolderType($value)'; } 
+ }
+/// Account type: checkings or savings. Defaults to checking if omitted.
+final class PaymentMethodDetailsUsBankAccountAccountType {const PaymentMethodDetailsUsBankAccountAccountType._(this.value);
+
+factory PaymentMethodDetailsUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'savings' => savings,
+  _ => PaymentMethodDetailsUsBankAccountAccountType._(json),
+}; }
+
+static const PaymentMethodDetailsUsBankAccountAccountType checking = PaymentMethodDetailsUsBankAccountAccountType._('checking');
+
+static const PaymentMethodDetailsUsBankAccountAccountType savings = PaymentMethodDetailsUsBankAccountAccountType._('savings');
+
+static const List<PaymentMethodDetailsUsBankAccountAccountType> values = [checking, savings];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsUsBankAccountAccountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsUsBankAccountAccountType($value)'; } 
+ }
+/// 
+final class PaymentMethodDetailsUsBankAccount {const PaymentMethodDetailsUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, this.paymentReference, this.routingNumber, });
+
+factory PaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsUsBankAccount(
+  accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? PaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+  bankName: json['bank_name'] as String?,
+  expectedDebitDate: json['expected_debit_date'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  last4: json['last4'] as String?,
+  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
+  paymentReference: json['payment_reference'] as String?,
+  routingNumber: json['routing_number'] as String?,
+); }
+
+/// Account holder type: individual or company.
+final PaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
+
+/// Account type: checkings or savings. Defaults to checking if omitted.
+final PaymentMethodDetailsUsBankAccountAccountType? accountType;
+
+/// Name of the bank associated with the bank account.
+final String? bankName;
+
+/// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
+final String? expectedDebitDate;
+
+/// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
+final String? fingerprint;
+
+/// Last four digits of the bank account number.
+final String? last4;
+
+/// ID of the mandate used to make this payment.
+final PaymentMethodDetailsUsBankAccountMandate? mandate;
+
+/// Reference number to locate ACH payments with customer's bank.
+final String? paymentReference;
+
+/// Routing number of the bank account.
+final String? routingNumber;
+
+Map<String, dynamic> toJson() { return {
+  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
+  if (accountType != null) 'account_type': accountType?.toJson(),
+  'bank_name': ?bankName,
+  'expected_debit_date': ?expectedDebitDate,
+  'fingerprint': ?fingerprint,
+  'last4': ?last4,
+  if (mandate != null) 'mandate': mandate?.toJson(),
+  'payment_reference': ?paymentReference,
+  'routing_number': ?routingNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsUsBankAccount copyWith({PaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, PaymentMethodDetailsUsBankAccountMandate Function()? mandate, String? Function()? paymentReference, String? Function()? routingNumber, }) { return PaymentMethodDetailsUsBankAccount(
+  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
+  accountType: accountType != null ? accountType() : this.accountType,
+  bankName: bankName != null ? bankName() : this.bankName,
+  expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  last4: last4 != null ? last4() : this.last4,
+  mandate: mandate != null ? mandate() : this.mandate,
+  paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
+  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsUsBankAccount &&
+          accountHolderType == other.accountHolderType &&
+          accountType == other.accountType &&
+          bankName == other.bankName &&
+          expectedDebitDate == other.expectedDebitDate &&
+          fingerprint == other.fingerprint &&
+          last4 == other.last4 &&
+          mandate == other.mandate &&
+          paymentReference == other.paymentReference &&
+          routingNumber == other.routingNumber; } 
+@override int get hashCode { return Object.hash(accountHolderType, accountType, bankName, expectedDebitDate, fingerprint, last4, mandate, paymentReference, routingNumber); } 
+@override String toString() { return 'PaymentMethodDetailsUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, paymentReference: $paymentReference, routingNumber: $routingNumber)'; } 
+ }

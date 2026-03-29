@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopBrowserFamiliesHttpVersion {const RadarGetHttpTopBrowserFamiliesHttpVersion._(this.value);
+
+factory RadarGetHttpTopBrowserFamiliesHttpVersion.fromJson(String json) { return switch (json) {
+  'HTTPv1' => httPv1,
+  'HTTPv2' => httPv2,
+  'HTTPv3' => httPv3,
+  _ => RadarGetHttpTopBrowserFamiliesHttpVersion._(json),
+}; }
+
+static const RadarGetHttpTopBrowserFamiliesHttpVersion httPv1 = RadarGetHttpTopBrowserFamiliesHttpVersion._('HTTPv1');
+
+static const RadarGetHttpTopBrowserFamiliesHttpVersion httPv2 = RadarGetHttpTopBrowserFamiliesHttpVersion._('HTTPv2');
+
+static const RadarGetHttpTopBrowserFamiliesHttpVersion httPv3 = RadarGetHttpTopBrowserFamiliesHttpVersion._('HTTPv3');
+
+static const List<RadarGetHttpTopBrowserFamiliesHttpVersion> values = [httPv1, httPv2, httPv3];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTopBrowserFamiliesHttpVersion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopBrowserFamiliesHttpVersion($value)'; } 
+ }

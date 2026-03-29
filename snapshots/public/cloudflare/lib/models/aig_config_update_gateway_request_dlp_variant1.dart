@@ -1,0 +1,61 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigUpdateGatewayRequestDlpVariant1Action {const AigConfigUpdateGatewayRequestDlpVariant1Action._(this.value);
+
+factory AigConfigUpdateGatewayRequestDlpVariant1Action.fromJson(String json) { return switch (json) {
+  'BLOCK' => block,
+  'FLAG' => flag,
+  _ => AigConfigUpdateGatewayRequestDlpVariant1Action._(json),
+}; }
+
+static const AigConfigUpdateGatewayRequestDlpVariant1Action block = AigConfigUpdateGatewayRequestDlpVariant1Action._('BLOCK');
+
+static const AigConfigUpdateGatewayRequestDlpVariant1Action flag = AigConfigUpdateGatewayRequestDlpVariant1Action._('FLAG');
+
+static const List<AigConfigUpdateGatewayRequestDlpVariant1Action> values = [block, flag];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigUpdateGatewayRequestDlpVariant1Action && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigUpdateGatewayRequestDlpVariant1Action($value)'; } 
+ }
+final class AigConfigUpdateGatewayRequestDlpVariant1 {const AigConfigUpdateGatewayRequestDlpVariant1({required this.action, required this.enabled, required this.profiles, });
+
+factory AigConfigUpdateGatewayRequestDlpVariant1.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayRequestDlpVariant1(
+  action: AigConfigUpdateGatewayRequestDlpVariant1Action.fromJson(json['action'] as String),
+  enabled: json['enabled'] as bool,
+  profiles: (json['profiles'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final AigConfigUpdateGatewayRequestDlpVariant1Action action;
+
+final bool enabled;
+
+final List<String> profiles;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'enabled': enabled,
+  'profiles': profiles,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('profiles'); } 
+AigConfigUpdateGatewayRequestDlpVariant1 copyWith({AigConfigUpdateGatewayRequestDlpVariant1Action? action, bool? enabled, List<String>? profiles, }) { return AigConfigUpdateGatewayRequestDlpVariant1(
+  action: action ?? this.action,
+  enabled: enabled ?? this.enabled,
+  profiles: profiles ?? this.profiles,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigUpdateGatewayRequestDlpVariant1 &&
+          action == other.action &&
+          enabled == other.enabled &&
+          listEquals(profiles, other.profiles); } 
+@override int get hashCode { return Object.hash(action, enabled, Object.hashAll(profiles)); } 
+@override String toString() { return 'AigConfigUpdateGatewayRequestDlpVariant1(action: $action, enabled: $enabled, profiles: $profiles)'; } 
+ }

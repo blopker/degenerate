@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Scope colo name.
+extension type const MagicColoName(String value) {
+factory MagicColoName.fromJson(String json) => MagicColoName(json);
+
+String toJson() => value;
+
+}
+/// Scope colo region.
+extension type const MagicColoRegion(String value) {
+factory MagicColoRegion.fromJson(String json) => MagicColoRegion(json);
+
+String toJson() => value;
+
+}
+/// Used only for ECMP routes.
+final class MagicScope {const MagicScope({this.coloNames, this.coloRegions, });
+
+factory MagicScope.fromJson(Map<String, dynamic> json) { return MagicScope(
+  coloNames: (json['colo_names'] as List<dynamic>?)?.map((e) => MagicColoName.fromJson(e as String)).toList(),
+  coloRegions: (json['colo_regions'] as List<dynamic>?)?.map((e) => MagicColoRegion.fromJson(e as String)).toList(),
+); }
+
+/// List of colo names for the ECMP scope.
+final List<MagicColoName>? coloNames;
+
+/// List of colo regions for the ECMP scope.
+final List<MagicColoRegion>? coloRegions;
+
+Map<String, dynamic> toJson() { return {
+  if (coloNames != null) 'colo_names': coloNames?.map((e) => e.toJson()).toList(),
+  if (coloRegions != null) 'colo_regions': coloRegions?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicScope copyWith({List<MagicColoName> Function()? coloNames, List<MagicColoRegion> Function()? coloRegions, }) { return MagicScope(
+  coloNames: coloNames != null ? coloNames() : this.coloNames,
+  coloRegions: coloRegions != null ? coloRegions() : this.coloRegions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicScope &&
+          listEquals(coloNames, other.coloNames) &&
+          listEquals(coloRegions, other.coloRegions); } 
+@override int get hashCode { return Object.hash(Object.hashAll(coloNames ?? const []), Object.hashAll(coloRegions ?? const [])); } 
+@override String toString() { return 'MagicScope(coloNames: $coloNames, coloRegions: $coloRegions)'; } 
+ }

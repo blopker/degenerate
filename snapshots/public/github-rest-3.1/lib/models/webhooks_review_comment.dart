@@ -1,0 +1,347 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhooks_review_comment_links.dart';import 'webhooks_review_comment_reactions.dart';import 'webhooks_review_comment_user.dart';/// How the author is associated with the repository.
+final class WebhooksReviewCommentAuthorAssociation {const WebhooksReviewCommentAuthorAssociation._(this.value);
+
+factory WebhooksReviewCommentAuthorAssociation.fromJson(String json) { return switch (json) {
+  'COLLABORATOR' => collaborator,
+  'CONTRIBUTOR' => contributor,
+  'FIRST_TIMER' => firstTimer,
+  'FIRST_TIME_CONTRIBUTOR' => firstTimeContributor,
+  'MANNEQUIN' => mannequin,
+  'MEMBER' => member,
+  'NONE' => none,
+  'OWNER' => owner,
+  _ => WebhooksReviewCommentAuthorAssociation._(json),
+}; }
+
+static const WebhooksReviewCommentAuthorAssociation collaborator = WebhooksReviewCommentAuthorAssociation._('COLLABORATOR');
+
+static const WebhooksReviewCommentAuthorAssociation contributor = WebhooksReviewCommentAuthorAssociation._('CONTRIBUTOR');
+
+static const WebhooksReviewCommentAuthorAssociation firstTimer = WebhooksReviewCommentAuthorAssociation._('FIRST_TIMER');
+
+static const WebhooksReviewCommentAuthorAssociation firstTimeContributor = WebhooksReviewCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+
+static const WebhooksReviewCommentAuthorAssociation mannequin = WebhooksReviewCommentAuthorAssociation._('MANNEQUIN');
+
+static const WebhooksReviewCommentAuthorAssociation member = WebhooksReviewCommentAuthorAssociation._('MEMBER');
+
+static const WebhooksReviewCommentAuthorAssociation none = WebhooksReviewCommentAuthorAssociation._('NONE');
+
+static const WebhooksReviewCommentAuthorAssociation owner = WebhooksReviewCommentAuthorAssociation._('OWNER');
+
+static const List<WebhooksReviewCommentAuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhooksReviewCommentAuthorAssociation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhooksReviewCommentAuthorAssociation($value)'; } 
+ }
+/// The side of the first line of the range for a multi-line comment.
+final class WebhooksReviewCommentSide {const WebhooksReviewCommentSide._(this.value);
+
+factory WebhooksReviewCommentSide.fromJson(String json) { return switch (json) {
+  'LEFT' => left,
+  'RIGHT' => right,
+  _ => WebhooksReviewCommentSide._(json),
+}; }
+
+static const WebhooksReviewCommentSide left = WebhooksReviewCommentSide._('LEFT');
+
+static const WebhooksReviewCommentSide right = WebhooksReviewCommentSide._('RIGHT');
+
+static const List<WebhooksReviewCommentSide> values = [left, right];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhooksReviewCommentSide && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhooksReviewCommentSide($value)'; } 
+ }
+/// The side of the first line of the range for a multi-line comment.
+final class WebhooksReviewCommentStartSide {const WebhooksReviewCommentStartSide._(this.value);
+
+factory WebhooksReviewCommentStartSide.fromJson(String json) { return switch (json) {
+  'LEFT' => left,
+  'RIGHT' => right,
+  'null' => $null,
+  _ => WebhooksReviewCommentStartSide._(json),
+}; }
+
+static const WebhooksReviewCommentStartSide left = WebhooksReviewCommentStartSide._('LEFT');
+
+static const WebhooksReviewCommentStartSide right = WebhooksReviewCommentStartSide._('RIGHT');
+
+static const WebhooksReviewCommentStartSide $null = WebhooksReviewCommentStartSide._('null');
+
+static const List<WebhooksReviewCommentStartSide> values = [left, right, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhooksReviewCommentStartSide && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhooksReviewCommentStartSide($value)'; } 
+ }
+/// The level at which the comment is targeted, can be a diff line or a file.
+final class WebhooksReviewCommentSubjectType {const WebhooksReviewCommentSubjectType._(this.value);
+
+factory WebhooksReviewCommentSubjectType.fromJson(String json) { return switch (json) {
+  'line' => line,
+  'file' => file,
+  _ => WebhooksReviewCommentSubjectType._(json),
+}; }
+
+static const WebhooksReviewCommentSubjectType line = WebhooksReviewCommentSubjectType._('line');
+
+static const WebhooksReviewCommentSubjectType file = WebhooksReviewCommentSubjectType._('file');
+
+static const List<WebhooksReviewCommentSubjectType> values = [line, file];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhooksReviewCommentSubjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhooksReviewCommentSubjectType($value)'; } 
+ }
+/// The [comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request) itself.
+final class WebhooksReviewComment {const WebhooksReviewComment({required this.links, required this.authorAssociation, required this.body, required this.commitId, required this.createdAt, required this.diffHunk, required this.htmlUrl, required this.id, this.inReplyToId, required this.line, required this.nodeId, required this.originalCommitId, required this.originalLine, required this.originalPosition, required this.originalStartLine, required this.path, required this.position, required this.pullRequestReviewId, required this.pullRequestUrl, required this.reactions, required this.side, required this.startLine, this.startSide = WebhooksReviewCommentStartSide.right, this.subjectType, required this.updatedAt, required this.url, required this.user, });
+
+factory WebhooksReviewComment.fromJson(Map<String, dynamic> json) { return WebhooksReviewComment(
+  links: WebhooksReviewCommentLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  authorAssociation: WebhooksReviewCommentAuthorAssociation.fromJson(json['author_association'] as String),
+  body: json['body'] as String,
+  commitId: json['commit_id'] as String,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  diffHunk: json['diff_hunk'] as String,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  id: (json['id'] as num).toInt(),
+  inReplyToId: json['in_reply_to_id'] != null ? (json['in_reply_to_id'] as num).toInt() : null,
+  line: json['line'] != null ? (json['line'] as num).toInt() : null,
+  nodeId: json['node_id'] as String,
+  originalCommitId: json['original_commit_id'] as String,
+  originalLine: (json['original_line'] as num).toInt(),
+  originalPosition: (json['original_position'] as num).toInt(),
+  originalStartLine: json['original_start_line'] != null ? (json['original_start_line'] as num).toInt() : null,
+  path: json['path'] as String,
+  position: json['position'] != null ? (json['position'] as num).toInt() : null,
+  pullRequestReviewId: json['pull_request_review_id'] != null ? (json['pull_request_review_id'] as num).toInt() : null,
+  pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
+  reactions: WebhooksReviewCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
+  side: WebhooksReviewCommentSide.fromJson(json['side'] as String),
+  startLine: json['start_line'] != null ? (json['start_line'] as num).toInt() : null,
+  startSide: json['start_side'] != null ? WebhooksReviewCommentStartSide.fromJson(json['start_side'] as String) : null,
+  subjectType: json['subject_type'] != null ? WebhooksReviewCommentSubjectType.fromJson(json['subject_type'] as String) : null,
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  url: Uri.parse(json['url'] as String),
+  user: json['user'] != null ? WebhooksReviewCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+final WebhooksReviewCommentLinks links;
+
+/// How the author is associated with the repository.
+final WebhooksReviewCommentAuthorAssociation authorAssociation;
+
+/// The text of the comment.
+final String body;
+
+/// The SHA of the commit to which the comment applies.
+final String commitId;
+
+final DateTime createdAt;
+
+/// The diff of the line that the comment refers to.
+final String diffHunk;
+
+/// HTML URL for the pull request review comment.
+final Uri htmlUrl;
+
+/// The ID of the pull request review comment.
+final int id;
+
+/// The comment ID to reply to.
+final int? inReplyToId;
+
+/// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+final int? line;
+
+/// The node ID of the pull request review comment.
+final String nodeId;
+
+/// The SHA of the original commit to which the comment applies.
+final String originalCommitId;
+
+/// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+final int originalLine;
+
+/// The index of the original line in the diff to which the comment applies.
+final int originalPosition;
+
+/// The first line of the range for a multi-line comment.
+final int? originalStartLine;
+
+/// The relative path of the file to which the comment applies.
+final String path;
+
+/// The line index in the diff to which the comment applies.
+final int? position;
+
+/// The ID of the pull request review to which the comment belongs.
+final int? pullRequestReviewId;
+
+/// URL for the pull request that the review comment belongs to.
+final Uri pullRequestUrl;
+
+final WebhooksReviewCommentReactions reactions;
+
+/// The side of the first line of the range for a multi-line comment.
+final WebhooksReviewCommentSide side;
+
+/// The first line of the range for a multi-line comment.
+final int? startLine;
+
+/// The side of the first line of the range for a multi-line comment.
+final WebhooksReviewCommentStartSide? startSide;
+
+/// The level at which the comment is targeted, can be a diff line or a file.
+final WebhooksReviewCommentSubjectType? subjectType;
+
+final DateTime updatedAt;
+
+/// URL for the pull request review comment
+final Uri url;
+
+final WebhooksReviewCommentUser? user;
+
+Map<String, dynamic> toJson() { return {
+  '_links': links.toJson(),
+  'author_association': authorAssociation.toJson(),
+  'body': body,
+  'commit_id': commitId,
+  'created_at': createdAt.toIso8601String(),
+  'diff_hunk': diffHunk,
+  'html_url': htmlUrl.toString(),
+  'id': id,
+  'in_reply_to_id': ?inReplyToId,
+  'line': ?line,
+  'node_id': nodeId,
+  'original_commit_id': originalCommitId,
+  'original_line': originalLine,
+  'original_position': originalPosition,
+  'original_start_line': ?originalStartLine,
+  'path': path,
+  'position': ?position,
+  'pull_request_review_id': ?pullRequestReviewId,
+  'pull_request_url': pullRequestUrl.toString(),
+  'reactions': reactions.toJson(),
+  'side': side.toJson(),
+  'start_line': ?startLine,
+  if (startSide != null) 'start_side': startSide?.toJson(),
+  if (subjectType != null) 'subject_type': subjectType?.toJson(),
+  'updated_at': updatedAt.toIso8601String(),
+  'url': url.toString(),
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('_links') &&
+      json.containsKey('author_association') &&
+      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('commit_id') && json['commit_id'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('diff_hunk') && json['diff_hunk'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('line') && json['line'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('original_commit_id') && json['original_commit_id'] is String &&
+      json.containsKey('original_line') && json['original_line'] is num &&
+      json.containsKey('original_position') && json['original_position'] is num &&
+      json.containsKey('original_start_line') && json['original_start_line'] is num &&
+      json.containsKey('path') && json['path'] is String &&
+      json.containsKey('position') && json['position'] is num &&
+      json.containsKey('pull_request_review_id') && json['pull_request_review_id'] is num &&
+      json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
+      json.containsKey('reactions') &&
+      json.containsKey('side') &&
+      json.containsKey('start_line') && json['start_line'] is num &&
+      json.containsKey('start_side') &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('user'); } 
+WebhooksReviewComment copyWith({WebhooksReviewCommentLinks? links, WebhooksReviewCommentAuthorAssociation? authorAssociation, String? body, String? commitId, DateTime? createdAt, String? diffHunk, Uri? htmlUrl, int? id, int Function()? inReplyToId, int? Function()? line, String? nodeId, String? originalCommitId, int? originalLine, int? originalPosition, int? Function()? originalStartLine, String? path, int? Function()? position, int? Function()? pullRequestReviewId, Uri? pullRequestUrl, WebhooksReviewCommentReactions? reactions, WebhooksReviewCommentSide? side, int? Function()? startLine, WebhooksReviewCommentStartSide? Function()? startSide, WebhooksReviewCommentSubjectType Function()? subjectType, DateTime? updatedAt, Uri? url, WebhooksReviewCommentUser? Function()? user, }) { return WebhooksReviewComment(
+  links: links ?? this.links,
+  authorAssociation: authorAssociation ?? this.authorAssociation,
+  body: body ?? this.body,
+  commitId: commitId ?? this.commitId,
+  createdAt: createdAt ?? this.createdAt,
+  diffHunk: diffHunk ?? this.diffHunk,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id ?? this.id,
+  inReplyToId: inReplyToId != null ? inReplyToId() : this.inReplyToId,
+  line: line != null ? line() : this.line,
+  nodeId: nodeId ?? this.nodeId,
+  originalCommitId: originalCommitId ?? this.originalCommitId,
+  originalLine: originalLine ?? this.originalLine,
+  originalPosition: originalPosition ?? this.originalPosition,
+  originalStartLine: originalStartLine != null ? originalStartLine() : this.originalStartLine,
+  path: path ?? this.path,
+  position: position != null ? position() : this.position,
+  pullRequestReviewId: pullRequestReviewId != null ? pullRequestReviewId() : this.pullRequestReviewId,
+  pullRequestUrl: pullRequestUrl ?? this.pullRequestUrl,
+  reactions: reactions ?? this.reactions,
+  side: side ?? this.side,
+  startLine: startLine != null ? startLine() : this.startLine,
+  startSide: startSide != null ? startSide() : this.startSide,
+  subjectType: subjectType != null ? subjectType() : this.subjectType,
+  updatedAt: updatedAt ?? this.updatedAt,
+  url: url ?? this.url,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhooksReviewComment &&
+          links == other.links &&
+          authorAssociation == other.authorAssociation &&
+          body == other.body &&
+          commitId == other.commitId &&
+          createdAt == other.createdAt &&
+          diffHunk == other.diffHunk &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          inReplyToId == other.inReplyToId &&
+          line == other.line &&
+          nodeId == other.nodeId &&
+          originalCommitId == other.originalCommitId &&
+          originalLine == other.originalLine &&
+          originalPosition == other.originalPosition &&
+          originalStartLine == other.originalStartLine &&
+          path == other.path &&
+          position == other.position &&
+          pullRequestReviewId == other.pullRequestReviewId &&
+          pullRequestUrl == other.pullRequestUrl &&
+          reactions == other.reactions &&
+          side == other.side &&
+          startLine == other.startLine &&
+          startSide == other.startSide &&
+          subjectType == other.subjectType &&
+          updatedAt == other.updatedAt &&
+          url == other.url &&
+          user == other.user; } 
+@override int get hashCode { return Object.hashAll([links, authorAssociation, body, commitId, createdAt, diffHunk, htmlUrl, id, inReplyToId, line, nodeId, originalCommitId, originalLine, originalPosition, originalStartLine, path, position, pullRequestReviewId, pullRequestUrl, reactions, side, startLine, startSide, subjectType, updatedAt, url, user]); } 
+@override String toString() { return 'WebhooksReviewComment(links: $links, authorAssociation: $authorAssociation, body: $body, commitId: $commitId, createdAt: $createdAt, diffHunk: $diffHunk, htmlUrl: $htmlUrl, id: $id, inReplyToId: $inReplyToId, line: $line, nodeId: $nodeId, originalCommitId: $originalCommitId, originalLine: $originalLine, originalPosition: $originalPosition, originalStartLine: $originalStartLine, path: $path, position: $position, pullRequestReviewId: $pullRequestReviewId, pullRequestUrl: $pullRequestUrl, reactions: $reactions, side: $side, startLine: $startLine, startSide: $startSide, subjectType: $subjectType, updatedAt: $updatedAt, url: $url, user: $user)'; } 
+ }

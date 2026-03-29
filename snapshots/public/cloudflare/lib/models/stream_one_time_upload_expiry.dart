@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The date and time when the video upload URL is no longer valid for direct user uploads.
+extension type StreamOneTimeUploadExpiry(DateTime value) {
+factory StreamOneTimeUploadExpiry.fromJson(String json) => StreamOneTimeUploadExpiry(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}

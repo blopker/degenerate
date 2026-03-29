@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of supported action.
+final class EmailRuleActionType {const EmailRuleActionType._(this.value);
+
+factory EmailRuleActionType.fromJson(String json) { return switch (json) {
+  'drop' => drop,
+  'forward' => forward,
+  'worker' => worker,
+  _ => EmailRuleActionType._(json),
+}; }
+
+static const EmailRuleActionType drop = EmailRuleActionType._('drop');
+
+static const EmailRuleActionType forward = EmailRuleActionType._('forward');
+
+static const EmailRuleActionType worker = EmailRuleActionType._('worker');
+
+static const List<EmailRuleActionType> values = [drop, forward, worker];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EmailRuleActionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EmailRuleActionType($value)'; } 
+ }
+/// Actions pattern.
+final class EmailRuleAction {const EmailRuleAction({required this.type, this.value, });
+
+factory EmailRuleAction.fromJson(Map<String, dynamic> json) { return EmailRuleAction(
+  type: EmailRuleActionType.fromJson(json['type'] as String),
+  value: (json['value'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Type of supported action.
+final EmailRuleActionType type;
+
+final List<String>? value;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+EmailRuleAction copyWith({EmailRuleActionType? type, List<String> Function()? value, }) { return EmailRuleAction(
+  type: type ?? this.type,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailRuleAction &&
+          type == other.type &&
+          listEquals(value, other.value); } 
+@override int get hashCode { return Object.hash(type, Object.hashAll(value ?? const [])); } 
+@override String toString() { return 'EmailRuleAction(type: $type, value: $value)'; } 
+ }

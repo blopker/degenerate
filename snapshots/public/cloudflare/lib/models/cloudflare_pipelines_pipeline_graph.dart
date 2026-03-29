@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_pipeline_edge.dart';import 'cloudflare_pipelines_pipeline_node.dart';final class CloudflarePipelinesPipelineGraph {const CloudflarePipelinesPipelineGraph({required this.edges, required this.nodes, });
+
+factory CloudflarePipelinesPipelineGraph.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesPipelineGraph(
+  edges: (json['edges'] as List<dynamic>).map((e) => CloudflarePipelinesPipelineEdge.fromJson(e as Map<String, dynamic>)).toList(),
+  nodes: (json['nodes'] as List<dynamic>).map((e) => CloudflarePipelinesPipelineNode.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<CloudflarePipelinesPipelineEdge> edges;
+
+final List<CloudflarePipelinesPipelineNode> nodes;
+
+Map<String, dynamic> toJson() { return {
+  'edges': edges.map((e) => e.toJson()).toList(),
+  'nodes': nodes.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('edges') &&
+      json.containsKey('nodes'); } 
+CloudflarePipelinesPipelineGraph copyWith({List<CloudflarePipelinesPipelineEdge>? edges, List<CloudflarePipelinesPipelineNode>? nodes, }) { return CloudflarePipelinesPipelineGraph(
+  edges: edges ?? this.edges,
+  nodes: nodes ?? this.nodes,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudflarePipelinesPipelineGraph &&
+          listEquals(edges, other.edges) &&
+          listEquals(nodes, other.nodes); } 
+@override int get hashCode { return Object.hash(Object.hashAll(edges), Object.hashAll(nodes)); } 
+@override String toString() { return 'CloudflarePipelinesPipelineGraph(edges: $edges, nodes: $nodes)'; } 
+ }

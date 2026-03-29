@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateTranslationRequestModelVariant2 {const CreateTranslationRequestModelVariant2._(this.value);
+
+factory CreateTranslationRequestModelVariant2.fromJson(String json) { return switch (json) {
+  'whisper-1' => whisper1,
+  _ => CreateTranslationRequestModelVariant2._(json),
+}; }
+
+static const CreateTranslationRequestModelVariant2 whisper1 = CreateTranslationRequestModelVariant2._('whisper-1');
+
+static const List<CreateTranslationRequestModelVariant2> values = [whisper1];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateTranslationRequestModelVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateTranslationRequestModelVariant2($value)'; } 
+ }
+typedef CreateTranslationRequestModel = OneOf2<String,CreateTranslationRequestModelVariant2>;

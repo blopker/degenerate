@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Messages6Functions {const Messages6Functions({required this.code, required this.name, });
+
+factory Messages6Functions.fromJson(Map<String, dynamic> json) { return Messages6Functions(
+  code: json['code'] as String,
+  name: json['name'] as String,
+); }
+
+final String code;
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+Messages6Functions copyWith({String? code, String? name, }) { return Messages6Functions(
+  code: code ?? this.code,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages6Functions &&
+          code == other.code &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(code, name); } 
+@override String toString() { return 'Messages6Functions(code: $code, name: $name)'; } 
+ }

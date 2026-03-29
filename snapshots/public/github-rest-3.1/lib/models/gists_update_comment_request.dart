@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GistsUpdateCommentRequest {const GistsUpdateCommentRequest({required this.body});
+
+factory GistsUpdateCommentRequest.fromJson(Map<String, dynamic> json) { return GistsUpdateCommentRequest(
+  body: json['body'] as String,
+); }
+
+/// The comment text.
+final String body;
+
+Map<String, dynamic> toJson() { return {
+  'body': body,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
+GistsUpdateCommentRequest copyWith({String? body}) { return GistsUpdateCommentRequest(
+  body: body ?? this.body,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GistsUpdateCommentRequest &&
+          body == other.body; } 
+@override int get hashCode { return body.hashCode; } 
+@override String toString() { return 'GistsUpdateCommentRequest(body: $body)'; } 
+ }

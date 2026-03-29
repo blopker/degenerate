@@ -1,0 +1,139 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_file_request.dart';import '../models/delete_file_response.dart';import '../models/list_files_order.dart';import '../models/list_files_response.dart';import '../models/open_ai_file.dart';/// FilesApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class FilesApi with ApiExecutor {const FilesApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Returns a list of files.
+///
+/// `GET /files`
+Future<ApiResult<ListFilesResponse, Never>> listFiles({String? purpose, int? limit, ListFilesOrder? order, String? after, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (purpose != null) queryParameters['purpose'] = purpose;
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (after != null) queryParameters['after'] = after;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/files',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListFilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Upload a file that can be used across various endpoints. Individual files
+/// can be up to 512 MB, and each project can store up to 2.5 TB of files in
+/// total. There is no organization-wide storage limit.
+/// 
+/// - The Assistants API supports files up to 2 million tokens and of specific
+///   file types. See the [Assistants Tools guide](/docs/assistants/tools) for
+///   details.
+/// - The Fine-tuning API only supports `.jsonl` files. The input also has
+///   certain required formats for fine-tuning
+///   [chat](/docs/api-reference/fine-tuning/chat-input) or
+///   [completions](/docs/api-reference/fine-tuning/completions-input) models.
+/// - The Batch API only supports `.jsonl` files up to 200 MB in size. The input
+///   also has a specific required
+///   [format](/docs/api-reference/batch/request-input).
+/// 
+/// Please [contact us](https://help.openai.com/) if you need to increase these
+/// storage limits.
+/// 
+///
+/// `POST /files`
+Future<ApiResult<OpenAiFile, Never>> createFile({required CreateFileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/files',
+  headers: headers,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('purpose', body.purpose.toJson()),
+    if (body.expiresAfter case final expiresAfter$?)
+      ApiMultipartField.text('expires_after', expiresAfter$.toString()),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OpenAiFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Returns information about a specific file.
+///
+/// `GET /files/{file_id}`
+Future<ApiResult<OpenAiFile, Never>> retrieveFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/files/${Uri.encodeComponent(fileId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OpenAiFile.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a file and remove it from all vector stores.
+///
+/// `DELETE /files/{file_id}`
+Future<ApiResult<DeleteFileResponse, Never>> deleteFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/files/${Uri.encodeComponent(fileId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return DeleteFileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Returns the contents of the specified file.
+///
+/// `GET /files/{file_id}/content`
+Future<ApiResult<String, Never>> downloadFile({required String fileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/files/${Uri.encodeComponent(fileId)}/content',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return response.body;
+  },
+);
+ } 
+ }

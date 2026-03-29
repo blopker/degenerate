@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Messages41ResponseFormatType {const Messages41ResponseFormatType._(this.value);
+
+factory Messages41ResponseFormatType.fromJson(String json) { return switch (json) {
+  'json_object' => jsonObject,
+  'json_schema' => jsonSchema,
+  _ => Messages41ResponseFormatType._(json),
+}; }
+
+static const Messages41ResponseFormatType jsonObject = Messages41ResponseFormatType._('json_object');
+
+static const Messages41ResponseFormatType jsonSchema = Messages41ResponseFormatType._('json_schema');
+
+static const List<Messages41ResponseFormatType> values = [jsonObject, jsonSchema];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages41ResponseFormatType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages41ResponseFormatType($value)'; } 
+ }
+final class Messages41ResponseFormat {const Messages41ResponseFormat({this.jsonSchema, this.type, });
+
+factory Messages41ResponseFormat.fromJson(Map<String, dynamic> json) { return Messages41ResponseFormat(
+  jsonSchema: json['json_schema'],
+  type: json['type'] != null ? Messages41ResponseFormatType.fromJson(json['type'] as String) : null,
+); }
+
+final dynamic jsonSchema;
+
+final Messages41ResponseFormatType? type;
+
+Map<String, dynamic> toJson() { return {
+  'json_schema': ?jsonSchema,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Messages41ResponseFormat copyWith({dynamic Function()? jsonSchema, Messages41ResponseFormatType Function()? type, }) { return Messages41ResponseFormat(
+  jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages41ResponseFormat &&
+          jsonSchema == other.jsonSchema &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(jsonSchema, type); } 
+@override String toString() { return 'Messages41ResponseFormat(jsonSchema: $jsonSchema, type: $type)'; } 
+ }

@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.
+final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._(this.value);
+
+factory IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'basic' => basic,
+  'aggressive' => aggressive,
+  _ => IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._(json),
+}; }
+
+static const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade none = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._('none');
+
+static const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade basic = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._('basic');
+
+static const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade aggressive = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade._('aggressive');
+
+static const List<IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade> values = [none, basic, aggressive];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade($value)'; } 
+ }
+final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest({this.cascade = IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.none});
+
+factory IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest.fromJson(Map<String, dynamic> json) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
+  cascade: json.containsKey('cascade') ? IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.fromJson(json['cascade'] as String) : IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade.none,
+); }
+
+/// The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.
+final IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade cascade;
+
+Map<String, dynamic> toJson() { return {
+  'cascade': cascade.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest copyWith({IpAccessRulesForAZoneDeleteAnIpAccessRuleRequestCascade Function()? cascade}) { return IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(
+  cascade: cascade != null ? cascade() : this.cascade,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest &&
+          cascade == other.cascade; } 
+@override int get hashCode { return cascade.hashCode; } 
+@override String toString() { return 'IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest(cascade: $cascade)'; } 
+ }

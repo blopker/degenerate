@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_ssl_recommender_enabled.dart';/// Enrollment in the SSL/TLS Recommender service which tries to detect and recommend (by sending periodic emails) the most secure SSL/TLS setting your origin servers support.
+final class ZonesSslRecommender {const ZonesSslRecommender({this.enabled, this.id, });
+
+factory ZonesSslRecommender.fromJson(Map<String, dynamic> json) { return ZonesSslRecommender(
+  enabled: json['enabled'] != null ? ZonesSslRecommenderEnabled.fromJson(json['enabled'] as bool) : null,
+  id: json['id'],
+); }
+
+final ZonesSslRecommenderEnabled? enabled;
+
+/// Enrollment value for SSL/TLS Recommender.
+final dynamic id;
+
+Map<String, dynamic> toJson() { return {
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  'id': ?id,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesSslRecommender copyWith({ZonesSslRecommenderEnabled Function()? enabled, dynamic Function()? id, }) { return ZonesSslRecommender(
+  enabled: enabled != null ? enabled() : this.enabled,
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesSslRecommender &&
+          enabled == other.enabled &&
+          id == other.id; } 
+@override int get hashCode { return Object.hash(enabled, id); } 
+@override String toString() { return 'ZonesSslRecommender(enabled: $enabled, id: $id)'; } 
+ }

@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The event type, must be `input_audio_buffer.cleared`.
+final class RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType._(this.value);
+
+factory RealtimeBetaServerEventInputAudioBufferClearedType.fromJson(String json) { return switch (json) {
+  'input_audio_buffer.cleared' => inputAudioBufferCleared,
+  _ => RealtimeBetaServerEventInputAudioBufferClearedType._(json),
+}; }
+
+static const RealtimeBetaServerEventInputAudioBufferClearedType inputAudioBufferCleared = RealtimeBetaServerEventInputAudioBufferClearedType._('input_audio_buffer.cleared');
+
+static const List<RealtimeBetaServerEventInputAudioBufferClearedType> values = [inputAudioBufferCleared];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeBetaServerEventInputAudioBufferClearedType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferClearedType($value)'; } 
+ }
+/// Returned when the input audio buffer is cleared by the client with a
+/// `input_audio_buffer.clear` event.
+/// 
+final class RealtimeBetaServerEventInputAudioBufferCleared {const RealtimeBetaServerEventInputAudioBufferCleared({required this.eventId, required this.type, });
+
+factory RealtimeBetaServerEventInputAudioBufferCleared.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventInputAudioBufferCleared(
+  eventId: json['event_id'] as String,
+  type: RealtimeBetaServerEventInputAudioBufferClearedType.fromJson(json['type'] as String),
+); }
+
+/// The unique ID of the server event.
+final String eventId;
+
+/// The event type, must be `input_audio_buffer.cleared`.
+final RealtimeBetaServerEventInputAudioBufferClearedType type;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': eventId,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+      json.containsKey('type'); } 
+RealtimeBetaServerEventInputAudioBufferCleared copyWith({String? eventId, RealtimeBetaServerEventInputAudioBufferClearedType? type, }) { return RealtimeBetaServerEventInputAudioBufferCleared(
+  eventId: eventId ?? this.eventId,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeBetaServerEventInputAudioBufferCleared &&
+          eventId == other.eventId &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(eventId, type); } 
+@override String toString() { return 'RealtimeBetaServerEventInputAudioBufferCleared(eventId: $eventId, type: $type)'; } 
+ }

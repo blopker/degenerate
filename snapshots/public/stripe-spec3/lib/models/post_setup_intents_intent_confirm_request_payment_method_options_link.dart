@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink();
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink copyWith() { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsLink()'; } 
+ }

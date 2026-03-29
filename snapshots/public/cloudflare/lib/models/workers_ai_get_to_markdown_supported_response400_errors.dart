@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersAiGetToMarkdownSupportedResponse400Errors {const WorkersAiGetToMarkdownSupportedResponse400Errors({required this.message});
+
+factory WorkersAiGetToMarkdownSupportedResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiGetToMarkdownSupportedResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+WorkersAiGetToMarkdownSupportedResponse400Errors copyWith({String? message}) { return WorkersAiGetToMarkdownSupportedResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiGetToMarkdownSupportedResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'WorkersAiGetToMarkdownSupportedResponse400Errors(message: $message)'; } 
+ }

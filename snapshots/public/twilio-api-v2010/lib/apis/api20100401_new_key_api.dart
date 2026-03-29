@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_new_key.dart';import '../models/create_new_key_request.dart';/// Api20100401NewKeyApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401NewKeyApi with ApiExecutor {const Api20100401NewKeyApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// 
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Keys.json`
+Future<ApiResult<AccountNewKey, Never>> createNewKey({required String accountSid, CreateNewKeyRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Keys.json',
+  headers: headers,
+  body: body == null ? null : [
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountNewKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

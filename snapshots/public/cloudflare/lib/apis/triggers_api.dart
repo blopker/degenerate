@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/builds_account_id.dart';import '../models/builds_create_build_request.dart';import '../models/builds_create_trigger_request.dart';import '../models/builds_error_response.dart';import '../models/builds_trigger_uuid.dart';import '../models/builds_update_trigger_request.dart';import '../models/response.dart';/// TriggersApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class TriggersApi with ApiExecutor {const TriggersApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Create trigger
+///
+/// Create a new CI/CD trigger
+///
+/// `POST /accounts/{account_id}/builds/triggers`
+Future<ApiResult<Response, Never>> createTrigger({required BuildsAccountId accountId, required BuildsCreateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update trigger
+///
+/// Update an existing CI/CD trigger
+///
+/// `PATCH /accounts/{account_id}/builds/triggers/{trigger_uuid}`
+Future<ApiResult<Response, BuildsErrorResponse>> updateTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsUpdateTriggerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete trigger
+///
+/// Remove a CI/CD trigger
+///
+/// `DELETE /accounts/{account_id}/builds/triggers/{trigger_uuid}`
+Future<ApiResult<Response, BuildsErrorResponse>> deleteTrigger({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create manual build
+///
+/// Trigger a manual build for a specific trigger
+///
+/// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/builds`
+Future<ApiResult<Response, Never>> createManualBuild({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, required BuildsCreateBuildRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/builds',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Purge build cache
+///
+/// Clear the build cache for a specific trigger
+///
+/// `POST /accounts/{account_id}/builds/triggers/{trigger_uuid}/purge_build_cache`
+Future<ApiResult<Response, BuildsErrorResponse>> purgeBuildCache({required BuildsAccountId accountId, required BuildsTriggerUuid triggerUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/builds/triggers/${Uri.encodeComponent(triggerUuid.toString())}/purge_build_cache',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Response.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BuildsErrorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

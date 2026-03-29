@@ -1,0 +1,96 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_changes8.dart';import 'webhooks_effective_date.dart';import 'webhooks_sponsorship.dart';final class WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction._(this.value);
+
+factory WebhookSponsorshipPendingTierChangeAction.fromJson(String json) { return switch (json) {
+  'pending_tier_change' => pendingTierChange,
+  _ => WebhookSponsorshipPendingTierChangeAction._(json),
+}; }
+
+static const WebhookSponsorshipPendingTierChangeAction pendingTierChange = WebhookSponsorshipPendingTierChangeAction._('pending_tier_change');
+
+static const List<WebhookSponsorshipPendingTierChangeAction> values = [pendingTierChange];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookSponsorshipPendingTierChangeAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookSponsorshipPendingTierChangeAction($value)'; } 
+ }
+final class WebhookSponsorshipPendingTierChange {const WebhookSponsorshipPendingTierChange({required this.action, required this.changes, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, required this.sender, required this.sponsorship, });
+
+factory WebhookSponsorshipPendingTierChange.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipPendingTierChange(
+  action: WebhookSponsorshipPendingTierChangeAction.fromJson(json['action'] as String),
+  changes: WebhooksChanges8.fromJson(json['changes'] as Map<String, dynamic>),
+  effectiveDate: json['effective_date'] != null ? WebhooksEffectiveDate.fromJson(json['effective_date'] as String) : null,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+  sponsorship: WebhooksSponsorship.fromJson(json['sponsorship'] as Map<String, dynamic>),
+); }
+
+final WebhookSponsorshipPendingTierChangeAction action;
+
+final WebhooksChanges8 changes;
+
+/// The `pending_cancellation` and `pending_tier_change` event types will include the date the cancellation or tier change will take effect.
+final WebhooksEffectiveDate? effectiveDate;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks? repository;
+
+final SimpleUser sender;
+
+final WebhooksSponsorship sponsorship;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'changes': changes.toJson(),
+  if (effectiveDate != null) 'effective_date': effectiveDate?.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  if (repository != null) 'repository': repository?.toJson(),
+  'sender': sender.toJson(),
+  'sponsorship': sponsorship.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('changes') &&
+      json.containsKey('sender') &&
+      json.containsKey('sponsorship'); } 
+WebhookSponsorshipPendingTierChange copyWith({WebhookSponsorshipPendingTierChangeAction? action, WebhooksChanges8? changes, WebhooksEffectiveDate Function()? effectiveDate, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, SimpleUser? sender, WebhooksSponsorship? sponsorship, }) { return WebhookSponsorshipPendingTierChange(
+  action: action ?? this.action,
+  changes: changes ?? this.changes,
+  effectiveDate: effectiveDate != null ? effectiveDate() : this.effectiveDate,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository != null ? repository() : this.repository,
+  sender: sender ?? this.sender,
+  sponsorship: sponsorship ?? this.sponsorship,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookSponsorshipPendingTierChange &&
+          action == other.action &&
+          changes == other.changes &&
+          effectiveDate == other.effectiveDate &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender &&
+          sponsorship == other.sponsorship; } 
+@override int get hashCode { return Object.hash(action, changes, effectiveDate, enterprise, installation, organization, repository, sender, sponsorship); } 
+@override String toString() { return 'WebhookSponsorshipPendingTierChange(action: $action, changes: $changes, effectiveDate: $effectiveDate, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender, sponsorship: $sponsorship)'; } 
+ }

@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ZarazZarazConfigRowBase {const ZarazZarazConfigRowBase({required this.createdAt, required this.id, required this.updatedAt, required this.userId, });
+
+factory ZarazZarazConfigRowBase.fromJson(Map<String, dynamic> json) { return ZarazZarazConfigRowBase(
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  id: (json['id'] as num).toInt(),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  userId: json['userId'] as String,
+); }
+
+/// Date and time the configuration was created
+final DateTime createdAt;
+
+/// ID of the configuration
+final int id;
+
+/// Date and time the configuration was last updated
+final DateTime updatedAt;
+
+/// Alpha-numeric ID of the account user who published the configuration
+final String userId;
+
+Map<String, dynamic> toJson() { return {
+  'createdAt': createdAt.toIso8601String(),
+  'id': id,
+  'updatedAt': updatedAt.toIso8601String(),
+  'userId': userId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('updatedAt') && json['updatedAt'] is String &&
+      json.containsKey('userId') && json['userId'] is String; } 
+ZarazZarazConfigRowBase copyWith({DateTime? createdAt, int? id, DateTime? updatedAt, String? userId, }) { return ZarazZarazConfigRowBase(
+  createdAt: createdAt ?? this.createdAt,
+  id: id ?? this.id,
+  updatedAt: updatedAt ?? this.updatedAt,
+  userId: userId ?? this.userId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZarazZarazConfigRowBase &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          updatedAt == other.updatedAt &&
+          userId == other.userId; } 
+@override int get hashCode { return Object.hash(createdAt, id, updatedAt, userId); } 
+@override String toString() { return 'ZarazZarazConfigRowBase(createdAt: $createdAt, id: $id, updatedAt: $updatedAt, userId: $userId)'; } 
+ }

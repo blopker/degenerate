@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'treasury_outbound_transfers_resource_outbound_transfer_resource_tracking_details.dart';/// Details about network-specific tracking information if available.
+final class TreasuryOutboundTransferTrackingDetails {const TreasuryOutboundTransferTrackingDetails({this.treasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails});
+
+factory TreasuryOutboundTransferTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransferTrackingDetails(
+  treasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails: TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.canParse(json) ? TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails.fromJson(json) : null,
+); }
+
+final TreasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails? treasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails;
+
+/// At least one variant must be present.
+bool get isValid { return treasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?treasuryOutboundTransfersResourceOutboundTransferResourceTrackingDetails?.toJson(),
+}; } 
+ }

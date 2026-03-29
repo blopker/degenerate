@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tunnel_subnet_comment.dart';import 'tunnel_subnet_ip_network.dart';import 'tunnel_subnet_is_default_network.dart';import 'tunnel_subnet_name.dart';final class ZeroTrustNetworksSubnetUpdateWarpRequest {const ZeroTrustNetworksSubnetUpdateWarpRequest({this.comment, this.isDefaultNetwork, this.name, this.network, });
+
+factory ZeroTrustNetworksSubnetUpdateWarpRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustNetworksSubnetUpdateWarpRequest(
+  comment: json['comment'] != null ? TunnelSubnetComment.fromJson(json['comment'] as String) : null,
+  isDefaultNetwork: json['is_default_network'] != null ? TunnelSubnetIsDefaultNetwork.fromJson(json['is_default_network'] as bool) : null,
+  name: json['name'] != null ? TunnelSubnetName.fromJson(json['name'] as String) : null,
+  network: json['network'] != null ? TunnelSubnetIpNetwork.fromJson(json['network'] as String) : null,
+); }
+
+/// An optional description of the subnet.
+final TunnelSubnetComment? comment;
+
+/// If `true`, this is the default subnet for the account. There can only be one default subnet per account.
+final TunnelSubnetIsDefaultNetwork? isDefaultNetwork;
+
+/// A user-friendly name for the subnet.
+final TunnelSubnetName? name;
+
+/// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
+final TunnelSubnetIpNetwork? network;
+
+Map<String, dynamic> toJson() { return {
+  if (comment != null) 'comment': comment?.toJson(),
+  if (isDefaultNetwork != null) 'is_default_network': isDefaultNetwork?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (network != null) 'network': network?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustNetworksSubnetUpdateWarpRequest copyWith({TunnelSubnetComment Function()? comment, TunnelSubnetIsDefaultNetwork Function()? isDefaultNetwork, TunnelSubnetName Function()? name, TunnelSubnetIpNetwork Function()? network, }) { return ZeroTrustNetworksSubnetUpdateWarpRequest(
+  comment: comment != null ? comment() : this.comment,
+  isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
+  name: name != null ? name() : this.name,
+  network: network != null ? network() : this.network,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustNetworksSubnetUpdateWarpRequest &&
+          comment == other.comment &&
+          isDefaultNetwork == other.isDefaultNetwork &&
+          name == other.name &&
+          network == other.network; } 
+@override int get hashCode { return Object.hash(comment, isDefaultNetwork, name, network); } 
+@override String toString() { return 'ZeroTrustNetworksSubnetUpdateWarpRequest(comment: $comment, isDefaultNetwork: $isDefaultNetwork, name: $name, network: $network)'; } 
+ }

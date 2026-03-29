@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'checkout_session_payment_method_options.dart';/// Payment-method-specific configuration for the PaymentIntent or SetupIntent of this CheckoutSession.
+final class CheckoutSessionPaymentMethodOptions2 {const CheckoutSessionPaymentMethodOptions2({this.checkoutSessionPaymentMethodOptions});
+
+factory CheckoutSessionPaymentMethodOptions2.fromJson(Map<String, dynamic> json) { return CheckoutSessionPaymentMethodOptions2(
+  checkoutSessionPaymentMethodOptions: CheckoutSessionPaymentMethodOptions.canParse(json) ? CheckoutSessionPaymentMethodOptions.fromJson(json) : null,
+); }
+
+final CheckoutSessionPaymentMethodOptions? checkoutSessionPaymentMethodOptions;
+
+/// At least one variant must be present.
+bool get isValid { return checkoutSessionPaymentMethodOptions != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?checkoutSessionPaymentMethodOptions?.toJson(),
+}; } 
+ }

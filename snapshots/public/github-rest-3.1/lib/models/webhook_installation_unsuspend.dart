@@ -1,0 +1,89 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'installation.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_user.dart';import 'webhooks_repositories2.dart';final class WebhookInstallationUnsuspendAction {const WebhookInstallationUnsuspendAction._(this.value);
+
+factory WebhookInstallationUnsuspendAction.fromJson(String json) { return switch (json) {
+  'unsuspend' => unsuspend,
+  _ => WebhookInstallationUnsuspendAction._(json),
+}; }
+
+static const WebhookInstallationUnsuspendAction unsuspend = WebhookInstallationUnsuspendAction._('unsuspend');
+
+static const List<WebhookInstallationUnsuspendAction> values = [unsuspend];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookInstallationUnsuspendAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookInstallationUnsuspendAction($value)'; } 
+ }
+final class WebhookInstallationUnsuspend {const WebhookInstallationUnsuspend({required this.action, this.enterprise, required this.installation, this.organization, this.repositories, this.repository, this.requester, required this.sender, });
+
+factory WebhookInstallationUnsuspend.fromJson(Map<String, dynamic> json) { return WebhookInstallationUnsuspend(
+  action: WebhookInstallationUnsuspendAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: Installation.fromJson(json['installation'] as Map<String, dynamic>),
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repositories: (json['repositories'] as List<dynamic>?)?.map((e) => WebhooksRepositories2.fromJson(e as Map<String, dynamic>)).toList(),
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  requester: json['requester'],
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookInstallationUnsuspendAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final Installation installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+/// An array of repository objects that the installation can access.
+final List<WebhooksRepositories2>? repositories;
+
+final RepositoryWebhooks? repository;
+
+final dynamic requester;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  'installation': installation.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
+  if (repository != null) 'repository': repository?.toJson(),
+  'requester': ?requester,
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('installation') &&
+      json.containsKey('sender'); } 
+WebhookInstallationUnsuspend copyWith({WebhookInstallationUnsuspendAction? action, EnterpriseWebhooks Function()? enterprise, Installation? installation, OrganizationSimpleWebhooks Function()? organization, List<WebhooksRepositories2> Function()? repositories, RepositoryWebhooks Function()? repository, dynamic Function()? requester, SimpleUser? sender, }) { return WebhookInstallationUnsuspend(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation ?? this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repositories: repositories != null ? repositories() : this.repositories,
+  repository: repository != null ? repository() : this.repository,
+  requester: requester != null ? requester() : this.requester,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookInstallationUnsuspend &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          listEquals(repositories, other.repositories) &&
+          repository == other.repository &&
+          requester == other.requester &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, organization, Object.hashAll(repositories ?? const []), repository, requester, sender); } 
+@override String toString() { return 'WebhookInstallationUnsuspend(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repositories: $repositories, repository: $repository, requester: $requester, sender: $sender)'; } 
+ }

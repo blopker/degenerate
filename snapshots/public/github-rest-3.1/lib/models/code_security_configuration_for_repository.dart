@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'code_security_configuration.dart';/// The attachment status of the code security configuration on the repository.
+final class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus._(this.value);
+
+factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) { return switch (json) {
+  'attached' => attached,
+  'attaching' => attaching,
+  'detached' => detached,
+  'removed' => removed,
+  'enforced' => enforced,
+  'failed' => failed,
+  'updating' => updating,
+  'removed_by_enterprise' => removedByEnterprise,
+  _ => CodeSecurityConfigurationForRepositoryStatus._(json),
+}; }
+
+static const CodeSecurityConfigurationForRepositoryStatus attached = CodeSecurityConfigurationForRepositoryStatus._('attached');
+
+static const CodeSecurityConfigurationForRepositoryStatus attaching = CodeSecurityConfigurationForRepositoryStatus._('attaching');
+
+static const CodeSecurityConfigurationForRepositoryStatus detached = CodeSecurityConfigurationForRepositoryStatus._('detached');
+
+static const CodeSecurityConfigurationForRepositoryStatus removed = CodeSecurityConfigurationForRepositoryStatus._('removed');
+
+static const CodeSecurityConfigurationForRepositoryStatus enforced = CodeSecurityConfigurationForRepositoryStatus._('enforced');
+
+static const CodeSecurityConfigurationForRepositoryStatus failed = CodeSecurityConfigurationForRepositoryStatus._('failed');
+
+static const CodeSecurityConfigurationForRepositoryStatus updating = CodeSecurityConfigurationForRepositoryStatus._('updating');
+
+static const CodeSecurityConfigurationForRepositoryStatus removedByEnterprise = CodeSecurityConfigurationForRepositoryStatus._('removed_by_enterprise');
+
+static const List<CodeSecurityConfigurationForRepositoryStatus> values = [attached, attaching, detached, removed, enforced, failed, updating, removedByEnterprise];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeSecurityConfigurationForRepositoryStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeSecurityConfigurationForRepositoryStatus($value)'; } 
+ }
+/// Code security configuration associated with a repository and attachment status
+final class CodeSecurityConfigurationForRepository {const CodeSecurityConfigurationForRepository({this.status, this.configuration, });
+
+factory CodeSecurityConfigurationForRepository.fromJson(Map<String, dynamic> json) { return CodeSecurityConfigurationForRepository(
+  status: json['status'] != null ? CodeSecurityConfigurationForRepositoryStatus.fromJson(json['status'] as String) : null,
+  configuration: json['configuration'] != null ? CodeSecurityConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
+); }
+
+/// The attachment status of the code security configuration on the repository.
+final CodeSecurityConfigurationForRepositoryStatus? status;
+
+final CodeSecurityConfiguration? configuration;
+
+Map<String, dynamic> toJson() { return {
+  if (status != null) 'status': status?.toJson(),
+  if (configuration != null) 'configuration': configuration?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodeSecurityConfigurationForRepository copyWith({CodeSecurityConfigurationForRepositoryStatus Function()? status, CodeSecurityConfiguration Function()? configuration, }) { return CodeSecurityConfigurationForRepository(
+  status: status != null ? status() : this.status,
+  configuration: configuration != null ? configuration() : this.configuration,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeSecurityConfigurationForRepository &&
+          status == other.status &&
+          configuration == other.configuration; } 
+@override int get hashCode { return Object.hash(status, configuration); } 
+@override String toString() { return 'CodeSecurityConfigurationForRepository(status: $status, configuration: $configuration)'; } 
+ }

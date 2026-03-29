@@ -1,0 +1,129 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_groups_create_an_access_group_request.dart';import '../models/access_groups_update_an_access_group_request.dart';import '../models/access_identifier.dart';import '../models/access_uuid.dart';import '../models/response_common3.dart';/// AccessGroupsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class AccessGroupsApi with ApiExecutor {const AccessGroupsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List Access groups
+///
+/// Lists all Access groups.
+///
+/// `GET /accounts/{account_id}/access/groups`
+Future<ApiResult<ResponseCommon3, Never>> accessGroupsListAccessGroups({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (search != null) queryParameters['search'] = search;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/groups',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create an Access group
+///
+/// Creates a new Access group.
+///
+/// `POST /accounts/{account_id}/access/groups`
+Future<ApiResult<ResponseCommon3, Never>> accessGroupsCreateAnAccessGroup({required AccessIdentifier accountId, required AccessGroupsCreateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/groups',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an Access group
+///
+/// Fetches a single Access group.
+///
+/// `GET /accounts/{account_id}/access/groups/{group_id}`
+Future<ApiResult<ResponseCommon3, Never>> accessGroupsGetAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update an Access group
+///
+/// Updates a configured Access group.
+///
+/// `PUT /accounts/{account_id}/access/groups/{group_id}`
+Future<ApiResult<ResponseCommon3, Never>> accessGroupsUpdateAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, required AccessGroupsUpdateAnAccessGroupRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete an Access group
+///
+/// Deletes an Access group.
+///
+/// `DELETE /accounts/{account_id}/access/groups/{group_id}`
+Future<ApiResult<ResponseCommon3, Never>> accessGroupsDeleteAnAccessGroup({required AccessUuid groupId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/access/groups/${Uri.encodeComponent(groupId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

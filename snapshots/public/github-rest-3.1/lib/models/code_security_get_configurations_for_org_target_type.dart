@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CodeSecurityGetConfigurationsForOrgTargetType {const CodeSecurityGetConfigurationsForOrgTargetType._(this.value);
+
+factory CodeSecurityGetConfigurationsForOrgTargetType.fromJson(String json) { return switch (json) {
+  'global' => global,
+  'all' => all,
+  _ => CodeSecurityGetConfigurationsForOrgTargetType._(json),
+}; }
+
+static const CodeSecurityGetConfigurationsForOrgTargetType global = CodeSecurityGetConfigurationsForOrgTargetType._('global');
+
+static const CodeSecurityGetConfigurationsForOrgTargetType all = CodeSecurityGetConfigurationsForOrgTargetType._('all');
+
+static const List<CodeSecurityGetConfigurationsForOrgTargetType> values = [global, all];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeSecurityGetConfigurationsForOrgTargetType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeSecurityGetConfigurationsForOrgTargetType($value)'; } 
+ }

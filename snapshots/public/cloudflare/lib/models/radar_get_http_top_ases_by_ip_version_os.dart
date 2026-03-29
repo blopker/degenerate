@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopAsesByIpVersionOs {const RadarGetHttpTopAsesByIpVersionOs._(this.value);
+
+factory RadarGetHttpTopAsesByIpVersionOs.fromJson(String json) { return switch (json) {
+  'WINDOWS' => windows,
+  'MACOSX' => macosx,
+  'IOS' => ios,
+  'ANDROID' => android,
+  'CHROMEOS' => chromeos,
+  'LINUX' => linux,
+  'SMART_TV' => smartTv,
+  _ => RadarGetHttpTopAsesByIpVersionOs._(json),
+}; }
+
+static const RadarGetHttpTopAsesByIpVersionOs windows = RadarGetHttpTopAsesByIpVersionOs._('WINDOWS');
+
+static const RadarGetHttpTopAsesByIpVersionOs macosx = RadarGetHttpTopAsesByIpVersionOs._('MACOSX');
+
+static const RadarGetHttpTopAsesByIpVersionOs ios = RadarGetHttpTopAsesByIpVersionOs._('IOS');
+
+static const RadarGetHttpTopAsesByIpVersionOs android = RadarGetHttpTopAsesByIpVersionOs._('ANDROID');
+
+static const RadarGetHttpTopAsesByIpVersionOs chromeos = RadarGetHttpTopAsesByIpVersionOs._('CHROMEOS');
+
+static const RadarGetHttpTopAsesByIpVersionOs linux = RadarGetHttpTopAsesByIpVersionOs._('LINUX');
+
+static const RadarGetHttpTopAsesByIpVersionOs smartTv = RadarGetHttpTopAsesByIpVersionOs._('SMART_TV');
+
+static const List<RadarGetHttpTopAsesByIpVersionOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTopAsesByIpVersionOs && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopAsesByIpVersionOs($value)'; } 
+ }

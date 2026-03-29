@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts {const PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts._(this.value);
+
+factory PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts.fromJson(String json) { return switch (json) {
+  'included' => included,
+  'itemized' => itemized,
+  _ => PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts._(json),
+}; }
+
+static const PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts included = PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts._('included');
+
+static const PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts itemized = PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts._('itemized');
+
+static const List<PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts> values = [included, itemized];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts($value)'; } 
+ }
+final class PostQuotesRequestSubscriptionDataBillingModeFlexible {const PostQuotesRequestSubscriptionDataBillingModeFlexible({this.prorationDiscounts});
+
+factory PostQuotesRequestSubscriptionDataBillingModeFlexible.fromJson(Map<String, dynamic> json) { return PostQuotesRequestSubscriptionDataBillingModeFlexible(
+  prorationDiscounts: json['proration_discounts'] != null ? PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts.fromJson(json['proration_discounts'] as String) : null,
+); }
+
+final PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts? prorationDiscounts;
+
+Map<String, dynamic> toJson() { return {
+  if (prorationDiscounts != null) 'proration_discounts': prorationDiscounts?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostQuotesRequestSubscriptionDataBillingModeFlexible copyWith({PostQuotesRequestSubscriptionDataBillingModeFlexibleProrationDiscounts Function()? prorationDiscounts}) { return PostQuotesRequestSubscriptionDataBillingModeFlexible(
+  prorationDiscounts: prorationDiscounts != null ? prorationDiscounts() : this.prorationDiscounts,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostQuotesRequestSubscriptionDataBillingModeFlexible &&
+          prorationDiscounts == other.prorationDiscounts; } 
+@override int get hashCode { return prorationDiscounts.hashCode; } 
+@override String toString() { return 'PostQuotesRequestSubscriptionDataBillingModeFlexible(prorationDiscounts: $prorationDiscounts)'; } 
+ }

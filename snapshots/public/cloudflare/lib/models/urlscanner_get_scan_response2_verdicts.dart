@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'urlscanner_get_scan_response2_verdicts_overall.dart';final class UrlscannerGetScanResponse2Verdicts {const UrlscannerGetScanResponse2Verdicts({required this.overall});
+
+factory UrlscannerGetScanResponse2Verdicts.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2Verdicts(
+  overall: UrlscannerGetScanResponse2VerdictsOverall.fromJson(json['overall'] as Map<String, dynamic>),
+); }
+
+final UrlscannerGetScanResponse2VerdictsOverall overall;
+
+Map<String, dynamic> toJson() { return {
+  'overall': overall.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('overall'); } 
+UrlscannerGetScanResponse2Verdicts copyWith({UrlscannerGetScanResponse2VerdictsOverall? overall}) { return UrlscannerGetScanResponse2Verdicts(
+  overall: overall ?? this.overall,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2Verdicts &&
+          overall == other.overall; } 
+@override int get hashCode { return overall.hashCode; } 
+@override String toString() { return 'UrlscannerGetScanResponse2Verdicts(overall: $overall)'; } 
+ }

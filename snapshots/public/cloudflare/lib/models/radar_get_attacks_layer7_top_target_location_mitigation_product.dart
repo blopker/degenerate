@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7TopTargetLocationMitigationProduct {const RadarGetAttacksLayer7TopTargetLocationMitigationProduct._(this.value);
+
+factory RadarGetAttacksLayer7TopTargetLocationMitigationProduct.fromJson(String json) { return switch (json) {
+  'DDOS' => ddos,
+  'WAF' => waf,
+  'BOT_MANAGEMENT' => botManagement,
+  'ACCESS_RULES' => accessRules,
+  'IP_REPUTATION' => ipReputation,
+  'API_SHIELD' => apiShield,
+  'DATA_LOSS_PREVENTION' => dataLossPrevention,
+  _ => RadarGetAttacksLayer7TopTargetLocationMitigationProduct._(json),
+}; }
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct ddos = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('DDOS');
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct waf = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('WAF');
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct botManagement = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('BOT_MANAGEMENT');
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct accessRules = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('ACCESS_RULES');
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct ipReputation = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('IP_REPUTATION');
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct apiShield = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('API_SHIELD');
+
+static const RadarGetAttacksLayer7TopTargetLocationMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TopTargetLocationMitigationProduct._('DATA_LOSS_PREVENTION');
+
+static const List<RadarGetAttacksLayer7TopTargetLocationMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7TopTargetLocationMitigationProduct && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7TopTargetLocationMitigationProduct($value)'; } 
+ }

@@ -1,0 +1,228 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
+final class RecordingEnumStatus {const RecordingEnumStatus._(this.value);
+
+factory RecordingEnumStatus.fromJson(String json) { return switch (json) {
+  'in-progress' => inProgress,
+  'paused' => paused,
+  'stopped' => stopped,
+  'processing' => processing,
+  'completed' => completed,
+  'absent' => absent,
+  'deleted' => deleted,
+  _ => RecordingEnumStatus._(json),
+}; }
+
+static const RecordingEnumStatus inProgress = RecordingEnumStatus._('in-progress');
+
+static const RecordingEnumStatus paused = RecordingEnumStatus._('paused');
+
+static const RecordingEnumStatus stopped = RecordingEnumStatus._('stopped');
+
+static const RecordingEnumStatus processing = RecordingEnumStatus._('processing');
+
+static const RecordingEnumStatus completed = RecordingEnumStatus._('completed');
+
+static const RecordingEnumStatus absent = RecordingEnumStatus._('absent');
+
+static const RecordingEnumStatus deleted = RecordingEnumStatus._('deleted');
+
+static const List<RecordingEnumStatus> values = [inProgress, paused, stopped, processing, completed, absent, deleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RecordingEnumStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RecordingEnumStatus($value)'; } 
+ }
+/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
+final class RecordingEnumSource {const RecordingEnumSource._(this.value);
+
+factory RecordingEnumSource.fromJson(String json) { return switch (json) {
+  'DialVerb' => dialVerb,
+  'Conference' => conference,
+  'OutboundAPI' => outboundApi,
+  'Trunking' => trunking,
+  'RecordVerb' => recordVerb,
+  'StartCallRecordingAPI' => startCallRecordingApi,
+  'StartConferenceRecordingAPI' => startConferenceRecordingApi,
+  _ => RecordingEnumSource._(json),
+}; }
+
+static const RecordingEnumSource dialVerb = RecordingEnumSource._('DialVerb');
+
+static const RecordingEnumSource conference = RecordingEnumSource._('Conference');
+
+static const RecordingEnumSource outboundApi = RecordingEnumSource._('OutboundAPI');
+
+static const RecordingEnumSource trunking = RecordingEnumSource._('Trunking');
+
+static const RecordingEnumSource recordVerb = RecordingEnumSource._('RecordVerb');
+
+static const RecordingEnumSource startCallRecordingApi = RecordingEnumSource._('StartCallRecordingAPI');
+
+static const RecordingEnumSource startConferenceRecordingApi = RecordingEnumSource._('StartConferenceRecordingAPI');
+
+static const List<RecordingEnumSource> values = [dialVerb, conference, outboundApi, trunking, recordVerb, startCallRecordingApi, startConferenceRecordingApi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RecordingEnumSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RecordingEnumSource($value)'; } 
+ }
+final class AccountRecording {const AccountRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels, this.source, this.errorCode, this.uri, this.encryptionDetails, this.subresourceUris, this.mediaUrl, });
+
+factory AccountRecording.fromJson(Map<String, dynamic> json) { return AccountRecording(
+  accountSid: json['account_sid'] as String?,
+  apiVersion: json['api_version'] as String?,
+  callSid: json['call_sid'] as String?,
+  conferenceSid: json['conference_sid'] as String?,
+  dateCreated: json['date_created'] as String?,
+  dateUpdated: json['date_updated'] as String?,
+  startTime: json['start_time'] as String?,
+  duration: json['duration'] as String?,
+  sid: json['sid'] as String?,
+  price: json['price'] as String?,
+  priceUnit: json['price_unit'] as String?,
+  status: json['status'] != null ? RecordingEnumStatus.fromJson(json['status'] as String) : null,
+  channels: json['channels'] != null ? (json['channels'] as num).toInt() : null,
+  source: json['source'] != null ? RecordingEnumSource.fromJson(json['source'] as String) : null,
+  errorCode: json['error_code'] != null ? (json['error_code'] as num).toInt() : null,
+  uri: json['uri'] as String?,
+  encryptionDetails: json['encryption_details'],
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  mediaUrl: json['media_url'] != null ? Uri.parse(json['media_url'] as String) : null,
+); }
+
+/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording resource.
+final String? accountSid;
+
+/// The API version used during the recording.
+final String? apiVersion;
+
+/// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Recording resource is associated with. This will always refer to the parent leg of a two-leg call.
+final String? callSid;
+
+/// The Conference SID that identifies the conference associated with the recording, if a conference recording.
+final String? conferenceSid;
+
+/// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
+final String? dateCreated;
+
+/// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
+final String? dateUpdated;
+
+/// The start time of the recording in GMT and in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.
+final String? startTime;
+
+/// The length of the recording in seconds.
+final String? duration;
+
+/// The unique string that that we created to identify the Recording resource.
+final String? sid;
+
+/// The one-time cost of creating the recording in the `price_unit` currency.
+final String? price;
+
+/// The currency used in the `price` property. Example: `USD`.
+final String? priceUnit;
+
+final RecordingEnumStatus? status;
+
+/// The number of channels in the recording resource. For information on specifying the number of channels in the downloaded recording file, check out [Fetch a Recording’s media file](https://www.twilio.com/docs/voice/api/recording#download-dual-channel-media-file).
+final int? channels;
+
+final RecordingEnumSource? source;
+
+/// The error code that describes why the recording is `absent`. The error code is described in our [Error Dictionary](https://www.twilio.com/docs/api/errors). This value is null if the recording `status` is not `absent`.
+final int? errorCode;
+
+/// The URI of the resource, relative to `https://api.twilio.com`.
+final String? uri;
+
+/// How to decrypt the recording if it was encrypted using [Call Recording Encryption](https://www.twilio.com/docs/voice/tutorials/voice-recording-encryption) feature.
+final dynamic encryptionDetails;
+
+/// A list of related resources identified by their relative URIs.
+final Map<String,dynamic>? subresourceUris;
+
+/// The URL of the media file associated with this recording resource. When stored externally, this is the full URL location of the media file.
+final Uri? mediaUrl;
+
+Map<String, dynamic> toJson() { return {
+  'account_sid': ?accountSid,
+  'api_version': ?apiVersion,
+  'call_sid': ?callSid,
+  'conference_sid': ?conferenceSid,
+  'date_created': ?dateCreated,
+  'date_updated': ?dateUpdated,
+  'start_time': ?startTime,
+  'duration': ?duration,
+  'sid': ?sid,
+  'price': ?price,
+  'price_unit': ?priceUnit,
+  if (status != null) 'status': status?.toJson(),
+  'channels': ?channels,
+  if (source != null) 'source': source?.toJson(),
+  'error_code': ?errorCode,
+  'uri': ?uri,
+  'encryption_details': ?encryptionDetails,
+  'subresource_uris': ?subresourceUris,
+  if (mediaUrl != null) 'media_url': mediaUrl?.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountRecording copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? callSid, String? Function()? conferenceSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? startTime, String? Function()? duration, String? Function()? sid, String? Function()? price, String? Function()? priceUnit, RecordingEnumStatus Function()? status, int? Function()? channels, RecordingEnumSource Function()? source, int? Function()? errorCode, String? Function()? uri, dynamic Function()? encryptionDetails, Map<String, dynamic>? Function()? subresourceUris, Uri? Function()? mediaUrl, }) { return AccountRecording(
+  accountSid: accountSid != null ? accountSid() : this.accountSid,
+  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  callSid: callSid != null ? callSid() : this.callSid,
+  conferenceSid: conferenceSid != null ? conferenceSid() : this.conferenceSid,
+  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
+  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
+  startTime: startTime != null ? startTime() : this.startTime,
+  duration: duration != null ? duration() : this.duration,
+  sid: sid != null ? sid() : this.sid,
+  price: price != null ? price() : this.price,
+  priceUnit: priceUnit != null ? priceUnit() : this.priceUnit,
+  status: status != null ? status() : this.status,
+  channels: channels != null ? channels() : this.channels,
+  source: source != null ? source() : this.source,
+  errorCode: errorCode != null ? errorCode() : this.errorCode,
+  uri: uri != null ? uri() : this.uri,
+  encryptionDetails: encryptionDetails != null ? encryptionDetails() : this.encryptionDetails,
+  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+  mediaUrl: mediaUrl != null ? mediaUrl() : this.mediaUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountRecording &&
+          accountSid == other.accountSid &&
+          apiVersion == other.apiVersion &&
+          callSid == other.callSid &&
+          conferenceSid == other.conferenceSid &&
+          dateCreated == other.dateCreated &&
+          dateUpdated == other.dateUpdated &&
+          startTime == other.startTime &&
+          duration == other.duration &&
+          sid == other.sid &&
+          price == other.price &&
+          priceUnit == other.priceUnit &&
+          status == other.status &&
+          channels == other.channels &&
+          source == other.source &&
+          errorCode == other.errorCode &&
+          uri == other.uri &&
+          encryptionDetails == other.encryptionDetails &&
+          subresourceUris == other.subresourceUris &&
+          mediaUrl == other.mediaUrl; } 
+@override int get hashCode { return Object.hash(accountSid, apiVersion, callSid, conferenceSid, dateCreated, dateUpdated, startTime, duration, sid, price, priceUnit, status, channels, source, errorCode, uri, encryptionDetails, subresourceUris, mediaUrl); } 
+@override String toString() { return 'AccountRecording(accountSid: $accountSid, apiVersion: $apiVersion, callSid: $callSid, conferenceSid: $conferenceSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, startTime: $startTime, duration: $duration, sid: $sid, price: $price, priceUnit: $priceUnit, status: $status, channels: $channels, source: $source, errorCode: $errorCode, uri: $uri, encryptionDetails: $encryptionDetails, subresourceUris: $subresourceUris, mediaUrl: $mediaUrl)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'abuse_reports_email_list_item.dart';final class ListEmailsResponseResult {const ListEmailsResponseResult({required this.emails});
+
+factory ListEmailsResponseResult.fromJson(Map<String, dynamic> json) { return ListEmailsResponseResult(
+  emails: (json['emails'] as List<dynamic>).map((e) => AbuseReportsEmailListItem.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<AbuseReportsEmailListItem> emails;
+
+Map<String, dynamic> toJson() { return {
+  'emails': emails.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('emails'); } 
+ListEmailsResponseResult copyWith({List<AbuseReportsEmailListItem>? emails}) { return ListEmailsResponseResult(
+  emails: emails ?? this.emails,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ListEmailsResponseResult &&
+          listEquals(emails, other.emails); } 
+@override int get hashCode { return Object.hashAll(emails).hashCode; } 
+@override String toString() { return 'ListEmailsResponseResult(emails: $emails)'; } 
+ }

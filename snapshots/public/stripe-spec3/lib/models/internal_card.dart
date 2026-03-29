@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class InternalCard {const InternalCard({this.brand, this.country, this.expMonth, this.expYear, this.last4, });
+
+factory InternalCard.fromJson(Map<String, dynamic> json) { return InternalCard(
+  brand: json['brand'] as String?,
+  country: json['country'] as String?,
+  expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
+  expYear: json['exp_year'] != null ? (json['exp_year'] as num).toInt() : null,
+  last4: json['last4'] as String?,
+); }
+
+/// Brand of the card used in the transaction
+final String? brand;
+
+/// Two-letter ISO code representing the country of the card
+final String? country;
+
+/// Two digit number representing the card's expiration month
+final int? expMonth;
+
+/// Two digit number representing the card's expiration year
+final int? expYear;
+
+/// The last 4 digits of the card
+final String? last4;
+
+Map<String, dynamic> toJson() { return {
+  'brand': ?brand,
+  'country': ?country,
+  'exp_month': ?expMonth,
+  'exp_year': ?expYear,
+  'last4': ?last4,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InternalCard copyWith({String? Function()? brand, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? last4, }) { return InternalCard(
+  brand: brand != null ? brand() : this.brand,
+  country: country != null ? country() : this.country,
+  expMonth: expMonth != null ? expMonth() : this.expMonth,
+  expYear: expYear != null ? expYear() : this.expYear,
+  last4: last4 != null ? last4() : this.last4,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InternalCard &&
+          brand == other.brand &&
+          country == other.country &&
+          expMonth == other.expMonth &&
+          expYear == other.expYear &&
+          last4 == other.last4; } 
+@override int get hashCode { return Object.hash(brand, country, expMonth, expYear, last4); } 
+@override String toString() { return 'InternalCard(brand: $brand, country: $country, expMonth: $expMonth, expYear: $expYear, last4: $last4)'; } 
+ }

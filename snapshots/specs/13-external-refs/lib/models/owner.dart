@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pet.dart';final class Owner {const Owner({required this.name, this.email, this.pets, });
+
+factory Owner.fromJson(Map<String, dynamic> json) { return Owner(
+  name: json['name'] as String,
+  email: json['email'] as String?,
+  pets: (json['pets'] as List<dynamic>?)?.map((e) => Pet.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final String name;
+
+final String? email;
+
+final List<Pet>? pets;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'email': ?email,
+  if (pets != null) 'pets': pets?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+Owner copyWith({String? name, String Function()? email, List<Pet> Function()? pets, }) { return Owner(
+  name: name ?? this.name,
+  email: email != null ? email() : this.email,
+  pets: pets != null ? pets() : this.pets,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Owner &&
+          name == other.name &&
+          email == other.email &&
+          listEquals(pets, other.pets); } 
+@override int get hashCode { return Object.hash(name, email, Object.hashAll(pets ?? const [])); } 
+@override String toString() { return 'Owner(name: $name, email: $email, pets: $pets)'; } 
+ }

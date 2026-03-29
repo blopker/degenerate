@@ -1,0 +1,169 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_ownership_verification.dart';import 'tls_certificates_and_hostnames_ownership_verification_http.dart';import 'tls_certificates_and_hostnames_ssl.dart';/// Status of the hostname's activation.
+final class TlsCertificatesAndHostnamesComponentsSchemasStatus {const TlsCertificatesAndHostnamesComponentsSchemasStatus._(this.value);
+
+factory TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'pending' => pending,
+  'active_redeploying' => activeRedeploying,
+  'moved' => moved,
+  'pending_deletion' => pendingDeletion,
+  'deleted' => deleted,
+  'pending_blocked' => pendingBlocked,
+  'pending_migration' => pendingMigration,
+  'pending_provisioned' => pendingProvisioned,
+  'test_pending' => testPending,
+  'test_active' => testActive,
+  'test_active_apex' => testActiveApex,
+  'test_blocked' => testBlocked,
+  'test_failed' => testFailed,
+  'provisioned' => provisioned,
+  'blocked' => blocked,
+  _ => TlsCertificatesAndHostnamesComponentsSchemasStatus._(json),
+}; }
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus active = TlsCertificatesAndHostnamesComponentsSchemasStatus._('active');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus pending = TlsCertificatesAndHostnamesComponentsSchemasStatus._('pending');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus activeRedeploying = TlsCertificatesAndHostnamesComponentsSchemasStatus._('active_redeploying');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus moved = TlsCertificatesAndHostnamesComponentsSchemasStatus._('moved');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesComponentsSchemasStatus._('pending_deletion');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesComponentsSchemasStatus._('deleted');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus pendingBlocked = TlsCertificatesAndHostnamesComponentsSchemasStatus._('pending_blocked');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus pendingMigration = TlsCertificatesAndHostnamesComponentsSchemasStatus._('pending_migration');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus pendingProvisioned = TlsCertificatesAndHostnamesComponentsSchemasStatus._('pending_provisioned');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus testPending = TlsCertificatesAndHostnamesComponentsSchemasStatus._('test_pending');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus testActive = TlsCertificatesAndHostnamesComponentsSchemasStatus._('test_active');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus testActiveApex = TlsCertificatesAndHostnamesComponentsSchemasStatus._('test_active_apex');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus testBlocked = TlsCertificatesAndHostnamesComponentsSchemasStatus._('test_blocked');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus testFailed = TlsCertificatesAndHostnamesComponentsSchemasStatus._('test_failed');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus provisioned = TlsCertificatesAndHostnamesComponentsSchemasStatus._('provisioned');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasStatus blocked = TlsCertificatesAndHostnamesComponentsSchemasStatus._('blocked');
+
+static const List<TlsCertificatesAndHostnamesComponentsSchemasStatus> values = [active, pending, activeRedeploying, moved, pendingDeletion, deleted, pendingBlocked, pendingMigration, pendingProvisioned, testPending, testActive, testActiveApex, testBlocked, testFailed, provisioned, blocked];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesComponentsSchemasStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasStatus($value)'; } 
+ }
+/// This is the time the hostname was created.
+extension type TlsCertificatesAndHostnamesCreatedAt(DateTime value) {
+factory TlsCertificatesAndHostnamesCreatedAt.fromJson(String json) => TlsCertificatesAndHostnamesCreatedAt(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// The custom hostname that will point to your hostname via CNAME.
+extension type const TlsCertificatesAndHostnamesHostname(String value) {
+factory TlsCertificatesAndHostnamesHostname.fromJson(String json) => TlsCertificatesAndHostnamesHostname(json);
+
+String toJson() => value;
+
+}
+final class TlsCertificatesAndHostnamesCustomhostname {const TlsCertificatesAndHostnamesCustomhostname({this.createdAt, this.customMetadata, this.customOriginServer, this.customOriginSni, this.hostname, this.id, this.ownershipVerification, this.ownershipVerificationHttp, this.ssl, this.status, this.verificationErrors, });
+
+factory TlsCertificatesAndHostnamesCustomhostname.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesCustomhostname(
+  createdAt: json['created_at'] != null ? TlsCertificatesAndHostnamesCreatedAt.fromJson(json['created_at'] as String) : null,
+  customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  customOriginServer: json['custom_origin_server'] != null ? TlsCertificatesAndHostnamesCustomOriginServer.fromJson(json['custom_origin_server'] as String) : null,
+  customOriginSni: json['custom_origin_sni'] != null ? TlsCertificatesAndHostnamesCustomOriginSni.fromJson(json['custom_origin_sni'] as String) : null,
+  hostname: json['hostname'] != null ? TlsCertificatesAndHostnamesHostname.fromJson(json['hostname'] as String) : null,
+  id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
+  ownershipVerification: json['ownership_verification'] != null ? TlsCertificatesAndHostnamesOwnershipVerification.fromJson(json['ownership_verification'] as Map<String, dynamic>) : null,
+  ownershipVerificationHttp: json['ownership_verification_http'] != null ? TlsCertificatesAndHostnamesOwnershipVerificationHttp.fromJson(json['ownership_verification_http'] as Map<String, dynamic>) : null,
+  ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSsl.fromJson(json['ssl'] as Map<String, dynamic>) : null,
+  status: json['status'] != null ? TlsCertificatesAndHostnamesComponentsSchemasStatus.fromJson(json['status'] as String) : null,
+  verificationErrors: (json['verification_errors'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// This is the time the hostname was created.
+final TlsCertificatesAndHostnamesCreatedAt? createdAt;
+
+/// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
+final Map<String,String>? customMetadata;
+
+/// a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.
+final TlsCertificatesAndHostnamesCustomOriginServer? customOriginServer;
+
+/// A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
+final TlsCertificatesAndHostnamesCustomOriginSni? customOriginSni;
+
+final TlsCertificatesAndHostnamesHostname? hostname;
+
+final TlsCertificatesAndHostnamesIdentifier? id;
+
+final TlsCertificatesAndHostnamesOwnershipVerification? ownershipVerification;
+
+final TlsCertificatesAndHostnamesOwnershipVerificationHttp? ownershipVerificationHttp;
+
+final TlsCertificatesAndHostnamesSsl? ssl;
+
+/// Status of the hostname's activation.
+final TlsCertificatesAndHostnamesComponentsSchemasStatus? status;
+
+final List<String>? verificationErrors;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  'custom_metadata': ?customMetadata,
+  if (customOriginServer != null) 'custom_origin_server': customOriginServer?.toJson(),
+  if (customOriginSni != null) 'custom_origin_sni': customOriginSni?.toJson(),
+  if (hostname != null) 'hostname': hostname?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (ownershipVerification != null) 'ownership_verification': ownershipVerification?.toJson(),
+  if (ownershipVerificationHttp != null) 'ownership_verification_http': ownershipVerificationHttp?.toJson(),
+  if (ssl != null) 'ssl': ssl?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  'verification_errors': ?verificationErrors,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TlsCertificatesAndHostnamesCustomhostname copyWith({TlsCertificatesAndHostnamesCreatedAt Function()? createdAt, Map<String, String> Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni Function()? customOriginSni, TlsCertificatesAndHostnamesHostname Function()? hostname, TlsCertificatesAndHostnamesIdentifier Function()? id, TlsCertificatesAndHostnamesOwnershipVerification Function()? ownershipVerification, TlsCertificatesAndHostnamesOwnershipVerificationHttp Function()? ownershipVerificationHttp, TlsCertificatesAndHostnamesSsl Function()? ssl, TlsCertificatesAndHostnamesComponentsSchemasStatus Function()? status, List<String> Function()? verificationErrors, }) { return TlsCertificatesAndHostnamesCustomhostname(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
+  customOriginServer: customOriginServer != null ? customOriginServer() : this.customOriginServer,
+  customOriginSni: customOriginSni != null ? customOriginSni() : this.customOriginSni,
+  hostname: hostname != null ? hostname() : this.hostname,
+  id: id != null ? id() : this.id,
+  ownershipVerification: ownershipVerification != null ? ownershipVerification() : this.ownershipVerification,
+  ownershipVerificationHttp: ownershipVerificationHttp != null ? ownershipVerificationHttp() : this.ownershipVerificationHttp,
+  ssl: ssl != null ? ssl() : this.ssl,
+  status: status != null ? status() : this.status,
+  verificationErrors: verificationErrors != null ? verificationErrors() : this.verificationErrors,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesCustomhostname &&
+          createdAt == other.createdAt &&
+          customMetadata == other.customMetadata &&
+          customOriginServer == other.customOriginServer &&
+          customOriginSni == other.customOriginSni &&
+          hostname == other.hostname &&
+          id == other.id &&
+          ownershipVerification == other.ownershipVerification &&
+          ownershipVerificationHttp == other.ownershipVerificationHttp &&
+          ssl == other.ssl &&
+          status == other.status &&
+          listEquals(verificationErrors, other.verificationErrors); } 
+@override int get hashCode { return Object.hash(createdAt, customMetadata, customOriginServer, customOriginSni, hostname, id, ownershipVerification, ownershipVerificationHttp, ssl, status, Object.hashAll(verificationErrors ?? const [])); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesCustomhostname(createdAt: $createdAt, customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, hostname: $hostname, id: $id, ownershipVerification: $ownershipVerification, ownershipVerificationHttp: $ownershipVerificationHttp, ssl: $ssl, status: $status, verificationErrors: $verificationErrors)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param106.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2._(this.value);
+
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2._(json),
+}; }
+
+static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2._('');
+
+static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPay = OneOf2<PaymentMethodOptionsParam106,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsSamsungPayVariant2>;

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_update_lines_request_lines_discounts_variant1.dart';final class PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2 {const PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2._(this.value);
+
+factory PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2._(json),
+}; }
+
+static const PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2 $empty = PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2._('');
+
+static const List<PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2($value)'; } 
+ }
+typedef PostInvoicesInvoiceUpdateLinesRequestLinesDiscounts = OneOf2<List<PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant1>,PostInvoicesInvoiceUpdateLinesRequestLinesDiscountsVariant2>;

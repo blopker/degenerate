@@ -1,0 +1,99 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_build_token_uuid.dart';import 'builds_deploy_command.dart';import 'builds_external_script_id.dart';import 'builds_repo_connection_uuid.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';final class BuildsCreateTriggerRequest {const BuildsCreateTriggerRequest({required this.branchExcludes, required this.branchIncludes, this.buildCachingEnabled, required this.buildCommand, required this.buildTokenUuid, required this.deployCommand, required this.externalScriptId, required this.pathExcludes, required this.pathIncludes, required this.repoConnectionUuid, required this.rootDirectory, required this.triggerName, });
+
+factory BuildsCreateTriggerRequest.fromJson(Map<String, dynamic> json) { return BuildsCreateTriggerRequest(
+  branchExcludes: (json['branch_excludes'] as List<dynamic>).map((e) => e as String).toList(),
+  branchIncludes: (json['branch_includes'] as List<dynamic>).map((e) => e as String).toList(),
+  buildCachingEnabled: json['build_caching_enabled'] != null ? BuildsBuildCachingEnabled.fromJson(json['build_caching_enabled'] as bool) : null,
+  buildCommand: BuildsBuildCommand.fromJson(json['build_command'] as String),
+  buildTokenUuid: BuildsBuildTokenUuid.fromJson(json['build_token_uuid'] as String),
+  deployCommand: BuildsDeployCommand.fromJson(json['deploy_command'] as String),
+  externalScriptId: BuildsExternalScriptId.fromJson(json['external_script_id'] as String),
+  pathExcludes: (json['path_excludes'] as List<dynamic>).map((e) => e as String).toList(),
+  pathIncludes: (json['path_includes'] as List<dynamic>).map((e) => e as String).toList(),
+  repoConnectionUuid: BuildsRepoConnectionUuid.fromJson(json['repo_connection_uuid'] as String),
+  rootDirectory: BuildsRootDirectory.fromJson(json['root_directory'] as String),
+  triggerName: BuildsTriggerName.fromJson(json['trigger_name'] as String),
+); }
+
+final List<String> branchExcludes;
+
+final List<String> branchIncludes;
+
+final BuildsBuildCachingEnabled? buildCachingEnabled;
+
+final BuildsBuildCommand buildCommand;
+
+final BuildsBuildTokenUuid buildTokenUuid;
+
+final BuildsDeployCommand deployCommand;
+
+final BuildsExternalScriptId externalScriptId;
+
+final List<String> pathExcludes;
+
+final List<String> pathIncludes;
+
+final BuildsRepoConnectionUuid repoConnectionUuid;
+
+final BuildsRootDirectory rootDirectory;
+
+final BuildsTriggerName triggerName;
+
+Map<String, dynamic> toJson() { return {
+  'branch_excludes': branchExcludes,
+  'branch_includes': branchIncludes,
+  if (buildCachingEnabled != null) 'build_caching_enabled': buildCachingEnabled?.toJson(),
+  'build_command': buildCommand.toJson(),
+  'build_token_uuid': buildTokenUuid.toJson(),
+  'deploy_command': deployCommand.toJson(),
+  'external_script_id': externalScriptId.toJson(),
+  'path_excludes': pathExcludes,
+  'path_includes': pathIncludes,
+  'repo_connection_uuid': repoConnectionUuid.toJson(),
+  'root_directory': rootDirectory.toJson(),
+  'trigger_name': triggerName.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('branch_excludes') &&
+      json.containsKey('branch_includes') &&
+      json.containsKey('build_command') &&
+      json.containsKey('build_token_uuid') &&
+      json.containsKey('deploy_command') &&
+      json.containsKey('external_script_id') &&
+      json.containsKey('path_excludes') &&
+      json.containsKey('path_includes') &&
+      json.containsKey('repo_connection_uuid') &&
+      json.containsKey('root_directory') &&
+      json.containsKey('trigger_name'); } 
+BuildsCreateTriggerRequest copyWith({List<String>? branchExcludes, List<String>? branchIncludes, BuildsBuildCachingEnabled Function()? buildCachingEnabled, BuildsBuildCommand? buildCommand, BuildsBuildTokenUuid? buildTokenUuid, BuildsDeployCommand? deployCommand, BuildsExternalScriptId? externalScriptId, List<String>? pathExcludes, List<String>? pathIncludes, BuildsRepoConnectionUuid? repoConnectionUuid, BuildsRootDirectory? rootDirectory, BuildsTriggerName? triggerName, }) { return BuildsCreateTriggerRequest(
+  branchExcludes: branchExcludes ?? this.branchExcludes,
+  branchIncludes: branchIncludes ?? this.branchIncludes,
+  buildCachingEnabled: buildCachingEnabled != null ? buildCachingEnabled() : this.buildCachingEnabled,
+  buildCommand: buildCommand ?? this.buildCommand,
+  buildTokenUuid: buildTokenUuid ?? this.buildTokenUuid,
+  deployCommand: deployCommand ?? this.deployCommand,
+  externalScriptId: externalScriptId ?? this.externalScriptId,
+  pathExcludes: pathExcludes ?? this.pathExcludes,
+  pathIncludes: pathIncludes ?? this.pathIncludes,
+  repoConnectionUuid: repoConnectionUuid ?? this.repoConnectionUuid,
+  rootDirectory: rootDirectory ?? this.rootDirectory,
+  triggerName: triggerName ?? this.triggerName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BuildsCreateTriggerRequest &&
+          listEquals(branchExcludes, other.branchExcludes) &&
+          listEquals(branchIncludes, other.branchIncludes) &&
+          buildCachingEnabled == other.buildCachingEnabled &&
+          buildCommand == other.buildCommand &&
+          buildTokenUuid == other.buildTokenUuid &&
+          deployCommand == other.deployCommand &&
+          externalScriptId == other.externalScriptId &&
+          listEquals(pathExcludes, other.pathExcludes) &&
+          listEquals(pathIncludes, other.pathIncludes) &&
+          repoConnectionUuid == other.repoConnectionUuid &&
+          rootDirectory == other.rootDirectory &&
+          triggerName == other.triggerName; } 
+@override int get hashCode { return Object.hash(Object.hashAll(branchExcludes), Object.hashAll(branchIncludes), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, externalScriptId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), repoConnectionUuid, rootDirectory, triggerName); } 
+@override String toString() { return 'BuildsCreateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, externalScriptId: $externalScriptId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, repoConnectionUuid: $repoConnectionUuid, rootDirectory: $rootDirectory, triggerName: $triggerName)'; } 
+ }

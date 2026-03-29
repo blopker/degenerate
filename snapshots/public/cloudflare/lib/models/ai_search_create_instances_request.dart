@@ -1,0 +1,270 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_create_instances_request_ai_search_model.dart';import 'ai_search_create_instances_request_custom_metadata.dart';import 'ai_search_create_instances_request_embedding_model.dart';import 'ai_search_create_instances_request_metadata.dart';import 'ai_search_create_instances_request_public_endpoint_params.dart';import 'ai_search_create_instances_request_retrieval_options.dart';import 'ai_search_create_instances_request_rewrite_model.dart';import 'ai_search_create_instances_request_source_params.dart';final class AiSearchCreateInstancesRequestRerankingModel {const AiSearchCreateInstancesRequestRerankingModel._(this.value);
+
+factory AiSearchCreateInstancesRequestRerankingModel.fromJson(String json) { return switch (json) {
+  '@cf/baai/bge-reranker-base' => cfBaaiBgeRerankerBase,
+  '' => $empty,
+  _ => AiSearchCreateInstancesRequestRerankingModel._(json),
+}; }
+
+static const AiSearchCreateInstancesRequestRerankingModel cfBaaiBgeRerankerBase = AiSearchCreateInstancesRequestRerankingModel._('@cf/baai/bge-reranker-base');
+
+static const AiSearchCreateInstancesRequestRerankingModel $empty = AiSearchCreateInstancesRequestRerankingModel._('');
+
+static const List<AiSearchCreateInstancesRequestRerankingModel> values = [cfBaaiBgeRerankerBase, $empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestRerankingModel && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchCreateInstancesRequestRerankingModel($value)'; } 
+ }
+final class AiSearchCreateInstancesRequestCacheThreshold {const AiSearchCreateInstancesRequestCacheThreshold._(this.value);
+
+factory AiSearchCreateInstancesRequestCacheThreshold.fromJson(String json) { return switch (json) {
+  'super_strict_match' => superStrictMatch,
+  'close_enough' => closeEnough,
+  'flexible_friend' => flexibleFriend,
+  'anything_goes' => anythingGoes,
+  _ => AiSearchCreateInstancesRequestCacheThreshold._(json),
+}; }
+
+static const AiSearchCreateInstancesRequestCacheThreshold superStrictMatch = AiSearchCreateInstancesRequestCacheThreshold._('super_strict_match');
+
+static const AiSearchCreateInstancesRequestCacheThreshold closeEnough = AiSearchCreateInstancesRequestCacheThreshold._('close_enough');
+
+static const AiSearchCreateInstancesRequestCacheThreshold flexibleFriend = AiSearchCreateInstancesRequestCacheThreshold._('flexible_friend');
+
+static const AiSearchCreateInstancesRequestCacheThreshold anythingGoes = AiSearchCreateInstancesRequestCacheThreshold._('anything_goes');
+
+static const List<AiSearchCreateInstancesRequestCacheThreshold> values = [superStrictMatch, closeEnough, flexibleFriend, anythingGoes];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestCacheThreshold && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchCreateInstancesRequestCacheThreshold($value)'; } 
+ }
+final class AiSearchCreateInstancesRequestFusionMethod {const AiSearchCreateInstancesRequestFusionMethod._(this.value);
+
+factory AiSearchCreateInstancesRequestFusionMethod.fromJson(String json) { return switch (json) {
+  'max' => max,
+  'rrf' => rrf,
+  _ => AiSearchCreateInstancesRequestFusionMethod._(json),
+}; }
+
+static const AiSearchCreateInstancesRequestFusionMethod max = AiSearchCreateInstancesRequestFusionMethod._('max');
+
+static const AiSearchCreateInstancesRequestFusionMethod rrf = AiSearchCreateInstancesRequestFusionMethod._('rrf');
+
+static const List<AiSearchCreateInstancesRequestFusionMethod> values = [max, rrf];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestFusionMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchCreateInstancesRequestFusionMethod($value)'; } 
+ }
+final class AiSearchCreateInstancesRequestType {const AiSearchCreateInstancesRequestType._(this.value);
+
+factory AiSearchCreateInstancesRequestType.fromJson(String json) { return switch (json) {
+  'r2' => r2,
+  'web-crawler' => webCrawler,
+  _ => AiSearchCreateInstancesRequestType._(json),
+}; }
+
+static const AiSearchCreateInstancesRequestType r2 = AiSearchCreateInstancesRequestType._('r2');
+
+static const AiSearchCreateInstancesRequestType webCrawler = AiSearchCreateInstancesRequestType._('web-crawler');
+
+static const List<AiSearchCreateInstancesRequestType> values = [r2, webCrawler];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchCreateInstancesRequestType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchCreateInstancesRequestType($value)'; } 
+ }
+final class AiSearchCreateInstancesRequest {const AiSearchCreateInstancesRequest({this.aiGatewayId, this.aiSearchModel, this.cache = true, this.cacheThreshold = AiSearchCreateInstancesRequestCacheThreshold.closeEnough, this.chunk = true, this.chunkOverlap = 10, this.chunkSize = 256, this.customMetadata, this.embeddingModel, this.fusionMethod = AiSearchCreateInstancesRequestFusionMethod.rrf, this.hybridSearchEnabled = false, required this.id, this.maxNumResults = 10, this.metadata, this.publicEndpointParams, this.reranking = false, this.rerankingModel, this.retrievalOptions, this.rewriteModel, this.rewriteQuery = false, this.scoreThreshold = 0.4, this.source, this.sourceParams, this.tokenId, this.type, });
+
+factory AiSearchCreateInstancesRequest.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequest(
+  aiGatewayId: json['ai_gateway_id'] as String?,
+  aiSearchModel: json['ai_search_model'] != null ? OneOf2.parse(json['ai_search_model'], fromA: (v) => AiSearchCreateInstancesRequestAiSearchModelVariant1.fromJson(v as String), fromB: (v) => AiSearchCreateInstancesRequestAiSearchModelVariant2.fromJson(v as String),) : null,
+  cache: json.containsKey('cache') ? json['cache'] as bool : true,
+  cacheThreshold: json.containsKey('cache_threshold') ? AiSearchCreateInstancesRequestCacheThreshold.fromJson(json['cache_threshold'] as String) : AiSearchCreateInstancesRequestCacheThreshold.closeEnough,
+  chunk: json.containsKey('chunk') ? json['chunk'] as bool : true,
+  chunkOverlap: json.containsKey('chunk_overlap') ? (json['chunk_overlap'] as num).toInt() : 10,
+  chunkSize: json.containsKey('chunk_size') ? (json['chunk_size'] as num).toInt() : 256,
+  customMetadata: (json['custom_metadata'] as List<dynamic>?)?.map((e) => AiSearchCreateInstancesRequestCustomMetadata.fromJson(e as Map<String, dynamic>)).toList(),
+  embeddingModel: json['embedding_model'] != null ? OneOf2.parse(json['embedding_model'], fromA: (v) => AiSearchCreateInstancesRequestEmbeddingModelVariant1.fromJson(v as String), fromB: (v) => AiSearchCreateInstancesRequestEmbeddingModelVariant2.fromJson(v as String),) : null,
+  fusionMethod: json.containsKey('fusion_method') ? AiSearchCreateInstancesRequestFusionMethod.fromJson(json['fusion_method'] as String) : AiSearchCreateInstancesRequestFusionMethod.rrf,
+  hybridSearchEnabled: json.containsKey('hybrid_search_enabled') ? json['hybrid_search_enabled'] as bool : false,
+  id: json['id'] as String,
+  maxNumResults: json.containsKey('max_num_results') ? (json['max_num_results'] as num).toInt() : 10,
+  metadata: json['metadata'] != null ? AiSearchCreateInstancesRequestMetadata.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  publicEndpointParams: json['public_endpoint_params'] != null ? AiSearchCreateInstancesRequestPublicEndpointParams.fromJson(json['public_endpoint_params'] as Map<String, dynamic>) : null,
+  reranking: json.containsKey('reranking') ? json['reranking'] as bool : false,
+  rerankingModel: json['reranking_model'] != null ? AiSearchCreateInstancesRequestRerankingModel.fromJson(json['reranking_model'] as String) : null,
+  retrievalOptions: json['retrieval_options'] != null ? AiSearchCreateInstancesRequestRetrievalOptions.fromJson(json['retrieval_options'] as Map<String, dynamic>) : null,
+  rewriteModel: json['rewrite_model'] != null ? OneOf2.parse(json['rewrite_model'], fromA: (v) => AiSearchCreateInstancesRequestRewriteModelVariant1.fromJson(v as String), fromB: (v) => AiSearchCreateInstancesRequestRewriteModelVariant2.fromJson(v as String),) : null,
+  rewriteQuery: json.containsKey('rewrite_query') ? json['rewrite_query'] as bool : false,
+  scoreThreshold: json.containsKey('score_threshold') ? (json['score_threshold'] as num).toDouble() : 0.4,
+  source: json['source'] as String?,
+  sourceParams: json['source_params'] != null ? AiSearchCreateInstancesRequestSourceParams.fromJson(json['source_params'] as Map<String, dynamic>) : null,
+  tokenId: json['token_id'] as String?,
+  type: json['type'] != null ? AiSearchCreateInstancesRequestType.fromJson(json['type'] as String) : null,
+); }
+
+final String? aiGatewayId;
+
+final AiSearchCreateInstancesRequestAiSearchModel? aiSearchModel;
+
+final bool cache;
+
+final AiSearchCreateInstancesRequestCacheThreshold cacheThreshold;
+
+final bool chunk;
+
+final int chunkOverlap;
+
+final int chunkSize;
+
+final List<AiSearchCreateInstancesRequestCustomMetadata>? customMetadata;
+
+final AiSearchCreateInstancesRequestEmbeddingModel? embeddingModel;
+
+final AiSearchCreateInstancesRequestFusionMethod fusionMethod;
+
+final bool hybridSearchEnabled;
+
+/// Use your AI Search ID.
+final String id;
+
+final int maxNumResults;
+
+final AiSearchCreateInstancesRequestMetadata? metadata;
+
+final AiSearchCreateInstancesRequestPublicEndpointParams? publicEndpointParams;
+
+final bool reranking;
+
+final AiSearchCreateInstancesRequestRerankingModel? rerankingModel;
+
+final AiSearchCreateInstancesRequestRetrievalOptions? retrievalOptions;
+
+final AiSearchCreateInstancesRequestRewriteModel? rewriteModel;
+
+final bool rewriteQuery;
+
+final double scoreThreshold;
+
+final String? source;
+
+final AiSearchCreateInstancesRequestSourceParams? sourceParams;
+
+final String? tokenId;
+
+final AiSearchCreateInstancesRequestType? type;
+
+Map<String, dynamic> toJson() { return {
+  'ai_gateway_id': ?aiGatewayId,
+  if (aiSearchModel != null) 'ai_search_model': aiSearchModel?.toJson(),
+  'cache': cache,
+  'cache_threshold': cacheThreshold.toJson(),
+  'chunk': chunk,
+  'chunk_overlap': chunkOverlap,
+  'chunk_size': chunkSize,
+  if (customMetadata != null) 'custom_metadata': customMetadata?.map((e) => e.toJson()).toList(),
+  if (embeddingModel != null) 'embedding_model': embeddingModel?.toJson(),
+  'fusion_method': fusionMethod.toJson(),
+  'hybrid_search_enabled': hybridSearchEnabled,
+  'id': id,
+  'max_num_results': maxNumResults,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  if (publicEndpointParams != null) 'public_endpoint_params': publicEndpointParams?.toJson(),
+  'reranking': reranking,
+  if (rerankingModel != null) 'reranking_model': rerankingModel?.toJson(),
+  if (retrievalOptions != null) 'retrieval_options': retrievalOptions?.toJson(),
+  if (rewriteModel != null) 'rewrite_model': rewriteModel?.toJson(),
+  'rewrite_query': rewriteQuery,
+  'score_threshold': scoreThreshold,
+  'source': ?source,
+  if (sourceParams != null) 'source_params': sourceParams?.toJson(),
+  'token_id': ?tokenId,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+AiSearchCreateInstancesRequest copyWith({String? Function()? aiGatewayId, AiSearchCreateInstancesRequestAiSearchModel Function()? aiSearchModel, bool Function()? cache, AiSearchCreateInstancesRequestCacheThreshold Function()? cacheThreshold, bool Function()? chunk, int Function()? chunkOverlap, int Function()? chunkSize, List<AiSearchCreateInstancesRequestCustomMetadata> Function()? customMetadata, AiSearchCreateInstancesRequestEmbeddingModel Function()? embeddingModel, AiSearchCreateInstancesRequestFusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, String? id, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata Function()? metadata, AiSearchCreateInstancesRequestPublicEndpointParams Function()? publicEndpointParams, bool Function()? reranking, AiSearchCreateInstancesRequestRerankingModel Function()? rerankingModel, AiSearchCreateInstancesRequestRetrievalOptions? Function()? retrievalOptions, AiSearchCreateInstancesRequestRewriteModel Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, String Function()? source, AiSearchCreateInstancesRequestSourceParams? Function()? sourceParams, String Function()? tokenId, AiSearchCreateInstancesRequestType Function()? type, }) { return AiSearchCreateInstancesRequest(
+  aiGatewayId: aiGatewayId != null ? aiGatewayId() : this.aiGatewayId,
+  aiSearchModel: aiSearchModel != null ? aiSearchModel() : this.aiSearchModel,
+  cache: cache != null ? cache() : this.cache,
+  cacheThreshold: cacheThreshold != null ? cacheThreshold() : this.cacheThreshold,
+  chunk: chunk != null ? chunk() : this.chunk,
+  chunkOverlap: chunkOverlap != null ? chunkOverlap() : this.chunkOverlap,
+  chunkSize: chunkSize != null ? chunkSize() : this.chunkSize,
+  customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
+  embeddingModel: embeddingModel != null ? embeddingModel() : this.embeddingModel,
+  fusionMethod: fusionMethod != null ? fusionMethod() : this.fusionMethod,
+  hybridSearchEnabled: hybridSearchEnabled != null ? hybridSearchEnabled() : this.hybridSearchEnabled,
+  id: id ?? this.id,
+  maxNumResults: maxNumResults != null ? maxNumResults() : this.maxNumResults,
+  metadata: metadata != null ? metadata() : this.metadata,
+  publicEndpointParams: publicEndpointParams != null ? publicEndpointParams() : this.publicEndpointParams,
+  reranking: reranking != null ? reranking() : this.reranking,
+  rerankingModel: rerankingModel != null ? rerankingModel() : this.rerankingModel,
+  retrievalOptions: retrievalOptions != null ? retrievalOptions() : this.retrievalOptions,
+  rewriteModel: rewriteModel != null ? rewriteModel() : this.rewriteModel,
+  rewriteQuery: rewriteQuery != null ? rewriteQuery() : this.rewriteQuery,
+  scoreThreshold: scoreThreshold != null ? scoreThreshold() : this.scoreThreshold,
+  source: source != null ? source() : this.source,
+  sourceParams: sourceParams != null ? sourceParams() : this.sourceParams,
+  tokenId: tokenId != null ? tokenId() : this.tokenId,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchCreateInstancesRequest &&
+          aiGatewayId == other.aiGatewayId &&
+          aiSearchModel == other.aiSearchModel &&
+          cache == other.cache &&
+          cacheThreshold == other.cacheThreshold &&
+          chunk == other.chunk &&
+          chunkOverlap == other.chunkOverlap &&
+          chunkSize == other.chunkSize &&
+          listEquals(customMetadata, other.customMetadata) &&
+          embeddingModel == other.embeddingModel &&
+          fusionMethod == other.fusionMethod &&
+          hybridSearchEnabled == other.hybridSearchEnabled &&
+          id == other.id &&
+          maxNumResults == other.maxNumResults &&
+          metadata == other.metadata &&
+          publicEndpointParams == other.publicEndpointParams &&
+          reranking == other.reranking &&
+          rerankingModel == other.rerankingModel &&
+          retrievalOptions == other.retrievalOptions &&
+          rewriteModel == other.rewriteModel &&
+          rewriteQuery == other.rewriteQuery &&
+          scoreThreshold == other.scoreThreshold &&
+          source == other.source &&
+          sourceParams == other.sourceParams &&
+          tokenId == other.tokenId &&
+          type == other.type; } 
+@override int get hashCode { return Object.hashAll([aiGatewayId, aiSearchModel, cache, cacheThreshold, chunk, chunkOverlap, chunkSize, Object.hashAll(customMetadata ?? const []), embeddingModel, fusionMethod, hybridSearchEnabled, id, maxNumResults, metadata, publicEndpointParams, reranking, rerankingModel, retrievalOptions, rewriteModel, rewriteQuery, scoreThreshold, source, sourceParams, tokenId, type]); } 
+@override String toString() { return 'AiSearchCreateInstancesRequest(aiGatewayId: $aiGatewayId, aiSearchModel: $aiSearchModel, cache: $cache, cacheThreshold: $cacheThreshold, chunk: $chunk, chunkOverlap: $chunkOverlap, chunkSize: $chunkSize, customMetadata: $customMetadata, embeddingModel: $embeddingModel, fusionMethod: $fusionMethod, hybridSearchEnabled: $hybridSearchEnabled, id: $id, maxNumResults: $maxNumResults, metadata: $metadata, publicEndpointParams: $publicEndpointParams, reranking: $reranking, rerankingModel: $rerankingModel, retrievalOptions: $retrievalOptions, rewriteModel: $rewriteModel, rewriteQuery: $rewriteQuery, scoreThreshold: $scoreThreshold, source: $source, sourceParams: $sourceParams, tokenId: $tokenId, type: $type)'; } 
+ }

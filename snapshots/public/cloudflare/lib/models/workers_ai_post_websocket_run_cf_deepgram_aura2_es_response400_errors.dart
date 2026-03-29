@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors {const WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors({required this.message});
+
+factory WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors.fromJson(Map<String, dynamic> json) { return WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors copyWith({String? message}) { return WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400Errors(message: $message)'; } 
+ }

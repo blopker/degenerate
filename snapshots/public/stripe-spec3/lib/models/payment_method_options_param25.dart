@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam25SetupFutureUsage {const PaymentMethodOptionsParam25SetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsParam25SetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentMethodOptionsParam25SetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsParam25SetupFutureUsage none = PaymentMethodOptionsParam25SetupFutureUsage._('none');
+
+static const List<PaymentMethodOptionsParam25SetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam25SetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam25SetupFutureUsage($value)'; } 
+ }
+final class PaymentMethodOptionsParam25 {const PaymentMethodOptionsParam25({this.setupFutureUsage, this.tosShownAndAccepted, });
+
+factory PaymentMethodOptionsParam25.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam25(
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam25SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  tosShownAndAccepted: json['tos_shown_and_accepted'] as bool?,
+); }
+
+final PaymentMethodOptionsParam25SetupFutureUsage? setupFutureUsage;
+
+final bool? tosShownAndAccepted;
+
+Map<String, dynamic> toJson() { return {
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+  'tos_shown_and_accepted': ?tosShownAndAccepted,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam25 copyWith({PaymentMethodOptionsParam25SetupFutureUsage Function()? setupFutureUsage, bool Function()? tosShownAndAccepted, }) { return PaymentMethodOptionsParam25(
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+  tosShownAndAccepted: tosShownAndAccepted != null ? tosShownAndAccepted() : this.tosShownAndAccepted,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam25 &&
+          setupFutureUsage == other.setupFutureUsage &&
+          tosShownAndAccepted == other.tosShownAndAccepted; } 
+@override int get hashCode { return Object.hash(setupFutureUsage, tosShownAndAccepted); } 
+@override String toString() { return 'PaymentMethodOptionsParam25(setupFutureUsage: $setupFutureUsage, tosShownAndAccepted: $tosShownAndAccepted)'; } 
+ }

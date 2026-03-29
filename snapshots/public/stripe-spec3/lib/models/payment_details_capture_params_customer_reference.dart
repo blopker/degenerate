@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PaymentDetailsCaptureParamsCustomerReferenceVariant2 {const PaymentDetailsCaptureParamsCustomerReferenceVariant2._(this.value);
+
+factory PaymentDetailsCaptureParamsCustomerReferenceVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PaymentDetailsCaptureParamsCustomerReferenceVariant2._(json),
+}; }
+
+static const PaymentDetailsCaptureParamsCustomerReferenceVariant2 $empty = PaymentDetailsCaptureParamsCustomerReferenceVariant2._('');
+
+static const List<PaymentDetailsCaptureParamsCustomerReferenceVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentDetailsCaptureParamsCustomerReferenceVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentDetailsCaptureParamsCustomerReferenceVariant2($value)'; } 
+ }
+typedef PaymentDetailsCaptureParamsCustomerReference = OneOf2<String,PaymentDetailsCaptureParamsCustomerReferenceVariant2>;

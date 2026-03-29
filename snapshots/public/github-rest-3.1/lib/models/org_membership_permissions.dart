@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class OrgMembershipPermissions {const OrgMembershipPermissions({required this.canCreateRepository});
+
+factory OrgMembershipPermissions.fromJson(Map<String, dynamic> json) { return OrgMembershipPermissions(
+  canCreateRepository: json['can_create_repository'] as bool,
+); }
+
+final bool canCreateRepository;
+
+Map<String, dynamic> toJson() { return {
+  'can_create_repository': canCreateRepository,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('can_create_repository') && json['can_create_repository'] is bool; } 
+OrgMembershipPermissions copyWith({bool? canCreateRepository}) { return OrgMembershipPermissions(
+  canCreateRepository: canCreateRepository ?? this.canCreateRepository,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgMembershipPermissions &&
+          canCreateRepository == other.canCreateRepository; } 
+@override int get hashCode { return canCreateRepository.hashCode; } 
+@override String toString() { return 'OrgMembershipPermissions(canCreateRepository: $canCreateRepository)'; } 
+ }

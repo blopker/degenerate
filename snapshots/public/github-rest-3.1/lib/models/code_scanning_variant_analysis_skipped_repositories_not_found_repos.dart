@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos {const CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos({required this.repositoryCount, required this.repositoryFullNames, });
+
+factory CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(
+  repositoryCount: (json['repository_count'] as num).toInt(),
+  repositoryFullNames: (json['repository_full_names'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// The total number of repositories that were skipped for this reason.
+final int repositoryCount;
+
+/// A list of full repository names that were skipped. This list may not include all repositories that were skipped.
+final List<String> repositoryFullNames;
+
+Map<String, dynamic> toJson() { return {
+  'repository_count': repositoryCount,
+  'repository_full_names': repositoryFullNames,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_count') && json['repository_count'] is num &&
+      json.containsKey('repository_full_names'); } 
+CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos copyWith({int? repositoryCount, List<String>? repositoryFullNames, }) { return CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(
+  repositoryCount: repositoryCount ?? this.repositoryCount,
+  repositoryFullNames: repositoryFullNames ?? this.repositoryFullNames,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos &&
+          repositoryCount == other.repositoryCount &&
+          listEquals(repositoryFullNames, other.repositoryFullNames); } 
+@override int get hashCode { return Object.hash(repositoryCount, Object.hashAll(repositoryFullNames)); } 
+@override String toString() { return 'CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(repositoryCount: $repositoryCount, repositoryFullNames: $repositoryFullNames)'; } 
+ }

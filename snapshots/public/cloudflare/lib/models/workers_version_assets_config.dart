@@ -1,0 +1,97 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_version_assets_config_run_worker_first.dart';/// Determines the redirects and rewrites of requests for HTML content.
+final class WorkersVersionAssetsConfigHtmlHandling {const WorkersVersionAssetsConfigHtmlHandling._(this.value);
+
+factory WorkersVersionAssetsConfigHtmlHandling.fromJson(String json) { return switch (json) {
+  'auto-trailing-slash' => autoTrailingSlash,
+  'force-trailing-slash' => forceTrailingSlash,
+  'drop-trailing-slash' => dropTrailingSlash,
+  'none' => none,
+  _ => WorkersVersionAssetsConfigHtmlHandling._(json),
+}; }
+
+static const WorkersVersionAssetsConfigHtmlHandling autoTrailingSlash = WorkersVersionAssetsConfigHtmlHandling._('auto-trailing-slash');
+
+static const WorkersVersionAssetsConfigHtmlHandling forceTrailingSlash = WorkersVersionAssetsConfigHtmlHandling._('force-trailing-slash');
+
+static const WorkersVersionAssetsConfigHtmlHandling dropTrailingSlash = WorkersVersionAssetsConfigHtmlHandling._('drop-trailing-slash');
+
+static const WorkersVersionAssetsConfigHtmlHandling none = WorkersVersionAssetsConfigHtmlHandling._('none');
+
+static const List<WorkersVersionAssetsConfigHtmlHandling> values = [autoTrailingSlash, forceTrailingSlash, dropTrailingSlash, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersVersionAssetsConfigHtmlHandling && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersVersionAssetsConfigHtmlHandling($value)'; } 
+ }
+/// Determines the response when a request does not match a static asset, and there is no Worker script.
+final class WorkersVersionAssetsConfigNotFoundHandling {const WorkersVersionAssetsConfigNotFoundHandling._(this.value);
+
+factory WorkersVersionAssetsConfigNotFoundHandling.fromJson(String json) { return switch (json) {
+  'none' => none,
+  '404-page' => $404Page,
+  'single-page-application' => singlePageApplication,
+  _ => WorkersVersionAssetsConfigNotFoundHandling._(json),
+}; }
+
+static const WorkersVersionAssetsConfigNotFoundHandling none = WorkersVersionAssetsConfigNotFoundHandling._('none');
+
+static const WorkersVersionAssetsConfigNotFoundHandling $404Page = WorkersVersionAssetsConfigNotFoundHandling._('404-page');
+
+static const WorkersVersionAssetsConfigNotFoundHandling singlePageApplication = WorkersVersionAssetsConfigNotFoundHandling._('single-page-application');
+
+static const List<WorkersVersionAssetsConfigNotFoundHandling> values = [none, $404Page, singlePageApplication];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersVersionAssetsConfigNotFoundHandling && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersVersionAssetsConfigNotFoundHandling($value)'; } 
+ }
+/// Configuration for assets within a Worker.
+final class WorkersVersionAssetsConfig {const WorkersVersionAssetsConfig({this.htmlHandling = WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash, this.notFoundHandling = WorkersVersionAssetsConfigNotFoundHandling.none, this.runWorkerFirst, });
+
+factory WorkersVersionAssetsConfig.fromJson(Map<String, dynamic> json) { return WorkersVersionAssetsConfig(
+  htmlHandling: json.containsKey('html_handling') ? WorkersVersionAssetsConfigHtmlHandling.fromJson(json['html_handling'] as String) : WorkersVersionAssetsConfigHtmlHandling.autoTrailingSlash,
+  notFoundHandling: json.containsKey('not_found_handling') ? WorkersVersionAssetsConfigNotFoundHandling.fromJson(json['not_found_handling'] as String) : WorkersVersionAssetsConfigNotFoundHandling.none,
+  runWorkerFirst: json['run_worker_first'] != null ? OneOf2.parse(json['run_worker_first'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => v as bool,) : null,
+); }
+
+/// Determines the redirects and rewrites of requests for HTML content.
+final WorkersVersionAssetsConfigHtmlHandling htmlHandling;
+
+/// Determines the response when a request does not match a static asset, and there is no Worker script.
+final WorkersVersionAssetsConfigNotFoundHandling notFoundHandling;
+
+final WorkersVersionAssetsConfigRunWorkerFirst? runWorkerFirst;
+
+Map<String, dynamic> toJson() { return {
+  'html_handling': htmlHandling.toJson(),
+  'not_found_handling': notFoundHandling.toJson(),
+  if (runWorkerFirst != null) 'run_worker_first': runWorkerFirst?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WorkersVersionAssetsConfig copyWith({WorkersVersionAssetsConfigHtmlHandling Function()? htmlHandling, WorkersVersionAssetsConfigNotFoundHandling Function()? notFoundHandling, WorkersVersionAssetsConfigRunWorkerFirst Function()? runWorkerFirst, }) { return WorkersVersionAssetsConfig(
+  htmlHandling: htmlHandling != null ? htmlHandling() : this.htmlHandling,
+  notFoundHandling: notFoundHandling != null ? notFoundHandling() : this.notFoundHandling,
+  runWorkerFirst: runWorkerFirst != null ? runWorkerFirst() : this.runWorkerFirst,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersVersionAssetsConfig &&
+          htmlHandling == other.htmlHandling &&
+          notFoundHandling == other.notFoundHandling &&
+          runWorkerFirst == other.runWorkerFirst; } 
+@override int get hashCode { return Object.hash(htmlHandling, notFoundHandling, runWorkerFirst); } 
+@override String toString() { return 'WorkersVersionAssetsConfig(htmlHandling: $htmlHandling, notFoundHandling: $notFoundHandling, runWorkerFirst: $runWorkerFirst)'; } 
+ }

@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.
+extension type const D1Sql(String value) {
+factory D1Sql.fromJson(String json) => D1Sql(json);
+
+String toJson() => value;
+
+}
+/// A single query with or without parameters
+final class D1SingleQuery {const D1SingleQuery({this.params, required this.sql, });
+
+factory D1SingleQuery.fromJson(Map<String, dynamic> json) { return D1SingleQuery(
+  params: (json['params'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  sql: D1Sql.fromJson(json['sql'] as String),
+); }
+
+final List<String>? params;
+
+final D1Sql sql;
+
+Map<String, dynamic> toJson() { return {
+  'params': ?params,
+  'sql': sql.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sql'); } 
+D1SingleQuery copyWith({List<String> Function()? params, D1Sql? sql, }) { return D1SingleQuery(
+  params: params != null ? params() : this.params,
+  sql: sql ?? this.sql,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is D1SingleQuery &&
+          listEquals(params, other.params) &&
+          sql == other.sql; } 
+@override int get hashCode { return Object.hash(Object.hashAll(params ?? const []), sql); } 
+@override String toString() { return 'D1SingleQuery(params: $params, sql: $sql)'; } 
+ }

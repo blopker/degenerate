@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_resource_reference.dart';final class LoadBalancingSearch {const LoadBalancingSearch({this.resources});
+
+factory LoadBalancingSearch.fromJson(Map<String, dynamic> json) { return LoadBalancingSearch(
+  resources: (json['resources'] as List<dynamic>?)?.map((e) => LoadBalancingResourceReference.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// A list of resources matching the search query.
+final List<LoadBalancingResourceReference>? resources;
+
+Map<String, dynamic> toJson() { return {
+  if (resources != null) 'resources': resources?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LoadBalancingSearch copyWith({List<LoadBalancingResourceReference> Function()? resources}) { return LoadBalancingSearch(
+  resources: resources != null ? resources() : this.resources,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LoadBalancingSearch &&
+          listEquals(resources, other.resources); } 
+@override int get hashCode { return Object.hashAll(resources ?? const []).hashCode; } 
+@override String toString() { return 'LoadBalancingSearch(resources: $resources)'; } 
+ }

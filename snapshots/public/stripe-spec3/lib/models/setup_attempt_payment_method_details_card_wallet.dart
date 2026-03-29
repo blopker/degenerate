@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_card_wallet_apple_pay.dart';import 'payment_method_details_card_wallet_google_pay.dart';/// The type of the card wallet, one of `apple_pay`, `google_pay`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
+final class SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType._(this.value);
+
+factory SetupAttemptPaymentMethodDetailsCardWalletType.fromJson(String json) { return switch (json) {
+  'apple_pay' => applePay,
+  'google_pay' => googlePay,
+  'link' => link,
+  _ => SetupAttemptPaymentMethodDetailsCardWalletType._(json),
+}; }
+
+static const SetupAttemptPaymentMethodDetailsCardWalletType applePay = SetupAttemptPaymentMethodDetailsCardWalletType._('apple_pay');
+
+static const SetupAttemptPaymentMethodDetailsCardWalletType googlePay = SetupAttemptPaymentMethodDetailsCardWalletType._('google_pay');
+
+static const SetupAttemptPaymentMethodDetailsCardWalletType link = SetupAttemptPaymentMethodDetailsCardWalletType._('link');
+
+static const List<SetupAttemptPaymentMethodDetailsCardWalletType> values = [applePay, googlePay, link];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SetupAttemptPaymentMethodDetailsCardWalletType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SetupAttemptPaymentMethodDetailsCardWalletType($value)'; } 
+ }
+/// 
+final class SetupAttemptPaymentMethodDetailsCardWallet {const SetupAttemptPaymentMethodDetailsCardWallet({this.applePay, this.googlePay, required this.type, });
+
+factory SetupAttemptPaymentMethodDetailsCardWallet.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCardWallet(
+  applePay: json['apple_pay'] != null ? PaymentMethodDetailsCardWalletApplePay.fromJson(json['apple_pay'] as Map<String, dynamic>) : null,
+  googlePay: json['google_pay'] != null ? PaymentMethodDetailsCardWalletGooglePay.fromJson(json['google_pay'] as Map<String, dynamic>) : null,
+  type: SetupAttemptPaymentMethodDetailsCardWalletType.fromJson(json['type'] as String),
+); }
+
+final PaymentMethodDetailsCardWalletApplePay? applePay;
+
+final PaymentMethodDetailsCardWalletGooglePay? googlePay;
+
+/// The type of the card wallet, one of `apple_pay`, `google_pay`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
+final SetupAttemptPaymentMethodDetailsCardWalletType type;
+
+Map<String, dynamic> toJson() { return {
+  if (applePay != null) 'apple_pay': applePay?.toJson(),
+  if (googlePay != null) 'google_pay': googlePay?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+SetupAttemptPaymentMethodDetailsCardWallet copyWith({PaymentMethodDetailsCardWalletApplePay Function()? applePay, PaymentMethodDetailsCardWalletGooglePay Function()? googlePay, SetupAttemptPaymentMethodDetailsCardWalletType? type, }) { return SetupAttemptPaymentMethodDetailsCardWallet(
+  applePay: applePay != null ? applePay() : this.applePay,
+  googlePay: googlePay != null ? googlePay() : this.googlePay,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SetupAttemptPaymentMethodDetailsCardWallet &&
+          applePay == other.applePay &&
+          googlePay == other.googlePay &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(applePay, googlePay, type); } 
+@override String toString() { return 'SetupAttemptPaymentMethodDetailsCardWallet(applePay: $applePay, googlePay: $googlePay, type: $type)'; } 
+ }

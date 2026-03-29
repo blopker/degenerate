@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'item.dart';import 'organization_simple_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class ItemCreatedAction {const ItemCreatedAction._(this.value);
+
+factory ItemCreatedAction.fromJson(String json) { return switch (json) {
+  'created' => created,
+  _ => ItemCreatedAction._(json),
+}; }
+
+static const ItemCreatedAction created = ItemCreatedAction._('created');
+
+static const List<ItemCreatedAction> values = [created];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ItemCreatedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ItemCreatedAction($value)'; } 
+ }
+final class ItemCreated {const ItemCreated({required this.action, this.installation, required this.organization, required this.projectsV2Item, required this.sender, });
+
+factory ItemCreated.fromJson(Map<String, dynamic> json) { return ItemCreated(
+  action: ItemCreatedAction.fromJson(json['action'] as String),
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
+  projectsV2Item: Item.fromJson(json['projects_v2_item'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final ItemCreatedAction action;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks organization;
+
+final Item projectsV2Item;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'organization': organization.toJson(),
+  'projects_v2_item': projectsV2Item.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('organization') &&
+      json.containsKey('projects_v2_item') &&
+      json.containsKey('sender'); } 
+ItemCreated copyWith({ItemCreatedAction? action, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, Item? projectsV2Item, SimpleUser? sender, }) { return ItemCreated(
+  action: action ?? this.action,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization ?? this.organization,
+  projectsV2Item: projectsV2Item ?? this.projectsV2Item,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ItemCreated &&
+          action == other.action &&
+          installation == other.installation &&
+          organization == other.organization &&
+          projectsV2Item == other.projectsV2Item &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, installation, organization, projectsV2Item, sender); } 
+@override String toString() { return 'ItemCreated(action: $action, installation: $installation, organization: $organization, projectsV2Item: $projectsV2Item, sender: $sender)'; } 
+ }

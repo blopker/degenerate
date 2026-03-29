@@ -1,0 +1,96 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'secrets_store_comment.dart';import 'secrets_store_created.dart';import 'secrets_store_identifier.dart';import 'secrets_store_modified.dart';import 'secrets_store_secret_name.dart';import 'secrets_store_store_identifier.dart';final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
+
+factory SecretsStoreSecretStatus.fromJson(String json) { return switch (json) {
+  'pending' => pending,
+  'active' => active,
+  'deleted' => deleted,
+  _ => SecretsStoreSecretStatus._(json),
+}; }
+
+static const SecretsStoreSecretStatus pending = SecretsStoreSecretStatus._('pending');
+
+static const SecretsStoreSecretStatus active = SecretsStoreSecretStatus._('active');
+
+static const SecretsStoreSecretStatus deleted = SecretsStoreSecretStatus._('deleted');
+
+static const List<SecretsStoreSecretStatus> values = [pending, active, deleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretsStoreSecretStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecretsStoreSecretStatus($value)'; } 
+ }
+final class SecretsStoreSecretObject {const SecretsStoreSecretObject({this.comment, required this.created, required this.id, required this.modified, required this.name, required this.status, required this.storeId, });
+
+factory SecretsStoreSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreSecretObject(
+  comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,
+  created: SecretsStoreCreated.fromJson(json['created'] as String),
+  id: SecretsStoreIdentifier.fromJson(json['id'] as String),
+  modified: SecretsStoreModified.fromJson(json['modified'] as String),
+  name: SecretsStoreSecretName.fromJson(json['name'] as String),
+  status: SecretsStoreSecretStatus.fromJson(json['status'] as String),
+  storeId: SecretsStoreStoreIdentifier.fromJson(json['store_id'] as String),
+); }
+
+/// Freeform text describing the secret
+final SecretsStoreComment? comment;
+
+/// Whenthe secret was created.
+final SecretsStoreCreated created;
+
+/// Secret identifier tag.
+final SecretsStoreIdentifier id;
+
+/// When the secret was modified.
+final SecretsStoreModified modified;
+
+/// The name of the secret
+final SecretsStoreSecretName name;
+
+final SecretsStoreSecretStatus status;
+
+final SecretsStoreStoreIdentifier storeId;
+
+Map<String, dynamic> toJson() { return {
+  if (comment != null) 'comment': comment?.toJson(),
+  'created': created.toJson(),
+  'id': id.toJson(),
+  'modified': modified.toJson(),
+  'name': name.toJson(),
+  'status': status.toJson(),
+  'store_id': storeId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+      json.containsKey('id') &&
+      json.containsKey('modified') &&
+      json.containsKey('name') &&
+      json.containsKey('status') &&
+      json.containsKey('store_id'); } 
+SecretsStoreSecretObject copyWith({SecretsStoreComment Function()? comment, SecretsStoreCreated? created, SecretsStoreIdentifier? id, SecretsStoreModified? modified, SecretsStoreSecretName? name, SecretsStoreSecretStatus? status, SecretsStoreStoreIdentifier? storeId, }) { return SecretsStoreSecretObject(
+  comment: comment != null ? comment() : this.comment,
+  created: created ?? this.created,
+  id: id ?? this.id,
+  modified: modified ?? this.modified,
+  name: name ?? this.name,
+  status: status ?? this.status,
+  storeId: storeId ?? this.storeId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretsStoreSecretObject &&
+          comment == other.comment &&
+          created == other.created &&
+          id == other.id &&
+          modified == other.modified &&
+          name == other.name &&
+          status == other.status &&
+          storeId == other.storeId; } 
+@override int get hashCode { return Object.hash(comment, created, id, modified, name, status, storeId); } 
+@override String toString() { return 'SecretsStoreSecretObject(comment: $comment, created: $created, id: $id, modified: $modified, name: $name, status: $status, storeId: $storeId)'; } 
+ }

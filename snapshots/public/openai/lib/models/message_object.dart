@@ -1,0 +1,203 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content_image_file_object.dart';import 'message_content_image_url_object.dart';import 'message_content_refusal_object.dart';import 'message_content_text_object.dart';import 'message_object_attachments2.dart';import 'message_object_content.dart';import 'message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
+final class MessageObjectObject {const MessageObjectObject._(this.value);
+
+factory MessageObjectObject.fromJson(String json) { return switch (json) {
+  'thread.message' => threadMessage,
+  _ => MessageObjectObject._(json),
+}; }
+
+static const MessageObjectObject threadMessage = MessageObjectObject._('thread.message');
+
+static const List<MessageObjectObject> values = [threadMessage];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageObjectObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageObjectObject($value)'; } 
+ }
+/// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
+final class MessageObjectStatus {const MessageObjectStatus._(this.value);
+
+factory MessageObjectStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'incomplete' => incomplete,
+  'completed' => completed,
+  _ => MessageObjectStatus._(json),
+}; }
+
+static const MessageObjectStatus inProgress = MessageObjectStatus._('in_progress');
+
+static const MessageObjectStatus incomplete = MessageObjectStatus._('incomplete');
+
+static const MessageObjectStatus completed = MessageObjectStatus._('completed');
+
+static const List<MessageObjectStatus> values = [inProgress, incomplete, completed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageObjectStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageObjectStatus($value)'; } 
+ }
+/// The entity that produced the message. One of `user` or `assistant`.
+final class MessageObjectRole {const MessageObjectRole._(this.value);
+
+factory MessageObjectRole.fromJson(String json) { return switch (json) {
+  'user' => user,
+  'assistant' => assistant,
+  _ => MessageObjectRole._(json),
+}; }
+
+static const MessageObjectRole user = MessageObjectRole._('user');
+
+static const MessageObjectRole assistant = MessageObjectRole._('assistant');
+
+static const List<MessageObjectRole> values = [user, assistant];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageObjectRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageObjectRole($value)'; } 
+ }
+/// Represents a message within a [thread](/docs/api-reference/threads).
+final class MessageObject {const MessageObject({required this.id, required this.object, required this.createdAt, required this.threadId, required this.status, required this.incompleteDetails, required this.completedAt, required this.incompleteAt, required this.role, required this.content, required this.assistantId, required this.runId, required this.attachments, required this.metadata, });
+
+factory MessageObject.fromJson(Map<String, dynamic> json) { return MessageObject(
+  id: json['id'] as String,
+  object: MessageObjectObject.fromJson(json['object'] as String),
+  createdAt: (json['created_at'] as num).toInt(),
+  threadId: json['thread_id'] as String,
+  status: MessageObjectStatus.fromJson(json['status'] as String),
+  incompleteDetails: json['incomplete_details'] != null ? MessageObjectIncompleteDetails.fromJson(json['incomplete_details'] as Map<String, dynamic>) : null,
+  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  incompleteAt: json['incomplete_at'] != null ? (json['incomplete_at'] as num).toInt() : null,
+  role: MessageObjectRole.fromJson(json['role'] as String),
+  content: (json['content'] as List<dynamic>).map((e) => OneOf4.parse(e, fromA: (v) => MessageContentImageFileObject.fromJson(v as Map<String, dynamic>), fromB: (v) => MessageContentImageUrlObject.fromJson(v as Map<String, dynamic>), fromC: (v) => MessageContentTextObject.fromJson(v as Map<String, dynamic>), fromD: (v) => MessageContentRefusalObject.fromJson(v as Map<String, dynamic>),)).toList(),
+  assistantId: json['assistant_id'] as String?,
+  runId: json['run_id'] as String?,
+  attachments: (json['attachments'] as List<dynamic>?)?.map((e) => MessageObjectAttachments2.fromJson(e as Map<String, dynamic>)).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+); }
+
+/// The identifier, which can be referenced in API endpoints.
+final String id;
+
+/// The object type, which is always `thread.message`.
+final MessageObjectObject object;
+
+/// The Unix timestamp (in seconds) for when the message was created.
+final int createdAt;
+
+/// The [thread](/docs/api-reference/threads) ID that this message belongs to.
+final String threadId;
+
+/// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.
+final MessageObjectStatus status;
+
+/// On an incomplete message, details about why the message is incomplete.
+final MessageObjectIncompleteDetails? incompleteDetails;
+
+/// The Unix timestamp (in seconds) for when the message was completed.
+final int? completedAt;
+
+/// The Unix timestamp (in seconds) for when the message was marked as incomplete.
+final int? incompleteAt;
+
+/// The entity that produced the message. One of `user` or `assistant`.
+final MessageObjectRole role;
+
+/// The content of the message in array of text and/or images.
+final List<MessageObjectContent> content;
+
+/// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
+final String? assistantId;
+
+/// The ID of the [run](/docs/api-reference/runs) associated with the creation of this message. Value is `null` when messages are created manually using the create message or create thread endpoints.
+final String? runId;
+
+/// A list of files attached to the message, and the tools they were added to.
+final List<MessageObjectAttachments2>? attachments;
+
+final Map<String,String>? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'created_at': createdAt,
+  'thread_id': threadId,
+  'status': status.toJson(),
+  if (incompleteDetails != null) 'incomplete_details': incompleteDetails?.toJson(),
+  'completed_at': ?completedAt,
+  'incomplete_at': ?incompleteAt,
+  'role': role.toJson(),
+  'content': content.map((e) => e.toJson()).toList(),
+  'assistant_id': ?assistantId,
+  'run_id': ?runId,
+  if (attachments != null) 'attachments': attachments?.map((e) => e.toJson()).toList(),
+  'metadata': ?metadata,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('thread_id') && json['thread_id'] is String &&
+      json.containsKey('status') &&
+      json.containsKey('incomplete_details') &&
+      json.containsKey('completed_at') && json['completed_at'] is num &&
+      json.containsKey('incomplete_at') && json['incomplete_at'] is num &&
+      json.containsKey('role') &&
+      json.containsKey('content') &&
+      json.containsKey('assistant_id') && json['assistant_id'] is String &&
+      json.containsKey('run_id') && json['run_id'] is String &&
+      json.containsKey('attachments') &&
+      json.containsKey('metadata'); } 
+MessageObject copyWith({String? id, MessageObjectObject? object, int? createdAt, String? threadId, MessageObjectStatus? status, MessageObjectIncompleteDetails? Function()? incompleteDetails, int? Function()? completedAt, int? Function()? incompleteAt, MessageObjectRole? role, List<MessageObjectContent>? content, String? Function()? assistantId, String? Function()? runId, List<MessageObjectAttachments2>? Function()? attachments, Map<String, String>? Function()? metadata, }) { return MessageObject(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  createdAt: createdAt ?? this.createdAt,
+  threadId: threadId ?? this.threadId,
+  status: status ?? this.status,
+  incompleteDetails: incompleteDetails != null ? incompleteDetails() : this.incompleteDetails,
+  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  incompleteAt: incompleteAt != null ? incompleteAt() : this.incompleteAt,
+  role: role ?? this.role,
+  content: content ?? this.content,
+  assistantId: assistantId != null ? assistantId() : this.assistantId,
+  runId: runId != null ? runId() : this.runId,
+  attachments: attachments != null ? attachments() : this.attachments,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MessageObject &&
+          id == other.id &&
+          object == other.object &&
+          createdAt == other.createdAt &&
+          threadId == other.threadId &&
+          status == other.status &&
+          incompleteDetails == other.incompleteDetails &&
+          completedAt == other.completedAt &&
+          incompleteAt == other.incompleteAt &&
+          role == other.role &&
+          listEquals(content, other.content) &&
+          assistantId == other.assistantId &&
+          runId == other.runId &&
+          listEquals(attachments, other.attachments) &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(id, object, createdAt, threadId, status, incompleteDetails, completedAt, incompleteAt, role, Object.hashAll(content), assistantId, runId, Object.hashAll(attachments ?? const []), metadata); } 
+@override String toString() { return 'MessageObject(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, status: $status, incompleteDetails: $incompleteDetails, completedAt: $completedAt, incompleteAt: $incompleteAt, role: $role, content: $content, assistantId: $assistantId, runId: $runId, attachments: $attachments, metadata: $metadata)'; } 
+ }

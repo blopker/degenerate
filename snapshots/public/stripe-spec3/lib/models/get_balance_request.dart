@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetBalanceRequest {const GetBalanceRequest();
+
+factory GetBalanceRequest.fromJson(Map<String, dynamic> json) { return GetBalanceRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetBalanceRequest copyWith() { return GetBalanceRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetBalanceRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetBalanceRequest()'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class SubscriptionBillingThresholds {const SubscriptionBillingThresholds({this.amountGte, this.resetBillingCycleAnchor, });
+
+factory SubscriptionBillingThresholds.fromJson(Map<String, dynamic> json) { return SubscriptionBillingThresholds(
+  amountGte: json['amount_gte'] != null ? (json['amount_gte'] as num).toInt() : null,
+  resetBillingCycleAnchor: json['reset_billing_cycle_anchor'] as bool?,
+); }
+
+/// Monetary threshold that triggers the subscription to create an invoice
+final int? amountGte;
+
+/// Indicates if the `billing_cycle_anchor` should be reset when a threshold is reached. If true, `billing_cycle_anchor` will be updated to the date/time the threshold was last reached; otherwise, the value will remain unchanged. This value may not be `true` if the subscription contains items with plans that have `aggregate_usage=last_ever`.
+final bool? resetBillingCycleAnchor;
+
+Map<String, dynamic> toJson() { return {
+  'amount_gte': ?amountGte,
+  'reset_billing_cycle_anchor': ?resetBillingCycleAnchor,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SubscriptionBillingThresholds copyWith({int? Function()? amountGte, bool? Function()? resetBillingCycleAnchor, }) { return SubscriptionBillingThresholds(
+  amountGte: amountGte != null ? amountGte() : this.amountGte,
+  resetBillingCycleAnchor: resetBillingCycleAnchor != null ? resetBillingCycleAnchor() : this.resetBillingCycleAnchor,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SubscriptionBillingThresholds &&
+          amountGte == other.amountGte &&
+          resetBillingCycleAnchor == other.resetBillingCycleAnchor; } 
+@override int get hashCode { return Object.hash(amountGte, resetBillingCycleAnchor); } 
+@override String toString() { return 'SubscriptionBillingThresholds(amountGte: $amountGte, resetBillingCycleAnchor: $resetBillingCycleAnchor)'; } 
+ }

@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetHttpSummaryByPostQuantumFormat {const RadarGetHttpSummaryByPostQuantumFormat._(this.value);
+
+factory RadarGetHttpSummaryByPostQuantumFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetHttpSummaryByPostQuantumFormat._(json),
+}; }
+
+static const RadarGetHttpSummaryByPostQuantumFormat $json = RadarGetHttpSummaryByPostQuantumFormat._('JSON');
+
+static const RadarGetHttpSummaryByPostQuantumFormat csv = RadarGetHttpSummaryByPostQuantumFormat._('CSV');
+
+static const List<RadarGetHttpSummaryByPostQuantumFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByPostQuantumFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByPostQuantumFormat($value)'; } 
+ }

@@ -1,0 +1,980 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class IssuingCardSpendingLimitCategories {const IssuingCardSpendingLimitCategories._(this.value);
+
+factory IssuingCardSpendingLimitCategories.fromJson(String json) { return switch (json) {
+  'ac_refrigeration_repair' => acRefrigerationRepair,
+  'accounting_bookkeeping_services' => accountingBookkeepingServices,
+  'advertising_services' => advertisingServices,
+  'agricultural_cooperative' => agriculturalCooperative,
+  'airlines_air_carriers' => airlinesAirCarriers,
+  'airports_flying_fields' => airportsFlyingFields,
+  'ambulance_services' => ambulanceServices,
+  'amusement_parks_carnivals' => amusementParksCarnivals,
+  'antique_reproductions' => antiqueReproductions,
+  'antique_shops' => antiqueShops,
+  'aquariums' => aquariums,
+  'architectural_surveying_services' => architecturalSurveyingServices,
+  'art_dealers_and_galleries' => artDealersAndGalleries,
+  'artists_supply_and_craft_shops' => artistsSupplyAndCraftShops,
+  'auto_and_home_supply_stores' => autoAndHomeSupplyStores,
+  'auto_body_repair_shops' => autoBodyRepairShops,
+  'auto_paint_shops' => autoPaintShops,
+  'auto_service_shops' => autoServiceShops,
+  'automated_cash_disburse' => automatedCashDisburse,
+  'automated_fuel_dispensers' => automatedFuelDispensers,
+  'automobile_associations' => automobileAssociations,
+  'automotive_parts_and_accessories_stores' => automotivePartsAndAccessoriesStores,
+  'automotive_tire_stores' => automotiveTireStores,
+  'bail_and_bond_payments' => bailAndBondPayments,
+  'bakeries' => bakeries,
+  'bands_orchestras' => bandsOrchestras,
+  'barber_and_beauty_shops' => barberAndBeautyShops,
+  'betting_casino_gambling' => bettingCasinoGambling,
+  'bicycle_shops' => bicycleShops,
+  'billiard_pool_establishments' => billiardPoolEstablishments,
+  'boat_dealers' => boatDealers,
+  'boat_rentals_and_leases' => boatRentalsAndLeases,
+  'book_stores' => bookStores,
+  'books_periodicals_and_newspapers' => booksPeriodicalsAndNewspapers,
+  'bowling_alleys' => bowlingAlleys,
+  'bus_lines' => busLines,
+  'business_secretarial_schools' => businessSecretarialSchools,
+  'buying_shopping_services' => buyingShoppingServices,
+  'cable_satellite_and_other_pay_television_and_radio' => cableSatelliteAndOtherPayTelevisionAndRadio,
+  'camera_and_photographic_supply_stores' => cameraAndPhotographicSupplyStores,
+  'candy_nut_and_confectionery_stores' => candyNutAndConfectioneryStores,
+  'car_and_truck_dealers_new_used' => carAndTruckDealersNewUsed,
+  'car_and_truck_dealers_used_only' => carAndTruckDealersUsedOnly,
+  'car_rental_agencies' => carRentalAgencies,
+  'car_washes' => carWashes,
+  'carpentry_services' => carpentryServices,
+  'carpet_upholstery_cleaning' => carpetUpholsteryCleaning,
+  'caterers' => caterers,
+  'charitable_and_social_service_organizations_fundraising' => charitableAndSocialServiceOrganizationsFundraising,
+  'chemicals_and_allied_products' => chemicalsAndAlliedProducts,
+  'child_care_services' => childCareServices,
+  'childrens_and_infants_wear_stores' => childrensAndInfantsWearStores,
+  'chiropodists_podiatrists' => chiropodistsPodiatrists,
+  'chiropractors' => chiropractors,
+  'cigar_stores_and_stands' => cigarStoresAndStands,
+  'civic_social_fraternal_associations' => civicSocialFraternalAssociations,
+  'cleaning_and_maintenance' => cleaningAndMaintenance,
+  'clothing_rental' => clothingRental,
+  'colleges_universities' => collegesUniversities,
+  'commercial_equipment' => commercialEquipment,
+  'commercial_footwear' => commercialFootwear,
+  'commercial_photography_art_and_graphics' => commercialPhotographyArtAndGraphics,
+  'commuter_transport_and_ferries' => commuterTransportAndFerries,
+  'computer_network_services' => computerNetworkServices,
+  'computer_programming' => computerProgramming,
+  'computer_repair' => computerRepair,
+  'computer_software_stores' => computerSoftwareStores,
+  'computers_peripherals_and_software' => computersPeripheralsAndSoftware,
+  'concrete_work_services' => concreteWorkServices,
+  'construction_materials' => constructionMaterials,
+  'consulting_public_relations' => consultingPublicRelations,
+  'correspondence_schools' => correspondenceSchools,
+  'cosmetic_stores' => cosmeticStores,
+  'counseling_services' => counselingServices,
+  'country_clubs' => countryClubs,
+  'courier_services' => courierServices,
+  'court_costs' => courtCosts,
+  'credit_reporting_agencies' => creditReportingAgencies,
+  'cruise_lines' => cruiseLines,
+  'dairy_products_stores' => dairyProductsStores,
+  'dance_hall_studios_schools' => danceHallStudiosSchools,
+  'dating_escort_services' => datingEscortServices,
+  'dentists_orthodontists' => dentistsOrthodontists,
+  'department_stores' => departmentStores,
+  'detective_agencies' => detectiveAgencies,
+  'digital_goods_applications' => digitalGoodsApplications,
+  'digital_goods_games' => digitalGoodsGames,
+  'digital_goods_large_volume' => digitalGoodsLargeVolume,
+  'digital_goods_media' => digitalGoodsMedia,
+  'direct_marketing_catalog_merchant' => directMarketingCatalogMerchant,
+  'direct_marketing_combination_catalog_and_retail_merchant' => directMarketingCombinationCatalogAndRetailMerchant,
+  'direct_marketing_inbound_telemarketing' => directMarketingInboundTelemarketing,
+  'direct_marketing_insurance_services' => directMarketingInsuranceServices,
+  'direct_marketing_other' => directMarketingOther,
+  'direct_marketing_outbound_telemarketing' => directMarketingOutboundTelemarketing,
+  'direct_marketing_subscription' => directMarketingSubscription,
+  'direct_marketing_travel' => directMarketingTravel,
+  'discount_stores' => discountStores,
+  'doctors' => doctors,
+  'door_to_door_sales' => doorToDoorSales,
+  'drapery_window_covering_and_upholstery_stores' => draperyWindowCoveringAndUpholsteryStores,
+  'drinking_places' => drinkingPlaces,
+  'drug_stores_and_pharmacies' => drugStoresAndPharmacies,
+  'drugs_drug_proprietaries_and_druggist_sundries' => drugsDrugProprietariesAndDruggistSundries,
+  'dry_cleaners' => dryCleaners,
+  'durable_goods' => durableGoods,
+  'duty_free_stores' => dutyFreeStores,
+  'eating_places_restaurants' => eatingPlacesRestaurants,
+  'educational_services' => educationalServices,
+  'electric_razor_stores' => electricRazorStores,
+  'electric_vehicle_charging' => electricVehicleCharging,
+  'electrical_parts_and_equipment' => electricalPartsAndEquipment,
+  'electrical_services' => electricalServices,
+  'electronics_repair_shops' => electronicsRepairShops,
+  'electronics_stores' => electronicsStores,
+  'elementary_secondary_schools' => elementarySecondarySchools,
+  'emergency_services_gcas_visa_use_only' => emergencyServicesGcasVisaUseOnly,
+  'employment_temp_agencies' => employmentTempAgencies,
+  'equipment_rental' => equipmentRental,
+  'exterminating_services' => exterminatingServices,
+  'family_clothing_stores' => familyClothingStores,
+  'fast_food_restaurants' => fastFoodRestaurants,
+  'financial_institutions' => financialInstitutions,
+  'fines_government_administrative_entities' => finesGovernmentAdministrativeEntities,
+  'fireplace_fireplace_screens_and_accessories_stores' => fireplaceFireplaceScreensAndAccessoriesStores,
+  'floor_covering_stores' => floorCoveringStores,
+  'florists' => florists,
+  'florists_supplies_nursery_stock_and_flowers' => floristsSuppliesNurseryStockAndFlowers,
+  'freezer_and_locker_meat_provisioners' => freezerAndLockerMeatProvisioners,
+  'fuel_dealers_non_automotive' => fuelDealersNonAutomotive,
+  'funeral_services_crematories' => funeralServicesCrematories,
+  'furniture_home_furnishings_and_equipment_stores_except_appliances' => furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances,
+  'furniture_repair_refinishing' => furnitureRepairRefinishing,
+  'furriers_and_fur_shops' => furriersAndFurShops,
+  'general_services' => generalServices,
+  'gift_card_novelty_and_souvenir_shops' => giftCardNoveltyAndSouvenirShops,
+  'glass_paint_and_wallpaper_stores' => glassPaintAndWallpaperStores,
+  'glassware_crystal_stores' => glasswareCrystalStores,
+  'golf_courses_public' => golfCoursesPublic,
+  'government_licensed_horse_dog_racing_us_region_only' => governmentLicensedHorseDogRacingUsRegionOnly,
+  'government_licensed_online_casions_online_gambling_us_region_only' => governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly,
+  'government_owned_lotteries_non_us_region' => governmentOwnedLotteriesNonUsRegion,
+  'government_owned_lotteries_us_region_only' => governmentOwnedLotteriesUsRegionOnly,
+  'government_services' => governmentServices,
+  'grocery_stores_supermarkets' => groceryStoresSupermarkets,
+  'hardware_equipment_and_supplies' => hardwareEquipmentAndSupplies,
+  'hardware_stores' => hardwareStores,
+  'health_and_beauty_spas' => healthAndBeautySpas,
+  'hearing_aids_sales_and_supplies' => hearingAidsSalesAndSupplies,
+  'heating_plumbing_a_c' => heatingPlumbingAC,
+  'hobby_toy_and_game_shops' => hobbyToyAndGameShops,
+  'home_supply_warehouse_stores' => homeSupplyWarehouseStores,
+  'hospitals' => hospitals,
+  'hotels_motels_and_resorts' => hotelsMotelsAndResorts,
+  'household_appliance_stores' => householdApplianceStores,
+  'industrial_supplies' => industrialSupplies,
+  'information_retrieval_services' => informationRetrievalServices,
+  'insurance_default' => insuranceDefault,
+  'insurance_underwriting_premiums' => insuranceUnderwritingPremiums,
+  'intra_company_purchases' => intraCompanyPurchases,
+  'jewelry_stores_watches_clocks_and_silverware_stores' => jewelryStoresWatchesClocksAndSilverwareStores,
+  'landscaping_services' => landscapingServices,
+  'laundries' => laundries,
+  'laundry_cleaning_services' => laundryCleaningServices,
+  'legal_services_attorneys' => legalServicesAttorneys,
+  'luggage_and_leather_goods_stores' => luggageAndLeatherGoodsStores,
+  'lumber_building_materials_stores' => lumberBuildingMaterialsStores,
+  'manual_cash_disburse' => manualCashDisburse,
+  'marinas_service_and_supplies' => marinasServiceAndSupplies,
+  'marketplaces' => marketplaces,
+  'masonry_stonework_and_plaster' => masonryStoneworkAndPlaster,
+  'massage_parlors' => massageParlors,
+  'medical_and_dental_labs' => medicalAndDentalLabs,
+  'medical_dental_ophthalmic_and_hospital_equipment_and_supplies' => medicalDentalOphthalmicAndHospitalEquipmentAndSupplies,
+  'medical_services' => medicalServices,
+  'membership_organizations' => membershipOrganizations,
+  'mens_and_boys_clothing_and_accessories_stores' => mensAndBoysClothingAndAccessoriesStores,
+  'mens_womens_clothing_stores' => mensWomensClothingStores,
+  'metal_service_centers' => metalServiceCenters,
+  'miscellaneous' => miscellaneous,
+  'miscellaneous_apparel_and_accessory_shops' => miscellaneousApparelAndAccessoryShops,
+  'miscellaneous_auto_dealers' => miscellaneousAutoDealers,
+  'miscellaneous_business_services' => miscellaneousBusinessServices,
+  'miscellaneous_food_stores' => miscellaneousFoodStores,
+  'miscellaneous_general_merchandise' => miscellaneousGeneralMerchandise,
+  'miscellaneous_general_services' => miscellaneousGeneralServices,
+  'miscellaneous_home_furnishing_specialty_stores' => miscellaneousHomeFurnishingSpecialtyStores,
+  'miscellaneous_publishing_and_printing' => miscellaneousPublishingAndPrinting,
+  'miscellaneous_recreation_services' => miscellaneousRecreationServices,
+  'miscellaneous_repair_shops' => miscellaneousRepairShops,
+  'miscellaneous_specialty_retail' => miscellaneousSpecialtyRetail,
+  'mobile_home_dealers' => mobileHomeDealers,
+  'motion_picture_theaters' => motionPictureTheaters,
+  'motor_freight_carriers_and_trucking' => motorFreightCarriersAndTrucking,
+  'motor_homes_dealers' => motorHomesDealers,
+  'motor_vehicle_supplies_and_new_parts' => motorVehicleSuppliesAndNewParts,
+  'motorcycle_shops_and_dealers' => motorcycleShopsAndDealers,
+  'motorcycle_shops_dealers' => motorcycleShopsDealers,
+  'music_stores_musical_instruments_pianos_and_sheet_music' => musicStoresMusicalInstrumentsPianosAndSheetMusic,
+  'news_dealers_and_newsstands' => newsDealersAndNewsstands,
+  'non_fi_money_orders' => nonFiMoneyOrders,
+  'non_fi_stored_value_card_purchase_load' => nonFiStoredValueCardPurchaseLoad,
+  'nondurable_goods' => nondurableGoods,
+  'nurseries_lawn_and_garden_supply_stores' => nurseriesLawnAndGardenSupplyStores,
+  'nursing_personal_care' => nursingPersonalCare,
+  'office_and_commercial_furniture' => officeAndCommercialFurniture,
+  'opticians_eyeglasses' => opticiansEyeglasses,
+  'optometrists_ophthalmologist' => optometristsOphthalmologist,
+  'orthopedic_goods_prosthetic_devices' => orthopedicGoodsProstheticDevices,
+  'osteopaths' => osteopaths,
+  'package_stores_beer_wine_and_liquor' => packageStoresBeerWineAndLiquor,
+  'paints_varnishes_and_supplies' => paintsVarnishesAndSupplies,
+  'parking_lots_garages' => parkingLotsGarages,
+  'passenger_railways' => passengerRailways,
+  'pawn_shops' => pawnShops,
+  'pet_shops_pet_food_and_supplies' => petShopsPetFoodAndSupplies,
+  'petroleum_and_petroleum_products' => petroleumAndPetroleumProducts,
+  'photo_developing' => photoDeveloping,
+  'photographic_photocopy_microfilm_equipment_and_supplies' => photographicPhotocopyMicrofilmEquipmentAndSupplies,
+  'photographic_studios' => photographicStudios,
+  'picture_video_production' => pictureVideoProduction,
+  'piece_goods_notions_and_other_dry_goods' => pieceGoodsNotionsAndOtherDryGoods,
+  'plumbing_heating_equipment_and_supplies' => plumbingHeatingEquipmentAndSupplies,
+  'political_organizations' => politicalOrganizations,
+  'postal_services_government_only' => postalServicesGovernmentOnly,
+  'precious_stones_and_metals_watches_and_jewelry' => preciousStonesAndMetalsWatchesAndJewelry,
+  'professional_services' => professionalServices,
+  'public_warehousing_and_storage' => publicWarehousingAndStorage,
+  'quick_copy_repro_and_blueprint' => quickCopyReproAndBlueprint,
+  'railroads' => railroads,
+  'real_estate_agents_and_managers_rentals' => realEstateAgentsAndManagersRentals,
+  'record_stores' => recordStores,
+  'recreational_vehicle_rentals' => recreationalVehicleRentals,
+  'religious_goods_stores' => religiousGoodsStores,
+  'religious_organizations' => religiousOrganizations,
+  'roofing_siding_sheet_metal' => roofingSidingSheetMetal,
+  'secretarial_support_services' => secretarialSupportServices,
+  'security_brokers_dealers' => securityBrokersDealers,
+  'service_stations' => serviceStations,
+  'sewing_needlework_fabric_and_piece_goods_stores' => sewingNeedleworkFabricAndPieceGoodsStores,
+  'shoe_repair_hat_cleaning' => shoeRepairHatCleaning,
+  'shoe_stores' => shoeStores,
+  'small_appliance_repair' => smallApplianceRepair,
+  'snowmobile_dealers' => snowmobileDealers,
+  'special_trade_services' => specialTradeServices,
+  'specialty_cleaning' => specialtyCleaning,
+  'sporting_goods_stores' => sportingGoodsStores,
+  'sporting_recreation_camps' => sportingRecreationCamps,
+  'sports_and_riding_apparel_stores' => sportsAndRidingApparelStores,
+  'sports_clubs_fields' => sportsClubsFields,
+  'stamp_and_coin_stores' => stampAndCoinStores,
+  'stationary_office_supplies_printing_and_writing_paper' => stationaryOfficeSuppliesPrintingAndWritingPaper,
+  'stationery_stores_office_and_school_supply_stores' => stationeryStoresOfficeAndSchoolSupplyStores,
+  'swimming_pools_sales' => swimmingPoolsSales,
+  't_ui_travel_germany' => tUiTravelGermany,
+  'tailors_alterations' => tailorsAlterations,
+  'tax_payments_government_agencies' => taxPaymentsGovernmentAgencies,
+  'tax_preparation_services' => taxPreparationServices,
+  'taxicabs_limousines' => taxicabsLimousines,
+  'telecommunication_equipment_and_telephone_sales' => telecommunicationEquipmentAndTelephoneSales,
+  'telecommunication_services' => telecommunicationServices,
+  'telegraph_services' => telegraphServices,
+  'tent_and_awning_shops' => tentAndAwningShops,
+  'testing_laboratories' => testingLaboratories,
+  'theatrical_ticket_agencies' => theatricalTicketAgencies,
+  'timeshares' => timeshares,
+  'tire_retreading_and_repair' => tireRetreadingAndRepair,
+  'tolls_bridge_fees' => tollsBridgeFees,
+  'tourist_attractions_and_exhibits' => touristAttractionsAndExhibits,
+  'towing_services' => towingServices,
+  'trailer_parks_campgrounds' => trailerParksCampgrounds,
+  'transportation_services' => transportationServices,
+  'travel_agencies_tour_operators' => travelAgenciesTourOperators,
+  'truck_stop_iteration' => truckStopIteration,
+  'truck_utility_trailer_rentals' => truckUtilityTrailerRentals,
+  'typesetting_plate_making_and_related_services' => typesettingPlateMakingAndRelatedServices,
+  'typewriter_stores' => typewriterStores,
+  'u_s_federal_government_agencies_or_departments' => uSFederalGovernmentAgenciesOrDepartments,
+  'uniforms_commercial_clothing' => uniformsCommercialClothing,
+  'used_merchandise_and_secondhand_stores' => usedMerchandiseAndSecondhandStores,
+  'utilities' => utilities,
+  'variety_stores' => varietyStores,
+  'veterinary_services' => veterinaryServices,
+  'video_amusement_game_supplies' => videoAmusementGameSupplies,
+  'video_game_arcades' => videoGameArcades,
+  'video_tape_rental_stores' => videoTapeRentalStores,
+  'vocational_trade_schools' => vocationalTradeSchools,
+  'watch_jewelry_repair' => watchJewelryRepair,
+  'welding_repair' => weldingRepair,
+  'wholesale_clubs' => wholesaleClubs,
+  'wig_and_toupee_stores' => wigAndToupeeStores,
+  'wires_money_orders' => wiresMoneyOrders,
+  'womens_accessory_and_specialty_shops' => womensAccessoryAndSpecialtyShops,
+  'womens_ready_to_wear_stores' => womensReadyToWearStores,
+  'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
+  _ => IssuingCardSpendingLimitCategories._(json),
+}; }
+
+static const IssuingCardSpendingLimitCategories acRefrigerationRepair = IssuingCardSpendingLimitCategories._('ac_refrigeration_repair');
+
+static const IssuingCardSpendingLimitCategories accountingBookkeepingServices = IssuingCardSpendingLimitCategories._('accounting_bookkeeping_services');
+
+static const IssuingCardSpendingLimitCategories advertisingServices = IssuingCardSpendingLimitCategories._('advertising_services');
+
+static const IssuingCardSpendingLimitCategories agriculturalCooperative = IssuingCardSpendingLimitCategories._('agricultural_cooperative');
+
+static const IssuingCardSpendingLimitCategories airlinesAirCarriers = IssuingCardSpendingLimitCategories._('airlines_air_carriers');
+
+static const IssuingCardSpendingLimitCategories airportsFlyingFields = IssuingCardSpendingLimitCategories._('airports_flying_fields');
+
+static const IssuingCardSpendingLimitCategories ambulanceServices = IssuingCardSpendingLimitCategories._('ambulance_services');
+
+static const IssuingCardSpendingLimitCategories amusementParksCarnivals = IssuingCardSpendingLimitCategories._('amusement_parks_carnivals');
+
+static const IssuingCardSpendingLimitCategories antiqueReproductions = IssuingCardSpendingLimitCategories._('antique_reproductions');
+
+static const IssuingCardSpendingLimitCategories antiqueShops = IssuingCardSpendingLimitCategories._('antique_shops');
+
+static const IssuingCardSpendingLimitCategories aquariums = IssuingCardSpendingLimitCategories._('aquariums');
+
+static const IssuingCardSpendingLimitCategories architecturalSurveyingServices = IssuingCardSpendingLimitCategories._('architectural_surveying_services');
+
+static const IssuingCardSpendingLimitCategories artDealersAndGalleries = IssuingCardSpendingLimitCategories._('art_dealers_and_galleries');
+
+static const IssuingCardSpendingLimitCategories artistsSupplyAndCraftShops = IssuingCardSpendingLimitCategories._('artists_supply_and_craft_shops');
+
+static const IssuingCardSpendingLimitCategories autoAndHomeSupplyStores = IssuingCardSpendingLimitCategories._('auto_and_home_supply_stores');
+
+static const IssuingCardSpendingLimitCategories autoBodyRepairShops = IssuingCardSpendingLimitCategories._('auto_body_repair_shops');
+
+static const IssuingCardSpendingLimitCategories autoPaintShops = IssuingCardSpendingLimitCategories._('auto_paint_shops');
+
+static const IssuingCardSpendingLimitCategories autoServiceShops = IssuingCardSpendingLimitCategories._('auto_service_shops');
+
+static const IssuingCardSpendingLimitCategories automatedCashDisburse = IssuingCardSpendingLimitCategories._('automated_cash_disburse');
+
+static const IssuingCardSpendingLimitCategories automatedFuelDispensers = IssuingCardSpendingLimitCategories._('automated_fuel_dispensers');
+
+static const IssuingCardSpendingLimitCategories automobileAssociations = IssuingCardSpendingLimitCategories._('automobile_associations');
+
+static const IssuingCardSpendingLimitCategories automotivePartsAndAccessoriesStores = IssuingCardSpendingLimitCategories._('automotive_parts_and_accessories_stores');
+
+static const IssuingCardSpendingLimitCategories automotiveTireStores = IssuingCardSpendingLimitCategories._('automotive_tire_stores');
+
+static const IssuingCardSpendingLimitCategories bailAndBondPayments = IssuingCardSpendingLimitCategories._('bail_and_bond_payments');
+
+static const IssuingCardSpendingLimitCategories bakeries = IssuingCardSpendingLimitCategories._('bakeries');
+
+static const IssuingCardSpendingLimitCategories bandsOrchestras = IssuingCardSpendingLimitCategories._('bands_orchestras');
+
+static const IssuingCardSpendingLimitCategories barberAndBeautyShops = IssuingCardSpendingLimitCategories._('barber_and_beauty_shops');
+
+static const IssuingCardSpendingLimitCategories bettingCasinoGambling = IssuingCardSpendingLimitCategories._('betting_casino_gambling');
+
+static const IssuingCardSpendingLimitCategories bicycleShops = IssuingCardSpendingLimitCategories._('bicycle_shops');
+
+static const IssuingCardSpendingLimitCategories billiardPoolEstablishments = IssuingCardSpendingLimitCategories._('billiard_pool_establishments');
+
+static const IssuingCardSpendingLimitCategories boatDealers = IssuingCardSpendingLimitCategories._('boat_dealers');
+
+static const IssuingCardSpendingLimitCategories boatRentalsAndLeases = IssuingCardSpendingLimitCategories._('boat_rentals_and_leases');
+
+static const IssuingCardSpendingLimitCategories bookStores = IssuingCardSpendingLimitCategories._('book_stores');
+
+static const IssuingCardSpendingLimitCategories booksPeriodicalsAndNewspapers = IssuingCardSpendingLimitCategories._('books_periodicals_and_newspapers');
+
+static const IssuingCardSpendingLimitCategories bowlingAlleys = IssuingCardSpendingLimitCategories._('bowling_alleys');
+
+static const IssuingCardSpendingLimitCategories busLines = IssuingCardSpendingLimitCategories._('bus_lines');
+
+static const IssuingCardSpendingLimitCategories businessSecretarialSchools = IssuingCardSpendingLimitCategories._('business_secretarial_schools');
+
+static const IssuingCardSpendingLimitCategories buyingShoppingServices = IssuingCardSpendingLimitCategories._('buying_shopping_services');
+
+static const IssuingCardSpendingLimitCategories cableSatelliteAndOtherPayTelevisionAndRadio = IssuingCardSpendingLimitCategories._('cable_satellite_and_other_pay_television_and_radio');
+
+static const IssuingCardSpendingLimitCategories cameraAndPhotographicSupplyStores = IssuingCardSpendingLimitCategories._('camera_and_photographic_supply_stores');
+
+static const IssuingCardSpendingLimitCategories candyNutAndConfectioneryStores = IssuingCardSpendingLimitCategories._('candy_nut_and_confectionery_stores');
+
+static const IssuingCardSpendingLimitCategories carAndTruckDealersNewUsed = IssuingCardSpendingLimitCategories._('car_and_truck_dealers_new_used');
+
+static const IssuingCardSpendingLimitCategories carAndTruckDealersUsedOnly = IssuingCardSpendingLimitCategories._('car_and_truck_dealers_used_only');
+
+static const IssuingCardSpendingLimitCategories carRentalAgencies = IssuingCardSpendingLimitCategories._('car_rental_agencies');
+
+static const IssuingCardSpendingLimitCategories carWashes = IssuingCardSpendingLimitCategories._('car_washes');
+
+static const IssuingCardSpendingLimitCategories carpentryServices = IssuingCardSpendingLimitCategories._('carpentry_services');
+
+static const IssuingCardSpendingLimitCategories carpetUpholsteryCleaning = IssuingCardSpendingLimitCategories._('carpet_upholstery_cleaning');
+
+static const IssuingCardSpendingLimitCategories caterers = IssuingCardSpendingLimitCategories._('caterers');
+
+static const IssuingCardSpendingLimitCategories charitableAndSocialServiceOrganizationsFundraising = IssuingCardSpendingLimitCategories._('charitable_and_social_service_organizations_fundraising');
+
+static const IssuingCardSpendingLimitCategories chemicalsAndAlliedProducts = IssuingCardSpendingLimitCategories._('chemicals_and_allied_products');
+
+static const IssuingCardSpendingLimitCategories childCareServices = IssuingCardSpendingLimitCategories._('child_care_services');
+
+static const IssuingCardSpendingLimitCategories childrensAndInfantsWearStores = IssuingCardSpendingLimitCategories._('childrens_and_infants_wear_stores');
+
+static const IssuingCardSpendingLimitCategories chiropodistsPodiatrists = IssuingCardSpendingLimitCategories._('chiropodists_podiatrists');
+
+static const IssuingCardSpendingLimitCategories chiropractors = IssuingCardSpendingLimitCategories._('chiropractors');
+
+static const IssuingCardSpendingLimitCategories cigarStoresAndStands = IssuingCardSpendingLimitCategories._('cigar_stores_and_stands');
+
+static const IssuingCardSpendingLimitCategories civicSocialFraternalAssociations = IssuingCardSpendingLimitCategories._('civic_social_fraternal_associations');
+
+static const IssuingCardSpendingLimitCategories cleaningAndMaintenance = IssuingCardSpendingLimitCategories._('cleaning_and_maintenance');
+
+static const IssuingCardSpendingLimitCategories clothingRental = IssuingCardSpendingLimitCategories._('clothing_rental');
+
+static const IssuingCardSpendingLimitCategories collegesUniversities = IssuingCardSpendingLimitCategories._('colleges_universities');
+
+static const IssuingCardSpendingLimitCategories commercialEquipment = IssuingCardSpendingLimitCategories._('commercial_equipment');
+
+static const IssuingCardSpendingLimitCategories commercialFootwear = IssuingCardSpendingLimitCategories._('commercial_footwear');
+
+static const IssuingCardSpendingLimitCategories commercialPhotographyArtAndGraphics = IssuingCardSpendingLimitCategories._('commercial_photography_art_and_graphics');
+
+static const IssuingCardSpendingLimitCategories commuterTransportAndFerries = IssuingCardSpendingLimitCategories._('commuter_transport_and_ferries');
+
+static const IssuingCardSpendingLimitCategories computerNetworkServices = IssuingCardSpendingLimitCategories._('computer_network_services');
+
+static const IssuingCardSpendingLimitCategories computerProgramming = IssuingCardSpendingLimitCategories._('computer_programming');
+
+static const IssuingCardSpendingLimitCategories computerRepair = IssuingCardSpendingLimitCategories._('computer_repair');
+
+static const IssuingCardSpendingLimitCategories computerSoftwareStores = IssuingCardSpendingLimitCategories._('computer_software_stores');
+
+static const IssuingCardSpendingLimitCategories computersPeripheralsAndSoftware = IssuingCardSpendingLimitCategories._('computers_peripherals_and_software');
+
+static const IssuingCardSpendingLimitCategories concreteWorkServices = IssuingCardSpendingLimitCategories._('concrete_work_services');
+
+static const IssuingCardSpendingLimitCategories constructionMaterials = IssuingCardSpendingLimitCategories._('construction_materials');
+
+static const IssuingCardSpendingLimitCategories consultingPublicRelations = IssuingCardSpendingLimitCategories._('consulting_public_relations');
+
+static const IssuingCardSpendingLimitCategories correspondenceSchools = IssuingCardSpendingLimitCategories._('correspondence_schools');
+
+static const IssuingCardSpendingLimitCategories cosmeticStores = IssuingCardSpendingLimitCategories._('cosmetic_stores');
+
+static const IssuingCardSpendingLimitCategories counselingServices = IssuingCardSpendingLimitCategories._('counseling_services');
+
+static const IssuingCardSpendingLimitCategories countryClubs = IssuingCardSpendingLimitCategories._('country_clubs');
+
+static const IssuingCardSpendingLimitCategories courierServices = IssuingCardSpendingLimitCategories._('courier_services');
+
+static const IssuingCardSpendingLimitCategories courtCosts = IssuingCardSpendingLimitCategories._('court_costs');
+
+static const IssuingCardSpendingLimitCategories creditReportingAgencies = IssuingCardSpendingLimitCategories._('credit_reporting_agencies');
+
+static const IssuingCardSpendingLimitCategories cruiseLines = IssuingCardSpendingLimitCategories._('cruise_lines');
+
+static const IssuingCardSpendingLimitCategories dairyProductsStores = IssuingCardSpendingLimitCategories._('dairy_products_stores');
+
+static const IssuingCardSpendingLimitCategories danceHallStudiosSchools = IssuingCardSpendingLimitCategories._('dance_hall_studios_schools');
+
+static const IssuingCardSpendingLimitCategories datingEscortServices = IssuingCardSpendingLimitCategories._('dating_escort_services');
+
+static const IssuingCardSpendingLimitCategories dentistsOrthodontists = IssuingCardSpendingLimitCategories._('dentists_orthodontists');
+
+static const IssuingCardSpendingLimitCategories departmentStores = IssuingCardSpendingLimitCategories._('department_stores');
+
+static const IssuingCardSpendingLimitCategories detectiveAgencies = IssuingCardSpendingLimitCategories._('detective_agencies');
+
+static const IssuingCardSpendingLimitCategories digitalGoodsApplications = IssuingCardSpendingLimitCategories._('digital_goods_applications');
+
+static const IssuingCardSpendingLimitCategories digitalGoodsGames = IssuingCardSpendingLimitCategories._('digital_goods_games');
+
+static const IssuingCardSpendingLimitCategories digitalGoodsLargeVolume = IssuingCardSpendingLimitCategories._('digital_goods_large_volume');
+
+static const IssuingCardSpendingLimitCategories digitalGoodsMedia = IssuingCardSpendingLimitCategories._('digital_goods_media');
+
+static const IssuingCardSpendingLimitCategories directMarketingCatalogMerchant = IssuingCardSpendingLimitCategories._('direct_marketing_catalog_merchant');
+
+static const IssuingCardSpendingLimitCategories directMarketingCombinationCatalogAndRetailMerchant = IssuingCardSpendingLimitCategories._('direct_marketing_combination_catalog_and_retail_merchant');
+
+static const IssuingCardSpendingLimitCategories directMarketingInboundTelemarketing = IssuingCardSpendingLimitCategories._('direct_marketing_inbound_telemarketing');
+
+static const IssuingCardSpendingLimitCategories directMarketingInsuranceServices = IssuingCardSpendingLimitCategories._('direct_marketing_insurance_services');
+
+static const IssuingCardSpendingLimitCategories directMarketingOther = IssuingCardSpendingLimitCategories._('direct_marketing_other');
+
+static const IssuingCardSpendingLimitCategories directMarketingOutboundTelemarketing = IssuingCardSpendingLimitCategories._('direct_marketing_outbound_telemarketing');
+
+static const IssuingCardSpendingLimitCategories directMarketingSubscription = IssuingCardSpendingLimitCategories._('direct_marketing_subscription');
+
+static const IssuingCardSpendingLimitCategories directMarketingTravel = IssuingCardSpendingLimitCategories._('direct_marketing_travel');
+
+static const IssuingCardSpendingLimitCategories discountStores = IssuingCardSpendingLimitCategories._('discount_stores');
+
+static const IssuingCardSpendingLimitCategories doctors = IssuingCardSpendingLimitCategories._('doctors');
+
+static const IssuingCardSpendingLimitCategories doorToDoorSales = IssuingCardSpendingLimitCategories._('door_to_door_sales');
+
+static const IssuingCardSpendingLimitCategories draperyWindowCoveringAndUpholsteryStores = IssuingCardSpendingLimitCategories._('drapery_window_covering_and_upholstery_stores');
+
+static const IssuingCardSpendingLimitCategories drinkingPlaces = IssuingCardSpendingLimitCategories._('drinking_places');
+
+static const IssuingCardSpendingLimitCategories drugStoresAndPharmacies = IssuingCardSpendingLimitCategories._('drug_stores_and_pharmacies');
+
+static const IssuingCardSpendingLimitCategories drugsDrugProprietariesAndDruggistSundries = IssuingCardSpendingLimitCategories._('drugs_drug_proprietaries_and_druggist_sundries');
+
+static const IssuingCardSpendingLimitCategories dryCleaners = IssuingCardSpendingLimitCategories._('dry_cleaners');
+
+static const IssuingCardSpendingLimitCategories durableGoods = IssuingCardSpendingLimitCategories._('durable_goods');
+
+static const IssuingCardSpendingLimitCategories dutyFreeStores = IssuingCardSpendingLimitCategories._('duty_free_stores');
+
+static const IssuingCardSpendingLimitCategories eatingPlacesRestaurants = IssuingCardSpendingLimitCategories._('eating_places_restaurants');
+
+static const IssuingCardSpendingLimitCategories educationalServices = IssuingCardSpendingLimitCategories._('educational_services');
+
+static const IssuingCardSpendingLimitCategories electricRazorStores = IssuingCardSpendingLimitCategories._('electric_razor_stores');
+
+static const IssuingCardSpendingLimitCategories electricVehicleCharging = IssuingCardSpendingLimitCategories._('electric_vehicle_charging');
+
+static const IssuingCardSpendingLimitCategories electricalPartsAndEquipment = IssuingCardSpendingLimitCategories._('electrical_parts_and_equipment');
+
+static const IssuingCardSpendingLimitCategories electricalServices = IssuingCardSpendingLimitCategories._('electrical_services');
+
+static const IssuingCardSpendingLimitCategories electronicsRepairShops = IssuingCardSpendingLimitCategories._('electronics_repair_shops');
+
+static const IssuingCardSpendingLimitCategories electronicsStores = IssuingCardSpendingLimitCategories._('electronics_stores');
+
+static const IssuingCardSpendingLimitCategories elementarySecondarySchools = IssuingCardSpendingLimitCategories._('elementary_secondary_schools');
+
+static const IssuingCardSpendingLimitCategories emergencyServicesGcasVisaUseOnly = IssuingCardSpendingLimitCategories._('emergency_services_gcas_visa_use_only');
+
+static const IssuingCardSpendingLimitCategories employmentTempAgencies = IssuingCardSpendingLimitCategories._('employment_temp_agencies');
+
+static const IssuingCardSpendingLimitCategories equipmentRental = IssuingCardSpendingLimitCategories._('equipment_rental');
+
+static const IssuingCardSpendingLimitCategories exterminatingServices = IssuingCardSpendingLimitCategories._('exterminating_services');
+
+static const IssuingCardSpendingLimitCategories familyClothingStores = IssuingCardSpendingLimitCategories._('family_clothing_stores');
+
+static const IssuingCardSpendingLimitCategories fastFoodRestaurants = IssuingCardSpendingLimitCategories._('fast_food_restaurants');
+
+static const IssuingCardSpendingLimitCategories financialInstitutions = IssuingCardSpendingLimitCategories._('financial_institutions');
+
+static const IssuingCardSpendingLimitCategories finesGovernmentAdministrativeEntities = IssuingCardSpendingLimitCategories._('fines_government_administrative_entities');
+
+static const IssuingCardSpendingLimitCategories fireplaceFireplaceScreensAndAccessoriesStores = IssuingCardSpendingLimitCategories._('fireplace_fireplace_screens_and_accessories_stores');
+
+static const IssuingCardSpendingLimitCategories floorCoveringStores = IssuingCardSpendingLimitCategories._('floor_covering_stores');
+
+static const IssuingCardSpendingLimitCategories florists = IssuingCardSpendingLimitCategories._('florists');
+
+static const IssuingCardSpendingLimitCategories floristsSuppliesNurseryStockAndFlowers = IssuingCardSpendingLimitCategories._('florists_supplies_nursery_stock_and_flowers');
+
+static const IssuingCardSpendingLimitCategories freezerAndLockerMeatProvisioners = IssuingCardSpendingLimitCategories._('freezer_and_locker_meat_provisioners');
+
+static const IssuingCardSpendingLimitCategories fuelDealersNonAutomotive = IssuingCardSpendingLimitCategories._('fuel_dealers_non_automotive');
+
+static const IssuingCardSpendingLimitCategories funeralServicesCrematories = IssuingCardSpendingLimitCategories._('funeral_services_crematories');
+
+static const IssuingCardSpendingLimitCategories furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances = IssuingCardSpendingLimitCategories._('furniture_home_furnishings_and_equipment_stores_except_appliances');
+
+static const IssuingCardSpendingLimitCategories furnitureRepairRefinishing = IssuingCardSpendingLimitCategories._('furniture_repair_refinishing');
+
+static const IssuingCardSpendingLimitCategories furriersAndFurShops = IssuingCardSpendingLimitCategories._('furriers_and_fur_shops');
+
+static const IssuingCardSpendingLimitCategories generalServices = IssuingCardSpendingLimitCategories._('general_services');
+
+static const IssuingCardSpendingLimitCategories giftCardNoveltyAndSouvenirShops = IssuingCardSpendingLimitCategories._('gift_card_novelty_and_souvenir_shops');
+
+static const IssuingCardSpendingLimitCategories glassPaintAndWallpaperStores = IssuingCardSpendingLimitCategories._('glass_paint_and_wallpaper_stores');
+
+static const IssuingCardSpendingLimitCategories glasswareCrystalStores = IssuingCardSpendingLimitCategories._('glassware_crystal_stores');
+
+static const IssuingCardSpendingLimitCategories golfCoursesPublic = IssuingCardSpendingLimitCategories._('golf_courses_public');
+
+static const IssuingCardSpendingLimitCategories governmentLicensedHorseDogRacingUsRegionOnly = IssuingCardSpendingLimitCategories._('government_licensed_horse_dog_racing_us_region_only');
+
+static const IssuingCardSpendingLimitCategories governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly = IssuingCardSpendingLimitCategories._('government_licensed_online_casions_online_gambling_us_region_only');
+
+static const IssuingCardSpendingLimitCategories governmentOwnedLotteriesNonUsRegion = IssuingCardSpendingLimitCategories._('government_owned_lotteries_non_us_region');
+
+static const IssuingCardSpendingLimitCategories governmentOwnedLotteriesUsRegionOnly = IssuingCardSpendingLimitCategories._('government_owned_lotteries_us_region_only');
+
+static const IssuingCardSpendingLimitCategories governmentServices = IssuingCardSpendingLimitCategories._('government_services');
+
+static const IssuingCardSpendingLimitCategories groceryStoresSupermarkets = IssuingCardSpendingLimitCategories._('grocery_stores_supermarkets');
+
+static const IssuingCardSpendingLimitCategories hardwareEquipmentAndSupplies = IssuingCardSpendingLimitCategories._('hardware_equipment_and_supplies');
+
+static const IssuingCardSpendingLimitCategories hardwareStores = IssuingCardSpendingLimitCategories._('hardware_stores');
+
+static const IssuingCardSpendingLimitCategories healthAndBeautySpas = IssuingCardSpendingLimitCategories._('health_and_beauty_spas');
+
+static const IssuingCardSpendingLimitCategories hearingAidsSalesAndSupplies = IssuingCardSpendingLimitCategories._('hearing_aids_sales_and_supplies');
+
+static const IssuingCardSpendingLimitCategories heatingPlumbingAC = IssuingCardSpendingLimitCategories._('heating_plumbing_a_c');
+
+static const IssuingCardSpendingLimitCategories hobbyToyAndGameShops = IssuingCardSpendingLimitCategories._('hobby_toy_and_game_shops');
+
+static const IssuingCardSpendingLimitCategories homeSupplyWarehouseStores = IssuingCardSpendingLimitCategories._('home_supply_warehouse_stores');
+
+static const IssuingCardSpendingLimitCategories hospitals = IssuingCardSpendingLimitCategories._('hospitals');
+
+static const IssuingCardSpendingLimitCategories hotelsMotelsAndResorts = IssuingCardSpendingLimitCategories._('hotels_motels_and_resorts');
+
+static const IssuingCardSpendingLimitCategories householdApplianceStores = IssuingCardSpendingLimitCategories._('household_appliance_stores');
+
+static const IssuingCardSpendingLimitCategories industrialSupplies = IssuingCardSpendingLimitCategories._('industrial_supplies');
+
+static const IssuingCardSpendingLimitCategories informationRetrievalServices = IssuingCardSpendingLimitCategories._('information_retrieval_services');
+
+static const IssuingCardSpendingLimitCategories insuranceDefault = IssuingCardSpendingLimitCategories._('insurance_default');
+
+static const IssuingCardSpendingLimitCategories insuranceUnderwritingPremiums = IssuingCardSpendingLimitCategories._('insurance_underwriting_premiums');
+
+static const IssuingCardSpendingLimitCategories intraCompanyPurchases = IssuingCardSpendingLimitCategories._('intra_company_purchases');
+
+static const IssuingCardSpendingLimitCategories jewelryStoresWatchesClocksAndSilverwareStores = IssuingCardSpendingLimitCategories._('jewelry_stores_watches_clocks_and_silverware_stores');
+
+static const IssuingCardSpendingLimitCategories landscapingServices = IssuingCardSpendingLimitCategories._('landscaping_services');
+
+static const IssuingCardSpendingLimitCategories laundries = IssuingCardSpendingLimitCategories._('laundries');
+
+static const IssuingCardSpendingLimitCategories laundryCleaningServices = IssuingCardSpendingLimitCategories._('laundry_cleaning_services');
+
+static const IssuingCardSpendingLimitCategories legalServicesAttorneys = IssuingCardSpendingLimitCategories._('legal_services_attorneys');
+
+static const IssuingCardSpendingLimitCategories luggageAndLeatherGoodsStores = IssuingCardSpendingLimitCategories._('luggage_and_leather_goods_stores');
+
+static const IssuingCardSpendingLimitCategories lumberBuildingMaterialsStores = IssuingCardSpendingLimitCategories._('lumber_building_materials_stores');
+
+static const IssuingCardSpendingLimitCategories manualCashDisburse = IssuingCardSpendingLimitCategories._('manual_cash_disburse');
+
+static const IssuingCardSpendingLimitCategories marinasServiceAndSupplies = IssuingCardSpendingLimitCategories._('marinas_service_and_supplies');
+
+static const IssuingCardSpendingLimitCategories marketplaces = IssuingCardSpendingLimitCategories._('marketplaces');
+
+static const IssuingCardSpendingLimitCategories masonryStoneworkAndPlaster = IssuingCardSpendingLimitCategories._('masonry_stonework_and_plaster');
+
+static const IssuingCardSpendingLimitCategories massageParlors = IssuingCardSpendingLimitCategories._('massage_parlors');
+
+static const IssuingCardSpendingLimitCategories medicalAndDentalLabs = IssuingCardSpendingLimitCategories._('medical_and_dental_labs');
+
+static const IssuingCardSpendingLimitCategories medicalDentalOphthalmicAndHospitalEquipmentAndSupplies = IssuingCardSpendingLimitCategories._('medical_dental_ophthalmic_and_hospital_equipment_and_supplies');
+
+static const IssuingCardSpendingLimitCategories medicalServices = IssuingCardSpendingLimitCategories._('medical_services');
+
+static const IssuingCardSpendingLimitCategories membershipOrganizations = IssuingCardSpendingLimitCategories._('membership_organizations');
+
+static const IssuingCardSpendingLimitCategories mensAndBoysClothingAndAccessoriesStores = IssuingCardSpendingLimitCategories._('mens_and_boys_clothing_and_accessories_stores');
+
+static const IssuingCardSpendingLimitCategories mensWomensClothingStores = IssuingCardSpendingLimitCategories._('mens_womens_clothing_stores');
+
+static const IssuingCardSpendingLimitCategories metalServiceCenters = IssuingCardSpendingLimitCategories._('metal_service_centers');
+
+static const IssuingCardSpendingLimitCategories miscellaneous = IssuingCardSpendingLimitCategories._('miscellaneous');
+
+static const IssuingCardSpendingLimitCategories miscellaneousApparelAndAccessoryShops = IssuingCardSpendingLimitCategories._('miscellaneous_apparel_and_accessory_shops');
+
+static const IssuingCardSpendingLimitCategories miscellaneousAutoDealers = IssuingCardSpendingLimitCategories._('miscellaneous_auto_dealers');
+
+static const IssuingCardSpendingLimitCategories miscellaneousBusinessServices = IssuingCardSpendingLimitCategories._('miscellaneous_business_services');
+
+static const IssuingCardSpendingLimitCategories miscellaneousFoodStores = IssuingCardSpendingLimitCategories._('miscellaneous_food_stores');
+
+static const IssuingCardSpendingLimitCategories miscellaneousGeneralMerchandise = IssuingCardSpendingLimitCategories._('miscellaneous_general_merchandise');
+
+static const IssuingCardSpendingLimitCategories miscellaneousGeneralServices = IssuingCardSpendingLimitCategories._('miscellaneous_general_services');
+
+static const IssuingCardSpendingLimitCategories miscellaneousHomeFurnishingSpecialtyStores = IssuingCardSpendingLimitCategories._('miscellaneous_home_furnishing_specialty_stores');
+
+static const IssuingCardSpendingLimitCategories miscellaneousPublishingAndPrinting = IssuingCardSpendingLimitCategories._('miscellaneous_publishing_and_printing');
+
+static const IssuingCardSpendingLimitCategories miscellaneousRecreationServices = IssuingCardSpendingLimitCategories._('miscellaneous_recreation_services');
+
+static const IssuingCardSpendingLimitCategories miscellaneousRepairShops = IssuingCardSpendingLimitCategories._('miscellaneous_repair_shops');
+
+static const IssuingCardSpendingLimitCategories miscellaneousSpecialtyRetail = IssuingCardSpendingLimitCategories._('miscellaneous_specialty_retail');
+
+static const IssuingCardSpendingLimitCategories mobileHomeDealers = IssuingCardSpendingLimitCategories._('mobile_home_dealers');
+
+static const IssuingCardSpendingLimitCategories motionPictureTheaters = IssuingCardSpendingLimitCategories._('motion_picture_theaters');
+
+static const IssuingCardSpendingLimitCategories motorFreightCarriersAndTrucking = IssuingCardSpendingLimitCategories._('motor_freight_carriers_and_trucking');
+
+static const IssuingCardSpendingLimitCategories motorHomesDealers = IssuingCardSpendingLimitCategories._('motor_homes_dealers');
+
+static const IssuingCardSpendingLimitCategories motorVehicleSuppliesAndNewParts = IssuingCardSpendingLimitCategories._('motor_vehicle_supplies_and_new_parts');
+
+static const IssuingCardSpendingLimitCategories motorcycleShopsAndDealers = IssuingCardSpendingLimitCategories._('motorcycle_shops_and_dealers');
+
+static const IssuingCardSpendingLimitCategories motorcycleShopsDealers = IssuingCardSpendingLimitCategories._('motorcycle_shops_dealers');
+
+static const IssuingCardSpendingLimitCategories musicStoresMusicalInstrumentsPianosAndSheetMusic = IssuingCardSpendingLimitCategories._('music_stores_musical_instruments_pianos_and_sheet_music');
+
+static const IssuingCardSpendingLimitCategories newsDealersAndNewsstands = IssuingCardSpendingLimitCategories._('news_dealers_and_newsstands');
+
+static const IssuingCardSpendingLimitCategories nonFiMoneyOrders = IssuingCardSpendingLimitCategories._('non_fi_money_orders');
+
+static const IssuingCardSpendingLimitCategories nonFiStoredValueCardPurchaseLoad = IssuingCardSpendingLimitCategories._('non_fi_stored_value_card_purchase_load');
+
+static const IssuingCardSpendingLimitCategories nondurableGoods = IssuingCardSpendingLimitCategories._('nondurable_goods');
+
+static const IssuingCardSpendingLimitCategories nurseriesLawnAndGardenSupplyStores = IssuingCardSpendingLimitCategories._('nurseries_lawn_and_garden_supply_stores');
+
+static const IssuingCardSpendingLimitCategories nursingPersonalCare = IssuingCardSpendingLimitCategories._('nursing_personal_care');
+
+static const IssuingCardSpendingLimitCategories officeAndCommercialFurniture = IssuingCardSpendingLimitCategories._('office_and_commercial_furniture');
+
+static const IssuingCardSpendingLimitCategories opticiansEyeglasses = IssuingCardSpendingLimitCategories._('opticians_eyeglasses');
+
+static const IssuingCardSpendingLimitCategories optometristsOphthalmologist = IssuingCardSpendingLimitCategories._('optometrists_ophthalmologist');
+
+static const IssuingCardSpendingLimitCategories orthopedicGoodsProstheticDevices = IssuingCardSpendingLimitCategories._('orthopedic_goods_prosthetic_devices');
+
+static const IssuingCardSpendingLimitCategories osteopaths = IssuingCardSpendingLimitCategories._('osteopaths');
+
+static const IssuingCardSpendingLimitCategories packageStoresBeerWineAndLiquor = IssuingCardSpendingLimitCategories._('package_stores_beer_wine_and_liquor');
+
+static const IssuingCardSpendingLimitCategories paintsVarnishesAndSupplies = IssuingCardSpendingLimitCategories._('paints_varnishes_and_supplies');
+
+static const IssuingCardSpendingLimitCategories parkingLotsGarages = IssuingCardSpendingLimitCategories._('parking_lots_garages');
+
+static const IssuingCardSpendingLimitCategories passengerRailways = IssuingCardSpendingLimitCategories._('passenger_railways');
+
+static const IssuingCardSpendingLimitCategories pawnShops = IssuingCardSpendingLimitCategories._('pawn_shops');
+
+static const IssuingCardSpendingLimitCategories petShopsPetFoodAndSupplies = IssuingCardSpendingLimitCategories._('pet_shops_pet_food_and_supplies');
+
+static const IssuingCardSpendingLimitCategories petroleumAndPetroleumProducts = IssuingCardSpendingLimitCategories._('petroleum_and_petroleum_products');
+
+static const IssuingCardSpendingLimitCategories photoDeveloping = IssuingCardSpendingLimitCategories._('photo_developing');
+
+static const IssuingCardSpendingLimitCategories photographicPhotocopyMicrofilmEquipmentAndSupplies = IssuingCardSpendingLimitCategories._('photographic_photocopy_microfilm_equipment_and_supplies');
+
+static const IssuingCardSpendingLimitCategories photographicStudios = IssuingCardSpendingLimitCategories._('photographic_studios');
+
+static const IssuingCardSpendingLimitCategories pictureVideoProduction = IssuingCardSpendingLimitCategories._('picture_video_production');
+
+static const IssuingCardSpendingLimitCategories pieceGoodsNotionsAndOtherDryGoods = IssuingCardSpendingLimitCategories._('piece_goods_notions_and_other_dry_goods');
+
+static const IssuingCardSpendingLimitCategories plumbingHeatingEquipmentAndSupplies = IssuingCardSpendingLimitCategories._('plumbing_heating_equipment_and_supplies');
+
+static const IssuingCardSpendingLimitCategories politicalOrganizations = IssuingCardSpendingLimitCategories._('political_organizations');
+
+static const IssuingCardSpendingLimitCategories postalServicesGovernmentOnly = IssuingCardSpendingLimitCategories._('postal_services_government_only');
+
+static const IssuingCardSpendingLimitCategories preciousStonesAndMetalsWatchesAndJewelry = IssuingCardSpendingLimitCategories._('precious_stones_and_metals_watches_and_jewelry');
+
+static const IssuingCardSpendingLimitCategories professionalServices = IssuingCardSpendingLimitCategories._('professional_services');
+
+static const IssuingCardSpendingLimitCategories publicWarehousingAndStorage = IssuingCardSpendingLimitCategories._('public_warehousing_and_storage');
+
+static const IssuingCardSpendingLimitCategories quickCopyReproAndBlueprint = IssuingCardSpendingLimitCategories._('quick_copy_repro_and_blueprint');
+
+static const IssuingCardSpendingLimitCategories railroads = IssuingCardSpendingLimitCategories._('railroads');
+
+static const IssuingCardSpendingLimitCategories realEstateAgentsAndManagersRentals = IssuingCardSpendingLimitCategories._('real_estate_agents_and_managers_rentals');
+
+static const IssuingCardSpendingLimitCategories recordStores = IssuingCardSpendingLimitCategories._('record_stores');
+
+static const IssuingCardSpendingLimitCategories recreationalVehicleRentals = IssuingCardSpendingLimitCategories._('recreational_vehicle_rentals');
+
+static const IssuingCardSpendingLimitCategories religiousGoodsStores = IssuingCardSpendingLimitCategories._('religious_goods_stores');
+
+static const IssuingCardSpendingLimitCategories religiousOrganizations = IssuingCardSpendingLimitCategories._('religious_organizations');
+
+static const IssuingCardSpendingLimitCategories roofingSidingSheetMetal = IssuingCardSpendingLimitCategories._('roofing_siding_sheet_metal');
+
+static const IssuingCardSpendingLimitCategories secretarialSupportServices = IssuingCardSpendingLimitCategories._('secretarial_support_services');
+
+static const IssuingCardSpendingLimitCategories securityBrokersDealers = IssuingCardSpendingLimitCategories._('security_brokers_dealers');
+
+static const IssuingCardSpendingLimitCategories serviceStations = IssuingCardSpendingLimitCategories._('service_stations');
+
+static const IssuingCardSpendingLimitCategories sewingNeedleworkFabricAndPieceGoodsStores = IssuingCardSpendingLimitCategories._('sewing_needlework_fabric_and_piece_goods_stores');
+
+static const IssuingCardSpendingLimitCategories shoeRepairHatCleaning = IssuingCardSpendingLimitCategories._('shoe_repair_hat_cleaning');
+
+static const IssuingCardSpendingLimitCategories shoeStores = IssuingCardSpendingLimitCategories._('shoe_stores');
+
+static const IssuingCardSpendingLimitCategories smallApplianceRepair = IssuingCardSpendingLimitCategories._('small_appliance_repair');
+
+static const IssuingCardSpendingLimitCategories snowmobileDealers = IssuingCardSpendingLimitCategories._('snowmobile_dealers');
+
+static const IssuingCardSpendingLimitCategories specialTradeServices = IssuingCardSpendingLimitCategories._('special_trade_services');
+
+static const IssuingCardSpendingLimitCategories specialtyCleaning = IssuingCardSpendingLimitCategories._('specialty_cleaning');
+
+static const IssuingCardSpendingLimitCategories sportingGoodsStores = IssuingCardSpendingLimitCategories._('sporting_goods_stores');
+
+static const IssuingCardSpendingLimitCategories sportingRecreationCamps = IssuingCardSpendingLimitCategories._('sporting_recreation_camps');
+
+static const IssuingCardSpendingLimitCategories sportsAndRidingApparelStores = IssuingCardSpendingLimitCategories._('sports_and_riding_apparel_stores');
+
+static const IssuingCardSpendingLimitCategories sportsClubsFields = IssuingCardSpendingLimitCategories._('sports_clubs_fields');
+
+static const IssuingCardSpendingLimitCategories stampAndCoinStores = IssuingCardSpendingLimitCategories._('stamp_and_coin_stores');
+
+static const IssuingCardSpendingLimitCategories stationaryOfficeSuppliesPrintingAndWritingPaper = IssuingCardSpendingLimitCategories._('stationary_office_supplies_printing_and_writing_paper');
+
+static const IssuingCardSpendingLimitCategories stationeryStoresOfficeAndSchoolSupplyStores = IssuingCardSpendingLimitCategories._('stationery_stores_office_and_school_supply_stores');
+
+static const IssuingCardSpendingLimitCategories swimmingPoolsSales = IssuingCardSpendingLimitCategories._('swimming_pools_sales');
+
+static const IssuingCardSpendingLimitCategories tUiTravelGermany = IssuingCardSpendingLimitCategories._('t_ui_travel_germany');
+
+static const IssuingCardSpendingLimitCategories tailorsAlterations = IssuingCardSpendingLimitCategories._('tailors_alterations');
+
+static const IssuingCardSpendingLimitCategories taxPaymentsGovernmentAgencies = IssuingCardSpendingLimitCategories._('tax_payments_government_agencies');
+
+static const IssuingCardSpendingLimitCategories taxPreparationServices = IssuingCardSpendingLimitCategories._('tax_preparation_services');
+
+static const IssuingCardSpendingLimitCategories taxicabsLimousines = IssuingCardSpendingLimitCategories._('taxicabs_limousines');
+
+static const IssuingCardSpendingLimitCategories telecommunicationEquipmentAndTelephoneSales = IssuingCardSpendingLimitCategories._('telecommunication_equipment_and_telephone_sales');
+
+static const IssuingCardSpendingLimitCategories telecommunicationServices = IssuingCardSpendingLimitCategories._('telecommunication_services');
+
+static const IssuingCardSpendingLimitCategories telegraphServices = IssuingCardSpendingLimitCategories._('telegraph_services');
+
+static const IssuingCardSpendingLimitCategories tentAndAwningShops = IssuingCardSpendingLimitCategories._('tent_and_awning_shops');
+
+static const IssuingCardSpendingLimitCategories testingLaboratories = IssuingCardSpendingLimitCategories._('testing_laboratories');
+
+static const IssuingCardSpendingLimitCategories theatricalTicketAgencies = IssuingCardSpendingLimitCategories._('theatrical_ticket_agencies');
+
+static const IssuingCardSpendingLimitCategories timeshares = IssuingCardSpendingLimitCategories._('timeshares');
+
+static const IssuingCardSpendingLimitCategories tireRetreadingAndRepair = IssuingCardSpendingLimitCategories._('tire_retreading_and_repair');
+
+static const IssuingCardSpendingLimitCategories tollsBridgeFees = IssuingCardSpendingLimitCategories._('tolls_bridge_fees');
+
+static const IssuingCardSpendingLimitCategories touristAttractionsAndExhibits = IssuingCardSpendingLimitCategories._('tourist_attractions_and_exhibits');
+
+static const IssuingCardSpendingLimitCategories towingServices = IssuingCardSpendingLimitCategories._('towing_services');
+
+static const IssuingCardSpendingLimitCategories trailerParksCampgrounds = IssuingCardSpendingLimitCategories._('trailer_parks_campgrounds');
+
+static const IssuingCardSpendingLimitCategories transportationServices = IssuingCardSpendingLimitCategories._('transportation_services');
+
+static const IssuingCardSpendingLimitCategories travelAgenciesTourOperators = IssuingCardSpendingLimitCategories._('travel_agencies_tour_operators');
+
+static const IssuingCardSpendingLimitCategories truckStopIteration = IssuingCardSpendingLimitCategories._('truck_stop_iteration');
+
+static const IssuingCardSpendingLimitCategories truckUtilityTrailerRentals = IssuingCardSpendingLimitCategories._('truck_utility_trailer_rentals');
+
+static const IssuingCardSpendingLimitCategories typesettingPlateMakingAndRelatedServices = IssuingCardSpendingLimitCategories._('typesetting_plate_making_and_related_services');
+
+static const IssuingCardSpendingLimitCategories typewriterStores = IssuingCardSpendingLimitCategories._('typewriter_stores');
+
+static const IssuingCardSpendingLimitCategories uSFederalGovernmentAgenciesOrDepartments = IssuingCardSpendingLimitCategories._('u_s_federal_government_agencies_or_departments');
+
+static const IssuingCardSpendingLimitCategories uniformsCommercialClothing = IssuingCardSpendingLimitCategories._('uniforms_commercial_clothing');
+
+static const IssuingCardSpendingLimitCategories usedMerchandiseAndSecondhandStores = IssuingCardSpendingLimitCategories._('used_merchandise_and_secondhand_stores');
+
+static const IssuingCardSpendingLimitCategories utilities = IssuingCardSpendingLimitCategories._('utilities');
+
+static const IssuingCardSpendingLimitCategories varietyStores = IssuingCardSpendingLimitCategories._('variety_stores');
+
+static const IssuingCardSpendingLimitCategories veterinaryServices = IssuingCardSpendingLimitCategories._('veterinary_services');
+
+static const IssuingCardSpendingLimitCategories videoAmusementGameSupplies = IssuingCardSpendingLimitCategories._('video_amusement_game_supplies');
+
+static const IssuingCardSpendingLimitCategories videoGameArcades = IssuingCardSpendingLimitCategories._('video_game_arcades');
+
+static const IssuingCardSpendingLimitCategories videoTapeRentalStores = IssuingCardSpendingLimitCategories._('video_tape_rental_stores');
+
+static const IssuingCardSpendingLimitCategories vocationalTradeSchools = IssuingCardSpendingLimitCategories._('vocational_trade_schools');
+
+static const IssuingCardSpendingLimitCategories watchJewelryRepair = IssuingCardSpendingLimitCategories._('watch_jewelry_repair');
+
+static const IssuingCardSpendingLimitCategories weldingRepair = IssuingCardSpendingLimitCategories._('welding_repair');
+
+static const IssuingCardSpendingLimitCategories wholesaleClubs = IssuingCardSpendingLimitCategories._('wholesale_clubs');
+
+static const IssuingCardSpendingLimitCategories wigAndToupeeStores = IssuingCardSpendingLimitCategories._('wig_and_toupee_stores');
+
+static const IssuingCardSpendingLimitCategories wiresMoneyOrders = IssuingCardSpendingLimitCategories._('wires_money_orders');
+
+static const IssuingCardSpendingLimitCategories womensAccessoryAndSpecialtyShops = IssuingCardSpendingLimitCategories._('womens_accessory_and_specialty_shops');
+
+static const IssuingCardSpendingLimitCategories womensReadyToWearStores = IssuingCardSpendingLimitCategories._('womens_ready_to_wear_stores');
+
+static const IssuingCardSpendingLimitCategories wreckingAndSalvageYards = IssuingCardSpendingLimitCategories._('wrecking_and_salvage_yards');
+
+static const List<IssuingCardSpendingLimitCategories> values = [acRefrigerationRepair, accountingBookkeepingServices, advertisingServices, agriculturalCooperative, airlinesAirCarriers, airportsFlyingFields, ambulanceServices, amusementParksCarnivals, antiqueReproductions, antiqueShops, aquariums, architecturalSurveyingServices, artDealersAndGalleries, artistsSupplyAndCraftShops, autoAndHomeSupplyStores, autoBodyRepairShops, autoPaintShops, autoServiceShops, automatedCashDisburse, automatedFuelDispensers, automobileAssociations, automotivePartsAndAccessoriesStores, automotiveTireStores, bailAndBondPayments, bakeries, bandsOrchestras, barberAndBeautyShops, bettingCasinoGambling, bicycleShops, billiardPoolEstablishments, boatDealers, boatRentalsAndLeases, bookStores, booksPeriodicalsAndNewspapers, bowlingAlleys, busLines, businessSecretarialSchools, buyingShoppingServices, cableSatelliteAndOtherPayTelevisionAndRadio, cameraAndPhotographicSupplyStores, candyNutAndConfectioneryStores, carAndTruckDealersNewUsed, carAndTruckDealersUsedOnly, carRentalAgencies, carWashes, carpentryServices, carpetUpholsteryCleaning, caterers, charitableAndSocialServiceOrganizationsFundraising, chemicalsAndAlliedProducts, childCareServices, childrensAndInfantsWearStores, chiropodistsPodiatrists, chiropractors, cigarStoresAndStands, civicSocialFraternalAssociations, cleaningAndMaintenance, clothingRental, collegesUniversities, commercialEquipment, commercialFootwear, commercialPhotographyArtAndGraphics, commuterTransportAndFerries, computerNetworkServices, computerProgramming, computerRepair, computerSoftwareStores, computersPeripheralsAndSoftware, concreteWorkServices, constructionMaterials, consultingPublicRelations, correspondenceSchools, cosmeticStores, counselingServices, countryClubs, courierServices, courtCosts, creditReportingAgencies, cruiseLines, dairyProductsStores, danceHallStudiosSchools, datingEscortServices, dentistsOrthodontists, departmentStores, detectiveAgencies, digitalGoodsApplications, digitalGoodsGames, digitalGoodsLargeVolume, digitalGoodsMedia, directMarketingCatalogMerchant, directMarketingCombinationCatalogAndRetailMerchant, directMarketingInboundTelemarketing, directMarketingInsuranceServices, directMarketingOther, directMarketingOutboundTelemarketing, directMarketingSubscription, directMarketingTravel, discountStores, doctors, doorToDoorSales, draperyWindowCoveringAndUpholsteryStores, drinkingPlaces, drugStoresAndPharmacies, drugsDrugProprietariesAndDruggistSundries, dryCleaners, durableGoods, dutyFreeStores, eatingPlacesRestaurants, educationalServices, electricRazorStores, electricVehicleCharging, electricalPartsAndEquipment, electricalServices, electronicsRepairShops, electronicsStores, elementarySecondarySchools, emergencyServicesGcasVisaUseOnly, employmentTempAgencies, equipmentRental, exterminatingServices, familyClothingStores, fastFoodRestaurants, financialInstitutions, finesGovernmentAdministrativeEntities, fireplaceFireplaceScreensAndAccessoriesStores, floorCoveringStores, florists, floristsSuppliesNurseryStockAndFlowers, freezerAndLockerMeatProvisioners, fuelDealersNonAutomotive, funeralServicesCrematories, furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, furnitureRepairRefinishing, furriersAndFurShops, generalServices, giftCardNoveltyAndSouvenirShops, glassPaintAndWallpaperStores, glasswareCrystalStores, golfCoursesPublic, governmentLicensedHorseDogRacingUsRegionOnly, governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, governmentOwnedLotteriesNonUsRegion, governmentOwnedLotteriesUsRegionOnly, governmentServices, groceryStoresSupermarkets, hardwareEquipmentAndSupplies, hardwareStores, healthAndBeautySpas, hearingAidsSalesAndSupplies, heatingPlumbingAC, hobbyToyAndGameShops, homeSupplyWarehouseStores, hospitals, hotelsMotelsAndResorts, householdApplianceStores, industrialSupplies, informationRetrievalServices, insuranceDefault, insuranceUnderwritingPremiums, intraCompanyPurchases, jewelryStoresWatchesClocksAndSilverwareStores, landscapingServices, laundries, laundryCleaningServices, legalServicesAttorneys, luggageAndLeatherGoodsStores, lumberBuildingMaterialsStores, manualCashDisburse, marinasServiceAndSupplies, marketplaces, masonryStoneworkAndPlaster, massageParlors, medicalAndDentalLabs, medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, medicalServices, membershipOrganizations, mensAndBoysClothingAndAccessoriesStores, mensWomensClothingStores, metalServiceCenters, miscellaneous, miscellaneousApparelAndAccessoryShops, miscellaneousAutoDealers, miscellaneousBusinessServices, miscellaneousFoodStores, miscellaneousGeneralMerchandise, miscellaneousGeneralServices, miscellaneousHomeFurnishingSpecialtyStores, miscellaneousPublishingAndPrinting, miscellaneousRecreationServices, miscellaneousRepairShops, miscellaneousSpecialtyRetail, mobileHomeDealers, motionPictureTheaters, motorFreightCarriersAndTrucking, motorHomesDealers, motorVehicleSuppliesAndNewParts, motorcycleShopsAndDealers, motorcycleShopsDealers, musicStoresMusicalInstrumentsPianosAndSheetMusic, newsDealersAndNewsstands, nonFiMoneyOrders, nonFiStoredValueCardPurchaseLoad, nondurableGoods, nurseriesLawnAndGardenSupplyStores, nursingPersonalCare, officeAndCommercialFurniture, opticiansEyeglasses, optometristsOphthalmologist, orthopedicGoodsProstheticDevices, osteopaths, packageStoresBeerWineAndLiquor, paintsVarnishesAndSupplies, parkingLotsGarages, passengerRailways, pawnShops, petShopsPetFoodAndSupplies, petroleumAndPetroleumProducts, photoDeveloping, photographicPhotocopyMicrofilmEquipmentAndSupplies, photographicStudios, pictureVideoProduction, pieceGoodsNotionsAndOtherDryGoods, plumbingHeatingEquipmentAndSupplies, politicalOrganizations, postalServicesGovernmentOnly, preciousStonesAndMetalsWatchesAndJewelry, professionalServices, publicWarehousingAndStorage, quickCopyReproAndBlueprint, railroads, realEstateAgentsAndManagersRentals, recordStores, recreationalVehicleRentals, religiousGoodsStores, religiousOrganizations, roofingSidingSheetMetal, secretarialSupportServices, securityBrokersDealers, serviceStations, sewingNeedleworkFabricAndPieceGoodsStores, shoeRepairHatCleaning, shoeStores, smallApplianceRepair, snowmobileDealers, specialTradeServices, specialtyCleaning, sportingGoodsStores, sportingRecreationCamps, sportsAndRidingApparelStores, sportsClubsFields, stampAndCoinStores, stationaryOfficeSuppliesPrintingAndWritingPaper, stationeryStoresOfficeAndSchoolSupplyStores, swimmingPoolsSales, tUiTravelGermany, tailorsAlterations, taxPaymentsGovernmentAgencies, taxPreparationServices, taxicabsLimousines, telecommunicationEquipmentAndTelephoneSales, telecommunicationServices, telegraphServices, tentAndAwningShops, testingLaboratories, theatricalTicketAgencies, timeshares, tireRetreadingAndRepair, tollsBridgeFees, touristAttractionsAndExhibits, towingServices, trailerParksCampgrounds, transportationServices, travelAgenciesTourOperators, truckStopIteration, truckUtilityTrailerRentals, typesettingPlateMakingAndRelatedServices, typewriterStores, uSFederalGovernmentAgenciesOrDepartments, uniformsCommercialClothing, usedMerchandiseAndSecondhandStores, utilities, varietyStores, veterinaryServices, videoAmusementGameSupplies, videoGameArcades, videoTapeRentalStores, vocationalTradeSchools, watchJewelryRepair, weldingRepair, wholesaleClubs, wigAndToupeeStores, wiresMoneyOrders, womensAccessoryAndSpecialtyShops, womensReadyToWearStores, wreckingAndSalvageYards];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingCardSpendingLimitCategories && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingCardSpendingLimitCategories($value)'; } 
+ }
+/// Interval (or event) to which the amount applies.
+final class IssuingCardSpendingLimitInterval {const IssuingCardSpendingLimitInterval._(this.value);
+
+factory IssuingCardSpendingLimitInterval.fromJson(String json) { return switch (json) {
+  'all_time' => allTime,
+  'daily' => daily,
+  'monthly' => monthly,
+  'per_authorization' => perAuthorization,
+  'weekly' => weekly,
+  'yearly' => yearly,
+  _ => IssuingCardSpendingLimitInterval._(json),
+}; }
+
+static const IssuingCardSpendingLimitInterval allTime = IssuingCardSpendingLimitInterval._('all_time');
+
+static const IssuingCardSpendingLimitInterval daily = IssuingCardSpendingLimitInterval._('daily');
+
+static const IssuingCardSpendingLimitInterval monthly = IssuingCardSpendingLimitInterval._('monthly');
+
+static const IssuingCardSpendingLimitInterval perAuthorization = IssuingCardSpendingLimitInterval._('per_authorization');
+
+static const IssuingCardSpendingLimitInterval weekly = IssuingCardSpendingLimitInterval._('weekly');
+
+static const IssuingCardSpendingLimitInterval yearly = IssuingCardSpendingLimitInterval._('yearly');
+
+static const List<IssuingCardSpendingLimitInterval> values = [allTime, daily, monthly, perAuthorization, weekly, yearly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingCardSpendingLimitInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingCardSpendingLimitInterval($value)'; } 
+ }
+/// 
+final class IssuingCardSpendingLimit {const IssuingCardSpendingLimit({required this.amount, this.categories, required this.interval, });
+
+factory IssuingCardSpendingLimit.fromJson(Map<String, dynamic> json) { return IssuingCardSpendingLimit(
+  amount: (json['amount'] as num).toInt(),
+  categories: (json['categories'] as List<dynamic>?)?.map((e) => IssuingCardSpendingLimitCategories.fromJson(e as String)).toList(),
+  interval: IssuingCardSpendingLimitInterval.fromJson(json['interval'] as String),
+); }
+
+/// Maximum amount allowed to spend per interval. This amount is in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
+final int amount;
+
+/// Array of strings containing [categories](https://docs.stripe.com/api#issuing_authorization_object-merchant_data-category) this limit applies to. Omitting this field will apply the limit to all categories.
+final List<IssuingCardSpendingLimitCategories>? categories;
+
+/// Interval (or event) to which the amount applies.
+final IssuingCardSpendingLimitInterval interval;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
+  'interval': interval.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('interval'); } 
+IssuingCardSpendingLimit copyWith({int? amount, List<IssuingCardSpendingLimitCategories>? Function()? categories, IssuingCardSpendingLimitInterval? interval, }) { return IssuingCardSpendingLimit(
+  amount: amount ?? this.amount,
+  categories: categories != null ? categories() : this.categories,
+  interval: interval ?? this.interval,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingCardSpendingLimit &&
+          amount == other.amount &&
+          listEquals(categories, other.categories) &&
+          interval == other.interval; } 
+@override int get hashCode { return Object.hash(amount, Object.hashAll(categories ?? const []), interval); } 
+@override String toString() { return 'IssuingCardSpendingLimit(amount: $amount, categories: $categories, interval: $interval)'; } 
+ }

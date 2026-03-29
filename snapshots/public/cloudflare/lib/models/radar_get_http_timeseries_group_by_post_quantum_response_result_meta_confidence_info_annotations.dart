@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByPostQuantumResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

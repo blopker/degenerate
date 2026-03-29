@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_failed_request_metadata.dart';final class PostPaymentRecordsIdReportPaymentAttemptFailedRequest {const PostPaymentRecordsIdReportPaymentAttemptFailedRequest({this.expand, required this.failedAt, this.metadata, });
+
+factory PostPaymentRecordsIdReportPaymentAttemptFailedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptFailedRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  failedAt: (json['failed_at'] as num).toInt(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadataVariant2.fromJson(v as String),) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// When the reported payment failed. Measured in seconds since the Unix epoch.
+final int failedAt;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadata? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'failed_at': failedAt,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('failed_at') && json['failed_at'] is num; } 
+PostPaymentRecordsIdReportPaymentAttemptFailedRequest copyWith({List<String> Function()? expand, int? failedAt, PostPaymentRecordsIdReportPaymentAttemptFailedRequestMetadata Function()? metadata, }) { return PostPaymentRecordsIdReportPaymentAttemptFailedRequest(
+  expand: expand != null ? expand() : this.expand,
+  failedAt: failedAt ?? this.failedAt,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentRecordsIdReportPaymentAttemptFailedRequest &&
+          listEquals(expand, other.expand) &&
+          failedAt == other.failedAt &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), failedAt, metadata); } 
+@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptFailedRequest(expand: $expand, failedAt: $failedAt, metadata: $metadata)'; } 
+ }

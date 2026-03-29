@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class InvoiceSettingCustomerRenderingOptions {const InvoiceSettingCustomerRenderingOptions({this.amountTaxDisplay, this.template, });
+
+factory InvoiceSettingCustomerRenderingOptions.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomerRenderingOptions(
+  amountTaxDisplay: json['amount_tax_display'] as String?,
+  template: json['template'] as String?,
+); }
+
+/// How line-item prices and amounts will be displayed with respect to tax on invoice PDFs.
+final String? amountTaxDisplay;
+
+/// ID of the invoice rendering template to be used for this customer's invoices. If set, the template will be used on all invoices for this customer unless a template is set directly on the invoice.
+final String? template;
+
+Map<String, dynamic> toJson() { return {
+  'amount_tax_display': ?amountTaxDisplay,
+  'template': ?template,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoiceSettingCustomerRenderingOptions copyWith({String? Function()? amountTaxDisplay, String? Function()? template, }) { return InvoiceSettingCustomerRenderingOptions(
+  amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
+  template: template != null ? template() : this.template,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoiceSettingCustomerRenderingOptions &&
+          amountTaxDisplay == other.amountTaxDisplay &&
+          template == other.template; } 
+@override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
+@override String toString() { return 'InvoiceSettingCustomerRenderingOptions(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
+ }

@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SecurityCenterIssueType {const SecurityCenterIssueType._(this.value);
+
+factory SecurityCenterIssueType.fromJson(String json) { return switch (json) {
+  'compliance_violation' => complianceViolation,
+  'email_security' => emailSecurity,
+  'exposed_infrastructure' => exposedInfrastructure,
+  'insecure_configuration' => insecureConfiguration,
+  'weak_authentication' => weakAuthentication,
+  'configuration_suggestion' => configurationSuggestion,
+  _ => SecurityCenterIssueType._(json),
+}; }
+
+static const SecurityCenterIssueType complianceViolation = SecurityCenterIssueType._('compliance_violation');
+
+static const SecurityCenterIssueType emailSecurity = SecurityCenterIssueType._('email_security');
+
+static const SecurityCenterIssueType exposedInfrastructure = SecurityCenterIssueType._('exposed_infrastructure');
+
+static const SecurityCenterIssueType insecureConfiguration = SecurityCenterIssueType._('insecure_configuration');
+
+static const SecurityCenterIssueType weakAuthentication = SecurityCenterIssueType._('weak_authentication');
+
+static const SecurityCenterIssueType configurationSuggestion = SecurityCenterIssueType._('configuration_suggestion');
+
+static const List<SecurityCenterIssueType> values = [complianceViolation, emailSecurity, exposedInfrastructure, insecureConfiguration, weakAuthentication, configurationSuggestion];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecurityCenterIssueType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecurityCenterIssueType($value)'; } 
+ }

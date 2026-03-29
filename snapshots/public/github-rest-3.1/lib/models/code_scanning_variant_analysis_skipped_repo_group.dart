@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_repository.dart';final class CodeScanningVariantAnalysisSkippedRepoGroup {const CodeScanningVariantAnalysisSkippedRepoGroup({required this.repositoryCount, required this.repositories, });
+
+factory CodeScanningVariantAnalysisSkippedRepoGroup.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysisSkippedRepoGroup(
+  repositoryCount: (json['repository_count'] as num).toInt(),
+  repositories: (json['repositories'] as List<dynamic>).map((e) => CodeScanningVariantAnalysisRepository.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The total number of repositories that were skipped for this reason.
+final int repositoryCount;
+
+/// A list of repositories that were skipped. This list may not include all repositories that were skipped. This is only available when the repository was found and the user has access to it.
+final List<CodeScanningVariantAnalysisRepository> repositories;
+
+Map<String, dynamic> toJson() { return {
+  'repository_count': repositoryCount,
+  'repositories': repositories.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('repository_count') && json['repository_count'] is num &&
+      json.containsKey('repositories'); } 
+CodeScanningVariantAnalysisSkippedRepoGroup copyWith({int? repositoryCount, List<CodeScanningVariantAnalysisRepository>? repositories, }) { return CodeScanningVariantAnalysisSkippedRepoGroup(
+  repositoryCount: repositoryCount ?? this.repositoryCount,
+  repositories: repositories ?? this.repositories,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeScanningVariantAnalysisSkippedRepoGroup &&
+          repositoryCount == other.repositoryCount &&
+          listEquals(repositories, other.repositories); } 
+@override int get hashCode { return Object.hash(repositoryCount, Object.hashAll(repositories)); } 
+@override String toString() { return 'CodeScanningVariantAnalysisSkippedRepoGroup(repositoryCount: $repositoryCount, repositories: $repositories)'; } 
+ }

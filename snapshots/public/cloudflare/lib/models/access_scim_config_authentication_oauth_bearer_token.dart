@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The authentication scheme to use when making SCIM requests to this application.
+final class AccessScimConfigAuthenticationOauthBearerTokenScheme {const AccessScimConfigAuthenticationOauthBearerTokenScheme._(this.value);
+
+factory AccessScimConfigAuthenticationOauthBearerTokenScheme.fromJson(String json) { return switch (json) {
+  'oauthbearertoken' => oauthbearertoken,
+  _ => AccessScimConfigAuthenticationOauthBearerTokenScheme._(json),
+}; }
+
+static const AccessScimConfigAuthenticationOauthBearerTokenScheme oauthbearertoken = AccessScimConfigAuthenticationOauthBearerTokenScheme._('oauthbearertoken');
+
+static const List<AccessScimConfigAuthenticationOauthBearerTokenScheme> values = [oauthbearertoken];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccessScimConfigAuthenticationOauthBearerTokenScheme && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AccessScimConfigAuthenticationOauthBearerTokenScheme($value)'; } 
+ }
+/// Attributes for configuring OAuth Bearer Token authentication scheme for SCIM provisioning to an application.
+final class AccessScimConfigAuthenticationOauthBearerToken {const AccessScimConfigAuthenticationOauthBearerToken({required this.scheme, required this.token, });
+
+factory AccessScimConfigAuthenticationOauthBearerToken.fromJson(Map<String, dynamic> json) { return AccessScimConfigAuthenticationOauthBearerToken(
+  scheme: AccessScimConfigAuthenticationOauthBearerTokenScheme.fromJson(json['scheme'] as String),
+  token: json['token'] as String,
+); }
+
+/// The authentication scheme to use when making SCIM requests to this application.
+final AccessScimConfigAuthenticationOauthBearerTokenScheme scheme;
+
+/// Token used to authenticate with the remote SCIM service.
+final String token;
+
+Map<String, dynamic> toJson() { return {
+  'scheme': scheme.toJson(),
+  'token': token,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('scheme') &&
+      json.containsKey('token') && json['token'] is String; } 
+AccessScimConfigAuthenticationOauthBearerToken copyWith({AccessScimConfigAuthenticationOauthBearerTokenScheme? scheme, String? token, }) { return AccessScimConfigAuthenticationOauthBearerToken(
+  scheme: scheme ?? this.scheme,
+  token: token ?? this.token,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessScimConfigAuthenticationOauthBearerToken &&
+          scheme == other.scheme &&
+          token == other.token; } 
+@override int get hashCode { return Object.hash(scheme, token); } 
+@override String toString() { return 'AccessScimConfigAuthenticationOauthBearerToken(scheme: $scheme, token: $token)'; } 
+ }

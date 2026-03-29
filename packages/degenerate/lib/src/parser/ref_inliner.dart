@@ -76,8 +76,7 @@ class RefInliner {
             value[r'$ref'] is String &&
             !(value[r'$ref'] as String).startsWith('#/')) {
           final ref = value[r'$ref'] as String;
-          resolvedPaths[entry.key] =
-              _inlineExternalRef(ref, _baseDir, {});
+          resolvedPaths[entry.key] = _inlineExternalRef(ref, _baseDir, {});
         } else {
           resolvedPaths[entry.key] = value;
         }
@@ -90,14 +89,12 @@ class RefInliner {
 
     // Merge any additional collected schemas (from refs outside components).
     if (_collectedSchemas.isNotEmpty) {
-      final resultComponents = result.putIfAbsent(
-        'components',
-        () => <String, dynamic>{},
-      ) as Map<String, dynamic>;
-      final resultSchemas = resultComponents.putIfAbsent(
-        'schemas',
-        () => <String, dynamic>{},
-      ) as Map<String, dynamic>;
+      final resultComponents =
+          result.putIfAbsent('components', () => <String, dynamic>{})
+              as Map<String, dynamic>;
+      final resultSchemas =
+          resultComponents.putIfAbsent('schemas', () => <String, dynamic>{})
+              as Map<String, dynamic>;
       resultSchemas.addAll(_collectedSchemas);
     }
 
@@ -145,20 +142,12 @@ class RefInliner {
     // Otherwise, recursively walk all values.
     final result = <String, dynamic>{};
     for (final entry in map.entries) {
-      result[entry.key] = _walkValue(
-        entry.value,
-        currentDir,
-        ancestors,
-      );
+      result[entry.key] = _walkValue(entry.value, currentDir, ancestors);
     }
     return result;
   }
 
-  dynamic _walkValue(
-    dynamic value,
-    String currentDir,
-    Set<String> ancestors,
-  ) {
+  dynamic _walkValue(dynamic value, String currentDir, Set<String> ancestors) {
     if (value is Map<String, dynamic>) {
       return _walkMap(value, currentDir, ancestors);
     } else if (value is List) {
@@ -251,10 +240,7 @@ class RefInliner {
   }
 
   /// Load a file and resolve a JSON pointer within it.
-  Map<String, dynamic> _loadAndResolve(
-    String absolutePath,
-    String? pointer,
-  ) {
+  Map<String, dynamic> _loadAndResolve(String absolutePath, String? pointer) {
     final fileContent = _loadFile(absolutePath);
 
     if (pointer != null && pointer.isNotEmpty) {
@@ -276,8 +262,7 @@ class RefInliner {
     if (pointer != null && pointer.isNotEmpty) {
       // Use the last segment of the pointer as the name.
       final segments = pointer.substring(1).split('/');
-      final last =
-          segments.last.replaceAll('~1', '/').replaceAll('~0', '~');
+      final last = segments.last.replaceAll('~1', '/').replaceAll('~0', '~');
       return last;
     }
     // Fall back to the file name without extension.
@@ -302,10 +287,7 @@ class RefInliner {
 
     final file = File(absolutePath);
     if (!file.existsSync()) {
-      throw FileSystemException(
-        'Referenced file not found',
-        absolutePath,
-      );
+      throw FileSystemException('Referenced file not found', absolutePath);
     }
 
     final content = file.readAsStringSync();
@@ -319,9 +301,7 @@ class RefInliner {
     }
 
     if (parsed is! Map<String, dynamic>) {
-      throw FormatException(
-        'Expected a mapping at the root of $absolutePath',
-      );
+      throw FormatException('Expected a mapping at the root of $absolutePath');
     }
 
     _fileCache[absolutePath] = parsed;

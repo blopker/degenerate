@@ -1,0 +1,118 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CustomerPaymentSourceCard4Object {const CustomerPaymentSourceCard4Object._(this.value);
+
+factory CustomerPaymentSourceCard4Object.fromJson(String json) { return switch (json) {
+  'card' => card,
+  _ => CustomerPaymentSourceCard4Object._(json),
+}; }
+
+static const CustomerPaymentSourceCard4Object card = CustomerPaymentSourceCard4Object._('card');
+
+static const List<CustomerPaymentSourceCard4Object> values = [card];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CustomerPaymentSourceCard4Object && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CustomerPaymentSourceCard4Object($value)'; } 
+ }
+final class CustomerPaymentSourceCard4 {const CustomerPaymentSourceCard4({this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.cvc, required this.expMonth, required this.expYear, this.metadata, this.name, required this.number, this.object, });
+
+factory CustomerPaymentSourceCard4.fromJson(Map<String, dynamic> json) { return CustomerPaymentSourceCard4(
+  addressCity: json['address_city'] as String?,
+  addressCountry: json['address_country'] as String?,
+  addressLine1: json['address_line1'] as String?,
+  addressLine2: json['address_line2'] as String?,
+  addressState: json['address_state'] as String?,
+  addressZip: json['address_zip'] as String?,
+  cvc: json['cvc'] as String?,
+  expMonth: (json['exp_month'] as num).toInt(),
+  expYear: (json['exp_year'] as num).toInt(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  name: json['name'] as String?,
+  number: json['number'] as String,
+  object: json['object'] != null ? CustomerPaymentSourceCard4Object.fromJson(json['object'] as String) : null,
+); }
+
+final String? addressCity;
+
+final String? addressCountry;
+
+final String? addressLine1;
+
+final String? addressLine2;
+
+final String? addressState;
+
+final String? addressZip;
+
+final String? cvc;
+
+final int expMonth;
+
+final int expYear;
+
+final Map<String,String>? metadata;
+
+final String? name;
+
+final String number;
+
+final CustomerPaymentSourceCard4Object? object;
+
+Map<String, dynamic> toJson() { return {
+  'address_city': ?addressCity,
+  'address_country': ?addressCountry,
+  'address_line1': ?addressLine1,
+  'address_line2': ?addressLine2,
+  'address_state': ?addressState,
+  'address_zip': ?addressZip,
+  'cvc': ?cvc,
+  'exp_month': expMonth,
+  'exp_year': expYear,
+  'metadata': ?metadata,
+  'name': ?name,
+  'number': number,
+  if (object != null) 'object': object?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
+      json.containsKey('exp_year') && json['exp_year'] is num &&
+      json.containsKey('number') && json['number'] is String; } 
+CustomerPaymentSourceCard4 copyWith({String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, String Function()? cvc, int? expMonth, int? expYear, Map<String, String> Function()? metadata, String Function()? name, String? number, CustomerPaymentSourceCard4Object Function()? object, }) { return CustomerPaymentSourceCard4(
+  addressCity: addressCity != null ? addressCity() : this.addressCity,
+  addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
+  addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
+  addressLine2: addressLine2 != null ? addressLine2() : this.addressLine2,
+  addressState: addressState != null ? addressState() : this.addressState,
+  addressZip: addressZip != null ? addressZip() : this.addressZip,
+  cvc: cvc != null ? cvc() : this.cvc,
+  expMonth: expMonth ?? this.expMonth,
+  expYear: expYear ?? this.expYear,
+  metadata: metadata != null ? metadata() : this.metadata,
+  name: name != null ? name() : this.name,
+  number: number ?? this.number,
+  object: object != null ? object() : this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomerPaymentSourceCard4 &&
+          addressCity == other.addressCity &&
+          addressCountry == other.addressCountry &&
+          addressLine1 == other.addressLine1 &&
+          addressLine2 == other.addressLine2 &&
+          addressState == other.addressState &&
+          addressZip == other.addressZip &&
+          cvc == other.cvc &&
+          expMonth == other.expMonth &&
+          expYear == other.expYear &&
+          metadata == other.metadata &&
+          name == other.name &&
+          number == other.number &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, cvc, expMonth, expYear, metadata, name, number, object); } 
+@override String toString() { return 'CustomerPaymentSourceCard4(addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, cvc: $cvc, expMonth: $expMonth, expYear: $expYear, metadata: $metadata, name: $name, number: $number, object: $object)'; } 
+ }

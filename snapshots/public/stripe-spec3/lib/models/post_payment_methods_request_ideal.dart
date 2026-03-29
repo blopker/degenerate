@@ -1,0 +1,102 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodsRequestIdealBank {const PostPaymentMethodsRequestIdealBank._(this.value);
+
+factory PostPaymentMethodsRequestIdealBank.fromJson(String json) { return switch (json) {
+  'abn_amro' => abnAmro,
+  'adyen' => adyen,
+  'asn_bank' => asnBank,
+  'bunq' => bunq,
+  'buut' => buut,
+  'finom' => finom,
+  'handelsbanken' => handelsbanken,
+  'ing' => ing,
+  'knab' => knab,
+  'mollie' => mollie,
+  'moneyou' => moneyou,
+  'n26' => n26,
+  'nn' => nn,
+  'rabobank' => rabobank,
+  'regiobank' => regiobank,
+  'revolut' => revolut,
+  'sns_bank' => snsBank,
+  'triodos_bank' => triodosBank,
+  'van_lanschot' => vanLanschot,
+  'yoursafe' => yoursafe,
+  _ => PostPaymentMethodsRequestIdealBank._(json),
+}; }
+
+static const PostPaymentMethodsRequestIdealBank abnAmro = PostPaymentMethodsRequestIdealBank._('abn_amro');
+
+static const PostPaymentMethodsRequestIdealBank adyen = PostPaymentMethodsRequestIdealBank._('adyen');
+
+static const PostPaymentMethodsRequestIdealBank asnBank = PostPaymentMethodsRequestIdealBank._('asn_bank');
+
+static const PostPaymentMethodsRequestIdealBank bunq = PostPaymentMethodsRequestIdealBank._('bunq');
+
+static const PostPaymentMethodsRequestIdealBank buut = PostPaymentMethodsRequestIdealBank._('buut');
+
+static const PostPaymentMethodsRequestIdealBank finom = PostPaymentMethodsRequestIdealBank._('finom');
+
+static const PostPaymentMethodsRequestIdealBank handelsbanken = PostPaymentMethodsRequestIdealBank._('handelsbanken');
+
+static const PostPaymentMethodsRequestIdealBank ing = PostPaymentMethodsRequestIdealBank._('ing');
+
+static const PostPaymentMethodsRequestIdealBank knab = PostPaymentMethodsRequestIdealBank._('knab');
+
+static const PostPaymentMethodsRequestIdealBank mollie = PostPaymentMethodsRequestIdealBank._('mollie');
+
+static const PostPaymentMethodsRequestIdealBank moneyou = PostPaymentMethodsRequestIdealBank._('moneyou');
+
+static const PostPaymentMethodsRequestIdealBank n26 = PostPaymentMethodsRequestIdealBank._('n26');
+
+static const PostPaymentMethodsRequestIdealBank nn = PostPaymentMethodsRequestIdealBank._('nn');
+
+static const PostPaymentMethodsRequestIdealBank rabobank = PostPaymentMethodsRequestIdealBank._('rabobank');
+
+static const PostPaymentMethodsRequestIdealBank regiobank = PostPaymentMethodsRequestIdealBank._('regiobank');
+
+static const PostPaymentMethodsRequestIdealBank revolut = PostPaymentMethodsRequestIdealBank._('revolut');
+
+static const PostPaymentMethodsRequestIdealBank snsBank = PostPaymentMethodsRequestIdealBank._('sns_bank');
+
+static const PostPaymentMethodsRequestIdealBank triodosBank = PostPaymentMethodsRequestIdealBank._('triodos_bank');
+
+static const PostPaymentMethodsRequestIdealBank vanLanschot = PostPaymentMethodsRequestIdealBank._('van_lanschot');
+
+static const PostPaymentMethodsRequestIdealBank yoursafe = PostPaymentMethodsRequestIdealBank._('yoursafe');
+
+static const List<PostPaymentMethodsRequestIdealBank> values = [abnAmro, adyen, asnBank, bunq, buut, finom, handelsbanken, ing, knab, mollie, moneyou, n26, nn, rabobank, regiobank, revolut, snsBank, triodosBank, vanLanschot, yoursafe];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodsRequestIdealBank && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestIdealBank($value)'; } 
+ }
+/// If this is an `ideal` PaymentMethod, this hash contains details about the iDEAL payment method.
+final class PostPaymentMethodsRequestIdeal {const PostPaymentMethodsRequestIdeal({this.bank});
+
+factory PostPaymentMethodsRequestIdeal.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestIdeal(
+  bank: json['bank'] != null ? PostPaymentMethodsRequestIdealBank.fromJson(json['bank'] as String) : null,
+); }
+
+final PostPaymentMethodsRequestIdealBank? bank;
+
+Map<String, dynamic> toJson() { return {
+  if (bank != null) 'bank': bank?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodsRequestIdeal copyWith({PostPaymentMethodsRequestIdealBank Function()? bank}) { return PostPaymentMethodsRequestIdeal(
+  bank: bank != null ? bank() : this.bank,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodsRequestIdeal &&
+          bank == other.bank; } 
+@override int get hashCode { return bank.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestIdeal(bank: $bank)'; } 
+ }

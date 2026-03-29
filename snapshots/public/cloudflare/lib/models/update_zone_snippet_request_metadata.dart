@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specify the name of the file that contains the main module of the snippet.
+extension type const SnippetsSnippetMainModule(String value) {
+factory SnippetsSnippetMainModule.fromJson(String json) => SnippetsSnippetMainModule(json);
+
+String toJson() => value;
+
+}
+/// Provide metadata about the snippet.
+final class UpdateZoneSnippetRequestMetadata {const UpdateZoneSnippetRequestMetadata({required this.mainModule});
+
+factory UpdateZoneSnippetRequestMetadata.fromJson(Map<String, dynamic> json) { return UpdateZoneSnippetRequestMetadata(
+  mainModule: SnippetsSnippetMainModule.fromJson(json['main_module'] as String),
+); }
+
+/// Specify the name of the file that contains the main module of the snippet.
+final SnippetsSnippetMainModule mainModule;
+
+Map<String, dynamic> toJson() { return {
+  'main_module': mainModule.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('main_module'); } 
+UpdateZoneSnippetRequestMetadata copyWith({SnippetsSnippetMainModule? mainModule}) { return UpdateZoneSnippetRequestMetadata(
+  mainModule: mainModule ?? this.mainModule,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UpdateZoneSnippetRequestMetadata &&
+          mainModule == other.mainModule; } 
+@override int get hashCode { return mainModule.hashCode; } 
+@override String toString() { return 'UpdateZoneSnippetRequestMetadata(mainModule: $mainModule)'; } 
+ }

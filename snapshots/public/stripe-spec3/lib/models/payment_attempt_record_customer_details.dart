@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payments_primitives_payment_records_resource_customer_details.dart';/// Customer information for this payment.
+final class PaymentAttemptRecordCustomerDetails {const PaymentAttemptRecordCustomerDetails({this.paymentsPrimitivesPaymentRecordsResourceCustomerDetails});
+
+factory PaymentAttemptRecordCustomerDetails.fromJson(Map<String, dynamic> json) { return PaymentAttemptRecordCustomerDetails(
+  paymentsPrimitivesPaymentRecordsResourceCustomerDetails: PaymentsPrimitivesPaymentRecordsResourceCustomerDetails.canParse(json) ? PaymentsPrimitivesPaymentRecordsResourceCustomerDetails.fromJson(json) : null,
+); }
+
+final PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? paymentsPrimitivesPaymentRecordsResourceCustomerDetails;
+
+/// At least one variant must be present.
+bool get isValid { return paymentsPrimitivesPaymentRecordsResourceCustomerDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentsPrimitivesPaymentRecordsResourceCustomerDetails?.toJson(),
+}; } 
+ }

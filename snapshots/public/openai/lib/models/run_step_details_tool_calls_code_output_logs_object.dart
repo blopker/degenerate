@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Always `logs`.
+final class RunStepDetailsToolCallsCodeOutputLogsObjectType {const RunStepDetailsToolCallsCodeOutputLogsObjectType._(this.value);
+
+factory RunStepDetailsToolCallsCodeOutputLogsObjectType.fromJson(String json) { return switch (json) {
+  'logs' => logs,
+  _ => RunStepDetailsToolCallsCodeOutputLogsObjectType._(json),
+}; }
+
+static const RunStepDetailsToolCallsCodeOutputLogsObjectType logs = RunStepDetailsToolCallsCodeOutputLogsObjectType._('logs');
+
+static const List<RunStepDetailsToolCallsCodeOutputLogsObjectType> values = [logs];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RunStepDetailsToolCallsCodeOutputLogsObjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RunStepDetailsToolCallsCodeOutputLogsObjectType($value)'; } 
+ }
+/// Text output from the Code Interpreter tool call as part of a run step.
+final class RunStepDetailsToolCallsCodeOutputLogsObject {const RunStepDetailsToolCallsCodeOutputLogsObject({required this.type, required this.logs, });
+
+factory RunStepDetailsToolCallsCodeOutputLogsObject.fromJson(Map<String, dynamic> json) { return RunStepDetailsToolCallsCodeOutputLogsObject(
+  type: RunStepDetailsToolCallsCodeOutputLogsObjectType.fromJson(json['type'] as String),
+  logs: json['logs'] as String,
+); }
+
+/// Always `logs`.
+final RunStepDetailsToolCallsCodeOutputLogsObjectType type;
+
+/// The text output from the Code Interpreter tool call.
+final String logs;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'logs': logs,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('logs') && json['logs'] is String; } 
+RunStepDetailsToolCallsCodeOutputLogsObject copyWith({RunStepDetailsToolCallsCodeOutputLogsObjectType? type, String? logs, }) { return RunStepDetailsToolCallsCodeOutputLogsObject(
+  type: type ?? this.type,
+  logs: logs ?? this.logs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RunStepDetailsToolCallsCodeOutputLogsObject &&
+          type == other.type &&
+          logs == other.logs; } 
+@override int get hashCode { return Object.hash(type, logs); } 
+@override String toString() { return 'RunStepDetailsToolCallsCodeOutputLogsObject(type: $type, logs: $logs)'; } 
+ }

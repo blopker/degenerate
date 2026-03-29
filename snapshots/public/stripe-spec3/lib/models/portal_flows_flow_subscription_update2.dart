@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'portal_flows_flow_subscription_update.dart';/// Configuration when `flow.type=subscription_update`.
+final class PortalFlowsFlowSubscriptionUpdate2 {const PortalFlowsFlowSubscriptionUpdate2({this.portalFlowsFlowSubscriptionUpdate});
+
+factory PortalFlowsFlowSubscriptionUpdate2.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionUpdate2(
+  portalFlowsFlowSubscriptionUpdate: PortalFlowsFlowSubscriptionUpdate.canParse(json) ? PortalFlowsFlowSubscriptionUpdate.fromJson(json) : null,
+); }
+
+final PortalFlowsFlowSubscriptionUpdate? portalFlowsFlowSubscriptionUpdate;
+
+/// At least one variant must be present.
+bool get isValid { return portalFlowsFlowSubscriptionUpdate != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?portalFlowsFlowSubscriptionUpdate?.toJson(),
+}; } 
+ }

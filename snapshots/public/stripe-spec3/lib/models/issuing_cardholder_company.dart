@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class IssuingCardholderCompany {const IssuingCardholderCompany({required this.taxIdProvided});
+
+factory IssuingCardholderCompany.fromJson(Map<String, dynamic> json) { return IssuingCardholderCompany(
+  taxIdProvided: json['tax_id_provided'] as bool,
+); }
+
+/// Whether the company's business ID number was provided.
+final bool taxIdProvided;
+
+Map<String, dynamic> toJson() { return {
+  'tax_id_provided': taxIdProvided,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_id_provided') && json['tax_id_provided'] is bool; } 
+IssuingCardholderCompany copyWith({bool? taxIdProvided}) { return IssuingCardholderCompany(
+  taxIdProvided: taxIdProvided ?? this.taxIdProvided,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingCardholderCompany &&
+          taxIdProvided == other.taxIdProvided; } 
+@override int get hashCode { return taxIdProvided.hashCode; } 
+@override String toString() { return 'IssuingCardholderCompany(taxIdProvided: $taxIdProvided)'; } 
+ }

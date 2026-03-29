@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'accounts_by_account_id_pipelines_deprecated_response_result_info.dart';import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'cloudflare_pipelines_workers_pipelines_pipeline.dart';final class AccountsByAccountIdPipelinesDeprecatedResponse {const AccountsByAccountIdPipelinesDeprecatedResponse({required this.resultInfo, required this.results, required this.success, });
+
+factory AccountsByAccountIdPipelinesDeprecatedResponse.fromJson(Map<String, dynamic> json) { return AccountsByAccountIdPipelinesDeprecatedResponse(
+  resultInfo: AccountsByAccountIdPipelinesDeprecatedResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
+  results: (json['results'] as List<dynamic>).map((e) => CloudflarePipelinesWorkersPipelinesPipeline.fromJson(e as Map<String, dynamic>)).toList(),
+  success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
+); }
+
+final AccountsByAccountIdPipelinesDeprecatedResponseResultInfo resultInfo;
+
+final List<CloudflarePipelinesWorkersPipelinesPipeline> results;
+
+/// Indicates whether the API call was successful.
+final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
+
+Map<String, dynamic> toJson() { return {
+  'result_info': resultInfo.toJson(),
+  'results': results.map((e) => e.toJson()).toList(),
+  'success': success.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result_info') &&
+      json.containsKey('results') &&
+      json.containsKey('success'); } 
+AccountsByAccountIdPipelinesDeprecatedResponse copyWith({AccountsByAccountIdPipelinesDeprecatedResponseResultInfo? resultInfo, List<CloudflarePipelinesWorkersPipelinesPipeline>? results, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return AccountsByAccountIdPipelinesDeprecatedResponse(
+  resultInfo: resultInfo ?? this.resultInfo,
+  results: results ?? this.results,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountsByAccountIdPipelinesDeprecatedResponse &&
+          resultInfo == other.resultInfo &&
+          listEquals(results, other.results) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(resultInfo, Object.hashAll(results), success); } 
+@override String toString() { return 'AccountsByAccountIdPipelinesDeprecatedResponse(resultInfo: $resultInfo, results: $results, success: $success)'; } 
+ }

@@ -1,0 +1,541 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_setup_intents_request_payment_method_data_acss_debit.dart';import 'post_setup_intents_request_payment_method_data_affirm.dart';import 'post_setup_intents_request_payment_method_data_afterpay_clearpay.dart';import 'post_setup_intents_request_payment_method_data_alipay.dart';import 'post_setup_intents_request_payment_method_data_alma.dart';import 'post_setup_intents_request_payment_method_data_amazon_pay.dart';import 'post_setup_intents_request_payment_method_data_au_becs_debit.dart';import 'post_setup_intents_request_payment_method_data_bacs_debit.dart';import 'post_setup_intents_request_payment_method_data_bancontact.dart';import 'post_setup_intents_request_payment_method_data_billie.dart';import 'post_setup_intents_request_payment_method_data_billing_details.dart';import 'post_setup_intents_request_payment_method_data_blik.dart';import 'post_setup_intents_request_payment_method_data_boleto.dart';import 'post_setup_intents_request_payment_method_data_cashapp.dart';import 'post_setup_intents_request_payment_method_data_crypto.dart';import 'post_setup_intents_request_payment_method_data_customer_balance.dart';import 'post_setup_intents_request_payment_method_data_eps.dart';import 'post_setup_intents_request_payment_method_data_fpx.dart';import 'post_setup_intents_request_payment_method_data_giropay.dart';import 'post_setup_intents_request_payment_method_data_grabpay.dart';import 'post_setup_intents_request_payment_method_data_ideal.dart';import 'post_setup_intents_request_payment_method_data_interac_present.dart';import 'post_setup_intents_request_payment_method_data_kakao_pay.dart';import 'post_setup_intents_request_payment_method_data_klarna.dart';import 'post_setup_intents_request_payment_method_data_konbini.dart';import 'post_setup_intents_request_payment_method_data_kr_card.dart';import 'post_setup_intents_request_payment_method_data_link.dart';import 'post_setup_intents_request_payment_method_data_mb_way.dart';import 'post_setup_intents_request_payment_method_data_mobilepay.dart';import 'post_setup_intents_request_payment_method_data_multibanco.dart';import 'post_setup_intents_request_payment_method_data_naver_pay.dart';import 'post_setup_intents_request_payment_method_data_nz_bank_account.dart';import 'post_setup_intents_request_payment_method_data_oxxo.dart';import 'post_setup_intents_request_payment_method_data_p24.dart';import 'post_setup_intents_request_payment_method_data_pay_by_bank.dart';import 'post_setup_intents_request_payment_method_data_payco.dart';import 'post_setup_intents_request_payment_method_data_paynow.dart';import 'post_setup_intents_request_payment_method_data_paypal.dart';import 'post_setup_intents_request_payment_method_data_payto.dart';import 'post_setup_intents_request_payment_method_data_pix.dart';import 'post_setup_intents_request_payment_method_data_promptpay.dart';import 'post_setup_intents_request_payment_method_data_radar_options.dart';import 'post_setup_intents_request_payment_method_data_revolut_pay.dart';import 'post_setup_intents_request_payment_method_data_samsung_pay.dart';import 'post_setup_intents_request_payment_method_data_satispay.dart';import 'post_setup_intents_request_payment_method_data_sepa_debit.dart';import 'post_setup_intents_request_payment_method_data_sofort.dart';import 'post_setup_intents_request_payment_method_data_swish.dart';import 'post_setup_intents_request_payment_method_data_twint.dart';import 'post_setup_intents_request_payment_method_data_us_bank_account.dart';import 'post_setup_intents_request_payment_method_data_wechat_pay.dart';import 'post_setup_intents_request_payment_method_data_zip.dart';final class PostSetupIntentsRequestPaymentMethodDataAllowRedisplay {const PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodDataAllowRedisplay.fromJson(String json) { return switch (json) {
+  'always' => always,
+  'limited' => limited,
+  'unspecified' => unspecified,
+  _ => PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodDataAllowRedisplay always = PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._('always');
+
+static const PostSetupIntentsRequestPaymentMethodDataAllowRedisplay limited = PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._('limited');
+
+static const PostSetupIntentsRequestPaymentMethodDataAllowRedisplay unspecified = PostSetupIntentsRequestPaymentMethodDataAllowRedisplay._('unspecified');
+
+static const List<PostSetupIntentsRequestPaymentMethodDataAllowRedisplay> values = [always, limited, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataAllowRedisplay && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataAllowRedisplay($value)'; } 
+ }
+final class PostSetupIntentsRequestPaymentMethodDataType {const PostSetupIntentsRequestPaymentMethodDataType._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodDataType.fromJson(String json) { return switch (json) {
+  'acss_debit' => acssDebit,
+  'affirm' => affirm,
+  'afterpay_clearpay' => afterpayClearpay,
+  'alipay' => alipay,
+  'alma' => alma,
+  'amazon_pay' => amazonPay,
+  'au_becs_debit' => auBecsDebit,
+  'bacs_debit' => bacsDebit,
+  'bancontact' => bancontact,
+  'billie' => billie,
+  'blik' => blik,
+  'boleto' => boleto,
+  'cashapp' => cashapp,
+  'crypto' => crypto,
+  'customer_balance' => customerBalance,
+  'eps' => eps,
+  'fpx' => fpx,
+  'giropay' => giropay,
+  'grabpay' => grabpay,
+  'ideal' => ideal,
+  'kakao_pay' => kakaoPay,
+  'klarna' => klarna,
+  'konbini' => konbini,
+  'kr_card' => krCard,
+  'link' => link,
+  'mb_way' => mbWay,
+  'mobilepay' => mobilepay,
+  'multibanco' => multibanco,
+  'naver_pay' => naverPay,
+  'nz_bank_account' => nzBankAccount,
+  'oxxo' => oxxo,
+  'p24' => p24,
+  'pay_by_bank' => payByBank,
+  'payco' => payco,
+  'paynow' => paynow,
+  'paypal' => paypal,
+  'payto' => payto,
+  'pix' => pix,
+  'promptpay' => promptpay,
+  'revolut_pay' => revolutPay,
+  'samsung_pay' => samsungPay,
+  'satispay' => satispay,
+  'sepa_debit' => sepaDebit,
+  'sofort' => sofort,
+  'swish' => swish,
+  'twint' => twint,
+  'us_bank_account' => usBankAccount,
+  'wechat_pay' => wechatPay,
+  'zip' => zip,
+  _ => PostSetupIntentsRequestPaymentMethodDataType._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodDataType acssDebit = PostSetupIntentsRequestPaymentMethodDataType._('acss_debit');
+
+static const PostSetupIntentsRequestPaymentMethodDataType affirm = PostSetupIntentsRequestPaymentMethodDataType._('affirm');
+
+static const PostSetupIntentsRequestPaymentMethodDataType afterpayClearpay = PostSetupIntentsRequestPaymentMethodDataType._('afterpay_clearpay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType alipay = PostSetupIntentsRequestPaymentMethodDataType._('alipay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType alma = PostSetupIntentsRequestPaymentMethodDataType._('alma');
+
+static const PostSetupIntentsRequestPaymentMethodDataType amazonPay = PostSetupIntentsRequestPaymentMethodDataType._('amazon_pay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType auBecsDebit = PostSetupIntentsRequestPaymentMethodDataType._('au_becs_debit');
+
+static const PostSetupIntentsRequestPaymentMethodDataType bacsDebit = PostSetupIntentsRequestPaymentMethodDataType._('bacs_debit');
+
+static const PostSetupIntentsRequestPaymentMethodDataType bancontact = PostSetupIntentsRequestPaymentMethodDataType._('bancontact');
+
+static const PostSetupIntentsRequestPaymentMethodDataType billie = PostSetupIntentsRequestPaymentMethodDataType._('billie');
+
+static const PostSetupIntentsRequestPaymentMethodDataType blik = PostSetupIntentsRequestPaymentMethodDataType._('blik');
+
+static const PostSetupIntentsRequestPaymentMethodDataType boleto = PostSetupIntentsRequestPaymentMethodDataType._('boleto');
+
+static const PostSetupIntentsRequestPaymentMethodDataType cashapp = PostSetupIntentsRequestPaymentMethodDataType._('cashapp');
+
+static const PostSetupIntentsRequestPaymentMethodDataType crypto = PostSetupIntentsRequestPaymentMethodDataType._('crypto');
+
+static const PostSetupIntentsRequestPaymentMethodDataType customerBalance = PostSetupIntentsRequestPaymentMethodDataType._('customer_balance');
+
+static const PostSetupIntentsRequestPaymentMethodDataType eps = PostSetupIntentsRequestPaymentMethodDataType._('eps');
+
+static const PostSetupIntentsRequestPaymentMethodDataType fpx = PostSetupIntentsRequestPaymentMethodDataType._('fpx');
+
+static const PostSetupIntentsRequestPaymentMethodDataType giropay = PostSetupIntentsRequestPaymentMethodDataType._('giropay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType grabpay = PostSetupIntentsRequestPaymentMethodDataType._('grabpay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType ideal = PostSetupIntentsRequestPaymentMethodDataType._('ideal');
+
+static const PostSetupIntentsRequestPaymentMethodDataType kakaoPay = PostSetupIntentsRequestPaymentMethodDataType._('kakao_pay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType klarna = PostSetupIntentsRequestPaymentMethodDataType._('klarna');
+
+static const PostSetupIntentsRequestPaymentMethodDataType konbini = PostSetupIntentsRequestPaymentMethodDataType._('konbini');
+
+static const PostSetupIntentsRequestPaymentMethodDataType krCard = PostSetupIntentsRequestPaymentMethodDataType._('kr_card');
+
+static const PostSetupIntentsRequestPaymentMethodDataType link = PostSetupIntentsRequestPaymentMethodDataType._('link');
+
+static const PostSetupIntentsRequestPaymentMethodDataType mbWay = PostSetupIntentsRequestPaymentMethodDataType._('mb_way');
+
+static const PostSetupIntentsRequestPaymentMethodDataType mobilepay = PostSetupIntentsRequestPaymentMethodDataType._('mobilepay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType multibanco = PostSetupIntentsRequestPaymentMethodDataType._('multibanco');
+
+static const PostSetupIntentsRequestPaymentMethodDataType naverPay = PostSetupIntentsRequestPaymentMethodDataType._('naver_pay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType nzBankAccount = PostSetupIntentsRequestPaymentMethodDataType._('nz_bank_account');
+
+static const PostSetupIntentsRequestPaymentMethodDataType oxxo = PostSetupIntentsRequestPaymentMethodDataType._('oxxo');
+
+static const PostSetupIntentsRequestPaymentMethodDataType p24 = PostSetupIntentsRequestPaymentMethodDataType._('p24');
+
+static const PostSetupIntentsRequestPaymentMethodDataType payByBank = PostSetupIntentsRequestPaymentMethodDataType._('pay_by_bank');
+
+static const PostSetupIntentsRequestPaymentMethodDataType payco = PostSetupIntentsRequestPaymentMethodDataType._('payco');
+
+static const PostSetupIntentsRequestPaymentMethodDataType paynow = PostSetupIntentsRequestPaymentMethodDataType._('paynow');
+
+static const PostSetupIntentsRequestPaymentMethodDataType paypal = PostSetupIntentsRequestPaymentMethodDataType._('paypal');
+
+static const PostSetupIntentsRequestPaymentMethodDataType payto = PostSetupIntentsRequestPaymentMethodDataType._('payto');
+
+static const PostSetupIntentsRequestPaymentMethodDataType pix = PostSetupIntentsRequestPaymentMethodDataType._('pix');
+
+static const PostSetupIntentsRequestPaymentMethodDataType promptpay = PostSetupIntentsRequestPaymentMethodDataType._('promptpay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType revolutPay = PostSetupIntentsRequestPaymentMethodDataType._('revolut_pay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType samsungPay = PostSetupIntentsRequestPaymentMethodDataType._('samsung_pay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType satispay = PostSetupIntentsRequestPaymentMethodDataType._('satispay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType sepaDebit = PostSetupIntentsRequestPaymentMethodDataType._('sepa_debit');
+
+static const PostSetupIntentsRequestPaymentMethodDataType sofort = PostSetupIntentsRequestPaymentMethodDataType._('sofort');
+
+static const PostSetupIntentsRequestPaymentMethodDataType swish = PostSetupIntentsRequestPaymentMethodDataType._('swish');
+
+static const PostSetupIntentsRequestPaymentMethodDataType twint = PostSetupIntentsRequestPaymentMethodDataType._('twint');
+
+static const PostSetupIntentsRequestPaymentMethodDataType usBankAccount = PostSetupIntentsRequestPaymentMethodDataType._('us_bank_account');
+
+static const PostSetupIntentsRequestPaymentMethodDataType wechatPay = PostSetupIntentsRequestPaymentMethodDataType._('wechat_pay');
+
+static const PostSetupIntentsRequestPaymentMethodDataType zip = PostSetupIntentsRequestPaymentMethodDataType._('zip');
+
+static const List<PostSetupIntentsRequestPaymentMethodDataType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataType($value)'; } 
+ }
+/// When included, this hash creates a PaymentMethod that is set as the [`payment_method`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-payment_method)
+/// value in the SetupIntent.
+final class PostSetupIntentsRequestPaymentMethodData {const PostSetupIntentsRequestPaymentMethodData({this.acssDebit, this.affirm, this.afterpayClearpay, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.billingDetails, this.blik, this.boleto, this.cashapp, this.crypto, this.customerBalance, this.eps, this.fpx, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.oxxo, this.p24, this.payByBank, this.payco, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, required this.type, this.usBankAccount, this.wechatPay, this.zip, });
+
+factory PostSetupIntentsRequestPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodData(
+  acssDebit: json['acss_debit'] != null ? PostSetupIntentsRequestPaymentMethodDataAcssDebit.fromJson(json['acss_debit'] as Map<String, dynamic>) : null,
+  affirm: json['affirm'] != null ? PostSetupIntentsRequestPaymentMethodDataAffirm.fromJson(json['affirm'] as Map<String, dynamic>) : null,
+  afterpayClearpay: json['afterpay_clearpay'] != null ? PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay.fromJson(json['afterpay_clearpay'] as Map<String, dynamic>) : null,
+  alipay: json['alipay'] != null ? PostSetupIntentsRequestPaymentMethodDataAlipay.fromJson(json['alipay'] as Map<String, dynamic>) : null,
+  allowRedisplay: json['allow_redisplay'] != null ? PostSetupIntentsRequestPaymentMethodDataAllowRedisplay.fromJson(json['allow_redisplay'] as String) : null,
+  alma: json['alma'] != null ? PostSetupIntentsRequestPaymentMethodDataAlma.fromJson(json['alma'] as Map<String, dynamic>) : null,
+  amazonPay: json['amazon_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataAmazonPay.fromJson(json['amazon_pay'] as Map<String, dynamic>) : null,
+  auBecsDebit: json['au_becs_debit'] != null ? PostSetupIntentsRequestPaymentMethodDataAuBecsDebit.fromJson(json['au_becs_debit'] as Map<String, dynamic>) : null,
+  bacsDebit: json['bacs_debit'] != null ? PostSetupIntentsRequestPaymentMethodDataBacsDebit.fromJson(json['bacs_debit'] as Map<String, dynamic>) : null,
+  bancontact: json['bancontact'] != null ? PostSetupIntentsRequestPaymentMethodDataBancontact.fromJson(json['bancontact'] as Map<String, dynamic>) : null,
+  billie: json['billie'] != null ? PostSetupIntentsRequestPaymentMethodDataBillie.fromJson(json['billie'] as Map<String, dynamic>) : null,
+  billingDetails: json['billing_details'] != null ? PostSetupIntentsRequestPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
+  blik: json['blik'] != null ? PostSetupIntentsRequestPaymentMethodDataBlik.fromJson(json['blik'] as Map<String, dynamic>) : null,
+  boleto: json['boleto'] != null ? PostSetupIntentsRequestPaymentMethodDataBoleto.fromJson(json['boleto'] as Map<String, dynamic>) : null,
+  cashapp: json['cashapp'] != null ? PostSetupIntentsRequestPaymentMethodDataCashapp.fromJson(json['cashapp'] as Map<String, dynamic>) : null,
+  crypto: json['crypto'] != null ? PostSetupIntentsRequestPaymentMethodDataCrypto.fromJson(json['crypto'] as Map<String, dynamic>) : null,
+  customerBalance: json['customer_balance'] != null ? PostSetupIntentsRequestPaymentMethodDataCustomerBalance.fromJson(json['customer_balance'] as Map<String, dynamic>) : null,
+  eps: json['eps'] != null ? PostSetupIntentsRequestPaymentMethodDataEps.fromJson(json['eps'] as Map<String, dynamic>) : null,
+  fpx: json['fpx'] != null ? PostSetupIntentsRequestPaymentMethodDataFpx.fromJson(json['fpx'] as Map<String, dynamic>) : null,
+  giropay: json['giropay'] != null ? PostSetupIntentsRequestPaymentMethodDataGiropay.fromJson(json['giropay'] as Map<String, dynamic>) : null,
+  grabpay: json['grabpay'] != null ? PostSetupIntentsRequestPaymentMethodDataGrabpay.fromJson(json['grabpay'] as Map<String, dynamic>) : null,
+  ideal: json['ideal'] != null ? PostSetupIntentsRequestPaymentMethodDataIdeal.fromJson(json['ideal'] as Map<String, dynamic>) : null,
+  interacPresent: json['interac_present'] != null ? PostSetupIntentsRequestPaymentMethodDataInteracPresent.fromJson(json['interac_present'] as Map<String, dynamic>) : null,
+  kakaoPay: json['kakao_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataKakaoPay.fromJson(json['kakao_pay'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? PostSetupIntentsRequestPaymentMethodDataKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  konbini: json['konbini'] != null ? PostSetupIntentsRequestPaymentMethodDataKonbini.fromJson(json['konbini'] as Map<String, dynamic>) : null,
+  krCard: json['kr_card'] != null ? PostSetupIntentsRequestPaymentMethodDataKrCard.fromJson(json['kr_card'] as Map<String, dynamic>) : null,
+  link: json['link'] != null ? PostSetupIntentsRequestPaymentMethodDataLink.fromJson(json['link'] as Map<String, dynamic>) : null,
+  mbWay: json['mb_way'] != null ? PostSetupIntentsRequestPaymentMethodDataMbWay.fromJson(json['mb_way'] as Map<String, dynamic>) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  mobilepay: json['mobilepay'] != null ? PostSetupIntentsRequestPaymentMethodDataMobilepay.fromJson(json['mobilepay'] as Map<String, dynamic>) : null,
+  multibanco: json['multibanco'] != null ? PostSetupIntentsRequestPaymentMethodDataMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
+  naverPay: json['naver_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataNaverPay.fromJson(json['naver_pay'] as Map<String, dynamic>) : null,
+  nzBankAccount: json['nz_bank_account'] != null ? PostSetupIntentsRequestPaymentMethodDataNzBankAccount.fromJson(json['nz_bank_account'] as Map<String, dynamic>) : null,
+  oxxo: json['oxxo'] != null ? PostSetupIntentsRequestPaymentMethodDataOxxo.fromJson(json['oxxo'] as Map<String, dynamic>) : null,
+  p24: json['p24'] != null ? PostSetupIntentsRequestPaymentMethodDataP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
+  payByBank: json['pay_by_bank'] != null ? PostSetupIntentsRequestPaymentMethodDataPayByBank.fromJson(json['pay_by_bank'] as Map<String, dynamic>) : null,
+  payco: json['payco'] != null ? PostSetupIntentsRequestPaymentMethodDataPayco.fromJson(json['payco'] as Map<String, dynamic>) : null,
+  paynow: json['paynow'] != null ? PostSetupIntentsRequestPaymentMethodDataPaynow.fromJson(json['paynow'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? PostSetupIntentsRequestPaymentMethodDataPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+  payto: json['payto'] != null ? PostSetupIntentsRequestPaymentMethodDataPayto.fromJson(json['payto'] as Map<String, dynamic>) : null,
+  pix: json['pix'] != null ? PostSetupIntentsRequestPaymentMethodDataPix.fromJson(json['pix'] as Map<String, dynamic>) : null,
+  promptpay: json['promptpay'] != null ? PostSetupIntentsRequestPaymentMethodDataPromptpay.fromJson(json['promptpay'] as Map<String, dynamic>) : null,
+  radarOptions: json['radar_options'] != null ? PostSetupIntentsRequestPaymentMethodDataRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
+  revolutPay: json['revolut_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataRevolutPay.fromJson(json['revolut_pay'] as Map<String, dynamic>) : null,
+  samsungPay: json['samsung_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataSamsungPay.fromJson(json['samsung_pay'] as Map<String, dynamic>) : null,
+  satispay: json['satispay'] != null ? PostSetupIntentsRequestPaymentMethodDataSatispay.fromJson(json['satispay'] as Map<String, dynamic>) : null,
+  sepaDebit: json['sepa_debit'] != null ? PostSetupIntentsRequestPaymentMethodDataSepaDebit.fromJson(json['sepa_debit'] as Map<String, dynamic>) : null,
+  sofort: json['sofort'] != null ? PostSetupIntentsRequestPaymentMethodDataSofort.fromJson(json['sofort'] as Map<String, dynamic>) : null,
+  swish: json['swish'] != null ? PostSetupIntentsRequestPaymentMethodDataSwish.fromJson(json['swish'] as Map<String, dynamic>) : null,
+  twint: json['twint'] != null ? PostSetupIntentsRequestPaymentMethodDataTwint.fromJson(json['twint'] as Map<String, dynamic>) : null,
+  type: PostSetupIntentsRequestPaymentMethodDataType.fromJson(json['type'] as String),
+  usBankAccount: json['us_bank_account'] != null ? PostSetupIntentsRequestPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+  wechatPay: json['wechat_pay'] != null ? PostSetupIntentsRequestPaymentMethodDataWechatPay.fromJson(json['wechat_pay'] as Map<String, dynamic>) : null,
+  zip: json['zip'] != null ? PostSetupIntentsRequestPaymentMethodDataZip.fromJson(json['zip'] as Map<String, dynamic>) : null,
+); }
+
+final PostSetupIntentsRequestPaymentMethodDataAcssDebit? acssDebit;
+
+final PostSetupIntentsRequestPaymentMethodDataAffirm? affirm;
+
+final PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay? afterpayClearpay;
+
+final PostSetupIntentsRequestPaymentMethodDataAlipay? alipay;
+
+final PostSetupIntentsRequestPaymentMethodDataAllowRedisplay? allowRedisplay;
+
+final PostSetupIntentsRequestPaymentMethodDataAlma? alma;
+
+final PostSetupIntentsRequestPaymentMethodDataAmazonPay? amazonPay;
+
+final PostSetupIntentsRequestPaymentMethodDataAuBecsDebit? auBecsDebit;
+
+final PostSetupIntentsRequestPaymentMethodDataBacsDebit? bacsDebit;
+
+final PostSetupIntentsRequestPaymentMethodDataBancontact? bancontact;
+
+final PostSetupIntentsRequestPaymentMethodDataBillie? billie;
+
+final PostSetupIntentsRequestPaymentMethodDataBillingDetails? billingDetails;
+
+final PostSetupIntentsRequestPaymentMethodDataBlik? blik;
+
+final PostSetupIntentsRequestPaymentMethodDataBoleto? boleto;
+
+final PostSetupIntentsRequestPaymentMethodDataCashapp? cashapp;
+
+final PostSetupIntentsRequestPaymentMethodDataCrypto? crypto;
+
+final PostSetupIntentsRequestPaymentMethodDataCustomerBalance? customerBalance;
+
+final PostSetupIntentsRequestPaymentMethodDataEps? eps;
+
+final PostSetupIntentsRequestPaymentMethodDataFpx? fpx;
+
+final PostSetupIntentsRequestPaymentMethodDataGiropay? giropay;
+
+final PostSetupIntentsRequestPaymentMethodDataGrabpay? grabpay;
+
+final PostSetupIntentsRequestPaymentMethodDataIdeal? ideal;
+
+final PostSetupIntentsRequestPaymentMethodDataInteracPresent? interacPresent;
+
+final PostSetupIntentsRequestPaymentMethodDataKakaoPay? kakaoPay;
+
+final PostSetupIntentsRequestPaymentMethodDataKlarna? klarna;
+
+final PostSetupIntentsRequestPaymentMethodDataKonbini? konbini;
+
+final PostSetupIntentsRequestPaymentMethodDataKrCard? krCard;
+
+final PostSetupIntentsRequestPaymentMethodDataLink? link;
+
+final PostSetupIntentsRequestPaymentMethodDataMbWay? mbWay;
+
+final Map<String,String>? metadata;
+
+final PostSetupIntentsRequestPaymentMethodDataMobilepay? mobilepay;
+
+final PostSetupIntentsRequestPaymentMethodDataMultibanco? multibanco;
+
+final PostSetupIntentsRequestPaymentMethodDataNaverPay? naverPay;
+
+final PostSetupIntentsRequestPaymentMethodDataNzBankAccount? nzBankAccount;
+
+final PostSetupIntentsRequestPaymentMethodDataOxxo? oxxo;
+
+final PostSetupIntentsRequestPaymentMethodDataP24? p24;
+
+final PostSetupIntentsRequestPaymentMethodDataPayByBank? payByBank;
+
+final PostSetupIntentsRequestPaymentMethodDataPayco? payco;
+
+final PostSetupIntentsRequestPaymentMethodDataPaynow? paynow;
+
+final PostSetupIntentsRequestPaymentMethodDataPaypal? paypal;
+
+final PostSetupIntentsRequestPaymentMethodDataPayto? payto;
+
+final PostSetupIntentsRequestPaymentMethodDataPix? pix;
+
+final PostSetupIntentsRequestPaymentMethodDataPromptpay? promptpay;
+
+final PostSetupIntentsRequestPaymentMethodDataRadarOptions? radarOptions;
+
+final PostSetupIntentsRequestPaymentMethodDataRevolutPay? revolutPay;
+
+final PostSetupIntentsRequestPaymentMethodDataSamsungPay? samsungPay;
+
+final PostSetupIntentsRequestPaymentMethodDataSatispay? satispay;
+
+final PostSetupIntentsRequestPaymentMethodDataSepaDebit? sepaDebit;
+
+final PostSetupIntentsRequestPaymentMethodDataSofort? sofort;
+
+final PostSetupIntentsRequestPaymentMethodDataSwish? swish;
+
+final PostSetupIntentsRequestPaymentMethodDataTwint? twint;
+
+final PostSetupIntentsRequestPaymentMethodDataType type;
+
+final PostSetupIntentsRequestPaymentMethodDataUsBankAccount? usBankAccount;
+
+final PostSetupIntentsRequestPaymentMethodDataWechatPay? wechatPay;
+
+final PostSetupIntentsRequestPaymentMethodDataZip? zip;
+
+Map<String, dynamic> toJson() { return {
+  if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
+  if (affirm != null) 'affirm': affirm?.toJson(),
+  if (afterpayClearpay != null) 'afterpay_clearpay': afterpayClearpay?.toJson(),
+  if (alipay != null) 'alipay': alipay?.toJson(),
+  if (allowRedisplay != null) 'allow_redisplay': allowRedisplay?.toJson(),
+  if (alma != null) 'alma': alma?.toJson(),
+  if (amazonPay != null) 'amazon_pay': amazonPay?.toJson(),
+  if (auBecsDebit != null) 'au_becs_debit': auBecsDebit?.toJson(),
+  if (bacsDebit != null) 'bacs_debit': bacsDebit?.toJson(),
+  if (bancontact != null) 'bancontact': bancontact?.toJson(),
+  if (billie != null) 'billie': billie?.toJson(),
+  if (billingDetails != null) 'billing_details': billingDetails?.toJson(),
+  if (blik != null) 'blik': blik?.toJson(),
+  if (boleto != null) 'boleto': boleto?.toJson(),
+  if (cashapp != null) 'cashapp': cashapp?.toJson(),
+  if (crypto != null) 'crypto': crypto?.toJson(),
+  if (customerBalance != null) 'customer_balance': customerBalance?.toJson(),
+  if (eps != null) 'eps': eps?.toJson(),
+  if (fpx != null) 'fpx': fpx?.toJson(),
+  if (giropay != null) 'giropay': giropay?.toJson(),
+  if (grabpay != null) 'grabpay': grabpay?.toJson(),
+  if (ideal != null) 'ideal': ideal?.toJson(),
+  if (interacPresent != null) 'interac_present': interacPresent?.toJson(),
+  if (kakaoPay != null) 'kakao_pay': kakaoPay?.toJson(),
+  if (klarna != null) 'klarna': klarna?.toJson(),
+  if (konbini != null) 'konbini': konbini?.toJson(),
+  if (krCard != null) 'kr_card': krCard?.toJson(),
+  if (link != null) 'link': link?.toJson(),
+  if (mbWay != null) 'mb_way': mbWay?.toJson(),
+  'metadata': ?metadata,
+  if (mobilepay != null) 'mobilepay': mobilepay?.toJson(),
+  if (multibanco != null) 'multibanco': multibanco?.toJson(),
+  if (naverPay != null) 'naver_pay': naverPay?.toJson(),
+  if (nzBankAccount != null) 'nz_bank_account': nzBankAccount?.toJson(),
+  if (oxxo != null) 'oxxo': oxxo?.toJson(),
+  if (p24 != null) 'p24': p24?.toJson(),
+  if (payByBank != null) 'pay_by_bank': payByBank?.toJson(),
+  if (payco != null) 'payco': payco?.toJson(),
+  if (paynow != null) 'paynow': paynow?.toJson(),
+  if (paypal != null) 'paypal': paypal?.toJson(),
+  if (payto != null) 'payto': payto?.toJson(),
+  if (pix != null) 'pix': pix?.toJson(),
+  if (promptpay != null) 'promptpay': promptpay?.toJson(),
+  if (radarOptions != null) 'radar_options': radarOptions?.toJson(),
+  if (revolutPay != null) 'revolut_pay': revolutPay?.toJson(),
+  if (samsungPay != null) 'samsung_pay': samsungPay?.toJson(),
+  if (satispay != null) 'satispay': satispay?.toJson(),
+  if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
+  if (sofort != null) 'sofort': sofort?.toJson(),
+  if (swish != null) 'swish': swish?.toJson(),
+  if (twint != null) 'twint': twint?.toJson(),
+  'type': type.toJson(),
+  if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
+  if (wechatPay != null) 'wechat_pay': wechatPay?.toJson(),
+  if (zip != null) 'zip': zip?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostSetupIntentsRequestPaymentMethodData copyWith({PostSetupIntentsRequestPaymentMethodDataAcssDebit Function()? acssDebit, PostSetupIntentsRequestPaymentMethodDataAffirm Function()? affirm, PostSetupIntentsRequestPaymentMethodDataAfterpayClearpay Function()? afterpayClearpay, PostSetupIntentsRequestPaymentMethodDataAlipay Function()? alipay, PostSetupIntentsRequestPaymentMethodDataAllowRedisplay Function()? allowRedisplay, PostSetupIntentsRequestPaymentMethodDataAlma Function()? alma, PostSetupIntentsRequestPaymentMethodDataAmazonPay Function()? amazonPay, PostSetupIntentsRequestPaymentMethodDataAuBecsDebit Function()? auBecsDebit, PostSetupIntentsRequestPaymentMethodDataBacsDebit Function()? bacsDebit, PostSetupIntentsRequestPaymentMethodDataBancontact Function()? bancontact, PostSetupIntentsRequestPaymentMethodDataBillie Function()? billie, PostSetupIntentsRequestPaymentMethodDataBillingDetails Function()? billingDetails, PostSetupIntentsRequestPaymentMethodDataBlik Function()? blik, PostSetupIntentsRequestPaymentMethodDataBoleto Function()? boleto, PostSetupIntentsRequestPaymentMethodDataCashapp Function()? cashapp, PostSetupIntentsRequestPaymentMethodDataCrypto Function()? crypto, PostSetupIntentsRequestPaymentMethodDataCustomerBalance Function()? customerBalance, PostSetupIntentsRequestPaymentMethodDataEps Function()? eps, PostSetupIntentsRequestPaymentMethodDataFpx Function()? fpx, PostSetupIntentsRequestPaymentMethodDataGiropay Function()? giropay, PostSetupIntentsRequestPaymentMethodDataGrabpay Function()? grabpay, PostSetupIntentsRequestPaymentMethodDataIdeal Function()? ideal, PostSetupIntentsRequestPaymentMethodDataInteracPresent Function()? interacPresent, PostSetupIntentsRequestPaymentMethodDataKakaoPay Function()? kakaoPay, PostSetupIntentsRequestPaymentMethodDataKlarna Function()? klarna, PostSetupIntentsRequestPaymentMethodDataKonbini Function()? konbini, PostSetupIntentsRequestPaymentMethodDataKrCard Function()? krCard, PostSetupIntentsRequestPaymentMethodDataLink Function()? link, PostSetupIntentsRequestPaymentMethodDataMbWay Function()? mbWay, Map<String, String> Function()? metadata, PostSetupIntentsRequestPaymentMethodDataMobilepay Function()? mobilepay, PostSetupIntentsRequestPaymentMethodDataMultibanco Function()? multibanco, PostSetupIntentsRequestPaymentMethodDataNaverPay Function()? naverPay, PostSetupIntentsRequestPaymentMethodDataNzBankAccount Function()? nzBankAccount, PostSetupIntentsRequestPaymentMethodDataOxxo Function()? oxxo, PostSetupIntentsRequestPaymentMethodDataP24 Function()? p24, PostSetupIntentsRequestPaymentMethodDataPayByBank Function()? payByBank, PostSetupIntentsRequestPaymentMethodDataPayco Function()? payco, PostSetupIntentsRequestPaymentMethodDataPaynow Function()? paynow, PostSetupIntentsRequestPaymentMethodDataPaypal Function()? paypal, PostSetupIntentsRequestPaymentMethodDataPayto Function()? payto, PostSetupIntentsRequestPaymentMethodDataPix Function()? pix, PostSetupIntentsRequestPaymentMethodDataPromptpay Function()? promptpay, PostSetupIntentsRequestPaymentMethodDataRadarOptions Function()? radarOptions, PostSetupIntentsRequestPaymentMethodDataRevolutPay Function()? revolutPay, PostSetupIntentsRequestPaymentMethodDataSamsungPay Function()? samsungPay, PostSetupIntentsRequestPaymentMethodDataSatispay Function()? satispay, PostSetupIntentsRequestPaymentMethodDataSepaDebit Function()? sepaDebit, PostSetupIntentsRequestPaymentMethodDataSofort Function()? sofort, PostSetupIntentsRequestPaymentMethodDataSwish Function()? swish, PostSetupIntentsRequestPaymentMethodDataTwint Function()? twint, PostSetupIntentsRequestPaymentMethodDataType? type, PostSetupIntentsRequestPaymentMethodDataUsBankAccount Function()? usBankAccount, PostSetupIntentsRequestPaymentMethodDataWechatPay Function()? wechatPay, PostSetupIntentsRequestPaymentMethodDataZip Function()? zip, }) { return PostSetupIntentsRequestPaymentMethodData(
+  acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
+  affirm: affirm != null ? affirm() : this.affirm,
+  afterpayClearpay: afterpayClearpay != null ? afterpayClearpay() : this.afterpayClearpay,
+  alipay: alipay != null ? alipay() : this.alipay,
+  allowRedisplay: allowRedisplay != null ? allowRedisplay() : this.allowRedisplay,
+  alma: alma != null ? alma() : this.alma,
+  amazonPay: amazonPay != null ? amazonPay() : this.amazonPay,
+  auBecsDebit: auBecsDebit != null ? auBecsDebit() : this.auBecsDebit,
+  bacsDebit: bacsDebit != null ? bacsDebit() : this.bacsDebit,
+  bancontact: bancontact != null ? bancontact() : this.bancontact,
+  billie: billie != null ? billie() : this.billie,
+  billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
+  blik: blik != null ? blik() : this.blik,
+  boleto: boleto != null ? boleto() : this.boleto,
+  cashapp: cashapp != null ? cashapp() : this.cashapp,
+  crypto: crypto != null ? crypto() : this.crypto,
+  customerBalance: customerBalance != null ? customerBalance() : this.customerBalance,
+  eps: eps != null ? eps() : this.eps,
+  fpx: fpx != null ? fpx() : this.fpx,
+  giropay: giropay != null ? giropay() : this.giropay,
+  grabpay: grabpay != null ? grabpay() : this.grabpay,
+  ideal: ideal != null ? ideal() : this.ideal,
+  interacPresent: interacPresent != null ? interacPresent() : this.interacPresent,
+  kakaoPay: kakaoPay != null ? kakaoPay() : this.kakaoPay,
+  klarna: klarna != null ? klarna() : this.klarna,
+  konbini: konbini != null ? konbini() : this.konbini,
+  krCard: krCard != null ? krCard() : this.krCard,
+  link: link != null ? link() : this.link,
+  mbWay: mbWay != null ? mbWay() : this.mbWay,
+  metadata: metadata != null ? metadata() : this.metadata,
+  mobilepay: mobilepay != null ? mobilepay() : this.mobilepay,
+  multibanco: multibanco != null ? multibanco() : this.multibanco,
+  naverPay: naverPay != null ? naverPay() : this.naverPay,
+  nzBankAccount: nzBankAccount != null ? nzBankAccount() : this.nzBankAccount,
+  oxxo: oxxo != null ? oxxo() : this.oxxo,
+  p24: p24 != null ? p24() : this.p24,
+  payByBank: payByBank != null ? payByBank() : this.payByBank,
+  payco: payco != null ? payco() : this.payco,
+  paynow: paynow != null ? paynow() : this.paynow,
+  paypal: paypal != null ? paypal() : this.paypal,
+  payto: payto != null ? payto() : this.payto,
+  pix: pix != null ? pix() : this.pix,
+  promptpay: promptpay != null ? promptpay() : this.promptpay,
+  radarOptions: radarOptions != null ? radarOptions() : this.radarOptions,
+  revolutPay: revolutPay != null ? revolutPay() : this.revolutPay,
+  samsungPay: samsungPay != null ? samsungPay() : this.samsungPay,
+  satispay: satispay != null ? satispay() : this.satispay,
+  sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
+  sofort: sofort != null ? sofort() : this.sofort,
+  swish: swish != null ? swish() : this.swish,
+  twint: twint != null ? twint() : this.twint,
+  type: type ?? this.type,
+  usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
+  wechatPay: wechatPay != null ? wechatPay() : this.wechatPay,
+  zip: zip != null ? zip() : this.zip,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodData &&
+          acssDebit == other.acssDebit &&
+          affirm == other.affirm &&
+          afterpayClearpay == other.afterpayClearpay &&
+          alipay == other.alipay &&
+          allowRedisplay == other.allowRedisplay &&
+          alma == other.alma &&
+          amazonPay == other.amazonPay &&
+          auBecsDebit == other.auBecsDebit &&
+          bacsDebit == other.bacsDebit &&
+          bancontact == other.bancontact &&
+          billie == other.billie &&
+          billingDetails == other.billingDetails &&
+          blik == other.blik &&
+          boleto == other.boleto &&
+          cashapp == other.cashapp &&
+          crypto == other.crypto &&
+          customerBalance == other.customerBalance &&
+          eps == other.eps &&
+          fpx == other.fpx &&
+          giropay == other.giropay &&
+          grabpay == other.grabpay &&
+          ideal == other.ideal &&
+          interacPresent == other.interacPresent &&
+          kakaoPay == other.kakaoPay &&
+          klarna == other.klarna &&
+          konbini == other.konbini &&
+          krCard == other.krCard &&
+          link == other.link &&
+          mbWay == other.mbWay &&
+          metadata == other.metadata &&
+          mobilepay == other.mobilepay &&
+          multibanco == other.multibanco &&
+          naverPay == other.naverPay &&
+          nzBankAccount == other.nzBankAccount &&
+          oxxo == other.oxxo &&
+          p24 == other.p24 &&
+          payByBank == other.payByBank &&
+          payco == other.payco &&
+          paynow == other.paynow &&
+          paypal == other.paypal &&
+          payto == other.payto &&
+          pix == other.pix &&
+          promptpay == other.promptpay &&
+          radarOptions == other.radarOptions &&
+          revolutPay == other.revolutPay &&
+          samsungPay == other.samsungPay &&
+          satispay == other.satispay &&
+          sepaDebit == other.sepaDebit &&
+          sofort == other.sofort &&
+          swish == other.swish &&
+          twint == other.twint &&
+          type == other.type &&
+          usBankAccount == other.usBankAccount &&
+          wechatPay == other.wechatPay &&
+          zip == other.zip; } 
+@override int get hashCode { return Object.hashAll([acssDebit, affirm, afterpayClearpay, alipay, allowRedisplay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, billingDetails, blik, boleto, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, interacPresent, kakaoPay, klarna, konbini, krCard, link, mbWay, metadata, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, radarOptions, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, type, usBankAccount, wechatPay, zip]); } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodData(acssDebit: $acssDebit, affirm: $affirm, afterpayClearpay: $afterpayClearpay, alipay: $alipay, allowRedisplay: $allowRedisplay, alma: $alma, amazonPay: $amazonPay, auBecsDebit: $auBecsDebit, bacsDebit: $bacsDebit, bancontact: $bancontact, billie: $billie, billingDetails: $billingDetails, blik: $blik, boleto: $boleto, cashapp: $cashapp, crypto: $crypto, customerBalance: $customerBalance, eps: $eps, fpx: $fpx, giropay: $giropay, grabpay: $grabpay, ideal: $ideal, interacPresent: $interacPresent, kakaoPay: $kakaoPay, klarna: $klarna, konbini: $konbini, krCard: $krCard, link: $link, mbWay: $mbWay, metadata: $metadata, mobilepay: $mobilepay, multibanco: $multibanco, naverPay: $naverPay, nzBankAccount: $nzBankAccount, oxxo: $oxxo, p24: $p24, payByBank: $payByBank, payco: $payco, paynow: $paynow, paypal: $paypal, payto: $payto, pix: $pix, promptpay: $promptpay, radarOptions: $radarOptions, revolutPay: $revolutPay, samsungPay: $samsungPay, satispay: $satispay, sepaDebit: $sepaDebit, sofort: $sofort, swish: $swish, twint: $twint, type: $type, usBankAccount: $usBankAccount, wechatPay: $wechatPay, zip: $zip)'; } 
+ }

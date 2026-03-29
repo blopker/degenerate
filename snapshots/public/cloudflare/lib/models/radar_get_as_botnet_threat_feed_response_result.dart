@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_as_botnet_threat_feed_response_result_ases.dart';import 'radar_get_as_botnet_threat_feed_response_result_meta.dart';final class RadarGetAsBotnetThreatFeedResponseResult {const RadarGetAsBotnetThreatFeedResponseResult({required this.ases, required this.meta, });
+
+factory RadarGetAsBotnetThreatFeedResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAsBotnetThreatFeedResponseResult(
+  ases: (json['ases'] as List<dynamic>).map((e) => RadarGetAsBotnetThreatFeedResponseResultAses.fromJson(e as Map<String, dynamic>)).toList(),
+  meta: RadarGetAsBotnetThreatFeedResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+); }
+
+final List<RadarGetAsBotnetThreatFeedResponseResultAses> ases;
+
+final RadarGetAsBotnetThreatFeedResponseResultMeta meta;
+
+Map<String, dynamic> toJson() { return {
+  'ases': ases.map((e) => e.toJson()).toList(),
+  'meta': meta.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ases') &&
+      json.containsKey('meta'); } 
+RadarGetAsBotnetThreatFeedResponseResult copyWith({List<RadarGetAsBotnetThreatFeedResponseResultAses>? ases, RadarGetAsBotnetThreatFeedResponseResultMeta? meta, }) { return RadarGetAsBotnetThreatFeedResponseResult(
+  ases: ases ?? this.ases,
+  meta: meta ?? this.meta,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAsBotnetThreatFeedResponseResult &&
+          listEquals(ases, other.ases) &&
+          meta == other.meta; } 
+@override int get hashCode { return Object.hash(Object.hashAll(ases), meta); } 
+@override String toString() { return 'RadarGetAsBotnetThreatFeedResponseResult(ases: $ases, meta: $meta)'; } 
+ }

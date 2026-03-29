@@ -1,0 +1,118 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_issuing_cards_card_request_shipping_address.dart';import 'post_issuing_cards_card_request_shipping_address_validation.dart';import 'post_issuing_cards_card_request_shipping_customs.dart';final class PostIssuingCardsCardRequestShippingService {const PostIssuingCardsCardRequestShippingService._(this.value);
+
+factory PostIssuingCardsCardRequestShippingService.fromJson(String json) { return switch (json) {
+  'express' => express,
+  'priority' => priority,
+  'standard' => standard,
+  _ => PostIssuingCardsCardRequestShippingService._(json),
+}; }
+
+static const PostIssuingCardsCardRequestShippingService express = PostIssuingCardsCardRequestShippingService._('express');
+
+static const PostIssuingCardsCardRequestShippingService priority = PostIssuingCardsCardRequestShippingService._('priority');
+
+static const PostIssuingCardsCardRequestShippingService standard = PostIssuingCardsCardRequestShippingService._('standard');
+
+static const List<PostIssuingCardsCardRequestShippingService> values = [express, priority, standard];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingCardsCardRequestShippingService && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingCardsCardRequestShippingService($value)'; } 
+ }
+final class PostIssuingCardsCardRequestShippingType {const PostIssuingCardsCardRequestShippingType._(this.value);
+
+factory PostIssuingCardsCardRequestShippingType.fromJson(String json) { return switch (json) {
+  'bulk' => bulk,
+  'individual' => individual,
+  _ => PostIssuingCardsCardRequestShippingType._(json),
+}; }
+
+static const PostIssuingCardsCardRequestShippingType bulk = PostIssuingCardsCardRequestShippingType._('bulk');
+
+static const PostIssuingCardsCardRequestShippingType individual = PostIssuingCardsCardRequestShippingType._('individual');
+
+static const List<PostIssuingCardsCardRequestShippingType> values = [bulk, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingCardsCardRequestShippingType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingCardsCardRequestShippingType($value)'; } 
+ }
+/// Updated shipping information for the card.
+final class PostIssuingCardsCardRequestShipping {const PostIssuingCardsCardRequestShipping({required this.address, this.addressValidation, this.customs, required this.name, this.phoneNumber, this.requireSignature, this.service, this.type, });
+
+factory PostIssuingCardsCardRequestShipping.fromJson(Map<String, dynamic> json) { return PostIssuingCardsCardRequestShipping(
+  address: PostIssuingCardsCardRequestShippingAddress.fromJson(json['address'] as Map<String, dynamic>),
+  addressValidation: json['address_validation'] != null ? PostIssuingCardsCardRequestShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
+  customs: json['customs'] != null ? PostIssuingCardsCardRequestShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>) : null,
+  name: json['name'] as String,
+  phoneNumber: json['phone_number'] as String?,
+  requireSignature: json['require_signature'] as bool?,
+  service: json['service'] != null ? PostIssuingCardsCardRequestShippingService.fromJson(json['service'] as String) : null,
+  type: json['type'] != null ? PostIssuingCardsCardRequestShippingType.fromJson(json['type'] as String) : null,
+); }
+
+final PostIssuingCardsCardRequestShippingAddress address;
+
+final PostIssuingCardsCardRequestShippingAddressValidation? addressValidation;
+
+final PostIssuingCardsCardRequestShippingCustoms? customs;
+
+final String name;
+
+final String? phoneNumber;
+
+final bool? requireSignature;
+
+final PostIssuingCardsCardRequestShippingService? service;
+
+final PostIssuingCardsCardRequestShippingType? type;
+
+Map<String, dynamic> toJson() { return {
+  'address': address.toJson(),
+  if (addressValidation != null) 'address_validation': addressValidation?.toJson(),
+  if (customs != null) 'customs': customs?.toJson(),
+  'name': name,
+  'phone_number': ?phoneNumber,
+  'require_signature': ?requireSignature,
+  if (service != null) 'service': service?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('address') &&
+      json.containsKey('name') && json['name'] is String; } 
+PostIssuingCardsCardRequestShipping copyWith({PostIssuingCardsCardRequestShippingAddress? address, PostIssuingCardsCardRequestShippingAddressValidation Function()? addressValidation, PostIssuingCardsCardRequestShippingCustoms Function()? customs, String? name, String Function()? phoneNumber, bool Function()? requireSignature, PostIssuingCardsCardRequestShippingService Function()? service, PostIssuingCardsCardRequestShippingType Function()? type, }) { return PostIssuingCardsCardRequestShipping(
+  address: address ?? this.address,
+  addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,
+  customs: customs != null ? customs() : this.customs,
+  name: name ?? this.name,
+  phoneNumber: phoneNumber != null ? phoneNumber() : this.phoneNumber,
+  requireSignature: requireSignature != null ? requireSignature() : this.requireSignature,
+  service: service != null ? service() : this.service,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostIssuingCardsCardRequestShipping &&
+          address == other.address &&
+          addressValidation == other.addressValidation &&
+          customs == other.customs &&
+          name == other.name &&
+          phoneNumber == other.phoneNumber &&
+          requireSignature == other.requireSignature &&
+          service == other.service &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(address, addressValidation, customs, name, phoneNumber, requireSignature, service, type); } 
+@override String toString() { return 'PostIssuingCardsCardRequestShipping(address: $address, addressValidation: $addressValidation, customs: $customs, name: $name, phoneNumber: $phoneNumber, requireSignature: $requireSignature, service: $service, type: $type)'; } 
+ }

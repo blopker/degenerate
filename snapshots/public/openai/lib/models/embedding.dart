@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "embedding".
+final class EmbeddingObject {const EmbeddingObject._(this.value);
+
+factory EmbeddingObject.fromJson(String json) { return switch (json) {
+  'embedding' => embedding,
+  _ => EmbeddingObject._(json),
+}; }
+
+static const EmbeddingObject embedding = EmbeddingObject._('embedding');
+
+static const List<EmbeddingObject> values = [embedding];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EmbeddingObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EmbeddingObject($value)'; } 
+ }
+/// Represents an embedding vector returned by embedding endpoint.
+/// 
+final class Embedding {const Embedding({required this.index, required this.embedding, required this.object, });
+
+factory Embedding.fromJson(Map<String, dynamic> json) { return Embedding(
+  index: (json['index'] as num).toInt(),
+  embedding: (json['embedding'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
+  object: EmbeddingObject.fromJson(json['object'] as String),
+); }
+
+/// The index of the embedding in the list of embeddings.
+final int index;
+
+/// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+/// 
+final List<double> embedding;
+
+/// The object type, which is always "embedding".
+final EmbeddingObject object;
+
+Map<String, dynamic> toJson() { return {
+  'index': index,
+  'embedding': embedding,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
+      json.containsKey('embedding') &&
+      json.containsKey('object'); } 
+Embedding copyWith({int? index, List<double>? embedding, EmbeddingObject? object, }) { return Embedding(
+  index: index ?? this.index,
+  embedding: embedding ?? this.embedding,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Embedding &&
+          index == other.index &&
+          listEquals(embedding, other.embedding) &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(index, Object.hashAll(embedding), object); } 
+@override String toString() { return 'Embedding(index: $index, embedding: $embedding, object: $object)'; } 
+ }

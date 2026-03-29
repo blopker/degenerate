@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'actions_create_hosted_runner_for_org_request_image.dart';final class ActionsCreateHostedRunnerForOrgRequest {const ActionsCreateHostedRunnerForOrgRequest({required this.name, required this.image, required this.size, required this.runnerGroupId, this.maximumRunners, this.enableStaticIp, this.imageGen = false, });
+
+factory ActionsCreateHostedRunnerForOrgRequest.fromJson(Map<String, dynamic> json) { return ActionsCreateHostedRunnerForOrgRequest(
+  name: json['name'] as String,
+  image: ActionsCreateHostedRunnerForOrgRequestImage.fromJson(json['image'] as Map<String, dynamic>),
+  size: json['size'] as String,
+  runnerGroupId: (json['runner_group_id'] as num).toInt(),
+  maximumRunners: json['maximum_runners'] != null ? (json['maximum_runners'] as num).toInt() : null,
+  enableStaticIp: json['enable_static_ip'] as bool?,
+  imageGen: json.containsKey('image_gen') ? json['image_gen'] as bool : false,
+); }
+
+/// Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
+final String name;
+
+/// The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.
+final ActionsCreateHostedRunnerForOrgRequestImage image;
+
+/// The machine size of the runner. To list available sizes, use `GET actions/hosted-runners/machine-sizes`
+final String size;
+
+/// The existing runner group to add this runner to.
+final int runnerGroupId;
+
+/// The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
+final int? maximumRunners;
+
+/// Whether this runner should be created with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
+final bool? enableStaticIp;
+
+/// Whether this runner should be used to generate custom images.
+final bool imageGen;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'image': image.toJson(),
+  'size': size,
+  'runner_group_id': runnerGroupId,
+  'maximum_runners': ?maximumRunners,
+  'enable_static_ip': ?enableStaticIp,
+  'image_gen': imageGen,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('image') &&
+      json.containsKey('size') && json['size'] is String &&
+      json.containsKey('runner_group_id') && json['runner_group_id'] is num; } 
+ActionsCreateHostedRunnerForOrgRequest copyWith({String? name, ActionsCreateHostedRunnerForOrgRequestImage? image, String? size, int? runnerGroupId, int Function()? maximumRunners, bool Function()? enableStaticIp, bool Function()? imageGen, }) { return ActionsCreateHostedRunnerForOrgRequest(
+  name: name ?? this.name,
+  image: image ?? this.image,
+  size: size ?? this.size,
+  runnerGroupId: runnerGroupId ?? this.runnerGroupId,
+  maximumRunners: maximumRunners != null ? maximumRunners() : this.maximumRunners,
+  enableStaticIp: enableStaticIp != null ? enableStaticIp() : this.enableStaticIp,
+  imageGen: imageGen != null ? imageGen() : this.imageGen,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsCreateHostedRunnerForOrgRequest &&
+          name == other.name &&
+          image == other.image &&
+          size == other.size &&
+          runnerGroupId == other.runnerGroupId &&
+          maximumRunners == other.maximumRunners &&
+          enableStaticIp == other.enableStaticIp &&
+          imageGen == other.imageGen; } 
+@override int get hashCode { return Object.hash(name, image, size, runnerGroupId, maximumRunners, enableStaticIp, imageGen); } 
+@override String toString() { return 'ActionsCreateHostedRunnerForOrgRequest(name: $name, image: $image, size: $size, runnerGroupId: $runnerGroupId, maximumRunners: $maximumRunners, enableStaticIp: $enableStaticIp, imageGen: $imageGen)'; } 
+ }

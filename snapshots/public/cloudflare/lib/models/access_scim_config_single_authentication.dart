@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_scim_config_authentication_access_service_token.dart';import 'access_scim_config_authentication_http_basic.dart';import 'access_scim_config_authentication_oauth2.dart';import 'access_scim_config_authentication_oauth_bearer_token.dart';typedef AccessScimConfigSingleAuthentication = OneOf4<AccessScimConfigAuthenticationHttpBasic,AccessScimConfigAuthenticationOauthBearerToken,AccessScimConfigAuthenticationOauth2,AccessScimConfigAuthenticationAccessServiceToken>;

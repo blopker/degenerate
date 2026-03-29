@@ -1,0 +1,116 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'integration.dart';/// A deployment created as the result of an Actions check run from a workflow that references an environment
+final class DeploymentSimple {const DeploymentSimple({required this.url, required this.id, required this.nodeId, required this.task, this.originalEnvironment, required this.environment, required this.description, required this.createdAt, required this.updatedAt, required this.statusesUrl, required this.repositoryUrl, this.transientEnvironment, this.productionEnvironment, this.performedViaGithubApp, });
+
+factory DeploymentSimple.fromJson(Map<String, dynamic> json) { return DeploymentSimple(
+  url: Uri.parse(json['url'] as String),
+  id: (json['id'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  task: json['task'] as String,
+  originalEnvironment: json['original_environment'] as String?,
+  environment: json['environment'] as String,
+  description: json['description'] as String?,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  statusesUrl: Uri.parse(json['statuses_url'] as String),
+  repositoryUrl: Uri.parse(json['repository_url'] as String),
+  transientEnvironment: json['transient_environment'] as bool?,
+  productionEnvironment: json['production_environment'] as bool?,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+); }
+
+final Uri url;
+
+/// Unique identifier of the deployment
+final int id;
+
+final String nodeId;
+
+/// Parameter to specify a task to execute
+final String task;
+
+final String? originalEnvironment;
+
+/// Name for the target deployment environment.
+final String environment;
+
+final String? description;
+
+final DateTime createdAt;
+
+final DateTime updatedAt;
+
+final Uri statusesUrl;
+
+final Uri repositoryUrl;
+
+/// Specifies if the given environment is will no longer exist at some point in the future. Default: false.
+final bool? transientEnvironment;
+
+/// Specifies if the given environment is one that end-users directly interact with. Default: false.
+final bool? productionEnvironment;
+
+final Integration? performedViaGithubApp;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'id': id,
+  'node_id': nodeId,
+  'task': task,
+  'original_environment': ?originalEnvironment,
+  'environment': environment,
+  'description': ?description,
+  'created_at': createdAt.toIso8601String(),
+  'updated_at': updatedAt.toIso8601String(),
+  'statuses_url': statusesUrl.toString(),
+  'repository_url': repositoryUrl.toString(),
+  'transient_environment': ?transientEnvironment,
+  'production_environment': ?productionEnvironment,
+  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('task') && json['task'] is String &&
+      json.containsKey('environment') && json['environment'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('statuses_url') && json['statuses_url'] is String &&
+      json.containsKey('repository_url') && json['repository_url'] is String; } 
+DeploymentSimple copyWith({Uri? url, int? id, String? nodeId, String? task, String Function()? originalEnvironment, String? environment, String? Function()? description, DateTime? createdAt, DateTime? updatedAt, Uri? statusesUrl, Uri? repositoryUrl, bool Function()? transientEnvironment, bool Function()? productionEnvironment, Integration? Function()? performedViaGithubApp, }) { return DeploymentSimple(
+  url: url ?? this.url,
+  id: id ?? this.id,
+  nodeId: nodeId ?? this.nodeId,
+  task: task ?? this.task,
+  originalEnvironment: originalEnvironment != null ? originalEnvironment() : this.originalEnvironment,
+  environment: environment ?? this.environment,
+  description: description != null ? description() : this.description,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  statusesUrl: statusesUrl ?? this.statusesUrl,
+  repositoryUrl: repositoryUrl ?? this.repositoryUrl,
+  transientEnvironment: transientEnvironment != null ? transientEnvironment() : this.transientEnvironment,
+  productionEnvironment: productionEnvironment != null ? productionEnvironment() : this.productionEnvironment,
+  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeploymentSimple &&
+          url == other.url &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          task == other.task &&
+          originalEnvironment == other.originalEnvironment &&
+          environment == other.environment &&
+          description == other.description &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          statusesUrl == other.statusesUrl &&
+          repositoryUrl == other.repositoryUrl &&
+          transientEnvironment == other.transientEnvironment &&
+          productionEnvironment == other.productionEnvironment &&
+          performedViaGithubApp == other.performedViaGithubApp; } 
+@override int get hashCode { return Object.hash(url, id, nodeId, task, originalEnvironment, environment, description, createdAt, updatedAt, statusesUrl, repositoryUrl, transientEnvironment, productionEnvironment, performedViaGithubApp); } 
+@override String toString() { return 'DeploymentSimple(url: $url, id: $id, nodeId: $nodeId, task: $task, originalEnvironment: $originalEnvironment, environment: $environment, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, statusesUrl: $statusesUrl, repositoryUrl: $repositoryUrl, transientEnvironment: $transientEnvironment, productionEnvironment: $productionEnvironment, performedViaGithubApp: $performedViaGithubApp)'; } 
+ }

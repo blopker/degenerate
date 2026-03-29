@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_inbound_transfers_id_fail_request_failure_details.dart';final class PostTestHelpersTreasuryInboundTransfersIdFailRequest {const PostTestHelpersTreasuryInboundTransfersIdFailRequest({this.expand, this.failureDetails, });
+
+factory PostTestHelpersTreasuryInboundTransfersIdFailRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  failureDetails: json['failure_details'] != null ? PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Details about a failed InboundTransfer.
+final PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails? failureDetails;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  if (failureDetails != null) 'failure_details': failureDetails?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersTreasuryInboundTransfersIdFailRequest copyWith({List<String> Function()? expand, PostTestHelpersTreasuryInboundTransfersIdFailRequestFailureDetails Function()? failureDetails, }) { return PostTestHelpersTreasuryInboundTransfersIdFailRequest(
+  expand: expand != null ? expand() : this.expand,
+  failureDetails: failureDetails != null ? failureDetails() : this.failureDetails,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersTreasuryInboundTransfersIdFailRequest &&
+          listEquals(expand, other.expand) &&
+          failureDetails == other.failureDetails; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), failureDetails); } 
+@override String toString() { return 'PostTestHelpersTreasuryInboundTransfersIdFailRequest(expand: $expand, failureDetails: $failureDetails)'; } 
+ }

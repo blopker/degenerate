@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_attacks_layer3_timeseries_group_response_result.dart';final class RadarGetAttacksLayer3TimeseriesGroupResponse {const RadarGetAttacksLayer3TimeseriesGroupResponse({required this.result, required this.success, });
+
+factory RadarGetAttacksLayer3TimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupResponse(
+  result: RadarGetAttacksLayer3TimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final RadarGetAttacksLayer3TimeseriesGroupResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+RadarGetAttacksLayer3TimeseriesGroupResponse copyWith({RadarGetAttacksLayer3TimeseriesGroupResponseResult? result, bool? success, }) { return RadarGetAttacksLayer3TimeseriesGroupResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TimeseriesGroupResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupResponse(result: $result, success: $success)'; } 
+ }

@@ -1,0 +1,141 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPermissionCreateResponseResourceType {const PostPermissionCreateResponseResourceType._(this.value);
+
+factory PostPermissionCreateResponseResourceType.fromJson(String json) { return switch (json) {
+  'dataset' => dataset,
+  _ => PostPermissionCreateResponseResourceType._(json),
+}; }
+
+static const PostPermissionCreateResponseResourceType dataset = PostPermissionCreateResponseResourceType._('dataset');
+
+static const List<PostPermissionCreateResponseResourceType> values = [dataset];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPermissionCreateResponseResourceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPermissionCreateResponseResourceType($value)'; } 
+ }
+final class PostPermissionCreateResponseRole {const PostPermissionCreateResponseRole._(this.value);
+
+factory PostPermissionCreateResponseRole.fromJson(String json) { return switch (json) {
+  'read' => read,
+  'write' => write,
+  _ => PostPermissionCreateResponseRole._(json),
+}; }
+
+static const PostPermissionCreateResponseRole read = PostPermissionCreateResponseRole._('read');
+
+static const PostPermissionCreateResponseRole write = PostPermissionCreateResponseRole._('write');
+
+static const List<PostPermissionCreateResponseRole> values = [read, write];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPermissionCreateResponseRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPermissionCreateResponseRole($value)'; } 
+ }
+final class PostPermissionCreateResponseSubjectType {const PostPermissionCreateResponseSubjectType._(this.value);
+
+factory PostPermissionCreateResponseSubjectType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'group' => group,
+  _ => PostPermissionCreateResponseSubjectType._(json),
+}; }
+
+static const PostPermissionCreateResponseSubjectType account = PostPermissionCreateResponseSubjectType._('account');
+
+static const PostPermissionCreateResponseSubjectType group = PostPermissionCreateResponseSubjectType._('group');
+
+static const List<PostPermissionCreateResponseSubjectType> values = [account, group];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPermissionCreateResponseSubjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPermissionCreateResponseSubjectType($value)'; } 
+ }
+final class PostPermissionCreateResponse {const PostPermissionCreateResponse({required this.createdAt, this.resourceId, required this.resourceType, required this.role, required this.subjectId, required this.subjectType, required this.updatedAt, required this.uuid, });
+
+factory PostPermissionCreateResponse.fromJson(Map<String, dynamic> json) { return PostPermissionCreateResponse(
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  resourceId: json['resourceId'] as String?,
+  resourceType: PostPermissionCreateResponseResourceType.fromJson(json['resourceType'] as String),
+  role: PostPermissionCreateResponseRole.fromJson(json['role'] as String),
+  subjectId: json['subjectId'] as String,
+  subjectType: PostPermissionCreateResponseSubjectType.fromJson(json['subjectType'] as String),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  uuid: json['uuid'] as String,
+); }
+
+final DateTime createdAt;
+
+/// The resource ID this permission applies to account_id or group_id
+final String? resourceId;
+
+final PostPermissionCreateResponseResourceType resourceType;
+
+final PostPermissionCreateResponseRole role;
+
+final String subjectId;
+
+final PostPermissionCreateResponseSubjectType subjectType;
+
+final DateTime updatedAt;
+
+final String uuid;
+
+Map<String, dynamic> toJson() { return {
+  'createdAt': createdAt.toIso8601String(),
+  'resourceId': ?resourceId,
+  'resourceType': resourceType.toJson(),
+  'role': role.toJson(),
+  'subjectId': subjectId,
+  'subjectType': subjectType.toJson(),
+  'updatedAt': updatedAt.toIso8601String(),
+  'uuid': uuid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+      json.containsKey('resourceType') &&
+      json.containsKey('role') &&
+      json.containsKey('subjectId') && json['subjectId'] is String &&
+      json.containsKey('subjectType') &&
+      json.containsKey('updatedAt') && json['updatedAt'] is String &&
+      json.containsKey('uuid') && json['uuid'] is String; } 
+PostPermissionCreateResponse copyWith({DateTime? createdAt, String Function()? resourceId, PostPermissionCreateResponseResourceType? resourceType, PostPermissionCreateResponseRole? role, String? subjectId, PostPermissionCreateResponseSubjectType? subjectType, DateTime? updatedAt, String? uuid, }) { return PostPermissionCreateResponse(
+  createdAt: createdAt ?? this.createdAt,
+  resourceId: resourceId != null ? resourceId() : this.resourceId,
+  resourceType: resourceType ?? this.resourceType,
+  role: role ?? this.role,
+  subjectId: subjectId ?? this.subjectId,
+  subjectType: subjectType ?? this.subjectType,
+  updatedAt: updatedAt ?? this.updatedAt,
+  uuid: uuid ?? this.uuid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPermissionCreateResponse &&
+          createdAt == other.createdAt &&
+          resourceId == other.resourceId &&
+          resourceType == other.resourceType &&
+          role == other.role &&
+          subjectId == other.subjectId &&
+          subjectType == other.subjectType &&
+          updatedAt == other.updatedAt &&
+          uuid == other.uuid; } 
+@override int get hashCode { return Object.hash(createdAt, resourceId, resourceType, role, subjectId, subjectType, updatedAt, uuid); } 
+@override String toString() { return 'PostPermissionCreateResponse(createdAt: $createdAt, resourceId: $resourceId, resourceType: $resourceType, role: $role, subjectId: $subjectId, subjectType: $subjectType, updatedAt: $updatedAt, uuid: $uuid)'; } 
+ }

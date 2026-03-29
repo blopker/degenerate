@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Provides details of Public IP for a GitHub-hosted larger runners
+final class PublicIp {const PublicIp({this.enabled, this.prefix, this.length, });
+
+factory PublicIp.fromJson(Map<String, dynamic> json) { return PublicIp(
+  enabled: json['enabled'] as bool?,
+  prefix: json['prefix'] as String?,
+  length: json['length'] != null ? (json['length'] as num).toInt() : null,
+); }
+
+/// Whether public IP is enabled.
+final bool? enabled;
+
+/// The prefix for the public IP.
+final String? prefix;
+
+/// The length of the IP prefix.
+final int? length;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': ?enabled,
+  'prefix': ?prefix,
+  'length': ?length,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PublicIp copyWith({bool Function()? enabled, String Function()? prefix, int Function()? length, }) { return PublicIp(
+  enabled: enabled != null ? enabled() : this.enabled,
+  prefix: prefix != null ? prefix() : this.prefix,
+  length: length != null ? length() : this.length,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PublicIp &&
+          enabled == other.enabled &&
+          prefix == other.prefix &&
+          length == other.length; } 
+@override int get hashCode { return Object.hash(enabled, prefix, length); } 
+@override String toString() { return 'PublicIp(enabled: $enabled, prefix: $prefix, length: $length)'; } 
+ }

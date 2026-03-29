@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file_link.dart';/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
+final class FileLinksObject {const FileLinksObject._(this.value);
+
+factory FileLinksObject.fromJson(String json) { return switch (json) {
+  'list' => list,
+  _ => FileLinksObject._(json),
+}; }
+
+static const FileLinksObject list = FileLinksObject._('list');
+
+static const List<FileLinksObject> values = [list];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FileLinksObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FileLinksObject($value)'; } 
+ }
+/// A list of [file links](https://api.stripe.com#file_links) that point at this file.
+final class FileLinks {const FileLinks({required this.data, required this.hasMore, required this.object, required this.url, });
+
+factory FileLinks.fromJson(Map<String, dynamic> json) { return FileLinks(
+  data: (json['data'] as List<dynamic>).map((e) => FileLink.fromJson(e as Map<String, dynamic>)).toList(),
+  hasMore: json['has_more'] as bool,
+  object: FileLinksObject.fromJson(json['object'] as String),
+  url: json['url'] as String,
+); }
+
+/// Details about each object.
+final List<FileLink> data;
+
+/// True if this list has another page of items after this one that can be fetched.
+final bool hasMore;
+
+/// String representing the object's type. Objects of the same type share the same value. Always has the value `list`.
+final FileLinksObject object;
+
+/// The URL where this list can be accessed.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.map((e) => e.toJson()).toList(),
+  'has_more': hasMore,
+  'object': object.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+      json.containsKey('has_more') && json['has_more'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('url') && json['url'] is String; } 
+FileLinks copyWith({List<FileLink>? data, bool? hasMore, FileLinksObject? object, String? url, }) { return FileLinks(
+  data: data ?? this.data,
+  hasMore: hasMore ?? this.hasMore,
+  object: object ?? this.object,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FileLinks &&
+          listEquals(data, other.data) &&
+          hasMore == other.hasMore &&
+          object == other.object &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(Object.hashAll(data), hasMore, object, url); } 
+@override String toString() { return 'FileLinks(data: $data, hasMore: $hasMore, object: $object, url: $url)'; } 
+ }

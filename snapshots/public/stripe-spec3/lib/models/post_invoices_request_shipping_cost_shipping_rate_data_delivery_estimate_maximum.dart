@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit {const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._(this.value);
+
+factory PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(String json) { return switch (json) {
+  'business_day' => businessDay,
+  'day' => day,
+  'hour' => hour,
+  'month' => month,
+  'week' => week,
+  _ => PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._(json),
+}; }
+
+static const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit businessDay = PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._('business_day');
+
+static const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit day = PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._('day');
+
+static const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit hour = PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._('hour');
+
+static const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit month = PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._('month');
+
+static const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit week = PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit._('week');
+
+static const List<PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit> values = [businessDay, day, hour, month, week];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit($value)'; } 
+ }
+final class PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum {const PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum({required this.unit, required this.value, });
+
+factory PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum(
+  unit: PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit.fromJson(json['unit'] as String),
+  value: (json['value'] as num).toInt(),
+); }
+
+final PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit unit;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'unit': unit.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num; } 
+PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum copyWith({PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximumUnit? unit, int? value, }) { return PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum(
+  unit: unit ?? this.unit,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum &&
+          unit == other.unit &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(unit, value); } 
+@override String toString() { return 'PostInvoicesRequestShippingCostShippingRateDataDeliveryEstimateMaximum(unit: $unit, value: $value)'; } 
+ }

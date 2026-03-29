@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that you authorized for the Connect App.  Can be: `get-all` or `post-all`.
+final class AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission._(this.value);
+
+factory AuthorizedConnectAppEnumPermission.fromJson(String json) { return switch (json) {
+  'get-all' => getAll,
+  'post-all' => postAll,
+  _ => AuthorizedConnectAppEnumPermission._(json),
+}; }
+
+static const AuthorizedConnectAppEnumPermission getAll = AuthorizedConnectAppEnumPermission._('get-all');
+
+static const AuthorizedConnectAppEnumPermission postAll = AuthorizedConnectAppEnumPermission._('post-all');
+
+static const List<AuthorizedConnectAppEnumPermission> values = [getAll, postAll];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AuthorizedConnectAppEnumPermission && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AuthorizedConnectAppEnumPermission($value)'; } 
+ }
+final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid, this.connectAppCompanyName, this.connectAppDescription, this.connectAppFriendlyName, this.connectAppHomepageUrl, this.connectAppSid, this.permissions, this.uri, });
+
+factory AccountAuthorizedConnectApp.fromJson(Map<String, dynamic> json) { return AccountAuthorizedConnectApp(
+  accountSid: json['account_sid'] as String?,
+  connectAppCompanyName: json['connect_app_company_name'] as String?,
+  connectAppDescription: json['connect_app_description'] as String?,
+  connectAppFriendlyName: json['connect_app_friendly_name'] as String?,
+  connectAppHomepageUrl: json['connect_app_homepage_url'] != null ? Uri.parse(json['connect_app_homepage_url'] as String) : null,
+  connectAppSid: json['connect_app_sid'] as String?,
+  permissions: (json['permissions'] as List<dynamic>?)?.map((e) => AuthorizedConnectAppEnumPermission.fromJson(e as String)).toList(),
+  uri: json['uri'] as String?,
+); }
+
+/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AuthorizedConnectApp resource.
+final String? accountSid;
+
+/// The company name set for the Connect App.
+final String? connectAppCompanyName;
+
+/// A detailed description of the Connect App.
+final String? connectAppDescription;
+
+/// The name of the Connect App.
+final String? connectAppFriendlyName;
+
+/// The public URL for the Connect App.
+final Uri? connectAppHomepageUrl;
+
+/// The SID that we assigned to the Connect App.
+final String? connectAppSid;
+
+/// The set of permissions that you authorized for the Connect App.  Can be: `get-all` or `post-all`.
+final List<AuthorizedConnectAppEnumPermission>? permissions;
+
+/// The URI of the resource, relative to `https://api.twilio.com`.
+final String? uri;
+
+Map<String, dynamic> toJson() { return {
+  'account_sid': ?accountSid,
+  'connect_app_company_name': ?connectAppCompanyName,
+  'connect_app_description': ?connectAppDescription,
+  'connect_app_friendly_name': ?connectAppFriendlyName,
+  if (connectAppHomepageUrl != null) 'connect_app_homepage_url': connectAppHomepageUrl?.toString(),
+  'connect_app_sid': ?connectAppSid,
+  if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
+  'uri': ?uri,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountAuthorizedConnectApp copyWith({String? Function()? accountSid, String? Function()? connectAppCompanyName, String? Function()? connectAppDescription, String? Function()? connectAppFriendlyName, Uri? Function()? connectAppHomepageUrl, String? Function()? connectAppSid, List<AuthorizedConnectAppEnumPermission>? Function()? permissions, String? Function()? uri, }) { return AccountAuthorizedConnectApp(
+  accountSid: accountSid != null ? accountSid() : this.accountSid,
+  connectAppCompanyName: connectAppCompanyName != null ? connectAppCompanyName() : this.connectAppCompanyName,
+  connectAppDescription: connectAppDescription != null ? connectAppDescription() : this.connectAppDescription,
+  connectAppFriendlyName: connectAppFriendlyName != null ? connectAppFriendlyName() : this.connectAppFriendlyName,
+  connectAppHomepageUrl: connectAppHomepageUrl != null ? connectAppHomepageUrl() : this.connectAppHomepageUrl,
+  connectAppSid: connectAppSid != null ? connectAppSid() : this.connectAppSid,
+  permissions: permissions != null ? permissions() : this.permissions,
+  uri: uri != null ? uri() : this.uri,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountAuthorizedConnectApp &&
+          accountSid == other.accountSid &&
+          connectAppCompanyName == other.connectAppCompanyName &&
+          connectAppDescription == other.connectAppDescription &&
+          connectAppFriendlyName == other.connectAppFriendlyName &&
+          connectAppHomepageUrl == other.connectAppHomepageUrl &&
+          connectAppSid == other.connectAppSid &&
+          listEquals(permissions, other.permissions) &&
+          uri == other.uri; } 
+@override int get hashCode { return Object.hash(accountSid, connectAppCompanyName, connectAppDescription, connectAppFriendlyName, connectAppHomepageUrl, connectAppSid, Object.hashAll(permissions ?? const []), uri); } 
+@override String toString() { return 'AccountAuthorizedConnectApp(accountSid: $accountSid, connectAppCompanyName: $connectAppCompanyName, connectAppDescription: $connectAppDescription, connectAppFriendlyName: $connectAppFriendlyName, connectAppHomepageUrl: $connectAppHomepageUrl, connectAppSid: $connectAppSid, permissions: $permissions, uri: $uri)'; } 
+ }

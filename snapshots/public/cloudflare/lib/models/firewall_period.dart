@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
+extension type const FirewallPeriod(double value) {
+factory FirewallPeriod.fromJson(num json) => FirewallPeriod(json.toDouble());
+
+num toJson() => value;
+
+}

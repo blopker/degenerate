@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_screenshot_response404_errors.dart';import 'urlscanner_get_scan_screenshot_response404_messages.dart';final class UrlscannerGetScanScreenshotResponse404 {const UrlscannerGetScanScreenshotResponse404({required this.errors, required this.messages, required this.success, });
+
+factory UrlscannerGetScanScreenshotResponse404.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanScreenshotResponse404(
+  errors: (json['errors'] as List<dynamic>).map((e) => UrlscannerGetScanScreenshotResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => UrlscannerGetScanScreenshotResponse404Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<UrlscannerGetScanScreenshotResponse404Errors> errors;
+
+final List<UrlscannerGetScanScreenshotResponse404Messages> messages;
+
+/// Whether request was successful or not
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+UrlscannerGetScanScreenshotResponse404 copyWith({List<UrlscannerGetScanScreenshotResponse404Errors>? errors, List<UrlscannerGetScanScreenshotResponse404Messages>? messages, bool? success, }) { return UrlscannerGetScanScreenshotResponse404(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanScreenshotResponse404 &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success); } 
+@override String toString() { return 'UrlscannerGetScanScreenshotResponse404(errors: $errors, messages: $messages, success: $success)'; } 
+ }

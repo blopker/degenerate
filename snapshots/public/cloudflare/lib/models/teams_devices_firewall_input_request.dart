@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Operating System.
+final class TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem._(this.value);
+
+factory TeamsDevicesFirewallInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
+  'windows' => windows,
+  'mac' => mac,
+  _ => TeamsDevicesFirewallInputRequestOperatingSystem._(json),
+}; }
+
+static const TeamsDevicesFirewallInputRequestOperatingSystem windows = TeamsDevicesFirewallInputRequestOperatingSystem._('windows');
+
+static const TeamsDevicesFirewallInputRequestOperatingSystem mac = TeamsDevicesFirewallInputRequestOperatingSystem._('mac');
+
+static const List<TeamsDevicesFirewallInputRequestOperatingSystem> values = [windows, mac];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesFirewallInputRequestOperatingSystem && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesFirewallInputRequestOperatingSystem($value)'; } 
+ }
+final class TeamsDevicesFirewallInputRequest {const TeamsDevicesFirewallInputRequest({required this.enabled, required this.operatingSystem, });
+
+factory TeamsDevicesFirewallInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesFirewallInputRequest(
+  enabled: json['enabled'] as bool,
+  operatingSystem: TeamsDevicesFirewallInputRequestOperatingSystem.fromJson(json['operating_system'] as String),
+); }
+
+/// Enabled.
+final bool enabled;
+
+/// Operating System.
+final TeamsDevicesFirewallInputRequestOperatingSystem operatingSystem;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  'operating_system': operatingSystem.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('operating_system'); } 
+TeamsDevicesFirewallInputRequest copyWith({bool? enabled, TeamsDevicesFirewallInputRequestOperatingSystem? operatingSystem, }) { return TeamsDevicesFirewallInputRequest(
+  enabled: enabled ?? this.enabled,
+  operatingSystem: operatingSystem ?? this.operatingSystem,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesFirewallInputRequest &&
+          enabled == other.enabled &&
+          operatingSystem == other.operatingSystem; } 
+@override int get hashCode { return Object.hash(enabled, operatingSystem); } 
+@override String toString() { return 'TeamsDevicesFirewallInputRequest(enabled: $enabled, operatingSystem: $operatingSystem)'; } 
+ }

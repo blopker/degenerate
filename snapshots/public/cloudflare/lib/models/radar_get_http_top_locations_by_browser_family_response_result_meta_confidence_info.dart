@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_top_locations_by_browser_family_response_result_meta_confidence_info_annotations.dart';final class RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo {const RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+
+factory RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo(
+  annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
+  level: (json['level'] as num).toInt(),
+); }
+
+final List<RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfoAnnotations> annotations;
+
+/// Provides an indication of how much confidence Cloudflare has in the data.
+final int level;
+
+Map<String, dynamic> toJson() { return {
+  'annotations': annotations.map((e) => e.toJson()).toList(),
+  'level': level,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations') &&
+      json.containsKey('level') && json['level'] is num; } 
+RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo copyWith({List<RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfoAnnotations>? annotations, int? level, }) { return RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo(
+  annotations: annotations ?? this.annotations,
+  level: level ?? this.level,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo &&
+          listEquals(annotations, other.annotations) &&
+          level == other.level; } 
+@override int get hashCode { return Object.hash(Object.hashAll(annotations), level); } 
+@override String toString() { return 'RadarGetHttpTopLocationsByBrowserFamilyResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)'; } 
+ }

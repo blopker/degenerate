@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo {const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(this.value);
+
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(String json) { return switch (json) {
+  '0' => $0,
+  '1' => $1,
+  '2' => $2,
+  '3' => $3,
+  '4' => $4,
+  'A' => a,
+  _ => PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._(json),
+}; }
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $0 = PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('0');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $1 = PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('1');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $2 = PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('2');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $3 = PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('3');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo $4 = PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('4');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo a = PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo._('A');
+
+static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo> values = [$0, $1, $2, $3, $4, a];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo($value)'; } 
+ }
+final class PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires {const PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });
+
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(
+  cbAvalgo: PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo.fromJson(json['cb_avalgo'] as String),
+  cbExemption: json['cb_exemption'] as String?,
+  cbScore: json['cb_score'] != null ? (json['cb_score'] as num).toInt() : null,
+); }
+
+final PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo cbAvalgo;
+
+final String? cbExemption;
+
+final int? cbScore;
+
+Map<String, dynamic> toJson() { return {
+  'cb_avalgo': cbAvalgo.toJson(),
+  'cb_exemption': ?cbExemption,
+  'cb_score': ?cbScore,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('cb_avalgo'); } 
+PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires copyWith({PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancairesCbAvalgo? cbAvalgo, String Function()? cbExemption, int Function()? cbScore, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(
+  cbAvalgo: cbAvalgo ?? this.cbAvalgo,
+  cbExemption: cbExemption != null ? cbExemption() : this.cbExemption,
+  cbScore: cbScore != null ? cbScore() : this.cbScore,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires &&
+          cbAvalgo == other.cbAvalgo &&
+          cbExemption == other.cbExemption &&
+          cbScore == other.cbScore; } 
+@override int get hashCode { return Object.hash(cbAvalgo, cbExemption, cbScore); } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardThreeDSecureNetworkOptionsCartesBancaires(cbAvalgo: $cbAvalgo, cbExemption: $cbExemption, cbScore: $cbScore)'; } 
+ }

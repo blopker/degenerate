@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetBgpRoutesRealtimeResponseResultRoutes {const RadarGetBgpRoutesRealtimeResponseResultRoutes({required this.asPath, required this.collector, required this.communities, required this.prefix, required this.timestamp, });
+
+factory RadarGetBgpRoutesRealtimeResponseResultRoutes.fromJson(Map<String, dynamic> json) { return RadarGetBgpRoutesRealtimeResponseResultRoutes(
+  asPath: (json['as_path'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+  collector: json['collector'] as String,
+  communities: (json['communities'] as List<dynamic>).map((e) => e as String).toList(),
+  prefix: json['prefix'] as String,
+  timestamp: json['timestamp'] as String,
+); }
+
+/// AS-level path for this route, from collector to origin.
+final List<int> asPath;
+
+/// Public collector ID for this route.
+final String collector;
+
+/// BGP community values.
+final List<String> communities;
+
+/// IP prefix of this query.
+final String prefix;
+
+/// Latest timestamp of change for this route.
+final String timestamp;
+
+Map<String, dynamic> toJson() { return {
+  'as_path': asPath,
+  'collector': collector,
+  'communities': communities,
+  'prefix': prefix,
+  'timestamp': timestamp,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('as_path') &&
+      json.containsKey('collector') && json['collector'] is String &&
+      json.containsKey('communities') &&
+      json.containsKey('prefix') && json['prefix'] is String &&
+      json.containsKey('timestamp') && json['timestamp'] is String; } 
+RadarGetBgpRoutesRealtimeResponseResultRoutes copyWith({List<int>? asPath, String? collector, List<String>? communities, String? prefix, String? timestamp, }) { return RadarGetBgpRoutesRealtimeResponseResultRoutes(
+  asPath: asPath ?? this.asPath,
+  collector: collector ?? this.collector,
+  communities: communities ?? this.communities,
+  prefix: prefix ?? this.prefix,
+  timestamp: timestamp ?? this.timestamp,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpRoutesRealtimeResponseResultRoutes &&
+          listEquals(asPath, other.asPath) &&
+          collector == other.collector &&
+          listEquals(communities, other.communities) &&
+          prefix == other.prefix &&
+          timestamp == other.timestamp; } 
+@override int get hashCode { return Object.hash(Object.hashAll(asPath), collector, Object.hashAll(communities), prefix, timestamp); } 
+@override String toString() { return 'RadarGetBgpRoutesRealtimeResponseResultRoutes(asPath: $asPath, collector: $collector, communities: $communities, prefix: $prefix, timestamp: $timestamp)'; } 
+ }

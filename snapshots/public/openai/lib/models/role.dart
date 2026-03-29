@@ -1,0 +1,95 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role`.
+final class RoleObject {const RoleObject._(this.value);
+
+factory RoleObject.fromJson(String json) { return switch (json) {
+  'role' => role,
+  _ => RoleObject._(json),
+}; }
+
+static const RoleObject role = RoleObject._('role');
+
+static const List<RoleObject> values = [role];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RoleObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RoleObject($value)'; } 
+ }
+/// Details about a role that can be assigned through the public Roles API.
+final class Role {const Role({required this.object, required this.id, required this.name, required this.description, required this.permissions, required this.resourceType, required this.predefinedRole, });
+
+factory Role.fromJson(Map<String, dynamic> json) { return Role(
+  object: RoleObject.fromJson(json['object'] as String),
+  id: json['id'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
+  resourceType: json['resource_type'] as String,
+  predefinedRole: json['predefined_role'] as bool,
+); }
+
+/// Always `role`.
+final RoleObject object;
+
+/// Identifier for the role.
+final String id;
+
+/// Unique name for the role.
+final String name;
+
+/// Optional description of the role.
+final String? description;
+
+/// Permissions granted by the role.
+final List<String> permissions;
+
+/// Resource type the role is bound to (for example `api.organization` or `api.project`).
+final String resourceType;
+
+/// Whether the role is predefined and managed by OpenAI.
+final bool predefinedRole;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'id': id,
+  'name': name,
+  'description': ?description,
+  'permissions': permissions,
+  'resource_type': resourceType,
+  'predefined_role': predefinedRole,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('permissions') &&
+      json.containsKey('resource_type') && json['resource_type'] is String &&
+      json.containsKey('predefined_role') && json['predefined_role'] is bool; } 
+Role copyWith({RoleObject? object, String? id, String? name, String? Function()? description, List<String>? permissions, String? resourceType, bool? predefinedRole, }) { return Role(
+  object: object ?? this.object,
+  id: id ?? this.id,
+  name: name ?? this.name,
+  description: description != null ? description() : this.description,
+  permissions: permissions ?? this.permissions,
+  resourceType: resourceType ?? this.resourceType,
+  predefinedRole: predefinedRole ?? this.predefinedRole,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Role &&
+          object == other.object &&
+          id == other.id &&
+          name == other.name &&
+          description == other.description &&
+          listEquals(permissions, other.permissions) &&
+          resourceType == other.resourceType &&
+          predefinedRole == other.predefinedRole; } 
+@override int get hashCode { return Object.hash(object, id, name, description, Object.hashAll(permissions), resourceType, predefinedRole); } 
+@override String toString() { return 'Role(object: $object, id: $id, name: $name, description: $description, permissions: $permissions, resourceType: $resourceType, predefinedRole: $predefinedRole)'; } 
+ }

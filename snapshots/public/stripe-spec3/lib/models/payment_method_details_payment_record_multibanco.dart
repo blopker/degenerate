@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodDetailsPaymentRecordMultibanco {const PaymentMethodDetailsPaymentRecordMultibanco({this.entity, this.reference, });
+
+factory PaymentMethodDetailsPaymentRecordMultibanco.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordMultibanco(
+  entity: json['entity'] as String?,
+  reference: json['reference'] as String?,
+); }
+
+/// Entity number associated with this Multibanco payment.
+final String? entity;
+
+/// Reference number associated with this Multibanco payment.
+final String? reference;
+
+Map<String, dynamic> toJson() { return {
+  'entity': ?entity,
+  'reference': ?reference,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsPaymentRecordMultibanco copyWith({String? Function()? entity, String? Function()? reference, }) { return PaymentMethodDetailsPaymentRecordMultibanco(
+  entity: entity != null ? entity() : this.entity,
+  reference: reference != null ? reference() : this.reference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsPaymentRecordMultibanco &&
+          entity == other.entity &&
+          reference == other.reference; } 
+@override int get hashCode { return Object.hash(entity, reference); } 
+@override String toString() { return 'PaymentMethodDetailsPaymentRecordMultibanco(entity: $entity, reference: $reference)'; } 
+ }

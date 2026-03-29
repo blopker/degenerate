@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'chatkit_configuration_param.dart';import 'expires_after_param.dart';import 'rate_limits_param.dart';import 'workflow_param.dart';/// Parameters for provisioning a new ChatKit session.
+final class CreateChatSessionBody {const CreateChatSessionBody({required this.workflow, required this.user, this.expiresAfter, this.rateLimits, this.chatkitConfiguration, });
+
+factory CreateChatSessionBody.fromJson(Map<String, dynamic> json) { return CreateChatSessionBody(
+  workflow: WorkflowParam.fromJson(json['workflow'] as Map<String, dynamic>),
+  user: json['user'] as String,
+  expiresAfter: json['expires_after'] != null ? ExpiresAfterParam.fromJson(json['expires_after'] as Map<String, dynamic>) : null,
+  rateLimits: json['rate_limits'] != null ? RateLimitsParam.fromJson(json['rate_limits'] as Map<String, dynamic>) : null,
+  chatkitConfiguration: json['chatkit_configuration'] != null ? ChatkitConfigurationParam.fromJson(json['chatkit_configuration'] as Map<String, dynamic>) : null,
+); }
+
+/// Workflow that powers the session.
+final WorkflowParam workflow;
+
+/// A free-form string that identifies your end user; ensures this Session can access other objects that have the same `user` scope.
+final String user;
+
+/// Optional override for session expiration timing in seconds from creation. Defaults to 10 minutes.
+final ExpiresAfterParam? expiresAfter;
+
+/// Optional override for per-minute request limits. When omitted, defaults to 10.
+final RateLimitsParam? rateLimits;
+
+/// Optional overrides for ChatKit runtime configuration features
+final ChatkitConfigurationParam? chatkitConfiguration;
+
+Map<String, dynamic> toJson() { return {
+  'workflow': workflow.toJson(),
+  'user': user,
+  if (expiresAfter != null) 'expires_after': expiresAfter?.toJson(),
+  if (rateLimits != null) 'rate_limits': rateLimits?.toJson(),
+  if (chatkitConfiguration != null) 'chatkit_configuration': chatkitConfiguration?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('workflow') &&
+      json.containsKey('user') && json['user'] is String; } 
+CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAfterParam Function()? expiresAfter, RateLimitsParam Function()? rateLimits, ChatkitConfigurationParam Function()? chatkitConfiguration, }) { return CreateChatSessionBody(
+  workflow: workflow ?? this.workflow,
+  user: user ?? this.user,
+  expiresAfter: expiresAfter != null ? expiresAfter() : this.expiresAfter,
+  rateLimits: rateLimits != null ? rateLimits() : this.rateLimits,
+  chatkitConfiguration: chatkitConfiguration != null ? chatkitConfiguration() : this.chatkitConfiguration,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateChatSessionBody &&
+          workflow == other.workflow &&
+          user == other.user &&
+          expiresAfter == other.expiresAfter &&
+          rateLimits == other.rateLimits &&
+          chatkitConfiguration == other.chatkitConfiguration; } 
+@override int get hashCode { return Object.hash(workflow, user, expiresAfter, rateLimits, chatkitConfiguration); } 
+@override String toString() { return 'CreateChatSessionBody(workflow: $workflow, user: $user, expiresAfter: $expiresAfter, rateLimits: $rateLimits, chatkitConfiguration: $chatkitConfiguration)'; } 
+ }

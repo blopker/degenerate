@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent._(this.value);
+
+factory PullsDismissReviewRequestEvent.fromJson(String json) { return switch (json) {
+  'DISMISS' => dismiss,
+  _ => PullsDismissReviewRequestEvent._(json),
+}; }
+
+static const PullsDismissReviewRequestEvent dismiss = PullsDismissReviewRequestEvent._('DISMISS');
+
+static const List<PullsDismissReviewRequestEvent> values = [dismiss];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PullsDismissReviewRequestEvent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PullsDismissReviewRequestEvent($value)'; } 
+ }
+final class PullsDismissReviewRequest {const PullsDismissReviewRequest({required this.message, this.event, });
+
+factory PullsDismissReviewRequest.fromJson(Map<String, dynamic> json) { return PullsDismissReviewRequest(
+  message: json['message'] as String,
+  event: json['event'] != null ? PullsDismissReviewRequestEvent.fromJson(json['event'] as String) : null,
+); }
+
+/// The message for the pull request review dismissal
+final String message;
+
+final PullsDismissReviewRequestEvent? event;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+  if (event != null) 'event': event?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+PullsDismissReviewRequest copyWith({String? message, PullsDismissReviewRequestEvent Function()? event, }) { return PullsDismissReviewRequest(
+  message: message ?? this.message,
+  event: event != null ? event() : this.event,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullsDismissReviewRequest &&
+          message == other.message &&
+          event == other.event; } 
+@override int get hashCode { return Object.hash(message, event); } 
+@override String toString() { return 'PullsDismissReviewRequest(message: $message, event: $event)'; } 
+ }

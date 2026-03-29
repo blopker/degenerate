@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param4.dart';final class PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2._(this.value);
+
+factory PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2._(json),
+}; }
+
+static const PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2 $empty = PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2._('');
+
+static const List<PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsRequestPaymentMethodOptionsAlma = OneOf2<PaymentMethodOptionsParam4,PostPaymentIntentsRequestPaymentMethodOptionsAlmaVariant2>;

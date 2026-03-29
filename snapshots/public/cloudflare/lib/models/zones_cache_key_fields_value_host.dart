@@ -1,0 +1,28 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Determines which host header to include in the Cache Key.
+/// 
+final class ZonesCacheKeyFieldsValueHost {const ZonesCacheKeyFieldsValueHost({this.resolved});
+
+factory ZonesCacheKeyFieldsValueHost.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueHost(
+  resolved: json['resolved'] as bool?,
+); }
+
+/// Whether to include the Host header in the HTTP request sent
+/// to the origin.
+/// 
+final bool? resolved;
+
+Map<String, dynamic> toJson() { return {
+  'resolved': ?resolved,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesCacheKeyFieldsValueHost copyWith({bool Function()? resolved}) { return ZonesCacheKeyFieldsValueHost(
+  resolved: resolved != null ? resolved() : this.resolved,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesCacheKeyFieldsValueHost &&
+          resolved == other.resolved; } 
+@override int get hashCode { return resolved.hashCode; } 
+@override String toString() { return 'ZonesCacheKeyFieldsValueHost(resolved: $resolved)'; } 
+ }

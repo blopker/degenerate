@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Prompt51ResponseFormatType {const Prompt51ResponseFormatType._(this.value);
+
+factory Prompt51ResponseFormatType.fromJson(String json) { return switch (json) {
+  'json_object' => jsonObject,
+  'json_schema' => jsonSchema,
+  _ => Prompt51ResponseFormatType._(json),
+}; }
+
+static const Prompt51ResponseFormatType jsonObject = Prompt51ResponseFormatType._('json_object');
+
+static const Prompt51ResponseFormatType jsonSchema = Prompt51ResponseFormatType._('json_schema');
+
+static const List<Prompt51ResponseFormatType> values = [jsonObject, jsonSchema];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Prompt51ResponseFormatType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Prompt51ResponseFormatType($value)'; } 
+ }
+final class Prompt51ResponseFormat {const Prompt51ResponseFormat({this.jsonSchema, this.type, });
+
+factory Prompt51ResponseFormat.fromJson(Map<String, dynamic> json) { return Prompt51ResponseFormat(
+  jsonSchema: json['json_schema'],
+  type: json['type'] != null ? Prompt51ResponseFormatType.fromJson(json['type'] as String) : null,
+); }
+
+final dynamic jsonSchema;
+
+final Prompt51ResponseFormatType? type;
+
+Map<String, dynamic> toJson() { return {
+  'json_schema': ?jsonSchema,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Prompt51ResponseFormat copyWith({dynamic Function()? jsonSchema, Prompt51ResponseFormatType Function()? type, }) { return Prompt51ResponseFormat(
+  jsonSchema: jsonSchema != null ? jsonSchema() : this.jsonSchema,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt51ResponseFormat &&
+          jsonSchema == other.jsonSchema &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(jsonSchema, type); } 
+@override String toString() { return 'Prompt51ResponseFormat(jsonSchema: $jsonSchema, type: $type)'; } 
+ }

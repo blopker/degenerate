@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_bgp_pfx2as_moas_response_result.dart';final class RadarGetBgpPfx2asMoasResponse {const RadarGetBgpPfx2asMoasResponse({required this.result, required this.success, });
+
+factory RadarGetBgpPfx2asMoasResponse.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asMoasResponse(
+  result: RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final RadarGetBgpPfx2asMoasResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+RadarGetBgpPfx2asMoasResponse copyWith({RadarGetBgpPfx2asMoasResponseResult? result, bool? success, }) { return RadarGetBgpPfx2asMoasResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpPfx2asMoasResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'RadarGetBgpPfx2asMoasResponse(result: $result, success: $success)'; } 
+ }

@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtimekit_storage_config.dart';/// The type of output destination this layer is being exported to.
+final class RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType._(this.value);
+
+factory RealtimekitTrackLayerOutputType.fromJson(String json) { return switch (json) {
+  'REALTIMEKIT_BUCKET' => realtimekitBucket,
+  'STORAGE_CONFIG' => storageConfig,
+  _ => RealtimekitTrackLayerOutputType._(json),
+}; }
+
+static const RealtimekitTrackLayerOutputType realtimekitBucket = RealtimekitTrackLayerOutputType._('REALTIMEKIT_BUCKET');
+
+static const RealtimekitTrackLayerOutputType storageConfig = RealtimekitTrackLayerOutputType._('STORAGE_CONFIG');
+
+static const List<RealtimekitTrackLayerOutputType> values = [realtimekitBucket, storageConfig];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimekitTrackLayerOutputType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimekitTrackLayerOutputType($value)'; } 
+ }
+final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });
+
+factory RealtimekitTrackLayerOutput.fromJson(Map<String, dynamic> json) { return RealtimekitTrackLayerOutput(
+  storageConfig: json['storage_config'] != null ? RealtimekitStorageConfig.fromJson(json['storage_config'] as Map<String, dynamic>) : null,
+  type: json.containsKey('type') ? RealtimekitTrackLayerOutputType.fromJson(json['type'] as String) : RealtimekitTrackLayerOutputType.realtimekitBucket,
+); }
+
+final RealtimekitStorageConfig? storageConfig;
+
+/// The type of output destination this layer is being exported to.
+final RealtimekitTrackLayerOutputType type;
+
+Map<String, dynamic> toJson() { return {
+  if (storageConfig != null) 'storage_config': storageConfig?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitTrackLayerOutput copyWith({RealtimekitStorageConfig Function()? storageConfig, RealtimekitTrackLayerOutputType Function()? type, }) { return RealtimekitTrackLayerOutput(
+  storageConfig: storageConfig != null ? storageConfig() : this.storageConfig,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitTrackLayerOutput &&
+          storageConfig == other.storageConfig &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(storageConfig, type); } 
+@override String toString() { return 'RealtimekitTrackLayerOutput(storageConfig: $storageConfig, type: $type)'; } 
+ }

@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DiffEntryStatus {const DiffEntryStatus._(this.value);
+
+factory DiffEntryStatus.fromJson(String json) { return switch (json) {
+  'added' => added,
+  'removed' => removed,
+  'modified' => modified,
+  'renamed' => renamed,
+  'copied' => copied,
+  'changed' => changed,
+  'unchanged' => unchanged,
+  _ => DiffEntryStatus._(json),
+}; }
+
+static const DiffEntryStatus added = DiffEntryStatus._('added');
+
+static const DiffEntryStatus removed = DiffEntryStatus._('removed');
+
+static const DiffEntryStatus modified = DiffEntryStatus._('modified');
+
+static const DiffEntryStatus renamed = DiffEntryStatus._('renamed');
+
+static const DiffEntryStatus copied = DiffEntryStatus._('copied');
+
+static const DiffEntryStatus changed = DiffEntryStatus._('changed');
+
+static const DiffEntryStatus unchanged = DiffEntryStatus._('unchanged');
+
+static const List<DiffEntryStatus> values = [added, removed, modified, renamed, copied, changed, unchanged];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DiffEntryStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DiffEntryStatus($value)'; } 
+ }
+/// Diff Entry
+final class DiffEntry {const DiffEntry({required this.sha, required this.filename, required this.status, required this.additions, required this.deletions, required this.changes, required this.blobUrl, required this.rawUrl, required this.contentsUrl, this.patch, this.previousFilename, });
+
+factory DiffEntry.fromJson(Map<String, dynamic> json) { return DiffEntry(
+  sha: json['sha'] as String?,
+  filename: json['filename'] as String,
+  status: DiffEntryStatus.fromJson(json['status'] as String),
+  additions: (json['additions'] as num).toInt(),
+  deletions: (json['deletions'] as num).toInt(),
+  changes: (json['changes'] as num).toInt(),
+  blobUrl: Uri.parse(json['blob_url'] as String),
+  rawUrl: Uri.parse(json['raw_url'] as String),
+  contentsUrl: Uri.parse(json['contents_url'] as String),
+  patch: json['patch'] as String?,
+  previousFilename: json['previous_filename'] as String?,
+); }
+
+final String? sha;
+
+final String filename;
+
+final DiffEntryStatus status;
+
+final int additions;
+
+final int deletions;
+
+final int changes;
+
+final Uri blobUrl;
+
+final Uri rawUrl;
+
+final Uri contentsUrl;
+
+final String? patch;
+
+final String? previousFilename;
+
+Map<String, dynamic> toJson() { return {
+  'sha': ?sha,
+  'filename': filename,
+  'status': status.toJson(),
+  'additions': additions,
+  'deletions': deletions,
+  'changes': changes,
+  'blob_url': blobUrl.toString(),
+  'raw_url': rawUrl.toString(),
+  'contents_url': contentsUrl.toString(),
+  'patch': ?patch,
+  'previous_filename': ?previousFilename,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sha') && json['sha'] is String &&
+      json.containsKey('filename') && json['filename'] is String &&
+      json.containsKey('status') &&
+      json.containsKey('additions') && json['additions'] is num &&
+      json.containsKey('deletions') && json['deletions'] is num &&
+      json.containsKey('changes') && json['changes'] is num &&
+      json.containsKey('blob_url') && json['blob_url'] is String &&
+      json.containsKey('raw_url') && json['raw_url'] is String &&
+      json.containsKey('contents_url') && json['contents_url'] is String; } 
+DiffEntry copyWith({String? Function()? sha, String? filename, DiffEntryStatus? status, int? additions, int? deletions, int? changes, Uri? blobUrl, Uri? rawUrl, Uri? contentsUrl, String Function()? patch, String Function()? previousFilename, }) { return DiffEntry(
+  sha: sha != null ? sha() : this.sha,
+  filename: filename ?? this.filename,
+  status: status ?? this.status,
+  additions: additions ?? this.additions,
+  deletions: deletions ?? this.deletions,
+  changes: changes ?? this.changes,
+  blobUrl: blobUrl ?? this.blobUrl,
+  rawUrl: rawUrl ?? this.rawUrl,
+  contentsUrl: contentsUrl ?? this.contentsUrl,
+  patch: patch != null ? patch() : this.patch,
+  previousFilename: previousFilename != null ? previousFilename() : this.previousFilename,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DiffEntry &&
+          sha == other.sha &&
+          filename == other.filename &&
+          status == other.status &&
+          additions == other.additions &&
+          deletions == other.deletions &&
+          changes == other.changes &&
+          blobUrl == other.blobUrl &&
+          rawUrl == other.rawUrl &&
+          contentsUrl == other.contentsUrl &&
+          patch == other.patch &&
+          previousFilename == other.previousFilename; } 
+@override int get hashCode { return Object.hash(sha, filename, status, additions, deletions, changes, blobUrl, rawUrl, contentsUrl, patch, previousFilename); } 
+@override String toString() { return 'DiffEntry(sha: $sha, filename: $filename, status: $status, additions: $additions, deletions: $deletions, changes: $changes, blobUrl: $blobUrl, rawUrl: $rawUrl, contentsUrl: $contentsUrl, patch: $patch, previousFilename: $previousFilename)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'inbound_transfers.dart';/// Details about the PaymentMethod for an InboundTransfer.
+final class TreasuryInboundTransferOriginPaymentMethodDetails {const TreasuryInboundTransferOriginPaymentMethodDetails({this.inboundTransfers});
+
+factory TreasuryInboundTransferOriginPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransferOriginPaymentMethodDetails(
+  inboundTransfers: InboundTransfers.canParse(json) ? InboundTransfers.fromJson(json) : null,
+); }
+
+final InboundTransfers? inboundTransfers;
+
+/// At least one variant must be present.
+bool get isValid { return inboundTransfers != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?inboundTransfers?.toJson(),
+}; } 
+ }

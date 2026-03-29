@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_ai_inference_summary_by_model_response_result_meta_confidence_info.dart';import 'radar_get_ai_inference_summary_by_model_response_result_meta_date_range.dart';import 'radar_get_ai_inference_summary_by_model_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization {const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._(this.value);
+
+factory RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization percentage = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization min0Max = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization minMax = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization rawValues = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization percentageChange = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization rollingAverage = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization overlappedPercentage = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization ratio = RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetAiInferenceSummaryByModelResponseResultMeta {const RadarGetAiInferenceSummaryByModelResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetAiInferenceSummaryByModelResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAiInferenceSummaryByModelResponseResultMeta(
+  confidenceInfo: RadarGetAiInferenceSummaryByModelResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetAiInferenceSummaryByModelResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetAiInferenceSummaryByModelResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final RadarGetAiInferenceSummaryByModelResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetAiInferenceSummaryByModelResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetAiInferenceSummaryByModelResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetAiInferenceSummaryByModelResponseResultMeta copyWith({RadarGetAiInferenceSummaryByModelResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetAiInferenceSummaryByModelResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetAiInferenceSummaryByModelResponseResultMetaNormalization? normalization, List<RadarGetAiInferenceSummaryByModelResponseResultMetaUnits>? units, }) { return RadarGetAiInferenceSummaryByModelResponseResultMeta(
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAiInferenceSummaryByModelResponseResultMeta &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetAiInferenceSummaryByModelResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentIntentPaymentMethodOptionsParam10 {const PaymentIntentPaymentMethodOptionsParam10();
+
+factory PaymentIntentPaymentMethodOptionsParam10.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam10(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsParam10 copyWith() { return PaymentIntentPaymentMethodOptionsParam10(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PaymentIntentPaymentMethodOptionsParam10; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam10()'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Defines which metric to return (bandwidth, latency, or DNS response time).
+final class RadarGetQualityIndexSummaryMetric {const RadarGetQualityIndexSummaryMetric._(this.value);
+
+factory RadarGetQualityIndexSummaryMetric.fromJson(String json) { return switch (json) {
+  'BANDWIDTH' => bandwidth,
+  'DNS' => dns,
+  'LATENCY' => latency,
+  _ => RadarGetQualityIndexSummaryMetric._(json),
+}; }
+
+static const RadarGetQualityIndexSummaryMetric bandwidth = RadarGetQualityIndexSummaryMetric._('BANDWIDTH');
+
+static const RadarGetQualityIndexSummaryMetric dns = RadarGetQualityIndexSummaryMetric._('DNS');
+
+static const RadarGetQualityIndexSummaryMetric latency = RadarGetQualityIndexSummaryMetric._('LATENCY');
+
+static const List<RadarGetQualityIndexSummaryMetric> values = [bandwidth, dns, latency];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetQualityIndexSummaryMetric && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetQualityIndexSummaryMetric($value)'; } 
+ }

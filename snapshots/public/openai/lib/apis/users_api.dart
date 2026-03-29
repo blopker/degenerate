@@ -1,0 +1,101 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/user.dart';import '../models/user_delete_response.dart';import '../models/user_list_response.dart';import '../models/user_role_update_request.dart';/// UsersApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class UsersApi with ApiExecutor {const UsersApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Lists all of the users in the organization.
+///
+/// `GET /organization/users`
+Future<ApiResult<UserListResponse, Never>> listUsers({int? limit, String? after, List<String>? emails, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (after != null) queryParameters['after'] = after;
+if (emails != null) {
+for (final item in emails) {
+  queryParametersList.add(ApiQueryParameter(name: 'emails', value: item, allowReserved: false));
+}
+}
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/organization/users',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return UserListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Retrieves a user by their identifier.
+///
+/// `GET /organization/users/{user_id}`
+Future<ApiResult<User, Never>> retrieveUser({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/organization/users/${Uri.encodeComponent(userId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Modifies a user's role in the organization.
+///
+/// `POST /organization/users/{user_id}`
+Future<ApiResult<User, Never>> modifyUser({required String userId, required UserRoleUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/organization/users/${Uri.encodeComponent(userId)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return User.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Deletes a user from the organization.
+///
+/// `DELETE /organization/users/{user_id}`
+Future<ApiResult<UserDeleteResponse, Never>> deleteUser({required String userId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/organization/users/${Uri.encodeComponent(userId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return UserDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

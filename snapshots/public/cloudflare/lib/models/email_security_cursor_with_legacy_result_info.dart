@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EmailSecurityCursorWithLegacyResultInfo {const EmailSecurityCursorWithLegacyResultInfo({required this.count, this.next, required this.page, required this.perPage, this.previous, required this.totalCount, });
+
+factory EmailSecurityCursorWithLegacyResultInfo.fromJson(Map<String, dynamic> json) { return EmailSecurityCursorWithLegacyResultInfo(
+  count: (json['count'] as num).toInt(),
+  next: json['next'] as String?,
+  page: (json['page'] as num).toInt(),
+  perPage: (json['per_page'] as num).toInt(),
+  previous: json['previous'] as String?,
+  totalCount: (json['total_count'] as num).toInt(),
+); }
+
+final int count;
+
+final String? next;
+
+/// Deprecated: Returns always 0
+final int page;
+
+/// number of items per page
+final int perPage;
+
+final String? previous;
+
+/// Deprecated: Returns always 0
+final int totalCount;
+
+Map<String, dynamic> toJson() { return {
+  'count': count,
+  'next': ?next,
+  'page': page,
+  'per_page': perPage,
+  'previous': ?previous,
+  'total_count': totalCount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('page') && json['page'] is num &&
+      json.containsKey('per_page') && json['per_page'] is num &&
+      json.containsKey('total_count') && json['total_count'] is num; } 
+EmailSecurityCursorWithLegacyResultInfo copyWith({int? count, String? Function()? next, int? page, int? perPage, String? Function()? previous, int? totalCount, }) { return EmailSecurityCursorWithLegacyResultInfo(
+  count: count ?? this.count,
+  next: next != null ? next() : this.next,
+  page: page ?? this.page,
+  perPage: perPage ?? this.perPage,
+  previous: previous != null ? previous() : this.previous,
+  totalCount: totalCount ?? this.totalCount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityCursorWithLegacyResultInfo &&
+          count == other.count &&
+          next == other.next &&
+          page == other.page &&
+          perPage == other.perPage &&
+          previous == other.previous &&
+          totalCount == other.totalCount; } 
+@override int get hashCode { return Object.hash(count, next, page, perPage, previous, totalCount); } 
+@override String toString() { return 'EmailSecurityCursorWithLegacyResultInfo(count: $count, next: $next, page: $page, perPage: $perPage, previous: $previous, totalCount: $totalCount)'; } 
+ }

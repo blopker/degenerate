@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Type of source
+final class MqEventSourceImagesType {const MqEventSourceImagesType._(this.value);
+
+factory MqEventSourceImagesType.fromJson(String json) { return switch (json) {
+  'images' => images,
+  _ => MqEventSourceImagesType._(json),
+}; }
+
+static const MqEventSourceImagesType images = MqEventSourceImagesType._('images');
+
+static const List<MqEventSourceImagesType> values = [images];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MqEventSourceImagesType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MqEventSourceImagesType($value)'; } 
+ }
+final class MqEventSourceImages {const MqEventSourceImages({this.type});
+
+factory MqEventSourceImages.fromJson(Map<String, dynamic> json) { return MqEventSourceImages(
+  type: json['type'] != null ? MqEventSourceImagesType.fromJson(json['type'] as String) : null,
+); }
+
+/// Type of source
+final MqEventSourceImagesType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MqEventSourceImages copyWith({MqEventSourceImagesType Function()? type}) { return MqEventSourceImages(
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MqEventSourceImages &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'MqEventSourceImages(type: $type)'; } 
+ }

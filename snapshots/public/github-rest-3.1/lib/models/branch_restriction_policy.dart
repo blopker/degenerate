@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'branch_restriction_policy_apps.dart';import 'branch_restriction_policy_users.dart';import 'team.dart';/// Branch Restriction Policy
+final class BranchRestrictionPolicy {const BranchRestrictionPolicy({required this.url, required this.usersUrl, required this.teamsUrl, required this.appsUrl, required this.users, required this.teams, required this.apps, });
+
+factory BranchRestrictionPolicy.fromJson(Map<String, dynamic> json) { return BranchRestrictionPolicy(
+  url: Uri.parse(json['url'] as String),
+  usersUrl: Uri.parse(json['users_url'] as String),
+  teamsUrl: Uri.parse(json['teams_url'] as String),
+  appsUrl: Uri.parse(json['apps_url'] as String),
+  users: (json['users'] as List<dynamic>).map((e) => BranchRestrictionPolicyUsers.fromJson(e as Map<String, dynamic>)).toList(),
+  teams: (json['teams'] as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
+  apps: (json['apps'] as List<dynamic>).map((e) => BranchRestrictionPolicyApps.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final Uri url;
+
+final Uri usersUrl;
+
+final Uri teamsUrl;
+
+final Uri appsUrl;
+
+final List<BranchRestrictionPolicyUsers> users;
+
+final List<Team> teams;
+
+final List<BranchRestrictionPolicyApps> apps;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'users_url': usersUrl.toString(),
+  'teams_url': teamsUrl.toString(),
+  'apps_url': appsUrl.toString(),
+  'users': users.map((e) => e.toJson()).toList(),
+  'teams': teams.map((e) => e.toJson()).toList(),
+  'apps': apps.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('users_url') && json['users_url'] is String &&
+      json.containsKey('teams_url') && json['teams_url'] is String &&
+      json.containsKey('apps_url') && json['apps_url'] is String &&
+      json.containsKey('users') &&
+      json.containsKey('teams') &&
+      json.containsKey('apps'); } 
+BranchRestrictionPolicy copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, Uri? appsUrl, List<BranchRestrictionPolicyUsers>? users, List<Team>? teams, List<BranchRestrictionPolicyApps>? apps, }) { return BranchRestrictionPolicy(
+  url: url ?? this.url,
+  usersUrl: usersUrl ?? this.usersUrl,
+  teamsUrl: teamsUrl ?? this.teamsUrl,
+  appsUrl: appsUrl ?? this.appsUrl,
+  users: users ?? this.users,
+  teams: teams ?? this.teams,
+  apps: apps ?? this.apps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BranchRestrictionPolicy &&
+          url == other.url &&
+          usersUrl == other.usersUrl &&
+          teamsUrl == other.teamsUrl &&
+          appsUrl == other.appsUrl &&
+          listEquals(users, other.users) &&
+          listEquals(teams, other.teams) &&
+          listEquals(apps, other.apps); } 
+@override int get hashCode { return Object.hash(url, usersUrl, teamsUrl, appsUrl, Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps)); } 
+@override String toString() { return 'BranchRestrictionPolicy(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, appsUrl: $appsUrl, users: $users, teams: $teams, apps: $apps)'; } 
+ }

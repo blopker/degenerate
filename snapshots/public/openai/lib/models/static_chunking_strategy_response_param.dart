@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'static_chunking_strategy.dart';/// Always `static`.
+final class StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType._(this.value);
+
+factory StaticChunkingStrategyResponseParamType.fromJson(String json) { return switch (json) {
+  'static' => $static,
+  _ => StaticChunkingStrategyResponseParamType._(json),
+}; }
+
+static const StaticChunkingStrategyResponseParamType $static = StaticChunkingStrategyResponseParamType._('static');
+
+static const List<StaticChunkingStrategyResponseParamType> values = [$static];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is StaticChunkingStrategyResponseParamType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'StaticChunkingStrategyResponseParamType($value)'; } 
+ }
+final class StaticChunkingStrategyResponseParam {const StaticChunkingStrategyResponseParam({required this.type, required this.$static, });
+
+factory StaticChunkingStrategyResponseParam.fromJson(Map<String, dynamic> json) { return StaticChunkingStrategyResponseParam(
+  type: StaticChunkingStrategyResponseParamType.fromJson(json['type'] as String),
+  $static: StaticChunkingStrategy.fromJson(json['static'] as Map<String, dynamic>),
+); }
+
+/// Always `static`.
+final StaticChunkingStrategyResponseParamType type;
+
+final StaticChunkingStrategy $static;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'static': $static.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('static'); } 
+StaticChunkingStrategyResponseParam copyWith({StaticChunkingStrategyResponseParamType? type, StaticChunkingStrategy? $static, }) { return StaticChunkingStrategyResponseParam(
+  type: type ?? this.type,
+  $static: $static ?? this.$static,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StaticChunkingStrategyResponseParam &&
+          type == other.type &&
+          $static == other.$static; } 
+@override int get hashCode { return Object.hash(type, $static); } 
+@override String toString() { return 'StaticChunkingStrategyResponseParam(type: $type, \$static: ${$static})'; } 
+ }

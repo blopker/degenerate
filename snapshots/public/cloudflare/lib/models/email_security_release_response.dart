@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_security_postfix_id.dart';final class EmailSecurityReleaseResponse {const EmailSecurityReleaseResponse({this.delivered, this.failed, this.undelivered, required this.id, required this.postfixId, });
+
+factory EmailSecurityReleaseResponse.fromJson(Map<String, dynamic> json) { return EmailSecurityReleaseResponse(
+  delivered: (json['delivered'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  failed: (json['failed'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  undelivered: (json['undelivered'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  id: json['id'] as String,
+  postfixId: EmailSecurityPostfixId.fromJson(json['postfix_id'] as String),
+); }
+
+final List<String>? delivered;
+
+final List<String>? failed;
+
+final List<String>? undelivered;
+
+final String id;
+
+/// The identifier of the message.
+final EmailSecurityPostfixId postfixId;
+
+Map<String, dynamic> toJson() { return {
+  'delivered': ?delivered,
+  'failed': ?failed,
+  'undelivered': ?undelivered,
+  'id': id,
+  'postfix_id': postfixId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('postfix_id'); } 
+EmailSecurityReleaseResponse copyWith({List<String>? Function()? delivered, List<String>? Function()? failed, List<String>? Function()? undelivered, String? id, EmailSecurityPostfixId? postfixId, }) { return EmailSecurityReleaseResponse(
+  delivered: delivered != null ? delivered() : this.delivered,
+  failed: failed != null ? failed() : this.failed,
+  undelivered: undelivered != null ? undelivered() : this.undelivered,
+  id: id ?? this.id,
+  postfixId: postfixId ?? this.postfixId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityReleaseResponse &&
+          listEquals(delivered, other.delivered) &&
+          listEquals(failed, other.failed) &&
+          listEquals(undelivered, other.undelivered) &&
+          id == other.id &&
+          postfixId == other.postfixId; } 
+@override int get hashCode { return Object.hash(Object.hashAll(delivered ?? const []), Object.hashAll(failed ?? const []), Object.hashAll(undelivered ?? const []), id, postfixId); } 
+@override String toString() { return 'EmailSecurityReleaseResponse(delivered: $delivered, failed: $failed, undelivered: $undelivered, id: $id, postfixId: $postfixId)'; } 
+ }

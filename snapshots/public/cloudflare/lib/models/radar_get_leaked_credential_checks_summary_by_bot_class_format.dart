@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetLeakedCredentialChecksSummaryByBotClassFormat {const RadarGetLeakedCredentialChecksSummaryByBotClassFormat._(this.value);
+
+factory RadarGetLeakedCredentialChecksSummaryByBotClassFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetLeakedCredentialChecksSummaryByBotClassFormat._(json),
+}; }
+
+static const RadarGetLeakedCredentialChecksSummaryByBotClassFormat $json = RadarGetLeakedCredentialChecksSummaryByBotClassFormat._('JSON');
+
+static const RadarGetLeakedCredentialChecksSummaryByBotClassFormat csv = RadarGetLeakedCredentialChecksSummaryByBotClassFormat._('CSV');
+
+static const List<RadarGetLeakedCredentialChecksSummaryByBotClassFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksSummaryByBotClassFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByBotClassFormat($value)'; } 
+ }

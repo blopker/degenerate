@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_opportunistic_encryption_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
+/// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.
+/// 
+final class ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId._(this.value);
+
+factory ZonesOpportunisticEncryptionId.fromJson(String json) { return switch (json) {
+  'opportunistic_encryption' => opportunisticEncryption,
+  _ => ZonesOpportunisticEncryptionId._(json),
+}; }
+
+static const ZonesOpportunisticEncryptionId opportunisticEncryption = ZonesOpportunisticEncryptionId._('opportunistic_encryption');
+
+static const List<ZonesOpportunisticEncryptionId> values = [opportunisticEncryption];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesOpportunisticEncryptionId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesOpportunisticEncryptionId($value)'; } 
+ }
+final class ZonesOpportunisticEncryption {const ZonesOpportunisticEncryption({this.id, this.value, });
+
+factory ZonesOpportunisticEncryption.fromJson(Map<String, dynamic> json) { return ZonesOpportunisticEncryption(
+  id: json['id'] != null ? ZonesOpportunisticEncryptionId.fromJson(json['id'] as String) : null,
+  value: json['value'] != null ? ZonesOpportunisticEncryptionValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
+/// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.
+/// 
+final ZonesOpportunisticEncryptionId? id;
+
+/// The status of Opportunistic Encryption.
+/// 
+final ZonesOpportunisticEncryptionValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesOpportunisticEncryption copyWith({ZonesOpportunisticEncryptionId Function()? id, ZonesOpportunisticEncryptionValue Function()? value, }) { return ZonesOpportunisticEncryption(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesOpportunisticEncryption &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ZonesOpportunisticEncryption(id: $id, value: $value)'; } 
+ }

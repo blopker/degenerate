@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant1({required this.timestamps});
+
+factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant1.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant1(
+  timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
+); }
+
+final List<DateTime> timestamps;
+
+Map<String, dynamic> toJson() { return {
+  'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamps'); } 
+RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 copyWith({List<DateTime>? timestamps}) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant1(
+  timestamps: timestamps ?? this.timestamps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetCtTimeseriesGroupResponseResultSerie0Variant1 &&
+          listEquals(timestamps, other.timestamps); } 
+@override int get hashCode { return Object.hashAll(timestamps).hashCode; } 
+@override String toString() { return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant1(timestamps: $timestamps)'; } 
+ }

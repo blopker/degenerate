@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_accounts_account_people_request_us_cfpb_data_ethnicity_details.dart';import 'post_accounts_account_people_request_us_cfpb_data_race_details.dart';/// Demographic data related to the person.
+final class PostAccountsAccountPeopleRequestUsCfpbData {const PostAccountsAccountPeopleRequestUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
+
+factory PostAccountsAccountPeopleRequestUsCfpbData.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeopleRequestUsCfpbData(
+  ethnicityDetails: json['ethnicity_details'] != null ? PostAccountsAccountPeopleRequestUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>) : null,
+  raceDetails: json['race_details'] != null ? PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>) : null,
+  selfIdentifiedGender: json['self_identified_gender'] as String?,
+); }
+
+final PostAccountsAccountPeopleRequestUsCfpbDataEthnicityDetails? ethnicityDetails;
+
+final PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails? raceDetails;
+
+final String? selfIdentifiedGender;
+
+Map<String, dynamic> toJson() { return {
+  if (ethnicityDetails != null) 'ethnicity_details': ethnicityDetails?.toJson(),
+  if (raceDetails != null) 'race_details': raceDetails?.toJson(),
+  'self_identified_gender': ?selfIdentifiedGender,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountPeopleRequestUsCfpbData copyWith({PostAccountsAccountPeopleRequestUsCfpbDataEthnicityDetails Function()? ethnicityDetails, PostAccountsAccountPeopleRequestUsCfpbDataRaceDetails Function()? raceDetails, String Function()? selfIdentifiedGender, }) { return PostAccountsAccountPeopleRequestUsCfpbData(
+  ethnicityDetails: ethnicityDetails != null ? ethnicityDetails() : this.ethnicityDetails,
+  raceDetails: raceDetails != null ? raceDetails() : this.raceDetails,
+  selfIdentifiedGender: selfIdentifiedGender != null ? selfIdentifiedGender() : this.selfIdentifiedGender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountPeopleRequestUsCfpbData &&
+          ethnicityDetails == other.ethnicityDetails &&
+          raceDetails == other.raceDetails &&
+          selfIdentifiedGender == other.selfIdentifiedGender; } 
+@override int get hashCode { return Object.hash(ethnicityDetails, raceDetails, selfIdentifiedGender); } 
+@override String toString() { return 'PostAccountsAccountPeopleRequestUsCfpbData(ethnicityDetails: $ethnicityDetails, raceDetails: $raceDetails, selfIdentifiedGender: $selfIdentifiedGender)'; } 
+ }

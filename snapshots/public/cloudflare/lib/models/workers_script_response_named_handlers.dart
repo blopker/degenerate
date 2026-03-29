@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class WorkersScriptResponseNamedHandlers {const WorkersScriptResponseNamedHandlers({this.handlers, this.name, });
+
+factory WorkersScriptResponseNamedHandlers.fromJson(Map<String, dynamic> json) { return WorkersScriptResponseNamedHandlers(
+  handlers: (json['handlers'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  name: json['name'] as String?,
+); }
+
+/// The names of handlers exported as part of the named export.
+final List<String>? handlers;
+
+/// The name of the export.
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'handlers': ?handlers,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WorkersScriptResponseNamedHandlers copyWith({List<String> Function()? handlers, String Function()? name, }) { return WorkersScriptResponseNamedHandlers(
+  handlers: handlers != null ? handlers() : this.handlers,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersScriptResponseNamedHandlers &&
+          listEquals(handlers, other.handlers) &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(Object.hashAll(handlers ?? const []), name); } 
+@override String toString() { return 'WorkersScriptResponseNamedHandlers(handlers: $handlers, name: $name)'; } 
+ }

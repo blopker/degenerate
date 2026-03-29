@@ -1,0 +1,34 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Details how `selector` interacted with an operation:
+///   - `included` operations are included by `selector` and will be covered by the Token Validation Rule
+///   - `excluded` operations are excluded by `selector` and will not be covered by the Token Validation Rule
+///   - `ignored` operations are not included by `selector` and will not be covered by the Token Validation Rule
+/// 
+final class ShieldSelectorOperationState {const ShieldSelectorOperationState._(this.value);
+
+factory ShieldSelectorOperationState.fromJson(String json) { return switch (json) {
+  'included' => included,
+  'excluded' => excluded,
+  'ignored' => ignored,
+  _ => ShieldSelectorOperationState._(json),
+}; }
+
+static const ShieldSelectorOperationState included = ShieldSelectorOperationState._('included');
+
+static const ShieldSelectorOperationState excluded = ShieldSelectorOperationState._('excluded');
+
+static const ShieldSelectorOperationState ignored = ShieldSelectorOperationState._('ignored');
+
+static const List<ShieldSelectorOperationState> values = [included, excluded, ignored];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ShieldSelectorOperationState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ShieldSelectorOperationState($value)'; } 
+ }

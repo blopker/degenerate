@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpSummaryByIpVersionDeviceType {const RadarGetHttpSummaryByIpVersionDeviceType._(this.value);
+
+factory RadarGetHttpSummaryByIpVersionDeviceType.fromJson(String json) { return switch (json) {
+  'DESKTOP' => desktop,
+  'MOBILE' => mobile,
+  'OTHER' => $other,
+  _ => RadarGetHttpSummaryByIpVersionDeviceType._(json),
+}; }
+
+static const RadarGetHttpSummaryByIpVersionDeviceType desktop = RadarGetHttpSummaryByIpVersionDeviceType._('DESKTOP');
+
+static const RadarGetHttpSummaryByIpVersionDeviceType mobile = RadarGetHttpSummaryByIpVersionDeviceType._('MOBILE');
+
+static const RadarGetHttpSummaryByIpVersionDeviceType $other = RadarGetHttpSummaryByIpVersionDeviceType._('OTHER');
+
+static const List<RadarGetHttpSummaryByIpVersionDeviceType> values = [desktop, mobile, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByIpVersionDeviceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByIpVersionDeviceType($value)'; } 
+ }

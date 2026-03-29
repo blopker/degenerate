@@ -1,0 +1,107 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsRequestPaymentMethodDataFpxBank {const PostSetupIntentsRequestPaymentMethodDataFpxBank._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(String json) { return switch (json) {
+  'affin_bank' => affinBank,
+  'agrobank' => agrobank,
+  'alliance_bank' => allianceBank,
+  'ambank' => ambank,
+  'bank_islam' => bankIslam,
+  'bank_muamalat' => bankMuamalat,
+  'bank_of_china' => bankOfChina,
+  'bank_rakyat' => bankRakyat,
+  'bsn' => bsn,
+  'cimb' => cimb,
+  'deutsche_bank' => deutscheBank,
+  'hong_leong_bank' => hongLeongBank,
+  'hsbc' => hsbc,
+  'kfh' => kfh,
+  'maybank2e' => maybank2e,
+  'maybank2u' => maybank2u,
+  'ocbc' => ocbc,
+  'pb_enterprise' => pbEnterprise,
+  'public_bank' => publicBank,
+  'rhb' => rhb,
+  'standard_chartered' => standardChartered,
+  'uob' => uob,
+  _ => PostSetupIntentsRequestPaymentMethodDataFpxBank._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank affinBank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('affin_bank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank agrobank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('agrobank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank allianceBank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('alliance_bank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank ambank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('ambank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank bankIslam = PostSetupIntentsRequestPaymentMethodDataFpxBank._('bank_islam');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank bankMuamalat = PostSetupIntentsRequestPaymentMethodDataFpxBank._('bank_muamalat');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank bankOfChina = PostSetupIntentsRequestPaymentMethodDataFpxBank._('bank_of_china');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank bankRakyat = PostSetupIntentsRequestPaymentMethodDataFpxBank._('bank_rakyat');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank bsn = PostSetupIntentsRequestPaymentMethodDataFpxBank._('bsn');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank cimb = PostSetupIntentsRequestPaymentMethodDataFpxBank._('cimb');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank deutscheBank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('deutsche_bank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank hongLeongBank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('hong_leong_bank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank hsbc = PostSetupIntentsRequestPaymentMethodDataFpxBank._('hsbc');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank kfh = PostSetupIntentsRequestPaymentMethodDataFpxBank._('kfh');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank maybank2e = PostSetupIntentsRequestPaymentMethodDataFpxBank._('maybank2e');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank maybank2u = PostSetupIntentsRequestPaymentMethodDataFpxBank._('maybank2u');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank ocbc = PostSetupIntentsRequestPaymentMethodDataFpxBank._('ocbc');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank pbEnterprise = PostSetupIntentsRequestPaymentMethodDataFpxBank._('pb_enterprise');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank publicBank = PostSetupIntentsRequestPaymentMethodDataFpxBank._('public_bank');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank rhb = PostSetupIntentsRequestPaymentMethodDataFpxBank._('rhb');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank standardChartered = PostSetupIntentsRequestPaymentMethodDataFpxBank._('standard_chartered');
+
+static const PostSetupIntentsRequestPaymentMethodDataFpxBank uob = PostSetupIntentsRequestPaymentMethodDataFpxBank._('uob');
+
+static const List<PostSetupIntentsRequestPaymentMethodDataFpxBank> values = [affinBank, agrobank, allianceBank, ambank, bankIslam, bankMuamalat, bankOfChina, bankRakyat, bsn, cimb, deutscheBank, hongLeongBank, hsbc, kfh, maybank2e, maybank2u, ocbc, pbEnterprise, publicBank, rhb, standardChartered, uob];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataFpxBank && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataFpxBank($value)'; } 
+ }
+final class PostSetupIntentsRequestPaymentMethodDataFpx {const PostSetupIntentsRequestPaymentMethodDataFpx({required this.bank});
+
+factory PostSetupIntentsRequestPaymentMethodDataFpx.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodDataFpx(
+  bank: PostSetupIntentsRequestPaymentMethodDataFpxBank.fromJson(json['bank'] as String),
+); }
+
+final PostSetupIntentsRequestPaymentMethodDataFpxBank bank;
+
+Map<String, dynamic> toJson() { return {
+  'bank': bank.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'); } 
+PostSetupIntentsRequestPaymentMethodDataFpx copyWith({PostSetupIntentsRequestPaymentMethodDataFpxBank? bank}) { return PostSetupIntentsRequestPaymentMethodDataFpx(
+  bank: bank ?? this.bank,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodDataFpx &&
+          bank == other.bank; } 
+@override int get hashCode { return bank.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataFpx(bank: $bank)'; } 
+ }

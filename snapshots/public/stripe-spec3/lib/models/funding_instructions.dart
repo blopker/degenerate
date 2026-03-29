@@ -1,0 +1,104 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'funding_instructions_bank_transfer.dart';/// The `funding_type` of the returned instructions
+final class FundingInstructionsFundingType {const FundingInstructionsFundingType._(this.value);
+
+factory FundingInstructionsFundingType.fromJson(String json) { return switch (json) {
+  'bank_transfer' => bankTransfer,
+  _ => FundingInstructionsFundingType._(json),
+}; }
+
+static const FundingInstructionsFundingType bankTransfer = FundingInstructionsFundingType._('bank_transfer');
+
+static const List<FundingInstructionsFundingType> values = [bankTransfer];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FundingInstructionsFundingType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FundingInstructionsFundingType($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class FundingInstructionsObject {const FundingInstructionsObject._(this.value);
+
+factory FundingInstructionsObject.fromJson(String json) { return switch (json) {
+  'funding_instructions' => fundingInstructions,
+  _ => FundingInstructionsObject._(json),
+}; }
+
+static const FundingInstructionsObject fundingInstructions = FundingInstructionsObject._('funding_instructions');
+
+static const List<FundingInstructionsObject> values = [fundingInstructions];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FundingInstructionsObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FundingInstructionsObject($value)'; } 
+ }
+/// Each customer has a [`balance`](https://docs.stripe.com/api/customers/object#customer_object-balance) that is
+/// automatically applied to future invoices and payments using the `customer_balance` payment method.
+/// Customers can fund this balance by initiating a bank transfer to any account in the
+/// `financial_addresses` field.
+/// Related guide: [Customer balance funding instructions](https://docs.stripe.com/payments/customer-balance/funding-instructions)
+final class FundingInstructions {const FundingInstructions({required this.bankTransfer, required this.currency, required this.fundingType, required this.livemode, required this.object, });
+
+factory FundingInstructions.fromJson(Map<String, dynamic> json) { return FundingInstructions(
+  bankTransfer: FundingInstructionsBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>),
+  currency: json['currency'] as String,
+  fundingType: FundingInstructionsFundingType.fromJson(json['funding_type'] as String),
+  livemode: json['livemode'] as bool,
+  object: FundingInstructionsObject.fromJson(json['object'] as String),
+); }
+
+final FundingInstructionsBankTransfer bankTransfer;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// The `funding_type` of the returned instructions
+final FundingInstructionsFundingType fundingType;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final FundingInstructionsObject object;
+
+Map<String, dynamic> toJson() { return {
+  'bank_transfer': bankTransfer.toJson(),
+  'currency': currency,
+  'funding_type': fundingType.toJson(),
+  'livemode': livemode,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_transfer') &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('funding_type') &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object'); } 
+FundingInstructions copyWith({FundingInstructionsBankTransfer? bankTransfer, String? currency, FundingInstructionsFundingType? fundingType, bool? livemode, FundingInstructionsObject? object, }) { return FundingInstructions(
+  bankTransfer: bankTransfer ?? this.bankTransfer,
+  currency: currency ?? this.currency,
+  fundingType: fundingType ?? this.fundingType,
+  livemode: livemode ?? this.livemode,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FundingInstructions &&
+          bankTransfer == other.bankTransfer &&
+          currency == other.currency &&
+          fundingType == other.fundingType &&
+          livemode == other.livemode &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(bankTransfer, currency, fundingType, livemode, object); } 
+@override String toString() { return 'FundingInstructions(bankTransfer: $bankTransfer, currency: $currency, fundingType: $fundingType, livemode: $livemode, object: $object)'; } 
+ }

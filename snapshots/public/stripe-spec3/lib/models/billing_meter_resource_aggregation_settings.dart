@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies how events are aggregated.
+final class BillingMeterResourceAggregationSettingsFormula {const BillingMeterResourceAggregationSettingsFormula._(this.value);
+
+factory BillingMeterResourceAggregationSettingsFormula.fromJson(String json) { return switch (json) {
+  'count' => count,
+  'last' => last,
+  'sum' => sum,
+  _ => BillingMeterResourceAggregationSettingsFormula._(json),
+}; }
+
+static const BillingMeterResourceAggregationSettingsFormula count = BillingMeterResourceAggregationSettingsFormula._('count');
+
+static const BillingMeterResourceAggregationSettingsFormula last = BillingMeterResourceAggregationSettingsFormula._('last');
+
+static const BillingMeterResourceAggregationSettingsFormula sum = BillingMeterResourceAggregationSettingsFormula._('sum');
+
+static const List<BillingMeterResourceAggregationSettingsFormula> values = [count, last, sum];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingMeterResourceAggregationSettingsFormula && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingMeterResourceAggregationSettingsFormula($value)'; } 
+ }
+/// 
+final class BillingMeterResourceAggregationSettings {const BillingMeterResourceAggregationSettings({required this.formula});
+
+factory BillingMeterResourceAggregationSettings.fromJson(Map<String, dynamic> json) { return BillingMeterResourceAggregationSettings(
+  formula: BillingMeterResourceAggregationSettingsFormula.fromJson(json['formula'] as String),
+); }
+
+/// Specifies how events are aggregated.
+final BillingMeterResourceAggregationSettingsFormula formula;
+
+Map<String, dynamic> toJson() { return {
+  'formula': formula.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('formula'); } 
+BillingMeterResourceAggregationSettings copyWith({BillingMeterResourceAggregationSettingsFormula? formula}) { return BillingMeterResourceAggregationSettings(
+  formula: formula ?? this.formula,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingMeterResourceAggregationSettings &&
+          formula == other.formula; } 
+@override int get hashCode { return formula.hashCode; } 
+@override String toString() { return 'BillingMeterResourceAggregationSettings(formula: $formula)'; } 
+ }

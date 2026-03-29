@@ -31,10 +31,9 @@ mixin ApiExecutor {
       final extraHeaders = request.options?.extraHeaders;
 
       // Merge timeout and user cancel into a single adapter-level cancel token.
-      final adapterToken =
-          (effectiveTimeout != null || userCancelToken != null)
-              ? CancelToken()
-              : null;
+      final adapterToken = (effectiveTimeout != null || userCancelToken != null)
+          ? CancelToken()
+          : null;
       Timer? timeoutTimer;
       bool timedOut = false;
 
@@ -110,10 +109,9 @@ mixin ApiExecutor {
     final effectiveTimeout = request.options?.timeout ?? apiConfig.timeout;
     final extraHeaders = request.options?.extraHeaders;
 
-    final adapterToken =
-        (effectiveTimeout != null || userCancelToken != null)
-            ? CancelToken()
-            : null;
+    final adapterToken = (effectiveTimeout != null || userCancelToken != null)
+        ? CancelToken()
+        : null;
     Timer? timeoutTimer;
     bool timedOut = false;
 
@@ -141,8 +139,9 @@ mixin ApiExecutor {
     );
 
     try {
-      final streamedResponse =
-          await apiConfig.client.sendStreaming(effectiveRequest);
+      final streamedResponse = await apiConfig.client.sendStreaming(
+        effectiveRequest,
+      );
       timeoutTimer?.cancel();
 
       if (!streamedResponse.isSuccessful) {
@@ -154,8 +153,9 @@ mixin ApiExecutor {
         );
       }
 
-      yield* parseSseStream(streamedResponse.byteStream)
-          .map((event) => onEvent(event.data));
+      yield* parseSseStream(
+        streamedResponse.byteStream,
+      ).map((event) => onEvent(event.data));
     } on CancelledException {
       timeoutTimer?.cancel();
       if (timedOut) {

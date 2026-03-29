@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'd1_export_database_request_dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
+final class D1ExportDatabaseRequestOutputFormat {const D1ExportDatabaseRequestOutputFormat._(this.value);
+
+factory D1ExportDatabaseRequestOutputFormat.fromJson(String json) { return switch (json) {
+  'polling' => polling,
+  _ => D1ExportDatabaseRequestOutputFormat._(json),
+}; }
+
+static const D1ExportDatabaseRequestOutputFormat polling = D1ExportDatabaseRequestOutputFormat._('polling');
+
+static const List<D1ExportDatabaseRequestOutputFormat> values = [polling];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is D1ExportDatabaseRequestOutputFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'D1ExportDatabaseRequestOutputFormat($value)'; } 
+ }
+final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({this.currentBookmark, this.dumpOptions, required this.outputFormat, });
+
+factory D1ExportDatabaseRequest.fromJson(Map<String, dynamic> json) { return D1ExportDatabaseRequest(
+  currentBookmark: json['current_bookmark'] as String?,
+  dumpOptions: json['dump_options'] != null ? D1ExportDatabaseRequestDumpOptions.fromJson(json['dump_options'] as Map<String, dynamic>) : null,
+  outputFormat: D1ExportDatabaseRequestOutputFormat.fromJson(json['output_format'] as String),
+); }
+
+/// To poll an in-progress export, provide the current bookmark (returned by your first polling response)
+final String? currentBookmark;
+
+final D1ExportDatabaseRequestDumpOptions? dumpOptions;
+
+/// Specifies that you will poll this endpoint until the export completes
+final D1ExportDatabaseRequestOutputFormat outputFormat;
+
+Map<String, dynamic> toJson() { return {
+  'current_bookmark': ?currentBookmark,
+  if (dumpOptions != null) 'dump_options': dumpOptions?.toJson(),
+  'output_format': outputFormat.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('output_format'); } 
+D1ExportDatabaseRequest copyWith({String Function()? currentBookmark, D1ExportDatabaseRequestDumpOptions Function()? dumpOptions, D1ExportDatabaseRequestOutputFormat? outputFormat, }) { return D1ExportDatabaseRequest(
+  currentBookmark: currentBookmark != null ? currentBookmark() : this.currentBookmark,
+  dumpOptions: dumpOptions != null ? dumpOptions() : this.dumpOptions,
+  outputFormat: outputFormat ?? this.outputFormat,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is D1ExportDatabaseRequest &&
+          currentBookmark == other.currentBookmark &&
+          dumpOptions == other.dumpOptions &&
+          outputFormat == other.outputFormat; } 
+@override int get hashCode { return Object.hash(currentBookmark, dumpOptions, outputFormat); } 
+@override String toString() { return 'D1ExportDatabaseRequest(currentBookmark: $currentBookmark, dumpOptions: $dumpOptions, outputFormat: $outputFormat)'; } 
+ }

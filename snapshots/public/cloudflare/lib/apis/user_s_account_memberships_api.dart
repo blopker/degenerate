@@ -1,0 +1,109 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_membership_components_schemas_identifier.dart';import '../models/iam_properties_name.dart';import '../models/response_common35.dart';import '../models/user_s_account_memberships_list_memberships_direction.dart';import '../models/user_s_account_memberships_list_memberships_order.dart';import '../models/user_s_account_memberships_list_memberships_response.dart';import '../models/user_s_account_memberships_list_memberships_status.dart';import '../models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class UserSAccountMembershipsApi with ApiExecutor {const UserSAccountMembershipsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List Memberships
+///
+/// List memberships of accounts the user can access.
+///
+/// `GET /memberships`
+Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, Never>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (accountName != null) queryParameters['account.name'] = accountName.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (order != null) queryParameters['order'] = order.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (name != null) queryParameters['name'] = name.toString();
+if (status != null) queryParameters['status'] = status.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/memberships',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>),);
+  },
+);
+ } 
+/// Membership Details
+///
+/// Get a specific membership.
+///
+/// `GET /memberships/{membership_id}`
+Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update Membership
+///
+/// Accept or reject this account invitation.
+///
+/// `PUT /memberships/{membership_id}`
+Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete Membership
+///
+/// Remove the associated member from an account.
+///
+/// `DELETE /memberships/{membership_id}`
+Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/memberships/${Uri.encodeComponent(membershipId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

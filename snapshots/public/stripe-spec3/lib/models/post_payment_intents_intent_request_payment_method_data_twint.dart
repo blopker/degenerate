@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsIntentRequestPaymentMethodDataTwint {const PostPaymentIntentsIntentRequestPaymentMethodDataTwint();
+
+factory PostPaymentIntentsIntentRequestPaymentMethodDataTwint.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataTwint(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsIntentRequestPaymentMethodDataTwint copyWith() { return PostPaymentIntentsIntentRequestPaymentMethodDataTwint(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsIntentRequestPaymentMethodDataTwint; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataTwint()'; } 
+ }

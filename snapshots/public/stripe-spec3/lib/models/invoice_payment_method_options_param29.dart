@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class InvoicePaymentMethodOptionsParam29 {const InvoicePaymentMethodOptionsParam29();
+
+factory InvoicePaymentMethodOptionsParam29.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam29(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoicePaymentMethodOptionsParam29 copyWith() { return InvoicePaymentMethodOptionsParam29(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is InvoicePaymentMethodOptionsParam29; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam29()'; } 
+ }

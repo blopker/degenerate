@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mcn_error.dart';final class McnResponse {const McnResponse({required this.messages, required this.success, });
+
+factory McnResponse.fromJson(Map<String, dynamic> json) { return McnResponse(
+  messages: (json['messages'] as List<dynamic>).map((e) => McnError.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<McnError> messages;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+McnResponse copyWith({List<McnError>? messages, bool? success, }) { return McnResponse(
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnResponse &&
+          listEquals(messages, other.messages) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(messages), success); } 
+@override String toString() { return 'McnResponse(messages: $messages, success: $success)'; } 
+ }

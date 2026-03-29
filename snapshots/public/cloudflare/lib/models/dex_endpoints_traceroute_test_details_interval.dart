@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval._(this.value);
+
+factory DexEndpointsTracerouteTestDetailsInterval.fromJson(String json) { return switch (json) {
+  'minute' => minute,
+  'hour' => hour,
+  _ => DexEndpointsTracerouteTestDetailsInterval._(json),
+}; }
+
+static const DexEndpointsTracerouteTestDetailsInterval minute = DexEndpointsTracerouteTestDetailsInterval._('minute');
+
+static const DexEndpointsTracerouteTestDetailsInterval hour = DexEndpointsTracerouteTestDetailsInterval._('hour');
+
+static const List<DexEndpointsTracerouteTestDetailsInterval> values = [minute, hour];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DexEndpointsTracerouteTestDetailsInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DexEndpointsTracerouteTestDetailsInterval($value)'; } 
+ }

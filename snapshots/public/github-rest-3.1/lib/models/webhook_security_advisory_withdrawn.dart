@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_security_advisory_withdrawn_security_advisory.dart';final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
+
+factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) { return switch (json) {
+  'withdrawn' => withdrawn,
+  _ => WebhookSecurityAdvisoryWithdrawnAction._(json),
+}; }
+
+static const WebhookSecurityAdvisoryWithdrawnAction withdrawn = WebhookSecurityAdvisoryWithdrawnAction._('withdrawn');
+
+static const List<WebhookSecurityAdvisoryWithdrawnAction> values = [withdrawn];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookSecurityAdvisoryWithdrawnAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookSecurityAdvisoryWithdrawnAction($value)'; } 
+ }
+final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, this.enterprise, this.installation, this.organization, this.repository, required this.securityAdvisory, this.sender, });
+
+factory WebhookSecurityAdvisoryWithdrawn.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawn(
+  action: WebhookSecurityAdvisoryWithdrawnAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: json['repository'] != null ? RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>) : null,
+  securityAdvisory: WebhookSecurityAdvisoryWithdrawnSecurityAdvisory.fromJson(json['security_advisory'] as Map<String, dynamic>),
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
+); }
+
+final WebhookSecurityAdvisoryWithdrawnAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks? repository;
+
+/// The details of the security advisory, including summary, description, and severity.
+final WebhookSecurityAdvisoryWithdrawnSecurityAdvisory securityAdvisory;
+
+final SimpleUser? sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  if (repository != null) 'repository': repository?.toJson(),
+  'security_advisory': securityAdvisory.toJson(),
+  if (sender != null) 'sender': sender?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('security_advisory'); } 
+WebhookSecurityAdvisoryWithdrawn copyWith({WebhookSecurityAdvisoryWithdrawnAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks Function()? repository, WebhookSecurityAdvisoryWithdrawnSecurityAdvisory? securityAdvisory, SimpleUser Function()? sender, }) { return WebhookSecurityAdvisoryWithdrawn(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository != null ? repository() : this.repository,
+  securityAdvisory: securityAdvisory ?? this.securityAdvisory,
+  sender: sender != null ? sender() : this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookSecurityAdvisoryWithdrawn &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          securityAdvisory == other.securityAdvisory &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, securityAdvisory, sender); } 
+@override String toString() { return 'WebhookSecurityAdvisoryWithdrawn(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, securityAdvisory: $securityAdvisory, sender: $sender)'; } 
+ }

@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_catchall_action.dart';import 'email_rule_catchall_matcher.dart';import 'email_rule_enabled.dart';import 'email_rule_name.dart';final class EmailUpdateCatchAllRuleProperties {const EmailUpdateCatchAllRuleProperties({required this.actions, this.enabled, required this.matchers, this.name, });
+
+factory EmailUpdateCatchAllRuleProperties.fromJson(Map<String, dynamic> json) { return EmailUpdateCatchAllRuleProperties(
+  actions: (json['actions'] as List<dynamic>).map((e) => EmailRuleCatchallAction.fromJson(e as Map<String, dynamic>)).toList(),
+  enabled: json['enabled'] != null ? EmailRuleEnabled.fromJson(json['enabled'] as bool) : null,
+  matchers: (json['matchers'] as List<dynamic>).map((e) => EmailRuleCatchallMatcher.fromJson(e as Map<String, dynamic>)).toList(),
+  name: json['name'] != null ? EmailRuleName.fromJson(json['name'] as String) : null,
+); }
+
+/// List actions for the catch-all routing rule.
+final List<EmailRuleCatchallAction> actions;
+
+/// Routing rule status.
+final EmailRuleEnabled? enabled;
+
+/// List of matchers for the catch-all routing rule.
+final List<EmailRuleCatchallMatcher> matchers;
+
+/// Routing rule name.
+final EmailRuleName? name;
+
+Map<String, dynamic> toJson() { return {
+  'actions': actions.map((e) => e.toJson()).toList(),
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  'matchers': matchers.map((e) => e.toJson()).toList(),
+  if (name != null) 'name': name?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions') &&
+      json.containsKey('matchers'); } 
+EmailUpdateCatchAllRuleProperties copyWith({List<EmailRuleCatchallAction>? actions, EmailRuleEnabled Function()? enabled, List<EmailRuleCatchallMatcher>? matchers, EmailRuleName Function()? name, }) { return EmailUpdateCatchAllRuleProperties(
+  actions: actions ?? this.actions,
+  enabled: enabled != null ? enabled() : this.enabled,
+  matchers: matchers ?? this.matchers,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailUpdateCatchAllRuleProperties &&
+          listEquals(actions, other.actions) &&
+          enabled == other.enabled &&
+          listEquals(matchers, other.matchers) &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(Object.hashAll(actions), enabled, Object.hashAll(matchers), name); } 
+@override String toString() { return 'EmailUpdateCatchAllRuleProperties(actions: $actions, enabled: $enabled, matchers: $matchers, name: $name)'; } 
+ }

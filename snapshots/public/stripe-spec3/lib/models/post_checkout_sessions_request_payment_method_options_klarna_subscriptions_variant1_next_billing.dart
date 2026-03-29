@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling {const PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling({required this.amount, required this.date, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
+  amount: (json['amount'] as num).toInt(),
+  date: json['date'] as String,
+); }
+
+final int amount;
+
+final String date;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'date': date,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('date') && json['date'] is String; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling copyWith({int? amount, String? date, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
+  amount: amount ?? this.amount,
+  date: date ?? this.date,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling &&
+          amount == other.amount &&
+          date == other.date; } 
+@override int get hashCode { return Object.hash(amount, date); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(amount: $amount, date: $date)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTagCategoryListResponse400Errors {const GetTagCategoryListResponse400Errors({required this.message});
+
+factory GetTagCategoryListResponse400Errors.fromJson(Map<String, dynamic> json) { return GetTagCategoryListResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+GetTagCategoryListResponse400Errors copyWith({String? message}) { return GetTagCategoryListResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetTagCategoryListResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'GetTagCategoryListResponse400Errors(message: $message)'; } 
+ }

@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class InvoicePaymentMethodOptionsParam16PreferredLanguage {const InvoicePaymentMethodOptionsParam16PreferredLanguage._(this.value);
+
+factory InvoicePaymentMethodOptionsParam16PreferredLanguage.fromJson(String json) { return switch (json) {
+  'de' => de,
+  'en' => en,
+  'fr' => fr,
+  'nl' => nl,
+  _ => InvoicePaymentMethodOptionsParam16PreferredLanguage._(json),
+}; }
+
+static const InvoicePaymentMethodOptionsParam16PreferredLanguage de = InvoicePaymentMethodOptionsParam16PreferredLanguage._('de');
+
+static const InvoicePaymentMethodOptionsParam16PreferredLanguage en = InvoicePaymentMethodOptionsParam16PreferredLanguage._('en');
+
+static const InvoicePaymentMethodOptionsParam16PreferredLanguage fr = InvoicePaymentMethodOptionsParam16PreferredLanguage._('fr');
+
+static const InvoicePaymentMethodOptionsParam16PreferredLanguage nl = InvoicePaymentMethodOptionsParam16PreferredLanguage._('nl');
+
+static const List<InvoicePaymentMethodOptionsParam16PreferredLanguage> values = [de, en, fr, nl];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam16PreferredLanguage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam16PreferredLanguage($value)'; } 
+ }
+final class InvoicePaymentMethodOptionsParam16 {const InvoicePaymentMethodOptionsParam16({this.preferredLanguage});
+
+factory InvoicePaymentMethodOptionsParam16.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam16(
+  preferredLanguage: json['preferred_language'] != null ? InvoicePaymentMethodOptionsParam16PreferredLanguage.fromJson(json['preferred_language'] as String) : null,
+); }
+
+final InvoicePaymentMethodOptionsParam16PreferredLanguage? preferredLanguage;
+
+Map<String, dynamic> toJson() { return {
+  if (preferredLanguage != null) 'preferred_language': preferredLanguage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoicePaymentMethodOptionsParam16 copyWith({InvoicePaymentMethodOptionsParam16PreferredLanguage Function()? preferredLanguage}) { return InvoicePaymentMethodOptionsParam16(
+  preferredLanguage: preferredLanguage != null ? preferredLanguage() : this.preferredLanguage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoicePaymentMethodOptionsParam16 &&
+          preferredLanguage == other.preferredLanguage; } 
+@override int get hashCode { return preferredLanguage.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam16(preferredLanguage: $preferredLanguage)'; } 
+ }

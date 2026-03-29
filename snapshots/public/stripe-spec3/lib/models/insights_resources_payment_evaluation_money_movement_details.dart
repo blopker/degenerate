@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_money_movement_details_card.dart';/// Describes the type of money movement. Currently only `card` is supported.
+final class InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType {const InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType._(this.value);
+
+factory InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(String json) { return switch (json) {
+  'card' => card,
+  _ => InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType._(json),
+}; }
+
+static const InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType card = InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType._('card');
+
+static const List<InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType> values = [card];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType($value)'; } 
+ }
+/// Money Movement details attached to this payment.
+final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({this.card, required this.moneyMovementType, });
+
+factory InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
+  card: json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  moneyMovementType: InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(json['money_movement_type'] as String),
+); }
+
+/// Describes card money movement details for the payment evaluation.
+final InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard? card;
+
+/// Describes the type of money movement. Currently only `card` is supported.
+final InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType moneyMovementType;
+
+Map<String, dynamic> toJson() { return {
+  if (card != null) 'card': card?.toJson(),
+  'money_movement_type': moneyMovementType.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
+InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard? Function()? card, InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
+  card: card != null ? card() : this.card,
+  moneyMovementType: moneyMovementType ?? this.moneyMovementType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InsightsResourcesPaymentEvaluationMoneyMovementDetails &&
+          card == other.card &&
+          moneyMovementType == other.moneyMovementType; } 
+@override int get hashCode { return Object.hash(card, moneyMovementType); } 
+@override String toString() { return 'InsightsResourcesPaymentEvaluationMoneyMovementDetails(card: $card, moneyMovementType: $moneyMovementType)'; } 
+ }

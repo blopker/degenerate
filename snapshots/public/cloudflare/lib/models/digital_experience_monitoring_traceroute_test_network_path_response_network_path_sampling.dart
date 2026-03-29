@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the sampling applied, if any, to the slots response. When sampled, results shown represent the first test run to the start of each sampling interval.
+final class DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling {const DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling({required this.unit, required this.value, });
+
+factory DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
+  unit: json['unit'],
+  value: (json['value'] as num).toInt(),
+); }
+
+final dynamic unit;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'unit': ?unit,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num; } 
+DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling copyWith({dynamic Function()? unit, int? value, }) { return DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(
+  unit: unit != null ? unit() : this.unit,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling &&
+          unit == other.unit &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(unit, value); } 
+@override String toString() { return 'DigitalExperienceMonitoringTracerouteTestNetworkPathResponseNetworkPathSampling(unit: $unit, value: $value)'; } 
+ }

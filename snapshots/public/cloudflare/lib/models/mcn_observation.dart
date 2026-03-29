@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mcn_provider_id.dart';import 'mcn_resource_id.dart';final class McnObservation {const McnObservation({required this.firstObservedAt, required this.lastObservedAt, required this.providerId, required this.resourceId, });
+
+factory McnObservation.fromJson(Map<String, dynamic> json) { return McnObservation(
+  firstObservedAt: json['first_observed_at'] as String,
+  lastObservedAt: json['last_observed_at'] as String,
+  providerId: McnProviderId.fromJson(json['provider_id'] as String),
+  resourceId: McnResourceId.fromJson(json['resource_id'] as String),
+); }
+
+final String firstObservedAt;
+
+final String lastObservedAt;
+
+final McnProviderId providerId;
+
+final McnResourceId resourceId;
+
+Map<String, dynamic> toJson() { return {
+  'first_observed_at': firstObservedAt,
+  'last_observed_at': lastObservedAt,
+  'provider_id': providerId.toJson(),
+  'resource_id': resourceId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('first_observed_at') && json['first_observed_at'] is String &&
+      json.containsKey('last_observed_at') && json['last_observed_at'] is String &&
+      json.containsKey('provider_id') &&
+      json.containsKey('resource_id'); } 
+McnObservation copyWith({String? firstObservedAt, String? lastObservedAt, McnProviderId? providerId, McnResourceId? resourceId, }) { return McnObservation(
+  firstObservedAt: firstObservedAt ?? this.firstObservedAt,
+  lastObservedAt: lastObservedAt ?? this.lastObservedAt,
+  providerId: providerId ?? this.providerId,
+  resourceId: resourceId ?? this.resourceId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnObservation &&
+          firstObservedAt == other.firstObservedAt &&
+          lastObservedAt == other.lastObservedAt &&
+          providerId == other.providerId &&
+          resourceId == other.resourceId; } 
+@override int get hashCode { return Object.hash(firstObservedAt, lastObservedAt, providerId, resourceId); } 
+@override String toString() { return 'McnObservation(firstObservedAt: $firstObservedAt, lastObservedAt: $lastObservedAt, providerId: $providerId, resourceId: $resourceId)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailRoutingTimeseriesGroupByDkimSpf {const RadarGetEmailRoutingTimeseriesGroupByDkimSpf._(this.value);
+
+factory RadarGetEmailRoutingTimeseriesGroupByDkimSpf.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailRoutingTimeseriesGroupByDkimSpf._(json),
+}; }
+
+static const RadarGetEmailRoutingTimeseriesGroupByDkimSpf pass = RadarGetEmailRoutingTimeseriesGroupByDkimSpf._('PASS');
+
+static const RadarGetEmailRoutingTimeseriesGroupByDkimSpf none = RadarGetEmailRoutingTimeseriesGroupByDkimSpf._('NONE');
+
+static const RadarGetEmailRoutingTimeseriesGroupByDkimSpf fail = RadarGetEmailRoutingTimeseriesGroupByDkimSpf._('FAIL');
+
+static const List<RadarGetEmailRoutingTimeseriesGroupByDkimSpf> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupByDkimSpf && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupByDkimSpf($value)'; } 
+ }

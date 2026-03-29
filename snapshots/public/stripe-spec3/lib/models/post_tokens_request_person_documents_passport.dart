@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_documents_passport_files.dart';final class PostTokensRequestPersonDocumentsPassport {const PostTokensRequestPersonDocumentsPassport({this.files});
+
+factory PostTokensRequestPersonDocumentsPassport.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonDocumentsPassport(
+  files: (json['files'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostTokensRequestPersonDocumentsPassportFilesVariant2.fromJson(v as String),)).toList(),
+); }
+
+final List<PostTokensRequestPersonDocumentsPassportFiles>? files;
+
+Map<String, dynamic> toJson() { return {
+  if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTokensRequestPersonDocumentsPassport copyWith({List<PostTokensRequestPersonDocumentsPassportFiles> Function()? files}) { return PostTokensRequestPersonDocumentsPassport(
+  files: files != null ? files() : this.files,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTokensRequestPersonDocumentsPassport &&
+          listEquals(files, other.files); } 
+@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override String toString() { return 'PostTokensRequestPersonDocumentsPassport(files: $files)'; } 
+ }

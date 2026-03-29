@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_indicator_type_create_response500_content_application_json_schema.dart';final class PostIndicatorTypeCreateResponse500ContentApplicationJson {const PostIndicatorTypeCreateResponse500ContentApplicationJson({required this.schema});
+
+factory PostIndicatorTypeCreateResponse500ContentApplicationJson.fromJson(Map<String, dynamic> json) { return PostIndicatorTypeCreateResponse500ContentApplicationJson(
+  schema: PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema.fromJson(json['schema'] as Map<String, dynamic>),
+); }
+
+final PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema schema;
+
+Map<String, dynamic> toJson() { return {
+  'schema': schema.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('schema'); } 
+PostIndicatorTypeCreateResponse500ContentApplicationJson copyWith({PostIndicatorTypeCreateResponse500ContentApplicationJsonSchema? schema}) { return PostIndicatorTypeCreateResponse500ContentApplicationJson(
+  schema: schema ?? this.schema,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostIndicatorTypeCreateResponse500ContentApplicationJson &&
+          schema == other.schema; } 
+@override int get hashCode { return schema.hashCode; } 
+@override String toString() { return 'PostIndicatorTypeCreateResponse500ContentApplicationJson(schema: $schema)'; } 
+ }

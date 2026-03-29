@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_update_status_check_protection_request_checks.dart';final class ReposUpdateStatusCheckProtectionRequest {const ReposUpdateStatusCheckProtectionRequest({this.strict, this.contexts, this.checks, });
+
+factory ReposUpdateStatusCheckProtectionRequest.fromJson(Map<String, dynamic> json) { return ReposUpdateStatusCheckProtectionRequest(
+  strict: json['strict'] as bool?,
+  contexts: (json['contexts'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  checks: (json['checks'] as List<dynamic>?)?.map((e) => ReposUpdateStatusCheckProtectionRequestChecks.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Require branches to be up to date before merging.
+final bool? strict;
+
+/// **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
+final List<String>? contexts;
+
+/// The list of status checks to require in order to merge into this branch.
+final List<ReposUpdateStatusCheckProtectionRequestChecks>? checks;
+
+Map<String, dynamic> toJson() { return {
+  'strict': ?strict,
+  'contexts': ?contexts,
+  if (checks != null) 'checks': checks?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposUpdateStatusCheckProtectionRequest copyWith({bool Function()? strict, List<String> Function()? contexts, List<ReposUpdateStatusCheckProtectionRequestChecks> Function()? checks, }) { return ReposUpdateStatusCheckProtectionRequest(
+  strict: strict != null ? strict() : this.strict,
+  contexts: contexts != null ? contexts() : this.contexts,
+  checks: checks != null ? checks() : this.checks,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposUpdateStatusCheckProtectionRequest &&
+          strict == other.strict &&
+          listEquals(contexts, other.contexts) &&
+          listEquals(checks, other.checks); } 
+@override int get hashCode { return Object.hash(strict, Object.hashAll(contexts ?? const []), Object.hashAll(checks ?? const [])); } 
+@override String toString() { return 'ReposUpdateStatusCheckProtectionRequest(strict: $strict, contexts: $contexts, checks: $checks)'; } 
+ }

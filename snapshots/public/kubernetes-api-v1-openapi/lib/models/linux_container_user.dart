@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// LinuxContainerUser represents user identity information in Linux containers
+final class LinuxContainerUser {const LinuxContainerUser({this.gid = 0, this.supplementalGroups, this.uid = 0, });
+
+factory LinuxContainerUser.fromJson(Map<String, dynamic> json) { return LinuxContainerUser(
+  gid: (json['gid'] as num).toInt(),
+  supplementalGroups: (json['supplementalGroups'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+  uid: (json['uid'] as num).toInt(),
+); }
+
+/// GID is the primary gid initially attached to the first process in the container
+final int gid;
+
+/// SupplementalGroups are the supplemental groups initially attached to the first process in the container
+final List<int>? supplementalGroups;
+
+/// UID is the primary uid initially attached to the first process in the container
+final int uid;
+
+Map<String, dynamic> toJson() { return {
+  'gid': gid,
+  'supplementalGroups': ?supplementalGroups,
+  'uid': uid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('gid') && json['gid'] is num &&
+      json.containsKey('uid') && json['uid'] is num; } 
+LinuxContainerUser copyWith({int? gid, List<int> Function()? supplementalGroups, int? uid, }) { return LinuxContainerUser(
+  gid: gid ?? this.gid,
+  supplementalGroups: supplementalGroups != null ? supplementalGroups() : this.supplementalGroups,
+  uid: uid ?? this.uid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LinuxContainerUser &&
+          gid == other.gid &&
+          listEquals(supplementalGroups, other.supplementalGroups) &&
+          uid == other.uid; } 
+@override int get hashCode { return Object.hash(gid, Object.hashAll(supplementalGroups ?? const []), uid); } 
+@override String toString() { return 'LinuxContainerUser(gid: $gid, supplementalGroups: $supplementalGroups, uid: $uid)'; } 
+ }

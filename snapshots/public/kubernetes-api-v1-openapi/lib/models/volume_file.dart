@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'object_field_selector.dart';import 'resource_field_selector.dart';/// DownwardAPIVolumeFile represents information to create the file containing the pod field
+final class VolumeFile {const VolumeFile({this.fieldRef, this.mode, this.path = '', this.resourceFieldRef, });
+
+factory VolumeFile.fromJson(Map<String, dynamic> json) { return VolumeFile(
+  fieldRef: json['fieldRef'] != null ? ObjectFieldSelector.fromJson(json['fieldRef'] as Map<String, dynamic>) : null,
+  mode: json['mode'] != null ? (json['mode'] as num).toInt() : null,
+  path: json['path'] as String,
+  resourceFieldRef: json['resourceFieldRef'] != null ? ResourceFieldSelector.fromJson(json['resourceFieldRef'] as Map<String, dynamic>) : null,
+); }
+
+/// Required: Selects a field of the pod: only annotations, labels, name, namespace and uid are supported.
+final ObjectFieldSelector? fieldRef;
+
+/// Optional: mode bits used to set permissions on this file, must be an octal value between 0000 and 0777 or a decimal value between 0 and 511. YAML accepts both octal and decimal values, JSON requires decimal values for mode bits. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+final int? mode;
+
+/// Required: Path is  the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'
+final String path;
+
+/// Selects a resource of the container: only resources limits and requests (limits.cpu, limits.memory, requests.cpu and requests.memory) are currently supported.
+final ResourceFieldSelector? resourceFieldRef;
+
+Map<String, dynamic> toJson() { return {
+  if (fieldRef != null) 'fieldRef': fieldRef?.toJson(),
+  'mode': ?mode,
+  'path': path,
+  if (resourceFieldRef != null) 'resourceFieldRef': resourceFieldRef?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('path') && json['path'] is String; } 
+VolumeFile copyWith({ObjectFieldSelector Function()? fieldRef, int Function()? mode, String? path, ResourceFieldSelector Function()? resourceFieldRef, }) { return VolumeFile(
+  fieldRef: fieldRef != null ? fieldRef() : this.fieldRef,
+  mode: mode != null ? mode() : this.mode,
+  path: path ?? this.path,
+  resourceFieldRef: resourceFieldRef != null ? resourceFieldRef() : this.resourceFieldRef,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VolumeFile &&
+          fieldRef == other.fieldRef &&
+          mode == other.mode &&
+          path == other.path &&
+          resourceFieldRef == other.resourceFieldRef; } 
+@override int get hashCode { return Object.hash(fieldRef, mode, path, resourceFieldRef); } 
+@override String toString() { return 'VolumeFile(fieldRef: $fieldRef, mode: $mode, path: $path, resourceFieldRef: $resourceFieldRef)'; } 
+ }

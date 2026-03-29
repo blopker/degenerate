@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';/// Installment details for this payment.
+final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments({this.paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments});
+
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments(
+  paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.canParse(json) ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.fromJson(json) : null,
+); }
+
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments;
+
+/// At least one variant must be present.
+bool get isValid { return paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments?.toJson(),
+}; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2 {const PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2._(this.value);
+
+factory PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2._(json),
+}; }
+
+static const PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2 $empty = PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2._('');
+
+static const List<PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2($value)'; } 
+ }
+typedef PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRates = OneOf2<List<String>,PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsTaxRatesVariant2>;

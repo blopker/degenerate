@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The certificate log endpoint names used in performance metrics.
+final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(this.value);
+
+factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(String json) { return switch (json) {
+  'add-chain (new)' => addChainNew,
+  'add-chain (old)' => addChainOld,
+  'add-pre-chain (new)' => addPreChainNew,
+  'add-pre-chain (old)' => addPreChainOld,
+  'get-entries' => getEntries,
+  'get-roots' => getRoots,
+  'get-sth' => getSth,
+  _ => RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._(json),
+}; }
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainNew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (new)');
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addChainOld = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-chain (old)');
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addPreChainNew = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-pre-chain (new)');
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint addPreChainOld = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('add-pre-chain (old)');
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint getEntries = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('get-entries');
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint getRoots = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('get-roots');
+
+static const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint getSth = RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint._('get-sth');
+
+static const List<RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint> values = [addChainNew, addChainOld, addPreChainNew, addPreChainOld, getEntries, getRoots, getSth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint($value)'; } 
+ }
+final class RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints {const RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints({required this.endpoint, required this.responseTime, required this.uptime, });
+
+factory RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints.fromJson(Map<String, dynamic> json) { return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
+  endpoint: RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint.fromJson(json['endpoint'] as String),
+  responseTime: (json['responseTime'] as num).toDouble(),
+  uptime: (json['uptime'] as num).toDouble(),
+); }
+
+/// The certificate log endpoint names used in performance metrics.
+final RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint endpoint;
+
+final double responseTime;
+
+final double uptime;
+
+Map<String, dynamic> toJson() { return {
+  'endpoint': endpoint.toJson(),
+  'responseTime': responseTime,
+  'uptime': uptime,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('endpoint') &&
+      json.containsKey('responseTime') && json['responseTime'] is num &&
+      json.containsKey('uptime') && json['uptime'] is num; } 
+RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints copyWith({RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpointsEndpoint? endpoint, double? responseTime, double? uptime, }) { return RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(
+  endpoint: endpoint ?? this.endpoint,
+  responseTime: responseTime ?? this.responseTime,
+  uptime: uptime ?? this.uptime,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints &&
+          endpoint == other.endpoint &&
+          responseTime == other.responseTime &&
+          uptime == other.uptime; } 
+@override int get hashCode { return Object.hash(endpoint, responseTime, uptime); } 
+@override String toString() { return 'RadarGetCertificateLogDetailsResponseResultCertificateLogPerformanceEndpoints(endpoint: $endpoint, responseTime: $responseTime, uptime: $uptime)'; } 
+ }

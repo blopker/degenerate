@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'cloudflare_pipelines_worker_pipelines_common_success.dart';import 'streams_response2_result.dart';final class StreamsResponse2 {const StreamsResponse2({required this.result, required this.success, });
+
+factory StreamsResponse2.fromJson(Map<String, dynamic> json) { return StreamsResponse2(
+  result: StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>),
+  success: CloudflarePipelinesWorkerPipelinesCommonSuccess.fromJson(json['success'] as bool),
+); }
+
+final StreamsResponse2Result result;
+
+/// Indicates whether the API call was successful.
+final CloudflarePipelinesWorkerPipelinesCommonSuccess success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success'); } 
+StreamsResponse2 copyWith({StreamsResponse2Result? result, CloudflarePipelinesWorkerPipelinesCommonSuccess? success, }) { return StreamsResponse2(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamsResponse2 &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'StreamsResponse2(result: $result, success: $success)'; } 
+ }

@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zaraz_element_visibility_rule_settings.dart';final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
+
+factory ZarazElementVisibilityRuleAction.fromJson(String json) { return switch (json) {
+  'elementVisibility' => elementVisibility,
+  _ => ZarazElementVisibilityRuleAction._(json),
+}; }
+
+static const ZarazElementVisibilityRuleAction elementVisibility = ZarazElementVisibilityRuleAction._('elementVisibility');
+
+static const List<ZarazElementVisibilityRuleAction> values = [elementVisibility];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZarazElementVisibilityRuleAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZarazElementVisibilityRuleAction($value)'; } 
+ }
+final class ZarazElementVisibilityRule {const ZarazElementVisibilityRule({required this.action, required this.id, required this.settings, });
+
+factory ZarazElementVisibilityRule.fromJson(Map<String, dynamic> json) { return ZarazElementVisibilityRule(
+  action: ZarazElementVisibilityRuleAction.fromJson(json['action'] as String),
+  id: json['id'] as String,
+  settings: ZarazElementVisibilityRuleSettings.fromJson(json['settings'] as Map<String, dynamic>),
+); }
+
+final ZarazElementVisibilityRuleAction action;
+
+final String id;
+
+final ZarazElementVisibilityRuleSettings settings;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'id': id,
+  'settings': settings.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('settings'); } 
+ZarazElementVisibilityRule copyWith({ZarazElementVisibilityRuleAction? action, String? id, ZarazElementVisibilityRuleSettings? settings, }) { return ZarazElementVisibilityRule(
+  action: action ?? this.action,
+  id: id ?? this.id,
+  settings: settings ?? this.settings,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZarazElementVisibilityRule &&
+          action == other.action &&
+          id == other.id &&
+          settings == other.settings; } 
+@override int get hashCode { return Object.hash(action, id, settings); } 
+@override String toString() { return 'ZarazElementVisibilityRule(action: $action, id: $id, settings: $settings)'; } 
+ }

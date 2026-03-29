@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVerticalResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZarazBaseTool {const ZarazBaseTool({required this.blockingTriggers, required this.defaultFields, this.defaultPurpose, required this.enabled, required this.name, this.vendorName, this.vendorPolicyUrl, });
+
+factory ZarazBaseTool.fromJson(Map<String, dynamic> json) { return ZarazBaseTool(
+  blockingTriggers: (json['blockingTriggers'] as List<dynamic>).map((e) => e as String).toList(),
+  defaultFields: (json['defaultFields'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  defaultPurpose: json['defaultPurpose'] as String?,
+  enabled: json['enabled'] as bool,
+  name: json['name'] as String,
+  vendorName: json['vendorName'] as String?,
+  vendorPolicyUrl: json['vendorPolicyUrl'] as String?,
+); }
+
+/// List of blocking trigger IDs
+final List<String> blockingTriggers;
+
+/// Default fields for tool's actions
+final Map<String,dynamic> defaultFields;
+
+/// Default consent purpose ID
+final String? defaultPurpose;
+
+/// Whether tool is enabled
+final bool enabled;
+
+/// Tool's name defined by the user
+final String name;
+
+/// Vendor name for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
+final String? vendorName;
+
+/// Vendor's Privacy Policy URL for TCF compliant consent modal, required for Custom Managed Components and Custom HTML tool with a defaultPurpose assigned
+final String? vendorPolicyUrl;
+
+Map<String, dynamic> toJson() { return {
+  'blockingTriggers': blockingTriggers,
+  'defaultFields': defaultFields,
+  'defaultPurpose': ?defaultPurpose,
+  'enabled': enabled,
+  'name': name,
+  'vendorName': ?vendorName,
+  'vendorPolicyUrl': ?vendorPolicyUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('blockingTriggers') &&
+      json.containsKey('defaultFields') &&
+      json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('name') && json['name'] is String; } 
+ZarazBaseTool copyWith({List<String>? blockingTriggers, Map<String,dynamic>? defaultFields, String Function()? defaultPurpose, bool? enabled, String? name, String Function()? vendorName, String Function()? vendorPolicyUrl, }) { return ZarazBaseTool(
+  blockingTriggers: blockingTriggers ?? this.blockingTriggers,
+  defaultFields: defaultFields ?? this.defaultFields,
+  defaultPurpose: defaultPurpose != null ? defaultPurpose() : this.defaultPurpose,
+  enabled: enabled ?? this.enabled,
+  name: name ?? this.name,
+  vendorName: vendorName != null ? vendorName() : this.vendorName,
+  vendorPolicyUrl: vendorPolicyUrl != null ? vendorPolicyUrl() : this.vendorPolicyUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZarazBaseTool &&
+          listEquals(blockingTriggers, other.blockingTriggers) &&
+          defaultFields == other.defaultFields &&
+          defaultPurpose == other.defaultPurpose &&
+          enabled == other.enabled &&
+          name == other.name &&
+          vendorName == other.vendorName &&
+          vendorPolicyUrl == other.vendorPolicyUrl; } 
+@override int get hashCode { return Object.hash(Object.hashAll(blockingTriggers), defaultFields, defaultPurpose, enabled, name, vendorName, vendorPolicyUrl); } 
+@override String toString() { return 'ZarazBaseTool(blockingTriggers: $blockingTriggers, defaultFields: $defaultFields, defaultPurpose: $defaultPurpose, enabled: $enabled, name: $name, vendorName: $vendorName, vendorPolicyUrl: $vendorPolicyUrl)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_host.dart';final class ShieldSelectorInclude {const ShieldSelectorInclude({this.host});
+
+factory ShieldSelectorInclude.fromJson(Map<String, dynamic> json) { return ShieldSelectorInclude(
+  host: (json['host'] as List<dynamic>?)?.map((e) => ShieldHost.fromJson(e as String)).toList(),
+); }
+
+/// Included hostnames.
+final List<ShieldHost>? host;
+
+Map<String, dynamic> toJson() { return {
+  if (host != null) 'host': host?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ShieldSelectorInclude copyWith({List<ShieldHost> Function()? host}) { return ShieldSelectorInclude(
+  host: host != null ? host() : this.host,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ShieldSelectorInclude &&
+          listEquals(host, other.host); } 
+@override int get hashCode { return Object.hashAll(host ?? const []).hashCode; } 
+@override String toString() { return 'ShieldSelectorInclude(host: $host)'; } 
+ }

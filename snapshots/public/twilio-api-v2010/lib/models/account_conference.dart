@@ -1,0 +1,133 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'conference_enum_status.dart';/// The reason why a conference ended. When a conference is in progress, will be `null`. When conference is completed, can be: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, or `last-participant-left`.
+final class ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded._(this.value);
+
+factory ConferenceEnumReasonConferenceEnded.fromJson(String json) { return switch (json) {
+  'conference-ended-via-api' => conferenceEndedViaApi,
+  'participant-with-end-conference-on-exit-left' => participantWithEndConferenceOnExitLeft,
+  'participant-with-end-conference-on-exit-kicked' => participantWithEndConferenceOnExitKicked,
+  'last-participant-kicked' => lastParticipantKicked,
+  'last-participant-left' => lastParticipantLeft,
+  _ => ConferenceEnumReasonConferenceEnded._(json),
+}; }
+
+static const ConferenceEnumReasonConferenceEnded conferenceEndedViaApi = ConferenceEnumReasonConferenceEnded._('conference-ended-via-api');
+
+static const ConferenceEnumReasonConferenceEnded participantWithEndConferenceOnExitLeft = ConferenceEnumReasonConferenceEnded._('participant-with-end-conference-on-exit-left');
+
+static const ConferenceEnumReasonConferenceEnded participantWithEndConferenceOnExitKicked = ConferenceEnumReasonConferenceEnded._('participant-with-end-conference-on-exit-kicked');
+
+static const ConferenceEnumReasonConferenceEnded lastParticipantKicked = ConferenceEnumReasonConferenceEnded._('last-participant-kicked');
+
+static const ConferenceEnumReasonConferenceEnded lastParticipantLeft = ConferenceEnumReasonConferenceEnded._('last-participant-left');
+
+static const List<ConferenceEnumReasonConferenceEnded> values = [conferenceEndedViaApi, participantWithEndConferenceOnExitLeft, participantWithEndConferenceOnExitKicked, lastParticipantKicked, lastParticipantLeft];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ConferenceEnumReasonConferenceEnded && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ConferenceEnumReasonConferenceEnded($value)'; } 
+ }
+final class AccountConference {const AccountConference({this.accountSid, this.dateCreated, this.dateUpdated, this.apiVersion, this.friendlyName, this.region, this.sid, this.status, this.uri, this.subresourceUris, this.reasonConferenceEnded, this.callSidEndingConference, });
+
+factory AccountConference.fromJson(Map<String, dynamic> json) { return AccountConference(
+  accountSid: json['account_sid'] as String?,
+  dateCreated: json['date_created'] as String?,
+  dateUpdated: json['date_updated'] as String?,
+  apiVersion: json['api_version'] as String?,
+  friendlyName: json['friendly_name'] as String?,
+  region: json['region'] as String?,
+  sid: json['sid'] as String?,
+  status: json['status'] != null ? ConferenceEnumStatus.fromJson(json['status'] as String) : null,
+  uri: json['uri'] as String?,
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  reasonConferenceEnded: json['reason_conference_ended'] != null ? ConferenceEnumReasonConferenceEnded.fromJson(json['reason_conference_ended'] as String) : null,
+  callSidEndingConference: json['call_sid_ending_conference'] as String?,
+); }
+
+/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Conference resource.
+final String? accountSid;
+
+/// The date and time in UTC that this resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
+final String? dateCreated;
+
+/// The date and time in UTC that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
+final String? dateUpdated;
+
+/// The API version used to create this conference.
+final String? apiVersion;
+
+/// A string that you assigned to describe this conference room. Maximum length is 128 characters.
+final String? friendlyName;
+
+/// A string that represents the Twilio Region where the conference audio was mixed. May be `us1`, `us2`, `ie1`,  `de1`, `sg1`, `br1`, `au1`, and `jp1`. Basic conference audio will always be mixed in `us1`. Global Conference audio will be mixed nearest to the majority of participants.
+final String? region;
+
+/// The unique, Twilio-provided string used to identify this Conference resource.
+final String? sid;
+
+final ConferenceEnumStatus? status;
+
+/// The URI of this resource, relative to `https://api.twilio.com`.
+final String? uri;
+
+/// A list of related resources identified by their URIs relative to `https://api.twilio.com`.
+final Map<String,dynamic>? subresourceUris;
+
+final ConferenceEnumReasonConferenceEnded? reasonConferenceEnded;
+
+/// The call SID that caused the conference to end.
+final String? callSidEndingConference;
+
+Map<String, dynamic> toJson() { return {
+  'account_sid': ?accountSid,
+  'date_created': ?dateCreated,
+  'date_updated': ?dateUpdated,
+  'api_version': ?apiVersion,
+  'friendly_name': ?friendlyName,
+  'region': ?region,
+  'sid': ?sid,
+  if (status != null) 'status': status?.toJson(),
+  'uri': ?uri,
+  'subresource_uris': ?subresourceUris,
+  if (reasonConferenceEnded != null) 'reason_conference_ended': reasonConferenceEnded?.toJson(),
+  'call_sid_ending_conference': ?callSidEndingConference,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountConference copyWith({String? Function()? accountSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? apiVersion, String? Function()? friendlyName, String? Function()? region, String? Function()? sid, ConferenceEnumStatus Function()? status, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, ConferenceEnumReasonConferenceEnded Function()? reasonConferenceEnded, String? Function()? callSidEndingConference, }) { return AccountConference(
+  accountSid: accountSid != null ? accountSid() : this.accountSid,
+  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
+  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
+  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
+  region: region != null ? region() : this.region,
+  sid: sid != null ? sid() : this.sid,
+  status: status != null ? status() : this.status,
+  uri: uri != null ? uri() : this.uri,
+  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+  reasonConferenceEnded: reasonConferenceEnded != null ? reasonConferenceEnded() : this.reasonConferenceEnded,
+  callSidEndingConference: callSidEndingConference != null ? callSidEndingConference() : this.callSidEndingConference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountConference &&
+          accountSid == other.accountSid &&
+          dateCreated == other.dateCreated &&
+          dateUpdated == other.dateUpdated &&
+          apiVersion == other.apiVersion &&
+          friendlyName == other.friendlyName &&
+          region == other.region &&
+          sid == other.sid &&
+          status == other.status &&
+          uri == other.uri &&
+          subresourceUris == other.subresourceUris &&
+          reasonConferenceEnded == other.reasonConferenceEnded &&
+          callSidEndingConference == other.callSidEndingConference; } 
+@override int get hashCode { return Object.hash(accountSid, dateCreated, dateUpdated, apiVersion, friendlyName, region, sid, status, uri, subresourceUris, reasonConferenceEnded, callSidEndingConference); } 
+@override String toString() { return 'AccountConference(accountSid: $accountSid, dateCreated: $dateCreated, dateUpdated: $dateUpdated, apiVersion: $apiVersion, friendlyName: $friendlyName, region: $region, sid: $sid, status: $status, uri: $uri, subresourceUris: $subresourceUris, reasonConferenceEnded: $reasonConferenceEnded, callSidEndingConference: $callSidEndingConference)'; } 
+ }

@@ -1,0 +1,10 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Comma-separated key-value pairs following the TUS protocol specification. Values are Base-64 encoded.
+/// Supported keys: `name`, `requiresignedurls`, `allowedorigins`, `thumbnailtimestamppct`, `watermark`, `scheduleddeletion`, `maxdurationseconds`.
+extension type const StreamUploadMetadata(String value) {
+factory StreamUploadMetadata.fromJson(String json) => StreamUploadMetadata(json);
+
+String toJson() => value;
+
+}

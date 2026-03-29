@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'urlscanner_get_scan_response2_data_requests_response_asn.dart';import 'urlscanner_get_scan_response2_data_requests_response_geoip.dart';import 'urlscanner_get_scan_response2_data_requests_response_response.dart';final class UrlscannerGetScanResponse2DataRequestsResponse {const UrlscannerGetScanResponse2DataRequestsResponse({required this.asn, this.contentAvailable, required this.dataLength, required this.encodedDataLength, required this.geoip, required this.hasExtraInfo, this.hash, required this.requestId, required this.response, required this.size, required this.type, });
+
+factory UrlscannerGetScanResponse2DataRequestsResponse.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequestsResponse(
+  asn: UrlscannerGetScanResponse2DataRequestsResponseAsn.fromJson(json['asn'] as Map<String, dynamic>),
+  contentAvailable: json['contentAvailable'] as bool?,
+  dataLength: (json['dataLength'] as num).toDouble(),
+  encodedDataLength: (json['encodedDataLength'] as num).toDouble(),
+  geoip: UrlscannerGetScanResponse2DataRequestsResponseGeoip.fromJson(json['geoip'] as Map<String, dynamic>),
+  hasExtraInfo: json['hasExtraInfo'] as bool,
+  hash: json['hash'] as String?,
+  requestId: json['requestId'] as String,
+  response: UrlscannerGetScanResponse2DataRequestsResponseResponse.fromJson(json['response'] as Map<String, dynamic>),
+  size: (json['size'] as num).toDouble(),
+  type: json['type'] as String,
+); }
+
+final UrlscannerGetScanResponse2DataRequestsResponseAsn asn;
+
+final bool? contentAvailable;
+
+final double dataLength;
+
+final double encodedDataLength;
+
+final UrlscannerGetScanResponse2DataRequestsResponseGeoip geoip;
+
+final bool hasExtraInfo;
+
+final String? hash;
+
+final String requestId;
+
+final UrlscannerGetScanResponse2DataRequestsResponseResponse response;
+
+final double size;
+
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'asn': asn.toJson(),
+  'contentAvailable': ?contentAvailable,
+  'dataLength': dataLength,
+  'encodedDataLength': encodedDataLength,
+  'geoip': geoip.toJson(),
+  'hasExtraInfo': hasExtraInfo,
+  'hash': ?hash,
+  'requestId': requestId,
+  'response': response.toJson(),
+  'size': size,
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
+      json.containsKey('dataLength') && json['dataLength'] is num &&
+      json.containsKey('encodedDataLength') && json['encodedDataLength'] is num &&
+      json.containsKey('geoip') &&
+      json.containsKey('hasExtraInfo') && json['hasExtraInfo'] is bool &&
+      json.containsKey('requestId') && json['requestId'] is String &&
+      json.containsKey('response') &&
+      json.containsKey('size') && json['size'] is num &&
+      json.containsKey('type') && json['type'] is String; } 
+UrlscannerGetScanResponse2DataRequestsResponse copyWith({UrlscannerGetScanResponse2DataRequestsResponseAsn? asn, bool Function()? contentAvailable, double? dataLength, double? encodedDataLength, UrlscannerGetScanResponse2DataRequestsResponseGeoip? geoip, bool? hasExtraInfo, String Function()? hash, String? requestId, UrlscannerGetScanResponse2DataRequestsResponseResponse? response, double? size, String? type, }) { return UrlscannerGetScanResponse2DataRequestsResponse(
+  asn: asn ?? this.asn,
+  contentAvailable: contentAvailable != null ? contentAvailable() : this.contentAvailable,
+  dataLength: dataLength ?? this.dataLength,
+  encodedDataLength: encodedDataLength ?? this.encodedDataLength,
+  geoip: geoip ?? this.geoip,
+  hasExtraInfo: hasExtraInfo ?? this.hasExtraInfo,
+  hash: hash != null ? hash() : this.hash,
+  requestId: requestId ?? this.requestId,
+  response: response ?? this.response,
+  size: size ?? this.size,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2DataRequestsResponse &&
+          asn == other.asn &&
+          contentAvailable == other.contentAvailable &&
+          dataLength == other.dataLength &&
+          encodedDataLength == other.encodedDataLength &&
+          geoip == other.geoip &&
+          hasExtraInfo == other.hasExtraInfo &&
+          hash == other.hash &&
+          requestId == other.requestId &&
+          response == other.response &&
+          size == other.size &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(asn, contentAvailable, dataLength, encodedDataLength, geoip, hasExtraInfo, hash, requestId, response, size, type); } 
+@override String toString() { return 'UrlscannerGetScanResponse2DataRequestsResponse(asn: $asn, contentAvailable: $contentAvailable, dataLength: $dataLength, encodedDataLength: $encodedDataLength, geoip: $geoip, hasExtraInfo: $hasExtraInfo, hash: $hash, requestId: $requestId, response: $response, size: $size, type: $type)'; } 
+ }

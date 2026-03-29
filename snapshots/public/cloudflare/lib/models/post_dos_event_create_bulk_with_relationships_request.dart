@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_dos_event_create_bulk_with_relationships_request_data.dart';final class PostDosEventCreateBulkWithRelationshipsRequest {const PostDosEventCreateBulkWithRelationshipsRequest({required this.data, required this.datasetId, });
+
+factory PostDosEventCreateBulkWithRelationshipsRequest.fromJson(Map<String, dynamic> json) { return PostDosEventCreateBulkWithRelationshipsRequest(
+  data: (json['data'] as List<dynamic>).map((e) => PostDosEventCreateBulkWithRelationshipsRequestData.fromJson(e as Map<String, dynamic>)).toList(),
+  datasetId: json['datasetId'] as String,
+); }
+
+final List<PostDosEventCreateBulkWithRelationshipsRequestData> data;
+
+final String datasetId;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.map((e) => e.toJson()).toList(),
+  'datasetId': datasetId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') &&
+      json.containsKey('datasetId') && json['datasetId'] is String; } 
+PostDosEventCreateBulkWithRelationshipsRequest copyWith({List<PostDosEventCreateBulkWithRelationshipsRequestData>? data, String? datasetId, }) { return PostDosEventCreateBulkWithRelationshipsRequest(
+  data: data ?? this.data,
+  datasetId: datasetId ?? this.datasetId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostDosEventCreateBulkWithRelationshipsRequest &&
+          listEquals(data, other.data) &&
+          datasetId == other.datasetId; } 
+@override int get hashCode { return Object.hash(Object.hashAll(data), datasetId); } 
+@override String toString() { return 'PostDosEventCreateBulkWithRelationshipsRequest(data: $data, datasetId: $datasetId)'; } 
+ }

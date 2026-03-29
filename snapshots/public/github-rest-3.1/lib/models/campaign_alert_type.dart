@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Indicates the alert type of a campaign
+final class CampaignAlertType {const CampaignAlertType._(this.value);
+
+factory CampaignAlertType.fromJson(String json) { return switch (json) {
+  'code_scanning' => codeScanning,
+  'secret_scanning' => secretScanning,
+  _ => CampaignAlertType._(json),
+}; }
+
+static const CampaignAlertType codeScanning = CampaignAlertType._('code_scanning');
+
+static const CampaignAlertType secretScanning = CampaignAlertType._('secret_scanning');
+
+static const List<CampaignAlertType> values = [codeScanning, secretScanning];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CampaignAlertType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CampaignAlertType($value)'; } 
+ }

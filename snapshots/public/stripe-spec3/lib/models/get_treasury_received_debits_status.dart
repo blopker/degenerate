@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTreasuryReceivedDebitsStatus {const GetTreasuryReceivedDebitsStatus._(this.value);
+
+factory GetTreasuryReceivedDebitsStatus.fromJson(String json) { return switch (json) {
+  'failed' => failed,
+  'succeeded' => succeeded,
+  _ => GetTreasuryReceivedDebitsStatus._(json),
+}; }
+
+static const GetTreasuryReceivedDebitsStatus failed = GetTreasuryReceivedDebitsStatus._('failed');
+
+static const GetTreasuryReceivedDebitsStatus succeeded = GetTreasuryReceivedDebitsStatus._('succeeded');
+
+static const List<GetTreasuryReceivedDebitsStatus> values = [failed, succeeded];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetTreasuryReceivedDebitsStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetTreasuryReceivedDebitsStatus($value)'; } 
+ }

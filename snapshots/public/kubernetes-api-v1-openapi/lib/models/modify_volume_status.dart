@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// ModifyVolumeStatus represents the status object of ControllerModifyVolume operation
+final class ModifyVolumeStatus {const ModifyVolumeStatus({this.status = '', this.targetVolumeAttributesClassName, });
+
+factory ModifyVolumeStatus.fromJson(Map<String, dynamic> json) { return ModifyVolumeStatus(
+  status: json['status'] as String,
+  targetVolumeAttributesClassName: json['targetVolumeAttributesClassName'] as String?,
+); }
+
+/// status is the status of the ControllerModifyVolume operation. It can be in any of following states:
+///  - Pending
+///    Pending indicates that the PersistentVolumeClaim cannot be modified due to unmet requirements, such as
+///    the specified VolumeAttributesClass not existing.
+///  - InProgress
+///    InProgress indicates that the volume is being modified.
+///  - Infeasible
+///   Infeasible indicates that the request has been rejected as invalid by the CSI driver. To
+/// 	  resolve the error, a valid VolumeAttributesClass needs to be specified.
+/// Note: New statuses can be added in the future. Consumers should check for unknown statuses and fail appropriately.
+final String status;
+
+/// targetVolumeAttributesClassName is the name of the VolumeAttributesClass the PVC currently being reconciled
+final String? targetVolumeAttributesClassName;
+
+Map<String, dynamic> toJson() { return {
+  'status': status,
+  'targetVolumeAttributesClassName': ?targetVolumeAttributesClassName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
+ModifyVolumeStatus copyWith({String? status, String Function()? targetVolumeAttributesClassName, }) { return ModifyVolumeStatus(
+  status: status ?? this.status,
+  targetVolumeAttributesClassName: targetVolumeAttributesClassName != null ? targetVolumeAttributesClassName() : this.targetVolumeAttributesClassName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ModifyVolumeStatus &&
+          status == other.status &&
+          targetVolumeAttributesClassName == other.targetVolumeAttributesClassName; } 
+@override int get hashCode { return Object.hash(status, targetVolumeAttributesClassName); } 
+@override String toString() { return 'ModifyVolumeStatus(status: $status, targetVolumeAttributesClassName: $targetVolumeAttributesClassName)'; } 
+ }

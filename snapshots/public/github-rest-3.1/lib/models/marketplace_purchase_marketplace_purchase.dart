@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'marketplace_listing_plan.dart';final class MarketplacePurchaseMarketplacePurchase {const MarketplacePurchaseMarketplacePurchase({this.billingCycle, this.nextBillingDate, this.isInstalled, this.unitCount, this.onFreeTrial, this.freeTrialEndsOn, this.updatedAt, this.plan, });
+
+factory MarketplacePurchaseMarketplacePurchase.fromJson(Map<String, dynamic> json) { return MarketplacePurchaseMarketplacePurchase(
+  billingCycle: json['billing_cycle'] as String?,
+  nextBillingDate: json['next_billing_date'] as String?,
+  isInstalled: json['is_installed'] as bool?,
+  unitCount: json['unit_count'] != null ? (json['unit_count'] as num).toInt() : null,
+  onFreeTrial: json['on_free_trial'] as bool?,
+  freeTrialEndsOn: json['free_trial_ends_on'] as String?,
+  updatedAt: json['updated_at'] as String?,
+  plan: json['plan'] != null ? MarketplaceListingPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
+); }
+
+final String? billingCycle;
+
+final String? nextBillingDate;
+
+final bool? isInstalled;
+
+final int? unitCount;
+
+final bool? onFreeTrial;
+
+final String? freeTrialEndsOn;
+
+final String? updatedAt;
+
+final MarketplaceListingPlan? plan;
+
+Map<String, dynamic> toJson() { return {
+  'billing_cycle': ?billingCycle,
+  'next_billing_date': ?nextBillingDate,
+  'is_installed': ?isInstalled,
+  'unit_count': ?unitCount,
+  'on_free_trial': ?onFreeTrial,
+  'free_trial_ends_on': ?freeTrialEndsOn,
+  'updated_at': ?updatedAt,
+  if (plan != null) 'plan': plan?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MarketplacePurchaseMarketplacePurchase copyWith({String Function()? billingCycle, String? Function()? nextBillingDate, bool Function()? isInstalled, int? Function()? unitCount, bool Function()? onFreeTrial, String? Function()? freeTrialEndsOn, String Function()? updatedAt, MarketplaceListingPlan Function()? plan, }) { return MarketplacePurchaseMarketplacePurchase(
+  billingCycle: billingCycle != null ? billingCycle() : this.billingCycle,
+  nextBillingDate: nextBillingDate != null ? nextBillingDate() : this.nextBillingDate,
+  isInstalled: isInstalled != null ? isInstalled() : this.isInstalled,
+  unitCount: unitCount != null ? unitCount() : this.unitCount,
+  onFreeTrial: onFreeTrial != null ? onFreeTrial() : this.onFreeTrial,
+  freeTrialEndsOn: freeTrialEndsOn != null ? freeTrialEndsOn() : this.freeTrialEndsOn,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  plan: plan != null ? plan() : this.plan,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MarketplacePurchaseMarketplacePurchase &&
+          billingCycle == other.billingCycle &&
+          nextBillingDate == other.nextBillingDate &&
+          isInstalled == other.isInstalled &&
+          unitCount == other.unitCount &&
+          onFreeTrial == other.onFreeTrial &&
+          freeTrialEndsOn == other.freeTrialEndsOn &&
+          updatedAt == other.updatedAt &&
+          plan == other.plan; } 
+@override int get hashCode { return Object.hash(billingCycle, nextBillingDate, isInstalled, unitCount, onFreeTrial, freeTrialEndsOn, updatedAt, plan); } 
+@override String toString() { return 'MarketplacePurchaseMarketplacePurchase(billingCycle: $billingCycle, nextBillingDate: $nextBillingDate, isInstalled: $isInstalled, unitCount: $unitCount, onFreeTrial: $onFreeTrial, freeTrialEndsOn: $freeTrialEndsOn, updatedAt: $updatedAt, plan: $plan)'; } 
+ }

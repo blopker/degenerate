@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType._(this.value);
+
+factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType.fromJson(String json) { return switch (json) {
+  'min_item_period_end' => minItemPeriodEnd,
+  'timestamp' => timestamp,
+  _ => PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType._(json),
+}; }
+
+static const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType minItemPeriodEnd = PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType._('min_item_period_end');
+
+static const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType timestamp = PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType._('timestamp');
+
+static const List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType> values = [minItemPeriodEnd, timestamp];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType($value)'; } 
+ }
+final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd({this.timestamp, required this.type, });
+
+factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd(
+  timestamp: json['timestamp'] != null ? (json['timestamp'] as num).toInt() : null,
+  type: PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType.fromJson(json['type'] as String),
+); }
+
+final int? timestamp;
+
+final PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType type;
+
+Map<String, dynamic> toJson() { return {
+  'timestamp': ?timestamp,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd copyWith({int Function()? timestamp, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEndType? type, }) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd(
+  timestamp: timestamp != null ? timestamp() : this.timestamp,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd &&
+          timestamp == other.timestamp &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(timestamp, type); } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd(timestamp: $timestamp, type: $type)'; } 
+ }

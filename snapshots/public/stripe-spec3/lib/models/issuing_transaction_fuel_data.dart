@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class IssuingTransactionFuelData {const IssuingTransactionFuelData({this.industryProductCode, this.quantityDecimal, required this.type, required this.unit, required this.unitCostDecimal, });
+
+factory IssuingTransactionFuelData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFuelData(
+  industryProductCode: json['industry_product_code'] as String?,
+  quantityDecimal: json['quantity_decimal'] as String?,
+  type: json['type'] as String,
+  unit: json['unit'] as String,
+  unitCostDecimal: json['unit_cost_decimal'] as String,
+); }
+
+/// [Conexxus Payment System Product Code](https://www.conexxus.org/conexxus-payment-system-product-codes) identifying the primary fuel product purchased.
+final String? industryProductCode;
+
+/// The quantity of `unit`s of fuel that was dispensed, represented as a decimal string with at most 12 decimal places.
+final String? quantityDecimal;
+
+/// The type of fuel that was purchased. One of `diesel`, `unleaded_plus`, `unleaded_regular`, `unleaded_super`, or `other`.
+final String type;
+
+/// The units for `quantity_decimal`. One of `charging_minute`, `imperial_gallon`, `kilogram`, `kilowatt_hour`, `liter`, `pound`, `us_gallon`, or `other`.
+final String unit;
+
+/// The cost in cents per each unit of fuel, represented as a decimal string with at most 12 decimal places.
+final String unitCostDecimal;
+
+Map<String, dynamic> toJson() { return {
+  'industry_product_code': ?industryProductCode,
+  'quantity_decimal': ?quantityDecimal,
+  'type': type,
+  'unit': unit,
+  'unit_cost_decimal': unitCostDecimal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('unit') && json['unit'] is String &&
+      json.containsKey('unit_cost_decimal') && json['unit_cost_decimal'] is String; } 
+IssuingTransactionFuelData copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, String? type, String? unit, String? unitCostDecimal, }) { return IssuingTransactionFuelData(
+  industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,
+  quantityDecimal: quantityDecimal != null ? quantityDecimal() : this.quantityDecimal,
+  type: type ?? this.type,
+  unit: unit ?? this.unit,
+  unitCostDecimal: unitCostDecimal ?? this.unitCostDecimal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingTransactionFuelData &&
+          industryProductCode == other.industryProductCode &&
+          quantityDecimal == other.quantityDecimal &&
+          type == other.type &&
+          unit == other.unit &&
+          unitCostDecimal == other.unitCostDecimal; } 
+@override int get hashCode { return Object.hash(industryProductCode, quantityDecimal, type, unit, unitCostDecimal); } 
+@override String toString() { return 'IssuingTransactionFuelData(industryProductCode: $industryProductCode, quantityDecimal: $quantityDecimal, type: $type, unit: $unit, unitCostDecimal: $unitCostDecimal)'; } 
+ }

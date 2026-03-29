@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ProtectedBranchRequiredStatusCheckChecks {const ProtectedBranchRequiredStatusCheckChecks({required this.context, required this.appId, });
+
+factory ProtectedBranchRequiredStatusCheckChecks.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredStatusCheckChecks(
+  context: json['context'] as String,
+  appId: json['app_id'] != null ? (json['app_id'] as num).toInt() : null,
+); }
+
+final String context;
+
+final int? appId;
+
+Map<String, dynamic> toJson() { return {
+  'context': context,
+  'app_id': ?appId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('context') && json['context'] is String &&
+      json.containsKey('app_id') && json['app_id'] is num; } 
+ProtectedBranchRequiredStatusCheckChecks copyWith({String? context, int? Function()? appId, }) { return ProtectedBranchRequiredStatusCheckChecks(
+  context: context ?? this.context,
+  appId: appId != null ? appId() : this.appId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProtectedBranchRequiredStatusCheckChecks &&
+          context == other.context &&
+          appId == other.appId; } 
+@override int get hashCode { return Object.hash(context, appId); } 
+@override String toString() { return 'ProtectedBranchRequiredStatusCheckChecks(context: $context, appId: $appId)'; } 
+ }

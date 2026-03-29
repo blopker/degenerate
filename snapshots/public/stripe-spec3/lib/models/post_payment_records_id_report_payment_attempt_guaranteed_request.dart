@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_guaranteed_request_metadata.dart';final class PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest {const PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest({this.expand, required this.guaranteedAt, this.metadata, });
+
+factory PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  guaranteedAt: (json['guaranteed_at'] as num).toInt(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequestMetadataVariant2.fromJson(v as String),) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// When the reported payment was guaranteed. Measured in seconds since the Unix epoch.
+final int guaranteedAt;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequestMetadata? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'guaranteed_at': guaranteedAt,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('guaranteed_at') && json['guaranteed_at'] is num; } 
+PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest copyWith({List<String> Function()? expand, int? guaranteedAt, PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequestMetadata Function()? metadata, }) { return PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(
+  expand: expand != null ? expand() : this.expand,
+  guaranteedAt: guaranteedAt ?? this.guaranteedAt,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest &&
+          listEquals(expand, other.expand) &&
+          guaranteedAt == other.guaranteedAt &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), guaranteedAt, metadata); } 
+@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptGuaranteedRequest(expand: $expand, guaranteedAt: $guaranteedAt, metadata: $metadata)'; } 
+ }

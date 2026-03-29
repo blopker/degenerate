@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_offset_time.dart';import 'magic_visibility_pcaps_pcaps_packet_limit.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'magic_visibility_pcaps_pcaps_type.dart';final class MagicVisibilityPcapsPcapsRequestSimple {const MagicVisibilityPcapsPcapsRequestSimple({this.filterV1, this.offsetTime, required this.packetLimit, required this.system, required this.timeLimit, required this.type, });
+
+factory MagicVisibilityPcapsPcapsRequestSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsRequestSimple(
+  filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
+  offsetTime: json['offset_time'] != null ? MagicVisibilityPcapsPcapsOffsetTime.fromJson(json['offset_time'] as String) : null,
+  packetLimit: MagicVisibilityPcapsPcapsPacketLimit.fromJson(json['packet_limit'] as num),
+  system: MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String),
+  timeLimit: MagicVisibilityPcapsPcapsTimeLimitSampled.fromJson(json['time_limit'] as num),
+  type: MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String),
+); }
+
+final MagicVisibilityPcapsPcapsFilter? filterV1;
+
+/// The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
+final MagicVisibilityPcapsPcapsOffsetTime? offsetTime;
+
+/// The limit of packets contained in a packet capture.
+final MagicVisibilityPcapsPcapsPacketLimit packetLimit;
+
+final MagicVisibilityPcapsPcapsSystem system;
+
+final MagicVisibilityPcapsPcapsTimeLimitSampled timeLimit;
+
+final MagicVisibilityPcapsPcapsType type;
+
+Map<String, dynamic> toJson() { return {
+  if (filterV1 != null) 'filter_v1': filterV1?.toJson(),
+  if (offsetTime != null) 'offset_time': offsetTime?.toJson(),
+  'packet_limit': packetLimit.toJson(),
+  'system': system.toJson(),
+  'time_limit': timeLimit.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('packet_limit') &&
+      json.containsKey('system') &&
+      json.containsKey('time_limit') &&
+      json.containsKey('type'); } 
+MagicVisibilityPcapsPcapsRequestSimple copyWith({MagicVisibilityPcapsPcapsFilter Function()? filterV1, MagicVisibilityPcapsPcapsOffsetTime Function()? offsetTime, MagicVisibilityPcapsPcapsPacketLimit? packetLimit, MagicVisibilityPcapsPcapsSystem? system, MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit, MagicVisibilityPcapsPcapsType? type, }) { return MagicVisibilityPcapsPcapsRequestSimple(
+  filterV1: filterV1 != null ? filterV1() : this.filterV1,
+  offsetTime: offsetTime != null ? offsetTime() : this.offsetTime,
+  packetLimit: packetLimit ?? this.packetLimit,
+  system: system ?? this.system,
+  timeLimit: timeLimit ?? this.timeLimit,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicVisibilityPcapsPcapsRequestSimple &&
+          filterV1 == other.filterV1 &&
+          offsetTime == other.offsetTime &&
+          packetLimit == other.packetLimit &&
+          system == other.system &&
+          timeLimit == other.timeLimit &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(filterV1, offsetTime, packetLimit, system, timeLimit, type); } 
+@override String toString() { return 'MagicVisibilityPcapsPcapsRequestSimple(filterV1: $filterV1, offsetTime: $offsetTime, packetLimit: $packetLimit, system: $system, timeLimit: $timeLimit, type: $type)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'actions_hosted_runner_custom_image.dart';final class ActionsListCustomImagesForOrgResponse {const ActionsListCustomImagesForOrgResponse({required this.totalCount, required this.images, });
+
+factory ActionsListCustomImagesForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListCustomImagesForOrgResponse(
+  totalCount: (json['total_count'] as num).toInt(),
+  images: (json['images'] as List<dynamic>).map((e) => ActionsHostedRunnerCustomImage.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final int totalCount;
+
+final List<ActionsHostedRunnerCustomImage> images;
+
+Map<String, dynamic> toJson() { return {
+  'total_count': totalCount,
+  'images': images.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('images'); } 
+ActionsListCustomImagesForOrgResponse copyWith({int? totalCount, List<ActionsHostedRunnerCustomImage>? images, }) { return ActionsListCustomImagesForOrgResponse(
+  totalCount: totalCount ?? this.totalCount,
+  images: images ?? this.images,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsListCustomImagesForOrgResponse &&
+          totalCount == other.totalCount &&
+          listEquals(images, other.images); } 
+@override int get hashCode { return Object.hash(totalCount, Object.hashAll(images)); } 
+@override String toString() { return 'ActionsListCustomImagesForOrgResponse(totalCount: $totalCount, images: $images)'; } 
+ }

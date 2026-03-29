@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of data source. Always `logs`.
+final class CreateEvalLogsDataSourceConfigType {const CreateEvalLogsDataSourceConfigType._(this.value);
+
+factory CreateEvalLogsDataSourceConfigType.fromJson(String json) { return switch (json) {
+  'logs' => logs,
+  _ => CreateEvalLogsDataSourceConfigType._(json),
+}; }
+
+static const CreateEvalLogsDataSourceConfigType logs = CreateEvalLogsDataSourceConfigType._('logs');
+
+static const List<CreateEvalLogsDataSourceConfigType> values = [logs];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateEvalLogsDataSourceConfigType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateEvalLogsDataSourceConfigType($value)'; } 
+ }
+/// A data source config which specifies the metadata property of your logs query.
+/// This is usually metadata like `usecase=chatbot` or `prompt-version=v2`, etc.
+/// 
+final class CreateEvalLogsDataSourceConfig {const CreateEvalLogsDataSourceConfig({this.type = CreateEvalLogsDataSourceConfigType.logs, this.metadata, });
+
+factory CreateEvalLogsDataSourceConfig.fromJson(Map<String, dynamic> json) { return CreateEvalLogsDataSourceConfig(
+  type: CreateEvalLogsDataSourceConfigType.fromJson(json['type'] as String),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+); }
+
+/// The type of data source. Always `logs`.
+final CreateEvalLogsDataSourceConfigType type;
+
+/// Metadata filters for the logs data source.
+final Map<String,dynamic>? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'metadata': ?metadata,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+CreateEvalLogsDataSourceConfig copyWith({CreateEvalLogsDataSourceConfigType? type, Map<String, dynamic> Function()? metadata, }) { return CreateEvalLogsDataSourceConfig(
+  type: type ?? this.type,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateEvalLogsDataSourceConfig &&
+          type == other.type &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(type, metadata); } 
+@override String toString() { return 'CreateEvalLogsDataSourceConfig(type: $type, metadata: $metadata)'; } 
+ }

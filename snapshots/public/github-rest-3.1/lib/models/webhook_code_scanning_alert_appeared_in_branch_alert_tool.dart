@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookCodeScanningAlertAppearedInBranchAlertTool {const WebhookCodeScanningAlertAppearedInBranchAlertTool({required this.name, required this.version, });
+
+factory WebhookCodeScanningAlertAppearedInBranchAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertAppearedInBranchAlertTool(
+  name: json['name'] as String,
+  version: json['version'] as String?,
+); }
+
+/// The name of the tool used to generate the code scanning analysis alert.
+final String name;
+
+/// The version of the tool used to detect the alert.
+final String? version;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'version': ?version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('version') && json['version'] is String; } 
+WebhookCodeScanningAlertAppearedInBranchAlertTool copyWith({String? name, String? Function()? version, }) { return WebhookCodeScanningAlertAppearedInBranchAlertTool(
+  name: name ?? this.name,
+  version: version != null ? version() : this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookCodeScanningAlertAppearedInBranchAlertTool &&
+          name == other.name &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(name, version); } 
+@override String toString() { return 'WebhookCodeScanningAlertAppearedInBranchAlertTool(name: $name, version: $version)'; } 
+ }

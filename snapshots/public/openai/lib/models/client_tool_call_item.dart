@@ -1,0 +1,143 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
+
+factory ClientToolCallStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'completed' => completed,
+  _ => ClientToolCallStatus._(json),
+}; }
+
+static const ClientToolCallStatus inProgress = ClientToolCallStatus._('in_progress');
+
+static const ClientToolCallStatus completed = ClientToolCallStatus._('completed');
+
+static const List<ClientToolCallStatus> values = [inProgress, completed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ClientToolCallStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ClientToolCallStatus($value)'; } 
+ }
+/// Type discriminator that is always `chatkit.thread_item`.
+final class ClientToolCallItemObject {const ClientToolCallItemObject._(this.value);
+
+factory ClientToolCallItemObject.fromJson(String json) { return switch (json) {
+  'chatkit.thread_item' => chatkitThreadItem,
+  _ => ClientToolCallItemObject._(json),
+}; }
+
+static const ClientToolCallItemObject chatkitThreadItem = ClientToolCallItemObject._('chatkit.thread_item');
+
+static const List<ClientToolCallItemObject> values = [chatkitThreadItem];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ClientToolCallItemObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ClientToolCallItemObject($value)'; } 
+ }
+/// Record of a client side tool invocation initiated by the assistant.
+final class ClientToolCallItem {const ClientToolCallItem({required this.id, this.object = ClientToolCallItemObject.chatkitThreadItem, required this.createdAt, required this.threadId, this.type = 'chatkit.client_tool_call', required this.status, required this.callId, required this.name, required this.arguments, required this.output, });
+
+factory ClientToolCallItem.fromJson(Map<String, dynamic> json) { return ClientToolCallItem(
+  id: json['id'] as String,
+  object: ClientToolCallItemObject.fromJson(json['object'] as String),
+  createdAt: (json['created_at'] as num).toInt(),
+  threadId: json['thread_id'] as String,
+  type: json['type'] as String,
+  status: ClientToolCallStatus.fromJson(json['status'] as String),
+  callId: json['call_id'] as String,
+  name: json['name'] as String,
+  arguments: json['arguments'] as String,
+  output: json['output'] as String?,
+); }
+
+/// Identifier of the thread item.
+final String id;
+
+/// Type discriminator that is always `chatkit.thread_item`.
+final ClientToolCallItemObject object;
+
+/// Unix timestamp (in seconds) for when the item was created.
+final int createdAt;
+
+/// Identifier of the parent thread.
+final String threadId;
+
+/// Type discriminator that is always `chatkit.client_tool_call`.
+final String type;
+
+/// Execution status for the tool call.
+final ClientToolCallStatus status;
+
+/// Identifier for the client tool call.
+final String callId;
+
+/// Tool name that was invoked.
+final String name;
+
+/// JSON-encoded arguments that were sent to the tool.
+final String arguments;
+
+/// JSON-encoded output captured from the tool. Defaults to null while execution is in progress.
+final String? output;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'created_at': createdAt,
+  'thread_id': threadId,
+  'type': type,
+  'status': status.toJson(),
+  'call_id': callId,
+  'name': name,
+  'arguments': arguments,
+  'output': ?output,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('thread_id') && json['thread_id'] is String &&
+      json.containsKey('type') && json['type'] is String &&
+      json.containsKey('status') &&
+      json.containsKey('call_id') && json['call_id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('arguments') && json['arguments'] is String &&
+      json.containsKey('output') && json['output'] is String; } 
+ClientToolCallItem copyWith({String? id, ClientToolCallItemObject? object, int? createdAt, String? threadId, String? type, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ClientToolCallItem(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  createdAt: createdAt ?? this.createdAt,
+  threadId: threadId ?? this.threadId,
+  type: type ?? this.type,
+  status: status ?? this.status,
+  callId: callId ?? this.callId,
+  name: name ?? this.name,
+  arguments: arguments ?? this.arguments,
+  output: output != null ? output() : this.output,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ClientToolCallItem &&
+          id == other.id &&
+          object == other.object &&
+          createdAt == other.createdAt &&
+          threadId == other.threadId &&
+          type == other.type &&
+          status == other.status &&
+          callId == other.callId &&
+          name == other.name &&
+          arguments == other.arguments &&
+          output == other.output; } 
+@override int get hashCode { return Object.hash(id, object, createdAt, threadId, type, status, callId, name, arguments, output); } 
+@override String toString() { return 'ClientToolCallItem(id: $id, object: $object, createdAt: $createdAt, threadId: $threadId, type: $type, status: $status, callId: $callId, name: $name, arguments: $arguments, output: $output)'; } 
+ }

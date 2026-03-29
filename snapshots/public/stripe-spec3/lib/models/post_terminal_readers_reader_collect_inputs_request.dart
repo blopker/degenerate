@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_terminal_readers_reader_collect_inputs_request_inputs.dart';final class PostTerminalReadersReaderCollectInputsRequest {const PostTerminalReadersReaderCollectInputsRequest({this.expand, required this.inputs, this.metadata, });
+
+factory PostTerminalReadersReaderCollectInputsRequest.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderCollectInputsRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  inputs: (json['inputs'] as List<dynamic>).map((e) => PostTerminalReadersReaderCollectInputsRequestInputs.fromJson(e as Map<String, dynamic>)).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// List of inputs to be collected from the customer using the Reader. Maximum 5 inputs.
+final List<PostTerminalReadersReaderCollectInputsRequestInputs> inputs;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final Map<String,String>? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'inputs': inputs.map((e) => e.toJson()).toList(),
+  'metadata': ?metadata,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('inputs'); } 
+PostTerminalReadersReaderCollectInputsRequest copyWith({List<String> Function()? expand, List<PostTerminalReadersReaderCollectInputsRequestInputs>? inputs, Map<String, String> Function()? metadata, }) { return PostTerminalReadersReaderCollectInputsRequest(
+  expand: expand != null ? expand() : this.expand,
+  inputs: inputs ?? this.inputs,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTerminalReadersReaderCollectInputsRequest &&
+          listEquals(expand, other.expand) &&
+          listEquals(inputs, other.inputs) &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(inputs), metadata); } 
+@override String toString() { return 'PostTerminalReadersReaderCollectInputsRequest(expand: $expand, inputs: $inputs, metadata: $metadata)'; } 
+ }

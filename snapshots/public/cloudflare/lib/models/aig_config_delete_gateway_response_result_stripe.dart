@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_delete_gateway_response_result_stripe_usage_events.dart';final class AigConfigDeleteGatewayResponseResultStripe {const AigConfigDeleteGatewayResponseResultStripe({required this.authorization, required this.usageEvents, });
+
+factory AigConfigDeleteGatewayResponseResultStripe.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayResponseResultStripe(
+  authorization: json['authorization'] as String,
+  usageEvents: (json['usage_events'] as List<dynamic>).map((e) => AigConfigDeleteGatewayResponseResultStripeUsageEvents.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final String authorization;
+
+final List<AigConfigDeleteGatewayResponseResultStripeUsageEvents> usageEvents;
+
+Map<String, dynamic> toJson() { return {
+  'authorization': authorization,
+  'usage_events': usageEvents.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
+      json.containsKey('usage_events'); } 
+AigConfigDeleteGatewayResponseResultStripe copyWith({String? authorization, List<AigConfigDeleteGatewayResponseResultStripeUsageEvents>? usageEvents, }) { return AigConfigDeleteGatewayResponseResultStripe(
+  authorization: authorization ?? this.authorization,
+  usageEvents: usageEvents ?? this.usageEvents,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigDeleteGatewayResponseResultStripe &&
+          authorization == other.authorization &&
+          listEquals(usageEvents, other.usageEvents); } 
+@override int get hashCode { return Object.hash(authorization, Object.hashAll(usageEvents)); } 
+@override String toString() { return 'AigConfigDeleteGatewayResponseResultStripe(authorization: $authorization, usageEvents: $usageEvents)'; } 
+ }

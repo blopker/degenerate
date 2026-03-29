@@ -1,0 +1,103 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'artifact_workflow_run.dart';/// An artifact
+final class Artifact {const Artifact({required this.id, required this.nodeId, required this.name, required this.sizeInBytes, required this.url, required this.archiveDownloadUrl, required this.expired, required this.createdAt, required this.expiresAt, required this.updatedAt, this.digest, this.workflowRun, });
+
+factory Artifact.fromJson(Map<String, dynamic> json) { return Artifact(
+  id: (json['id'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  name: json['name'] as String,
+  sizeInBytes: (json['size_in_bytes'] as num).toInt(),
+  url: json['url'] as String,
+  archiveDownloadUrl: json['archive_download_url'] as String,
+  expired: json['expired'] as bool,
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  expiresAt: json['expires_at'] != null ? DateTime.parse(json['expires_at'] as String) : null,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  digest: json['digest'] as String?,
+  workflowRun: json['workflow_run'] != null ? ArtifactWorkflowRun.fromJson(json['workflow_run'] as Map<String, dynamic>) : null,
+); }
+
+final int id;
+
+final String nodeId;
+
+/// The name of the artifact.
+final String name;
+
+/// The size in bytes of the artifact.
+final int sizeInBytes;
+
+final String url;
+
+final String archiveDownloadUrl;
+
+/// Whether or not the artifact has expired.
+final bool expired;
+
+final DateTime? createdAt;
+
+final DateTime? expiresAt;
+
+final DateTime? updatedAt;
+
+/// The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.
+final String? digest;
+
+final ArtifactWorkflowRun? workflowRun;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'node_id': nodeId,
+  'name': name,
+  'size_in_bytes': sizeInBytes,
+  'url': url,
+  'archive_download_url': archiveDownloadUrl,
+  'expired': expired,
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  if (expiresAt != null) 'expires_at': expiresAt?.toIso8601String(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'digest': ?digest,
+  if (workflowRun != null) 'workflow_run': workflowRun?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('size_in_bytes') && json['size_in_bytes'] is num &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('archive_download_url') && json['archive_download_url'] is String &&
+      json.containsKey('expired') && json['expired'] is bool &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('expires_at') && json['expires_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+Artifact copyWith({int? id, String? nodeId, String? name, int? sizeInBytes, String? url, String? archiveDownloadUrl, bool? expired, DateTime? Function()? createdAt, DateTime? Function()? expiresAt, DateTime? Function()? updatedAt, String? Function()? digest, ArtifactWorkflowRun? Function()? workflowRun, }) { return Artifact(
+  id: id ?? this.id,
+  nodeId: nodeId ?? this.nodeId,
+  name: name ?? this.name,
+  sizeInBytes: sizeInBytes ?? this.sizeInBytes,
+  url: url ?? this.url,
+  archiveDownloadUrl: archiveDownloadUrl ?? this.archiveDownloadUrl,
+  expired: expired ?? this.expired,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  digest: digest != null ? digest() : this.digest,
+  workflowRun: workflowRun != null ? workflowRun() : this.workflowRun,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Artifact &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          name == other.name &&
+          sizeInBytes == other.sizeInBytes &&
+          url == other.url &&
+          archiveDownloadUrl == other.archiveDownloadUrl &&
+          expired == other.expired &&
+          createdAt == other.createdAt &&
+          expiresAt == other.expiresAt &&
+          updatedAt == other.updatedAt &&
+          digest == other.digest &&
+          workflowRun == other.workflowRun; } 
+@override int get hashCode { return Object.hash(id, nodeId, name, sizeInBytes, url, archiveDownloadUrl, expired, createdAt, expiresAt, updatedAt, digest, workflowRun); } 
+@override String toString() { return 'Artifact(id: $id, nodeId: $nodeId, name: $name, sizeInBytes: $sizeInBytes, url: $url, archiveDownloadUrl: $archiveDownloadUrl, expired: $expired, createdAt: $createdAt, expiresAt: $expiresAt, updatedAt: $updatedAt, digest: $digest, workflowRun: $workflowRun)'; } 
+ }

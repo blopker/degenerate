@@ -1,0 +1,300 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tax_rate_flat_amount2.dart';/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
+final class TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel._(this.value);
+
+factory TaxRateJurisdictionLevel.fromJson(String json) { return switch (json) {
+  'city' => city,
+  'country' => country,
+  'county' => county,
+  'district' => district,
+  'multiple' => multiple,
+  'state' => state,
+  _ => TaxRateJurisdictionLevel._(json),
+}; }
+
+static const TaxRateJurisdictionLevel city = TaxRateJurisdictionLevel._('city');
+
+static const TaxRateJurisdictionLevel country = TaxRateJurisdictionLevel._('country');
+
+static const TaxRateJurisdictionLevel county = TaxRateJurisdictionLevel._('county');
+
+static const TaxRateJurisdictionLevel district = TaxRateJurisdictionLevel._('district');
+
+static const TaxRateJurisdictionLevel multiple = TaxRateJurisdictionLevel._('multiple');
+
+static const TaxRateJurisdictionLevel state = TaxRateJurisdictionLevel._('state');
+
+static const List<TaxRateJurisdictionLevel> values = [city, country, county, district, multiple, state];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxRateJurisdictionLevel && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxRateJurisdictionLevel($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class TaxRateObject {const TaxRateObject._(this.value);
+
+factory TaxRateObject.fromJson(String json) { return switch (json) {
+  'tax_rate' => taxRate,
+  _ => TaxRateObject._(json),
+}; }
+
+static const TaxRateObject taxRate = TaxRateObject._('tax_rate');
+
+static const List<TaxRateObject> values = [taxRate];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxRateObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxRateObject($value)'; } 
+ }
+/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
+final class TaxRateRateType {const TaxRateRateType._(this.value);
+
+factory TaxRateRateType.fromJson(String json) { return switch (json) {
+  'flat_amount' => flatAmount,
+  'percentage' => percentage,
+  _ => TaxRateRateType._(json),
+}; }
+
+static const TaxRateRateType flatAmount = TaxRateRateType._('flat_amount');
+
+static const TaxRateRateType percentage = TaxRateRateType._('percentage');
+
+static const List<TaxRateRateType> values = [flatAmount, percentage];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxRateRateType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxRateRateType($value)'; } 
+ }
+/// The high-level tax type, such as `vat` or `sales_tax`.
+final class TaxRateTaxType {const TaxRateTaxType._(this.value);
+
+factory TaxRateTaxType.fromJson(String json) { return switch (json) {
+  'amusement_tax' => amusementTax,
+  'communications_tax' => communicationsTax,
+  'gst' => gst,
+  'hst' => hst,
+  'igst' => igst,
+  'jct' => jct,
+  'lease_tax' => leaseTax,
+  'pst' => pst,
+  'qst' => qst,
+  'retail_delivery_fee' => retailDeliveryFee,
+  'rst' => rst,
+  'sales_tax' => salesTax,
+  'service_tax' => serviceTax,
+  'vat' => vat,
+  _ => TaxRateTaxType._(json),
+}; }
+
+static const TaxRateTaxType amusementTax = TaxRateTaxType._('amusement_tax');
+
+static const TaxRateTaxType communicationsTax = TaxRateTaxType._('communications_tax');
+
+static const TaxRateTaxType gst = TaxRateTaxType._('gst');
+
+static const TaxRateTaxType hst = TaxRateTaxType._('hst');
+
+static const TaxRateTaxType igst = TaxRateTaxType._('igst');
+
+static const TaxRateTaxType jct = TaxRateTaxType._('jct');
+
+static const TaxRateTaxType leaseTax = TaxRateTaxType._('lease_tax');
+
+static const TaxRateTaxType pst = TaxRateTaxType._('pst');
+
+static const TaxRateTaxType qst = TaxRateTaxType._('qst');
+
+static const TaxRateTaxType retailDeliveryFee = TaxRateTaxType._('retail_delivery_fee');
+
+static const TaxRateTaxType rst = TaxRateTaxType._('rst');
+
+static const TaxRateTaxType salesTax = TaxRateTaxType._('sales_tax');
+
+static const TaxRateTaxType serviceTax = TaxRateTaxType._('service_tax');
+
+static const TaxRateTaxType vat = TaxRateTaxType._('vat');
+
+static const List<TaxRateTaxType> values = [amusementTax, communicationsTax, gst, hst, igst, jct, leaseTax, pst, qst, retailDeliveryFee, rst, salesTax, serviceTax, vat];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxRateTaxType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxRateTaxType($value)'; } 
+ }
+/// Tax rates can be applied to [invoices](/invoicing/taxes/tax-rates), [subscriptions](/billing/taxes/tax-rates) and [Checkout Sessions](/payments/checkout/use-manual-tax-rates) to collect tax.
+/// 
+/// Related guide: [Tax rates](/billing/taxes/tax-rates)
+final class TaxRate {const TaxRate({required this.active, this.country, required this.created, this.description, required this.displayName, this.effectivePercentage, this.flatAmount, required this.id, required this.inclusive, this.jurisdiction, this.jurisdictionLevel, required this.livemode, this.metadata, required this.object, required this.percentage, this.rateType, this.state, this.taxType, });
+
+factory TaxRate.fromJson(Map<String, dynamic> json) { return TaxRate(
+  active: json['active'] as bool,
+  country: json['country'] as String?,
+  created: (json['created'] as num).toInt(),
+  description: json['description'] as String?,
+  displayName: json['display_name'] as String,
+  effectivePercentage: json['effective_percentage'] != null ? (json['effective_percentage'] as num).toDouble() : null,
+  flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount2.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
+  id: json['id'] as String,
+  inclusive: json['inclusive'] as bool,
+  jurisdiction: json['jurisdiction'] as String?,
+  jurisdictionLevel: json['jurisdiction_level'] != null ? TaxRateJurisdictionLevel.fromJson(json['jurisdiction_level'] as String) : null,
+  livemode: json['livemode'] as bool,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  object: TaxRateObject.fromJson(json['object'] as String),
+  percentage: (json['percentage'] as num).toDouble(),
+  rateType: json['rate_type'] != null ? TaxRateRateType.fromJson(json['rate_type'] as String) : null,
+  state: json['state'] as String?,
+  taxType: json['tax_type'] != null ? TaxRateTaxType.fromJson(json['tax_type'] as String) : null,
+); }
+
+/// Defaults to `true`. When set to `false`, this tax rate cannot be used with new applications or Checkout Sessions, but will still work for subscriptions and invoices that already have it set.
+final bool active;
+
+/// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
+final String? country;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// An arbitrary string attached to the tax rate for your internal use only. It will not be visible to your customers.
+final String? description;
+
+/// The display name of the tax rates as it will appear to your customer on their receipt email, PDF, and the hosted invoice page.
+final String displayName;
+
+/// Actual/effective tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true,
+/// this percentage reflects the rate actually used to calculate tax based on the product's taxability
+/// and whether the user is registered to collect taxes in the corresponding jurisdiction.
+final double? effectivePercentage;
+
+/// The amount of the tax rate when the `rate_type` is `flat_amount`. Tax rates with `rate_type` `percentage` can vary based on the transaction, resulting in this field being `null`. This field exposes the amount and currency of the flat tax rate.
+final TaxRateFlatAmount2? flatAmount;
+
+/// Unique identifier for the object.
+final String id;
+
+/// This specifies if the tax rate is inclusive or exclusive.
+final bool inclusive;
+
+/// The jurisdiction for the tax rate. You can use this label field for tax reporting purposes. It also appears on your customer’s invoice.
+final String? jurisdiction;
+
+/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
+final TaxRateJurisdictionLevel? jurisdictionLevel;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String>? metadata;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final TaxRateObject object;
+
+/// Tax rate percentage out of 100. For tax calculations with automatic_tax[enabled]=true, this percentage includes the statutory tax rate of non-taxable jurisdictions.
+final double percentage;
+
+/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
+final TaxRateRateType? rateType;
+
+/// [ISO 3166-2 subdivision code](https://en.wikipedia.org/wiki/ISO_3166-2), without country prefix. For example, "NY" for New York, United States.
+final String? state;
+
+/// The high-level tax type, such as `vat` or `sales_tax`.
+final TaxRateTaxType? taxType;
+
+Map<String, dynamic> toJson() { return {
+  'active': active,
+  'country': ?country,
+  'created': created,
+  'description': ?description,
+  'display_name': displayName,
+  'effective_percentage': ?effectivePercentage,
+  if (flatAmount != null) 'flat_amount': flatAmount?.toJson(),
+  'id': id,
+  'inclusive': inclusive,
+  'jurisdiction': ?jurisdiction,
+  if (jurisdictionLevel != null) 'jurisdiction_level': jurisdictionLevel?.toJson(),
+  'livemode': livemode,
+  'metadata': ?metadata,
+  'object': object.toJson(),
+  'percentage': percentage,
+  if (rateType != null) 'rate_type': rateType?.toJson(),
+  'state': ?state,
+  if (taxType != null) 'tax_type': taxType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('active') && json['active'] is bool &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('display_name') && json['display_name'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('inclusive') && json['inclusive'] is bool &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('percentage') && json['percentage'] is num; } 
+TaxRate copyWith({bool? active, String? Function()? country, int? created, String? Function()? description, String? displayName, double? Function()? effectivePercentage, TaxRateFlatAmount2? Function()? flatAmount, String? id, bool? inclusive, String? Function()? jurisdiction, TaxRateJurisdictionLevel? Function()? jurisdictionLevel, bool? livemode, Map<String, String>? Function()? metadata, TaxRateObject? object, double? percentage, TaxRateRateType? Function()? rateType, String? Function()? state, TaxRateTaxType? Function()? taxType, }) { return TaxRate(
+  active: active ?? this.active,
+  country: country != null ? country() : this.country,
+  created: created ?? this.created,
+  description: description != null ? description() : this.description,
+  displayName: displayName ?? this.displayName,
+  effectivePercentage: effectivePercentage != null ? effectivePercentage() : this.effectivePercentage,
+  flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
+  id: id ?? this.id,
+  inclusive: inclusive ?? this.inclusive,
+  jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
+  jurisdictionLevel: jurisdictionLevel != null ? jurisdictionLevel() : this.jurisdictionLevel,
+  livemode: livemode ?? this.livemode,
+  metadata: metadata != null ? metadata() : this.metadata,
+  object: object ?? this.object,
+  percentage: percentage ?? this.percentage,
+  rateType: rateType != null ? rateType() : this.rateType,
+  state: state != null ? state() : this.state,
+  taxType: taxType != null ? taxType() : this.taxType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxRate &&
+          active == other.active &&
+          country == other.country &&
+          created == other.created &&
+          description == other.description &&
+          displayName == other.displayName &&
+          effectivePercentage == other.effectivePercentage &&
+          flatAmount == other.flatAmount &&
+          id == other.id &&
+          inclusive == other.inclusive &&
+          jurisdiction == other.jurisdiction &&
+          jurisdictionLevel == other.jurisdictionLevel &&
+          livemode == other.livemode &&
+          metadata == other.metadata &&
+          object == other.object &&
+          percentage == other.percentage &&
+          rateType == other.rateType &&
+          state == other.state &&
+          taxType == other.taxType; } 
+@override int get hashCode { return Object.hash(active, country, created, description, displayName, effectivePercentage, flatAmount, id, inclusive, jurisdiction, jurisdictionLevel, livemode, metadata, object, percentage, rateType, state, taxType); } 
+@override String toString() { return 'TaxRate(active: $active, country: $country, created: $created, description: $description, displayName: $displayName, effectivePercentage: $effectivePercentage, flatAmount: $flatAmount, id: $id, inclusive: $inclusive, jurisdiction: $jurisdiction, jurisdictionLevel: $jurisdictionLevel, livemode: $livemode, metadata: $metadata, object: $object, percentage: $percentage, rateType: $rateType, state: $state, taxType: $taxType)'; } 
+ }

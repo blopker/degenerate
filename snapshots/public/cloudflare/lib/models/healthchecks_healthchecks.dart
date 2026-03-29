@@ -1,0 +1,175 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'healthchecks_address.dart';import 'healthchecks_check_regions2.dart';import 'healthchecks_consecutive_fails.dart';import 'healthchecks_consecutive_successes.dart';import 'healthchecks_description.dart';import 'healthchecks_http_config.dart';import 'healthchecks_identifier.dart';import 'healthchecks_interval.dart';import 'healthchecks_name.dart';import 'healthchecks_retries.dart';import 'healthchecks_suspended.dart';import 'healthchecks_tcp_config.dart';import 'healthchecks_timeout.dart';import 'healthchecks_type.dart';/// The current failure reason if status is unhealthy.
+extension type const HealthchecksFailureReason(String value) {
+factory HealthchecksFailureReason.fromJson(String json) => HealthchecksFailureReason(json);
+
+String toJson() => value;
+
+}
+/// The current status of the origin server according to the health check.
+final class HealthchecksStatus {const HealthchecksStatus._(this.value);
+
+factory HealthchecksStatus.fromJson(String json) { return switch (json) {
+  'unknown' => unknown,
+  'healthy' => healthy,
+  'unhealthy' => unhealthy,
+  'suspended' => suspended,
+  _ => HealthchecksStatus._(json),
+}; }
+
+static const HealthchecksStatus unknown = HealthchecksStatus._('unknown');
+
+static const HealthchecksStatus healthy = HealthchecksStatus._('healthy');
+
+static const HealthchecksStatus unhealthy = HealthchecksStatus._('unhealthy');
+
+static const HealthchecksStatus suspended = HealthchecksStatus._('suspended');
+
+static const List<HealthchecksStatus> values = [unknown, healthy, unhealthy, suspended];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is HealthchecksStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'HealthchecksStatus($value)'; } 
+ }
+extension type HealthchecksTimestamp(DateTime value) {
+factory HealthchecksTimestamp.fromJson(String json) => HealthchecksTimestamp(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+final class HealthchecksHealthchecks {const HealthchecksHealthchecks({this.address, this.checkRegions, this.consecutiveFails, this.consecutiveSuccesses, this.createdOn, this.description, this.failureReason, this.httpConfig, this.id, this.interval, this.modifiedOn, this.name, this.retries, this.status, this.suspended, this.tcpConfig, this.timeout, this.type, });
+
+factory HealthchecksHealthchecks.fromJson(Map<String, dynamic> json) { return HealthchecksHealthchecks(
+  address: json['address'] != null ? HealthchecksAddress.fromJson(json['address'] as String) : null,
+  checkRegions: (json['check_regions'] as List<dynamic>?)?.map((e) => HealthchecksCheckRegions2.fromJson(e as String)).toList(),
+  consecutiveFails: json['consecutive_fails'] != null ? HealthchecksConsecutiveFails.fromJson(json['consecutive_fails'] as num) : null,
+  consecutiveSuccesses: json['consecutive_successes'] != null ? HealthchecksConsecutiveSuccesses.fromJson(json['consecutive_successes'] as num) : null,
+  createdOn: json['created_on'] != null ? HealthchecksTimestamp.fromJson(json['created_on'] as String) : null,
+  description: json['description'] != null ? HealthchecksDescription.fromJson(json['description'] as String) : null,
+  failureReason: json['failure_reason'] != null ? HealthchecksFailureReason.fromJson(json['failure_reason'] as String) : null,
+  httpConfig: json['http_config'] != null ? HealthchecksHttpConfig.fromJson(json['http_config'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? HealthchecksIdentifier.fromJson(json['id'] as String) : null,
+  interval: json['interval'] != null ? HealthchecksInterval.fromJson(json['interval'] as num) : null,
+  modifiedOn: json['modified_on'] != null ? HealthchecksTimestamp.fromJson(json['modified_on'] as String) : null,
+  name: json['name'] != null ? HealthchecksName.fromJson(json['name'] as String) : null,
+  retries: json['retries'] != null ? HealthchecksRetries.fromJson(json['retries'] as num) : null,
+  status: json['status'] != null ? HealthchecksStatus.fromJson(json['status'] as String) : null,
+  suspended: json['suspended'] != null ? HealthchecksSuspended.fromJson(json['suspended'] as bool) : null,
+  tcpConfig: json['tcp_config'] != null ? HealthchecksTcpConfig.fromJson(json['tcp_config'] as Map<String, dynamic>) : null,
+  timeout: json['timeout'] != null ? HealthchecksTimeout.fromJson(json['timeout'] as num) : null,
+  type: json['type'] != null ? HealthchecksType.fromJson(json['type'] as String) : null,
+); }
+
+/// The hostname or IP address of the origin server to run health checks on.
+final HealthchecksAddress? address;
+
+/// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
+final List<HealthchecksCheckRegions2>? checkRegions;
+
+/// The number of consecutive fails required from a health check before changing the health to unhealthy.
+final HealthchecksConsecutiveFails? consecutiveFails;
+
+/// The number of consecutive successes required from a health check before changing the health to healthy.
+final HealthchecksConsecutiveSuccesses? consecutiveSuccesses;
+
+final HealthchecksTimestamp? createdOn;
+
+/// A human-readable description of the health check.
+final HealthchecksDescription? description;
+
+/// The current failure reason if status is unhealthy.
+final HealthchecksFailureReason? failureReason;
+
+final HealthchecksHttpConfig? httpConfig;
+
+final HealthchecksIdentifier? id;
+
+final HealthchecksInterval? interval;
+
+final HealthchecksTimestamp? modifiedOn;
+
+final HealthchecksName? name;
+
+final HealthchecksRetries? retries;
+
+final HealthchecksStatus? status;
+
+final HealthchecksSuspended? suspended;
+
+final HealthchecksTcpConfig? tcpConfig;
+
+final HealthchecksTimeout? timeout;
+
+final HealthchecksType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (address != null) 'address': address?.toJson(),
+  if (checkRegions != null) 'check_regions': checkRegions?.map((e) => e.toJson()).toList(),
+  if (consecutiveFails != null) 'consecutive_fails': consecutiveFails?.toJson(),
+  if (consecutiveSuccesses != null) 'consecutive_successes': consecutiveSuccesses?.toJson(),
+  if (createdOn != null) 'created_on': createdOn?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (failureReason != null) 'failure_reason': failureReason?.toJson(),
+  if (httpConfig != null) 'http_config': httpConfig?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (interval != null) 'interval': interval?.toJson(),
+  if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (retries != null) 'retries': retries?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (suspended != null) 'suspended': suspended?.toJson(),
+  if (tcpConfig != null) 'tcp_config': tcpConfig?.toJson(),
+  if (timeout != null) 'timeout': timeout?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+HealthchecksHealthchecks copyWith({HealthchecksAddress Function()? address, List<HealthchecksCheckRegions2>? Function()? checkRegions, HealthchecksConsecutiveFails Function()? consecutiveFails, HealthchecksConsecutiveSuccesses Function()? consecutiveSuccesses, HealthchecksTimestamp Function()? createdOn, HealthchecksDescription Function()? description, HealthchecksFailureReason Function()? failureReason, HealthchecksHttpConfig Function()? httpConfig, HealthchecksIdentifier Function()? id, HealthchecksInterval Function()? interval, HealthchecksTimestamp Function()? modifiedOn, HealthchecksName Function()? name, HealthchecksRetries Function()? retries, HealthchecksStatus Function()? status, HealthchecksSuspended Function()? suspended, HealthchecksTcpConfig Function()? tcpConfig, HealthchecksTimeout Function()? timeout, HealthchecksType Function()? type, }) { return HealthchecksHealthchecks(
+  address: address != null ? address() : this.address,
+  checkRegions: checkRegions != null ? checkRegions() : this.checkRegions,
+  consecutiveFails: consecutiveFails != null ? consecutiveFails() : this.consecutiveFails,
+  consecutiveSuccesses: consecutiveSuccesses != null ? consecutiveSuccesses() : this.consecutiveSuccesses,
+  createdOn: createdOn != null ? createdOn() : this.createdOn,
+  description: description != null ? description() : this.description,
+  failureReason: failureReason != null ? failureReason() : this.failureReason,
+  httpConfig: httpConfig != null ? httpConfig() : this.httpConfig,
+  id: id != null ? id() : this.id,
+  interval: interval != null ? interval() : this.interval,
+  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  name: name != null ? name() : this.name,
+  retries: retries != null ? retries() : this.retries,
+  status: status != null ? status() : this.status,
+  suspended: suspended != null ? suspended() : this.suspended,
+  tcpConfig: tcpConfig != null ? tcpConfig() : this.tcpConfig,
+  timeout: timeout != null ? timeout() : this.timeout,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is HealthchecksHealthchecks &&
+          address == other.address &&
+          listEquals(checkRegions, other.checkRegions) &&
+          consecutiveFails == other.consecutiveFails &&
+          consecutiveSuccesses == other.consecutiveSuccesses &&
+          createdOn == other.createdOn &&
+          description == other.description &&
+          failureReason == other.failureReason &&
+          httpConfig == other.httpConfig &&
+          id == other.id &&
+          interval == other.interval &&
+          modifiedOn == other.modifiedOn &&
+          name == other.name &&
+          retries == other.retries &&
+          status == other.status &&
+          suspended == other.suspended &&
+          tcpConfig == other.tcpConfig &&
+          timeout == other.timeout &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(address, Object.hashAll(checkRegions ?? const []), consecutiveFails, consecutiveSuccesses, createdOn, description, failureReason, httpConfig, id, interval, modifiedOn, name, retries, status, suspended, tcpConfig, timeout, type); } 
+@override String toString() { return 'HealthchecksHealthchecks(address: $address, checkRegions: $checkRegions, consecutiveFails: $consecutiveFails, consecutiveSuccesses: $consecutiveSuccesses, createdOn: $createdOn, description: $description, failureReason: $failureReason, httpConfig: $httpConfig, id: $id, interval: $interval, modifiedOn: $modifiedOn, name: $name, retries: $retries, status: $status, suspended: $suspended, tcpConfig: $tcpConfig, timeout: $timeout, type: $type)'; } 
+ }

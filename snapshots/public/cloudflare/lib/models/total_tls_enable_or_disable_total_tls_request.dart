@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The Certificate Authority that Total TLS certificates will be issued through.
+final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._(this.value);
+
+factory TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority.fromJson(String json) { return switch (json) {
+  'google' => google,
+  'lets_encrypt' => letsEncrypt,
+  'ssl_com' => sslCom,
+  _ => TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._(json),
+}; }
+
+static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority google = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._('google');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority letsEncrypt = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._('lets_encrypt');
+
+static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority sslCom = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._('ssl_com');
+
+static const List<TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority> values = [google, letsEncrypt, sslCom];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority($value)'; } 
+ }
+/// If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
+extension type const TlsCertificatesAndHostnamesComponentsSchemasEnabled(bool value) {
+factory TlsCertificatesAndHostnamesComponentsSchemasEnabled.fromJson(bool json) => TlsCertificatesAndHostnamesComponentsSchemasEnabled(json);
+
+bool toJson() => value;
+
+}
+final class TotalTlsEnableOrDisableTotalTlsRequest {const TotalTlsEnableOrDisableTotalTlsRequest({this.certificateAuthority, required this.enabled, });
+
+factory TotalTlsEnableOrDisableTotalTlsRequest.fromJson(Map<String, dynamic> json) { return TotalTlsEnableOrDisableTotalTlsRequest(
+  certificateAuthority: json['certificate_authority'] != null ? TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority.fromJson(json['certificate_authority'] as String) : null,
+  enabled: TlsCertificatesAndHostnamesComponentsSchemasEnabled.fromJson(json['enabled'] as bool),
+); }
+
+/// The Certificate Authority that Total TLS certificates will be issued through.
+final TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority? certificateAuthority;
+
+/// If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
+final TlsCertificatesAndHostnamesComponentsSchemasEnabled enabled;
+
+Map<String, dynamic> toJson() { return {
+  if (certificateAuthority != null) 'certificate_authority': certificateAuthority?.toJson(),
+  'enabled': enabled.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled'); } 
+TotalTlsEnableOrDisableTotalTlsRequest copyWith({TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority Function()? certificateAuthority, TlsCertificatesAndHostnamesComponentsSchemasEnabled? enabled, }) { return TotalTlsEnableOrDisableTotalTlsRequest(
+  certificateAuthority: certificateAuthority != null ? certificateAuthority() : this.certificateAuthority,
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TotalTlsEnableOrDisableTotalTlsRequest &&
+          certificateAuthority == other.certificateAuthority &&
+          enabled == other.enabled; } 
+@override int get hashCode { return Object.hash(certificateAuthority, enabled); } 
+@override String toString() { return 'TotalTlsEnableOrDisableTotalTlsRequest(certificateAuthority: $certificateAuthority, enabled: $enabled)'; } 
+ }

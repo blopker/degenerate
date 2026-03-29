@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpSummaryByPostQuantumOs {const RadarGetHttpSummaryByPostQuantumOs._(this.value);
+
+factory RadarGetHttpSummaryByPostQuantumOs.fromJson(String json) { return switch (json) {
+  'WINDOWS' => windows,
+  'MACOSX' => macosx,
+  'IOS' => ios,
+  'ANDROID' => android,
+  'CHROMEOS' => chromeos,
+  'LINUX' => linux,
+  'SMART_TV' => smartTv,
+  _ => RadarGetHttpSummaryByPostQuantumOs._(json),
+}; }
+
+static const RadarGetHttpSummaryByPostQuantumOs windows = RadarGetHttpSummaryByPostQuantumOs._('WINDOWS');
+
+static const RadarGetHttpSummaryByPostQuantumOs macosx = RadarGetHttpSummaryByPostQuantumOs._('MACOSX');
+
+static const RadarGetHttpSummaryByPostQuantumOs ios = RadarGetHttpSummaryByPostQuantumOs._('IOS');
+
+static const RadarGetHttpSummaryByPostQuantumOs android = RadarGetHttpSummaryByPostQuantumOs._('ANDROID');
+
+static const RadarGetHttpSummaryByPostQuantumOs chromeos = RadarGetHttpSummaryByPostQuantumOs._('CHROMEOS');
+
+static const RadarGetHttpSummaryByPostQuantumOs linux = RadarGetHttpSummaryByPostQuantumOs._('LINUX');
+
+static const RadarGetHttpSummaryByPostQuantumOs smartTv = RadarGetHttpSummaryByPostQuantumOs._('SMART_TV');
+
+static const List<RadarGetHttpSummaryByPostQuantumOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByPostQuantumOs && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByPostQuantumOs($value)'; } 
+ }

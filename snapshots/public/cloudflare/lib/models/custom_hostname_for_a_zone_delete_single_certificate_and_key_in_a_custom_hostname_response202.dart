@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tls_certificates_and_hostnames_identifier.dart';final class CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 {const CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202({this.id});
+
+factory CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(
+  id: json['id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['id'] as String) : null,
+); }
+
+/// Identifier.
+final TlsCertificatesAndHostnamesIdentifier? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 copyWith({TlsCertificatesAndHostnamesIdentifier Function()? id}) { return CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202 &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'CustomHostnameForAZoneDeleteSingleCertificateAndKeyInACustomHostnameResponse202(id: $id)'; } 
+ }

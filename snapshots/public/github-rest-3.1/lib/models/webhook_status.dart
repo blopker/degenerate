@@ -1,0 +1,168 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_status_branches.dart';import 'webhook_status_commit.dart';/// The new state. Can be `pending`, `success`, `failure`, or `error`.
+final class WebhookStatusState {const WebhookStatusState._(this.value);
+
+factory WebhookStatusState.fromJson(String json) { return switch (json) {
+  'pending' => pending,
+  'success' => success,
+  'failure' => failure,
+  'error' => error,
+  _ => WebhookStatusState._(json),
+}; }
+
+static const WebhookStatusState pending = WebhookStatusState._('pending');
+
+static const WebhookStatusState success = WebhookStatusState._('success');
+
+static const WebhookStatusState failure = WebhookStatusState._('failure');
+
+static const WebhookStatusState error = WebhookStatusState._('error');
+
+static const List<WebhookStatusState> values = [pending, success, failure, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookStatusState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookStatusState($value)'; } 
+ }
+final class WebhookStatus {const WebhookStatus({this.avatarUrl, required this.branches, required this.commit, required this.context, required this.createdAt, required this.description, this.enterprise, required this.id, this.installation, required this.name, this.organization, required this.repository, required this.sender, required this.sha, required this.state, required this.targetUrl, required this.updatedAt, });
+
+factory WebhookStatus.fromJson(Map<String, dynamic> json) { return WebhookStatus(
+  avatarUrl: json['avatar_url'] != null ? Uri.parse(json['avatar_url'] as String) : null,
+  branches: (json['branches'] as List<dynamic>).map((e) => WebhookStatusBranches.fromJson(e as Map<String, dynamic>)).toList(),
+  commit: WebhookStatusCommit.fromJson(json['commit'] as Map<String, dynamic>),
+  context: json['context'] as String,
+  createdAt: json['created_at'] as String,
+  description: json['description'] as String?,
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  id: (json['id'] as num).toInt(),
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  name: json['name'] as String,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+  sha: json['sha'] as String,
+  state: WebhookStatusState.fromJson(json['state'] as String),
+  targetUrl: json['target_url'] as String?,
+  updatedAt: json['updated_at'] as String,
+); }
+
+final Uri? avatarUrl;
+
+/// An array of branch objects containing the status' SHA. Each branch contains the given SHA, but the SHA may or may not be the head of the branch. The array includes a maximum of 10 branches.
+final List<WebhookStatusBranches> branches;
+
+final WebhookStatusCommit commit;
+
+final String context;
+
+final String createdAt;
+
+/// The optional human-readable description added to the status.
+final String? description;
+
+final EnterpriseWebhooks? enterprise;
+
+/// The unique identifier of the status.
+final int id;
+
+final SimpleInstallation? installation;
+
+final String name;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser sender;
+
+/// The Commit SHA.
+final String sha;
+
+/// The new state. Can be `pending`, `success`, `failure`, or `error`.
+final WebhookStatusState state;
+
+/// The optional link added to the status.
+final String? targetUrl;
+
+final String updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (avatarUrl != null) 'avatar_url': avatarUrl?.toString(),
+  'branches': branches.map((e) => e.toJson()).toList(),
+  'commit': commit.toJson(),
+  'context': context,
+  'created_at': createdAt,
+  'description': ?description,
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  'id': id,
+  if (installation != null) 'installation': installation?.toJson(),
+  'name': name,
+  if (organization != null) 'organization': organization?.toJson(),
+  'repository': repository.toJson(),
+  'sender': sender.toJson(),
+  'sha': sha,
+  'state': state.toJson(),
+  'target_url': ?targetUrl,
+  'updated_at': updatedAt,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('branches') &&
+      json.containsKey('commit') &&
+      json.containsKey('context') && json['context'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('repository') &&
+      json.containsKey('sender') &&
+      json.containsKey('sha') && json['sha'] is String &&
+      json.containsKey('state') &&
+      json.containsKey('target_url') && json['target_url'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+WebhookStatus copyWith({Uri? Function()? avatarUrl, List<WebhookStatusBranches>? branches, WebhookStatusCommit? commit, String? context, String? createdAt, String? Function()? description, EnterpriseWebhooks Function()? enterprise, int? id, SimpleInstallation Function()? installation, String? name, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, String? sha, WebhookStatusState? state, String? Function()? targetUrl, String? updatedAt, }) { return WebhookStatus(
+  avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
+  branches: branches ?? this.branches,
+  commit: commit ?? this.commit,
+  context: context ?? this.context,
+  createdAt: createdAt ?? this.createdAt,
+  description: description != null ? description() : this.description,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  id: id ?? this.id,
+  installation: installation != null ? installation() : this.installation,
+  name: name ?? this.name,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository ?? this.repository,
+  sender: sender ?? this.sender,
+  sha: sha ?? this.sha,
+  state: state ?? this.state,
+  targetUrl: targetUrl != null ? targetUrl() : this.targetUrl,
+  updatedAt: updatedAt ?? this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookStatus &&
+          avatarUrl == other.avatarUrl &&
+          listEquals(branches, other.branches) &&
+          commit == other.commit &&
+          context == other.context &&
+          createdAt == other.createdAt &&
+          description == other.description &&
+          enterprise == other.enterprise &&
+          id == other.id &&
+          installation == other.installation &&
+          name == other.name &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender &&
+          sha == other.sha &&
+          state == other.state &&
+          targetUrl == other.targetUrl &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(avatarUrl, Object.hashAll(branches), commit, context, createdAt, description, enterprise, id, installation, name, organization, repository, sender, sha, state, targetUrl, updatedAt); } 
+@override String toString() { return 'WebhookStatus(avatarUrl: $avatarUrl, branches: $branches, commit: $commit, context: $context, createdAt: $createdAt, description: $description, enterprise: $enterprise, id: $id, installation: $installation, name: $name, organization: $organization, repository: $repository, sender: $sender, sha: $sha, state: $state, targetUrl: $targetUrl, updatedAt: $updatedAt)'; } 
+ }

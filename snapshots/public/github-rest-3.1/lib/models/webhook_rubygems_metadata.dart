@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_rubygems_metadata_version_info.dart';final class WebhookRubygemsMetadata {const WebhookRubygemsMetadata({this.name, this.description, this.readme, this.homepage, this.versionInfo, this.platform, this.metadata, this.repo, this.dependencies, this.commitOid, });
+
+factory WebhookRubygemsMetadata.fromJson(Map<String, dynamic> json) { return WebhookRubygemsMetadata(
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  readme: json['readme'] as String?,
+  homepage: json['homepage'] as String?,
+  versionInfo: json['version_info'] != null ? WebhookRubygemsMetadataVersionInfo.fromJson(json['version_info'] as Map<String, dynamic>) : null,
+  platform: json['platform'] as String?,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  repo: json['repo'] as String?,
+  dependencies: (json['dependencies'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String))).toList(),
+  commitOid: json['commit_oid'] as String?,
+); }
+
+final String? name;
+
+final String? description;
+
+final String? readme;
+
+final String? homepage;
+
+final WebhookRubygemsMetadataVersionInfo? versionInfo;
+
+final String? platform;
+
+final Map<String,String>? metadata;
+
+final String? repo;
+
+final List<Map<String,String>>? dependencies;
+
+final String? commitOid;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  'description': ?description,
+  'readme': ?readme,
+  'homepage': ?homepage,
+  if (versionInfo != null) 'version_info': versionInfo?.toJson(),
+  'platform': ?platform,
+  'metadata': ?metadata,
+  'repo': ?repo,
+  if (dependencies != null) 'dependencies': dependencies?.map((e) => e).toList(),
+  'commit_oid': ?commitOid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookRubygemsMetadata copyWith({String Function()? name, String Function()? description, String Function()? readme, String Function()? homepage, WebhookRubygemsMetadataVersionInfo Function()? versionInfo, String Function()? platform, Map<String, String> Function()? metadata, String Function()? repo, List<Map<String, String>> Function()? dependencies, String Function()? commitOid, }) { return WebhookRubygemsMetadata(
+  name: name != null ? name() : this.name,
+  description: description != null ? description() : this.description,
+  readme: readme != null ? readme() : this.readme,
+  homepage: homepage != null ? homepage() : this.homepage,
+  versionInfo: versionInfo != null ? versionInfo() : this.versionInfo,
+  platform: platform != null ? platform() : this.platform,
+  metadata: metadata != null ? metadata() : this.metadata,
+  repo: repo != null ? repo() : this.repo,
+  dependencies: dependencies != null ? dependencies() : this.dependencies,
+  commitOid: commitOid != null ? commitOid() : this.commitOid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookRubygemsMetadata &&
+          name == other.name &&
+          description == other.description &&
+          readme == other.readme &&
+          homepage == other.homepage &&
+          versionInfo == other.versionInfo &&
+          platform == other.platform &&
+          metadata == other.metadata &&
+          repo == other.repo &&
+          listEquals(dependencies, other.dependencies) &&
+          commitOid == other.commitOid; } 
+@override int get hashCode { return Object.hash(name, description, readme, homepage, versionInfo, platform, metadata, repo, Object.hashAll(dependencies ?? const []), commitOid); } 
+@override String toString() { return 'WebhookRubygemsMetadata(name: $name, description: $description, readme: $readme, homepage: $homepage, versionInfo: $versionInfo, platform: $platform, metadata: $metadata, repo: $repo, dependencies: $dependencies, commitOid: $commitOid)'; } 
+ }

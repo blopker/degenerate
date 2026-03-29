@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secondary_dns_identifier.dart';import 'secondary_dns_name.dart';final class SecondaryDnsSingleRequestOutgoing {const SecondaryDnsSingleRequestOutgoing({required this.id, required this.name, required this.peers, });
+
+factory SecondaryDnsSingleRequestOutgoing.fromJson(Map<String, dynamic> json) { return SecondaryDnsSingleRequestOutgoing(
+  id: SecondaryDnsIdentifier.fromJson(json['id'] as String),
+  name: SecondaryDnsName.fromJson(json['name'] as String),
+  peers: (json['peers'] as List<dynamic>).map((e) => SecondaryDnsIdentifier.fromJson(e as String)).toList(),
+); }
+
+final SecondaryDnsIdentifier id;
+
+/// Zone name.
+final SecondaryDnsName name;
+
+/// A list of peer tags.
+final List<SecondaryDnsIdentifier> peers;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  'name': name.toJson(),
+  'peers': peers.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('name') &&
+      json.containsKey('peers'); } 
+SecondaryDnsSingleRequestOutgoing copyWith({SecondaryDnsIdentifier? id, SecondaryDnsName? name, List<SecondaryDnsIdentifier>? peers, }) { return SecondaryDnsSingleRequestOutgoing(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  peers: peers ?? this.peers,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecondaryDnsSingleRequestOutgoing &&
+          id == other.id &&
+          name == other.name &&
+          listEquals(peers, other.peers); } 
+@override int get hashCode { return Object.hash(id, name, Object.hashAll(peers)); } 
+@override String toString() { return 'SecondaryDnsSingleRequestOutgoing(id: $id, name: $name, peers: $peers)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort._(this.value);
+
+factory ActionsGetActionsCacheListSort.fromJson(String json) { return switch (json) {
+  'created_at' => createdAt,
+  'last_accessed_at' => lastAccessedAt,
+  'size_in_bytes' => sizeInBytes,
+  _ => ActionsGetActionsCacheListSort._(json),
+}; }
+
+static const ActionsGetActionsCacheListSort createdAt = ActionsGetActionsCacheListSort._('created_at');
+
+static const ActionsGetActionsCacheListSort lastAccessedAt = ActionsGetActionsCacheListSort._('last_accessed_at');
+
+static const ActionsGetActionsCacheListSort sizeInBytes = ActionsGetActionsCacheListSort._('size_in_bytes');
+
+static const List<ActionsGetActionsCacheListSort> values = [createdAt, lastAccessedAt, sizeInBytes];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActionsGetActionsCacheListSort && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActionsGetActionsCacheListSort($value)'; } 
+ }

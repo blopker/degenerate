@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The abuse report type
+final class AbuseReportsReportType {const AbuseReportsReportType._(this.value);
+
+factory AbuseReportsReportType.fromJson(String json) { return switch (json) {
+  'PHISH' => phish,
+  'GEN' => gen,
+  'THREAT' => threat,
+  'DMCA' => dmca,
+  'EMER' => emer,
+  'TM' => tm,
+  'REG_WHO' => regWho,
+  'NCSEI' => ncsei,
+  'NETWORK' => network,
+  _ => AbuseReportsReportType._(json),
+}; }
+
+static const AbuseReportsReportType phish = AbuseReportsReportType._('PHISH');
+
+static const AbuseReportsReportType gen = AbuseReportsReportType._('GEN');
+
+static const AbuseReportsReportType threat = AbuseReportsReportType._('THREAT');
+
+static const AbuseReportsReportType dmca = AbuseReportsReportType._('DMCA');
+
+static const AbuseReportsReportType emer = AbuseReportsReportType._('EMER');
+
+static const AbuseReportsReportType tm = AbuseReportsReportType._('TM');
+
+static const AbuseReportsReportType regWho = AbuseReportsReportType._('REG_WHO');
+
+static const AbuseReportsReportType ncsei = AbuseReportsReportType._('NCSEI');
+
+static const AbuseReportsReportType network = AbuseReportsReportType._('NETWORK');
+
+static const List<AbuseReportsReportType> values = [phish, gen, threat, dmca, emer, tm, regWho, ncsei, network];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsReportType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AbuseReportsReportType($value)'; } 
+ }

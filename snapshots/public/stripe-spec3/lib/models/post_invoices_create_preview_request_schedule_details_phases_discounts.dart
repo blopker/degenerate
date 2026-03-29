@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_schedule_details_phases_discounts_variant1.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2 {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2._(this.value);
+
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2._(json),
+}; }
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2 $empty = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2._('');
+
+static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2($value)'; } 
+ }
+typedef PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscounts = OneOf2<List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant1>,PostInvoicesCreatePreviewRequestScheduleDetailsPhasesDiscountsVariant2>;

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'legal_entity_person_verification_document.dart';/// A document showing address, either a passport, local ID card, or utility bill from a well-known utility company.
+final class LegalEntityPersonVerificationAdditionalDocument {const LegalEntityPersonVerificationAdditionalDocument({this.legalEntityPersonVerificationDocument});
+
+factory LegalEntityPersonVerificationAdditionalDocument.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerificationAdditionalDocument(
+  legalEntityPersonVerificationDocument: LegalEntityPersonVerificationDocument.canParse(json) ? LegalEntityPersonVerificationDocument.fromJson(json) : null,
+); }
+
+final LegalEntityPersonVerificationDocument? legalEntityPersonVerificationDocument;
+
+/// At least one variant must be present.
+bool get isValid { return legalEntityPersonVerificationDocument != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?legalEntityPersonVerificationDocument?.toJson(),
+}; } 
+ }

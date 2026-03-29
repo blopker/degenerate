@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_payment_method_options_param29_mandate_options.dart';final class PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'none' => none,
+  'off_session' => offSession,
+  'on_session' => onSession,
+  _ => PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage._('');
+
+static const PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage._('none');
+
+static const PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage offSession = PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage._('off_session');
+
+static const PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage onSession = PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage._('on_session');
+
+static const List<PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage> values = [$empty, none, offSession, onSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParam29VerificationMethod {const PaymentIntentPaymentMethodOptionsParam29VerificationMethod._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParam29VerificationMethod.fromJson(String json) { return switch (json) {
+  'automatic' => automatic,
+  'instant' => instant,
+  'microdeposits' => microdeposits,
+  _ => PaymentIntentPaymentMethodOptionsParam29VerificationMethod._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParam29VerificationMethod automatic = PaymentIntentPaymentMethodOptionsParam29VerificationMethod._('automatic');
+
+static const PaymentIntentPaymentMethodOptionsParam29VerificationMethod instant = PaymentIntentPaymentMethodOptionsParam29VerificationMethod._('instant');
+
+static const PaymentIntentPaymentMethodOptionsParam29VerificationMethod microdeposits = PaymentIntentPaymentMethodOptionsParam29VerificationMethod._('microdeposits');
+
+static const List<PaymentIntentPaymentMethodOptionsParam29VerificationMethod> values = [automatic, instant, microdeposits];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam29VerificationMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam29VerificationMethod($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParam29 {const PaymentIntentPaymentMethodOptionsParam29({this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+
+factory PaymentIntentPaymentMethodOptionsParam29.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam29(
+  mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsParam29MandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  targetDate: json['target_date'] as String?,
+  verificationMethod: json['verification_method'] != null ? PaymentIntentPaymentMethodOptionsParam29VerificationMethod.fromJson(json['verification_method'] as String) : null,
+); }
+
+final PaymentIntentPaymentMethodOptionsParam29MandateOptions? mandateOptions;
+
+final PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage? setupFutureUsage;
+
+final String? targetDate;
+
+final PaymentIntentPaymentMethodOptionsParam29VerificationMethod? verificationMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+  'target_date': ?targetDate,
+  if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsParam29 copyWith({PaymentIntentPaymentMethodOptionsParam29MandateOptions Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParam29SetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PaymentIntentPaymentMethodOptionsParam29VerificationMethod Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam29(
+  mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+  targetDate: targetDate != null ? targetDate() : this.targetDate,
+  verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParam29 &&
+          mandateOptions == other.mandateOptions &&
+          setupFutureUsage == other.setupFutureUsage &&
+          targetDate == other.targetDate &&
+          verificationMethod == other.verificationMethod; } 
+@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage, targetDate, verificationMethod); } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam29(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
+ }

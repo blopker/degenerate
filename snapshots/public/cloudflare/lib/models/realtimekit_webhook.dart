@@ -1,0 +1,117 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RealtimekitWebhookEvents {const RealtimekitWebhookEvents._(this.value);
+
+factory RealtimekitWebhookEvents.fromJson(String json) { return switch (json) {
+  'meeting.started' => meetingStarted,
+  'meeting.ended' => meetingEnded,
+  'meeting.participantJoined' => meetingParticipantJoined,
+  'meeting.participantLeft' => meetingParticipantLeft,
+  'meeting.chatSynced' => meetingChatSynced,
+  'recording.statusUpdate' => recordingStatusUpdate,
+  'livestreaming.statusUpdate' => livestreamingStatusUpdate,
+  'meeting.transcript' => meetingTranscript,
+  'meeting.summary' => meetingSummary,
+  _ => RealtimekitWebhookEvents._(json),
+}; }
+
+static const RealtimekitWebhookEvents meetingStarted = RealtimekitWebhookEvents._('meeting.started');
+
+static const RealtimekitWebhookEvents meetingEnded = RealtimekitWebhookEvents._('meeting.ended');
+
+static const RealtimekitWebhookEvents meetingParticipantJoined = RealtimekitWebhookEvents._('meeting.participantJoined');
+
+static const RealtimekitWebhookEvents meetingParticipantLeft = RealtimekitWebhookEvents._('meeting.participantLeft');
+
+static const RealtimekitWebhookEvents meetingChatSynced = RealtimekitWebhookEvents._('meeting.chatSynced');
+
+static const RealtimekitWebhookEvents recordingStatusUpdate = RealtimekitWebhookEvents._('recording.statusUpdate');
+
+static const RealtimekitWebhookEvents livestreamingStatusUpdate = RealtimekitWebhookEvents._('livestreaming.statusUpdate');
+
+static const RealtimekitWebhookEvents meetingTranscript = RealtimekitWebhookEvents._('meeting.transcript');
+
+static const RealtimekitWebhookEvents meetingSummary = RealtimekitWebhookEvents._('meeting.summary');
+
+static const List<RealtimekitWebhookEvents> values = [meetingStarted, meetingEnded, meetingParticipantJoined, meetingParticipantLeft, meetingChatSynced, recordingStatusUpdate, livestreamingStatusUpdate, meetingTranscript, meetingSummary];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimekitWebhookEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimekitWebhookEvents($value)'; } 
+ }
+final class RealtimekitWebhook {const RealtimekitWebhook({required this.createdAt, required this.enabled, required this.events, required this.id, required this.name, required this.updatedAt, required this.url, });
+
+factory RealtimekitWebhook.fromJson(Map<String, dynamic> json) { return RealtimekitWebhook(
+  createdAt: DateTime.parse(json['created_at'] as String),
+  enabled: json['enabled'] as bool,
+  events: (json['events'] as List<dynamic>).map((e) => RealtimekitWebhookEvents.fromJson(e as String)).toList(),
+  id: json['id'] as String,
+  name: json['name'] as String,
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  url: Uri.parse(json['url'] as String),
+); }
+
+/// Timestamp when this webhook was created
+final DateTime createdAt;
+
+/// Set to true if the webhook is active
+final bool enabled;
+
+/// Events this webhook will send updates for
+final List<RealtimekitWebhookEvents> events;
+
+/// ID of the webhook
+final String id;
+
+/// Name of the webhook
+final String name;
+
+/// Timestamp when this webhook was updated
+final DateTime updatedAt;
+
+/// URL the webhook will send events to
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'created_at': createdAt.toIso8601String(),
+  'enabled': enabled,
+  'events': events.map((e) => e.toJson()).toList(),
+  'id': id,
+  'name': name,
+  'updated_at': updatedAt.toIso8601String(),
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('events') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+RealtimekitWebhook copyWith({DateTime? createdAt, bool? enabled, List<RealtimekitWebhookEvents>? events, String? id, String? name, DateTime? updatedAt, Uri? url, }) { return RealtimekitWebhook(
+  createdAt: createdAt ?? this.createdAt,
+  enabled: enabled ?? this.enabled,
+  events: events ?? this.events,
+  id: id ?? this.id,
+  name: name ?? this.name,
+  updatedAt: updatedAt ?? this.updatedAt,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitWebhook &&
+          createdAt == other.createdAt &&
+          enabled == other.enabled &&
+          listEquals(events, other.events) &&
+          id == other.id &&
+          name == other.name &&
+          updatedAt == other.updatedAt &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(createdAt, enabled, Object.hashAll(events), id, name, updatedAt, url); } 
+@override String toString() { return 'RealtimekitWebhook(createdAt: $createdAt, enabled: $enabled, events: $events, id: $id, name: $name, updatedAt: $updatedAt, url: $url)'; } 
+ }

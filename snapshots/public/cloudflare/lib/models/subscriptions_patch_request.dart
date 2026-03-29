@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mq_event_destination.dart';final class SubscriptionsPatchRequest {const SubscriptionsPatchRequest({this.destination, this.enabled, this.events, this.name, });
+
+factory SubscriptionsPatchRequest.fromJson(Map<String, dynamic> json) { return SubscriptionsPatchRequest(
+  destination: json['destination'] != null ? MqEventDestination.fromJson(json['destination'] as Map<String, dynamic>) : null,
+  enabled: json['enabled'] as bool?,
+  events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  name: json['name'] as String?,
+); }
+
+final MqEventDestination? destination;
+
+/// Whether the subscription is active
+final bool? enabled;
+
+/// List of event types this subscription handles
+final List<String>? events;
+
+/// Name of the subscription
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  if (destination != null) 'destination': destination?.toJson(),
+  'enabled': ?enabled,
+  'events': ?events,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SubscriptionsPatchRequest copyWith({MqEventDestination Function()? destination, bool Function()? enabled, List<String> Function()? events, String Function()? name, }) { return SubscriptionsPatchRequest(
+  destination: destination != null ? destination() : this.destination,
+  enabled: enabled != null ? enabled() : this.enabled,
+  events: events != null ? events() : this.events,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SubscriptionsPatchRequest &&
+          destination == other.destination &&
+          enabled == other.enabled &&
+          listEquals(events, other.events) &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(destination, enabled, Object.hashAll(events ?? const []), name); } 
+@override String toString() { return 'SubscriptionsPatchRequest(destination: $destination, enabled: $enabled, events: $events, name: $name)'; } 
+ }

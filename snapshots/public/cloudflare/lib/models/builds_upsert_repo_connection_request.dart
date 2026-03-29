@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'builds_provider_account_id.dart';import 'builds_provider_account_name.dart';import 'builds_repo_id.dart';import 'builds_repo_name.dart';import 'builds_scm_provider_type.dart';final class BuildsUpsertRepoConnectionRequest {const BuildsUpsertRepoConnectionRequest({required this.providerAccountId, required this.providerAccountName, required this.providerType, required this.repoId, required this.repoName, });
+
+factory BuildsUpsertRepoConnectionRequest.fromJson(Map<String, dynamic> json) { return BuildsUpsertRepoConnectionRequest(
+  providerAccountId: BuildsProviderAccountId.fromJson(json['provider_account_id'] as String),
+  providerAccountName: BuildsProviderAccountName.fromJson(json['provider_account_name'] as String),
+  providerType: BuildsScmProviderType.fromJson(json['provider_type'] as String),
+  repoId: BuildsRepoId.fromJson(json['repo_id'] as String),
+  repoName: BuildsRepoName.fromJson(json['repo_name'] as String),
+); }
+
+final BuildsProviderAccountId providerAccountId;
+
+final BuildsProviderAccountName providerAccountName;
+
+final BuildsScmProviderType providerType;
+
+final BuildsRepoId repoId;
+
+final BuildsRepoName repoName;
+
+Map<String, dynamic> toJson() { return {
+  'provider_account_id': providerAccountId.toJson(),
+  'provider_account_name': providerAccountName.toJson(),
+  'provider_type': providerType.toJson(),
+  'repo_id': repoId.toJson(),
+  'repo_name': repoName.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('provider_account_id') &&
+      json.containsKey('provider_account_name') &&
+      json.containsKey('provider_type') &&
+      json.containsKey('repo_id') &&
+      json.containsKey('repo_name'); } 
+BuildsUpsertRepoConnectionRequest copyWith({BuildsProviderAccountId? providerAccountId, BuildsProviderAccountName? providerAccountName, BuildsScmProviderType? providerType, BuildsRepoId? repoId, BuildsRepoName? repoName, }) { return BuildsUpsertRepoConnectionRequest(
+  providerAccountId: providerAccountId ?? this.providerAccountId,
+  providerAccountName: providerAccountName ?? this.providerAccountName,
+  providerType: providerType ?? this.providerType,
+  repoId: repoId ?? this.repoId,
+  repoName: repoName ?? this.repoName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BuildsUpsertRepoConnectionRequest &&
+          providerAccountId == other.providerAccountId &&
+          providerAccountName == other.providerAccountName &&
+          providerType == other.providerType &&
+          repoId == other.repoId &&
+          repoName == other.repoName; } 
+@override int get hashCode { return Object.hash(providerAccountId, providerAccountName, providerType, repoId, repoName); } 
+@override String toString() { return 'BuildsUpsertRepoConnectionRequest(providerAccountId: $providerAccountId, providerAccountName: $providerAccountName, providerType: $providerType, repoId: $repoId, repoName: $repoName)'; } 
+ }

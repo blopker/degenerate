@@ -1,0 +1,10 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Allows searching in multiple properties of a DNS record simultaneously. This parameter is intended for human users, not automation. Its exact behavior is intentionally left unspecified and is subject to change in the future. This parameter works independently of the `match` setting. For automated searches, please use the other available parameters.
+/// 
+extension type const DnsRecordsSearch(String value) {
+factory DnsRecordsSearch.fromJson(String json) => DnsRecordsSearch(json);
+
+String toJson() => value;
+
+}

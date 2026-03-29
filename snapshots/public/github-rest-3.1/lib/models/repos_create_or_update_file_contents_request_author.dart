@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
+final class ReposCreateOrUpdateFileContentsRequestAuthor {const ReposCreateOrUpdateFileContentsRequestAuthor({required this.name, required this.email, this.date, });
+
+factory ReposCreateOrUpdateFileContentsRequestAuthor.fromJson(Map<String, dynamic> json) { return ReposCreateOrUpdateFileContentsRequestAuthor(
+  name: json['name'] as String,
+  email: json['email'] as String,
+  date: json['date'] as String?,
+); }
+
+/// The name of the author or committer of the commit. You'll receive a `422` status code if `name` is omitted.
+final String name;
+
+/// The email of the author or committer of the commit. You'll receive a `422` status code if `email` is omitted.
+final String email;
+
+final String? date;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'email': email,
+  'date': ?date,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('email') && json['email'] is String; } 
+ReposCreateOrUpdateFileContentsRequestAuthor copyWith({String? name, String? email, String Function()? date, }) { return ReposCreateOrUpdateFileContentsRequestAuthor(
+  name: name ?? this.name,
+  email: email ?? this.email,
+  date: date != null ? date() : this.date,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposCreateOrUpdateFileContentsRequestAuthor &&
+          name == other.name &&
+          email == other.email &&
+          date == other.date; } 
+@override int get hashCode { return Object.hash(name, email, date); } 
+@override String toString() { return 'ReposCreateOrUpdateFileContentsRequestAuthor(name: $name, email: $email, date: $date)'; } 
+ }

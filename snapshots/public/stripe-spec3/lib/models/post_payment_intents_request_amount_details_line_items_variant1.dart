@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_intents_request_amount_details_line_items_variant1_payment_method_options.dart';import 'post_payment_intents_request_amount_details_line_items_variant1_tax.dart';final class PostPaymentIntentsRequestAmountDetailsLineItemsVariant1 {const PostPaymentIntentsRequestAmountDetailsLineItemsVariant1({this.discountAmount, this.paymentMethodOptions, this.productCode, required this.productName, required this.quantity, this.tax, required this.unitCost, this.unitOfMeasure, });
+
+factory PostPaymentIntentsRequestAmountDetailsLineItemsVariant1.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestAmountDetailsLineItemsVariant1(
+  discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  productCode: json['product_code'] as String?,
+  productName: json['product_name'] as String,
+  quantity: (json['quantity'] as num).toInt(),
+  tax: json['tax'] != null ? PostPaymentIntentsRequestAmountDetailsLineItemsVariant1Tax.fromJson(json['tax'] as Map<String, dynamic>) : null,
+  unitCost: (json['unit_cost'] as num).toInt(),
+  unitOfMeasure: json['unit_of_measure'] as String?,
+); }
+
+final int? discountAmount;
+
+final PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptions? paymentMethodOptions;
+
+final String? productCode;
+
+final String productName;
+
+final int quantity;
+
+final PostPaymentIntentsRequestAmountDetailsLineItemsVariant1Tax? tax;
+
+final int unitCost;
+
+final String? unitOfMeasure;
+
+Map<String, dynamic> toJson() { return {
+  'discount_amount': ?discountAmount,
+  if (paymentMethodOptions != null) 'payment_method_options': paymentMethodOptions?.toJson(),
+  'product_code': ?productCode,
+  'product_name': productName,
+  'quantity': quantity,
+  if (tax != null) 'tax': tax?.toJson(),
+  'unit_cost': unitCost,
+  'unit_of_measure': ?unitOfMeasure,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('product_name') && json['product_name'] is String &&
+      json.containsKey('quantity') && json['quantity'] is num &&
+      json.containsKey('unit_cost') && json['unit_cost'] is num; } 
+PostPaymentIntentsRequestAmountDetailsLineItemsVariant1 copyWith({int Function()? discountAmount, PostPaymentIntentsRequestAmountDetailsLineItemsVariant1PaymentMethodOptions Function()? paymentMethodOptions, String Function()? productCode, String? productName, int? quantity, PostPaymentIntentsRequestAmountDetailsLineItemsVariant1Tax Function()? tax, int? unitCost, String Function()? unitOfMeasure, }) { return PostPaymentIntentsRequestAmountDetailsLineItemsVariant1(
+  discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
+  paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
+  productCode: productCode != null ? productCode() : this.productCode,
+  productName: productName ?? this.productName,
+  quantity: quantity ?? this.quantity,
+  tax: tax != null ? tax() : this.tax,
+  unitCost: unitCost ?? this.unitCost,
+  unitOfMeasure: unitOfMeasure != null ? unitOfMeasure() : this.unitOfMeasure,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentIntentsRequestAmountDetailsLineItemsVariant1 &&
+          discountAmount == other.discountAmount &&
+          paymentMethodOptions == other.paymentMethodOptions &&
+          productCode == other.productCode &&
+          productName == other.productName &&
+          quantity == other.quantity &&
+          tax == other.tax &&
+          unitCost == other.unitCost &&
+          unitOfMeasure == other.unitOfMeasure; } 
+@override int get hashCode { return Object.hash(discountAmount, paymentMethodOptions, productCode, productName, quantity, tax, unitCost, unitOfMeasure); } 
+@override String toString() { return 'PostPaymentIntentsRequestAmountDetailsLineItemsVariant1(discountAmount: $discountAmount, paymentMethodOptions: $paymentMethodOptions, productCode: $productCode, productName: $productName, quantity: $quantity, tax: $tax, unitCost: $unitCost, unitOfMeasure: $unitOfMeasure)'; } 
+ }

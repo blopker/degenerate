@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CheckSuitePreferencePreferencesAutoTriggerChecks {const CheckSuitePreferencePreferencesAutoTriggerChecks({required this.appId, required this.setting, });
+
+factory CheckSuitePreferencePreferencesAutoTriggerChecks.fromJson(Map<String, dynamic> json) { return CheckSuitePreferencePreferencesAutoTriggerChecks(
+  appId: (json['app_id'] as num).toInt(),
+  setting: json['setting'] as bool,
+); }
+
+final int appId;
+
+final bool setting;
+
+Map<String, dynamic> toJson() { return {
+  'app_id': appId,
+  'setting': setting,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('app_id') && json['app_id'] is num &&
+      json.containsKey('setting') && json['setting'] is bool; } 
+CheckSuitePreferencePreferencesAutoTriggerChecks copyWith({int? appId, bool? setting, }) { return CheckSuitePreferencePreferencesAutoTriggerChecks(
+  appId: appId ?? this.appId,
+  setting: setting ?? this.setting,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CheckSuitePreferencePreferencesAutoTriggerChecks &&
+          appId == other.appId &&
+          setting == other.setting; } 
+@override int get hashCode { return Object.hash(appId, setting); } 
+@override String toString() { return 'CheckSuitePreferencePreferencesAutoTriggerChecks(appId: $appId, setting: $setting)'; } 
+ }

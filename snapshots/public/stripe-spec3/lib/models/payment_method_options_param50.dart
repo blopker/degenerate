@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam50SetupFutureUsage {const PaymentMethodOptionsParam50SetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsParam50SetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentMethodOptionsParam50SetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsParam50SetupFutureUsage none = PaymentMethodOptionsParam50SetupFutureUsage._('none');
+
+static const List<PaymentMethodOptionsParam50SetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam50SetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam50SetupFutureUsage($value)'; } 
+ }
+final class PaymentMethodOptionsParam50 {const PaymentMethodOptionsParam50({this.setupFutureUsage});
+
+factory PaymentMethodOptionsParam50.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam50(
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam50SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PaymentMethodOptionsParam50SetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam50 copyWith({PaymentMethodOptionsParam50SetupFutureUsage Function()? setupFutureUsage}) { return PaymentMethodOptionsParam50(
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam50 &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return setupFutureUsage.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam50(setupFutureUsage: $setupFutureUsage)'; } 
+ }

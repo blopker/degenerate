@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ImageClassificationVariant2 {const ImageClassificationVariant2({required this.image});
+
+factory ImageClassificationVariant2.fromJson(Map<String, dynamic> json) { return ImageClassificationVariant2(
+  image: (json['image'] as List<dynamic>).map((e) => (e as num).toDouble()).toList(),
+); }
+
+/// An array of integers that represent the image data constrained to 8-bit unsigned integer values
+final List<double> image;
+
+Map<String, dynamic> toJson() { return {
+  'image': image,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('image'); } 
+ImageClassificationVariant2 copyWith({List<double>? image}) { return ImageClassificationVariant2(
+  image: image ?? this.image,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ImageClassificationVariant2 &&
+          listEquals(image, other.image); } 
+@override int get hashCode { return Object.hashAll(image).hashCode; } 
+@override String toString() { return 'ImageClassificationVariant2(image: $image)'; } 
+ }

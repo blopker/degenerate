@@ -1,0 +1,306 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_get_database_database_id.dart';import '../models/d1_import_database_request.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_timestamp.dart';import '../models/response_common18.dart';/// D1Api operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class D1Api with ApiExecutor {const D1Api(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List D1 Databases
+///
+/// Returns a list of D1 databases.
+///
+/// `GET /accounts/{account_id}/d1/database`
+Future<ApiResult<ResponseCommon18, Never>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create D1 Database
+///
+/// Returns the created D1 database.
+///
+/// `POST /accounts/{account_id}/d1/database`
+Future<ApiResult<ResponseCommon18, Never>> d1CreateDatabase({required D1AccountIdentifier accountId, required D1CreateDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get D1 Database
+///
+/// Returns the specified D1 database.
+///
+/// `GET /accounts/{account_id}/d1/database/{database_id}`
+Future<ApiResult<ResponseCommon18, Never>> d1GetDatabase({required D1AccountIdentifier accountId, required D1GetDatabaseDatabaseId databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update D1 Database
+///
+/// Updates the specified D1 database.
+///
+/// `PUT /accounts/{account_id}/d1/database/{database_id}`
+Future<ApiResult<ResponseCommon18, Never>> d1UpdateDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdateRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update D1 Database partially
+///
+/// Updates partially the specified D1 database.
+///
+/// `PATCH /accounts/{account_id}/d1/database/{database_id}`
+Future<ApiResult<ResponseCommon18, Never>> d1UpdatePartialDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1DatabaseUpdatePartialRequestBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete D1 Database
+///
+/// Deletes the specified D1 database.
+///
+/// `DELETE /accounts/{account_id}/d1/database/{database_id}`
+Future<ApiResult<ResponseCommon18, Never>> d1DeleteDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Export D1 Database as SQL
+///
+/// Returns a URL where the SQL contents of your D1 can be downloaded. Note: this process may take
+/// some time for larger DBs, during which your D1 will be unavailable to serve queries. To avoid
+/// blocking your DB unnecessarily, an in-progress export must be continually polled or will automatically cancel.
+/// 
+///
+/// `POST /accounts/{account_id}/d1/database/{database_id}/export`
+Future<ApiResult<ResponseCommon18, Never>> d1ExportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ExportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/export',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Import SQL into your D1 Database
+///
+/// Generates a temporary URL for uploading an SQL file to, then instructing the D1 to import it
+/// and polling it for status updates. Imports block the D1 for their duration.
+/// 
+///
+/// `POST /accounts/{account_id}/d1/database/{database_id}/import`
+Future<ApiResult<ResponseCommon18, Never>> d1ImportDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1ImportDatabaseRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/import',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Query D1 Database
+///
+/// Returns the query result as an object.
+///
+/// `POST /accounts/{account_id}/d1/database/{database_id}/query`
+Future<ApiResult<ResponseCommon18, Never>> d1QueryDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/query',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Raw D1 Database query
+///
+/// Returns the query result rows as arrays rather than objects. This is a performance-optimized version of the /query endpoint.
+///
+/// `POST /accounts/{account_id}/d1/database/{database_id}/raw`
+Future<ApiResult<ResponseCommon18, Never>> d1RawDatabaseQuery({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, required D1BatchQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/raw',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get D1 database bookmark
+///
+/// Retrieves the current bookmark, or the nearest bookmark at or before a provided timestamp.
+/// Bookmarks can be used with the restore endpoint to revert the database to a previous point in time.
+/// 
+///
+/// `GET /accounts/{account_id}/d1/database/{database_id}/time_travel/bookmark`
+Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelGetBookmark({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/time_travel/bookmark',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Restore D1 Database to a bookmark or point in time
+///
+/// Restores a D1 database to a previous point in time either via a bookmark or a timestamp.
+/// 
+///
+/// `POST /accounts/{account_id}/d1/database/{database_id}/time_travel/restore`
+Future<ApiResult<ResponseCommon18, Never>> d1TimeTravelRestore({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, D1TimeTravelBookmark? bookmark, D1TimeTravelTimestamp? timestamp, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (bookmark != null) queryParameters['bookmark'] = bookmark.toString();
+if (timestamp != null) queryParameters['timestamp'] = timestamp.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/d1/database/${Uri.encodeComponent(databaseId.toString())}/time_travel/restore',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

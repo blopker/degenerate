@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The total number of seats set to "pending cancellation" for members of the specified team(s).
+final class CopilotCancelCopilotSeatAssignmentForTeamsResponse {const CopilotCancelCopilotSeatAssignmentForTeamsResponse({required this.seatsCancelled});
+
+factory CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(Map<String, dynamic> json) { return CopilotCancelCopilotSeatAssignmentForTeamsResponse(
+  seatsCancelled: (json['seats_cancelled'] as num).toInt(),
+); }
+
+final int seatsCancelled;
+
+Map<String, dynamic> toJson() { return {
+  'seats_cancelled': seatsCancelled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('seats_cancelled') && json['seats_cancelled'] is num; } 
+CopilotCancelCopilotSeatAssignmentForTeamsResponse copyWith({int? seatsCancelled}) { return CopilotCancelCopilotSeatAssignmentForTeamsResponse(
+  seatsCancelled: seatsCancelled ?? this.seatsCancelled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CopilotCancelCopilotSeatAssignmentForTeamsResponse &&
+          seatsCancelled == other.seatsCancelled; } 
+@override int get hashCode { return seatsCancelled.hashCode; } 
+@override String toString() { return 'CopilotCancelCopilotSeatAssignmentForTeamsResponse(seatsCancelled: $seatsCancelled)'; } 
+ }

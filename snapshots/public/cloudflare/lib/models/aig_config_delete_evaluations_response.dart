@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_delete_evaluations_response_result.dart';final class AigConfigDeleteEvaluationsResponse {const AigConfigDeleteEvaluationsResponse({required this.result, required this.success, });
+
+factory AigConfigDeleteEvaluationsResponse.fromJson(Map<String, dynamic> json) { return AigConfigDeleteEvaluationsResponse(
+  result: AigConfigDeleteEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final AigConfigDeleteEvaluationsResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AigConfigDeleteEvaluationsResponse copyWith({AigConfigDeleteEvaluationsResponseResult? result, bool? success, }) { return AigConfigDeleteEvaluationsResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigDeleteEvaluationsResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'AigConfigDeleteEvaluationsResponse(result: $result, success: $success)'; } 
+ }

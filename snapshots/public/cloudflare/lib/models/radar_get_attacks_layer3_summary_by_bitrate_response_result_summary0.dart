@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 {const RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0({required this.$1GbpsTo10Gbps, required this.$10GbpsTo100Gbps, required this.$500MbpsTo1Gbps, required this.over100Gbps, required this.under500Mbps, });
+
+factory RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
+  $1GbpsTo10Gbps: json['_1_GBPS_TO_10_GBPS'] as String,
+  $10GbpsTo100Gbps: json['_10_GBPS_TO_100_GBPS'] as String,
+  $500MbpsTo1Gbps: json['_500_MBPS_TO_1_GBPS'] as String,
+  over100Gbps: json['OVER_100_GBPS'] as String,
+  under500Mbps: json['UNDER_500_MBPS'] as String,
+); }
+
+/// A numeric string.
+final String $1GbpsTo10Gbps;
+
+/// A numeric string.
+final String $10GbpsTo100Gbps;
+
+/// A numeric string.
+final String $500MbpsTo1Gbps;
+
+/// A numeric string.
+final String over100Gbps;
+
+/// A numeric string.
+final String under500Mbps;
+
+Map<String, dynamic> toJson() { return {
+  '_1_GBPS_TO_10_GBPS': $1GbpsTo10Gbps,
+  '_10_GBPS_TO_100_GBPS': $10GbpsTo100Gbps,
+  '_500_MBPS_TO_1_GBPS': $500MbpsTo1Gbps,
+  'OVER_100_GBPS': over100Gbps,
+  'UNDER_500_MBPS': under500Mbps,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('_1_GBPS_TO_10_GBPS') && json['_1_GBPS_TO_10_GBPS'] is String &&
+      json.containsKey('_10_GBPS_TO_100_GBPS') && json['_10_GBPS_TO_100_GBPS'] is String &&
+      json.containsKey('_500_MBPS_TO_1_GBPS') && json['_500_MBPS_TO_1_GBPS'] is String &&
+      json.containsKey('OVER_100_GBPS') && json['OVER_100_GBPS'] is String &&
+      json.containsKey('UNDER_500_MBPS') && json['UNDER_500_MBPS'] is String; } 
+RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 copyWith({String? $1GbpsTo10Gbps, String? $10GbpsTo100Gbps, String? $500MbpsTo1Gbps, String? over100Gbps, String? under500Mbps, }) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
+  $1GbpsTo10Gbps: $1GbpsTo10Gbps ?? this.$1GbpsTo10Gbps,
+  $10GbpsTo100Gbps: $10GbpsTo100Gbps ?? this.$10GbpsTo100Gbps,
+  $500MbpsTo1Gbps: $500MbpsTo1Gbps ?? this.$500MbpsTo1Gbps,
+  over100Gbps: over100Gbps ?? this.over100Gbps,
+  under500Mbps: under500Mbps ?? this.under500Mbps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 &&
+          $1GbpsTo10Gbps == other.$1GbpsTo10Gbps &&
+          $10GbpsTo100Gbps == other.$10GbpsTo100Gbps &&
+          $500MbpsTo1Gbps == other.$500MbpsTo1Gbps &&
+          over100Gbps == other.over100Gbps &&
+          under500Mbps == other.under500Mbps; } 
+@override int get hashCode { return Object.hash($1GbpsTo10Gbps, $10GbpsTo100Gbps, $500MbpsTo1Gbps, over100Gbps, under500Mbps); } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(\$1GbpsTo10Gbps: ${$1GbpsTo10Gbps}, \$10GbpsTo100Gbps: ${$10GbpsTo100Gbps}, \$500MbpsTo1Gbps: ${$500MbpsTo1Gbps}, over100Gbps: $over100Gbps, under500Mbps: $under500Mbps)'; } 
+ }

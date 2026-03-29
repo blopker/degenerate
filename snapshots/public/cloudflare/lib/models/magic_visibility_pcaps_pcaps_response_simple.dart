@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_visibility_pcaps_pcaps_filter.dart';import 'magic_visibility_pcaps_pcaps_id.dart';import 'magic_visibility_pcaps_pcaps_offset_time.dart';import 'magic_visibility_pcaps_pcaps_status.dart';import 'magic_visibility_pcaps_pcaps_submitted.dart';import 'magic_visibility_pcaps_pcaps_system.dart';import 'magic_visibility_pcaps_pcaps_time_limit_sampled.dart';import 'magic_visibility_pcaps_pcaps_type.dart';final class MagicVisibilityPcapsPcapsResponseSimple {const MagicVisibilityPcapsPcapsResponseSimple({this.filterV1, this.id, this.offsetTime, this.status, this.submitted, this.system, this.timeLimit, this.type, });
+
+factory MagicVisibilityPcapsPcapsResponseSimple.fromJson(Map<String, dynamic> json) { return MagicVisibilityPcapsPcapsResponseSimple(
+  filterV1: json['filter_v1'] != null ? MagicVisibilityPcapsPcapsFilter.fromJson(json['filter_v1'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? MagicVisibilityPcapsPcapsId.fromJson(json['id'] as String) : null,
+  offsetTime: json['offset_time'] != null ? MagicVisibilityPcapsPcapsOffsetTime.fromJson(json['offset_time'] as String) : null,
+  status: json['status'] != null ? MagicVisibilityPcapsPcapsStatus.fromJson(json['status'] as String) : null,
+  submitted: json['submitted'] != null ? MagicVisibilityPcapsPcapsSubmitted.fromJson(json['submitted'] as String) : null,
+  system: json['system'] != null ? MagicVisibilityPcapsPcapsSystem.fromJson(json['system'] as String) : null,
+  timeLimit: json['time_limit'] != null ? MagicVisibilityPcapsPcapsTimeLimitSampled.fromJson(json['time_limit'] as num) : null,
+  type: json['type'] != null ? MagicVisibilityPcapsPcapsType.fromJson(json['type'] as String) : null,
+); }
+
+final MagicVisibilityPcapsPcapsFilter? filterV1;
+
+/// The ID for the packet capture.
+final MagicVisibilityPcapsPcapsId? id;
+
+/// The RFC 3339 offset timestamp from which to query backwards for packets. Must be within the last 24h. When this field is empty, defaults to time of request.
+final MagicVisibilityPcapsPcapsOffsetTime? offsetTime;
+
+final MagicVisibilityPcapsPcapsStatus? status;
+
+final MagicVisibilityPcapsPcapsSubmitted? submitted;
+
+final MagicVisibilityPcapsPcapsSystem? system;
+
+final MagicVisibilityPcapsPcapsTimeLimitSampled? timeLimit;
+
+final MagicVisibilityPcapsPcapsType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (filterV1 != null) 'filter_v1': filterV1?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (offsetTime != null) 'offset_time': offsetTime?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (submitted != null) 'submitted': submitted?.toJson(),
+  if (system != null) 'system': system?.toJson(),
+  if (timeLimit != null) 'time_limit': timeLimit?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicVisibilityPcapsPcapsResponseSimple copyWith({MagicVisibilityPcapsPcapsFilter Function()? filterV1, MagicVisibilityPcapsPcapsId Function()? id, MagicVisibilityPcapsPcapsOffsetTime Function()? offsetTime, MagicVisibilityPcapsPcapsStatus Function()? status, MagicVisibilityPcapsPcapsSubmitted Function()? submitted, MagicVisibilityPcapsPcapsSystem Function()? system, MagicVisibilityPcapsPcapsTimeLimitSampled Function()? timeLimit, MagicVisibilityPcapsPcapsType Function()? type, }) { return MagicVisibilityPcapsPcapsResponseSimple(
+  filterV1: filterV1 != null ? filterV1() : this.filterV1,
+  id: id != null ? id() : this.id,
+  offsetTime: offsetTime != null ? offsetTime() : this.offsetTime,
+  status: status != null ? status() : this.status,
+  submitted: submitted != null ? submitted() : this.submitted,
+  system: system != null ? system() : this.system,
+  timeLimit: timeLimit != null ? timeLimit() : this.timeLimit,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicVisibilityPcapsPcapsResponseSimple &&
+          filterV1 == other.filterV1 &&
+          id == other.id &&
+          offsetTime == other.offsetTime &&
+          status == other.status &&
+          submitted == other.submitted &&
+          system == other.system &&
+          timeLimit == other.timeLimit &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(filterV1, id, offsetTime, status, submitted, system, timeLimit, type); } 
+@override String toString() { return 'MagicVisibilityPcapsPcapsResponseSimple(filterV1: $filterV1, id: $id, offsetTime: $offsetTime, status: $status, submitted: $submitted, system: $system, timeLimit: $timeLimit, type: $type)'; } 
+ }

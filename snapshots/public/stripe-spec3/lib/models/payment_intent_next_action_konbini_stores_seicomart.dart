@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_next_action_konbini_seicomart.dart';/// Seicomart instruction details.
+final class PaymentIntentNextActionKonbiniStoresSeicomart {const PaymentIntentNextActionKonbiniStoresSeicomart({this.paymentIntentNextActionKonbiniSeicomart});
+
+factory PaymentIntentNextActionKonbiniStoresSeicomart.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniStoresSeicomart(
+  paymentIntentNextActionKonbiniSeicomart: PaymentIntentNextActionKonbiniSeicomart.canParse(json) ? PaymentIntentNextActionKonbiniSeicomart.fromJson(json) : null,
+); }
+
+final PaymentIntentNextActionKonbiniSeicomart? paymentIntentNextActionKonbiniSeicomart;
+
+/// At least one variant must be present.
+bool get isValid { return paymentIntentNextActionKonbiniSeicomart != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentIntentNextActionKonbiniSeicomart?.toJson(),
+}; } 
+ }

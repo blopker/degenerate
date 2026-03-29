@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits {const RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits({required this.name, required this.value, });
+
+factory RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits(
+  name: json['name'] as String,
+  value: json['value'] as String,
+); }
+
+final String name;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits(
+  name: name ?? this.name,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits &&
+          name == other.name &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(name, value); } 
+@override String toString() { return 'RadarGetAttacksLayer7TopOriginLocationResponseResultMetaUnits(name: $name, value: $value)'; } 
+ }

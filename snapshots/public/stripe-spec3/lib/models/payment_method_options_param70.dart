@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam70CaptureMethod {const PaymentMethodOptionsParam70CaptureMethod._(this.value);
+
+factory PaymentMethodOptionsParam70CaptureMethod.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'manual' => manual,
+  _ => PaymentMethodOptionsParam70CaptureMethod._(json),
+}; }
+
+static const PaymentMethodOptionsParam70CaptureMethod $empty = PaymentMethodOptionsParam70CaptureMethod._('');
+
+static const PaymentMethodOptionsParam70CaptureMethod manual = PaymentMethodOptionsParam70CaptureMethod._('manual');
+
+static const List<PaymentMethodOptionsParam70CaptureMethod> values = [$empty, manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam70CaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam70CaptureMethod($value)'; } 
+ }
+final class PaymentMethodOptionsParam70 {const PaymentMethodOptionsParam70({this.captureMethod});
+
+factory PaymentMethodOptionsParam70.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam70(
+  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam70CaptureMethod.fromJson(json['capture_method'] as String) : null,
+); }
+
+final PaymentMethodOptionsParam70CaptureMethod? captureMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam70 copyWith({PaymentMethodOptionsParam70CaptureMethod Function()? captureMethod}) { return PaymentMethodOptionsParam70(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam70 &&
+          captureMethod == other.captureMethod; } 
+@override int get hashCode { return captureMethod.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam70(captureMethod: $captureMethod)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_history_categorizations.dart';import 'intel_domain_name.dart';final class IntelDomainHistory {const IntelDomainHistory({this.categorizations, this.domain, });
+
+factory IntelDomainHistory.fromJson(Map<String, dynamic> json) { return IntelDomainHistory(
+  categorizations: (json['categorizations'] as List<dynamic>?)?.map((e) => IntelDomainHistoryCategorizations.fromJson(e as Map<String, dynamic>)).toList(),
+  domain: json['domain'] != null ? IntelDomainName.fromJson(json['domain'] as String) : null,
+); }
+
+final List<IntelDomainHistoryCategorizations>? categorizations;
+
+final IntelDomainName? domain;
+
+Map<String, dynamic> toJson() { return {
+  if (categorizations != null) 'categorizations': categorizations?.map((e) => e.toJson()).toList(),
+  if (domain != null) 'domain': domain?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelDomainHistory copyWith({List<IntelDomainHistoryCategorizations> Function()? categorizations, IntelDomainName Function()? domain, }) { return IntelDomainHistory(
+  categorizations: categorizations != null ? categorizations() : this.categorizations,
+  domain: domain != null ? domain() : this.domain,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelDomainHistory &&
+          listEquals(categorizations, other.categorizations) &&
+          domain == other.domain; } 
+@override int get hashCode { return Object.hash(Object.hashAll(categorizations ?? const []), domain); } 
+@override String toString() { return 'IntelDomainHistory(categorizations: $categorizations, domain: $domain)'; } 
+ }

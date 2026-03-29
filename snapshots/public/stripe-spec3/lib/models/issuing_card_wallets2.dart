@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_card_wallets.dart';/// Information relating to digital wallets (like Apple Pay and Google Pay).
+final class IssuingCardWallets2 {const IssuingCardWallets2({this.issuingCardWallets});
+
+factory IssuingCardWallets2.fromJson(Map<String, dynamic> json) { return IssuingCardWallets2(
+  issuingCardWallets: IssuingCardWallets.canParse(json) ? IssuingCardWallets.fromJson(json) : null,
+); }
+
+final IssuingCardWallets? issuingCardWallets;
+
+/// At least one variant must be present.
+bool get isValid { return issuingCardWallets != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingCardWallets?.toJson(),
+}; } 
+ }

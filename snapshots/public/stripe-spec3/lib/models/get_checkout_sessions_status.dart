@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetCheckoutSessionsStatus {const GetCheckoutSessionsStatus._(this.value);
+
+factory GetCheckoutSessionsStatus.fromJson(String json) { return switch (json) {
+  'complete' => complete,
+  'expired' => expired,
+  'open' => open,
+  _ => GetCheckoutSessionsStatus._(json),
+}; }
+
+static const GetCheckoutSessionsStatus complete = GetCheckoutSessionsStatus._('complete');
+
+static const GetCheckoutSessionsStatus expired = GetCheckoutSessionsStatus._('expired');
+
+static const GetCheckoutSessionsStatus open = GetCheckoutSessionsStatus._('open');
+
+static const List<GetCheckoutSessionsStatus> values = [complete, expired, open];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetCheckoutSessionsStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetCheckoutSessionsStatus($value)'; } 
+ }

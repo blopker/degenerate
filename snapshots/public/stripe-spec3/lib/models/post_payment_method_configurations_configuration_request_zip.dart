@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_configuration_request_zip_display_preference.dart';/// Zip gives your customers a way to split purchases over a series of payments. Check this [page](https://docs.stripe.com/payments/zip) for more details like country availability.
+final class PostPaymentMethodConfigurationsConfigurationRequestZip {const PostPaymentMethodConfigurationsConfigurationRequestZip({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestZip.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestZip(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestZipDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestZipDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestZip copyWith({PostPaymentMethodConfigurationsConfigurationRequestZipDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestZip(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestZip &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestZip(displayPreference: $displayPreference)'; } 
+ }

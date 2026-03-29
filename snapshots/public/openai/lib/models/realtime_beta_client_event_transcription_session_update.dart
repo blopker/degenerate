@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtime_transcription_session_create_request.dart';/// The event type, must be `transcription_session.update`.
+final class RealtimeBetaClientEventTranscriptionSessionUpdateType {const RealtimeBetaClientEventTranscriptionSessionUpdateType._(this.value);
+
+factory RealtimeBetaClientEventTranscriptionSessionUpdateType.fromJson(String json) { return switch (json) {
+  'transcription_session.update' => transcriptionSessionUpdate,
+  _ => RealtimeBetaClientEventTranscriptionSessionUpdateType._(json),
+}; }
+
+static const RealtimeBetaClientEventTranscriptionSessionUpdateType transcriptionSessionUpdate = RealtimeBetaClientEventTranscriptionSessionUpdateType._('transcription_session.update');
+
+static const List<RealtimeBetaClientEventTranscriptionSessionUpdateType> values = [transcriptionSessionUpdate];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeBetaClientEventTranscriptionSessionUpdateType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeBetaClientEventTranscriptionSessionUpdateType($value)'; } 
+ }
+/// Send this event to update a transcription session.
+/// 
+final class RealtimeBetaClientEventTranscriptionSessionUpdate {const RealtimeBetaClientEventTranscriptionSessionUpdate({this.eventId, required this.type, required this.session, });
+
+factory RealtimeBetaClientEventTranscriptionSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventTranscriptionSessionUpdate(
+  eventId: json['event_id'] as String?,
+  type: RealtimeBetaClientEventTranscriptionSessionUpdateType.fromJson(json['type'] as String),
+  session: RealtimeTranscriptionSessionCreateRequest.fromJson(json['session'] as Map<String, dynamic>),
+); }
+
+/// Optional client-generated ID used to identify this event.
+final String? eventId;
+
+/// The event type, must be `transcription_session.update`.
+final RealtimeBetaClientEventTranscriptionSessionUpdateType type;
+
+final RealtimeTranscriptionSessionCreateRequest session;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': ?eventId,
+  'type': type.toJson(),
+  'session': session.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('session'); } 
+RealtimeBetaClientEventTranscriptionSessionUpdate copyWith({String Function()? eventId, RealtimeBetaClientEventTranscriptionSessionUpdateType? type, RealtimeTranscriptionSessionCreateRequest? session, }) { return RealtimeBetaClientEventTranscriptionSessionUpdate(
+  eventId: eventId != null ? eventId() : this.eventId,
+  type: type ?? this.type,
+  session: session ?? this.session,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeBetaClientEventTranscriptionSessionUpdate &&
+          eventId == other.eventId &&
+          type == other.type &&
+          session == other.session; } 
+@override int get hashCode { return Object.hash(eventId, type, session); } 
+@override String toString() { return 'RealtimeBetaClientEventTranscriptionSessionUpdate(eventId: $eventId, type: $type, session: $session)'; } 
+ }

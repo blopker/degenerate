@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_rule_params_reviewer.dart';/// A reviewing team, and file patterns describing which files they must approve changes to.
+final class RepositoryRuleParamsRequiredReviewerConfiguration {const RepositoryRuleParamsRequiredReviewerConfiguration({required this.filePatterns, required this.minimumApprovals, required this.reviewer, });
+
+factory RepositoryRuleParamsRequiredReviewerConfiguration.fromJson(Map<String, dynamic> json) { return RepositoryRuleParamsRequiredReviewerConfiguration(
+  filePatterns: (json['file_patterns'] as List<dynamic>).map((e) => e as String).toList(),
+  minimumApprovals: (json['minimum_approvals'] as num).toInt(),
+  reviewer: RepositoryRuleParamsReviewer.fromJson(json['reviewer'] as Map<String, dynamic>),
+); }
+
+/// Array of file patterns. Pull requests which change matching files must be approved by the specified team. File patterns use fnmatch syntax.
+final List<String> filePatterns;
+
+/// Minimum number of approvals required from the specified team. If set to zero, the team will be added to the pull request but approval is optional.
+final int minimumApprovals;
+
+final RepositoryRuleParamsReviewer reviewer;
+
+Map<String, dynamic> toJson() { return {
+  'file_patterns': filePatterns,
+  'minimum_approvals': minimumApprovals,
+  'reviewer': reviewer.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_patterns') &&
+      json.containsKey('minimum_approvals') && json['minimum_approvals'] is num &&
+      json.containsKey('reviewer'); } 
+RepositoryRuleParamsRequiredReviewerConfiguration copyWith({List<String>? filePatterns, int? minimumApprovals, RepositoryRuleParamsReviewer? reviewer, }) { return RepositoryRuleParamsRequiredReviewerConfiguration(
+  filePatterns: filePatterns ?? this.filePatterns,
+  minimumApprovals: minimumApprovals ?? this.minimumApprovals,
+  reviewer: reviewer ?? this.reviewer,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRuleParamsRequiredReviewerConfiguration &&
+          listEquals(filePatterns, other.filePatterns) &&
+          minimumApprovals == other.minimumApprovals &&
+          reviewer == other.reviewer; } 
+@override int get hashCode { return Object.hash(Object.hashAll(filePatterns), minimumApprovals, reviewer); } 
+@override String toString() { return 'RepositoryRuleParamsRequiredReviewerConfiguration(filePatterns: $filePatterns, minimumApprovals: $minimumApprovals, reviewer: $reviewer)'; } 
+ }

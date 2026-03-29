@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class DeletedInvoiceObject {const DeletedInvoiceObject._(this.value);
+
+factory DeletedInvoiceObject.fromJson(String json) { return switch (json) {
+  'invoice' => invoice,
+  _ => DeletedInvoiceObject._(json),
+}; }
+
+static const DeletedInvoiceObject invoice = DeletedInvoiceObject._('invoice');
+
+static const List<DeletedInvoiceObject> values = [invoice];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DeletedInvoiceObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DeletedInvoiceObject($value)'; } 
+ }
+/// 
+final class DeletedInvoice {const DeletedInvoice({required this.deleted, required this.id, required this.object, });
+
+factory DeletedInvoice.fromJson(Map<String, dynamic> json) { return DeletedInvoice(
+  deleted: json['deleted'] as bool,
+  id: json['id'] as String,
+  object: DeletedInvoiceObject.fromJson(json['object'] as String),
+); }
+
+/// Always true for a deleted object
+final bool deleted;
+
+/// Unique identifier for the object.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final DeletedInvoiceObject object;
+
+Map<String, dynamic> toJson() { return {
+  'deleted': deleted,
+  'id': id,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object'); } 
+DeletedInvoice copyWith({bool? deleted, String? id, DeletedInvoiceObject? object, }) { return DeletedInvoice(
+  deleted: deleted ?? this.deleted,
+  id: id ?? this.id,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeletedInvoice &&
+          deleted == other.deleted &&
+          id == other.id &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(deleted, id, object); } 
+@override String toString() { return 'DeletedInvoice(deleted: $deleted, id: $id, object: $object)'; } 
+ }

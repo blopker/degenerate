@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecuritySummaryByThreatCategorySpf {const RadarGetEmailSecuritySummaryByThreatCategorySpf._(this.value);
+
+factory RadarGetEmailSecuritySummaryByThreatCategorySpf.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailSecuritySummaryByThreatCategorySpf._(json),
+}; }
+
+static const RadarGetEmailSecuritySummaryByThreatCategorySpf pass = RadarGetEmailSecuritySummaryByThreatCategorySpf._('PASS');
+
+static const RadarGetEmailSecuritySummaryByThreatCategorySpf none = RadarGetEmailSecuritySummaryByThreatCategorySpf._('NONE');
+
+static const RadarGetEmailSecuritySummaryByThreatCategorySpf fail = RadarGetEmailSecuritySummaryByThreatCategorySpf._('FAIL');
+
+static const List<RadarGetEmailSecuritySummaryByThreatCategorySpf> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecuritySummaryByThreatCategorySpf && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryByThreatCategorySpf($value)'; } 
+ }

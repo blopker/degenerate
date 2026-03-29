@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'revolut_pay_underlying_payment_method_funding_details.dart';/// 
+final class PaymentMethodDetailsRevolutPay {const PaymentMethodDetailsRevolutPay({this.funding, this.transactionId, });
+
+factory PaymentMethodDetailsRevolutPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsRevolutPay(
+  funding: json['funding'] != null ? RevolutPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>) : null,
+  transactionId: json['transaction_id'] as String?,
+); }
+
+final RevolutPayUnderlyingPaymentMethodFundingDetails? funding;
+
+/// The Revolut Pay transaction ID associated with this payment.
+final String? transactionId;
+
+Map<String, dynamic> toJson() { return {
+  if (funding != null) 'funding': funding?.toJson(),
+  'transaction_id': ?transactionId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsRevolutPay copyWith({RevolutPayUnderlyingPaymentMethodFundingDetails Function()? funding, String? Function()? transactionId, }) { return PaymentMethodDetailsRevolutPay(
+  funding: funding != null ? funding() : this.funding,
+  transactionId: transactionId != null ? transactionId() : this.transactionId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsRevolutPay &&
+          funding == other.funding &&
+          transactionId == other.transactionId; } 
+@override int get hashCode { return Object.hash(funding, transactionId); } 
+@override String toString() { return 'PaymentMethodDetailsRevolutPay(funding: $funding, transactionId: $transactionId)'; } 
+ }

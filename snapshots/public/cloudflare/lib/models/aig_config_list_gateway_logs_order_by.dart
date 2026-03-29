@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigListGatewayLogsOrderBy {const AigConfigListGatewayLogsOrderBy._(this.value);
+
+factory AigConfigListGatewayLogsOrderBy.fromJson(String json) { return switch (json) {
+  'created_at' => createdAt,
+  'provider' => provider,
+  'model' => model,
+  'model_type' => modelType,
+  'success' => success,
+  'cached' => cached,
+  _ => AigConfigListGatewayLogsOrderBy._(json),
+}; }
+
+static const AigConfigListGatewayLogsOrderBy createdAt = AigConfigListGatewayLogsOrderBy._('created_at');
+
+static const AigConfigListGatewayLogsOrderBy provider = AigConfigListGatewayLogsOrderBy._('provider');
+
+static const AigConfigListGatewayLogsOrderBy model = AigConfigListGatewayLogsOrderBy._('model');
+
+static const AigConfigListGatewayLogsOrderBy modelType = AigConfigListGatewayLogsOrderBy._('model_type');
+
+static const AigConfigListGatewayLogsOrderBy success = AigConfigListGatewayLogsOrderBy._('success');
+
+static const AigConfigListGatewayLogsOrderBy cached = AigConfigListGatewayLogsOrderBy._('cached');
+
+static const List<AigConfigListGatewayLogsOrderBy> values = [createdAt, provider, model, modelType, success, cached];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigListGatewayLogsOrderBy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigListGatewayLogsOrderBy($value)'; } 
+ }

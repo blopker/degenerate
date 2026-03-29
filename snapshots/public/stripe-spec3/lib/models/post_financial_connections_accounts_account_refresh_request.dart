@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostFinancialConnectionsAccountsAccountRefreshRequestFeatures {const PostFinancialConnectionsAccountsAccountRefreshRequestFeatures._(this.value);
+
+factory PostFinancialConnectionsAccountsAccountRefreshRequestFeatures.fromJson(String json) { return switch (json) {
+  'balance' => balance,
+  'ownership' => ownership,
+  'transactions' => transactions,
+  _ => PostFinancialConnectionsAccountsAccountRefreshRequestFeatures._(json),
+}; }
+
+static const PostFinancialConnectionsAccountsAccountRefreshRequestFeatures balance = PostFinancialConnectionsAccountsAccountRefreshRequestFeatures._('balance');
+
+static const PostFinancialConnectionsAccountsAccountRefreshRequestFeatures ownership = PostFinancialConnectionsAccountsAccountRefreshRequestFeatures._('ownership');
+
+static const PostFinancialConnectionsAccountsAccountRefreshRequestFeatures transactions = PostFinancialConnectionsAccountsAccountRefreshRequestFeatures._('transactions');
+
+static const List<PostFinancialConnectionsAccountsAccountRefreshRequestFeatures> values = [balance, ownership, transactions];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostFinancialConnectionsAccountsAccountRefreshRequestFeatures && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostFinancialConnectionsAccountsAccountRefreshRequestFeatures($value)'; } 
+ }
+final class PostFinancialConnectionsAccountsAccountRefreshRequest {const PostFinancialConnectionsAccountsAccountRefreshRequest({this.expand, required this.features, });
+
+factory PostFinancialConnectionsAccountsAccountRefreshRequest.fromJson(Map<String, dynamic> json) { return PostFinancialConnectionsAccountsAccountRefreshRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  features: (json['features'] as List<dynamic>).map((e) => PostFinancialConnectionsAccountsAccountRefreshRequestFeatures.fromJson(e as String)).toList(),
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// The list of account features that you would like to refresh.
+final List<PostFinancialConnectionsAccountsAccountRefreshRequestFeatures> features;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'features': features.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('features'); } 
+PostFinancialConnectionsAccountsAccountRefreshRequest copyWith({List<String> Function()? expand, List<PostFinancialConnectionsAccountsAccountRefreshRequestFeatures>? features, }) { return PostFinancialConnectionsAccountsAccountRefreshRequest(
+  expand: expand != null ? expand() : this.expand,
+  features: features ?? this.features,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostFinancialConnectionsAccountsAccountRefreshRequest &&
+          listEquals(expand, other.expand) &&
+          listEquals(features, other.features); } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(features)); } 
+@override String toString() { return 'PostFinancialConnectionsAccountsAccountRefreshRequest(expand: $expand, features: $features)'; } 
+ }

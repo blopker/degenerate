@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_tax_param.dart';final class PostPaymentIntentsRequestAmountDetailsTaxVariant2 {const PostPaymentIntentsRequestAmountDetailsTaxVariant2._(this.value);
+
+factory PostPaymentIntentsRequestAmountDetailsTaxVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsRequestAmountDetailsTaxVariant2._(json),
+}; }
+
+static const PostPaymentIntentsRequestAmountDetailsTaxVariant2 $empty = PostPaymentIntentsRequestAmountDetailsTaxVariant2._('');
+
+static const List<PostPaymentIntentsRequestAmountDetailsTaxVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsRequestAmountDetailsTaxVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestAmountDetailsTaxVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsRequestAmountDetailsTax = OneOf2<AmountDetailsTaxParam,PostPaymentIntentsRequestAmountDetailsTaxVariant2>;

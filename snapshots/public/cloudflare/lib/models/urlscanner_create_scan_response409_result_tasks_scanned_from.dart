@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerCreateScanResponse409ResultTasksScannedFrom {const UrlscannerCreateScanResponse409ResultTasksScannedFrom({required this.colo});
+
+factory UrlscannerCreateScanResponse409ResultTasksScannedFrom.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse409ResultTasksScannedFrom(
+  colo: json['colo'] as String,
+); }
+
+/// IATA code of Cloudflare datacenter
+final String colo;
+
+Map<String, dynamic> toJson() { return {
+  'colo': colo,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('colo') && json['colo'] is String; } 
+UrlscannerCreateScanResponse409ResultTasksScannedFrom copyWith({String? colo}) { return UrlscannerCreateScanResponse409ResultTasksScannedFrom(
+  colo: colo ?? this.colo,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerCreateScanResponse409ResultTasksScannedFrom &&
+          colo == other.colo; } 
+@override int get hashCode { return colo.hashCode; } 
+@override String toString() { return 'UrlscannerCreateScanResponse409ResultTasksScannedFrom(colo: $colo)'; } 
+ }

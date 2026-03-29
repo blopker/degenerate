@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetIssuingPersonalizationDesignsPersonalizationDesignRequest {const GetIssuingPersonalizationDesignsPersonalizationDesignRequest();
+
+factory GetIssuingPersonalizationDesignsPersonalizationDesignRequest.fromJson(Map<String, dynamic> json) { return GetIssuingPersonalizationDesignsPersonalizationDesignRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetIssuingPersonalizationDesignsPersonalizationDesignRequest copyWith() { return GetIssuingPersonalizationDesignsPersonalizationDesignRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetIssuingPersonalizationDesignsPersonalizationDesignRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetIssuingPersonalizationDesignsPersonalizationDesignRequest()'; } 
+ }

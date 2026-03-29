@@ -1,0 +1,68 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The event type, must be `response.cancel`.
+final class RealtimeClientEventResponseCancelType {const RealtimeClientEventResponseCancelType._(this.value);
+
+factory RealtimeClientEventResponseCancelType.fromJson(String json) { return switch (json) {
+  'response.cancel' => responseCancel,
+  _ => RealtimeClientEventResponseCancelType._(json),
+}; }
+
+static const RealtimeClientEventResponseCancelType responseCancel = RealtimeClientEventResponseCancelType._('response.cancel');
+
+static const List<RealtimeClientEventResponseCancelType> values = [responseCancel];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeClientEventResponseCancelType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeClientEventResponseCancelType($value)'; } 
+ }
+/// Send this event to cancel an in-progress response. The server will respond
+/// with a `response.done` event with a status of `response.status=cancelled`. If
+/// there is no response to cancel, the server will respond with an error. It's safe
+/// to call `response.cancel` even if no response is in progress, an error will be
+/// returned the session will remain unaffected.
+/// 
+final class RealtimeClientEventResponseCancel {const RealtimeClientEventResponseCancel({this.eventId, required this.type, this.responseId, });
+
+factory RealtimeClientEventResponseCancel.fromJson(Map<String, dynamic> json) { return RealtimeClientEventResponseCancel(
+  eventId: json['event_id'] as String?,
+  type: RealtimeClientEventResponseCancelType.fromJson(json['type'] as String),
+  responseId: json['response_id'] as String?,
+); }
+
+/// Optional client-generated ID used to identify this event.
+final String? eventId;
+
+/// The event type, must be `response.cancel`.
+final RealtimeClientEventResponseCancelType type;
+
+/// A specific response ID to cancel - if not provided, will cancel an
+/// in-progress response in the default conversation.
+/// 
+final String? responseId;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': ?eventId,
+  'type': type.toJson(),
+  'response_id': ?responseId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+RealtimeClientEventResponseCancel copyWith({String Function()? eventId, RealtimeClientEventResponseCancelType? type, String Function()? responseId, }) { return RealtimeClientEventResponseCancel(
+  eventId: eventId != null ? eventId() : this.eventId,
+  type: type ?? this.type,
+  responseId: responseId != null ? responseId() : this.responseId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeClientEventResponseCancel &&
+          eventId == other.eventId &&
+          type == other.type &&
+          responseId == other.responseId; } 
+@override int get hashCode { return Object.hash(eventId, type, responseId); } 
+@override String toString() { return 'RealtimeClientEventResponseCancel(eventId: $eventId, type: $type, responseId: $responseId)'; } 
+ }

@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the event. Always `response.refusal.delta`.
+/// 
+final class ResponseRefusalDeltaEventType {const ResponseRefusalDeltaEventType._(this.value);
+
+factory ResponseRefusalDeltaEventType.fromJson(String json) { return switch (json) {
+  'response.refusal.delta' => responseRefusalDelta,
+  _ => ResponseRefusalDeltaEventType._(json),
+}; }
+
+static const ResponseRefusalDeltaEventType responseRefusalDelta = ResponseRefusalDeltaEventType._('response.refusal.delta');
+
+static const List<ResponseRefusalDeltaEventType> values = [responseRefusalDelta];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseRefusalDeltaEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseRefusalDeltaEventType($value)'; } 
+ }
+/// Emitted when there is a partial refusal text.
+final class ResponseRefusalDeltaEvent {const ResponseRefusalDeltaEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.delta, required this.sequenceNumber, });
+
+factory ResponseRefusalDeltaEvent.fromJson(Map<String, dynamic> json) { return ResponseRefusalDeltaEvent(
+  type: ResponseRefusalDeltaEventType.fromJson(json['type'] as String),
+  itemId: json['item_id'] as String,
+  outputIndex: (json['output_index'] as num).toInt(),
+  contentIndex: (json['content_index'] as num).toInt(),
+  delta: json['delta'] as String,
+  sequenceNumber: (json['sequence_number'] as num).toInt(),
+); }
+
+/// The type of the event. Always `response.refusal.delta`.
+/// 
+final ResponseRefusalDeltaEventType type;
+
+/// The ID of the output item that the refusal text is added to.
+/// 
+final String itemId;
+
+/// The index of the output item that the refusal text is added to.
+/// 
+final int outputIndex;
+
+/// The index of the content part that the refusal text is added to.
+/// 
+final int contentIndex;
+
+/// The refusal text that is added.
+/// 
+final String delta;
+
+/// The sequence number of this event.
+/// 
+final int sequenceNumber;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'item_id': itemId,
+  'output_index': outputIndex,
+  'content_index': contentIndex,
+  'delta': delta,
+  'sequence_number': sequenceNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('item_id') && json['item_id'] is String &&
+      json.containsKey('output_index') && json['output_index'] is num &&
+      json.containsKey('content_index') && json['content_index'] is num &&
+      json.containsKey('delta') && json['delta'] is String &&
+      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
+ResponseRefusalDeltaEvent copyWith({ResponseRefusalDeltaEventType? type, String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseRefusalDeltaEvent(
+  type: type ?? this.type,
+  itemId: itemId ?? this.itemId,
+  outputIndex: outputIndex ?? this.outputIndex,
+  contentIndex: contentIndex ?? this.contentIndex,
+  delta: delta ?? this.delta,
+  sequenceNumber: sequenceNumber ?? this.sequenceNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseRefusalDeltaEvent &&
+          type == other.type &&
+          itemId == other.itemId &&
+          outputIndex == other.outputIndex &&
+          contentIndex == other.contentIndex &&
+          delta == other.delta &&
+          sequenceNumber == other.sequenceNumber; } 
+@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, delta, sequenceNumber); } 
+@override String toString() { return 'ResponseRefusalDeltaEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, delta: $delta, sequenceNumber: $sequenceNumber)'; } 
+ }

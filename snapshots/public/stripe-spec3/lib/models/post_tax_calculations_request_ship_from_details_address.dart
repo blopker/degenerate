@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tax_calculations_request_ship_from_details_address_city.dart';import 'post_tax_calculations_request_ship_from_details_address_line1.dart';import 'post_tax_calculations_request_ship_from_details_address_line2.dart';import 'post_tax_calculations_request_ship_from_details_address_postal_code.dart';import 'post_tax_calculations_request_ship_from_details_address_state.dart';final class PostTaxCalculationsRequestShipFromDetailsAddress {const PostTaxCalculationsRequestShipFromDetailsAddress({this.city, required this.country, this.line1, this.line2, this.postalCode, this.state, });
+
+factory PostTaxCalculationsRequestShipFromDetailsAddress.fromJson(Map<String, dynamic> json) { return PostTaxCalculationsRequestShipFromDetailsAddress(
+  city: json['city'] != null ? OneOf2.parse(json['city'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressCityVariant2.fromJson(v as String),) : null,
+  country: json['country'] as String,
+  line1: json['line1'] != null ? OneOf2.parse(json['line1'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressLine1Variant2.fromJson(v as String),) : null,
+  line2: json['line2'] != null ? OneOf2.parse(json['line2'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressLine2Variant2.fromJson(v as String),) : null,
+  postalCode: json['postal_code'] != null ? OneOf2.parse(json['postal_code'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressPostalCodeVariant2.fromJson(v as String),) : null,
+  state: json['state'] != null ? OneOf2.parse(json['state'], fromA: (v) => v as String, fromB: (v) => PostTaxCalculationsRequestShipFromDetailsAddressStateVariant2.fromJson(v as String),) : null,
+); }
+
+final PostTaxCalculationsRequestShipFromDetailsAddressCity? city;
+
+final String country;
+
+final PostTaxCalculationsRequestShipFromDetailsAddressLine1? line1;
+
+final PostTaxCalculationsRequestShipFromDetailsAddressLine2? line2;
+
+final PostTaxCalculationsRequestShipFromDetailsAddressPostalCode? postalCode;
+
+final PostTaxCalculationsRequestShipFromDetailsAddressState? state;
+
+Map<String, dynamic> toJson() { return {
+  if (city != null) 'city': city?.toJson(),
+  'country': country,
+  if (line1 != null) 'line1': line1?.toJson(),
+  if (line2 != null) 'line2': line2?.toJson(),
+  if (postalCode != null) 'postal_code': postalCode?.toJson(),
+  if (state != null) 'state': state?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
+PostTaxCalculationsRequestShipFromDetailsAddress copyWith({PostTaxCalculationsRequestShipFromDetailsAddressCity Function()? city, String? country, PostTaxCalculationsRequestShipFromDetailsAddressLine1 Function()? line1, PostTaxCalculationsRequestShipFromDetailsAddressLine2 Function()? line2, PostTaxCalculationsRequestShipFromDetailsAddressPostalCode Function()? postalCode, PostTaxCalculationsRequestShipFromDetailsAddressState Function()? state, }) { return PostTaxCalculationsRequestShipFromDetailsAddress(
+  city: city != null ? city() : this.city,
+  country: country ?? this.country,
+  line1: line1 != null ? line1() : this.line1,
+  line2: line2 != null ? line2() : this.line2,
+  postalCode: postalCode != null ? postalCode() : this.postalCode,
+  state: state != null ? state() : this.state,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTaxCalculationsRequestShipFromDetailsAddress &&
+          city == other.city &&
+          country == other.country &&
+          line1 == other.line1 &&
+          line2 == other.line2 &&
+          postalCode == other.postalCode &&
+          state == other.state; } 
+@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
+@override String toString() { return 'PostTaxCalculationsRequestShipFromDetailsAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
+ }

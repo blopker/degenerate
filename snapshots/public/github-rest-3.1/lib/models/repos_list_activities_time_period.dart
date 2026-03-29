@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReposListActivitiesTimePeriod {const ReposListActivitiesTimePeriod._(this.value);
+
+factory ReposListActivitiesTimePeriod.fromJson(String json) { return switch (json) {
+  'day' => day,
+  'week' => week,
+  'month' => month,
+  'quarter' => quarter,
+  'year' => year,
+  _ => ReposListActivitiesTimePeriod._(json),
+}; }
+
+static const ReposListActivitiesTimePeriod day = ReposListActivitiesTimePeriod._('day');
+
+static const ReposListActivitiesTimePeriod week = ReposListActivitiesTimePeriod._('week');
+
+static const ReposListActivitiesTimePeriod month = ReposListActivitiesTimePeriod._('month');
+
+static const ReposListActivitiesTimePeriod quarter = ReposListActivitiesTimePeriod._('quarter');
+
+static const ReposListActivitiesTimePeriod year = ReposListActivitiesTimePeriod._('year');
+
+static const List<ReposListActivitiesTimePeriod> values = [day, week, month, quarter, year];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReposListActivitiesTimePeriod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReposListActivitiesTimePeriod($value)'; } 
+ }

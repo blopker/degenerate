@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Configuration for exposed credential checking.
+final class RulesetsRuleExposedCredentialCheck {const RulesetsRuleExposedCredentialCheck({required this.passwordExpression, required this.usernameExpression, });
+
+factory RulesetsRuleExposedCredentialCheck.fromJson(Map<String, dynamic> json) { return RulesetsRuleExposedCredentialCheck(
+  passwordExpression: json['password_expression'] as String,
+  usernameExpression: json['username_expression'] as String,
+); }
+
+/// An expression that selects the password used in the credentials check.
+final String passwordExpression;
+
+/// An expression that selects the user ID used in the credentials check.
+final String usernameExpression;
+
+Map<String, dynamic> toJson() { return {
+  'password_expression': passwordExpression,
+  'username_expression': usernameExpression,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('password_expression') && json['password_expression'] is String &&
+      json.containsKey('username_expression') && json['username_expression'] is String; } 
+RulesetsRuleExposedCredentialCheck copyWith({String? passwordExpression, String? usernameExpression, }) { return RulesetsRuleExposedCredentialCheck(
+  passwordExpression: passwordExpression ?? this.passwordExpression,
+  usernameExpression: usernameExpression ?? this.usernameExpression,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RulesetsRuleExposedCredentialCheck &&
+          passwordExpression == other.passwordExpression &&
+          usernameExpression == other.usernameExpression; } 
+@override int get hashCode { return Object.hash(passwordExpression, usernameExpression); } 
+@override String toString() { return 'RulesetsRuleExposedCredentialCheck(passwordExpression: $passwordExpression, usernameExpression: $usernameExpression)'; } 
+ }

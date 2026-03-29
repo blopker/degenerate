@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVectorResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

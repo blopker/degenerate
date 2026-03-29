@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dlp_dataset.dart';final class DlpDatasetCreation {const DlpDatasetCreation({required this.dataset, required this.encodingVersion, required this.maxCells, this.secret, required this.version, });
+
+factory DlpDatasetCreation.fromJson(Map<String, dynamic> json) { return DlpDatasetCreation(
+  dataset: DlpDataset.fromJson(json['dataset'] as Map<String, dynamic>),
+  encodingVersion: (json['encoding_version'] as num).toInt(),
+  maxCells: (json['max_cells'] as num).toInt(),
+  secret: json['secret'] as String?,
+  version: (json['version'] as num).toInt(),
+); }
+
+final DlpDataset dataset;
+
+/// Encoding version to use for dataset.
+final int encodingVersion;
+
+final int maxCells;
+
+/// The secret to use for Exact Data Match datasets.
+/// 
+/// This is not present in Custom Wordlists.
+final String? secret;
+
+/// The version to use when uploading the dataset.
+final int version;
+
+Map<String, dynamic> toJson() { return {
+  'dataset': dataset.toJson(),
+  'encoding_version': encodingVersion,
+  'max_cells': maxCells,
+  'secret': ?secret,
+  'version': version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataset') &&
+      json.containsKey('encoding_version') && json['encoding_version'] is num &&
+      json.containsKey('max_cells') && json['max_cells'] is num &&
+      json.containsKey('version') && json['version'] is num; } 
+DlpDatasetCreation copyWith({DlpDataset? dataset, int? encodingVersion, int? maxCells, String Function()? secret, int? version, }) { return DlpDatasetCreation(
+  dataset: dataset ?? this.dataset,
+  encodingVersion: encodingVersion ?? this.encodingVersion,
+  maxCells: maxCells ?? this.maxCells,
+  secret: secret != null ? secret() : this.secret,
+  version: version ?? this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpDatasetCreation &&
+          dataset == other.dataset &&
+          encodingVersion == other.encodingVersion &&
+          maxCells == other.maxCells &&
+          secret == other.secret &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(dataset, encodingVersion, maxCells, secret, version); } 
+@override String toString() { return 'DlpDatasetCreation(dataset: $dataset, encodingVersion: $encodingVersion, maxCells: $maxCells, secret: $secret, version: $version)'; } 
+ }

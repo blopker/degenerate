@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payouts_trace_id.dart';/// A value that generates from the beneficiary's bank that allows users to track payouts with their bank. Banks might call this a "reference number" or something similar.
+final class PayoutTraceId {const PayoutTraceId({this.payoutsTraceId});
+
+factory PayoutTraceId.fromJson(Map<String, dynamic> json) { return PayoutTraceId(
+  payoutsTraceId: PayoutsTraceId.canParse(json) ? PayoutsTraceId.fromJson(json) : null,
+); }
+
+final PayoutsTraceId? payoutsTraceId;
+
+/// At least one variant must be present.
+bool get isValid { return payoutsTraceId != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?payoutsTraceId?.toJson(),
+}; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pause_collection_param.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._(this.value);
+
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._(json),
+}; }
+
+static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 $empty = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2._('');
+
+static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2($value)'; } 
+ }
+typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollection = OneOf2<PauseCollectionParam,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestPauseCollectionVariant2>;

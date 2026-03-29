@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ZeroTrustGatewayRuleSettingsQuarantineFileTypes {const ZeroTrustGatewayRuleSettingsQuarantineFileTypes._(this.value);
+
+factory ZeroTrustGatewayRuleSettingsQuarantineFileTypes.fromJson(String json) { return switch (json) {
+  'exe' => exe,
+  'pdf' => pdf,
+  'doc' => doc,
+  'docm' => docm,
+  'docx' => docx,
+  'rtf' => rtf,
+  'ppt' => ppt,
+  'pptx' => pptx,
+  'xls' => xls,
+  'xlsm' => xlsm,
+  'xlsx' => xlsx,
+  'zip' => zip,
+  'rar' => rar,
+  _ => ZeroTrustGatewayRuleSettingsQuarantineFileTypes._(json),
+}; }
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes exe = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('exe');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes pdf = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('pdf');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes doc = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('doc');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes docm = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('docm');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes docx = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('docx');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes rtf = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('rtf');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes ppt = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('ppt');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes pptx = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('pptx');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes xls = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('xls');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes xlsm = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('xlsm');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes xlsx = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('xlsx');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes zip = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('zip');
+
+static const ZeroTrustGatewayRuleSettingsQuarantineFileTypes rar = ZeroTrustGatewayRuleSettingsQuarantineFileTypes._('rar');
+
+static const List<ZeroTrustGatewayRuleSettingsQuarantineFileTypes> values = [exe, pdf, doc, docm, docx, rtf, ppt, pptx, xls, xlsm, xlsx, zip, rar];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZeroTrustGatewayRuleSettingsQuarantineFileTypes && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayRuleSettingsQuarantineFileTypes($value)'; } 
+ }
+/// Configure settings that apply to quarantine rules. Settable only for `http` rules.
+final class ZeroTrustGatewayRuleSettingsQuarantine {const ZeroTrustGatewayRuleSettingsQuarantine({this.fileTypes});
+
+factory ZeroTrustGatewayRuleSettingsQuarantine.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRuleSettingsQuarantine(
+  fileTypes: (json['file_types'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayRuleSettingsQuarantineFileTypes.fromJson(e as String)).toList(),
+); }
+
+/// Specify the types of files to sandbox.
+final List<ZeroTrustGatewayRuleSettingsQuarantineFileTypes>? fileTypes;
+
+Map<String, dynamic> toJson() { return {
+  if (fileTypes != null) 'file_types': fileTypes?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustGatewayRuleSettingsQuarantine copyWith({List<ZeroTrustGatewayRuleSettingsQuarantineFileTypes> Function()? fileTypes}) { return ZeroTrustGatewayRuleSettingsQuarantine(
+  fileTypes: fileTypes != null ? fileTypes() : this.fileTypes,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayRuleSettingsQuarantine &&
+          listEquals(fileTypes, other.fileTypes); } 
+@override int get hashCode { return Object.hashAll(fileTypes ?? const []).hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayRuleSettingsQuarantine(fileTypes: $fileTypes)'; } 
+ }

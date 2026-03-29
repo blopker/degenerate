@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Current content categories.
+final class IntelContentCategories2 {const IntelContentCategories2({this.id, this.name, this.superCategoryId, });
+
+factory IntelContentCategories2.fromJson(Map<String, dynamic> json) { return IntelContentCategories2(
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  name: json['name'] as String?,
+  superCategoryId: json['super_category_id'] != null ? (json['super_category_id'] as num).toInt() : null,
+); }
+
+final int? id;
+
+final String? name;
+
+final int? superCategoryId;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'name': ?name,
+  'super_category_id': ?superCategoryId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelContentCategories2 copyWith({int Function()? id, String Function()? name, int Function()? superCategoryId, }) { return IntelContentCategories2(
+  id: id != null ? id() : this.id,
+  name: name != null ? name() : this.name,
+  superCategoryId: superCategoryId != null ? superCategoryId() : this.superCategoryId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelContentCategories2 &&
+          id == other.id &&
+          name == other.name &&
+          superCategoryId == other.superCategoryId; } 
+@override int get hashCode { return Object.hash(id, name, superCategoryId); } 
+@override String toString() { return 'IntelContentCategories2(id: $id, name: $name, superCategoryId: $superCategoryId)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopAsesByHttpProtocolDeviceType {const RadarGetHttpTopAsesByHttpProtocolDeviceType._(this.value);
+
+factory RadarGetHttpTopAsesByHttpProtocolDeviceType.fromJson(String json) { return switch (json) {
+  'DESKTOP' => desktop,
+  'MOBILE' => mobile,
+  'OTHER' => $other,
+  _ => RadarGetHttpTopAsesByHttpProtocolDeviceType._(json),
+}; }
+
+static const RadarGetHttpTopAsesByHttpProtocolDeviceType desktop = RadarGetHttpTopAsesByHttpProtocolDeviceType._('DESKTOP');
+
+static const RadarGetHttpTopAsesByHttpProtocolDeviceType mobile = RadarGetHttpTopAsesByHttpProtocolDeviceType._('MOBILE');
+
+static const RadarGetHttpTopAsesByHttpProtocolDeviceType $other = RadarGetHttpTopAsesByHttpProtocolDeviceType._('OTHER');
+
+static const List<RadarGetHttpTopAsesByHttpProtocolDeviceType> values = [desktop, mobile, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTopAsesByHttpProtocolDeviceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopAsesByHttpProtocolDeviceType($value)'; } 
+ }

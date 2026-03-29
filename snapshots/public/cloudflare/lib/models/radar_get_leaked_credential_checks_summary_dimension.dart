@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the attribute by which to group the results.
+final class RadarGetLeakedCredentialChecksSummaryDimension {const RadarGetLeakedCredentialChecksSummaryDimension._(this.value);
+
+factory RadarGetLeakedCredentialChecksSummaryDimension.fromJson(String json) { return switch (json) {
+  'COMPROMISED' => compromised,
+  'BOT_CLASS' => botClass,
+  _ => RadarGetLeakedCredentialChecksSummaryDimension._(json),
+}; }
+
+static const RadarGetLeakedCredentialChecksSummaryDimension compromised = RadarGetLeakedCredentialChecksSummaryDimension._('COMPROMISED');
+
+static const RadarGetLeakedCredentialChecksSummaryDimension botClass = RadarGetLeakedCredentialChecksSummaryDimension._('BOT_CLASS');
+
+static const List<RadarGetLeakedCredentialChecksSummaryDimension> values = [compromised, botClass];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksSummaryDimension && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryDimension($value)'; } 
+ }

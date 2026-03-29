@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
+extension type const AccessSchemasUserSeatExpirationInactiveTime(String value) {
+factory AccessSchemasUserSeatExpirationInactiveTime.fromJson(String json) => AccessSchemasUserSeatExpirationInactiveTime(json);
+
+String toJson() => value;
+
+}

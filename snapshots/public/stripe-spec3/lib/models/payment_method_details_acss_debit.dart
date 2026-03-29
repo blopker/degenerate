@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodDetailsAcssDebit {const PaymentMethodDetailsAcssDebit({this.bankName, this.expectedDebitDate, this.fingerprint, this.institutionNumber, this.last4, this.mandate, this.transitNumber, });
+
+factory PaymentMethodDetailsAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAcssDebit(
+  bankName: json['bank_name'] as String?,
+  expectedDebitDate: json['expected_debit_date'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  institutionNumber: json['institution_number'] as String?,
+  last4: json['last4'] as String?,
+  mandate: json['mandate'] as String?,
+  transitNumber: json['transit_number'] as String?,
+); }
+
+/// Name of the bank associated with the bank account.
+final String? bankName;
+
+/// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
+final String? expectedDebitDate;
+
+/// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
+final String? fingerprint;
+
+/// Institution number of the bank account
+final String? institutionNumber;
+
+/// Last four digits of the bank account number.
+final String? last4;
+
+/// ID of the mandate used to make this payment.
+final String? mandate;
+
+/// Transit number of the bank account.
+final String? transitNumber;
+
+Map<String, dynamic> toJson() { return {
+  'bank_name': ?bankName,
+  'expected_debit_date': ?expectedDebitDate,
+  'fingerprint': ?fingerprint,
+  'institution_number': ?institutionNumber,
+  'last4': ?last4,
+  'mandate': ?mandate,
+  'transit_number': ?transitNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsAcssDebit copyWith({String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String Function()? mandate, String? Function()? transitNumber, }) { return PaymentMethodDetailsAcssDebit(
+  bankName: bankName != null ? bankName() : this.bankName,
+  expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  institutionNumber: institutionNumber != null ? institutionNumber() : this.institutionNumber,
+  last4: last4 != null ? last4() : this.last4,
+  mandate: mandate != null ? mandate() : this.mandate,
+  transitNumber: transitNumber != null ? transitNumber() : this.transitNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsAcssDebit &&
+          bankName == other.bankName &&
+          expectedDebitDate == other.expectedDebitDate &&
+          fingerprint == other.fingerprint &&
+          institutionNumber == other.institutionNumber &&
+          last4 == other.last4 &&
+          mandate == other.mandate &&
+          transitNumber == other.transitNumber; } 
+@override int get hashCode { return Object.hash(bankName, expectedDebitDate, fingerprint, institutionNumber, last4, mandate, transitNumber); } 
+@override String toString() { return 'PaymentMethodDetailsAcssDebit(bankName: $bankName, expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, institutionNumber: $institutionNumber, last4: $last4, mandate: $mandate, transitNumber: $transitNumber)'; } 
+ }

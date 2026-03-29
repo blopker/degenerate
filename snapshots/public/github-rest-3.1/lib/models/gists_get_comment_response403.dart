@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'gists_get_comment_response403_block.dart';final class GistsGetCommentResponse403 {const GistsGetCommentResponse403({this.block, this.message, this.documentationUrl, });
+
+factory GistsGetCommentResponse403.fromJson(Map<String, dynamic> json) { return GistsGetCommentResponse403(
+  block: json['block'] != null ? GistsGetCommentResponse403Block.fromJson(json['block'] as Map<String, dynamic>) : null,
+  message: json['message'] as String?,
+  documentationUrl: json['documentation_url'] as String?,
+); }
+
+final GistsGetCommentResponse403Block? block;
+
+final String? message;
+
+final String? documentationUrl;
+
+Map<String, dynamic> toJson() { return {
+  if (block != null) 'block': block?.toJson(),
+  'message': ?message,
+  'documentation_url': ?documentationUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GistsGetCommentResponse403 copyWith({GistsGetCommentResponse403Block Function()? block, String Function()? message, String Function()? documentationUrl, }) { return GistsGetCommentResponse403(
+  block: block != null ? block() : this.block,
+  message: message != null ? message() : this.message,
+  documentationUrl: documentationUrl != null ? documentationUrl() : this.documentationUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GistsGetCommentResponse403 &&
+          block == other.block &&
+          message == other.message &&
+          documentationUrl == other.documentationUrl; } 
+@override int get hashCode { return Object.hash(block, message, documentationUrl); } 
+@override String toString() { return 'GistsGetCommentResponse403(block: $block, message: $message, documentationUrl: $documentationUrl)'; } 
+ }

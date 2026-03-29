@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class FcmTokenRegisterSchema {const FcmTokenRegisterSchema({required this.token});
+
+factory FcmTokenRegisterSchema.fromJson(Map<String, dynamic> json) { return FcmTokenRegisterSchema(
+  token: json['token'] as String,
+); }
+
+final String token;
+
+Map<String, dynamic> toJson() { return {
+  'token': token,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String; } 
+FcmTokenRegisterSchema copyWith({String? token}) { return FcmTokenRegisterSchema(
+  token: token ?? this.token,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FcmTokenRegisterSchema &&
+          token == other.token; } 
+@override int get hashCode { return token.hashCode; } 
+@override String toString() { return 'FcmTokenRegisterSchema(token: $token)'; } 
+ }

@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the local shell action. Always `exec`.
+final class LocalShellExecActionType {const LocalShellExecActionType._(this.value);
+
+factory LocalShellExecActionType.fromJson(String json) { return switch (json) {
+  'exec' => exec,
+  _ => LocalShellExecActionType._(json),
+}; }
+
+static const LocalShellExecActionType exec = LocalShellExecActionType._('exec');
+
+static const List<LocalShellExecActionType> values = [exec];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is LocalShellExecActionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'LocalShellExecActionType($value)'; } 
+ }
+/// Execute a shell command on the server.
+final class LocalShellExecAction {const LocalShellExecAction({this.type = LocalShellExecActionType.exec, required this.command, this.timeoutMs, this.workingDirectory, required this.env, this.user, });
+
+factory LocalShellExecAction.fromJson(Map<String, dynamic> json) { return LocalShellExecAction(
+  type: LocalShellExecActionType.fromJson(json['type'] as String),
+  command: (json['command'] as List<dynamic>).map((e) => e as String).toList(),
+  timeoutMs: json['timeout_ms'] != null ? (json['timeout_ms'] as num).toInt() : null,
+  workingDirectory: json['working_directory'] as String?,
+  env: (json['env'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  user: json['user'] as String?,
+); }
+
+/// The type of the local shell action. Always `exec`.
+final LocalShellExecActionType type;
+
+/// The command to run.
+final List<String> command;
+
+/// Optional timeout in milliseconds for the command.
+final int? timeoutMs;
+
+/// Optional working directory to run the command in.
+final String? workingDirectory;
+
+/// Environment variables to set for the command.
+final Map<String,String> env;
+
+/// Optional user to run the command as.
+final String? user;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'command': command,
+  'timeout_ms': ?timeoutMs,
+  'working_directory': ?workingDirectory,
+  'env': env,
+  'user': ?user,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('command') &&
+      json.containsKey('env'); } 
+LocalShellExecAction copyWith({LocalShellExecActionType? type, List<String>? command, int? Function()? timeoutMs, String? Function()? workingDirectory, Map<String,String>? env, String? Function()? user, }) { return LocalShellExecAction(
+  type: type ?? this.type,
+  command: command ?? this.command,
+  timeoutMs: timeoutMs != null ? timeoutMs() : this.timeoutMs,
+  workingDirectory: workingDirectory != null ? workingDirectory() : this.workingDirectory,
+  env: env ?? this.env,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LocalShellExecAction &&
+          type == other.type &&
+          listEquals(command, other.command) &&
+          timeoutMs == other.timeoutMs &&
+          workingDirectory == other.workingDirectory &&
+          env == other.env &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(type, Object.hashAll(command), timeoutMs, workingDirectory, env, user); } 
+@override String toString() { return 'LocalShellExecAction(type: $type, command: $command, timeoutMs: $timeoutMs, workingDirectory: $workingDirectory, env: $env, user: $user)'; } 
+ }

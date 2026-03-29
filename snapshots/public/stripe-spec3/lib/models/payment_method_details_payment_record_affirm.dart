@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodDetailsPaymentRecordAffirm {const PaymentMethodDetailsPaymentRecordAffirm({this.location, this.reader, this.transactionId, });
+
+factory PaymentMethodDetailsPaymentRecordAffirm.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordAffirm(
+  location: json['location'] as String?,
+  reader: json['reader'] as String?,
+  transactionId: json['transaction_id'] as String?,
+); }
+
+/// ID of the location that this reader is assigned to.
+final String? location;
+
+/// ID of the reader this transaction was made on.
+final String? reader;
+
+/// The Affirm transaction ID associated with this payment.
+final String? transactionId;
+
+Map<String, dynamic> toJson() { return {
+  'location': ?location,
+  'reader': ?reader,
+  'transaction_id': ?transactionId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsPaymentRecordAffirm copyWith({String Function()? location, String Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsPaymentRecordAffirm(
+  location: location != null ? location() : this.location,
+  reader: reader != null ? reader() : this.reader,
+  transactionId: transactionId != null ? transactionId() : this.transactionId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsPaymentRecordAffirm &&
+          location == other.location &&
+          reader == other.reader &&
+          transactionId == other.transactionId; } 
+@override int get hashCode { return Object.hash(location, reader, transactionId); } 
+@override String toString() { return 'PaymentMethodDetailsPaymentRecordAffirm(location: $location, reader: $reader, transactionId: $transactionId)'; } 
+ }

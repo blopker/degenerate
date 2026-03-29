@@ -1,0 +1,68 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookIssuesDeletedIssueLabels {const WebhookIssuesDeletedIssueLabels({required this.color, required this.$default, required this.description, required this.id, required this.name, required this.nodeId, required this.url, });
+
+factory WebhookIssuesDeletedIssueLabels.fromJson(Map<String, dynamic> json) { return WebhookIssuesDeletedIssueLabels(
+  color: json['color'] as String,
+  $default: json['default'] as bool,
+  description: json['description'] as String?,
+  id: (json['id'] as num).toInt(),
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  url: Uri.parse(json['url'] as String),
+); }
+
+/// 6-character hex code, without the leading #, identifying the color
+final String color;
+
+final bool $default;
+
+final String? description;
+
+final int id;
+
+/// The name of the label.
+final String name;
+
+final String nodeId;
+
+/// URL for the label
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'color': color,
+  'default': $default,
+  'description': ?description,
+  'id': id,
+  'name': name,
+  'node_id': nodeId,
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('color') && json['color'] is String &&
+      json.containsKey('default') && json['default'] is bool &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookIssuesDeletedIssueLabels copyWith({String? color, bool? $default, String? Function()? description, int? id, String? name, String? nodeId, Uri? url, }) { return WebhookIssuesDeletedIssueLabels(
+  color: color ?? this.color,
+  $default: $default ?? this.$default,
+  description: description != null ? description() : this.description,
+  id: id ?? this.id,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssuesDeletedIssueLabels &&
+          color == other.color &&
+          $default == other.$default &&
+          description == other.description &&
+          id == other.id &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(color, $default, description, id, name, nodeId, url); } 
+@override String toString() { return 'WebhookIssuesDeletedIssueLabels(color: $color, \$default: ${$default}, description: $description, id: $id, name: $name, nodeId: $nodeId, url: $url)'; } 
+ }

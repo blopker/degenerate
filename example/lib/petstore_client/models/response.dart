@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Response {const Response({this.code, this.type, this.message, });
+
+factory Response.fromJson(Map<String, dynamic> json) { return Response(
+  code: json['code'] != null ? (json['code'] as num).toInt() : null,
+  type: json['type'] as String?,
+  message: json['message'] as String?,
+); }
+
+final int? code;
+
+final String? type;
+
+final String? message;
+
+Map<String, dynamic> toJson() { return {
+  'code': ?code,
+  'type': ?type,
+  'message': ?message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Response copyWith({int Function()? code, String Function()? type, String Function()? message, }) { return Response(
+  code: code != null ? code() : this.code,
+  type: type != null ? type() : this.type,
+  message: message != null ? message() : this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Response &&
+          code == other.code &&
+          type == other.type &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, type, message); } 
+@override String toString() { return 'Response(code: $code, type: $type, message: $message)'; } 
+ }

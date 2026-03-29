@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).
+final class BrapiPostPdfRequestVariant2WaitForSelector {const BrapiPostPdfRequestVariant2WaitForSelector({this.hidden, required this.selector, this.timeout, this.visible, });
+
+factory BrapiPostPdfRequestVariant2WaitForSelector.fromJson(Map<String, dynamic> json) { return BrapiPostPdfRequestVariant2WaitForSelector(
+  hidden: json['hidden'] as bool?,
+  selector: json['selector'] as String,
+  timeout: json['timeout'] != null ? (json['timeout'] as num).toDouble() : null,
+  visible: json['visible'] as bool?,
+); }
+
+final bool? hidden;
+
+final String selector;
+
+final double? timeout;
+
+final bool? visible;
+
+Map<String, dynamic> toJson() { return {
+  'hidden': ?hidden,
+  'selector': selector,
+  'timeout': ?timeout,
+  'visible': ?visible,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String; } 
+BrapiPostPdfRequestVariant2WaitForSelector copyWith({bool Function()? hidden, String? selector, double Function()? timeout, bool Function()? visible, }) { return BrapiPostPdfRequestVariant2WaitForSelector(
+  hidden: hidden != null ? hidden() : this.hidden,
+  selector: selector ?? this.selector,
+  timeout: timeout != null ? timeout() : this.timeout,
+  visible: visible != null ? visible() : this.visible,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BrapiPostPdfRequestVariant2WaitForSelector &&
+          hidden == other.hidden &&
+          selector == other.selector &&
+          timeout == other.timeout &&
+          visible == other.visible; } 
+@override int get hashCode { return Object.hash(hidden, selector, timeout, visible); } 
+@override String toString() { return 'BrapiPostPdfRequestVariant2WaitForSelector(hidden: $hidden, selector: $selector, timeout: $timeout, visible: $visible)'; } 
+ }

@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations {const RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupByIndustryResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

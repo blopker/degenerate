@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'setup_attempt_payment_method_details_card_wallet.dart';/// If this Card is part of a card wallet, this contains the details of the card wallet.
+final class SetupAttemptPaymentMethodDetailsCardWallet2 {const SetupAttemptPaymentMethodDetailsCardWallet2({this.setupAttemptPaymentMethodDetailsCardWallet});
+
+factory SetupAttemptPaymentMethodDetailsCardWallet2.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCardWallet2(
+  setupAttemptPaymentMethodDetailsCardWallet: SetupAttemptPaymentMethodDetailsCardWallet.canParse(json) ? SetupAttemptPaymentMethodDetailsCardWallet.fromJson(json) : null,
+); }
+
+final SetupAttemptPaymentMethodDetailsCardWallet? setupAttemptPaymentMethodDetailsCardWallet;
+
+/// At least one variant must be present.
+bool get isValid { return setupAttemptPaymentMethodDetailsCardWallet != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?setupAttemptPaymentMethodDetailsCardWallet?.toJson(),
+}; } 
+ }

@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'user_id.dart';/// An ISO 8601 timestamp.
+extension type Timestamp(DateTime value) {
+factory Timestamp.fromJson(String json) => Timestamp(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// A numeric score.
+extension type const Score(int value) {
+factory Score.fromJson(num json) => Score(json.toInt());
+
+num toJson() => value;
+
+}
+extension type const Ratio(double value) {
+factory Ratio.fromJson(num json) => Ratio(json.toDouble());
+
+num toJson() => value;
+
+}
+extension type const Active(bool value) {
+factory Active.fromJson(bool json) => Active(json);
+
+bool toJson() => value;
+
+}
+final class User {const User({required this.id, required this.name, required this.createdAt, this.score, this.ratio, this.active, });
+
+factory User.fromJson(Map<String, dynamic> json) { return User(
+  id: UserId.fromJson(json['id'] as String),
+  name: json['name'] as String,
+  createdAt: Timestamp.fromJson(json['createdAt'] as String),
+  score: json['score'] != null ? Score.fromJson(json['score'] as num) : null,
+  ratio: json['ratio'] != null ? Ratio.fromJson(json['ratio'] as num) : null,
+  active: json['active'] != null ? Active.fromJson(json['active'] as bool) : null,
+); }
+
+/// A unique user identifier.
+final UserId id;
+
+final String name;
+
+/// An ISO 8601 timestamp.
+final Timestamp createdAt;
+
+/// A numeric score.
+final Score? score;
+
+final Ratio? ratio;
+
+final Active? active;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  'name': name,
+  'createdAt': createdAt.toJson(),
+  if (score != null) 'score': score?.toJson(),
+  if (ratio != null) 'ratio': ratio?.toJson(),
+  if (active != null) 'active': active?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('createdAt'); } 
+User copyWith({UserId? id, String? name, Timestamp? createdAt, Score Function()? score, Ratio Function()? ratio, Active Function()? active, }) { return User(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  createdAt: createdAt ?? this.createdAt,
+  score: score != null ? score() : this.score,
+  ratio: ratio != null ? ratio() : this.ratio,
+  active: active != null ? active() : this.active,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is User &&
+          id == other.id &&
+          name == other.name &&
+          createdAt == other.createdAt &&
+          score == other.score &&
+          ratio == other.ratio &&
+          active == other.active; } 
+@override int get hashCode { return Object.hash(id, name, createdAt, score, ratio, active); } 
+@override String toString() { return 'User(id: $id, name: $name, createdAt: $createdAt, score: $score, ratio: $ratio, active: $active)'; } 
+ }

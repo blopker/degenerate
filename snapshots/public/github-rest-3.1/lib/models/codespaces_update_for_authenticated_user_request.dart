@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CodespacesUpdateForAuthenticatedUserRequest {const CodespacesUpdateForAuthenticatedUserRequest({this.machine, this.displayName, this.recentFolders, });
+
+factory CodespacesUpdateForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return CodespacesUpdateForAuthenticatedUserRequest(
+  machine: json['machine'] as String?,
+  displayName: json['display_name'] as String?,
+  recentFolders: (json['recent_folders'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// A valid machine to transition this codespace to.
+final String? machine;
+
+/// Display name for this codespace
+final String? displayName;
+
+/// Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
+final List<String>? recentFolders;
+
+Map<String, dynamic> toJson() { return {
+  'machine': ?machine,
+  'display_name': ?displayName,
+  'recent_folders': ?recentFolders,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodespacesUpdateForAuthenticatedUserRequest copyWith({String Function()? machine, String Function()? displayName, List<String> Function()? recentFolders, }) { return CodespacesUpdateForAuthenticatedUserRequest(
+  machine: machine != null ? machine() : this.machine,
+  displayName: displayName != null ? displayName() : this.displayName,
+  recentFolders: recentFolders != null ? recentFolders() : this.recentFolders,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodespacesUpdateForAuthenticatedUserRequest &&
+          machine == other.machine &&
+          displayName == other.displayName &&
+          listEquals(recentFolders, other.recentFolders); } 
+@override int get hashCode { return Object.hash(machine, displayName, Object.hashAll(recentFolders ?? const [])); } 
+@override String toString() { return 'CodespacesUpdateForAuthenticatedUserRequest(machine: $machine, displayName: $displayName, recentFolders: $recentFolders)'; } 
+ }

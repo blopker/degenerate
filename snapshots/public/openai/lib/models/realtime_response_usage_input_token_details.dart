@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtime_response_usage_input_token_details_cached_tokens_details.dart';/// Details about the input tokens used in the Response. Cached tokens are tokens from previous turns in the conversation that are included as context for the current response. Cached tokens here are counted as a subset of input tokens, meaning input tokens will include cached and uncached tokens.
+final class RealtimeResponseUsageInputTokenDetails {const RealtimeResponseUsageInputTokenDetails({this.cachedTokens, this.textTokens, this.imageTokens, this.audioTokens, this.cachedTokensDetails, });
+
+factory RealtimeResponseUsageInputTokenDetails.fromJson(Map<String, dynamic> json) { return RealtimeResponseUsageInputTokenDetails(
+  cachedTokens: json['cached_tokens'] != null ? (json['cached_tokens'] as num).toInt() : null,
+  textTokens: json['text_tokens'] != null ? (json['text_tokens'] as num).toInt() : null,
+  imageTokens: json['image_tokens'] != null ? (json['image_tokens'] as num).toInt() : null,
+  audioTokens: json['audio_tokens'] != null ? (json['audio_tokens'] as num).toInt() : null,
+  cachedTokensDetails: json['cached_tokens_details'] != null ? RealtimeResponseUsageInputTokenDetailsCachedTokensDetails.fromJson(json['cached_tokens_details'] as Map<String, dynamic>) : null,
+); }
+
+/// The number of cached tokens used as input for the Response.
+final int? cachedTokens;
+
+/// The number of text tokens used as input for the Response.
+final int? textTokens;
+
+/// The number of image tokens used as input for the Response.
+final int? imageTokens;
+
+/// The number of audio tokens used as input for the Response.
+final int? audioTokens;
+
+/// Details about the cached tokens used as input for the Response.
+final RealtimeResponseUsageInputTokenDetailsCachedTokensDetails? cachedTokensDetails;
+
+Map<String, dynamic> toJson() { return {
+  'cached_tokens': ?cachedTokens,
+  'text_tokens': ?textTokens,
+  'image_tokens': ?imageTokens,
+  'audio_tokens': ?audioTokens,
+  if (cachedTokensDetails != null) 'cached_tokens_details': cachedTokensDetails?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimeResponseUsageInputTokenDetails copyWith({int Function()? cachedTokens, int Function()? textTokens, int Function()? imageTokens, int Function()? audioTokens, RealtimeResponseUsageInputTokenDetailsCachedTokensDetails Function()? cachedTokensDetails, }) { return RealtimeResponseUsageInputTokenDetails(
+  cachedTokens: cachedTokens != null ? cachedTokens() : this.cachedTokens,
+  textTokens: textTokens != null ? textTokens() : this.textTokens,
+  imageTokens: imageTokens != null ? imageTokens() : this.imageTokens,
+  audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
+  cachedTokensDetails: cachedTokensDetails != null ? cachedTokensDetails() : this.cachedTokensDetails,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeResponseUsageInputTokenDetails &&
+          cachedTokens == other.cachedTokens &&
+          textTokens == other.textTokens &&
+          imageTokens == other.imageTokens &&
+          audioTokens == other.audioTokens &&
+          cachedTokensDetails == other.cachedTokensDetails; } 
+@override int get hashCode { return Object.hash(cachedTokens, textTokens, imageTokens, audioTokens, cachedTokensDetails); } 
+@override String toString() { return 'RealtimeResponseUsageInputTokenDetails(cachedTokens: $cachedTokens, textTokens: $textTokens, imageTokens: $imageTokens, audioTokens: $audioTokens, cachedTokensDetails: $cachedTokensDetails)'; } 
+ }

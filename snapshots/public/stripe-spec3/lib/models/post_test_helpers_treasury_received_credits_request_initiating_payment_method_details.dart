@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_test_helpers_treasury_received_credits_request_initiating_payment_method_details_us_bank_account.dart';final class PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType {const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType._(this.value);
+
+factory PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
+  'us_bank_account' => usBankAccount,
+  _ => PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType._(json),
+}; }
+
+static const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType usBankAccount = PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType._('us_bank_account');
+
+static const List<PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType> values = [usBankAccount];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType($value)'; } 
+ }
+/// Initiating payment method details for the object.
+final class PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails {const PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails({required this.type, this.usBankAccount, });
+
+factory PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails(
+  type: PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType.fromJson(json['type'] as String),
+  usBankAccount: json['us_bank_account'] != null ? PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+); }
+
+final PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType type;
+
+final PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount? usBankAccount;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails copyWith({PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsType? type, PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetailsUsBankAccount Function()? usBankAccount, }) { return PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails(
+  type: type ?? this.type,
+  usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails &&
+          type == other.type &&
+          usBankAccount == other.usBankAccount; } 
+@override int get hashCode { return Object.hash(type, usBankAccount); } 
+@override String toString() { return 'PostTestHelpersTreasuryReceivedCreditsRequestInitiatingPaymentMethodDetails(type: $type, usBankAccount: $usBankAccount)'; } 
+ }

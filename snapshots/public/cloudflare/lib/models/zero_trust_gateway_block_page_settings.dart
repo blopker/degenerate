@@ -1,0 +1,151 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
+final class ZeroTrustGatewayBlockPageSettingsMode {const ZeroTrustGatewayBlockPageSettingsMode._(this.value);
+
+factory ZeroTrustGatewayBlockPageSettingsMode.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'customized_block_page' => customizedBlockPage,
+  'redirect_uri' => redirectUri,
+  _ => ZeroTrustGatewayBlockPageSettingsMode._(json),
+}; }
+
+static const ZeroTrustGatewayBlockPageSettingsMode $empty = ZeroTrustGatewayBlockPageSettingsMode._('');
+
+static const ZeroTrustGatewayBlockPageSettingsMode customizedBlockPage = ZeroTrustGatewayBlockPageSettingsMode._('customized_block_page');
+
+static const ZeroTrustGatewayBlockPageSettingsMode redirectUri = ZeroTrustGatewayBlockPageSettingsMode._('redirect_uri');
+
+static const List<ZeroTrustGatewayBlockPageSettingsMode> values = [$empty, customizedBlockPage, redirectUri];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZeroTrustGatewayBlockPageSettingsMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayBlockPageSettingsMode($value)'; } 
+ }
+/// Specify block page layout settings.
+final class ZeroTrustGatewayBlockPageSettings {const ZeroTrustGatewayBlockPageSettings({this.backgroundColor, this.enabled, this.footerText, this.headerText, this.includeContext, this.logoPath, this.mailtoAddress, this.mailtoSubject, this.mode = ZeroTrustGatewayBlockPageSettingsMode.$empty, this.name, this.readOnly, this.sourceAccount, this.suppressFooter, this.targetUri, this.version, });
+
+factory ZeroTrustGatewayBlockPageSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBlockPageSettings(
+  backgroundColor: json['background_color'] as String?,
+  enabled: json['enabled'] as bool?,
+  footerText: json['footer_text'] as String?,
+  headerText: json['header_text'] as String?,
+  includeContext: json['include_context'] as bool?,
+  logoPath: json['logo_path'] as String?,
+  mailtoAddress: json['mailto_address'] as String?,
+  mailtoSubject: json['mailto_subject'] as String?,
+  mode: json.containsKey('mode') ? ZeroTrustGatewayBlockPageSettingsMode.fromJson(json['mode'] as String) : ZeroTrustGatewayBlockPageSettingsMode.$empty,
+  name: json['name'] as String?,
+  readOnly: json['read_only'] as bool?,
+  sourceAccount: json['source_account'] as String?,
+  suppressFooter: json['suppress_footer'] as bool?,
+  targetUri: json['target_uri'] != null ? Uri.parse(json['target_uri'] as String) : null,
+  version: json['version'] != null ? (json['version'] as num).toInt() : null,
+); }
+
+/// Specify the block page background color in `#rrggbb` format when the mode is customized_block_page.
+final String? backgroundColor;
+
+/// Specify whether to enable the custom block page.
+final bool? enabled;
+
+/// Specify the block page footer text when the mode is customized_block_page.
+final String? footerText;
+
+/// Specify the block page header text when the mode is customized_block_page.
+final String? headerText;
+
+/// Specify whether to append context to target_uri as query parameters. This applies only when the mode is redirect_uri.
+final bool? includeContext;
+
+/// Specify the full URL to the logo file when the mode is customized_block_page.
+final String? logoPath;
+
+/// Specify the admin email for users to contact when the mode is customized_block_page.
+final String? mailtoAddress;
+
+/// Specify the subject line for emails created from the block page when the mode is customized_block_page.
+final String? mailtoSubject;
+
+/// Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.
+final ZeroTrustGatewayBlockPageSettingsMode mode;
+
+/// Specify the block page title when the mode is customized_block_page.
+final String? name;
+
+/// Indicate that this setting was shared via the Orgs API and read only for the current account.
+final bool? readOnly;
+
+/// Indicate the account tag of the account that shared this setting.
+final String? sourceAccount;
+
+/// Specify whether to suppress detailed information at the bottom of the block page when the mode is customized_block_page.
+final bool? suppressFooter;
+
+/// Specify the URI to redirect users to when the mode is redirect_uri.
+final Uri? targetUri;
+
+/// Indicate the version number of the setting.
+final int? version;
+
+Map<String, dynamic> toJson() { return {
+  'background_color': ?backgroundColor,
+  'enabled': ?enabled,
+  'footer_text': ?footerText,
+  'header_text': ?headerText,
+  'include_context': ?includeContext,
+  'logo_path': ?logoPath,
+  'mailto_address': ?mailtoAddress,
+  'mailto_subject': ?mailtoSubject,
+  'mode': mode.toJson(),
+  'name': ?name,
+  'read_only': ?readOnly,
+  'source_account': ?sourceAccount,
+  'suppress_footer': ?suppressFooter,
+  if (targetUri != null) 'target_uri': targetUri?.toString(),
+  'version': ?version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustGatewayBlockPageSettings copyWith({String Function()? backgroundColor, bool? Function()? enabled, String Function()? footerText, String Function()? headerText, bool Function()? includeContext, String Function()? logoPath, String Function()? mailtoAddress, String Function()? mailtoSubject, ZeroTrustGatewayBlockPageSettingsMode Function()? mode, String Function()? name, bool? Function()? readOnly, String? Function()? sourceAccount, bool Function()? suppressFooter, Uri Function()? targetUri, int? Function()? version, }) { return ZeroTrustGatewayBlockPageSettings(
+  backgroundColor: backgroundColor != null ? backgroundColor() : this.backgroundColor,
+  enabled: enabled != null ? enabled() : this.enabled,
+  footerText: footerText != null ? footerText() : this.footerText,
+  headerText: headerText != null ? headerText() : this.headerText,
+  includeContext: includeContext != null ? includeContext() : this.includeContext,
+  logoPath: logoPath != null ? logoPath() : this.logoPath,
+  mailtoAddress: mailtoAddress != null ? mailtoAddress() : this.mailtoAddress,
+  mailtoSubject: mailtoSubject != null ? mailtoSubject() : this.mailtoSubject,
+  mode: mode != null ? mode() : this.mode,
+  name: name != null ? name() : this.name,
+  readOnly: readOnly != null ? readOnly() : this.readOnly,
+  sourceAccount: sourceAccount != null ? sourceAccount() : this.sourceAccount,
+  suppressFooter: suppressFooter != null ? suppressFooter() : this.suppressFooter,
+  targetUri: targetUri != null ? targetUri() : this.targetUri,
+  version: version != null ? version() : this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayBlockPageSettings &&
+          backgroundColor == other.backgroundColor &&
+          enabled == other.enabled &&
+          footerText == other.footerText &&
+          headerText == other.headerText &&
+          includeContext == other.includeContext &&
+          logoPath == other.logoPath &&
+          mailtoAddress == other.mailtoAddress &&
+          mailtoSubject == other.mailtoSubject &&
+          mode == other.mode &&
+          name == other.name &&
+          readOnly == other.readOnly &&
+          sourceAccount == other.sourceAccount &&
+          suppressFooter == other.suppressFooter &&
+          targetUri == other.targetUri &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(backgroundColor, enabled, footerText, headerText, includeContext, logoPath, mailtoAddress, mailtoSubject, mode, name, readOnly, sourceAccount, suppressFooter, targetUri, version); } 
+@override String toString() { return 'ZeroTrustGatewayBlockPageSettings(backgroundColor: $backgroundColor, enabled: $enabled, footerText: $footerText, headerText: $headerText, includeContext: $includeContext, logoPath: $logoPath, mailtoAddress: $mailtoAddress, mailtoSubject: $mailtoSubject, mode: $mode, name: $name, readOnly: $readOnly, sourceAccount: $sourceAccount, suppressFooter: $suppressFooter, targetUri: $targetUri, version: $version)'; } 
+ }

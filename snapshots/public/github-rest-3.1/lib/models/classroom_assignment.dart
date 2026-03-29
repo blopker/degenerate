@@ -1,0 +1,192 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'classroom.dart';import 'simple_classroom_repository.dart';/// Whether it's a group assignment or individual assignment.
+final class ClassroomAssignmentType {const ClassroomAssignmentType._(this.value);
+
+factory ClassroomAssignmentType.fromJson(String json) { return switch (json) {
+  'individual' => individual,
+  'group' => group,
+  _ => ClassroomAssignmentType._(json),
+}; }
+
+static const ClassroomAssignmentType individual = ClassroomAssignmentType._('individual');
+
+static const ClassroomAssignmentType group = ClassroomAssignmentType._('group');
+
+static const List<ClassroomAssignmentType> values = [individual, group];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ClassroomAssignmentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ClassroomAssignmentType($value)'; } 
+ }
+/// A GitHub Classroom assignment
+final class ClassroomAssignment {const ClassroomAssignment({required this.id, required this.publicRepo, required this.title, required this.type, required this.inviteLink, required this.invitationsEnabled, required this.slug, required this.studentsAreRepoAdmins, required this.feedbackPullRequestsEnabled, required this.maxTeams, required this.maxMembers, required this.editor, required this.accepted, required this.submitted, required this.passing, required this.language, required this.deadline, required this.starterCodeRepository, required this.classroom, });
+
+factory ClassroomAssignment.fromJson(Map<String, dynamic> json) { return ClassroomAssignment(
+  id: (json['id'] as num).toInt(),
+  publicRepo: json['public_repo'] as bool,
+  title: json['title'] as String,
+  type: ClassroomAssignmentType.fromJson(json['type'] as String),
+  inviteLink: json['invite_link'] as String,
+  invitationsEnabled: json['invitations_enabled'] as bool,
+  slug: json['slug'] as String,
+  studentsAreRepoAdmins: json['students_are_repo_admins'] as bool,
+  feedbackPullRequestsEnabled: json['feedback_pull_requests_enabled'] as bool,
+  maxTeams: json['max_teams'] != null ? (json['max_teams'] as num).toInt() : null,
+  maxMembers: json['max_members'] != null ? (json['max_members'] as num).toInt() : null,
+  editor: json['editor'] as String,
+  accepted: (json['accepted'] as num).toInt(),
+  submitted: (json['submitted'] as num).toInt(),
+  passing: (json['passing'] as num).toInt(),
+  language: json['language'] as String,
+  deadline: json['deadline'] != null ? DateTime.parse(json['deadline'] as String) : null,
+  starterCodeRepository: SimpleClassroomRepository.fromJson(json['starter_code_repository'] as Map<String, dynamic>),
+  classroom: Classroom.fromJson(json['classroom'] as Map<String, dynamic>),
+); }
+
+/// Unique identifier of the repository.
+final int id;
+
+/// Whether an accepted assignment creates a public repository.
+final bool publicRepo;
+
+/// Assignment title.
+final String title;
+
+/// Whether it's a group assignment or individual assignment.
+final ClassroomAssignmentType type;
+
+/// The link that a student can use to accept the assignment.
+final String inviteLink;
+
+/// Whether the invitation link is enabled. Visiting an enabled invitation link will accept the assignment.
+final bool invitationsEnabled;
+
+/// Sluggified name of the assignment.
+final String slug;
+
+/// Whether students are admins on created repository when a student accepts the assignment.
+final bool studentsAreRepoAdmins;
+
+/// Whether feedback pull request will be created when a student accepts the assignment.
+final bool feedbackPullRequestsEnabled;
+
+/// The maximum allowable teams for the assignment.
+final int? maxTeams;
+
+/// The maximum allowable members per team.
+final int? maxMembers;
+
+/// The selected editor for the assignment.
+final String editor;
+
+/// The number of students that have accepted the assignment.
+final int accepted;
+
+/// The number of students that have submitted the assignment.
+final int submitted;
+
+/// The number of students that have passed the assignment.
+final int passing;
+
+/// The programming language used in the assignment.
+final String language;
+
+/// The time at which the assignment is due.
+final DateTime? deadline;
+
+final SimpleClassroomRepository starterCodeRepository;
+
+final Classroom classroom;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'public_repo': publicRepo,
+  'title': title,
+  'type': type.toJson(),
+  'invite_link': inviteLink,
+  'invitations_enabled': invitationsEnabled,
+  'slug': slug,
+  'students_are_repo_admins': studentsAreRepoAdmins,
+  'feedback_pull_requests_enabled': feedbackPullRequestsEnabled,
+  'max_teams': ?maxTeams,
+  'max_members': ?maxMembers,
+  'editor': editor,
+  'accepted': accepted,
+  'submitted': submitted,
+  'passing': passing,
+  'language': language,
+  if (deadline != null) 'deadline': deadline?.toIso8601String(),
+  'starter_code_repository': starterCodeRepository.toJson(),
+  'classroom': classroom.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('public_repo') && json['public_repo'] is bool &&
+      json.containsKey('title') && json['title'] is String &&
+      json.containsKey('type') &&
+      json.containsKey('invite_link') && json['invite_link'] is String &&
+      json.containsKey('invitations_enabled') && json['invitations_enabled'] is bool &&
+      json.containsKey('slug') && json['slug'] is String &&
+      json.containsKey('students_are_repo_admins') && json['students_are_repo_admins'] is bool &&
+      json.containsKey('feedback_pull_requests_enabled') && json['feedback_pull_requests_enabled'] is bool &&
+      json.containsKey('max_teams') && json['max_teams'] is num &&
+      json.containsKey('max_members') && json['max_members'] is num &&
+      json.containsKey('editor') && json['editor'] is String &&
+      json.containsKey('accepted') && json['accepted'] is num &&
+      json.containsKey('submitted') && json['submitted'] is num &&
+      json.containsKey('passing') && json['passing'] is num &&
+      json.containsKey('language') && json['language'] is String &&
+      json.containsKey('deadline') && json['deadline'] is String &&
+      json.containsKey('starter_code_repository') &&
+      json.containsKey('classroom'); } 
+ClassroomAssignment copyWith({int? id, bool? publicRepo, String? title, ClassroomAssignmentType? type, String? inviteLink, bool? invitationsEnabled, String? slug, bool? studentsAreRepoAdmins, bool? feedbackPullRequestsEnabled, int? Function()? maxTeams, int? Function()? maxMembers, String? editor, int? accepted, int? submitted, int? passing, String? language, DateTime? Function()? deadline, SimpleClassroomRepository? starterCodeRepository, Classroom? classroom, }) { return ClassroomAssignment(
+  id: id ?? this.id,
+  publicRepo: publicRepo ?? this.publicRepo,
+  title: title ?? this.title,
+  type: type ?? this.type,
+  inviteLink: inviteLink ?? this.inviteLink,
+  invitationsEnabled: invitationsEnabled ?? this.invitationsEnabled,
+  slug: slug ?? this.slug,
+  studentsAreRepoAdmins: studentsAreRepoAdmins ?? this.studentsAreRepoAdmins,
+  feedbackPullRequestsEnabled: feedbackPullRequestsEnabled ?? this.feedbackPullRequestsEnabled,
+  maxTeams: maxTeams != null ? maxTeams() : this.maxTeams,
+  maxMembers: maxMembers != null ? maxMembers() : this.maxMembers,
+  editor: editor ?? this.editor,
+  accepted: accepted ?? this.accepted,
+  submitted: submitted ?? this.submitted,
+  passing: passing ?? this.passing,
+  language: language ?? this.language,
+  deadline: deadline != null ? deadline() : this.deadline,
+  starterCodeRepository: starterCodeRepository ?? this.starterCodeRepository,
+  classroom: classroom ?? this.classroom,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ClassroomAssignment &&
+          id == other.id &&
+          publicRepo == other.publicRepo &&
+          title == other.title &&
+          type == other.type &&
+          inviteLink == other.inviteLink &&
+          invitationsEnabled == other.invitationsEnabled &&
+          slug == other.slug &&
+          studentsAreRepoAdmins == other.studentsAreRepoAdmins &&
+          feedbackPullRequestsEnabled == other.feedbackPullRequestsEnabled &&
+          maxTeams == other.maxTeams &&
+          maxMembers == other.maxMembers &&
+          editor == other.editor &&
+          accepted == other.accepted &&
+          submitted == other.submitted &&
+          passing == other.passing &&
+          language == other.language &&
+          deadline == other.deadline &&
+          starterCodeRepository == other.starterCodeRepository &&
+          classroom == other.classroom; } 
+@override int get hashCode { return Object.hash(id, publicRepo, title, type, inviteLink, invitationsEnabled, slug, studentsAreRepoAdmins, feedbackPullRequestsEnabled, maxTeams, maxMembers, editor, accepted, submitted, passing, language, deadline, starterCodeRepository, classroom); } 
+@override String toString() { return 'ClassroomAssignment(id: $id, publicRepo: $publicRepo, title: $title, type: $type, inviteLink: $inviteLink, invitationsEnabled: $invitationsEnabled, slug: $slug, studentsAreRepoAdmins: $studentsAreRepoAdmins, feedbackPullRequestsEnabled: $feedbackPullRequestsEnabled, maxTeams: $maxTeams, maxMembers: $maxMembers, editor: $editor, accepted: $accepted, submitted: $submitted, passing: $passing, language: $language, deadline: $deadline, starterCodeRepository: $starterCodeRepository, classroom: $classroom)'; } 
+ }

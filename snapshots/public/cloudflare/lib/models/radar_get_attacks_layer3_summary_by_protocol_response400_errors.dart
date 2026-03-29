@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer3SummaryByProtocolResponse400Errors {const RadarGetAttacksLayer3SummaryByProtocolResponse400Errors({required this.message});
+
+factory RadarGetAttacksLayer3SummaryByProtocolResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3SummaryByProtocolResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+RadarGetAttacksLayer3SummaryByProtocolResponse400Errors copyWith({String? message}) { return RadarGetAttacksLayer3SummaryByProtocolResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3SummaryByProtocolResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByProtocolResponse400Errors(message: $message)'; } 
+ }

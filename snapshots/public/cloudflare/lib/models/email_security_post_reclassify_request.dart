@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EmailSecurityPostReclassifyRequestExpectedDisposition {const EmailSecurityPostReclassifyRequestExpectedDisposition._(this.value);
+
+factory EmailSecurityPostReclassifyRequestExpectedDisposition.fromJson(String json) { return switch (json) {
+  'NONE' => none,
+  'BULK' => bulk,
+  'MALICIOUS' => malicious,
+  'SPAM' => spam,
+  'SPOOF' => spoof,
+  'SUSPICIOUS' => suspicious,
+  _ => EmailSecurityPostReclassifyRequestExpectedDisposition._(json),
+}; }
+
+static const EmailSecurityPostReclassifyRequestExpectedDisposition none = EmailSecurityPostReclassifyRequestExpectedDisposition._('NONE');
+
+static const EmailSecurityPostReclassifyRequestExpectedDisposition bulk = EmailSecurityPostReclassifyRequestExpectedDisposition._('BULK');
+
+static const EmailSecurityPostReclassifyRequestExpectedDisposition malicious = EmailSecurityPostReclassifyRequestExpectedDisposition._('MALICIOUS');
+
+static const EmailSecurityPostReclassifyRequestExpectedDisposition spam = EmailSecurityPostReclassifyRequestExpectedDisposition._('SPAM');
+
+static const EmailSecurityPostReclassifyRequestExpectedDisposition spoof = EmailSecurityPostReclassifyRequestExpectedDisposition._('SPOOF');
+
+static const EmailSecurityPostReclassifyRequestExpectedDisposition suspicious = EmailSecurityPostReclassifyRequestExpectedDisposition._('SUSPICIOUS');
+
+static const List<EmailSecurityPostReclassifyRequestExpectedDisposition> values = [none, bulk, malicious, spam, spoof, suspicious];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EmailSecurityPostReclassifyRequestExpectedDisposition && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EmailSecurityPostReclassifyRequestExpectedDisposition($value)'; } 
+ }
+final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({this.emlContent, this.escalatedSubmissionId, required this.expectedDisposition, });
+
+factory EmailSecurityPostReclassifyRequest.fromJson(Map<String, dynamic> json) { return EmailSecurityPostReclassifyRequest(
+  emlContent: json['eml_content'] as String?,
+  escalatedSubmissionId: json['escalated_submission_id'] as String?,
+  expectedDisposition: EmailSecurityPostReclassifyRequestExpectedDisposition.fromJson(json['expected_disposition'] as String),
+); }
+
+/// Base64 encoded content of the EML file
+final String? emlContent;
+
+final String? escalatedSubmissionId;
+
+final EmailSecurityPostReclassifyRequestExpectedDisposition expectedDisposition;
+
+Map<String, dynamic> toJson() { return {
+  'eml_content': ?emlContent,
+  'escalated_submission_id': ?escalatedSubmissionId,
+  'expected_disposition': expectedDisposition.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('expected_disposition'); } 
+EmailSecurityPostReclassifyRequest copyWith({String Function()? emlContent, String Function()? escalatedSubmissionId, EmailSecurityPostReclassifyRequestExpectedDisposition? expectedDisposition, }) { return EmailSecurityPostReclassifyRequest(
+  emlContent: emlContent != null ? emlContent() : this.emlContent,
+  escalatedSubmissionId: escalatedSubmissionId != null ? escalatedSubmissionId() : this.escalatedSubmissionId,
+  expectedDisposition: expectedDisposition ?? this.expectedDisposition,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityPostReclassifyRequest &&
+          emlContent == other.emlContent &&
+          escalatedSubmissionId == other.escalatedSubmissionId &&
+          expectedDisposition == other.expectedDisposition; } 
+@override int get hashCode { return Object.hash(emlContent, escalatedSubmissionId, expectedDisposition); } 
+@override String toString() { return 'EmailSecurityPostReclassifyRequest(emlContent: $emlContent, escalatedSubmissionId: $escalatedSubmissionId, expectedDisposition: $expectedDisposition)'; } 
+ }

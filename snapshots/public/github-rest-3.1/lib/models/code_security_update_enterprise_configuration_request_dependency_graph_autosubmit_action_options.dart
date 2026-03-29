@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Feature options for Automatic dependency submission
+final class CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions {const CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions({this.labeledRunners});
+
+factory CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions.fromJson(Map<String, dynamic> json) { return CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions(
+  labeledRunners: json['labeled_runners'] as bool?,
+); }
+
+/// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
+final bool? labeledRunners;
+
+Map<String, dynamic> toJson() { return {
+  'labeled_runners': ?labeledRunners,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions copyWith({bool Function()? labeledRunners}) { return CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions(
+  labeledRunners: labeledRunners != null ? labeledRunners() : this.labeledRunners,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions &&
+          labeledRunners == other.labeledRunners; } 
+@override int get hashCode { return labeledRunners.hashCode; } 
+@override String toString() { return 'CodeSecurityUpdateEnterpriseConfigurationRequestDependencyGraphAutosubmitActionOptions(labeledRunners: $labeledRunners)'; } 
+ }

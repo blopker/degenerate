@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_subscription_details_items_discounts_variant1.dart';final class PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 {const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2._(this.value);
+
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2._(json),
+}; }
+
+static const PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 $empty = PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2._('');
+
+static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2($value)'; } 
+ }
+typedef PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscounts = OneOf2<List<PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant1>,PostInvoicesCreatePreviewRequestSubscriptionDetailsItemsDiscountsVariant2>;

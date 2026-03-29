@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'shield_uuid.dart';/// When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation
+/// 
+///   - `"log"` - log request when request does not conform to schema for this operation
+///   - `"block"` - deny access to the site when request does not conform to schema for this operation
+///   - `"none"` - will skip mitigation for this operation
+/// 
+final class ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction._(this.value);
+
+factory ShieldPerOperationSettingMitigationAction.fromJson(String json) { return switch (json) {
+  'log' => log,
+  'block' => block,
+  'none' => none,
+  _ => ShieldPerOperationSettingMitigationAction._(json),
+}; }
+
+static const ShieldPerOperationSettingMitigationAction log = ShieldPerOperationSettingMitigationAction._('log');
+
+static const ShieldPerOperationSettingMitigationAction block = ShieldPerOperationSettingMitigationAction._('block');
+
+static const ShieldPerOperationSettingMitigationAction none = ShieldPerOperationSettingMitigationAction._('none');
+
+static const List<ShieldPerOperationSettingMitigationAction> values = [log, block, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ShieldPerOperationSettingMitigationAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ShieldPerOperationSettingMitigationAction($value)'; } 
+ }
+final class ShieldPerOperationSetting {const ShieldPerOperationSetting({required this.mitigationAction, required this.operationId, });
+
+factory ShieldPerOperationSetting.fromJson(Map<String, dynamic> json) { return ShieldPerOperationSetting(
+  mitigationAction: ShieldPerOperationSettingMitigationAction.fromJson(json['mitigation_action'] as String),
+  operationId: ShieldUuid.fromJson(json['operation_id'] as String),
+); }
+
+/// When set, this applies a mitigation action to this operation which supersedes a global schema validation setting just for this operation
+/// 
+///   - `"log"` - log request when request does not conform to schema for this operation
+///   - `"block"` - deny access to the site when request does not conform to schema for this operation
+///   - `"none"` - will skip mitigation for this operation
+/// 
+final ShieldPerOperationSettingMitigationAction mitigationAction;
+
+final ShieldUuid operationId;
+
+Map<String, dynamic> toJson() { return {
+  'mitigation_action': mitigationAction.toJson(),
+  'operation_id': operationId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mitigation_action') &&
+      json.containsKey('operation_id'); } 
+ShieldPerOperationSetting copyWith({ShieldPerOperationSettingMitigationAction? mitigationAction, ShieldUuid? operationId, }) { return ShieldPerOperationSetting(
+  mitigationAction: mitigationAction ?? this.mitigationAction,
+  operationId: operationId ?? this.operationId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ShieldPerOperationSetting &&
+          mitigationAction == other.mitigationAction &&
+          operationId == other.operationId; } 
+@override int get hashCode { return Object.hash(mitigationAction, operationId); } 
+@override String toString() { return 'ShieldPerOperationSetting(mitigationAction: $mitigationAction, operationId: $operationId)'; } 
+ }

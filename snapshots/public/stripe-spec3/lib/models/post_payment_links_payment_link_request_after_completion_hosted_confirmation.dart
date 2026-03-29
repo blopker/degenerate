@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation {const PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation({this.customMessage});
+
+factory PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(
+  customMessage: json['custom_message'] as String?,
+); }
+
+final String? customMessage;
+
+Map<String, dynamic> toJson() { return {
+  'custom_message': ?customMessage,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation copyWith({String Function()? customMessage}) { return PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(
+  customMessage: customMessage != null ? customMessage() : this.customMessage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation &&
+          customMessage == other.customMessage; } 
+@override int get hashCode { return customMessage.hashCode; } 
+@override String toString() { return 'PostPaymentLinksPaymentLinkRequestAfterCompletionHostedConfirmation(customMessage: $customMessage)'; } 
+ }

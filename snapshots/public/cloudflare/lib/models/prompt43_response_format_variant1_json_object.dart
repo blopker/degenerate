@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Prompt43ResponseFormatVariant1JsonObjectType {const Prompt43ResponseFormatVariant1JsonObjectType._(this.value);
+
+factory Prompt43ResponseFormatVariant1JsonObjectType.fromJson(String json) { return switch (json) {
+  'json_object' => jsonObject,
+  _ => Prompt43ResponseFormatVariant1JsonObjectType._(json),
+}; }
+
+static const Prompt43ResponseFormatVariant1JsonObjectType jsonObject = Prompt43ResponseFormatVariant1JsonObjectType._('json_object');
+
+static const List<Prompt43ResponseFormatVariant1JsonObjectType> values = [jsonObject];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Prompt43ResponseFormatVariant1JsonObjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Prompt43ResponseFormatVariant1JsonObjectType($value)'; } 
+ }
+final class Prompt43ResponseFormatVariant1JsonObject {const Prompt43ResponseFormatVariant1JsonObject({required this.type});
+
+factory Prompt43ResponseFormatVariant1JsonObject.fromJson(Map<String, dynamic> json) { return Prompt43ResponseFormatVariant1JsonObject(
+  type: Prompt43ResponseFormatVariant1JsonObjectType.fromJson(json['type'] as String),
+); }
+
+final Prompt43ResponseFormatVariant1JsonObjectType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+Prompt43ResponseFormatVariant1JsonObject copyWith({Prompt43ResponseFormatVariant1JsonObjectType? type}) { return Prompt43ResponseFormatVariant1JsonObject(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt43ResponseFormatVariant1JsonObject &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'Prompt43ResponseFormatVariant1JsonObject(type: $type)'; } 
+ }

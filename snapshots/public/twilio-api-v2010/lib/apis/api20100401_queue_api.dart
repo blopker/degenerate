@@ -1,0 +1,125 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_queue.dart';import '../models/create_queue_request.dart';import '../models/list_queue_response.dart';import '../models/update_queue_request.dart';/// Api20100401QueueApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401QueueApi with ApiExecutor {const Api20100401QueueApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Fetch an instance of a queue identified by the QueueSid
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
+Future<ApiResult<AccountQueue, Never>> fetchQueue({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountQueue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update the queue with the new parameters
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
+Future<ApiResult<AccountQueue, Never>> updateQueue({required String accountSid, required String sid, UpdateQueueRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  body: body == null ? null : [
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.maxSize case final maxSize$?)
+      'MaxSize=${Uri.encodeQueryComponent(maxSize$.toString())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountQueue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove an empty queue
+///
+/// `DELETE /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
+Future<ApiResult<void, Never>> deleteQueue({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Retrieve a list of queues belonging to the account used to make the request
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Queues.json`
+Future<ApiResult<ListQueueResponse, Never>> listQueue({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListQueueResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a queue
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Queues.json`
+Future<ApiResult<AccountQueue, Never>> createQueue({required String accountSid, CreateQueueRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Queues.json',
+  headers: headers,
+  body: body == null ? null : [
+    'FriendlyName=${Uri.encodeQueryComponent(body.friendlyName)}',
+    if (body.maxSize case final maxSize$?)
+      'MaxSize=${Uri.encodeQueryComponent(maxSize$.toString())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountQueue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

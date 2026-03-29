@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus {const SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._(this.value);
+
+factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus.fromJson(String json) { return switch (json) {
+  'enabled' => enabled,
+  'disabled' => disabled,
+  _ => SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._(json),
+}; }
+
+static const SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus enabled = SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._('enabled');
+
+static const SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus disabled = SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus._('disabled');
+
+static const List<SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus> values = [enabled, disabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus($value)'; } 
+ }
+final class SecurityAndAnalysisSecretScanningDelegatedAlertDismissal {const SecurityAndAnalysisSecretScanningDelegatedAlertDismissal({this.status});
+
+factory SecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+  status: json['status'] != null ? SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus.fromJson(json['status'] as String) : null,
+); }
+
+final SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SecurityAndAnalysisSecretScanningDelegatedAlertDismissal copyWith({SecurityAndAnalysisSecretScanningDelegatedAlertDismissalStatus Function()? status}) { return SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecurityAndAnalysisSecretScanningDelegatedAlertDismissal &&
+          status == other.status; } 
+@override int get hashCode { return status.hashCode; } 
+@override String toString() { return 'SecurityAndAnalysisSecretScanningDelegatedAlertDismissal(status: $status)'; } 
+ }

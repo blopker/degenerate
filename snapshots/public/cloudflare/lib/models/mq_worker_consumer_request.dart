@@ -1,0 +1,43 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mq_queue_name.dart';import 'mq_script_name.dart';import 'mq_worker_consumer_request_settings.dart';final class MqWorkerConsumerRequest {const MqWorkerConsumerRequest({this.deadLetterQueue, required this.scriptName, this.settings, required this.type, });
+
+factory MqWorkerConsumerRequest.fromJson(Map<String, dynamic> json) { return MqWorkerConsumerRequest(
+  deadLetterQueue: json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null,
+  scriptName: MqScriptName.fromJson(json['script_name'] as String),
+  settings: json['settings'] != null ? MqWorkerConsumerRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+  type: json['type'] as String,
+); }
+
+final MqQueueName? deadLetterQueue;
+
+/// Name of a Worker
+final MqScriptName scriptName;
+
+final MqWorkerConsumerRequestSettings? settings;
+
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  if (deadLetterQueue != null) 'dead_letter_queue': deadLetterQueue?.toJson(),
+  'script_name': scriptName.toJson(),
+  if (settings != null) 'settings': settings?.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('script_name') &&
+      json.containsKey('type') && json['type'] is String; } 
+MqWorkerConsumerRequest copyWith({MqQueueName Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings Function()? settings, String? type, }) { return MqWorkerConsumerRequest(
+  deadLetterQueue: deadLetterQueue != null ? deadLetterQueue() : this.deadLetterQueue,
+  scriptName: scriptName ?? this.scriptName,
+  settings: settings != null ? settings() : this.settings,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MqWorkerConsumerRequest &&
+          deadLetterQueue == other.deadLetterQueue &&
+          scriptName == other.scriptName &&
+          settings == other.settings &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(deadLetterQueue, scriptName, settings, type); } 
+@override String toString() { return 'MqWorkerConsumerRequest(deadLetterQueue: $deadLetterQueue, scriptName: $scriptName, settings: $settings, type: $type)'; } 
+ }

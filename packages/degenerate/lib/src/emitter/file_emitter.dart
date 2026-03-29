@@ -23,8 +23,6 @@ class FileEmitter {
     List<IrSecurityScheme> securitySchemes = const [],
     List<IrSecurityRequirement>? globalSecurity,
     required String packageName,
-    required String specFileName,
-    required String specVersion,
     bool workspace = false,
     String? defaultServerUrl,
     List<String>? warnings,
@@ -60,7 +58,7 @@ class FileEmitter {
     // into their parent typedef file (the parent file provides the import).
     final apiReferencedTypes = <String>{};
     for (final api in apis) {
-      final analysis = _analyzeApi(api);  // no typeRegistry
+      final analysis = _analyzeApi(api); // no typeRegistry
       apiReferencedTypes.addAll(analysis.referencedTypes);
     }
 
@@ -89,7 +87,7 @@ class FileEmitter {
       if (inlinedInto.containsKey(name)) continue; // emitted with parent
 
       final fileName = toSnakeCase(name);
-      final header = _header(specFileName, specVersion);
+      final header = _header;
 
       // Prepend inlined children before the parent type
       final specs = <Spec>[];
@@ -127,6 +125,7 @@ class FileEmitter {
       final needsTypedData = modelAnalysis.needsTypedData;
       final needsConvert = modelAnalysis.needsConvert;
       final needsOneOf = modelAnalysis.needsOneOf;
+      final needsRuntime = needsOneOf || needsCollection;
 
       final library = Library((b) {
         b.comments.addAll(header);
@@ -136,27 +135,24 @@ class FileEmitter {
         if (needsTypedData) {
           b.directives.add(Directive.import('dart:typed_data'));
         }
-        if (needsCollection) {
+        if (needsRuntime) {
           b.directives.add(
-            Directive.import('package:collection/collection.dart'),
-          );
-        }
-        if (needsOneOf) {
-          b.directives.add(
-            Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
+            Directive.import(
+              'package:degenerate_runtime/degenerate_runtime.dart',
+            ),
           );
         }
         b.directives.addAll(modelImports);
         b.body.addAll(specs);
       });
 
-      files['lib/src/models/$fileName.dart'] = emitRaw(library);
+      files['models/$fileName.dart'] = emitRaw(library);
     }
 
     // Emit API files
     for (final api in apis) {
       final fileName = toSnakeCase(api.name);
-      final header = _header(specFileName, specVersion);
+      final header = _header;
       final apiEmitter = ApiEmitter(api, typeRegistry: typeRegistry);
       warnings?.addAll(apiEmitter.collectWarnings());
       final specs = apiEmitter.emit();
@@ -197,50 +193,46 @@ class FileEmitter {
           ..body.addAll(specs),
       );
 
-      files['lib/src/apis/$fileName.dart'] = emitRaw(library);
+      files['apis/$fileName.dart'] = emitRaw(library);
     }
 
     // Emit root SDK facade
     if (apis.isNotEmpty) {
       final sdkFileName = '${packageName}_api';
-      files['lib/src/client/$sdkFileName.dart'] = _emitSdkFacade(
+      files['client/$sdkFileName.dart'] = _emitSdkFacade(
         apis: apis,
         securitySchemes: securitySchemes,
         packageName: packageName,
-        specFileName: specFileName,
-        specVersion: specVersion,
         defaultServerUrl: defaultServerUrl,
       );
     }
 
     if (securitySchemes.isNotEmpty || globalSecurity != null) {
       final securityFileName = '${packageName}_security';
-      files['lib/src/client/$securityFileName.dart'] = _emitSecurityFile(
+      files['client/$securityFileName.dart'] = _emitSecurityFile(
         apis: apis,
         securitySchemes: securitySchemes,
         globalSecurity: globalSecurity,
         packageName: packageName,
-        specFileName: specFileName,
-        specVersion: specVersion,
       );
     }
 
     // Emit barrel file
-    files['lib/$packageName.dart'] = _emitBarrelFile(
+    files['$packageName.dart'] = _emitBarrelFile(
       types: types,
       apis: apis,
       packageName: packageName,
-      specFileName: specFileName,
-      specVersion: specVersion,
       inlinedTypes: inlinedInto.keys.toSet(),
       hasSecurityFile: securitySchemes.isNotEmpty || globalSecurity != null,
     );
 
-    // Emit pubspec.yaml
-    files['pubspec.yaml'] = _emitPubspec(
-      packageName: packageName,
-      workspace: workspace,
-    );
+    // Emit pubspec.yaml only in workspace mode
+    if (workspace) {
+      files['pubspec.yaml'] = _emitPubspec(
+        packageName: packageName,
+        workspace: true,
+      );
+    }
 
     return files;
   }
@@ -339,8 +331,7 @@ class FileEmitter {
       }
       // Match the type selection logic used by ApiEmitter:
       // prefer application/json, fallback to first content type.
-      if (op.requestBody != null &&
-          op.requestBody!.content.isNotEmpty) {
+      if (op.requestBody != null && op.requestBody!.content.isNotEmpty) {
         final bodyContent = preferredContent(op.requestBody!.content)!;
         if (isJsonLikeMediaType(bodyContent.$1)) needsConvert = true;
         final schema = bodyContent.$2.schema;
@@ -405,7 +396,13 @@ class FileEmitter {
   /// When [skipInlinedOneOfRefs] is true (used during variant resolution),
   /// refs that resolve to non-self-referencing OneOf typedefs are NOT added
   /// to [names] because they are fully inlined in the parse code.
-  void _collectTopLevelTypeName(IrType type, Set<String> names, [Map<String, IrType>? typeRegistry, Set<String>? resolving, bool skipInlinedOneOfRefs = false]) {
+  void _collectTopLevelTypeName(
+    IrType type,
+    Set<String> names, [
+    Map<String, IrType>? typeRegistry,
+    Set<String>? resolving,
+    bool skipInlinedOneOfRefs = false,
+  ]) {
     switch (type) {
       case IrObject(:final name):
         names.add(name);
@@ -414,13 +411,20 @@ class FileEmitter {
       case IrTypeRef(:final name):
         // Check if this ref points to a non-self-referencing OneOf typedef
         // that will be inlined in parse code (no explicit reference in output).
-        final isInlinedOneOf = skipInlinedOneOfRefs && typeRegistry != null && switch (typeRegistry[name]) {
-          IrUntaggedUnion(:final variants)
-              when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-          IrAnyOf(:final variants)
-              when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-          _ => false,
-        };
+        final isInlinedOneOf =
+            skipInlinedOneOfRefs &&
+            typeRegistry != null &&
+            switch (typeRegistry[name]) {
+              IrUntaggedUnion(:final variants)
+                  when isOneOfEligible(variants) &&
+                      !_isSelfReferencing(name, variants) =>
+                true,
+              IrAnyOf(:final variants)
+                  when isOneOfEligible(variants) &&
+                      !_isSelfReferencing(name, variants) =>
+                true,
+              _ => false,
+            };
         if (!isInlinedOneOf) {
           names.add(name);
         }
@@ -432,14 +436,22 @@ class FileEmitter {
           final target = typeRegistry[name];
           if (target != null) {
             final variants = switch (target) {
-              IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants,
-              IrAnyOf(:final variants) when isOneOfEligible(variants) => variants,
+              IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+                variants,
+              IrAnyOf(:final variants) when isOneOfEligible(variants) =>
+                variants,
               _ => null,
             };
             if (variants != null) {
               for (final v in variants) {
                 // Variant refs to other OneOf typedefs are also inlined
-                _collectTopLevelTypeName(v, names, typeRegistry, resolving, true);
+                _collectTopLevelTypeName(
+                  v,
+                  names,
+                  typeRegistry,
+                  resolving,
+                  true,
+                );
               }
             }
           }
@@ -449,8 +461,10 @@ class FileEmitter {
       case IrUntaggedUnion(:final name, :final variants):
         // Skip adding the name if this is a non-self-referencing OneOf typedef
         // that will be inlined in parse code.
-        final skipUntagged = skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) && !_isSelfReferencing(name, variants);
+        final skipUntagged =
+            skipInlinedOneOfRefs &&
+            isOneOfEligible(variants) &&
+            !_isSelfReferencing(name, variants);
         if (!skipUntagged) {
           names.add(name);
         }
@@ -462,8 +476,10 @@ class FileEmitter {
           }
         }
       case IrAnyOf(:final name, :final variants):
-        final skipAnyOf = skipInlinedOneOfRefs &&
-            isOneOfEligible(variants) && !_isSelfReferencing(name, variants);
+        final skipAnyOf =
+            skipInlinedOneOfRefs &&
+            isOneOfEligible(variants) &&
+            !_isSelfReferencing(name, variants);
         if (!skipAnyOf) {
           names.add(name);
         }
@@ -475,9 +491,21 @@ class FileEmitter {
       case IrExtensionType(:final name):
         names.add(name);
       case IrList(:final items):
-        _collectTopLevelTypeName(items, names, typeRegistry, resolving, skipInlinedOneOfRefs);
+        _collectTopLevelTypeName(
+          items,
+          names,
+          typeRegistry,
+          resolving,
+          skipInlinedOneOfRefs,
+        );
       case IrMap(:final values):
-        _collectTopLevelTypeName(values, names, typeRegistry, resolving, skipInlinedOneOfRefs);
+        _collectTopLevelTypeName(
+          values,
+          names,
+          typeRegistry,
+          resolving,
+          skipInlinedOneOfRefs,
+        );
       case IrPrimitive():
         break;
     }
@@ -516,28 +544,44 @@ class FileEmitter {
       IrPrimitive(:final kind) => kind == PrimitiveKind.bytes,
       IrList(:final items) => hasBytesAnywhere(items),
       IrMap(:final values) => hasBytesAnywhere(values),
-      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-      IrTypeRef(:final name) when typeRegistry != null && bytesVisited.add(name) => switch (typeRegistry[name]) {
-        IrUntaggedUnion(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-        IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(hasBytesAnywhere),
-        _ => false,
-      },
+      IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+        variants.any(hasBytesAnywhere),
+      IrAnyOf(:final variants) when isOneOfEligible(variants) => variants.any(
+        hasBytesAnywhere,
+      ),
+      IrTypeRef(:final name)
+          when typeRegistry != null && bytesVisited.add(name) =>
+        switch (typeRegistry[name]) {
+          IrUntaggedUnion(:final variants) when isOneOfEligible(variants) =>
+            variants.any(hasBytesAnywhere),
+          IrAnyOf(:final variants) when isOneOfEligible(variants) =>
+            variants.any(hasBytesAnywhere),
+          _ => false,
+        },
       _ => false,
     };
 
     bool isOneOfType(IrType t) => switch (t) {
       IrUntaggedUnion(:final name, :final variants)
-          when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencing(name, variants) =>
+        true,
       IrAnyOf(:final name, :final variants)
-          when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-      IrTypeRef(:final name) when typeRegistry != null => switch (typeRegistry[name]) {
-        IrUntaggedUnion(:final variants)
-            when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-        IrAnyOf(:final variants)
-            when isOneOfEligible(variants) && !_isSelfReferencing(name, variants) => true,
-        _ => false,
-      },
+          when isOneOfEligible(variants) &&
+              !_isSelfReferencing(name, variants) =>
+        true,
+      IrTypeRef(:final name) when typeRegistry != null =>
+        switch (typeRegistry[name]) {
+          IrUntaggedUnion(:final variants)
+              when isOneOfEligible(variants) &&
+                  !_isSelfReferencing(name, variants) =>
+            true,
+          IrAnyOf(:final variants)
+              when isOneOfEligible(variants) &&
+                  !_isSelfReferencing(name, variants) =>
+            true,
+          _ => false,
+        },
       IrList(:final items) => isOneOfType(items),
       IrMap(:final values) => isOneOfType(values),
       _ => false,
@@ -630,86 +674,61 @@ class FileEmitter {
     );
   }
 
-  List<String> _header(String specFileName, String specVersion) {
-    return [
-      ' dart format off',
-      ' GENERATED CODE - DO NOT MODIFY BY HAND',
-      '',
-      ' Generated by degenerate from $specFileName',
-      ' OpenAPI spec version: $specVersion',
-    ];
+  /// Header comment for generated files.
+  /// Note: code_builder prepends '// ' to each line.
+  static const _header = ['GENERATED CODE - DO NOT MODIFY BY HAND'];
+
+  /// Wrap raw Dart source in a Library with the standard header.
+  String _emitWithHeader(String body) {
+    final library = Library((b) {
+      b.comments.addAll(_header);
+      b.body.add(Code(body));
+    });
+    return emitRaw(library);
   }
 
   String _emitBarrelFile({
     required List<IrType> types,
     required List<IrApi> apis,
     required String packageName,
-    required String specFileName,
-    required String specVersion,
     Set<String> inlinedTypes = const {},
     bool hasSecurityFile = false,
   }) {
-    final buf = StringBuffer();
-    buf.writeln('// dart format off');
-    buf.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
-    buf.writeln('//');
-    buf.writeln('// Generated by degenerate from $specFileName');
-    buf.writeln('// OpenAPI spec version: $specVersion');
-    buf.writeln();
+    final exports = <Directive>[
+      Directive.export('package:degenerate_runtime/degenerate_runtime.dart'),
+      if (apis.isNotEmpty) Directive.export('client/${packageName}_api.dart'),
+      if (hasSecurityFile)
+        Directive.export('client/${packageName}_security.dart'),
+      // Model exports (sorted, deduplicated, excluding inlined)
+      for (final name
+          in types
+              .map(_typeName)
+              .whereType<String>()
+              .where((name) => !inlinedTypes.contains(name))
+              .toSet()
+              .toList()
+            ..sort())
+        Directive.export('models/${toSnakeCase(name)}.dart'),
+      // API exports (sorted, deduplicated)
+      for (final name in apis.map((a) => a.name).toSet().toList()..sort())
+        Directive.export('apis/${toSnakeCase(name)}.dart'),
+    ];
 
-    // Re-export runtime types so consumers get everything from one import
-    buf.writeln("export 'package:degenerate_runtime/degenerate_runtime.dart';");
-    if (apis.isNotEmpty) {
-      final sdkFileName = '${packageName}_api';
-      buf.writeln("export 'src/client/$sdkFileName.dart';");
-    }
-    if (hasSecurityFile) {
-      final securityFileName = '${packageName}_security';
-      buf.writeln("export 'src/client/$securityFileName.dart';");
-    }
-    buf.writeln();
-
-    // Export model files (sorted for stable diffs, deduplicated, excluding inlined)
-    final modelNames =
-        types
-            .map(_typeName)
-            .whereType<String>()
-            .where((name) => !inlinedTypes.contains(name))
-            .toSet()
-            .toList()
-          ..sort();
-    for (final name in modelNames) {
-      final fileName = toSnakeCase(name);
-      buf.writeln("export 'src/models/$fileName.dart';");
-    }
-    buf.writeln();
-
-    // Export API files (sorted for stable diffs, deduplicated)
-    final apiNames = apis.map((a) => a.name).toSet().toList()..sort();
-    for (final name in apiNames) {
-      final fileName = toSnakeCase(name);
-      buf.writeln("export 'src/apis/$fileName.dart';");
-    }
-
-    return buf.toString();
+    final library = Library((b) {
+      b.comments.addAll(_header);
+      b.directives.addAll(exports);
+    });
+    return emitRaw(library);
   }
 
   String _emitSdkFacade({
     required List<IrApi> apis,
     required List<IrSecurityScheme> securitySchemes,
     required String packageName,
-    required String specFileName,
-    required String specVersion,
     String? defaultServerUrl,
   }) {
     final className = '${sanitizeDartName(toPascalCase(packageName))}Api';
     final buf = StringBuffer();
-    buf.writeln('// dart format off');
-    buf.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
-    buf.writeln('//');
-    buf.writeln('// Generated by degenerate from $specFileName');
-    buf.writeln('// OpenAPI spec version: $specVersion');
-    buf.writeln();
     buf.writeln("import 'package:degenerate_runtime/degenerate_runtime.dart';");
     if (securitySchemes.isNotEmpty) {
       buf.writeln("import '${packageName}_security.dart';");
@@ -767,7 +786,7 @@ class FileEmitter {
     }
 
     buf.writeln('}');
-    return buf.toString();
+    return _emitWithHeader(buf.toString());
   }
 
   String _emitSecurityFile({
@@ -775,17 +794,9 @@ class FileEmitter {
     required List<IrSecurityScheme> securitySchemes,
     required List<IrSecurityRequirement>? globalSecurity,
     required String packageName,
-    required String specFileName,
-    required String specVersion,
   }) {
     final className = '${sanitizeDartName(toPascalCase(packageName))}Security';
     final buf = StringBuffer();
-    buf.writeln('// dart format off');
-    buf.writeln('// GENERATED CODE - DO NOT MODIFY BY HAND');
-    buf.writeln('//');
-    buf.writeln('// Generated by degenerate from $specFileName');
-    buf.writeln('// OpenAPI spec version: $specVersion');
-    buf.writeln();
     if (securitySchemes.any(
       (scheme) => scheme.type == 'http' && scheme.scheme == 'basic',
     )) {
@@ -831,7 +842,7 @@ class FileEmitter {
       }
     }
     buf.writeln('}');
-    return buf.toString();
+    return _emitWithHeader(buf.toString());
   }
 
   String _securitySchemeLiteral(IrSecurityScheme scheme) {
@@ -924,7 +935,8 @@ class FileEmitter {
     String packageName,
     IrSecurityScheme scheme,
   ) {
-    final securityClass = '${sanitizeDartName(toPascalCase(packageName))}Security';
+    final securityClass =
+        '${sanitizeDartName(toPascalCase(packageName))}Security';
     final suffix = _securityMethodSuffix(scheme.name);
     final helperName = 'with$suffix';
     final applyName = 'apply$suffix';
@@ -962,10 +974,7 @@ class FileEmitter {
     return sanitizeFieldName(camel);
   }
 
-  String _emitPubspec({
-    required String packageName,
-    bool workspace = false,
-  }) {
+  String _emitPubspec({required String packageName, bool workspace = false}) {
     final buf = StringBuffer();
     buf.writeln('name: $packageName');
     buf.writeln('description: Generated API client.');
@@ -979,8 +988,7 @@ class FileEmitter {
     buf.writeln('  sdk: ^3.8.0');
     buf.writeln();
     buf.writeln('dependencies:');
-    buf.writeln('  collection: ^1.18.0');
-    buf.writeln('  degenerate_runtime: ^0.1.0');
+    buf.writeln('  degenerate_runtime:');
     return buf.toString();
   }
 }

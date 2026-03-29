@@ -1,0 +1,16 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'prompt43_web_search_options_variant1.dart';final class Prompt43WebSearchOptions {const Prompt43WebSearchOptions({this.prompt43WebSearchOptionsVariant1});
+
+factory Prompt43WebSearchOptions.fromJson(Map<String, dynamic> json) { return Prompt43WebSearchOptions(
+  prompt43WebSearchOptionsVariant1: Prompt43WebSearchOptionsVariant1.canParse(json) ? Prompt43WebSearchOptionsVariant1.fromJson(json) : null,
+); }
+
+final Prompt43WebSearchOptionsVariant1? prompt43WebSearchOptionsVariant1;
+
+/// At least one variant must be present.
+bool get isValid { return prompt43WebSearchOptionsVariant1 != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?prompt43WebSearchOptionsVariant1?.toJson(),
+}; } 
+ }

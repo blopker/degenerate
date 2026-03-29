@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod.fromJson(String json) { return switch (json) {
+  'manual' => manual,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod manual = PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod._('manual');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod> values = [manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsBillie {const PostCheckoutSessionsRequestPaymentMethodOptionsBillie({this.captureMethod});
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsBillie.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsBillie(
+  captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod.fromJson(json['capture_method'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod? captureMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsBillie copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsBillieCaptureMethod Function()? captureMethod}) { return PostCheckoutSessionsRequestPaymentMethodOptionsBillie(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsBillie &&
+          captureMethod == other.captureMethod; } 
+@override int get hashCode { return captureMethod.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsBillie(captureMethod: $captureMethod)'; } 
+ }

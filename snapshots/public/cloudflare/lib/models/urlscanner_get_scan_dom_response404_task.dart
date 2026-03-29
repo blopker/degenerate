@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerGetScanDomResponse404Task {const UrlscannerGetScanDomResponse404Task({required this.status, required this.time, required this.url, required this.uuid, required this.visibility, });
+
+factory UrlscannerGetScanDomResponse404Task.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanDomResponse404Task(
+  status: json['status'] as String,
+  time: json['time'] as String,
+  url: json['url'] as String,
+  uuid: json['uuid'] as String,
+  visibility: json['visibility'] as String,
+); }
+
+final String status;
+
+final String time;
+
+final String url;
+
+final String uuid;
+
+final String visibility;
+
+Map<String, dynamic> toJson() { return {
+  'status': status,
+  'time': time,
+  'url': url,
+  'uuid': uuid,
+  'visibility': visibility,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('time') && json['time'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('uuid') && json['uuid'] is String &&
+      json.containsKey('visibility') && json['visibility'] is String; } 
+UrlscannerGetScanDomResponse404Task copyWith({String? status, String? time, String? url, String? uuid, String? visibility, }) { return UrlscannerGetScanDomResponse404Task(
+  status: status ?? this.status,
+  time: time ?? this.time,
+  url: url ?? this.url,
+  uuid: uuid ?? this.uuid,
+  visibility: visibility ?? this.visibility,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanDomResponse404Task &&
+          status == other.status &&
+          time == other.time &&
+          url == other.url &&
+          uuid == other.uuid &&
+          visibility == other.visibility; } 
+@override int get hashCode { return Object.hash(status, time, url, uuid, visibility); } 
+@override String toString() { return 'UrlscannerGetScanDomResponse404Task(status: $status, time: $time, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+ }

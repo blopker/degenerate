@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SecretsStoreListOrder {const SecretsStoreListOrder._(this.value);
+
+factory SecretsStoreListOrder.fromJson(String json) { return switch (json) {
+  'name' => $name,
+  'comment' => comment,
+  'created' => created,
+  'modified' => modified,
+  'status' => status,
+  _ => SecretsStoreListOrder._(json),
+}; }
+
+static const SecretsStoreListOrder $name = SecretsStoreListOrder._('name');
+
+static const SecretsStoreListOrder comment = SecretsStoreListOrder._('comment');
+
+static const SecretsStoreListOrder created = SecretsStoreListOrder._('created');
+
+static const SecretsStoreListOrder modified = SecretsStoreListOrder._('modified');
+
+static const SecretsStoreListOrder status = SecretsStoreListOrder._('status');
+
+static const List<SecretsStoreListOrder> values = [$name, comment, created, modified, status];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretsStoreListOrder && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecretsStoreListOrder($value)'; } 
+ }

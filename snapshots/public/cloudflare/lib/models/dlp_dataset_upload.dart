@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dlp_dataset_upload_status.dart';final class DlpDatasetUpload {const DlpDatasetUpload({required this.numCells, required this.status, required this.version, });
+
+factory DlpDatasetUpload.fromJson(Map<String, dynamic> json) { return DlpDatasetUpload(
+  numCells: (json['num_cells'] as num).toInt(),
+  status: DlpDatasetUploadStatus.fromJson(json['status'] as String),
+  version: (json['version'] as num).toInt(),
+); }
+
+final int numCells;
+
+final DlpDatasetUploadStatus status;
+
+final int version;
+
+Map<String, dynamic> toJson() { return {
+  'num_cells': numCells,
+  'status': status.toJson(),
+  'version': version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('num_cells') && json['num_cells'] is num &&
+      json.containsKey('status') &&
+      json.containsKey('version') && json['version'] is num; } 
+DlpDatasetUpload copyWith({int? numCells, DlpDatasetUploadStatus? status, int? version, }) { return DlpDatasetUpload(
+  numCells: numCells ?? this.numCells,
+  status: status ?? this.status,
+  version: version ?? this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpDatasetUpload &&
+          numCells == other.numCells &&
+          status == other.status &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(numCells, status, version); } 
+@override String toString() { return 'DlpDatasetUpload(numCells: $numCells, status: $status, version: $version)'; } 
+ }

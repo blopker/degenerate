@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The field's data type.
+final class ProjectsAddFieldForUserRequestVariant1DataType {const ProjectsAddFieldForUserRequestVariant1DataType._(this.value);
+
+factory ProjectsAddFieldForUserRequestVariant1DataType.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'number' => number,
+  'date' => date,
+  _ => ProjectsAddFieldForUserRequestVariant1DataType._(json),
+}; }
+
+static const ProjectsAddFieldForUserRequestVariant1DataType text = ProjectsAddFieldForUserRequestVariant1DataType._('text');
+
+static const ProjectsAddFieldForUserRequestVariant1DataType number = ProjectsAddFieldForUserRequestVariant1DataType._('number');
+
+static const ProjectsAddFieldForUserRequestVariant1DataType date = ProjectsAddFieldForUserRequestVariant1DataType._('date');
+
+static const List<ProjectsAddFieldForUserRequestVariant1DataType> values = [text, number, date];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ProjectsAddFieldForUserRequestVariant1DataType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ProjectsAddFieldForUserRequestVariant1DataType($value)'; } 
+ }
+final class ProjectsAddFieldForUserRequestVariant1 {const ProjectsAddFieldForUserRequestVariant1({required this.name, required this.dataType, });
+
+factory ProjectsAddFieldForUserRequestVariant1.fromJson(Map<String, dynamic> json) { return ProjectsAddFieldForUserRequestVariant1(
+  name: json['name'] as String,
+  dataType: ProjectsAddFieldForUserRequestVariant1DataType.fromJson(json['data_type'] as String),
+); }
+
+/// The name of the field.
+final String name;
+
+/// The field's data type.
+final ProjectsAddFieldForUserRequestVariant1DataType dataType;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'data_type': dataType.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('data_type'); } 
+ProjectsAddFieldForUserRequestVariant1 copyWith({String? name, ProjectsAddFieldForUserRequestVariant1DataType? dataType, }) { return ProjectsAddFieldForUserRequestVariant1(
+  name: name ?? this.name,
+  dataType: dataType ?? this.dataType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProjectsAddFieldForUserRequestVariant1 &&
+          name == other.name &&
+          dataType == other.dataType; } 
+@override int get hashCode { return Object.hash(name, dataType); } 
+@override String toString() { return 'ProjectsAddFieldForUserRequestVariant1(name: $name, dataType: $dataType)'; } 
+ }

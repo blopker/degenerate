@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'simple_user.dart';/// Stargazer
+final class Stargazer {const Stargazer({required this.starredAt, required this.user, });
+
+factory Stargazer.fromJson(Map<String, dynamic> json) { return Stargazer(
+  starredAt: DateTime.parse(json['starred_at'] as String),
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+final DateTime starredAt;
+
+final SimpleUser? user;
+
+Map<String, dynamic> toJson() { return {
+  'starred_at': starredAt.toIso8601String(),
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('starred_at') && json['starred_at'] is String &&
+      json.containsKey('user'); } 
+Stargazer copyWith({DateTime? starredAt, SimpleUser? Function()? user, }) { return Stargazer(
+  starredAt: starredAt ?? this.starredAt,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Stargazer &&
+          starredAt == other.starredAt &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(starredAt, user); } 
+@override String toString() { return 'Stargazer(starredAt: $starredAt, user: $user)'; } 
+ }

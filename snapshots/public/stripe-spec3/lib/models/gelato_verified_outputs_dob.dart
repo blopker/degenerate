@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'gelato_data_verified_outputs_date.dart';/// The user’s verified date of birth.
+final class GelatoVerifiedOutputsDob {const GelatoVerifiedOutputsDob({this.gelatoDataVerifiedOutputsDate});
+
+factory GelatoVerifiedOutputsDob.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputsDob(
+  gelatoDataVerifiedOutputsDate: GelatoDataVerifiedOutputsDate.canParse(json) ? GelatoDataVerifiedOutputsDate.fromJson(json) : null,
+); }
+
+final GelatoDataVerifiedOutputsDate? gelatoDataVerifiedOutputsDate;
+
+/// At least one variant must be present.
+bool get isValid { return gelatoDataVerifiedOutputsDate != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?gelatoDataVerifiedOutputsDate?.toJson(),
+}; } 
+ }

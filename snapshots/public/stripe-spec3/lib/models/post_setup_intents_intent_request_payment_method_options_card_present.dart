@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent {const PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent();
+
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent copyWith() { return PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsCardPresent()'; } 
+ }

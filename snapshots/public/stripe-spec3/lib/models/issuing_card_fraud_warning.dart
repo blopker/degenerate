@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
+final class IssuingCardFraudWarningType {const IssuingCardFraudWarningType._(this.value);
+
+factory IssuingCardFraudWarningType.fromJson(String json) { return switch (json) {
+  'card_testing_exposure' => cardTestingExposure,
+  'fraud_dispute_filed' => fraudDisputeFiled,
+  'third_party_reported' => thirdPartyReported,
+  'user_indicated_fraud' => userIndicatedFraud,
+  _ => IssuingCardFraudWarningType._(json),
+}; }
+
+static const IssuingCardFraudWarningType cardTestingExposure = IssuingCardFraudWarningType._('card_testing_exposure');
+
+static const IssuingCardFraudWarningType fraudDisputeFiled = IssuingCardFraudWarningType._('fraud_dispute_filed');
+
+static const IssuingCardFraudWarningType thirdPartyReported = IssuingCardFraudWarningType._('third_party_reported');
+
+static const IssuingCardFraudWarningType userIndicatedFraud = IssuingCardFraudWarningType._('user_indicated_fraud');
+
+static const List<IssuingCardFraudWarningType> values = [cardTestingExposure, fraudDisputeFiled, thirdPartyReported, userIndicatedFraud];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingCardFraudWarningType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingCardFraudWarningType($value)'; } 
+ }
+/// 
+final class IssuingCardFraudWarning {const IssuingCardFraudWarning({this.startedAt, this.type, });
+
+factory IssuingCardFraudWarning.fromJson(Map<String, dynamic> json) { return IssuingCardFraudWarning(
+  startedAt: json['started_at'] != null ? (json['started_at'] as num).toInt() : null,
+  type: json['type'] != null ? IssuingCardFraudWarningType.fromJson(json['type'] as String) : null,
+); }
+
+/// Timestamp of the most recent fraud warning.
+final int? startedAt;
+
+/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
+final IssuingCardFraudWarningType? type;
+
+Map<String, dynamic> toJson() { return {
+  'started_at': ?startedAt,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuingCardFraudWarning copyWith({int? Function()? startedAt, IssuingCardFraudWarningType? Function()? type, }) { return IssuingCardFraudWarning(
+  startedAt: startedAt != null ? startedAt() : this.startedAt,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingCardFraudWarning &&
+          startedAt == other.startedAt &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(startedAt, type); } 
+@override String toString() { return 'IssuingCardFraudWarning(startedAt: $startedAt, type: $type)'; } 
+ }

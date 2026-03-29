@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay();
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay copyWith() { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAmazonPay()'; } 
+ }

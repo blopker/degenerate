@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'cloud_connector_rule_parameters.dart';/// Cloud Provider type
+final class CloudConnectorProvider {const CloudConnectorProvider._(this.value);
+
+factory CloudConnectorProvider.fromJson(String json) { return switch (json) {
+  'aws_s3' => awsS3,
+  'cloudflare_r2' => cloudflareR2,
+  'gcp_storage' => gcpStorage,
+  'azure_storage' => azureStorage,
+  _ => CloudConnectorProvider._(json),
+}; }
+
+static const CloudConnectorProvider awsS3 = CloudConnectorProvider._('aws_s3');
+
+static const CloudConnectorProvider cloudflareR2 = CloudConnectorProvider._('cloudflare_r2');
+
+static const CloudConnectorProvider gcpStorage = CloudConnectorProvider._('gcp_storage');
+
+static const CloudConnectorProvider azureStorage = CloudConnectorProvider._('azure_storage');
+
+static const List<CloudConnectorProvider> values = [awsS3, cloudflareR2, gcpStorage, azureStorage];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CloudConnectorProvider && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CloudConnectorProvider($value)'; } 
+ }
+final class CloudConnectorRule {const CloudConnectorRule({this.description, this.enabled, this.expression, this.id, this.parameters, this.provider, });
+
+factory CloudConnectorRule.fromJson(Map<String, dynamic> json) { return CloudConnectorRule(
+  description: json['description'] as String?,
+  enabled: json['enabled'] as bool?,
+  expression: json['expression'] as String?,
+  id: json['id'] as String?,
+  parameters: json['parameters'] != null ? CloudConnectorRuleParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+  provider: json['provider'] != null ? CloudConnectorProvider.fromJson(json['provider'] as String) : null,
+); }
+
+final String? description;
+
+final bool? enabled;
+
+final String? expression;
+
+final String? id;
+
+/// Parameters of Cloud Connector Rule
+final CloudConnectorRuleParameters? parameters;
+
+/// Cloud Provider type
+final CloudConnectorProvider? provider;
+
+Map<String, dynamic> toJson() { return {
+  'description': ?description,
+  'enabled': ?enabled,
+  'expression': ?expression,
+  'id': ?id,
+  if (parameters != null) 'parameters': parameters?.toJson(),
+  if (provider != null) 'provider': provider?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CloudConnectorRule copyWith({String Function()? description, bool Function()? enabled, String Function()? expression, String Function()? id, CloudConnectorRuleParameters Function()? parameters, CloudConnectorProvider Function()? provider, }) { return CloudConnectorRule(
+  description: description != null ? description() : this.description,
+  enabled: enabled != null ? enabled() : this.enabled,
+  expression: expression != null ? expression() : this.expression,
+  id: id != null ? id() : this.id,
+  parameters: parameters != null ? parameters() : this.parameters,
+  provider: provider != null ? provider() : this.provider,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudConnectorRule &&
+          description == other.description &&
+          enabled == other.enabled &&
+          expression == other.expression &&
+          id == other.id &&
+          parameters == other.parameters &&
+          provider == other.provider; } 
+@override int get hashCode { return Object.hash(description, enabled, expression, id, parameters, provider); } 
+@override String toString() { return 'CloudConnectorRule(description: $description, enabled: $enabled, expression: $expression, id: $id, parameters: $parameters, provider: $provider)'; } 
+ }

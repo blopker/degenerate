@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'nsc_slot_info.dart';final class NscSlotList {const NscSlotList({required this.items, this.next, });
+
+factory NscSlotList.fromJson(Map<String, dynamic> json) { return NscSlotList(
+  items: (json['items'] as List<dynamic>).map((e) => NscSlotInfo.fromJson(e as Map<String, dynamic>)).toList(),
+  next: json['next'] != null ? (json['next'] as num).toInt() : null,
+); }
+
+final List<NscSlotInfo> items;
+
+final int? next;
+
+Map<String, dynamic> toJson() { return {
+  'items': items.map((e) => e.toJson()).toList(),
+  'next': ?next,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
+NscSlotList copyWith({List<NscSlotInfo>? items, int? Function()? next, }) { return NscSlotList(
+  items: items ?? this.items,
+  next: next != null ? next() : this.next,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NscSlotList &&
+          listEquals(items, other.items) &&
+          next == other.next; } 
+@override int get hashCode { return Object.hash(Object.hashAll(items), next); } 
+@override String toString() { return 'NscSlotList(items: $items, next: $next)'; } 
+ }

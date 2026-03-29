@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullsListDirection {const PullsListDirection._(this.value);
+
+factory PullsListDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => PullsListDirection._(json),
+}; }
+
+static const PullsListDirection asc = PullsListDirection._('asc');
+
+static const PullsListDirection desc = PullsListDirection._('desc');
+
+static const List<PullsListDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PullsListDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PullsListDirection($value)'; } 
+ }

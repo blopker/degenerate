@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsAs112TimeseriesByDnssecResponseCode {const RadarGetDnsAs112TimeseriesByDnssecResponseCode._(this.value);
+
+factory RadarGetDnsAs112TimeseriesByDnssecResponseCode.fromJson(String json) { return switch (json) {
+  'NOERROR' => noerror,
+  'FORMERR' => formerr,
+  'SERVFAIL' => servfail,
+  'NXDOMAIN' => nxdomain,
+  'NOTIMP' => notimp,
+  'REFUSED' => refused,
+  'YXDOMAIN' => yxdomain,
+  'YXRRSET' => yxrrset,
+  'NXRRSET' => nxrrset,
+  'NOTAUTH' => notauth,
+  'NOTZONE' => notzone,
+  'BADSIG' => badsig,
+  'BADKEY' => badkey,
+  'BADTIME' => badtime,
+  'BADMODE' => badmode,
+  'BADNAME' => badname,
+  'BADALG' => badalg,
+  'BADTRUNC' => badtrunc,
+  'BADCOOKIE' => badcookie,
+  _ => RadarGetDnsAs112TimeseriesByDnssecResponseCode._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode noerror = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('NOERROR');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode formerr = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('FORMERR');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode servfail = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('SERVFAIL');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode nxdomain = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('NXDOMAIN');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode notimp = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('NOTIMP');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode refused = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('REFUSED');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode yxdomain = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('YXDOMAIN');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode yxrrset = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('YXRRSET');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode nxrrset = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('NXRRSET');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode notauth = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('NOTAUTH');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode notzone = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('NOTZONE');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badsig = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADSIG');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badkey = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADKEY');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badtime = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADTIME');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badmode = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADMODE');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badname = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADNAME');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badalg = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADALG');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badtrunc = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADTRUNC');
+
+static const RadarGetDnsAs112TimeseriesByDnssecResponseCode badcookie = RadarGetDnsAs112TimeseriesByDnssecResponseCode._('BADCOOKIE');
+
+static const List<RadarGetDnsAs112TimeseriesByDnssecResponseCode> values = [noerror, formerr, servfail, nxdomain, notimp, refused, yxdomain, yxrrset, nxrrset, notauth, notzone, badsig, badkey, badtime, badmode, badname, badalg, badtrunc, badcookie];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesByDnssecResponseCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesByDnssecResponseCode($value)'; } 
+ }

@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AutoragConfigListJobLogsResponseResult {const AutoragConfigListJobLogsResponseResult({required this.createdAt, required this.id, required this.message, required this.messageType, });
+
+factory AutoragConfigListJobLogsResponseResult.fromJson(Map<String, dynamic> json) { return AutoragConfigListJobLogsResponseResult(
+  createdAt: (json['created_at'] as num).toDouble(),
+  id: (json['id'] as num).toInt(),
+  message: json['message'] as String,
+  messageType: (json['message_type'] as num).toInt(),
+); }
+
+final double createdAt;
+
+final int id;
+
+final String message;
+
+final int messageType;
+
+Map<String, dynamic> toJson() { return {
+  'created_at': createdAt,
+  'id': id,
+  'message': message,
+  'message_type': messageType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('message') && json['message'] is String &&
+      json.containsKey('message_type') && json['message_type'] is num; } 
+AutoragConfigListJobLogsResponseResult copyWith({double? createdAt, int? id, String? message, int? messageType, }) { return AutoragConfigListJobLogsResponseResult(
+  createdAt: createdAt ?? this.createdAt,
+  id: id ?? this.id,
+  message: message ?? this.message,
+  messageType: messageType ?? this.messageType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AutoragConfigListJobLogsResponseResult &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          message == other.message &&
+          messageType == other.messageType; } 
+@override int get hashCode { return Object.hash(createdAt, id, message, messageType); } 
+@override String toString() { return 'AutoragConfigListJobLogsResponseResult(createdAt: $createdAt, id: $id, message: $message, messageType: $messageType)'; } 
+ }

@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'collaborator.dart';/// Repository Collaborator Permission
+final class RepositoryCollaboratorPermission {const RepositoryCollaboratorPermission({required this.permission, required this.roleName, required this.user, });
+
+factory RepositoryCollaboratorPermission.fromJson(Map<String, dynamic> json) { return RepositoryCollaboratorPermission(
+  permission: json['permission'] as String,
+  roleName: json['role_name'] as String,
+  user: json['user'] != null ? Collaborator.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+final String permission;
+
+final String roleName;
+
+final Collaborator? user;
+
+Map<String, dynamic> toJson() { return {
+  'permission': permission,
+  'role_name': roleName,
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('permission') && json['permission'] is String &&
+      json.containsKey('role_name') && json['role_name'] is String &&
+      json.containsKey('user'); } 
+RepositoryCollaboratorPermission copyWith({String? permission, String? roleName, Collaborator? Function()? user, }) { return RepositoryCollaboratorPermission(
+  permission: permission ?? this.permission,
+  roleName: roleName ?? this.roleName,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryCollaboratorPermission &&
+          permission == other.permission &&
+          roleName == other.roleName &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(permission, roleName, user); } 
+@override String toString() { return 'RepositoryCollaboratorPermission(permission: $permission, roleName: $roleName, user: $user)'; } 
+ }

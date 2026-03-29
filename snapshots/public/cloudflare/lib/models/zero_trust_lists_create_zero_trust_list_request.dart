@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_description.dart';import 'zero_trust_gateway_items_input2.dart';import 'zero_trust_gateway_name.dart';import 'zero_trust_gateway_schemas_type.dart';final class ZeroTrustListsCreateZeroTrustListRequest {const ZeroTrustListsCreateZeroTrustListRequest({this.description, this.items, required this.name, required this.type, });
+
+factory ZeroTrustListsCreateZeroTrustListRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustListsCreateZeroTrustListRequest(
+  description: json['description'] != null ? ZeroTrustGatewayDescription.fromJson(json['description'] as String) : null,
+  items: (json['items'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayItemsInput2.fromJson(e as Map<String, dynamic>)).toList(),
+  name: ZeroTrustGatewayName.fromJson(json['name'] as String),
+  type: ZeroTrustGatewaySchemasType.fromJson(json['type'] as String),
+); }
+
+/// Provide the list description.
+final ZeroTrustGatewayDescription? description;
+
+/// Add items to the list.
+final List<ZeroTrustGatewayItemsInput2>? items;
+
+/// Specify the list name.
+final ZeroTrustGatewayName name;
+
+/// Specify the list type.
+final ZeroTrustGatewaySchemasType type;
+
+Map<String, dynamic> toJson() { return {
+  if (description != null) 'description': description?.toJson(),
+  if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
+  'name': name.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+      json.containsKey('type'); } 
+ZeroTrustListsCreateZeroTrustListRequest copyWith({ZeroTrustGatewayDescription Function()? description, List<ZeroTrustGatewayItemsInput2> Function()? items, ZeroTrustGatewayName? name, ZeroTrustGatewaySchemasType? type, }) { return ZeroTrustListsCreateZeroTrustListRequest(
+  description: description != null ? description() : this.description,
+  items: items != null ? items() : this.items,
+  name: name ?? this.name,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustListsCreateZeroTrustListRequest &&
+          description == other.description &&
+          listEquals(items, other.items) &&
+          name == other.name &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(description, Object.hashAll(items ?? const []), name, type); } 
+@override String toString() { return 'ZeroTrustListsCreateZeroTrustListRequest(description: $description, items: $items, name: $name, type: $type)'; } 
+ }

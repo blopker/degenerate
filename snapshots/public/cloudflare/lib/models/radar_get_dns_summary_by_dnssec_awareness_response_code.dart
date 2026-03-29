@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByDnssecAwarenessResponseCode {const RadarGetDnsSummaryByDnssecAwarenessResponseCode._(this.value);
+
+factory RadarGetDnsSummaryByDnssecAwarenessResponseCode.fromJson(String json) { return switch (json) {
+  'NOERROR' => noerror,
+  'FORMERR' => formerr,
+  'SERVFAIL' => servfail,
+  'NXDOMAIN' => nxdomain,
+  'NOTIMP' => notimp,
+  'REFUSED' => refused,
+  'YXDOMAIN' => yxdomain,
+  'YXRRSET' => yxrrset,
+  'NXRRSET' => nxrrset,
+  'NOTAUTH' => notauth,
+  'NOTZONE' => notzone,
+  'BADSIG' => badsig,
+  'BADKEY' => badkey,
+  'BADTIME' => badtime,
+  'BADMODE' => badmode,
+  'BADNAME' => badname,
+  'BADALG' => badalg,
+  'BADTRUNC' => badtrunc,
+  'BADCOOKIE' => badcookie,
+  _ => RadarGetDnsSummaryByDnssecAwarenessResponseCode._(json),
+}; }
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode noerror = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NOERROR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode formerr = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('FORMERR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode servfail = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('SERVFAIL');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode nxdomain = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NXDOMAIN');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode notimp = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NOTIMP');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode refused = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('REFUSED');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode yxdomain = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('YXDOMAIN');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode yxrrset = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('YXRRSET');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode nxrrset = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NXRRSET');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode notauth = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NOTAUTH');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode notzone = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('NOTZONE');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badsig = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADSIG');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badkey = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badtime = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADTIME');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badmode = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADMODE');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badname = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADNAME');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badalg = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADALG');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badtrunc = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADTRUNC');
+
+static const RadarGetDnsSummaryByDnssecAwarenessResponseCode badcookie = RadarGetDnsSummaryByDnssecAwarenessResponseCode._('BADCOOKIE');
+
+static const List<RadarGetDnsSummaryByDnssecAwarenessResponseCode> values = [noerror, formerr, servfail, nxdomain, notimp, refused, yxdomain, yxrrset, nxrrset, notauth, notzone, badsig, badkey, badtime, badmode, badname, badalg, badtrunc, badcookie];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecAwarenessResponseCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByDnssecAwarenessResponseCode($value)'; } 
+ }

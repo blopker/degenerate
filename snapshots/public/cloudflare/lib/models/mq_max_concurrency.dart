@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Maximum number of concurrent consumers that may consume from this Queue. Set to `null` to automatically opt in to the platform's maximum (recommended).
+extension type const MqMaxConcurrency(double value) {
+factory MqMaxConcurrency.fromJson(num json) => MqMaxConcurrency(json.toDouble());
+
+num toJson() => value;
+
+}

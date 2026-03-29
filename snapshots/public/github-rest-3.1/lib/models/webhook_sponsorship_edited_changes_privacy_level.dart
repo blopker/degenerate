@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookSponsorshipEditedChangesPrivacyLevel {const WebhookSponsorshipEditedChangesPrivacyLevel({required this.from});
+
+factory WebhookSponsorshipEditedChangesPrivacyLevel.fromJson(Map<String, dynamic> json) { return WebhookSponsorshipEditedChangesPrivacyLevel(
+  from: json['from'] as String,
+); }
+
+/// The `edited` event types include the details about the change when someone edits a sponsorship to change the privacy.
+final String from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+WebhookSponsorshipEditedChangesPrivacyLevel copyWith({String? from}) { return WebhookSponsorshipEditedChangesPrivacyLevel(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookSponsorshipEditedChangesPrivacyLevel &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookSponsorshipEditedChangesPrivacyLevel(from: $from)'; } 
+ }

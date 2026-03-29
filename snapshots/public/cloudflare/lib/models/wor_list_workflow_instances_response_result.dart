@@ -1,0 +1,114 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorListWorkflowInstancesResponseResultStatus {const WorListWorkflowInstancesResponseResultStatus._(this.value);
+
+factory WorListWorkflowInstancesResponseResultStatus.fromJson(String json) { return switch (json) {
+  'queued' => queued,
+  'running' => running,
+  'paused' => paused,
+  'errored' => errored,
+  'terminated' => terminated,
+  'complete' => complete,
+  'waitingForPause' => waitingForPause,
+  'waiting' => waiting,
+  _ => WorListWorkflowInstancesResponseResultStatus._(json),
+}; }
+
+static const WorListWorkflowInstancesResponseResultStatus queued = WorListWorkflowInstancesResponseResultStatus._('queued');
+
+static const WorListWorkflowInstancesResponseResultStatus running = WorListWorkflowInstancesResponseResultStatus._('running');
+
+static const WorListWorkflowInstancesResponseResultStatus paused = WorListWorkflowInstancesResponseResultStatus._('paused');
+
+static const WorListWorkflowInstancesResponseResultStatus errored = WorListWorkflowInstancesResponseResultStatus._('errored');
+
+static const WorListWorkflowInstancesResponseResultStatus terminated = WorListWorkflowInstancesResponseResultStatus._('terminated');
+
+static const WorListWorkflowInstancesResponseResultStatus complete = WorListWorkflowInstancesResponseResultStatus._('complete');
+
+static const WorListWorkflowInstancesResponseResultStatus waitingForPause = WorListWorkflowInstancesResponseResultStatus._('waitingForPause');
+
+static const WorListWorkflowInstancesResponseResultStatus waiting = WorListWorkflowInstancesResponseResultStatus._('waiting');
+
+static const List<WorListWorkflowInstancesResponseResultStatus> values = [queued, running, paused, errored, terminated, complete, waitingForPause, waiting];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorListWorkflowInstancesResponseResultStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorListWorkflowInstancesResponseResultStatus($value)'; } 
+ }
+final class WorListWorkflowInstancesResponseResult {const WorListWorkflowInstancesResponseResult({required this.createdOn, required this.endedOn, required this.id, required this.modifiedOn, required this.startedOn, required this.status, required this.versionId, required this.workflowId, });
+
+factory WorListWorkflowInstancesResponseResult.fromJson(Map<String, dynamic> json) { return WorListWorkflowInstancesResponseResult(
+  createdOn: DateTime.parse(json['created_on'] as String),
+  endedOn: json['ended_on'] != null ? DateTime.parse(json['ended_on'] as String) : null,
+  id: json['id'] as String,
+  modifiedOn: DateTime.parse(json['modified_on'] as String),
+  startedOn: json['started_on'] != null ? DateTime.parse(json['started_on'] as String) : null,
+  status: WorListWorkflowInstancesResponseResultStatus.fromJson(json['status'] as String),
+  versionId: json['version_id'] as String,
+  workflowId: json['workflow_id'] as String,
+); }
+
+final DateTime createdOn;
+
+final DateTime? endedOn;
+
+final String id;
+
+final DateTime modifiedOn;
+
+final DateTime? startedOn;
+
+final WorListWorkflowInstancesResponseResultStatus status;
+
+final String versionId;
+
+final String workflowId;
+
+Map<String, dynamic> toJson() { return {
+  'created_on': createdOn.toIso8601String(),
+  if (endedOn != null) 'ended_on': endedOn?.toIso8601String(),
+  'id': id,
+  'modified_on': modifiedOn.toIso8601String(),
+  if (startedOn != null) 'started_on': startedOn?.toIso8601String(),
+  'status': status.toJson(),
+  'version_id': versionId,
+  'workflow_id': workflowId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+      json.containsKey('ended_on') && json['ended_on'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('modified_on') && json['modified_on'] is String &&
+      json.containsKey('started_on') && json['started_on'] is String &&
+      json.containsKey('status') &&
+      json.containsKey('version_id') && json['version_id'] is String &&
+      json.containsKey('workflow_id') && json['workflow_id'] is String; } 
+WorListWorkflowInstancesResponseResult copyWith({DateTime? createdOn, DateTime? Function()? endedOn, String? id, DateTime? modifiedOn, DateTime? Function()? startedOn, WorListWorkflowInstancesResponseResultStatus? status, String? versionId, String? workflowId, }) { return WorListWorkflowInstancesResponseResult(
+  createdOn: createdOn ?? this.createdOn,
+  endedOn: endedOn != null ? endedOn() : this.endedOn,
+  id: id ?? this.id,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
+  startedOn: startedOn != null ? startedOn() : this.startedOn,
+  status: status ?? this.status,
+  versionId: versionId ?? this.versionId,
+  workflowId: workflowId ?? this.workflowId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorListWorkflowInstancesResponseResult &&
+          createdOn == other.createdOn &&
+          endedOn == other.endedOn &&
+          id == other.id &&
+          modifiedOn == other.modifiedOn &&
+          startedOn == other.startedOn &&
+          status == other.status &&
+          versionId == other.versionId &&
+          workflowId == other.workflowId; } 
+@override int get hashCode { return Object.hash(createdOn, endedOn, id, modifiedOn, startedOn, status, versionId, workflowId); } 
+@override String toString() { return 'WorListWorkflowInstancesResponseResult(createdOn: $createdOn, endedOn: $endedOn, id: $id, modifiedOn: $modifiedOn, startedOn: $startedOn, status: $status, versionId: $versionId, workflowId: $workflowId)'; } 
+ }

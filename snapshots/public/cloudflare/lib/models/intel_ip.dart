@@ -1,0 +1,15 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const IntelIpv4(String value) {
+factory IntelIpv4.fromJson(String json) => IntelIpv4(json);
+
+String toJson() => value;
+
+}
+extension type const IntelIpv6(String value) {
+factory IntelIpv6.fromJson(String json) => IntelIpv6(json);
+
+String toJson() => value;
+
+}
+typedef IntelIp = OneOf2<IntelIpv4,IntelIpv6>;

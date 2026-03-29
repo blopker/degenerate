@@ -1,0 +1,187 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'code_scanning_variant_analysis_scanned_repositories.dart';import 'code_scanning_variant_analysis_skipped_repositories.dart';import 'code_scanning_variant_analysis_status.dart';import 'simple_repository.dart';import 'simple_user.dart';/// The language targeted by the CodeQL query
+final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
+
+factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
+  'actions' => actions,
+  'cpp' => cpp,
+  'csharp' => csharp,
+  'go' => go,
+  'java' => java,
+  'javascript' => javascript,
+  'python' => python,
+  'ruby' => ruby,
+  'rust' => rust,
+  'swift' => swift,
+  _ => CodeScanningVariantAnalysisLanguage._(json),
+}; }
+
+static const CodeScanningVariantAnalysisLanguage actions = CodeScanningVariantAnalysisLanguage._('actions');
+
+static const CodeScanningVariantAnalysisLanguage cpp = CodeScanningVariantAnalysisLanguage._('cpp');
+
+static const CodeScanningVariantAnalysisLanguage csharp = CodeScanningVariantAnalysisLanguage._('csharp');
+
+static const CodeScanningVariantAnalysisLanguage go = CodeScanningVariantAnalysisLanguage._('go');
+
+static const CodeScanningVariantAnalysisLanguage java = CodeScanningVariantAnalysisLanguage._('java');
+
+static const CodeScanningVariantAnalysisLanguage javascript = CodeScanningVariantAnalysisLanguage._('javascript');
+
+static const CodeScanningVariantAnalysisLanguage python = CodeScanningVariantAnalysisLanguage._('python');
+
+static const CodeScanningVariantAnalysisLanguage ruby = CodeScanningVariantAnalysisLanguage._('ruby');
+
+static const CodeScanningVariantAnalysisLanguage rust = CodeScanningVariantAnalysisLanguage._('rust');
+
+static const CodeScanningVariantAnalysisLanguage swift = CodeScanningVariantAnalysisLanguage._('swift');
+
+static const List<CodeScanningVariantAnalysisLanguage> values = [actions, cpp, csharp, go, java, javascript, python, ruby, rust, swift];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningVariantAnalysisLanguage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningVariantAnalysisLanguage($value)'; } 
+ }
+/// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
+final class CodeScanningVariantAnalysisFailureReason {const CodeScanningVariantAnalysisFailureReason._(this.value);
+
+factory CodeScanningVariantAnalysisFailureReason.fromJson(String json) { return switch (json) {
+  'no_repos_queried' => noReposQueried,
+  'actions_workflow_run_failed' => actionsWorkflowRunFailed,
+  'internal_error' => internalError,
+  _ => CodeScanningVariantAnalysisFailureReason._(json),
+}; }
+
+static const CodeScanningVariantAnalysisFailureReason noReposQueried = CodeScanningVariantAnalysisFailureReason._('no_repos_queried');
+
+static const CodeScanningVariantAnalysisFailureReason actionsWorkflowRunFailed = CodeScanningVariantAnalysisFailureReason._('actions_workflow_run_failed');
+
+static const CodeScanningVariantAnalysisFailureReason internalError = CodeScanningVariantAnalysisFailureReason._('internal_error');
+
+static const List<CodeScanningVariantAnalysisFailureReason> values = [noReposQueried, actionsWorkflowRunFailed, internalError];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningVariantAnalysisFailureReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningVariantAnalysisFailureReason($value)'; } 
+ }
+/// A run of a CodeQL query against one or more repositories.
+final class CodeScanningVariantAnalysis {const CodeScanningVariantAnalysis({required this.id, required this.controllerRepo, required this.actor, required this.queryLanguage, required this.queryPackUrl, this.createdAt, this.updatedAt, this.completedAt, required this.status, this.actionsWorkflowRunId, this.failureReason, this.scannedRepositories, this.skippedRepositories, });
+
+factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return CodeScanningVariantAnalysis(
+  id: (json['id'] as num).toInt(),
+  controllerRepo: SimpleRepository.fromJson(json['controller_repo'] as Map<String, dynamic>),
+  actor: SimpleUser.fromJson(json['actor'] as Map<String, dynamic>),
+  queryLanguage: CodeScanningVariantAnalysisLanguage.fromJson(json['query_language'] as String),
+  queryPackUrl: json['query_pack_url'] as String,
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
+  status: CodeScanningVariantAnalysisStatus.fromJson(json['status'] as String),
+  actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
+  failureReason: json['failure_reason'] != null ? CodeScanningVariantAnalysisFailureReason.fromJson(json['failure_reason'] as String) : null,
+  scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => CodeScanningVariantAnalysisScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
+  skippedRepositories: json['skipped_repositories'] != null ? CodeScanningVariantAnalysisSkippedRepositories.fromJson(json['skipped_repositories'] as Map<String, dynamic>) : null,
+); }
+
+/// The ID of the variant analysis.
+final int id;
+
+final SimpleRepository controllerRepo;
+
+final SimpleUser actor;
+
+/// The language targeted by the CodeQL query
+final CodeScanningVariantAnalysisLanguage queryLanguage;
+
+/// The download url for the query pack.
+final String queryPackUrl;
+
+/// The date and time at which the variant analysis was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+final DateTime? createdAt;
+
+/// The date and time at which the variant analysis was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+final DateTime? updatedAt;
+
+/// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
+final DateTime? completedAt;
+
+final CodeScanningVariantAnalysisStatus status;
+
+/// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
+final int? actionsWorkflowRunId;
+
+/// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
+final CodeScanningVariantAnalysisFailureReason? failureReason;
+
+final List<CodeScanningVariantAnalysisScannedRepositories>? scannedRepositories;
+
+/// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
+final CodeScanningVariantAnalysisSkippedRepositories? skippedRepositories;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'controller_repo': controllerRepo.toJson(),
+  'actor': actor.toJson(),
+  'query_language': queryLanguage.toJson(),
+  'query_pack_url': queryPackUrl,
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  if (completedAt != null) 'completed_at': completedAt?.toIso8601String(),
+  'status': status.toJson(),
+  'actions_workflow_run_id': ?actionsWorkflowRunId,
+  if (failureReason != null) 'failure_reason': failureReason?.toJson(),
+  if (scannedRepositories != null) 'scanned_repositories': scannedRepositories?.map((e) => e.toJson()).toList(),
+  if (skippedRepositories != null) 'skipped_repositories': skippedRepositories?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('controller_repo') &&
+      json.containsKey('actor') &&
+      json.containsKey('query_language') &&
+      json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
+      json.containsKey('status'); } 
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime Function()? createdAt, DateTime Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int Function()? actionsWorkflowRunId, CodeScanningVariantAnalysisFailureReason Function()? failureReason, List<CodeScanningVariantAnalysisScannedRepositories> Function()? scannedRepositories, CodeScanningVariantAnalysisSkippedRepositories Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+  id: id ?? this.id,
+  controllerRepo: controllerRepo ?? this.controllerRepo,
+  actor: actor ?? this.actor,
+  queryLanguage: queryLanguage ?? this.queryLanguage,
+  queryPackUrl: queryPackUrl ?? this.queryPackUrl,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  status: status ?? this.status,
+  actionsWorkflowRunId: actionsWorkflowRunId != null ? actionsWorkflowRunId() : this.actionsWorkflowRunId,
+  failureReason: failureReason != null ? failureReason() : this.failureReason,
+  scannedRepositories: scannedRepositories != null ? scannedRepositories() : this.scannedRepositories,
+  skippedRepositories: skippedRepositories != null ? skippedRepositories() : this.skippedRepositories,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeScanningVariantAnalysis &&
+          id == other.id &&
+          controllerRepo == other.controllerRepo &&
+          actor == other.actor &&
+          queryLanguage == other.queryLanguage &&
+          queryPackUrl == other.queryPackUrl &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          completedAt == other.completedAt &&
+          status == other.status &&
+          actionsWorkflowRunId == other.actionsWorkflowRunId &&
+          failureReason == other.failureReason &&
+          listEquals(scannedRepositories, other.scannedRepositories) &&
+          skippedRepositories == other.skippedRepositories; } 
+@override int get hashCode { return Object.hash(id, controllerRepo, actor, queryLanguage, queryPackUrl, createdAt, updatedAt, completedAt, status, actionsWorkflowRunId, failureReason, Object.hashAll(scannedRepositories ?? const []), skippedRepositories); } 
+@override String toString() { return 'CodeScanningVariantAnalysis(id: $id, controllerRepo: $controllerRepo, actor: $actor, queryLanguage: $queryLanguage, queryPackUrl: $queryPackUrl, createdAt: $createdAt, updatedAt: $updatedAt, completedAt: $completedAt, status: $status, actionsWorkflowRunId: $actionsWorkflowRunId, failureReason: $failureReason, scannedRepositories: $scannedRepositories, skippedRepositories: $skippedRepositories)'; } 
+ }

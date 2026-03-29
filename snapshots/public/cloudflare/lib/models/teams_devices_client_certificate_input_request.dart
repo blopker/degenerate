@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TeamsDevicesClientCertificateInputRequest {const TeamsDevicesClientCertificateInputRequest({required this.certificateId, required this.cn, });
+
+factory TeamsDevicesClientCertificateInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesClientCertificateInputRequest(
+  certificateId: json['certificate_id'] as String,
+  cn: json['cn'] as String,
+); }
+
+/// UUID of Cloudflare managed certificate.
+final String certificateId;
+
+/// Common Name that is protected by the certificate.
+final String cn;
+
+Map<String, dynamic> toJson() { return {
+  'certificate_id': certificateId,
+  'cn': cn,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('certificate_id') && json['certificate_id'] is String &&
+      json.containsKey('cn') && json['cn'] is String; } 
+TeamsDevicesClientCertificateInputRequest copyWith({String? certificateId, String? cn, }) { return TeamsDevicesClientCertificateInputRequest(
+  certificateId: certificateId ?? this.certificateId,
+  cn: cn ?? this.cn,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesClientCertificateInputRequest &&
+          certificateId == other.certificateId &&
+          cn == other.cn; } 
+@override int get hashCode { return Object.hash(certificateId, cn); } 
+@override String toString() { return 'TeamsDevicesClientCertificateInputRequest(certificateId: $certificateId, cn: $cn)'; } 
+ }

@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage._(this.value);
+
+factory DestinationCreateResponse400ErrorsMessage.fromJson(String json) { return switch (json) {
+  'Bad Request' => badRequest,
+  _ => DestinationCreateResponse400ErrorsMessage._(json),
+}; }
+
+static const DestinationCreateResponse400ErrorsMessage badRequest = DestinationCreateResponse400ErrorsMessage._('Bad Request');
+
+static const List<DestinationCreateResponse400ErrorsMessage> values = [badRequest];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DestinationCreateResponse400ErrorsMessage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DestinationCreateResponse400ErrorsMessage($value)'; } 
+ }
+final class DestinationCreateResponse400Errors {const DestinationCreateResponse400Errors({this.detail, required this.message, });
+
+factory DestinationCreateResponse400Errors.fromJson(Map<String, dynamic> json) { return DestinationCreateResponse400Errors(
+  detail: json['detail'] as String?,
+  message: DestinationCreateResponse400ErrorsMessage.fromJson(json['message'] as String),
+); }
+
+final String? detail;
+
+final DestinationCreateResponse400ErrorsMessage message;
+
+Map<String, dynamic> toJson() { return {
+  'detail': ?detail,
+  'message': message.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
+DestinationCreateResponse400Errors copyWith({String Function()? detail, DestinationCreateResponse400ErrorsMessage? message, }) { return DestinationCreateResponse400Errors(
+  detail: detail != null ? detail() : this.detail,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DestinationCreateResponse400Errors &&
+          detail == other.detail &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(detail, message); } 
+@override String toString() { return 'DestinationCreateResponse400Errors(detail: $detail, message: $message)'; } 
+ }

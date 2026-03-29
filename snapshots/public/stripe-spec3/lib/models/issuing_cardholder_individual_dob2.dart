@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_cardholder_individual_dob.dart';/// The date of birth of this cardholder.
+final class IssuingCardholderIndividualDob2 {const IssuingCardholderIndividualDob2({this.issuingCardholderIndividualDob});
+
+factory IssuingCardholderIndividualDob2.fromJson(Map<String, dynamic> json) { return IssuingCardholderIndividualDob2(
+  issuingCardholderIndividualDob: IssuingCardholderIndividualDob.canParse(json) ? IssuingCardholderIndividualDob.fromJson(json) : null,
+); }
+
+final IssuingCardholderIndividualDob? issuingCardholderIndividualDob;
+
+/// At least one variant must be present.
+bool get isValid { return issuingCardholderIndividualDob != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingCardholderIndividualDob?.toJson(),
+}; } 
+ }

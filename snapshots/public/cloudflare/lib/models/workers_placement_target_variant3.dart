@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersPlacementTargetVariant3 {const WorkersPlacementTargetVariant3({required this.host});
+
+factory WorkersPlacementTargetVariant3.fromJson(Map<String, dynamic> json) { return WorkersPlacementTargetVariant3(
+  host: json['host'] as String,
+); }
+
+/// TCP host:port for targeted placement.
+final String host;
+
+Map<String, dynamic> toJson() { return {
+  'host': host,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('host') && json['host'] is String; } 
+WorkersPlacementTargetVariant3 copyWith({String? host}) { return WorkersPlacementTargetVariant3(
+  host: host ?? this.host,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersPlacementTargetVariant3 &&
+          host == other.host; } 
+@override int get hashCode { return host.hashCode; } 
+@override String toString() { return 'WorkersPlacementTargetVariant3(host: $host)'; } 
+ }

@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_balance_settings_request_payments.dart';final class PostBalanceSettingsRequest {const PostBalanceSettingsRequest({this.expand, this.payments, });
+
+factory PostBalanceSettingsRequest.fromJson(Map<String, dynamic> json) { return PostBalanceSettingsRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  payments: json['payments'] != null ? PostBalanceSettingsRequestPayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Settings that apply to the [Payments Balance](https://docs.stripe.com/api/balance).
+final PostBalanceSettingsRequestPayments? payments;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  if (payments != null) 'payments': payments?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostBalanceSettingsRequest copyWith({List<String> Function()? expand, PostBalanceSettingsRequestPayments Function()? payments, }) { return PostBalanceSettingsRequest(
+  expand: expand != null ? expand() : this.expand,
+  payments: payments != null ? payments() : this.payments,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBalanceSettingsRequest &&
+          listEquals(expand, other.expand) &&
+          payments == other.payments; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), payments); } 
+@override String toString() { return 'PostBalanceSettingsRequest(expand: $expand, payments: $payments)'; } 
+ }

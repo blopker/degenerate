@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// STIX 2.1 identifier: https://docs.oasis-open.org/cti/stix/v2.1/cs02/stix-v2.1-cs02.html#_64yvzeku5a5c.
+extension type const IntelStixIdentifier(String value) {
+factory IntelStixIdentifier.fromJson(String json) => IntelStixIdentifier(json);
+
+String toJson() => value;
+
+}
+final class IntelResolvesToRef {const IntelResolvesToRef({this.id, this.value, });
+
+factory IntelResolvesToRef.fromJson(Map<String, dynamic> json) { return IntelResolvesToRef(
+  id: json['id'] != null ? IntelStixIdentifier.fromJson(json['id'] as String) : null,
+  value: json['value'] as String?,
+); }
+
+final IntelStixIdentifier? id;
+
+/// IP address or domain name.
+final String? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelResolvesToRef copyWith({IntelStixIdentifier Function()? id, String Function()? value, }) { return IntelResolvesToRef(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelResolvesToRef &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'IntelResolvesToRef(id: $id, value: $value)'; } 
+ }

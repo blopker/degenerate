@@ -1,0 +1,110 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_files_request_file_link_data.dart';/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
+final class PostFilesRequestPurpose {const PostFilesRequestPurpose._(this.value);
+
+factory PostFilesRequestPurpose.fromJson(String json) { return switch (json) {
+  'account_requirement' => accountRequirement,
+  'additional_verification' => additionalVerification,
+  'business_icon' => businessIcon,
+  'business_logo' => businessLogo,
+  'customer_signature' => customerSignature,
+  'dispute_evidence' => disputeEvidence,
+  'identity_document' => identityDocument,
+  'issuing_regulatory_reporting' => issuingRegulatoryReporting,
+  'pci_document' => pciDocument,
+  'platform_terms_of_service' => platformTermsOfService,
+  'tax_document_user_upload' => taxDocumentUserUpload,
+  'terminal_android_apk' => terminalAndroidApk,
+  'terminal_reader_splashscreen' => terminalReaderSplashscreen,
+  'terminal_wifi_certificate' => terminalWifiCertificate,
+  'terminal_wifi_private_key' => terminalWifiPrivateKey,
+  _ => PostFilesRequestPurpose._(json),
+}; }
+
+static const PostFilesRequestPurpose accountRequirement = PostFilesRequestPurpose._('account_requirement');
+
+static const PostFilesRequestPurpose additionalVerification = PostFilesRequestPurpose._('additional_verification');
+
+static const PostFilesRequestPurpose businessIcon = PostFilesRequestPurpose._('business_icon');
+
+static const PostFilesRequestPurpose businessLogo = PostFilesRequestPurpose._('business_logo');
+
+static const PostFilesRequestPurpose customerSignature = PostFilesRequestPurpose._('customer_signature');
+
+static const PostFilesRequestPurpose disputeEvidence = PostFilesRequestPurpose._('dispute_evidence');
+
+static const PostFilesRequestPurpose identityDocument = PostFilesRequestPurpose._('identity_document');
+
+static const PostFilesRequestPurpose issuingRegulatoryReporting = PostFilesRequestPurpose._('issuing_regulatory_reporting');
+
+static const PostFilesRequestPurpose pciDocument = PostFilesRequestPurpose._('pci_document');
+
+static const PostFilesRequestPurpose platformTermsOfService = PostFilesRequestPurpose._('platform_terms_of_service');
+
+static const PostFilesRequestPurpose taxDocumentUserUpload = PostFilesRequestPurpose._('tax_document_user_upload');
+
+static const PostFilesRequestPurpose terminalAndroidApk = PostFilesRequestPurpose._('terminal_android_apk');
+
+static const PostFilesRequestPurpose terminalReaderSplashscreen = PostFilesRequestPurpose._('terminal_reader_splashscreen');
+
+static const PostFilesRequestPurpose terminalWifiCertificate = PostFilesRequestPurpose._('terminal_wifi_certificate');
+
+static const PostFilesRequestPurpose terminalWifiPrivateKey = PostFilesRequestPurpose._('terminal_wifi_private_key');
+
+static const List<PostFilesRequestPurpose> values = [accountRequirement, additionalVerification, businessIcon, businessLogo, customerSignature, disputeEvidence, identityDocument, issuingRegulatoryReporting, pciDocument, platformTermsOfService, taxDocumentUserUpload, terminalAndroidApk, terminalReaderSplashscreen, terminalWifiCertificate, terminalWifiPrivateKey];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostFilesRequestPurpose && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostFilesRequestPurpose($value)'; } 
+ }
+final class PostFilesRequest {const PostFilesRequest({this.expand, required this.file, this.fileLinkData, required this.purpose, });
+
+factory PostFilesRequest.fromJson(Map<String, dynamic> json) { return PostFilesRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  file: base64Decode(json['file'] as String),
+  fileLinkData: json['file_link_data'] != null ? PostFilesRequestFileLinkData.fromJson(json['file_link_data'] as Map<String, dynamic>) : null,
+  purpose: PostFilesRequestPurpose.fromJson(json['purpose'] as String),
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// A file to upload. Make sure that the specifications follow RFC 2388, which defines file transfers for the `multipart/form-data` protocol.
+final Uint8List file;
+
+/// Optional parameters that automatically create a [file link](https://api.stripe.com#file_links) for the newly created file.
+final PostFilesRequestFileLinkData? fileLinkData;
+
+/// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
+final PostFilesRequestPurpose purpose;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'file': base64Encode(file),
+  if (fileLinkData != null) 'file_link_data': fileLinkData?.toJson(),
+  'purpose': purpose.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') &&
+      json.containsKey('purpose'); } 
+PostFilesRequest copyWith({List<String> Function()? expand, Uint8List? file, PostFilesRequestFileLinkData Function()? fileLinkData, PostFilesRequestPurpose? purpose, }) { return PostFilesRequest(
+  expand: expand != null ? expand() : this.expand,
+  file: file ?? this.file,
+  fileLinkData: fileLinkData != null ? fileLinkData() : this.fileLinkData,
+  purpose: purpose ?? this.purpose,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostFilesRequest &&
+          listEquals(expand, other.expand) &&
+          file == other.file &&
+          fileLinkData == other.fileLinkData &&
+          purpose == other.purpose; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), file, fileLinkData, purpose); } 
+@override String toString() { return 'PostFilesRequest(expand: $expand, file: $file, fileLinkData: $fileLinkData, purpose: $purpose)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The host name to which the waiting room will be applied (no wildcards). Please do not include the scheme (http:// or https://). The host and path combination must be unique.
+extension type const WaitingroomHost(String value) {
+factory WaitingroomHost.fromJson(String json) => WaitingroomHost(json);
+
+String toJson() => value;
+
+}

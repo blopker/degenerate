@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetCtTimeseriesGroupLog {const RadarGetCtTimeseriesGroupLog._(this.value);
+
+factory RadarGetCtTimeseriesGroupLog.fromJson(String json) { return switch (json) {
+  'RFC6962' => rfc6962,
+  'STATIC' => $static,
+  _ => RadarGetCtTimeseriesGroupLog._(json),
+}; }
+
+static const RadarGetCtTimeseriesGroupLog rfc6962 = RadarGetCtTimeseriesGroupLog._('RFC6962');
+
+static const RadarGetCtTimeseriesGroupLog $static = RadarGetCtTimeseriesGroupLog._('STATIC');
+
+static const List<RadarGetCtTimeseriesGroupLog> values = [rfc6962, $static];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetCtTimeseriesGroupLog && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetCtTimeseriesGroupLog($value)'; } 
+ }

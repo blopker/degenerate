@@ -1,0 +1,134 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_business_profile_annual_revenue.dart';import 'account_business_profile_support_address.dart';import 'account_monthly_estimated_revenue.dart';final class AccountBusinessProfileMinorityOwnedBusinessDesignation {const AccountBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
+
+factory AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) { return switch (json) {
+  'lgbtqi_owned_business' => lgbtqiOwnedBusiness,
+  'minority_owned_business' => minorityOwnedBusiness,
+  'none_of_these_apply' => noneOfTheseApply,
+  'prefer_not_to_answer' => preferNotToAnswer,
+  'women_owned_business' => womenOwnedBusiness,
+  _ => AccountBusinessProfileMinorityOwnedBusinessDesignation._(json),
+}; }
+
+static const AccountBusinessProfileMinorityOwnedBusinessDesignation lgbtqiOwnedBusiness = AccountBusinessProfileMinorityOwnedBusinessDesignation._('lgbtqi_owned_business');
+
+static const AccountBusinessProfileMinorityOwnedBusinessDesignation minorityOwnedBusiness = AccountBusinessProfileMinorityOwnedBusinessDesignation._('minority_owned_business');
+
+static const AccountBusinessProfileMinorityOwnedBusinessDesignation noneOfTheseApply = AccountBusinessProfileMinorityOwnedBusinessDesignation._('none_of_these_apply');
+
+static const AccountBusinessProfileMinorityOwnedBusinessDesignation preferNotToAnswer = AccountBusinessProfileMinorityOwnedBusinessDesignation._('prefer_not_to_answer');
+
+static const AccountBusinessProfileMinorityOwnedBusinessDesignation womenOwnedBusiness = AccountBusinessProfileMinorityOwnedBusinessDesignation._('women_owned_business');
+
+static const List<AccountBusinessProfileMinorityOwnedBusinessDesignation> values = [lgbtqiOwnedBusiness, minorityOwnedBusiness, noneOfTheseApply, preferNotToAnswer, womenOwnedBusiness];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccountBusinessProfileMinorityOwnedBusinessDesignation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AccountBusinessProfileMinorityOwnedBusinessDesignation($value)'; } 
+ }
+/// 
+final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
+
+factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
+  annualRevenue: json['annual_revenue'] != null ? AccountBusinessProfileAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
+  estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
+  mcc: json['mcc'] as String?,
+  minorityOwnedBusinessDesignation: (json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(e as String)).toList(),
+  monthlyEstimatedRevenue: json['monthly_estimated_revenue'] != null ? AccountMonthlyEstimatedRevenue.fromJson(json['monthly_estimated_revenue'] as Map<String, dynamic>) : null,
+  name: json['name'] as String?,
+  productDescription: json['product_description'] as String?,
+  supportAddress: json['support_address'] != null ? AccountBusinessProfileSupportAddress.fromJson(json['support_address'] as Map<String, dynamic>) : null,
+  supportEmail: json['support_email'] as String?,
+  supportPhone: json['support_phone'] as String?,
+  supportUrl: json['support_url'] as String?,
+  url: json['url'] as String?,
+); }
+
+/// The applicant's gross annual revenue for its preceding fiscal year.
+final AccountBusinessProfileAnnualRevenue? annualRevenue;
+
+/// An estimated upper bound of employees, contractors, vendors, etc. currently working for the business.
+final int? estimatedWorkerCount;
+
+/// [The merchant category code for the account](/connect/setting-mcc). MCCs are used to classify businesses based on the goods or services they provide.
+final String? mcc;
+
+/// Whether the business is a minority-owned, women-owned, and/or LGBTQI+ -owned business.
+final List<AccountBusinessProfileMinorityOwnedBusinessDesignation>? minorityOwnedBusinessDesignation;
+
+final AccountMonthlyEstimatedRevenue? monthlyEstimatedRevenue;
+
+/// The customer-facing business name.
+final String? name;
+
+/// Internal-only description of the product sold or service provided by the business. It's used by Stripe for risk and underwriting purposes.
+final String? productDescription;
+
+/// A publicly available mailing address for sending support issues to.
+final AccountBusinessProfileSupportAddress? supportAddress;
+
+/// A publicly available email address for sending support issues to.
+final String? supportEmail;
+
+/// A publicly available phone number to call with support issues.
+final String? supportPhone;
+
+/// A publicly available website for handling support issues.
+final String? supportUrl;
+
+/// The business's publicly available website.
+final String? url;
+
+Map<String, dynamic> toJson() { return {
+  if (annualRevenue != null) 'annual_revenue': annualRevenue?.toJson(),
+  'estimated_worker_count': ?estimatedWorkerCount,
+  'mcc': ?mcc,
+  if (minorityOwnedBusinessDesignation != null) 'minority_owned_business_designation': minorityOwnedBusinessDesignation?.map((e) => e.toJson()).toList(),
+  if (monthlyEstimatedRevenue != null) 'monthly_estimated_revenue': monthlyEstimatedRevenue?.toJson(),
+  'name': ?name,
+  'product_description': ?productDescription,
+  if (supportAddress != null) 'support_address': supportAddress?.toJson(),
+  'support_email': ?supportEmail,
+  'support_phone': ?supportPhone,
+  'support_url': ?supportUrl,
+  'url': ?url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountBusinessProfile copyWith({AccountBusinessProfileAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<AccountBusinessProfileMinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, AccountBusinessProfileSupportAddress? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
+  annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
+  estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
+  mcc: mcc != null ? mcc() : this.mcc,
+  minorityOwnedBusinessDesignation: minorityOwnedBusinessDesignation != null ? minorityOwnedBusinessDesignation() : this.minorityOwnedBusinessDesignation,
+  monthlyEstimatedRevenue: monthlyEstimatedRevenue != null ? monthlyEstimatedRevenue() : this.monthlyEstimatedRevenue,
+  name: name != null ? name() : this.name,
+  productDescription: productDescription != null ? productDescription() : this.productDescription,
+  supportAddress: supportAddress != null ? supportAddress() : this.supportAddress,
+  supportEmail: supportEmail != null ? supportEmail() : this.supportEmail,
+  supportPhone: supportPhone != null ? supportPhone() : this.supportPhone,
+  supportUrl: supportUrl != null ? supportUrl() : this.supportUrl,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountBusinessProfile &&
+          annualRevenue == other.annualRevenue &&
+          estimatedWorkerCount == other.estimatedWorkerCount &&
+          mcc == other.mcc &&
+          listEquals(minorityOwnedBusinessDesignation, other.minorityOwnedBusinessDesignation) &&
+          monthlyEstimatedRevenue == other.monthlyEstimatedRevenue &&
+          name == other.name &&
+          productDescription == other.productDescription &&
+          supportAddress == other.supportAddress &&
+          supportEmail == other.supportEmail &&
+          supportPhone == other.supportPhone &&
+          supportUrl == other.supportUrl &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(annualRevenue, estimatedWorkerCount, mcc, Object.hashAll(minorityOwnedBusinessDesignation ?? const []), monthlyEstimatedRevenue, name, productDescription, supportAddress, supportEmail, supportPhone, supportUrl, url); } 
+@override String toString() { return 'AccountBusinessProfile(annualRevenue: $annualRevenue, estimatedWorkerCount: $estimatedWorkerCount, mcc: $mcc, minorityOwnedBusinessDesignation: $minorityOwnedBusinessDesignation, monthlyEstimatedRevenue: $monthlyEstimatedRevenue, name: $name, productDescription: $productDescription, supportAddress: $supportAddress, supportEmail: $supportEmail, supportPhone: $supportPhone, supportUrl: $supportUrl, url: $url)'; } 
+ }

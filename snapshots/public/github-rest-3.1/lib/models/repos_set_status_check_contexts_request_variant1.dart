@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposSetStatusCheckContextsRequestVariant1 {const ReposSetStatusCheckContextsRequestVariant1({required this.contexts});
+
+factory ReposSetStatusCheckContextsRequestVariant1.fromJson(Map<String, dynamic> json) { return ReposSetStatusCheckContextsRequestVariant1(
+  contexts: (json['contexts'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// The name of the status checks
+final List<String> contexts;
+
+Map<String, dynamic> toJson() { return {
+  'contexts': contexts,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts'); } 
+ReposSetStatusCheckContextsRequestVariant1 copyWith({List<String>? contexts}) { return ReposSetStatusCheckContextsRequestVariant1(
+  contexts: contexts ?? this.contexts,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposSetStatusCheckContextsRequestVariant1 &&
+          listEquals(contexts, other.contexts); } 
+@override int get hashCode { return Object.hashAll(contexts).hashCode; } 
+@override String toString() { return 'ReposSetStatusCheckContextsRequestVariant1(contexts: $contexts)'; } 
+ }

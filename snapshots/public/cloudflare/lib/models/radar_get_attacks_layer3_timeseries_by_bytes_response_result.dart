@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_attacks_layer3_timeseries_by_bytes_response_result_meta.dart';final class RadarGetAttacksLayer3TimeseriesByBytesResponseResult {const RadarGetAttacksLayer3TimeseriesByBytesResponseResult({required this.meta});
+
+factory RadarGetAttacksLayer3TimeseriesByBytesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesByBytesResponseResult(
+  meta: RadarGetAttacksLayer3TimeseriesByBytesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetAttacksLayer3TimeseriesByBytesResponseResultMeta meta;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta'); } 
+RadarGetAttacksLayer3TimeseriesByBytesResponseResult copyWith({RadarGetAttacksLayer3TimeseriesByBytesResponseResultMeta? meta}) { return RadarGetAttacksLayer3TimeseriesByBytesResponseResult(
+  meta: meta ?? this.meta,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TimeseriesByBytesResponseResult &&
+          meta == other.meta; } 
+@override int get hashCode { return meta.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesByBytesResponseResult(meta: $meta)'; } 
+ }

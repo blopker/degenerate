@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated {const PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated({required this.type});
+
+factory PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated(
+  type: json['type'] as String,
+); }
+
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
+PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated copyWith({String? type}) { return PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'PostDatasetPopulateResponsePropertiesDatasetsItemsPropertiesIndicatorTypesPropertiesCreated(type: $type)'; } 
+ }

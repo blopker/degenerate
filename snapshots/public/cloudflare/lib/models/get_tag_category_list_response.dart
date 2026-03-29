@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_category_list_response_categories.dart';final class GetTagCategoryListResponse {const GetTagCategoryListResponse({required this.categories});
+
+factory GetTagCategoryListResponse.fromJson(Map<String, dynamic> json) { return GetTagCategoryListResponse(
+  categories: (json['categories'] as List<dynamic>).map((e) => GetTagCategoryListResponseCategories.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<GetTagCategoryListResponseCategories> categories;
+
+Map<String, dynamic> toJson() { return {
+  'categories': categories.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('categories'); } 
+GetTagCategoryListResponse copyWith({List<GetTagCategoryListResponseCategories>? categories}) { return GetTagCategoryListResponse(
+  categories: categories ?? this.categories,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetTagCategoryListResponse &&
+          listEquals(categories, other.categories); } 
+@override int get hashCode { return Object.hashAll(categories).hashCode; } 
+@override String toString() { return 'GetTagCategoryListResponse(categories: $categories)'; } 
+ }

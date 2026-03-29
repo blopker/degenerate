@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_async2_requests.dart';final class ResponsesAsync2 {const ResponsesAsync2({required this.requests});
+
+factory ResponsesAsync2.fromJson(Map<String, dynamic> json) { return ResponsesAsync2(
+  requests: (json['requests'] as List<dynamic>).map((e) => ResponsesAsync2Requests.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<ResponsesAsync2Requests> requests;
+
+Map<String, dynamic> toJson() { return {
+  'requests': requests.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('requests'); } 
+ResponsesAsync2 copyWith({List<ResponsesAsync2Requests>? requests}) { return ResponsesAsync2(
+  requests: requests ?? this.requests,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponsesAsync2 &&
+          listEquals(requests, other.requests); } 
+@override int get hashCode { return Object.hashAll(requests).hashCode; } 
+@override String toString() { return 'ResponsesAsync2(requests: $requests)'; } 
+ }

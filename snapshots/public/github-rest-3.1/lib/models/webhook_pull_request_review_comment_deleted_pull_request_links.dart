@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_pull_request_review_comment_deleted_pull_request_links_comments.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_commits.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_html.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_issue.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_review_comment.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_review_comments.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_self.dart';import 'webhook_pull_request_review_comment_deleted_pull_request_links_statuses.dart';final class WebhookPullRequestReviewCommentDeletedPullRequestLinks {const WebhookPullRequestReviewCommentDeletedPullRequestLinks({required this.comments, required this.commits, required this.html, required this.issue, required this.reviewComment, required this.reviewComments, required this.self, required this.statuses, });
+
+factory WebhookPullRequestReviewCommentDeletedPullRequestLinks.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentDeletedPullRequestLinks(
+  comments: WebhookPullRequestReviewCommentDeletedPullRequestLinksComments.fromJson(json['comments'] as Map<String, dynamic>),
+  commits: WebhookPullRequestReviewCommentDeletedPullRequestLinksCommits.fromJson(json['commits'] as Map<String, dynamic>),
+  html: WebhookPullRequestReviewCommentDeletedPullRequestLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
+  issue: WebhookPullRequestReviewCommentDeletedPullRequestLinksIssue.fromJson(json['issue'] as Map<String, dynamic>),
+  reviewComment: WebhookPullRequestReviewCommentDeletedPullRequestLinksReviewComment.fromJson(json['review_comment'] as Map<String, dynamic>),
+  reviewComments: WebhookPullRequestReviewCommentDeletedPullRequestLinksReviewComments.fromJson(json['review_comments'] as Map<String, dynamic>),
+  self: WebhookPullRequestReviewCommentDeletedPullRequestLinksSelf.fromJson(json['self'] as Map<String, dynamic>),
+  statuses: WebhookPullRequestReviewCommentDeletedPullRequestLinksStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
+); }
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksComments comments;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksCommits commits;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksHtml html;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksIssue issue;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksReviewComment reviewComment;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksReviewComments reviewComments;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksSelf self;
+
+final WebhookPullRequestReviewCommentDeletedPullRequestLinksStatuses statuses;
+
+Map<String, dynamic> toJson() { return {
+  'comments': comments.toJson(),
+  'commits': commits.toJson(),
+  'html': html.toJson(),
+  'issue': issue.toJson(),
+  'review_comment': reviewComment.toJson(),
+  'review_comments': reviewComments.toJson(),
+  'self': self.toJson(),
+  'statuses': statuses.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('comments') &&
+      json.containsKey('commits') &&
+      json.containsKey('html') &&
+      json.containsKey('issue') &&
+      json.containsKey('review_comment') &&
+      json.containsKey('review_comments') &&
+      json.containsKey('self') &&
+      json.containsKey('statuses'); } 
+WebhookPullRequestReviewCommentDeletedPullRequestLinks copyWith({WebhookPullRequestReviewCommentDeletedPullRequestLinksComments? comments, WebhookPullRequestReviewCommentDeletedPullRequestLinksCommits? commits, WebhookPullRequestReviewCommentDeletedPullRequestLinksHtml? html, WebhookPullRequestReviewCommentDeletedPullRequestLinksIssue? issue, WebhookPullRequestReviewCommentDeletedPullRequestLinksReviewComment? reviewComment, WebhookPullRequestReviewCommentDeletedPullRequestLinksReviewComments? reviewComments, WebhookPullRequestReviewCommentDeletedPullRequestLinksSelf? self, WebhookPullRequestReviewCommentDeletedPullRequestLinksStatuses? statuses, }) { return WebhookPullRequestReviewCommentDeletedPullRequestLinks(
+  comments: comments ?? this.comments,
+  commits: commits ?? this.commits,
+  html: html ?? this.html,
+  issue: issue ?? this.issue,
+  reviewComment: reviewComment ?? this.reviewComment,
+  reviewComments: reviewComments ?? this.reviewComments,
+  self: self ?? this.self,
+  statuses: statuses ?? this.statuses,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewCommentDeletedPullRequestLinks &&
+          comments == other.comments &&
+          commits == other.commits &&
+          html == other.html &&
+          issue == other.issue &&
+          reviewComment == other.reviewComment &&
+          reviewComments == other.reviewComments &&
+          self == other.self &&
+          statuses == other.statuses; } 
+@override int get hashCode { return Object.hash(comments, commits, html, issue, reviewComment, reviewComments, self, statuses); } 
+@override String toString() { return 'WebhookPullRequestReviewCommentDeletedPullRequestLinks(comments: $comments, commits: $commits, html: $html, issue: $issue, reviewComment: $reviewComment, reviewComments: $reviewComments, self: $self, statuses: $statuses)'; } 
+ }

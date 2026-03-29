@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ZarazFormSubmissionRuleSettings {const ZarazFormSubmissionRuleSettings({required this.selector, required this.validate, });
+
+factory ZarazFormSubmissionRuleSettings.fromJson(Map<String, dynamic> json) { return ZarazFormSubmissionRuleSettings(
+  selector: json['selector'] as String,
+  validate: json['validate'] as bool,
+); }
+
+final String selector;
+
+final bool validate;
+
+Map<String, dynamic> toJson() { return {
+  'selector': selector,
+  'validate': validate,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('selector') && json['selector'] is String &&
+      json.containsKey('validate') && json['validate'] is bool; } 
+ZarazFormSubmissionRuleSettings copyWith({String? selector, bool? validate, }) { return ZarazFormSubmissionRuleSettings(
+  selector: selector ?? this.selector,
+  validate: validate ?? this.validate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZarazFormSubmissionRuleSettings &&
+          selector == other.selector &&
+          validate == other.validate; } 
+@override int get hashCode { return Object.hash(selector, validate); } 
+@override String toString() { return 'ZarazFormSubmissionRuleSettings(selector: $selector, validate: $validate)'; } 
+ }

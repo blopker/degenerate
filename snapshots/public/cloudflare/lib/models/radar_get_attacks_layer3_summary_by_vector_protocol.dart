@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol._(this.value);
+
+factory RadarGetAttacksLayer3SummaryByVectorProtocol.fromJson(String json) { return switch (json) {
+  'UDP' => udp,
+  'TCP' => tcp,
+  'ICMP' => icmp,
+  'GRE' => gre,
+  _ => RadarGetAttacksLayer3SummaryByVectorProtocol._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryByVectorProtocol udp = RadarGetAttacksLayer3SummaryByVectorProtocol._('UDP');
+
+static const RadarGetAttacksLayer3SummaryByVectorProtocol tcp = RadarGetAttacksLayer3SummaryByVectorProtocol._('TCP');
+
+static const RadarGetAttacksLayer3SummaryByVectorProtocol icmp = RadarGetAttacksLayer3SummaryByVectorProtocol._('ICMP');
+
+static const RadarGetAttacksLayer3SummaryByVectorProtocol gre = RadarGetAttacksLayer3SummaryByVectorProtocol._('GRE');
+
+static const List<RadarGetAttacksLayer3SummaryByVectorProtocol> values = [udp, tcp, icmp, gre];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryByVectorProtocol && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryByVectorProtocol($value)'; } 
+ }

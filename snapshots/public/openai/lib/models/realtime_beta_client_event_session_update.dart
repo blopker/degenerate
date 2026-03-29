@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtime_session_create_request.dart';/// The event type, must be `session.update`.
+final class RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType._(this.value);
+
+factory RealtimeBetaClientEventSessionUpdateType.fromJson(String json) { return switch (json) {
+  'session.update' => sessionUpdate,
+  _ => RealtimeBetaClientEventSessionUpdateType._(json),
+}; }
+
+static const RealtimeBetaClientEventSessionUpdateType sessionUpdate = RealtimeBetaClientEventSessionUpdateType._('session.update');
+
+static const List<RealtimeBetaClientEventSessionUpdateType> values = [sessionUpdate];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeBetaClientEventSessionUpdateType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeBetaClientEventSessionUpdateType($value)'; } 
+ }
+/// Send this event to update the session’s default configuration.
+/// The client may send this event at any time to update any field,
+/// except for `voice`. However, note that once a session has been
+/// initialized with a particular `model`, it can’t be changed to
+/// another model using `session.update`.
+/// 
+/// When the server receives a `session.update`, it will respond
+/// with a `session.updated` event showing the full, effective configuration.
+/// Only the fields that are present are updated. To clear a field like
+/// `instructions`, pass an empty string.
+/// 
+final class RealtimeBetaClientEventSessionUpdate {const RealtimeBetaClientEventSessionUpdate({this.eventId, required this.type, required this.session, });
+
+factory RealtimeBetaClientEventSessionUpdate.fromJson(Map<String, dynamic> json) { return RealtimeBetaClientEventSessionUpdate(
+  eventId: json['event_id'] as String?,
+  type: RealtimeBetaClientEventSessionUpdateType.fromJson(json['type'] as String),
+  session: RealtimeSessionCreateRequest.fromJson(json['session'] as Map<String, dynamic>),
+); }
+
+/// Optional client-generated ID used to identify this event.
+final String? eventId;
+
+/// The event type, must be `session.update`.
+final RealtimeBetaClientEventSessionUpdateType type;
+
+final RealtimeSessionCreateRequest session;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': ?eventId,
+  'type': type.toJson(),
+  'session': session.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('session'); } 
+RealtimeBetaClientEventSessionUpdate copyWith({String Function()? eventId, RealtimeBetaClientEventSessionUpdateType? type, RealtimeSessionCreateRequest? session, }) { return RealtimeBetaClientEventSessionUpdate(
+  eventId: eventId != null ? eventId() : this.eventId,
+  type: type ?? this.type,
+  session: session ?? this.session,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeBetaClientEventSessionUpdate &&
+          eventId == other.eventId &&
+          type == other.type &&
+          session == other.session; } 
+@override int get hashCode { return Object.hash(eventId, type, session); } 
+@override String toString() { return 'RealtimeBetaClientEventSessionUpdate(eventId: $eventId, type: $type, session: $session)'; } 
+ }

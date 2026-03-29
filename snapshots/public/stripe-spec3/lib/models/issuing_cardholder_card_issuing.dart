@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_cardholder_card_issuing_user_terms_acceptance.dart';/// 
+final class IssuingCardholderCardIssuing {const IssuingCardholderCardIssuing({this.userTermsAcceptance});
+
+factory IssuingCardholderCardIssuing.fromJson(Map<String, dynamic> json) { return IssuingCardholderCardIssuing(
+  userTermsAcceptance: json['user_terms_acceptance'] != null ? IssuingCardholderCardIssuingUserTermsAcceptance.fromJson(json['user_terms_acceptance'] as Map<String, dynamic>) : null,
+); }
+
+/// Information about cardholder acceptance of Celtic [Authorized User Terms](https://stripe.com/docs/issuing/cards#accept-authorized-user-terms). Required for cards backed by a Celtic program.
+final IssuingCardholderCardIssuingUserTermsAcceptance? userTermsAcceptance;
+
+Map<String, dynamic> toJson() { return {
+  if (userTermsAcceptance != null) 'user_terms_acceptance': userTermsAcceptance?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuingCardholderCardIssuing copyWith({IssuingCardholderCardIssuingUserTermsAcceptance? Function()? userTermsAcceptance}) { return IssuingCardholderCardIssuing(
+  userTermsAcceptance: userTermsAcceptance != null ? userTermsAcceptance() : this.userTermsAcceptance,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingCardholderCardIssuing &&
+          userTermsAcceptance == other.userTermsAcceptance; } 
+@override int get hashCode { return userTermsAcceptance.hashCode; } 
+@override String toString() { return 'IssuingCardholderCardIssuing(userTermsAcceptance: $userTermsAcceptance)'; } 
+ }

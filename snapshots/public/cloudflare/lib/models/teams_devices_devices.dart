@@ -1,0 +1,174 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'teams_devices_created.dart';import 'teams_devices_deleted.dart';import 'teams_devices_ip.dart';import 'teams_devices_key.dart';import 'teams_devices_last_seen.dart';import 'teams_devices_mac_address.dart';import 'teams_devices_model.dart';import 'teams_devices_os_version.dart';import 'teams_devices_platform.dart';import 'teams_devices_registration_id.dart';import 'teams_devices_schemas_name.dart';import 'teams_devices_serial_number.dart';import 'teams_devices_updated.dart';import 'teams_devices_user.dart';import 'teams_devices_version.dart';/// The device manufacturer name.
+extension type const TeamsDevicesManufacturer(String value) {
+factory TeamsDevicesManufacturer.fromJson(String json) => TeamsDevicesManufacturer(json);
+
+String toJson() => value;
+
+}
+/// The Linux distro name.
+extension type const TeamsDevicesOsDistroName(String value) {
+factory TeamsDevicesOsDistroName.fromJson(String json) => TeamsDevicesOsDistroName(json);
+
+String toJson() => value;
+
+}
+/// The Linux distro revision.
+extension type const TeamsDevicesOsDistroRevision(String value) {
+factory TeamsDevicesOsDistroRevision.fromJson(String json) => TeamsDevicesOsDistroRevision(json);
+
+String toJson() => value;
+
+}
+/// Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.
+extension type const TeamsDevicesOsVersionExtra(String value) {
+factory TeamsDevicesOsVersionExtra.fromJson(String json) => TeamsDevicesOsVersionExtra(json);
+
+String toJson() => value;
+
+}
+/// When the device was revoked.
+extension type TeamsDevicesRevokedAt(DateTime value) {
+factory TeamsDevicesRevokedAt.fromJson(String json) => TeamsDevicesRevokedAt(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+final class TeamsDevicesDevices {const TeamsDevicesDevices({this.created, this.deleted, this.deviceType, this.id, this.ip, this.key, this.lastSeen, this.macAddress, this.manufacturer, this.model, this.name, this.osDistroName, this.osDistroRevision, this.osVersion, this.osVersionExtra, this.revokedAt, this.serialNumber, this.updated, this.user, this.version, });
+
+factory TeamsDevicesDevices.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevices(
+  created: json['created'] != null ? TeamsDevicesCreated.fromJson(json['created'] as String) : null,
+  deleted: json['deleted'] != null ? TeamsDevicesDeleted.fromJson(json['deleted'] as bool) : null,
+  deviceType: json['device_type'] != null ? TeamsDevicesPlatform.fromJson(json['device_type'] as String) : null,
+  id: json['id'] != null ? TeamsDevicesRegistrationId.fromJson(json['id'] as String) : null,
+  ip: json['ip'] != null ? TeamsDevicesIp.fromJson(json['ip'] as String) : null,
+  key: json['key'] != null ? TeamsDevicesKey.fromJson(json['key'] as String) : null,
+  lastSeen: json['last_seen'] != null ? TeamsDevicesLastSeen.fromJson(json['last_seen'] as String) : null,
+  macAddress: json['mac_address'] != null ? TeamsDevicesMacAddress.fromJson(json['mac_address'] as String) : null,
+  manufacturer: json['manufacturer'] != null ? TeamsDevicesManufacturer.fromJson(json['manufacturer'] as String) : null,
+  model: json['model'] != null ? TeamsDevicesModel.fromJson(json['model'] as String) : null,
+  name: json['name'] != null ? TeamsDevicesSchemasName.fromJson(json['name'] as String) : null,
+  osDistroName: json['os_distro_name'] != null ? TeamsDevicesOsDistroName.fromJson(json['os_distro_name'] as String) : null,
+  osDistroRevision: json['os_distro_revision'] != null ? TeamsDevicesOsDistroRevision.fromJson(json['os_distro_revision'] as String) : null,
+  osVersion: json['os_version'] != null ? TeamsDevicesOsVersion.fromJson(json['os_version'] as String) : null,
+  osVersionExtra: json['os_version_extra'] != null ? TeamsDevicesOsVersionExtra.fromJson(json['os_version_extra'] as String) : null,
+  revokedAt: json['revoked_at'] != null ? TeamsDevicesRevokedAt.fromJson(json['revoked_at'] as String) : null,
+  serialNumber: json['serial_number'] != null ? TeamsDevicesSerialNumber.fromJson(json['serial_number'] as String) : null,
+  updated: json['updated'] != null ? TeamsDevicesUpdated.fromJson(json['updated'] as String) : null,
+  user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
+); }
+
+/// When the device was created.
+final TeamsDevicesCreated? created;
+
+/// True if the device was deleted.
+final TeamsDevicesDeleted? deleted;
+
+final TeamsDevicesPlatform? deviceType;
+
+final TeamsDevicesRegistrationId? id;
+
+final TeamsDevicesIp? ip;
+
+final TeamsDevicesKey? key;
+
+final TeamsDevicesLastSeen? lastSeen;
+
+final TeamsDevicesMacAddress? macAddress;
+
+final TeamsDevicesManufacturer? manufacturer;
+
+final TeamsDevicesModel? model;
+
+final TeamsDevicesSchemasName? name;
+
+final TeamsDevicesOsDistroName? osDistroName;
+
+final TeamsDevicesOsDistroRevision? osDistroRevision;
+
+final TeamsDevicesOsVersion? osVersion;
+
+final TeamsDevicesOsVersionExtra? osVersionExtra;
+
+final TeamsDevicesRevokedAt? revokedAt;
+
+final TeamsDevicesSerialNumber? serialNumber;
+
+final TeamsDevicesUpdated? updated;
+
+final TeamsDevicesUser? user;
+
+final TeamsDevicesVersion? version;
+
+Map<String, dynamic> toJson() { return {
+  if (created != null) 'created': created?.toJson(),
+  if (deleted != null) 'deleted': deleted?.toJson(),
+  if (deviceType != null) 'device_type': deviceType?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (ip != null) 'ip': ip?.toJson(),
+  if (key != null) 'key': key?.toJson(),
+  if (lastSeen != null) 'last_seen': lastSeen?.toJson(),
+  if (macAddress != null) 'mac_address': macAddress?.toJson(),
+  if (manufacturer != null) 'manufacturer': manufacturer?.toJson(),
+  if (model != null) 'model': model?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (osDistroName != null) 'os_distro_name': osDistroName?.toJson(),
+  if (osDistroRevision != null) 'os_distro_revision': osDistroRevision?.toJson(),
+  if (osVersion != null) 'os_version': osVersion?.toJson(),
+  if (osVersionExtra != null) 'os_version_extra': osVersionExtra?.toJson(),
+  if (revokedAt != null) 'revoked_at': revokedAt?.toJson(),
+  if (serialNumber != null) 'serial_number': serialNumber?.toJson(),
+  if (updated != null) 'updated': updated?.toJson(),
+  if (user != null) 'user': user?.toJson(),
+  if (version != null) 'version': version?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TeamsDevicesDevices copyWith({TeamsDevicesCreated Function()? created, TeamsDevicesDeleted Function()? deleted, TeamsDevicesPlatform Function()? deviceType, TeamsDevicesRegistrationId Function()? id, TeamsDevicesIp Function()? ip, TeamsDevicesKey Function()? key, TeamsDevicesLastSeen Function()? lastSeen, TeamsDevicesMacAddress Function()? macAddress, TeamsDevicesManufacturer Function()? manufacturer, TeamsDevicesModel Function()? model, TeamsDevicesSchemasName Function()? name, TeamsDevicesOsDistroName Function()? osDistroName, TeamsDevicesOsDistroRevision Function()? osDistroRevision, TeamsDevicesOsVersion Function()? osVersion, TeamsDevicesOsVersionExtra Function()? osVersionExtra, TeamsDevicesRevokedAt Function()? revokedAt, TeamsDevicesSerialNumber Function()? serialNumber, TeamsDevicesUpdated Function()? updated, TeamsDevicesUser Function()? user, TeamsDevicesVersion Function()? version, }) { return TeamsDevicesDevices(
+  created: created != null ? created() : this.created,
+  deleted: deleted != null ? deleted() : this.deleted,
+  deviceType: deviceType != null ? deviceType() : this.deviceType,
+  id: id != null ? id() : this.id,
+  ip: ip != null ? ip() : this.ip,
+  key: key != null ? key() : this.key,
+  lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
+  macAddress: macAddress != null ? macAddress() : this.macAddress,
+  manufacturer: manufacturer != null ? manufacturer() : this.manufacturer,
+  model: model != null ? model() : this.model,
+  name: name != null ? name() : this.name,
+  osDistroName: osDistroName != null ? osDistroName() : this.osDistroName,
+  osDistroRevision: osDistroRevision != null ? osDistroRevision() : this.osDistroRevision,
+  osVersion: osVersion != null ? osVersion() : this.osVersion,
+  osVersionExtra: osVersionExtra != null ? osVersionExtra() : this.osVersionExtra,
+  revokedAt: revokedAt != null ? revokedAt() : this.revokedAt,
+  serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
+  updated: updated != null ? updated() : this.updated,
+  user: user != null ? user() : this.user,
+  version: version != null ? version() : this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesDevices &&
+          created == other.created &&
+          deleted == other.deleted &&
+          deviceType == other.deviceType &&
+          id == other.id &&
+          ip == other.ip &&
+          key == other.key &&
+          lastSeen == other.lastSeen &&
+          macAddress == other.macAddress &&
+          manufacturer == other.manufacturer &&
+          model == other.model &&
+          name == other.name &&
+          osDistroName == other.osDistroName &&
+          osDistroRevision == other.osDistroRevision &&
+          osVersion == other.osVersion &&
+          osVersionExtra == other.osVersionExtra &&
+          revokedAt == other.revokedAt &&
+          serialNumber == other.serialNumber &&
+          updated == other.updated &&
+          user == other.user &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(created, deleted, deviceType, id, ip, key, lastSeen, macAddress, manufacturer, model, name, osDistroName, osDistroRevision, osVersion, osVersionExtra, revokedAt, serialNumber, updated, user, version); } 
+@override String toString() { return 'TeamsDevicesDevices(created: $created, deleted: $deleted, deviceType: $deviceType, id: $id, ip: $ip, key: $key, lastSeen: $lastSeen, macAddress: $macAddress, manufacturer: $manufacturer, model: $model, name: $name, osDistroName: $osDistroName, osDistroRevision: $osDistroRevision, osVersion: $osVersion, osVersionExtra: $osVersionExtra, revokedAt: $revokedAt, serialNumber: $serialNumber, updated: $updated, user: $user, version: $version)'; } 
+ }

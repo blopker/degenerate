@@ -1,0 +1,191 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'secret_scanning_location_commit.dart';import 'secret_scanning_location_discussion_body.dart';import 'secret_scanning_location_discussion_comment.dart';import 'secret_scanning_location_discussion_title.dart';import 'secret_scanning_location_issue_body.dart';import 'secret_scanning_location_issue_comment.dart';import 'secret_scanning_location_issue_title.dart';import 'secret_scanning_location_pull_request_body.dart';import 'secret_scanning_location_pull_request_comment.dart';import 'secret_scanning_location_pull_request_review.dart';import 'secret_scanning_location_pull_request_review_comment.dart';import 'secret_scanning_location_pull_request_title.dart';import 'secret_scanning_location_wiki_commit.dart';/// A value that is one of: `SecretScanningLocationCommit`, `SecretScanningLocationWikiCommit`, `SecretScanningLocationIssueTitle`, `SecretScanningLocationIssueBody`, `SecretScanningLocationIssueComment`, `SecretScanningLocationDiscussionTitle`, `SecretScanningLocationDiscussionBody`, `SecretScanningLocationDiscussionComment`, `SecretScanningLocationPullRequestTitle`, `SecretScanningLocationPullRequestBody`, `SecretScanningLocationPullRequestComment`, `SecretScanningLocationPullRequestReview`, `SecretScanningLocationPullRequestReviewComment`.
+sealed class SecretScanningLocationDetails {const SecretScanningLocationDetails();
+
+factory SecretScanningLocationDetails.fromJson(Map<String, dynamic> json) {   if (SecretScanningLocationCommit.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationCommit(SecretScanningLocationCommit.fromJson(json));
+  }
+  if (SecretScanningLocationWikiCommit.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationWikiCommit(SecretScanningLocationWikiCommit.fromJson(json));
+  }
+  if (SecretScanningLocationIssueTitle.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationIssueTitle(SecretScanningLocationIssueTitle.fromJson(json));
+  }
+  if (SecretScanningLocationIssueBody.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationIssueBody(SecretScanningLocationIssueBody.fromJson(json));
+  }
+  if (SecretScanningLocationIssueComment.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationIssueComment(SecretScanningLocationIssueComment.fromJson(json));
+  }
+  if (SecretScanningLocationDiscussionTitle.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(SecretScanningLocationDiscussionTitle.fromJson(json));
+  }
+  if (SecretScanningLocationDiscussionBody.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(SecretScanningLocationDiscussionBody.fromJson(json));
+  }
+  if (SecretScanningLocationDiscussionComment.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(SecretScanningLocationDiscussionComment.fromJson(json));
+  }
+  if (SecretScanningLocationPullRequestTitle.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(SecretScanningLocationPullRequestTitle.fromJson(json));
+  }
+  if (SecretScanningLocationPullRequestBody.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(SecretScanningLocationPullRequestBody.fromJson(json));
+  }
+  if (SecretScanningLocationPullRequestComment.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(SecretScanningLocationPullRequestComment.fromJson(json));
+  }
+  if (SecretScanningLocationPullRequestReview.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(SecretScanningLocationPullRequestReview.fromJson(json));
+  }
+  if (SecretScanningLocationPullRequestReviewComment.canParse(json)) {
+    return SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(SecretScanningLocationPullRequestReviewComment.fromJson(json));
+  }
+  return SecretScanningLocationDetails$Unknown(json); }
+
+/// The underlying raw value.
+dynamic get value;
+dynamic toJson() { return value; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationCommit extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationCommit(this._value);
+
+final SecretScanningLocationCommit _value;
+
+@override SecretScanningLocationCommit get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationCommit && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationCommit($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationWikiCommit extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationWikiCommit(this._value);
+
+final SecretScanningLocationWikiCommit _value;
+
+@override SecretScanningLocationWikiCommit get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationWikiCommit && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationWikiCommit($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationIssueTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueTitle(this._value);
+
+final SecretScanningLocationIssueTitle _value;
+
+@override SecretScanningLocationIssueTitle get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationIssueTitle && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationIssueTitle($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationIssueBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueBody(this._value);
+
+final SecretScanningLocationIssueBody _value;
+
+@override SecretScanningLocationIssueBody get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationIssueBody && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationIssueBody($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationIssueComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationIssueComment(this._value);
+
+final SecretScanningLocationIssueComment _value;
+
+@override SecretScanningLocationIssueComment get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationIssueComment && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationIssueComment($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle(this._value);
+
+final SecretScanningLocationDiscussionTitle _value;
+
+@override SecretScanningLocationDiscussionTitle get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationDiscussionTitle && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationDiscussionTitle($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationDiscussionBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionBody(this._value);
+
+final SecretScanningLocationDiscussionBody _value;
+
+@override SecretScanningLocationDiscussionBody get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationDiscussionBody && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationDiscussionBody($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationDiscussionComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationDiscussionComment(this._value);
+
+final SecretScanningLocationDiscussionComment _value;
+
+@override SecretScanningLocationDiscussionComment get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationDiscussionComment && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationDiscussionComment($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle(this._value);
+
+final SecretScanningLocationPullRequestTitle _value;
+
+@override SecretScanningLocationPullRequestTitle get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationPullRequestTitle && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestTitle($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestBody extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestBody(this._value);
+
+final SecretScanningLocationPullRequestBody _value;
+
+@override SecretScanningLocationPullRequestBody get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationPullRequestBody && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestBody($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestComment(this._value);
+
+final SecretScanningLocationPullRequestComment _value;
+
+@override SecretScanningLocationPullRequestComment get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationPullRequestComment && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestComment($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReview extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestReview(this._value);
+
+final SecretScanningLocationPullRequestReview _value;
+
+@override SecretScanningLocationPullRequestReview get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationPullRequestReview && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestReview($_value)'; } 
+ }
+final class SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment extends SecretScanningLocationDetails {const SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment(this._value);
+
+final SecretScanningLocationPullRequestReviewComment _value;
+
+@override SecretScanningLocationPullRequestReviewComment get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetailsSecretScanningLocationPullRequestReviewComment && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.secretScanningLocationPullRequestReviewComment($_value)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+final class SecretScanningLocationDetails$Unknown extends SecretScanningLocationDetails {const SecretScanningLocationDetails$Unknown(this._value);
+
+final dynamic _value;
+
+@override dynamic get value { return _value ?? ''; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningLocationDetails$Unknown && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'SecretScanningLocationDetails.unknown($_value)'; } 
+ }

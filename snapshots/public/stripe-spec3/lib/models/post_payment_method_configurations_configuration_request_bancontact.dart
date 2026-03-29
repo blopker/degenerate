@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_configuration_request_bancontact_display_preference.dart';/// Bancontact is the most popular online payment method in Belgium, with over 15 million cards in circulation. [Customers](https://docs.stripe.com/api/customers) use a Bancontact card or mobile app linked to a Belgian bank account to make online payments that are secure, guaranteed, and confirmed immediately. Check this [page](https://docs.stripe.com/payments/bancontact) for more details.
+final class PostPaymentMethodConfigurationsConfigurationRequestBancontact {const PostPaymentMethodConfigurationsConfigurationRequestBancontact({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestBancontact.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestBancontact(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestBancontactDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestBancontactDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestBancontact copyWith({PostPaymentMethodConfigurationsConfigurationRequestBancontactDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestBancontact(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestBancontact &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestBancontact(displayPreference: $displayPreference)'; } 
+ }

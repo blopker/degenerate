@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mcn_cloud_type.dart';final class McnCreateProviderRequest {const McnCreateProviderRequest({required this.cloudType, this.description, required this.friendlyName, });
+
+factory McnCreateProviderRequest.fromJson(Map<String, dynamic> json) { return McnCreateProviderRequest(
+  cloudType: McnCloudType.fromJson(json['cloud_type'] as String),
+  description: json['description'] as String?,
+  friendlyName: json['friendly_name'] as String,
+); }
+
+final McnCloudType cloudType;
+
+final String? description;
+
+final String friendlyName;
+
+Map<String, dynamic> toJson() { return {
+  'cloud_type': cloudType.toJson(),
+  'description': ?description,
+  'friendly_name': friendlyName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud_type') &&
+      json.containsKey('friendly_name') && json['friendly_name'] is String; } 
+McnCreateProviderRequest copyWith({McnCloudType? cloudType, String Function()? description, String? friendlyName, }) { return McnCreateProviderRequest(
+  cloudType: cloudType ?? this.cloudType,
+  description: description != null ? description() : this.description,
+  friendlyName: friendlyName ?? this.friendlyName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnCreateProviderRequest &&
+          cloudType == other.cloudType &&
+          description == other.description &&
+          friendlyName == other.friendlyName; } 
+@override int get hashCode { return Object.hash(cloudType, description, friendlyName); } 
+@override String toString() { return 'McnCreateProviderRequest(cloudType: $cloudType, description: $description, friendlyName: $friendlyName)'; } 
+ }

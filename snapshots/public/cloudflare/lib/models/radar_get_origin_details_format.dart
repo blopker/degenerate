@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetOriginDetailsFormat {const RadarGetOriginDetailsFormat._(this.value);
+
+factory RadarGetOriginDetailsFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetOriginDetailsFormat._(json),
+}; }
+
+static const RadarGetOriginDetailsFormat $json = RadarGetOriginDetailsFormat._('JSON');
+
+static const RadarGetOriginDetailsFormat csv = RadarGetOriginDetailsFormat._('CSV');
+
+static const List<RadarGetOriginDetailsFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetOriginDetailsFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetOriginDetailsFormat($value)'; } 
+ }

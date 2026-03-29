@@ -1,0 +1,122 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AccountUsageUsageRecordUsageRecordYearly {const AccountUsageUsageRecordUsageRecordYearly({this.accountSid, this.apiVersion, this.asOf, this.category, this.count, this.countUnit, this.description, this.endDate, this.price, this.priceUnit, this.startDate, this.subresourceUris, this.uri, this.usage, this.usageUnit, });
+
+factory AccountUsageUsageRecordUsageRecordYearly.fromJson(Map<String, dynamic> json) { return AccountUsageUsageRecordUsageRecordYearly(
+  accountSid: json['account_sid'] as String?,
+  apiVersion: json['api_version'] as String?,
+  asOf: json['as_of'] as String?,
+  category: json['category'] as String?,
+  count: json['count'] as String?,
+  countUnit: json['count_unit'] as String?,
+  description: json['description'] as String?,
+  endDate: json['end_date'] as String?,
+  price: json['price'] != null ? (json['price'] as num).toDouble() : null,
+  priceUnit: json['price_unit'] as String?,
+  startDate: json['start_date'] as String?,
+  subresourceUris: (json['subresource_uris'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  uri: json['uri'] as String?,
+  usage: json['usage'] as String?,
+  usageUnit: json['usage_unit'] as String?,
+); }
+
+/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that accrued the usage.
+final String? accountSid;
+
+/// The API version used to create the resource.
+final String? apiVersion;
+
+/// Usage records up to date as of this timestamp, formatted as YYYY-MM-DDTHH:MM:SS+00:00. All timestamps are in GMT
+final String? asOf;
+
+/// The category of usage. For more information, see [Usage Categories](https://www.twilio.com/docs/usage/api/usage-record#usage-categories).
+final String? category;
+
+/// The number of usage events, such as the number of calls.
+final String? count;
+
+/// The units in which `count` is measured, such as `calls` for calls or `messages` for SMS.
+final String? countUnit;
+
+/// A plain-language description of the usage category.
+final String? description;
+
+/// The last date for which usage is included in the UsageRecord. The date is specified in GMT and formatted as `YYYY-MM-DD`.
+final String? endDate;
+
+/// The total price of the usage in the currency specified in `price_unit` and associated with the account.
+final double? price;
+
+/// The currency in which `price` is measured, in [ISO 4127](https://www.iso.org/iso/home/standards/currency_codes.htm) format, such as `usd`, `eur`, and `jpy`.
+final String? priceUnit;
+
+/// The first date for which usage is included in this UsageRecord. The date is specified in GMT and formatted as `YYYY-MM-DD`.
+final String? startDate;
+
+/// A list of related resources identified by their URIs. For more information, see [List Subresources](https://www.twilio.com/docs/usage/api/usage-record#list-subresources).
+final Map<String,dynamic>? subresourceUris;
+
+/// The URI of the resource, relative to `https://api.twilio.com`.
+final String? uri;
+
+/// The amount used to bill usage and measured in units described in `usage_unit`.
+final String? usage;
+
+/// The units in which `usage` is measured, such as `minutes` for calls or `messages` for SMS.
+final String? usageUnit;
+
+Map<String, dynamic> toJson() { return {
+  'account_sid': ?accountSid,
+  'api_version': ?apiVersion,
+  'as_of': ?asOf,
+  'category': ?category,
+  'count': ?count,
+  'count_unit': ?countUnit,
+  'description': ?description,
+  'end_date': ?endDate,
+  'price': ?price,
+  'price_unit': ?priceUnit,
+  'start_date': ?startDate,
+  'subresource_uris': ?subresourceUris,
+  'uri': ?uri,
+  'usage': ?usage,
+  'usage_unit': ?usageUnit,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountUsageUsageRecordUsageRecordYearly copyWith({String? Function()? accountSid, String? Function()? apiVersion, String? Function()? asOf, String? Function()? category, String? Function()? count, String? Function()? countUnit, String? Function()? description, String? Function()? endDate, double? Function()? price, String? Function()? priceUnit, String? Function()? startDate, Map<String, dynamic>? Function()? subresourceUris, String? Function()? uri, String? Function()? usage, String? Function()? usageUnit, }) { return AccountUsageUsageRecordUsageRecordYearly(
+  accountSid: accountSid != null ? accountSid() : this.accountSid,
+  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  asOf: asOf != null ? asOf() : this.asOf,
+  category: category != null ? category() : this.category,
+  count: count != null ? count() : this.count,
+  countUnit: countUnit != null ? countUnit() : this.countUnit,
+  description: description != null ? description() : this.description,
+  endDate: endDate != null ? endDate() : this.endDate,
+  price: price != null ? price() : this.price,
+  priceUnit: priceUnit != null ? priceUnit() : this.priceUnit,
+  startDate: startDate != null ? startDate() : this.startDate,
+  subresourceUris: subresourceUris != null ? subresourceUris() : this.subresourceUris,
+  uri: uri != null ? uri() : this.uri,
+  usage: usage != null ? usage() : this.usage,
+  usageUnit: usageUnit != null ? usageUnit() : this.usageUnit,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountUsageUsageRecordUsageRecordYearly &&
+          accountSid == other.accountSid &&
+          apiVersion == other.apiVersion &&
+          asOf == other.asOf &&
+          category == other.category &&
+          count == other.count &&
+          countUnit == other.countUnit &&
+          description == other.description &&
+          endDate == other.endDate &&
+          price == other.price &&
+          priceUnit == other.priceUnit &&
+          startDate == other.startDate &&
+          subresourceUris == other.subresourceUris &&
+          uri == other.uri &&
+          usage == other.usage &&
+          usageUnit == other.usageUnit; } 
+@override int get hashCode { return Object.hash(accountSid, apiVersion, asOf, category, count, countUnit, description, endDate, price, priceUnit, startDate, subresourceUris, uri, usage, usageUnit); } 
+@override String toString() { return 'AccountUsageUsageRecordUsageRecordYearly(accountSid: $accountSid, apiVersion: $apiVersion, asOf: $asOf, category: $category, count: $count, countUnit: $countUnit, description: $description, endDate: $endDate, price: $price, priceUnit: $priceUnit, startDate: $startDate, subresourceUris: $subresourceUris, uri: $uri, usage: $usage, usageUnit: $usageUnit)'; } 
+ }

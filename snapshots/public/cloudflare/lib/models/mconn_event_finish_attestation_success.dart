@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Finished attestation
+final class MconnEventFinishAttestationSuccessK {const MconnEventFinishAttestationSuccessK._(this.value);
+
+factory MconnEventFinishAttestationSuccessK.fromJson(String json) { return switch (json) {
+  'FinishAttestationSuccess' => finishAttestationSuccess,
+  _ => MconnEventFinishAttestationSuccessK._(json),
+}; }
+
+static const MconnEventFinishAttestationSuccessK finishAttestationSuccess = MconnEventFinishAttestationSuccessK._('FinishAttestationSuccess');
+
+static const List<MconnEventFinishAttestationSuccessK> values = [finishAttestationSuccess];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MconnEventFinishAttestationSuccessK && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MconnEventFinishAttestationSuccessK($value)'; } 
+ }
+final class MconnEventFinishAttestationSuccess {const MconnEventFinishAttestationSuccess({required this.k});
+
+factory MconnEventFinishAttestationSuccess.fromJson(Map<String, dynamic> json) { return MconnEventFinishAttestationSuccess(
+  k: MconnEventFinishAttestationSuccessK.fromJson(json['k'] as String),
+); }
+
+/// Finished attestation
+final MconnEventFinishAttestationSuccessK k;
+
+Map<String, dynamic> toJson() { return {
+  'k': k.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+MconnEventFinishAttestationSuccess copyWith({MconnEventFinishAttestationSuccessK? k}) { return MconnEventFinishAttestationSuccess(
+  k: k ?? this.k,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnEventFinishAttestationSuccess &&
+          k == other.k; } 
+@override int get hashCode { return k.hashCode; } 
+@override String toString() { return 'MconnEventFinishAttestationSuccess(k: $k)'; } 
+ }

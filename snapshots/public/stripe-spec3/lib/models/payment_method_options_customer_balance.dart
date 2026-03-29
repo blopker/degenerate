@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_options_customer_balance_bank_transfer.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
+final class PaymentMethodOptionsCustomerBalanceFundingType {const PaymentMethodOptionsCustomerBalanceFundingType._(this.value);
+
+factory PaymentMethodOptionsCustomerBalanceFundingType.fromJson(String json) { return switch (json) {
+  'bank_transfer' => bankTransfer,
+  _ => PaymentMethodOptionsCustomerBalanceFundingType._(json),
+}; }
+
+static const PaymentMethodOptionsCustomerBalanceFundingType bankTransfer = PaymentMethodOptionsCustomerBalanceFundingType._('bank_transfer');
+
+static const List<PaymentMethodOptionsCustomerBalanceFundingType> values = [bankTransfer];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsCustomerBalanceFundingType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsCustomerBalanceFundingType($value)'; } 
+ }
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final class PaymentMethodOptionsCustomerBalanceSetupFutureUsage {const PaymentMethodOptionsCustomerBalanceSetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentMethodOptionsCustomerBalanceSetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsCustomerBalanceSetupFutureUsage none = PaymentMethodOptionsCustomerBalanceSetupFutureUsage._('none');
+
+static const List<PaymentMethodOptionsCustomerBalanceSetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsCustomerBalanceSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsCustomerBalanceSetupFutureUsage($value)'; } 
+ }
+/// 
+final class PaymentMethodOptionsCustomerBalance {const PaymentMethodOptionsCustomerBalance({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
+
+factory PaymentMethodOptionsCustomerBalance.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCustomerBalance(
+  bankTransfer: json['bank_transfer'] != null ? PaymentMethodOptionsCustomerBalanceBankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
+  fundingType: json['funding_type'] != null ? PaymentMethodOptionsCustomerBalanceFundingType.fromJson(json['funding_type'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsCustomerBalanceSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PaymentMethodOptionsCustomerBalanceBankTransfer? bankTransfer;
+
+/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
+final PaymentMethodOptionsCustomerBalanceFundingType? fundingType;
+
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final PaymentMethodOptionsCustomerBalanceSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
+  if (fundingType != null) 'funding_type': fundingType?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsCustomerBalance copyWith({PaymentMethodOptionsCustomerBalanceBankTransfer Function()? bankTransfer, PaymentMethodOptionsCustomerBalanceFundingType? Function()? fundingType, PaymentMethodOptionsCustomerBalanceSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsCustomerBalance(
+  bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
+  fundingType: fundingType != null ? fundingType() : this.fundingType,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsCustomerBalance &&
+          bankTransfer == other.bankTransfer &&
+          fundingType == other.fundingType &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(bankTransfer, fundingType, setupFutureUsage); } 
+@override String toString() { return 'PaymentMethodOptionsCustomerBalance(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)'; } 
+ }

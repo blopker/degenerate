@@ -1,0 +1,272 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_check_suite_rerequested_check_suite_app_owner.dart';import 'webhook_check_suite_rerequested_check_suite_app_permissions.dart';final class WebhookCheckSuiteRerequestedCheckSuiteAppEvents {const WebhookCheckSuiteRerequestedCheckSuiteAppEvents._(this.value);
+
+factory WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(String json) { return switch (json) {
+  'branch_protection_rule' => branchProtectionRule,
+  'check_run' => checkRun,
+  'check_suite' => checkSuite,
+  'code_scanning_alert' => codeScanningAlert,
+  'commit_comment' => commitComment,
+  'content_reference' => contentReference,
+  'create' => create,
+  'delete' => delete,
+  'deployment' => deployment,
+  'deployment_review' => deploymentReview,
+  'deployment_status' => deploymentStatus,
+  'deploy_key' => deployKey,
+  'discussion' => discussion,
+  'discussion_comment' => discussionComment,
+  'fork' => fork,
+  'gollum' => gollum,
+  'issues' => issues,
+  'issue_comment' => issueComment,
+  'label' => label,
+  'member' => member,
+  'membership' => membership,
+  'milestone' => milestone,
+  'organization' => organization,
+  'org_block' => orgBlock,
+  'page_build' => pageBuild,
+  'project' => project,
+  'project_card' => projectCard,
+  'project_column' => projectColumn,
+  'public' => public,
+  'pull_request' => pullRequest,
+  'pull_request_review' => pullRequestReview,
+  'pull_request_review_comment' => pullRequestReviewComment,
+  'push' => push,
+  'registry_package' => registryPackage,
+  'release' => release,
+  'repository' => repository,
+  'repository_dispatch' => repositoryDispatch,
+  'secret_scanning_alert' => secretScanningAlert,
+  'star' => star,
+  'status' => status,
+  'team' => team,
+  'team_add' => teamAdd,
+  'watch' => watch,
+  'workflow_dispatch' => workflowDispatch,
+  'workflow_run' => workflowRun,
+  'pull_request_review_thread' => pullRequestReviewThread,
+  'merge_queue_entry' => mergeQueueEntry,
+  'workflow_job' => workflowJob,
+  _ => WebhookCheckSuiteRerequestedCheckSuiteAppEvents._(json),
+}; }
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents branchProtectionRule = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('branch_protection_rule');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents checkRun = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('check_run');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents checkSuite = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('check_suite');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents codeScanningAlert = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('code_scanning_alert');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents commitComment = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('commit_comment');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents contentReference = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('content_reference');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents create = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('create');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents delete = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('delete');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents deployment = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('deployment');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents deploymentReview = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('deployment_review');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents deploymentStatus = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('deployment_status');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents deployKey = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('deploy_key');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents discussion = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('discussion');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents discussionComment = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('discussion_comment');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents fork = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('fork');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents gollum = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('gollum');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents issues = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('issues');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents issueComment = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('issue_comment');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents label = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('label');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents member = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('member');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents membership = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('membership');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents milestone = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('milestone');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents organization = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('organization');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents orgBlock = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('org_block');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents pageBuild = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('page_build');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents project = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('project');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents projectCard = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('project_card');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents projectColumn = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('project_column');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents public = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('public');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents pullRequest = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('pull_request');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents pullRequestReview = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('pull_request_review');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents pullRequestReviewComment = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('pull_request_review_comment');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents push = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('push');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents registryPackage = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('registry_package');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents release = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('release');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents repository = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('repository');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents repositoryDispatch = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('repository_dispatch');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents secretScanningAlert = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('secret_scanning_alert');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents star = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('star');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents status = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('status');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents team = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('team');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents teamAdd = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('team_add');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents watch = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('watch');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents workflowDispatch = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('workflow_dispatch');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents workflowRun = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('workflow_run');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents pullRequestReviewThread = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('pull_request_review_thread');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents mergeQueueEntry = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('merge_queue_entry');
+
+static const WebhookCheckSuiteRerequestedCheckSuiteAppEvents workflowJob = WebhookCheckSuiteRerequestedCheckSuiteAppEvents._('workflow_job');
+
+static const List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, pullRequestReviewThread, mergeQueueEntry, workflowJob];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookCheckSuiteRerequestedCheckSuiteAppEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteAppEvents($value)'; } 
+ }
+/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+final class WebhookCheckSuiteRerequestedCheckSuiteApp {const WebhookCheckSuiteRerequestedCheckSuiteApp({required this.createdAt, required this.description, this.events, required this.externalUrl, required this.htmlUrl, required this.id, this.clientId, required this.name, required this.nodeId, required this.owner, this.permissions, this.slug, required this.updatedAt, });
+
+factory WebhookCheckSuiteRerequestedCheckSuiteApp.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  description: json['description'] as String?,
+  events: (json['events'] as List<dynamic>?)?.map((e) => WebhookCheckSuiteRerequestedCheckSuiteAppEvents.fromJson(e as String)).toList(),
+  externalUrl: json['external_url'] != null ? Uri.parse(json['external_url'] as String) : null,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  clientId: json['client_id'] as String?,
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  owner: json['owner'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? WebhookCheckSuiteRerequestedCheckSuiteAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  slug: json['slug'] as String?,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+); }
+
+final DateTime? createdAt;
+
+final String? description;
+
+/// The list of events for the GitHub app
+final List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents>? events;
+
+final Uri? externalUrl;
+
+final Uri htmlUrl;
+
+/// Unique identifier of the GitHub app
+final int? id;
+
+/// The Client ID for the GitHub app
+final String? clientId;
+
+/// The name of the GitHub app
+final String name;
+
+final String nodeId;
+
+final WebhookCheckSuiteRerequestedCheckSuiteAppOwner? owner;
+
+/// The set of permissions for the GitHub app
+final WebhookCheckSuiteRerequestedCheckSuiteAppPermissions? permissions;
+
+/// The slug name of the GitHub app
+final String? slug;
+
+final DateTime? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'description': ?description,
+  if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
+  if (externalUrl != null) 'external_url': externalUrl?.toString(),
+  'html_url': htmlUrl.toString(),
+  'id': ?id,
+  'client_id': ?clientId,
+  'name': name,
+  'node_id': nodeId,
+  if (owner != null) 'owner': owner?.toJson(),
+  if (permissions != null) 'permissions': permissions?.toJson(),
+  'slug': ?slug,
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('external_url') && json['external_url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('owner') &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+WebhookCheckSuiteRerequestedCheckSuiteApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookCheckSuiteRerequestedCheckSuiteAppEvents> Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? Function()? clientId, String? name, String? nodeId, WebhookCheckSuiteRerequestedCheckSuiteAppOwner? Function()? owner, WebhookCheckSuiteRerequestedCheckSuiteAppPermissions Function()? permissions, String Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookCheckSuiteRerequestedCheckSuiteApp(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  description: description != null ? description() : this.description,
+  events: events != null ? events() : this.events,
+  externalUrl: externalUrl != null ? externalUrl() : this.externalUrl,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id != null ? id() : this.id,
+  clientId: clientId != null ? clientId() : this.clientId,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  owner: owner != null ? owner() : this.owner,
+  permissions: permissions != null ? permissions() : this.permissions,
+  slug: slug != null ? slug() : this.slug,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookCheckSuiteRerequestedCheckSuiteApp &&
+          createdAt == other.createdAt &&
+          description == other.description &&
+          listEquals(events, other.events) &&
+          externalUrl == other.externalUrl &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          clientId == other.clientId &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          owner == other.owner &&
+          permissions == other.permissions &&
+          slug == other.slug &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, clientId, name, nodeId, owner, permissions, slug, updatedAt); } 
+@override String toString() { return 'WebhookCheckSuiteRerequestedCheckSuiteApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, clientId: $clientId, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
+ }

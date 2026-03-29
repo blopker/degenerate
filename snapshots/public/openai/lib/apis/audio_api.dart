@@ -1,0 +1,346 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_speech_request.dart';import '../models/create_speech_response_stream_event.dart';import '../models/create_transcription_request.dart';import '../models/create_transcription_response.dart';import '../models/create_transcription_response_diarized_json.dart';import '../models/create_transcription_response_json.dart';import '../models/create_transcription_response_stream_event.dart';import '../models/create_transcription_response_verbose_json.dart';import '../models/create_translation_request.dart';import '../models/create_translation_response.dart';import '../models/create_translation_response_json.dart';import '../models/create_translation_response_verbose_json.dart';import '../models/create_voice_consent_request.dart';import '../models/create_voice_request.dart';import '../models/speech_audio_delta_event.dart';import '../models/speech_audio_done_event.dart';import '../models/transcript_text_delta_event.dart';import '../models/transcript_text_done_event.dart';import '../models/transcript_text_segment_event.dart';import '../models/update_voice_consent_request.dart';import '../models/voice_consent_deleted_resource.dart';import '../models/voice_consent_list_resource.dart';import '../models/voice_consent_resource.dart';import '../models/voice_resource.dart';/// AudioApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class AudioApi with ApiExecutor {const AudioApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Generates audio from the input text.
+/// 
+/// Returns the audio file content, or a stream of audio events.
+/// 
+///
+/// `POST /audio/speech`
+Future<ApiResult<Uint8List, Never>> createSpeech({required CreateSpeechRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/speech',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Uint8List.fromList(response.bodyBytes);
+  },
+);
+ } 
+/// Transcribes audio into the input language.
+/// 
+/// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
+/// format, or a stream of transcript events.
+/// 
+///
+/// `POST /audio/transcriptions`
+Future<ApiResult<CreateTranscriptionResponse, Never>> createTranscription({required CreateTranscriptionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/transcriptions',
+  headers: headers,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('model', body.model.toString()),
+    if (body.language case final language$?)
+      ApiMultipartField.text('language', language$),
+    if (body.prompt case final prompt$?)
+      ApiMultipartField.text('prompt', prompt$),
+    if (body.responseFormat case final responseFormat$?)
+      ApiMultipartField.text('response_format', responseFormat$.toJson()),
+    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.include case final include$?)
+      ApiMultipartField.text('include', include$.toString()),
+    if (body.timestampGranularities case final timestampGranularities$?)
+      ApiMultipartField.text('timestamp_granularities', timestampGranularities$.toString()),
+    if (body.stream case final stream$?)
+      ApiMultipartField.text('stream', stream$.toString()),
+    if (body.chunkingStrategy case final chunkingStrategy$?)
+      ApiMultipartField.text('chunking_strategy', chunkingStrategy$.toString()),
+    if (body.knownSpeakerNames case final knownSpeakerNames$?)
+      ApiMultipartField.text('known_speaker_names', knownSpeakerNames$.toString()),
+    if (body.knownSpeakerReferences case final knownSpeakerReferences$?)
+      ApiMultipartField.text('known_speaker_references', knownSpeakerReferences$.toString()),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OneOf3.parse(jsonDecode(response.body), fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
+  },
+);
+ } 
+/// Translates audio into English.
+///
+/// `POST /audio/translations`
+Future<ApiResult<CreateTranslationResponse, Never>> createTranslation({required CreateTranslationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/translations',
+  headers: headers,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('model', body.model.toString()),
+    if (body.prompt case final prompt$?)
+      ApiMultipartField.text('prompt', prompt$),
+    ApiMultipartField.text('response_format', body.responseFormat.toJson()),
+    ApiMultipartField.text('temperature', body.temperature.toString()),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
+  },
+);
+ } 
+/// Returns a list of voice consent recordings.
+///
+/// List consent recordings available to your organization for creating custom voices.
+/// 
+/// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+/// 
+///
+/// `GET /audio/voice_consents`
+Future<ApiResult<VoiceConsentListResource, Never>> listVoiceConsents({String? after, int? limit, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (after != null) queryParameters['after'] = after;
+if (limit != null) queryParameters['limit'] = limit.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/audio/voice_consents',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return VoiceConsentListResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Upload a voice consent recording.
+///
+/// Upload a consent recording that authorizes creation of a custom voice.
+/// 
+/// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+/// 
+///
+/// `POST /audio/voice_consents`
+Future<ApiResult<VoiceConsentResource, Never>> createVoiceConsent({required CreateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/voice_consents',
+  headers: headers,
+  body: [
+    ApiMultipartField.text('name', body.name),
+    ApiMultipartField.file('recording', body.recording),
+    ApiMultipartField.text('language', body.language),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Retrieves a voice consent recording.
+///
+/// Retrieve consent recording metadata used for creating custom voices.
+/// 
+/// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+/// 
+///
+/// `GET /audio/voice_consents/{consent_id}`
+Future<ApiResult<VoiceConsentResource, Never>> getVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Updates a voice consent recording (metadata only).
+///
+/// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.
+/// 
+/// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+/// 
+///
+/// `POST /audio/voice_consents/{consent_id}`
+Future<ApiResult<VoiceConsentResource, Never>> updateVoiceConsent({required String consentId, required UpdateVoiceConsentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return VoiceConsentResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Deletes a voice consent recording.
+///
+/// Delete a consent recording that was uploaded for creating custom voices.
+/// 
+/// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+/// 
+///
+/// `DELETE /audio/voice_consents/{consent_id}`
+Future<ApiResult<VoiceConsentDeletedResource, Never>> deleteVoiceConsent({required String consentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/audio/voice_consents/${Uri.encodeComponent(consentId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return VoiceConsentDeletedResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Creates a custom voice.
+///
+/// Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.
+/// 
+/// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+/// 
+///
+/// `POST /audio/voices`
+Future<ApiResult<VoiceResource, Never>> createVoice({required CreateVoiceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/voices',
+  headers: headers,
+  body: [
+    ApiMultipartField.text('name', body.name),
+    ApiMultipartField.file('audio_sample', body.audioSample),
+    ApiMultipartField.text('consent', body.consent),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return VoiceResource.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Generates audio from the input text.
+/// 
+/// Returns the audio file content, or a stream of audio events.
+///  (streaming)
+///
+/// `POST /audio/speech`
+Stream<CreateSpeechResponseStreamEvent> createSpeechStream({required CreateSpeechRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/speech',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return executeStreaming(
+  request,
+  onEvent: (data) {
+    return OneOf2.parse(jsonDecode(data), fromA: (v) => SpeechAudioDeltaEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => SpeechAudioDoneEvent.fromJson(v as Map<String, dynamic>),);
+  },
+);
+ } 
+/// Transcribes audio into the input language.
+/// 
+/// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
+/// format, or a stream of transcript events.
+///  (streaming)
+///
+/// `POST /audio/transcriptions`
+Stream<CreateTranscriptionResponseStreamEvent> createTranscriptionStream({required CreateTranscriptionRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/audio/transcriptions',
+  headers: headers,
+  body: [
+    ApiMultipartField.file('file', body.file),
+    ApiMultipartField.text('model', body.model.toString()),
+    if (body.language case final language$?)
+      ApiMultipartField.text('language', language$),
+    if (body.prompt case final prompt$?)
+      ApiMultipartField.text('prompt', prompt$),
+    if (body.responseFormat case final responseFormat$?)
+      ApiMultipartField.text('response_format', responseFormat$.toJson()),
+    ApiMultipartField.text('temperature', body.temperature.toString()),
+    if (body.include case final include$?)
+      ApiMultipartField.text('include', include$.toString()),
+    if (body.timestampGranularities case final timestampGranularities$?)
+      ApiMultipartField.text('timestamp_granularities', timestampGranularities$.toString()),
+    if (body.stream case final stream$?)
+      ApiMultipartField.text('stream', stream$.toString()),
+    if (body.chunkingStrategy case final chunkingStrategy$?)
+      ApiMultipartField.text('chunking_strategy', chunkingStrategy$.toString()),
+    if (body.knownSpeakerNames case final knownSpeakerNames$?)
+      ApiMultipartField.text('known_speaker_names', knownSpeakerNames$.toString()),
+    if (body.knownSpeakerReferences case final knownSpeakerReferences$?)
+      ApiMultipartField.text('known_speaker_references', knownSpeakerReferences$.toString()),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return executeStreaming(
+  request,
+  onEvent: (data) {
+    return OneOf3.parse(jsonDecode(data), fromA: (v) => TranscriptTextSegmentEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => TranscriptTextDeltaEvent.fromJson(v as Map<String, dynamic>), fromC: (v) => TranscriptTextDoneEvent.fromJson(v as Map<String, dynamic>),);
+  },
+);
+ } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorCreateOrModifyWorkflowResponseErrors {const WorCreateOrModifyWorkflowResponseErrors({required this.code, required this.message, });
+
+factory WorCreateOrModifyWorkflowResponseErrors.fromJson(Map<String, dynamic> json) { return WorCreateOrModifyWorkflowResponseErrors(
+  code: (json['code'] as num).toDouble(),
+  message: json['message'] as String,
+); }
+
+final double code;
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String; } 
+WorCreateOrModifyWorkflowResponseErrors copyWith({double? code, String? message, }) { return WorCreateOrModifyWorkflowResponseErrors(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorCreateOrModifyWorkflowResponseErrors &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'WorCreateOrModifyWorkflowResponseErrors(code: $code, message: $message)'; } 
+ }

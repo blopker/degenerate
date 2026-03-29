@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
+/// 
+final class ZonesRocketLoaderId {const ZonesRocketLoaderId._(this.value);
+
+factory ZonesRocketLoaderId.fromJson(String json) { return switch (json) {
+  'rocket_loader' => rocketLoader,
+  _ => ZonesRocketLoaderId._(json),
+}; }
+
+static const ZonesRocketLoaderId rocketLoader = ZonesRocketLoaderId._('rocket_loader');
+
+static const List<ZonesRocketLoaderId> values = [rocketLoader];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesRocketLoaderId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesRocketLoaderId($value)'; } 
+ }
+final class ZonesRocketLoader {const ZonesRocketLoader({this.id, this.value, });
+
+factory ZonesRocketLoader.fromJson(Map<String, dynamic> json) { return ZonesRocketLoader(
+  id: json['id'] != null ? ZonesRocketLoaderId.fromJson(json['id'] as String) : null,
+  value: json['value'] != null ? ZonesRocketLoaderValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Turn on or off Rocket Loader in the Cloudflare Speed app.
+/// 
+final ZonesRocketLoaderId? id;
+
+/// The status of Rocket Loader
+/// 
+final ZonesRocketLoaderValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesRocketLoader copyWith({ZonesRocketLoaderId Function()? id, ZonesRocketLoaderValue Function()? value, }) { return ZonesRocketLoader(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesRocketLoader &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ZonesRocketLoader(id: $id, value: $value)'; } 
+ }

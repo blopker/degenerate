@@ -1,0 +1,106 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_invoices_invoice_lines_line_item_id_request_tax_amounts_variant1_tax_rate_data.dart';final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._(this.value);
+
+factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason.fromJson(String json) { return switch (json) {
+  'customer_exempt' => customerExempt,
+  'not_collecting' => notCollecting,
+  'not_subject_to_tax' => notSubjectToTax,
+  'not_supported' => notSupported,
+  'portion_product_exempt' => portionProductExempt,
+  'portion_reduced_rated' => portionReducedRated,
+  'portion_standard_rated' => portionStandardRated,
+  'product_exempt' => productExempt,
+  'product_exempt_holiday' => productExemptHoliday,
+  'proportionally_rated' => proportionallyRated,
+  'reduced_rated' => reducedRated,
+  'reverse_charge' => reverseCharge,
+  'standard_rated' => standardRated,
+  'taxable_basis_reduced' => taxableBasisReduced,
+  'zero_rated' => zeroRated,
+  _ => PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._(json),
+}; }
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason customerExempt = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('customer_exempt');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason notCollecting = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('not_collecting');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason notSubjectToTax = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('not_subject_to_tax');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason notSupported = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('not_supported');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason portionProductExempt = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('portion_product_exempt');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason portionReducedRated = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('portion_reduced_rated');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason portionStandardRated = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('portion_standard_rated');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason productExempt = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('product_exempt');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason productExemptHoliday = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('product_exempt_holiday');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason proportionallyRated = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('proportionally_rated');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason reducedRated = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('reduced_rated');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason reverseCharge = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('reverse_charge');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason standardRated = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('standard_rated');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason taxableBasisReduced = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('taxable_basis_reduced');
+
+static const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason zeroRated = PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason._('zero_rated');
+
+static const List<PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason> values = [customerExempt, notCollecting, notSubjectToTax, notSupported, portionProductExempt, portionReducedRated, portionStandardRated, productExempt, productExemptHoliday, proportionallyRated, reducedRated, reverseCharge, standardRated, taxableBasisReduced, zeroRated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason($value)'; } 
+ }
+final class PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1 {const PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1({required this.amount, required this.taxRateData, this.taxabilityReason, required this.taxableAmount, });
+
+factory PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1(
+  amount: (json['amount'] as num).toInt(),
+  taxRateData: PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData.fromJson(json['tax_rate_data'] as Map<String, dynamic>),
+  taxabilityReason: json['taxability_reason'] != null ? PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason.fromJson(json['taxability_reason'] as String) : null,
+  taxableAmount: (json['taxable_amount'] as num).toInt(),
+); }
+
+final int amount;
+
+final PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData taxRateData;
+
+final PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason? taxabilityReason;
+
+final int taxableAmount;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'tax_rate_data': taxRateData.toJson(),
+  if (taxabilityReason != null) 'taxability_reason': taxabilityReason?.toJson(),
+  'taxable_amount': taxableAmount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('tax_rate_data') &&
+      json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
+PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1 copyWith({int? amount, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxRateData? taxRateData, PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1TaxabilityReason Function()? taxabilityReason, int? taxableAmount, }) { return PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1(
+  amount: amount ?? this.amount,
+  taxRateData: taxRateData ?? this.taxRateData,
+  taxabilityReason: taxabilityReason != null ? taxabilityReason() : this.taxabilityReason,
+  taxableAmount: taxableAmount ?? this.taxableAmount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1 &&
+          amount == other.amount &&
+          taxRateData == other.taxRateData &&
+          taxabilityReason == other.taxabilityReason &&
+          taxableAmount == other.taxableAmount; } 
+@override int get hashCode { return Object.hash(amount, taxRateData, taxabilityReason, taxableAmount); } 
+@override String toString() { return 'PostInvoicesInvoiceLinesLineItemIdRequestTaxAmountsVariant1(amount: $amount, taxRateData: $taxRateData, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
+ }

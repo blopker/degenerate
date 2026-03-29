@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'message_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
+final class MessageContentTextAnnotationsFileCitationObjectType {const MessageContentTextAnnotationsFileCitationObjectType._(this.value);
+
+factory MessageContentTextAnnotationsFileCitationObjectType.fromJson(String json) { return switch (json) {
+  'file_citation' => fileCitation,
+  _ => MessageContentTextAnnotationsFileCitationObjectType._(json),
+}; }
+
+static const MessageContentTextAnnotationsFileCitationObjectType fileCitation = MessageContentTextAnnotationsFileCitationObjectType._('file_citation');
+
+static const List<MessageContentTextAnnotationsFileCitationObjectType> values = [fileCitation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageContentTextAnnotationsFileCitationObjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageContentTextAnnotationsFileCitationObjectType($value)'; } 
+ }
+/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
+final class MessageContentTextAnnotationsFileCitationObject {const MessageContentTextAnnotationsFileCitationObject({required this.type, required this.text, required this.fileCitation, required this.startIndex, required this.endIndex, });
+
+factory MessageContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageContentTextAnnotationsFileCitationObject(
+  type: MessageContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),
+  text: json['text'] as String,
+  fileCitation: MessageContentTextAnnotationsFileCitationObjectFileCitation.fromJson(json['file_citation'] as Map<String, dynamic>),
+  startIndex: (json['start_index'] as num).toInt(),
+  endIndex: (json['end_index'] as num).toInt(),
+); }
+
+/// Always `file_citation`.
+final MessageContentTextAnnotationsFileCitationObjectType type;
+
+/// The text in the message content that needs to be replaced.
+final String text;
+
+final MessageContentTextAnnotationsFileCitationObjectFileCitation fileCitation;
+
+final int startIndex;
+
+final int endIndex;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'text': text,
+  'file_citation': fileCitation.toJson(),
+  'start_index': startIndex,
+  'end_index': endIndex,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String &&
+      json.containsKey('file_citation') &&
+      json.containsKey('start_index') && json['start_index'] is num &&
+      json.containsKey('end_index') && json['end_index'] is num; } 
+MessageContentTextAnnotationsFileCitationObject copyWith({MessageContentTextAnnotationsFileCitationObjectType? type, String? text, MessageContentTextAnnotationsFileCitationObjectFileCitation? fileCitation, int? startIndex, int? endIndex, }) { return MessageContentTextAnnotationsFileCitationObject(
+  type: type ?? this.type,
+  text: text ?? this.text,
+  fileCitation: fileCitation ?? this.fileCitation,
+  startIndex: startIndex ?? this.startIndex,
+  endIndex: endIndex ?? this.endIndex,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MessageContentTextAnnotationsFileCitationObject &&
+          type == other.type &&
+          text == other.text &&
+          fileCitation == other.fileCitation &&
+          startIndex == other.startIndex &&
+          endIndex == other.endIndex; } 
+@override int get hashCode { return Object.hash(type, text, fileCitation, startIndex, endIndex); } 
+@override String toString() { return 'MessageContentTextAnnotationsFileCitationObject(type: $type, text: $text, fileCitation: $fileCitation, startIndex: $startIndex, endIndex: $endIndex)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_start_outputs_next.dart';final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs({required this.next});
+
+factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs(
+  next: AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputsNext.fromJson(json['next'] as Map<String, dynamic>),
+); }
+
+final AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputsNext next;
+
+Map<String, dynamic> toJson() { return {
+  'next': next.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('next'); } 
+AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs copyWith({AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputsNext? next}) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs(
+  next: next ?? this.next,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs &&
+          next == other.next; } 
+@override int get hashCode { return next.hashCode; } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs(next: $next)'; } 
+ }

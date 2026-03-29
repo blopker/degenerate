@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentPagesCheckoutSessionCustomTextPosition {const PaymentPagesCheckoutSessionCustomTextPosition({required this.message});
+
+factory PaymentPagesCheckoutSessionCustomTextPosition.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomTextPosition(
+  message: json['message'] as String,
+); }
+
+/// Text can be up to 1200 characters in length.
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+PaymentPagesCheckoutSessionCustomTextPosition copyWith({String? message}) { return PaymentPagesCheckoutSessionCustomTextPosition(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionCustomTextPosition &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionCustomTextPosition(message: $message)'; } 
+ }

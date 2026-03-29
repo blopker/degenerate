@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_subscriptions_subscription_migrate_request_billing_mode_flexible.dart';final class PostSubscriptionsSubscriptionMigrateRequestBillingModeType {const PostSubscriptionsSubscriptionMigrateRequestBillingModeType._(this.value);
+
+factory PostSubscriptionsSubscriptionMigrateRequestBillingModeType.fromJson(String json) { return switch (json) {
+  'flexible' => flexible,
+  _ => PostSubscriptionsSubscriptionMigrateRequestBillingModeType._(json),
+}; }
+
+static const PostSubscriptionsSubscriptionMigrateRequestBillingModeType flexible = PostSubscriptionsSubscriptionMigrateRequestBillingModeType._('flexible');
+
+static const List<PostSubscriptionsSubscriptionMigrateRequestBillingModeType> values = [flexible];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionMigrateRequestBillingModeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsSubscriptionMigrateRequestBillingModeType($value)'; } 
+ }
+/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
+final class PostSubscriptionsSubscriptionMigrateRequestBillingMode {const PostSubscriptionsSubscriptionMigrateRequestBillingMode({this.flexible, required this.type, });
+
+factory PostSubscriptionsSubscriptionMigrateRequestBillingMode.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionMigrateRequestBillingMode(
+  flexible: json['flexible'] != null ? PostSubscriptionsSubscriptionMigrateRequestBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
+  type: PostSubscriptionsSubscriptionMigrateRequestBillingModeType.fromJson(json['type'] as String),
+); }
+
+final PostSubscriptionsSubscriptionMigrateRequestBillingModeFlexible? flexible;
+
+final PostSubscriptionsSubscriptionMigrateRequestBillingModeType type;
+
+Map<String, dynamic> toJson() { return {
+  if (flexible != null) 'flexible': flexible?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostSubscriptionsSubscriptionMigrateRequestBillingMode copyWith({PostSubscriptionsSubscriptionMigrateRequestBillingModeFlexible Function()? flexible, PostSubscriptionsSubscriptionMigrateRequestBillingModeType? type, }) { return PostSubscriptionsSubscriptionMigrateRequestBillingMode(
+  flexible: flexible != null ? flexible() : this.flexible,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionsSubscriptionMigrateRequestBillingMode &&
+          flexible == other.flexible &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(flexible, type); } 
+@override String toString() { return 'PostSubscriptionsSubscriptionMigrateRequestBillingMode(flexible: $flexible, type: $type)'; } 
+ }

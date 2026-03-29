@@ -1,0 +1,440 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/n5_request.dart';import '../models/n5_request2.dart';import '../models/n5_request3.dart';import '../models/n5_request4.dart';import '../models/n5_request5.dart';import '../models/n5_request6.dart';import '../models/n5_request7.dart';import '../models/n5_response400.dart';import '../models/n5_response4002.dart';import '../models/n5_response4003.dart';import '../models/n5_response4004.dart';import '../models/n5_response4005.dart';import '../models/n5_response4006.dart';import '../models/n5_response4007.dart';import '../models/workers_ai_post_run_cf_baai_bge_m3_request.dart';import '../models/workers_ai_post_run_cf_baai_bge_m3_response400.dart';import '../models/workers_ai_post_run_cf_baai_omni_bge_m3_request.dart';import '../models/workers_ai_post_run_cf_baai_omni_bge_m3_response400.dart';import '../models/workers_ai_post_run_cf_google_embeddinggemma300m_request.dart';import '../models/workers_ai_post_run_cf_google_embeddinggemma300m_response400.dart';import '../models/workers_ai_post_run_cf_google_omni_embeddinggemma300m_request.dart';import '../models/workers_ai_post_run_cf_google_omni_embeddinggemma300m_response400.dart';import '../models/workers_ai_post_run_cf_pfnet_plamo_embedding1b_request.dart';import '../models/workers_ai_post_run_cf_pfnet_plamo_embedding1b_response400.dart';import '../models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_request.dart';import '../models/workers_ai_post_run_cf_qwen_qwen3_embedding06b_response400.dart';/// WorkersAiTextEmbeddingsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class WorkersAiTextEmbeddingsApi with ApiExecutor {const WorkersAiTextEmbeddingsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Execute @cf/baai/bge-base-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/bge-base-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-base-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response400>> workersAiPostRunCfBaaiBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-base-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/bge-large-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/bge-large-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-large-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response4002>> workersAiPostRunCfBaaiBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request2? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-large-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response4002.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/bge-m3 model.
+///
+/// Runs inference on the @cf/baai/bge-m3 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-m3`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiBgeM3Response400>> workersAiPostRunCfBaaiBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-m3',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfBaaiBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/bge-small-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/bge-small-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/bge-small-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response4003>> workersAiPostRunCfBaaiBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request3? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/bge-small-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response4003.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/omni-bge-base-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/omni-bge-base-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-base-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response4004>> workersAiPostRunCfBaaiOmniBgeBaseEnV15({required String accountId, String? queueRequest, String? tags, $5Request4? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-base-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response4004.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/omni-bge-large-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/omni-bge-large-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-large-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response4005>> workersAiPostRunCfBaaiOmniBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request5? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-large-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response4005.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/omni-bge-m3 model.
+///
+/// Runs inference on the @cf/baai/omni-bge-m3 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-m3`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfBaaiOmniBgeM3Response400>> workersAiPostRunCfBaaiOmniBgeM3({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfBaaiOmniBgeM3Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-m3',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfBaaiOmniBgeM3Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/omni-bge-small-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/omni-bge-small-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/omni-bge-small-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response4006>> workersAiPostRunCfBaaiOmniBgeSmallEnV15({required String accountId, String? queueRequest, String? tags, $5Request6? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/omni-bge-small-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response4006.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/baai/ray-bge-large-en-v1.5 model.
+///
+/// Runs inference on the @cf/baai/ray-bge-large-en-v1.5 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/baai/ray-bge-large-en-v1.5`
+Future<ApiResult<Map<String, dynamic>, $5Response4007>> workersAiPostRunCfBaaiRayBgeLargeEnV15({required String accountId, String? queueRequest, String? tags, $5Request7? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/baai/ray-bge-large-en-v1.5',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return $5Response4007.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/google/embeddinggemma-300m model.
+///
+/// Runs inference on the @cf/google/embeddinggemma-300m model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/google/embeddinggemma-300m`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/embeddinggemma-300m',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfGoogleEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/google/omni-embeddinggemma-300m model.
+///
+/// Runs inference on the @cf/google/omni-embeddinggemma-300m model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/google/omni-embeddinggemma-300m`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400>> workersAiPostRunCfGoogleOmniEmbeddinggemma300m({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/google/omni-embeddinggemma-300m',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfGoogleOmniEmbeddinggemma300mResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/pfnet/plamo-embedding-1b model.
+///
+/// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/pfnet/plamo-embedding-1b`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400>> workersAiPostRunCfPfnetPlamoEmbedding1b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfPfnetPlamoEmbedding1bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/pfnet/plamo-embedding-1b',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfPfnetPlamoEmbedding1bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/qwen/qwen3-embedding-0.6b model.
+///
+/// Runs inference on the @cf/qwen/qwen3-embedding-0.6b model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/qwen/qwen3-embedding-0.6b`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfQwenQwen3Embedding06bResponse400>> workersAiPostRunCfQwenQwen3Embedding06b({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfQwenQwen3Embedding06bRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/qwen/qwen3-embedding-0.6b',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfQwenQwen3Embedding06bResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

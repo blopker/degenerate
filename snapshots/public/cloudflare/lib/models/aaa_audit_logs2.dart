@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aaa_audit_logs2_account.dart';import 'aaa_audit_logs2_action.dart';import 'aaa_audit_logs2_actor.dart';import 'aaa_audit_logs2_raw.dart';import 'aaa_audit_logs2_resource.dart';import 'aaa_audit_logs2_zone.dart';/// A unique identifier for the audit log entry.
+extension type const AaaSchemasIdentifier(String value) {
+factory AaaSchemasIdentifier.fromJson(String json) => AaaSchemasIdentifier(json);
+
+String toJson() => value;
+
+}
+final class AaaAuditLogs2 {const AaaAuditLogs2({this.account, this.action, this.actor, this.id, this.raw, this.resource, this.zone, });
+
+factory AaaAuditLogs2.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2(
+  account: json['account'] != null ? AaaAuditLogs2Account.fromJson(json['account'] as Map<String, dynamic>) : null,
+  action: json['action'] != null ? AaaAuditLogs2Action.fromJson(json['action'] as Map<String, dynamic>) : null,
+  actor: json['actor'] != null ? AaaAuditLogs2Actor.fromJson(json['actor'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? AaaSchemasIdentifier.fromJson(json['id'] as String) : null,
+  raw: json['raw'] != null ? AaaAuditLogs2Raw.fromJson(json['raw'] as Map<String, dynamic>) : null,
+  resource: json['resource'] != null ? AaaAuditLogs2Resource.fromJson(json['resource'] as Map<String, dynamic>) : null,
+  zone: json['zone'] != null ? AaaAuditLogs2Zone.fromJson(json['zone'] as Map<String, dynamic>) : null,
+); }
+
+/// Contains account related information.
+final AaaAuditLogs2Account? account;
+
+/// Provides information about the action performed.
+final AaaAuditLogs2Action? action;
+
+/// Provides details about the actor who performed the action.
+final AaaAuditLogs2Actor? actor;
+
+final AaaSchemasIdentifier? id;
+
+/// Provides raw information about the request and response.
+final AaaAuditLogs2Raw? raw;
+
+/// Provides details about the affected resource.
+final AaaAuditLogs2Resource? resource;
+
+/// Provides details about the zone affected by the action.
+final AaaAuditLogs2Zone? zone;
+
+Map<String, dynamic> toJson() { return {
+  if (account != null) 'account': account?.toJson(),
+  if (action != null) 'action': action?.toJson(),
+  if (actor != null) 'actor': actor?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (raw != null) 'raw': raw?.toJson(),
+  if (resource != null) 'resource': resource?.toJson(),
+  if (zone != null) 'zone': zone?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AaaAuditLogs2 copyWith({AaaAuditLogs2Account Function()? account, AaaAuditLogs2Action Function()? action, AaaAuditLogs2Actor Function()? actor, AaaSchemasIdentifier Function()? id, AaaAuditLogs2Raw Function()? raw, AaaAuditLogs2Resource Function()? resource, AaaAuditLogs2Zone Function()? zone, }) { return AaaAuditLogs2(
+  account: account != null ? account() : this.account,
+  action: action != null ? action() : this.action,
+  actor: actor != null ? actor() : this.actor,
+  id: id != null ? id() : this.id,
+  raw: raw != null ? raw() : this.raw,
+  resource: resource != null ? resource() : this.resource,
+  zone: zone != null ? zone() : this.zone,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AaaAuditLogs2 &&
+          account == other.account &&
+          action == other.action &&
+          actor == other.actor &&
+          id == other.id &&
+          raw == other.raw &&
+          resource == other.resource &&
+          zone == other.zone; } 
+@override int get hashCode { return Object.hash(account, action, actor, id, raw, resource, zone); } 
+@override String toString() { return 'AaaAuditLogs2(account: $account, action: $action, actor: $actor, id: $id, raw: $raw, resource: $resource, zone: $zone)'; } 
+ }

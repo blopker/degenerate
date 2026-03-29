@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/credentials_revoke_request.dart';import '../models/validation_error_simple.dart';/// CredentialsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class CredentialsApi with ApiExecutor {const CredentialsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Revoke a list of credentials
+///
+/// Submit a list of credentials to be revoked. This endpoint is intended to revoke credentials the caller does not own and may have found exposed on GitHub.com or elsewhere. It can also be used for credentials associated with an old user account that you no longer have access to. Credential owners will be notified of the revocation.
+/// 
+/// This endpoint currently accepts the following credential types:
+/// - Personal access tokens (classic)
+/// - Fine-grained personal access tokens
+/// 
+/// Revoked credentials may impact users on GitHub Free, Pro, & Team and GitHub Enterprise Cloud, and GitHub Enterprise Cloud with Enterprise Managed Users.
+/// GitHub cannot reactivate any credentials that have been revoked; new credentials will need to be generated.
+/// 
+/// To prevent abuse, this API is limited to only 60 unauthenticated requests per hour and a max of 1000 tokens per API request.
+/// 
+/// > [!NOTE]
+/// > Any authenticated requests will return a 403.
+///
+/// `POST /credentials/revoke`
+Future<ApiResult<Map<String, dynamic>, ValidationErrorSimple>> credentialsRevoke({required CredentialsRevokeRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/credentials/revoke',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

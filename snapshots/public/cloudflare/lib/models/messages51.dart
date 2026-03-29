@@ -1,0 +1,298 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio.dart';import 'messages51_chat_template_kwargs.dart';import 'messages51_function_call.dart';import 'messages51_function_call_variant2.dart';import 'messages51_functions.dart';import 'messages51_messages.dart';import 'messages51_messages_assistant.dart';import 'messages51_messages_developer.dart';import 'messages51_messages_function.dart';import 'messages51_messages_system.dart';import 'messages51_messages_tool.dart';import 'messages51_messages_user.dart';import 'messages51_prediction.dart';import 'messages51_response_format.dart';import 'messages51_stop.dart';import 'messages51_stream_options.dart';import 'messages51_tool_choice.dart';import 'messages51_tools.dart';import 'messages51_tools_custom.dart';import 'messages51_tools_function.dart';import 'messages51_web_search_options.dart';final class Messages51Modalities {const Messages51Modalities._(this.value);
+
+factory Messages51Modalities.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'audio' => audio,
+  _ => Messages51Modalities._(json),
+}; }
+
+static const Messages51Modalities text = Messages51Modalities._('text');
+
+static const Messages51Modalities audio = Messages51Modalities._('audio');
+
+static const List<Messages51Modalities> values = [text, audio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51Modalities && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51Modalities($value)'; } 
+ }
+final class Messages51ReasoningEffort {const Messages51ReasoningEffort._(this.value);
+
+factory Messages51ReasoningEffort.fromJson(String json) { return switch (json) {
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  _ => Messages51ReasoningEffort._(json),
+}; }
+
+static const Messages51ReasoningEffort low = Messages51ReasoningEffort._('low');
+
+static const Messages51ReasoningEffort medium = Messages51ReasoningEffort._('medium');
+
+static const Messages51ReasoningEffort high = Messages51ReasoningEffort._('high');
+
+static const List<Messages51ReasoningEffort> values = [low, medium, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51ReasoningEffort && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51ReasoningEffort($value)'; } 
+ }
+final class Messages51ServiceTier {const Messages51ServiceTier._(this.value);
+
+factory Messages51ServiceTier.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'default' => $default,
+  'flex' => flex,
+  'scale' => scale,
+  'priority' => priority,
+  _ => Messages51ServiceTier._(json),
+}; }
+
+static const Messages51ServiceTier auto = Messages51ServiceTier._('auto');
+
+static const Messages51ServiceTier $default = Messages51ServiceTier._('default');
+
+static const Messages51ServiceTier flex = Messages51ServiceTier._('flex');
+
+static const Messages51ServiceTier scale = Messages51ServiceTier._('scale');
+
+static const Messages51ServiceTier priority = Messages51ServiceTier._('priority');
+
+static const List<Messages51ServiceTier> values = [auto, $default, flex, scale, priority];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51ServiceTier && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51ServiceTier($value)'; } 
+ }
+final class Messages51 {const Messages51({this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, required this.messages, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
+
+factory Messages51.fromJson(Map<String, dynamic> json) { return Messages51(
+  audio: json['audio'] != null ? Messages51Audio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  chatTemplateKwargs: json['chat_template_kwargs'] != null ? Messages51ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>) : null,
+  frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
+  functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => Messages51FunctionCallVariant1.fromJson(v as String), fromB: (v) => Messages51FunctionCallVariant2.fromJson(v as Map<String, dynamic>),) : null,
+  functions: (json['functions'] as List<dynamic>?)?.map((e) => Messages51Functions.fromJson(e as Map<String, dynamic>)).toList(),
+  logitBias: (json['logit_bias'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  logprobs: json['logprobs'] as bool?,
+  maxCompletionTokens: json['max_completion_tokens'] != null ? (json['max_completion_tokens'] as num).toInt() : null,
+  maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
+  messages: (json['messages'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => Messages51MessagesDeveloper.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages51MessagesSystem.fromJson(v as Map<String, dynamic>), fromC: (v) => Messages51MessagesUser.fromJson(v as Map<String, dynamic>), fromD: (v) => Messages51MessagesAssistant.fromJson(v as Map<String, dynamic>), fromE: (v) => Messages51MessagesTool.fromJson(v as Map<String, dynamic>), fromF: (v) => Messages51MessagesFunction.fromJson(v as Map<String, dynamic>),)).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  modalities: (json['modalities'] as List<dynamic>?)?.map((e) => Messages51Modalities.fromJson(e as String)).toList(),
+  model: json['model'] as String?,
+  n: json['n'] != null ? (json['n'] as num).toInt() : null,
+  parallelToolCalls: json.containsKey('parallel_tool_calls') ? json['parallel_tool_calls'] as bool : true,
+  prediction: json['prediction'] != null ? Messages51Prediction.fromJson(json['prediction'] as Map<String, dynamic>) : null,
+  presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
+  reasoningEffort: json['reasoning_effort'] != null ? Messages51ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
+  responseFormat: json['response_format'] != null ? Messages51ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
+  seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
+  serviceTier: json['service_tier'] != null ? Messages51ServiceTier.fromJson(json['service_tier'] as String) : null,
+  stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
+  store: json['store'] as bool?,
+  stream: json['stream'] as bool?,
+  streamOptions: json['stream_options'] != null ? Messages51StreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  toolChoice: json['tool_choice'] != null ? Messages51ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => Messages51ToolsFunction.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages51ToolsCustom.fromJson(v as Map<String, dynamic>),)).toList(),
+  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  user: json['user'] as String?,
+  webSearchOptions: json['web_search_options'] != null ? Messages51WebSearchOptions.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
+); }
+
+final Messages51Audio? audio;
+
+final Messages51ChatTemplateKwargs? chatTemplateKwargs;
+
+final double? frequencyPenalty;
+
+final Messages51FunctionCall? functionCall;
+
+final List<Messages51Functions>? functions;
+
+final Map<String,dynamic>? logitBias;
+
+final bool? logprobs;
+
+final int? maxCompletionTokens;
+
+final int? maxTokens;
+
+/// A list of messages comprising the conversation so far.
+final List<Messages51Messages> messages;
+
+final Map<String,dynamic>? metadata;
+
+final List<Messages51Modalities>? modalities;
+
+/// ID of the model to use (e.g. '@cf/zai-org/glm-4.7-flash, etc').
+final String? model;
+
+final int? n;
+
+/// Whether to enable parallel function calling during tool use.
+final bool parallelToolCalls;
+
+final Messages51Prediction? prediction;
+
+final double? presencePenalty;
+
+final Messages51ReasoningEffort? reasoningEffort;
+
+final Messages51ResponseFormat? responseFormat;
+
+final int? seed;
+
+final Messages51ServiceTier? serviceTier;
+
+final Messages51Stop? stop;
+
+final bool? store;
+
+final bool? stream;
+
+final Messages51StreamOptions? streamOptions;
+
+final double? temperature;
+
+final Messages51ToolChoice? toolChoice;
+
+/// A list of tools the model may call.
+final List<Messages51Tools>? tools;
+
+final int? topLogprobs;
+
+final double? topP;
+
+/// A unique identifier representing your end-user, for abuse monitoring.
+final String? user;
+
+final Messages51WebSearchOptions? webSearchOptions;
+
+Map<String, dynamic> toJson() { return {
+  if (audio != null) 'audio': audio?.toJson(),
+  if (chatTemplateKwargs != null) 'chat_template_kwargs': chatTemplateKwargs?.toJson(),
+  'frequency_penalty': ?frequencyPenalty,
+  if (functionCall != null) 'function_call': functionCall?.toJson(),
+  if (functions != null) 'functions': functions?.map((e) => e.toJson()).toList(),
+  'logit_bias': ?logitBias,
+  'logprobs': ?logprobs,
+  'max_completion_tokens': ?maxCompletionTokens,
+  'max_tokens': ?maxTokens,
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'metadata': ?metadata,
+  if (modalities != null) 'modalities': modalities?.map((e) => e.toJson()).toList(),
+  'model': ?model,
+  'n': ?n,
+  'parallel_tool_calls': parallelToolCalls,
+  if (prediction != null) 'prediction': prediction?.toJson(),
+  'presence_penalty': ?presencePenalty,
+  if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
+  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+  'seed': ?seed,
+  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (stop != null) 'stop': stop?.toJson(),
+  'store': ?store,
+  'stream': ?stream,
+  if (streamOptions != null) 'stream_options': streamOptions?.toJson(),
+  'temperature': ?temperature,
+  if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
+  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
+  'top_logprobs': ?topLogprobs,
+  'top_p': ?topP,
+  'user': ?user,
+  if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
+Messages51 copyWith({Messages51Audio Function()? audio, Messages51ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Messages51FunctionCall Function()? functionCall, List<Messages51Functions> Function()? functions, Map<String, dynamic>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<Messages51Messages>? messages, Map<String, dynamic>? Function()? metadata, List<Messages51Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Messages51Prediction Function()? prediction, double? Function()? presencePenalty, Messages51ReasoningEffort? Function()? reasoningEffort, Messages51ResponseFormat Function()? responseFormat, int? Function()? seed, Messages51ServiceTier? Function()? serviceTier, Messages51Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Messages51StreamOptions Function()? streamOptions, double? Function()? temperature, Messages51ToolChoice Function()? toolChoice, List<Messages51Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Messages51WebSearchOptions Function()? webSearchOptions, }) { return Messages51(
+  audio: audio != null ? audio() : this.audio,
+  chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
+  frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,
+  functionCall: functionCall != null ? functionCall() : this.functionCall,
+  functions: functions != null ? functions() : this.functions,
+  logitBias: logitBias != null ? logitBias() : this.logitBias,
+  logprobs: logprobs != null ? logprobs() : this.logprobs,
+  maxCompletionTokens: maxCompletionTokens != null ? maxCompletionTokens() : this.maxCompletionTokens,
+  maxTokens: maxTokens != null ? maxTokens() : this.maxTokens,
+  messages: messages ?? this.messages,
+  metadata: metadata != null ? metadata() : this.metadata,
+  modalities: modalities != null ? modalities() : this.modalities,
+  model: model != null ? model() : this.model,
+  n: n != null ? n() : this.n,
+  parallelToolCalls: parallelToolCalls != null ? parallelToolCalls() : this.parallelToolCalls,
+  prediction: prediction != null ? prediction() : this.prediction,
+  presencePenalty: presencePenalty != null ? presencePenalty() : this.presencePenalty,
+  reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
+  responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
+  seed: seed != null ? seed() : this.seed,
+  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  stop: stop != null ? stop() : this.stop,
+  store: store != null ? store() : this.store,
+  stream: stream != null ? stream() : this.stream,
+  streamOptions: streamOptions != null ? streamOptions() : this.streamOptions,
+  temperature: temperature != null ? temperature() : this.temperature,
+  toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
+  tools: tools != null ? tools() : this.tools,
+  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
+  topP: topP != null ? topP() : this.topP,
+  user: user != null ? user() : this.user,
+  webSearchOptions: webSearchOptions != null ? webSearchOptions() : this.webSearchOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages51 &&
+          audio == other.audio &&
+          chatTemplateKwargs == other.chatTemplateKwargs &&
+          frequencyPenalty == other.frequencyPenalty &&
+          functionCall == other.functionCall &&
+          listEquals(functions, other.functions) &&
+          logitBias == other.logitBias &&
+          logprobs == other.logprobs &&
+          maxCompletionTokens == other.maxCompletionTokens &&
+          maxTokens == other.maxTokens &&
+          listEquals(messages, other.messages) &&
+          metadata == other.metadata &&
+          listEquals(modalities, other.modalities) &&
+          model == other.model &&
+          n == other.n &&
+          parallelToolCalls == other.parallelToolCalls &&
+          prediction == other.prediction &&
+          presencePenalty == other.presencePenalty &&
+          reasoningEffort == other.reasoningEffort &&
+          responseFormat == other.responseFormat &&
+          seed == other.seed &&
+          serviceTier == other.serviceTier &&
+          stop == other.stop &&
+          store == other.store &&
+          stream == other.stream &&
+          streamOptions == other.streamOptions &&
+          temperature == other.temperature &&
+          toolChoice == other.toolChoice &&
+          listEquals(tools, other.tools) &&
+          topLogprobs == other.topLogprobs &&
+          topP == other.topP &&
+          user == other.user &&
+          webSearchOptions == other.webSearchOptions; } 
+@override int get hashCode { return Object.hashAll([audio, chatTemplateKwargs, frequencyPenalty, functionCall, Object.hashAll(functions ?? const []), logitBias, logprobs, maxCompletionTokens, maxTokens, Object.hashAll(messages), metadata, Object.hashAll(modalities ?? const []), model, n, parallelToolCalls, prediction, presencePenalty, reasoningEffort, responseFormat, seed, serviceTier, stop, store, stream, streamOptions, temperature, toolChoice, Object.hashAll(tools ?? const []), topLogprobs, topP, user, webSearchOptions]); } 
+@override String toString() { return 'Messages51(audio: $audio, chatTemplateKwargs: $chatTemplateKwargs, frequencyPenalty: $frequencyPenalty, functionCall: $functionCall, functions: $functions, logitBias: $logitBias, logprobs: $logprobs, maxCompletionTokens: $maxCompletionTokens, maxTokens: $maxTokens, messages: $messages, metadata: $metadata, modalities: $modalities, model: $model, n: $n, parallelToolCalls: $parallelToolCalls, prediction: $prediction, presencePenalty: $presencePenalty, reasoningEffort: $reasoningEffort, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, store: $store, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, toolChoice: $toolChoice, tools: $tools, topLogprobs: $topLogprobs, topP: $topP, user: $user, webSearchOptions: $webSearchOptions)'; } 
+ }

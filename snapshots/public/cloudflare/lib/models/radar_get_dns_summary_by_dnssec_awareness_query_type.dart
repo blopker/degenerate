@@ -1,0 +1,284 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByDnssecAwarenessQueryType {const RadarGetDnsSummaryByDnssecAwarenessQueryType._(this.value);
+
+factory RadarGetDnsSummaryByDnssecAwarenessQueryType.fromJson(String json) { return switch (json) {
+  'A' => a,
+  'AAAA' => aaaa,
+  'A6' => a6,
+  'AFSDB' => afsdb,
+  'ANY' => any,
+  'APL' => apl,
+  'ATMA' => atma,
+  'AXFR' => axfr,
+  'CAA' => caa,
+  'CDNSKEY' => cdnskey,
+  'CDS' => cds,
+  'CERT' => cert,
+  'CNAME' => cname,
+  'CSYNC' => csync,
+  'DHCID' => dhcid,
+  'DLV' => dlv,
+  'DNAME' => dname,
+  'DNSKEY' => dnskey,
+  'DOA' => doa,
+  'DS' => ds,
+  'EID' => eid,
+  'EUI48' => eui48,
+  'EUI64' => eui64,
+  'GPOS' => gpos,
+  'GID' => gid,
+  'HINFO' => hinfo,
+  'HIP' => hip,
+  'HTTPS' => https,
+  'IPSECKEY' => ipseckey,
+  'ISDN' => isdn,
+  'IXFR' => ixfr,
+  'KEY' => key,
+  'KX' => kx,
+  'L32' => l32,
+  'L64' => l64,
+  'LOC' => loc,
+  'LP' => lp,
+  'MAILA' => maila,
+  'MAILB' => mailb,
+  'MB' => mb,
+  'MD' => md,
+  'MF' => mf,
+  'MG' => mg,
+  'MINFO' => minfo,
+  'MR' => mr,
+  'MX' => mx,
+  'NAPTR' => naptr,
+  'NB' => nb,
+  'NBSTAT' => nbstat,
+  'NID' => nid,
+  'NIMLOC' => nimloc,
+  'NINFO' => ninfo,
+  'NS' => ns,
+  'NSAP' => nsap,
+  'NSEC' => nsec,
+  'NSEC3' => nsec3,
+  'NSEC3PARAM' => nsec3Param,
+  'NULL' => $null,
+  'NXT' => nxt,
+  'OPENPGPKEY' => openpgpkey,
+  'OPT' => opt,
+  'PTR' => ptr,
+  'PX' => px,
+  'RKEY' => rkey,
+  'RP' => rp,
+  'RRSIG' => rrsig,
+  'RT' => rt,
+  'SIG' => sig,
+  'SINK' => sink,
+  'SMIMEA' => smimea,
+  'SOA' => soa,
+  'SPF' => spf,
+  'SRV' => srv,
+  'SSHFP' => sshfp,
+  'SVCB' => svcb,
+  'TA' => ta,
+  'TALINK' => talink,
+  'TKEY' => tkey,
+  'TLSA' => tlsa,
+  'TSIG' => tsig,
+  'TXT' => txt,
+  'UINFO' => uinfo,
+  'UID' => uid,
+  'UNSPEC' => unspec,
+  'URI' => uri,
+  'WKS' => wks,
+  'X25' => x25,
+  'ZONEMD' => zonemd,
+  _ => RadarGetDnsSummaryByDnssecAwarenessQueryType._(json),
+}; }
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType a = RadarGetDnsSummaryByDnssecAwarenessQueryType._('A');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType aaaa = RadarGetDnsSummaryByDnssecAwarenessQueryType._('AAAA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType a6 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('A6');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType afsdb = RadarGetDnsSummaryByDnssecAwarenessQueryType._('AFSDB');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType any = RadarGetDnsSummaryByDnssecAwarenessQueryType._('ANY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType apl = RadarGetDnsSummaryByDnssecAwarenessQueryType._('APL');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType atma = RadarGetDnsSummaryByDnssecAwarenessQueryType._('ATMA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType axfr = RadarGetDnsSummaryByDnssecAwarenessQueryType._('AXFR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType caa = RadarGetDnsSummaryByDnssecAwarenessQueryType._('CAA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType cdnskey = RadarGetDnsSummaryByDnssecAwarenessQueryType._('CDNSKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType cds = RadarGetDnsSummaryByDnssecAwarenessQueryType._('CDS');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType cert = RadarGetDnsSummaryByDnssecAwarenessQueryType._('CERT');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType cname = RadarGetDnsSummaryByDnssecAwarenessQueryType._('CNAME');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType csync = RadarGetDnsSummaryByDnssecAwarenessQueryType._('CSYNC');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType dhcid = RadarGetDnsSummaryByDnssecAwarenessQueryType._('DHCID');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType dlv = RadarGetDnsSummaryByDnssecAwarenessQueryType._('DLV');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType dname = RadarGetDnsSummaryByDnssecAwarenessQueryType._('DNAME');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType dnskey = RadarGetDnsSummaryByDnssecAwarenessQueryType._('DNSKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType doa = RadarGetDnsSummaryByDnssecAwarenessQueryType._('DOA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ds = RadarGetDnsSummaryByDnssecAwarenessQueryType._('DS');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType eid = RadarGetDnsSummaryByDnssecAwarenessQueryType._('EID');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType eui48 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('EUI48');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType eui64 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('EUI64');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType gpos = RadarGetDnsSummaryByDnssecAwarenessQueryType._('GPOS');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType gid = RadarGetDnsSummaryByDnssecAwarenessQueryType._('GID');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType hinfo = RadarGetDnsSummaryByDnssecAwarenessQueryType._('HINFO');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType hip = RadarGetDnsSummaryByDnssecAwarenessQueryType._('HIP');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType https = RadarGetDnsSummaryByDnssecAwarenessQueryType._('HTTPS');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ipseckey = RadarGetDnsSummaryByDnssecAwarenessQueryType._('IPSECKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType isdn = RadarGetDnsSummaryByDnssecAwarenessQueryType._('ISDN');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ixfr = RadarGetDnsSummaryByDnssecAwarenessQueryType._('IXFR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType key = RadarGetDnsSummaryByDnssecAwarenessQueryType._('KEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType kx = RadarGetDnsSummaryByDnssecAwarenessQueryType._('KX');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType l32 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('L32');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType l64 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('L64');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType loc = RadarGetDnsSummaryByDnssecAwarenessQueryType._('LOC');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType lp = RadarGetDnsSummaryByDnssecAwarenessQueryType._('LP');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType maila = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MAILA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType mailb = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MAILB');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType mb = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MB');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType md = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MD');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType mf = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MF');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType mg = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MG');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType minfo = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MINFO');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType mr = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType mx = RadarGetDnsSummaryByDnssecAwarenessQueryType._('MX');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType naptr = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NAPTR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nb = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NB');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nbstat = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NBSTAT');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nid = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NID');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nimloc = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NIMLOC');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ninfo = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NINFO');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ns = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NS');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nsap = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NSAP');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nsec = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NSEC');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nsec3 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NSEC3');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nsec3Param = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NSEC3PARAM');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType $null = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NULL');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType nxt = RadarGetDnsSummaryByDnssecAwarenessQueryType._('NXT');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType openpgpkey = RadarGetDnsSummaryByDnssecAwarenessQueryType._('OPENPGPKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType opt = RadarGetDnsSummaryByDnssecAwarenessQueryType._('OPT');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ptr = RadarGetDnsSummaryByDnssecAwarenessQueryType._('PTR');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType px = RadarGetDnsSummaryByDnssecAwarenessQueryType._('PX');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType rkey = RadarGetDnsSummaryByDnssecAwarenessQueryType._('RKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType rp = RadarGetDnsSummaryByDnssecAwarenessQueryType._('RP');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType rrsig = RadarGetDnsSummaryByDnssecAwarenessQueryType._('RRSIG');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType rt = RadarGetDnsSummaryByDnssecAwarenessQueryType._('RT');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType sig = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SIG');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType sink = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SINK');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType smimea = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SMIMEA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType soa = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SOA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType spf = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SPF');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType srv = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SRV');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType sshfp = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SSHFP');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType svcb = RadarGetDnsSummaryByDnssecAwarenessQueryType._('SVCB');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType ta = RadarGetDnsSummaryByDnssecAwarenessQueryType._('TA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType talink = RadarGetDnsSummaryByDnssecAwarenessQueryType._('TALINK');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType tkey = RadarGetDnsSummaryByDnssecAwarenessQueryType._('TKEY');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType tlsa = RadarGetDnsSummaryByDnssecAwarenessQueryType._('TLSA');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType tsig = RadarGetDnsSummaryByDnssecAwarenessQueryType._('TSIG');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType txt = RadarGetDnsSummaryByDnssecAwarenessQueryType._('TXT');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType uinfo = RadarGetDnsSummaryByDnssecAwarenessQueryType._('UINFO');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType uid = RadarGetDnsSummaryByDnssecAwarenessQueryType._('UID');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType unspec = RadarGetDnsSummaryByDnssecAwarenessQueryType._('UNSPEC');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType uri = RadarGetDnsSummaryByDnssecAwarenessQueryType._('URI');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType wks = RadarGetDnsSummaryByDnssecAwarenessQueryType._('WKS');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType x25 = RadarGetDnsSummaryByDnssecAwarenessQueryType._('X25');
+
+static const RadarGetDnsSummaryByDnssecAwarenessQueryType zonemd = RadarGetDnsSummaryByDnssecAwarenessQueryType._('ZONEMD');
+
+static const List<RadarGetDnsSummaryByDnssecAwarenessQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecAwarenessQueryType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByDnssecAwarenessQueryType($value)'; } 
+ }

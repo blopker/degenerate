@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ActionsSetSelectedReposForOrgSecretRequest {const ActionsSetSelectedReposForOrgSecretRequest({required this.selectedRepositoryIds});
+
+factory ActionsSetSelectedReposForOrgSecretRequest.fromJson(Map<String, dynamic> json) { return ActionsSetSelectedReposForOrgSecretRequest(
+  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+); }
+
+/// An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Add selected repository to an organization secret](https://docs.github.com/rest/actions/secrets#add-selected-repository-to-an-organization-secret) and [Remove selected repository from an organization secret](https://docs.github.com/rest/actions/secrets#remove-selected-repository-from-an-organization-secret) endpoints.
+final List<int> selectedRepositoryIds;
+
+Map<String, dynamic> toJson() { return {
+  'selected_repository_ids': selectedRepositoryIds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_repository_ids'); } 
+ActionsSetSelectedReposForOrgSecretRequest copyWith({List<int>? selectedRepositoryIds}) { return ActionsSetSelectedReposForOrgSecretRequest(
+  selectedRepositoryIds: selectedRepositoryIds ?? this.selectedRepositoryIds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsSetSelectedReposForOrgSecretRequest &&
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
+@override int get hashCode { return Object.hashAll(selectedRepositoryIds).hashCode; } 
+@override String toString() { return 'ActionsSetSelectedReposForOrgSecretRequest(selectedRepositoryIds: $selectedRepositoryIds)'; } 
+ }

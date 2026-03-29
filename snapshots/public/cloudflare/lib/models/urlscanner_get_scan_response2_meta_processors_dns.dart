@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_dns_data.dart';final class UrlscannerGetScanResponse2MetaProcessorsDns {const UrlscannerGetScanResponse2MetaProcessorsDns({required this.data});
+
+factory UrlscannerGetScanResponse2MetaProcessorsDns.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsDns(
+  data: (json['data'] as List<dynamic>).map((e) => UrlscannerGetScanResponse2MetaProcessorsDnsData.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<UrlscannerGetScanResponse2MetaProcessorsDnsData> data;
+
+Map<String, dynamic> toJson() { return {
+  'data': data.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
+UrlscannerGetScanResponse2MetaProcessorsDns copyWith({List<UrlscannerGetScanResponse2MetaProcessorsDnsData>? data}) { return UrlscannerGetScanResponse2MetaProcessorsDns(
+  data: data ?? this.data,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2MetaProcessorsDns &&
+          listEquals(data, other.data); } 
+@override int get hashCode { return Object.hashAll(data).hashCode; } 
+@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsDns(data: $data)'; } 
+ }

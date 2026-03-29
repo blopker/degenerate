@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailRoutingSummaryByEncryptedArc {const RadarGetEmailRoutingSummaryByEncryptedArc._(this.value);
+
+factory RadarGetEmailRoutingSummaryByEncryptedArc.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailRoutingSummaryByEncryptedArc._(json),
+}; }
+
+static const RadarGetEmailRoutingSummaryByEncryptedArc pass = RadarGetEmailRoutingSummaryByEncryptedArc._('PASS');
+
+static const RadarGetEmailRoutingSummaryByEncryptedArc none = RadarGetEmailRoutingSummaryByEncryptedArc._('NONE');
+
+static const RadarGetEmailRoutingSummaryByEncryptedArc fail = RadarGetEmailRoutingSummaryByEncryptedArc._('FAIL');
+
+static const List<RadarGetEmailRoutingSummaryByEncryptedArc> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingSummaryByEncryptedArc && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingSummaryByEncryptedArc($value)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Continuation token to fetch next page. Passed as a query param when requesting List V2 api endpoint.
+extension type const ImagesImagesListContinuationToken(String value) {
+factory ImagesImagesListContinuationToken.fromJson(String json) => ImagesImagesListContinuationToken(json);
+
+String toJson() => value;
+
+}

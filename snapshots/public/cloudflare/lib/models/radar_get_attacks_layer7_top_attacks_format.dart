@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetAttacksLayer7TopAttacksFormat {const RadarGetAttacksLayer7TopAttacksFormat._(this.value);
+
+factory RadarGetAttacksLayer7TopAttacksFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetAttacksLayer7TopAttacksFormat._(json),
+}; }
+
+static const RadarGetAttacksLayer7TopAttacksFormat $json = RadarGetAttacksLayer7TopAttacksFormat._('JSON');
+
+static const RadarGetAttacksLayer7TopAttacksFormat csv = RadarGetAttacksLayer7TopAttacksFormat._('CSV');
+
+static const List<RadarGetAttacksLayer7TopAttacksFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7TopAttacksFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7TopAttacksFormat($value)'; } 
+ }

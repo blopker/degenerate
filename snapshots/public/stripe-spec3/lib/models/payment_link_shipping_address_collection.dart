@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_links_resource_shipping_address_collection.dart';/// Configuration for collecting the customer's shipping address.
+final class PaymentLinkShippingAddressCollection {const PaymentLinkShippingAddressCollection({this.paymentLinksResourceShippingAddressCollection});
+
+factory PaymentLinkShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PaymentLinkShippingAddressCollection(
+  paymentLinksResourceShippingAddressCollection: PaymentLinksResourceShippingAddressCollection.canParse(json) ? PaymentLinksResourceShippingAddressCollection.fromJson(json) : null,
+); }
+
+final PaymentLinksResourceShippingAddressCollection? paymentLinksResourceShippingAddressCollection;
+
+/// At least one variant must be present.
+bool get isValid { return paymentLinksResourceShippingAddressCollection != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentLinksResourceShippingAddressCollection?.toJson(),
+}; } 
+ }

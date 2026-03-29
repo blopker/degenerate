@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_list_response_result_asns.dart';final class RadarGetEntitiesAsnListResponseResult {const RadarGetEntitiesAsnListResponseResult({required this.asns});
+
+factory RadarGetEntitiesAsnListResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnListResponseResult(
+  asns: (json['asns'] as List<dynamic>).map((e) => RadarGetEntitiesAsnListResponseResultAsns.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<RadarGetEntitiesAsnListResponseResultAsns> asns;
+
+Map<String, dynamic> toJson() { return {
+  'asns': asns.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('asns'); } 
+RadarGetEntitiesAsnListResponseResult copyWith({List<RadarGetEntitiesAsnListResponseResultAsns>? asns}) { return RadarGetEntitiesAsnListResponseResult(
+  asns: asns ?? this.asns,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEntitiesAsnListResponseResult &&
+          listEquals(asns, other.asns); } 
+@override int get hashCode { return Object.hashAll(asns).hashCode; } 
+@override String toString() { return 'RadarGetEntitiesAsnListResponseResult(asns: $asns)'; } 
+ }

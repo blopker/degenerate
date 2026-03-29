@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes {const WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes({required this.cweId, required this.name, });
+
+factory WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes.fromJson(Map<String, dynamic> json) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes(
+  cweId: json['cwe_id'] as String,
+  name: json['name'] as String,
+); }
+
+final String cweId;
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'cwe_id': cweId,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('cwe_id') && json['cwe_id'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes copyWith({String? cweId, String? name, }) { return WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes(
+  cweId: cweId ?? this.cweId,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes &&
+          cweId == other.cweId &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(cweId, name); } 
+@override String toString() { return 'WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwes(cweId: $cweId, name: $name)'; } 
+ }

@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay();
+
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay copyWith() { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataGrabpay()'; } 
+ }

@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_check_suite_completed_check_suite_pull_requests_base_repo.dart';final class WebhookCheckSuiteCompletedCheckSuitePullRequestsBase {const WebhookCheckSuiteCompletedCheckSuitePullRequestsBase({required this.ref, required this.repo, required this.sha, });
+
+factory WebhookCheckSuiteCompletedCheckSuitePullRequestsBase.fromJson(Map<String, dynamic> json) { return WebhookCheckSuiteCompletedCheckSuitePullRequestsBase(
+  ref: json['ref'] as String,
+  repo: WebhookCheckSuiteCompletedCheckSuitePullRequestsBaseRepo.fromJson(json['repo'] as Map<String, dynamic>),
+  sha: json['sha'] as String,
+); }
+
+final String ref;
+
+final WebhookCheckSuiteCompletedCheckSuitePullRequestsBaseRepo repo;
+
+final String sha;
+
+Map<String, dynamic> toJson() { return {
+  'ref': ref,
+  'repo': repo.toJson(),
+  'sha': sha,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('repo') &&
+      json.containsKey('sha') && json['sha'] is String; } 
+WebhookCheckSuiteCompletedCheckSuitePullRequestsBase copyWith({String? ref, WebhookCheckSuiteCompletedCheckSuitePullRequestsBaseRepo? repo, String? sha, }) { return WebhookCheckSuiteCompletedCheckSuitePullRequestsBase(
+  ref: ref ?? this.ref,
+  repo: repo ?? this.repo,
+  sha: sha ?? this.sha,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookCheckSuiteCompletedCheckSuitePullRequestsBase &&
+          ref == other.ref &&
+          repo == other.repo &&
+          sha == other.sha; } 
+@override int get hashCode { return Object.hash(ref, repo, sha); } 
+@override String toString() { return 'WebhookCheckSuiteCompletedCheckSuitePullRequestsBase(ref: $ref, repo: $repo, sha: $sha)'; } 
+ }

@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_call_user_defined_message.dart';import '../models/create_user_defined_message_request.dart';/// Api20100401UserDefinedMessageApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401UserDefinedMessageApi with ApiExecutor {const Api20100401UserDefinedMessageApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Create a new User Defined Message for the given Call SID.
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessages.json`
+Future<ApiResult<AccountCallUserDefinedMessage, Never>> createUserDefinedMessage({required String accountSid, required String callSid, CreateUserDefinedMessageRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessages.json',
+  headers: headers,
+  body: body == null ? null : [
+    'Content=${Uri.encodeQueryComponent(body.content)}',
+    if (body.idempotencyKey case final idempotencyKey$?)
+      'IdempotencyKey=${Uri.encodeQueryComponent(idempotencyKey$)}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountCallUserDefinedMessage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

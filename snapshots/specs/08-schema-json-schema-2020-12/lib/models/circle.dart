@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Circle {const Circle({required this.kind, required this.radius, this.color, });
+
+factory Circle.fromJson(Map<String, dynamic> json) { return Circle(
+  kind: json['kind'],
+  radius: (json['radius'] as num).toDouble(),
+  color: json['color'] as String?,
+); }
+
+final dynamic kind;
+
+final double radius;
+
+final String? color;
+
+Map<String, dynamic> toJson() { return {
+  'kind': ?kind,
+  'radius': radius,
+  'color': ?color,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+      json.containsKey('radius') && json['radius'] is num; } 
+Circle copyWith({dynamic Function()? kind, double? radius, String? Function()? color, }) { return Circle(
+  kind: kind != null ? kind() : this.kind,
+  radius: radius ?? this.radius,
+  color: color != null ? color() : this.color,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Circle &&
+          kind == other.kind &&
+          radius == other.radius &&
+          color == other.color; } 
+@override int get hashCode { return Object.hash(kind, radius, color); } 
+@override String toString() { return 'Circle(kind: $kind, radius: $radius, color: $color)'; } 
+ }

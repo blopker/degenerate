@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the type of indexed metadata property.
+final class VectorizeListMetadataIndexResponseMetadataIndexesIndexType {const VectorizeListMetadataIndexResponseMetadataIndexesIndexType._(this.value);
+
+factory VectorizeListMetadataIndexResponseMetadataIndexesIndexType.fromJson(String json) { return switch (json) {
+  'string' => string,
+  'number' => number,
+  'boolean' => boolean,
+  _ => VectorizeListMetadataIndexResponseMetadataIndexesIndexType._(json),
+}; }
+
+static const VectorizeListMetadataIndexResponseMetadataIndexesIndexType string = VectorizeListMetadataIndexResponseMetadataIndexesIndexType._('string');
+
+static const VectorizeListMetadataIndexResponseMetadataIndexesIndexType number = VectorizeListMetadataIndexResponseMetadataIndexesIndexType._('number');
+
+static const VectorizeListMetadataIndexResponseMetadataIndexesIndexType boolean = VectorizeListMetadataIndexResponseMetadataIndexesIndexType._('boolean');
+
+static const List<VectorizeListMetadataIndexResponseMetadataIndexesIndexType> values = [string, number, boolean];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is VectorizeListMetadataIndexResponseMetadataIndexesIndexType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'VectorizeListMetadataIndexResponseMetadataIndexesIndexType($value)'; } 
+ }
+final class VectorizeListMetadataIndexResponseMetadataIndexes {const VectorizeListMetadataIndexResponseMetadataIndexes({this.indexType, this.propertyName, });
+
+factory VectorizeListMetadataIndexResponseMetadataIndexes.fromJson(Map<String, dynamic> json) { return VectorizeListMetadataIndexResponseMetadataIndexes(
+  indexType: json['indexType'] != null ? VectorizeListMetadataIndexResponseMetadataIndexesIndexType.fromJson(json['indexType'] as String) : null,
+  propertyName: json['propertyName'] as String?,
+); }
+
+/// Specifies the type of indexed metadata property.
+final VectorizeListMetadataIndexResponseMetadataIndexesIndexType? indexType;
+
+/// Specifies the indexed metadata property.
+final String? propertyName;
+
+Map<String, dynamic> toJson() { return {
+  if (indexType != null) 'indexType': indexType?.toJson(),
+  'propertyName': ?propertyName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+VectorizeListMetadataIndexResponseMetadataIndexes copyWith({VectorizeListMetadataIndexResponseMetadataIndexesIndexType Function()? indexType, String Function()? propertyName, }) { return VectorizeListMetadataIndexResponseMetadataIndexes(
+  indexType: indexType != null ? indexType() : this.indexType,
+  propertyName: propertyName != null ? propertyName() : this.propertyName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VectorizeListMetadataIndexResponseMetadataIndexes &&
+          indexType == other.indexType &&
+          propertyName == other.propertyName; } 
+@override int get hashCode { return Object.hash(indexType, propertyName); } 
+@override String toString() { return 'VectorizeListMetadataIndexResponseMetadataIndexes(indexType: $indexType, propertyName: $propertyName)'; } 
+ }

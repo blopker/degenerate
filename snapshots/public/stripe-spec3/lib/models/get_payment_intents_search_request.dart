@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetPaymentIntentsSearchRequest {const GetPaymentIntentsSearchRequest();
+
+factory GetPaymentIntentsSearchRequest.fromJson(Map<String, dynamic> json) { return GetPaymentIntentsSearchRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetPaymentIntentsSearchRequest copyWith() { return GetPaymentIntentsSearchRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetPaymentIntentsSearchRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetPaymentIntentsSearchRequest()'; } 
+ }

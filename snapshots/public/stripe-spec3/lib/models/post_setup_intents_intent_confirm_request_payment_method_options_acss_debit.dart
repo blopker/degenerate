@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_setup_intents_intent_confirm_request_payment_method_options_acss_debit_mandate_options.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency._(this.value);
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
+  'cad' => cad,
+  'usd' => usd,
+  _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency._(json),
+}; }
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency cad = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency._('cad');
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency usd = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency._('usd');
+
+static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency> values = [cad, usd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency($value)'; } 
+ }
+final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
+  'automatic' => automatic,
+  'instant' => instant,
+  'microdeposits' => microdeposits,
+  _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod._(json),
+}; }
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod automatic = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod._('automatic');
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod instant = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod._('instant');
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod microdeposits = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod._('microdeposits');
+
+static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod> values = [automatic, instant, microdeposits];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
+ }
+final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.verificationMethod, });
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(
+  currency: json['currency'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
+  mandateOptions: json['mandate_options'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  verificationMethod: json['verification_method'] != null ? PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
+); }
+
+final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency? currency;
+
+final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions? mandateOptions;
+
+final PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod? verificationMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (currency != null) 'currency': currency?.toJson(),
+  if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
+  if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit copyWith({PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitCurrency Function()? currency, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitMandateOptions Function()? mandateOptions, PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebitVerificationMethod Function()? verificationMethod, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(
+  currency: currency != null ? currency() : this.currency,
+  mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
+  verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit &&
+          currency == other.currency &&
+          mandateOptions == other.mandateOptions &&
+          verificationMethod == other.verificationMethod; } 
+@override int get hashCode { return Object.hash(currency, mandateOptions, verificationMethod); } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, verificationMethod: $verificationMethod)'; } 
+ }

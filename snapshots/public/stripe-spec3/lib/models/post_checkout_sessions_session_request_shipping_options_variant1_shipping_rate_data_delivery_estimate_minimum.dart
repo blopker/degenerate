@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._(this.value);
+
+factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit.fromJson(String json) { return switch (json) {
+  'business_day' => businessDay,
+  'day' => day,
+  'hour' => hour,
+  'month' => month,
+  'week' => week,
+  _ => PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._(json),
+}; }
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit businessDay = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._('business_day');
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit day = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._('day');
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit hour = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._('hour');
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit month = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._('month');
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit week = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit._('week');
+
+static const List<PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit> values = [businessDay, day, hour, month, week];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit($value)'; } 
+ }
+final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum({required this.unit, required this.value, });
+
+factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum(
+  unit: PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit.fromJson(json['unit'] as String),
+  value: (json['value'] as num).toInt(),
+); }
+
+final PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit unit;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'unit': unit.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num; } 
+PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum copyWith({PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimumUnit? unit, int? value, }) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum(
+  unit: unit ?? this.unit,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum &&
+          unit == other.unit &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(unit, value); } 
+@override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataDeliveryEstimateMinimum(unit: $unit, value: $value)'; } 
+ }

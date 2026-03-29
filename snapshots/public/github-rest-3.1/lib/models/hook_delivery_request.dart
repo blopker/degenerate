@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class HookDeliveryRequest {const HookDeliveryRequest({required this.headers, required this.payload, });
+
+factory HookDeliveryRequest.fromJson(Map<String, dynamic> json) { return HookDeliveryRequest(
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  payload: (json['payload'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+); }
+
+/// The request headers sent with the webhook delivery.
+final Map<String,dynamic>? headers;
+
+/// The webhook payload.
+final Map<String,dynamic>? payload;
+
+Map<String, dynamic> toJson() { return {
+  'headers': ?headers,
+  'payload': ?payload,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('headers') &&
+      json.containsKey('payload'); } 
+HookDeliveryRequest copyWith({Map<String, dynamic>? Function()? headers, Map<String, dynamic>? Function()? payload, }) { return HookDeliveryRequest(
+  headers: headers != null ? headers() : this.headers,
+  payload: payload != null ? payload() : this.payload,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is HookDeliveryRequest &&
+          headers == other.headers &&
+          payload == other.payload; } 
+@override int get hashCode { return Object.hash(headers, payload); } 
+@override String toString() { return 'HookDeliveryRequest(headers: $headers, payload: $payload)'; } 
+ }

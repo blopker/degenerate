@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class Category {const Category({required this.id, required this.name, this.parent, this.children, });
+
+factory Category.fromJson(Map<String, dynamic> json) { return Category(
+  id: (json['id'] as num).toInt(),
+  name: json['name'] as String,
+  parent: json['parent'] != null ? Category.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  children: (json['children'] as List<dynamic>?)?.map((e) => Category.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final int id;
+
+final String name;
+
+final Category? parent;
+
+final List<Category>? children;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'name': name,
+  if (parent != null) 'parent': parent?.toJson(),
+  if (children != null) 'children': children?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String; } 
+Category copyWith({int? id, String? name, Category Function()? parent, List<Category> Function()? children, }) { return Category(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  parent: parent != null ? parent() : this.parent,
+  children: children != null ? children() : this.children,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Category &&
+          id == other.id &&
+          name == other.name &&
+          parent == other.parent &&
+          listEquals(children, other.children); } 
+@override int get hashCode { return Object.hash(id, name, parent, Object.hashAll(children ?? const [])); } 
+@override String toString() { return 'Category(id: $id, name: $name, parent: $parent, children: $children)'; } 
+ }

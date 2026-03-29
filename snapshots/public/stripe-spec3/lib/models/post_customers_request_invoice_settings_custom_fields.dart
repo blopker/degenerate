@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_request_invoice_settings_custom_fields_variant1.dart';final class PostCustomersRequestInvoiceSettingsCustomFieldsVariant2 {const PostCustomersRequestInvoiceSettingsCustomFieldsVariant2._(this.value);
+
+factory PostCustomersRequestInvoiceSettingsCustomFieldsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersRequestInvoiceSettingsCustomFieldsVariant2._(json),
+}; }
+
+static const PostCustomersRequestInvoiceSettingsCustomFieldsVariant2 $empty = PostCustomersRequestInvoiceSettingsCustomFieldsVariant2._('');
+
+static const List<PostCustomersRequestInvoiceSettingsCustomFieldsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersRequestInvoiceSettingsCustomFieldsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersRequestInvoiceSettingsCustomFieldsVariant2($value)'; } 
+ }
+typedef PostCustomersRequestInvoiceSettingsCustomFields = OneOf2<List<PostCustomersRequestInvoiceSettingsCustomFieldsVariant1>,PostCustomersRequestInvoiceSettingsCustomFieldsVariant2>;

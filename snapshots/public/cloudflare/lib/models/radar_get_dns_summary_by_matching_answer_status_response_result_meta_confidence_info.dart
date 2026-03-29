@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_summary_by_matching_answer_status_response_result_meta_confidence_info_annotations.dart';final class RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo {const RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+
+factory RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo(
+  annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
+  level: (json['level'] as num).toInt(),
+); }
+
+final List<RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations> annotations;
+
+/// Provides an indication of how much confidence Cloudflare has in the data.
+final int level;
+
+Map<String, dynamic> toJson() { return {
+  'annotations': annotations.map((e) => e.toJson()).toList(),
+  'level': level,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations') &&
+      json.containsKey('level') && json['level'] is num; } 
+RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo copyWith({List<RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfoAnnotations>? annotations, int? level, }) { return RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo(
+  annotations: annotations ?? this.annotations,
+  level: level ?? this.level,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo &&
+          listEquals(annotations, other.annotations) &&
+          level == other.level; } 
+@override int get hashCode { return Object.hash(Object.hashAll(annotations), level); } 
+@override String toString() { return 'RadarGetDnsSummaryByMatchingAnswerStatusResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)'; } 
+ }

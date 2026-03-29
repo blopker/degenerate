@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The scope of the URL normalization.
+final class RulesetsUrlNormalizationScope {const RulesetsUrlNormalizationScope._(this.value);
+
+factory RulesetsUrlNormalizationScope.fromJson(String json) { return switch (json) {
+  'incoming' => incoming,
+  'both' => both,
+  'none' => none,
+  _ => RulesetsUrlNormalizationScope._(json),
+}; }
+
+static const RulesetsUrlNormalizationScope incoming = RulesetsUrlNormalizationScope._('incoming');
+
+static const RulesetsUrlNormalizationScope both = RulesetsUrlNormalizationScope._('both');
+
+static const RulesetsUrlNormalizationScope none = RulesetsUrlNormalizationScope._('none');
+
+static const List<RulesetsUrlNormalizationScope> values = [incoming, both, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RulesetsUrlNormalizationScope && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RulesetsUrlNormalizationScope($value)'; } 
+ }
+/// The type of URL normalization performed by Cloudflare.
+final class RulesetsUrlNormalizationType {const RulesetsUrlNormalizationType._(this.value);
+
+factory RulesetsUrlNormalizationType.fromJson(String json) { return switch (json) {
+  'cloudflare' => cloudflare,
+  'rfc3986' => rfc3986,
+  _ => RulesetsUrlNormalizationType._(json),
+}; }
+
+static const RulesetsUrlNormalizationType cloudflare = RulesetsUrlNormalizationType._('cloudflare');
+
+static const RulesetsUrlNormalizationType rfc3986 = RulesetsUrlNormalizationType._('rfc3986');
+
+static const List<RulesetsUrlNormalizationType> values = [cloudflare, rfc3986];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RulesetsUrlNormalizationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RulesetsUrlNormalizationType($value)'; } 
+ }
+/// A URL Normalization object.
+final class RulesetsUrlNormalization {const RulesetsUrlNormalization({required this.scope, required this.type, });
+
+factory RulesetsUrlNormalization.fromJson(Map<String, dynamic> json) { return RulesetsUrlNormalization(
+  scope: RulesetsUrlNormalizationScope.fromJson(json['scope'] as String),
+  type: RulesetsUrlNormalizationType.fromJson(json['type'] as String),
+); }
+
+/// The scope of the URL normalization.
+final RulesetsUrlNormalizationScope scope;
+
+/// The type of URL normalization performed by Cloudflare.
+final RulesetsUrlNormalizationType type;
+
+Map<String, dynamic> toJson() { return {
+  'scope': scope.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('scope') &&
+      json.containsKey('type'); } 
+RulesetsUrlNormalization copyWith({RulesetsUrlNormalizationScope? scope, RulesetsUrlNormalizationType? type, }) { return RulesetsUrlNormalization(
+  scope: scope ?? this.scope,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RulesetsUrlNormalization &&
+          scope == other.scope &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(scope, type); } 
+@override String toString() { return 'RulesetsUrlNormalization(scope: $scope, type: $type)'; } 
+ }

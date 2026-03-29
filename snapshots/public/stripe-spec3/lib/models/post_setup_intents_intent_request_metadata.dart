@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentRequestMetadataVariant2 {const PostSetupIntentsIntentRequestMetadataVariant2._(this.value);
+
+factory PostSetupIntentsIntentRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsIntentRequestMetadataVariant2._(json),
+}; }
+
+static const PostSetupIntentsIntentRequestMetadataVariant2 $empty = PostSetupIntentsIntentRequestMetadataVariant2._('');
+
+static const List<PostSetupIntentsIntentRequestMetadataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestMetadataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestMetadataVariant2($value)'; } 
+ }
+typedef PostSetupIntentsIntentRequestMetadata = OneOf2<Map<String,String>,PostSetupIntentsIntentRequestMetadataVariant2>;

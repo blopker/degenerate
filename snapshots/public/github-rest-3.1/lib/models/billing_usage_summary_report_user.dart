@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_usage_summary_report_user_time_period.dart';import 'billing_usage_summary_report_user_usage_items.dart';final class BillingUsageSummaryReportUser {const BillingUsageSummaryReportUser({required this.timePeriod, required this.user, this.repository, this.product, this.sku, required this.usageItems, });
+
+factory BillingUsageSummaryReportUser.fromJson(Map<String, dynamic> json) { return BillingUsageSummaryReportUser(
+  timePeriod: BillingUsageSummaryReportUserTimePeriod.fromJson(json['timePeriod'] as Map<String, dynamic>),
+  user: json['user'] as String,
+  repository: json['repository'] as String?,
+  product: json['product'] as String?,
+  sku: json['sku'] as String?,
+  usageItems: (json['usageItems'] as List<dynamic>).map((e) => BillingUsageSummaryReportUserUsageItems.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final BillingUsageSummaryReportUserTimePeriod timePeriod;
+
+/// The unique identifier of the user.
+final String user;
+
+/// The name of the repository for the usage report.
+final String? repository;
+
+/// The product for the usage report.
+final String? product;
+
+/// The SKU for the usage report.
+final String? sku;
+
+final List<BillingUsageSummaryReportUserUsageItems> usageItems;
+
+Map<String, dynamic> toJson() { return {
+  'timePeriod': timePeriod.toJson(),
+  'user': user,
+  'repository': ?repository,
+  'product': ?product,
+  'sku': ?sku,
+  'usageItems': usageItems.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('timePeriod') &&
+      json.containsKey('user') && json['user'] is String &&
+      json.containsKey('usageItems'); } 
+BillingUsageSummaryReportUser copyWith({BillingUsageSummaryReportUserTimePeriod? timePeriod, String? user, String Function()? repository, String Function()? product, String Function()? sku, List<BillingUsageSummaryReportUserUsageItems>? usageItems, }) { return BillingUsageSummaryReportUser(
+  timePeriod: timePeriod ?? this.timePeriod,
+  user: user ?? this.user,
+  repository: repository != null ? repository() : this.repository,
+  product: product != null ? product() : this.product,
+  sku: sku != null ? sku() : this.sku,
+  usageItems: usageItems ?? this.usageItems,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingUsageSummaryReportUser &&
+          timePeriod == other.timePeriod &&
+          user == other.user &&
+          repository == other.repository &&
+          product == other.product &&
+          sku == other.sku &&
+          listEquals(usageItems, other.usageItems); } 
+@override int get hashCode { return Object.hash(timePeriod, user, repository, product, sku, Object.hashAll(usageItems)); } 
+@override String toString() { return 'BillingUsageSummaryReportUser(timePeriod: $timePeriod, user: $user, repository: $repository, product: $product, sku: $sku, usageItems: $usageItems)'; } 
+ }

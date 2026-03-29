@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.
+extension type const LoadBalancingAddress(String value) {
+factory LoadBalancingAddress.fromJson(String json) => LoadBalancingAddress(json);
+
+String toJson() => value;
+
+}

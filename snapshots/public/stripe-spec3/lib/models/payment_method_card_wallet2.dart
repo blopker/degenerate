@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_card_wallet.dart';/// If this Card is part of a card wallet, this contains the details of the card wallet.
+final class PaymentMethodCardWallet2 {const PaymentMethodCardWallet2({this.paymentMethodCardWallet});
+
+factory PaymentMethodCardWallet2.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWallet2(
+  paymentMethodCardWallet: PaymentMethodCardWallet.canParse(json) ? PaymentMethodCardWallet.fromJson(json) : null,
+); }
+
+final PaymentMethodCardWallet? paymentMethodCardWallet;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodCardWallet != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodCardWallet?.toJson(),
+}; } 
+ }

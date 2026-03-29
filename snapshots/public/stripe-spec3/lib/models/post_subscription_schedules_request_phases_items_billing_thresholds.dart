@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param7.dart';final class PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2 {const PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2._(this.value);
+
+factory PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2._(json),
+}; }
+
+static const PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2 $empty = PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2._('');
+
+static const List<PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2($value)'; } 
+ }
+typedef PostSubscriptionSchedulesRequestPhasesItemsBillingThresholds = OneOf2<ItemBillingThresholdsParam7,PostSubscriptionSchedulesRequestPhasesItemsBillingThresholdsVariant2>;

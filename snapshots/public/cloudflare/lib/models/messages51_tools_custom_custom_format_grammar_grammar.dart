@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Messages51ToolsCustomCustomFormatGrammarGrammarSyntax {const Messages51ToolsCustomCustomFormatGrammarGrammarSyntax._(this.value);
+
+factory Messages51ToolsCustomCustomFormatGrammarGrammarSyntax.fromJson(String json) { return switch (json) {
+  'lark' => lark,
+  'regex' => regex,
+  _ => Messages51ToolsCustomCustomFormatGrammarGrammarSyntax._(json),
+}; }
+
+static const Messages51ToolsCustomCustomFormatGrammarGrammarSyntax lark = Messages51ToolsCustomCustomFormatGrammarGrammarSyntax._('lark');
+
+static const Messages51ToolsCustomCustomFormatGrammarGrammarSyntax regex = Messages51ToolsCustomCustomFormatGrammarGrammarSyntax._('regex');
+
+static const List<Messages51ToolsCustomCustomFormatGrammarGrammarSyntax> values = [lark, regex];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51ToolsCustomCustomFormatGrammarGrammarSyntax && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51ToolsCustomCustomFormatGrammarGrammarSyntax($value)'; } 
+ }
+final class Messages51ToolsCustomCustomFormatGrammarGrammar {const Messages51ToolsCustomCustomFormatGrammarGrammar({required this.definition, required this.syntax, });
+
+factory Messages51ToolsCustomCustomFormatGrammarGrammar.fromJson(Map<String, dynamic> json) { return Messages51ToolsCustomCustomFormatGrammarGrammar(
+  definition: json['definition'] as String,
+  syntax: Messages51ToolsCustomCustomFormatGrammarGrammarSyntax.fromJson(json['syntax'] as String),
+); }
+
+final String definition;
+
+final Messages51ToolsCustomCustomFormatGrammarGrammarSyntax syntax;
+
+Map<String, dynamic> toJson() { return {
+  'definition': definition,
+  'syntax': syntax.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('definition') && json['definition'] is String &&
+      json.containsKey('syntax'); } 
+Messages51ToolsCustomCustomFormatGrammarGrammar copyWith({String? definition, Messages51ToolsCustomCustomFormatGrammarGrammarSyntax? syntax, }) { return Messages51ToolsCustomCustomFormatGrammarGrammar(
+  definition: definition ?? this.definition,
+  syntax: syntax ?? this.syntax,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages51ToolsCustomCustomFormatGrammarGrammar &&
+          definition == other.definition &&
+          syntax == other.syntax; } 
+@override int get hashCode { return Object.hash(definition, syntax); } 
+@override String toString() { return 'Messages51ToolsCustomCustomFormatGrammarGrammar(definition: $definition, syntax: $syntax)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_card_installments_plan.dart';/// Installment plan selected for the payment.
+final class PaymentMethodDetailsCardInstallmentsPlan2 {const PaymentMethodDetailsCardInstallmentsPlan2({this.paymentMethodDetailsCardInstallmentsPlan});
+
+factory PaymentMethodDetailsCardInstallmentsPlan2.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardInstallmentsPlan2(
+  paymentMethodDetailsCardInstallmentsPlan: PaymentMethodDetailsCardInstallmentsPlan.canParse(json) ? PaymentMethodDetailsCardInstallmentsPlan.fromJson(json) : null,
+); }
+
+final PaymentMethodDetailsCardInstallmentsPlan? paymentMethodDetailsCardInstallmentsPlan;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodDetailsCardInstallmentsPlan != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodDetailsCardInstallmentsPlan?.toJson(),
+}; } 
+ }

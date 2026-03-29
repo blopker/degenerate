@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CommunityHealthFile {const CommunityHealthFile({required this.url, required this.htmlUrl, });
+
+factory CommunityHealthFile.fromJson(Map<String, dynamic> json) { return CommunityHealthFile(
+  url: Uri.parse(json['url'] as String),
+  htmlUrl: Uri.parse(json['html_url'] as String),
+); }
+
+final Uri url;
+
+final Uri htmlUrl;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'html_url': htmlUrl.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String; } 
+CommunityHealthFile copyWith({Uri? url, Uri? htmlUrl, }) { return CommunityHealthFile(
+  url: url ?? this.url,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CommunityHealthFile &&
+          url == other.url &&
+          htmlUrl == other.htmlUrl; } 
+@override int get hashCode { return Object.hash(url, htmlUrl); } 
+@override String toString() { return 'CommunityHealthFile(url: $url, htmlUrl: $htmlUrl)'; } 
+ }

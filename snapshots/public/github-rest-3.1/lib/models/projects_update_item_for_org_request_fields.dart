@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ProjectsUpdateItemForOrgRequestFields {const ProjectsUpdateItemForOrgRequestFields({required this.id, required this.value, });
+
+factory ProjectsUpdateItemForOrgRequestFields.fromJson(Map<String, dynamic> json) { return ProjectsUpdateItemForOrgRequestFields(
+  id: (json['id'] as num).toInt(),
+  value: json['value'],
+); }
+
+/// The ID of the project field to update.
+final int id;
+
+/// The new value for the field:
+/// - For text, number, and date fields, provide the new value directly.
+/// - For single select and iteration fields, provide the ID of the option or iteration.
+/// - To clear the field, set this to null.
+/// 
+/// The new value for the field:
+/// - For text, number, and date fields, provide the new value directly.
+/// - For single select and iteration fields, provide the ID of the option or iteration.
+/// - To clear the field, set this to null.
+/// 
+/// One of: String, double
+final dynamic value;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('value'); } 
+ProjectsUpdateItemForOrgRequestFields copyWith({int? id, dynamic Function()? value, }) { return ProjectsUpdateItemForOrgRequestFields(
+  id: id ?? this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProjectsUpdateItemForOrgRequestFields &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ProjectsUpdateItemForOrgRequestFields(id: $id, value: $value)'; } 
+ }

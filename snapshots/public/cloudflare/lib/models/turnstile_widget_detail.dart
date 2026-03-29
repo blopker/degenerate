@@ -1,0 +1,128 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turnstile_bot_fight_mode.dart';import 'turnstile_clearance_level.dart';import 'turnstile_created_on.dart';import 'turnstile_ephemeral_id.dart';import 'turnstile_modified_on.dart';import 'turnstile_name.dart';import 'turnstile_offlabel.dart';import 'turnstile_region.dart';import 'turnstile_sitekey.dart';import 'turnstile_widget_mode.dart';/// Secret key for this widget.
+extension type const TurnstileSecret(String value) {
+factory TurnstileSecret.fromJson(String json) => TurnstileSecret(json);
+
+String toJson() => value;
+
+}
+/// A Turnstile widget's detailed configuration
+final class TurnstileWidgetDetail {const TurnstileWidgetDetail({required this.botFightMode, required this.clearanceLevel, required this.createdOn, required this.domains, required this.ephemeralId, required this.mode, required this.modifiedOn, required this.name, required this.offlabel, required this.region, required this.secret, required this.sitekey, });
+
+factory TurnstileWidgetDetail.fromJson(Map<String, dynamic> json) { return TurnstileWidgetDetail(
+  botFightMode: TurnstileBotFightMode.fromJson(json['bot_fight_mode'] as bool),
+  clearanceLevel: TurnstileClearanceLevel.fromJson(json['clearance_level'] as String),
+  createdOn: TurnstileCreatedOn.fromJson(json['created_on'] as String),
+  domains: (json['domains'] as List<dynamic>).map((e) => e as String).toList(),
+  ephemeralId: TurnstileEphemeralId.fromJson(json['ephemeral_id'] as bool),
+  mode: TurnstileWidgetMode.fromJson(json['mode'] as String),
+  modifiedOn: TurnstileModifiedOn.fromJson(json['modified_on'] as String),
+  name: TurnstileName.fromJson(json['name'] as String),
+  offlabel: TurnstileOfflabel.fromJson(json['offlabel'] as bool),
+  region: TurnstileRegion.fromJson(json['region'] as String),
+  secret: TurnstileSecret.fromJson(json['secret'] as String),
+  sitekey: TurnstileSitekey.fromJson(json['sitekey'] as String),
+); }
+
+/// If bot_fight_mode is set to `true`, Cloudflare issues computationally
+/// expensive challenges in response to malicious bots (ENT only).
+/// 
+final TurnstileBotFightMode botFightMode;
+
+/// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,
+/// this setting can determine the clearance level to be set
+/// 
+final TurnstileClearanceLevel clearanceLevel;
+
+/// When the widget was created.
+final TurnstileCreatedOn createdOn;
+
+final List<String> domains;
+
+/// Return the Ephemeral ID in /siteverify (ENT only).
+/// 
+final TurnstileEphemeralId ephemeralId;
+
+final TurnstileWidgetMode mode;
+
+/// When the widget was modified.
+final TurnstileModifiedOn modifiedOn;
+
+/// Human readable widget name. Not unique. Cloudflare suggests that you
+/// set this to a meaningful string to make it easier to identify your
+/// widget, and where it is used.
+/// 
+final TurnstileName name;
+
+/// Do not show any Cloudflare branding on the widget (ENT only).
+/// 
+final TurnstileOfflabel offlabel;
+
+/// Region where this widget can be used. This cannot be changed after creation.
+/// 
+final TurnstileRegion region;
+
+/// Secret key for this widget.
+final TurnstileSecret secret;
+
+/// Widget item identifier tag.
+final TurnstileSitekey sitekey;
+
+Map<String, dynamic> toJson() { return {
+  'bot_fight_mode': botFightMode.toJson(),
+  'clearance_level': clearanceLevel.toJson(),
+  'created_on': createdOn.toJson(),
+  'domains': domains,
+  'ephemeral_id': ephemeralId.toJson(),
+  'mode': mode.toJson(),
+  'modified_on': modifiedOn.toJson(),
+  'name': name.toJson(),
+  'offlabel': offlabel.toJson(),
+  'region': region.toJson(),
+  'secret': secret.toJson(),
+  'sitekey': sitekey.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot_fight_mode') &&
+      json.containsKey('clearance_level') &&
+      json.containsKey('created_on') &&
+      json.containsKey('domains') &&
+      json.containsKey('ephemeral_id') &&
+      json.containsKey('mode') &&
+      json.containsKey('modified_on') &&
+      json.containsKey('name') &&
+      json.containsKey('offlabel') &&
+      json.containsKey('region') &&
+      json.containsKey('secret') &&
+      json.containsKey('sitekey'); } 
+TurnstileWidgetDetail copyWith({TurnstileBotFightMode? botFightMode, TurnstileClearanceLevel? clearanceLevel, TurnstileCreatedOn? createdOn, List<String>? domains, TurnstileEphemeralId? ephemeralId, TurnstileWidgetMode? mode, TurnstileModifiedOn? modifiedOn, TurnstileName? name, TurnstileOfflabel? offlabel, TurnstileRegion? region, TurnstileSecret? secret, TurnstileSitekey? sitekey, }) { return TurnstileWidgetDetail(
+  botFightMode: botFightMode ?? this.botFightMode,
+  clearanceLevel: clearanceLevel ?? this.clearanceLevel,
+  createdOn: createdOn ?? this.createdOn,
+  domains: domains ?? this.domains,
+  ephemeralId: ephemeralId ?? this.ephemeralId,
+  mode: mode ?? this.mode,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
+  name: name ?? this.name,
+  offlabel: offlabel ?? this.offlabel,
+  region: region ?? this.region,
+  secret: secret ?? this.secret,
+  sitekey: sitekey ?? this.sitekey,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TurnstileWidgetDetail &&
+          botFightMode == other.botFightMode &&
+          clearanceLevel == other.clearanceLevel &&
+          createdOn == other.createdOn &&
+          listEquals(domains, other.domains) &&
+          ephemeralId == other.ephemeralId &&
+          mode == other.mode &&
+          modifiedOn == other.modifiedOn &&
+          name == other.name &&
+          offlabel == other.offlabel &&
+          region == other.region &&
+          secret == other.secret &&
+          sitekey == other.sitekey; } 
+@override int get hashCode { return Object.hash(botFightMode, clearanceLevel, createdOn, Object.hashAll(domains), ephemeralId, mode, modifiedOn, name, offlabel, region, secret, sitekey); } 
+@override String toString() { return 'TurnstileWidgetDetail(botFightMode: $botFightMode, clearanceLevel: $clearanceLevel, createdOn: $createdOn, domains: $domains, ephemeralId: $ephemeralId, mode: $mode, modifiedOn: $modifiedOn, name: $name, offlabel: $offlabel, region: $region, secret: $secret, sitekey: $sitekey)'; } 
+ }

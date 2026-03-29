@@ -1,0 +1,90 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'rate_limit.dart';final class RateLimitOverviewResources {const RateLimitOverviewResources({required this.core, this.graphql, required this.search, this.codeSearch, this.sourceImport, this.integrationManifest, this.codeScanningUpload, this.actionsRunnerRegistration, this.scim, this.dependencySnapshots, this.dependencySbom, this.codeScanningAutofix, });
+
+factory RateLimitOverviewResources.fromJson(Map<String, dynamic> json) { return RateLimitOverviewResources(
+  core: RateLimit.fromJson(json['core'] as Map<String, dynamic>),
+  graphql: json['graphql'] != null ? RateLimit.fromJson(json['graphql'] as Map<String, dynamic>) : null,
+  search: RateLimit.fromJson(json['search'] as Map<String, dynamic>),
+  codeSearch: json['code_search'] != null ? RateLimit.fromJson(json['code_search'] as Map<String, dynamic>) : null,
+  sourceImport: json['source_import'] != null ? RateLimit.fromJson(json['source_import'] as Map<String, dynamic>) : null,
+  integrationManifest: json['integration_manifest'] != null ? RateLimit.fromJson(json['integration_manifest'] as Map<String, dynamic>) : null,
+  codeScanningUpload: json['code_scanning_upload'] != null ? RateLimit.fromJson(json['code_scanning_upload'] as Map<String, dynamic>) : null,
+  actionsRunnerRegistration: json['actions_runner_registration'] != null ? RateLimit.fromJson(json['actions_runner_registration'] as Map<String, dynamic>) : null,
+  scim: json['scim'] != null ? RateLimit.fromJson(json['scim'] as Map<String, dynamic>) : null,
+  dependencySnapshots: json['dependency_snapshots'] != null ? RateLimit.fromJson(json['dependency_snapshots'] as Map<String, dynamic>) : null,
+  dependencySbom: json['dependency_sbom'] != null ? RateLimit.fromJson(json['dependency_sbom'] as Map<String, dynamic>) : null,
+  codeScanningAutofix: json['code_scanning_autofix'] != null ? RateLimit.fromJson(json['code_scanning_autofix'] as Map<String, dynamic>) : null,
+); }
+
+final RateLimit core;
+
+final RateLimit? graphql;
+
+final RateLimit search;
+
+final RateLimit? codeSearch;
+
+final RateLimit? sourceImport;
+
+final RateLimit? integrationManifest;
+
+final RateLimit? codeScanningUpload;
+
+final RateLimit? actionsRunnerRegistration;
+
+final RateLimit? scim;
+
+final RateLimit? dependencySnapshots;
+
+final RateLimit? dependencySbom;
+
+final RateLimit? codeScanningAutofix;
+
+Map<String, dynamic> toJson() { return {
+  'core': core.toJson(),
+  if (graphql != null) 'graphql': graphql?.toJson(),
+  'search': search.toJson(),
+  if (codeSearch != null) 'code_search': codeSearch?.toJson(),
+  if (sourceImport != null) 'source_import': sourceImport?.toJson(),
+  if (integrationManifest != null) 'integration_manifest': integrationManifest?.toJson(),
+  if (codeScanningUpload != null) 'code_scanning_upload': codeScanningUpload?.toJson(),
+  if (actionsRunnerRegistration != null) 'actions_runner_registration': actionsRunnerRegistration?.toJson(),
+  if (scim != null) 'scim': scim?.toJson(),
+  if (dependencySnapshots != null) 'dependency_snapshots': dependencySnapshots?.toJson(),
+  if (dependencySbom != null) 'dependency_sbom': dependencySbom?.toJson(),
+  if (codeScanningAutofix != null) 'code_scanning_autofix': codeScanningAutofix?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('core') &&
+      json.containsKey('search'); } 
+RateLimitOverviewResources copyWith({RateLimit? core, RateLimit Function()? graphql, RateLimit? search, RateLimit Function()? codeSearch, RateLimit Function()? sourceImport, RateLimit Function()? integrationManifest, RateLimit Function()? codeScanningUpload, RateLimit Function()? actionsRunnerRegistration, RateLimit Function()? scim, RateLimit Function()? dependencySnapshots, RateLimit Function()? dependencySbom, RateLimit Function()? codeScanningAutofix, }) { return RateLimitOverviewResources(
+  core: core ?? this.core,
+  graphql: graphql != null ? graphql() : this.graphql,
+  search: search ?? this.search,
+  codeSearch: codeSearch != null ? codeSearch() : this.codeSearch,
+  sourceImport: sourceImport != null ? sourceImport() : this.sourceImport,
+  integrationManifest: integrationManifest != null ? integrationManifest() : this.integrationManifest,
+  codeScanningUpload: codeScanningUpload != null ? codeScanningUpload() : this.codeScanningUpload,
+  actionsRunnerRegistration: actionsRunnerRegistration != null ? actionsRunnerRegistration() : this.actionsRunnerRegistration,
+  scim: scim != null ? scim() : this.scim,
+  dependencySnapshots: dependencySnapshots != null ? dependencySnapshots() : this.dependencySnapshots,
+  dependencySbom: dependencySbom != null ? dependencySbom() : this.dependencySbom,
+  codeScanningAutofix: codeScanningAutofix != null ? codeScanningAutofix() : this.codeScanningAutofix,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RateLimitOverviewResources &&
+          core == other.core &&
+          graphql == other.graphql &&
+          search == other.search &&
+          codeSearch == other.codeSearch &&
+          sourceImport == other.sourceImport &&
+          integrationManifest == other.integrationManifest &&
+          codeScanningUpload == other.codeScanningUpload &&
+          actionsRunnerRegistration == other.actionsRunnerRegistration &&
+          scim == other.scim &&
+          dependencySnapshots == other.dependencySnapshots &&
+          dependencySbom == other.dependencySbom &&
+          codeScanningAutofix == other.codeScanningAutofix; } 
+@override int get hashCode { return Object.hash(core, graphql, search, codeSearch, sourceImport, integrationManifest, codeScanningUpload, actionsRunnerRegistration, scim, dependencySnapshots, dependencySbom, codeScanningAutofix); } 
+@override String toString() { return 'RateLimitOverviewResources(core: $core, graphql: $graphql, search: $search, codeSearch: $codeSearch, sourceImport: $sourceImport, integrationManifest: $integrationManifest, codeScanningUpload: $codeScanningUpload, actionsRunnerRegistration: $actionsRunnerRegistration, scim: $scim, dependencySnapshots: $dependencySnapshots, dependencySbom: $dependencySbom, codeScanningAutofix: $codeScanningAutofix)'; } 
+ }

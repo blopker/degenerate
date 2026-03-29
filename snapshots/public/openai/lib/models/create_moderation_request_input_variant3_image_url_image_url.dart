@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Contains either an image URL or a data URL for a base64 encoded image.
+final class CreateModerationRequestInputVariant3ImageUrlImageUrl {const CreateModerationRequestInputVariant3ImageUrlImageUrl({required this.url});
+
+factory CreateModerationRequestInputVariant3ImageUrlImageUrl.fromJson(Map<String, dynamic> json) { return CreateModerationRequestInputVariant3ImageUrlImageUrl(
+  url: Uri.parse(json['url'] as String),
+); }
+
+/// Either a URL of the image or the base64 encoded image data.
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
+CreateModerationRequestInputVariant3ImageUrlImageUrl copyWith({Uri? url}) { return CreateModerationRequestInputVariant3ImageUrlImageUrl(
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModerationRequestInputVariant3ImageUrlImageUrl &&
+          url == other.url; } 
+@override int get hashCode { return url.hashCode; } 
+@override String toString() { return 'CreateModerationRequestInputVariant3ImageUrlImageUrl(url: $url)'; } 
+ }

@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_requirements_error.dart';/// 
+final class ExternalAccountRequirements {const ExternalAccountRequirements({this.currentlyDue, this.errors, this.pastDue, this.pendingVerification, });
+
+factory ExternalAccountRequirements.fromJson(Map<String, dynamic> json) { return ExternalAccountRequirements(
+  currentlyDue: (json['currently_due'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => AccountRequirementsError.fromJson(e as Map<String, dynamic>)).toList(),
+  pastDue: (json['past_due'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  pendingVerification: (json['pending_verification'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Fields that need to be resolved to keep the external account enabled. If not resolved by `current_deadline`, these fields will appear in `past_due` as well, and the account is disabled.
+final List<String>? currentlyDue;
+
+/// Details about validation and verification failures for `due` requirements that must be resolved.
+final List<AccountRequirementsError>? errors;
+
+/// Fields that haven't been resolved by `current_deadline`. These fields need to be resolved to enable the external account.
+final List<String>? pastDue;
+
+/// Fields that are being reviewed, or might become required depending on the results of a review. If the review fails, these fields can move to `eventually_due`, `currently_due`, `past_due` or `alternatives`. Fields might appear in `eventually_due`, `currently_due`, `past_due` or `alternatives` and in `pending_verification` if one verification fails but another is still pending.
+final List<String>? pendingVerification;
+
+Map<String, dynamic> toJson() { return {
+  'currently_due': ?currentlyDue,
+  if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
+  'past_due': ?pastDue,
+  'pending_verification': ?pendingVerification,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ExternalAccountRequirements copyWith({List<String>? Function()? currentlyDue, List<AccountRequirementsError>? Function()? errors, List<String>? Function()? pastDue, List<String>? Function()? pendingVerification, }) { return ExternalAccountRequirements(
+  currentlyDue: currentlyDue != null ? currentlyDue() : this.currentlyDue,
+  errors: errors != null ? errors() : this.errors,
+  pastDue: pastDue != null ? pastDue() : this.pastDue,
+  pendingVerification: pendingVerification != null ? pendingVerification() : this.pendingVerification,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ExternalAccountRequirements &&
+          listEquals(currentlyDue, other.currentlyDue) &&
+          listEquals(errors, other.errors) &&
+          listEquals(pastDue, other.pastDue) &&
+          listEquals(pendingVerification, other.pendingVerification); } 
+@override int get hashCode { return Object.hash(Object.hashAll(currentlyDue ?? const []), Object.hashAll(errors ?? const []), Object.hashAll(pastDue ?? const []), Object.hashAll(pendingVerification ?? const [])); } 
+@override String toString() { return 'ExternalAccountRequirements(currentlyDue: $currentlyDue, errors: $errors, pastDue: $pastDue, pendingVerification: $pendingVerification)'; } 
+ }

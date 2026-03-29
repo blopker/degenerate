@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookDiscussionEditedChangesTitle {const WebhookDiscussionEditedChangesTitle({required this.from});
+
+factory WebhookDiscussionEditedChangesTitle.fromJson(Map<String, dynamic> json) { return WebhookDiscussionEditedChangesTitle(
+  from: json['from'] as String,
+); }
+
+final String from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+WebhookDiscussionEditedChangesTitle copyWith({String? from}) { return WebhookDiscussionEditedChangesTitle(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookDiscussionEditedChangesTitle &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookDiscussionEditedChangesTitle(from: $from)'; } 
+ }

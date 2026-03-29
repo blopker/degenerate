@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// R2 binding.
+final class PagesDeploymentConfigValuesRequestR2BucketsValue {const PagesDeploymentConfigValuesRequestR2BucketsValue({this.jurisdiction, required this.name, });
+
+factory PagesDeploymentConfigValuesRequestR2BucketsValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesRequestR2BucketsValue(
+  jurisdiction: json['jurisdiction'] as String?,
+  name: json['name'] as String,
+); }
+
+/// Jurisdiction of the R2 bucket.
+final String? jurisdiction;
+
+/// Name of the R2 bucket.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'jurisdiction': ?jurisdiction,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+PagesDeploymentConfigValuesRequestR2BucketsValue copyWith({String? Function()? jurisdiction, String? name, }) { return PagesDeploymentConfigValuesRequestR2BucketsValue(
+  jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDeploymentConfigValuesRequestR2BucketsValue &&
+          jurisdiction == other.jurisdiction &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(jurisdiction, name); } 
+@override String toString() { return 'PagesDeploymentConfigValuesRequestR2BucketsValue(jurisdiction: $jurisdiction, name: $name)'; } 
+ }

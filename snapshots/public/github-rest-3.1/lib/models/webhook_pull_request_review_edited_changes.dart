@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_pull_request_review_edited_changes_body.dart';final class WebhookPullRequestReviewEditedChanges {const WebhookPullRequestReviewEditedChanges({this.body});
+
+factory WebhookPullRequestReviewEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedChanges(
+  body: json['body'] != null ? WebhookPullRequestReviewEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+); }
+
+final WebhookPullRequestReviewEditedChangesBody? body;
+
+Map<String, dynamic> toJson() { return {
+  if (body != null) 'body': body?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookPullRequestReviewEditedChanges copyWith({WebhookPullRequestReviewEditedChangesBody Function()? body}) { return WebhookPullRequestReviewEditedChanges(
+  body: body != null ? body() : this.body,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewEditedChanges &&
+          body == other.body; } 
+@override int get hashCode { return body.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewEditedChanges(body: $body)'; } 
+ }

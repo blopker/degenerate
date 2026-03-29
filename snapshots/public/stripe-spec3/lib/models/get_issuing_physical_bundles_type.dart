@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetIssuingPhysicalBundlesType {const GetIssuingPhysicalBundlesType._(this.value);
+
+factory GetIssuingPhysicalBundlesType.fromJson(String json) { return switch (json) {
+  'custom' => custom,
+  'standard' => standard,
+  _ => GetIssuingPhysicalBundlesType._(json),
+}; }
+
+static const GetIssuingPhysicalBundlesType custom = GetIssuingPhysicalBundlesType._('custom');
+
+static const GetIssuingPhysicalBundlesType standard = GetIssuingPhysicalBundlesType._('standard');
+
+static const List<GetIssuingPhysicalBundlesType> values = [custom, standard];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetIssuingPhysicalBundlesType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetIssuingPhysicalBundlesType($value)'; } 
+ }

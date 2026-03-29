@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0 {const RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0({required this.insecure, required this.invalid, required this.other, required this.secure, });
+
+factory RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0(
+  insecure: (json['INSECURE'] as List<dynamic>).map((e) => e as String).toList(),
+  invalid: (json['INVALID'] as List<dynamic>).map((e) => e as String).toList(),
+  other: (json['OTHER'] as List<dynamic>).map((e) => e as String).toList(),
+  secure: (json['SECURE'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final List<String> insecure;
+
+final List<String> invalid;
+
+final List<String> other;
+
+final List<String> secure;
+
+Map<String, dynamic> toJson() { return {
+  'INSECURE': insecure,
+  'INVALID': invalid,
+  'OTHER': other,
+  'SECURE': secure,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('INSECURE') &&
+      json.containsKey('INVALID') &&
+      json.containsKey('OTHER') &&
+      json.containsKey('SECURE'); } 
+RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0 copyWith({List<String>? insecure, List<String>? invalid, List<String>? other, List<String>? secure, }) { return RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0(
+  insecure: insecure ?? this.insecure,
+  invalid: invalid ?? this.invalid,
+  other: other ?? this.other,
+  secure: secure ?? this.secure,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0 &&
+          listEquals(insecure, other.insecure) &&
+          listEquals(invalid, other.invalid) &&
+          listEquals(this.other, other.other) &&
+          listEquals(secure, other.secure); } 
+@override int get hashCode { return Object.hash(Object.hashAll(insecure), Object.hashAll(invalid), Object.hashAll(other), Object.hashAll(secure)); } 
+@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecResponseResultSerie0(insecure: $insecure, invalid: $invalid, other: $other, secure: $secure)'; } 
+ }

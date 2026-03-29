@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_next_action_konbini_familymart.dart';/// FamilyMart instruction details.
+final class PaymentIntentNextActionKonbiniStoresFamilymart {const PaymentIntentNextActionKonbiniStoresFamilymart({this.paymentIntentNextActionKonbiniFamilymart});
+
+factory PaymentIntentNextActionKonbiniStoresFamilymart.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniStoresFamilymart(
+  paymentIntentNextActionKonbiniFamilymart: PaymentIntentNextActionKonbiniFamilymart.canParse(json) ? PaymentIntentNextActionKonbiniFamilymart.fromJson(json) : null,
+); }
+
+final PaymentIntentNextActionKonbiniFamilymart? paymentIntentNextActionKonbiniFamilymart;
+
+/// At least one variant must be present.
+bool get isValid { return paymentIntentNextActionKonbiniFamilymart != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentIntentNextActionKonbiniFamilymart?.toJson(),
+}; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTreasuryOutboundPaymentsIdCancelRequest {const PostTreasuryOutboundPaymentsIdCancelRequest({this.expand});
+
+factory PostTreasuryOutboundPaymentsIdCancelRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsIdCancelRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTreasuryOutboundPaymentsIdCancelRequest copyWith({List<String> Function()? expand}) { return PostTreasuryOutboundPaymentsIdCancelRequest(
+  expand: expand != null ? expand() : this.expand,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTreasuryOutboundPaymentsIdCancelRequest &&
+          listEquals(expand, other.expand); } 
+@override int get hashCode { return Object.hashAll(expand ?? const []).hashCode; } 
+@override String toString() { return 'PostTreasuryOutboundPaymentsIdCancelRequest(expand: $expand)'; } 
+ }

@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Address data.
+final class InsightsResourcesPaymentEvaluationAddress {const InsightsResourcesPaymentEvaluationAddress({this.city, this.country, this.line1, this.line2, this.postalCode, this.state, });
+
+factory InsightsResourcesPaymentEvaluationAddress.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationAddress(
+  city: json['city'] as String?,
+  country: json['country'] as String?,
+  line1: json['line1'] as String?,
+  line2: json['line2'] as String?,
+  postalCode: json['postal_code'] as String?,
+  state: json['state'] as String?,
+); }
+
+/// City, district, suburb, town, or village.
+final String? city;
+
+/// Two-letter country code ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)).
+final String? country;
+
+/// Address line 1, such as the street, PO Box, or company name.
+final String? line1;
+
+/// Address line 2, such as the apartment, suite, unit, or building.
+final String? line2;
+
+/// ZIP or postal code.
+final String? postalCode;
+
+/// State, county, province, or region ([ISO 3166-2](https://en.wikipedia.org/wiki/ISO_3166-2)).
+final String? state;
+
+Map<String, dynamic> toJson() { return {
+  'city': ?city,
+  'country': ?country,
+  'line1': ?line1,
+  'line2': ?line2,
+  'postal_code': ?postalCode,
+  'state': ?state,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InsightsResourcesPaymentEvaluationAddress copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, }) { return InsightsResourcesPaymentEvaluationAddress(
+  city: city != null ? city() : this.city,
+  country: country != null ? country() : this.country,
+  line1: line1 != null ? line1() : this.line1,
+  line2: line2 != null ? line2() : this.line2,
+  postalCode: postalCode != null ? postalCode() : this.postalCode,
+  state: state != null ? state() : this.state,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InsightsResourcesPaymentEvaluationAddress &&
+          city == other.city &&
+          country == other.country &&
+          line1 == other.line1 &&
+          line2 == other.line2 &&
+          postalCode == other.postalCode &&
+          state == other.state; } 
+@override int get hashCode { return Object.hash(city, country, line1, line2, postalCode, state); } 
+@override String toString() { return 'InsightsResourcesPaymentEvaluationAddress(city: $city, country: $country, line1: $line1, line2: $line2, postalCode: $postalCode, state: $state)'; } 
+ }

@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bots_timeseries_response_result_meta_confidence_info_annotations.dart';final class RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo {const RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+
+factory RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo(
+  annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
+  level: (json['level'] as num).toInt(),
+); }
+
+final List<RadarGetBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations> annotations;
+
+/// Provides an indication of how much confidence Cloudflare has in the data.
+final int level;
+
+Map<String, dynamic> toJson() { return {
+  'annotations': annotations.map((e) => e.toJson()).toList(),
+  'level': level,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations') &&
+      json.containsKey('level') && json['level'] is num; } 
+RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo copyWith({List<RadarGetBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations>? annotations, int? level, }) { return RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo(
+  annotations: annotations ?? this.annotations,
+  level: level ?? this.level,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo &&
+          listEquals(annotations, other.annotations) &&
+          level == other.level; } 
+@override int get hashCode { return Object.hash(Object.hashAll(annotations), level); } 
+@override String toString() { return 'RadarGetBotsTimeseriesResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)'; } 
+ }

@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'mandate.dart';import 'payment_method_details_payment_record_us_bank_account_mandate.dart';/// The type of entity that holds the account. This can be either 'individual' or 'company'.
+final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._(this.value);
+
+factory PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+  'company' => company,
+  'individual' => individual,
+  _ => PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._(json),
+}; }
+
+static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType company = PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._('company');
+
+static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType individual = PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType._('individual');
+
+static const List<PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType> values = [company, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType($value)'; } 
+ }
+/// The type of the bank account. This can be either 'checking' or 'savings'.
+final class PaymentMethodDetailsPaymentRecordUsBankAccountAccountType {const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._(this.value);
+
+factory PaymentMethodDetailsPaymentRecordUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'savings' => savings,
+  _ => PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._(json),
+}; }
+
+static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType checking = PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._('checking');
+
+static const PaymentMethodDetailsPaymentRecordUsBankAccountAccountType savings = PaymentMethodDetailsPaymentRecordUsBankAccountAccountType._('savings');
+
+static const List<PaymentMethodDetailsPaymentRecordUsBankAccountAccountType> values = [checking, savings];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsPaymentRecordUsBankAccountAccountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccountAccountType($value)'; } 
+ }
+/// 
+final class PaymentMethodDetailsPaymentRecordUsBankAccount {const PaymentMethodDetailsPaymentRecordUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, this.paymentReference, this.routingNumber, });
+
+factory PaymentMethodDetailsPaymentRecordUsBankAccount.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
+  accountHolderType: json['account_holder_type'] != null ? PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? PaymentMethodDetailsPaymentRecordUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+  bankName: json['bank_name'] as String?,
+  expectedDebitDate: json['expected_debit_date'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  last4: json['last4'] as String?,
+  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
+  paymentReference: json['payment_reference'] as String?,
+  routingNumber: json['routing_number'] as String?,
+); }
+
+/// The type of entity that holds the account. This can be either 'individual' or 'company'.
+final PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType? accountHolderType;
+
+/// The type of the bank account. This can be either 'checking' or 'savings'.
+final PaymentMethodDetailsPaymentRecordUsBankAccountAccountType? accountType;
+
+/// Name of the bank associated with the bank account.
+final String? bankName;
+
+/// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
+final String? expectedDebitDate;
+
+/// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
+final String? fingerprint;
+
+/// Last four digits of the bank account number.
+final String? last4;
+
+/// ID of the mandate used to make this payment.
+final PaymentMethodDetailsPaymentRecordUsBankAccountMandate? mandate;
+
+/// The ACH payment reference for this transaction.
+final String? paymentReference;
+
+/// The routing number for the bank account.
+final String? routingNumber;
+
+Map<String, dynamic> toJson() { return {
+  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
+  if (accountType != null) 'account_type': accountType?.toJson(),
+  'bank_name': ?bankName,
+  'expected_debit_date': ?expectedDebitDate,
+  'fingerprint': ?fingerprint,
+  'last4': ?last4,
+  if (mandate != null) 'mandate': mandate?.toJson(),
+  'payment_reference': ?paymentReference,
+  'routing_number': ?routingNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsPaymentRecordUsBankAccount copyWith({PaymentMethodDetailsPaymentRecordUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodDetailsPaymentRecordUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, PaymentMethodDetailsPaymentRecordUsBankAccountMandate Function()? mandate, String? Function()? paymentReference, String? Function()? routingNumber, }) { return PaymentMethodDetailsPaymentRecordUsBankAccount(
+  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
+  accountType: accountType != null ? accountType() : this.accountType,
+  bankName: bankName != null ? bankName() : this.bankName,
+  expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  last4: last4 != null ? last4() : this.last4,
+  mandate: mandate != null ? mandate() : this.mandate,
+  paymentReference: paymentReference != null ? paymentReference() : this.paymentReference,
+  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsPaymentRecordUsBankAccount &&
+          accountHolderType == other.accountHolderType &&
+          accountType == other.accountType &&
+          bankName == other.bankName &&
+          expectedDebitDate == other.expectedDebitDate &&
+          fingerprint == other.fingerprint &&
+          last4 == other.last4 &&
+          mandate == other.mandate &&
+          paymentReference == other.paymentReference &&
+          routingNumber == other.routingNumber; } 
+@override int get hashCode { return Object.hash(accountHolderType, accountType, bankName, expectedDebitDate, fingerprint, last4, mandate, paymentReference, routingNumber); } 
+@override String toString() { return 'PaymentMethodDetailsPaymentRecordUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, paymentReference: $paymentReference, routingNumber: $routingNumber)'; } 
+ }

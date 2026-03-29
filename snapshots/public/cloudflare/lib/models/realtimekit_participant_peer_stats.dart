@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtimekit_participant_peer_stats_peer_stats.dart';final class RealtimekitParticipantPeerStats {const RealtimekitParticipantPeerStats({this.peerStats});
+
+factory RealtimekitParticipantPeerStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStats(
+  peerStats: json['peer_stats'] != null ? RealtimekitParticipantPeerStatsPeerStats.fromJson(json['peer_stats'] as Map<String, dynamic>) : null,
+); }
+
+final RealtimekitParticipantPeerStatsPeerStats? peerStats;
+
+Map<String, dynamic> toJson() { return {
+  if (peerStats != null) 'peer_stats': peerStats?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitParticipantPeerStats copyWith({RealtimekitParticipantPeerStatsPeerStats Function()? peerStats}) { return RealtimekitParticipantPeerStats(
+  peerStats: peerStats != null ? peerStats() : this.peerStats,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitParticipantPeerStats &&
+          peerStats == other.peerStats; } 
+@override int get hashCode { return peerStats.hashCode; } 
+@override String toString() { return 'RealtimekitParticipantPeerStats(peerStats: $peerStats)'; } 
+ }

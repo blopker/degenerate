@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_ruleset_conditions_repository_property_spec.dart';final class RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty {const RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty({this.include, this.exclude, });
+
+factory RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty.fromJson(Map<String, dynamic> json) { return RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
+  include: (json['include'] as List<dynamic>?)?.map((e) => RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(e as Map<String, dynamic>)).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => RepositoryRulesetConditionsRepositoryPropertySpec.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The repository properties and values to include. All of these properties must match for the condition to pass.
+final List<RepositoryRulesetConditionsRepositoryPropertySpec>? include;
+
+/// The repository properties and values to exclude. The condition will not pass if any of these properties match.
+final List<RepositoryRulesetConditionsRepositoryPropertySpec>? exclude;
+
+Map<String, dynamic> toJson() { return {
+  if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
+  if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty copyWith({List<RepositoryRulesetConditionsRepositoryPropertySpec> Function()? include, List<RepositoryRulesetConditionsRepositoryPropertySpec> Function()? exclude, }) { return RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
+  include: include != null ? include() : this.include,
+  exclude: exclude != null ? exclude() : this.exclude,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty &&
+          listEquals(include, other.include) &&
+          listEquals(exclude, other.exclude); } 
+@override int get hashCode { return Object.hash(Object.hashAll(include ?? const []), Object.hashAll(exclude ?? const [])); } 
+@override String toString() { return 'RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(include: $include, exclude: $exclude)'; } 
+ }

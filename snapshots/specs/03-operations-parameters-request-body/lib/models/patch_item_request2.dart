@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PatchItemRequest2 {const PatchItemRequest2({this.name, this.avatar, });
+
+factory PatchItemRequest2.fromJson(Map<String, dynamic> json) { return PatchItemRequest2(
+  name: json['name'] as String?,
+  avatar: json['avatar'],
+); }
+
+final String? name;
+
+final dynamic avatar;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  'avatar': ?avatar,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PatchItemRequest2 copyWith({String Function()? name, dynamic Function()? avatar, }) { return PatchItemRequest2(
+  name: name != null ? name() : this.name,
+  avatar: avatar != null ? avatar() : this.avatar,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PatchItemRequest2 &&
+          name == other.name &&
+          avatar == other.avatar; } 
+@override int get hashCode { return Object.hash(name, avatar); } 
+@override String toString() { return 'PatchItemRequest2(name: $name, avatar: $avatar)'; } 
+ }

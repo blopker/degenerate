@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.create`.
+final class RealtimeClientEventConversationItemCreateType {const RealtimeClientEventConversationItemCreateType._(this.value);
+
+factory RealtimeClientEventConversationItemCreateType.fromJson(String json) { return switch (json) {
+  'conversation.item.create' => conversationItemCreate,
+  _ => RealtimeClientEventConversationItemCreateType._(json),
+}; }
+
+static const RealtimeClientEventConversationItemCreateType conversationItemCreate = RealtimeClientEventConversationItemCreateType._('conversation.item.create');
+
+static const List<RealtimeClientEventConversationItemCreateType> values = [conversationItemCreate];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeClientEventConversationItemCreateType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeClientEventConversationItemCreateType($value)'; } 
+ }
+/// Add a new Item to the Conversation's context, including messages, function
+/// calls, and function call responses. This event can be used both to populate a
+/// "history" of the conversation and to add new items mid-stream, but has the
+/// current limitation that it cannot populate assistant audio messages.
+/// 
+/// If successful, the server will respond with a `conversation.item.created`
+/// event, otherwise an `error` event will be sent.
+/// 
+final class RealtimeClientEventConversationItemCreate {const RealtimeClientEventConversationItemCreate({this.eventId, required this.type, this.previousItemId, required this.item, });
+
+factory RealtimeClientEventConversationItemCreate.fromJson(Map<String, dynamic> json) { return RealtimeClientEventConversationItemCreate(
+  eventId: json['event_id'] as String?,
+  type: RealtimeClientEventConversationItemCreateType.fromJson(json['type'] as String),
+  previousItemId: json['previous_item_id'] as String?,
+  item: OneOf9.parse(json['item'], fromA: (v) => RealtimeConversationItemMessageSystem.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeConversationItemMessageUser.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeConversationItemMessageAssistant.fromJson(v as Map<String, dynamic>), fromD: (v) => RealtimeConversationItemFunctionCall.fromJson(v as Map<String, dynamic>), fromE: (v) => RealtimeConversationItemFunctionCallOutput.fromJson(v as Map<String, dynamic>), fromF: (v) => RealtimeMcpApprovalResponse.fromJson(v as Map<String, dynamic>), fromG: (v) => RealtimeMcpListTools.fromJson(v as Map<String, dynamic>), fromH: (v) => RealtimeMcpToolCall.fromJson(v as Map<String, dynamic>), fromI: (v) => RealtimeMcpApprovalRequest.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// Optional client-generated ID used to identify this event.
+final String? eventId;
+
+/// The event type, must be `conversation.item.create`.
+final RealtimeClientEventConversationItemCreateType type;
+
+/// The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation.
+/// 
+/// If set to `root`, the new item will be added to the beginning of the conversation.
+/// 
+/// If set to an existing ID, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.
+/// 
+final String? previousItemId;
+
+final RealtimeConversationItem item;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': ?eventId,
+  'type': type.toJson(),
+  'previous_item_id': ?previousItemId,
+  'item': item.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('item'); } 
+RealtimeClientEventConversationItemCreate copyWith({String Function()? eventId, RealtimeClientEventConversationItemCreateType? type, String Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeClientEventConversationItemCreate(
+  eventId: eventId != null ? eventId() : this.eventId,
+  type: type ?? this.type,
+  previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
+  item: item ?? this.item,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeClientEventConversationItemCreate &&
+          eventId == other.eventId &&
+          type == other.type &&
+          previousItemId == other.previousItemId &&
+          item == other.item; } 
+@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
+@override String toString() { return 'RealtimeClientEventConversationItemCreate(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
+ }

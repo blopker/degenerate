@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_observability_query_parameters.dart';final class WorkersObservabilityQuery {const WorkersObservabilityQuery({required this.created, required this.description, required this.environmentId, required this.generated, required this.id, required this.name, required this.parameters, required this.updated, required this.userId, required this.workspaceId, });
+
+factory WorkersObservabilityQuery.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQuery(
+  created: json['created'] as String,
+  description: json['description'] as String?,
+  environmentId: json['environmentId'] as String,
+  generated: json['generated'] as bool?,
+  id: json['id'] as String,
+  name: json['name'] as String?,
+  parameters: WorkersObservabilityQueryParameters.fromJson(json['parameters'] as Map<String, dynamic>),
+  updated: json['updated'] as String,
+  userId: json['userId'] as String,
+  workspaceId: json['workspaceId'] as String,
+); }
+
+final String created;
+
+final String? description;
+
+/// ID of your environment
+final String environmentId;
+
+/// Flag for alerts automatically created
+final bool? generated;
+
+/// ID of the query
+final String id;
+
+/// Query name
+final String? name;
+
+final WorkersObservabilityQueryParameters parameters;
+
+final String updated;
+
+final String userId;
+
+/// ID of your workspace
+final String workspaceId;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  'description': ?description,
+  'environmentId': environmentId,
+  'generated': ?generated,
+  'id': id,
+  'name': ?name,
+  'parameters': parameters.toJson(),
+  'updated': updated,
+  'userId': userId,
+  'workspaceId': workspaceId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('environmentId') && json['environmentId'] is String &&
+      json.containsKey('generated') && json['generated'] is bool &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('parameters') &&
+      json.containsKey('updated') && json['updated'] is String &&
+      json.containsKey('userId') && json['userId'] is String &&
+      json.containsKey('workspaceId') && json['workspaceId'] is String; } 
+WorkersObservabilityQuery copyWith({String? created, String? Function()? description, String? environmentId, bool? Function()? generated, String? id, String? Function()? name, WorkersObservabilityQueryParameters? parameters, String? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQuery(
+  created: created ?? this.created,
+  description: description != null ? description() : this.description,
+  environmentId: environmentId ?? this.environmentId,
+  generated: generated != null ? generated() : this.generated,
+  id: id ?? this.id,
+  name: name != null ? name() : this.name,
+  parameters: parameters ?? this.parameters,
+  updated: updated ?? this.updated,
+  userId: userId ?? this.userId,
+  workspaceId: workspaceId ?? this.workspaceId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersObservabilityQuery &&
+          created == other.created &&
+          description == other.description &&
+          environmentId == other.environmentId &&
+          generated == other.generated &&
+          id == other.id &&
+          name == other.name &&
+          parameters == other.parameters &&
+          updated == other.updated &&
+          userId == other.userId &&
+          workspaceId == other.workspaceId; } 
+@override int get hashCode { return Object.hash(created, description, environmentId, generated, id, name, parameters, updated, userId, workspaceId); } 
+@override String toString() { return 'WorkersObservabilityQuery(created: $created, description: $description, environmentId: $environmentId, generated: $generated, id: $id, name: $name, parameters: $parameters, updated: $updated, userId: $userId, workspaceId: $workspaceId)'; } 
+ }

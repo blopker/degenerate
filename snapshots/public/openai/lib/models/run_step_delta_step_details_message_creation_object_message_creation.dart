@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RunStepDeltaStepDetailsMessageCreationObjectMessageCreation {const RunStepDeltaStepDetailsMessageCreationObjectMessageCreation({this.messageId});
+
+factory RunStepDeltaStepDetailsMessageCreationObjectMessageCreation.fromJson(Map<String, dynamic> json) { return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
+  messageId: json['message_id'] as String?,
+); }
+
+/// The ID of the message that was created by this run step.
+final String? messageId;
+
+Map<String, dynamic> toJson() { return {
+  'message_id': ?messageId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RunStepDeltaStepDetailsMessageCreationObjectMessageCreation copyWith({String Function()? messageId}) { return RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
+  messageId: messageId != null ? messageId() : this.messageId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RunStepDeltaStepDetailsMessageCreationObjectMessageCreation &&
+          messageId == other.messageId; } 
+@override int get hashCode { return messageId.hashCode; } 
+@override String toString() { return 'RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(messageId: $messageId)'; } 
+ }

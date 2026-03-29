@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'teams_devices_tls_config_request.dart';/// A value that is one of: `TeamsDevicesTlsConfigRequest`.
+sealed class TeamsDevicesSchemasConfigRequest {const TeamsDevicesSchemasConfigRequest();
+
+factory TeamsDevicesSchemasConfigRequest.fromJson(Map<String, dynamic> json) {   if (TeamsDevicesTlsConfigRequest.canParse(json)) {
+    return TeamsDevicesSchemasConfigRequestTeamsDevicesTlsConfigRequest(TeamsDevicesTlsConfigRequest.fromJson(json));
+  }
+  return TeamsDevicesSchemasConfigRequest$Unknown(json); }
+
+/// The underlying raw value.
+dynamic get value;
+dynamic toJson() { return value; } 
+ }
+final class TeamsDevicesSchemasConfigRequestTeamsDevicesTlsConfigRequest extends TeamsDevicesSchemasConfigRequest {const TeamsDevicesSchemasConfigRequestTeamsDevicesTlsConfigRequest(this._value);
+
+final TeamsDevicesTlsConfigRequest _value;
+
+@override TeamsDevicesTlsConfigRequest get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesSchemasConfigRequestTeamsDevicesTlsConfigRequest && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'TeamsDevicesSchemasConfigRequest.teamsDevicesTlsConfigRequest($_value)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+final class TeamsDevicesSchemasConfigRequest$Unknown extends TeamsDevicesSchemasConfigRequest {const TeamsDevicesSchemasConfigRequest$Unknown(this._value);
+
+final dynamic _value;
+
+@override dynamic get value { return _value ?? ''; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesSchemasConfigRequest$Unknown && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'TeamsDevicesSchemasConfigRequest.unknown($_value)'; } 
+ }

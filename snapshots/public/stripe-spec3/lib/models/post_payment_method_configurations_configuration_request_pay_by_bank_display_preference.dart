@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference._(this.value);
+
+factory PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off' => off,
+  'on' => $on,
+  _ => PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference._(json),
+}; }
+
+static const PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference none = PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference._('none');
+
+static const PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference off = PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference._('off');
+
+static const PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference $on = PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference._('on');
+
+static const List<PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference> values = [none, off, $on];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference($value)'; } 
+ }
+final class PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference({this.preference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference(
+  preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference? preference;
+
+Map<String, dynamic> toJson() { return {
+  if (preference != null) 'preference': preference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference(
+  preference: preference != null ? preference() : this.preference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference &&
+          preference == other.preference; } 
+@override int get hashCode { return preference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestPayByBankDisplayPreference(preference: $preference)'; } 
+ }

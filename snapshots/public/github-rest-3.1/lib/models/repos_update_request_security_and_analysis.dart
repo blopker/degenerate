@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'repos_update_request_security_and_analysis_advanced_security.dart';import 'repos_update_request_security_and_analysis_code_security.dart';import 'repos_update_request_security_and_analysis_secret_scanning.dart';import 'repos_update_request_security_and_analysis_secret_scanning_ai_detection.dart';import 'repos_update_request_security_and_analysis_secret_scanning_delegated_alert_dismissal.dart';import 'repos_update_request_security_and_analysis_secret_scanning_delegated_bypass.dart';import 'repos_update_request_security_and_analysis_secret_scanning_delegated_bypass_options.dart';import 'repos_update_request_security_and_analysis_secret_scanning_non_provider_patterns.dart';import 'repos_update_request_security_and_analysis_secret_scanning_push_protection.dart';/// Specify which security and analysis features to enable or disable for the repository.
+/// 
+/// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
+/// 
+/// For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:
+/// `{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.
+/// 
+/// You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+final class ReposUpdateRequestSecurityAndAnalysis {const ReposUpdateRequestSecurityAndAnalysis({this.advancedSecurity, this.codeSecurity, this.secretScanning, this.secretScanningPushProtection, this.secretScanningAiDetection, this.secretScanningNonProviderPatterns, this.secretScanningDelegatedAlertDismissal, this.secretScanningDelegatedBypass, this.secretScanningDelegatedBypassOptions, });
+
+factory ReposUpdateRequestSecurityAndAnalysis.fromJson(Map<String, dynamic> json) { return ReposUpdateRequestSecurityAndAnalysis(
+  advancedSecurity: json['advanced_security'] != null ? ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity.fromJson(json['advanced_security'] as Map<String, dynamic>) : null,
+  codeSecurity: json['code_security'] != null ? ReposUpdateRequestSecurityAndAnalysisCodeSecurity.fromJson(json['code_security'] as Map<String, dynamic>) : null,
+  secretScanning: json['secret_scanning'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanning.fromJson(json['secret_scanning'] as Map<String, dynamic>) : null,
+  secretScanningPushProtection: json['secret_scanning_push_protection'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection.fromJson(json['secret_scanning_push_protection'] as Map<String, dynamic>) : null,
+  secretScanningAiDetection: json['secret_scanning_ai_detection'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection.fromJson(json['secret_scanning_ai_detection'] as Map<String, dynamic>) : null,
+  secretScanningNonProviderPatterns: json['secret_scanning_non_provider_patterns'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns.fromJson(json['secret_scanning_non_provider_patterns'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedAlertDismissal: json['secret_scanning_delegated_alert_dismissal'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal.fromJson(json['secret_scanning_delegated_alert_dismissal'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedBypass: json['secret_scanning_delegated_bypass'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass.fromJson(json['secret_scanning_delegated_bypass'] as Map<String, dynamic>) : null,
+  secretScanningDelegatedBypassOptions: json['secret_scanning_delegated_bypass_options'] != null ? ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions.fromJson(json['secret_scanning_delegated_bypass_options'] as Map<String, dynamic>) : null,
+); }
+
+/// Use the `status` property to enable or disable GitHub Advanced Security for this repository.
+/// For more information, see "[About GitHub Advanced
+/// Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
+/// 
+/// For standalone Code Scanning or Secret Protection products, this parameter cannot be used.
+final ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity? advancedSecurity;
+
+/// Use the `status` property to enable or disable GitHub Code Security for this repository.
+final ReposUpdateRequestSecurityAndAnalysisCodeSecurity? codeSecurity;
+
+/// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
+final ReposUpdateRequestSecurityAndAnalysisSecretScanning? secretScanning;
+
+/// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
+final ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection? secretScanningPushProtection;
+
+/// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
+final ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection? secretScanningAiDetection;
+
+/// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
+final ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns? secretScanningNonProviderPatterns;
+
+/// Use the `status` property to enable or disable secret scanning delegated alert dismissal for this repository.
+final ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal? secretScanningDelegatedAlertDismissal;
+
+/// Use the `status` property to enable or disable secret scanning delegated bypass for this repository.
+final ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass? secretScanningDelegatedBypass;
+
+/// Feature options for secret scanning delegated bypass.
+/// This object is only honored when `security_and_analysis.secret_scanning_delegated_bypass.status` is set to `enabled`.
+/// You can send this object in the same request as `secret_scanning_delegated_bypass`, or update just the options in a separate request.
+final ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions? secretScanningDelegatedBypassOptions;
+
+Map<String, dynamic> toJson() { return {
+  if (advancedSecurity != null) 'advanced_security': advancedSecurity?.toJson(),
+  if (codeSecurity != null) 'code_security': codeSecurity?.toJson(),
+  if (secretScanning != null) 'secret_scanning': secretScanning?.toJson(),
+  if (secretScanningPushProtection != null) 'secret_scanning_push_protection': secretScanningPushProtection?.toJson(),
+  if (secretScanningAiDetection != null) 'secret_scanning_ai_detection': secretScanningAiDetection?.toJson(),
+  if (secretScanningNonProviderPatterns != null) 'secret_scanning_non_provider_patterns': secretScanningNonProviderPatterns?.toJson(),
+  if (secretScanningDelegatedAlertDismissal != null) 'secret_scanning_delegated_alert_dismissal': secretScanningDelegatedAlertDismissal?.toJson(),
+  if (secretScanningDelegatedBypass != null) 'secret_scanning_delegated_bypass': secretScanningDelegatedBypass?.toJson(),
+  if (secretScanningDelegatedBypassOptions != null) 'secret_scanning_delegated_bypass_options': secretScanningDelegatedBypassOptions?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposUpdateRequestSecurityAndAnalysis copyWith({ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity Function()? advancedSecurity, ReposUpdateRequestSecurityAndAnalysisCodeSecurity Function()? codeSecurity, ReposUpdateRequestSecurityAndAnalysisSecretScanning Function()? secretScanning, ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection Function()? secretScanningPushProtection, ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection Function()? secretScanningAiDetection, ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns Function()? secretScanningNonProviderPatterns, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedAlertDismissal Function()? secretScanningDelegatedAlertDismissal, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypass Function()? secretScanningDelegatedBypass, ReposUpdateRequestSecurityAndAnalysisSecretScanningDelegatedBypassOptions Function()? secretScanningDelegatedBypassOptions, }) { return ReposUpdateRequestSecurityAndAnalysis(
+  advancedSecurity: advancedSecurity != null ? advancedSecurity() : this.advancedSecurity,
+  codeSecurity: codeSecurity != null ? codeSecurity() : this.codeSecurity,
+  secretScanning: secretScanning != null ? secretScanning() : this.secretScanning,
+  secretScanningPushProtection: secretScanningPushProtection != null ? secretScanningPushProtection() : this.secretScanningPushProtection,
+  secretScanningAiDetection: secretScanningAiDetection != null ? secretScanningAiDetection() : this.secretScanningAiDetection,
+  secretScanningNonProviderPatterns: secretScanningNonProviderPatterns != null ? secretScanningNonProviderPatterns() : this.secretScanningNonProviderPatterns,
+  secretScanningDelegatedAlertDismissal: secretScanningDelegatedAlertDismissal != null ? secretScanningDelegatedAlertDismissal() : this.secretScanningDelegatedAlertDismissal,
+  secretScanningDelegatedBypass: secretScanningDelegatedBypass != null ? secretScanningDelegatedBypass() : this.secretScanningDelegatedBypass,
+  secretScanningDelegatedBypassOptions: secretScanningDelegatedBypassOptions != null ? secretScanningDelegatedBypassOptions() : this.secretScanningDelegatedBypassOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposUpdateRequestSecurityAndAnalysis &&
+          advancedSecurity == other.advancedSecurity &&
+          codeSecurity == other.codeSecurity &&
+          secretScanning == other.secretScanning &&
+          secretScanningPushProtection == other.secretScanningPushProtection &&
+          secretScanningAiDetection == other.secretScanningAiDetection &&
+          secretScanningNonProviderPatterns == other.secretScanningNonProviderPatterns &&
+          secretScanningDelegatedAlertDismissal == other.secretScanningDelegatedAlertDismissal &&
+          secretScanningDelegatedBypass == other.secretScanningDelegatedBypass &&
+          secretScanningDelegatedBypassOptions == other.secretScanningDelegatedBypassOptions; } 
+@override int get hashCode { return Object.hash(advancedSecurity, codeSecurity, secretScanning, secretScanningPushProtection, secretScanningAiDetection, secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions); } 
+@override String toString() { return 'ReposUpdateRequestSecurityAndAnalysis(advancedSecurity: $advancedSecurity, codeSecurity: $codeSecurity, secretScanning: $secretScanning, secretScanningPushProtection: $secretScanningPushProtection, secretScanningAiDetection: $secretScanningAiDetection, secretScanningNonProviderPatterns: $secretScanningNonProviderPatterns, secretScanningDelegatedAlertDismissal: $secretScanningDelegatedAlertDismissal, secretScanningDelegatedBypass: $secretScanningDelegatedBypass, secretScanningDelegatedBypassOptions: $secretScanningDelegatedBypassOptions)'; } 
+ }

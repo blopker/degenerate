@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'output_item.dart';/// The type of the event. Always `response.output_item.added`.
+/// 
+final class ResponseOutputItemAddedEventType {const ResponseOutputItemAddedEventType._(this.value);
+
+factory ResponseOutputItemAddedEventType.fromJson(String json) { return switch (json) {
+  'response.output_item.added' => responseOutputItemAdded,
+  _ => ResponseOutputItemAddedEventType._(json),
+}; }
+
+static const ResponseOutputItemAddedEventType responseOutputItemAdded = ResponseOutputItemAddedEventType._('response.output_item.added');
+
+static const List<ResponseOutputItemAddedEventType> values = [responseOutputItemAdded];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseOutputItemAddedEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseOutputItemAddedEventType($value)'; } 
+ }
+/// Emitted when a new output item is added.
+final class ResponseOutputItemAddedEvent {const ResponseOutputItemAddedEvent({required this.type, required this.outputIndex, required this.sequenceNumber, required this.item, });
+
+factory ResponseOutputItemAddedEvent.fromJson(Map<String, dynamic> json) { return ResponseOutputItemAddedEvent(
+  type: ResponseOutputItemAddedEventType.fromJson(json['type'] as String),
+  outputIndex: (json['output_index'] as num).toInt(),
+  sequenceNumber: (json['sequence_number'] as num).toInt(),
+  item: OutputItem.fromJson(json['item'] as Map<String, dynamic>),
+); }
+
+/// The type of the event. Always `response.output_item.added`.
+/// 
+final ResponseOutputItemAddedEventType type;
+
+/// The index of the output item that was added.
+/// 
+final int outputIndex;
+
+/// The sequence number of this event.
+/// 
+final int sequenceNumber;
+
+/// The output item that was added.
+/// 
+final OutputItem item;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'output_index': outputIndex,
+  'sequence_number': sequenceNumber,
+  'item': item.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('output_index') && json['output_index'] is num &&
+      json.containsKey('sequence_number') && json['sequence_number'] is num &&
+      json.containsKey('item'); } 
+ResponseOutputItemAddedEvent copyWith({ResponseOutputItemAddedEventType? type, int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseOutputItemAddedEvent(
+  type: type ?? this.type,
+  outputIndex: outputIndex ?? this.outputIndex,
+  sequenceNumber: sequenceNumber ?? this.sequenceNumber,
+  item: item ?? this.item,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseOutputItemAddedEvent &&
+          type == other.type &&
+          outputIndex == other.outputIndex &&
+          sequenceNumber == other.sequenceNumber &&
+          item == other.item; } 
+@override int get hashCode { return Object.hash(type, outputIndex, sequenceNumber, item); } 
+@override String toString() { return 'ResponseOutputItemAddedEvent(type: $type, outputIndex: $outputIndex, sequenceNumber: $sequenceNumber, item: $item)'; } 
+ }

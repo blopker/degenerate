@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetCtTimeseriesGroupResponse400Errors {const RadarGetCtTimeseriesGroupResponse400Errors({required this.message});
+
+factory RadarGetCtTimeseriesGroupResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+RadarGetCtTimeseriesGroupResponse400Errors copyWith({String? message}) { return RadarGetCtTimeseriesGroupResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetCtTimeseriesGroupResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'RadarGetCtTimeseriesGroupResponse400Errors(message: $message)'; } 
+ }

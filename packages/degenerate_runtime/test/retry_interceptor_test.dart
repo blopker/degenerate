@@ -202,38 +202,40 @@ void main() {
       expect(delays, [const Duration(milliseconds: 150)]);
     });
 
-    test('ignores non-integer Retry-After header and falls back to backoff',
-        () async {
-      final delays = <Duration>[];
-      var attempts = 0;
-      final interceptor = RetryInterceptor(
-        maxRetries: 1,
-        initialDelay: const Duration(milliseconds: 100),
-        jitterRatio: 0,
-        sleep: (delay) async => delays.add(delay),
-      );
+    test(
+      'ignores non-integer Retry-After header and falls back to backoff',
+      () async {
+        final delays = <Duration>[];
+        var attempts = 0;
+        final interceptor = RetryInterceptor(
+          maxRetries: 1,
+          initialDelay: const Duration(milliseconds: 100),
+          jitterRatio: 0,
+          sleep: (delay) async => delays.add(delay),
+        );
 
-      final chain = buildInterceptorChain(
-        interceptors: [interceptor],
-        terminal: (_) async {
-          attempts++;
-          return attempts == 1
-              ? ApiResponse(
-                  statusCode: 503,
-                  body: 'unavailable',
-                  headers: const {
-                    'Retry-After': 'Tue, 10 Mar 2026 12:00:03 GMT',
-                  },
-                )
-              : ApiResponse(statusCode: 200, body: 'ok');
-        },
-      );
+        final chain = buildInterceptorChain(
+          interceptors: [interceptor],
+          terminal: (_) async {
+            attempts++;
+            return attempts == 1
+                ? ApiResponse(
+                    statusCode: 503,
+                    body: 'unavailable',
+                    headers: const {
+                      'Retry-After': 'Tue, 10 Mar 2026 12:00:03 GMT',
+                    },
+                  )
+                : ApiResponse(statusCode: 200, body: 'ok');
+          },
+        );
 
-      final response = await chain(ApiRequest(method: 'GET', path: '/test'));
-      expect(response.statusCode, 200);
-      // Falls back to exponential backoff (100ms for first retry)
-      expect(delays, [const Duration(milliseconds: 100)]);
-    });
+        final response = await chain(ApiRequest(method: 'GET', path: '/test'));
+        expect(response.statusCode, 200);
+        // Falls back to exponential backoff (100ms for first retry)
+        expect(delays, [const Duration(milliseconds: 100)]);
+      },
+    );
 
     test('does not retry non-idempotent POST by default', () async {
       var attempts = 0;

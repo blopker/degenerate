@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_branding_settings_icon.dart';/// The icon for the Checkout Session. You cannot set both `logo` and `icon`.
+final class PaymentPagesCheckoutSessionBrandingSettingsIcon2 {const PaymentPagesCheckoutSessionBrandingSettingsIcon2({this.paymentPagesCheckoutSessionBrandingSettingsIcon});
+
+factory PaymentPagesCheckoutSessionBrandingSettingsIcon2.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionBrandingSettingsIcon2(
+  paymentPagesCheckoutSessionBrandingSettingsIcon: PaymentPagesCheckoutSessionBrandingSettingsIcon.canParse(json) ? PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(json) : null,
+); }
+
+final PaymentPagesCheckoutSessionBrandingSettingsIcon? paymentPagesCheckoutSessionBrandingSettingsIcon;
+
+/// At least one variant must be present.
+bool get isValid { return paymentPagesCheckoutSessionBrandingSettingsIcon != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentPagesCheckoutSessionBrandingSettingsIcon?.toJson(),
+}; } 
+ }

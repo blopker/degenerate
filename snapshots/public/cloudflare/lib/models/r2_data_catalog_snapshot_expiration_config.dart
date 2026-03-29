@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'r2_data_catalog_catalog_maintenance_state.dart';/// Configures snapshot expiration settings.
+final class R2DataCatalogSnapshotExpirationConfig {const R2DataCatalogSnapshotExpirationConfig({required this.maxSnapshotAge, required this.minSnapshotsToKeep, required this.state, });
+
+factory R2DataCatalogSnapshotExpirationConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogSnapshotExpirationConfig(
+  maxSnapshotAge: json['max_snapshot_age'] as String,
+  minSnapshotsToKeep: (json['min_snapshots_to_keep'] as num).toInt(),
+  state: R2DataCatalogCatalogMaintenanceState.fromJson(json['state'] as String),
+); }
+
+/// Specifies the maximum age for snapshots. The system deletes snapshots older than this age.
+/// Format: `<number>``<unit>` where unit is d (days), h (hours), m (minutes), or s (seconds).
+/// Examples: "7d" (7 days), "48h" (48 hours), "2880m" (2,880 minutes).
+/// Defaults to "7d".
+/// 
+final String maxSnapshotAge;
+
+/// Specifies the minimum number of snapshots to retain. Defaults to 100.
+final int minSnapshotsToKeep;
+
+/// Specifies the state of maintenance operations.
+final R2DataCatalogCatalogMaintenanceState state;
+
+Map<String, dynamic> toJson() { return {
+  'max_snapshot_age': maxSnapshotAge,
+  'min_snapshots_to_keep': minSnapshotsToKeep,
+  'state': state.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_snapshot_age') && json['max_snapshot_age'] is String &&
+      json.containsKey('min_snapshots_to_keep') && json['min_snapshots_to_keep'] is num &&
+      json.containsKey('state'); } 
+R2DataCatalogSnapshotExpirationConfig copyWith({String? maxSnapshotAge, int? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? state, }) { return R2DataCatalogSnapshotExpirationConfig(
+  maxSnapshotAge: maxSnapshotAge ?? this.maxSnapshotAge,
+  minSnapshotsToKeep: minSnapshotsToKeep ?? this.minSnapshotsToKeep,
+  state: state ?? this.state,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2DataCatalogSnapshotExpirationConfig &&
+          maxSnapshotAge == other.maxSnapshotAge &&
+          minSnapshotsToKeep == other.minSnapshotsToKeep &&
+          state == other.state; } 
+@override int get hashCode { return Object.hash(maxSnapshotAge, minSnapshotsToKeep, state); } 
+@override String toString() { return 'R2DataCatalogSnapshotExpirationConfig(maxSnapshotAge: $maxSnapshotAge, minSnapshotsToKeep: $minSnapshotsToKeep, state: $state)'; } 
+ }

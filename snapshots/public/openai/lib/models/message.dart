@@ -1,0 +1,126 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'message_content.dart';final class MessageStatus {const MessageStatus._(this.value);
+
+factory MessageStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'completed' => completed,
+  'incomplete' => incomplete,
+  _ => MessageStatus._(json),
+}; }
+
+static const MessageStatus inProgress = MessageStatus._('in_progress');
+
+static const MessageStatus completed = MessageStatus._('completed');
+
+static const MessageStatus incomplete = MessageStatus._('incomplete');
+
+static const List<MessageStatus> values = [inProgress, completed, incomplete];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageStatus($value)'; } 
+ }
+final class MessageRole {const MessageRole._(this.value);
+
+factory MessageRole.fromJson(String json) { return switch (json) {
+  'unknown' => unknown,
+  'user' => user,
+  'assistant' => assistant,
+  'system' => system,
+  'critic' => critic,
+  'discriminator' => discriminator,
+  'developer' => developer,
+  'tool' => tool,
+  _ => MessageRole._(json),
+}; }
+
+static const MessageRole unknown = MessageRole._('unknown');
+
+static const MessageRole user = MessageRole._('user');
+
+static const MessageRole assistant = MessageRole._('assistant');
+
+static const MessageRole system = MessageRole._('system');
+
+static const MessageRole critic = MessageRole._('critic');
+
+static const MessageRole discriminator = MessageRole._('discriminator');
+
+static const MessageRole developer = MessageRole._('developer');
+
+static const MessageRole tool = MessageRole._('tool');
+
+static const List<MessageRole> values = [unknown, user, assistant, system, critic, discriminator, developer, tool];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageRole($value)'; } 
+ }
+/// A message to or from the model.
+final class Message {const Message({this.type = 'message', required this.id, required this.status, required this.role, required this.content, });
+
+factory Message.fromJson(Map<String, dynamic> json) { return Message(
+  type: json['type'] as String,
+  id: json['id'] as String,
+  status: MessageStatus.fromJson(json['status'] as String),
+  role: MessageRole.fromJson(json['role'] as String),
+  content: (json['content'] as List<dynamic>).map((e) => MessageContent.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The type of the message. Always set to `message`.
+final String type;
+
+/// The unique ID of the message.
+final String id;
+
+/// The status of item. One of `in_progress`, `completed`, or `incomplete`. Populated when items are returned via API.
+final MessageStatus status;
+
+/// The role of the message. One of `unknown`, `user`, `assistant`, `system`, `critic`, `discriminator`, `developer`, or `tool`.
+final MessageRole role;
+
+/// The content of the message
+final List<MessageContent> content;
+
+Map<String, dynamic> toJson() { return {
+  'type': type,
+  'id': id,
+  'status': status.toJson(),
+  'role': role.toJson(),
+  'content': content.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('status') &&
+      json.containsKey('role') &&
+      json.containsKey('content'); } 
+Message copyWith({String? type, String? id, MessageStatus? status, MessageRole? role, List<MessageContent>? content, }) { return Message(
+  type: type ?? this.type,
+  id: id ?? this.id,
+  status: status ?? this.status,
+  role: role ?? this.role,
+  content: content ?? this.content,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Message &&
+          type == other.type &&
+          id == other.id &&
+          status == other.status &&
+          role == other.role &&
+          listEquals(content, other.content); } 
+@override int get hashCode { return Object.hash(type, id, status, role, Object.hashAll(content)); } 
+@override String toString() { return 'Message(type: $type, id: $id, status: $status, role: $role, content: $content)'; } 
+ }

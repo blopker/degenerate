@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'merchandise_not_as_described.dart';final class PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2 {const PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2._(this.value);
+
+factory PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2._(json),
+}; }
+
+static const PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2 $empty = PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2._('');
+
+static const List<PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2($value)'; } 
+ }
+typedef PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribed = OneOf2<MerchandiseNotAsDescribed,PostIssuingDisputesRequestEvidenceMerchandiseNotAsDescribedVariant2>;

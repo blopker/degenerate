@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Type discriminator that is always `quoted_text`.
+final class UserMessageQuotedTextType {const UserMessageQuotedTextType._(this.value);
+
+factory UserMessageQuotedTextType.fromJson(String json) { return switch (json) {
+  'quoted_text' => quotedText,
+  _ => UserMessageQuotedTextType._(json),
+}; }
+
+static const UserMessageQuotedTextType quotedText = UserMessageQuotedTextType._('quoted_text');
+
+static const List<UserMessageQuotedTextType> values = [quotedText];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UserMessageQuotedTextType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UserMessageQuotedTextType($value)'; } 
+ }
+/// Quoted snippet that the user referenced in their message.
+final class UserMessageQuotedText {const UserMessageQuotedText({this.type = UserMessageQuotedTextType.quotedText, required this.text, });
+
+factory UserMessageQuotedText.fromJson(Map<String, dynamic> json) { return UserMessageQuotedText(
+  type: UserMessageQuotedTextType.fromJson(json['type'] as String),
+  text: json['text'] as String,
+); }
+
+/// Type discriminator that is always `quoted_text`.
+final UserMessageQuotedTextType type;
+
+/// Quoted text content.
+final String text;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'text': text,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String; } 
+UserMessageQuotedText copyWith({UserMessageQuotedTextType? type, String? text, }) { return UserMessageQuotedText(
+  type: type ?? this.type,
+  text: text ?? this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UserMessageQuotedText &&
+          type == other.type &&
+          text == other.text; } 
+@override int get hashCode { return Object.hash(type, text); } 
+@override String toString() { return 'UserMessageQuotedText(type: $type, text: $text)'; } 
+ }

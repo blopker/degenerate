@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PendingDeploymentEnvironment {const PendingDeploymentEnvironment({this.id, this.nodeId, this.name, this.url, this.htmlUrl, });
+
+factory PendingDeploymentEnvironment.fromJson(Map<String, dynamic> json) { return PendingDeploymentEnvironment(
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  nodeId: json['node_id'] as String?,
+  name: json['name'] as String?,
+  url: json['url'] as String?,
+  htmlUrl: json['html_url'] as String?,
+); }
+
+/// The id of the environment.
+final int? id;
+
+final String? nodeId;
+
+/// The name of the environment.
+final String? name;
+
+final String? url;
+
+final String? htmlUrl;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'node_id': ?nodeId,
+  'name': ?name,
+  'url': ?url,
+  'html_url': ?htmlUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PendingDeploymentEnvironment copyWith({int Function()? id, String Function()? nodeId, String Function()? name, String Function()? url, String Function()? htmlUrl, }) { return PendingDeploymentEnvironment(
+  id: id != null ? id() : this.id,
+  nodeId: nodeId != null ? nodeId() : this.nodeId,
+  name: name != null ? name() : this.name,
+  url: url != null ? url() : this.url,
+  htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PendingDeploymentEnvironment &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          name == other.name &&
+          url == other.url &&
+          htmlUrl == other.htmlUrl; } 
+@override int get hashCode { return Object.hash(id, nodeId, name, url, htmlUrl); } 
+@override String toString() { return 'PendingDeploymentEnvironment(id: $id, nodeId: $nodeId, name: $name, url: $url, htmlUrl: $htmlUrl)'; } 
+ }

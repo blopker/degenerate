@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CopilotAddCopilotSeatsForUsersRequest {const CopilotAddCopilotSeatsForUsersRequest({required this.selectedUsernames});
+
+factory CopilotAddCopilotSeatsForUsersRequest.fromJson(Map<String, dynamic> json) { return CopilotAddCopilotSeatsForUsersRequest(
+  selectedUsernames: (json['selected_usernames'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// The usernames of the organization members to be granted access to GitHub Copilot.
+final List<String> selectedUsernames;
+
+Map<String, dynamic> toJson() { return {
+  'selected_usernames': selectedUsernames,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_usernames'); } 
+CopilotAddCopilotSeatsForUsersRequest copyWith({List<String>? selectedUsernames}) { return CopilotAddCopilotSeatsForUsersRequest(
+  selectedUsernames: selectedUsernames ?? this.selectedUsernames,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CopilotAddCopilotSeatsForUsersRequest &&
+          listEquals(selectedUsernames, other.selectedUsernames); } 
+@override int get hashCode { return Object.hashAll(selectedUsernames).hashCode; } 
+@override String toString() { return 'CopilotAddCopilotSeatsForUsersRequest(selectedUsernames: $selectedUsernames)'; } 
+ }

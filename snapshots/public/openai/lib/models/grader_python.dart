@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The object type, which is always `python`.
+final class GraderPythonType {const GraderPythonType._(this.value);
+
+factory GraderPythonType.fromJson(String json) { return switch (json) {
+  'python' => python,
+  _ => GraderPythonType._(json),
+}; }
+
+static const GraderPythonType python = GraderPythonType._('python');
+
+static const List<GraderPythonType> values = [python];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GraderPythonType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GraderPythonType($value)'; } 
+ }
+/// A PythonGrader object that runs a python script on the input.
+/// 
+final class GraderPython {const GraderPython({required this.type, required this.name, required this.source, this.imageTag, });
+
+factory GraderPython.fromJson(Map<String, dynamic> json) { return GraderPython(
+  type: GraderPythonType.fromJson(json['type'] as String),
+  name: json['name'] as String,
+  source: json['source'] as String,
+  imageTag: json['image_tag'] as String?,
+); }
+
+/// The object type, which is always `python`.
+final GraderPythonType type;
+
+/// The name of the grader.
+final String name;
+
+/// The source code of the python script.
+final String source;
+
+/// The image tag to use for the python script.
+final String? imageTag;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'name': name,
+  'source': source,
+  'image_tag': ?imageTag,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('source') && json['source'] is String; } 
+GraderPython copyWith({GraderPythonType? type, String? name, String? source, String Function()? imageTag, }) { return GraderPython(
+  type: type ?? this.type,
+  name: name ?? this.name,
+  source: source ?? this.source,
+  imageTag: imageTag != null ? imageTag() : this.imageTag,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GraderPython &&
+          type == other.type &&
+          name == other.name &&
+          source == other.source &&
+          imageTag == other.imageTag; } 
+@override int get hashCode { return Object.hash(type, name, source, imageTag); } 
+@override String toString() { return 'GraderPython(type: $type, name: $name, source: $source, imageTag: $imageTag)'; } 
+ }

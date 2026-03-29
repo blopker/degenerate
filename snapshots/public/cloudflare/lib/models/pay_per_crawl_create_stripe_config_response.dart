@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'pay_per_crawl_msg.dart';import 'pay_per_crawl_result_info.dart';import 'pay_per_crawl_stripe_connect_resp.dart';final class PayPerCrawlCreateStripeConfigResponse {const PayPerCrawlCreateStripeConfigResponse({this.errors, this.messages, this.result, this.resultInfo, this.success, });
+
+factory PayPerCrawlCreateStripeConfigResponse.fromJson(Map<String, dynamic> json) { return PayPerCrawlCreateStripeConfigResponse(
+  errors: (json['errors'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>?)?.map((e) => PayPerCrawlMsg.fromJson(e as Map<String, dynamic>)).toList(),
+  result: json['result'] != null ? PayPerCrawlStripeConnectResp.fromJson(json['result'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? PayPerCrawlResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  success: json['success'] as bool?,
+); }
+
+final List<PayPerCrawlMsg>? errors;
+
+final List<PayPerCrawlMsg>? messages;
+
+final PayPerCrawlStripeConnectResp? result;
+
+final PayPerCrawlResultInfo? resultInfo;
+
+final bool? success;
+
+Map<String, dynamic> toJson() { return {
+  if (errors != null) 'errors': errors?.map((e) => e.toJson()).toList(),
+  if (messages != null) 'messages': messages?.map((e) => e.toJson()).toList(),
+  if (result != null) 'result': result?.toJson(),
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+  'success': ?success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PayPerCrawlCreateStripeConfigResponse copyWith({List<PayPerCrawlMsg> Function()? errors, List<PayPerCrawlMsg> Function()? messages, PayPerCrawlStripeConnectResp Function()? result, PayPerCrawlResultInfo Function()? resultInfo, bool Function()? success, }) { return PayPerCrawlCreateStripeConfigResponse(
+  errors: errors != null ? errors() : this.errors,
+  messages: messages != null ? messages() : this.messages,
+  result: result != null ? result() : this.result,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+  success: success != null ? success() : this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PayPerCrawlCreateStripeConfigResponse &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          resultInfo == other.resultInfo &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors ?? const []), Object.hashAll(messages ?? const []), result, resultInfo, success); } 
+@override String toString() { return 'PayPerCrawlCreateStripeConfigResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
+ }

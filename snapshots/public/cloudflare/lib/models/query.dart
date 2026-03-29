@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Query {const Query({this.maxTime, this.minTime, this.scan, this.stringMatches, this.tag, });
+
+factory Query.fromJson(Map<String, dynamic> json) { return Query(
+  maxTime: json['max_time'] != null ? DateTime.parse(json['max_time'] as String) : null,
+  minTime: json['min_time'] != null ? DateTime.parse(json['min_time'] as String) : null,
+  scan: json['scan'] as bool?,
+  stringMatches: json['string_matches'],
+  tag: json['tag'] as String?,
+); }
+
+final DateTime? maxTime;
+
+final DateTime? minTime;
+
+final bool? scan;
+
+final dynamic stringMatches;
+
+final String? tag;
+
+Map<String, dynamic> toJson() { return {
+  if (maxTime != null) 'max_time': maxTime?.toIso8601String(),
+  if (minTime != null) 'min_time': minTime?.toIso8601String(),
+  'scan': ?scan,
+  'string_matches': ?stringMatches,
+  'tag': ?tag,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Query copyWith({DateTime? Function()? maxTime, DateTime? Function()? minTime, bool Function()? scan, dynamic Function()? stringMatches, String Function()? tag, }) { return Query(
+  maxTime: maxTime != null ? maxTime() : this.maxTime,
+  minTime: minTime != null ? minTime() : this.minTime,
+  scan: scan != null ? scan() : this.scan,
+  stringMatches: stringMatches != null ? stringMatches() : this.stringMatches,
+  tag: tag != null ? tag() : this.tag,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Query &&
+          maxTime == other.maxTime &&
+          minTime == other.minTime &&
+          scan == other.scan &&
+          stringMatches == other.stringMatches &&
+          tag == other.tag; } 
+@override int get hashCode { return Object.hash(maxTime, minTime, scan, stringMatches, tag); } 
+@override String toString() { return 'Query(maxTime: $maxTime, minTime: $minTime, scan: $scan, stringMatches: $stringMatches, tag: $tag)'; } 
+ }

@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'financial_connections_account_ownership_owners.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject._(this.value);
+
+factory FinancialConnectionsAccountOwnershipObject.fromJson(String json) { return switch (json) {
+  'financial_connections.account_ownership' => financialConnectionsAccountOwnership,
+  _ => FinancialConnectionsAccountOwnershipObject._(json),
+}; }
+
+static const FinancialConnectionsAccountOwnershipObject financialConnectionsAccountOwnership = FinancialConnectionsAccountOwnershipObject._('financial_connections.account_ownership');
+
+static const List<FinancialConnectionsAccountOwnershipObject> values = [financialConnectionsAccountOwnership];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FinancialConnectionsAccountOwnershipObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FinancialConnectionsAccountOwnershipObject($value)'; } 
+ }
+/// Describes a snapshot of the owners of an account at a particular point in time.
+final class FinancialConnectionsAccountOwnership {const FinancialConnectionsAccountOwnership({required this.created, required this.id, required this.object, required this.owners, });
+
+factory FinancialConnectionsAccountOwnership.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccountOwnership(
+  created: (json['created'] as num).toInt(),
+  id: json['id'] as String,
+  object: FinancialConnectionsAccountOwnershipObject.fromJson(json['object'] as String),
+  owners: FinancialConnectionsAccountOwnershipOwners.fromJson(json['owners'] as Map<String, dynamic>),
+); }
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// Unique identifier for the object.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final FinancialConnectionsAccountOwnershipObject object;
+
+/// A paginated list of owners for this account.
+final FinancialConnectionsAccountOwnershipOwners owners;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  'id': id,
+  'object': object.toJson(),
+  'owners': owners.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('owners'); } 
+FinancialConnectionsAccountOwnership copyWith({int? created, String? id, FinancialConnectionsAccountOwnershipObject? object, FinancialConnectionsAccountOwnershipOwners? owners, }) { return FinancialConnectionsAccountOwnership(
+  created: created ?? this.created,
+  id: id ?? this.id,
+  object: object ?? this.object,
+  owners: owners ?? this.owners,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FinancialConnectionsAccountOwnership &&
+          created == other.created &&
+          id == other.id &&
+          object == other.object &&
+          owners == other.owners; } 
+@override int get hashCode { return Object.hash(created, id, object, owners); } 
+@override String toString() { return 'FinancialConnectionsAccountOwnership(created: $created, id: $id, object: $object, owners: $owners)'; } 
+ }

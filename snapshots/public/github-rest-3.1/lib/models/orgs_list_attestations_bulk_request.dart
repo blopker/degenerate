@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class OrgsListAttestationsBulkRequest {const OrgsListAttestationsBulkRequest({required this.subjectDigests, this.predicateType, });
+
+factory OrgsListAttestationsBulkRequest.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkRequest(
+  subjectDigests: (json['subject_digests'] as List<dynamic>).map((e) => e as String).toList(),
+  predicateType: json['predicate_type'] as String?,
+); }
+
+/// List of subject digests to fetch attestations for.
+final List<String> subjectDigests;
+
+/// Optional filter for fetching attestations with a given predicate type.
+/// This option accepts `provenance`, `sbom`, `release`, or freeform text
+/// for custom predicate types.
+final String? predicateType;
+
+Map<String, dynamic> toJson() { return {
+  'subject_digests': subjectDigests,
+  'predicate_type': ?predicateType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('subject_digests'); } 
+OrgsListAttestationsBulkRequest copyWith({List<String>? subjectDigests, String Function()? predicateType, }) { return OrgsListAttestationsBulkRequest(
+  subjectDigests: subjectDigests ?? this.subjectDigests,
+  predicateType: predicateType != null ? predicateType() : this.predicateType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgsListAttestationsBulkRequest &&
+          listEquals(subjectDigests, other.subjectDigests) &&
+          predicateType == other.predicateType; } 
+@override int get hashCode { return Object.hash(Object.hashAll(subjectDigests), predicateType); } 
+@override String toString() { return 'OrgsListAttestationsBulkRequest(subjectDigests: $subjectDigests, predicateType: $predicateType)'; } 
+ }

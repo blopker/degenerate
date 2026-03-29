@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCreditNotesRequestLinesTaxAmountsVariant1 {const PostCreditNotesRequestLinesTaxAmountsVariant1({required this.amount, required this.taxRate, required this.taxableAmount, });
+
+factory PostCreditNotesRequestLinesTaxAmountsVariant1.fromJson(Map<String, dynamic> json) { return PostCreditNotesRequestLinesTaxAmountsVariant1(
+  amount: (json['amount'] as num).toInt(),
+  taxRate: json['tax_rate'] as String,
+  taxableAmount: (json['taxable_amount'] as num).toInt(),
+); }
+
+final int amount;
+
+final String taxRate;
+
+final int taxableAmount;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'tax_rate': taxRate,
+  'taxable_amount': taxableAmount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('tax_rate') && json['tax_rate'] is String &&
+      json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
+PostCreditNotesRequestLinesTaxAmountsVariant1 copyWith({int? amount, String? taxRate, int? taxableAmount, }) { return PostCreditNotesRequestLinesTaxAmountsVariant1(
+  amount: amount ?? this.amount,
+  taxRate: taxRate ?? this.taxRate,
+  taxableAmount: taxableAmount ?? this.taxableAmount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCreditNotesRequestLinesTaxAmountsVariant1 &&
+          amount == other.amount &&
+          taxRate == other.taxRate &&
+          taxableAmount == other.taxableAmount; } 
+@override int get hashCode { return Object.hash(amount, taxRate, taxableAmount); } 
+@override String toString() { return 'PostCreditNotesRequestLinesTaxAmountsVariant1(amount: $amount, taxRate: $taxRate, taxableAmount: $taxableAmount)'; } 
+ }

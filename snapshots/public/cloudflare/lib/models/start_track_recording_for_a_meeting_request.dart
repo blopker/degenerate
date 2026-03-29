@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtimekit_track_config_layer.dart';final class StartTrackRecordingForAMeetingRequest {const StartTrackRecordingForAMeetingRequest({required this.layers, this.maxSeconds, required this.meetingId, });
+
+factory StartTrackRecordingForAMeetingRequest.fromJson(Map<String, dynamic> json) { return StartTrackRecordingForAMeetingRequest(
+  layers: (json['layers'] as Map<String, dynamic>).map((k, v) => MapEntry(k, RealtimekitTrackConfigLayer.fromJson(v as Map<String, dynamic>))),
+  maxSeconds: json['max_seconds'] != null ? (json['max_seconds'] as num).toDouble() : null,
+  meetingId: json['meeting_id'] as String,
+); }
+
+final Map<String,RealtimekitTrackConfigLayer> layers;
+
+/// Maximum seconds this recording should be active for (beta)
+final double? maxSeconds;
+
+/// ID of the meeting to record.
+final String meetingId;
+
+Map<String, dynamic> toJson() { return {
+  'layers': layers.map((k, v) => MapEntry(k, v.toJson())),
+  'max_seconds': ?maxSeconds,
+  'meeting_id': meetingId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('layers') &&
+      json.containsKey('meeting_id') && json['meeting_id'] is String; } 
+StartTrackRecordingForAMeetingRequest copyWith({Map<String,RealtimekitTrackConfigLayer>? layers, double Function()? maxSeconds, String? meetingId, }) { return StartTrackRecordingForAMeetingRequest(
+  layers: layers ?? this.layers,
+  maxSeconds: maxSeconds != null ? maxSeconds() : this.maxSeconds,
+  meetingId: meetingId ?? this.meetingId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StartTrackRecordingForAMeetingRequest &&
+          layers == other.layers &&
+          maxSeconds == other.maxSeconds &&
+          meetingId == other.meetingId; } 
+@override int get hashCode { return Object.hash(layers, maxSeconds, meetingId); } 
+@override String toString() { return 'StartTrackRecordingForAMeetingRequest(layers: $layers, maxSeconds: $maxSeconds, meetingId: $meetingId)'; } 
+ }

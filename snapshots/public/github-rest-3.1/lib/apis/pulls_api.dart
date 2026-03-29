@@ -1,0 +1,926 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/commit.dart';import '../models/diff_entry.dart';import '../models/pull_request.dart';import '../models/pull_request_merge_result.dart';import '../models/pull_request_review.dart';import '../models/pull_request_review_comment.dart';import '../models/pull_request_review_request.dart';import '../models/pull_request_simple.dart';import '../models/pulls_create_reply_for_review_comment_request.dart';import '../models/pulls_create_request.dart';import '../models/pulls_create_review_comment_request.dart';import '../models/pulls_create_review_request.dart';import '../models/pulls_dismiss_review_request.dart';import '../models/pulls_list_direction.dart';import '../models/pulls_list_review_comments_direction.dart';import '../models/pulls_list_review_comments_for_repo_direction.dart';import '../models/pulls_list_review_comments_for_repo_sort.dart';import '../models/pulls_list_review_comments_sort.dart';import '../models/pulls_list_sort.dart';import '../models/pulls_list_state.dart';import '../models/pulls_merge_request.dart';import '../models/pulls_merge_response405.dart';import '../models/pulls_remove_requested_reviewers_request.dart';import '../models/pulls_submit_review_request.dart';import '../models/pulls_update_branch_request.dart';import '../models/pulls_update_branch_response202.dart';import '../models/pulls_update_request.dart';import '../models/pulls_update_review_comment_request.dart';import '../models/pulls_update_review_request.dart';import '../models/review_comment.dart';import '../models/validation_error.dart';import '../models/validation_error_simple.dart';/// PullsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class PullsApi with ApiExecutor {const PullsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List pull requests
+///
+/// Lists pull requests in a specified repository.
+/// 
+/// Draft pull requests are available in public repositories with GitHub
+/// Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing
+/// plans, and in public and private repositories with GitHub Team and GitHub Enterprise
+/// Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products)
+/// in the GitHub Help documentation.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls`
+Future<ApiResult<List<PullRequestSimple>, ValidationError>> pullsList({required String owner, required String repo, PullsListState? state, String? head, String? base, PullsListSort? sort, PullsListDirection? direction, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (state != null) queryParameters['state'] = state.toJson();
+if (head != null) queryParameters['head'] = head;
+if (base != null) queryParameters['base'] = base;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a pull request
+///
+/// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+/// 
+/// To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.
+/// 
+/// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `POST /repos/{owner}/{repo}/pulls`
+Future<ApiResult<PullRequest, BasicError>> pullsCreate({required String owner, required String repo, required PullsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List review comments in a repository
+///
+/// Lists review comments for all pull requests in a repository. By default,
+/// review comments are in ascending order by ID.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/comments`
+Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewCommentsForRepo({required String owner, required String repo, PullsListReviewCommentsForRepoSort? sort, PullsListReviewCommentsForRepoDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Get a review comment for a pull request
+///
+/// Provides details for a specified review comment.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/comments/{comment_id}`
+Future<ApiResult<PullRequestReviewComment, BasicError>> pullsGetReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a review comment for a pull request
+///
+/// Edits the content of a specified review comment.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}`
+Future<ApiResult<PullRequestReviewComment, Never>> pullsUpdateReviewComment({required String owner, required String repo, required int commentId, required PullsUpdateReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a review comment for a pull request
+///
+/// Deletes a review comment.
+///
+/// `DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}`
+Future<ApiResult<void, BasicError>> pullsDeleteReviewComment({required String owner, required String repo, required int commentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/comments/${Uri.encodeComponent(commentId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a pull request
+///
+/// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+/// 
+/// Lists details of a pull request by providing its number.
+/// 
+/// When you get, [create](https://docs.github.com/rest/pulls/pulls/#create-a-pull-request), or [edit](https://docs.github.com/rest/pulls/pulls#update-a-pull-request) a pull request, GitHub creates a merge commit to test whether the pull request can be automatically merged into the base branch. This test commit is not added to the base branch or the head branch. You can review the status of the test commit using the `mergeable` key. For more information, see "[Checking mergeability of pull requests](https://docs.github.com/rest/guides/getting-started-with-the-git-database-api#checking-mergeability-of-pull-requests)".
+/// 
+/// The value of the `mergeable` attribute can be `true`, `false`, or `null`. If the value is `null`, then GitHub has started a background job to compute the mergeability. After giving the job time to complete, resubmit the request. When the job finishes, you will see a non-`null` value for the `mergeable` attribute in the response. If `mergeable` is `true`, then `merge_commit_sha` will be the SHA of the _test_ merge commit.
+/// 
+/// The value of the `merge_commit_sha` attribute changes depending on the state of the pull request. Before merging a pull request, the `merge_commit_sha` attribute holds the SHA of the _test_ merge commit. After merging a pull request, the `merge_commit_sha` attribute changes depending on how you merged the pull request:
+/// 
+/// *   If merged as a [merge commit](https://docs.github.com/articles/about-merge-methods-on-github/), `merge_commit_sha` represents the SHA of the merge commit.
+/// *   If merged via a [squash](https://docs.github.com/articles/about-merge-methods-on-github/#squashing-your-merge-commits), `merge_commit_sha` represents the SHA of the squashed commit on the base branch.
+/// *   If [rebased](https://docs.github.com/articles/about-merge-methods-on-github/#rebasing-and-merging-your-commits), `merge_commit_sha` represents the commit that the base branch was updated to.
+/// 
+/// Pass the appropriate [media type](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types) to fetch diff and patch formats.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+/// - **`application/vnd.github.diff`**: For more information, see "[git-diff](https://git-scm.com/docs/git-diff)" in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}`
+Future<ApiResult<PullRequest, BasicError>> pullsGet({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a pull request
+///
+/// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
+/// 
+/// To open or update a pull request in a public repository, you must have write access to the head or the source branch. For organization-owned repositories, you must be a member of the organization that owns the repository to open or update a pull request.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `PATCH /repos/{owner}/{repo}/pulls/{pull_number}`
+Future<ApiResult<PullRequest, ValidationError>> pullsUpdate({required String owner, required String repo, required int pullNumber, PullsUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List review comments on a pull request
+///
+/// Lists all review comments for a specified pull request. By default, review comments
+/// are in ascending order by ID.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/comments`
+Future<ApiResult<List<PullRequestReviewComment>, Never>> pullsListReviewComments({required String owner, required String repo, required int pullNumber, PullsListReviewCommentsSort? sort, PullsListReviewCommentsDirection? direction, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+if (since != null) queryParameters['since'] = since.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Create a review comment for a pull request
+///
+/// Creates a review comment on the diff of a specified pull request. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/issues/comments#create-an-issue-comment)."
+/// 
+/// If your comment applies to more than one line in the pull request diff, you should use the parameters `line`, `side`, and optionally `start_line` and `start_side` in your request.
+/// 
+/// The `position` parameter is closing down. If you use `position`, the `line`, `side`, `start_line`, and `start_side` parameters are not required.
+/// 
+/// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
+/// and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `POST /repos/{owner}/{repo}/pulls/{pull_number}/comments`
+Future<ApiResult<PullRequestReviewComment, ValidationError>> pullsCreateReviewComment({required String owner, required String repo, required int pullNumber, required PullsCreateReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a reply for a review comment
+///
+/// Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
+/// 
+/// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)"
+/// and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies`
+Future<ApiResult<PullRequestReviewComment, BasicError>> pullsCreateReplyForReviewComment({required String owner, required String repo, required int pullNumber, required int commentId, required PullsCreateReplyForReviewCommentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/comments/${Uri.encodeComponent(commentId.toString())}/replies',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReviewComment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List commits on a pull request
+///
+/// Lists a maximum of 250 commits for a pull request. To receive a complete
+/// commit list for pull requests with more than 250 commits, use the [List commits](https://docs.github.com/rest/commits/commits#list-commits)
+/// endpoint.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/commits`
+Future<ApiResult<List<Commit>, Never>> pullsListCommits({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/commits',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// List pull requests files
+///
+/// Lists the files in a specified pull request.
+/// 
+/// > [!NOTE]
+/// > Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/files`
+Future<ApiResult<List<DiffEntry>, ValidationError>> pullsListFiles({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/files',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Check if a pull request has been merged
+///
+/// Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/merge`
+Future<ApiResult<void, Never>> pullsCheckIfMerged({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/merge',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Merge a pull request
+///
+/// Merges a pull request into the base branch.
+/// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+///
+/// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge`
+Future<ApiResult<PullRequestMergeResult, PullsMergeResponse405>> pullsMerge({required String owner, required String repo, required int pullNumber, PullsMergeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/merge',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestMergeResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return PullsMergeResponse405.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get all requested reviewers for a pull request
+///
+/// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
+Future<ApiResult<PullRequestReviewRequest, Never>> pullsListRequestedReviewers({required String owner, required String repo, required int pullNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReviewRequest.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Request reviewers for a pull request
+///
+/// Requests reviews for a pull request from a given set of users and/or teams.
+/// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+///
+/// `POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
+Future<ApiResult<PullRequestSimple, BasicError>> pullsRequestReviewers({required String owner, required String repo, required int pullNumber, dynamic body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
+  headers: headers,
+  body: jsonEncode(body),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove requested reviewers from a pull request
+///
+/// Removes review requests from a pull request for a given set of users and/or teams.
+///
+/// `DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers`
+Future<ApiResult<PullRequestSimple, ValidationError>> pullsRemoveRequestedReviewers({required String owner, required String repo, required int pullNumber, required PullsRemoveRequestedReviewersRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/requested_reviewers',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List reviews for a pull request
+///
+/// Lists all reviews for a specified pull request. The list of reviews returns in chronological order.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
+Future<ApiResult<List<PullRequestReview>, Never>> pullsListReviews({required String owner, required String repo, required int pullNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => PullRequestReview.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Create a review for a pull request
+///
+/// Creates a review on a specified pull request.
+/// 
+/// This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)" and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
+/// 
+/// Pull request reviews created in the `PENDING` state are not submitted and therefore do not include the `submitted_at` property in the response. To create a pending review for a pull request, leave the `event` parameter blank. For more information about submitting a `PENDING` review, see "[Submit a review for a pull request](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request)."
+/// 
+/// > [!NOTE]
+/// > To comment on a specific line in a file, you need to first determine the position of that line in the diff. To see a pull request diff, add the `application/vnd.github.v3.diff` media type to the `Accept` header of a call to the [Get a pull request](https://docs.github.com/rest/pulls/pulls#get-a-pull-request) endpoint.
+/// 
+/// The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews`
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsCreateReview({required String owner, required String repo, required int pullNumber, PullsCreateReviewRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a review for a pull request
+///
+/// Retrieves a pull request review by its ID.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
+Future<ApiResult<PullRequestReview, BasicError>> pullsGetReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a review for a pull request
+///
+/// Updates the contents of a specified review summary comment.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsUpdateReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsUpdateReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a pending review for a pull request
+///
+/// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}`
+Future<ApiResult<PullRequestReview, ValidationErrorSimple>> pullsDeletePendingReview({required String owner, required String repo, required int pullNumber, required int reviewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List comments for a pull request review
+///
+/// Lists comments for a specific pull request review.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments`
+Future<ApiResult<List<ReviewComment>, BasicError>> pullsListCommentsForReview({required String owner, required String repo, required int pullNumber, required int reviewId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}/comments',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Dismiss a review for a pull request
+///
+/// Dismisses a specified review on a pull request.
+/// 
+/// > [!NOTE]
+/// > To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals`
+Future<ApiResult<PullRequestReview, BasicError>> pullsDismissReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsDismissReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}/dismissals',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Submit a review for a pull request
+///
+/// Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls/reviews#create-a-review-for-a-pull-request)."
+/// 
+/// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."
+/// 
+/// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.
+/// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.
+/// - **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body's markdown. Response will include `body_html`.
+/// - **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
+///
+/// `POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events`
+Future<ApiResult<PullRequestReview, BasicError>> pullsSubmitReview({required String owner, required String repo, required int pullNumber, required int reviewId, required PullsSubmitReviewRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/reviews/${Uri.encodeComponent(reviewId.toString())}/events',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullRequestReview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a pull request branch
+///
+/// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
+/// Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
+///
+/// `PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch`
+Future<ApiResult<PullsUpdateBranchResponse202, ValidationError>> pullsUpdateBranch({required String owner, required String repo, required int pullNumber, PullsUpdateBranchRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/pulls/${Uri.encodeComponent(pullNumber.toString())}/update-branch',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PullsUpdateBranchResponse202.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return ValidationError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

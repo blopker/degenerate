@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_response_result_meta_confidence_info.dart';import 'radar_get_http_timeseries_group_response_result_meta_date_range.dart';import 'radar_get_http_timeseries_group_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval {const RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval fifteenMinutes = RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval oneHour = RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval oneDay = RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval oneWeek = RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval oneMonth = RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetHttpTimeseriesGroupResponseResultMetaNormalization {const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._(this.value);
+
+factory RadarGetHttpTimeseriesGroupResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization percentage = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization min0Max = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization minMax = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization rawValues = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization percentageChange = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization rollingAverage = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization overlappedPercentage = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetHttpTimeseriesGroupResponseResultMetaNormalization ratio = RadarGetHttpTimeseriesGroupResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetHttpTimeseriesGroupResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetHttpTimeseriesGroupResponseResultMeta {const RadarGetHttpTimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetHttpTimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupResponseResultMeta(
+  aggInterval: RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetHttpTimeseriesGroupResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetHttpTimeseriesGroupResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval aggInterval;
+
+final RadarGetHttpTimeseriesGroupResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetHttpTimeseriesGroupResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetHttpTimeseriesGroupResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetHttpTimeseriesGroupResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetHttpTimeseriesGroupResponseResultMeta copyWith({RadarGetHttpTimeseriesGroupResponseResultMetaAggInterval? aggInterval, RadarGetHttpTimeseriesGroupResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetHttpTimeseriesGroupResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetHttpTimeseriesGroupResponseResultMetaNormalization? normalization, List<RadarGetHttpTimeseriesGroupResponseResultMetaUnits>? units, }) { return RadarGetHttpTimeseriesGroupResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

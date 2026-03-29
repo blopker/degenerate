@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// KV namespace binding.
+final class PagesDeploymentConfigValuesKvNamespacesValue {const PagesDeploymentConfigValuesKvNamespacesValue({required this.namespaceId});
+
+factory PagesDeploymentConfigValuesKvNamespacesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesKvNamespacesValue(
+  namespaceId: json['namespace_id'] as String,
+); }
+
+/// ID of the KV namespace.
+final String namespaceId;
+
+Map<String, dynamic> toJson() { return {
+  'namespace_id': namespaceId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('namespace_id') && json['namespace_id'] is String; } 
+PagesDeploymentConfigValuesKvNamespacesValue copyWith({String? namespaceId}) { return PagesDeploymentConfigValuesKvNamespacesValue(
+  namespaceId: namespaceId ?? this.namespaceId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDeploymentConfigValuesKvNamespacesValue &&
+          namespaceId == other.namespaceId; } 
+@override int get hashCode { return namespaceId.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesKvNamespacesValue(namespaceId: $namespaceId)'; } 
+ }

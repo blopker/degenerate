@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A hosted compute network settings resource.
+final class NetworkSettings {const NetworkSettings({required this.id, this.networkConfigurationId, required this.name, required this.subnetId, required this.region, });
+
+factory NetworkSettings.fromJson(Map<String, dynamic> json) { return NetworkSettings(
+  id: json['id'] as String,
+  networkConfigurationId: json['network_configuration_id'] as String?,
+  name: json['name'] as String,
+  subnetId: json['subnet_id'] as String,
+  region: json['region'] as String,
+); }
+
+/// The unique identifier of the network settings resource.
+final String id;
+
+/// The identifier of the network configuration that is using this settings resource.
+final String? networkConfigurationId;
+
+/// The name of the network settings resource.
+final String name;
+
+/// The subnet this network settings resource is configured for.
+final String subnetId;
+
+/// The location of the subnet this network settings resource is configured for.
+final String region;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'network_configuration_id': ?networkConfigurationId,
+  'name': name,
+  'subnet_id': subnetId,
+  'region': region,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('subnet_id') && json['subnet_id'] is String &&
+      json.containsKey('region') && json['region'] is String; } 
+NetworkSettings copyWith({String? id, String Function()? networkConfigurationId, String? name, String? subnetId, String? region, }) { return NetworkSettings(
+  id: id ?? this.id,
+  networkConfigurationId: networkConfigurationId != null ? networkConfigurationId() : this.networkConfigurationId,
+  name: name ?? this.name,
+  subnetId: subnetId ?? this.subnetId,
+  region: region ?? this.region,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NetworkSettings &&
+          id == other.id &&
+          networkConfigurationId == other.networkConfigurationId &&
+          name == other.name &&
+          subnetId == other.subnetId &&
+          region == other.region; } 
+@override int get hashCode { return Object.hash(id, networkConfigurationId, name, subnetId, region); } 
+@override String toString() { return 'NetworkSettings(id: $id, networkConfigurationId: $networkConfigurationId, name: $name, subnetId: $subnetId, region: $region)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigDeleteGatewayLogsResponse {const AigConfigDeleteGatewayLogsResponse({required this.success});
+
+factory AigConfigDeleteGatewayLogsResponse.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayLogsResponse(
+  success: json['success'] as bool,
+); }
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('success') && json['success'] is bool; } 
+AigConfigDeleteGatewayLogsResponse copyWith({bool? success}) { return AigConfigDeleteGatewayLogsResponse(
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigDeleteGatewayLogsResponse &&
+          success == other.success; } 
+@override int get hashCode { return success.hashCode; } 
+@override String toString() { return 'AigConfigDeleteGatewayLogsResponse(success: $success)'; } 
+ }

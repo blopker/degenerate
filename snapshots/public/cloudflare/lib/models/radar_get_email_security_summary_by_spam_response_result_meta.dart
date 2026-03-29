@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_security_summary_by_spam_response_result_meta_confidence_info.dart';import 'radar_get_email_security_summary_by_spam_response_result_meta_date_range.dart';import 'radar_get_email_security_summary_by_spam_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._(this.value);
+
+factory RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization percentage = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization min0Max = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization minMax = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization rawValues = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization percentageChange = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization rollingAverage = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization overlappedPercentage = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization ratio = RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetEmailSecuritySummaryBySpamResponseResultMeta {const RadarGetEmailSecuritySummaryBySpamResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetEmailSecuritySummaryBySpamResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpamResponseResultMeta(
+  confidenceInfo: RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetEmailSecuritySummaryBySpamResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetEmailSecuritySummaryBySpamResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetEmailSecuritySummaryBySpamResponseResultMeta copyWith({RadarGetEmailSecuritySummaryBySpamResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetEmailSecuritySummaryBySpamResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetEmailSecuritySummaryBySpamResponseResultMetaNormalization? normalization, List<RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits>? units, }) { return RadarGetEmailSecuritySummaryBySpamResponseResultMeta(
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailSecuritySummaryBySpamResponseResultMeta &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryBySpamResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

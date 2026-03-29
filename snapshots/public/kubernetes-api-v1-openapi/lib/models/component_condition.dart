@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Information about the condition of a component.
+final class ComponentCondition {const ComponentCondition({this.error, this.message, this.status = '', this.type = '', });
+
+factory ComponentCondition.fromJson(Map<String, dynamic> json) { return ComponentCondition(
+  error: json['error'] as String?,
+  message: json['message'] as String?,
+  status: json['status'] as String,
+  type: json['type'] as String,
+); }
+
+/// Condition error code for a component. For example, a health check error code.
+final String? error;
+
+/// Message about the condition for a component. For example, information about a health check.
+final String? message;
+
+/// Status of the condition for a component. Valid values for "Healthy": "True", "False", or "Unknown".
+final String status;
+
+/// Type of condition for a component. Valid value: "Healthy"
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'error': ?error,
+  'message': ?message,
+  'status': status,
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type') && json['type'] is String; } 
+ComponentCondition copyWith({String Function()? error, String Function()? message, String? status, String? type, }) { return ComponentCondition(
+  error: error != null ? error() : this.error,
+  message: message != null ? message() : this.message,
+  status: status ?? this.status,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ComponentCondition &&
+          error == other.error &&
+          message == other.message &&
+          status == other.status &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(error, message, status, type); } 
+@override String toString() { return 'ComponentCondition(error: $error, message: $message, status: $status, type: $type)'; } 
+ }

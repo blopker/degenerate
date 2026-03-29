@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'output_text_content.dart';import 'reasoning_text_content.dart';import 'refusal_content.dart';sealed class OutputContent {const OutputContent();
+
+/// Deserialize from JSON, dispatching on the `type` discriminator.
+factory OutputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+  'OutputTextContent' => OutputContentOutputTextContent.fromJson(json),
+  'RefusalContent' => OutputContentRefusalContent.fromJson(json),
+  'ReasoningTextContent' => OutputContentReasoningTextContent.fromJson(json),
+  _ => OutputContent$Unknown(json),
+}; }
+
+/// The discriminator value identifying this variant.
+String get type;
+Map<String, dynamic> toJson();
+/// Whether this variant is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is OutputContent$Unknown; } 
+ }
+final class OutputContentOutputTextContent extends OutputContent {const OutputContentOutputTextContent(this.outputTextContent);
+
+factory OutputContentOutputTextContent.fromJson(Map<String, dynamic> json) { return OutputContentOutputTextContent(OutputTextContent.fromJson(json)); }
+
+final OutputTextContent outputTextContent;
+
+@override String get type { return 'OutputTextContent'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...outputTextContent.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OutputContentOutputTextContent && outputTextContent == other.outputTextContent; } 
+@override int get hashCode { return outputTextContent.hashCode; } 
+@override String toString() { return 'OutputContentOutputTextContent(outputTextContent: $outputTextContent)'; } 
+ }
+final class OutputContentRefusalContent extends OutputContent {const OutputContentRefusalContent(this.refusalContent);
+
+factory OutputContentRefusalContent.fromJson(Map<String, dynamic> json) { return OutputContentRefusalContent(RefusalContent.fromJson(json)); }
+
+final RefusalContent refusalContent;
+
+@override String get type { return 'RefusalContent'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...refusalContent.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OutputContentRefusalContent && refusalContent == other.refusalContent; } 
+@override int get hashCode { return refusalContent.hashCode; } 
+@override String toString() { return 'OutputContentRefusalContent(refusalContent: $refusalContent)'; } 
+ }
+final class OutputContentReasoningTextContent extends OutputContent {const OutputContentReasoningTextContent(this.reasoningTextContent);
+
+factory OutputContentReasoningTextContent.fromJson(Map<String, dynamic> json) { return OutputContentReasoningTextContent(ReasoningTextContent.fromJson(json)); }
+
+final ReasoningTextContent reasoningTextContent;
+
+@override String get type { return 'ReasoningTextContent'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...reasoningTextContent.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OutputContentReasoningTextContent && reasoningTextContent == other.reasoningTextContent; } 
+@override int get hashCode { return reasoningTextContent.hashCode; } 
+@override String toString() { return 'OutputContentReasoningTextContent(reasoningTextContent: $reasoningTextContent)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+/// Returned when the server sends a discriminator value that this client does not recognize.
+final class OutputContent$Unknown extends OutputContent {const OutputContent$Unknown(this.json);
+
+final Map<String, dynamic> json;
+
+@override String get type { return json['type'] as String? ?? ''; } 
+@override Map<String, dynamic> toJson() { return json; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OutputContent$Unknown && json == other.json; } 
+@override int get hashCode { return json.hashCode; } 
+@override String toString() { return 'OutputContent.unknown($json)'; } 
+ }

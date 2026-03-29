@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A group of scoped resources.
+final class IamMemberResourceGroup {const IamMemberResourceGroup({required this.id});
+
+factory IamMemberResourceGroup.fromJson(Map<String, dynamic> json) { return IamMemberResourceGroup(
+  id: json['id'] as String,
+); }
+
+/// Identifier of the group.
+final String id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+IamMemberResourceGroup copyWith({String? id}) { return IamMemberResourceGroup(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IamMemberResourceGroup &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'IamMemberResourceGroup(id: $id)'; } 
+ }

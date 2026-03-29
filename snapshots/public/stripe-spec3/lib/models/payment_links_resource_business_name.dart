@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentLinksResourceBusinessName {const PaymentLinksResourceBusinessName({required this.enabled, required this.optional, });
+
+factory PaymentLinksResourceBusinessName.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceBusinessName(
+  enabled: json['enabled'] as bool,
+  optional: json['optional'] as bool,
+); }
+
+/// Indicates whether business name collection is enabled for the payment link.
+final bool enabled;
+
+/// Whether the customer is required to complete the field before checking out. Defaults to `false`.
+final bool optional;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  'optional': optional,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('optional') && json['optional'] is bool; } 
+PaymentLinksResourceBusinessName copyWith({bool? enabled, bool? optional, }) { return PaymentLinksResourceBusinessName(
+  enabled: enabled ?? this.enabled,
+  optional: optional ?? this.optional,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentLinksResourceBusinessName &&
+          enabled == other.enabled &&
+          optional == other.optional; } 
+@override int get hashCode { return Object.hash(enabled, optional); } 
+@override String toString() { return 'PaymentLinksResourceBusinessName(enabled: $enabled, optional: $optional)'; } 
+ }

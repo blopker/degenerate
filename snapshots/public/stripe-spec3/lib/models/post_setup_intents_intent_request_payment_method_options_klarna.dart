@@ -1,0 +1,197 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_klarna_on_demand.dart';import 'post_setup_intents_intent_request_payment_method_options_klarna_subscriptions.dart';import 'post_setup_intents_intent_request_payment_method_options_klarna_subscriptions_variant1.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale {const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._(this.value);
+
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(String json) { return switch (json) {
+  'cs-CZ' => csCz,
+  'da-DK' => daDk,
+  'de-AT' => deAt,
+  'de-CH' => deCh,
+  'de-DE' => deDe,
+  'el-GR' => elGr,
+  'en-AT' => enAt,
+  'en-AU' => enAu,
+  'en-BE' => enBe,
+  'en-CA' => enCa,
+  'en-CH' => enCh,
+  'en-CZ' => enCz,
+  'en-DE' => enDe,
+  'en-DK' => enDk,
+  'en-ES' => enEs,
+  'en-FI' => enFi,
+  'en-FR' => enFr,
+  'en-GB' => enGb,
+  'en-GR' => enGr,
+  'en-IE' => enIe,
+  'en-IT' => enIt,
+  'en-NL' => enNl,
+  'en-NO' => enNo,
+  'en-NZ' => enNz,
+  'en-PL' => enPl,
+  'en-PT' => enPt,
+  'en-RO' => enRo,
+  'en-SE' => enSe,
+  'en-US' => enUs,
+  'es-ES' => esEs,
+  'es-US' => esUs,
+  'fi-FI' => fiFi,
+  'fr-BE' => frBe,
+  'fr-CA' => frCa,
+  'fr-CH' => frCh,
+  'fr-FR' => frFr,
+  'it-CH' => itCh,
+  'it-IT' => itIt,
+  'nb-NO' => nbNo,
+  'nl-BE' => nlBe,
+  'nl-NL' => nlNl,
+  'pl-PL' => plPl,
+  'pt-PT' => ptPt,
+  'ro-RO' => roRo,
+  'sv-FI' => svFi,
+  'sv-SE' => svSe,
+  _ => PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._(json),
+}; }
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale csCz = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('cs-CZ');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale daDk = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('da-DK');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale deAt = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('de-AT');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale deCh = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('de-CH');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale deDe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('de-DE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale elGr = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('el-GR');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enAt = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-AT');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enAu = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-AU');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enBe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-BE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enCa = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-CA');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enCh = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-CH');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enCz = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-CZ');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enDe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-DE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enDk = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-DK');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enEs = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-ES');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enFi = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-FI');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enFr = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-FR');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enGb = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-GB');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enGr = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-GR');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enIe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-IE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enIt = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-IT');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enNl = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-NL');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enNo = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-NO');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enNz = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-NZ');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enPl = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-PL');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enPt = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-PT');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enRo = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-RO');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enSe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-SE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale enUs = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('en-US');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale esEs = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('es-ES');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale esUs = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('es-US');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale fiFi = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('fi-FI');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale frBe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('fr-BE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale frCa = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('fr-CA');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale frCh = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('fr-CH');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale frFr = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('fr-FR');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale itCh = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('it-CH');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale itIt = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('it-IT');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale nbNo = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('nb-NO');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale nlBe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('nl-BE');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale nlNl = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('nl-NL');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale plPl = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('pl-PL');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale ptPt = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('pt-PT');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale roRo = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('ro-RO');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale svFi = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('sv-FI');
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale svSe = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale._('sv-SE');
+
+static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale> values = [csCz, daDk, deAt, deCh, deDe, elGr, enAt, enAu, enBe, enCa, enCh, enCz, enDe, enDk, enEs, enFi, enFr, enGb, enGr, enIe, enIt, enNl, enNo, enNz, enPl, enPt, enRo, enSe, enUs, esEs, esUs, fiFi, frBe, frCa, frCh, frFr, itCh, itIt, nbNo, nlBe, nlNl, plPl, ptPt, roRo, svFi, svSe];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale($value)'; } 
+ }
+final class PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna {const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna({this.currency, this.onDemand, this.preferredLocale, this.subscriptions, });
+
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
+  currency: json['currency'] as String?,
+  onDemand: json['on_demand'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand.fromJson(json['on_demand'] as Map<String, dynamic>) : null,
+  preferredLocale: json['preferred_locale'] != null ? PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale.fromJson(json['preferred_locale'] as String) : null,
+  subscriptions: json['subscriptions'] != null ? OneOf2.parse(json['subscriptions'], fromA: (v) => (v as List<dynamic>).map((e) => PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(v as String),) : null,
+); }
+
+final String? currency;
+
+final PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand? onDemand;
+
+final PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale? preferredLocale;
+
+final PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions? subscriptions;
+
+Map<String, dynamic> toJson() { return {
+  'currency': ?currency,
+  if (onDemand != null) 'on_demand': onDemand?.toJson(),
+  if (preferredLocale != null) 'preferred_locale': preferredLocale?.toJson(),
+  if (subscriptions != null) 'subscriptions': subscriptions?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna copyWith({String Function()? currency, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaOnDemand Function()? onDemand, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaPreferredLocale Function()? preferredLocale, PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions Function()? subscriptions, }) { return PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(
+  currency: currency != null ? currency() : this.currency,
+  onDemand: onDemand != null ? onDemand() : this.onDemand,
+  preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,
+  subscriptions: subscriptions != null ? subscriptions() : this.subscriptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna &&
+          currency == other.currency &&
+          onDemand == other.onDemand &&
+          preferredLocale == other.preferredLocale &&
+          subscriptions == other.subscriptions; } 
+@override int get hashCode { return Object.hash(currency, onDemand, preferredLocale, subscriptions); } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarna(currency: $currency, onDemand: $onDemand, preferredLocale: $preferredLocale, subscriptions: $subscriptions)'; } 
+ }

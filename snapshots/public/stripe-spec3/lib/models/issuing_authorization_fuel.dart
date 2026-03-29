@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_authorization_fuel_data.dart';/// Information about fuel that was purchased with this transaction. Typically this information is received from the merchant after the authorization has been approved and the fuel dispensed.
+final class IssuingAuthorizationFuel {const IssuingAuthorizationFuel({this.issuingAuthorizationFuelData});
+
+factory IssuingAuthorizationFuel.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFuel(
+  issuingAuthorizationFuelData: IssuingAuthorizationFuelData.canParse(json) ? IssuingAuthorizationFuelData.fromJson(json) : null,
+); }
+
+final IssuingAuthorizationFuelData? issuingAuthorizationFuelData;
+
+/// At least one variant must be present.
+bool get isValid { return issuingAuthorizationFuelData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingAuthorizationFuelData?.toJson(),
+}; } 
+ }

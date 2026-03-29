@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'amount_details_param_line_items_variant1_payment_method_options_card.dart';import 'amount_details_param_line_items_variant1_payment_method_options_card_present.dart';import 'amount_details_param_line_items_variant1_payment_method_options_klarna.dart';import 'amount_details_param_line_items_variant1_payment_method_options_paypal.dart';final class AmountDetailsParamLineItemsVariant1PaymentMethodOptions {const AmountDetailsParamLineItemsVariant1PaymentMethodOptions({this.card, this.cardPresent, this.klarna, this.paypal, });
+
+factory AmountDetailsParamLineItemsVariant1PaymentMethodOptions.fromJson(Map<String, dynamic> json) { return AmountDetailsParamLineItemsVariant1PaymentMethodOptions(
+  card: json['card'] != null ? AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  cardPresent: json['card_present'] != null ? AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCardPresent.fromJson(json['card_present'] as Map<String, dynamic>) : null,
+  klarna: json['klarna'] != null ? AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna.fromJson(json['klarna'] as Map<String, dynamic>) : null,
+  paypal: json['paypal'] != null ? AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal.fromJson(json['paypal'] as Map<String, dynamic>) : null,
+); }
+
+final AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard? card;
+
+final AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCardPresent? cardPresent;
+
+final AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna? klarna;
+
+final AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal? paypal;
+
+Map<String, dynamic> toJson() { return {
+  if (card != null) 'card': card?.toJson(),
+  if (cardPresent != null) 'card_present': cardPresent?.toJson(),
+  if (klarna != null) 'klarna': klarna?.toJson(),
+  if (paypal != null) 'paypal': paypal?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AmountDetailsParamLineItemsVariant1PaymentMethodOptions copyWith({AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCard Function()? card, AmountDetailsParamLineItemsVariant1PaymentMethodOptionsCardPresent Function()? cardPresent, AmountDetailsParamLineItemsVariant1PaymentMethodOptionsKlarna Function()? klarna, AmountDetailsParamLineItemsVariant1PaymentMethodOptionsPaypal Function()? paypal, }) { return AmountDetailsParamLineItemsVariant1PaymentMethodOptions(
+  card: card != null ? card() : this.card,
+  cardPresent: cardPresent != null ? cardPresent() : this.cardPresent,
+  klarna: klarna != null ? klarna() : this.klarna,
+  paypal: paypal != null ? paypal() : this.paypal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AmountDetailsParamLineItemsVariant1PaymentMethodOptions &&
+          card == other.card &&
+          cardPresent == other.cardPresent &&
+          klarna == other.klarna &&
+          paypal == other.paypal; } 
+@override int get hashCode { return Object.hash(card, cardPresent, klarna, paypal); } 
+@override String toString() { return 'AmountDetailsParamLineItemsVariant1PaymentMethodOptions(card: $card, cardPresent: $cardPresent, klarna: $klarna, paypal: $paypal)'; } 
+ }

@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A group of email addresses that can approve a temporary authentication request.
+final class AccessApprovalGroup {const AccessApprovalGroup({required this.approvalsNeeded, this.emailAddresses, this.emailListUuid, });
+
+factory AccessApprovalGroup.fromJson(Map<String, dynamic> json) { return AccessApprovalGroup(
+  approvalsNeeded: (json['approvals_needed'] as num).toDouble(),
+  emailAddresses: (json['email_addresses'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  emailListUuid: json['email_list_uuid'] as String?,
+); }
+
+/// The number of approvals needed to obtain access.
+final double approvalsNeeded;
+
+/// A list of emails that can approve the access request.
+final List<String>? emailAddresses;
+
+/// The UUID of an re-usable email list.
+final String? emailListUuid;
+
+Map<String, dynamic> toJson() { return {
+  'approvals_needed': approvalsNeeded,
+  'email_addresses': ?emailAddresses,
+  'email_list_uuid': ?emailListUuid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('approvals_needed') && json['approvals_needed'] is num; } 
+AccessApprovalGroup copyWith({double? approvalsNeeded, List<String> Function()? emailAddresses, String Function()? emailListUuid, }) { return AccessApprovalGroup(
+  approvalsNeeded: approvalsNeeded ?? this.approvalsNeeded,
+  emailAddresses: emailAddresses != null ? emailAddresses() : this.emailAddresses,
+  emailListUuid: emailListUuid != null ? emailListUuid() : this.emailListUuid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessApprovalGroup &&
+          approvalsNeeded == other.approvalsNeeded &&
+          listEquals(emailAddresses, other.emailAddresses) &&
+          emailListUuid == other.emailListUuid; } 
+@override int get hashCode { return Object.hash(approvalsNeeded, Object.hashAll(emailAddresses ?? const []), emailListUuid); } 
+@override String toString() { return 'AccessApprovalGroup(approvalsNeeded: $approvalsNeeded, emailAddresses: $emailAddresses, emailListUuid: $emailListUuid)'; } 
+ }

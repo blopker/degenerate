@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'billing_bill_resource_invoicing_parents_invoice_subscription_parent.dart';/// Details about the subscription that generated this invoice
+final class BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails {const BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails({this.billingBillResourceInvoicingParentsInvoiceSubscriptionParent});
+
+factory BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails(
+  billingBillResourceInvoicingParentsInvoiceSubscriptionParent: BillingBillResourceInvoicingParentsInvoiceSubscriptionParent.canParse(json) ? BillingBillResourceInvoicingParentsInvoiceSubscriptionParent.fromJson(json) : null,
+); }
+
+final BillingBillResourceInvoicingParentsInvoiceSubscriptionParent? billingBillResourceInvoicingParentsInvoiceSubscriptionParent;
+
+/// At least one variant must be present.
+bool get isValid { return billingBillResourceInvoicingParentsInvoiceSubscriptionParent != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?billingBillResourceInvoicingParentsInvoiceSubscriptionParent?.toJson(),
+}; } 
+ }

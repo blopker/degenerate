@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the usage object. Always `duration` for this variant.
+final class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType._(this.value);
+
+factory TranscriptTextUsageDurationType.fromJson(String json) { return switch (json) {
+  'duration' => duration,
+  _ => TranscriptTextUsageDurationType._(json),
+}; }
+
+static const TranscriptTextUsageDurationType duration = TranscriptTextUsageDurationType._('duration');
+
+static const List<TranscriptTextUsageDurationType> values = [duration];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TranscriptTextUsageDurationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TranscriptTextUsageDurationType($value)'; } 
+ }
+/// Usage statistics for models billed by audio input duration.
+final class TranscriptTextUsageDuration {const TranscriptTextUsageDuration({required this.type, required this.seconds, });
+
+factory TranscriptTextUsageDuration.fromJson(Map<String, dynamic> json) { return TranscriptTextUsageDuration(
+  type: TranscriptTextUsageDurationType.fromJson(json['type'] as String),
+  seconds: (json['seconds'] as num).toDouble(),
+); }
+
+/// The type of the usage object. Always `duration` for this variant.
+final TranscriptTextUsageDurationType type;
+
+/// Duration of the input audio in seconds.
+final double seconds;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'seconds': seconds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('seconds') && json['seconds'] is num; } 
+TranscriptTextUsageDuration copyWith({TranscriptTextUsageDurationType? type, double? seconds, }) { return TranscriptTextUsageDuration(
+  type: type ?? this.type,
+  seconds: seconds ?? this.seconds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TranscriptTextUsageDuration &&
+          type == other.type &&
+          seconds == other.seconds; } 
+@override int get hashCode { return Object.hash(type, seconds); } 
+@override String toString() { return 'TranscriptTextUsageDuration(type: $type, seconds: $seconds)'; } 
+ }

@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_top_verticals_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer3_top_verticals_response_result_meta_date_range.dart';import 'radar_get_attacks_layer3_top_verticals_response_result_meta_units.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization {const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._(this.value);
+
+factory RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization percentage = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization min0Max = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization minMax = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization rawValues = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization percentageChange = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization rollingAverage = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization overlappedPercentage = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization ratio = RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetAttacksLayer3TopVerticalsResponseResultMeta {const RadarGetAttacksLayer3TopVerticalsResponseResultMeta({required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetAttacksLayer3TopVerticalsResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopVerticalsResponseResultMeta(
+  confidenceInfo: json['confidenceInfo'] != null ? RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>) : null,
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TopVerticalsResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TopVerticalsResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfo? confidenceInfo;
+
+final List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  if (confidenceInfo != null) 'confidenceInfo': confidenceInfo?.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetAttacksLayer3TopVerticalsResponseResultMeta copyWith({RadarGetAttacksLayer3TopVerticalsResponseResultMetaConfidenceInfo? Function()? confidenceInfo, List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetAttacksLayer3TopVerticalsResponseResultMetaNormalization? normalization, List<RadarGetAttacksLayer3TopVerticalsResponseResultMetaUnits>? units, }) { return RadarGetAttacksLayer3TopVerticalsResponseResultMeta(
+  confidenceInfo: confidenceInfo != null ? confidenceInfo() : this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TopVerticalsResponseResultMeta &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetAttacksLayer3TopVerticalsResponseResultMeta(confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

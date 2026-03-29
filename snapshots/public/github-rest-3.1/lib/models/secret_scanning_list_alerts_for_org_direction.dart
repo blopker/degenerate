@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SecretScanningListAlertsForOrgDirection {const SecretScanningListAlertsForOrgDirection._(this.value);
+
+factory SecretScanningListAlertsForOrgDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => SecretScanningListAlertsForOrgDirection._(json),
+}; }
+
+static const SecretScanningListAlertsForOrgDirection asc = SecretScanningListAlertsForOrgDirection._('asc');
+
+static const SecretScanningListAlertsForOrgDirection desc = SecretScanningListAlertsForOrgDirection._('desc');
+
+static const List<SecretScanningListAlertsForOrgDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningListAlertsForOrgDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecretScanningListAlertsForOrgDirection($value)'; } 
+ }

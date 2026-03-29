@@ -1,0 +1,137 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_client_default.dart';import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_ecs_support.dart';import 'zero_trust_gateway_endpoints.dart';import 'zero_trust_gateway_ipv4_network.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_schemas_name.dart';/// Indicate the identifier of the pair of IPv4 addresses assigned to this location.
+extension type const ZeroTrustGatewayDnsDestinationIpsIdRead(String value) {
+factory ZeroTrustGatewayDnsDestinationIpsIdRead.fromJson(String json) => ZeroTrustGatewayDnsDestinationIpsIdRead(json);
+
+String toJson() => value;
+
+}
+/// Specify the UUID of the IPv6 block brought to the gateway so that this location's IPv6 address is allocated from the Bring Your Own IPv6 (BYOIPv6) block rather than the standard Cloudflare IPv6 block.
+extension type const ZeroTrustGatewayDnsDestinationIpv6BlockId(String value) {
+factory ZeroTrustGatewayDnsDestinationIpv6BlockId.fromJson(String json) => ZeroTrustGatewayDnsDestinationIpv6BlockId(json);
+
+String toJson() => value;
+
+}
+/// Defines the automatically generated IPv6 destination IP assigned to this location. Gateway counts all DNS requests sent to this IP as requests under this location.
+extension type const ZeroTrustGatewayIp(String value) {
+factory ZeroTrustGatewayIp.fromJson(String json) => ZeroTrustGatewayIp(json);
+
+String toJson() => value;
+
+}
+/// Specify the DNS over HTTPS domain that receives DNS requests. Gateway automatically generates this value.
+extension type const ZeroTrustGatewaySubdomain(String value) {
+factory ZeroTrustGatewaySubdomain.fromJson(String json) => ZeroTrustGatewaySubdomain(json);
+
+String toJson() => value;
+
+}
+final class ZeroTrustGatewayLocations {const ZeroTrustGatewayLocations({this.clientDefault, this.createdAt, this.dnsDestinationIpsId, this.dnsDestinationIpv6BlockId, this.dohSubdomain, this.ecsSupport, this.endpoints, this.id, this.ip, this.ipv4Destination, this.ipv4DestinationBackup, this.name, this.networks, this.updatedAt, });
+
+factory ZeroTrustGatewayLocations.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayLocations(
+  clientDefault: json['client_default'] != null ? ZeroTrustGatewayClientDefault.fromJson(json['client_default'] as bool) : null,
+  createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
+  dnsDestinationIpsId: json['dns_destination_ips_id'] != null ? ZeroTrustGatewayDnsDestinationIpsIdRead.fromJson(json['dns_destination_ips_id'] as String) : null,
+  dnsDestinationIpv6BlockId: json['dns_destination_ipv6_block_id'] != null ? ZeroTrustGatewayDnsDestinationIpv6BlockId.fromJson(json['dns_destination_ipv6_block_id'] as String) : null,
+  dohSubdomain: json['doh_subdomain'] != null ? ZeroTrustGatewaySubdomain.fromJson(json['doh_subdomain'] as String) : null,
+  ecsSupport: json['ecs_support'] != null ? ZeroTrustGatewayEcsSupport.fromJson(json['ecs_support'] as bool) : null,
+  endpoints: json['endpoints'] != null ? ZeroTrustGatewayEndpoints.fromJson(json['endpoints'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? ZeroTrustGatewayComponentsSchemasUuid.fromJson(json['id'] as String) : null,
+  ip: json['ip'] != null ? ZeroTrustGatewayIp.fromJson(json['ip'] as String) : null,
+  ipv4Destination: json['ipv4_destination'] as String?,
+  ipv4DestinationBackup: json['ipv4_destination_backup'] as String?,
+  name: json['name'] != null ? ZeroTrustGatewaySchemasName.fromJson(json['name'] as String) : null,
+  networks: (json['networks'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayIpv4Network.fromJson(e as Map<String, dynamic>)).toList(),
+  updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+/// Indicate whether this location is the default location.
+final ZeroTrustGatewayClientDefault? clientDefault;
+
+final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
+
+/// Indicate the identifier of the pair of IPv4 addresses assigned to this location.
+final ZeroTrustGatewayDnsDestinationIpsIdRead? dnsDestinationIpsId;
+
+/// Specify the UUID of the IPv6 block brought to the gateway so that this location's IPv6 address is allocated from the Bring Your Own IPv6 (BYOIPv6) block rather than the standard Cloudflare IPv6 block.
+final ZeroTrustGatewayDnsDestinationIpv6BlockId? dnsDestinationIpv6BlockId;
+
+final ZeroTrustGatewaySubdomain? dohSubdomain;
+
+/// Indicate whether the location must resolve EDNS queries.
+final ZeroTrustGatewayEcsSupport? ecsSupport;
+
+final ZeroTrustGatewayEndpoints? endpoints;
+
+final ZeroTrustGatewayComponentsSchemasUuid? id;
+
+/// Defines the automatically generated IPv6 destination IP assigned to this location. Gateway counts all DNS requests sent to this IP as requests under this location.
+final ZeroTrustGatewayIp? ip;
+
+/// Show the primary destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
+final String? ipv4Destination;
+
+/// Show the backup destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
+final String? ipv4DestinationBackup;
+
+final ZeroTrustGatewaySchemasName? name;
+
+/// Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
+final List<ZeroTrustGatewayIpv4Network>? networks;
+
+final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (clientDefault != null) 'client_default': clientDefault?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (dnsDestinationIpsId != null) 'dns_destination_ips_id': dnsDestinationIpsId?.toJson(),
+  if (dnsDestinationIpv6BlockId != null) 'dns_destination_ipv6_block_id': dnsDestinationIpv6BlockId?.toJson(),
+  if (dohSubdomain != null) 'doh_subdomain': dohSubdomain?.toJson(),
+  if (ecsSupport != null) 'ecs_support': ecsSupport?.toJson(),
+  if (endpoints != null) 'endpoints': endpoints?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (ip != null) 'ip': ip?.toJson(),
+  'ipv4_destination': ?ipv4Destination,
+  'ipv4_destination_backup': ?ipv4DestinationBackup,
+  if (name != null) 'name': name?.toJson(),
+  if (networks != null) 'networks': networks?.map((e) => e.toJson()).toList(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustGatewayLocations copyWith({ZeroTrustGatewayClientDefault Function()? clientDefault, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayDnsDestinationIpsIdRead Function()? dnsDestinationIpsId, ZeroTrustGatewayDnsDestinationIpv6BlockId? Function()? dnsDestinationIpv6BlockId, ZeroTrustGatewaySubdomain Function()? dohSubdomain, ZeroTrustGatewayEcsSupport Function()? ecsSupport, ZeroTrustGatewayEndpoints Function()? endpoints, ZeroTrustGatewayComponentsSchemasUuid Function()? id, ZeroTrustGatewayIp Function()? ip, String Function()? ipv4Destination, String Function()? ipv4DestinationBackup, ZeroTrustGatewaySchemasName Function()? name, List<ZeroTrustGatewayIpv4Network>? Function()? networks, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, }) { return ZeroTrustGatewayLocations(
+  clientDefault: clientDefault != null ? clientDefault() : this.clientDefault,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  dnsDestinationIpsId: dnsDestinationIpsId != null ? dnsDestinationIpsId() : this.dnsDestinationIpsId,
+  dnsDestinationIpv6BlockId: dnsDestinationIpv6BlockId != null ? dnsDestinationIpv6BlockId() : this.dnsDestinationIpv6BlockId,
+  dohSubdomain: dohSubdomain != null ? dohSubdomain() : this.dohSubdomain,
+  ecsSupport: ecsSupport != null ? ecsSupport() : this.ecsSupport,
+  endpoints: endpoints != null ? endpoints() : this.endpoints,
+  id: id != null ? id() : this.id,
+  ip: ip != null ? ip() : this.ip,
+  ipv4Destination: ipv4Destination != null ? ipv4Destination() : this.ipv4Destination,
+  ipv4DestinationBackup: ipv4DestinationBackup != null ? ipv4DestinationBackup() : this.ipv4DestinationBackup,
+  name: name != null ? name() : this.name,
+  networks: networks != null ? networks() : this.networks,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayLocations &&
+          clientDefault == other.clientDefault &&
+          createdAt == other.createdAt &&
+          dnsDestinationIpsId == other.dnsDestinationIpsId &&
+          dnsDestinationIpv6BlockId == other.dnsDestinationIpv6BlockId &&
+          dohSubdomain == other.dohSubdomain &&
+          ecsSupport == other.ecsSupport &&
+          endpoints == other.endpoints &&
+          id == other.id &&
+          ip == other.ip &&
+          ipv4Destination == other.ipv4Destination &&
+          ipv4DestinationBackup == other.ipv4DestinationBackup &&
+          name == other.name &&
+          listEquals(networks, other.networks) &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(clientDefault, createdAt, dnsDestinationIpsId, dnsDestinationIpv6BlockId, dohSubdomain, ecsSupport, endpoints, id, ip, ipv4Destination, ipv4DestinationBackup, name, Object.hashAll(networks ?? const []), updatedAt); } 
+@override String toString() { return 'ZeroTrustGatewayLocations(clientDefault: $clientDefault, createdAt: $createdAt, dnsDestinationIpsId: $dnsDestinationIpsId, dnsDestinationIpv6BlockId: $dnsDestinationIpv6BlockId, dohSubdomain: $dohSubdomain, ecsSupport: $ecsSupport, endpoints: $endpoints, id: $id, ip: $ip, ipv4Destination: $ipv4Destination, ipv4DestinationBackup: $ipv4DestinationBackup, name: $name, networks: $networks, updatedAt: $updatedAt)'; } 
+ }

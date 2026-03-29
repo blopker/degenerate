@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'code_scanning_analysis_sarif_id.dart';final class CodeScanningSarifsReceipt {const CodeScanningSarifsReceipt({this.id, this.url, });
+
+factory CodeScanningSarifsReceipt.fromJson(Map<String, dynamic> json) { return CodeScanningSarifsReceipt(
+  id: json['id'] != null ? CodeScanningAnalysisSarifId.fromJson(json['id'] as String) : null,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
+); }
+
+/// An identifier for the upload.
+final CodeScanningAnalysisSarifId? id;
+
+/// The REST API URL for checking the status of the upload.
+final Uri? url;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (url != null) 'url': url?.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodeScanningSarifsReceipt copyWith({CodeScanningAnalysisSarifId Function()? id, Uri Function()? url, }) { return CodeScanningSarifsReceipt(
+  id: id != null ? id() : this.id,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeScanningSarifsReceipt &&
+          id == other.id &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(id, url); } 
+@override String toString() { return 'CodeScanningSarifsReceipt(id: $id, url: $url)'; } 
+ }

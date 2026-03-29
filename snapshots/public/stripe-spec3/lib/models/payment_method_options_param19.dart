@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam19CaptureMethod {const PaymentMethodOptionsParam19CaptureMethod._(this.value);
+
+factory PaymentMethodOptionsParam19CaptureMethod.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'manual' => manual,
+  _ => PaymentMethodOptionsParam19CaptureMethod._(json),
+}; }
+
+static const PaymentMethodOptionsParam19CaptureMethod $empty = PaymentMethodOptionsParam19CaptureMethod._('');
+
+static const PaymentMethodOptionsParam19CaptureMethod manual = PaymentMethodOptionsParam19CaptureMethod._('manual');
+
+static const List<PaymentMethodOptionsParam19CaptureMethod> values = [$empty, manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam19CaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam19CaptureMethod($value)'; } 
+ }
+final class PaymentMethodOptionsParam19SetupFutureUsage {const PaymentMethodOptionsParam19SetupFutureUsage._(this.value);
+
+factory PaymentMethodOptionsParam19SetupFutureUsage.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'none' => none,
+  'off_session' => offSession,
+  _ => PaymentMethodOptionsParam19SetupFutureUsage._(json),
+}; }
+
+static const PaymentMethodOptionsParam19SetupFutureUsage $empty = PaymentMethodOptionsParam19SetupFutureUsage._('');
+
+static const PaymentMethodOptionsParam19SetupFutureUsage none = PaymentMethodOptionsParam19SetupFutureUsage._('none');
+
+static const PaymentMethodOptionsParam19SetupFutureUsage offSession = PaymentMethodOptionsParam19SetupFutureUsage._('off_session');
+
+static const List<PaymentMethodOptionsParam19SetupFutureUsage> values = [$empty, none, offSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam19SetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam19SetupFutureUsage($value)'; } 
+ }
+final class PaymentMethodOptionsParam19 {const PaymentMethodOptionsParam19({this.captureMethod, this.setupFutureUsage, });
+
+factory PaymentMethodOptionsParam19.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam19(
+  captureMethod: json['capture_method'] != null ? PaymentMethodOptionsParam19CaptureMethod.fromJson(json['capture_method'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentMethodOptionsParam19SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PaymentMethodOptionsParam19CaptureMethod? captureMethod;
+
+final PaymentMethodOptionsParam19SetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam19 copyWith({PaymentMethodOptionsParam19CaptureMethod Function()? captureMethod, PaymentMethodOptionsParam19SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam19(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam19 &&
+          captureMethod == other.captureMethod &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
+@override String toString() { return 'PaymentMethodOptionsParam19(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
+ }

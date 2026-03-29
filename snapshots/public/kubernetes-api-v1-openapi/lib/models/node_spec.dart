@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'node_config_source.dart';import 'taint.dart';/// NodeSpec describes the attributes that a node is created with.
+final class NodeSpec {const NodeSpec({this.configSource, this.externalId, this.podCidr, this.podCidRs, this.providerId, this.taints, this.unschedulable, });
+
+factory NodeSpec.fromJson(Map<String, dynamic> json) { return NodeSpec(
+  configSource: json['configSource'] != null ? NodeConfigSource.fromJson(json['configSource'] as Map<String, dynamic>) : null,
+  externalId: json['externalID'] as String?,
+  podCidr: json['podCIDR'] as String?,
+  podCidRs: (json['podCIDRs'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  providerId: json['providerID'] as String?,
+  taints: (json['taints'] as List<dynamic>?)?.map((e) => Taint.fromJson(e as Map<String, dynamic>)).toList(),
+  unschedulable: json['unschedulable'] as bool?,
+); }
+
+/// Deprecated: Previously used to specify the source of the node's configuration for the DynamicKubeletConfig feature. This feature is removed.
+final NodeConfigSource? configSource;
+
+/// Deprecated. Not all kubelets will set this field. Remove field after 1.13. see: https://issues.k8s.io/61966
+final String? externalId;
+
+/// PodCIDR represents the pod IP range assigned to the node.
+final String? podCidr;
+
+/// podCIDRs represents the IP ranges assigned to the node for usage by Pods on that node. If this field is specified, the 0th entry must match the podCIDR field. It may contain at most 1 value for each of IPv4 and IPv6.
+final List<String>? podCidRs;
+
+/// ID of the node assigned by the cloud provider in the format: `<ProviderName>`://`<ProviderSpecificNodeID>`
+final String? providerId;
+
+/// If specified, the node's taints.
+final List<Taint>? taints;
+
+/// Unschedulable controls node schedulability of new pods. By default, node is schedulable. More info: https://kubernetes.io/docs/concepts/nodes/node/#manual-node-administration
+final bool? unschedulable;
+
+Map<String, dynamic> toJson() { return {
+  if (configSource != null) 'configSource': configSource?.toJson(),
+  'externalID': ?externalId,
+  'podCIDR': ?podCidr,
+  'podCIDRs': ?podCidRs,
+  'providerID': ?providerId,
+  if (taints != null) 'taints': taints?.map((e) => e.toJson()).toList(),
+  'unschedulable': ?unschedulable,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+NodeSpec copyWith({NodeConfigSource Function()? configSource, String Function()? externalId, String Function()? podCidr, List<String> Function()? podCidRs, String Function()? providerId, List<Taint> Function()? taints, bool Function()? unschedulable, }) { return NodeSpec(
+  configSource: configSource != null ? configSource() : this.configSource,
+  externalId: externalId != null ? externalId() : this.externalId,
+  podCidr: podCidr != null ? podCidr() : this.podCidr,
+  podCidRs: podCidRs != null ? podCidRs() : this.podCidRs,
+  providerId: providerId != null ? providerId() : this.providerId,
+  taints: taints != null ? taints() : this.taints,
+  unschedulable: unschedulable != null ? unschedulable() : this.unschedulable,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NodeSpec &&
+          configSource == other.configSource &&
+          externalId == other.externalId &&
+          podCidr == other.podCidr &&
+          listEquals(podCidRs, other.podCidRs) &&
+          providerId == other.providerId &&
+          listEquals(taints, other.taints) &&
+          unschedulable == other.unschedulable; } 
+@override int get hashCode { return Object.hash(configSource, externalId, podCidr, Object.hashAll(podCidRs ?? const []), providerId, Object.hashAll(taints ?? const []), unschedulable); } 
+@override String toString() { return 'NodeSpec(configSource: $configSource, externalId: $externalId, podCidr: $podCidr, podCidRs: $podCidRs, providerId: $providerId, taints: $taints, unschedulable: $unschedulable)'; } 
+ }

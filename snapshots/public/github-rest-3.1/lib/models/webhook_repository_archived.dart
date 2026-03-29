@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookRepositoryArchivedAction {const WebhookRepositoryArchivedAction._(this.value);
+
+factory WebhookRepositoryArchivedAction.fromJson(String json) { return switch (json) {
+  'archived' => archived,
+  _ => WebhookRepositoryArchivedAction._(json),
+}; }
+
+static const WebhookRepositoryArchivedAction archived = WebhookRepositoryArchivedAction._('archived');
+
+static const List<WebhookRepositoryArchivedAction> values = [archived];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookRepositoryArchivedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookRepositoryArchivedAction($value)'; } 
+ }
+final class WebhookRepositoryArchived {const WebhookRepositoryArchived({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.sender, });
+
+factory WebhookRepositoryArchived.fromJson(Map<String, dynamic> json) { return WebhookRepositoryArchived(
+  action: WebhookRepositoryArchivedAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookRepositoryArchivedAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'repository': repository.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('repository') &&
+      json.containsKey('sender'); } 
+WebhookRepositoryArchived copyWith({WebhookRepositoryArchivedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookRepositoryArchived(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository ?? this.repository,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookRepositoryArchived &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, sender); } 
+@override String toString() { return 'WebhookRepositoryArchived(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+ }

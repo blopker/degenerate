@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DeleteIndicatorDeleteResponse {const DeleteIndicatorDeleteResponse({this.message, this.success, });
+
+factory DeleteIndicatorDeleteResponse.fromJson(Map<String, dynamic> json) { return DeleteIndicatorDeleteResponse(
+  message: json['message'] as String?,
+  success: json['success'] as bool?,
+); }
+
+final String? message;
+
+final bool? success;
+
+Map<String, dynamic> toJson() { return {
+  'message': ?message,
+  'success': ?success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DeleteIndicatorDeleteResponse copyWith({String Function()? message, bool Function()? success, }) { return DeleteIndicatorDeleteResponse(
+  message: message != null ? message() : this.message,
+  success: success != null ? success() : this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeleteIndicatorDeleteResponse &&
+          message == other.message &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(message, success); } 
+@override String toString() { return 'DeleteIndicatorDeleteResponse(message: $message, success: $success)'; } 
+ }

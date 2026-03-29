@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Name of a Worker
+extension type const MqScriptName(String value) {
+factory MqScriptName.fromJson(String json) => MqScriptName(json);
+
+String toJson() => value;
+
+}

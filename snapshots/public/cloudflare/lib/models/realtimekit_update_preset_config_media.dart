@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtimekit_update_preset_config_media_screenshare.dart';import 'realtimekit_update_preset_config_media_video.dart';/// Media configuration options. eg: Video quality
+final class RealtimekitUpdatePresetConfigMedia {const RealtimekitUpdatePresetConfigMedia({this.screenshare, this.video, });
+
+factory RealtimekitUpdatePresetConfigMedia.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetConfigMedia(
+  screenshare: json['screenshare'] != null ? RealtimekitUpdatePresetConfigMediaScreenshare.fromJson(json['screenshare'] as Map<String, dynamic>) : null,
+  video: json['video'] != null ? RealtimekitUpdatePresetConfigMediaVideo.fromJson(json['video'] as Map<String, dynamic>) : null,
+); }
+
+/// Configuration options for participant screen shares
+final RealtimekitUpdatePresetConfigMediaScreenshare? screenshare;
+
+/// Configuration options for participant videos
+final RealtimekitUpdatePresetConfigMediaVideo? video;
+
+Map<String, dynamic> toJson() { return {
+  if (screenshare != null) 'screenshare': screenshare?.toJson(),
+  if (video != null) 'video': video?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitUpdatePresetConfigMedia copyWith({RealtimekitUpdatePresetConfigMediaScreenshare Function()? screenshare, RealtimekitUpdatePresetConfigMediaVideo Function()? video, }) { return RealtimekitUpdatePresetConfigMedia(
+  screenshare: screenshare != null ? screenshare() : this.screenshare,
+  video: video != null ? video() : this.video,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitUpdatePresetConfigMedia &&
+          screenshare == other.screenshare &&
+          video == other.video; } 
+@override int get hashCode { return Object.hash(screenshare, video); } 
+@override String toString() { return 'RealtimekitUpdatePresetConfigMedia(screenshare: $screenshare, video: $video)'; } 
+ }

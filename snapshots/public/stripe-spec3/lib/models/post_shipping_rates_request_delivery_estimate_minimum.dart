@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostShippingRatesRequestDeliveryEstimateMinimumUnit {const PostShippingRatesRequestDeliveryEstimateMinimumUnit._(this.value);
+
+factory PostShippingRatesRequestDeliveryEstimateMinimumUnit.fromJson(String json) { return switch (json) {
+  'business_day' => businessDay,
+  'day' => day,
+  'hour' => hour,
+  'month' => month,
+  'week' => week,
+  _ => PostShippingRatesRequestDeliveryEstimateMinimumUnit._(json),
+}; }
+
+static const PostShippingRatesRequestDeliveryEstimateMinimumUnit businessDay = PostShippingRatesRequestDeliveryEstimateMinimumUnit._('business_day');
+
+static const PostShippingRatesRequestDeliveryEstimateMinimumUnit day = PostShippingRatesRequestDeliveryEstimateMinimumUnit._('day');
+
+static const PostShippingRatesRequestDeliveryEstimateMinimumUnit hour = PostShippingRatesRequestDeliveryEstimateMinimumUnit._('hour');
+
+static const PostShippingRatesRequestDeliveryEstimateMinimumUnit month = PostShippingRatesRequestDeliveryEstimateMinimumUnit._('month');
+
+static const PostShippingRatesRequestDeliveryEstimateMinimumUnit week = PostShippingRatesRequestDeliveryEstimateMinimumUnit._('week');
+
+static const List<PostShippingRatesRequestDeliveryEstimateMinimumUnit> values = [businessDay, day, hour, month, week];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostShippingRatesRequestDeliveryEstimateMinimumUnit && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostShippingRatesRequestDeliveryEstimateMinimumUnit($value)'; } 
+ }
+final class PostShippingRatesRequestDeliveryEstimateMinimum {const PostShippingRatesRequestDeliveryEstimateMinimum({required this.unit, required this.value, });
+
+factory PostShippingRatesRequestDeliveryEstimateMinimum.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequestDeliveryEstimateMinimum(
+  unit: PostShippingRatesRequestDeliveryEstimateMinimumUnit.fromJson(json['unit'] as String),
+  value: (json['value'] as num).toInt(),
+); }
+
+final PostShippingRatesRequestDeliveryEstimateMinimumUnit unit;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'unit': unit.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('unit') &&
+      json.containsKey('value') && json['value'] is num; } 
+PostShippingRatesRequestDeliveryEstimateMinimum copyWith({PostShippingRatesRequestDeliveryEstimateMinimumUnit? unit, int? value, }) { return PostShippingRatesRequestDeliveryEstimateMinimum(
+  unit: unit ?? this.unit,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostShippingRatesRequestDeliveryEstimateMinimum &&
+          unit == other.unit &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(unit, value); } 
+@override String toString() { return 'PostShippingRatesRequestDeliveryEstimateMinimum(unit: $unit, value: $value)'; } 
+ }

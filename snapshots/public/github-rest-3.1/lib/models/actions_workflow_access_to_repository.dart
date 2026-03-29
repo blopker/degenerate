@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
+/// repository.
+/// 
+/// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
+final class ActionsWorkflowAccessToRepositoryAccessLevel {const ActionsWorkflowAccessToRepositoryAccessLevel._(this.value);
+
+factory ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'user' => user,
+  'organization' => organization,
+  _ => ActionsWorkflowAccessToRepositoryAccessLevel._(json),
+}; }
+
+static const ActionsWorkflowAccessToRepositoryAccessLevel none = ActionsWorkflowAccessToRepositoryAccessLevel._('none');
+
+static const ActionsWorkflowAccessToRepositoryAccessLevel user = ActionsWorkflowAccessToRepositoryAccessLevel._('user');
+
+static const ActionsWorkflowAccessToRepositoryAccessLevel organization = ActionsWorkflowAccessToRepositoryAccessLevel._('organization');
+
+static const List<ActionsWorkflowAccessToRepositoryAccessLevel> values = [none, user, organization];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActionsWorkflowAccessToRepositoryAccessLevel && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActionsWorkflowAccessToRepositoryAccessLevel($value)'; } 
+ }
+final class ActionsWorkflowAccessToRepository {const ActionsWorkflowAccessToRepository({required this.accessLevel});
+
+factory ActionsWorkflowAccessToRepository.fromJson(Map<String, dynamic> json) { return ActionsWorkflowAccessToRepository(
+  accessLevel: ActionsWorkflowAccessToRepositoryAccessLevel.fromJson(json['access_level'] as String),
+); }
+
+/// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
+/// repository.
+/// 
+/// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
+final ActionsWorkflowAccessToRepositoryAccessLevel accessLevel;
+
+Map<String, dynamic> toJson() { return {
+  'access_level': accessLevel.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('access_level'); } 
+ActionsWorkflowAccessToRepository copyWith({ActionsWorkflowAccessToRepositoryAccessLevel? accessLevel}) { return ActionsWorkflowAccessToRepository(
+  accessLevel: accessLevel ?? this.accessLevel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsWorkflowAccessToRepository &&
+          accessLevel == other.accessLevel; } 
+@override int get hashCode { return accessLevel.hashCode; } 
+@override String toString() { return 'ActionsWorkflowAccessToRepository(accessLevel: $accessLevel)'; } 
+ }

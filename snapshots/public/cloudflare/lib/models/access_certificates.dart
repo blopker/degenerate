@@ -1,0 +1,61 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name.dart';import 'access_fingerprint.dart';import 'access_timestamp.dart';final class AccessCertificates {const AccessCertificates({this.associatedHostnames, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.name, this.updatedAt, });
+
+factory AccessCertificates.fromJson(Map<String, dynamic> json) { return AccessCertificates(
+  associatedHostnames: (json['associated_hostnames'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  expiresOn: json['expires_on'] != null ? AccessTimestamp.fromJson(json['expires_on'] as String) : null,
+  fingerprint: json['fingerprint'] != null ? AccessFingerprint.fromJson(json['fingerprint'] as String) : null,
+  id: json['id'] as String?,
+  name: json['name'] != null ? AccessCertificatesComponentsSchemasName.fromJson(json['name'] as String) : null,
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+/// The hostnames of the applications that will use this certificate.
+final List<String>? associatedHostnames;
+
+final AccessTimestamp? createdAt;
+
+final AccessTimestamp? expiresOn;
+
+final AccessFingerprint? fingerprint;
+
+/// The ID of the application that will use this certificate.
+final String? id;
+
+final AccessCertificatesComponentsSchemasName? name;
+
+final AccessTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  'associated_hostnames': ?associatedHostnames,
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (expiresOn != null) 'expires_on': expiresOn?.toJson(),
+  if (fingerprint != null) 'fingerprint': fingerprint?.toJson(),
+  'id': ?id,
+  if (name != null) 'name': name?.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessCertificates copyWith({List<String> Function()? associatedHostnames, AccessTimestamp Function()? createdAt, AccessTimestamp Function()? expiresOn, AccessFingerprint Function()? fingerprint, String Function()? id, AccessCertificatesComponentsSchemasName Function()? name, AccessTimestamp Function()? updatedAt, }) { return AccessCertificates(
+  associatedHostnames: associatedHostnames != null ? associatedHostnames() : this.associatedHostnames,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  expiresOn: expiresOn != null ? expiresOn() : this.expiresOn,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  id: id != null ? id() : this.id,
+  name: name != null ? name() : this.name,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessCertificates &&
+          listEquals(associatedHostnames, other.associatedHostnames) &&
+          createdAt == other.createdAt &&
+          expiresOn == other.expiresOn &&
+          fingerprint == other.fingerprint &&
+          id == other.id &&
+          name == other.name &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(Object.hashAll(associatedHostnames ?? const []), createdAt, expiresOn, fingerprint, id, name, updatedAt); } 
+@override String toString() { return 'AccessCertificates(associatedHostnames: $associatedHostnames, createdAt: $createdAt, expiresOn: $expiresOn, fingerprint: $fingerprint, id: $id, name: $name, updatedAt: $updatedAt)'; } 
+ }

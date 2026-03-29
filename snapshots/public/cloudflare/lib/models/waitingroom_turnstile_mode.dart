@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Which Turnstile widget type to use for detecting bot traffic. See
+/// [the Turnstile documentation](https://developers.cloudflare.com/turnstile/concepts/widget/#widget-types)
+/// for the definitions of these widget types. Set to `off` to disable the
+/// Turnstile integration entirely. Setting this to anything other than
+/// `off` or `invisible` requires Advanced Waiting Room.
+/// 
+final class WaitingroomTurnstileMode {const WaitingroomTurnstileMode._(this.value);
+
+factory WaitingroomTurnstileMode.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'invisible' => invisible,
+  'visible_non_interactive' => visibleNonInteractive,
+  'visible_managed' => visibleManaged,
+  _ => WaitingroomTurnstileMode._(json),
+}; }
+
+static const WaitingroomTurnstileMode off = WaitingroomTurnstileMode._('off');
+
+static const WaitingroomTurnstileMode invisible = WaitingroomTurnstileMode._('invisible');
+
+static const WaitingroomTurnstileMode visibleNonInteractive = WaitingroomTurnstileMode._('visible_non_interactive');
+
+static const WaitingroomTurnstileMode visibleManaged = WaitingroomTurnstileMode._('visible_managed');
+
+static const List<WaitingroomTurnstileMode> values = [off, invisible, visibleNonInteractive, visibleManaged];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WaitingroomTurnstileMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WaitingroomTurnstileMode($value)'; } 
+ }

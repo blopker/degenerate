@@ -1,0 +1,95 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_review_thread_resolved_pull_request.dart';import 'webhook_pull_request_review_thread_resolved_thread.dart';final class WebhookPullRequestReviewThreadResolvedAction {const WebhookPullRequestReviewThreadResolvedAction._(this.value);
+
+factory WebhookPullRequestReviewThreadResolvedAction.fromJson(String json) { return switch (json) {
+  'resolved' => resolved,
+  _ => WebhookPullRequestReviewThreadResolvedAction._(json),
+}; }
+
+static const WebhookPullRequestReviewThreadResolvedAction resolved = WebhookPullRequestReviewThreadResolvedAction._('resolved');
+
+static const List<WebhookPullRequestReviewThreadResolvedAction> values = [resolved];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookPullRequestReviewThreadResolvedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewThreadResolvedAction($value)'; } 
+ }
+final class WebhookPullRequestReviewThreadResolved {const WebhookPullRequestReviewThreadResolved({required this.action, this.enterprise, this.installation, this.organization, required this.pullRequest, required this.repository, this.sender, required this.thread, this.updatedAt, });
+
+factory WebhookPullRequestReviewThreadResolved.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolved(
+  action: WebhookPullRequestReviewThreadResolvedAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  pullRequest: WebhookPullRequestReviewThreadResolvedPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
+  thread: WebhookPullRequestReviewThreadResolvedThread.fromJson(json['thread'] as Map<String, dynamic>),
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+); }
+
+final WebhookPullRequestReviewThreadResolvedAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final WebhookPullRequestReviewThreadResolvedPullRequest pullRequest;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser? sender;
+
+final WebhookPullRequestReviewThreadResolvedThread thread;
+
+final DateTime? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'pull_request': pullRequest.toJson(),
+  'repository': repository.toJson(),
+  if (sender != null) 'sender': sender?.toJson(),
+  'thread': thread.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('pull_request') &&
+      json.containsKey('repository') &&
+      json.containsKey('thread'); } 
+WebhookPullRequestReviewThreadResolved copyWith({WebhookPullRequestReviewThreadResolvedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, WebhookPullRequestReviewThreadResolvedPullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, WebhookPullRequestReviewThreadResolvedThread? thread, DateTime? Function()? updatedAt, }) { return WebhookPullRequestReviewThreadResolved(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  pullRequest: pullRequest ?? this.pullRequest,
+  repository: repository ?? this.repository,
+  sender: sender != null ? sender() : this.sender,
+  thread: thread ?? this.thread,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewThreadResolved &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          pullRequest == other.pullRequest &&
+          repository == other.repository &&
+          sender == other.sender &&
+          thread == other.thread &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, organization, pullRequest, repository, sender, thread, updatedAt); } 
+@override String toString() { return 'WebhookPullRequestReviewThreadResolved(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, pullRequest: $pullRequest, repository: $repository, sender: $sender, thread: $thread, updatedAt: $updatedAt)'; } 
+ }

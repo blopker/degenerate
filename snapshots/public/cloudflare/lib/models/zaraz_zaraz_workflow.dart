@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Zaraz workflow
+final class ZarazZarazWorkflow {const ZarazZarazWorkflow._(this.value);
+
+factory ZarazZarazWorkflow.fromJson(String json) { return switch (json) {
+  'realtime' => realtime,
+  'preview' => preview,
+  _ => ZarazZarazWorkflow._(json),
+}; }
+
+static const ZarazZarazWorkflow realtime = ZarazZarazWorkflow._('realtime');
+
+static const ZarazZarazWorkflow preview = ZarazZarazWorkflow._('preview');
+
+static const List<ZarazZarazWorkflow> values = [realtime, preview];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZarazZarazWorkflow && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZarazZarazWorkflow($value)'; } 
+ }

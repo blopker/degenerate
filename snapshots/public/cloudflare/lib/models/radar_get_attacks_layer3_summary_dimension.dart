@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the attribute by which to group the results.
+final class RadarGetAttacksLayer3SummaryDimension {const RadarGetAttacksLayer3SummaryDimension._(this.value);
+
+factory RadarGetAttacksLayer3SummaryDimension.fromJson(String json) { return switch (json) {
+  'PROTOCOL' => protocol,
+  'IP_VERSION' => ipVersion,
+  'VECTOR' => vector,
+  'DURATION' => duration,
+  'BITRATE' => bitrate,
+  'VERTICAL' => vertical,
+  'INDUSTRY' => industry,
+  _ => RadarGetAttacksLayer3SummaryDimension._(json),
+}; }
+
+static const RadarGetAttacksLayer3SummaryDimension protocol = RadarGetAttacksLayer3SummaryDimension._('PROTOCOL');
+
+static const RadarGetAttacksLayer3SummaryDimension ipVersion = RadarGetAttacksLayer3SummaryDimension._('IP_VERSION');
+
+static const RadarGetAttacksLayer3SummaryDimension vector = RadarGetAttacksLayer3SummaryDimension._('VECTOR');
+
+static const RadarGetAttacksLayer3SummaryDimension duration = RadarGetAttacksLayer3SummaryDimension._('DURATION');
+
+static const RadarGetAttacksLayer3SummaryDimension bitrate = RadarGetAttacksLayer3SummaryDimension._('BITRATE');
+
+static const RadarGetAttacksLayer3SummaryDimension vertical = RadarGetAttacksLayer3SummaryDimension._('VERTICAL');
+
+static const RadarGetAttacksLayer3SummaryDimension industry = RadarGetAttacksLayer3SummaryDimension._('INDUSTRY');
+
+static const List<RadarGetAttacksLayer3SummaryDimension> values = [protocol, ipVersion, vector, duration, bitrate, vertical, industry];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3SummaryDimension && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3SummaryDimension($value)'; } 
+ }

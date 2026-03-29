@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class DeletedTerminalLocationObject {const DeletedTerminalLocationObject._(this.value);
+
+factory DeletedTerminalLocationObject.fromJson(String json) { return switch (json) {
+  'terminal.location' => terminalLocation,
+  _ => DeletedTerminalLocationObject._(json),
+}; }
+
+static const DeletedTerminalLocationObject terminalLocation = DeletedTerminalLocationObject._('terminal.location');
+
+static const List<DeletedTerminalLocationObject> values = [terminalLocation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DeletedTerminalLocationObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DeletedTerminalLocationObject($value)'; } 
+ }
+/// 
+final class DeletedTerminalLocation {const DeletedTerminalLocation({required this.deleted, required this.id, required this.object, });
+
+factory DeletedTerminalLocation.fromJson(Map<String, dynamic> json) { return DeletedTerminalLocation(
+  deleted: json['deleted'] as bool,
+  id: json['id'] as String,
+  object: DeletedTerminalLocationObject.fromJson(json['object'] as String),
+); }
+
+/// Always true for a deleted object
+final bool deleted;
+
+/// Unique identifier for the object.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final DeletedTerminalLocationObject object;
+
+Map<String, dynamic> toJson() { return {
+  'deleted': deleted,
+  'id': id,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object'); } 
+DeletedTerminalLocation copyWith({bool? deleted, String? id, DeletedTerminalLocationObject? object, }) { return DeletedTerminalLocation(
+  deleted: deleted ?? this.deleted,
+  id: id ?? this.id,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeletedTerminalLocation &&
+          deleted == other.deleted &&
+          id == other.id &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(deleted, id, object); } 
+@override String toString() { return 'DeletedTerminalLocation(deleted: $deleted, id: $id, object: $object)'; } 
+ }

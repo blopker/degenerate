@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_items_input2.dart';import 'zero_trust_gateway_value.dart';final class ZeroTrustListsPatchZeroTrustListRequest {const ZeroTrustListsPatchZeroTrustListRequest({this.append, this.remove, });
+
+factory ZeroTrustListsPatchZeroTrustListRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustListsPatchZeroTrustListRequest(
+  append: (json['append'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayItemsInput2.fromJson(e as Map<String, dynamic>)).toList(),
+  remove: (json['remove'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayValue.fromJson(e as String)).toList(),
+); }
+
+/// Add items to the list.
+final List<ZeroTrustGatewayItemsInput2>? append;
+
+/// Lists of item values you want to remove.
+final List<ZeroTrustGatewayValue>? remove;
+
+Map<String, dynamic> toJson() { return {
+  if (append != null) 'append': append?.map((e) => e.toJson()).toList(),
+  if (remove != null) 'remove': remove?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustListsPatchZeroTrustListRequest copyWith({List<ZeroTrustGatewayItemsInput2> Function()? append, List<ZeroTrustGatewayValue> Function()? remove, }) { return ZeroTrustListsPatchZeroTrustListRequest(
+  append: append != null ? append() : this.append,
+  remove: remove != null ? remove() : this.remove,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustListsPatchZeroTrustListRequest &&
+          listEquals(append, other.append) &&
+          listEquals(remove, other.remove); } 
+@override int get hashCode { return Object.hash(Object.hashAll(append ?? const []), Object.hashAll(remove ?? const [])); } 
+@override String toString() { return 'ZeroTrustListsPatchZeroTrustListRequest(append: $append, remove: $remove)'; } 
+ }

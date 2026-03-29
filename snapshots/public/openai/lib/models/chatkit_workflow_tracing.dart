@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Controls diagnostic tracing during the session.
+final class ChatkitWorkflowTracing {const ChatkitWorkflowTracing({required this.enabled});
+
+factory ChatkitWorkflowTracing.fromJson(Map<String, dynamic> json) { return ChatkitWorkflowTracing(
+  enabled: json['enabled'] as bool,
+); }
+
+/// Indicates whether tracing is enabled.
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+ChatkitWorkflowTracing copyWith({bool? enabled}) { return ChatkitWorkflowTracing(
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChatkitWorkflowTracing &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'ChatkitWorkflowTracing(enabled: $enabled)'; } 
+ }

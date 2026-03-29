@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetEventQueryListResponse500Errors {const GetEventQueryListResponse500Errors({required this.message});
+
+factory GetEventQueryListResponse500Errors.fromJson(Map<String, dynamic> json) { return GetEventQueryListResponse500Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+GetEventQueryListResponse500Errors copyWith({String? message}) { return GetEventQueryListResponse500Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetEventQueryListResponse500Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'GetEventQueryListResponse500Errors(message: $message)'; } 
+ }

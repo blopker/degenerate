@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'billing_credit_grants_resource_balance_debit.dart';/// Debit details for this credit balance transaction. Only present if type is `debit`.
+final class BillingCreditBalanceTransactionDebit {const BillingCreditBalanceTransactionDebit({this.billingCreditGrantsResourceBalanceDebit});
+
+factory BillingCreditBalanceTransactionDebit.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceTransactionDebit(
+  billingCreditGrantsResourceBalanceDebit: BillingCreditGrantsResourceBalanceDebit.canParse(json) ? BillingCreditGrantsResourceBalanceDebit.fromJson(json) : null,
+); }
+
+final BillingCreditGrantsResourceBalanceDebit? billingCreditGrantsResourceBalanceDebit;
+
+/// At least one variant must be present.
+bool get isValid { return billingCreditGrantsResourceBalanceDebit != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?billingCreditGrantsResourceBalanceDebit?.toJson(),
+}; } 
+ }

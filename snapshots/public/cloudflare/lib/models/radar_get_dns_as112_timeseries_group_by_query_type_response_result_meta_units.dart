@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits {const RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits({required this.name, required this.value, });
+
+factory RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits(
+  name: json['name'] as String,
+  value: json['value'] as String,
+); }
+
+final String name;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits(
+  name: name ?? this.name,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits &&
+          name == other.name &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(name, value); } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByQueryTypeResponseResultMetaUnits(name: $name, value: $value)'; } 
+ }

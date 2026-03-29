@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_request_fr_meal_voucher_conecs_display_preference.dart';/// Meal vouchers in France, or “titres-restaurant”, is a local benefits program commonly offered by employers for their employees to purchase prepared food and beverages on working days. Check this [page](https://docs.stripe.com/payments/meal-vouchers/fr-meal-vouchers) for more details.
+final class PostPaymentMethodConfigurationsRequestFrMealVoucherConecs {const PostPaymentMethodConfigurationsRequestFrMealVoucherConecs({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsRequestFrMealVoucherConecs.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestFrMealVoucherConecs(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestFrMealVoucherConecsDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsRequestFrMealVoucherConecsDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsRequestFrMealVoucherConecs copyWith({PostPaymentMethodConfigurationsRequestFrMealVoucherConecsDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestFrMealVoucherConecs(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsRequestFrMealVoucherConecs &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestFrMealVoucherConecs(displayPreference: $displayPreference)'; } 
+ }

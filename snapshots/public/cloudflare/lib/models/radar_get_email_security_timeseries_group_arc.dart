@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecurityTimeseriesGroupArc {const RadarGetEmailSecurityTimeseriesGroupArc._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupArc.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailSecurityTimeseriesGroupArc._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupArc pass = RadarGetEmailSecurityTimeseriesGroupArc._('PASS');
+
+static const RadarGetEmailSecurityTimeseriesGroupArc none = RadarGetEmailSecurityTimeseriesGroupArc._('NONE');
+
+static const RadarGetEmailSecurityTimeseriesGroupArc fail = RadarGetEmailSecurityTimeseriesGroupArc._('FAIL');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupArc> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupArc && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupArc($value)'; } 
+ }

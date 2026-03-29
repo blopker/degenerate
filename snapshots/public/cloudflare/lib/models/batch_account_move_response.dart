@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'batch_account_move_response_statuses.dart';final class BatchAccountMoveResponse {const BatchAccountMoveResponse({required this.statuses});
+
+factory BatchAccountMoveResponse.fromJson(Map<String, dynamic> json) { return BatchAccountMoveResponse(
+  statuses: BatchAccountMoveResponseStatuses.fromJson(json['statuses'] as Map<String, dynamic>),
+); }
+
+final BatchAccountMoveResponseStatuses statuses;
+
+Map<String, dynamic> toJson() { return {
+  'statuses': statuses.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('statuses'); } 
+BatchAccountMoveResponse copyWith({BatchAccountMoveResponseStatuses? statuses}) { return BatchAccountMoveResponse(
+  statuses: statuses ?? this.statuses,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BatchAccountMoveResponse &&
+          statuses == other.statuses; } 
+@override int get hashCode { return statuses.hashCode; } 
+@override String toString() { return 'BatchAccountMoveResponse(statuses: $statuses)'; } 
+ }

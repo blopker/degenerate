@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'email_rule_action.dart';import 'email_rule_enabled.dart';import 'email_rule_identifier.dart';import 'email_rule_matcher.dart';import 'email_rule_name.dart';import 'email_rule_priority.dart';import 'email_rule_tag.dart';final class EmailRuleProperties {const EmailRuleProperties({this.actions, this.enabled, this.id, this.matchers, this.name, this.priority, this.tag, });
+
+factory EmailRuleProperties.fromJson(Map<String, dynamic> json) { return EmailRuleProperties(
+  actions: (json['actions'] as List<dynamic>?)?.map((e) => EmailRuleAction.fromJson(e as Map<String, dynamic>)).toList(),
+  enabled: json['enabled'] != null ? EmailRuleEnabled.fromJson(json['enabled'] as bool) : null,
+  id: json['id'] != null ? EmailRuleIdentifier.fromJson(json['id'] as String) : null,
+  matchers: (json['matchers'] as List<dynamic>?)?.map((e) => EmailRuleMatcher.fromJson(e as Map<String, dynamic>)).toList(),
+  name: json['name'] != null ? EmailRuleName.fromJson(json['name'] as String) : null,
+  priority: json['priority'] != null ? EmailRulePriority.fromJson(json['priority'] as num) : null,
+  tag: json['tag'] != null ? EmailRuleTag.fromJson(json['tag'] as String) : null,
+); }
+
+/// List actions patterns.
+final List<EmailRuleAction>? actions;
+
+/// Routing rule status.
+final EmailRuleEnabled? enabled;
+
+/// Routing rule identifier.
+final EmailRuleIdentifier? id;
+
+/// Matching patterns to forward to your actions.
+final List<EmailRuleMatcher>? matchers;
+
+/// Routing rule name.
+final EmailRuleName? name;
+
+/// Priority of the routing rule.
+final EmailRulePriority? priority;
+
+final EmailRuleTag? tag;
+
+Map<String, dynamic> toJson() { return {
+  if (actions != null) 'actions': actions?.map((e) => e.toJson()).toList(),
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (matchers != null) 'matchers': matchers?.map((e) => e.toJson()).toList(),
+  if (name != null) 'name': name?.toJson(),
+  if (priority != null) 'priority': priority?.toJson(),
+  if (tag != null) 'tag': tag?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EmailRuleProperties copyWith({List<EmailRuleAction> Function()? actions, EmailRuleEnabled Function()? enabled, EmailRuleIdentifier Function()? id, List<EmailRuleMatcher> Function()? matchers, EmailRuleName Function()? name, EmailRulePriority Function()? priority, EmailRuleTag Function()? tag, }) { return EmailRuleProperties(
+  actions: actions != null ? actions() : this.actions,
+  enabled: enabled != null ? enabled() : this.enabled,
+  id: id != null ? id() : this.id,
+  matchers: matchers != null ? matchers() : this.matchers,
+  name: name != null ? name() : this.name,
+  priority: priority != null ? priority() : this.priority,
+  tag: tag != null ? tag() : this.tag,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailRuleProperties &&
+          listEquals(actions, other.actions) &&
+          enabled == other.enabled &&
+          id == other.id &&
+          listEquals(matchers, other.matchers) &&
+          name == other.name &&
+          priority == other.priority &&
+          tag == other.tag; } 
+@override int get hashCode { return Object.hash(Object.hashAll(actions ?? const []), enabled, id, Object.hashAll(matchers ?? const []), name, priority, tag); } 
+@override String toString() { return 'EmailRuleProperties(actions: $actions, enabled: $enabled, id: $id, matchers: $matchers, name: $name, priority: $priority, tag: $tag)'; } 
+ }

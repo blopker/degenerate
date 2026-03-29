@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dependency_graph_spdx_sbom_sbom.dart';/// A schema for the SPDX JSON format returned by the Dependency Graph.
+final class DependencyGraphSpdxSbom {const DependencyGraphSpdxSbom({required this.sbom});
+
+factory DependencyGraphSpdxSbom.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbom(
+  sbom: DependencyGraphSpdxSbomSbom.fromJson(json['sbom'] as Map<String, dynamic>),
+); }
+
+final DependencyGraphSpdxSbomSbom sbom;
+
+Map<String, dynamic> toJson() { return {
+  'sbom': sbom.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('sbom'); } 
+DependencyGraphSpdxSbom copyWith({DependencyGraphSpdxSbomSbom? sbom}) { return DependencyGraphSpdxSbom(
+  sbom: sbom ?? this.sbom,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DependencyGraphSpdxSbom &&
+          sbom == other.sbom; } 
+@override int get hashCode { return sbom.hashCode; } 
+@override String toString() { return 'DependencyGraphSpdxSbom(sbom: $sbom)'; } 
+ }

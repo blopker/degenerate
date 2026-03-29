@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_facebook_nonomni_detr_resnet50_response400_errors.dart';final class WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400 {const WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400({required this.errors, required this.result, required this.success, });
+
+factory WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400(
+  errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  success: json['success'] as bool,
+); }
+
+final List<WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400Errors> errors;
+
+final Map<String,dynamic> result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result,
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400 copyWith({List<WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400(
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400 &&
+          listEquals(errors, other.errors) &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
+@override String toString() { return 'WorkersAiPostRunCfFacebookNonomniDetrResnet50Response400(errors: $errors, result: $result, success: $success)'; } 
+ }

@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken({required this.used});
+
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
+  used: json['used'] as bool,
+); }
+
+/// Indicates if Stripe used a network token, either user provided or Stripe managed when processing the transaction.
+final bool used;
+
+Map<String, dynamic> toJson() { return {
+  'used': used,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('used') && json['used'] is bool; } 
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken copyWith({bool? used}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(
+  used: used ?? this.used,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken &&
+          used == other.used; } 
+@override int get hashCode { return used.hashCode; } 
+@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken(used: $used)'; } 
+ }

@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class IssuesListForAuthenticatedUserDirection {const IssuesListForAuthenticatedUserDirection._(this.value);
+
+factory IssuesListForAuthenticatedUserDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => IssuesListForAuthenticatedUserDirection._(json),
+}; }
+
+static const IssuesListForAuthenticatedUserDirection asc = IssuesListForAuthenticatedUserDirection._('asc');
+
+static const IssuesListForAuthenticatedUserDirection desc = IssuesListForAuthenticatedUserDirection._('desc');
+
+static const List<IssuesListForAuthenticatedUserDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuesListForAuthenticatedUserDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuesListForAuthenticatedUserDirection($value)'; } 
+ }

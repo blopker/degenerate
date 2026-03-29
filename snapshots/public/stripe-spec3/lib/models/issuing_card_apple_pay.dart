@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Reason the card is ineligible for Apple Pay
+final class IssuingCardApplePayIneligibleReason {const IssuingCardApplePayIneligibleReason._(this.value);
+
+factory IssuingCardApplePayIneligibleReason.fromJson(String json) { return switch (json) {
+  'missing_agreement' => missingAgreement,
+  'missing_cardholder_contact' => missingCardholderContact,
+  'unsupported_region' => unsupportedRegion,
+  _ => IssuingCardApplePayIneligibleReason._(json),
+}; }
+
+static const IssuingCardApplePayIneligibleReason missingAgreement = IssuingCardApplePayIneligibleReason._('missing_agreement');
+
+static const IssuingCardApplePayIneligibleReason missingCardholderContact = IssuingCardApplePayIneligibleReason._('missing_cardholder_contact');
+
+static const IssuingCardApplePayIneligibleReason unsupportedRegion = IssuingCardApplePayIneligibleReason._('unsupported_region');
+
+static const List<IssuingCardApplePayIneligibleReason> values = [missingAgreement, missingCardholderContact, unsupportedRegion];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingCardApplePayIneligibleReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingCardApplePayIneligibleReason($value)'; } 
+ }
+/// 
+final class IssuingCardApplePay {const IssuingCardApplePay({required this.eligible, this.ineligibleReason, });
+
+factory IssuingCardApplePay.fromJson(Map<String, dynamic> json) { return IssuingCardApplePay(
+  eligible: json['eligible'] as bool,
+  ineligibleReason: json['ineligible_reason'] != null ? IssuingCardApplePayIneligibleReason.fromJson(json['ineligible_reason'] as String) : null,
+); }
+
+/// Apple Pay Eligibility
+final bool eligible;
+
+/// Reason the card is ineligible for Apple Pay
+final IssuingCardApplePayIneligibleReason? ineligibleReason;
+
+Map<String, dynamic> toJson() { return {
+  'eligible': eligible,
+  if (ineligibleReason != null) 'ineligible_reason': ineligibleReason?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('eligible') && json['eligible'] is bool; } 
+IssuingCardApplePay copyWith({bool? eligible, IssuingCardApplePayIneligibleReason? Function()? ineligibleReason, }) { return IssuingCardApplePay(
+  eligible: eligible ?? this.eligible,
+  ineligibleReason: ineligibleReason != null ? ineligibleReason() : this.ineligibleReason,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingCardApplePay &&
+          eligible == other.eligible &&
+          ineligibleReason == other.ineligibleReason; } 
+@override int get hashCode { return Object.hash(eligible, ineligibleReason); } 
+@override String toString() { return 'IssuingCardApplePay(eligible: $eligible, ineligibleReason: $ineligibleReason)'; } 
+ }

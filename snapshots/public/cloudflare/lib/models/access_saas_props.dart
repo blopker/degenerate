@@ -1,0 +1,81 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_logo_url.dart';import 'access_oidc_saas_app.dart';import 'access_saas_props_saas_app.dart';import 'access_saml_saas_app.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_scim_config.dart';import 'access_type.dart';final class AccessSaasProps {const AccessSaasProps({this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.customPages, this.logoUrl, this.name, this.saasApp, this.scimConfig, this.tags, this.type, });
+
+factory AccessSaasProps.fromJson(Map<String, dynamic> json) { return AccessSaasProps(
+  allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  appLauncherVisible: json['app_launcher_visible'] != null ? AccessAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,
+  autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
+  customPages: (json['custom_pages'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
+  name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
+  saasApp: json['saas_app'] != null ? OneOf2.parse(json['saas_app'], fromA: (v) => AccessSamlSaasApp.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessOidcSaasApp.fromJson(v as Map<String, dynamic>),) : null,
+  scimConfig: json['scim_config'] != null ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  type: json['type'] != null ? AccessType.fromJson(json['type'] as String) : null,
+); }
+
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
+final List<String>? allowedIdps;
+
+/// Displays the application in the App Launcher.
+final AccessAppLauncherVisible? appLauncherVisible;
+
+final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
+
+final List<String>? customPages;
+
+/// The image URL for the logo shown in the App Launcher dashboard.
+final AccessLogoUrl? logoUrl;
+
+/// The name of the application.
+final AccessAppsComponentsSchemasName? name;
+
+final AccessSaasPropsSaasApp? saasApp;
+
+final AccessScimConfig? scimConfig;
+
+final List<String>? tags;
+
+final AccessType? type;
+
+Map<String, dynamic> toJson() { return {
+  'allowed_idps': ?allowedIdps,
+  if (appLauncherVisible != null) 'app_launcher_visible': appLauncherVisible?.toJson(),
+  if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
+  'custom_pages': ?customPages,
+  if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (saasApp != null) 'saas_app': saasApp?.toJson(),
+  if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
+  'tags': ?tags,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessSaasProps copyWith({List<String> Function()? allowedIdps, AccessAppLauncherVisible Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, List<String> Function()? customPages, AccessLogoUrl Function()? logoUrl, AccessAppsComponentsSchemasName Function()? name, AccessSaasPropsSaasApp Function()? saasApp, AccessScimConfig Function()? scimConfig, List<String> Function()? tags, AccessType Function()? type, }) { return AccessSaasProps(
+  allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
+  appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
+  autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
+  customPages: customPages != null ? customPages() : this.customPages,
+  logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
+  name: name != null ? name() : this.name,
+  saasApp: saasApp != null ? saasApp() : this.saasApp,
+  scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
+  tags: tags != null ? tags() : this.tags,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessSaasProps &&
+          listEquals(allowedIdps, other.allowedIdps) &&
+          appLauncherVisible == other.appLauncherVisible &&
+          autoRedirectToIdentity == other.autoRedirectToIdentity &&
+          listEquals(customPages, other.customPages) &&
+          logoUrl == other.logoUrl &&
+          name == other.name &&
+          saasApp == other.saasApp &&
+          scimConfig == other.scimConfig &&
+          listEquals(tags, other.tags) &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, Object.hashAll(customPages ?? const []), logoUrl, name, saasApp, scimConfig, Object.hashAll(tags ?? const []), type); } 
+@override String toString() { return 'AccessSaasProps(allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, customPages: $customPages, logoUrl: $logoUrl, name: $name, saasApp: $saasApp, scimConfig: $scimConfig, tags: $tags, type: $type)'; } 
+ }

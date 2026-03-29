@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'savings' => savings,
+  _ => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories checking = PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._('checking');
+
+static const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories savings = PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories._('savings');
+
+static const List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories> values = [checking, savings];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories($value)'; } 
+ }
+final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters({this.accountSubcategories});
+
+factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
+  accountSubcategories: (json['account_subcategories'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories.fromJson(e as String)).toList(),
+); }
+
+final List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories>? accountSubcategories;
+
+Map<String, dynamic> toJson() { return {
+  if (accountSubcategories != null) 'account_subcategories': accountSubcategories?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters copyWith({List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFiltersAccountSubcategories> Function()? accountSubcategories}) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(
+  accountSubcategories: accountSubcategories != null ? accountSubcategories() : this.accountSubcategories,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters &&
+          listEquals(accountSubcategories, other.accountSubcategories); } 
+@override int get hashCode { return Object.hashAll(accountSubcategories ?? const []).hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountFinancialConnectionsFilters(accountSubcategories: $accountSubcategories)'; } 
+ }

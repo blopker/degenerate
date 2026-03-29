@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailRoutingSummaryByDkimDmarc {const RadarGetEmailRoutingSummaryByDkimDmarc._(this.value);
+
+factory RadarGetEmailRoutingSummaryByDkimDmarc.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailRoutingSummaryByDkimDmarc._(json),
+}; }
+
+static const RadarGetEmailRoutingSummaryByDkimDmarc pass = RadarGetEmailRoutingSummaryByDkimDmarc._('PASS');
+
+static const RadarGetEmailRoutingSummaryByDkimDmarc none = RadarGetEmailRoutingSummaryByDkimDmarc._('NONE');
+
+static const RadarGetEmailRoutingSummaryByDkimDmarc fail = RadarGetEmailRoutingSummaryByDkimDmarc._('FAIL');
+
+static const List<RadarGetEmailRoutingSummaryByDkimDmarc> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingSummaryByDkimDmarc && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingSummaryByDkimDmarc($value)'; } 
+ }

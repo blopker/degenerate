@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SpectrumAnalyticsMetrics2 {const SpectrumAnalyticsMetrics2._(this.value);
+
+factory SpectrumAnalyticsMetrics2.fromJson(String json) { return switch (json) {
+  'count' => count,
+  'bytesIngress' => bytesIngress,
+  'bytesEgress' => bytesEgress,
+  'durationAvg' => durationAvg,
+  'durationMedian' => durationMedian,
+  'duration90th' => duration90th,
+  'duration99th' => duration99th,
+  _ => SpectrumAnalyticsMetrics2._(json),
+}; }
+
+static const SpectrumAnalyticsMetrics2 count = SpectrumAnalyticsMetrics2._('count');
+
+static const SpectrumAnalyticsMetrics2 bytesIngress = SpectrumAnalyticsMetrics2._('bytesIngress');
+
+static const SpectrumAnalyticsMetrics2 bytesEgress = SpectrumAnalyticsMetrics2._('bytesEgress');
+
+static const SpectrumAnalyticsMetrics2 durationAvg = SpectrumAnalyticsMetrics2._('durationAvg');
+
+static const SpectrumAnalyticsMetrics2 durationMedian = SpectrumAnalyticsMetrics2._('durationMedian');
+
+static const SpectrumAnalyticsMetrics2 duration90th = SpectrumAnalyticsMetrics2._('duration90th');
+
+static const SpectrumAnalyticsMetrics2 duration99th = SpectrumAnalyticsMetrics2._('duration99th');
+
+static const List<SpectrumAnalyticsMetrics2> values = [count, bytesIngress, bytesEgress, durationAvg, durationMedian, duration90th, duration99th];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SpectrumAnalyticsMetrics2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SpectrumAnalyticsMetrics2($value)'; } 
+ }

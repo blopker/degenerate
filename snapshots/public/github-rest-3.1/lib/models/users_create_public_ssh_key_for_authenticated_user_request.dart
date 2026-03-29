@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UsersCreatePublicSshKeyForAuthenticatedUserRequest {const UsersCreatePublicSshKeyForAuthenticatedUserRequest({this.title, required this.key, });
+
+factory UsersCreatePublicSshKeyForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersCreatePublicSshKeyForAuthenticatedUserRequest(
+  title: json['title'] as String?,
+  key: json['key'] as String,
+); }
+
+/// A descriptive name for the new key.
+final String? title;
+
+/// The public SSH key to add to your GitHub account.
+final String key;
+
+Map<String, dynamic> toJson() { return {
+  'title': ?title,
+  'key': key,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
+UsersCreatePublicSshKeyForAuthenticatedUserRequest copyWith({String Function()? title, String? key, }) { return UsersCreatePublicSshKeyForAuthenticatedUserRequest(
+  title: title != null ? title() : this.title,
+  key: key ?? this.key,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UsersCreatePublicSshKeyForAuthenticatedUserRequest &&
+          title == other.title &&
+          key == other.key; } 
+@override int get hashCode { return Object.hash(title, key); } 
+@override String toString() { return 'UsersCreatePublicSshKeyForAuthenticatedUserRequest(title: $title, key: $key)'; } 
+ }

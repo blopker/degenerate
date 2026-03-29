@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2._(this.value);
+
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2._(json),
+}; }
+
+static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2 $empty = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2._('');
+
+static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2($value)'; } 
+ }
+typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRates = OneOf2<List<String>,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestDefaultTaxRatesVariant2>;

@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ChatCompletionRequestFunctionMessage {const ChatCompletionRequestFunctionMessage({required this.role, required this.content, required this.name, });
+
+factory ChatCompletionRequestFunctionMessage.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestFunctionMessage(
+  role: json['role'] as String,
+  content: json['content'] as String?,
+  name: json['name'] as String,
+); }
+
+/// The role of the messages author, in this case `function`.
+final String role;
+
+/// The contents of the function message.
+final String? content;
+
+/// The name of the function to call.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'role': role,
+  'content': ?content,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] is String &&
+      json.containsKey('content') && json['content'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+ChatCompletionRequestFunctionMessage copyWith({String? role, String? Function()? content, String? name, }) { return ChatCompletionRequestFunctionMessage(
+  role: role ?? this.role,
+  content: content != null ? content() : this.content,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChatCompletionRequestFunctionMessage &&
+          role == other.role &&
+          content == other.content &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(role, content, name); } 
+@override String toString() { return 'ChatCompletionRequestFunctionMessage(role: $role, content: $content, name: $name)'; } 
+ }

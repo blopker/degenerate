@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mcn_catalog_sync_update_mode.dart';final class McnUpdateCatalogSyncRequest {const McnUpdateCatalogSyncRequest({this.description, this.name, this.policy, this.updateMode, });
+
+factory McnUpdateCatalogSyncRequest.fromJson(Map<String, dynamic> json) { return McnUpdateCatalogSyncRequest(
+  description: json['description'] as String?,
+  name: json['name'] as String?,
+  policy: json['policy'] as String?,
+  updateMode: json['update_mode'] != null ? McnCatalogSyncUpdateMode.fromJson(json['update_mode'] as String) : null,
+); }
+
+final String? description;
+
+final String? name;
+
+final String? policy;
+
+final McnCatalogSyncUpdateMode? updateMode;
+
+Map<String, dynamic> toJson() { return {
+  'description': ?description,
+  'name': ?name,
+  'policy': ?policy,
+  if (updateMode != null) 'update_mode': updateMode?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+McnUpdateCatalogSyncRequest copyWith({String Function()? description, String Function()? name, String Function()? policy, McnCatalogSyncUpdateMode Function()? updateMode, }) { return McnUpdateCatalogSyncRequest(
+  description: description != null ? description() : this.description,
+  name: name != null ? name() : this.name,
+  policy: policy != null ? policy() : this.policy,
+  updateMode: updateMode != null ? updateMode() : this.updateMode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnUpdateCatalogSyncRequest &&
+          description == other.description &&
+          name == other.name &&
+          policy == other.policy &&
+          updateMode == other.updateMode; } 
+@override int get hashCode { return Object.hash(description, name, policy, updateMode); } 
+@override String toString() { return 'McnUpdateCatalogSyncRequest(description: $description, name: $name, policy: $policy, updateMode: $updateMode)'; } 
+ }

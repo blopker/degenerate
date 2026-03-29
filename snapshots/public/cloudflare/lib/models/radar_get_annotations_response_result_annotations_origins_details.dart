@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAnnotationsResponseResultAnnotationsOriginsDetails {const RadarGetAnnotationsResponseResultAnnotationsOriginsDetails({required this.name, required this.origin, });
+
+factory RadarGetAnnotationsResponseResultAnnotationsOriginsDetails.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResultAnnotationsOriginsDetails(
+  name: json['name'] as String,
+  origin: json['origin'] as String,
+); }
+
+final String name;
+
+final String origin;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'origin': origin,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('origin') && json['origin'] is String; } 
+RadarGetAnnotationsResponseResultAnnotationsOriginsDetails copyWith({String? name, String? origin, }) { return RadarGetAnnotationsResponseResultAnnotationsOriginsDetails(
+  name: name ?? this.name,
+  origin: origin ?? this.origin,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAnnotationsResponseResultAnnotationsOriginsDetails &&
+          name == other.name &&
+          origin == other.origin; } 
+@override int get hashCode { return Object.hash(name, origin); } 
+@override String toString() { return 'RadarGetAnnotationsResponseResultAnnotationsOriginsDetails(name: $name, origin: $origin)'; } 
+ }

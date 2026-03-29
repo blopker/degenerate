@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_hostname.dart';import 'workers_schemas_environment.dart';import 'workers_schemas_service.dart';import 'workers_zone_identifier.dart';final class WorkerDomainAttachToDomainRequest {const WorkerDomainAttachToDomainRequest({this.environment, required this.hostname, required this.service, required this.zoneId, });
+
+factory WorkerDomainAttachToDomainRequest.fromJson(Map<String, dynamic> json) { return WorkerDomainAttachToDomainRequest(
+  environment: json['environment'] != null ? WorkersSchemasEnvironment.fromJson(json['environment'] as String) : null,
+  hostname: WorkersHostname.fromJson(json['hostname'] as String),
+  service: WorkersSchemasService.fromJson(json['service'] as String),
+  zoneId: WorkersZoneIdentifier.fromJson(json['zone_id'] as String),
+); }
+
+/// Worker environment associated with the zone and hostname.
+final WorkersSchemasEnvironment? environment;
+
+/// Hostname of the Worker Domain.
+final WorkersHostname hostname;
+
+/// Worker service associated with the zone and hostname.
+final WorkersSchemasService service;
+
+/// Identifier of the zone.
+final WorkersZoneIdentifier zoneId;
+
+Map<String, dynamic> toJson() { return {
+  if (environment != null) 'environment': environment?.toJson(),
+  'hostname': hostname.toJson(),
+  'service': service.toJson(),
+  'zone_id': zoneId.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') &&
+      json.containsKey('service') &&
+      json.containsKey('zone_id'); } 
+WorkerDomainAttachToDomainRequest copyWith({WorkersSchemasEnvironment Function()? environment, WorkersHostname? hostname, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, }) { return WorkerDomainAttachToDomainRequest(
+  environment: environment != null ? environment() : this.environment,
+  hostname: hostname ?? this.hostname,
+  service: service ?? this.service,
+  zoneId: zoneId ?? this.zoneId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkerDomainAttachToDomainRequest &&
+          environment == other.environment &&
+          hostname == other.hostname &&
+          service == other.service &&
+          zoneId == other.zoneId; } 
+@override int get hashCode { return Object.hash(environment, hostname, service, zoneId); } 
+@override String toString() { return 'WorkerDomainAttachToDomainRequest(environment: $environment, hostname: $hostname, service: $service, zoneId: $zoneId)'; } 
+ }

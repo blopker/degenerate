@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTimeseriesGroupByBotClassIpVersion {const RadarGetHttpTimeseriesGroupByBotClassIpVersion._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByBotClassIpVersion.fromJson(String json) { return switch (json) {
+  'IPv4' => iPv4,
+  'IPv6' => iPv6,
+  _ => RadarGetHttpTimeseriesGroupByBotClassIpVersion._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByBotClassIpVersion iPv4 = RadarGetHttpTimeseriesGroupByBotClassIpVersion._('IPv4');
+
+static const RadarGetHttpTimeseriesGroupByBotClassIpVersion iPv6 = RadarGetHttpTimeseriesGroupByBotClassIpVersion._('IPv6');
+
+static const List<RadarGetHttpTimeseriesGroupByBotClassIpVersion> values = [iPv4, iPv6];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBotClassIpVersion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBotClassIpVersion($value)'; } 
+ }

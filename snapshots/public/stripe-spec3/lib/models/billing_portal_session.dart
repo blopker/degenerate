@@ -1,0 +1,303 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration.dart';import 'billing_portal_session_configuration.dart';import 'billing_portal_session_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
+
+factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'bg' => bg,
+  'cs' => cs,
+  'da' => da,
+  'de' => de,
+  'el' => el,
+  'en' => en,
+  'en-AU' => enAu,
+  'en-CA' => enCa,
+  'en-GB' => enGb,
+  'en-IE' => enIe,
+  'en-IN' => enIn,
+  'en-NZ' => enNz,
+  'en-SG' => enSg,
+  'es' => es,
+  'es-419' => es419,
+  'et' => et,
+  'fi' => fi,
+  'fil' => fil,
+  'fr' => fr,
+  'fr-CA' => frCa,
+  'hr' => hr,
+  'hu' => hu,
+  'id' => id,
+  'it' => it,
+  'ja' => ja,
+  'ko' => ko,
+  'lt' => lt,
+  'lv' => lv,
+  'ms' => ms,
+  'mt' => mt,
+  'nb' => nb,
+  'nl' => nl,
+  'pl' => pl,
+  'pt' => pt,
+  'pt-BR' => ptBr,
+  'ro' => ro,
+  'ru' => ru,
+  'sk' => sk,
+  'sl' => sl,
+  'sv' => sv,
+  'th' => th,
+  'tr' => tr,
+  'vi' => vi,
+  'zh' => zh,
+  'zh-HK' => zhHk,
+  'zh-TW' => zhTw,
+  _ => BillingPortalSessionLocale._(json),
+}; }
+
+static const BillingPortalSessionLocale auto = BillingPortalSessionLocale._('auto');
+
+static const BillingPortalSessionLocale bg = BillingPortalSessionLocale._('bg');
+
+static const BillingPortalSessionLocale cs = BillingPortalSessionLocale._('cs');
+
+static const BillingPortalSessionLocale da = BillingPortalSessionLocale._('da');
+
+static const BillingPortalSessionLocale de = BillingPortalSessionLocale._('de');
+
+static const BillingPortalSessionLocale el = BillingPortalSessionLocale._('el');
+
+static const BillingPortalSessionLocale en = BillingPortalSessionLocale._('en');
+
+static const BillingPortalSessionLocale enAu = BillingPortalSessionLocale._('en-AU');
+
+static const BillingPortalSessionLocale enCa = BillingPortalSessionLocale._('en-CA');
+
+static const BillingPortalSessionLocale enGb = BillingPortalSessionLocale._('en-GB');
+
+static const BillingPortalSessionLocale enIe = BillingPortalSessionLocale._('en-IE');
+
+static const BillingPortalSessionLocale enIn = BillingPortalSessionLocale._('en-IN');
+
+static const BillingPortalSessionLocale enNz = BillingPortalSessionLocale._('en-NZ');
+
+static const BillingPortalSessionLocale enSg = BillingPortalSessionLocale._('en-SG');
+
+static const BillingPortalSessionLocale es = BillingPortalSessionLocale._('es');
+
+static const BillingPortalSessionLocale es419 = BillingPortalSessionLocale._('es-419');
+
+static const BillingPortalSessionLocale et = BillingPortalSessionLocale._('et');
+
+static const BillingPortalSessionLocale fi = BillingPortalSessionLocale._('fi');
+
+static const BillingPortalSessionLocale fil = BillingPortalSessionLocale._('fil');
+
+static const BillingPortalSessionLocale fr = BillingPortalSessionLocale._('fr');
+
+static const BillingPortalSessionLocale frCa = BillingPortalSessionLocale._('fr-CA');
+
+static const BillingPortalSessionLocale hr = BillingPortalSessionLocale._('hr');
+
+static const BillingPortalSessionLocale hu = BillingPortalSessionLocale._('hu');
+
+static const BillingPortalSessionLocale id = BillingPortalSessionLocale._('id');
+
+static const BillingPortalSessionLocale it = BillingPortalSessionLocale._('it');
+
+static const BillingPortalSessionLocale ja = BillingPortalSessionLocale._('ja');
+
+static const BillingPortalSessionLocale ko = BillingPortalSessionLocale._('ko');
+
+static const BillingPortalSessionLocale lt = BillingPortalSessionLocale._('lt');
+
+static const BillingPortalSessionLocale lv = BillingPortalSessionLocale._('lv');
+
+static const BillingPortalSessionLocale ms = BillingPortalSessionLocale._('ms');
+
+static const BillingPortalSessionLocale mt = BillingPortalSessionLocale._('mt');
+
+static const BillingPortalSessionLocale nb = BillingPortalSessionLocale._('nb');
+
+static const BillingPortalSessionLocale nl = BillingPortalSessionLocale._('nl');
+
+static const BillingPortalSessionLocale pl = BillingPortalSessionLocale._('pl');
+
+static const BillingPortalSessionLocale pt = BillingPortalSessionLocale._('pt');
+
+static const BillingPortalSessionLocale ptBr = BillingPortalSessionLocale._('pt-BR');
+
+static const BillingPortalSessionLocale ro = BillingPortalSessionLocale._('ro');
+
+static const BillingPortalSessionLocale ru = BillingPortalSessionLocale._('ru');
+
+static const BillingPortalSessionLocale sk = BillingPortalSessionLocale._('sk');
+
+static const BillingPortalSessionLocale sl = BillingPortalSessionLocale._('sl');
+
+static const BillingPortalSessionLocale sv = BillingPortalSessionLocale._('sv');
+
+static const BillingPortalSessionLocale th = BillingPortalSessionLocale._('th');
+
+static const BillingPortalSessionLocale tr = BillingPortalSessionLocale._('tr');
+
+static const BillingPortalSessionLocale vi = BillingPortalSessionLocale._('vi');
+
+static const BillingPortalSessionLocale zh = BillingPortalSessionLocale._('zh');
+
+static const BillingPortalSessionLocale zhHk = BillingPortalSessionLocale._('zh-HK');
+
+static const BillingPortalSessionLocale zhTw = BillingPortalSessionLocale._('zh-TW');
+
+static const List<BillingPortalSessionLocale> values = [auto, bg, cs, da, de, el, en, enAu, enCa, enGb, enIe, enIn, enNz, enSg, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingPortalSessionLocale && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingPortalSessionLocale($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class BillingPortalSessionObject {const BillingPortalSessionObject._(this.value);
+
+factory BillingPortalSessionObject.fromJson(String json) { return switch (json) {
+  'billing_portal.session' => billingPortalSession,
+  _ => BillingPortalSessionObject._(json),
+}; }
+
+static const BillingPortalSessionObject billingPortalSession = BillingPortalSessionObject._('billing_portal.session');
+
+static const List<BillingPortalSessionObject> values = [billingPortalSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BillingPortalSessionObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BillingPortalSessionObject($value)'; } 
+ }
+/// The Billing customer portal is a Stripe-hosted UI for subscription and
+/// billing management.
+/// 
+/// A portal configuration describes the functionality and features that you
+/// want to provide to your customers through the portal.
+/// 
+/// A portal session describes the instantiation of the customer portal for
+/// a particular customer. By visiting the session's URL, the customer
+/// can manage their subscriptions and billing details. For security reasons,
+/// sessions are short-lived and will expire if the customer does not visit the URL.
+/// Create sessions on-demand when customers intend to manage their subscriptions
+/// and billing details.
+/// 
+/// Related guide: [Customer management](/customer-management)
+final class BillingPortalSession {const BillingPortalSession({required this.configuration, required this.created, required this.customer, this.customerAccount, this.flow, required this.id, required this.livemode, this.locale, required this.object, this.onBehalfOf, this.returnUrl, required this.url, });
+
+factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return BillingPortalSession(
+  configuration: OneOf2.parse(json['configuration'], fromA: (v) => v as String, fromB: (v) => BillingPortalConfiguration.fromJson(v as Map<String, dynamic>),),
+  created: (json['created'] as num).toInt(),
+  customer: json['customer'] as String,
+  customerAccount: json['customer_account'] as String?,
+  flow: json['flow'] != null ? BillingPortalSessionFlow.fromJson(json['flow'] as Map<String, dynamic>) : null,
+  id: json['id'] as String,
+  livemode: json['livemode'] as bool,
+  locale: json['locale'] != null ? BillingPortalSessionLocale.fromJson(json['locale'] as String) : null,
+  object: BillingPortalSessionObject.fromJson(json['object'] as String),
+  onBehalfOf: json['on_behalf_of'] as String?,
+  returnUrl: json['return_url'] as String?,
+  url: json['url'] as String,
+); }
+
+/// The configuration used by this session, describing the features available.
+final BillingPortalSessionConfiguration configuration;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// The ID of the customer for this session.
+final String customer;
+
+/// The ID of the account for this session.
+final String? customerAccount;
+
+/// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
+final BillingPortalSessionFlow? flow;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+final BillingPortalSessionLocale? locale;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final BillingPortalSessionObject object;
+
+/// The account for which the session was created on behalf of. When specified, only subscriptions and invoices with this `on_behalf_of` account appear in the portal. For more information, see the [docs](https://docs.stripe.com/connect/separate-charges-and-transfers#settlement-merchant). Use the [Accounts API](https://docs.stripe.com/api/accounts/object#account_object-settings-branding) to modify the `on_behalf_of` account's branding settings, which the portal displays.
+final String? onBehalfOf;
+
+/// The URL to redirect customers to when they click on the portal's link to return to your website.
+final String? returnUrl;
+
+/// The short-lived URL of the session that gives customers access to the customer portal.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'configuration': configuration.toJson(),
+  'created': created,
+  'customer': customer,
+  'customer_account': ?customerAccount,
+  if (flow != null) 'flow': flow?.toJson(),
+  'id': id,
+  'livemode': livemode,
+  if (locale != null) 'locale': locale?.toJson(),
+  'object': object.toJson(),
+  'on_behalf_of': ?onBehalfOf,
+  'return_url': ?returnUrl,
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('configuration') &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('customer') && json['customer'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('url') && json['url'] is String; } 
+BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, String? Function()? customerAccount, BillingPortalSessionFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
+  configuration: configuration ?? this.configuration,
+  created: created ?? this.created,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  flow: flow != null ? flow() : this.flow,
+  id: id ?? this.id,
+  livemode: livemode ?? this.livemode,
+  locale: locale != null ? locale() : this.locale,
+  object: object ?? this.object,
+  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingPortalSession &&
+          configuration == other.configuration &&
+          created == other.created &&
+          customer == other.customer &&
+          customerAccount == other.customerAccount &&
+          flow == other.flow &&
+          id == other.id &&
+          livemode == other.livemode &&
+          locale == other.locale &&
+          object == other.object &&
+          onBehalfOf == other.onBehalfOf &&
+          returnUrl == other.returnUrl &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(configuration, created, customer, customerAccount, flow, id, livemode, locale, object, onBehalfOf, returnUrl, url); } 
+@override String toString() { return 'BillingPortalSession(configuration: $configuration, created: $created, customer: $customer, customerAccount: $customerAccount, flow: $flow, id: $id, livemode: $livemode, locale: $locale, object: $object, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl, url: $url)'; } 
+ }

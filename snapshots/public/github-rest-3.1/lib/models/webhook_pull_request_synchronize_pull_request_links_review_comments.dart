@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPullRequestSynchronizePullRequestLinksReviewComments {const WebhookPullRequestSynchronizePullRequestLinksReviewComments({required this.href});
+
+factory WebhookPullRequestSynchronizePullRequestLinksReviewComments.fromJson(Map<String, dynamic> json) { return WebhookPullRequestSynchronizePullRequestLinksReviewComments(
+  href: json['href'] as String,
+); }
+
+final String href;
+
+Map<String, dynamic> toJson() { return {
+  'href': href,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
+WebhookPullRequestSynchronizePullRequestLinksReviewComments copyWith({String? href}) { return WebhookPullRequestSynchronizePullRequestLinksReviewComments(
+  href: href ?? this.href,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestSynchronizePullRequestLinksReviewComments &&
+          href == other.href; } 
+@override int get hashCode { return href.hashCode; } 
+@override String toString() { return 'WebhookPullRequestSynchronizePullRequestLinksReviewComments(href: $href)'; } 
+ }

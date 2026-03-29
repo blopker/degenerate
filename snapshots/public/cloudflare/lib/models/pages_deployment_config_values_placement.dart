@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Placement setting used for Pages Functions.
+final class PagesDeploymentConfigValuesPlacement {const PagesDeploymentConfigValuesPlacement({required this.mode});
+
+factory PagesDeploymentConfigValuesPlacement.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesPlacement(
+  mode: json['mode'] as String,
+); }
+
+/// Placement mode.
+final String mode;
+
+Map<String, dynamic> toJson() { return {
+  'mode': mode,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode') && json['mode'] is String; } 
+PagesDeploymentConfigValuesPlacement copyWith({String? mode}) { return PagesDeploymentConfigValuesPlacement(
+  mode: mode ?? this.mode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDeploymentConfigValuesPlacement &&
+          mode == other.mode; } 
+@override int get hashCode { return mode.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesPlacement(mode: $mode)'; } 
+ }

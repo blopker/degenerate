@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role for the new member.
+///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.
+///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.
+///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
+///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
+final class OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole._(this.value);
+
+factory OrgsCreateInvitationRequestRole.fromJson(String json) { return switch (json) {
+  'admin' => admin,
+  'direct_member' => directMember,
+  'billing_manager' => billingManager,
+  'reinstate' => reinstate,
+  _ => OrgsCreateInvitationRequestRole._(json),
+}; }
+
+static const OrgsCreateInvitationRequestRole admin = OrgsCreateInvitationRequestRole._('admin');
+
+static const OrgsCreateInvitationRequestRole directMember = OrgsCreateInvitationRequestRole._('direct_member');
+
+static const OrgsCreateInvitationRequestRole billingManager = OrgsCreateInvitationRequestRole._('billing_manager');
+
+static const OrgsCreateInvitationRequestRole reinstate = OrgsCreateInvitationRequestRole._('reinstate');
+
+static const List<OrgsCreateInvitationRequestRole> values = [admin, directMember, billingManager, reinstate];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OrgsCreateInvitationRequestRole && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'OrgsCreateInvitationRequestRole($value)'; } 
+ }
+final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role = OrgsCreateInvitationRequestRole.directMember, this.teamIds, });
+
+factory OrgsCreateInvitationRequest.fromJson(Map<String, dynamic> json) { return OrgsCreateInvitationRequest(
+  inviteeId: json['invitee_id'] != null ? (json['invitee_id'] as num).toInt() : null,
+  email: json['email'] as String?,
+  role: json.containsKey('role') ? OrgsCreateInvitationRequestRole.fromJson(json['role'] as String) : OrgsCreateInvitationRequestRole.directMember,
+  teamIds: (json['team_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+); }
+
+/// **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
+final int? inviteeId;
+
+/// **Required unless you provide `invitee_id`**. Email address of the person you are inviting, which can be an existing GitHub user.
+final String? email;
+
+/// The role for the new member.
+///  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.
+///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.
+///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
+///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
+final OrgsCreateInvitationRequestRole role;
+
+/// Specify IDs for the teams you want to invite new members to.
+final List<int>? teamIds;
+
+Map<String, dynamic> toJson() { return {
+  'invitee_id': ?inviteeId,
+  'email': ?email,
+  'role': role.toJson(),
+  'team_ids': ?teamIds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+OrgsCreateInvitationRequest copyWith({int Function()? inviteeId, String Function()? email, OrgsCreateInvitationRequestRole Function()? role, List<int> Function()? teamIds, }) { return OrgsCreateInvitationRequest(
+  inviteeId: inviteeId != null ? inviteeId() : this.inviteeId,
+  email: email != null ? email() : this.email,
+  role: role != null ? role() : this.role,
+  teamIds: teamIds != null ? teamIds() : this.teamIds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgsCreateInvitationRequest &&
+          inviteeId == other.inviteeId &&
+          email == other.email &&
+          role == other.role &&
+          listEquals(teamIds, other.teamIds); } 
+@override int get hashCode { return Object.hash(inviteeId, email, role, Object.hashAll(teamIds ?? const [])); } 
+@override String toString() { return 'OrgsCreateInvitationRequest(inviteeId: $inviteeId, email: $email, role: $role, teamIds: $teamIds)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'charge_transfer_data.dart';/// An optional dictionary including the account to automatically transfer to as part of a destination charge. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
+final class ChargeTransferData2 {const ChargeTransferData2({this.chargeTransferData});
+
+factory ChargeTransferData2.fromJson(Map<String, dynamic> json) { return ChargeTransferData2(
+  chargeTransferData: ChargeTransferData.canParse(json) ? ChargeTransferData.fromJson(json) : null,
+); }
+
+final ChargeTransferData? chargeTransferData;
+
+/// At least one variant must be present.
+bool get isValid { return chargeTransferData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?chargeTransferData?.toJson(),
+}; } 
+ }

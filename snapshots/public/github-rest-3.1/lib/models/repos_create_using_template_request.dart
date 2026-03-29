@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReposCreateUsingTemplateRequest {const ReposCreateUsingTemplateRequest({this.owner, required this.name, this.description, this.includeAllBranches = false, this.private = false, });
+
+factory ReposCreateUsingTemplateRequest.fromJson(Map<String, dynamic> json) { return ReposCreateUsingTemplateRequest(
+  owner: json['owner'] as String?,
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  includeAllBranches: json.containsKey('include_all_branches') ? json['include_all_branches'] as bool : false,
+  private: json.containsKey('private') ? json['private'] as bool : false,
+); }
+
+/// The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
+final String? owner;
+
+/// The name of the new repository.
+final String name;
+
+/// A short description of the new repository.
+final String? description;
+
+/// Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.
+final bool includeAllBranches;
+
+/// Either `true` to create a new private repository or `false` to create a new public one.
+final bool private;
+
+Map<String, dynamic> toJson() { return {
+  'owner': ?owner,
+  'name': name,
+  'description': ?description,
+  'include_all_branches': includeAllBranches,
+  'private': private,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+ReposCreateUsingTemplateRequest copyWith({String Function()? owner, String? name, String Function()? description, bool Function()? includeAllBranches, bool Function()? private, }) { return ReposCreateUsingTemplateRequest(
+  owner: owner != null ? owner() : this.owner,
+  name: name ?? this.name,
+  description: description != null ? description() : this.description,
+  includeAllBranches: includeAllBranches != null ? includeAllBranches() : this.includeAllBranches,
+  private: private != null ? private() : this.private,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposCreateUsingTemplateRequest &&
+          owner == other.owner &&
+          name == other.name &&
+          description == other.description &&
+          includeAllBranches == other.includeAllBranches &&
+          private == other.private; } 
+@override int get hashCode { return Object.hash(owner, name, description, includeAllBranches, private); } 
+@override String toString() { return 'ReposCreateUsingTemplateRequest(owner: $owner, name: $name, description: $description, includeAllBranches: $includeAllBranches, private: $private)'; } 
+ }

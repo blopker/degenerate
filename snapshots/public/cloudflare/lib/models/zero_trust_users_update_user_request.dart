@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_schemas_email.dart';import 'access_users_components_schemas_name.dart';final class ZeroTrustUsersUpdateUserRequest {const ZeroTrustUsersUpdateUserRequest({required this.email, required this.name, });
+
+factory ZeroTrustUsersUpdateUserRequest.fromJson(Map<String, dynamic> json) { return ZeroTrustUsersUpdateUserRequest(
+  email: AccessSchemasEmail.fromJson(json['email'] as String),
+  name: AccessUsersComponentsSchemasName.fromJson(json['name'] as String),
+); }
+
+/// The email of the user.
+final AccessSchemasEmail email;
+
+/// The name of the user.
+final AccessUsersComponentsSchemasName name;
+
+Map<String, dynamic> toJson() { return {
+  'email': email.toJson(),
+  'name': name.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') &&
+      json.containsKey('name'); } 
+ZeroTrustUsersUpdateUserRequest copyWith({AccessSchemasEmail? email, AccessUsersComponentsSchemasName? name, }) { return ZeroTrustUsersUpdateUserRequest(
+  email: email ?? this.email,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustUsersUpdateUserRequest &&
+          email == other.email &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(email, name); } 
+@override String toString() { return 'ZeroTrustUsersUpdateUserRequest(email: $email, name: $name)'; } 
+ }

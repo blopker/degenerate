@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam113Network {const PaymentMethodOptionsParam113Network._(this.value);
+
+factory PaymentMethodOptionsParam113Network.fromJson(String json) { return switch (json) {
+  'ach' => ach,
+  'us_domestic_wire' => usDomesticWire,
+  _ => PaymentMethodOptionsParam113Network._(json),
+}; }
+
+static const PaymentMethodOptionsParam113Network ach = PaymentMethodOptionsParam113Network._('ach');
+
+static const PaymentMethodOptionsParam113Network usDomesticWire = PaymentMethodOptionsParam113Network._('us_domestic_wire');
+
+static const List<PaymentMethodOptionsParam113Network> values = [ach, usDomesticWire];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsParam113Network && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam113Network($value)'; } 
+ }
+final class PaymentMethodOptionsParam113 {const PaymentMethodOptionsParam113({this.network});
+
+factory PaymentMethodOptionsParam113.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam113(
+  network: json['network'] != null ? PaymentMethodOptionsParam113Network.fromJson(json['network'] as String) : null,
+); }
+
+final PaymentMethodOptionsParam113Network? network;
+
+Map<String, dynamic> toJson() { return {
+  if (network != null) 'network': network?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam113 copyWith({PaymentMethodOptionsParam113Network Function()? network}) { return PaymentMethodOptionsParam113(
+  network: network != null ? network() : this.network,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsParam113 &&
+          network == other.network; } 
+@override int get hashCode { return network.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam113(network: $network)'; } 
+ }

@@ -1,0 +1,259 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_issues_milestoned_issue_performed_via_github_app_owner.dart';import 'webhook_issues_milestoned_issue_performed_via_github_app_permissions.dart';final class WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents {const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._(this.value);
+
+factory WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
+  'branch_protection_rule' => branchProtectionRule,
+  'check_run' => checkRun,
+  'check_suite' => checkSuite,
+  'code_scanning_alert' => codeScanningAlert,
+  'commit_comment' => commitComment,
+  'content_reference' => contentReference,
+  'create' => create,
+  'delete' => delete,
+  'deployment' => deployment,
+  'deployment_review' => deploymentReview,
+  'deployment_status' => deploymentStatus,
+  'deploy_key' => deployKey,
+  'discussion' => discussion,
+  'discussion_comment' => discussionComment,
+  'fork' => fork,
+  'gollum' => gollum,
+  'issues' => issues,
+  'issue_comment' => issueComment,
+  'label' => label,
+  'member' => member,
+  'membership' => membership,
+  'milestone' => milestone,
+  'organization' => organization,
+  'org_block' => orgBlock,
+  'page_build' => pageBuild,
+  'project' => project,
+  'project_card' => projectCard,
+  'project_column' => projectColumn,
+  'public' => public,
+  'pull_request' => pullRequest,
+  'pull_request_review' => pullRequestReview,
+  'pull_request_review_comment' => pullRequestReviewComment,
+  'push' => push,
+  'registry_package' => registryPackage,
+  'release' => release,
+  'repository' => repository,
+  'repository_dispatch' => repositoryDispatch,
+  'secret_scanning_alert' => secretScanningAlert,
+  'star' => star,
+  'status' => status,
+  'team' => team,
+  'team_add' => teamAdd,
+  'watch' => watch,
+  'workflow_dispatch' => workflowDispatch,
+  'workflow_run' => workflowRun,
+  'reminder' => reminder,
+  _ => WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._(json),
+}; }
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents branchProtectionRule = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('branch_protection_rule');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents checkRun = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('check_run');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents checkSuite = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('check_suite');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents codeScanningAlert = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('code_scanning_alert');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents commitComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('commit_comment');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents contentReference = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('content_reference');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents create = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('create');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents delete = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('delete');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents deployment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('deployment');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents deploymentReview = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('deployment_review');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents deploymentStatus = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('deployment_status');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents deployKey = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('deploy_key');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents discussion = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('discussion');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents discussionComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('discussion_comment');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents fork = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('fork');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents gollum = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('gollum');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents issues = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('issues');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents issueComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('issue_comment');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents label = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('label');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents member = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('member');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents membership = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('membership');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents milestone = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('milestone');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents organization = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('organization');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents orgBlock = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('org_block');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents pageBuild = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('page_build');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents project = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('project');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents projectCard = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('project_card');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents projectColumn = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('project_column');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents public = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('public');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents pullRequest = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('pull_request');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents pullRequestReview = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('pull_request_review');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents pullRequestReviewComment = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('pull_request_review_comment');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents push = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('push');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents registryPackage = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('registry_package');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents release = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('release');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents repository = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('repository');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents repositoryDispatch = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('repository_dispatch');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents secretScanningAlert = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('secret_scanning_alert');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents star = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('star');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents status = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('status');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents team = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('team');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents teamAdd = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('team_add');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents watch = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('watch');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents workflowDispatch = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('workflow_dispatch');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents workflowRun = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('workflow_run');
+
+static const WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents reminder = WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents._('reminder');
+
+static const List<WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, reminder];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents($value)'; } 
+ }
+/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+final class WebhookIssuesMilestonedIssuePerformedViaGithubApp {const WebhookIssuesMilestonedIssuePerformedViaGithubApp({required this.createdAt, required this.description, this.events, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, this.permissions, this.slug, required this.updatedAt, });
+
+factory WebhookIssuesMilestonedIssuePerformedViaGithubApp.fromJson(Map<String, dynamic> json) { return WebhookIssuesMilestonedIssuePerformedViaGithubApp(
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  description: json['description'] as String?,
+  events: (json['events'] as List<dynamic>?)?.map((e) => WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents.fromJson(e as String)).toList(),
+  externalUrl: json['external_url'] != null ? Uri.parse(json['external_url'] as String) : null,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  owner: json['owner'] != null ? WebhookIssuesMilestonedIssuePerformedViaGithubAppOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  slug: json['slug'] as String?,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+); }
+
+final DateTime? createdAt;
+
+final String? description;
+
+/// The list of events for the GitHub app
+final List<WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents>? events;
+
+final Uri? externalUrl;
+
+final Uri htmlUrl;
+
+/// Unique identifier of the GitHub app
+final int? id;
+
+/// The name of the GitHub app
+final String name;
+
+final String nodeId;
+
+final WebhookIssuesMilestonedIssuePerformedViaGithubAppOwner? owner;
+
+/// The set of permissions for the GitHub app
+final WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissions? permissions;
+
+/// The slug name of the GitHub app
+final String? slug;
+
+final DateTime? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'description': ?description,
+  if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
+  if (externalUrl != null) 'external_url': externalUrl?.toString(),
+  'html_url': htmlUrl.toString(),
+  'id': ?id,
+  'name': name,
+  'node_id': nodeId,
+  if (owner != null) 'owner': owner?.toJson(),
+  if (permissions != null) 'permissions': permissions?.toJson(),
+  'slug': ?slug,
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('external_url') && json['external_url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('owner') &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+WebhookIssuesMilestonedIssuePerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookIssuesMilestonedIssuePerformedViaGithubAppEvents> Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookIssuesMilestonedIssuePerformedViaGithubAppOwner? Function()? owner, WebhookIssuesMilestonedIssuePerformedViaGithubAppPermissions Function()? permissions, String Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookIssuesMilestonedIssuePerformedViaGithubApp(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  description: description != null ? description() : this.description,
+  events: events != null ? events() : this.events,
+  externalUrl: externalUrl != null ? externalUrl() : this.externalUrl,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id != null ? id() : this.id,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  owner: owner != null ? owner() : this.owner,
+  permissions: permissions != null ? permissions() : this.permissions,
+  slug: slug != null ? slug() : this.slug,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssuesMilestonedIssuePerformedViaGithubApp &&
+          createdAt == other.createdAt &&
+          description == other.description &&
+          listEquals(events, other.events) &&
+          externalUrl == other.externalUrl &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          owner == other.owner &&
+          permissions == other.permissions &&
+          slug == other.slug &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt); } 
+@override String toString() { return 'WebhookIssuesMilestonedIssuePerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
+ }

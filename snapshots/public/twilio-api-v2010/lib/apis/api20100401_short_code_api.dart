@@ -1,0 +1,93 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_short_code.dart';import '../models/list_short_code_response.dart';import '../models/update_short_code_request.dart';/// Api20100401ShortCodeApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401ShortCodeApi with ApiExecutor {const Api20100401ShortCodeApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Fetch an instance of a short code
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
+Future<ApiResult<AccountShortCode, Never>> fetchShortCode({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountShortCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a short code with the following parameters
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
+Future<ApiResult<AccountShortCode, Never>> updateShortCode({required String accountSid, required String sid, UpdateShortCodeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  body: body == null ? null : [
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.apiVersion case final apiVersion$?)
+      'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
+    if (body.smsUrl case final smsUrl$?)
+      'SmsUrl=${Uri.encodeQueryComponent(smsUrl$.toString())}',
+    if (body.smsMethod case final smsMethod$?)
+      'SmsMethod=${Uri.encodeQueryComponent(smsMethod$.toJson())}',
+    if (body.smsFallbackUrl case final smsFallbackUrl$?)
+      'SmsFallbackUrl=${Uri.encodeQueryComponent(smsFallbackUrl$.toString())}',
+    if (body.smsFallbackMethod case final smsFallbackMethod$?)
+      'SmsFallbackMethod=${Uri.encodeQueryComponent(smsFallbackMethod$.toJson())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountShortCode.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Retrieve a list of short-codes belonging to the account used to make the request
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json`
+Future<ApiResult<ListShortCodeResponse, Never>> listShortCode({required String accountSid, String? friendlyName, String? shortCode, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (shortCode != null) queryParameters['ShortCode'] = shortCode;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/SMS/ShortCodes.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListShortCodeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

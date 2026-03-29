@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'charge_transfer_data_destination.dart';/// 
+final class ChargeTransferData {const ChargeTransferData({this.amount, required this.destination, });
+
+factory ChargeTransferData.fromJson(Map<String, dynamic> json) { return ChargeTransferData(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// The amount transferred to the destination account, if specified. By default, the entire charge amount is transferred to the destination account.
+final int? amount;
+
+/// ID of an existing, connected Stripe account to transfer funds to if `transfer_data` was specified in the charge request.
+final ChargeTransferDataDestination destination;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  'destination': destination.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
+ChargeTransferData copyWith({int? Function()? amount, ChargeTransferDataDestination? destination, }) { return ChargeTransferData(
+  amount: amount != null ? amount() : this.amount,
+  destination: destination ?? this.destination,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChargeTransferData &&
+          amount == other.amount &&
+          destination == other.destination; } 
+@override int get hashCode { return Object.hash(amount, destination); } 
+@override String toString() { return 'ChargeTransferData(amount: $amount, destination: $destination)'; } 
+ }

@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the event. Always `response.reasoning_text.done`.
+/// 
+final class ResponseReasoningTextDoneEventType {const ResponseReasoningTextDoneEventType._(this.value);
+
+factory ResponseReasoningTextDoneEventType.fromJson(String json) { return switch (json) {
+  'response.reasoning_text.done' => responseReasoningTextDone,
+  _ => ResponseReasoningTextDoneEventType._(json),
+}; }
+
+static const ResponseReasoningTextDoneEventType responseReasoningTextDone = ResponseReasoningTextDoneEventType._('response.reasoning_text.done');
+
+static const List<ResponseReasoningTextDoneEventType> values = [responseReasoningTextDone];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseReasoningTextDoneEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseReasoningTextDoneEventType($value)'; } 
+ }
+/// Emitted when a reasoning text is completed.
+final class ResponseReasoningTextDoneEvent {const ResponseReasoningTextDoneEvent({required this.type, required this.itemId, required this.outputIndex, required this.contentIndex, required this.text, required this.sequenceNumber, });
+
+factory ResponseReasoningTextDoneEvent.fromJson(Map<String, dynamic> json) { return ResponseReasoningTextDoneEvent(
+  type: ResponseReasoningTextDoneEventType.fromJson(json['type'] as String),
+  itemId: json['item_id'] as String,
+  outputIndex: (json['output_index'] as num).toInt(),
+  contentIndex: (json['content_index'] as num).toInt(),
+  text: json['text'] as String,
+  sequenceNumber: (json['sequence_number'] as num).toInt(),
+); }
+
+/// The type of the event. Always `response.reasoning_text.done`.
+/// 
+final ResponseReasoningTextDoneEventType type;
+
+/// The ID of the item this reasoning text is associated with.
+/// 
+final String itemId;
+
+/// The index of the output item this reasoning text is associated with.
+/// 
+final int outputIndex;
+
+/// The index of the reasoning content part.
+/// 
+final int contentIndex;
+
+/// The full text of the completed reasoning content.
+/// 
+final String text;
+
+/// The sequence number of this event.
+/// 
+final int sequenceNumber;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'item_id': itemId,
+  'output_index': outputIndex,
+  'content_index': contentIndex,
+  'text': text,
+  'sequence_number': sequenceNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('item_id') && json['item_id'] is String &&
+      json.containsKey('output_index') && json['output_index'] is num &&
+      json.containsKey('content_index') && json['content_index'] is num &&
+      json.containsKey('text') && json['text'] is String &&
+      json.containsKey('sequence_number') && json['sequence_number'] is num; } 
+ResponseReasoningTextDoneEvent copyWith({ResponseReasoningTextDoneEventType? type, String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, }) { return ResponseReasoningTextDoneEvent(
+  type: type ?? this.type,
+  itemId: itemId ?? this.itemId,
+  outputIndex: outputIndex ?? this.outputIndex,
+  contentIndex: contentIndex ?? this.contentIndex,
+  text: text ?? this.text,
+  sequenceNumber: sequenceNumber ?? this.sequenceNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseReasoningTextDoneEvent &&
+          type == other.type &&
+          itemId == other.itemId &&
+          outputIndex == other.outputIndex &&
+          contentIndex == other.contentIndex &&
+          text == other.text &&
+          sequenceNumber == other.sequenceNumber; } 
+@override int get hashCode { return Object.hash(type, itemId, outputIndex, contentIndex, text, sequenceNumber); } 
+@override String toString() { return 'ResponseReasoningTextDoneEvent(type: $type, itemId: $itemId, outputIndex: $outputIndex, contentIndex: $contentIndex, text: $text, sequenceNumber: $sequenceNumber)'; } 
+ }

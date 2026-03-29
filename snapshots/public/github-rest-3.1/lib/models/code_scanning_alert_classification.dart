@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A classification of the file. For example to identify it as generated.
+final class CodeScanningAlertClassification {const CodeScanningAlertClassification._(this.value);
+
+factory CodeScanningAlertClassification.fromJson(String json) { return switch (json) {
+  'source' => source,
+  'generated' => generated,
+  'test' => test,
+  'library' => $library,
+  'null' => $null,
+  _ => CodeScanningAlertClassification._(json),
+}; }
+
+static const CodeScanningAlertClassification source = CodeScanningAlertClassification._('source');
+
+static const CodeScanningAlertClassification generated = CodeScanningAlertClassification._('generated');
+
+static const CodeScanningAlertClassification test = CodeScanningAlertClassification._('test');
+
+static const CodeScanningAlertClassification $library = CodeScanningAlertClassification._('library');
+
+static const CodeScanningAlertClassification $null = CodeScanningAlertClassification._('null');
+
+static const List<CodeScanningAlertClassification> values = [source, generated, test, $library, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningAlertClassification && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningAlertClassification($value)'; } 
+ }

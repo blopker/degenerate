@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'cloudflare_pipelines_workers_pipelines_http_source_cors.dart';/// Specifies the format of source data.
+final class CloudflarePipelinesWorkersPipelinesHttpSourceFormat {const CloudflarePipelinesWorkersPipelinesHttpSourceFormat._(this.value);
+
+factory CloudflarePipelinesWorkersPipelinesHttpSourceFormat.fromJson(String json) { return switch (json) {
+  'json' => $json,
+  _ => CloudflarePipelinesWorkersPipelinesHttpSourceFormat._(json),
+}; }
+
+static const CloudflarePipelinesWorkersPipelinesHttpSourceFormat $json = CloudflarePipelinesWorkersPipelinesHttpSourceFormat._('json');
+
+static const List<CloudflarePipelinesWorkersPipelinesHttpSourceFormat> values = [$json];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CloudflarePipelinesWorkersPipelinesHttpSourceFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesWorkersPipelinesHttpSourceFormat($value)'; } 
+ }
+/// [DEPRECATED] HTTP source configuration. Use the new streams API instead.
+final class CloudflarePipelinesWorkersPipelinesHttpSource {const CloudflarePipelinesWorkersPipelinesHttpSource({this.authentication, this.cors, required this.format, required this.type, });
+
+factory CloudflarePipelinesWorkersPipelinesHttpSource.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesHttpSource(
+  authentication: json['authentication'] as bool?,
+  cors: json['cors'] != null ? CloudflarePipelinesWorkersPipelinesHttpSourceCors.fromJson(json['cors'] as Map<String, dynamic>) : null,
+  format: CloudflarePipelinesWorkersPipelinesHttpSourceFormat.fromJson(json['format'] as String),
+  type: json['type'] as String,
+); }
+
+/// Specifies whether authentication is required to send to this pipeline via HTTP.
+final bool? authentication;
+
+final CloudflarePipelinesWorkersPipelinesHttpSourceCors? cors;
+
+/// Specifies the format of source data.
+final CloudflarePipelinesWorkersPipelinesHttpSourceFormat format;
+
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'authentication': ?authentication,
+  if (cors != null) 'cors': cors?.toJson(),
+  'format': format.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('format') &&
+      json.containsKey('type') && json['type'] is String; } 
+CloudflarePipelinesWorkersPipelinesHttpSource copyWith({bool Function()? authentication, CloudflarePipelinesWorkersPipelinesHttpSourceCors Function()? cors, CloudflarePipelinesWorkersPipelinesHttpSourceFormat? format, String? type, }) { return CloudflarePipelinesWorkersPipelinesHttpSource(
+  authentication: authentication != null ? authentication() : this.authentication,
+  cors: cors != null ? cors() : this.cors,
+  format: format ?? this.format,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudflarePipelinesWorkersPipelinesHttpSource &&
+          authentication == other.authentication &&
+          cors == other.cors &&
+          format == other.format &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(authentication, cors, format, type); } 
+@override String toString() { return 'CloudflarePipelinesWorkersPipelinesHttpSource(authentication: $authentication, cors: $cors, format: $format, type: $type)'; } 
+ }

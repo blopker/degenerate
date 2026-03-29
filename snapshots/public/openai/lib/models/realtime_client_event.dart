@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtime_client_event_conversation_item_create.dart';import 'realtime_client_event_conversation_item_delete.dart';import 'realtime_client_event_conversation_item_retrieve.dart';import 'realtime_client_event_conversation_item_truncate.dart';import 'realtime_client_event_input_audio_buffer_append.dart';import 'realtime_client_event_input_audio_buffer_clear.dart';import 'realtime_client_event_input_audio_buffer_commit.dart';import 'realtime_client_event_output_audio_buffer_clear.dart';import 'realtime_client_event_response_cancel.dart';import 'realtime_client_event_response_create.dart';import 'realtime_client_event_session_update.dart';/// A realtime client event.
+/// 
+final class RealtimeClientEvent {const RealtimeClientEvent({this.realtimeClientEventConversationItemCreate, this.realtimeClientEventConversationItemDelete, this.realtimeClientEventConversationItemRetrieve, this.realtimeClientEventConversationItemTruncate, this.realtimeClientEventInputAudioBufferAppend, this.realtimeClientEventInputAudioBufferClear, this.realtimeClientEventOutputAudioBufferClear, this.realtimeClientEventInputAudioBufferCommit, this.realtimeClientEventResponseCancel, this.realtimeClientEventResponseCreate, this.realtimeClientEventSessionUpdate, });
+
+factory RealtimeClientEvent.fromJson(Map<String, dynamic> json) { return RealtimeClientEvent(
+  realtimeClientEventConversationItemCreate: RealtimeClientEventConversationItemCreate.canParse(json) ? RealtimeClientEventConversationItemCreate.fromJson(json) : null,
+  realtimeClientEventConversationItemDelete: RealtimeClientEventConversationItemDelete.canParse(json) ? RealtimeClientEventConversationItemDelete.fromJson(json) : null,
+  realtimeClientEventConversationItemRetrieve: RealtimeClientEventConversationItemRetrieve.canParse(json) ? RealtimeClientEventConversationItemRetrieve.fromJson(json) : null,
+  realtimeClientEventConversationItemTruncate: RealtimeClientEventConversationItemTruncate.canParse(json) ? RealtimeClientEventConversationItemTruncate.fromJson(json) : null,
+  realtimeClientEventInputAudioBufferAppend: RealtimeClientEventInputAudioBufferAppend.canParse(json) ? RealtimeClientEventInputAudioBufferAppend.fromJson(json) : null,
+  realtimeClientEventInputAudioBufferClear: RealtimeClientEventInputAudioBufferClear.canParse(json) ? RealtimeClientEventInputAudioBufferClear.fromJson(json) : null,
+  realtimeClientEventOutputAudioBufferClear: RealtimeClientEventOutputAudioBufferClear.canParse(json) ? RealtimeClientEventOutputAudioBufferClear.fromJson(json) : null,
+  realtimeClientEventInputAudioBufferCommit: RealtimeClientEventInputAudioBufferCommit.canParse(json) ? RealtimeClientEventInputAudioBufferCommit.fromJson(json) : null,
+  realtimeClientEventResponseCancel: RealtimeClientEventResponseCancel.canParse(json) ? RealtimeClientEventResponseCancel.fromJson(json) : null,
+  realtimeClientEventResponseCreate: RealtimeClientEventResponseCreate.canParse(json) ? RealtimeClientEventResponseCreate.fromJson(json) : null,
+  realtimeClientEventSessionUpdate: RealtimeClientEventSessionUpdate.canParse(json) ? RealtimeClientEventSessionUpdate.fromJson(json) : null,
+); }
+
+final RealtimeClientEventConversationItemCreate? realtimeClientEventConversationItemCreate;
+
+final RealtimeClientEventConversationItemDelete? realtimeClientEventConversationItemDelete;
+
+final RealtimeClientEventConversationItemRetrieve? realtimeClientEventConversationItemRetrieve;
+
+final RealtimeClientEventConversationItemTruncate? realtimeClientEventConversationItemTruncate;
+
+final RealtimeClientEventInputAudioBufferAppend? realtimeClientEventInputAudioBufferAppend;
+
+final RealtimeClientEventInputAudioBufferClear? realtimeClientEventInputAudioBufferClear;
+
+final RealtimeClientEventOutputAudioBufferClear? realtimeClientEventOutputAudioBufferClear;
+
+final RealtimeClientEventInputAudioBufferCommit? realtimeClientEventInputAudioBufferCommit;
+
+final RealtimeClientEventResponseCancel? realtimeClientEventResponseCancel;
+
+final RealtimeClientEventResponseCreate? realtimeClientEventResponseCreate;
+
+final RealtimeClientEventSessionUpdate? realtimeClientEventSessionUpdate;
+
+/// At least one variant must be present.
+bool get isValid { return realtimeClientEventConversationItemCreate != null || realtimeClientEventConversationItemDelete != null || realtimeClientEventConversationItemRetrieve != null || realtimeClientEventConversationItemTruncate != null || realtimeClientEventInputAudioBufferAppend != null || realtimeClientEventInputAudioBufferClear != null || realtimeClientEventOutputAudioBufferClear != null || realtimeClientEventInputAudioBufferCommit != null || realtimeClientEventResponseCancel != null || realtimeClientEventResponseCreate != null || realtimeClientEventSessionUpdate != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?realtimeClientEventConversationItemCreate?.toJson(),
+  ...?realtimeClientEventConversationItemDelete?.toJson(),
+  ...?realtimeClientEventConversationItemRetrieve?.toJson(),
+  ...?realtimeClientEventConversationItemTruncate?.toJson(),
+  ...?realtimeClientEventInputAudioBufferAppend?.toJson(),
+  ...?realtimeClientEventInputAudioBufferClear?.toJson(),
+  ...?realtimeClientEventOutputAudioBufferClear?.toJson(),
+  ...?realtimeClientEventInputAudioBufferCommit?.toJson(),
+  ...?realtimeClientEventResponseCancel?.toJson(),
+  ...?realtimeClientEventResponseCreate?.toJson(),
+  ...?realtimeClientEventSessionUpdate?.toJson(),
+}; } 
+ }

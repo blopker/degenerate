@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
+/// 
+final class RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType._(this.value);
+
+factory RealtimeConversationItemWithReferenceContentType.fromJson(String json) { return switch (json) {
+  'input_audio' => inputAudio,
+  'input_text' => inputText,
+  'item_reference' => itemReference,
+  'text' => text,
+  _ => RealtimeConversationItemWithReferenceContentType._(json),
+}; }
+
+static const RealtimeConversationItemWithReferenceContentType inputAudio = RealtimeConversationItemWithReferenceContentType._('input_audio');
+
+static const RealtimeConversationItemWithReferenceContentType inputText = RealtimeConversationItemWithReferenceContentType._('input_text');
+
+static const RealtimeConversationItemWithReferenceContentType itemReference = RealtimeConversationItemWithReferenceContentType._('item_reference');
+
+static const RealtimeConversationItemWithReferenceContentType text = RealtimeConversationItemWithReferenceContentType._('text');
+
+static const List<RealtimeConversationItemWithReferenceContentType> values = [inputAudio, inputText, itemReference, text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeConversationItemWithReferenceContentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeConversationItemWithReferenceContentType($value)'; } 
+ }
+final class RealtimeConversationItemWithReferenceContent {const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript, });
+
+factory RealtimeConversationItemWithReferenceContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemWithReferenceContent(
+  type: json['type'] != null ? RealtimeConversationItemWithReferenceContentType.fromJson(json['type'] as String) : null,
+  text: json['text'] as String?,
+  id: json['id'] as String?,
+  audio: json['audio'] as String?,
+  transcript: json['transcript'] as String?,
+); }
+
+/// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
+/// 
+final RealtimeConversationItemWithReferenceContentType? type;
+
+/// The text content, used for `input_text` and `text` content types.
+/// 
+final String? text;
+
+/// ID of a previous conversation item to reference (for `item_reference`
+/// content types in `response.create` events). These can reference both
+/// client and server created items.
+/// 
+final String? id;
+
+/// Base64-encoded audio bytes, used for `input_audio` content type.
+/// 
+final String? audio;
+
+/// The transcript of the audio, used for `input_audio` content type.
+/// 
+final String? transcript;
+
+Map<String, dynamic> toJson() { return {
+  if (type != null) 'type': type?.toJson(),
+  'text': ?text,
+  'id': ?id,
+  'audio': ?audio,
+  'transcript': ?transcript,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimeConversationItemWithReferenceContent copyWith({RealtimeConversationItemWithReferenceContentType Function()? type, String Function()? text, String Function()? id, String Function()? audio, String Function()? transcript, }) { return RealtimeConversationItemWithReferenceContent(
+  type: type != null ? type() : this.type,
+  text: text != null ? text() : this.text,
+  id: id != null ? id() : this.id,
+  audio: audio != null ? audio() : this.audio,
+  transcript: transcript != null ? transcript() : this.transcript,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeConversationItemWithReferenceContent &&
+          type == other.type &&
+          text == other.text &&
+          id == other.id &&
+          audio == other.audio &&
+          transcript == other.transcript; } 
+@override int get hashCode { return Object.hash(type, text, id, audio, transcript); } 
+@override String toString() { return 'RealtimeConversationItemWithReferenceContent(type: $type, text: $text, id: $id, audio: $audio, transcript: $transcript)'; } 
+ }

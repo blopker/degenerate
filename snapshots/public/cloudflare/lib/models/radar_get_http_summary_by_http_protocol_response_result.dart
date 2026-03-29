@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_http_summary_by_http_protocol_response_result_meta.dart';import 'radar_get_http_summary_by_http_protocol_response_result_summary0.dart';final class RadarGetHttpSummaryByHttpProtocolResponseResult {const RadarGetHttpSummaryByHttpProtocolResponseResult({required this.meta, required this.summary0, });
+
+factory RadarGetHttpSummaryByHttpProtocolResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByHttpProtocolResponseResult(
+  meta: RadarGetHttpSummaryByHttpProtocolResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  summary0: RadarGetHttpSummaryByHttpProtocolResponseResultSummary0.fromJson(json['summary_0'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetHttpSummaryByHttpProtocolResponseResultMeta meta;
+
+final RadarGetHttpSummaryByHttpProtocolResponseResultSummary0 summary0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'summary_0': summary0.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('summary_0'); } 
+RadarGetHttpSummaryByHttpProtocolResponseResult copyWith({RadarGetHttpSummaryByHttpProtocolResponseResultMeta? meta, RadarGetHttpSummaryByHttpProtocolResponseResultSummary0? summary0, }) { return RadarGetHttpSummaryByHttpProtocolResponseResult(
+  meta: meta ?? this.meta,
+  summary0: summary0 ?? this.summary0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpSummaryByHttpProtocolResponseResult &&
+          meta == other.meta &&
+          summary0 == other.summary0; } 
+@override int get hashCode { return Object.hash(meta, summary0); } 
+@override String toString() { return 'RadarGetHttpSummaryByHttpProtocolResponseResult(meta: $meta, summary0: $summary0)'; } 
+ }

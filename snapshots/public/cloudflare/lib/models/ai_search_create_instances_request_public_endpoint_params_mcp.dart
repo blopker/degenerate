@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AiSearchCreateInstancesRequestPublicEndpointParamsMcp {const AiSearchCreateInstancesRequestPublicEndpointParamsMcp({this.description = 'Finds exactly what you\'re looking for', this.disabled = false, });
+
+factory AiSearchCreateInstancesRequestPublicEndpointParamsMcp.fromJson(Map<String, dynamic> json) { return AiSearchCreateInstancesRequestPublicEndpointParamsMcp(
+  description: json.containsKey('description') ? json['description'] as String : 'Finds exactly what you\'re looking for',
+  disabled: json.containsKey('disabled') ? json['disabled'] as bool : false,
+); }
+
+final String description;
+
+/// Disable MCP endpoint for this public endpoint
+final bool disabled;
+
+Map<String, dynamic> toJson() { return {
+  'description': description,
+  'disabled': disabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AiSearchCreateInstancesRequestPublicEndpointParamsMcp copyWith({String Function()? description, bool Function()? disabled, }) { return AiSearchCreateInstancesRequestPublicEndpointParamsMcp(
+  description: description != null ? description() : this.description,
+  disabled: disabled != null ? disabled() : this.disabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchCreateInstancesRequestPublicEndpointParamsMcp &&
+          description == other.description &&
+          disabled == other.disabled; } 
+@override int get hashCode { return Object.hash(description, disabled); } 
+@override String toString() { return 'AiSearchCreateInstancesRequestPublicEndpointParamsMcp(description: $description, disabled: $disabled)'; } 
+ }

@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common80.dart';import '../models/worker_environment_put_script_content_request.dart';import '../models/workers_environment.dart';import '../models/workers_identifier.dart';import '../models/workers_service.dart';/// WorkerEnvironmentApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class WorkerEnvironmentApi with ApiExecutor {const WorkerEnvironmentApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get script content
+///
+/// Get script content from a worker with an environment.
+///
+/// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
+Future<ApiResult<String, Never>> workerEnvironmentGetScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return response.body;
+  },
+);
+ } 
+/// Put script content
+///
+/// Put script content from a worker with an environment.
+///
+/// `PUT /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/content`
+Future<ApiResult<ResponseCommon80, Never>> workerEnvironmentPutScriptContent({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerEnvironmentPutScriptContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+if (cfWorkerBodyPart != null) headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
+if (cfWorkerMainModulePart != null) headers['CF-WORKER-MAIN-MODULE-PART'] = cfWorkerMainModulePart;
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/content',
+  headers: headers,
+  body: [
+    if (body.files case final files$?)
+      ApiMultipartField.text('files', files$.toString()),
+    ApiMultipartField.text('metadata', body.metadata.toString()),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get Script Settings
+///
+/// Get script settings from a worker with an environment.
+///
+/// `GET /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentGetSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Patch Script Settings
+///
+/// Patch script metadata, such as bindings.
+///
+/// `PATCH /accounts/{account_id}/workers/services/{service_name}/environments/{environment_name}/settings`
+Future<ApiResult<ResponseCommon80, Never>> workerScriptEnvironmentPatchSettings({required WorkersIdentifier accountId, required WorkersService serviceName, required WorkersEnvironment environmentName, required ResponseCommon80 body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/workers/services/${Uri.encodeComponent(serviceName.toString())}/environments/${Uri.encodeComponent(environmentName.toString())}/settings',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

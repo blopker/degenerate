@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference._(this.value);
+
+factory PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off' => off,
+  'on' => $on,
+  _ => PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference._(json),
+}; }
+
+static const PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference none = PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference._('none');
+
+static const PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference off = PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference._('off');
+
+static const PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference $on = PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference._('on');
+
+static const List<PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference> values = [none, off, $on];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference($value)'; } 
+ }
+final class PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference({this.preference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference(
+  preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference? preference;
+
+Map<String, dynamic> toJson() { return {
+  if (preference != null) 'preference': preference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference(
+  preference: preference != null ? preference() : this.preference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference &&
+          preference == other.preference; } 
+@override int get hashCode { return preference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestKlarnaDisplayPreference(preference: $preference)'; } 
+ }

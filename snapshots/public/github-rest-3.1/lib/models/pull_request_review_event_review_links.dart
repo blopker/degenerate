@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'pull_request_review_event_review_links_html.dart';import 'pull_request_review_event_review_links_pull_request.dart';final class PullRequestReviewEventReviewLinks {const PullRequestReviewEventReviewLinks({required this.html, required this.pullRequest, });
+
+factory PullRequestReviewEventReviewLinks.fromJson(Map<String, dynamic> json) { return PullRequestReviewEventReviewLinks(
+  html: PullRequestReviewEventReviewLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
+  pullRequest: PullRequestReviewEventReviewLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+); }
+
+final PullRequestReviewEventReviewLinksHtml html;
+
+final PullRequestReviewEventReviewLinksPullRequest pullRequest;
+
+Map<String, dynamic> toJson() { return {
+  'html': html.toJson(),
+  'pull_request': pullRequest.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('html') &&
+      json.containsKey('pull_request'); } 
+PullRequestReviewEventReviewLinks copyWith({PullRequestReviewEventReviewLinksHtml? html, PullRequestReviewEventReviewLinksPullRequest? pullRequest, }) { return PullRequestReviewEventReviewLinks(
+  html: html ?? this.html,
+  pullRequest: pullRequest ?? this.pullRequest,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullRequestReviewEventReviewLinks &&
+          html == other.html &&
+          pullRequest == other.pullRequest; } 
+@override int get hashCode { return Object.hash(html, pullRequest); } 
+@override String toString() { return 'PullRequestReviewEventReviewLinks(html: $html, pullRequest: $pullRequest)'; } 
+ }

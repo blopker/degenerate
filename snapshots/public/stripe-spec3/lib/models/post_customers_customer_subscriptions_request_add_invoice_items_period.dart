@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_customers_customer_subscriptions_request_add_invoice_items_period_end.dart';import 'post_customers_customer_subscriptions_request_add_invoice_items_period_start.dart';final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
+
+factory PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(
+  end: PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),
+  start: PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart.fromJson(json['start'] as Map<String, dynamic>),
+); }
+
+final PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd end;
+
+final PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart start;
+
+Map<String, dynamic> toJson() { return {
+  'end': end.toJson(),
+  'start': start.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') &&
+      json.containsKey('start'); } 
+PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod copyWith({PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd? end, PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart? start, }) { return PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(
+  end: end ?? this.end,
+  start: start ?? this.start,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod &&
+          end == other.end &&
+          start == other.start; } 
+@override int get hashCode { return Object.hash(end, start); } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriod(end: $end, start: $start)'; } 
+ }

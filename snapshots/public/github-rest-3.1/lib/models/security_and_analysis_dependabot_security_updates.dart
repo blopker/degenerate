@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The enablement status of Dependabot security updates for the repository.
+final class SecurityAndAnalysisDependabotSecurityUpdatesStatus {const SecurityAndAnalysisDependabotSecurityUpdatesStatus._(this.value);
+
+factory SecurityAndAnalysisDependabotSecurityUpdatesStatus.fromJson(String json) { return switch (json) {
+  'enabled' => enabled,
+  'disabled' => disabled,
+  _ => SecurityAndAnalysisDependabotSecurityUpdatesStatus._(json),
+}; }
+
+static const SecurityAndAnalysisDependabotSecurityUpdatesStatus enabled = SecurityAndAnalysisDependabotSecurityUpdatesStatus._('enabled');
+
+static const SecurityAndAnalysisDependabotSecurityUpdatesStatus disabled = SecurityAndAnalysisDependabotSecurityUpdatesStatus._('disabled');
+
+static const List<SecurityAndAnalysisDependabotSecurityUpdatesStatus> values = [enabled, disabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecurityAndAnalysisDependabotSecurityUpdatesStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecurityAndAnalysisDependabotSecurityUpdatesStatus($value)'; } 
+ }
+/// Enable or disable Dependabot security updates for the repository.
+final class SecurityAndAnalysisDependabotSecurityUpdates {const SecurityAndAnalysisDependabotSecurityUpdates({this.status});
+
+factory SecurityAndAnalysisDependabotSecurityUpdates.fromJson(Map<String, dynamic> json) { return SecurityAndAnalysisDependabotSecurityUpdates(
+  status: json['status'] != null ? SecurityAndAnalysisDependabotSecurityUpdatesStatus.fromJson(json['status'] as String) : null,
+); }
+
+/// The enablement status of Dependabot security updates for the repository.
+final SecurityAndAnalysisDependabotSecurityUpdatesStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SecurityAndAnalysisDependabotSecurityUpdates copyWith({SecurityAndAnalysisDependabotSecurityUpdatesStatus Function()? status}) { return SecurityAndAnalysisDependabotSecurityUpdates(
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecurityAndAnalysisDependabotSecurityUpdates &&
+          status == other.status; } 
+@override int get hashCode { return status.hashCode; } 
+@override String toString() { return 'SecurityAndAnalysisDependabotSecurityUpdates(status: $status)'; } 
+ }

@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'object_meta.dart';import 'object_reference.dart';/// Binding ties one object to another; for example, a pod is bound to a node by a scheduler.
+final class Binding {const Binding({this.apiVersion, this.kind, this.metadata, required this.target, });
+
+factory Binding.fromJson(Map<String, dynamic> json) { return Binding(
+  apiVersion: json['apiVersion'] as String?,
+  kind: json['kind'] as String?,
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  target: ObjectReference.fromJson(json['target'] as Map<String, dynamic>),
+); }
+
+/// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+final String? apiVersion;
+
+/// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+final String? kind;
+
+/// Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+final ObjectMeta? metadata;
+
+/// The target object that you want to bind to the standard object.
+final ObjectReference target;
+
+Map<String, dynamic> toJson() { return {
+  'apiVersion': ?apiVersion,
+  'kind': ?kind,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  'target': target.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('target'); } 
+Binding copyWith({String Function()? apiVersion, String Function()? kind, ObjectMeta Function()? metadata, ObjectReference? target, }) { return Binding(
+  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  kind: kind != null ? kind() : this.kind,
+  metadata: metadata != null ? metadata() : this.metadata,
+  target: target ?? this.target,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Binding &&
+          apiVersion == other.apiVersion &&
+          kind == other.kind &&
+          metadata == other.metadata &&
+          target == other.target; } 
+@override int get hashCode { return Object.hash(apiVersion, kind, metadata, target); } 
+@override String toString() { return 'Binding(apiVersion: $apiVersion, kind: $kind, metadata: $metadata, target: $target)'; } 
+ }

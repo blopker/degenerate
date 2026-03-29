@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_refunds_refund_request_metadata.dart';final class PostChargesChargeRefundsRefundRequest {const PostChargesChargeRefundsRefundRequest({this.expand, this.metadata, });
+
+factory PostChargesChargeRefundsRefundRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRefundsRefundRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeRefundsRefundRequestMetadataVariant2.fromJson(v as String),) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+final PostChargesChargeRefundsRefundRequestMetadata? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostChargesChargeRefundsRefundRequest copyWith({List<String> Function()? expand, PostChargesChargeRefundsRefundRequestMetadata Function()? metadata, }) { return PostChargesChargeRefundsRefundRequest(
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostChargesChargeRefundsRefundRequest &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), metadata); } 
+@override String toString() { return 'PostChargesChargeRefundsRefundRequest(expand: $expand, metadata: $metadata)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'discussion.dart';final class DiscussionEvent {const DiscussionEvent({required this.action, required this.discussion, });
+
+factory DiscussionEvent.fromJson(Map<String, dynamic> json) { return DiscussionEvent(
+  action: json['action'] as String,
+  discussion: Discussion.fromJson(json['discussion'] as Map<String, dynamic>),
+); }
+
+final String action;
+
+final Discussion discussion;
+
+Map<String, dynamic> toJson() { return {
+  'action': action,
+  'discussion': discussion.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String &&
+      json.containsKey('discussion'); } 
+DiscussionEvent copyWith({String? action, Discussion? discussion, }) { return DiscussionEvent(
+  action: action ?? this.action,
+  discussion: discussion ?? this.discussion,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DiscussionEvent &&
+          action == other.action &&
+          discussion == other.discussion; } 
+@override int get hashCode { return Object.hash(action, discussion); } 
+@override String toString() { return 'DiscussionEvent(action: $action, discussion: $discussion)'; } 
+ }

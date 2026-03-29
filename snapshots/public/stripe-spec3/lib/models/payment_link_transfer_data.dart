@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_links_resource_transfer_data.dart';/// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to.
+final class PaymentLinkTransferData {const PaymentLinkTransferData({this.paymentLinksResourceTransferData});
+
+factory PaymentLinkTransferData.fromJson(Map<String, dynamic> json) { return PaymentLinkTransferData(
+  paymentLinksResourceTransferData: PaymentLinksResourceTransferData.canParse(json) ? PaymentLinksResourceTransferData.fromJson(json) : null,
+); }
+
+final PaymentLinksResourceTransferData? paymentLinksResourceTransferData;
+
+/// At least one variant must be present.
+bool get isValid { return paymentLinksResourceTransferData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentLinksResourceTransferData?.toJson(),
+}; } 
+ }

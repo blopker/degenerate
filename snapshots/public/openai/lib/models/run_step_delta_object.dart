@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'run_step_delta_object_delta.dart';/// The object type, which is always `thread.run.step.delta`.
+final class RunStepDeltaObjectObject {const RunStepDeltaObjectObject._(this.value);
+
+factory RunStepDeltaObjectObject.fromJson(String json) { return switch (json) {
+  'thread.run.step.delta' => threadRunStepDelta,
+  _ => RunStepDeltaObjectObject._(json),
+}; }
+
+static const RunStepDeltaObjectObject threadRunStepDelta = RunStepDeltaObjectObject._('thread.run.step.delta');
+
+static const List<RunStepDeltaObjectObject> values = [threadRunStepDelta];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RunStepDeltaObjectObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RunStepDeltaObjectObject($value)'; } 
+ }
+/// Represents a run step delta i.e. any changed fields on a run step during streaming.
+/// 
+final class RunStepDeltaObject {const RunStepDeltaObject({required this.id, required this.object, required this.delta, });
+
+factory RunStepDeltaObject.fromJson(Map<String, dynamic> json) { return RunStepDeltaObject(
+  id: json['id'] as String,
+  object: RunStepDeltaObjectObject.fromJson(json['object'] as String),
+  delta: RunStepDeltaObjectDelta.fromJson(json['delta'] as Map<String, dynamic>),
+); }
+
+/// The identifier of the run step, which can be referenced in API endpoints.
+final String id;
+
+/// The object type, which is always `thread.run.step.delta`.
+final RunStepDeltaObjectObject object;
+
+/// The delta containing the fields that have changed on the run step.
+final RunStepDeltaObjectDelta delta;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'delta': delta.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('delta'); } 
+RunStepDeltaObject copyWith({String? id, RunStepDeltaObjectObject? object, RunStepDeltaObjectDelta? delta, }) { return RunStepDeltaObject(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  delta: delta ?? this.delta,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RunStepDeltaObject &&
+          id == other.id &&
+          object == other.object &&
+          delta == other.delta; } 
+@override int get hashCode { return Object.hash(id, object, delta); } 
+@override String toString() { return 'RunStepDeltaObject(id: $id, object: $object, delta: $delta)'; } 
+ }

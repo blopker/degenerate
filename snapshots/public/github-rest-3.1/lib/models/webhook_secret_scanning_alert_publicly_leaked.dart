@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'secret_scanning_alert_webhook.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction._(this.value);
+
+factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(String json) { return switch (json) {
+  'publicly_leaked' => publiclyLeaked,
+  _ => WebhookSecretScanningAlertPubliclyLeakedAction._(json),
+}; }
+
+static const WebhookSecretScanningAlertPubliclyLeakedAction publiclyLeaked = WebhookSecretScanningAlertPubliclyLeakedAction._('publicly_leaked');
+
+static const List<WebhookSecretScanningAlertPubliclyLeakedAction> values = [publiclyLeaked];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookSecretScanningAlertPubliclyLeakedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookSecretScanningAlertPubliclyLeakedAction($value)'; } 
+ }
+final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScanningAlertPubliclyLeaked({required this.action, required this.alert, this.enterprise, this.installation, this.organization, required this.repository, this.sender, });
+
+factory WebhookSecretScanningAlertPubliclyLeaked.fromJson(Map<String, dynamic> json) { return WebhookSecretScanningAlertPubliclyLeaked(
+  action: WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(json['action'] as String),
+  alert: SecretScanningAlertWebhook.fromJson(json['alert'] as Map<String, dynamic>),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
+); }
+
+final WebhookSecretScanningAlertPubliclyLeakedAction action;
+
+final SecretScanningAlertWebhook alert;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser? sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'alert': alert.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'repository': repository.toJson(),
+  if (sender != null) 'sender': sender?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('alert') &&
+      json.containsKey('repository'); } 
+WebhookSecretScanningAlertPubliclyLeaked copyWith({WebhookSecretScanningAlertPubliclyLeakedAction? action, SecretScanningAlertWebhook? alert, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookSecretScanningAlertPubliclyLeaked(
+  action: action ?? this.action,
+  alert: alert ?? this.alert,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository ?? this.repository,
+  sender: sender != null ? sender() : this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookSecretScanningAlertPubliclyLeaked &&
+          action == other.action &&
+          alert == other.alert &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, alert, enterprise, installation, organization, repository, sender); } 
+@override String toString() { return 'WebhookSecretScanningAlertPubliclyLeaked(action: $action, alert: $alert, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+ }

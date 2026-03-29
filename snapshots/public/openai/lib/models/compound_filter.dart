@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'compound_filter_filters.dart';/// Type of operation: `and` or `or`.
+final class CompoundFilterType {const CompoundFilterType._(this.value);
+
+factory CompoundFilterType.fromJson(String json) { return switch (json) {
+  'and' => and,
+  'or' => or,
+  _ => CompoundFilterType._(json),
+}; }
+
+static const CompoundFilterType and = CompoundFilterType._('and');
+
+static const CompoundFilterType or = CompoundFilterType._('or');
+
+static const List<CompoundFilterType> values = [and, or];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CompoundFilterType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CompoundFilterType($value)'; } 
+ }
+/// Combine multiple filters using `and` or `or`.
+final class CompoundFilter {const CompoundFilter({required this.type, required this.filters, });
+
+factory CompoundFilter.fromJson(Map<String, dynamic> json) { return CompoundFilter(
+  type: CompoundFilterType.fromJson(json['type'] as String),
+  filters: (json['filters'] as List<dynamic>).map((e) => CompoundFilterFilters.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Type of operation: `and` or `or`.
+final CompoundFilterType type;
+
+/// Array of filters to combine. Items can be `ComparisonFilter` or `CompoundFilter`.
+final List<CompoundFilterFilters> filters;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'filters': filters.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('filters'); } 
+CompoundFilter copyWith({CompoundFilterType? type, List<CompoundFilterFilters>? filters, }) { return CompoundFilter(
+  type: type ?? this.type,
+  filters: filters ?? this.filters,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CompoundFilter &&
+          type == other.type &&
+          listEquals(filters, other.filters); } 
+@override int get hashCode { return Object.hash(type, Object.hashAll(filters)); } 
+@override String toString() { return 'CompoundFilter(type: $type, filters: $filters)'; } 
+ }

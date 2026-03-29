@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class StreamsResponseResultWorkerBinding {const StreamsResponseResultWorkerBinding({required this.enabled});
+
+factory StreamsResponseResultWorkerBinding.fromJson(Map<String, dynamic> json) { return StreamsResponseResultWorkerBinding(
+  enabled: json['enabled'] as bool,
+); }
+
+/// Indicates that the worker binding is enabled.
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+StreamsResponseResultWorkerBinding copyWith({bool? enabled}) { return StreamsResponseResultWorkerBinding(
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamsResponseResultWorkerBinding &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'StreamsResponseResultWorkerBinding(enabled: $enabled)'; } 
+ }

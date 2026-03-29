@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AccessCommonNameRuleCommonName {const AccessCommonNameRuleCommonName({required this.commonName});
+
+factory AccessCommonNameRuleCommonName.fromJson(Map<String, dynamic> json) { return AccessCommonNameRuleCommonName(
+  commonName: json['common_name'] as String,
+); }
+
+/// The common name to match.
+final String commonName;
+
+Map<String, dynamic> toJson() { return {
+  'common_name': commonName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('common_name') && json['common_name'] is String; } 
+AccessCommonNameRuleCommonName copyWith({String? commonName}) { return AccessCommonNameRuleCommonName(
+  commonName: commonName ?? this.commonName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessCommonNameRuleCommonName &&
+          commonName == other.commonName; } 
+@override int get hashCode { return commonName.hashCode; } 
+@override String toString() { return 'AccessCommonNameRuleCommonName(commonName: $commonName)'; } 
+ }

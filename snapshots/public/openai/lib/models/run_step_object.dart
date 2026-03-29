@@ -1,0 +1,232 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'run_step_completion_usage.dart';import 'run_step_details_message_creation_object.dart';import 'run_step_details_tool_calls_object.dart';import 'run_step_object_last_error.dart';import 'run_step_object_step_details.dart';/// The object type, which is always `thread.run.step`.
+final class RunStepObjectObject {const RunStepObjectObject._(this.value);
+
+factory RunStepObjectObject.fromJson(String json) { return switch (json) {
+  'thread.run.step' => threadRunStep,
+  _ => RunStepObjectObject._(json),
+}; }
+
+static const RunStepObjectObject threadRunStep = RunStepObjectObject._('thread.run.step');
+
+static const List<RunStepObjectObject> values = [threadRunStep];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RunStepObjectObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RunStepObjectObject($value)'; } 
+ }
+/// The type of run step, which can be either `message_creation` or `tool_calls`.
+final class RunStepObjectType {const RunStepObjectType._(this.value);
+
+factory RunStepObjectType.fromJson(String json) { return switch (json) {
+  'message_creation' => messageCreation,
+  'tool_calls' => toolCalls,
+  _ => RunStepObjectType._(json),
+}; }
+
+static const RunStepObjectType messageCreation = RunStepObjectType._('message_creation');
+
+static const RunStepObjectType toolCalls = RunStepObjectType._('tool_calls');
+
+static const List<RunStepObjectType> values = [messageCreation, toolCalls];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RunStepObjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RunStepObjectType($value)'; } 
+ }
+/// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
+final class RunStepObjectStatus {const RunStepObjectStatus._(this.value);
+
+factory RunStepObjectStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'cancelled' => cancelled,
+  'failed' => failed,
+  'completed' => completed,
+  'expired' => expired,
+  _ => RunStepObjectStatus._(json),
+}; }
+
+static const RunStepObjectStatus inProgress = RunStepObjectStatus._('in_progress');
+
+static const RunStepObjectStatus cancelled = RunStepObjectStatus._('cancelled');
+
+static const RunStepObjectStatus failed = RunStepObjectStatus._('failed');
+
+static const RunStepObjectStatus completed = RunStepObjectStatus._('completed');
+
+static const RunStepObjectStatus expired = RunStepObjectStatus._('expired');
+
+static const List<RunStepObjectStatus> values = [inProgress, cancelled, failed, completed, expired];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RunStepObjectStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RunStepObjectStatus($value)'; } 
+ }
+/// Represents a step in execution of a run.
+/// 
+final class RunStepObject {const RunStepObject({required this.id, required this.object, required this.createdAt, required this.assistantId, required this.threadId, required this.runId, required this.type, required this.status, required this.stepDetails, required this.lastError, required this.expiredAt, required this.cancelledAt, required this.failedAt, required this.completedAt, required this.metadata, required this.usage, });
+
+factory RunStepObject.fromJson(Map<String, dynamic> json) { return RunStepObject(
+  id: json['id'] as String,
+  object: RunStepObjectObject.fromJson(json['object'] as String),
+  createdAt: (json['created_at'] as num).toInt(),
+  assistantId: json['assistant_id'] as String,
+  threadId: json['thread_id'] as String,
+  runId: json['run_id'] as String,
+  type: RunStepObjectType.fromJson(json['type'] as String),
+  status: RunStepObjectStatus.fromJson(json['status'] as String),
+  stepDetails: OneOf2.parse(json['step_details'], fromA: (v) => RunStepDetailsMessageCreationObject.fromJson(v as Map<String, dynamic>), fromB: (v) => RunStepDetailsToolCallsObject.fromJson(v as Map<String, dynamic>),),
+  lastError: json['last_error'] != null ? RunStepObjectLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
+  expiredAt: json['expired_at'] != null ? (json['expired_at'] as num).toInt() : null,
+  cancelledAt: json['cancelled_at'] != null ? (json['cancelled_at'] as num).toInt() : null,
+  failedAt: json['failed_at'] != null ? (json['failed_at'] as num).toInt() : null,
+  completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  usage: RunStepCompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
+); }
+
+/// The identifier of the run step, which can be referenced in API endpoints.
+final String id;
+
+/// The object type, which is always `thread.run.step`.
+final RunStepObjectObject object;
+
+/// The Unix timestamp (in seconds) for when the run step was created.
+final int createdAt;
+
+/// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+final String assistantId;
+
+/// The ID of the [thread](/docs/api-reference/threads) that was run.
+final String threadId;
+
+/// The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+final String runId;
+
+/// The type of run step, which can be either `message_creation` or `tool_calls`.
+final RunStepObjectType type;
+
+/// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
+final RunStepObjectStatus status;
+
+/// The details of the run step.
+final RunStepObjectStepDetails stepDetails;
+
+/// The last error associated with this run step. Will be `null` if there are no errors.
+final RunStepObjectLastError? lastError;
+
+/// The Unix timestamp (in seconds) for when the run step expired. A step is considered expired if the parent run is expired.
+final int? expiredAt;
+
+/// The Unix timestamp (in seconds) for when the run step was cancelled.
+final int? cancelledAt;
+
+/// The Unix timestamp (in seconds) for when the run step failed.
+final int? failedAt;
+
+/// The Unix timestamp (in seconds) for when the run step completed.
+final int? completedAt;
+
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard.
+/// 
+/// Keys are strings with a maximum length of 64 characters. Values are strings
+/// with a maximum length of 512 characters.
+/// 
+final Map<String,String>? metadata;
+
+final RunStepCompletionUsage usage;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'created_at': createdAt,
+  'assistant_id': assistantId,
+  'thread_id': threadId,
+  'run_id': runId,
+  'type': type.toJson(),
+  'status': status.toJson(),
+  'step_details': stepDetails.toJson(),
+  if (lastError != null) 'last_error': lastError?.toJson(),
+  'expired_at': ?expiredAt,
+  'cancelled_at': ?cancelledAt,
+  'failed_at': ?failedAt,
+  'completed_at': ?completedAt,
+  'metadata': ?metadata,
+  'usage': usage.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('assistant_id') && json['assistant_id'] is String &&
+      json.containsKey('thread_id') && json['thread_id'] is String &&
+      json.containsKey('run_id') && json['run_id'] is String &&
+      json.containsKey('type') &&
+      json.containsKey('status') &&
+      json.containsKey('step_details') &&
+      json.containsKey('last_error') &&
+      json.containsKey('expired_at') && json['expired_at'] is num &&
+      json.containsKey('cancelled_at') && json['cancelled_at'] is num &&
+      json.containsKey('failed_at') && json['failed_at'] is num &&
+      json.containsKey('completed_at') && json['completed_at'] is num &&
+      json.containsKey('metadata') &&
+      json.containsKey('usage'); } 
+RunStepObject copyWith({String? id, RunStepObjectObject? object, int? createdAt, String? assistantId, String? threadId, String? runId, RunStepObjectType? type, RunStepObjectStatus? status, RunStepObjectStepDetails? stepDetails, RunStepObjectLastError? Function()? lastError, int? Function()? expiredAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, Map<String, String>? Function()? metadata, RunStepCompletionUsage? usage, }) { return RunStepObject(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  createdAt: createdAt ?? this.createdAt,
+  assistantId: assistantId ?? this.assistantId,
+  threadId: threadId ?? this.threadId,
+  runId: runId ?? this.runId,
+  type: type ?? this.type,
+  status: status ?? this.status,
+  stepDetails: stepDetails ?? this.stepDetails,
+  lastError: lastError != null ? lastError() : this.lastError,
+  expiredAt: expiredAt != null ? expiredAt() : this.expiredAt,
+  cancelledAt: cancelledAt != null ? cancelledAt() : this.cancelledAt,
+  failedAt: failedAt != null ? failedAt() : this.failedAt,
+  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  metadata: metadata != null ? metadata() : this.metadata,
+  usage: usage ?? this.usage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RunStepObject &&
+          id == other.id &&
+          object == other.object &&
+          createdAt == other.createdAt &&
+          assistantId == other.assistantId &&
+          threadId == other.threadId &&
+          runId == other.runId &&
+          type == other.type &&
+          status == other.status &&
+          stepDetails == other.stepDetails &&
+          lastError == other.lastError &&
+          expiredAt == other.expiredAt &&
+          cancelledAt == other.cancelledAt &&
+          failedAt == other.failedAt &&
+          completedAt == other.completedAt &&
+          metadata == other.metadata &&
+          usage == other.usage; } 
+@override int get hashCode { return Object.hash(id, object, createdAt, assistantId, threadId, runId, type, status, stepDetails, lastError, expiredAt, cancelledAt, failedAt, completedAt, metadata, usage); } 
+@override String toString() { return 'RunStepObject(id: $id, object: $object, createdAt: $createdAt, assistantId: $assistantId, threadId: $threadId, runId: $runId, type: $type, status: $status, stepDetails: $stepDetails, lastError: $lastError, expiredAt: $expiredAt, cancelledAt: $cancelledAt, failedAt: $failedAt, completedAt: $completedAt, metadata: $metadata, usage: $usage)'; } 
+ }

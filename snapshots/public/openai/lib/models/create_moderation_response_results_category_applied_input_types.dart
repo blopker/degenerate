@@ -1,0 +1,412 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CreateModerationResponseResultsCategoryAppliedInputTypesHate {const CreateModerationResponseResultsCategoryAppliedInputTypesHate._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesHate._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesHate text = CreateModerationResponseResultsCategoryAppliedInputTypesHate._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHate> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHate && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHate($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening text = CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassment {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassment.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesHarassment text = CreateModerationResponseResultsCategoryAppliedInputTypesHarassment._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHarassment && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassment($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening {const CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening text = CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicit {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesIllicit text = CreateModerationResponseResultsCategoryAppliedInputTypesIllicit._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesIllicit && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicit($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent {const CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent text = CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'image' => image,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm text = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._('text');
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm image = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm._('image');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm> values = [text, image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'image' => image,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent text = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._('text');
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent image = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent._('image');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent> values = [text, image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions {const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'image' => image,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions text = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._('text');
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions image = CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions._('image');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions> values = [text, image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesSexual {const CreateModerationResponseResultsCategoryAppliedInputTypesSexual._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSexual.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'image' => image,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesSexual._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSexual text = CreateModerationResponseResultsCategoryAppliedInputTypesSexual._('text');
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSexual image = CreateModerationResponseResultsCategoryAppliedInputTypesSexual._('image');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual> values = [text, image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSexual && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexual($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors {const CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors text = CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors._('text');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesViolence {const CreateModerationResponseResultsCategoryAppliedInputTypesViolence._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesViolence.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'image' => image,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesViolence._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesViolence text = CreateModerationResponseResultsCategoryAppliedInputTypesViolence._('text');
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesViolence image = CreateModerationResponseResultsCategoryAppliedInputTypesViolence._('image');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence> values = [text, image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesViolence && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolence($value)'; } 
+ }
+final class CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic {const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._(this.value);
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'image' => image,
+  _ => CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._(json),
+}; }
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic text = CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._('text');
+
+static const CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic image = CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic._('image');
+
+static const List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic> values = [text, image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic($value)'; } 
+ }
+/// A list of the categories along with the input type(s) that the score applies to.
+final class CreateModerationResponseResultsCategoryAppliedInputTypes {const CreateModerationResponseResultsCategoryAppliedInputTypes({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
+
+factory CreateModerationResponseResultsCategoryAppliedInputTypes.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResultsCategoryAppliedInputTypes(
+  hate: (json['hate'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHate.fromJson(e as String)).toList(),
+  hateThreatening: (json['hate/threatening'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening.fromJson(e as String)).toList(),
+  harassment: (json['harassment'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHarassment.fromJson(e as String)).toList(),
+  harassmentThreatening: (json['harassment/threatening'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening.fromJson(e as String)).toList(),
+  illicit: (json['illicit'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesIllicit.fromJson(e as String)).toList(),
+  illicitViolent: (json['illicit/violent'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent.fromJson(e as String)).toList(),
+  selfHarm: (json['self-harm'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm.fromJson(e as String)).toList(),
+  selfHarmIntent: (json['self-harm/intent'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent.fromJson(e as String)).toList(),
+  selfHarmInstructions: (json['self-harm/instructions'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions.fromJson(e as String)).toList(),
+  sexual: (json['sexual'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesSexual.fromJson(e as String)).toList(),
+  sexualMinors: (json['sexual/minors'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors.fromJson(e as String)).toList(),
+  violence: (json['violence'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesViolence.fromJson(e as String)).toList(),
+  violenceGraphic: (json['violence/graphic'] as List<dynamic>).map((e) => CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic.fromJson(e as String)).toList(),
+); }
+
+/// The applied input type(s) for the category 'hate'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesHate> hate;
+
+/// The applied input type(s) for the category 'hate/threatening'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening> hateThreatening;
+
+/// The applied input type(s) for the category 'harassment'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment> harassment;
+
+/// The applied input type(s) for the category 'harassment/threatening'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening> harassmentThreatening;
+
+/// The applied input type(s) for the category 'illicit'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit> illicit;
+
+/// The applied input type(s) for the category 'illicit/violent'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent> illicitViolent;
+
+/// The applied input type(s) for the category 'self-harm'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm> selfHarm;
+
+/// The applied input type(s) for the category 'self-harm/intent'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent> selfHarmIntent;
+
+/// The applied input type(s) for the category 'self-harm/instructions'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions> selfHarmInstructions;
+
+/// The applied input type(s) for the category 'sexual'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual> sexual;
+
+/// The applied input type(s) for the category 'sexual/minors'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors> sexualMinors;
+
+/// The applied input type(s) for the category 'violence'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence> violence;
+
+/// The applied input type(s) for the category 'violence/graphic'.
+final List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic> violenceGraphic;
+
+Map<String, dynamic> toJson() { return {
+  'hate': hate.map((e) => e.toJson()).toList(),
+  'hate/threatening': hateThreatening.map((e) => e.toJson()).toList(),
+  'harassment': harassment.map((e) => e.toJson()).toList(),
+  'harassment/threatening': harassmentThreatening.map((e) => e.toJson()).toList(),
+  'illicit': illicit.map((e) => e.toJson()).toList(),
+  'illicit/violent': illicitViolent.map((e) => e.toJson()).toList(),
+  'self-harm': selfHarm.map((e) => e.toJson()).toList(),
+  'self-harm/intent': selfHarmIntent.map((e) => e.toJson()).toList(),
+  'self-harm/instructions': selfHarmInstructions.map((e) => e.toJson()).toList(),
+  'sexual': sexual.map((e) => e.toJson()).toList(),
+  'sexual/minors': sexualMinors.map((e) => e.toJson()).toList(),
+  'violence': violence.map((e) => e.toJson()).toList(),
+  'violence/graphic': violenceGraphic.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') &&
+      json.containsKey('hate/threatening') &&
+      json.containsKey('harassment') &&
+      json.containsKey('harassment/threatening') &&
+      json.containsKey('illicit') &&
+      json.containsKey('illicit/violent') &&
+      json.containsKey('self-harm') &&
+      json.containsKey('self-harm/intent') &&
+      json.containsKey('self-harm/instructions') &&
+      json.containsKey('sexual') &&
+      json.containsKey('sexual/minors') &&
+      json.containsKey('violence') &&
+      json.containsKey('violence/graphic'); } 
+CreateModerationResponseResultsCategoryAppliedInputTypes copyWith({List<CreateModerationResponseResultsCategoryAppliedInputTypesHate>? hate, List<CreateModerationResponseResultsCategoryAppliedInputTypesHateThreatening>? hateThreatening, List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassment>? harassment, List<CreateModerationResponseResultsCategoryAppliedInputTypesHarassmentThreatening>? harassmentThreatening, List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicit>? illicit, List<CreateModerationResponseResultsCategoryAppliedInputTypesIllicitViolent>? illicitViolent, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarm>? selfHarm, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmIntent>? selfHarmIntent, List<CreateModerationResponseResultsCategoryAppliedInputTypesSelfHarmInstructions>? selfHarmInstructions, List<CreateModerationResponseResultsCategoryAppliedInputTypesSexual>? sexual, List<CreateModerationResponseResultsCategoryAppliedInputTypesSexualMinors>? sexualMinors, List<CreateModerationResponseResultsCategoryAppliedInputTypesViolence>? violence, List<CreateModerationResponseResultsCategoryAppliedInputTypesViolenceGraphic>? violenceGraphic, }) { return CreateModerationResponseResultsCategoryAppliedInputTypes(
+  hate: hate ?? this.hate,
+  hateThreatening: hateThreatening ?? this.hateThreatening,
+  harassment: harassment ?? this.harassment,
+  harassmentThreatening: harassmentThreatening ?? this.harassmentThreatening,
+  illicit: illicit ?? this.illicit,
+  illicitViolent: illicitViolent ?? this.illicitViolent,
+  selfHarm: selfHarm ?? this.selfHarm,
+  selfHarmIntent: selfHarmIntent ?? this.selfHarmIntent,
+  selfHarmInstructions: selfHarmInstructions ?? this.selfHarmInstructions,
+  sexual: sexual ?? this.sexual,
+  sexualMinors: sexualMinors ?? this.sexualMinors,
+  violence: violence ?? this.violence,
+  violenceGraphic: violenceGraphic ?? this.violenceGraphic,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModerationResponseResultsCategoryAppliedInputTypes &&
+          listEquals(hate, other.hate) &&
+          listEquals(hateThreatening, other.hateThreatening) &&
+          listEquals(harassment, other.harassment) &&
+          listEquals(harassmentThreatening, other.harassmentThreatening) &&
+          listEquals(illicit, other.illicit) &&
+          listEquals(illicitViolent, other.illicitViolent) &&
+          listEquals(selfHarm, other.selfHarm) &&
+          listEquals(selfHarmIntent, other.selfHarmIntent) &&
+          listEquals(selfHarmInstructions, other.selfHarmInstructions) &&
+          listEquals(sexual, other.sexual) &&
+          listEquals(sexualMinors, other.sexualMinors) &&
+          listEquals(violence, other.violence) &&
+          listEquals(violenceGraphic, other.violenceGraphic); } 
+@override int get hashCode { return Object.hash(Object.hashAll(hate), Object.hashAll(hateThreatening), Object.hashAll(harassment), Object.hashAll(harassmentThreatening), Object.hashAll(illicit), Object.hashAll(illicitViolent), Object.hashAll(selfHarm), Object.hashAll(selfHarmIntent), Object.hashAll(selfHarmInstructions), Object.hashAll(sexual), Object.hashAll(sexualMinors), Object.hashAll(violence), Object.hashAll(violenceGraphic)); } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryAppliedInputTypes(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)'; } 
+ }

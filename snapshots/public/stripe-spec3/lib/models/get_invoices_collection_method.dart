@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetInvoicesCollectionMethod {const GetInvoicesCollectionMethod._(this.value);
+
+factory GetInvoicesCollectionMethod.fromJson(String json) { return switch (json) {
+  'charge_automatically' => chargeAutomatically,
+  'send_invoice' => sendInvoice,
+  _ => GetInvoicesCollectionMethod._(json),
+}; }
+
+static const GetInvoicesCollectionMethod chargeAutomatically = GetInvoicesCollectionMethod._('charge_automatically');
+
+static const GetInvoicesCollectionMethod sendInvoice = GetInvoicesCollectionMethod._('send_invoice');
+
+static const List<GetInvoicesCollectionMethod> values = [chargeAutomatically, sendInvoice];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetInvoicesCollectionMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetInvoicesCollectionMethod($value)'; } 
+ }

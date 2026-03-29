@@ -1,0 +1,103 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issue.dart';import 'organization_simple_webhooks.dart';import 'repository.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';final class WebhookIssueDependenciesBlockedByAddedAction {const WebhookIssueDependenciesBlockedByAddedAction._(this.value);
+
+factory WebhookIssueDependenciesBlockedByAddedAction.fromJson(String json) { return switch (json) {
+  'blocked_by_added' => blockedByAdded,
+  _ => WebhookIssueDependenciesBlockedByAddedAction._(json),
+}; }
+
+static const WebhookIssueDependenciesBlockedByAddedAction blockedByAdded = WebhookIssueDependenciesBlockedByAddedAction._('blocked_by_added');
+
+static const List<WebhookIssueDependenciesBlockedByAddedAction> values = [blockedByAdded];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookIssueDependenciesBlockedByAddedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookIssueDependenciesBlockedByAddedAction($value)'; } 
+ }
+final class WebhookIssueDependenciesBlockedByAdded {const WebhookIssueDependenciesBlockedByAdded({required this.action, this.blockedIssueId, this.blockedIssue, this.blockingIssueId, this.blockingIssue, this.blockingIssueRepo, this.installation, required this.organization, required this.repository, required this.sender, });
+
+factory WebhookIssueDependenciesBlockedByAdded.fromJson(Map<String, dynamic> json) { return WebhookIssueDependenciesBlockedByAdded(
+  action: WebhookIssueDependenciesBlockedByAddedAction.fromJson(json['action'] as String),
+  blockedIssueId: json['blocked_issue_id'] != null ? (json['blocked_issue_id'] as num).toDouble() : null,
+  blockedIssue: json['blocked_issue'] != null ? Issue.fromJson(json['blocked_issue'] as Map<String, dynamic>) : null,
+  blockingIssueId: json['blocking_issue_id'] != null ? (json['blocking_issue_id'] as num).toDouble() : null,
+  blockingIssue: json['blocking_issue'] != null ? Issue.fromJson(json['blocking_issue'] as Map<String, dynamic>) : null,
+  blockingIssueRepo: json['blocking_issue_repo'] != null ? Repository.fromJson(json['blocking_issue_repo'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>),
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookIssueDependenciesBlockedByAddedAction action;
+
+/// The ID of the blocked issue.
+final double? blockedIssueId;
+
+final Issue? blockedIssue;
+
+/// The ID of the blocking issue.
+final double? blockingIssueId;
+
+final Issue? blockingIssue;
+
+final Repository? blockingIssueRepo;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks organization;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'blocked_issue_id': ?blockedIssueId,
+  if (blockedIssue != null) 'blocked_issue': blockedIssue?.toJson(),
+  'blocking_issue_id': ?blockingIssueId,
+  if (blockingIssue != null) 'blocking_issue': blockingIssue?.toJson(),
+  if (blockingIssueRepo != null) 'blocking_issue_repo': blockingIssueRepo?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'organization': organization.toJson(),
+  'repository': repository.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('organization') &&
+      json.containsKey('repository') &&
+      json.containsKey('sender'); } 
+WebhookIssueDependenciesBlockedByAdded copyWith({WebhookIssueDependenciesBlockedByAddedAction? action, double Function()? blockedIssueId, Issue Function()? blockedIssue, double Function()? blockingIssueId, Issue Function()? blockingIssue, Repository Function()? blockingIssueRepo, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssueDependenciesBlockedByAdded(
+  action: action ?? this.action,
+  blockedIssueId: blockedIssueId != null ? blockedIssueId() : this.blockedIssueId,
+  blockedIssue: blockedIssue != null ? blockedIssue() : this.blockedIssue,
+  blockingIssueId: blockingIssueId != null ? blockingIssueId() : this.blockingIssueId,
+  blockingIssue: blockingIssue != null ? blockingIssue() : this.blockingIssue,
+  blockingIssueRepo: blockingIssueRepo != null ? blockingIssueRepo() : this.blockingIssueRepo,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization ?? this.organization,
+  repository: repository ?? this.repository,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssueDependenciesBlockedByAdded &&
+          action == other.action &&
+          blockedIssueId == other.blockedIssueId &&
+          blockedIssue == other.blockedIssue &&
+          blockingIssueId == other.blockingIssueId &&
+          blockingIssue == other.blockingIssue &&
+          blockingIssueRepo == other.blockingIssueRepo &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, blockedIssueId, blockedIssue, blockingIssueId, blockingIssue, blockingIssueRepo, installation, organization, repository, sender); } 
+@override String toString() { return 'WebhookIssueDependenciesBlockedByAdded(action: $action, blockedIssueId: $blockedIssueId, blockedIssue: $blockedIssue, blockingIssueId: $blockingIssueId, blockingIssue: $blockingIssue, blockingIssueRepo: $blockingIssueRepo, installation: $installation, organization: $organization, repository: $repository, sender: $sender)'; } 
+ }

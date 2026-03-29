@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'repos_list_attestations_response_attestations_bundle_dsse_envelope.dart';import 'repos_list_attestations_response_attestations_bundle_verification_material.dart';/// The attestation's Sigstore Bundle.
+/// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+final class ReposListAttestationsResponseAttestationsBundle {const ReposListAttestationsResponseAttestationsBundle({this.mediaType, this.verificationMaterial, this.dsseEnvelope, });
+
+factory ReposListAttestationsResponseAttestationsBundle.fromJson(Map<String, dynamic> json) { return ReposListAttestationsResponseAttestationsBundle(
+  mediaType: json['mediaType'] as String?,
+  verificationMaterial: json['verificationMaterial'] != null ? ReposListAttestationsResponseAttestationsBundleVerificationMaterial.fromJson(json['verificationMaterial'] as Map<String, dynamic>) : null,
+  dsseEnvelope: json['dsseEnvelope'] != null ? ReposListAttestationsResponseAttestationsBundleDsseEnvelope.fromJson(json['dsseEnvelope'] as Map<String, dynamic>) : null,
+); }
+
+final String? mediaType;
+
+final ReposListAttestationsResponseAttestationsBundleVerificationMaterial? verificationMaterial;
+
+final ReposListAttestationsResponseAttestationsBundleDsseEnvelope? dsseEnvelope;
+
+Map<String, dynamic> toJson() { return {
+  'mediaType': ?mediaType,
+  if (verificationMaterial != null) 'verificationMaterial': verificationMaterial?.toJson(),
+  if (dsseEnvelope != null) 'dsseEnvelope': dsseEnvelope?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposListAttestationsResponseAttestationsBundle copyWith({String Function()? mediaType, ReposListAttestationsResponseAttestationsBundleVerificationMaterial Function()? verificationMaterial, ReposListAttestationsResponseAttestationsBundleDsseEnvelope Function()? dsseEnvelope, }) { return ReposListAttestationsResponseAttestationsBundle(
+  mediaType: mediaType != null ? mediaType() : this.mediaType,
+  verificationMaterial: verificationMaterial != null ? verificationMaterial() : this.verificationMaterial,
+  dsseEnvelope: dsseEnvelope != null ? dsseEnvelope() : this.dsseEnvelope,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposListAttestationsResponseAttestationsBundle &&
+          mediaType == other.mediaType &&
+          verificationMaterial == other.verificationMaterial &&
+          dsseEnvelope == other.dsseEnvelope; } 
+@override int get hashCode { return Object.hash(mediaType, verificationMaterial, dsseEnvelope); } 
+@override String toString() { return 'ReposListAttestationsResponseAttestationsBundle(mediaType: $mediaType, verificationMaterial: $verificationMaterial, dsseEnvelope: $dsseEnvelope)'; } 
+ }

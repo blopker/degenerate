@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class BranchWithProtectionLinks {const BranchWithProtectionLinks({required this.html, required this.self, });
+
+factory BranchWithProtectionLinks.fromJson(Map<String, dynamic> json) { return BranchWithProtectionLinks(
+  html: json['html'] as String,
+  self: Uri.parse(json['self'] as String),
+); }
+
+final String html;
+
+final Uri self;
+
+Map<String, dynamic> toJson() { return {
+  'html': html,
+  'self': self.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('html') && json['html'] is String &&
+      json.containsKey('self') && json['self'] is String; } 
+BranchWithProtectionLinks copyWith({String? html, Uri? self, }) { return BranchWithProtectionLinks(
+  html: html ?? this.html,
+  self: self ?? this.self,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BranchWithProtectionLinks &&
+          html == other.html &&
+          self == other.self; } 
+@override int get hashCode { return Object.hash(html, self); } 
+@override String toString() { return 'BranchWithProtectionLinks(html: $html, self: $self)'; } 
+ }

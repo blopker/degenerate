@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum._(this.value);
+
+factory TeamsDevicesTrustStoresEnum.fromJson(String json) { return switch (json) {
+  'system' => system,
+  'user' => user,
+  _ => TeamsDevicesTrustStoresEnum._(json),
+}; }
+
+static const TeamsDevicesTrustStoresEnum system = TeamsDevicesTrustStoresEnum._('system');
+
+static const TeamsDevicesTrustStoresEnum user = TeamsDevicesTrustStoresEnum._('user');
+
+static const List<TeamsDevicesTrustStoresEnum> values = [system, user];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesTrustStoresEnum && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesTrustStoresEnum($value)'; } 
+ }
+final class InputRequestLocations {const InputRequestLocations({this.paths, this.trustStores, });
+
+factory InputRequestLocations.fromJson(Map<String, dynamic> json) { return InputRequestLocations(
+  paths: (json['paths'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  trustStores: (json['trust_stores'] as List<dynamic>?)?.map((e) => TeamsDevicesTrustStoresEnum.fromJson(e as String)).toList(),
+); }
+
+final List<String>? paths;
+
+final List<TeamsDevicesTrustStoresEnum>? trustStores;
+
+Map<String, dynamic> toJson() { return {
+  'paths': ?paths,
+  if (trustStores != null) 'trust_stores': trustStores?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InputRequestLocations copyWith({List<String> Function()? paths, List<TeamsDevicesTrustStoresEnum> Function()? trustStores, }) { return InputRequestLocations(
+  paths: paths != null ? paths() : this.paths,
+  trustStores: trustStores != null ? trustStores() : this.trustStores,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InputRequestLocations &&
+          listEquals(paths, other.paths) &&
+          listEquals(trustStores, other.trustStores); } 
+@override int get hashCode { return Object.hash(Object.hashAll(paths ?? const []), Object.hashAll(trustStores ?? const [])); } 
+@override String toString() { return 'InputRequestLocations(paths: $paths, trustStores: $trustStores)'; } 
+ }

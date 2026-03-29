@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'orgs_delete_attestations_bulk_request_variant1.dart';import 'orgs_delete_attestations_bulk_request_variant2.dart';typedef OrgsDeleteAttestationsBulkRequest = OneOf2<OrgsDeleteAttestationsBulkRequestVariant1,OrgsDeleteAttestationsBulkRequestVariant2>;

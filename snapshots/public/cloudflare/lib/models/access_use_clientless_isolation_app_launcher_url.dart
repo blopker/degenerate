@@ -1,0 +1,12 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Determines if users can access this application via a clientless browser isolation URL.
+/// This allows users to access private domains without connecting to Gateway. The option requires
+/// Clientless Browser Isolation to be set up with policies that allow users of this application.
+/// 
+extension type const AccessUseClientlessIsolationAppLauncherUrl(bool value) {
+factory AccessUseClientlessIsolationAppLauncherUrl.fromJson(bool json) => AccessUseClientlessIsolationAppLauncherUrl(json);
+
+bool toJson() => value;
+
+}

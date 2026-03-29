@@ -1,0 +1,93 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions allowed on the credentials.
+final class R2TempAccessCredsRequestPermission {const R2TempAccessCredsRequestPermission._(this.value);
+
+factory R2TempAccessCredsRequestPermission.fromJson(String json) { return switch (json) {
+  'admin-read-write' => adminReadWrite,
+  'admin-read-only' => adminReadOnly,
+  'object-read-write' => objectReadWrite,
+  'object-read-only' => objectReadOnly,
+  _ => R2TempAccessCredsRequestPermission._(json),
+}; }
+
+static const R2TempAccessCredsRequestPermission adminReadWrite = R2TempAccessCredsRequestPermission._('admin-read-write');
+
+static const R2TempAccessCredsRequestPermission adminReadOnly = R2TempAccessCredsRequestPermission._('admin-read-only');
+
+static const R2TempAccessCredsRequestPermission objectReadWrite = R2TempAccessCredsRequestPermission._('object-read-write');
+
+static const R2TempAccessCredsRequestPermission objectReadOnly = R2TempAccessCredsRequestPermission._('object-read-only');
+
+static const List<R2TempAccessCredsRequestPermission> values = [adminReadWrite, adminReadOnly, objectReadWrite, objectReadOnly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is R2TempAccessCredsRequestPermission && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'R2TempAccessCredsRequestPermission($value)'; } 
+ }
+final class R2TempAccessCredsRequest {const R2TempAccessCredsRequest({required this.bucket, this.objects, required this.parentAccessKeyId, required this.permission, this.prefixes, this.ttlSeconds = 900.0, });
+
+factory R2TempAccessCredsRequest.fromJson(Map<String, dynamic> json) { return R2TempAccessCredsRequest(
+  bucket: json['bucket'] as String,
+  objects: (json['objects'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  parentAccessKeyId: json['parentAccessKeyId'] as String,
+  permission: R2TempAccessCredsRequestPermission.fromJson(json['permission'] as String),
+  prefixes: (json['prefixes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  ttlSeconds: (json['ttlSeconds'] as num).toDouble(),
+); }
+
+/// Name of the R2 bucket.
+final String bucket;
+
+/// Optional object paths to scope the credentials to.
+final List<String>? objects;
+
+/// The parent access key id to use for signing.
+final String parentAccessKeyId;
+
+/// Permissions allowed on the credentials.
+final R2TempAccessCredsRequestPermission permission;
+
+/// Optional prefix paths to scope the credentials to.
+final List<String>? prefixes;
+
+/// How long the credentials will live for in seconds.
+final double ttlSeconds;
+
+Map<String, dynamic> toJson() { return {
+  'bucket': bucket,
+  'objects': ?objects,
+  'parentAccessKeyId': parentAccessKeyId,
+  'permission': permission.toJson(),
+  'prefixes': ?prefixes,
+  'ttlSeconds': ttlSeconds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
+      json.containsKey('parentAccessKeyId') && json['parentAccessKeyId'] is String &&
+      json.containsKey('permission') &&
+      json.containsKey('ttlSeconds') && json['ttlSeconds'] is num; } 
+R2TempAccessCredsRequest copyWith({String? bucket, List<String> Function()? objects, String? parentAccessKeyId, R2TempAccessCredsRequestPermission? permission, List<String> Function()? prefixes, double? ttlSeconds, }) { return R2TempAccessCredsRequest(
+  bucket: bucket ?? this.bucket,
+  objects: objects != null ? objects() : this.objects,
+  parentAccessKeyId: parentAccessKeyId ?? this.parentAccessKeyId,
+  permission: permission ?? this.permission,
+  prefixes: prefixes != null ? prefixes() : this.prefixes,
+  ttlSeconds: ttlSeconds ?? this.ttlSeconds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2TempAccessCredsRequest &&
+          bucket == other.bucket &&
+          listEquals(objects, other.objects) &&
+          parentAccessKeyId == other.parentAccessKeyId &&
+          permission == other.permission &&
+          listEquals(prefixes, other.prefixes) &&
+          ttlSeconds == other.ttlSeconds; } 
+@override int get hashCode { return Object.hash(bucket, Object.hashAll(objects ?? const []), parentAccessKeyId, permission, Object.hashAll(prefixes ?? const []), ttlSeconds); } 
+@override String toString() { return 'R2TempAccessCredsRequest(bucket: $bucket, objects: $objects, parentAccessKeyId: $parentAccessKeyId, permission: $permission, prefixes: $prefixes, ttlSeconds: $ttlSeconds)'; } 
+ }

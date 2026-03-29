@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_post_request_account.dart';import 'zones_type.dart';/// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
+extension type const ZonesName(String value) {
+factory ZonesName.fromJson(String json) => ZonesName(json);
+
+String toJson() => value;
+
+}
+final class ZonesPostRequest {const ZonesPostRequest({required this.account, required this.name, this.type, });
+
+factory ZonesPostRequest.fromJson(Map<String, dynamic> json) { return ZonesPostRequest(
+  account: ZonesPostRequestAccount.fromJson(json['account'] as Map<String, dynamic>),
+  name: ZonesName.fromJson(json['name'] as String),
+  type: json['type'] != null ? ZonesType.fromJson(json['type'] as String) : null,
+); }
+
+final ZonesPostRequestAccount account;
+
+/// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
+final ZonesName name;
+
+/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+/// typically a partner-hosted zone or a CNAME setup.
+/// 
+final ZonesType? type;
+
+Map<String, dynamic> toJson() { return {
+  'account': account.toJson(),
+  'name': name.toJson(),
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') &&
+      json.containsKey('name'); } 
+ZonesPostRequest copyWith({ZonesPostRequestAccount? account, ZonesName? name, ZonesType Function()? type, }) { return ZonesPostRequest(
+  account: account ?? this.account,
+  name: name ?? this.name,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesPostRequest &&
+          account == other.account &&
+          name == other.name &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(account, name, type); } 
+@override String toString() { return 'ZonesPostRequest(account: $account, name: $name, type: $type)'; } 
+ }

@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetGroupMemberListResponse {const GetGroupMemberListResponse({required this.accountId, this.createdAt, required this.groupId, this.updatedAt, required this.uuid, });
+
+factory GetGroupMemberListResponse.fromJson(Map<String, dynamic> json) { return GetGroupMemberListResponse(
+  accountId: json['accountId'] as String,
+  createdAt: json['createdAt'] != null ? DateTime.parse(json['createdAt'] as String) : null,
+  groupId: json['groupId'] as String,
+  updatedAt: json['updatedAt'] != null ? DateTime.parse(json['updatedAt'] as String) : null,
+  uuid: json['uuid'] as String,
+); }
+
+final String accountId;
+
+final DateTime? createdAt;
+
+final String groupId;
+
+final DateTime? updatedAt;
+
+final String uuid;
+
+Map<String, dynamic> toJson() { return {
+  'accountId': accountId,
+  if (createdAt != null) 'createdAt': createdAt?.toIso8601String(),
+  'groupId': groupId,
+  if (updatedAt != null) 'updatedAt': updatedAt?.toIso8601String(),
+  'uuid': uuid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('accountId') && json['accountId'] is String &&
+      json.containsKey('groupId') && json['groupId'] is String &&
+      json.containsKey('uuid') && json['uuid'] is String; } 
+GetGroupMemberListResponse copyWith({String? accountId, DateTime Function()? createdAt, String? groupId, DateTime Function()? updatedAt, String? uuid, }) { return GetGroupMemberListResponse(
+  accountId: accountId ?? this.accountId,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  groupId: groupId ?? this.groupId,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  uuid: uuid ?? this.uuid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetGroupMemberListResponse &&
+          accountId == other.accountId &&
+          createdAt == other.createdAt &&
+          groupId == other.groupId &&
+          updatedAt == other.updatedAt &&
+          uuid == other.uuid; } 
+@override int get hashCode { return Object.hash(accountId, createdAt, groupId, updatedAt, uuid); } 
+@override String toString() { return 'GetGroupMemberListResponse(accountId: $accountId, createdAt: $createdAt, groupId: $groupId, updatedAt: $updatedAt, uuid: $uuid)'; } 
+ }

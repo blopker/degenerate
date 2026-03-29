@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_dns_as112_top_locations_response_result.dart';final class RadarGetDnsAs112TopLocationsResponse {const RadarGetDnsAs112TopLocationsResponse({required this.result, required this.success, });
+
+factory RadarGetDnsAs112TopLocationsResponse.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsResponse(
+  result: RadarGetDnsAs112TopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final RadarGetDnsAs112TopLocationsResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+RadarGetDnsAs112TopLocationsResponse copyWith({RadarGetDnsAs112TopLocationsResponseResult? result, bool? success, }) { return RadarGetDnsAs112TopLocationsResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TopLocationsResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'RadarGetDnsAs112TopLocationsResponse(result: $result, success: $success)'; } 
+ }

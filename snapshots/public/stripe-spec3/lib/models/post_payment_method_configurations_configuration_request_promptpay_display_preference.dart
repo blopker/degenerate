@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference {const PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference._(this.value);
+
+factory PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off' => off,
+  'on' => $on,
+  _ => PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference._(json),
+}; }
+
+static const PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference none = PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference._('none');
+
+static const PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference off = PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference._('off');
+
+static const PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference $on = PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference._('on');
+
+static const List<PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference> values = [none, off, $on];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference($value)'; } 
+ }
+final class PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference {const PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference({this.preference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference(
+  preference: json['preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference.fromJson(json['preference'] as String) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference? preference;
+
+Map<String, dynamic> toJson() { return {
+  if (preference != null) 'preference': preference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference copyWith({PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreferencePreference Function()? preference}) { return PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference(
+  preference: preference != null ? preference() : this.preference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference &&
+          preference == other.preference; } 
+@override int get hashCode { return preference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestPromptpayDisplayPreference(preference: $preference)'; } 
+ }

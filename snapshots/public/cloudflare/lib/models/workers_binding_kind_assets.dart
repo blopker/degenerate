@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_binding_name.dart';final class WorkersBindingKindAssets {const WorkersBindingKindAssets({required this.name, required this.type, });
+
+factory WorkersBindingKindAssets.fromJson(Map<String, dynamic> json) { return WorkersBindingKindAssets(
+  name: WorkersBindingName.fromJson(json['name'] as String),
+  type: json['type'] as String,
+); }
+
+final WorkersBindingName name;
+
+/// The kind of resource that the binding provides.
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'name': name.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+      json.containsKey('type') && json['type'] is String; } 
+WorkersBindingKindAssets copyWith({WorkersBindingName? name, String? type, }) { return WorkersBindingKindAssets(
+  name: name ?? this.name,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersBindingKindAssets &&
+          name == other.name &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(name, type); } 
+@override String toString() { return 'WorkersBindingKindAssets(name: $name, type: $type)'; } 
+ }

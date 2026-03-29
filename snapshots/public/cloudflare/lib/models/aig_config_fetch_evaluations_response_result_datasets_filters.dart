@@ -1,0 +1,124 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey {const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._(this.value);
+
+factory AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey.fromJson(String json) { return switch (json) {
+  'created_at' => createdAt,
+  'request_content_type' => requestContentType,
+  'response_content_type' => responseContentType,
+  'success' => success,
+  'cached' => cached,
+  'provider' => provider,
+  'model' => model,
+  'cost' => cost,
+  'tokens' => tokens,
+  'tokens_in' => tokensIn,
+  'tokens_out' => tokensOut,
+  'duration' => duration,
+  'feedback' => feedback,
+  _ => AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._(json),
+}; }
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey createdAt = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('created_at');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey requestContentType = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('request_content_type');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey responseContentType = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('response_content_type');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey success = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('success');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey cached = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('cached');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey provider = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('provider');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey model = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('model');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey cost = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('cost');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey tokens = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('tokens');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey tokensIn = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('tokens_in');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey tokensOut = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('tokens_out');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey duration = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('duration');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey feedback = AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey._('feedback');
+
+static const List<AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey> values = [createdAt, requestContentType, responseContentType, success, cached, provider, model, cost, tokens, tokensIn, tokensOut, duration, feedback];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey($value)'; } 
+ }
+final class AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator {const AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator._(this.value);
+
+factory AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator.fromJson(String json) { return switch (json) {
+  'eq' => eq,
+  'contains' => contains,
+  'lt' => lt,
+  'gt' => gt,
+  _ => AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator._(json),
+}; }
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator eq = AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator._('eq');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator contains = AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator._('contains');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator lt = AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator._('lt');
+
+static const AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator gt = AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator._('gt');
+
+static const List<AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator> values = [eq, contains, lt, gt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator($value)'; } 
+ }
+final class AigConfigFetchEvaluationsResponseResultDatasetsFilters {const AigConfigFetchEvaluationsResponseResultDatasetsFilters({required this.key, required this.$operator, required this.value, });
+
+factory AigConfigFetchEvaluationsResponseResultDatasetsFilters.fromJson(Map<String, dynamic> json) { return AigConfigFetchEvaluationsResponseResultDatasetsFilters(
+  key: AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey.fromJson(json['key'] as String),
+  $operator: AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator.fromJson(json['operator'] as String),
+  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+); }
+
+final AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey key;
+
+final AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator $operator;
+
+final List<dynamic> value;
+
+Map<String, dynamic> toJson() { return {
+  'key': key.toJson(),
+  'operator': $operator.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
+      json.containsKey('operator') &&
+      json.containsKey('value'); } 
+AigConfigFetchEvaluationsResponseResultDatasetsFilters copyWith({AigConfigFetchEvaluationsResponseResultDatasetsFiltersKey? key, AigConfigFetchEvaluationsResponseResultDatasetsFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigFetchEvaluationsResponseResultDatasetsFilters(
+  key: key ?? this.key,
+  $operator: $operator ?? this.$operator,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigFetchEvaluationsResponseResultDatasetsFilters &&
+          key == other.key &&
+          $operator == other.$operator &&
+          listEquals(value, other.value); } 
+@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
+@override String toString() { return 'AigConfigFetchEvaluationsResponseResultDatasetsFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
+ }

@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
+///  * `off-topic`
+///  * `too heated`
+///  * `resolved`
+///  * `spam`
+final class IssuesLockRequestLockReason {const IssuesLockRequestLockReason._(this.value);
+
+factory IssuesLockRequestLockReason.fromJson(String json) { return switch (json) {
+  'off-topic' => offTopic,
+  'too heated' => tooHeated,
+  'resolved' => resolved,
+  'spam' => spam,
+  _ => IssuesLockRequestLockReason._(json),
+}; }
+
+static const IssuesLockRequestLockReason offTopic = IssuesLockRequestLockReason._('off-topic');
+
+static const IssuesLockRequestLockReason tooHeated = IssuesLockRequestLockReason._('too heated');
+
+static const IssuesLockRequestLockReason resolved = IssuesLockRequestLockReason._('resolved');
+
+static const IssuesLockRequestLockReason spam = IssuesLockRequestLockReason._('spam');
+
+static const List<IssuesLockRequestLockReason> values = [offTopic, tooHeated, resolved, spam];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuesLockRequestLockReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuesLockRequestLockReason($value)'; } 
+ }
+final class IssuesLockRequest {const IssuesLockRequest({this.lockReason});
+
+factory IssuesLockRequest.fromJson(Map<String, dynamic> json) { return IssuesLockRequest(
+  lockReason: json['lock_reason'] != null ? IssuesLockRequestLockReason.fromJson(json['lock_reason'] as String) : null,
+); }
+
+/// The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
+///  * `off-topic`
+///  * `too heated`
+///  * `resolved`
+///  * `spam`
+final IssuesLockRequestLockReason? lockReason;
+
+Map<String, dynamic> toJson() { return {
+  if (lockReason != null) 'lock_reason': lockReason?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuesLockRequest copyWith({IssuesLockRequestLockReason Function()? lockReason}) { return IssuesLockRequest(
+  lockReason: lockReason != null ? lockReason() : this.lockReason,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuesLockRequest &&
+          lockReason == other.lockReason; } 
+@override int get hashCode { return lockReason.hashCode; } 
+@override String toString() { return 'IssuesLockRequest(lockReason: $lockReason)'; } 
+ }

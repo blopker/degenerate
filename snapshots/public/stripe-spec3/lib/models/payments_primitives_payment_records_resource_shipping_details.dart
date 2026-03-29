@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payments_primitives_payment_records_resource_address.dart';/// The customer's shipping information associated with this payment.
+final class PaymentsPrimitivesPaymentRecordsResourceShippingDetails {const PaymentsPrimitivesPaymentRecordsResourceShippingDetails({required this.address, this.name, this.phone, });
+
+factory PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourceShippingDetails(
+  address: PaymentsPrimitivesPaymentRecordsResourceAddress.fromJson(json['address'] as Map<String, dynamic>),
+  name: json['name'] as String?,
+  phone: json['phone'] as String?,
+); }
+
+final PaymentsPrimitivesPaymentRecordsResourceAddress address;
+
+/// The shipping recipient's name.
+final String? name;
+
+/// The shipping recipient's phone number.
+final String? phone;
+
+Map<String, dynamic> toJson() { return {
+  'address': address.toJson(),
+  'name': ?name,
+  'phone': ?phone,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
+PaymentsPrimitivesPaymentRecordsResourceShippingDetails copyWith({PaymentsPrimitivesPaymentRecordsResourceAddress? address, String? Function()? name, String? Function()? phone, }) { return PaymentsPrimitivesPaymentRecordsResourceShippingDetails(
+  address: address ?? this.address,
+  name: name != null ? name() : this.name,
+  phone: phone != null ? phone() : this.phone,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentsPrimitivesPaymentRecordsResourceShippingDetails &&
+          address == other.address &&
+          name == other.name &&
+          phone == other.phone; } 
+@override int get hashCode { return Object.hash(address, name, phone); } 
+@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourceShippingDetails(address: $address, name: $name, phone: $phone)'; } 
+ }

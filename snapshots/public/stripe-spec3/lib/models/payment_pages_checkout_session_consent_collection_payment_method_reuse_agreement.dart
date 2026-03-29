@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_payment_method_reuse_agreement.dart';/// If set to `hidden`, it will hide legal text related to the reuse of a payment method.
+final class PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement {const PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement({this.paymentPagesCheckoutSessionPaymentMethodReuseAgreement});
+
+factory PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement(
+  paymentPagesCheckoutSessionPaymentMethodReuseAgreement: PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.canParse(json) ? PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(json) : null,
+); }
+
+final PaymentPagesCheckoutSessionPaymentMethodReuseAgreement? paymentPagesCheckoutSessionPaymentMethodReuseAgreement;
+
+/// At least one variant must be present.
+bool get isValid { return paymentPagesCheckoutSessionPaymentMethodReuseAgreement != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentPagesCheckoutSessionPaymentMethodReuseAgreement?.toJson(),
+}; } 
+ }

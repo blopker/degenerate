@@ -1,0 +1,79 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Always `group`.
+final class GroupObject {const GroupObject._(this.value);
+
+factory GroupObject.fromJson(String json) { return switch (json) {
+  'group' => group,
+  _ => GroupObject._(json),
+}; }
+
+static const GroupObject group = GroupObject._('group');
+
+static const List<GroupObject> values = [group];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GroupObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GroupObject($value)'; } 
+ }
+/// Summary information about a group returned in role assignment responses.
+final class Group {const Group({required this.object, required this.id, required this.name, required this.createdAt, required this.scimManaged, });
+
+factory Group.fromJson(Map<String, dynamic> json) { return Group(
+  object: GroupObject.fromJson(json['object'] as String),
+  id: json['id'] as String,
+  name: json['name'] as String,
+  createdAt: (json['created_at'] as num).toInt(),
+  scimManaged: json['scim_managed'] as bool,
+); }
+
+/// Always `group`.
+final GroupObject object;
+
+/// Identifier for the group.
+final String id;
+
+/// Display name of the group.
+final String name;
+
+/// Unix timestamp (in seconds) when the group was created.
+final int createdAt;
+
+/// Whether the group is managed through SCIM.
+final bool scimManaged;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'id': id,
+  'name': name,
+  'created_at': createdAt,
+  'scim_managed': scimManaged,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('scim_managed') && json['scim_managed'] is bool; } 
+Group copyWith({GroupObject? object, String? id, String? name, int? createdAt, bool? scimManaged, }) { return Group(
+  object: object ?? this.object,
+  id: id ?? this.id,
+  name: name ?? this.name,
+  createdAt: createdAt ?? this.createdAt,
+  scimManaged: scimManaged ?? this.scimManaged,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Group &&
+          object == other.object &&
+          id == other.id &&
+          name == other.name &&
+          createdAt == other.createdAt &&
+          scimManaged == other.scimManaged; } 
+@override int get hashCode { return Object.hash(object, id, name, createdAt, scimManaged); } 
+@override String toString() { return 'Group(object: $object, id: $id, name: $name, createdAt: $createdAt, scimManaged: $scimManaged)'; } 
+ }

@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_id.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_value.dart';import 'webhook_registry_package_published_registry_package_package_version_nuget_metadata_value_variant4.dart';final class WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata {const WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata({this.id, this.name, this.value, });
+
+factory WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata.fromJson(Map<String, dynamic> json) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata(
+  id: json['id'] != null ? OneOf3.parse(json['id'], fromA: (v) => v as String, fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v)), fromC: (v) => (v as num).toInt(),) : null,
+  name: json['name'] as String?,
+  value: json['value'] != null ? OneOf4.parse(json['value'], fromA: (v) => v as bool, fromB: (v) => v as String, fromC: (v) => (v as num).toInt(), fromD: (v) => WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValueVariant4.fromJson(v as Map<String, dynamic>),) : null,
+); }
+
+final WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataId? id;
+
+final String? name;
+
+final WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  'name': ?name,
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata copyWith({WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataId? Function()? id, String Function()? name, WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataValue Function()? value, }) { return WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata(
+  id: id != null ? id() : this.id,
+  name: name != null ? name() : this.name,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata &&
+          id == other.id &&
+          name == other.name &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, name, value); } 
+@override String toString() { return 'WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadata(id: $id, name: $name, value: $value)'; } 
+ }

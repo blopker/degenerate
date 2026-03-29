@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_bucket_lock_rule.dart';final class R2PutBucketLockConfigurationRequest {const R2PutBucketLockConfigurationRequest({this.rules});
+
+factory R2PutBucketLockConfigurationRequest.fromJson(Map<String, dynamic> json) { return R2PutBucketLockConfigurationRequest(
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => R2BucketLockRule.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<R2BucketLockRule>? rules;
+
+Map<String, dynamic> toJson() { return {
+  if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2PutBucketLockConfigurationRequest copyWith({List<R2BucketLockRule> Function()? rules}) { return R2PutBucketLockConfigurationRequest(
+  rules: rules != null ? rules() : this.rules,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2PutBucketLockConfigurationRequest &&
+          listEquals(rules, other.rules); } 
+@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
+@override String toString() { return 'R2PutBucketLockConfigurationRequest(rules: $rules)'; } 
+ }

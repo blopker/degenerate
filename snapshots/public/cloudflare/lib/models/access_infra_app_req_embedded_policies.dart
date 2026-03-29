@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_base_policy_req.dart';final class AccessInfraAppReqEmbeddedPolicies {const AccessInfraAppReqEmbeddedPolicies({this.policies});
+
+factory AccessInfraAppReqEmbeddedPolicies.fromJson(Map<String, dynamic> json) { return AccessInfraAppReqEmbeddedPolicies(
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessBasePolicyReq.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The policies that Access applies to the application.
+final List<AccessBasePolicyReq>? policies;
+
+Map<String, dynamic> toJson() { return {
+  if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessInfraAppReqEmbeddedPolicies copyWith({List<AccessBasePolicyReq> Function()? policies}) { return AccessInfraAppReqEmbeddedPolicies(
+  policies: policies != null ? policies() : this.policies,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessInfraAppReqEmbeddedPolicies &&
+          listEquals(policies, other.policies); } 
+@override int get hashCode { return Object.hashAll(policies ?? const []).hashCode; } 
+@override String toString() { return 'AccessInfraAppReqEmbeddedPolicies(policies: $policies)'; } 
+ }

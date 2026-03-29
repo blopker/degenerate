@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'secret_key_param2_customer_acceptance.dart';final class SecretKeyParam2 {const SecretKeyParam2({required this.customerAcceptance});
+
+factory SecretKeyParam2.fromJson(Map<String, dynamic> json) { return SecretKeyParam2(
+  customerAcceptance: SecretKeyParam2CustomerAcceptance.fromJson(json['customer_acceptance'] as Map<String, dynamic>),
+); }
+
+final SecretKeyParam2CustomerAcceptance customerAcceptance;
+
+Map<String, dynamic> toJson() { return {
+  'customer_acceptance': customerAcceptance.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('customer_acceptance'); } 
+SecretKeyParam2 copyWith({SecretKeyParam2CustomerAcceptance? customerAcceptance}) { return SecretKeyParam2(
+  customerAcceptance: customerAcceptance ?? this.customerAcceptance,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretKeyParam2 &&
+          customerAcceptance == other.customerAcceptance; } 
+@override int get hashCode { return customerAcceptance.hashCode; } 
+@override String toString() { return 'SecretKeyParam2(customerAcceptance: $customerAcceptance)'; } 
+ }

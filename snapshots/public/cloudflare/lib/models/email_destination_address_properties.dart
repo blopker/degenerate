@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'email_created.dart';import 'email_destination_address_identifier.dart';import 'email_email.dart';import 'email_modified.dart';/// Destination address tag. (Deprecated, replaced by destination address identifier)
+extension type const EmailDestinationAddressTag(String value) {
+factory EmailDestinationAddressTag.fromJson(String json) => EmailDestinationAddressTag(json);
+
+String toJson() => value;
+
+}
+/// The date and time the destination address has been verified. Null means not verified yet.
+extension type EmailVerified(DateTime value) {
+factory EmailVerified.fromJson(String json) => EmailVerified(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+final class EmailDestinationAddressProperties {const EmailDestinationAddressProperties({this.created, this.email, this.id, this.modified, this.tag, this.verified, });
+
+factory EmailDestinationAddressProperties.fromJson(Map<String, dynamic> json) { return EmailDestinationAddressProperties(
+  created: json['created'] != null ? EmailCreated.fromJson(json['created'] as String) : null,
+  email: json['email'] != null ? EmailEmail.fromJson(json['email'] as String) : null,
+  id: json['id'] != null ? EmailDestinationAddressIdentifier.fromJson(json['id'] as String) : null,
+  modified: json['modified'] != null ? EmailModified.fromJson(json['modified'] as String) : null,
+  tag: json['tag'] != null ? EmailDestinationAddressTag.fromJson(json['tag'] as String) : null,
+  verified: json['verified'] != null ? EmailVerified.fromJson(json['verified'] as String) : null,
+); }
+
+/// The date and time the destination address has been created.
+final EmailCreated? created;
+
+final EmailEmail? email;
+
+/// Destination address identifier.
+final EmailDestinationAddressIdentifier? id;
+
+final EmailModified? modified;
+
+final EmailDestinationAddressTag? tag;
+
+final EmailVerified? verified;
+
+Map<String, dynamic> toJson() { return {
+  if (created != null) 'created': created?.toJson(),
+  if (email != null) 'email': email?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (modified != null) 'modified': modified?.toJson(),
+  if (tag != null) 'tag': tag?.toJson(),
+  if (verified != null) 'verified': verified?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EmailDestinationAddressProperties copyWith({EmailCreated Function()? created, EmailEmail Function()? email, EmailDestinationAddressIdentifier Function()? id, EmailModified Function()? modified, EmailDestinationAddressTag Function()? tag, EmailVerified Function()? verified, }) { return EmailDestinationAddressProperties(
+  created: created != null ? created() : this.created,
+  email: email != null ? email() : this.email,
+  id: id != null ? id() : this.id,
+  modified: modified != null ? modified() : this.modified,
+  tag: tag != null ? tag() : this.tag,
+  verified: verified != null ? verified() : this.verified,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailDestinationAddressProperties &&
+          created == other.created &&
+          email == other.email &&
+          id == other.id &&
+          modified == other.modified &&
+          tag == other.tag &&
+          verified == other.verified; } 
+@override int get hashCode { return Object.hash(created, email, id, modified, tag, verified); } 
+@override String toString() { return 'EmailDestinationAddressProperties(created: $created, email: $email, id: $id, modified: $modified, tag: $tag, verified: $verified)'; } 
+ }

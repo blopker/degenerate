@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit {const PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit({this.accountNumber, this.sortCode, });
+
+factory PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit(
+  accountNumber: json['account_number'] as String?,
+  sortCode: json['sort_code'] as String?,
+); }
+
+final String? accountNumber;
+
+final String? sortCode;
+
+Map<String, dynamic> toJson() { return {
+  'account_number': ?accountNumber,
+  'sort_code': ?sortCode,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit copyWith({String Function()? accountNumber, String Function()? sortCode, }) { return PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit(
+  accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
+  sortCode: sortCode != null ? sortCode() : this.sortCode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit &&
+          accountNumber == other.accountNumber &&
+          sortCode == other.sortCode; } 
+@override int get hashCode { return Object.hash(accountNumber, sortCode); } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataBacsDebit(accountNumber: $accountNumber, sortCode: $sortCode)'; } 
+ }

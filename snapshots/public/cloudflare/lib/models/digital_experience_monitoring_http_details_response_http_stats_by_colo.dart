@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_http_details_response_http_stats_by_colo_http_status_code.dart';import 'digital_experience_monitoring_test_stat_over_time.dart';import 'digital_experience_monitoring_test_stat_pct_over_time.dart';final class DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo {const DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo({required this.availabilityPct, required this.colo, required this.dnsResponseTimeMs, required this.httpStatusCode, required this.resourceFetchTimeMs, required this.serverResponseTimeMs, required this.uniqueDevicesTotal, });
+
+factory DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo(
+  availabilityPct: DigitalExperienceMonitoringTestStatPctOverTime.fromJson(json['availabilityPct'] as Map<String, dynamic>),
+  colo: json['colo'] as String,
+  dnsResponseTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['dnsResponseTimeMs'] as Map<String, dynamic>),
+  httpStatusCode: (json['httpStatusCode'] as List<dynamic>).map((e) => DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode.fromJson(e as Map<String, dynamic>)).toList(),
+  resourceFetchTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['resourceFetchTimeMs'] as Map<String, dynamic>),
+  serverResponseTimeMs: DigitalExperienceMonitoringTestStatOverTime.fromJson(json['serverResponseTimeMs'] as Map<String, dynamic>),
+  uniqueDevicesTotal: (json['uniqueDevicesTotal'] as num).toInt(),
+); }
+
+final DigitalExperienceMonitoringTestStatPctOverTime availabilityPct;
+
+final String colo;
+
+final DigitalExperienceMonitoringTestStatOverTime dnsResponseTimeMs;
+
+final List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode> httpStatusCode;
+
+final DigitalExperienceMonitoringTestStatOverTime resourceFetchTimeMs;
+
+final DigitalExperienceMonitoringTestStatOverTime serverResponseTimeMs;
+
+/// Count of unique devices that have run this test in the given time period
+final int uniqueDevicesTotal;
+
+Map<String, dynamic> toJson() { return {
+  'availabilityPct': availabilityPct.toJson(),
+  'colo': colo,
+  'dnsResponseTimeMs': dnsResponseTimeMs.toJson(),
+  'httpStatusCode': httpStatusCode.map((e) => e.toJson()).toList(),
+  'resourceFetchTimeMs': resourceFetchTimeMs.toJson(),
+  'serverResponseTimeMs': serverResponseTimeMs.toJson(),
+  'uniqueDevicesTotal': uniqueDevicesTotal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('availabilityPct') &&
+      json.containsKey('colo') && json['colo'] is String &&
+      json.containsKey('dnsResponseTimeMs') &&
+      json.containsKey('httpStatusCode') &&
+      json.containsKey('resourceFetchTimeMs') &&
+      json.containsKey('serverResponseTimeMs') &&
+      json.containsKey('uniqueDevicesTotal') && json['uniqueDevicesTotal'] is num; } 
+DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo copyWith({DigitalExperienceMonitoringTestStatPctOverTime? availabilityPct, String? colo, DigitalExperienceMonitoringTestStatOverTime? dnsResponseTimeMs, List<DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColoHttpStatusCode>? httpStatusCode, DigitalExperienceMonitoringTestStatOverTime? resourceFetchTimeMs, DigitalExperienceMonitoringTestStatOverTime? serverResponseTimeMs, int? uniqueDevicesTotal, }) { return DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo(
+  availabilityPct: availabilityPct ?? this.availabilityPct,
+  colo: colo ?? this.colo,
+  dnsResponseTimeMs: dnsResponseTimeMs ?? this.dnsResponseTimeMs,
+  httpStatusCode: httpStatusCode ?? this.httpStatusCode,
+  resourceFetchTimeMs: resourceFetchTimeMs ?? this.resourceFetchTimeMs,
+  serverResponseTimeMs: serverResponseTimeMs ?? this.serverResponseTimeMs,
+  uniqueDevicesTotal: uniqueDevicesTotal ?? this.uniqueDevicesTotal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo &&
+          availabilityPct == other.availabilityPct &&
+          colo == other.colo &&
+          dnsResponseTimeMs == other.dnsResponseTimeMs &&
+          listEquals(httpStatusCode, other.httpStatusCode) &&
+          resourceFetchTimeMs == other.resourceFetchTimeMs &&
+          serverResponseTimeMs == other.serverResponseTimeMs &&
+          uniqueDevicesTotal == other.uniqueDevicesTotal; } 
+@override int get hashCode { return Object.hash(availabilityPct, colo, dnsResponseTimeMs, Object.hashAll(httpStatusCode), resourceFetchTimeMs, serverResponseTimeMs, uniqueDevicesTotal); } 
+@override String toString() { return 'DigitalExperienceMonitoringHttpDetailsResponseHttpStatsByColo(availabilityPct: $availabilityPct, colo: $colo, dnsResponseTimeMs: $dnsResponseTimeMs, httpStatusCode: $httpStatusCode, resourceFetchTimeMs: $resourceFetchTimeMs, serverResponseTimeMs: $serverResponseTimeMs, uniqueDevicesTotal: $uniqueDevicesTotal)'; } 
+ }

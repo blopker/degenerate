@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A pending safety check for the computer call.
+final class ComputerCallSafetyCheckParam {const ComputerCallSafetyCheckParam({required this.id, this.code, this.message, });
+
+factory ComputerCallSafetyCheckParam.fromJson(Map<String, dynamic> json) { return ComputerCallSafetyCheckParam(
+  id: json['id'] as String,
+  code: json['code'] as String?,
+  message: json['message'] as String?,
+); }
+
+/// The ID of the pending safety check.
+final String id;
+
+/// The type of the pending safety check.
+final String? code;
+
+/// Details about the pending safety check.
+final String? message;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'code': ?code,
+  'message': ?message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+ComputerCallSafetyCheckParam copyWith({String? id, String? Function()? code, String? Function()? message, }) { return ComputerCallSafetyCheckParam(
+  id: id ?? this.id,
+  code: code != null ? code() : this.code,
+  message: message != null ? message() : this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ComputerCallSafetyCheckParam &&
+          id == other.id &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(id, code, message); } 
+@override String toString() { return 'ComputerCallSafetyCheckParam(id: $id, code: $code, message: $message)'; } 
+ }

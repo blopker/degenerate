@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_shipping_rates_request_fixed_amount_currency_options_value.dart';/// Describes a fixed amount to charge for shipping. Must be present if type is `fixed_amount`.
+final class PostShippingRatesRequestFixedAmount {const PostShippingRatesRequestFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
+
+factory PostShippingRatesRequestFixedAmount.fromJson(Map<String, dynamic> json) { return PostShippingRatesRequestFixedAmount(
+  amount: (json['amount'] as num).toInt(),
+  currency: json['currency'] as String,
+  currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostShippingRatesRequestFixedAmountCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
+); }
+
+final int amount;
+
+final String currency;
+
+final Map<String,PostShippingRatesRequestFixedAmountCurrencyOptionsValue>? currencyOptions;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'currency': currency,
+  if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String; } 
+PostShippingRatesRequestFixedAmount copyWith({int? amount, String? currency, Map<String, PostShippingRatesRequestFixedAmountCurrencyOptionsValue> Function()? currencyOptions, }) { return PostShippingRatesRequestFixedAmount(
+  amount: amount ?? this.amount,
+  currency: currency ?? this.currency,
+  currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostShippingRatesRequestFixedAmount &&
+          amount == other.amount &&
+          currency == other.currency &&
+          currencyOptions == other.currencyOptions; } 
+@override int get hashCode { return Object.hash(amount, currency, currencyOptions); } 
+@override String toString() { return 'PostShippingRatesRequestFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)'; } 
+ }

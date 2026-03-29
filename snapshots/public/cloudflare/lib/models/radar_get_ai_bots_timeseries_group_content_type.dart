@@ -1,0 +1,68 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAiBotsTimeseriesGroupContentType {const RadarGetAiBotsTimeseriesGroupContentType._(this.value);
+
+factory RadarGetAiBotsTimeseriesGroupContentType.fromJson(String json) { return switch (json) {
+  'HTML' => html,
+  'IMAGES' => images,
+  'JSON' => $json,
+  'JAVASCRIPT' => javascript,
+  'CSS' => css,
+  'PLAIN_TEXT' => plainText,
+  'FONTS' => fonts,
+  'XML' => xml,
+  'YAML' => yaml,
+  'VIDEO' => video,
+  'AUDIO' => audio,
+  'MARKDOWN' => markdown,
+  'DOCUMENTS' => documents,
+  'BINARY' => binary,
+  'SERIALIZATION' => serialization,
+  'OTHER' => $other,
+  _ => RadarGetAiBotsTimeseriesGroupContentType._(json),
+}; }
+
+static const RadarGetAiBotsTimeseriesGroupContentType html = RadarGetAiBotsTimeseriesGroupContentType._('HTML');
+
+static const RadarGetAiBotsTimeseriesGroupContentType images = RadarGetAiBotsTimeseriesGroupContentType._('IMAGES');
+
+static const RadarGetAiBotsTimeseriesGroupContentType $json = RadarGetAiBotsTimeseriesGroupContentType._('JSON');
+
+static const RadarGetAiBotsTimeseriesGroupContentType javascript = RadarGetAiBotsTimeseriesGroupContentType._('JAVASCRIPT');
+
+static const RadarGetAiBotsTimeseriesGroupContentType css = RadarGetAiBotsTimeseriesGroupContentType._('CSS');
+
+static const RadarGetAiBotsTimeseriesGroupContentType plainText = RadarGetAiBotsTimeseriesGroupContentType._('PLAIN_TEXT');
+
+static const RadarGetAiBotsTimeseriesGroupContentType fonts = RadarGetAiBotsTimeseriesGroupContentType._('FONTS');
+
+static const RadarGetAiBotsTimeseriesGroupContentType xml = RadarGetAiBotsTimeseriesGroupContentType._('XML');
+
+static const RadarGetAiBotsTimeseriesGroupContentType yaml = RadarGetAiBotsTimeseriesGroupContentType._('YAML');
+
+static const RadarGetAiBotsTimeseriesGroupContentType video = RadarGetAiBotsTimeseriesGroupContentType._('VIDEO');
+
+static const RadarGetAiBotsTimeseriesGroupContentType audio = RadarGetAiBotsTimeseriesGroupContentType._('AUDIO');
+
+static const RadarGetAiBotsTimeseriesGroupContentType markdown = RadarGetAiBotsTimeseriesGroupContentType._('MARKDOWN');
+
+static const RadarGetAiBotsTimeseriesGroupContentType documents = RadarGetAiBotsTimeseriesGroupContentType._('DOCUMENTS');
+
+static const RadarGetAiBotsTimeseriesGroupContentType binary = RadarGetAiBotsTimeseriesGroupContentType._('BINARY');
+
+static const RadarGetAiBotsTimeseriesGroupContentType serialization = RadarGetAiBotsTimeseriesGroupContentType._('SERIALIZATION');
+
+static const RadarGetAiBotsTimeseriesGroupContentType $other = RadarGetAiBotsTimeseriesGroupContentType._('OTHER');
+
+static const List<RadarGetAiBotsTimeseriesGroupContentType> values = [html, images, $json, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAiBotsTimeseriesGroupContentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAiBotsTimeseriesGroupContentType($value)'; } 
+ }

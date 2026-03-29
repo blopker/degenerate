@@ -105,10 +105,7 @@ void main() {
       expect(multipart.fields['name'], 'photo.png');
       expect(multipart.files, hasLength(1));
       expect(multipart.files.first.filename, 'photo.png');
-      expect(
-        multipart.files.first.contentType.toString(),
-        'image/png',
-      );
+      expect(multipart.files.first.contentType.toString(), 'image/png');
     });
 
     test('cancel token races against in-flight request', () async {

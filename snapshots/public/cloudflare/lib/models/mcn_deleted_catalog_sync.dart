@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mcn_catalog_sync_id.dart';final class McnDeletedCatalogSync {const McnDeletedCatalogSync({required this.id});
+
+factory McnDeletedCatalogSync.fromJson(Map<String, dynamic> json) { return McnDeletedCatalogSync(
+  id: McnCatalogSyncId.fromJson(json['id'] as String),
+); }
+
+final McnCatalogSyncId id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+McnDeletedCatalogSync copyWith({McnCatalogSyncId? id}) { return McnDeletedCatalogSync(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnDeletedCatalogSync &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'McnDeletedCatalogSync(id: $id)'; } 
+ }

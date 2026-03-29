@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// End date and time of requesting data period in the ISO8601 format.
+extension type LoadBalancingUntil(DateTime value) {
+factory LoadBalancingUntil.fromJson(String json) => LoadBalancingUntil(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}

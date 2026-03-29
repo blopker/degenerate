@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// If this is a MB WAY PaymentMethod, this hash contains details about the MB WAY payment method.
+final class PostPaymentMethodsRequestMbWay {const PostPaymentMethodsRequestMbWay();
+
+factory PostPaymentMethodsRequestMbWay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestMbWay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodsRequestMbWay copyWith() { return PostPaymentMethodsRequestMbWay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentMethodsRequestMbWay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestMbWay()'; } 
+ }

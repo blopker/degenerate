@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
+final class SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod {const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._(this.value);
+
+factory SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod.fromJson(String json) { return switch (json) {
+  'cancel' => cancel,
+  'create_invoice' => createInvoice,
+  'pause' => pause,
+  _ => SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._(json),
+}; }
+
+static const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod cancel = SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._('cancel');
+
+static const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod createInvoice = SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._('create_invoice');
+
+static const SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod pause = SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod._('pause');
+
+static const List<SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod> values = [cancel, createInvoice, pause];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod($value)'; } 
+ }
+/// Defines how a subscription behaves when a free trial ends.
+final class SubscriptionsTrialsResourceEndBehavior {const SubscriptionsTrialsResourceEndBehavior({required this.missingPaymentMethod});
+
+factory SubscriptionsTrialsResourceEndBehavior.fromJson(Map<String, dynamic> json) { return SubscriptionsTrialsResourceEndBehavior(
+  missingPaymentMethod: SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod.fromJson(json['missing_payment_method'] as String),
+); }
+
+/// Indicates how the subscription should change when the trial ends if the user did not provide a payment method.
+final SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod missingPaymentMethod;
+
+Map<String, dynamic> toJson() { return {
+  'missing_payment_method': missingPaymentMethod.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('missing_payment_method'); } 
+SubscriptionsTrialsResourceEndBehavior copyWith({SubscriptionsTrialsResourceEndBehaviorMissingPaymentMethod? missingPaymentMethod}) { return SubscriptionsTrialsResourceEndBehavior(
+  missingPaymentMethod: missingPaymentMethod ?? this.missingPaymentMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SubscriptionsTrialsResourceEndBehavior &&
+          missingPaymentMethod == other.missingPaymentMethod; } 
+@override int get hashCode { return missingPaymentMethod.hashCode; } 
+@override String toString() { return 'SubscriptionsTrialsResourceEndBehavior(missingPaymentMethod: $missingPaymentMethod)'; } 
+ }

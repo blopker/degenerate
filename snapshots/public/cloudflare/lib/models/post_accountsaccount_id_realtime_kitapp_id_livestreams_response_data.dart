@@ -1,0 +1,100 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._(this.value);
+
+factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus.fromJson(String json) { return switch (json) {
+  'LIVE' => live,
+  'IDLE' => idle,
+  'ERRORED' => errored,
+  'INVOKED' => invoked,
+  _ => PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._(json),
+}; }
+
+static const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus live = PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._('LIVE');
+
+static const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus idle = PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._('IDLE');
+
+static const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus errored = PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._('ERRORED');
+
+static const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus invoked = PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus._('INVOKED');
+
+static const List<PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus> values = [live, idle, errored, invoked];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus($value)'; } 
+ }
+final class PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData {const PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData({this.disabled, this.id, this.ingestServer, this.meetingId, this.name, this.playbackUrl, this.status, this.streamKey, });
+
+factory PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData.fromJson(Map<String, dynamic> json) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
+  disabled: json['disabled'] as bool?,
+  id: json['id'] as String?,
+  ingestServer: json['ingest_server'] as String?,
+  meetingId: json['meeting_id'] as String?,
+  name: json['name'] as String?,
+  playbackUrl: json['playback_url'] as String?,
+  status: json['status'] != null ? PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus.fromJson(json['status'] as String) : null,
+  streamKey: json['stream_key'] as String?,
+); }
+
+/// Specifies if the livestream was disabled.
+final bool? disabled;
+
+/// The livestream ID.
+final String? id;
+
+/// The server URL to which the RTMP encoder should send the video and audio data.
+final String? ingestServer;
+
+final String? meetingId;
+
+final String? name;
+
+/// The web address that viewers can use to watch the livestream.
+final String? playbackUrl;
+
+final PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus? status;
+
+/// Unique key for accessing each livestream.
+final String? streamKey;
+
+Map<String, dynamic> toJson() { return {
+  'disabled': ?disabled,
+  'id': ?id,
+  'ingest_server': ?ingestServer,
+  'meeting_id': ?meetingId,
+  'name': ?name,
+  'playback_url': ?playbackUrl,
+  if (status != null) 'status': status?.toJson(),
+  'stream_key': ?streamKey,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData copyWith({bool Function()? disabled, String Function()? id, String Function()? ingestServer, String? Function()? meetingId, String Function()? name, String Function()? playbackUrl, PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseDataStatus Function()? status, String Function()? streamKey, }) { return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(
+  disabled: disabled != null ? disabled() : this.disabled,
+  id: id != null ? id() : this.id,
+  ingestServer: ingestServer != null ? ingestServer() : this.ingestServer,
+  meetingId: meetingId != null ? meetingId() : this.meetingId,
+  name: name != null ? name() : this.name,
+  playbackUrl: playbackUrl != null ? playbackUrl() : this.playbackUrl,
+  status: status != null ? status() : this.status,
+  streamKey: streamKey != null ? streamKey() : this.streamKey,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData &&
+          disabled == other.disabled &&
+          id == other.id &&
+          ingestServer == other.ingestServer &&
+          meetingId == other.meetingId &&
+          name == other.name &&
+          playbackUrl == other.playbackUrl &&
+          status == other.status &&
+          streamKey == other.streamKey; } 
+@override int get hashCode { return Object.hash(disabled, id, ingestServer, meetingId, name, playbackUrl, status, streamKey); } 
+@override String toString() { return 'PostAccountsaccountIdRealtimeKitappIdLivestreamsResponseData(disabled: $disabled, id: $id, ingestServer: $ingestServer, meetingId: $meetingId, name: $name, playbackUrl: $playbackUrl, status: $status, streamKey: $streamKey)'; } 
+ }

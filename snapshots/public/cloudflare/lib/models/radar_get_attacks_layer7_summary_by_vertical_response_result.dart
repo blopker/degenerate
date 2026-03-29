@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_attacks_layer7_summary_by_vertical_response_result_meta.dart';final class RadarGetAttacksLayer7SummaryByVerticalResponseResult {const RadarGetAttacksLayer7SummaryByVerticalResponseResult({required this.meta, required this.summary0, });
+
+factory RadarGetAttacksLayer7SummaryByVerticalResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer7SummaryByVerticalResponseResult(
+  meta: RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  summary0: (json['summary_0'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+); }
+
+/// Metadata for the results.
+final RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta meta;
+
+final Map<String,String> summary0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'summary_0': summary0,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('summary_0'); } 
+RadarGetAttacksLayer7SummaryByVerticalResponseResult copyWith({RadarGetAttacksLayer7SummaryByVerticalResponseResultMeta? meta, Map<String,String>? summary0, }) { return RadarGetAttacksLayer7SummaryByVerticalResponseResult(
+  meta: meta ?? this.meta,
+  summary0: summary0 ?? this.summary0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer7SummaryByVerticalResponseResult &&
+          meta == other.meta &&
+          summary0 == other.summary0; } 
+@override int get hashCode { return Object.hash(meta, summary0); } 
+@override String toString() { return 'RadarGetAttacksLayer7SummaryByVerticalResponseResult(meta: $meta, summary0: $summary0)'; } 
+ }

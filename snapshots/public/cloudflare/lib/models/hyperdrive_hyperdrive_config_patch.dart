@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hyperdrive_hyperdrive_caching.dart';import 'hyperdrive_hyperdrive_config_patch_origin.dart';import 'hyperdrive_hyperdrive_database.dart';import 'hyperdrive_hyperdrive_mtls.dart';import 'hyperdrive_hyperdrive_name.dart';import 'hyperdrive_hyperdrive_origin_connection_limit.dart';import 'hyperdrive_internet_origin.dart';import 'hyperdrive_over_access_origin.dart';final class HyperdriveHyperdriveConfigPatch {const HyperdriveHyperdriveConfigPatch({this.caching, this.mtls, this.name, this.origin, this.originConnectionLimit, });
+
+factory HyperdriveHyperdriveConfigPatch.fromJson(Map<String, dynamic> json) { return HyperdriveHyperdriveConfigPatch(
+  caching: json['caching'] != null ? HyperdriveHyperdriveCaching.fromJson(json['caching'] as Map<String, dynamic>) : null,
+  mtls: json['mtls'] != null ? HyperdriveHyperdriveMtls.fromJson(json['mtls'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? HyperdriveHyperdriveName.fromJson(json['name'] as String) : null,
+  origin: json['origin'] != null ? OneOf2.parse(json['origin'], fromA: (v) => HyperdriveHyperdriveDatabase.fromJson(v as Map<String, dynamic>), fromB: (v) => OneOf2.parse(v, fromA: (v) => HyperdriveInternetOrigin.fromJson(v as Map<String, dynamic>), fromB: (v) => HyperdriveOverAccessOrigin.fromJson(v as Map<String, dynamic>),),) : null,
+  originConnectionLimit: json['origin_connection_limit'] != null ? HyperdriveHyperdriveOriginConnectionLimit.fromJson(json['origin_connection_limit'] as num) : null,
+); }
+
+final HyperdriveHyperdriveCaching? caching;
+
+final HyperdriveHyperdriveMtls? mtls;
+
+final HyperdriveHyperdriveName? name;
+
+final HyperdriveHyperdriveConfigPatchOrigin? origin;
+
+final HyperdriveHyperdriveOriginConnectionLimit? originConnectionLimit;
+
+Map<String, dynamic> toJson() { return {
+  if (caching != null) 'caching': caching?.toJson(),
+  if (mtls != null) 'mtls': mtls?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (origin != null) 'origin': origin?.toJson(),
+  if (originConnectionLimit != null) 'origin_connection_limit': originConnectionLimit?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+HyperdriveHyperdriveConfigPatch copyWith({HyperdriveHyperdriveCaching Function()? caching, HyperdriveHyperdriveMtls Function()? mtls, HyperdriveHyperdriveName Function()? name, HyperdriveHyperdriveConfigPatchOrigin Function()? origin, HyperdriveHyperdriveOriginConnectionLimit Function()? originConnectionLimit, }) { return HyperdriveHyperdriveConfigPatch(
+  caching: caching != null ? caching() : this.caching,
+  mtls: mtls != null ? mtls() : this.mtls,
+  name: name != null ? name() : this.name,
+  origin: origin != null ? origin() : this.origin,
+  originConnectionLimit: originConnectionLimit != null ? originConnectionLimit() : this.originConnectionLimit,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is HyperdriveHyperdriveConfigPatch &&
+          caching == other.caching &&
+          mtls == other.mtls &&
+          name == other.name &&
+          origin == other.origin &&
+          originConnectionLimit == other.originConnectionLimit; } 
+@override int get hashCode { return Object.hash(caching, mtls, name, origin, originConnectionLimit); } 
+@override String toString() { return 'HyperdriveHyperdriveConfigPatch(caching: $caching, mtls: $mtls, name: $name, origin: $origin, originConnectionLimit: $originConnectionLimit)'; } 
+ }

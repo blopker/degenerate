@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Whether to use labeled runners or standard GitHub runners.
+final class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType._(this.value);
+
+factory CodeScanningDefaultSetupOptionsRunnerType.fromJson(String json) { return switch (json) {
+  'standard' => standard,
+  'labeled' => labeled,
+  'not_set' => notSet,
+  _ => CodeScanningDefaultSetupOptionsRunnerType._(json),
+}; }
+
+static const CodeScanningDefaultSetupOptionsRunnerType standard = CodeScanningDefaultSetupOptionsRunnerType._('standard');
+
+static const CodeScanningDefaultSetupOptionsRunnerType labeled = CodeScanningDefaultSetupOptionsRunnerType._('labeled');
+
+static const CodeScanningDefaultSetupOptionsRunnerType notSet = CodeScanningDefaultSetupOptionsRunnerType._('not_set');
+
+static const List<CodeScanningDefaultSetupOptionsRunnerType> values = [standard, labeled, notSet];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningDefaultSetupOptionsRunnerType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningDefaultSetupOptionsRunnerType($value)'; } 
+ }
+/// Feature options for code scanning default setup
+final class CodeScanningDefaultSetupOptions {const CodeScanningDefaultSetupOptions({this.runnerType, this.runnerLabel, });
+
+factory CodeScanningDefaultSetupOptions.fromJson(Map<String, dynamic> json) { return CodeScanningDefaultSetupOptions(
+  runnerType: json['runner_type'] != null ? CodeScanningDefaultSetupOptionsRunnerType.fromJson(json['runner_type'] as String) : null,
+  runnerLabel: json['runner_label'] as String?,
+); }
+
+/// Whether to use labeled runners or standard GitHub runners.
+final CodeScanningDefaultSetupOptionsRunnerType? runnerType;
+
+/// The label of the runner to use for code scanning default setup when runner_type is 'labeled'.
+final String? runnerLabel;
+
+Map<String, dynamic> toJson() { return {
+  if (runnerType != null) 'runner_type': runnerType?.toJson(),
+  'runner_label': ?runnerLabel,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CodeScanningDefaultSetupOptions copyWith({CodeScanningDefaultSetupOptionsRunnerType Function()? runnerType, String? Function()? runnerLabel, }) { return CodeScanningDefaultSetupOptions(
+  runnerType: runnerType != null ? runnerType() : this.runnerType,
+  runnerLabel: runnerLabel != null ? runnerLabel() : this.runnerLabel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeScanningDefaultSetupOptions &&
+          runnerType == other.runnerType &&
+          runnerLabel == other.runnerLabel; } 
+@override int get hashCode { return Object.hash(runnerType, runnerLabel); } 
+@override String toString() { return 'CodeScanningDefaultSetupOptions(runnerType: $runnerType, runnerLabel: $runnerLabel)'; } 
+ }

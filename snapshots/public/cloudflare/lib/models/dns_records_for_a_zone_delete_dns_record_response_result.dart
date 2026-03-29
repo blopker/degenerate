@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dns_records_identifier.dart';final class DnsRecordsForAZoneDeleteDnsRecordResponseResult {const DnsRecordsForAZoneDeleteDnsRecordResponseResult({this.id});
+
+factory DnsRecordsForAZoneDeleteDnsRecordResponseResult.fromJson(Map<String, dynamic> json) { return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
+  id: json['id'] != null ? DnsRecordsIdentifier.fromJson(json['id'] as String) : null,
+); }
+
+/// Identifier.
+final DnsRecordsIdentifier? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DnsRecordsForAZoneDeleteDnsRecordResponseResult copyWith({DnsRecordsIdentifier Function()? id}) { return DnsRecordsForAZoneDeleteDnsRecordResponseResult(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsRecordsForAZoneDeleteDnsRecordResponseResult &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'DnsRecordsForAZoneDeleteDnsRecordResponseResult(id: $id)'; } 
+ }

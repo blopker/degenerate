@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Determines the position and visibility of the payment method reuse agreement in the UI. When set to `auto`, Stripe's defaults will be used.
+/// 
+/// When set to `hidden`, the payment method reuse agreement text will always be hidden in the UI.
+final class PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition {const PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition._(this.value);
+
+factory PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'hidden' => hidden,
+  _ => PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition._(json),
+}; }
+
+static const PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition auto = PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition._('auto');
+
+static const PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition hidden = PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition._('hidden');
+
+static const List<PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition> values = [auto, hidden];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition($value)'; } 
+ }
+/// 
+final class PaymentPagesCheckoutSessionPaymentMethodReuseAgreement {const PaymentPagesCheckoutSessionPaymentMethodReuseAgreement({required this.position});
+
+factory PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPaymentMethodReuseAgreement(
+  position: PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition.fromJson(json['position'] as String),
+); }
+
+/// Determines the position and visibility of the payment method reuse agreement in the UI. When set to `auto`, Stripe's defaults will be used.
+/// 
+/// When set to `hidden`, the payment method reuse agreement text will always be hidden in the UI.
+final PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition position;
+
+Map<String, dynamic> toJson() { return {
+  'position': position.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('position'); } 
+PaymentPagesCheckoutSessionPaymentMethodReuseAgreement copyWith({PaymentPagesCheckoutSessionPaymentMethodReuseAgreementPosition? position}) { return PaymentPagesCheckoutSessionPaymentMethodReuseAgreement(
+  position: position ?? this.position,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionPaymentMethodReuseAgreement &&
+          position == other.position; } 
+@override int get hashCode { return position.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionPaymentMethodReuseAgreement(position: $position)'; } 
+ }

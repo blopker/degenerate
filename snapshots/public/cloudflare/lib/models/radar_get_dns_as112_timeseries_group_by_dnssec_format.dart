@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetDnsAs112TimeseriesGroupByDnssecFormat {const RadarGetDnsAs112TimeseriesGroupByDnssecFormat._(this.value);
+
+factory RadarGetDnsAs112TimeseriesGroupByDnssecFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetDnsAs112TimeseriesGroupByDnssecFormat._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecFormat $json = RadarGetDnsAs112TimeseriesGroupByDnssecFormat._('JSON');
+
+static const RadarGetDnsAs112TimeseriesGroupByDnssecFormat csv = RadarGetDnsAs112TimeseriesGroupByDnssecFormat._('CSV');
+
+static const List<RadarGetDnsAs112TimeseriesGroupByDnssecFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByDnssecFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByDnssecFormat($value)'; } 
+ }

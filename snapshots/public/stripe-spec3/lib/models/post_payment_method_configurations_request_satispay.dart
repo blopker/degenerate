@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_request_satispay_display_preference.dart';/// Satispay is a [single-use](https://docs.stripe.com/payments/payment-methods#usage) payment method where customers are required to [authenticate](/payments/payment-methods#customer-actions) their payment. Customers pay by being redirected from your website or app, authorizing the payment with Satispay, then returning to your website or app. You get [immediate notification](/payments/payment-methods#payment-notification) of whether the payment succeeded or failed.
+final class PostPaymentMethodConfigurationsRequestSatispay {const PostPaymentMethodConfigurationsRequestSatispay({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsRequestSatispay.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestSatispay(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestSatispayDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsRequestSatispayDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsRequestSatispay copyWith({PostPaymentMethodConfigurationsRequestSatispayDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestSatispay(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsRequestSatispay &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestSatispay(displayPreference: $displayPreference)'; } 
+ }

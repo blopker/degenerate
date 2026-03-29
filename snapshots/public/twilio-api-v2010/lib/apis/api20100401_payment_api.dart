@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_call_payments.dart';import '../models/create_payments_request.dart';import '../models/update_payments_request.dart';/// Api20100401PaymentApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401PaymentApi with ApiExecutor {const Api20100401PaymentApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// create an instance of payments. This will start a new payments session
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments.json`
+Future<ApiResult<AccountCallPayments, Never>> createPayments({required String accountSid, required String callSid, CreatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments.json',
+  headers: headers,
+  body: body == null ? null : [
+    'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
+    'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
+    if (body.bankAccountType case final bankAccountType$?)
+      'BankAccountType=${Uri.encodeQueryComponent(bankAccountType$.toJson())}',
+    if (body.chargeAmount case final chargeAmount$?)
+      'ChargeAmount=${Uri.encodeQueryComponent(chargeAmount$.toString())}',
+    if (body.currency case final currency$?)
+      'Currency=${Uri.encodeQueryComponent(currency$)}',
+    if (body.description case final description$?)
+      'Description=${Uri.encodeQueryComponent(description$)}',
+    if (body.input case final input$?)
+      'Input=${Uri.encodeQueryComponent(input$)}',
+    if (body.minPostalCodeLength case final minPostalCodeLength$?)
+      'MinPostalCodeLength=${Uri.encodeQueryComponent(minPostalCodeLength$.toString())}',
+    if (body.parameter case final parameter$?)
+      'Parameter=${Uri.encodeQueryComponent(parameter$.toString())}',
+    if (body.paymentConnector case final paymentConnector$?)
+      'PaymentConnector=${Uri.encodeQueryComponent(paymentConnector$)}',
+    if (body.paymentMethod case final paymentMethod$?)
+      'PaymentMethod=${Uri.encodeQueryComponent(paymentMethod$.toJson())}',
+    if (body.postalCode case final postalCode$?)
+      'PostalCode=${Uri.encodeQueryComponent(postalCode$.toString())}',
+    if (body.securityCode case final securityCode$?)
+      'SecurityCode=${Uri.encodeQueryComponent(securityCode$.toString())}',
+    if (body.timeout case final timeout$?)
+      'Timeout=${Uri.encodeQueryComponent(timeout$.toString())}',
+    if (body.tokenType case final tokenType$?)
+      'TokenType=${Uri.encodeQueryComponent(tokenType$.toJson())}',
+    if (body.validCardTypes case final validCardTypes$?)
+      'ValidCardTypes=${Uri.encodeQueryComponent(validCardTypes$)}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountCallPayments.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// update an instance of payments with different phases of payment flows.
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Payments/{Sid}.json`
+Future<ApiResult<AccountCallPayments, Never>> updatePayments({required String accountSid, required String callSid, required String sid, UpdatePaymentsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Payments/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  body: body == null ? null : [
+    'IdempotencyKey=${Uri.encodeQueryComponent(body.idempotencyKey)}',
+    'StatusCallback=${Uri.encodeQueryComponent(body.statusCallback.toString())}',
+    if (body.capture case final capture$?)
+      'Capture=${Uri.encodeQueryComponent(capture$.toJson())}',
+    if (body.status case final status$?)
+      'Status=${Uri.encodeQueryComponent(status$.toJson())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountCallPayments.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

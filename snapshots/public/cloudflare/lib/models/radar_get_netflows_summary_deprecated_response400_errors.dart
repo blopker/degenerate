@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetNetflowsSummaryDeprecatedResponse400Errors {const RadarGetNetflowsSummaryDeprecatedResponse400Errors({required this.message});
+
+factory RadarGetNetflowsSummaryDeprecatedResponse400Errors.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryDeprecatedResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+RadarGetNetflowsSummaryDeprecatedResponse400Errors copyWith({String? message}) { return RadarGetNetflowsSummaryDeprecatedResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetNetflowsSummaryDeprecatedResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponse400Errors(message: $message)'; } 
+ }

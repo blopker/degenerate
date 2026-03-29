@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigFetchGatewayResponseResultStripeUsageEvents {const AigConfigFetchGatewayResponseResultStripeUsageEvents({required this.payload});
+
+factory AigConfigFetchGatewayResponseResultStripeUsageEvents.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResultStripeUsageEvents(
+  payload: json['payload'] as String,
+); }
+
+final String payload;
+
+Map<String, dynamic> toJson() { return {
+  'payload': payload,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('payload') && json['payload'] is String; } 
+AigConfigFetchGatewayResponseResultStripeUsageEvents copyWith({String? payload}) { return AigConfigFetchGatewayResponseResultStripeUsageEvents(
+  payload: payload ?? this.payload,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigFetchGatewayResponseResultStripeUsageEvents &&
+          payload == other.payload; } 
+@override int get hashCode { return payload.hashCode; } 
+@override String toString() { return 'AigConfigFetchGatewayResponseResultStripeUsageEvents(payload: $payload)'; } 
+ }

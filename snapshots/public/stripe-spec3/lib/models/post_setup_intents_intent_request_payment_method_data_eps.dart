@@ -1,0 +1,125 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodDataEpsBank {const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._(this.value);
+
+factory PostSetupIntentsIntentRequestPaymentMethodDataEpsBank.fromJson(String json) { return switch (json) {
+  'arzte_und_apotheker_bank' => arzteUndApothekerBank,
+  'austrian_anadi_bank_ag' => austrianAnadiBankAg,
+  'bank_austria' => bankAustria,
+  'bankhaus_carl_spangler' => bankhausCarlSpangler,
+  'bankhaus_schelhammer_und_schattera_ag' => bankhausSchelhammerUndSchatteraAg,
+  'bawag_psk_ag' => bawagPskAg,
+  'bks_bank_ag' => bksBankAg,
+  'brull_kallmus_bank_ag' => brullKallmusBankAg,
+  'btv_vier_lander_bank' => btvVierLanderBank,
+  'capital_bank_grawe_gruppe_ag' => capitalBankGraweGruppeAg,
+  'deutsche_bank_ag' => deutscheBankAg,
+  'dolomitenbank' => dolomitenbank,
+  'easybank_ag' => easybankAg,
+  'erste_bank_und_sparkassen' => ersteBankUndSparkassen,
+  'hypo_alpeadriabank_international_ag' => hypoAlpeadriabankInternationalAg,
+  'hypo_bank_burgenland_aktiengesellschaft' => hypoBankBurgenlandAktiengesellschaft,
+  'hypo_noe_lb_fur_niederosterreich_u_wien' => hypoNoeLbFurNiederosterreichUWien,
+  'hypo_oberosterreich_salzburg_steiermark' => hypoOberosterreichSalzburgSteiermark,
+  'hypo_tirol_bank_ag' => hypoTirolBankAg,
+  'hypo_vorarlberg_bank_ag' => hypoVorarlbergBankAg,
+  'marchfelder_bank' => marchfelderBank,
+  'oberbank_ag' => oberbankAg,
+  'raiffeisen_bankengruppe_osterreich' => raiffeisenBankengruppeOsterreich,
+  'schoellerbank_ag' => schoellerbankAg,
+  'sparda_bank_wien' => spardaBankWien,
+  'volksbank_gruppe' => volksbankGruppe,
+  'volkskreditbank_ag' => volkskreditbankAg,
+  'vr_bank_braunau' => vrBankBraunau,
+  _ => PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._(json),
+}; }
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank arzteUndApothekerBank = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('arzte_und_apotheker_bank');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank austrianAnadiBankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('austrian_anadi_bank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank bankAustria = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('bank_austria');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank bankhausCarlSpangler = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('bankhaus_carl_spangler');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank bankhausSchelhammerUndSchatteraAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('bankhaus_schelhammer_und_schattera_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank bawagPskAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('bawag_psk_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank bksBankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('bks_bank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank brullKallmusBankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('brull_kallmus_bank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank btvVierLanderBank = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('btv_vier_lander_bank');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank capitalBankGraweGruppeAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('capital_bank_grawe_gruppe_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank deutscheBankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('deutsche_bank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank dolomitenbank = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('dolomitenbank');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank easybankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('easybank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank ersteBankUndSparkassen = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('erste_bank_und_sparkassen');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank hypoAlpeadriabankInternationalAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('hypo_alpeadriabank_international_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank hypoBankBurgenlandAktiengesellschaft = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('hypo_bank_burgenland_aktiengesellschaft');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank hypoNoeLbFurNiederosterreichUWien = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('hypo_noe_lb_fur_niederosterreich_u_wien');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank hypoOberosterreichSalzburgSteiermark = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('hypo_oberosterreich_salzburg_steiermark');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank hypoTirolBankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('hypo_tirol_bank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank hypoVorarlbergBankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('hypo_vorarlberg_bank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank marchfelderBank = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('marchfelder_bank');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank oberbankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('oberbank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank raiffeisenBankengruppeOsterreich = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('raiffeisen_bankengruppe_osterreich');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank schoellerbankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('schoellerbank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank spardaBankWien = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('sparda_bank_wien');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank volksbankGruppe = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('volksbank_gruppe');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank volkskreditbankAg = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('volkskreditbank_ag');
+
+static const PostSetupIntentsIntentRequestPaymentMethodDataEpsBank vrBankBraunau = PostSetupIntentsIntentRequestPaymentMethodDataEpsBank._('vr_bank_braunau');
+
+static const List<PostSetupIntentsIntentRequestPaymentMethodDataEpsBank> values = [arzteUndApothekerBank, austrianAnadiBankAg, bankAustria, bankhausCarlSpangler, bankhausSchelhammerUndSchatteraAg, bawagPskAg, bksBankAg, brullKallmusBankAg, btvVierLanderBank, capitalBankGraweGruppeAg, deutscheBankAg, dolomitenbank, easybankAg, ersteBankUndSparkassen, hypoAlpeadriabankInternationalAg, hypoBankBurgenlandAktiengesellschaft, hypoNoeLbFurNiederosterreichUWien, hypoOberosterreichSalzburgSteiermark, hypoTirolBankAg, hypoVorarlbergBankAg, marchfelderBank, oberbankAg, raiffeisenBankengruppeOsterreich, schoellerbankAg, spardaBankWien, volksbankGruppe, volkskreditbankAg, vrBankBraunau];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodDataEpsBank && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataEpsBank($value)'; } 
+ }
+final class PostSetupIntentsIntentRequestPaymentMethodDataEps {const PostSetupIntentsIntentRequestPaymentMethodDataEps({this.bank});
+
+factory PostSetupIntentsIntentRequestPaymentMethodDataEps.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataEps(
+  bank: json['bank'] != null ? PostSetupIntentsIntentRequestPaymentMethodDataEpsBank.fromJson(json['bank'] as String) : null,
+); }
+
+final PostSetupIntentsIntentRequestPaymentMethodDataEpsBank? bank;
+
+Map<String, dynamic> toJson() { return {
+  if (bank != null) 'bank': bank?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodDataEps copyWith({PostSetupIntentsIntentRequestPaymentMethodDataEpsBank Function()? bank}) { return PostSetupIntentsIntentRequestPaymentMethodDataEps(
+  bank: bank != null ? bank() : this.bank,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentRequestPaymentMethodDataEps &&
+          bank == other.bank; } 
+@override int get hashCode { return bank.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataEps(bank: $bank)'; } 
+ }

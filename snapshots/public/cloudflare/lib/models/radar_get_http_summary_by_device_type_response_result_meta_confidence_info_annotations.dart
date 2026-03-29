@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations {const RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetHttpSummaryByDeviceTypeResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

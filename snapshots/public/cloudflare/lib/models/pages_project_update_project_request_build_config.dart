@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Configs for the project build process.
+final class PagesProjectUpdateProjectRequestBuildConfig {const PagesProjectUpdateProjectRequestBuildConfig({this.buildCaching, this.buildCommand, this.destinationDir, this.rootDir, this.webAnalyticsTag, this.webAnalyticsToken, });
+
+factory PagesProjectUpdateProjectRequestBuildConfig.fromJson(Map<String, dynamic> json) { return PagesProjectUpdateProjectRequestBuildConfig(
+  buildCaching: json['build_caching'] as bool?,
+  buildCommand: json['build_command'] as String?,
+  destinationDir: json['destination_dir'] as String?,
+  rootDir: json['root_dir'] as String?,
+  webAnalyticsTag: json['web_analytics_tag'] as String?,
+  webAnalyticsToken: json['web_analytics_token'] as String?,
+); }
+
+/// Enable build caching for the project.
+final bool? buildCaching;
+
+/// Command used to build project.
+final String? buildCommand;
+
+/// Output directory of the build.
+final String? destinationDir;
+
+/// Directory to run the command.
+final String? rootDir;
+
+/// The classifying tag for analytics.
+final String? webAnalyticsTag;
+
+/// The auth token for analytics.
+final String? webAnalyticsToken;
+
+Map<String, dynamic> toJson() { return {
+  'build_caching': ?buildCaching,
+  'build_command': ?buildCommand,
+  'destination_dir': ?destinationDir,
+  'root_dir': ?rootDir,
+  'web_analytics_tag': ?webAnalyticsTag,
+  'web_analytics_token': ?webAnalyticsToken,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PagesProjectUpdateProjectRequestBuildConfig copyWith({bool Function()? buildCaching, String Function()? buildCommand, String Function()? destinationDir, String Function()? rootDir, String? Function()? webAnalyticsTag, String? Function()? webAnalyticsToken, }) { return PagesProjectUpdateProjectRequestBuildConfig(
+  buildCaching: buildCaching != null ? buildCaching() : this.buildCaching,
+  buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,
+  destinationDir: destinationDir != null ? destinationDir() : this.destinationDir,
+  rootDir: rootDir != null ? rootDir() : this.rootDir,
+  webAnalyticsTag: webAnalyticsTag != null ? webAnalyticsTag() : this.webAnalyticsTag,
+  webAnalyticsToken: webAnalyticsToken != null ? webAnalyticsToken() : this.webAnalyticsToken,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesProjectUpdateProjectRequestBuildConfig &&
+          buildCaching == other.buildCaching &&
+          buildCommand == other.buildCommand &&
+          destinationDir == other.destinationDir &&
+          rootDir == other.rootDir &&
+          webAnalyticsTag == other.webAnalyticsTag &&
+          webAnalyticsToken == other.webAnalyticsToken; } 
+@override int get hashCode { return Object.hash(buildCaching, buildCommand, destinationDir, rootDir, webAnalyticsTag, webAnalyticsToken); } 
+@override String toString() { return 'PagesProjectUpdateProjectRequestBuildConfig(buildCaching: $buildCaching, buildCommand: $buildCommand, destinationDir: $destinationDir, rootDir: $rootDir, webAnalyticsTag: $webAnalyticsTag, webAnalyticsToken: $webAnalyticsToken)'; } 
+ }

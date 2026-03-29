@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudforce_one_requests_time.dart';import 'cloudforce_one_requests_tlp.dart';import 'cloudforce_one_requests_uuid.dart';final class CloudforceOneRequestsPriorityItem {const CloudforceOneRequestsPriorityItem({required this.created, required this.id, required this.labels, required this.priority, required this.requirement, required this.tlp, required this.updated, });
+
+factory CloudforceOneRequestsPriorityItem.fromJson(Map<String, dynamic> json) { return CloudforceOneRequestsPriorityItem(
+  created: CloudforceOneRequestsTime.fromJson(json['created'] as String),
+  id: CloudforceOneRequestsUuid.fromJson(json['id'] as String),
+  labels: (json['labels'] as List<dynamic>).map((e) => e as String).toList(),
+  priority: (json['priority'] as num).toInt(),
+  requirement: json['requirement'] as String,
+  tlp: CloudforceOneRequestsTlp.fromJson(json['tlp'] as String),
+  updated: CloudforceOneRequestsTime.fromJson(json['updated'] as String),
+); }
+
+/// Priority creation time.
+final CloudforceOneRequestsTime created;
+
+final CloudforceOneRequestsUuid id;
+
+/// List of labels.
+final List<String> labels;
+
+/// Priority.
+final int priority;
+
+/// Requirement.
+final String requirement;
+
+final CloudforceOneRequestsTlp tlp;
+
+/// Priority last updated time.
+final CloudforceOneRequestsTime updated;
+
+Map<String, dynamic> toJson() { return {
+  'created': created.toJson(),
+  'id': id.toJson(),
+  'labels': labels,
+  'priority': priority,
+  'requirement': requirement,
+  'tlp': tlp.toJson(),
+  'updated': updated.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') &&
+      json.containsKey('id') &&
+      json.containsKey('labels') &&
+      json.containsKey('priority') && json['priority'] is num &&
+      json.containsKey('requirement') && json['requirement'] is String &&
+      json.containsKey('tlp') &&
+      json.containsKey('updated'); } 
+CloudforceOneRequestsPriorityItem copyWith({CloudforceOneRequestsTime? created, CloudforceOneRequestsUuid? id, List<String>? labels, int? priority, String? requirement, CloudforceOneRequestsTlp? tlp, CloudforceOneRequestsTime? updated, }) { return CloudforceOneRequestsPriorityItem(
+  created: created ?? this.created,
+  id: id ?? this.id,
+  labels: labels ?? this.labels,
+  priority: priority ?? this.priority,
+  requirement: requirement ?? this.requirement,
+  tlp: tlp ?? this.tlp,
+  updated: updated ?? this.updated,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudforceOneRequestsPriorityItem &&
+          created == other.created &&
+          id == other.id &&
+          listEquals(labels, other.labels) &&
+          priority == other.priority &&
+          requirement == other.requirement &&
+          tlp == other.tlp &&
+          updated == other.updated; } 
+@override int get hashCode { return Object.hash(created, id, Object.hashAll(labels), priority, requirement, tlp, updated); } 
+@override String toString() { return 'CloudforceOneRequestsPriorityItem(created: $created, id: $id, labels: $labels, priority: $priority, requirement: $requirement, tlp: $tlp, updated: $updated)'; } 
+ }

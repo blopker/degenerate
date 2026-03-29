@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The wirefilter expression to match devices. Available values: "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.service_token_uuid", "identity.saml_attributes", "network", "os.name", "os.version".
+extension type const TeamsDevicesSchemasMatch(String value) {
+factory TeamsDevicesSchemasMatch.fromJson(String json) => TeamsDevicesSchemasMatch(json);
+
+String toJson() => value;
+
+}

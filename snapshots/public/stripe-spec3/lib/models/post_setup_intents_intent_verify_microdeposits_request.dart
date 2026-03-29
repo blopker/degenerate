@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentVerifyMicrodepositsRequest {const PostSetupIntentsIntentVerifyMicrodepositsRequest({this.amounts, this.clientSecret, this.descriptorCode, this.expand, });
+
+factory PostSetupIntentsIntentVerifyMicrodepositsRequest.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentVerifyMicrodepositsRequest(
+  amounts: (json['amounts'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+  clientSecret: json['client_secret'] as String?,
+  descriptorCode: json['descriptor_code'] as String?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Two positive integers, in *cents*, equal to the values of the microdeposits sent to the bank account.
+final List<int>? amounts;
+
+/// The client secret of the SetupIntent.
+final String? clientSecret;
+
+/// A six-character code starting with SM present in the microdeposit sent to the bank account.
+final String? descriptorCode;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+Map<String, dynamic> toJson() { return {
+  'amounts': ?amounts,
+  'client_secret': ?clientSecret,
+  'descriptor_code': ?descriptorCode,
+  'expand': ?expand,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentVerifyMicrodepositsRequest copyWith({List<int> Function()? amounts, String Function()? clientSecret, String Function()? descriptorCode, List<String> Function()? expand, }) { return PostSetupIntentsIntentVerifyMicrodepositsRequest(
+  amounts: amounts != null ? amounts() : this.amounts,
+  clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
+  descriptorCode: descriptorCode != null ? descriptorCode() : this.descriptorCode,
+  expand: expand != null ? expand() : this.expand,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentVerifyMicrodepositsRequest &&
+          listEquals(amounts, other.amounts) &&
+          clientSecret == other.clientSecret &&
+          descriptorCode == other.descriptorCode &&
+          listEquals(expand, other.expand); } 
+@override int get hashCode { return Object.hash(Object.hashAll(amounts ?? const []), clientSecret, descriptorCode, Object.hashAll(expand ?? const [])); } 
+@override String toString() { return 'PostSetupIntentsIntentVerifyMicrodepositsRequest(amounts: $amounts, clientSecret: $clientSecret, descriptorCode: $descriptorCode, expand: $expand)'; } 
+ }

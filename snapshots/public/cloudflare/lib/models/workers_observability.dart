@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_observability_logs.dart';/// Observability settings for the Worker.
+final class WorkersObservability {const WorkersObservability({required this.enabled, this.headSamplingRate, this.logs, });
+
+factory WorkersObservability.fromJson(Map<String, dynamic> json) { return WorkersObservability(
+  enabled: json['enabled'] as bool,
+  headSamplingRate: json['head_sampling_rate'] != null ? (json['head_sampling_rate'] as num).toDouble() : null,
+  logs: json['logs'] != null ? WorkersObservabilityLogs.fromJson(json['logs'] as Map<String, dynamic>) : null,
+); }
+
+/// Whether observability is enabled for the Worker.
+final bool enabled;
+
+/// The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+final double? headSamplingRate;
+
+/// Log settings for the Worker.
+final WorkersObservabilityLogs? logs;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  'head_sampling_rate': ?headSamplingRate,
+  if (logs != null) 'logs': logs?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+WorkersObservability copyWith({bool? enabled, double? Function()? headSamplingRate, WorkersObservabilityLogs? Function()? logs, }) { return WorkersObservability(
+  enabled: enabled ?? this.enabled,
+  headSamplingRate: headSamplingRate != null ? headSamplingRate() : this.headSamplingRate,
+  logs: logs != null ? logs() : this.logs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersObservability &&
+          enabled == other.enabled &&
+          headSamplingRate == other.headSamplingRate &&
+          logs == other.logs; } 
+@override int get hashCode { return Object.hash(enabled, headSamplingRate, logs); } 
+@override String toString() { return 'WorkersObservability(enabled: $enabled, headSamplingRate: $headSamplingRate, logs: $logs)'; } 
+ }

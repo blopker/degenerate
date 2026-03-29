@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'container_restart_rule_on_exit_codes.dart';/// ContainerRestartRule describes how a container exit is handled.
+final class ContainerRestartRule {const ContainerRestartRule({required this.action, this.exitCodes, });
+
+factory ContainerRestartRule.fromJson(Map<String, dynamic> json) { return ContainerRestartRule(
+  action: json['action'] as String,
+  exitCodes: json['exitCodes'] != null ? ContainerRestartRuleOnExitCodes.fromJson(json['exitCodes'] as Map<String, dynamic>) : null,
+); }
+
+/// Specifies the action taken on a container exit if the requirements are satisfied. The only possible value is "Restart" to restart the container.
+final String action;
+
+/// Represents the exit codes to check on container exits.
+final ContainerRestartRuleOnExitCodes? exitCodes;
+
+Map<String, dynamic> toJson() { return {
+  'action': action,
+  if (exitCodes != null) 'exitCodes': exitCodes?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') && json['action'] is String; } 
+ContainerRestartRule copyWith({String? action, ContainerRestartRuleOnExitCodes Function()? exitCodes, }) { return ContainerRestartRule(
+  action: action ?? this.action,
+  exitCodes: exitCodes != null ? exitCodes() : this.exitCodes,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ContainerRestartRule &&
+          action == other.action &&
+          exitCodes == other.exitCodes; } 
+@override int get hashCode { return Object.hash(action, exitCodes); } 
+@override String toString() { return 'ContainerRestartRule(action: $action, exitCodes: $exitCodes)'; } 
+ }

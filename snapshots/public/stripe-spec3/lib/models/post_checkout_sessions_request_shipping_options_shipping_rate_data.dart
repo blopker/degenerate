@@ -1,0 +1,107 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_delivery_estimate.dart';import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_fixed_amount.dart';final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._(this.value);
+
+factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior.fromJson(String json) { return switch (json) {
+  'exclusive' => exclusive,
+  'inclusive' => inclusive,
+  'unspecified' => unspecified,
+  _ => PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._(json),
+}; }
+
+static const PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior exclusive = PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._('exclusive');
+
+static const PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior inclusive = PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._('inclusive');
+
+static const PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior unspecified = PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior._('unspecified');
+
+static const List<PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior> values = [exclusive, inclusive, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior($value)'; } 
+ }
+final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataType {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataType._(this.value);
+
+factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataType.fromJson(String json) { return switch (json) {
+  'fixed_amount' => fixedAmount,
+  _ => PostCheckoutSessionsRequestShippingOptionsShippingRateDataType._(json),
+}; }
+
+static const PostCheckoutSessionsRequestShippingOptionsShippingRateDataType fixedAmount = PostCheckoutSessionsRequestShippingOptionsShippingRateDataType._('fixed_amount');
+
+static const List<PostCheckoutSessionsRequestShippingOptionsShippingRateDataType> values = [fixedAmount];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestShippingOptionsShippingRateDataType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateDataType($value)'; } 
+ }
+final class PostCheckoutSessionsRequestShippingOptionsShippingRateData {const PostCheckoutSessionsRequestShippingOptionsShippingRateData({this.deliveryEstimate, required this.displayName, this.fixedAmount, this.metadata, this.taxBehavior, this.taxCode, this.type, });
+
+factory PostCheckoutSessionsRequestShippingOptionsShippingRateData.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptionsShippingRateData(
+  deliveryEstimate: json['delivery_estimate'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
+  displayName: json['display_name'] as String,
+  fixedAmount: json['fixed_amount'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  taxBehavior: json['tax_behavior'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  taxCode: json['tax_code'] as String?,
+  type: json['type'] != null ? PostCheckoutSessionsRequestShippingOptionsShippingRateDataType.fromJson(json['type'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate? deliveryEstimate;
+
+final String displayName;
+
+final PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount? fixedAmount;
+
+final Map<String,String>? metadata;
+
+final PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior? taxBehavior;
+
+final String? taxCode;
+
+final PostCheckoutSessionsRequestShippingOptionsShippingRateDataType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (deliveryEstimate != null) 'delivery_estimate': deliveryEstimate?.toJson(),
+  'display_name': displayName,
+  if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
+  'metadata': ?metadata,
+  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
+  'tax_code': ?taxCode,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('display_name') && json['display_name'] is String; } 
+PostCheckoutSessionsRequestShippingOptionsShippingRateData copyWith({PostCheckoutSessionsRequestShippingOptionsShippingRateDataDeliveryEstimate Function()? deliveryEstimate, String? displayName, PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount Function()? fixedAmount, Map<String, String> Function()? metadata, PostCheckoutSessionsRequestShippingOptionsShippingRateDataTaxBehavior Function()? taxBehavior, String Function()? taxCode, PostCheckoutSessionsRequestShippingOptionsShippingRateDataType Function()? type, }) { return PostCheckoutSessionsRequestShippingOptionsShippingRateData(
+  deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,
+  displayName: displayName ?? this.displayName,
+  fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
+  metadata: metadata != null ? metadata() : this.metadata,
+  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
+  taxCode: taxCode != null ? taxCode() : this.taxCode,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestShippingOptionsShippingRateData &&
+          deliveryEstimate == other.deliveryEstimate &&
+          displayName == other.displayName &&
+          fixedAmount == other.fixedAmount &&
+          metadata == other.metadata &&
+          taxBehavior == other.taxBehavior &&
+          taxCode == other.taxCode &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(deliveryEstimate, displayName, fixedAmount, metadata, taxBehavior, taxCode, type); } 
+@override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateData(deliveryEstimate: $deliveryEstimate, displayName: $displayName, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior, taxCode: $taxCode, type: $type)'; } 
+ }

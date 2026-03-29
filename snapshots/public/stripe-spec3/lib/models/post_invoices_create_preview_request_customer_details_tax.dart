@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_create_preview_request_customer_details_tax_ip_address.dart';final class PostInvoicesCreatePreviewRequestCustomerDetailsTax {const PostInvoicesCreatePreviewRequestCustomerDetailsTax({this.ipAddress});
+
+factory PostInvoicesCreatePreviewRequestCustomerDetailsTax.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
+  ipAddress: json['ip_address'] != null ? OneOf2.parse(json['ip_address'], fromA: (v) => v as String, fromB: (v) => PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddressVariant2.fromJson(v as String),) : null,
+); }
+
+final PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress? ipAddress;
+
+Map<String, dynamic> toJson() { return {
+  if (ipAddress != null) 'ip_address': ipAddress?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostInvoicesCreatePreviewRequestCustomerDetailsTax copyWith({PostInvoicesCreatePreviewRequestCustomerDetailsTaxIpAddress Function()? ipAddress}) { return PostInvoicesCreatePreviewRequestCustomerDetailsTax(
+  ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesCreatePreviewRequestCustomerDetailsTax &&
+          ipAddress == other.ipAddress; } 
+@override int get hashCode { return ipAddress.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestCustomerDetailsTax(ipAddress: $ipAddress)'; } 
+ }

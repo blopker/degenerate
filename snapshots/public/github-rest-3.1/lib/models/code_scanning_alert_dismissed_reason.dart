@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+final class CodeScanningAlertDismissedReason {const CodeScanningAlertDismissedReason._(this.value);
+
+factory CodeScanningAlertDismissedReason.fromJson(String json) { return switch (json) {
+  'false positive' => falsePositive,
+  'won\'t fix' => wontFix,
+  'used in tests' => usedInTests,
+  'null' => $null,
+  _ => CodeScanningAlertDismissedReason._(json),
+}; }
+
+static const CodeScanningAlertDismissedReason falsePositive = CodeScanningAlertDismissedReason._('false positive');
+
+static const CodeScanningAlertDismissedReason wontFix = CodeScanningAlertDismissedReason._('won\'t fix');
+
+static const CodeScanningAlertDismissedReason usedInTests = CodeScanningAlertDismissedReason._('used in tests');
+
+static const CodeScanningAlertDismissedReason $null = CodeScanningAlertDismissedReason._('null');
+
+static const List<CodeScanningAlertDismissedReason> values = [falsePositive, wontFix, usedInTests, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningAlertDismissedReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningAlertDismissedReason($value)'; } 
+ }

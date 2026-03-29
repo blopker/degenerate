@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_configurations2.dart';import 'firewall_schemas_cidr_configuration.dart';import 'firewall_schemas_ip_configuration.dart';final class ZoneLockdownUpdateAZoneLockdownRuleRequest {const ZoneLockdownUpdateAZoneLockdownRuleRequest({required this.configurations, required this.urls, });
+
+factory ZoneLockdownUpdateAZoneLockdownRuleRequest.fromJson(Map<String, dynamic> json) { return ZoneLockdownUpdateAZoneLockdownRuleRequest(
+  configurations: (json['configurations'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => FirewallSchemasIpConfiguration.fromJson(v as Map<String, dynamic>), fromB: (v) => FirewallSchemasCidrConfiguration.fromJson(v as Map<String, dynamic>),)).toList(),
+  urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
+final List<FirewallConfigurations2> configurations;
+
+/// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
+final List<String> urls;
+
+Map<String, dynamic> toJson() { return {
+  'configurations': configurations.map((e) => e.toJson()).toList(),
+  'urls': urls,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('configurations') &&
+      json.containsKey('urls'); } 
+ZoneLockdownUpdateAZoneLockdownRuleRequest copyWith({List<FirewallConfigurations2>? configurations, List<String>? urls, }) { return ZoneLockdownUpdateAZoneLockdownRuleRequest(
+  configurations: configurations ?? this.configurations,
+  urls: urls ?? this.urls,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZoneLockdownUpdateAZoneLockdownRuleRequest &&
+          listEquals(configurations, other.configurations) &&
+          listEquals(urls, other.urls); } 
+@override int get hashCode { return Object.hash(Object.hashAll(configurations), Object.hashAll(urls)); } 
+@override String toString() { return 'ZoneLockdownUpdateAZoneLockdownRuleRequest(configurations: $configurations, urls: $urls)'; } 
+ }

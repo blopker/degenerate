@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval {const WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval({required this.from});
+
+factory WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval(
+  from: json['from'] as bool?,
+); }
+
+final bool? from;
+
+Map<String, dynamic> toJson() { return {
+  'from': ?from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is bool; } 
+WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval copyWith({bool? Function()? from}) { return WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval(
+  from: from != null ? from() : this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval(from: $from)'; } 
+ }

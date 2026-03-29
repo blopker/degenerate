@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_fetch_gateway_response_result_stripe_usage_events.dart';final class AigConfigFetchGatewayResponseResultStripe {const AigConfigFetchGatewayResponseResultStripe({required this.authorization, required this.usageEvents, });
+
+factory AigConfigFetchGatewayResponseResultStripe.fromJson(Map<String, dynamic> json) { return AigConfigFetchGatewayResponseResultStripe(
+  authorization: json['authorization'] as String,
+  usageEvents: (json['usage_events'] as List<dynamic>).map((e) => AigConfigFetchGatewayResponseResultStripeUsageEvents.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final String authorization;
+
+final List<AigConfigFetchGatewayResponseResultStripeUsageEvents> usageEvents;
+
+Map<String, dynamic> toJson() { return {
+  'authorization': authorization,
+  'usage_events': usageEvents.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('authorization') && json['authorization'] is String &&
+      json.containsKey('usage_events'); } 
+AigConfigFetchGatewayResponseResultStripe copyWith({String? authorization, List<AigConfigFetchGatewayResponseResultStripeUsageEvents>? usageEvents, }) { return AigConfigFetchGatewayResponseResultStripe(
+  authorization: authorization ?? this.authorization,
+  usageEvents: usageEvents ?? this.usageEvents,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigFetchGatewayResponseResultStripe &&
+          authorization == other.authorization &&
+          listEquals(usageEvents, other.usageEvents); } 
+@override int get hashCode { return Object.hash(authorization, Object.hashAll(usageEvents)); } 
+@override String toString() { return 'AigConfigFetchGatewayResponseResultStripe(authorization: $authorization, usageEvents: $usageEvents)'; } 
+ }

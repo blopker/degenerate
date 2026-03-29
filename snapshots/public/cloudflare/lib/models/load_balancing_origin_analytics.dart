@@ -1,0 +1,88 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'load_balancing_address.dart';import 'load_balancing_schemas_enabled.dart';import 'load_balancing_schemas_name.dart';/// Whether the origin has changed health status.
+extension type const LoadBalancingOriginChanged(bool value) {
+factory LoadBalancingOriginChanged.fromJson(bool json) => LoadBalancingOriginChanged(json);
+
+bool toJson() => value;
+
+}
+/// Failure reason for un-healthy origin health check.
+extension type const LoadBalancingOriginFailureReason(String value) {
+factory LoadBalancingOriginFailureReason.fromJson(String json) => LoadBalancingOriginFailureReason(json);
+
+String toJson() => value;
+
+}
+/// Whether the origin is reported as healthy.
+extension type const LoadBalancingOriginHealthy(bool value) {
+factory LoadBalancingOriginHealthy.fromJson(bool json) => LoadBalancingOriginHealthy(json);
+
+bool toJson() => value;
+
+}
+/// The IP address (IPv4 or IPv6) of the origin.
+extension type const LoadBalancingOriginIp(String value) {
+factory LoadBalancingOriginIp.fromJson(String json) => LoadBalancingOriginIp(json);
+
+String toJson() => value;
+
+}
+final class LoadBalancingOriginAnalytics {const LoadBalancingOriginAnalytics({this.address, this.changed, this.enabled, this.failureReason, this.healthy, this.ip, this.name, });
+
+factory LoadBalancingOriginAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingOriginAnalytics(
+  address: json['address'] != null ? LoadBalancingAddress.fromJson(json['address'] as String) : null,
+  changed: json['changed'] != null ? LoadBalancingOriginChanged.fromJson(json['changed'] as bool) : null,
+  enabled: json['enabled'] != null ? LoadBalancingSchemasEnabled.fromJson(json['enabled'] as bool) : null,
+  failureReason: json['failure_reason'] != null ? LoadBalancingOriginFailureReason.fromJson(json['failure_reason'] as String) : null,
+  healthy: json['healthy'] != null ? LoadBalancingOriginHealthy.fromJson(json['healthy'] as bool) : null,
+  ip: json['ip'] != null ? LoadBalancingOriginIp.fromJson(json['ip'] as String) : null,
+  name: json['name'] != null ? LoadBalancingSchemasName.fromJson(json['name'] as String) : null,
+); }
+
+/// The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.
+final LoadBalancingAddress? address;
+
+final LoadBalancingOriginChanged? changed;
+
+final LoadBalancingSchemasEnabled? enabled;
+
+final LoadBalancingOriginFailureReason? failureReason;
+
+final LoadBalancingOriginHealthy? healthy;
+
+final LoadBalancingOriginIp? ip;
+
+final LoadBalancingSchemasName? name;
+
+Map<String, dynamic> toJson() { return {
+  if (address != null) 'address': address?.toJson(),
+  if (changed != null) 'changed': changed?.toJson(),
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  if (failureReason != null) 'failure_reason': failureReason?.toJson(),
+  if (healthy != null) 'healthy': healthy?.toJson(),
+  if (ip != null) 'ip': ip?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LoadBalancingOriginAnalytics copyWith({LoadBalancingAddress Function()? address, LoadBalancingOriginChanged Function()? changed, LoadBalancingSchemasEnabled Function()? enabled, LoadBalancingOriginFailureReason Function()? failureReason, LoadBalancingOriginHealthy Function()? healthy, LoadBalancingOriginIp Function()? ip, LoadBalancingSchemasName Function()? name, }) { return LoadBalancingOriginAnalytics(
+  address: address != null ? address() : this.address,
+  changed: changed != null ? changed() : this.changed,
+  enabled: enabled != null ? enabled() : this.enabled,
+  failureReason: failureReason != null ? failureReason() : this.failureReason,
+  healthy: healthy != null ? healthy() : this.healthy,
+  ip: ip != null ? ip() : this.ip,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LoadBalancingOriginAnalytics &&
+          address == other.address &&
+          changed == other.changed &&
+          enabled == other.enabled &&
+          failureReason == other.failureReason &&
+          healthy == other.healthy &&
+          ip == other.ip &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(address, changed, enabled, failureReason, healthy, ip, name); } 
+@override String toString() { return 'LoadBalancingOriginAnalytics(address: $address, changed: $changed, enabled: $enabled, failureReason: $failureReason, healthy: $healthy, ip: $ip, name: $name)'; } 
+ }

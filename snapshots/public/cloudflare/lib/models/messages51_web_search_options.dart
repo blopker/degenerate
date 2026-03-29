@@ -1,0 +1,16 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'messages51_web_search_options_variant1.dart';final class Messages51WebSearchOptions {const Messages51WebSearchOptions({this.messages51WebSearchOptionsVariant1});
+
+factory Messages51WebSearchOptions.fromJson(Map<String, dynamic> json) { return Messages51WebSearchOptions(
+  messages51WebSearchOptionsVariant1: Messages51WebSearchOptionsVariant1.canParse(json) ? Messages51WebSearchOptionsVariant1.fromJson(json) : null,
+); }
+
+final Messages51WebSearchOptionsVariant1? messages51WebSearchOptionsVariant1;
+
+/// At least one variant must be present.
+bool get isValid { return messages51WebSearchOptionsVariant1 != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?messages51WebSearchOptionsVariant1?.toJson(),
+}; } 
+ }

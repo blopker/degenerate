@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dns_settings_dns_settings_base.dart';final class DnsSettingsAccountSettingsPatch {const DnsSettingsAccountSettingsPatch({this.zoneDefaults});
+
+factory DnsSettingsAccountSettingsPatch.fromJson(Map<String, dynamic> json) { return DnsSettingsAccountSettingsPatch(
+  zoneDefaults: json['zone_defaults'] != null ? DnsSettingsDnsSettingsBase.fromJson(json['zone_defaults'] as Map<String, dynamic>) : null,
+); }
+
+final DnsSettingsDnsSettingsBase? zoneDefaults;
+
+Map<String, dynamic> toJson() { return {
+  if (zoneDefaults != null) 'zone_defaults': zoneDefaults?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DnsSettingsAccountSettingsPatch copyWith({DnsSettingsDnsSettingsBase Function()? zoneDefaults}) { return DnsSettingsAccountSettingsPatch(
+  zoneDefaults: zoneDefaults != null ? zoneDefaults() : this.zoneDefaults,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsSettingsAccountSettingsPatch &&
+          zoneDefaults == other.zoneDefaults; } 
+@override int get hashCode { return zoneDefaults.hashCode; } 
+@override String toString() { return 'DnsSettingsAccountSettingsPatch(zoneDefaults: $zoneDefaults)'; } 
+ }

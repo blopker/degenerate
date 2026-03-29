@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cloudflare_pipelines_field_type.dart';import 'cloudflare_pipelines_format.dart';final class CloudflarePipelinesConnectionSchema {const CloudflarePipelinesConnectionSchema({this.fields, this.format, this.inferred, });
+
+factory CloudflarePipelinesConnectionSchema.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesConnectionSchema(
+  fields: (json['fields'] as List<dynamic>?)?.map((e) => CloudflarePipelinesFieldType.fromJson(e as Map<String, dynamic>)).toList(),
+  format: json['format'] != null ? CloudflarePipelinesFormat.fromJson(json['format'] as Map<String, dynamic>) : null,
+  inferred: json['inferred'] as bool?,
+); }
+
+final List<CloudflarePipelinesFieldType>? fields;
+
+final CloudflarePipelinesFormat? format;
+
+final bool? inferred;
+
+Map<String, dynamic> toJson() { return {
+  if (fields != null) 'fields': fields?.map((e) => e.toJson()).toList(),
+  if (format != null) 'format': format?.toJson(),
+  'inferred': ?inferred,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CloudflarePipelinesConnectionSchema copyWith({List<CloudflarePipelinesFieldType> Function()? fields, CloudflarePipelinesFormat Function()? format, bool? Function()? inferred, }) { return CloudflarePipelinesConnectionSchema(
+  fields: fields != null ? fields() : this.fields,
+  format: format != null ? format() : this.format,
+  inferred: inferred != null ? inferred() : this.inferred,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudflarePipelinesConnectionSchema &&
+          listEquals(fields, other.fields) &&
+          format == other.format &&
+          inferred == other.inferred; } 
+@override int get hashCode { return Object.hash(Object.hashAll(fields ?? const []), format, inferred); } 
+@override String toString() { return 'CloudflarePipelinesConnectionSchema(fields: $fields, format: $format, inferred: $inferred)'; } 
+ }

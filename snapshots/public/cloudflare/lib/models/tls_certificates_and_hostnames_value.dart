@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used when `setting_id` is `min_tls_version`. The minimum TLS version.
+final class TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2._(this.value);
+
+factory TlsCertificatesAndHostnamesValueVariant2.fromJson(String json) { return switch (json) {
+  '1.0' => $10,
+  '1.1' => $11,
+  '1.2' => $12,
+  '1.3' => $13,
+  _ => TlsCertificatesAndHostnamesValueVariant2._(json),
+}; }
+
+static const TlsCertificatesAndHostnamesValueVariant2 $10 = TlsCertificatesAndHostnamesValueVariant2._('1.0');
+
+static const TlsCertificatesAndHostnamesValueVariant2 $11 = TlsCertificatesAndHostnamesValueVariant2._('1.1');
+
+static const TlsCertificatesAndHostnamesValueVariant2 $12 = TlsCertificatesAndHostnamesValueVariant2._('1.2');
+
+static const TlsCertificatesAndHostnamesValueVariant2 $13 = TlsCertificatesAndHostnamesValueVariant2._('1.3');
+
+static const List<TlsCertificatesAndHostnamesValueVariant2> values = [$10, $11, $12, $13];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesValueVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesValueVariant2($value)'; } 
+ }
+/// Used when `setting_id` is `http2`. Whether HTTP/2 is enabled.
+final class TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3._(this.value);
+
+factory TlsCertificatesAndHostnamesValueVariant3.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => TlsCertificatesAndHostnamesValueVariant3._(json),
+}; }
+
+static const TlsCertificatesAndHostnamesValueVariant3 $on = TlsCertificatesAndHostnamesValueVariant3._('on');
+
+static const TlsCertificatesAndHostnamesValueVariant3 off = TlsCertificatesAndHostnamesValueVariant3._('off');
+
+static const List<TlsCertificatesAndHostnamesValueVariant3> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesValueVariant3 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesValueVariant3($value)'; } 
+ }
+typedef TlsCertificatesAndHostnamesValue = OneOf3<List<String>,TlsCertificatesAndHostnamesValueVariant2,TlsCertificatesAndHostnamesValueVariant3>;

@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vectorize_vector_list_item.dart';final class VectorizeIndexListVectorsResponse {const VectorizeIndexListVectorsResponse({required this.count, this.cursorExpirationTimestamp, required this.isTruncated, this.nextCursor, required this.totalCount, required this.vectors, });
+
+factory VectorizeIndexListVectorsResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexListVectorsResponse(
+  count: (json['count'] as num).toInt(),
+  cursorExpirationTimestamp: json['cursorExpirationTimestamp'] != null ? DateTime.parse(json['cursorExpirationTimestamp'] as String) : null,
+  isTruncated: json['isTruncated'] as bool,
+  nextCursor: json['nextCursor'] as String?,
+  totalCount: (json['totalCount'] as num).toInt(),
+  vectors: (json['vectors'] as List<dynamic>).map((e) => VectorizeVectorListItem.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Number of vectors returned in this response
+final int count;
+
+/// When the cursor expires as an ISO8601 string
+final DateTime? cursorExpirationTimestamp;
+
+/// Whether there are more vectors available beyond this response
+final bool isTruncated;
+
+/// Cursor for the next page of results
+final String? nextCursor;
+
+/// Total number of vectors in the index
+final int totalCount;
+
+/// Array of vector items
+final List<VectorizeVectorListItem> vectors;
+
+Map<String, dynamic> toJson() { return {
+  'count': count,
+  if (cursorExpirationTimestamp != null) 'cursorExpirationTimestamp': cursorExpirationTimestamp?.toIso8601String(),
+  'isTruncated': isTruncated,
+  'nextCursor': ?nextCursor,
+  'totalCount': totalCount,
+  'vectors': vectors.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('isTruncated') && json['isTruncated'] is bool &&
+      json.containsKey('totalCount') && json['totalCount'] is num &&
+      json.containsKey('vectors'); } 
+VectorizeIndexListVectorsResponse copyWith({int? count, DateTime? Function()? cursorExpirationTimestamp, bool? isTruncated, String? Function()? nextCursor, int? totalCount, List<VectorizeVectorListItem>? vectors, }) { return VectorizeIndexListVectorsResponse(
+  count: count ?? this.count,
+  cursorExpirationTimestamp: cursorExpirationTimestamp != null ? cursorExpirationTimestamp() : this.cursorExpirationTimestamp,
+  isTruncated: isTruncated ?? this.isTruncated,
+  nextCursor: nextCursor != null ? nextCursor() : this.nextCursor,
+  totalCount: totalCount ?? this.totalCount,
+  vectors: vectors ?? this.vectors,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VectorizeIndexListVectorsResponse &&
+          count == other.count &&
+          cursorExpirationTimestamp == other.cursorExpirationTimestamp &&
+          isTruncated == other.isTruncated &&
+          nextCursor == other.nextCursor &&
+          totalCount == other.totalCount &&
+          listEquals(vectors, other.vectors); } 
+@override int get hashCode { return Object.hash(count, cursorExpirationTimestamp, isTruncated, nextCursor, totalCount, Object.hashAll(vectors)); } 
+@override String toString() { return 'VectorizeIndexListVectorsResponse(count: $count, cursorExpirationTimestamp: $cursorExpirationTimestamp, isTruncated: $isTruncated, nextCursor: $nextCursor, totalCount: $totalCount, vectors: $vectors)'; } 
+ }

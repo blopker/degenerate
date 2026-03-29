@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';/// The event type, must be `conversation.item.done`.
+final class RealtimeServerEventConversationItemDoneType {const RealtimeServerEventConversationItemDoneType._(this.value);
+
+factory RealtimeServerEventConversationItemDoneType.fromJson(String json) { return switch (json) {
+  'conversation.item.done' => conversationItemDone,
+  _ => RealtimeServerEventConversationItemDoneType._(json),
+}; }
+
+static const RealtimeServerEventConversationItemDoneType conversationItemDone = RealtimeServerEventConversationItemDoneType._('conversation.item.done');
+
+static const List<RealtimeServerEventConversationItemDoneType> values = [conversationItemDone];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeServerEventConversationItemDoneType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeServerEventConversationItemDoneType($value)'; } 
+ }
+/// Returned when a conversation item is finalized.
+/// 
+/// The event will include the full content of the Item except for audio data, which can be retrieved separately with a `conversation.item.retrieve` event if needed.
+/// 
+final class RealtimeServerEventConversationItemDone {const RealtimeServerEventConversationItemDone({required this.eventId, required this.type, this.previousItemId, required this.item, });
+
+factory RealtimeServerEventConversationItemDone.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemDone(
+  eventId: json['event_id'] as String,
+  type: RealtimeServerEventConversationItemDoneType.fromJson(json['type'] as String),
+  previousItemId: json['previous_item_id'] as String?,
+  item: OneOf9.parse(json['item'], fromA: (v) => RealtimeConversationItemMessageSystem.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeConversationItemMessageUser.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeConversationItemMessageAssistant.fromJson(v as Map<String, dynamic>), fromD: (v) => RealtimeConversationItemFunctionCall.fromJson(v as Map<String, dynamic>), fromE: (v) => RealtimeConversationItemFunctionCallOutput.fromJson(v as Map<String, dynamic>), fromF: (v) => RealtimeMcpApprovalResponse.fromJson(v as Map<String, dynamic>), fromG: (v) => RealtimeMcpListTools.fromJson(v as Map<String, dynamic>), fromH: (v) => RealtimeMcpToolCall.fromJson(v as Map<String, dynamic>), fromI: (v) => RealtimeMcpApprovalRequest.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// The unique ID of the server event.
+final String eventId;
+
+/// The event type, must be `conversation.item.done`.
+final RealtimeServerEventConversationItemDoneType type;
+
+/// The ID of the item that precedes this one, if any. This is used to
+/// maintain ordering when items are inserted.
+/// 
+final String? previousItemId;
+
+final RealtimeConversationItem item;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': eventId,
+  'type': type.toJson(),
+  'previous_item_id': ?previousItemId,
+  'item': item.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+      json.containsKey('type') &&
+      json.containsKey('item'); } 
+RealtimeServerEventConversationItemDone copyWith({String? eventId, RealtimeServerEventConversationItemDoneType? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeServerEventConversationItemDone(
+  eventId: eventId ?? this.eventId,
+  type: type ?? this.type,
+  previousItemId: previousItemId != null ? previousItemId() : this.previousItemId,
+  item: item ?? this.item,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeServerEventConversationItemDone &&
+          eventId == other.eventId &&
+          type == other.type &&
+          previousItemId == other.previousItemId &&
+          item == other.item; } 
+@override int get hashCode { return Object.hash(eventId, type, previousItemId, item); } 
+@override String toString() { return 'RealtimeServerEventConversationItemDone(eventId: $eventId, type: $type, previousItemId: $previousItemId, item: $item)'; } 
+ }

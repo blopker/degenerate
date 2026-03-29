@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The unique component.
+extension type ComponentsSchemasName(dynamic value) {
+factory ComponentsSchemasName.fromJson(dynamic json) => ComponentsSchemasName(json);
+
+dynamic toJson() => value;
+
+}
+/// The default amount allocated.
+extension type const Default(double value) {
+factory Default.fromJson(num json) => Default(json.toDouble());
+
+num toJson() => value;
+
+}
+/// The unit price of the addon.
+extension type const UnitPrice(double value) {
+factory UnitPrice.fromJson(num json) => UnitPrice(json.toDouble());
+
+num toJson() => value;
+
+}
+final class ComponentValue {const ComponentValue({this.$default, this.name, this.unitPrice, });
+
+factory ComponentValue.fromJson(Map<String, dynamic> json) { return ComponentValue(
+  $default: json['default'] != null ? Default.fromJson(json['default'] as num) : null,
+  name: json['name'] != null ? ComponentsSchemasName.fromJson(json['name'] as dynamic) : null,
+  unitPrice: json['unit_price'] != null ? UnitPrice.fromJson(json['unit_price'] as num) : null,
+); }
+
+final Default? $default;
+
+final ComponentsSchemasName? name;
+
+final UnitPrice? unitPrice;
+
+Map<String, dynamic> toJson() { return {
+  if ($default != null) 'default': $default?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (unitPrice != null) 'unit_price': unitPrice?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ComponentValue copyWith({Default Function()? $default, ComponentsSchemasName? Function()? name, UnitPrice Function()? unitPrice, }) { return ComponentValue(
+  $default: $default != null ? $default() : this.$default,
+  name: name != null ? name() : this.name,
+  unitPrice: unitPrice != null ? unitPrice() : this.unitPrice,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ComponentValue &&
+          $default == other.$default &&
+          name == other.name &&
+          unitPrice == other.unitPrice; } 
+@override int get hashCode { return Object.hash($default, name, unitPrice); } 
+@override String toString() { return 'ComponentValue(\$default: ${$default}, name: $name, unitPrice: $unitPrice)'; } 
+ }

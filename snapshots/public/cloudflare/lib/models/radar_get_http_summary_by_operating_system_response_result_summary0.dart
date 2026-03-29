@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 {const RadarGetHttpSummaryByOperatingSystemResponseResultSummary0({required this.android, required this.ios, });
+
+factory RadarGetHttpSummaryByOperatingSystemResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
+  android: json['ANDROID'] as String,
+  ios: json['IOS'] as String,
+); }
+
+/// A numeric string.
+final String android;
+
+/// A numeric string.
+final String ios;
+
+Map<String, dynamic> toJson() { return {
+  'ANDROID': android,
+  'IOS': ios,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ANDROID') && json['ANDROID'] is String &&
+      json.containsKey('IOS') && json['IOS'] is String; } 
+RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 copyWith({String? android, String? ios, }) { return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
+  android: android ?? this.android,
+  ios: ios ?? this.ios,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 &&
+          android == other.android &&
+          ios == other.ios; } 
+@override int get hashCode { return Object.hash(android, ios); } 
+@override String toString() { return 'RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(android: $android, ios: $ios)'; } 
+ }

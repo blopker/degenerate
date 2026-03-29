@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The cursor to use for the next page.
+extension type const RulesetsCursor(String value) {
+factory RulesetsCursor.fromJson(String json) => RulesetsCursor(json);
+
+String toJson() => value;
+
+}

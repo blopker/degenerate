@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';import 'access_schemas_uuid.dart';import 'access_timestamp.dart';final class AccessBasePolicyResp {const AccessBasePolicyResp({this.createdAt, this.decision, this.exclude, this.id, this.include, this.name, this.require, this.updatedAt, });
+
+factory AccessBasePolicyResp.fromJson(Map<String, dynamic> json) { return AccessBasePolicyResp(
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  decision: json['decision'] != null ? AccessDecision.fromJson(json['decision'] as String) : null,
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  id: json['id'] != null ? AccessSchemasUuid.fromJson(json['id'] as String) : null,
+  include: (json['include'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  name: json['name'] != null ? AccessPolicyComponentsSchemasName.fromJson(json['name'] as String) : null,
+  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+final AccessTimestamp? createdAt;
+
+final AccessDecision? decision;
+
+final List<AccessRule>? exclude;
+
+final AccessSchemasUuid? id;
+
+final List<AccessRule>? include;
+
+final AccessPolicyComponentsSchemasName? name;
+
+final List<AccessRule>? require;
+
+final AccessTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (decision != null) 'decision': decision?.toJson(),
+  if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
+  if (id != null) 'id': id?.toJson(),
+  if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
+  if (name != null) 'name': name?.toJson(),
+  if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessBasePolicyResp copyWith({AccessTimestamp Function()? createdAt, AccessDecision Function()? decision, List<AccessRule> Function()? exclude, AccessSchemasUuid Function()? id, List<AccessRule> Function()? include, AccessPolicyComponentsSchemasName Function()? name, List<AccessRule> Function()? require, AccessTimestamp Function()? updatedAt, }) { return AccessBasePolicyResp(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  decision: decision != null ? decision() : this.decision,
+  exclude: exclude != null ? exclude() : this.exclude,
+  id: id != null ? id() : this.id,
+  include: include != null ? include() : this.include,
+  name: name != null ? name() : this.name,
+  require: require != null ? require() : this.require,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessBasePolicyResp &&
+          createdAt == other.createdAt &&
+          decision == other.decision &&
+          listEquals(exclude, other.exclude) &&
+          id == other.id &&
+          listEquals(include, other.include) &&
+          name == other.name &&
+          listEquals(require, other.require) &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(createdAt, decision, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), name, Object.hashAll(require ?? const []), updatedAt); } 
+@override String toString() { return 'AccessBasePolicyResp(createdAt: $createdAt, decision: $decision, exclude: $exclude, id: $id, include: $include, name: $name, require: $require, updatedAt: $updatedAt)'; } 
+ }

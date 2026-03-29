@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Provides details about the affected resource.
+final class AaaAuditLogs2Resource {const AaaAuditLogs2Resource({this.id, this.product, this.request, this.response, this.scope, this.type, });
+
+factory AaaAuditLogs2Resource.fromJson(Map<String, dynamic> json) { return AaaAuditLogs2Resource(
+  id: json['id'] as String?,
+  product: json['product'] as String?,
+  request: (json['request'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  response: (json['response'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  scope: (json['scope'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  type: json['type'] as String?,
+); }
+
+/// The unique identifier for the affected resource.
+final String? id;
+
+/// The Cloudflare product associated with the resource.
+final String? product;
+
+final Map<String,dynamic>? request;
+
+final Map<String,dynamic>? response;
+
+/// The scope of the resource.
+final Map<String,dynamic>? scope;
+
+/// The type of the resource.
+final String? type;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'product': ?product,
+  'request': ?request,
+  'response': ?response,
+  'scope': ?scope,
+  'type': ?type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AaaAuditLogs2Resource copyWith({String Function()? id, String Function()? product, Map<String, dynamic> Function()? request, Map<String, dynamic> Function()? response, Map<String, dynamic> Function()? scope, String Function()? type, }) { return AaaAuditLogs2Resource(
+  id: id != null ? id() : this.id,
+  product: product != null ? product() : this.product,
+  request: request != null ? request() : this.request,
+  response: response != null ? response() : this.response,
+  scope: scope != null ? scope() : this.scope,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AaaAuditLogs2Resource &&
+          id == other.id &&
+          product == other.product &&
+          request == other.request &&
+          response == other.response &&
+          scope == other.scope &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(id, product, request, response, scope, type); } 
+@override String toString() { return 'AaaAuditLogs2Resource(id: $id, product: $product, request: $request, response: $response, scope: $scope, type: $type)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence2_visa_compelling_evidence3_disputed_transaction.dart';import 'enhanced_evidence2_visa_compelling_evidence3_prior_undisputed_transactions.dart';final class EnhancedEvidence2VisaCompellingEvidence3 {const EnhancedEvidence2VisaCompellingEvidence3({this.disputedTransaction, this.priorUndisputedTransactions, });
+
+factory EnhancedEvidence2VisaCompellingEvidence3.fromJson(Map<String, dynamic> json) { return EnhancedEvidence2VisaCompellingEvidence3(
+  disputedTransaction: json['disputed_transaction'] != null ? EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction.fromJson(json['disputed_transaction'] as Map<String, dynamic>) : null,
+  priorUndisputedTransactions: (json['prior_undisputed_transactions'] as List<dynamic>?)?.map((e) => EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction? disputedTransaction;
+
+final List<EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions>? priorUndisputedTransactions;
+
+Map<String, dynamic> toJson() { return {
+  if (disputedTransaction != null) 'disputed_transaction': disputedTransaction?.toJson(),
+  if (priorUndisputedTransactions != null) 'prior_undisputed_transactions': priorUndisputedTransactions?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EnhancedEvidence2VisaCompellingEvidence3 copyWith({EnhancedEvidence2VisaCompellingEvidence3DisputedTransaction Function()? disputedTransaction, List<EnhancedEvidence2VisaCompellingEvidence3PriorUndisputedTransactions> Function()? priorUndisputedTransactions, }) { return EnhancedEvidence2VisaCompellingEvidence3(
+  disputedTransaction: disputedTransaction != null ? disputedTransaction() : this.disputedTransaction,
+  priorUndisputedTransactions: priorUndisputedTransactions != null ? priorUndisputedTransactions() : this.priorUndisputedTransactions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EnhancedEvidence2VisaCompellingEvidence3 &&
+          disputedTransaction == other.disputedTransaction &&
+          listEquals(priorUndisputedTransactions, other.priorUndisputedTransactions); } 
+@override int get hashCode { return Object.hash(disputedTransaction, Object.hashAll(priorUndisputedTransactions ?? const [])); } 
+@override String toString() { return 'EnhancedEvidence2VisaCompellingEvidence3(disputedTransaction: $disputedTransaction, priorUndisputedTransactions: $priorUndisputedTransactions)'; } 
+ }

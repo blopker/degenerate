@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType {const PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType._(this.value);
+
+factory PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+  'company' => company,
+  'individual' => individual,
+  _ => PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType._(json),
+}; }
+
+static const PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType company = PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType._('company');
+
+static const PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType individual = PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType._('individual');
+
+static const List<PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType> values = [company, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType($value)'; } 
+ }
+final class PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType {const PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType._(this.value);
+
+factory PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'savings' => savings,
+  _ => PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType._(json),
+}; }
+
+static const PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType checking = PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType._('checking');
+
+static const PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType savings = PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType._('savings');
+
+static const List<PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType> values = [checking, savings];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType($value)'; } 
+ }
+/// If this is an `us_bank_account` PaymentMethod, this hash contains details about the US bank account payment method.
+final class PostPaymentMethodsPaymentMethodRequestUsBankAccount {const PostPaymentMethodsPaymentMethodRequestUsBankAccount({this.accountHolderType, this.accountType, });
+
+factory PostPaymentMethodsPaymentMethodRequestUsBankAccount.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
+  accountHolderType: json['account_holder_type'] != null ? PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+); }
+
+final PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType? accountHolderType;
+
+final PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType? accountType;
+
+Map<String, dynamic> toJson() { return {
+  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
+  if (accountType != null) 'account_type': accountType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodsPaymentMethodRequestUsBankAccount copyWith({PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountHolderType Function()? accountHolderType, PostPaymentMethodsPaymentMethodRequestUsBankAccountAccountType Function()? accountType, }) { return PostPaymentMethodsPaymentMethodRequestUsBankAccount(
+  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
+  accountType: accountType != null ? accountType() : this.accountType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodsPaymentMethodRequestUsBankAccount &&
+          accountHolderType == other.accountHolderType &&
+          accountType == other.accountType; } 
+@override int get hashCode { return Object.hash(accountHolderType, accountType); } 
+@override String toString() { return 'PostPaymentMethodsPaymentMethodRequestUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType)'; } 
+ }

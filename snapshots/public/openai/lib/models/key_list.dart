@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'key.dart';final class KeyList {const KeyList({this.object, this.data, this.hasMore, this.firstId, this.lastId, });
+
+factory KeyList.fromJson(Map<String, dynamic> json) { return KeyList(
+  object: json['object'] as String?,
+  data: (json['data'] as List<dynamic>?)?.map((e) => Key.fromJson(e as Map<String, dynamic>)).toList(),
+  hasMore: json['has_more'] as bool?,
+  firstId: json['first_id'] as String?,
+  lastId: json['last_id'] as String?,
+); }
+
+final String? object;
+
+final List<Key>? data;
+
+final bool? hasMore;
+
+final String? firstId;
+
+final String? lastId;
+
+Map<String, dynamic> toJson() { return {
+  'object': ?object,
+  if (data != null) 'data': data?.map((e) => e.toJson()).toList(),
+  'has_more': ?hasMore,
+  'first_id': ?firstId,
+  'last_id': ?lastId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+KeyList copyWith({String Function()? object, List<Key> Function()? data, bool Function()? hasMore, String Function()? firstId, String Function()? lastId, }) { return KeyList(
+  object: object != null ? object() : this.object,
+  data: data != null ? data() : this.data,
+  hasMore: hasMore != null ? hasMore() : this.hasMore,
+  firstId: firstId != null ? firstId() : this.firstId,
+  lastId: lastId != null ? lastId() : this.lastId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is KeyList &&
+          object == other.object &&
+          listEquals(data, other.data) &&
+          hasMore == other.hasMore &&
+          firstId == other.firstId &&
+          lastId == other.lastId; } 
+@override int get hashCode { return Object.hash(object, Object.hashAll(data ?? const []), hasMore, firstId, lastId); } 
+@override String toString() { return 'KeyList(object: $object, data: $data, hasMore: $hasMore, firstId: $firstId, lastId: $lastId)'; } 
+ }

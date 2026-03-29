@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The name of the convenience store chain where the payment was completed.
+final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(this.value);
+
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(String json) { return switch (json) {
+  'familymart' => familymart,
+  'lawson' => lawson,
+  'ministop' => ministop,
+  'seicomart' => seicomart,
+  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._(json),
+}; }
+
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain familymart = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('familymart');
+
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain lawson = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('lawson');
+
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain ministop = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('ministop');
+
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain seicomart = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain._('seicomart');
+
+static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain> values = [familymart, lawson, ministop, seicomart];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain($value)'; } 
+ }
+/// 
+final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore({this.chain});
+
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
+  chain: json['chain'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain.fromJson(json['chain'] as String) : null,
+); }
+
+/// The name of the convenience store chain where the payment was completed.
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain? chain;
+
+Map<String, dynamic> toJson() { return {
+  if (chain != null) 'chain': chain?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStoreChain? Function()? chain}) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(
+  chain: chain != null ? chain() : this.chain,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore &&
+          chain == other.chain; } 
+@override int get hashCode { return chain.hashCode; } 
+@override String toString() { return 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore(chain: $chain)'; } 
+ }

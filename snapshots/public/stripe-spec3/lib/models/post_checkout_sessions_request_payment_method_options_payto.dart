@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_checkout_sessions_request_payment_method_options_payto_mandate_options.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off_session' => offSession,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage._('none');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage offSession = PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage._('off_session');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage> values = [none, offSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsPayto {const PostCheckoutSessionsRequestPaymentMethodOptionsPayto({this.mandateOptions, this.setupFutureUsage, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsPayto.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsPayto(
+  mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions? mandateOptions;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsPayto copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsPaytoMandateOptions Function()? mandateOptions, PostCheckoutSessionsRequestPaymentMethodOptionsPaytoSetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsPayto(
+  mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsPayto &&
+          mandateOptions == other.mandateOptions &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(mandateOptions, setupFutureUsage); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsPayto(mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage)'; } 
+ }

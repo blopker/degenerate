@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily {const RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily.fromJson(String json) { return switch (json) {
+  'CHROME' => chrome,
+  'EDGE' => edge,
+  'FIREFOX' => firefox,
+  'SAFARI' => safari,
+  _ => RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily chrome = RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily._('CHROME');
+
+static const RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily edge = RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily._('EDGE');
+
+static const RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily firefox = RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily._('FIREFOX');
+
+static const RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily safari = RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily._('SAFARI');
+
+static const List<RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily> values = [chrome, edge, firefox, safari];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByDeviceTypeBrowserFamily($value)'; } 
+ }

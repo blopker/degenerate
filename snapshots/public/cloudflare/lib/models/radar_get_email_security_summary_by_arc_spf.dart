@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecuritySummaryByArcSpf {const RadarGetEmailSecuritySummaryByArcSpf._(this.value);
+
+factory RadarGetEmailSecuritySummaryByArcSpf.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailSecuritySummaryByArcSpf._(json),
+}; }
+
+static const RadarGetEmailSecuritySummaryByArcSpf pass = RadarGetEmailSecuritySummaryByArcSpf._('PASS');
+
+static const RadarGetEmailSecuritySummaryByArcSpf none = RadarGetEmailSecuritySummaryByArcSpf._('NONE');
+
+static const RadarGetEmailSecuritySummaryByArcSpf fail = RadarGetEmailSecuritySummaryByArcSpf._('FAIL');
+
+static const List<RadarGetEmailSecuritySummaryByArcSpf> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecuritySummaryByArcSpf && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryByArcSpf($value)'; } 
+ }

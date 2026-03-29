@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The error code for the response.
+/// 
+final class ResponseErrorCode {const ResponseErrorCode._(this.value);
+
+factory ResponseErrorCode.fromJson(String json) { return switch (json) {
+  'server_error' => serverError,
+  'rate_limit_exceeded' => rateLimitExceeded,
+  'invalid_prompt' => invalidPrompt,
+  'vector_store_timeout' => vectorStoreTimeout,
+  'invalid_image' => invalidImage,
+  'invalid_image_format' => invalidImageFormat,
+  'invalid_base64_image' => invalidBase64Image,
+  'invalid_image_url' => invalidImageUrl,
+  'image_too_large' => imageTooLarge,
+  'image_too_small' => imageTooSmall,
+  'image_parse_error' => imageParseError,
+  'image_content_policy_violation' => imageContentPolicyViolation,
+  'invalid_image_mode' => invalidImageMode,
+  'image_file_too_large' => imageFileTooLarge,
+  'unsupported_image_media_type' => unsupportedImageMediaType,
+  'empty_image_file' => emptyImageFile,
+  'failed_to_download_image' => failedToDownloadImage,
+  'image_file_not_found' => imageFileNotFound,
+  _ => ResponseErrorCode._(json),
+}; }
+
+static const ResponseErrorCode serverError = ResponseErrorCode._('server_error');
+
+static const ResponseErrorCode rateLimitExceeded = ResponseErrorCode._('rate_limit_exceeded');
+
+static const ResponseErrorCode invalidPrompt = ResponseErrorCode._('invalid_prompt');
+
+static const ResponseErrorCode vectorStoreTimeout = ResponseErrorCode._('vector_store_timeout');
+
+static const ResponseErrorCode invalidImage = ResponseErrorCode._('invalid_image');
+
+static const ResponseErrorCode invalidImageFormat = ResponseErrorCode._('invalid_image_format');
+
+static const ResponseErrorCode invalidBase64Image = ResponseErrorCode._('invalid_base64_image');
+
+static const ResponseErrorCode invalidImageUrl = ResponseErrorCode._('invalid_image_url');
+
+static const ResponseErrorCode imageTooLarge = ResponseErrorCode._('image_too_large');
+
+static const ResponseErrorCode imageTooSmall = ResponseErrorCode._('image_too_small');
+
+static const ResponseErrorCode imageParseError = ResponseErrorCode._('image_parse_error');
+
+static const ResponseErrorCode imageContentPolicyViolation = ResponseErrorCode._('image_content_policy_violation');
+
+static const ResponseErrorCode invalidImageMode = ResponseErrorCode._('invalid_image_mode');
+
+static const ResponseErrorCode imageFileTooLarge = ResponseErrorCode._('image_file_too_large');
+
+static const ResponseErrorCode unsupportedImageMediaType = ResponseErrorCode._('unsupported_image_media_type');
+
+static const ResponseErrorCode emptyImageFile = ResponseErrorCode._('empty_image_file');
+
+static const ResponseErrorCode failedToDownloadImage = ResponseErrorCode._('failed_to_download_image');
+
+static const ResponseErrorCode imageFileNotFound = ResponseErrorCode._('image_file_not_found');
+
+static const List<ResponseErrorCode> values = [serverError, rateLimitExceeded, invalidPrompt, vectorStoreTimeout, invalidImage, invalidImageFormat, invalidBase64Image, invalidImageUrl, imageTooLarge, imageTooSmall, imageParseError, imageContentPolicyViolation, invalidImageMode, imageFileTooLarge, unsupportedImageMediaType, emptyImageFile, failedToDownloadImage, imageFileNotFound];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseErrorCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseErrorCode($value)'; } 
+ }
+/// An error object returned when the model fails to generate a Response.
+/// 
+final class ResponseError {const ResponseError({required this.code, required this.message, });
+
+factory ResponseError.fromJson(Map<String, dynamic> json) { return ResponseError(
+  code: ResponseErrorCode.fromJson(json['code'] as String),
+  message: json['message'] as String,
+); }
+
+final ResponseErrorCode code;
+
+/// A human-readable description of the error.
+/// 
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code.toJson(),
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+      json.containsKey('message') && json['message'] is String; } 
+ResponseError copyWith({ResponseErrorCode? code, String? message, }) { return ResponseError(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseError &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'ResponseError(code: $code, message: $message)'; } 
+ }

@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsAs112TimeseriesResponseCode {const RadarGetDnsAs112TimeseriesResponseCode._(this.value);
+
+factory RadarGetDnsAs112TimeseriesResponseCode.fromJson(String json) { return switch (json) {
+  'NOERROR' => noerror,
+  'FORMERR' => formerr,
+  'SERVFAIL' => servfail,
+  'NXDOMAIN' => nxdomain,
+  'NOTIMP' => notimp,
+  'REFUSED' => refused,
+  'YXDOMAIN' => yxdomain,
+  'YXRRSET' => yxrrset,
+  'NXRRSET' => nxrrset,
+  'NOTAUTH' => notauth,
+  'NOTZONE' => notzone,
+  'BADSIG' => badsig,
+  'BADKEY' => badkey,
+  'BADTIME' => badtime,
+  'BADMODE' => badmode,
+  'BADNAME' => badname,
+  'BADALG' => badalg,
+  'BADTRUNC' => badtrunc,
+  'BADCOOKIE' => badcookie,
+  _ => RadarGetDnsAs112TimeseriesResponseCode._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesResponseCode noerror = RadarGetDnsAs112TimeseriesResponseCode._('NOERROR');
+
+static const RadarGetDnsAs112TimeseriesResponseCode formerr = RadarGetDnsAs112TimeseriesResponseCode._('FORMERR');
+
+static const RadarGetDnsAs112TimeseriesResponseCode servfail = RadarGetDnsAs112TimeseriesResponseCode._('SERVFAIL');
+
+static const RadarGetDnsAs112TimeseriesResponseCode nxdomain = RadarGetDnsAs112TimeseriesResponseCode._('NXDOMAIN');
+
+static const RadarGetDnsAs112TimeseriesResponseCode notimp = RadarGetDnsAs112TimeseriesResponseCode._('NOTIMP');
+
+static const RadarGetDnsAs112TimeseriesResponseCode refused = RadarGetDnsAs112TimeseriesResponseCode._('REFUSED');
+
+static const RadarGetDnsAs112TimeseriesResponseCode yxdomain = RadarGetDnsAs112TimeseriesResponseCode._('YXDOMAIN');
+
+static const RadarGetDnsAs112TimeseriesResponseCode yxrrset = RadarGetDnsAs112TimeseriesResponseCode._('YXRRSET');
+
+static const RadarGetDnsAs112TimeseriesResponseCode nxrrset = RadarGetDnsAs112TimeseriesResponseCode._('NXRRSET');
+
+static const RadarGetDnsAs112TimeseriesResponseCode notauth = RadarGetDnsAs112TimeseriesResponseCode._('NOTAUTH');
+
+static const RadarGetDnsAs112TimeseriesResponseCode notzone = RadarGetDnsAs112TimeseriesResponseCode._('NOTZONE');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badsig = RadarGetDnsAs112TimeseriesResponseCode._('BADSIG');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badkey = RadarGetDnsAs112TimeseriesResponseCode._('BADKEY');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badtime = RadarGetDnsAs112TimeseriesResponseCode._('BADTIME');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badmode = RadarGetDnsAs112TimeseriesResponseCode._('BADMODE');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badname = RadarGetDnsAs112TimeseriesResponseCode._('BADNAME');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badalg = RadarGetDnsAs112TimeseriesResponseCode._('BADALG');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badtrunc = RadarGetDnsAs112TimeseriesResponseCode._('BADTRUNC');
+
+static const RadarGetDnsAs112TimeseriesResponseCode badcookie = RadarGetDnsAs112TimeseriesResponseCode._('BADCOOKIE');
+
+static const List<RadarGetDnsAs112TimeseriesResponseCode> values = [noerror, formerr, servfail, nxdomain, notimp, refused, yxdomain, yxrrset, nxrrset, notauth, notzone, badsig, badkey, badtime, badmode, badname, badalg, badtrunc, badcookie];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesResponseCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesResponseCode($value)'; } 
+ }

@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._(this.value);
+
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval.fromJson(String json) { return switch (json) {
+  'day' => day,
+  'month' => month,
+  'week' => week,
+  'year' => year,
+  _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._(json),
+}; }
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval day = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._('day');
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval month = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._('month');
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval week = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._('week');
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval year = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval._('year');
+
+static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval> values = [day, month, week, year];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval($value)'; } 
+ }
+final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring({required this.interval, this.intervalCount, });
+
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring(
+  interval: PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval.fromJson(json['interval'] as String),
+  intervalCount: json['interval_count'] != null ? (json['interval_count'] as num).toInt() : null,
+); }
+
+final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval interval;
+
+final int? intervalCount;
+
+Map<String, dynamic> toJson() { return {
+  'interval': interval.toJson(),
+  'interval_count': ?intervalCount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('interval'); } 
+PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurringInterval? interval, int Function()? intervalCount, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring(
+  interval: interval ?? this.interval,
+  intervalCount: intervalCount != null ? intervalCount() : this.intervalCount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring &&
+          interval == other.interval &&
+          intervalCount == other.intervalCount; } 
+@override int get hashCode { return Object.hash(interval, intervalCount); } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceDataRecurring(interval: $interval, intervalCount: $intervalCount)'; } 
+ }

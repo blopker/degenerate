@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bool_allocation.dart';import 'entitlement.dart';import 'max_count_allocation.dart';final class InnateEntitlements {const InnateEntitlements({required this.allowAddSubdomain, required this.allowAutoAcceptInvites, required this.cnameSetupAllowed, required this.customEntitlements, required this.mhsCertificateCount, required this.partialSetupAllowed, });
+
+factory InnateEntitlements.fromJson(Map<String, dynamic> json) { return InnateEntitlements(
+  allowAddSubdomain: BoolAllocation.fromJson(json['allow_add_subdomain'] as Map<String, dynamic>),
+  allowAutoAcceptInvites: BoolAllocation.fromJson(json['allow_auto_accept_invites'] as Map<String, dynamic>),
+  cnameSetupAllowed: BoolAllocation.fromJson(json['cname_setup_allowed'] as Map<String, dynamic>),
+  customEntitlements: (json['custom_entitlements'] as List<dynamic>?)?.map((e) => Entitlement.fromJson(e as Map<String, dynamic>)).toList(),
+  mhsCertificateCount: MaxCountAllocation.fromJson(json['mhs_certificate_count'] as Map<String, dynamic>),
+  partialSetupAllowed: BoolAllocation.fromJson(json['partial_setup_allowed'] as Map<String, dynamic>),
+); }
+
+final BoolAllocation allowAddSubdomain;
+
+final BoolAllocation allowAutoAcceptInvites;
+
+final BoolAllocation cnameSetupAllowed;
+
+final List<Entitlement>? customEntitlements;
+
+final MaxCountAllocation mhsCertificateCount;
+
+final BoolAllocation partialSetupAllowed;
+
+Map<String, dynamic> toJson() { return {
+  'allow_add_subdomain': allowAddSubdomain.toJson(),
+  'allow_auto_accept_invites': allowAutoAcceptInvites.toJson(),
+  'cname_setup_allowed': cnameSetupAllowed.toJson(),
+  if (customEntitlements != null) 'custom_entitlements': customEntitlements?.map((e) => e.toJson()).toList(),
+  'mhs_certificate_count': mhsCertificateCount.toJson(),
+  'partial_setup_allowed': partialSetupAllowed.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_add_subdomain') &&
+      json.containsKey('allow_auto_accept_invites') &&
+      json.containsKey('cname_setup_allowed') &&
+      json.containsKey('custom_entitlements') &&
+      json.containsKey('mhs_certificate_count') &&
+      json.containsKey('partial_setup_allowed'); } 
+InnateEntitlements copyWith({BoolAllocation? allowAddSubdomain, BoolAllocation? allowAutoAcceptInvites, BoolAllocation? cnameSetupAllowed, List<Entitlement>? Function()? customEntitlements, MaxCountAllocation? mhsCertificateCount, BoolAllocation? partialSetupAllowed, }) { return InnateEntitlements(
+  allowAddSubdomain: allowAddSubdomain ?? this.allowAddSubdomain,
+  allowAutoAcceptInvites: allowAutoAcceptInvites ?? this.allowAutoAcceptInvites,
+  cnameSetupAllowed: cnameSetupAllowed ?? this.cnameSetupAllowed,
+  customEntitlements: customEntitlements != null ? customEntitlements() : this.customEntitlements,
+  mhsCertificateCount: mhsCertificateCount ?? this.mhsCertificateCount,
+  partialSetupAllowed: partialSetupAllowed ?? this.partialSetupAllowed,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InnateEntitlements &&
+          allowAddSubdomain == other.allowAddSubdomain &&
+          allowAutoAcceptInvites == other.allowAutoAcceptInvites &&
+          cnameSetupAllowed == other.cnameSetupAllowed &&
+          listEquals(customEntitlements, other.customEntitlements) &&
+          mhsCertificateCount == other.mhsCertificateCount &&
+          partialSetupAllowed == other.partialSetupAllowed; } 
+@override int get hashCode { return Object.hash(allowAddSubdomain, allowAutoAcceptInvites, cnameSetupAllowed, Object.hashAll(customEntitlements ?? const []), mhsCertificateCount, partialSetupAllowed); } 
+@override String toString() { return 'InnateEntitlements(allowAddSubdomain: $allowAddSubdomain, allowAutoAcceptInvites: $allowAutoAcceptInvites, cnameSetupAllowed: $cnameSetupAllowed, customEntitlements: $customEntitlements, mhsCertificateCount: $mhsCertificateCount, partialSetupAllowed: $partialSetupAllowed)'; } 
+ }

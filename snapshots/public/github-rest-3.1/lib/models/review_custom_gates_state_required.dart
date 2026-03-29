@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Whether to approve or reject deployment to the specified environments.
+final class ReviewCustomGatesStateRequiredState {const ReviewCustomGatesStateRequiredState._(this.value);
+
+factory ReviewCustomGatesStateRequiredState.fromJson(String json) { return switch (json) {
+  'approved' => approved,
+  'rejected' => rejected,
+  _ => ReviewCustomGatesStateRequiredState._(json),
+}; }
+
+static const ReviewCustomGatesStateRequiredState approved = ReviewCustomGatesStateRequiredState._('approved');
+
+static const ReviewCustomGatesStateRequiredState rejected = ReviewCustomGatesStateRequiredState._('rejected');
+
+static const List<ReviewCustomGatesStateRequiredState> values = [approved, rejected];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReviewCustomGatesStateRequiredState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReviewCustomGatesStateRequiredState($value)'; } 
+ }
+final class ReviewCustomGatesStateRequired {const ReviewCustomGatesStateRequired({required this.environmentName, required this.state, this.comment, });
+
+factory ReviewCustomGatesStateRequired.fromJson(Map<String, dynamic> json) { return ReviewCustomGatesStateRequired(
+  environmentName: json['environment_name'] as String,
+  state: ReviewCustomGatesStateRequiredState.fromJson(json['state'] as String),
+  comment: json['comment'] as String?,
+); }
+
+/// The name of the environment to approve or reject.
+final String environmentName;
+
+/// Whether to approve or reject deployment to the specified environments.
+final ReviewCustomGatesStateRequiredState state;
+
+/// Optional comment to include with the review.
+final String? comment;
+
+Map<String, dynamic> toJson() { return {
+  'environment_name': environmentName,
+  'state': state.toJson(),
+  'comment': ?comment,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('environment_name') && json['environment_name'] is String &&
+      json.containsKey('state'); } 
+ReviewCustomGatesStateRequired copyWith({String? environmentName, ReviewCustomGatesStateRequiredState? state, String Function()? comment, }) { return ReviewCustomGatesStateRequired(
+  environmentName: environmentName ?? this.environmentName,
+  state: state ?? this.state,
+  comment: comment != null ? comment() : this.comment,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReviewCustomGatesStateRequired &&
+          environmentName == other.environmentName &&
+          state == other.state &&
+          comment == other.comment; } 
+@override int get hashCode { return Object.hash(environmentName, state, comment); } 
+@override String toString() { return 'ReviewCustomGatesStateRequired(environmentName: $environmentName, state: $state, comment: $comment)'; } 
+ }

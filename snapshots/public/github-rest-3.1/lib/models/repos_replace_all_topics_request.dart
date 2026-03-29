@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ReposReplaceAllTopicsRequest {const ReposReplaceAllTopicsRequest({required this.names});
+
+factory ReposReplaceAllTopicsRequest.fromJson(Map<String, dynamic> json) { return ReposReplaceAllTopicsRequest(
+  names: (json['names'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` will be saved as lowercase.
+final List<String> names;
+
+Map<String, dynamic> toJson() { return {
+  'names': names,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('names'); } 
+ReposReplaceAllTopicsRequest copyWith({List<String>? names}) { return ReposReplaceAllTopicsRequest(
+  names: names ?? this.names,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposReplaceAllTopicsRequest &&
+          listEquals(names, other.names); } 
+@override int get hashCode { return Object.hashAll(names).hashCode; } 
+@override String toString() { return 'ReposReplaceAllTopicsRequest(names: $names)'; } 
+ }

@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules2_content_signal.dart';final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2({required this.allow, this.contentSignal, this.crawlDelay, required this.disallow, });
+
+factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(
+  allow: (json['allow'] as List<dynamic>).map((e) => e as String).toList(),
+  contentSignal: json['contentSignal'] != null ? UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal.fromJson(json['contentSignal'] as Map<String, dynamic>) : null,
+  crawlDelay: json['crawlDelay'] != null ? (json['crawlDelay'] as num).toDouble() : null,
+  disallow: (json['disallow'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final List<String> allow;
+
+final UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal? contentSignal;
+
+final double? crawlDelay;
+
+final List<String> disallow;
+
+Map<String, dynamic> toJson() { return {
+  'allow': allow,
+  if (contentSignal != null) 'contentSignal': contentSignal?.toJson(),
+  'crawlDelay': ?crawlDelay,
+  'disallow': disallow,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow') &&
+      json.containsKey('disallow'); } 
+UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 copyWith({List<String>? allow, UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2ContentSignal Function()? contentSignal, double Function()? crawlDelay, List<String>? disallow, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(
+  allow: allow ?? this.allow,
+  contentSignal: contentSignal != null ? contentSignal() : this.contentSignal,
+  crawlDelay: crawlDelay != null ? crawlDelay() : this.crawlDelay,
+  disallow: disallow ?? this.disallow,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2 &&
+          listEquals(allow, other.allow) &&
+          contentSignal == other.contentSignal &&
+          crawlDelay == other.crawlDelay &&
+          listEquals(disallow, other.disallow); } 
+@override int get hashCode { return Object.hash(Object.hashAll(allow), contentSignal, crawlDelay, Object.hashAll(disallow)); } 
+@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules2(allow: $allow, contentSignal: $contentSignal, crawlDelay: $crawlDelay, disallow: $disallow)'; } 
+ }

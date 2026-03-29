@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// For custom tool calling, the type is always `custom`.
+final class ToolChoiceCustomType {const ToolChoiceCustomType._(this.value);
+
+factory ToolChoiceCustomType.fromJson(String json) { return switch (json) {
+  'custom' => custom,
+  _ => ToolChoiceCustomType._(json),
+}; }
+
+static const ToolChoiceCustomType custom = ToolChoiceCustomType._('custom');
+
+static const List<ToolChoiceCustomType> values = [custom];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ToolChoiceCustomType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ToolChoiceCustomType($value)'; } 
+ }
+/// Use this option to force the model to call a specific custom tool.
+/// 
+final class ToolChoiceCustom {const ToolChoiceCustom({required this.type, required this.name, });
+
+factory ToolChoiceCustom.fromJson(Map<String, dynamic> json) { return ToolChoiceCustom(
+  type: ToolChoiceCustomType.fromJson(json['type'] as String),
+  name: json['name'] as String,
+); }
+
+/// For custom tool calling, the type is always `custom`.
+final ToolChoiceCustomType type;
+
+/// The name of the custom tool to call.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('name') && json['name'] is String; } 
+ToolChoiceCustom copyWith({ToolChoiceCustomType? type, String? name, }) { return ToolChoiceCustom(
+  type: type ?? this.type,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ToolChoiceCustom &&
+          type == other.type &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(type, name); } 
+@override String toString() { return 'ToolChoiceCustom(type: $type, name: $name)'; } 
+ }

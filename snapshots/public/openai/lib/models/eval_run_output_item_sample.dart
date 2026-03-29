@@ -1,0 +1,96 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'error_model2.dart';import 'eval_run_output_item_sample_input.dart';import 'eval_run_output_item_sample_output.dart';import 'eval_run_output_item_sample_usage.dart';/// A sample containing the input and output of the evaluation run.
+final class EvalRunOutputItemSample {const EvalRunOutputItemSample({required this.input, required this.output, required this.finishReason, required this.model, required this.usage, required this.error, required this.temperature, required this.maxCompletionTokens, required this.topP, required this.seed, });
+
+factory EvalRunOutputItemSample.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemSample(
+  input: (json['input'] as List<dynamic>).map((e) => EvalRunOutputItemSampleInput.fromJson(e as Map<String, dynamic>)).toList(),
+  output: (json['output'] as List<dynamic>).map((e) => EvalRunOutputItemSampleOutput.fromJson(e as Map<String, dynamic>)).toList(),
+  finishReason: json['finish_reason'] as String,
+  model: json['model'] as String,
+  usage: EvalRunOutputItemSampleUsage.fromJson(json['usage'] as Map<String, dynamic>),
+  error: ErrorModel2.fromJson(json['error'] as Map<String, dynamic>),
+  temperature: (json['temperature'] as num).toDouble(),
+  maxCompletionTokens: (json['max_completion_tokens'] as num).toInt(),
+  topP: (json['top_p'] as num).toDouble(),
+  seed: (json['seed'] as num).toInt(),
+); }
+
+/// An array of input messages.
+final List<EvalRunOutputItemSampleInput> input;
+
+/// An array of output messages.
+final List<EvalRunOutputItemSampleOutput> output;
+
+/// The reason why the sample generation was finished.
+final String finishReason;
+
+/// The model used for generating the sample.
+final String model;
+
+/// Token usage details for the sample.
+final EvalRunOutputItemSampleUsage usage;
+
+final ErrorModel2 error;
+
+/// The sampling temperature used.
+final double temperature;
+
+/// The maximum number of tokens allowed for completion.
+final int maxCompletionTokens;
+
+/// The top_p value used for sampling.
+final double topP;
+
+/// The seed used for generating the sample.
+final int seed;
+
+Map<String, dynamic> toJson() { return {
+  'input': input.map((e) => e.toJson()).toList(),
+  'output': output.map((e) => e.toJson()).toList(),
+  'finish_reason': finishReason,
+  'model': model,
+  'usage': usage.toJson(),
+  'error': error.toJson(),
+  'temperature': temperature,
+  'max_completion_tokens': maxCompletionTokens,
+  'top_p': topP,
+  'seed': seed,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('input') &&
+      json.containsKey('output') &&
+      json.containsKey('finish_reason') && json['finish_reason'] is String &&
+      json.containsKey('model') && json['model'] is String &&
+      json.containsKey('usage') &&
+      json.containsKey('error') &&
+      json.containsKey('temperature') && json['temperature'] is num &&
+      json.containsKey('max_completion_tokens') && json['max_completion_tokens'] is num &&
+      json.containsKey('top_p') && json['top_p'] is num &&
+      json.containsKey('seed') && json['seed'] is num; } 
+EvalRunOutputItemSample copyWith({List<EvalRunOutputItemSampleInput>? input, List<EvalRunOutputItemSampleOutput>? output, String? finishReason, String? model, EvalRunOutputItemSampleUsage? usage, ErrorModel2? error, double? temperature, int? maxCompletionTokens, double? topP, int? seed, }) { return EvalRunOutputItemSample(
+  input: input ?? this.input,
+  output: output ?? this.output,
+  finishReason: finishReason ?? this.finishReason,
+  model: model ?? this.model,
+  usage: usage ?? this.usage,
+  error: error ?? this.error,
+  temperature: temperature ?? this.temperature,
+  maxCompletionTokens: maxCompletionTokens ?? this.maxCompletionTokens,
+  topP: topP ?? this.topP,
+  seed: seed ?? this.seed,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EvalRunOutputItemSample &&
+          listEquals(input, other.input) &&
+          listEquals(output, other.output) &&
+          finishReason == other.finishReason &&
+          model == other.model &&
+          usage == other.usage &&
+          error == other.error &&
+          temperature == other.temperature &&
+          maxCompletionTokens == other.maxCompletionTokens &&
+          topP == other.topP &&
+          seed == other.seed; } 
+@override int get hashCode { return Object.hash(Object.hashAll(input), Object.hashAll(output), finishReason, model, usage, error, temperature, maxCompletionTokens, topP, seed); } 
+@override String toString() { return 'EvalRunOutputItemSample(input: $input, output: $output, finishReason: $finishReason, model: $model, usage: $usage, error: $error, temperature: $temperature, maxCompletionTokens: $maxCompletionTokens, topP: $topP, seed: $seed)'; } 
+ }

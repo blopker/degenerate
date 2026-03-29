@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'builds_is_secret.dart';final class BuildsEnvironmentVariablesRequestValue {const BuildsEnvironmentVariablesRequestValue({required this.isSecret, this.value, });
+
+factory BuildsEnvironmentVariablesRequestValue.fromJson(Map<String, dynamic> json) { return BuildsEnvironmentVariablesRequestValue(
+  isSecret: BuildsIsSecret.fromJson(json['is_secret'] as bool),
+  value: json['value'] as String?,
+); }
+
+final BuildsIsSecret isSecret;
+
+final String? value;
+
+Map<String, dynamic> toJson() { return {
+  'is_secret': isSecret.toJson(),
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_secret'); } 
+BuildsEnvironmentVariablesRequestValue copyWith({BuildsIsSecret? isSecret, String? Function()? value, }) { return BuildsEnvironmentVariablesRequestValue(
+  isSecret: isSecret ?? this.isSecret,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BuildsEnvironmentVariablesRequestValue &&
+          isSecret == other.isSecret &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(isSecret, value); } 
+@override String toString() { return 'BuildsEnvironmentVariablesRequestValue(isSecret: $isSecret, value: $value)'; } 
+ }

@@ -1,0 +1,266 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
+final class WorkersAiPostRunCfDeepgramAura2EnRequestContainer {const WorkersAiPostRunCfDeepgramAura2EnRequestContainer._(this.value);
+
+factory WorkersAiPostRunCfDeepgramAura2EnRequestContainer.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'wav' => wav,
+  'ogg' => ogg,
+  _ => WorkersAiPostRunCfDeepgramAura2EnRequestContainer._(json),
+}; }
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestContainer none = WorkersAiPostRunCfDeepgramAura2EnRequestContainer._('none');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestContainer wav = WorkersAiPostRunCfDeepgramAura2EnRequestContainer._('wav');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestContainer ogg = WorkersAiPostRunCfDeepgramAura2EnRequestContainer._('ogg');
+
+static const List<WorkersAiPostRunCfDeepgramAura2EnRequestContainer> values = [none, wav, ogg];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura2EnRequestContainer && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EnRequestContainer($value)'; } 
+ }
+/// Encoding of the output audio.
+final class WorkersAiPostRunCfDeepgramAura2EnRequestEncoding {const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._(this.value);
+
+factory WorkersAiPostRunCfDeepgramAura2EnRequestEncoding.fromJson(String json) { return switch (json) {
+  'linear16' => linear16,
+  'flac' => flac,
+  'mulaw' => mulaw,
+  'alaw' => alaw,
+  'mp3' => mp3,
+  'opus' => opus,
+  'aac' => aac,
+  _ => WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._(json),
+}; }
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding linear16 = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('linear16');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding flac = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('flac');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding mulaw = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('mulaw');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding alaw = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('alaw');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding mp3 = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('mp3');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding opus = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('opus');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestEncoding aac = WorkersAiPostRunCfDeepgramAura2EnRequestEncoding._('aac');
+
+static const List<WorkersAiPostRunCfDeepgramAura2EnRequestEncoding> values = [linear16, flac, mulaw, alaw, mp3, opus, aac];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura2EnRequestEncoding && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EnRequestEncoding($value)'; } 
+ }
+/// Speaker used to produce the audio.
+final class WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._(this.value);
+
+factory WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker.fromJson(String json) { return switch (json) {
+  'amalthea' => amalthea,
+  'andromeda' => andromeda,
+  'apollo' => apollo,
+  'arcas' => arcas,
+  'aries' => aries,
+  'asteria' => asteria,
+  'athena' => athena,
+  'atlas' => atlas,
+  'aurora' => aurora,
+  'callista' => callista,
+  'cora' => cora,
+  'cordelia' => cordelia,
+  'delia' => delia,
+  'draco' => draco,
+  'electra' => electra,
+  'harmonia' => harmonia,
+  'helena' => helena,
+  'hera' => hera,
+  'hermes' => hermes,
+  'hyperion' => hyperion,
+  'iris' => iris,
+  'janus' => janus,
+  'juno' => juno,
+  'jupiter' => jupiter,
+  'luna' => luna,
+  'mars' => mars,
+  'minerva' => minerva,
+  'neptune' => neptune,
+  'odysseus' => odysseus,
+  'ophelia' => ophelia,
+  'orion' => orion,
+  'orpheus' => orpheus,
+  'pandora' => pandora,
+  'phoebe' => phoebe,
+  'pluto' => pluto,
+  'saturn' => saturn,
+  'thalia' => thalia,
+  'theia' => theia,
+  'vesta' => vesta,
+  'zeus' => zeus,
+  _ => WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._(json),
+}; }
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker amalthea = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('amalthea');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker andromeda = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('andromeda');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker apollo = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('apollo');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker arcas = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('arcas');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker aries = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('aries');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker asteria = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('asteria');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker athena = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('athena');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker atlas = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('atlas');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker aurora = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('aurora');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker callista = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('callista');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker cora = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('cora');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker cordelia = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('cordelia');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker delia = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('delia');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker draco = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('draco');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker electra = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('electra');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker harmonia = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('harmonia');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker helena = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('helena');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker hera = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('hera');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker hermes = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('hermes');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker hyperion = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('hyperion');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker iris = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('iris');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker janus = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('janus');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker juno = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('juno');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker jupiter = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('jupiter');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker luna = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('luna');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker mars = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('mars');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker minerva = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('minerva');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker neptune = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('neptune');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker odysseus = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('odysseus');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker ophelia = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('ophelia');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker orion = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('orion');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker orpheus = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('orpheus');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker pandora = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('pandora');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker phoebe = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('phoebe');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker pluto = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('pluto');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker saturn = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('saturn');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker thalia = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('thalia');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker theia = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('theia');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker vesta = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('vesta');
+
+static const WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker zeus = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker._('zeus');
+
+static const List<WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker> values = [amalthea, andromeda, apollo, arcas, aries, asteria, athena, atlas, aurora, callista, cora, cordelia, delia, draco, electra, harmonia, helena, hera, hermes, hyperion, iris, janus, juno, jupiter, luna, mars, minerva, neptune, odysseus, ophelia, orion, orpheus, pandora, phoebe, pluto, saturn, thalia, theia, vesta, zeus];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker($value)'; } 
+ }
+final class WorkersAiPostRunCfDeepgramAura2EnRequest {const WorkersAiPostRunCfDeepgramAura2EnRequest({this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker = WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker.luna, required this.text, });
+
+factory WorkersAiPostRunCfDeepgramAura2EnRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfDeepgramAura2EnRequest(
+  bitRate: json['bit_rate'] != null ? (json['bit_rate'] as num).toDouble() : null,
+  container: json['container'] != null ? WorkersAiPostRunCfDeepgramAura2EnRequestContainer.fromJson(json['container'] as String) : null,
+  encoding: json['encoding'] != null ? WorkersAiPostRunCfDeepgramAura2EnRequestEncoding.fromJson(json['encoding'] as String) : null,
+  sampleRate: json['sample_rate'] != null ? (json['sample_rate'] as num).toDouble() : null,
+  speaker: json.containsKey('speaker') ? WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker.fromJson(json['speaker'] as String) : WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker.luna,
+  text: json['text'] as String,
+); }
+
+/// The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.
+final double? bitRate;
+
+/// Container specifies the file format wrapper for the output audio. The available options depend on the encoding type..
+final WorkersAiPostRunCfDeepgramAura2EnRequestContainer? container;
+
+/// Encoding of the output audio.
+final WorkersAiPostRunCfDeepgramAura2EnRequestEncoding? encoding;
+
+/// Sample Rate specifies the sample rate for the output audio. Based on the encoding, different sample rates are supported. For some encodings, the sample rate is not configurable
+final double? sampleRate;
+
+/// Speaker used to produce the audio.
+final WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker speaker;
+
+/// The text content to be converted to speech
+final String text;
+
+Map<String, dynamic> toJson() { return {
+  'bit_rate': ?bitRate,
+  if (container != null) 'container': container?.toJson(),
+  if (encoding != null) 'encoding': encoding?.toJson(),
+  'sample_rate': ?sampleRate,
+  'speaker': speaker.toJson(),
+  'text': text,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('text') && json['text'] is String; } 
+WorkersAiPostRunCfDeepgramAura2EnRequest copyWith({double Function()? bitRate, WorkersAiPostRunCfDeepgramAura2EnRequestContainer Function()? container, WorkersAiPostRunCfDeepgramAura2EnRequestEncoding Function()? encoding, double Function()? sampleRate, WorkersAiPostRunCfDeepgramAura2EnRequestSpeaker Function()? speaker, String? text, }) { return WorkersAiPostRunCfDeepgramAura2EnRequest(
+  bitRate: bitRate != null ? bitRate() : this.bitRate,
+  container: container != null ? container() : this.container,
+  encoding: encoding != null ? encoding() : this.encoding,
+  sampleRate: sampleRate != null ? sampleRate() : this.sampleRate,
+  speaker: speaker != null ? speaker() : this.speaker,
+  text: text ?? this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfDeepgramAura2EnRequest &&
+          bitRate == other.bitRate &&
+          container == other.container &&
+          encoding == other.encoding &&
+          sampleRate == other.sampleRate &&
+          speaker == other.speaker &&
+          text == other.text; } 
+@override int get hashCode { return Object.hash(bitRate, container, encoding, sampleRate, speaker, text); } 
+@override String toString() { return 'WorkersAiPostRunCfDeepgramAura2EnRequest(bitRate: $bitRate, container: $container, encoding: $encoding, sampleRate: $sampleRate, speaker: $speaker, text: $text)'; } 
+ }

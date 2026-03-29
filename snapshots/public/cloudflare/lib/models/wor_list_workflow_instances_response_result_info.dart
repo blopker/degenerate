@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorListWorkflowInstancesResponseResultInfo {const WorListWorkflowInstancesResponseResultInfo({required this.count, this.cursor, this.page, required this.perPage, required this.totalCount, });
+
+factory WorListWorkflowInstancesResponseResultInfo.fromJson(Map<String, dynamic> json) { return WorListWorkflowInstancesResponseResultInfo(
+  count: (json['count'] as num).toDouble(),
+  cursor: json['cursor'] as String?,
+  page: json['page'] != null ? (json['page'] as num).toDouble() : null,
+  perPage: (json['per_page'] as num).toDouble(),
+  totalCount: (json['total_count'] as num).toDouble(),
+); }
+
+final double count;
+
+final String? cursor;
+
+final double? page;
+
+final double perPage;
+
+final double totalCount;
+
+Map<String, dynamic> toJson() { return {
+  'count': count,
+  'cursor': ?cursor,
+  'page': ?page,
+  'per_page': perPage,
+  'total_count': totalCount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('per_page') && json['per_page'] is num &&
+      json.containsKey('total_count') && json['total_count'] is num; } 
+WorListWorkflowInstancesResponseResultInfo copyWith({double? count, String Function()? cursor, double Function()? page, double? perPage, double? totalCount, }) { return WorListWorkflowInstancesResponseResultInfo(
+  count: count ?? this.count,
+  cursor: cursor != null ? cursor() : this.cursor,
+  page: page != null ? page() : this.page,
+  perPage: perPage ?? this.perPage,
+  totalCount: totalCount ?? this.totalCount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorListWorkflowInstancesResponseResultInfo &&
+          count == other.count &&
+          cursor == other.cursor &&
+          page == other.page &&
+          perPage == other.perPage &&
+          totalCount == other.totalCount; } 
+@override int get hashCode { return Object.hash(count, cursor, page, perPage, totalCount); } 
+@override String toString() { return 'WorListWorkflowInstancesResponseResultInfo(count: $count, cursor: $cursor, page: $page, perPage: $perPage, totalCount: $totalCount)'; } 
+ }

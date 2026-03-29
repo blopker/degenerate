@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPullRequestReviewDismissedPullRequestLinksIssue {const WebhookPullRequestReviewDismissedPullRequestLinksIssue({required this.href});
+
+factory WebhookPullRequestReviewDismissedPullRequestLinksIssue.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewDismissedPullRequestLinksIssue(
+  href: json['href'] as String,
+); }
+
+final String href;
+
+Map<String, dynamic> toJson() { return {
+  'href': href,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
+WebhookPullRequestReviewDismissedPullRequestLinksIssue copyWith({String? href}) { return WebhookPullRequestReviewDismissedPullRequestLinksIssue(
+  href: href ?? this.href,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewDismissedPullRequestLinksIssue &&
+          href == other.href; } 
+@override int get hashCode { return href.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewDismissedPullRequestLinksIssue(href: $href)'; } 
+ }

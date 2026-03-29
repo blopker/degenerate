@@ -1,0 +1,182 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dnssec_dnssec_multi_signer.dart';import 'dnssec_dnssec_presigned.dart';import 'dnssec_dnssec_use_nsec3.dart';/// Algorithm key code.
+extension type const DnssecAlgorithm(String value) {
+factory DnssecAlgorithm.fromJson(String json) => DnssecAlgorithm(json);
+
+String toJson() => value;
+
+}
+/// Digest hash.
+extension type const DnssecDigest(String value) {
+factory DnssecDigest.fromJson(String json) => DnssecDigest(json);
+
+String toJson() => value;
+
+}
+/// Type of digest algorithm.
+extension type const DnssecDigestAlgorithm(String value) {
+factory DnssecDigestAlgorithm.fromJson(String json) => DnssecDigestAlgorithm(json);
+
+String toJson() => value;
+
+}
+/// Coded type for digest algorithm.
+extension type const DnssecDigestType(String value) {
+factory DnssecDigestType.fromJson(String json) => DnssecDigestType(json);
+
+String toJson() => value;
+
+}
+/// Full DS record.
+extension type const DnssecDs(String value) {
+factory DnssecDs.fromJson(String json) => DnssecDs(json);
+
+String toJson() => value;
+
+}
+/// Flag for DNSSEC record.
+extension type const DnssecFlags(double value) {
+factory DnssecFlags.fromJson(num json) => DnssecFlags(json.toDouble());
+
+num toJson() => value;
+
+}
+/// Code for key tag.
+extension type const DnssecKeyTag(double value) {
+factory DnssecKeyTag.fromJson(num json) => DnssecKeyTag(json.toDouble());
+
+num toJson() => value;
+
+}
+/// Algorithm key type.
+extension type const DnssecKeyType(String value) {
+factory DnssecKeyType.fromJson(String json) => DnssecKeyType(json);
+
+String toJson() => value;
+
+}
+/// When DNSSEC was last modified.
+extension type DnssecModifiedOn(DateTime value) {
+factory DnssecModifiedOn.fromJson(String json) => DnssecModifiedOn(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// Public key for DS record.
+extension type const DnssecPublicKey(String value) {
+factory DnssecPublicKey.fromJson(String json) => DnssecPublicKey(json);
+
+String toJson() => value;
+
+}
+/// Status of DNSSEC, based on user-desired state and presence of necessary records.
+extension type DnssecStatus(dynamic value) {
+factory DnssecStatus.fromJson(dynamic json) => DnssecStatus(json);
+
+dynamic toJson() => value;
+
+}
+final class DnssecDnssec {const DnssecDnssec({this.algorithm, this.digest, this.digestAlgorithm, this.digestType, this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.ds, this.flags, this.keyTag, this.keyType, this.modifiedOn, this.publicKey, this.status, });
+
+factory DnssecDnssec.fromJson(Map<String, dynamic> json) { return DnssecDnssec(
+  algorithm: json['algorithm'] != null ? DnssecAlgorithm.fromJson(json['algorithm'] as String) : null,
+  digest: json['digest'] != null ? DnssecDigest.fromJson(json['digest'] as String) : null,
+  digestAlgorithm: json['digest_algorithm'] != null ? DnssecDigestAlgorithm.fromJson(json['digest_algorithm'] as String) : null,
+  digestType: json['digest_type'] != null ? DnssecDigestType.fromJson(json['digest_type'] as String) : null,
+  dnssecMultiSigner: json['dnssec_multi_signer'] != null ? DnssecDnssecMultiSigner.fromJson(json['dnssec_multi_signer'] as bool) : null,
+  dnssecPresigned: json['dnssec_presigned'] != null ? DnssecDnssecPresigned.fromJson(json['dnssec_presigned'] as bool) : null,
+  dnssecUseNsec3: json['dnssec_use_nsec3'] != null ? DnssecDnssecUseNsec3.fromJson(json['dnssec_use_nsec3'] as bool) : null,
+  ds: json['ds'] != null ? DnssecDs.fromJson(json['ds'] as String) : null,
+  flags: json['flags'] != null ? DnssecFlags.fromJson(json['flags'] as num) : null,
+  keyTag: json['key_tag'] != null ? DnssecKeyTag.fromJson(json['key_tag'] as num) : null,
+  keyType: json['key_type'] != null ? DnssecKeyType.fromJson(json['key_type'] as String) : null,
+  modifiedOn: json['modified_on'] != null ? DnssecModifiedOn.fromJson(json['modified_on'] as String) : null,
+  publicKey: json['public_key'] != null ? DnssecPublicKey.fromJson(json['public_key'] as String) : null,
+  status: json['status'] != null ? DnssecStatus.fromJson(json['status'] as dynamic) : null,
+); }
+
+/// Algorithm key code.
+final DnssecAlgorithm? algorithm;
+
+/// Digest hash.
+final DnssecDigest? digest;
+
+/// Type of digest algorithm.
+final DnssecDigestAlgorithm? digestAlgorithm;
+
+/// Coded type for digest algorithm.
+final DnssecDigestType? digestType;
+
+final DnssecDnssecMultiSigner? dnssecMultiSigner;
+
+final DnssecDnssecPresigned? dnssecPresigned;
+
+final DnssecDnssecUseNsec3? dnssecUseNsec3;
+
+final DnssecDs? ds;
+
+final DnssecFlags? flags;
+
+final DnssecKeyTag? keyTag;
+
+final DnssecKeyType? keyType;
+
+final DnssecModifiedOn? modifiedOn;
+
+final DnssecPublicKey? publicKey;
+
+final DnssecStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  if (algorithm != null) 'algorithm': algorithm?.toJson(),
+  if (digest != null) 'digest': digest?.toJson(),
+  if (digestAlgorithm != null) 'digest_algorithm': digestAlgorithm?.toJson(),
+  if (digestType != null) 'digest_type': digestType?.toJson(),
+  if (dnssecMultiSigner != null) 'dnssec_multi_signer': dnssecMultiSigner?.toJson(),
+  if (dnssecPresigned != null) 'dnssec_presigned': dnssecPresigned?.toJson(),
+  if (dnssecUseNsec3 != null) 'dnssec_use_nsec3': dnssecUseNsec3?.toJson(),
+  if (ds != null) 'ds': ds?.toJson(),
+  if (flags != null) 'flags': flags?.toJson(),
+  if (keyTag != null) 'key_tag': keyTag?.toJson(),
+  if (keyType != null) 'key_type': keyType?.toJson(),
+  if (modifiedOn != null) 'modified_on': modifiedOn?.toJson(),
+  if (publicKey != null) 'public_key': publicKey?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DnssecDnssec copyWith({DnssecAlgorithm? Function()? algorithm, DnssecDigest? Function()? digest, DnssecDigestAlgorithm? Function()? digestAlgorithm, DnssecDigestType? Function()? digestType, DnssecDnssecMultiSigner Function()? dnssecMultiSigner, DnssecDnssecPresigned Function()? dnssecPresigned, DnssecDnssecUseNsec3 Function()? dnssecUseNsec3, DnssecDs? Function()? ds, DnssecFlags? Function()? flags, DnssecKeyTag? Function()? keyTag, DnssecKeyType? Function()? keyType, DnssecModifiedOn? Function()? modifiedOn, DnssecPublicKey? Function()? publicKey, DnssecStatus? Function()? status, }) { return DnssecDnssec(
+  algorithm: algorithm != null ? algorithm() : this.algorithm,
+  digest: digest != null ? digest() : this.digest,
+  digestAlgorithm: digestAlgorithm != null ? digestAlgorithm() : this.digestAlgorithm,
+  digestType: digestType != null ? digestType() : this.digestType,
+  dnssecMultiSigner: dnssecMultiSigner != null ? dnssecMultiSigner() : this.dnssecMultiSigner,
+  dnssecPresigned: dnssecPresigned != null ? dnssecPresigned() : this.dnssecPresigned,
+  dnssecUseNsec3: dnssecUseNsec3 != null ? dnssecUseNsec3() : this.dnssecUseNsec3,
+  ds: ds != null ? ds() : this.ds,
+  flags: flags != null ? flags() : this.flags,
+  keyTag: keyTag != null ? keyTag() : this.keyTag,
+  keyType: keyType != null ? keyType() : this.keyType,
+  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  publicKey: publicKey != null ? publicKey() : this.publicKey,
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnssecDnssec &&
+          algorithm == other.algorithm &&
+          digest == other.digest &&
+          digestAlgorithm == other.digestAlgorithm &&
+          digestType == other.digestType &&
+          dnssecMultiSigner == other.dnssecMultiSigner &&
+          dnssecPresigned == other.dnssecPresigned &&
+          dnssecUseNsec3 == other.dnssecUseNsec3 &&
+          ds == other.ds &&
+          flags == other.flags &&
+          keyTag == other.keyTag &&
+          keyType == other.keyType &&
+          modifiedOn == other.modifiedOn &&
+          publicKey == other.publicKey &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(algorithm, digest, digestAlgorithm, digestType, dnssecMultiSigner, dnssecPresigned, dnssecUseNsec3, ds, flags, keyTag, keyType, modifiedOn, publicKey, status); } 
+@override String toString() { return 'DnssecDnssec(algorithm: $algorithm, digest: $digest, digestAlgorithm: $digestAlgorithm, digestType: $digestType, dnssecMultiSigner: $dnssecMultiSigner, dnssecPresigned: $dnssecPresigned, dnssecUseNsec3: $dnssecUseNsec3, ds: $ds, flags: $flags, keyTag: $keyTag, keyType: $keyType, modifiedOn: $modifiedOn, publicKey: $publicKey, status: $status)'; } 
+ }

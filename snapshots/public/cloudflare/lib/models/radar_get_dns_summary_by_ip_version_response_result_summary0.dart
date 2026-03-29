@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByIpVersionResponseResultSummary0 {const RadarGetDnsSummaryByIpVersionResponseResultSummary0({required this.iPv4, required this.iPv6, });
+
+factory RadarGetDnsSummaryByIpVersionResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByIpVersionResponseResultSummary0(
+  iPv4: json['IPv4'] as String,
+  iPv6: json['IPv6'] as String,
+); }
+
+/// A numeric string.
+final String iPv4;
+
+/// A numeric string.
+final String iPv6;
+
+Map<String, dynamic> toJson() { return {
+  'IPv4': iPv4,
+  'IPv6': iPv6,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('IPv4') && json['IPv4'] is String &&
+      json.containsKey('IPv6') && json['IPv6'] is String; } 
+RadarGetDnsSummaryByIpVersionResponseResultSummary0 copyWith({String? iPv4, String? iPv6, }) { return RadarGetDnsSummaryByIpVersionResponseResultSummary0(
+  iPv4: iPv4 ?? this.iPv4,
+  iPv6: iPv6 ?? this.iPv6,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsSummaryByIpVersionResponseResultSummary0 &&
+          iPv4 == other.iPv4 &&
+          iPv6 == other.iPv6; } 
+@override int get hashCode { return Object.hash(iPv4, iPv6); } 
+@override String toString() { return 'RadarGetDnsSummaryByIpVersionResponseResultSummary0(iPv4: $iPv4, iPv6: $iPv6)'; } 
+ }

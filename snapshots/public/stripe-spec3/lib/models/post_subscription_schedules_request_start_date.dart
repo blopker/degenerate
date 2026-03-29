@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionSchedulesRequestStartDateVariant2 {const PostSubscriptionSchedulesRequestStartDateVariant2._(this.value);
+
+factory PostSubscriptionSchedulesRequestStartDateVariant2.fromJson(String json) { return switch (json) {
+  'now' => now,
+  _ => PostSubscriptionSchedulesRequestStartDateVariant2._(json),
+}; }
+
+static const PostSubscriptionSchedulesRequestStartDateVariant2 now = PostSubscriptionSchedulesRequestStartDateVariant2._('now');
+
+static const List<PostSubscriptionSchedulesRequestStartDateVariant2> values = [now];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionSchedulesRequestStartDateVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionSchedulesRequestStartDateVariant2($value)'; } 
+ }
+typedef PostSubscriptionSchedulesRequestStartDate = OneOf2<int,PostSubscriptionSchedulesRequestStartDateVariant2>;

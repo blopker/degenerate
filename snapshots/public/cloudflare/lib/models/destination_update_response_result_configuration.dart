@@ -1,0 +1,96 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DestinationUpdateResponseResultConfigurationLogpushDataset {const DestinationUpdateResponseResultConfigurationLogpushDataset._(this.value);
+
+factory DestinationUpdateResponseResultConfigurationLogpushDataset.fromJson(String json) { return switch (json) {
+  'opentelemetry-traces' => opentelemetryTraces,
+  'opentelemetry-logs' => opentelemetryLogs,
+  _ => DestinationUpdateResponseResultConfigurationLogpushDataset._(json),
+}; }
+
+static const DestinationUpdateResponseResultConfigurationLogpushDataset opentelemetryTraces = DestinationUpdateResponseResultConfigurationLogpushDataset._('opentelemetry-traces');
+
+static const DestinationUpdateResponseResultConfigurationLogpushDataset opentelemetryLogs = DestinationUpdateResponseResultConfigurationLogpushDataset._('opentelemetry-logs');
+
+static const List<DestinationUpdateResponseResultConfigurationLogpushDataset> values = [opentelemetryTraces, opentelemetryLogs];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DestinationUpdateResponseResultConfigurationLogpushDataset && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DestinationUpdateResponseResultConfigurationLogpushDataset($value)'; } 
+ }
+final class DestinationUpdateResponseResultConfigurationType {const DestinationUpdateResponseResultConfigurationType._(this.value);
+
+factory DestinationUpdateResponseResultConfigurationType.fromJson(String json) { return switch (json) {
+  'logpush' => logpush,
+  _ => DestinationUpdateResponseResultConfigurationType._(json),
+}; }
+
+static const DestinationUpdateResponseResultConfigurationType logpush = DestinationUpdateResponseResultConfigurationType._('logpush');
+
+static const List<DestinationUpdateResponseResultConfigurationType> values = [logpush];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DestinationUpdateResponseResultConfigurationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DestinationUpdateResponseResultConfigurationType($value)'; } 
+ }
+final class DestinationUpdateResponseResultConfiguration {const DestinationUpdateResponseResultConfiguration({required this.destinationConf, required this.logpushDataset, required this.logpushJob, required this.type, required this.url, });
+
+factory DestinationUpdateResponseResultConfiguration.fromJson(Map<String, dynamic> json) { return DestinationUpdateResponseResultConfiguration(
+  destinationConf: json['destination_conf'] as String,
+  logpushDataset: DestinationUpdateResponseResultConfigurationLogpushDataset.fromJson(json['logpushDataset'] as String),
+  logpushJob: (json['logpushJob'] as num).toDouble(),
+  type: DestinationUpdateResponseResultConfigurationType.fromJson(json['type'] as String),
+  url: json['url'] as String,
+); }
+
+final String destinationConf;
+
+final DestinationUpdateResponseResultConfigurationLogpushDataset logpushDataset;
+
+final double logpushJob;
+
+final DestinationUpdateResponseResultConfigurationType type;
+
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'destination_conf': destinationConf,
+  'logpushDataset': logpushDataset.toJson(),
+  'logpushJob': logpushJob,
+  'type': type.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_conf') && json['destination_conf'] is String &&
+      json.containsKey('logpushDataset') &&
+      json.containsKey('logpushJob') && json['logpushJob'] is num &&
+      json.containsKey('type') &&
+      json.containsKey('url') && json['url'] is String; } 
+DestinationUpdateResponseResultConfiguration copyWith({String? destinationConf, DestinationUpdateResponseResultConfigurationLogpushDataset? logpushDataset, double? logpushJob, DestinationUpdateResponseResultConfigurationType? type, String? url, }) { return DestinationUpdateResponseResultConfiguration(
+  destinationConf: destinationConf ?? this.destinationConf,
+  logpushDataset: logpushDataset ?? this.logpushDataset,
+  logpushJob: logpushJob ?? this.logpushJob,
+  type: type ?? this.type,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DestinationUpdateResponseResultConfiguration &&
+          destinationConf == other.destinationConf &&
+          logpushDataset == other.logpushDataset &&
+          logpushJob == other.logpushJob &&
+          type == other.type &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(destinationConf, logpushDataset, logpushJob, type, url); } 
+@override String toString() { return 'DestinationUpdateResponseResultConfiguration(destinationConf: $destinationConf, logpushDataset: $logpushDataset, logpushJob: $logpushJob, type: $type, url: $url)'; } 
+ }

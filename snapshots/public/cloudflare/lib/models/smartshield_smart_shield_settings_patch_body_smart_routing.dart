@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the enablement value of Smart Routing.
+final class SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue {const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue._(this.value);
+
+factory SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue._(json),
+}; }
+
+static const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue $on = SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue._('on');
+
+static const SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue off = SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue._('off');
+
+static const List<SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue($value)'; } 
+ }
+final class SmartshieldSmartShieldSettingsPatchBodySmartRouting {const SmartshieldSmartShieldSettingsPatchBodySmartRouting({this.value});
+
+factory SmartshieldSmartShieldSettingsPatchBodySmartRouting.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodySmartRouting(
+  value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Specifies the enablement value of Smart Routing.
+final SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SmartshieldSmartShieldSettingsPatchBodySmartRouting copyWith({SmartshieldSmartShieldSettingsPatchBodySmartRoutingValue Function()? value}) { return SmartshieldSmartShieldSettingsPatchBodySmartRouting(
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SmartshieldSmartShieldSettingsPatchBodySmartRouting &&
+          value == other.value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodySmartRouting(value: $value)'; } 
+ }

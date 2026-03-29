@@ -1,0 +1,199 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zero_trust_gateway_action.dart';import 'zero_trust_gateway_components_schemas_name.dart';import 'zero_trust_gateway_device_posture.dart';import 'zero_trust_gateway_enabled.dart';import 'zero_trust_gateway_expiration.dart';import 'zero_trust_gateway_filters2.dart';import 'zero_trust_gateway_identity.dart';import 'zero_trust_gateway_precedence.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_rule_settings.dart';import 'zero_trust_gateway_schedule.dart';import 'zero_trust_gateway_schemas_description.dart';import 'zero_trust_gateway_schemas_uuid.dart';import 'zero_trust_gateway_traffic.dart';/// Indicate the date of deletion, if any.
+extension type ZeroTrustGatewayDeletedAt(DateTime value) {
+factory ZeroTrustGatewayDeletedAt.fromJson(String json) => ZeroTrustGatewayDeletedAt(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// Indicate that this rule is shared via the Orgs API and read only.
+extension type const ZeroTrustGatewayReadOnly(bool value) {
+factory ZeroTrustGatewayReadOnly.fromJson(bool json) => ZeroTrustGatewayReadOnly(json);
+
+bool toJson() => value;
+
+}
+/// Indicate that this rule is sharable via the Orgs API.
+extension type const ZeroTrustGatewaySharable(bool value) {
+factory ZeroTrustGatewaySharable.fromJson(bool json) => ZeroTrustGatewaySharable(json);
+
+bool toJson() => value;
+
+}
+/// Provide the account tag of the account that created the rule.
+extension type const ZeroTrustGatewaySourceAccount(String value) {
+factory ZeroTrustGatewaySourceAccount.fromJson(String json) => ZeroTrustGatewaySourceAccount(json);
+
+String toJson() => value;
+
+}
+/// Indicate the version number of the rule(read-only).
+extension type const ZeroTrustGatewayVersion(int value) {
+factory ZeroTrustGatewayVersion.fromJson(num json) => ZeroTrustGatewayVersion(json.toInt());
+
+num toJson() => value;
+
+}
+/// Indicate a warning for a misconfigured rule, if any.
+extension type const ZeroTrustGatewayWarningStatus(String value) {
+factory ZeroTrustGatewayWarningStatus.fromJson(String json) => ZeroTrustGatewayWarningStatus(json);
+
+String toJson() => value;
+
+}
+final class ZeroTrustGatewayRules {const ZeroTrustGatewayRules({required this.action, this.createdAt, this.deletedAt, this.description, this.devicePosture, required this.enabled, this.expiration, required this.filters, this.id, this.identity, required this.name, required this.precedence, this.readOnly, this.ruleSettings, this.schedule, this.sharable, this.sourceAccount, required this.traffic, this.updatedAt, this.version, this.warningStatus, });
+
+factory ZeroTrustGatewayRules.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayRules(
+  action: ZeroTrustGatewayAction.fromJson(json['action'] as String),
+  createdAt: json['created_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['created_at'] as String) : null,
+  deletedAt: json['deleted_at'] != null ? ZeroTrustGatewayDeletedAt.fromJson(json['deleted_at'] as String) : null,
+  description: json['description'] != null ? ZeroTrustGatewaySchemasDescription.fromJson(json['description'] as String) : null,
+  devicePosture: json['device_posture'] != null ? ZeroTrustGatewayDevicePosture.fromJson(json['device_posture'] as String) : null,
+  enabled: ZeroTrustGatewayEnabled.fromJson(json['enabled'] as bool),
+  expiration: json['expiration'] != null ? ZeroTrustGatewayExpiration.fromJson(json['expiration'] as Map<String, dynamic>) : null,
+  filters: (json['filters'] as List<dynamic>).map((e) => ZeroTrustGatewayFilters2.fromJson(e as String)).toList(),
+  id: json['id'] != null ? ZeroTrustGatewaySchemasUuid.fromJson(json['id'] as String) : null,
+  identity: json['identity'] != null ? ZeroTrustGatewayIdentity.fromJson(json['identity'] as String) : null,
+  name: ZeroTrustGatewayComponentsSchemasName.fromJson(json['name'] as String),
+  precedence: ZeroTrustGatewayPrecedence.fromJson(json['precedence'] as num),
+  readOnly: json['read_only'] != null ? ZeroTrustGatewayReadOnly.fromJson(json['read_only'] as bool) : null,
+  ruleSettings: json['rule_settings'] != null ? ZeroTrustGatewayRuleSettings.fromJson(json['rule_settings'] as Map<String, dynamic>) : null,
+  schedule: json['schedule'] != null ? ZeroTrustGatewaySchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
+  sharable: json['sharable'] != null ? ZeroTrustGatewaySharable.fromJson(json['sharable'] as bool) : null,
+  sourceAccount: json['source_account'] != null ? ZeroTrustGatewaySourceAccount.fromJson(json['source_account'] as String) : null,
+  traffic: ZeroTrustGatewayTraffic.fromJson(json['traffic'] as String),
+  updatedAt: json['updated_at'] != null ? ZeroTrustGatewayReadOnlyTimestamp.fromJson(json['updated_at'] as String) : null,
+  version: json['version'] != null ? ZeroTrustGatewayVersion.fromJson(json['version'] as num) : null,
+  warningStatus: json['warning_status'] != null ? ZeroTrustGatewayWarningStatus.fromJson(json['warning_status'] as String) : null,
+); }
+
+/// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
+final ZeroTrustGatewayAction action;
+
+final ZeroTrustGatewayReadOnlyTimestamp? createdAt;
+
+/// Indicate the date of deletion, if any.
+final ZeroTrustGatewayDeletedAt? deletedAt;
+
+final ZeroTrustGatewaySchemasDescription? description;
+
+/// Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+final ZeroTrustGatewayDevicePosture? devicePosture;
+
+/// Specify whether the rule is enabled.
+final ZeroTrustGatewayEnabled enabled;
+
+final ZeroTrustGatewayExpiration? expiration;
+
+/// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
+final List<ZeroTrustGatewayFilters2> filters;
+
+final ZeroTrustGatewaySchemasUuid? id;
+
+/// Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+final ZeroTrustGatewayIdentity? identity;
+
+/// Specify the rule name.
+final ZeroTrustGatewayComponentsSchemasName name;
+
+/// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
+final ZeroTrustGatewayPrecedence precedence;
+
+/// Indicate that this rule is shared via the Orgs API and read only.
+final ZeroTrustGatewayReadOnly? readOnly;
+
+final ZeroTrustGatewayRuleSettings? ruleSettings;
+
+final ZeroTrustGatewaySchedule? schedule;
+
+final ZeroTrustGatewaySharable? sharable;
+
+final ZeroTrustGatewaySourceAccount? sourceAccount;
+
+final ZeroTrustGatewayTraffic traffic;
+
+final ZeroTrustGatewayReadOnlyTimestamp? updatedAt;
+
+final ZeroTrustGatewayVersion? version;
+
+final ZeroTrustGatewayWarningStatus? warningStatus;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (deletedAt != null) 'deleted_at': deletedAt?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (devicePosture != null) 'device_posture': devicePosture?.toJson(),
+  'enabled': enabled.toJson(),
+  if (expiration != null) 'expiration': expiration?.toJson(),
+  'filters': filters.map((e) => e.toJson()).toList(),
+  if (id != null) 'id': id?.toJson(),
+  if (identity != null) 'identity': identity?.toJson(),
+  'name': name.toJson(),
+  'precedence': precedence.toJson(),
+  if (readOnly != null) 'read_only': readOnly?.toJson(),
+  if (ruleSettings != null) 'rule_settings': ruleSettings?.toJson(),
+  if (schedule != null) 'schedule': schedule?.toJson(),
+  if (sharable != null) 'sharable': sharable?.toJson(),
+  if (sourceAccount != null) 'source_account': sourceAccount?.toJson(),
+  'traffic': traffic.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+  if (version != null) 'version': version?.toJson(),
+  if (warningStatus != null) 'warning_status': warningStatus?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('enabled') &&
+      json.containsKey('filters') &&
+      json.containsKey('name') &&
+      json.containsKey('precedence') &&
+      json.containsKey('traffic'); } 
+ZeroTrustGatewayRules copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewayReadOnlyTimestamp Function()? createdAt, ZeroTrustGatewayDeletedAt? Function()? deletedAt, ZeroTrustGatewaySchemasDescription Function()? description, ZeroTrustGatewayDevicePosture Function()? devicePosture, ZeroTrustGatewayEnabled? enabled, ZeroTrustGatewayExpiration Function()? expiration, List<ZeroTrustGatewayFilters2>? filters, ZeroTrustGatewaySchemasUuid Function()? id, ZeroTrustGatewayIdentity Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? precedence, ZeroTrustGatewayReadOnly Function()? readOnly, ZeroTrustGatewayRuleSettings Function()? ruleSettings, ZeroTrustGatewaySchedule Function()? schedule, ZeroTrustGatewaySharable Function()? sharable, ZeroTrustGatewaySourceAccount Function()? sourceAccount, ZeroTrustGatewayTraffic? traffic, ZeroTrustGatewayReadOnlyTimestamp Function()? updatedAt, ZeroTrustGatewayVersion Function()? version, ZeroTrustGatewayWarningStatus? Function()? warningStatus, }) { return ZeroTrustGatewayRules(
+  action: action ?? this.action,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
+  description: description != null ? description() : this.description,
+  devicePosture: devicePosture != null ? devicePosture() : this.devicePosture,
+  enabled: enabled ?? this.enabled,
+  expiration: expiration != null ? expiration() : this.expiration,
+  filters: filters ?? this.filters,
+  id: id != null ? id() : this.id,
+  identity: identity != null ? identity() : this.identity,
+  name: name ?? this.name,
+  precedence: precedence ?? this.precedence,
+  readOnly: readOnly != null ? readOnly() : this.readOnly,
+  ruleSettings: ruleSettings != null ? ruleSettings() : this.ruleSettings,
+  schedule: schedule != null ? schedule() : this.schedule,
+  sharable: sharable != null ? sharable() : this.sharable,
+  sourceAccount: sourceAccount != null ? sourceAccount() : this.sourceAccount,
+  traffic: traffic ?? this.traffic,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  version: version != null ? version() : this.version,
+  warningStatus: warningStatus != null ? warningStatus() : this.warningStatus,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayRules &&
+          action == other.action &&
+          createdAt == other.createdAt &&
+          deletedAt == other.deletedAt &&
+          description == other.description &&
+          devicePosture == other.devicePosture &&
+          enabled == other.enabled &&
+          expiration == other.expiration &&
+          listEquals(filters, other.filters) &&
+          id == other.id &&
+          identity == other.identity &&
+          name == other.name &&
+          precedence == other.precedence &&
+          readOnly == other.readOnly &&
+          ruleSettings == other.ruleSettings &&
+          schedule == other.schedule &&
+          sharable == other.sharable &&
+          sourceAccount == other.sourceAccount &&
+          traffic == other.traffic &&
+          updatedAt == other.updatedAt &&
+          version == other.version &&
+          warningStatus == other.warningStatus; } 
+@override int get hashCode { return Object.hashAll([action, createdAt, deletedAt, description, devicePosture, enabled, expiration, Object.hashAll(filters), id, identity, name, precedence, readOnly, ruleSettings, schedule, sharable, sourceAccount, traffic, updatedAt, version, warningStatus]); } 
+@override String toString() { return 'ZeroTrustGatewayRules(action: $action, createdAt: $createdAt, deletedAt: $deletedAt, description: $description, devicePosture: $devicePosture, enabled: $enabled, expiration: $expiration, filters: $filters, id: $id, identity: $identity, name: $name, precedence: $precedence, readOnly: $readOnly, ruleSettings: $ruleSettings, schedule: $schedule, sharable: $sharable, sourceAccount: $sourceAccount, traffic: $traffic, updatedAt: $updatedAt, version: $version, warningStatus: $warningStatus)'; } 
+ }

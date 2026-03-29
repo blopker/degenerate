@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'confirmation_tokens_resource_payment_method_preview.dart';/// Payment details collected by the Payment Element, used to create a PaymentMethod when a PaymentIntent or SetupIntent is confirmed with this ConfirmationToken.
+final class ConfirmationTokenPaymentMethodPreview {const ConfirmationTokenPaymentMethodPreview({this.confirmationTokensResourcePaymentMethodPreview});
+
+factory ConfirmationTokenPaymentMethodPreview.fromJson(Map<String, dynamic> json) { return ConfirmationTokenPaymentMethodPreview(
+  confirmationTokensResourcePaymentMethodPreview: ConfirmationTokensResourcePaymentMethodPreview.canParse(json) ? ConfirmationTokensResourcePaymentMethodPreview.fromJson(json) : null,
+); }
+
+final ConfirmationTokensResourcePaymentMethodPreview? confirmationTokensResourcePaymentMethodPreview;
+
+/// At least one variant must be present.
+bool get isValid { return confirmationTokensResourcePaymentMethodPreview != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?confirmationTokensResourcePaymentMethodPreview?.toJson(),
+}; } 
+ }

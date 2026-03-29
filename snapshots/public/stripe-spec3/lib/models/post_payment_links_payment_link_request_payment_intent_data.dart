@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_payment_intent_data_description.dart';import 'post_payment_links_payment_link_request_payment_intent_data_metadata.dart';import 'post_payment_links_payment_link_request_payment_intent_data_statement_descriptor.dart';import 'post_payment_links_payment_link_request_payment_intent_data_statement_descriptor_suffix.dart';import 'post_payment_links_payment_link_request_payment_intent_data_transfer_group.dart';/// A subset of parameters to be passed to PaymentIntent creation for Checkout Sessions in `payment` mode.
+final class PostPaymentLinksPaymentLinkRequestPaymentIntentData {const PostPaymentLinksPaymentLinkRequestPaymentIntentData({this.description, this.metadata, this.statementDescriptor, this.statementDescriptorSuffix, this.transferGroup, });
+
+factory PostPaymentLinksPaymentLinkRequestPaymentIntentData.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
+  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescriptionVariant2.fromJson(v as String),) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadataVariant2.fromJson(v as String),) : null,
+  statementDescriptor: json['statement_descriptor'] != null ? OneOf2.parse(json['statement_descriptor'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorVariant2.fromJson(v as String),) : null,
+  statementDescriptorSuffix: json['statement_descriptor_suffix'] != null ? OneOf2.parse(json['statement_descriptor_suffix'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffixVariant2.fromJson(v as String),) : null,
+  transferGroup: json['transfer_group'] != null ? OneOf2.parse(json['transfer_group'], fromA: (v) => v as String, fromB: (v) => PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroupVariant2.fromJson(v as String),) : null,
+); }
+
+final PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription? description;
+
+final PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadata? metadata;
+
+final PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor? statementDescriptor;
+
+final PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffix? statementDescriptorSuffix;
+
+final PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroup? transferGroup;
+
+Map<String, dynamic> toJson() { return {
+  if (description != null) 'description': description?.toJson(),
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  if (statementDescriptor != null) 'statement_descriptor': statementDescriptor?.toJson(),
+  if (statementDescriptorSuffix != null) 'statement_descriptor_suffix': statementDescriptorSuffix?.toJson(),
+  if (transferGroup != null) 'transfer_group': transferGroup?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentLinksPaymentLinkRequestPaymentIntentData copyWith({PostPaymentLinksPaymentLinkRequestPaymentIntentDataDescription Function()? description, PostPaymentLinksPaymentLinkRequestPaymentIntentDataMetadata Function()? metadata, PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptor Function()? statementDescriptor, PostPaymentLinksPaymentLinkRequestPaymentIntentDataStatementDescriptorSuffix Function()? statementDescriptorSuffix, PostPaymentLinksPaymentLinkRequestPaymentIntentDataTransferGroup Function()? transferGroup, }) { return PostPaymentLinksPaymentLinkRequestPaymentIntentData(
+  description: description != null ? description() : this.description,
+  metadata: metadata != null ? metadata() : this.metadata,
+  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+  statementDescriptorSuffix: statementDescriptorSuffix != null ? statementDescriptorSuffix() : this.statementDescriptorSuffix,
+  transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestPaymentIntentData &&
+          description == other.description &&
+          metadata == other.metadata &&
+          statementDescriptor == other.statementDescriptor &&
+          statementDescriptorSuffix == other.statementDescriptorSuffix &&
+          transferGroup == other.transferGroup; } 
+@override int get hashCode { return Object.hash(description, metadata, statementDescriptor, statementDescriptorSuffix, transferGroup); } 
+@override String toString() { return 'PostPaymentLinksPaymentLinkRequestPaymentIntentData(description: $description, metadata: $metadata, statementDescriptor: $statementDescriptor, statementDescriptorSuffix: $statementDescriptorSuffix, transferGroup: $transferGroup)'; } 
+ }

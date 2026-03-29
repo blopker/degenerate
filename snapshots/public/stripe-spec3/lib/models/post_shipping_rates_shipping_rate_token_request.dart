@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_shipping_rates_shipping_rate_token_request_fixed_amount.dart';import 'post_shipping_rates_shipping_rate_token_request_metadata.dart';/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
+final class PostShippingRatesShippingRateTokenRequestTaxBehavior {const PostShippingRatesShippingRateTokenRequestTaxBehavior._(this.value);
+
+factory PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(String json) { return switch (json) {
+  'exclusive' => exclusive,
+  'inclusive' => inclusive,
+  'unspecified' => unspecified,
+  _ => PostShippingRatesShippingRateTokenRequestTaxBehavior._(json),
+}; }
+
+static const PostShippingRatesShippingRateTokenRequestTaxBehavior exclusive = PostShippingRatesShippingRateTokenRequestTaxBehavior._('exclusive');
+
+static const PostShippingRatesShippingRateTokenRequestTaxBehavior inclusive = PostShippingRatesShippingRateTokenRequestTaxBehavior._('inclusive');
+
+static const PostShippingRatesShippingRateTokenRequestTaxBehavior unspecified = PostShippingRatesShippingRateTokenRequestTaxBehavior._('unspecified');
+
+static const List<PostShippingRatesShippingRateTokenRequestTaxBehavior> values = [exclusive, inclusive, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostShippingRatesShippingRateTokenRequestTaxBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostShippingRatesShippingRateTokenRequestTaxBehavior($value)'; } 
+ }
+final class PostShippingRatesShippingRateTokenRequest {const PostShippingRatesShippingRateTokenRequest({this.active, this.expand, this.fixedAmount, this.metadata, this.taxBehavior, });
+
+factory PostShippingRatesShippingRateTokenRequest.fromJson(Map<String, dynamic> json) { return PostShippingRatesShippingRateTokenRequest(
+  active: json['active'] as bool?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  fixedAmount: json['fixed_amount'] != null ? PostShippingRatesShippingRateTokenRequestFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostShippingRatesShippingRateTokenRequestMetadataVariant2.fromJson(v as String),) : null,
+  taxBehavior: json['tax_behavior'] != null ? PostShippingRatesShippingRateTokenRequestTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+); }
+
+/// Whether the shipping rate can be used for new purchases. Defaults to `true`.
+final bool? active;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Describes a fixed amount to charge for shipping. Must be present if type is `fixed_amount`.
+final PostShippingRatesShippingRateTokenRequestFixedAmount? fixedAmount;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostShippingRatesShippingRateTokenRequestMetadata? metadata;
+
+/// Specifies whether the rate is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`.
+final PostShippingRatesShippingRateTokenRequestTaxBehavior? taxBehavior;
+
+Map<String, dynamic> toJson() { return {
+  'active': ?active,
+  'expand': ?expand,
+  if (fixedAmount != null) 'fixed_amount': fixedAmount?.toJson(),
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostShippingRatesShippingRateTokenRequest copyWith({bool Function()? active, List<String> Function()? expand, PostShippingRatesShippingRateTokenRequestFixedAmount Function()? fixedAmount, PostShippingRatesShippingRateTokenRequestMetadata Function()? metadata, PostShippingRatesShippingRateTokenRequestTaxBehavior Function()? taxBehavior, }) { return PostShippingRatesShippingRateTokenRequest(
+  active: active != null ? active() : this.active,
+  expand: expand != null ? expand() : this.expand,
+  fixedAmount: fixedAmount != null ? fixedAmount() : this.fixedAmount,
+  metadata: metadata != null ? metadata() : this.metadata,
+  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostShippingRatesShippingRateTokenRequest &&
+          active == other.active &&
+          listEquals(expand, other.expand) &&
+          fixedAmount == other.fixedAmount &&
+          metadata == other.metadata &&
+          taxBehavior == other.taxBehavior; } 
+@override int get hashCode { return Object.hash(active, Object.hashAll(expand ?? const []), fixedAmount, metadata, taxBehavior); } 
+@override String toString() { return 'PostShippingRatesShippingRateTokenRequest(active: $active, expand: $expand, fixedAmount: $fixedAmount, metadata: $metadata, taxBehavior: $taxBehavior)'; } 
+ }

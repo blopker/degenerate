@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTagCreateResponse404Errors {const PostTagCreateResponse404Errors({required this.message});
+
+factory PostTagCreateResponse404Errors.fromJson(Map<String, dynamic> json) { return PostTagCreateResponse404Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+PostTagCreateResponse404Errors copyWith({String? message}) { return PostTagCreateResponse404Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTagCreateResponse404Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'PostTagCreateResponse404Errors(message: $message)'; } 
+ }

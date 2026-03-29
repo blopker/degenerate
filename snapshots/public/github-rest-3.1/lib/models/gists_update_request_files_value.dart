@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GistsUpdateRequestFilesValue {const GistsUpdateRequestFilesValue({this.content, this.filename, });
+
+factory GistsUpdateRequestFilesValue.fromJson(Map<String, dynamic> json) { return GistsUpdateRequestFilesValue(
+  content: json['content'] as String?,
+  filename: json['filename'] as String?,
+); }
+
+/// The new content of the file.
+final String? content;
+
+/// The new filename for the file.
+final String? filename;
+
+Map<String, dynamic> toJson() { return {
+  'content': ?content,
+  'filename': ?filename,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GistsUpdateRequestFilesValue copyWith({String Function()? content, String? Function()? filename, }) { return GistsUpdateRequestFilesValue(
+  content: content != null ? content() : this.content,
+  filename: filename != null ? filename() : this.filename,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GistsUpdateRequestFilesValue &&
+          content == other.content &&
+          filename == other.filename; } 
+@override int get hashCode { return Object.hash(content, filename); } 
+@override String toString() { return 'GistsUpdateRequestFilesValue(content: $content, filename: $filename)'; } 
+ }

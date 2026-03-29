@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_google_gemma2b_it_lora_response400_errors.dart';final class WorkersAiPostRunCfGoogleGemma2bItLoraResponse400 {const WorkersAiPostRunCfGoogleGemma2bItLoraResponse400({required this.errors, required this.result, required this.success, });
+
+factory WorkersAiPostRunCfGoogleGemma2bItLoraResponse400.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfGoogleGemma2bItLoraResponse400(
+  errors: (json['errors'] as List<dynamic>).map((e) => WorkersAiPostRunCfGoogleGemma2bItLoraResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  success: json['success'] as bool,
+); }
+
+final List<WorkersAiPostRunCfGoogleGemma2bItLoraResponse400Errors> errors;
+
+final Map<String,dynamic> result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'result': result,
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+WorkersAiPostRunCfGoogleGemma2bItLoraResponse400 copyWith({List<WorkersAiPostRunCfGoogleGemma2bItLoraResponse400Errors>? errors, Map<String,dynamic>? result, bool? success, }) { return WorkersAiPostRunCfGoogleGemma2bItLoraResponse400(
+  errors: errors ?? this.errors,
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfGoogleGemma2bItLoraResponse400 &&
+          listEquals(errors, other.errors) &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), result, success); } 
+@override String toString() { return 'WorkersAiPostRunCfGoogleGemma2bItLoraResponse400(errors: $errors, result: $result, success: $success)'; } 
+ }

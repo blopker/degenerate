@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'email_security_pattern_type.dart';final class EmailSecurityUpdateBlockedSender {const EmailSecurityUpdateBlockedSender({this.comments, this.isRegex, this.pattern, this.patternType, });
+
+factory EmailSecurityUpdateBlockedSender.fromJson(Map<String, dynamic> json) { return EmailSecurityUpdateBlockedSender(
+  comments: json['comments'] as String?,
+  isRegex: json['is_regex'] as bool?,
+  pattern: json['pattern'] as String?,
+  patternType: json['pattern_type'] != null ? EmailSecurityPatternType.fromJson(json['pattern_type'] as String) : null,
+); }
+
+final String? comments;
+
+final bool? isRegex;
+
+final String? pattern;
+
+final EmailSecurityPatternType? patternType;
+
+Map<String, dynamic> toJson() { return {
+  'comments': ?comments,
+  'is_regex': ?isRegex,
+  'pattern': ?pattern,
+  if (patternType != null) 'pattern_type': patternType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EmailSecurityUpdateBlockedSender copyWith({String? Function()? comments, bool? Function()? isRegex, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityUpdateBlockedSender(
+  comments: comments != null ? comments() : this.comments,
+  isRegex: isRegex != null ? isRegex() : this.isRegex,
+  pattern: pattern != null ? pattern() : this.pattern,
+  patternType: patternType != null ? patternType() : this.patternType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityUpdateBlockedSender &&
+          comments == other.comments &&
+          isRegex == other.isRegex &&
+          pattern == other.pattern &&
+          patternType == other.patternType; } 
+@override int get hashCode { return Object.hash(comments, isRegex, pattern, patternType); } 
+@override String toString() { return 'EmailSecurityUpdateBlockedSender(comments: $comments, isRegex: $isRegex, pattern: $pattern, patternType: $patternType)'; } 
+ }

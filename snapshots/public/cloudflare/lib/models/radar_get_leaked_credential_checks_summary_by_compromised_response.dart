@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_leaked_credential_checks_summary_by_compromised_response_result.dart';final class RadarGetLeakedCredentialChecksSummaryByCompromisedResponse {const RadarGetLeakedCredentialChecksSummaryByCompromisedResponse({required this.result, required this.success, });
+
+factory RadarGetLeakedCredentialChecksSummaryByCompromisedResponse.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksSummaryByCompromisedResponse(
+  result: RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+RadarGetLeakedCredentialChecksSummaryByCompromisedResponse copyWith({RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResult? result, bool? success, }) { return RadarGetLeakedCredentialChecksSummaryByCompromisedResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetLeakedCredentialChecksSummaryByCompromisedResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByCompromisedResponse(result: $result, success: $success)'; } 
+ }

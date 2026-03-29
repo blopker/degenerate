@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 {const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._(this.value);
+
+factory PostCustomersCustomerSubscriptionsRequestCancelAtVariant2.fromJson(String json) { return switch (json) {
+  'max_period_end' => maxPeriodEnd,
+  'min_period_end' => minPeriodEnd,
+  _ => PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._(json),
+}; }
+
+static const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 maxPeriodEnd = PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._('max_period_end');
+
+static const PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 minPeriodEnd = PostCustomersCustomerSubscriptionsRequestCancelAtVariant2._('min_period_end');
+
+static const List<PostCustomersCustomerSubscriptionsRequestCancelAtVariant2> values = [maxPeriodEnd, minPeriodEnd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsRequestCancelAtVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsRequestCancelAtVariant2($value)'; } 
+ }
+typedef PostCustomersCustomerSubscriptionsRequestCancelAt = OneOf2<int,PostCustomersCustomerSubscriptionsRequestCancelAtVariant2>;

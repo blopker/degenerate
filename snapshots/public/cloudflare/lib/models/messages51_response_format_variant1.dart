@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_response_format_variant1_json_object.dart';import 'messages51_response_format_variant1_json_schema.dart';import 'messages51_response_format_variant1_text.dart';typedef Messages51ResponseFormatVariant1 = OneOf3<Messages51ResponseFormatVariant1Text,Messages51ResponseFormatVariant1JsonObject,Messages51ResponseFormatVariant1JsonSchema>;

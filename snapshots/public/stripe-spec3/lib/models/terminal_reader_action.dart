@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'terminal_reader_reader_resource_reader_action.dart';/// The most recent action performed by the reader.
+final class TerminalReaderAction {const TerminalReaderAction({this.terminalReaderReaderResourceReaderAction});
+
+factory TerminalReaderAction.fromJson(Map<String, dynamic> json) { return TerminalReaderAction(
+  terminalReaderReaderResourceReaderAction: TerminalReaderReaderResourceReaderAction.canParse(json) ? TerminalReaderReaderResourceReaderAction.fromJson(json) : null,
+); }
+
+final TerminalReaderReaderResourceReaderAction? terminalReaderReaderResourceReaderAction;
+
+/// At least one variant must be present.
+bool get isValid { return terminalReaderReaderResourceReaderAction != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?terminalReaderReaderResourceReaderAction?.toJson(),
+}; } 
+ }

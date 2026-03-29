@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetDnsAs112TopLocationsFormat {const RadarGetDnsAs112TopLocationsFormat._(this.value);
+
+factory RadarGetDnsAs112TopLocationsFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetDnsAs112TopLocationsFormat._(json),
+}; }
+
+static const RadarGetDnsAs112TopLocationsFormat $json = RadarGetDnsAs112TopLocationsFormat._('JSON');
+
+static const RadarGetDnsAs112TopLocationsFormat csv = RadarGetDnsAs112TopLocationsFormat._('CSV');
+
+static const List<RadarGetDnsAs112TopLocationsFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TopLocationsFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TopLocationsFormat($value)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AccessDevicePostureRuleDevicePosture {const AccessDevicePostureRuleDevicePosture({required this.integrationUid});
+
+factory AccessDevicePostureRuleDevicePosture.fromJson(Map<String, dynamic> json) { return AccessDevicePostureRuleDevicePosture(
+  integrationUid: json['integration_uid'] as String,
+); }
+
+/// The ID of a device posture integration.
+final String integrationUid;
+
+Map<String, dynamic> toJson() { return {
+  'integration_uid': integrationUid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('integration_uid') && json['integration_uid'] is String; } 
+AccessDevicePostureRuleDevicePosture copyWith({String? integrationUid}) { return AccessDevicePostureRuleDevicePosture(
+  integrationUid: integrationUid ?? this.integrationUid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessDevicePostureRuleDevicePosture &&
+          integrationUid == other.integrationUid; } 
+@override int get hashCode { return integrationUid.hashCode; } 
+@override String toString() { return 'AccessDevicePostureRuleDevicePosture(integrationUid: $integrationUid)'; } 
+ }

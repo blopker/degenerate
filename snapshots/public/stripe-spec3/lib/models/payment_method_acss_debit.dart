@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodAcssDebit {const PaymentMethodAcssDebit({this.bankName, this.fingerprint, this.institutionNumber, this.last4, this.transitNumber, });
+
+factory PaymentMethodAcssDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodAcssDebit(
+  bankName: json['bank_name'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  institutionNumber: json['institution_number'] as String?,
+  last4: json['last4'] as String?,
+  transitNumber: json['transit_number'] as String?,
+); }
+
+/// Name of the bank associated with the bank account.
+final String? bankName;
+
+/// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
+final String? fingerprint;
+
+/// Institution number of the bank account.
+final String? institutionNumber;
+
+/// Last four digits of the bank account number.
+final String? last4;
+
+/// Transit number of the bank account.
+final String? transitNumber;
+
+Map<String, dynamic> toJson() { return {
+  'bank_name': ?bankName,
+  'fingerprint': ?fingerprint,
+  'institution_number': ?institutionNumber,
+  'last4': ?last4,
+  'transit_number': ?transitNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodAcssDebit copyWith({String? Function()? bankName, String? Function()? fingerprint, String? Function()? institutionNumber, String? Function()? last4, String? Function()? transitNumber, }) { return PaymentMethodAcssDebit(
+  bankName: bankName != null ? bankName() : this.bankName,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  institutionNumber: institutionNumber != null ? institutionNumber() : this.institutionNumber,
+  last4: last4 != null ? last4() : this.last4,
+  transitNumber: transitNumber != null ? transitNumber() : this.transitNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodAcssDebit &&
+          bankName == other.bankName &&
+          fingerprint == other.fingerprint &&
+          institutionNumber == other.institutionNumber &&
+          last4 == other.last4 &&
+          transitNumber == other.transitNumber; } 
+@override int get hashCode { return Object.hash(bankName, fingerprint, institutionNumber, last4, transitNumber); } 
+@override String toString() { return 'PaymentMethodAcssDebit(bankName: $bankName, fingerprint: $fingerprint, institutionNumber: $institutionNumber, last4: $last4, transitNumber: $transitNumber)'; } 
+ }

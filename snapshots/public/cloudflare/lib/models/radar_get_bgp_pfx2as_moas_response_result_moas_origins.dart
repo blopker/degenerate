@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetBgpPfx2asMoasResponseResultMoasOrigins {const RadarGetBgpPfx2asMoasResponseResultMoasOrigins({required this.origin, required this.peerCount, required this.rpkiValidation, });
+
+factory RadarGetBgpPfx2asMoasResponseResultMoasOrigins.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asMoasResponseResultMoasOrigins(
+  origin: (json['origin'] as num).toInt(),
+  peerCount: (json['peer_count'] as num).toInt(),
+  rpkiValidation: json['rpki_validation'] as String,
+); }
+
+final int origin;
+
+final int peerCount;
+
+final String rpkiValidation;
+
+Map<String, dynamic> toJson() { return {
+  'origin': origin,
+  'peer_count': peerCount,
+  'rpki_validation': rpkiValidation,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('origin') && json['origin'] is num &&
+      json.containsKey('peer_count') && json['peer_count'] is num &&
+      json.containsKey('rpki_validation') && json['rpki_validation'] is String; } 
+RadarGetBgpPfx2asMoasResponseResultMoasOrigins copyWith({int? origin, int? peerCount, String? rpkiValidation, }) { return RadarGetBgpPfx2asMoasResponseResultMoasOrigins(
+  origin: origin ?? this.origin,
+  peerCount: peerCount ?? this.peerCount,
+  rpkiValidation: rpkiValidation ?? this.rpkiValidation,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpPfx2asMoasResponseResultMoasOrigins &&
+          origin == other.origin &&
+          peerCount == other.peerCount &&
+          rpkiValidation == other.rpkiValidation; } 
+@override int get hashCode { return Object.hash(origin, peerCount, rpkiValidation); } 
+@override String toString() { return 'RadarGetBgpPfx2asMoasResponseResultMoasOrigins(origin: $origin, peerCount: $peerCount, rpkiValidation: $rpkiValidation)'; } 
+ }

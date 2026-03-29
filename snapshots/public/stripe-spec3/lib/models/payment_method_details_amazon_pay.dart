@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'amazon_pay_underlying_payment_method_funding_details.dart';/// 
+final class PaymentMethodDetailsAmazonPay {const PaymentMethodDetailsAmazonPay({this.funding, this.transactionId, });
+
+factory PaymentMethodDetailsAmazonPay.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsAmazonPay(
+  funding: json['funding'] != null ? AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(json['funding'] as Map<String, dynamic>) : null,
+  transactionId: json['transaction_id'] as String?,
+); }
+
+final AmazonPayUnderlyingPaymentMethodFundingDetails? funding;
+
+/// The Amazon Pay transaction ID associated with this payment.
+final String? transactionId;
+
+Map<String, dynamic> toJson() { return {
+  if (funding != null) 'funding': funding?.toJson(),
+  'transaction_id': ?transactionId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsAmazonPay copyWith({AmazonPayUnderlyingPaymentMethodFundingDetails Function()? funding, String? Function()? transactionId, }) { return PaymentMethodDetailsAmazonPay(
+  funding: funding != null ? funding() : this.funding,
+  transactionId: transactionId != null ? transactionId() : this.transactionId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsAmazonPay &&
+          funding == other.funding &&
+          transactionId == other.transactionId; } 
+@override int get hashCode { return Object.hash(funding, transactionId); } 
+@override String toString() { return 'PaymentMethodDetailsAmazonPay(funding: $funding, transactionId: $transactionId)'; } 
+ }

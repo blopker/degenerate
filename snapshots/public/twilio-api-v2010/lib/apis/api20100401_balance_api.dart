@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_balance.dart';/// Api20100401BalanceApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401BalanceApi with ApiExecutor {const Api20100401BalanceApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Fetch the balance for an Account based on Account Sid. Balance changes may not be reflected immediately. Child accounts do not contain balance information
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Balance.json`
+Future<ApiResult<AccountBalance, Never>> fetchBalance({required String accountSid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Balance.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountBalance.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

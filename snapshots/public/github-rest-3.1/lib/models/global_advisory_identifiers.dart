@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of identifier.
+final class GlobalAdvisoryIdentifiersType {const GlobalAdvisoryIdentifiersType._(this.value);
+
+factory GlobalAdvisoryIdentifiersType.fromJson(String json) { return switch (json) {
+  'CVE' => cve,
+  'GHSA' => ghsa,
+  _ => GlobalAdvisoryIdentifiersType._(json),
+}; }
+
+static const GlobalAdvisoryIdentifiersType cve = GlobalAdvisoryIdentifiersType._('CVE');
+
+static const GlobalAdvisoryIdentifiersType ghsa = GlobalAdvisoryIdentifiersType._('GHSA');
+
+static const List<GlobalAdvisoryIdentifiersType> values = [cve, ghsa];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GlobalAdvisoryIdentifiersType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GlobalAdvisoryIdentifiersType($value)'; } 
+ }
+final class GlobalAdvisoryIdentifiers {const GlobalAdvisoryIdentifiers({required this.type, required this.value, });
+
+factory GlobalAdvisoryIdentifiers.fromJson(Map<String, dynamic> json) { return GlobalAdvisoryIdentifiers(
+  type: GlobalAdvisoryIdentifiersType.fromJson(json['type'] as String),
+  value: json['value'] as String,
+); }
+
+/// The type of identifier.
+final GlobalAdvisoryIdentifiersType type;
+
+/// The identifier value.
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('value') && json['value'] is String; } 
+GlobalAdvisoryIdentifiers copyWith({GlobalAdvisoryIdentifiersType? type, String? value, }) { return GlobalAdvisoryIdentifiers(
+  type: type ?? this.type,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GlobalAdvisoryIdentifiers &&
+          type == other.type &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(type, value); } 
+@override String toString() { return 'GlobalAdvisoryIdentifiers(type: $type, value: $value)'; } 
+ }

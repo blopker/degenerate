@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class CustomUnitAmount {const CustomUnitAmount({this.maximum, this.minimum, this.preset, });
+
+factory CustomUnitAmount.fromJson(Map<String, dynamic> json) { return CustomUnitAmount(
+  maximum: json['maximum'] != null ? (json['maximum'] as num).toInt() : null,
+  minimum: json['minimum'] != null ? (json['minimum'] as num).toInt() : null,
+  preset: json['preset'] != null ? (json['preset'] as num).toInt() : null,
+); }
+
+/// The maximum unit amount the customer can specify for this item.
+final int? maximum;
+
+/// The minimum unit amount the customer can specify for this item. Must be at least the minimum charge amount.
+final int? minimum;
+
+/// The starting unit amount which can be updated by the customer.
+final int? preset;
+
+Map<String, dynamic> toJson() { return {
+  'maximum': ?maximum,
+  'minimum': ?minimum,
+  'preset': ?preset,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CustomUnitAmount copyWith({int? Function()? maximum, int? Function()? minimum, int? Function()? preset, }) { return CustomUnitAmount(
+  maximum: maximum != null ? maximum() : this.maximum,
+  minimum: minimum != null ? minimum() : this.minimum,
+  preset: preset != null ? preset() : this.preset,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomUnitAmount &&
+          maximum == other.maximum &&
+          minimum == other.minimum &&
+          preset == other.preset; } 
+@override int get hashCode { return Object.hash(maximum, minimum, preset); } 
+@override String toString() { return 'CustomUnitAmount(maximum: $maximum, minimum: $minimum, preset: $preset)'; } 
+ }

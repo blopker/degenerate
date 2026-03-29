@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DosTcpFlowProtectionRuleUpdate {const DosTcpFlowProtectionRuleUpdate({this.burstSensitivity, this.mode, this.rateSensitivity, });
+
+factory DosTcpFlowProtectionRuleUpdate.fromJson(Map<String, dynamic> json) { return DosTcpFlowProtectionRuleUpdate(
+  burstSensitivity: json['burst_sensitivity'] as String?,
+  mode: json['mode'] as String?,
+  rateSensitivity: json['rate_sensitivity'] as String?,
+); }
+
+/// The new burst sensitivity. Optional. Must be one of 'low', 'medium', 'high'.
+final String? burstSensitivity;
+
+/// The new mode for TCP Flow Protection. Optional. Must be one of 'enabled', 'disabled', 'monitoring'.
+final String? mode;
+
+/// The new rate sensitivity. Optional. Must be one of 'low', 'medium', 'high'.
+final String? rateSensitivity;
+
+Map<String, dynamic> toJson() { return {
+  'burst_sensitivity': ?burstSensitivity,
+  'mode': ?mode,
+  'rate_sensitivity': ?rateSensitivity,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DosTcpFlowProtectionRuleUpdate copyWith({String Function()? burstSensitivity, String Function()? mode, String Function()? rateSensitivity, }) { return DosTcpFlowProtectionRuleUpdate(
+  burstSensitivity: burstSensitivity != null ? burstSensitivity() : this.burstSensitivity,
+  mode: mode != null ? mode() : this.mode,
+  rateSensitivity: rateSensitivity != null ? rateSensitivity() : this.rateSensitivity,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DosTcpFlowProtectionRuleUpdate &&
+          burstSensitivity == other.burstSensitivity &&
+          mode == other.mode &&
+          rateSensitivity == other.rateSensitivity; } 
+@override int get hashCode { return Object.hash(burstSensitivity, mode, rateSensitivity); } 
+@override String toString() { return 'DosTcpFlowProtectionRuleUpdate(burstSensitivity: $burstSensitivity, mode: $mode, rateSensitivity: $rateSensitivity)'; } 
+ }

@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'stream_schemas_identifier.dart';/// The signing key in JWK format.
+extension type const StreamJwk(String value) {
+factory StreamJwk.fromJson(String json) => StreamJwk(json);
+
+String toJson() => value;
+
+}
+/// The signing key in PEM format.
+extension type const StreamPem(String value) {
+factory StreamPem.fromJson(String json) => StreamPem(json);
+
+String toJson() => value;
+
+}
+/// The date and time a signing key was created.
+extension type StreamSigningKeyCreated(DateTime value) {
+factory StreamSigningKeyCreated.fromJson(String json) => StreamSigningKeyCreated(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+final class StreamKeys {const StreamKeys({this.created, this.id, this.jwk, this.pem, });
+
+factory StreamKeys.fromJson(Map<String, dynamic> json) { return StreamKeys(
+  created: json['created'] != null ? StreamSigningKeyCreated.fromJson(json['created'] as String) : null,
+  id: json['id'] != null ? StreamSchemasIdentifier.fromJson(json['id'] as String) : null,
+  jwk: json['jwk'] != null ? StreamJwk.fromJson(json['jwk'] as String) : null,
+  pem: json['pem'] != null ? StreamPem.fromJson(json['pem'] as String) : null,
+); }
+
+final StreamSigningKeyCreated? created;
+
+final StreamSchemasIdentifier? id;
+
+/// The signing key in JWK format.
+final StreamJwk? jwk;
+
+final StreamPem? pem;
+
+Map<String, dynamic> toJson() { return {
+  if (created != null) 'created': created?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (jwk != null) 'jwk': jwk?.toJson(),
+  if (pem != null) 'pem': pem?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamKeys copyWith({StreamSigningKeyCreated Function()? created, StreamSchemasIdentifier Function()? id, StreamJwk Function()? jwk, StreamPem Function()? pem, }) { return StreamKeys(
+  created: created != null ? created() : this.created,
+  id: id != null ? id() : this.id,
+  jwk: jwk != null ? jwk() : this.jwk,
+  pem: pem != null ? pem() : this.pem,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamKeys &&
+          created == other.created &&
+          id == other.id &&
+          jwk == other.jwk &&
+          pem == other.pem; } 
+@override int get hashCode { return Object.hash(created, id, jwk, pem); } 
+@override String toString() { return 'StreamKeys(created: $created, id: $id, jwk: $jwk, pem: $pem)'; } 
+ }

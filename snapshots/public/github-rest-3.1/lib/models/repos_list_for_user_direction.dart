@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReposListForUserDirection {const ReposListForUserDirection._(this.value);
+
+factory ReposListForUserDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => ReposListForUserDirection._(json),
+}; }
+
+static const ReposListForUserDirection asc = ReposListForUserDirection._('asc');
+
+static const ReposListForUserDirection desc = ReposListForUserDirection._('desc');
+
+static const List<ReposListForUserDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReposListForUserDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReposListForUserDirection($value)'; } 
+ }

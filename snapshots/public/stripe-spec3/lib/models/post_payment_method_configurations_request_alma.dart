@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_request_alma_display_preference.dart';/// Alma is a Buy Now, Pay Later payment method that offers customers the ability to pay in 2, 3, or 4 installments.
+final class PostPaymentMethodConfigurationsRequestAlma {const PostPaymentMethodConfigurationsRequestAlma({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsRequestAlma.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsRequestAlma(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsRequestAlmaDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsRequestAlmaDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsRequestAlma copyWith({PostPaymentMethodConfigurationsRequestAlmaDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsRequestAlma(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsRequestAlma &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsRequestAlma(displayPreference: $displayPreference)'; } 
+ }

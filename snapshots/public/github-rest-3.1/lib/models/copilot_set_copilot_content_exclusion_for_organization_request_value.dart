@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_set_copilot_content_exclusion_for_organization_request_value_variant2.dart';import 'copilot_set_copilot_content_exclusion_for_organization_request_value_variant3.dart';typedef CopilotSetCopilotContentExclusionForOrganizationRequestValue = OneOf3<String,CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant2,CopilotSetCopilotContentExclusionForOrganizationRequestValueVariant3>;

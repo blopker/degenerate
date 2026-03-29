@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'dart:typed_data';final class WorkersAiUploadFinetuneAssetRequest {const WorkersAiUploadFinetuneAssetRequest({this.file, this.fileName, });
+
+factory WorkersAiUploadFinetuneAssetRequest.fromJson(Map<String, dynamic> json) { return WorkersAiUploadFinetuneAssetRequest(
+  file: json['file'] != null ? base64Decode(json['file'] as String) : null,
+  fileName: json['file_name'] as String?,
+); }
+
+final Uint8List? file;
+
+final String? fileName;
+
+Map<String, dynamic> toJson() { return {
+  'file': ?file,
+  'file_name': ?fileName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WorkersAiUploadFinetuneAssetRequest copyWith({Uint8List Function()? file, String Function()? fileName, }) { return WorkersAiUploadFinetuneAssetRequest(
+  file: file != null ? file() : this.file,
+  fileName: fileName != null ? fileName() : this.fileName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiUploadFinetuneAssetRequest &&
+          file == other.file &&
+          fileName == other.fileName; } 
+@override int get hashCode { return Object.hash(file, fileName); } 
+@override String toString() { return 'WorkersAiUploadFinetuneAssetRequest(file: $file, fileName: $fileName)'; } 
+ }

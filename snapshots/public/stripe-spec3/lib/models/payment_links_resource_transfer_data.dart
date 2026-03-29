@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'payment_links_resource_transfer_data_destination.dart';/// 
+final class PaymentLinksResourceTransferData {const PaymentLinksResourceTransferData({this.amount, required this.destination, });
+
+factory PaymentLinksResourceTransferData.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceTransferData(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  destination: OneOf2.parse(json['destination'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// The amount in cents (or local equivalent) that will be transferred to the destination account. By default, the entire amount is transferred to the destination.
+final int? amount;
+
+/// The connected account receiving the transfer.
+final PaymentLinksResourceTransferDataDestination destination;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  'destination': destination.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination'); } 
+PaymentLinksResourceTransferData copyWith({int? Function()? amount, PaymentLinksResourceTransferDataDestination? destination, }) { return PaymentLinksResourceTransferData(
+  amount: amount != null ? amount() : this.amount,
+  destination: destination ?? this.destination,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentLinksResourceTransferData &&
+          amount == other.amount &&
+          destination == other.destination; } 
+@override int get hashCode { return Object.hash(amount, destination); } 
+@override String toString() { return 'PaymentLinksResourceTransferData(amount: $amount, destination: $destination)'; } 
+ }

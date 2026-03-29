@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentIntentsRequestOffSessionVariant2 {const PostPaymentIntentsRequestOffSessionVariant2._(this.value);
+
+factory PostPaymentIntentsRequestOffSessionVariant2.fromJson(String json) { return switch (json) {
+  'one_off' => oneOff,
+  'recurring' => recurring,
+  _ => PostPaymentIntentsRequestOffSessionVariant2._(json),
+}; }
+
+static const PostPaymentIntentsRequestOffSessionVariant2 oneOff = PostPaymentIntentsRequestOffSessionVariant2._('one_off');
+
+static const PostPaymentIntentsRequestOffSessionVariant2 recurring = PostPaymentIntentsRequestOffSessionVariant2._('recurring');
+
+static const List<PostPaymentIntentsRequestOffSessionVariant2> values = [oneOff, recurring];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsRequestOffSessionVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestOffSessionVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsRequestOffSession = OneOf2<bool,PostPaymentIntentsRequestOffSessionVariant2>;

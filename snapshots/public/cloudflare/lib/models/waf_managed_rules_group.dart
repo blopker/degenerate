@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'waf_managed_rules_components_schemas_identifier.dart';import 'waf_managed_rules_identifier.dart';import 'waf_managed_rules_name.dart';/// Defines an informative summary of what the rule group does.
+extension type const WafManagedRulesDescription(String value) {
+factory WafManagedRulesDescription.fromJson(String json) => WafManagedRulesDescription(json);
+
+String toJson() => value;
+
+}
+/// Defines the number of rules within the group that have been modified from their default configuration.
+extension type const WafManagedRulesModifiedRulesCount(double value) {
+factory WafManagedRulesModifiedRulesCount.fromJson(num json) => WafManagedRulesModifiedRulesCount(json.toDouble());
+
+num toJson() => value;
+
+}
+/// Defines the number of rules in the current rule group.
+extension type const WafManagedRulesRulesCount(double value) {
+factory WafManagedRulesRulesCount.fromJson(num json) => WafManagedRulesRulesCount(json.toDouble());
+
+num toJson() => value;
+
+}
+final class WafManagedRulesGroup {const WafManagedRulesGroup({this.description, this.id, this.modifiedRulesCount, this.name, this.packageId, this.rulesCount, });
+
+factory WafManagedRulesGroup.fromJson(Map<String, dynamic> json) { return WafManagedRulesGroup(
+  description: json['description'] != null ? WafManagedRulesDescription.fromJson(json['description'] as String) : null,
+  id: json['id'] != null ? WafManagedRulesComponentsSchemasIdentifier.fromJson(json['id'] as String) : null,
+  modifiedRulesCount: json['modified_rules_count'] != null ? WafManagedRulesModifiedRulesCount.fromJson(json['modified_rules_count'] as num) : null,
+  name: json['name'] != null ? WafManagedRulesName.fromJson(json['name'] as String) : null,
+  packageId: json['package_id'] != null ? WafManagedRulesIdentifier.fromJson(json['package_id'] as String) : null,
+  rulesCount: json['rules_count'] != null ? WafManagedRulesRulesCount.fromJson(json['rules_count'] as num) : null,
+); }
+
+/// Defines an informative summary of what the rule group does.
+final WafManagedRulesDescription? description;
+
+/// Defines the unique identifier of the rule group.
+final WafManagedRulesComponentsSchemasIdentifier? id;
+
+final WafManagedRulesModifiedRulesCount? modifiedRulesCount;
+
+final WafManagedRulesName? name;
+
+final WafManagedRulesIdentifier? packageId;
+
+final WafManagedRulesRulesCount? rulesCount;
+
+Map<String, dynamic> toJson() { return {
+  if (description != null) 'description': description?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (modifiedRulesCount != null) 'modified_rules_count': modifiedRulesCount?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (packageId != null) 'package_id': packageId?.toJson(),
+  if (rulesCount != null) 'rules_count': rulesCount?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WafManagedRulesGroup copyWith({WafManagedRulesDescription? Function()? description, WafManagedRulesComponentsSchemasIdentifier Function()? id, WafManagedRulesModifiedRulesCount Function()? modifiedRulesCount, WafManagedRulesName Function()? name, WafManagedRulesIdentifier Function()? packageId, WafManagedRulesRulesCount Function()? rulesCount, }) { return WafManagedRulesGroup(
+  description: description != null ? description() : this.description,
+  id: id != null ? id() : this.id,
+  modifiedRulesCount: modifiedRulesCount != null ? modifiedRulesCount() : this.modifiedRulesCount,
+  name: name != null ? name() : this.name,
+  packageId: packageId != null ? packageId() : this.packageId,
+  rulesCount: rulesCount != null ? rulesCount() : this.rulesCount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WafManagedRulesGroup &&
+          description == other.description &&
+          id == other.id &&
+          modifiedRulesCount == other.modifiedRulesCount &&
+          name == other.name &&
+          packageId == other.packageId &&
+          rulesCount == other.rulesCount; } 
+@override int get hashCode { return Object.hash(description, id, modifiedRulesCount, name, packageId, rulesCount); } 
+@override String toString() { return 'WafManagedRulesGroup(description: $description, id: $id, modifiedRulesCount: $modifiedRulesCount, name: $name, packageId: $packageId, rulesCount: $rulesCount)'; } 
+ }

@@ -1,0 +1,552 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';extension type const CloudforceOneWhoisDomainName(String value) {
+factory CloudforceOneWhoisDomainName.fromJson(String json) => CloudforceOneWhoisDomainName(json);
+
+String toJson() => value;
+
+}
+final class CloudforceOneWhoisWhois {const CloudforceOneWhoisWhois({this.administrativeCity, this.administrativeCountry, this.administrativeEmail, this.administrativeFax, this.administrativeFaxExt, this.administrativeId, this.administrativeName, this.administrativeOrg, this.administrativePhone, this.administrativePhoneExt, this.administrativePostalCode, this.administrativeProvince, this.administrativeReferralUrl, this.administrativeStreet, this.billingCity, this.billingCountry, this.billingEmail, this.billingFax, this.billingFaxExt, this.billingId, this.billingName, this.billingOrg, this.billingPhone, this.billingPhoneExt, this.billingPostalCode, this.billingProvince, this.billingReferralUrl, this.billingStreet, this.createdDate, this.createdDateRaw, required this.dnssec, required this.domain, this.expirationDate, this.expirationDateRaw, required this.$extension, required this.found, this.id, required this.nameservers, required this.punycode, required this.registrant, this.registrantCity, this.registrantCountry, this.registrantEmail, this.registrantFax, this.registrantFaxExt, this.registrantId, this.registrantName, this.registrantOrg, this.registrantPhone, this.registrantPhoneExt, this.registrantPostalCode, this.registrantProvince, this.registrantReferralUrl, this.registrantStreet, required this.registrar, this.registrarCity, this.registrarCountry, this.registrarEmail, this.registrarFax, this.registrarFaxExt, this.registrarId, this.registrarName, this.registrarOrg, this.registrarPhone, this.registrarPhoneExt, this.registrarPostalCode, this.registrarProvince, this.registrarReferralUrl, this.registrarStreet, this.status, this.technicalCity, this.technicalCountry, this.technicalEmail, this.technicalFax, this.technicalFaxExt, this.technicalId, this.technicalName, this.technicalOrg, this.technicalPhone, this.technicalPhoneExt, this.technicalPostalCode, this.technicalProvince, this.technicalReferralUrl, this.technicalStreet, this.updatedDate, this.updatedDateRaw, this.whoisServer, });
+
+factory CloudforceOneWhoisWhois.fromJson(Map<String, dynamic> json) { return CloudforceOneWhoisWhois(
+  administrativeCity: json['administrative_city'] as String?,
+  administrativeCountry: json['administrative_country'] as String?,
+  administrativeEmail: json['administrative_email'] as String?,
+  administrativeFax: json['administrative_fax'] as String?,
+  administrativeFaxExt: json['administrative_fax_ext'] as String?,
+  administrativeId: json['administrative_id'] as String?,
+  administrativeName: json['administrative_name'] as String?,
+  administrativeOrg: json['administrative_org'] as String?,
+  administrativePhone: json['administrative_phone'] as String?,
+  administrativePhoneExt: json['administrative_phone_ext'] as String?,
+  administrativePostalCode: json['administrative_postal_code'] as String?,
+  administrativeProvince: json['administrative_province'] as String?,
+  administrativeReferralUrl: json['administrative_referral_url'] as String?,
+  administrativeStreet: json['administrative_street'] as String?,
+  billingCity: json['billing_city'] as String?,
+  billingCountry: json['billing_country'] as String?,
+  billingEmail: json['billing_email'] as String?,
+  billingFax: json['billing_fax'] as String?,
+  billingFaxExt: json['billing_fax_ext'] as String?,
+  billingId: json['billing_id'] as String?,
+  billingName: json['billing_name'] as String?,
+  billingOrg: json['billing_org'] as String?,
+  billingPhone: json['billing_phone'] as String?,
+  billingPhoneExt: json['billing_phone_ext'] as String?,
+  billingPostalCode: json['billing_postal_code'] as String?,
+  billingProvince: json['billing_province'] as String?,
+  billingReferralUrl: json['billing_referral_url'] as String?,
+  billingStreet: json['billing_street'] as String?,
+  createdDate: json['created_date'] != null ? DateTime.parse(json['created_date'] as String) : null,
+  createdDateRaw: json['created_date_raw'] as String?,
+  dnssec: json['dnssec'] as bool,
+  domain: CloudforceOneWhoisDomainName.fromJson(json['domain'] as String),
+  expirationDate: json['expiration_date'] != null ? DateTime.parse(json['expiration_date'] as String) : null,
+  expirationDateRaw: json['expiration_date_raw'] as String?,
+  $extension: json['extension'] as String,
+  found: json['found'] as bool,
+  id: json['id'] as String?,
+  nameservers: (json['nameservers'] as List<dynamic>).map((e) => e as String).toList(),
+  punycode: json['punycode'] as String,
+  registrant: json['registrant'] as String,
+  registrantCity: json['registrant_city'] as String?,
+  registrantCountry: json['registrant_country'] as String?,
+  registrantEmail: json['registrant_email'] as String?,
+  registrantFax: json['registrant_fax'] as String?,
+  registrantFaxExt: json['registrant_fax_ext'] as String?,
+  registrantId: json['registrant_id'] as String?,
+  registrantName: json['registrant_name'] as String?,
+  registrantOrg: json['registrant_org'] as String?,
+  registrantPhone: json['registrant_phone'] as String?,
+  registrantPhoneExt: json['registrant_phone_ext'] as String?,
+  registrantPostalCode: json['registrant_postal_code'] as String?,
+  registrantProvince: json['registrant_province'] as String?,
+  registrantReferralUrl: json['registrant_referral_url'] as String?,
+  registrantStreet: json['registrant_street'] as String?,
+  registrar: json['registrar'] as String,
+  registrarCity: json['registrar_city'] as String?,
+  registrarCountry: json['registrar_country'] as String?,
+  registrarEmail: json['registrar_email'] as String?,
+  registrarFax: json['registrar_fax'] as String?,
+  registrarFaxExt: json['registrar_fax_ext'] as String?,
+  registrarId: json['registrar_id'] as String?,
+  registrarName: json['registrar_name'] as String?,
+  registrarOrg: json['registrar_org'] as String?,
+  registrarPhone: json['registrar_phone'] as String?,
+  registrarPhoneExt: json['registrar_phone_ext'] as String?,
+  registrarPostalCode: json['registrar_postal_code'] as String?,
+  registrarProvince: json['registrar_province'] as String?,
+  registrarReferralUrl: json['registrar_referral_url'] as String?,
+  registrarStreet: json['registrar_street'] as String?,
+  status: (json['status'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  technicalCity: json['technical_city'] as String?,
+  technicalCountry: json['technical_country'] as String?,
+  technicalEmail: json['technical_email'] as String?,
+  technicalFax: json['technical_fax'] as String?,
+  technicalFaxExt: json['technical_fax_ext'] as String?,
+  technicalId: json['technical_id'] as String?,
+  technicalName: json['technical_name'] as String?,
+  technicalOrg: json['technical_org'] as String?,
+  technicalPhone: json['technical_phone'] as String?,
+  technicalPhoneExt: json['technical_phone_ext'] as String?,
+  technicalPostalCode: json['technical_postal_code'] as String?,
+  technicalProvince: json['technical_province'] as String?,
+  technicalReferralUrl: json['technical_referral_url'] as String?,
+  technicalStreet: json['technical_street'] as String?,
+  updatedDate: json['updated_date'] != null ? DateTime.parse(json['updated_date'] as String) : null,
+  updatedDateRaw: json['updated_date_raw'] as String?,
+  whoisServer: json['whois_server'] as String?,
+); }
+
+final String? administrativeCity;
+
+final String? administrativeCountry;
+
+final String? administrativeEmail;
+
+final String? administrativeFax;
+
+final String? administrativeFaxExt;
+
+final String? administrativeId;
+
+final String? administrativeName;
+
+final String? administrativeOrg;
+
+final String? administrativePhone;
+
+final String? administrativePhoneExt;
+
+final String? administrativePostalCode;
+
+final String? administrativeProvince;
+
+final String? administrativeReferralUrl;
+
+final String? administrativeStreet;
+
+final String? billingCity;
+
+final String? billingCountry;
+
+final String? billingEmail;
+
+final String? billingFax;
+
+final String? billingFaxExt;
+
+final String? billingId;
+
+final String? billingName;
+
+final String? billingOrg;
+
+final String? billingPhone;
+
+final String? billingPhoneExt;
+
+final String? billingPostalCode;
+
+final String? billingProvince;
+
+final String? billingReferralUrl;
+
+final String? billingStreet;
+
+final DateTime? createdDate;
+
+final String? createdDateRaw;
+
+final bool dnssec;
+
+final CloudforceOneWhoisDomainName domain;
+
+final DateTime? expirationDate;
+
+final String? expirationDateRaw;
+
+final String $extension;
+
+final bool found;
+
+final String? id;
+
+final List<String> nameservers;
+
+final String punycode;
+
+final String registrant;
+
+final String? registrantCity;
+
+final String? registrantCountry;
+
+final String? registrantEmail;
+
+final String? registrantFax;
+
+final String? registrantFaxExt;
+
+final String? registrantId;
+
+final String? registrantName;
+
+final String? registrantOrg;
+
+final String? registrantPhone;
+
+final String? registrantPhoneExt;
+
+final String? registrantPostalCode;
+
+final String? registrantProvince;
+
+final String? registrantReferralUrl;
+
+final String? registrantStreet;
+
+final String registrar;
+
+final String? registrarCity;
+
+final String? registrarCountry;
+
+final String? registrarEmail;
+
+final String? registrarFax;
+
+final String? registrarFaxExt;
+
+final String? registrarId;
+
+final String? registrarName;
+
+final String? registrarOrg;
+
+final String? registrarPhone;
+
+final String? registrarPhoneExt;
+
+final String? registrarPostalCode;
+
+final String? registrarProvince;
+
+final String? registrarReferralUrl;
+
+final String? registrarStreet;
+
+final List<String>? status;
+
+final String? technicalCity;
+
+final String? technicalCountry;
+
+final String? technicalEmail;
+
+final String? technicalFax;
+
+final String? technicalFaxExt;
+
+final String? technicalId;
+
+final String? technicalName;
+
+final String? technicalOrg;
+
+final String? technicalPhone;
+
+final String? technicalPhoneExt;
+
+final String? technicalPostalCode;
+
+final String? technicalProvince;
+
+final String? technicalReferralUrl;
+
+final String? technicalStreet;
+
+final DateTime? updatedDate;
+
+final String? updatedDateRaw;
+
+final String? whoisServer;
+
+Map<String, dynamic> toJson() { return {
+  'administrative_city': ?administrativeCity,
+  'administrative_country': ?administrativeCountry,
+  'administrative_email': ?administrativeEmail,
+  'administrative_fax': ?administrativeFax,
+  'administrative_fax_ext': ?administrativeFaxExt,
+  'administrative_id': ?administrativeId,
+  'administrative_name': ?administrativeName,
+  'administrative_org': ?administrativeOrg,
+  'administrative_phone': ?administrativePhone,
+  'administrative_phone_ext': ?administrativePhoneExt,
+  'administrative_postal_code': ?administrativePostalCode,
+  'administrative_province': ?administrativeProvince,
+  'administrative_referral_url': ?administrativeReferralUrl,
+  'administrative_street': ?administrativeStreet,
+  'billing_city': ?billingCity,
+  'billing_country': ?billingCountry,
+  'billing_email': ?billingEmail,
+  'billing_fax': ?billingFax,
+  'billing_fax_ext': ?billingFaxExt,
+  'billing_id': ?billingId,
+  'billing_name': ?billingName,
+  'billing_org': ?billingOrg,
+  'billing_phone': ?billingPhone,
+  'billing_phone_ext': ?billingPhoneExt,
+  'billing_postal_code': ?billingPostalCode,
+  'billing_province': ?billingProvince,
+  'billing_referral_url': ?billingReferralUrl,
+  'billing_street': ?billingStreet,
+  if (createdDate != null) 'created_date': createdDate?.toIso8601String(),
+  'created_date_raw': ?createdDateRaw,
+  'dnssec': dnssec,
+  'domain': domain.toJson(),
+  if (expirationDate != null) 'expiration_date': expirationDate?.toIso8601String(),
+  'expiration_date_raw': ?expirationDateRaw,
+  'extension': $extension,
+  'found': found,
+  'id': ?id,
+  'nameservers': nameservers,
+  'punycode': punycode,
+  'registrant': registrant,
+  'registrant_city': ?registrantCity,
+  'registrant_country': ?registrantCountry,
+  'registrant_email': ?registrantEmail,
+  'registrant_fax': ?registrantFax,
+  'registrant_fax_ext': ?registrantFaxExt,
+  'registrant_id': ?registrantId,
+  'registrant_name': ?registrantName,
+  'registrant_org': ?registrantOrg,
+  'registrant_phone': ?registrantPhone,
+  'registrant_phone_ext': ?registrantPhoneExt,
+  'registrant_postal_code': ?registrantPostalCode,
+  'registrant_province': ?registrantProvince,
+  'registrant_referral_url': ?registrantReferralUrl,
+  'registrant_street': ?registrantStreet,
+  'registrar': registrar,
+  'registrar_city': ?registrarCity,
+  'registrar_country': ?registrarCountry,
+  'registrar_email': ?registrarEmail,
+  'registrar_fax': ?registrarFax,
+  'registrar_fax_ext': ?registrarFaxExt,
+  'registrar_id': ?registrarId,
+  'registrar_name': ?registrarName,
+  'registrar_org': ?registrarOrg,
+  'registrar_phone': ?registrarPhone,
+  'registrar_phone_ext': ?registrarPhoneExt,
+  'registrar_postal_code': ?registrarPostalCode,
+  'registrar_province': ?registrarProvince,
+  'registrar_referral_url': ?registrarReferralUrl,
+  'registrar_street': ?registrarStreet,
+  'status': ?status,
+  'technical_city': ?technicalCity,
+  'technical_country': ?technicalCountry,
+  'technical_email': ?technicalEmail,
+  'technical_fax': ?technicalFax,
+  'technical_fax_ext': ?technicalFaxExt,
+  'technical_id': ?technicalId,
+  'technical_name': ?technicalName,
+  'technical_org': ?technicalOrg,
+  'technical_phone': ?technicalPhone,
+  'technical_phone_ext': ?technicalPhoneExt,
+  'technical_postal_code': ?technicalPostalCode,
+  'technical_province': ?technicalProvince,
+  'technical_referral_url': ?technicalReferralUrl,
+  'technical_street': ?technicalStreet,
+  if (updatedDate != null) 'updated_date': updatedDate?.toIso8601String(),
+  'updated_date_raw': ?updatedDateRaw,
+  'whois_server': ?whoisServer,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dnssec') && json['dnssec'] is bool &&
+      json.containsKey('domain') &&
+      json.containsKey('extension') && json['extension'] is String &&
+      json.containsKey('found') && json['found'] is bool &&
+      json.containsKey('nameservers') &&
+      json.containsKey('punycode') && json['punycode'] is String &&
+      json.containsKey('registrant') && json['registrant'] is String &&
+      json.containsKey('registrar') && json['registrar'] is String; } 
+CloudforceOneWhoisWhois copyWith({String Function()? administrativeCity, String Function()? administrativeCountry, String Function()? administrativeEmail, String Function()? administrativeFax, String Function()? administrativeFaxExt, String Function()? administrativeId, String Function()? administrativeName, String Function()? administrativeOrg, String Function()? administrativePhone, String Function()? administrativePhoneExt, String Function()? administrativePostalCode, String Function()? administrativeProvince, String Function()? administrativeReferralUrl, String Function()? administrativeStreet, String Function()? billingCity, String Function()? billingCountry, String Function()? billingEmail, String Function()? billingFax, String Function()? billingFaxExt, String Function()? billingId, String Function()? billingName, String Function()? billingOrg, String Function()? billingPhone, String Function()? billingPhoneExt, String Function()? billingPostalCode, String Function()? billingProvince, String Function()? billingReferralUrl, String Function()? billingStreet, DateTime Function()? createdDate, String Function()? createdDateRaw, bool? dnssec, CloudforceOneWhoisDomainName? domain, DateTime Function()? expirationDate, String Function()? expirationDateRaw, String? $extension, bool? found, String Function()? id, List<String>? nameservers, String? punycode, String? registrant, String Function()? registrantCity, String Function()? registrantCountry, String Function()? registrantEmail, String Function()? registrantFax, String Function()? registrantFaxExt, String Function()? registrantId, String Function()? registrantName, String Function()? registrantOrg, String Function()? registrantPhone, String Function()? registrantPhoneExt, String Function()? registrantPostalCode, String Function()? registrantProvince, String Function()? registrantReferralUrl, String Function()? registrantStreet, String? registrar, String Function()? registrarCity, String Function()? registrarCountry, String Function()? registrarEmail, String Function()? registrarFax, String Function()? registrarFaxExt, String Function()? registrarId, String Function()? registrarName, String Function()? registrarOrg, String Function()? registrarPhone, String Function()? registrarPhoneExt, String Function()? registrarPostalCode, String Function()? registrarProvince, String Function()? registrarReferralUrl, String Function()? registrarStreet, List<String> Function()? status, String Function()? technicalCity, String Function()? technicalCountry, String Function()? technicalEmail, String Function()? technicalFax, String Function()? technicalFaxExt, String Function()? technicalId, String Function()? technicalName, String Function()? technicalOrg, String Function()? technicalPhone, String Function()? technicalPhoneExt, String Function()? technicalPostalCode, String Function()? technicalProvince, String Function()? technicalReferralUrl, String Function()? technicalStreet, DateTime Function()? updatedDate, String Function()? updatedDateRaw, String Function()? whoisServer, }) { return CloudforceOneWhoisWhois(
+  administrativeCity: administrativeCity != null ? administrativeCity() : this.administrativeCity,
+  administrativeCountry: administrativeCountry != null ? administrativeCountry() : this.administrativeCountry,
+  administrativeEmail: administrativeEmail != null ? administrativeEmail() : this.administrativeEmail,
+  administrativeFax: administrativeFax != null ? administrativeFax() : this.administrativeFax,
+  administrativeFaxExt: administrativeFaxExt != null ? administrativeFaxExt() : this.administrativeFaxExt,
+  administrativeId: administrativeId != null ? administrativeId() : this.administrativeId,
+  administrativeName: administrativeName != null ? administrativeName() : this.administrativeName,
+  administrativeOrg: administrativeOrg != null ? administrativeOrg() : this.administrativeOrg,
+  administrativePhone: administrativePhone != null ? administrativePhone() : this.administrativePhone,
+  administrativePhoneExt: administrativePhoneExt != null ? administrativePhoneExt() : this.administrativePhoneExt,
+  administrativePostalCode: administrativePostalCode != null ? administrativePostalCode() : this.administrativePostalCode,
+  administrativeProvince: administrativeProvince != null ? administrativeProvince() : this.administrativeProvince,
+  administrativeReferralUrl: administrativeReferralUrl != null ? administrativeReferralUrl() : this.administrativeReferralUrl,
+  administrativeStreet: administrativeStreet != null ? administrativeStreet() : this.administrativeStreet,
+  billingCity: billingCity != null ? billingCity() : this.billingCity,
+  billingCountry: billingCountry != null ? billingCountry() : this.billingCountry,
+  billingEmail: billingEmail != null ? billingEmail() : this.billingEmail,
+  billingFax: billingFax != null ? billingFax() : this.billingFax,
+  billingFaxExt: billingFaxExt != null ? billingFaxExt() : this.billingFaxExt,
+  billingId: billingId != null ? billingId() : this.billingId,
+  billingName: billingName != null ? billingName() : this.billingName,
+  billingOrg: billingOrg != null ? billingOrg() : this.billingOrg,
+  billingPhone: billingPhone != null ? billingPhone() : this.billingPhone,
+  billingPhoneExt: billingPhoneExt != null ? billingPhoneExt() : this.billingPhoneExt,
+  billingPostalCode: billingPostalCode != null ? billingPostalCode() : this.billingPostalCode,
+  billingProvince: billingProvince != null ? billingProvince() : this.billingProvince,
+  billingReferralUrl: billingReferralUrl != null ? billingReferralUrl() : this.billingReferralUrl,
+  billingStreet: billingStreet != null ? billingStreet() : this.billingStreet,
+  createdDate: createdDate != null ? createdDate() : this.createdDate,
+  createdDateRaw: createdDateRaw != null ? createdDateRaw() : this.createdDateRaw,
+  dnssec: dnssec ?? this.dnssec,
+  domain: domain ?? this.domain,
+  expirationDate: expirationDate != null ? expirationDate() : this.expirationDate,
+  expirationDateRaw: expirationDateRaw != null ? expirationDateRaw() : this.expirationDateRaw,
+  $extension: $extension ?? this.$extension,
+  found: found ?? this.found,
+  id: id != null ? id() : this.id,
+  nameservers: nameservers ?? this.nameservers,
+  punycode: punycode ?? this.punycode,
+  registrant: registrant ?? this.registrant,
+  registrantCity: registrantCity != null ? registrantCity() : this.registrantCity,
+  registrantCountry: registrantCountry != null ? registrantCountry() : this.registrantCountry,
+  registrantEmail: registrantEmail != null ? registrantEmail() : this.registrantEmail,
+  registrantFax: registrantFax != null ? registrantFax() : this.registrantFax,
+  registrantFaxExt: registrantFaxExt != null ? registrantFaxExt() : this.registrantFaxExt,
+  registrantId: registrantId != null ? registrantId() : this.registrantId,
+  registrantName: registrantName != null ? registrantName() : this.registrantName,
+  registrantOrg: registrantOrg != null ? registrantOrg() : this.registrantOrg,
+  registrantPhone: registrantPhone != null ? registrantPhone() : this.registrantPhone,
+  registrantPhoneExt: registrantPhoneExt != null ? registrantPhoneExt() : this.registrantPhoneExt,
+  registrantPostalCode: registrantPostalCode != null ? registrantPostalCode() : this.registrantPostalCode,
+  registrantProvince: registrantProvince != null ? registrantProvince() : this.registrantProvince,
+  registrantReferralUrl: registrantReferralUrl != null ? registrantReferralUrl() : this.registrantReferralUrl,
+  registrantStreet: registrantStreet != null ? registrantStreet() : this.registrantStreet,
+  registrar: registrar ?? this.registrar,
+  registrarCity: registrarCity != null ? registrarCity() : this.registrarCity,
+  registrarCountry: registrarCountry != null ? registrarCountry() : this.registrarCountry,
+  registrarEmail: registrarEmail != null ? registrarEmail() : this.registrarEmail,
+  registrarFax: registrarFax != null ? registrarFax() : this.registrarFax,
+  registrarFaxExt: registrarFaxExt != null ? registrarFaxExt() : this.registrarFaxExt,
+  registrarId: registrarId != null ? registrarId() : this.registrarId,
+  registrarName: registrarName != null ? registrarName() : this.registrarName,
+  registrarOrg: registrarOrg != null ? registrarOrg() : this.registrarOrg,
+  registrarPhone: registrarPhone != null ? registrarPhone() : this.registrarPhone,
+  registrarPhoneExt: registrarPhoneExt != null ? registrarPhoneExt() : this.registrarPhoneExt,
+  registrarPostalCode: registrarPostalCode != null ? registrarPostalCode() : this.registrarPostalCode,
+  registrarProvince: registrarProvince != null ? registrarProvince() : this.registrarProvince,
+  registrarReferralUrl: registrarReferralUrl != null ? registrarReferralUrl() : this.registrarReferralUrl,
+  registrarStreet: registrarStreet != null ? registrarStreet() : this.registrarStreet,
+  status: status != null ? status() : this.status,
+  technicalCity: technicalCity != null ? technicalCity() : this.technicalCity,
+  technicalCountry: technicalCountry != null ? technicalCountry() : this.technicalCountry,
+  technicalEmail: technicalEmail != null ? technicalEmail() : this.technicalEmail,
+  technicalFax: technicalFax != null ? technicalFax() : this.technicalFax,
+  technicalFaxExt: technicalFaxExt != null ? technicalFaxExt() : this.technicalFaxExt,
+  technicalId: technicalId != null ? technicalId() : this.technicalId,
+  technicalName: technicalName != null ? technicalName() : this.technicalName,
+  technicalOrg: technicalOrg != null ? technicalOrg() : this.technicalOrg,
+  technicalPhone: technicalPhone != null ? technicalPhone() : this.technicalPhone,
+  technicalPhoneExt: technicalPhoneExt != null ? technicalPhoneExt() : this.technicalPhoneExt,
+  technicalPostalCode: technicalPostalCode != null ? technicalPostalCode() : this.technicalPostalCode,
+  technicalProvince: technicalProvince != null ? technicalProvince() : this.technicalProvince,
+  technicalReferralUrl: technicalReferralUrl != null ? technicalReferralUrl() : this.technicalReferralUrl,
+  technicalStreet: technicalStreet != null ? technicalStreet() : this.technicalStreet,
+  updatedDate: updatedDate != null ? updatedDate() : this.updatedDate,
+  updatedDateRaw: updatedDateRaw != null ? updatedDateRaw() : this.updatedDateRaw,
+  whoisServer: whoisServer != null ? whoisServer() : this.whoisServer,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudforceOneWhoisWhois &&
+          administrativeCity == other.administrativeCity &&
+          administrativeCountry == other.administrativeCountry &&
+          administrativeEmail == other.administrativeEmail &&
+          administrativeFax == other.administrativeFax &&
+          administrativeFaxExt == other.administrativeFaxExt &&
+          administrativeId == other.administrativeId &&
+          administrativeName == other.administrativeName &&
+          administrativeOrg == other.administrativeOrg &&
+          administrativePhone == other.administrativePhone &&
+          administrativePhoneExt == other.administrativePhoneExt &&
+          administrativePostalCode == other.administrativePostalCode &&
+          administrativeProvince == other.administrativeProvince &&
+          administrativeReferralUrl == other.administrativeReferralUrl &&
+          administrativeStreet == other.administrativeStreet &&
+          billingCity == other.billingCity &&
+          billingCountry == other.billingCountry &&
+          billingEmail == other.billingEmail &&
+          billingFax == other.billingFax &&
+          billingFaxExt == other.billingFaxExt &&
+          billingId == other.billingId &&
+          billingName == other.billingName &&
+          billingOrg == other.billingOrg &&
+          billingPhone == other.billingPhone &&
+          billingPhoneExt == other.billingPhoneExt &&
+          billingPostalCode == other.billingPostalCode &&
+          billingProvince == other.billingProvince &&
+          billingReferralUrl == other.billingReferralUrl &&
+          billingStreet == other.billingStreet &&
+          createdDate == other.createdDate &&
+          createdDateRaw == other.createdDateRaw &&
+          dnssec == other.dnssec &&
+          domain == other.domain &&
+          expirationDate == other.expirationDate &&
+          expirationDateRaw == other.expirationDateRaw &&
+          $extension == other.$extension &&
+          found == other.found &&
+          id == other.id &&
+          listEquals(nameservers, other.nameservers) &&
+          punycode == other.punycode &&
+          registrant == other.registrant &&
+          registrantCity == other.registrantCity &&
+          registrantCountry == other.registrantCountry &&
+          registrantEmail == other.registrantEmail &&
+          registrantFax == other.registrantFax &&
+          registrantFaxExt == other.registrantFaxExt &&
+          registrantId == other.registrantId &&
+          registrantName == other.registrantName &&
+          registrantOrg == other.registrantOrg &&
+          registrantPhone == other.registrantPhone &&
+          registrantPhoneExt == other.registrantPhoneExt &&
+          registrantPostalCode == other.registrantPostalCode &&
+          registrantProvince == other.registrantProvince &&
+          registrantReferralUrl == other.registrantReferralUrl &&
+          registrantStreet == other.registrantStreet &&
+          registrar == other.registrar &&
+          registrarCity == other.registrarCity &&
+          registrarCountry == other.registrarCountry &&
+          registrarEmail == other.registrarEmail &&
+          registrarFax == other.registrarFax &&
+          registrarFaxExt == other.registrarFaxExt &&
+          registrarId == other.registrarId &&
+          registrarName == other.registrarName &&
+          registrarOrg == other.registrarOrg &&
+          registrarPhone == other.registrarPhone &&
+          registrarPhoneExt == other.registrarPhoneExt &&
+          registrarPostalCode == other.registrarPostalCode &&
+          registrarProvince == other.registrarProvince &&
+          registrarReferralUrl == other.registrarReferralUrl &&
+          registrarStreet == other.registrarStreet &&
+          listEquals(status, other.status) &&
+          technicalCity == other.technicalCity &&
+          technicalCountry == other.technicalCountry &&
+          technicalEmail == other.technicalEmail &&
+          technicalFax == other.technicalFax &&
+          technicalFaxExt == other.technicalFaxExt &&
+          technicalId == other.technicalId &&
+          technicalName == other.technicalName &&
+          technicalOrg == other.technicalOrg &&
+          technicalPhone == other.technicalPhone &&
+          technicalPhoneExt == other.technicalPhoneExt &&
+          technicalPostalCode == other.technicalPostalCode &&
+          technicalProvince == other.technicalProvince &&
+          technicalReferralUrl == other.technicalReferralUrl &&
+          technicalStreet == other.technicalStreet &&
+          updatedDate == other.updatedDate &&
+          updatedDateRaw == other.updatedDateRaw &&
+          whoisServer == other.whoisServer; } 
+@override int get hashCode { return Object.hashAll([administrativeCity, administrativeCountry, administrativeEmail, administrativeFax, administrativeFaxExt, administrativeId, administrativeName, administrativeOrg, administrativePhone, administrativePhoneExt, administrativePostalCode, administrativeProvince, administrativeReferralUrl, administrativeStreet, billingCity, billingCountry, billingEmail, billingFax, billingFaxExt, billingId, billingName, billingOrg, billingPhone, billingPhoneExt, billingPostalCode, billingProvince, billingReferralUrl, billingStreet, createdDate, createdDateRaw, dnssec, domain, expirationDate, expirationDateRaw, $extension, found, id, Object.hashAll(nameservers), punycode, registrant, registrantCity, registrantCountry, registrantEmail, registrantFax, registrantFaxExt, registrantId, registrantName, registrantOrg, registrantPhone, registrantPhoneExt, registrantPostalCode, registrantProvince, registrantReferralUrl, registrantStreet, registrar, registrarCity, registrarCountry, registrarEmail, registrarFax, registrarFaxExt, registrarId, registrarName, registrarOrg, registrarPhone, registrarPhoneExt, registrarPostalCode, registrarProvince, registrarReferralUrl, registrarStreet, Object.hashAll(status ?? const []), technicalCity, technicalCountry, technicalEmail, technicalFax, technicalFaxExt, technicalId, technicalName, technicalOrg, technicalPhone, technicalPhoneExt, technicalPostalCode, technicalProvince, technicalReferralUrl, technicalStreet, updatedDate, updatedDateRaw, whoisServer]); } 
+@override String toString() { return 'CloudforceOneWhoisWhois(administrativeCity: $administrativeCity, administrativeCountry: $administrativeCountry, administrativeEmail: $administrativeEmail, administrativeFax: $administrativeFax, administrativeFaxExt: $administrativeFaxExt, administrativeId: $administrativeId, administrativeName: $administrativeName, administrativeOrg: $administrativeOrg, administrativePhone: $administrativePhone, administrativePhoneExt: $administrativePhoneExt, administrativePostalCode: $administrativePostalCode, administrativeProvince: $administrativeProvince, administrativeReferralUrl: $administrativeReferralUrl, administrativeStreet: $administrativeStreet, billingCity: $billingCity, billingCountry: $billingCountry, billingEmail: $billingEmail, billingFax: $billingFax, billingFaxExt: $billingFaxExt, billingId: $billingId, billingName: $billingName, billingOrg: $billingOrg, billingPhone: $billingPhone, billingPhoneExt: $billingPhoneExt, billingPostalCode: $billingPostalCode, billingProvince: $billingProvince, billingReferralUrl: $billingReferralUrl, billingStreet: $billingStreet, createdDate: $createdDate, createdDateRaw: $createdDateRaw, dnssec: $dnssec, domain: $domain, expirationDate: $expirationDate, expirationDateRaw: $expirationDateRaw, \$extension: ${$extension}, found: $found, id: $id, nameservers: $nameservers, punycode: $punycode, registrant: $registrant, registrantCity: $registrantCity, registrantCountry: $registrantCountry, registrantEmail: $registrantEmail, registrantFax: $registrantFax, registrantFaxExt: $registrantFaxExt, registrantId: $registrantId, registrantName: $registrantName, registrantOrg: $registrantOrg, registrantPhone: $registrantPhone, registrantPhoneExt: $registrantPhoneExt, registrantPostalCode: $registrantPostalCode, registrantProvince: $registrantProvince, registrantReferralUrl: $registrantReferralUrl, registrantStreet: $registrantStreet, registrar: $registrar, registrarCity: $registrarCity, registrarCountry: $registrarCountry, registrarEmail: $registrarEmail, registrarFax: $registrarFax, registrarFaxExt: $registrarFaxExt, registrarId: $registrarId, registrarName: $registrarName, registrarOrg: $registrarOrg, registrarPhone: $registrarPhone, registrarPhoneExt: $registrarPhoneExt, registrarPostalCode: $registrarPostalCode, registrarProvince: $registrarProvince, registrarReferralUrl: $registrarReferralUrl, registrarStreet: $registrarStreet, status: $status, technicalCity: $technicalCity, technicalCountry: $technicalCountry, technicalEmail: $technicalEmail, technicalFax: $technicalFax, technicalFaxExt: $technicalFaxExt, technicalId: $technicalId, technicalName: $technicalName, technicalOrg: $technicalOrg, technicalPhone: $technicalPhone, technicalPhoneExt: $technicalPhoneExt, technicalPostalCode: $technicalPostalCode, technicalProvince: $technicalProvince, technicalReferralUrl: $technicalReferralUrl, technicalStreet: $technicalStreet, updatedDate: $updatedDate, updatedDateRaw: $updatedDateRaw, whoisServer: $whoisServer)'; } 
+ }

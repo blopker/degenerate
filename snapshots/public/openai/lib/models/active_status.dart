@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Status discriminator that is always `active`.
+final class ActiveStatusType {const ActiveStatusType._(this.value);
+
+factory ActiveStatusType.fromJson(String json) { return switch (json) {
+  'active' => active,
+  _ => ActiveStatusType._(json),
+}; }
+
+static const ActiveStatusType active = ActiveStatusType._('active');
+
+static const List<ActiveStatusType> values = [active];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActiveStatusType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActiveStatusType($value)'; } 
+ }
+/// Indicates that a thread is active.
+final class ActiveStatus {const ActiveStatus({this.type = ActiveStatusType.active});
+
+factory ActiveStatus.fromJson(Map<String, dynamic> json) { return ActiveStatus(
+  type: ActiveStatusType.fromJson(json['type'] as String),
+); }
+
+/// Status discriminator that is always `active`.
+final ActiveStatusType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+ActiveStatus copyWith({ActiveStatusType? type}) { return ActiveStatus(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActiveStatus &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'ActiveStatus(type: $type)'; } 
+ }

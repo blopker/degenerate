@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_treasury_transactions_status_transitions_posted_at.dart';import 'range_query_specs60.dart';final class GetTreasuryTransactionsStatusTransitions {const GetTreasuryTransactionsStatusTransitions({this.postedAt});
+
+factory GetTreasuryTransactionsStatusTransitions.fromJson(Map<String, dynamic> json) { return GetTreasuryTransactionsStatusTransitions(
+  postedAt: json['posted_at'] != null ? OneOf2.parse(json['posted_at'], fromA: (v) => RangeQuerySpecs60.fromJson(v as Map<String, dynamic>), fromB: (v) => (v as num).toInt(),) : null,
+); }
+
+final GetTreasuryTransactionsStatusTransitionsPostedAt? postedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (postedAt != null) 'posted_at': postedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetTreasuryTransactionsStatusTransitions copyWith({GetTreasuryTransactionsStatusTransitionsPostedAt Function()? postedAt}) { return GetTreasuryTransactionsStatusTransitions(
+  postedAt: postedAt != null ? postedAt() : this.postedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetTreasuryTransactionsStatusTransitions &&
+          postedAt == other.postedAt; } 
+@override int get hashCode { return postedAt.hashCode; } 
+@override String toString() { return 'GetTreasuryTransactionsStatusTransitions(postedAt: $postedAt)'; } 
+ }

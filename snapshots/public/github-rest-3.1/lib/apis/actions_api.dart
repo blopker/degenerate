@@ -1,0 +1,4890 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_org_response.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_request.dart';import '../models/actions_add_custom_labels_to_self_hosted_runner_for_repo_response.dart';import '../models/actions_artifact_and_log_retention.dart';import '../models/actions_artifact_and_log_retention_response.dart';import '../models/actions_cache_list.dart';import '../models/actions_cache_retention_limit_for_enterprise.dart';import '../models/actions_cache_retention_limit_for_organization.dart';import '../models/actions_cache_retention_limit_for_repository.dart';import '../models/actions_cache_storage_limit_for_enterprise.dart';import '../models/actions_cache_storage_limit_for_organization.dart';import '../models/actions_cache_storage_limit_for_repository.dart';import '../models/actions_cache_usage_by_repository.dart';import '../models/actions_cache_usage_org_enterprise.dart';import '../models/actions_create_environment_variable_request.dart';import '../models/actions_create_hosted_runner_for_org_request.dart';import '../models/actions_create_or_update_environment_secret_request.dart';import '../models/actions_create_or_update_org_secret_request.dart';import '../models/actions_create_or_update_repo_secret_request.dart';import '../models/actions_create_org_variable_request.dart';import '../models/actions_create_repo_variable_request.dart';import '../models/actions_create_self_hosted_runner_group_for_org_request.dart';import '../models/actions_create_workflow_dispatch_request.dart';import '../models/actions_fork_pr_contributor_approval.dart';import '../models/actions_fork_pr_workflows_private_repos.dart';import '../models/actions_fork_pr_workflows_private_repos_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_request.dart';import '../models/actions_generate_runner_jitconfig_for_org_response.dart';import '../models/actions_generate_runner_jitconfig_for_repo_request.dart';import '../models/actions_generate_runner_jitconfig_for_repo_response.dart';import '../models/actions_get_actions_cache_list_direction.dart';import '../models/actions_get_actions_cache_list_sort.dart';import '../models/actions_get_actions_cache_usage_by_repo_for_org_response.dart';import '../models/actions_get_default_workflow_permissions.dart';import '../models/actions_get_hosted_runners_github_owned_images_for_org_response.dart';import '../models/actions_get_hosted_runners_machine_specs_for_org_response.dart';import '../models/actions_get_hosted_runners_partner_images_for_org_response.dart';import '../models/actions_get_hosted_runners_platforms_for_org_response.dart';import '../models/actions_hosted_runner.dart';import '../models/actions_hosted_runner_custom_image.dart';import '../models/actions_hosted_runner_custom_image_version.dart';import '../models/actions_hosted_runner_limits.dart';import '../models/actions_list_artifacts_for_repo_response.dart';import '../models/actions_list_custom_image_versions_for_org_response.dart';import '../models/actions_list_custom_images_for_org_response.dart';import '../models/actions_list_environment_secrets_response.dart';import '../models/actions_list_environment_variables_response.dart';import '../models/actions_list_github_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_hosted_runners_for_org_response.dart';import '../models/actions_list_jobs_for_workflow_run_attempt_response.dart';import '../models/actions_list_jobs_for_workflow_run_filter.dart';import '../models/actions_list_jobs_for_workflow_run_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_list_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_list_org_secrets_response.dart';import '../models/actions_list_org_variables_response.dart';import '../models/actions_list_repo_access_to_self_hosted_runner_group_in_org_response.dart';import '../models/actions_list_repo_organization_secrets_response.dart';import '../models/actions_list_repo_organization_variables_response.dart';import '../models/actions_list_repo_secrets_response.dart';import '../models/actions_list_repo_variables_response.dart';import '../models/actions_list_repo_workflows_response.dart';import '../models/actions_list_selected_repos_for_org_secret_response.dart';import '../models/actions_list_selected_repos_for_org_variable_response.dart';import '../models/actions_list_selected_repositories_enabled_github_actions_organization_response.dart';import '../models/actions_list_selected_repositories_self_hosted_runners_organization_response.dart';import '../models/actions_list_self_hosted_runner_groups_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_org_response.dart';import '../models/actions_list_self_hosted_runners_for_repo_response.dart';import '../models/actions_list_self_hosted_runners_in_group_for_org_response.dart';import '../models/actions_list_workflow_run_artifacts_direction.dart';import '../models/actions_list_workflow_run_artifacts_response.dart';import '../models/actions_list_workflow_runs_for_repo_response.dart';import '../models/actions_list_workflow_runs_for_repo_status.dart';import '../models/actions_list_workflow_runs_response.dart';import '../models/actions_list_workflow_runs_status.dart';import '../models/actions_organization_permissions.dart';import '../models/actions_public_key.dart';import '../models/actions_re_run_job_for_workflow_run_request.dart';import '../models/actions_re_run_workflow_failed_jobs_request.dart';import '../models/actions_re_run_workflow_request.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_all_custom_labels_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_org_response.dart';import '../models/actions_remove_custom_label_from_self_hosted_runner_for_repo_response.dart';import '../models/actions_repository_permissions.dart';import '../models/actions_review_custom_gates_for_run_request.dart';import '../models/actions_review_pending_deployments_for_run_request.dart';import '../models/actions_secret.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_org_response.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_request.dart';import '../models/actions_set_custom_labels_for_self_hosted_runner_for_repo_response.dart';import '../models/actions_set_custom_oidc_sub_claim_for_repo_request.dart';import '../models/actions_set_default_workflow_permissions.dart';import '../models/actions_set_github_actions_permissions_organization_request.dart';import '../models/actions_set_github_actions_permissions_repository_request.dart';import '../models/actions_set_repo_access_to_self_hosted_runner_group_in_org_request.dart';import '../models/actions_set_selected_repos_for_org_secret_request.dart';import '../models/actions_set_selected_repos_for_org_variable_request.dart';import '../models/actions_set_selected_repositories_enabled_github_actions_organization_request.dart';import '../models/actions_set_selected_repositories_self_hosted_runners_organization_request.dart';import '../models/actions_set_self_hosted_runners_in_group_for_org_request.dart';import '../models/actions_set_self_hosted_runners_permissions_organization_request.dart';import '../models/actions_update_environment_variable_request.dart';import '../models/actions_update_hosted_runner_for_org_request.dart';import '../models/actions_update_org_variable_request.dart';import '../models/actions_update_repo_variable_request.dart';import '../models/actions_update_self_hosted_runner_group_for_org_request.dart';import '../models/actions_variable.dart';import '../models/actions_workflow_access_to_repository.dart';import '../models/artifact.dart';import '../models/authentication_token.dart';import '../models/basic_error.dart';import '../models/deployment.dart';import '../models/empty_object.dart';import '../models/environment_approvals.dart';import '../models/job.dart';import '../models/oidc_custom_sub_repo.dart';import '../models/organization_actions_secret.dart';import '../models/organization_actions_variable.dart';import '../models/pending_deployment.dart';import '../models/runner.dart';import '../models/runner_application.dart';import '../models/runner_groups_org.dart';import '../models/selected_actions.dart';import '../models/self_hosted_runners_settings.dart';import '../models/validation_error_simple.dart';import '../models/workflow.dart';import '../models/workflow_dispatch_response.dart';import '../models/workflow_run.dart';import '../models/workflow_run_usage.dart';import '../models/workflow_usage.dart';/// ActionsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class ActionsApi with ApiExecutor {const ActionsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get GitHub Actions cache retention limit for an enterprise
+///
+/// Gets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this
+/// enterprise may not set a higher cache retention limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+///
+/// `GET /enterprises/{enterprise}/actions/cache/retention-limit`
+Future<ApiResult<ActionsCacheRetentionLimitForEnterprise, BasicError>> actionsGetActionsCacheRetentionLimitForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/actions/cache/retention-limit',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheRetentionLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions cache retention limit for an enterprise
+///
+/// Sets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this
+/// enterprise may not set a higher cache retention limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+///
+/// `PUT /enterprises/{enterprise}/actions/cache/retention-limit`
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForEnterprise({required String enterprise, required ActionsCacheRetentionLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/actions/cache/retention-limit',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache storage limit for an enterprise
+///
+/// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this
+/// enterprise may not set a higher cache storage limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+///
+/// `GET /enterprises/{enterprise}/actions/cache/storage-limit`
+Future<ApiResult<ActionsCacheStorageLimitForEnterprise, BasicError>> actionsGetActionsCacheStorageLimitForEnterprise({required String enterprise, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/actions/cache/storage-limit',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheStorageLimitForEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions cache storage limit for an enterprise
+///
+/// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this
+/// enterprise may not set a higher cache storage limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:enterprise` scope to use this endpoint.
+///
+/// `PUT /enterprises/{enterprise}/actions/cache/storage-limit`
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForEnterprise({required String enterprise, required ActionsCacheStorageLimitForEnterprise body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/enterprises/${Uri.encodeComponent(enterprise)}/actions/cache/storage-limit',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache retention limit for an organization
+///
+/// Gets GitHub Actions cache retention limit for an organization. All repositories under this
+/// organization may not set a higher cache retention limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+///
+/// `GET /organizations/{org}/actions/cache/retention-limit`
+Future<ApiResult<ActionsCacheRetentionLimitForOrganization, BasicError>> actionsGetActionsCacheRetentionLimitForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/organizations/${Uri.encodeComponent(org)}/actions/cache/retention-limit',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheRetentionLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions cache retention limit for an organization
+///
+/// Sets GitHub Actions cache retention limit for an organization. All repositories under this
+/// organization may not set a higher cache retention limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+///
+/// `PUT /organizations/{org}/actions/cache/retention-limit`
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForOrganization({required String org, required ActionsCacheRetentionLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/organizations/${Uri.encodeComponent(org)}/actions/cache/retention-limit',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache storage limit for an organization
+///
+/// Gets GitHub Actions cache storage limit for an organization. All repositories under this
+/// organization may not set a higher cache storage limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+///
+/// `GET /organizations/{org}/actions/cache/storage-limit`
+Future<ApiResult<ActionsCacheStorageLimitForOrganization, BasicError>> actionsGetActionsCacheStorageLimitForOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/organizations/${Uri.encodeComponent(org)}/actions/cache/storage-limit',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheStorageLimitForOrganization.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions cache storage limit for an organization
+///
+/// Sets GitHub Actions cache storage limit for an organization. All organizations and repositories under this
+/// organization may not set a higher cache storage limit.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:organization` scope to use this endpoint.
+///
+/// `PUT /organizations/{org}/actions/cache/storage-limit`
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForOrganization({required String org, required ActionsCacheStorageLimitForOrganization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/organizations/${Uri.encodeComponent(org)}/actions/cache/storage-limit',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache usage for an organization
+///
+/// Gets the total GitHub Actions cache usage for an organization.
+/// The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/cache/usage`
+Future<ApiResult<ActionsCacheUsageOrgEnterprise, Never>> actionsGetActionsCacheUsageForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/cache/usage',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheUsageOrgEnterprise.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List repositories with GitHub Actions cache usage for an organization
+///
+/// Lists repositories and their GitHub Actions cache usage for an organization.
+/// The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/cache/usage-by-repository`
+Future<ApiResult<ActionsGetActionsCacheUsageByRepoForOrgResponse, Never>> actionsGetActionsCacheUsageByRepoForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/cache/usage-by-repository',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List GitHub-hosted runners for an organization
+///
+/// Lists all GitHub-hosted runners configured in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `manage_runner:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/hosted-runners`
+Future<ApiResult<ActionsListHostedRunnersForOrgResponse, Never>> actionsListHostedRunnersForOrg({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListHostedRunnersForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a GitHub-hosted runner for an organization
+///
+/// Creates a GitHub-hosted runner for an organization.
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/hosted-runners`
+Future<ApiResult<ActionsHostedRunner, Never>> actionsCreateHostedRunnerForOrg({required String org, required ActionsCreateHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List custom images for an organization
+///
+/// List custom images for an organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/images/custom`
+Future<ApiResult<ActionsListCustomImagesForOrgResponse, Never>> actionsListCustomImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/custom',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListCustomImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a custom image definition for GitHub Actions Hosted Runners
+///
+/// Get a custom image definition for GitHub Actions Hosted Runners.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}`
+Future<ApiResult<ActionsHostedRunnerCustomImage, Never>> actionsGetCustomImageForOrg({required String org, required int imageDefinitionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/custom/${Uri.encodeComponent(imageDefinitionId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunnerCustomImage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a custom image from the organization
+///
+/// Delete a custom image from the organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}`
+Future<ApiResult<void, Never>> actionsDeleteCustomImageFromOrg({required String org, required int imageDefinitionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/custom/${Uri.encodeComponent(imageDefinitionId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List image versions of a custom image for an organization
+///
+/// List image versions of a custom image for an organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions`
+Future<ApiResult<ActionsListCustomImageVersionsForOrgResponse, Never>> actionsListCustomImageVersionsForOrg({required int imageDefinitionId, required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/custom/${Uri.encodeComponent(imageDefinitionId.toString())}/versions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListCustomImageVersionsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an image version of a custom image for GitHub Actions Hosted Runners
+///
+/// Get an image version of a custom image for GitHub Actions Hosted Runners.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}`
+Future<ApiResult<ActionsHostedRunnerCustomImageVersion, Never>> actionsGetCustomImageVersionForOrg({required String org, required int imageDefinitionId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/custom/${Uri.encodeComponent(imageDefinitionId.toString())}/versions/${Uri.encodeComponent(version)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunnerCustomImageVersion.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete an image version of custom image from the organization
+///
+/// Delete an image version of custom image from the organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}`
+Future<ApiResult<void, Never>> actionsDeleteCustomImageVersionFromOrg({required String org, required int imageDefinitionId, required String version, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/custom/${Uri.encodeComponent(imageDefinitionId.toString())}/versions/${Uri.encodeComponent(version)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get GitHub-owned images for GitHub-hosted runners in an organization
+///
+/// Get the list of GitHub-owned images available for GitHub-hosted runners for an organization.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/images/github-owned`
+Future<ApiResult<ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse, Never>> actionsGetHostedRunnersGithubOwnedImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/github-owned',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get partner images for GitHub-hosted runners in an organization
+///
+/// Get the list of partner images available for GitHub-hosted runners for an organization.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/images/partner`
+Future<ApiResult<ActionsGetHostedRunnersPartnerImagesForOrgResponse, Never>> actionsGetHostedRunnersPartnerImagesForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/images/partner',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get limits on GitHub-hosted runners for an organization
+///
+/// Get the GitHub-hosted runners limits for an organization.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/limits`
+Future<ApiResult<ActionsHostedRunnerLimits, Never>> actionsGetHostedRunnersLimitsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/limits',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunnerLimits.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub-hosted runners machine specs for an organization
+///
+/// Get the list of machine specs available for GitHub-hosted runners for an organization.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/machine-sizes`
+Future<ApiResult<ActionsGetHostedRunnersMachineSpecsForOrgResponse, Never>> actionsGetHostedRunnersMachineSpecsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/machine-sizes',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get platforms for GitHub-hosted runners in an organization
+///
+/// Get the list of platforms available for GitHub-hosted runners for an organization.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/platforms`
+Future<ApiResult<ActionsGetHostedRunnersPlatformsForOrgResponse, Never>> actionsGetHostedRunnersPlatformsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/platforms',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a GitHub-hosted runner for an organization
+///
+/// Gets a GitHub-hosted runner configured in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}`
+Future<ApiResult<ActionsHostedRunner, Never>> actionsGetHostedRunnerForOrg({required String org, required int hostedRunnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/${Uri.encodeComponent(hostedRunnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a GitHub-hosted runner for an organization
+///
+/// Updates a GitHub-hosted runner for an organization.
+/// OAuth app tokens and personal access tokens (classic) need the `manage_runners:org` scope to use this endpoint.
+///
+/// `PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}`
+Future<ApiResult<ActionsHostedRunner, Never>> actionsUpdateHostedRunnerForOrg({required String org, required int hostedRunnerId, required ActionsUpdateHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/${Uri.encodeComponent(hostedRunnerId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a GitHub-hosted runner for an organization
+///
+/// Deletes a GitHub-hosted runner for an organization.
+///
+/// `DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}`
+Future<ApiResult<ActionsHostedRunner, Never>> actionsDeleteHostedRunnerForOrg({required String org, required int hostedRunnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/hosted-runners/${Uri.encodeComponent(hostedRunnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsHostedRunner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions permissions for an organization
+///
+/// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions`
+Future<ApiResult<ActionsOrganizationPermissions, Never>> actionsGetGithubActionsPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsOrganizationPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions permissions for an organization
+///
+/// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions`
+Future<ApiResult<void, Never>> actionsSetGithubActionsPermissionsOrganization({required String org, required ActionsSetGithubActionsPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get artifact and log retention settings for an organization
+///
+/// Gets artifact and log retention settings for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/artifact-and-log-retention`
+Future<ApiResult<ActionsArtifactAndLogRetentionResponse, BasicError>> actionsGetArtifactAndLogRetentionSettingsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/artifact-and-log-retention',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set artifact and log retention settings for an organization
+///
+/// Sets artifact and log retention settings for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/artifact-and-log-retention`
+Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsOrganization({required String org, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/artifact-and-log-retention',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get fork PR contributor approval permissions for an organization
+///
+/// Gets the fork PR contributor approval policy for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/fork-pr-contributor-approval`
+Future<ApiResult<ActionsForkPrContributorApproval, BasicError>> actionsGetForkPrContributorApprovalPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/fork-pr-contributor-approval',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set fork PR contributor approval permissions for an organization
+///
+/// Sets the fork PR contributor approval policy for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval`
+Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsOrganization({required String org, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/fork-pr-contributor-approval',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get private repo fork PR workflow settings for an organization
+///
+/// Gets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
+///
+/// `GET /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos`
+Future<ApiResult<ActionsForkPrWorkflowsPrivateRepos, BasicError>> actionsGetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/fork-pr-workflows-private-repos',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set private repo fork PR workflow settings for an organization
+///
+/// Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
+///
+/// `PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos`
+Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsOrganization({required String org, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/fork-pr-workflows-private-repos',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List selected repositories enabled for GitHub Actions in an organization
+///
+/// Lists the selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/repositories`
+Future<ApiResult<ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse, Never>> actionsListSelectedRepositoriesEnabledGithubActionsOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/repositories',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set selected repositories enabled for GitHub Actions in an organization
+///
+/// Replaces the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
+/// 
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/repositories`
+Future<ApiResult<void, Never>> actionsSetSelectedRepositoriesEnabledGithubActionsOrganization({required String org, required ActionsSetSelectedRepositoriesEnabledGithubActionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/repositories',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Enable a selected repository for GitHub Actions in an organization
+///
+/// Adds a repository to the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsEnableSelectedRepositoryGithubActionsOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Disable a selected repository for GitHub Actions in an organization
+///
+/// Removes a repository from the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsDisableSelectedRepositoryGithubActionsOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get allowed actions and reusable workflows for an organization
+///
+/// Gets the selected actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/selected-actions`
+Future<ApiResult<SelectedActions, Never>> actionsGetAllowedActionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/selected-actions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return SelectedActions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set allowed actions and reusable workflows for an organization
+///
+/// Sets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/selected-actions`
+Future<ApiResult<void, Never>> actionsSetAllowedActionsOrganization({required String org, SelectedActions? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/selected-actions',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get self-hosted runners settings for an organization
+///
+/// Gets the settings for self-hosted runners for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/self-hosted-runners`
+Future<ApiResult<SelfHostedRunnersSettings, BasicError>> actionsGetSelfHostedRunnersPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/self-hosted-runners',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return SelfHostedRunnersSettings.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set self-hosted runners settings for an organization
+///
+/// Sets the settings for self-hosted runners for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/self-hosted-runners`
+Future<ApiResult<void, BasicError>> actionsSetSelfHostedRunnersPermissionsOrganization({required String org, required ActionsSetSelfHostedRunnersPermissionsOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/self-hosted-runners',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List repositories allowed to use self-hosted runners in an organization
+///
+/// Lists repositories that are allowed to use self-hosted runners in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/self-hosted-runners/repositories`
+Future<ApiResult<ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse, BasicError>> actionsListSelectedRepositoriesSelfHostedRunnersOrganization({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/self-hosted-runners/repositories',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set repositories allowed to use self-hosted runners in an organization
+///
+/// Sets repositories that are allowed to use self-hosted runners in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories`
+Future<ApiResult<void, BasicError>> actionsSetSelectedRepositoriesSelfHostedRunnersOrganization({required String org, required ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/self-hosted-runners/repositories',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Add a repository to the list of repositories allowed to use self-hosted runners in an organization
+///
+/// Adds a repository to the list of repositories that are allowed to use self-hosted runners in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
+Future<ApiResult<void, BasicError>> actionsEnableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/self-hosted-runners/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove a repository from the list of repositories allowed to use self-hosted runners in an organization
+///
+/// Removes a repository from the list of repositories that are allowed to use self-hosted runners in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope or the "Actions policies" fine-grained permission to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}`
+Future<ApiResult<void, BasicError>> actionsDisableSelectedRepositorySelfHostedRunnersOrganization({required String org, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/self-hosted-runners/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get default workflow permissions for an organization
+///
+/// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization,
+/// as well as whether GitHub Actions can submit approving pull request reviews. For more information, see
+/// "[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/permissions/workflow`
+Future<ApiResult<ActionsGetDefaultWorkflowPermissions, Never>> actionsGetGithubActionsDefaultWorkflowPermissionsOrganization({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/workflow',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetDefaultWorkflowPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set default workflow permissions for an organization
+///
+/// Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, and sets if GitHub Actions
+/// can submit approving pull request reviews. For more information, see
+/// "[Setting the permissions of the GITHUB_TOKEN for your organization](https://docs.github.com/organizations/managing-organization-settings/disabling-or-limiting-github-actions-for-your-organization#setting-the-permissions-of-the-github_token-for-your-organization)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/permissions/workflow`
+Future<ApiResult<void, Never>> actionsSetGithubActionsDefaultWorkflowPermissionsOrganization({required String org, ActionsSetDefaultWorkflowPermissions? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/permissions/workflow',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List self-hosted runner groups for an organization
+///
+/// Lists all self-hosted runner groups configured in an organization and inherited from an enterprise.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/runner-groups`
+Future<ApiResult<ActionsListSelfHostedRunnerGroupsForOrgResponse, Never>> actionsListSelfHostedRunnerGroupsForOrg({required String org, int? perPage, int? page, String? visibleToRepository, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (visibleToRepository != null) queryParameters['visible_to_repository'] = visibleToRepository;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a self-hosted runner group for an organization
+///
+/// Creates a new self-hosted runner group for an organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/runner-groups`
+Future<ApiResult<RunnerGroupsOrg, Never>> actionsCreateSelfHostedRunnerGroupForOrg({required String org, required ActionsCreateSelfHostedRunnerGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a self-hosted runner group for an organization
+///
+/// Gets a specific self-hosted runner group for an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}`
+Future<ApiResult<RunnerGroupsOrg, Never>> actionsGetSelfHostedRunnerGroupForOrg({required String org, required int runnerGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a self-hosted runner group for an organization
+///
+/// Updates the `name` and `visibility` of a self-hosted runner group in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}`
+Future<ApiResult<RunnerGroupsOrg, Never>> actionsUpdateSelfHostedRunnerGroupForOrg({required String org, required int runnerGroupId, required ActionsUpdateSelfHostedRunnerGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RunnerGroupsOrg.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a self-hosted runner group from an organization
+///
+/// Deletes a self-hosted runner group for an organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}`
+Future<ApiResult<void, Never>> actionsDeleteSelfHostedRunnerGroupFromOrg({required String org, required int runnerGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List GitHub-hosted runners in a group for an organization
+///
+/// Lists the GitHub-hosted runners in an organization group.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners`
+Future<ApiResult<ActionsListGithubHostedRunnersInGroupForOrgResponse, Never>> actionsListGithubHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/hosted-runners',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List repository access to a self-hosted runner group in an organization
+///
+/// Lists the repositories with access to a self-hosted runner group configured in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories`
+Future<ApiResult<ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse, Never>> actionsListRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set repository access for a self-hosted runner group in an organization
+///
+/// Replaces the list of repositories that have access to a self-hosted runner group configured in an organization.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories`
+Future<ApiResult<void, Never>> actionsSetRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Add repository access to a self-hosted runner group in an organization
+///
+/// Adds a repository to the list of repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsAddRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Remove repository access to a self-hosted runner group in an organization
+///
+/// Removes a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsRemoveRepoAccessToSelfHostedRunnerGroupInOrg({required String org, required int runnerGroupId, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List self-hosted runners in a group for an organization
+///
+/// Lists self-hosted runners that are in a specific organization group.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners`
+Future<ApiResult<ActionsListSelfHostedRunnersInGroupForOrgResponse, Never>> actionsListSelfHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/runners',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set self-hosted runners in a group for an organization
+///
+/// Replaces the list of self-hosted runners that are part of an organization runner group.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners`
+Future<ApiResult<void, Never>> actionsSetSelfHostedRunnersInGroupForOrg({required String org, required int runnerGroupId, required ActionsSetSelfHostedRunnersInGroupForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/runners',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Add a self-hosted runner to a group for an organization
+///
+/// Adds a self-hosted runner to a runner group configured in an organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}`
+Future<ApiResult<void, Never>> actionsAddSelfHostedRunnerToGroupForOrg({required String org, required int runnerGroupId, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/runners/${Uri.encodeComponent(runnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Remove a self-hosted runner from a group for an organization
+///
+/// Removes a self-hosted runner from a group configured in an organization. The runner is then returned to the default group.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}`
+Future<ApiResult<void, Never>> actionsRemoveSelfHostedRunnerFromGroupForOrg({required String org, required int runnerGroupId, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runner-groups/${Uri.encodeComponent(runnerGroupId.toString())}/runners/${Uri.encodeComponent(runnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List self-hosted runners for an organization
+///
+/// Lists all self-hosted runners configured in an organization.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/runners`
+Future<ApiResult<ActionsListSelfHostedRunnersForOrgResponse, Never>> actionsListSelfHostedRunnersForOrg({required String org, String? name, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelfHostedRunnersForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List runner applications for an organization
+///
+/// Lists binaries for the runner application that you can download and run.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.  If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/runners/downloads`
+Future<ApiResult<List<RunnerApplication>, Never>> actionsListRunnerApplicationsForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/downloads',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Create configuration for a just-in-time runner for an organization
+///
+/// Generates a configuration that can be passed to the runner application at startup.
+/// 
+/// The authenticated user must have admin access to the organization.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/runners/generate-jitconfig`
+Future<ApiResult<ActionsGenerateRunnerJitconfigForOrgResponse, BasicError>> actionsGenerateRunnerJitconfigForOrg({required String org, required ActionsGenerateRunnerJitconfigForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/generate-jitconfig',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a registration token for an organization
+///
+/// Returns a token that you can pass to the `config` script. The token expires after one hour.
+/// 
+/// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:
+/// 
+/// ````
+/// ./config.sh --url https://github.com/octo-org --token TOKEN
+/// ````
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/runners/registration-token`
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRegistrationTokenForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/registration-token',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a remove token for an organization
+///
+/// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.
+/// 
+/// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization:
+/// 
+/// ````
+/// ./config.sh remove --token TOKEN
+/// ````
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/runners/remove-token`
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRemoveTokenForOrg({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/remove-token',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a self-hosted runner for an organization
+///
+/// Gets a specific self-hosted runner configured in an organization.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/runners/{runner_id}`
+Future<ApiResult<Runner, Never>> actionsGetSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Runner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a self-hosted runner from an organization
+///
+/// Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/runners/{runner_id}`
+Future<ApiResult<void, ValidationErrorSimple>> actionsDeleteSelfHostedRunnerFromOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List labels for a self-hosted runner for an organization
+///
+/// Lists all labels for a self-hosted runner configured in an organization.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsListLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsListLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Add custom labels to a self-hosted runner for an organization
+///
+/// Adds custom labels to a self-hosted runner configured in an organization.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set custom labels for a self-hosted runner for an organization
+///
+/// Remove all previous custom labels and set the new custom labels for a specific
+/// self-hosted runner configured in an organization.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `PUT /orgs/{org}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForOrg({required String org, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForOrgRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove all custom labels from a self-hosted runner for an organization
+///
+/// Remove all custom labels from a self-hosted runner configured in an
+/// organization. Returns the remaining read-only labels from the runner.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `DELETE /orgs/{org}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrg({required String org, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove a custom label from a self-hosted runner for an organization
+///
+/// Remove a custom label from a self-hosted runner configured
+/// in an organization. Returns the remaining labels from the runner.
+/// 
+/// This endpoint returns a `404 Not Found` status if the custom label is not
+/// present on the runner.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}`
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForOrg({required String org, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List organization secrets
+///
+/// Lists all secrets available in an organization without revealing their
+/// encrypted values.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/secrets`
+Future<ApiResult<ActionsListOrgSecretsResponse, Never>> actionsListOrgSecrets({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListOrgSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an organization public key
+///
+/// Gets your public key, which you need to encrypt secrets. You need to
+/// encrypt a secret before you can create or update secrets.
+/// 
+/// The authenticated user must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/secrets/public-key`
+Future<ApiResult<ActionsPublicKey, Never>> actionsGetOrgPublicKey({required String org, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/public-key',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an organization secret
+///
+/// Gets a single organization secret without revealing its encrypted value.
+/// 
+/// The authenticated user must have collaborator access to a repository to create, update, or read secrets
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/secrets/{secret_name}`
+Future<ApiResult<OrganizationActionsSecret, Never>> actionsGetOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OrganizationActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create or update an organization secret
+///
+/// Creates or updates an organization secret with an encrypted value. Encrypt your secret using
+/// [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/secrets/{secret_name}`
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateOrgSecret({required String org, required String secretName, required ActionsCreateOrUpdateOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete an organization secret
+///
+/// Deletes a secret in an organization using the secret name.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/secrets/{secret_name}`
+Future<ApiResult<void, Never>> actionsDeleteOrgSecret({required String org, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List selected repositories for an organization secret
+///
+/// Lists all repositories that have been selected when the `visibility`
+/// for repository access to a secret is set to `selected`.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/secrets/{secret_name}/repositories`
+Future<ApiResult<ActionsListSelectedReposForOrgSecretResponse, Never>> actionsListSelectedReposForOrgSecret({required String org, required String secretName, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}/repositories',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelectedReposForOrgSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set selected repositories for an organization secret
+///
+/// Replaces all repositories for an organization secret when the `visibility`
+/// for repository access is set to `selected`. The visibility is set when you [Create
+/// or update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret).
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `PUT /orgs/{org}/actions/secrets/{secret_name}/repositories`
+Future<ApiResult<void, Never>> actionsSetSelectedReposForOrgSecret({required String org, required String secretName, required ActionsSetSelectedReposForOrgSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}/repositories',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Add selected repository to an organization secret
+///
+/// Adds a repository to an organization secret when the `visibility` for
+/// repository access is set to `selected`. For more information about setting the visibility, see [Create or
+/// update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret).
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsAddSelectedRepoToOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Remove selected repository from an organization secret
+///
+/// Removes a repository from an organization secret when the `visibility`
+/// for repository access is set to `selected`. The visibility is set when you [Create
+/// or update an organization secret](https://docs.github.com/rest/actions/secrets#create-or-update-an-organization-secret).
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsRemoveSelectedRepoFromOrgSecret({required String org, required String secretName, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/secrets/${Uri.encodeComponent(secretName)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List organization variables
+///
+/// Lists all organization variables.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/variables`
+Future<ApiResult<ActionsListOrgVariablesResponse, Never>> actionsListOrgVariables({required String org, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListOrgVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create an organization variable
+///
+/// Creates an organization variable that you can reference in a GitHub Actions workflow.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /orgs/{org}/actions/variables`
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrgVariable({required String org, required ActionsCreateOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an organization variable
+///
+/// Gets a specific variable in an organization.
+/// 
+/// The authenticated user must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /orgs/{org}/actions/variables/{name}`
+Future<ApiResult<OrganizationActionsVariable, Never>> actionsGetOrgVariable({required String org, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OrganizationActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update an organization variable
+///
+/// Updates an organization variable that you can reference in a GitHub Actions workflow.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `PATCH /orgs/{org}/actions/variables/{name}`
+Future<ApiResult<void, Never>> actionsUpdateOrgVariable({required String org, required String name, required ActionsUpdateOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Delete an organization variable
+///
+/// Deletes an organization variable using the variable name.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /orgs/{org}/actions/variables/{name}`
+Future<ApiResult<void, Never>> actionsDeleteOrgVariable({required String org, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List selected repositories for an organization variable
+///
+/// Lists all repositories that can access an organization variable
+/// that is available to selected repositories.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `GET /orgs/{org}/actions/variables/{name}/repositories`
+Future<ApiResult<ActionsListSelectedReposForOrgVariableResponse, Never>> actionsListSelectedReposForOrgVariable({required String org, required String name, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}/repositories',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelectedReposForOrgVariableResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set selected repositories for an organization variable
+///
+/// Replaces all repositories for an organization variable that is available
+/// to selected repositories. Organization variables that are available to selected
+/// repositories have their `visibility` field set to `selected`.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `PUT /orgs/{org}/actions/variables/{name}/repositories`
+Future<ApiResult<void, Never>> actionsSetSelectedReposForOrgVariable({required String org, required String name, required ActionsSetSelectedReposForOrgVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}/repositories',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Add selected repository to an organization variable
+///
+/// Adds a repository to an organization variable that is available to selected repositories.
+/// Organization variables that are available to selected repositories have their `visibility` field set to `selected`.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /orgs/{org}/actions/variables/{name}/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsAddSelectedRepoToOrgVariable({required String org, required String name, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Remove selected repository from an organization variable
+///
+/// Removes a repository from an organization variable that is
+/// available to selected repositories. Organization variables that are available to
+/// selected repositories have their `visibility` field set to `selected`.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+///
+/// `DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}`
+Future<ApiResult<void, Never>> actionsRemoveSelectedRepoFromOrgVariable({required String org, required String name, required int repositoryId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/orgs/${Uri.encodeComponent(org)}/actions/variables/${Uri.encodeComponent(name)}/repositories/${Uri.encodeComponent(repositoryId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List artifacts for a repository
+///
+/// Lists all artifacts for a repository.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/artifacts`
+Future<ApiResult<ActionsListArtifactsForRepoResponse, Never>> actionsListArtifactsForRepo({required String owner, required String repo, int? perPage, int? page, String? name, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (name != null) queryParameters['name'] = name;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/artifacts',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListArtifactsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an artifact
+///
+/// Gets a specific artifact for a workflow run.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}`
+Future<ApiResult<Artifact, Never>> actionsGetArtifact({required String owner, required String repo, required int artifactId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/artifacts/${Uri.encodeComponent(artifactId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Artifact.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete an artifact
+///
+/// Deletes an artifact for a workflow run.
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}`
+Future<ApiResult<void, Never>> actionsDeleteArtifact({required String owner, required String repo, required int artifactId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/artifacts/${Uri.encodeComponent(artifactId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Download an artifact
+///
+/// Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in
+/// the response header to find the URL for the download. The `:archive_format` must be `zip`.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}`
+Future<ApiResult<void, BasicError>> actionsDownloadArtifact({required String owner, required String repo, required int artifactId, required String archiveFormat, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/artifacts/${Uri.encodeComponent(artifactId.toString())}/${Uri.encodeComponent(archiveFormat)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache retention limit for a repository
+///
+/// Gets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if
+/// not manually removed or evicted due to size constraints.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/cache/retention-limit`
+Future<ApiResult<ActionsCacheRetentionLimitForRepository, BasicError>> actionsGetActionsCacheRetentionLimitForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/cache/retention-limit',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheRetentionLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions cache retention limit for a repository
+///
+/// Sets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if
+/// not manually removed or evicted due to size constraints.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/cache/retention-limit`
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheRetentionLimitForRepository({required String owner, required String repo, required ActionsCacheRetentionLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/cache/retention-limit',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache storage limit for a repository
+///
+/// Gets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be
+/// stored before eviction occurs.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/cache/storage-limit`
+Future<ApiResult<ActionsCacheStorageLimitForRepository, BasicError>> actionsGetActionsCacheStorageLimitForRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/cache/storage-limit',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheStorageLimitForRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions cache storage limit for a repository
+///
+/// Sets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be
+/// stored before eviction occurs.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `admin:repository` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/cache/storage-limit`
+Future<ApiResult<void, BasicError>> actionsSetActionsCacheStorageLimitForRepository({required String owner, required String repo, required ActionsCacheStorageLimitForRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/cache/storage-limit',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions cache usage for a repository
+///
+/// Gets GitHub Actions cache usage for a repository.
+/// The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/cache/usage`
+Future<ApiResult<ActionsCacheUsageByRepository, Never>> actionsGetActionsCacheUsage({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/cache/usage',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheUsageByRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List GitHub Actions caches for a repository
+///
+/// Lists the GitHub Actions caches for a repository.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/caches`
+Future<ApiResult<ActionsCacheList, Never>> actionsGetActionsCacheList({required String owner, required String repo, int? perPage, int? page, String? ref, String? key, ActionsGetActionsCacheListSort? sort, ActionsGetActionsCacheListDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (ref != null) queryParameters['ref'] = ref;
+if (key != null) queryParameters['key'] = key;
+if (sort != null) queryParameters['sort'] = sort.toJson();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/caches',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete GitHub Actions caches for a repository (using a cache key)
+///
+/// Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/caches`
+Future<ApiResult<ActionsCacheList, Never>> actionsDeleteActionsCacheByKey({required String owner, required String repo, required String key, String? ref, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['key'] = key;
+if (ref != null) queryParameters['ref'] = ref;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/caches',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsCacheList.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a GitHub Actions cache for a repository (using a cache ID)
+///
+/// Deletes a GitHub Actions cache for a repository, using a cache ID.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}`
+Future<ApiResult<void, Never>> actionsDeleteActionsCacheById({required String owner, required String repo, required int cacheId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/caches/${Uri.encodeComponent(cacheId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get a job for a workflow run
+///
+/// Gets a specific job in a workflow run.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/jobs/{job_id}`
+Future<ApiResult<Job, Never>> actionsGetJobForWorkflowRun({required String owner, required String repo, required int jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/jobs/${Uri.encodeComponent(jobId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Job.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Download job logs for a workflow run
+///
+/// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look
+/// for `Location:` in the response header to find the URL for the download.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs`
+Future<ApiResult<void, Never>> actionsDownloadJobLogsForWorkflowRun({required String owner, required String repo, required int jobId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/jobs/${Uri.encodeComponent(jobId.toString())}/logs',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Re-run a job from a workflow run
+///
+/// Re-run a job and its dependent jobs in a workflow run.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun`
+Future<ApiResult<EmptyObject, BasicError>> actionsReRunJobForWorkflowRun({required String owner, required String repo, required int jobId, ActionsReRunJobForWorkflowRunRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/jobs/${Uri.encodeComponent(jobId.toString())}/rerun',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get the customization template for an OIDC subject claim for a repository
+///
+/// Gets the customization template for an OpenID Connect (OIDC) subject claim.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/oidc/customization/sub`
+Future<ApiResult<OidcCustomSubRepo, BasicError>> actionsGetCustomOidcSubClaimForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/oidc/customization/sub',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return OidcCustomSubRepo.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set the customization template for an OIDC subject claim for a repository
+///
+/// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/oidc/customization/sub`
+Future<ApiResult<EmptyObject, BasicError>> actionsSetCustomOidcSubClaimForRepo({required String owner, required String repo, required ActionsSetCustomOidcSubClaimForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/oidc/customization/sub',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List repository organization secrets
+///
+/// Lists all organization secrets shared with a repository without revealing their encrypted
+/// values.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/organization-secrets`
+Future<ApiResult<ActionsListRepoOrganizationSecretsResponse, Never>> actionsListRepoOrganizationSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/organization-secrets',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListRepoOrganizationSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List repository organization variables
+///
+/// Lists all organization variables shared with a repository.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/organization-variables`
+Future<ApiResult<ActionsListRepoOrganizationVariablesResponse, Never>> actionsListRepoOrganizationVariables({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/organization-variables',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListRepoOrganizationVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub Actions permissions for a repository
+///
+/// Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions and reusable workflows allowed to run in the repository.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions`
+Future<ApiResult<ActionsRepositoryPermissions, Never>> actionsGetGithubActionsPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsRepositoryPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set GitHub Actions permissions for a repository
+///
+/// Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions`
+Future<ApiResult<void, Never>> actionsSetGithubActionsPermissionsRepository({required String owner, required String repo, required ActionsSetGithubActionsPermissionsRepositoryRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get the level of access for workflows outside of the repository
+///
+/// Gets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository.
+/// This endpoint only applies to private repositories.
+/// For more information, see "[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions/access`
+Future<ApiResult<ActionsWorkflowAccessToRepository, Never>> actionsGetWorkflowAccessToRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/access',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsWorkflowAccessToRepository.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set the level of access for workflows outside of the repository
+///
+/// Sets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository.
+/// This endpoint only applies to private repositories.
+/// For more information, see "[Allowing access to components in a private repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#allowing-access-to-components-in-a-private-repository)".
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions/access`
+Future<ApiResult<void, Never>> actionsSetWorkflowAccessToRepository({required String owner, required String repo, required ActionsWorkflowAccessToRepository body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/access',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get artifact and log retention settings for a repository
+///
+/// Gets artifact and log retention settings for a repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention`
+Future<ApiResult<ActionsArtifactAndLogRetentionResponse, BasicError>> actionsGetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/artifact-and-log-retention',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsArtifactAndLogRetentionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set artifact and log retention settings for a repository
+///
+/// Sets artifact and log retention settings for a repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention`
+Future<ApiResult<void, BasicError>> actionsSetArtifactAndLogRetentionSettingsRepository({required String owner, required String repo, required ActionsArtifactAndLogRetention body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/artifact-and-log-retention',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get fork PR contributor approval permissions for a repository
+///
+/// Gets the fork PR contributor approval policy for a repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval`
+Future<ApiResult<ActionsForkPrContributorApproval, BasicError>> actionsGetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/fork-pr-contributor-approval',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsForkPrContributorApproval.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set fork PR contributor approval permissions for a repository
+///
+/// Sets the fork PR contributor approval policy for a repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval`
+Future<ApiResult<void, BasicError>> actionsSetForkPrContributorApprovalPermissionsRepository({required String owner, required String repo, required ActionsForkPrContributorApproval body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/fork-pr-contributor-approval',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get private repo fork PR workflow settings for a repository
+///
+/// Gets the settings for whether workflows from fork pull requests can run on a private repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos`
+Future<ApiResult<ActionsForkPrWorkflowsPrivateRepos, BasicError>> actionsGetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/fork-pr-workflows-private-repos',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsForkPrWorkflowsPrivateRepos.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set private repo fork PR workflow settings for a repository
+///
+/// Sets the settings for whether workflows from fork pull requests can run on a private repository.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos`
+Future<ApiResult<void, BasicError>> actionsSetPrivateRepoForkPrWorkflowsSettingsRepository({required String owner, required String repo, required ActionsForkPrWorkflowsPrivateReposRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/fork-pr-workflows-private-repos',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get allowed actions and reusable workflows for a repository
+///
+/// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions/selected-actions`
+Future<ApiResult<SelectedActions, Never>> actionsGetAllowedActionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/selected-actions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return SelectedActions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set allowed actions and reusable workflows for a repository
+///
+/// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions/selected-actions`
+Future<ApiResult<void, Never>> actionsSetAllowedActionsRepository({required String owner, required String repo, SelectedActions? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/selected-actions',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get default workflow permissions for a repository
+///
+/// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository,
+/// as well as if GitHub Actions can submit approving pull request reviews.
+/// For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/permissions/workflow`
+Future<ApiResult<ActionsGetDefaultWorkflowPermissions, Never>> actionsGetGithubActionsDefaultWorkflowPermissionsRepository({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/workflow',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGetDefaultWorkflowPermissions.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set default workflow permissions for a repository
+///
+/// Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, and sets if GitHub Actions
+/// can submit approving pull request reviews.
+/// For more information, see "[Setting the permissions of the GITHUB_TOKEN for your repository](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository)."
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/permissions/workflow`
+Future<ApiResult<void, Never>> actionsSetGithubActionsDefaultWorkflowPermissionsRepository({required String owner, required String repo, required ActionsSetDefaultWorkflowPermissions body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/permissions/workflow',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List self-hosted runners for a repository
+///
+/// Lists all self-hosted runners configured in a repository.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runners`
+Future<ApiResult<ActionsListSelfHostedRunnersForRepoResponse, Never>> actionsListSelfHostedRunnersForRepo({required String owner, required String repo, String? name, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListSelfHostedRunnersForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List runner applications for a repository
+///
+/// Lists binaries for the runner application that you can download and run.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runners/downloads`
+Future<ApiResult<List<RunnerApplication>, Never>> actionsListRunnerApplicationsForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/downloads',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Create configuration for a just-in-time runner for a repository
+///
+/// Generates a configuration that can be passed to the runner application at startup.
+/// 
+/// The authenticated user must have admin access to the repository.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig`
+Future<ApiResult<ActionsGenerateRunnerJitconfigForRepoResponse, BasicError>> actionsGenerateRunnerJitconfigForRepo({required String owner, required String repo, required ActionsGenerateRunnerJitconfigForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/generate-jitconfig',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a registration token for a repository
+///
+/// Returns a token that you can pass to the `config` script. The token expires after one hour.
+/// 
+/// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:
+/// 
+/// ````
+/// ./config.sh --url https://github.com/octo-org --token TOKEN
+/// ````
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runners/registration-token`
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRegistrationTokenForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/registration-token',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a remove token for a repository
+///
+/// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an repository. The token expires after one hour.
+/// 
+/// For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization:
+/// 
+/// ````
+/// ./config.sh remove --token TOKEN
+/// ````
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runners/remove-token`
+Future<ApiResult<AuthenticationToken, Never>> actionsCreateRemoveTokenForRepo({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/remove-token',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AuthenticationToken.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a self-hosted runner for a repository
+///
+/// Gets a specific self-hosted runner configured in a repository.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runners/{runner_id}`
+Future<ApiResult<Runner, Never>> actionsGetSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Runner.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a self-hosted runner from a repository
+///
+/// Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}`
+Future<ApiResult<void, ValidationErrorSimple>> actionsDeleteSelfHostedRunnerFromRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return ValidationErrorSimple.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List labels for a self-hosted runner for a repository
+///
+/// Lists all labels for a self-hosted runner configured in a repository.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsListLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsListLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Add custom labels to a self-hosted runner for a repository
+///
+/// Adds custom labels to a self-hosted runner configured in a repository.
+/// 
+/// Authenticated users must have admin access to the organization to use this endpoint.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse, BasicError>> actionsAddCustomLabelsToSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Set custom labels for a self-hosted runner for a repository
+///
+/// Remove all previous custom labels and set the new custom labels for a specific
+/// self-hosted runner configured in a repository.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse, BasicError>> actionsSetCustomLabelsForSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required ActionsSetCustomLabelsForSelfHostedRunnerForRepoRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove all custom labels from a self-hosted runner for a repository
+///
+/// Remove all custom labels from a self-hosted runner configured in a
+/// repository. Returns the remaining read-only labels from the runner.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels`
+Future<ApiResult<ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Remove a custom label from a self-hosted runner for a repository
+///
+/// Remove a custom label from a self-hosted runner configured
+/// in a repository. Returns the remaining labels from the runner.
+/// 
+/// This endpoint returns a `404 Not Found` status if the custom label is not
+/// present on the runner.
+/// 
+/// Authenticated users must have admin access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}`
+Future<ApiResult<ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse, BasicError>> actionsRemoveCustomLabelFromSelfHostedRunnerForRepo({required String owner, required String repo, required int runnerId, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runners/${Uri.encodeComponent(runnerId.toString())}/labels/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List workflow runs for a repository
+///
+/// Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+/// 
+/// This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs`
+Future<ApiResult<ActionsListWorkflowRunsForRepoResponse, Never>> actionsListWorkflowRunsForRepo({required String owner, required String repo, String? actor, String? branch, String? event, ActionsListWorkflowRunsForRepoStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (actor != null) queryParameters['actor'] = actor;
+if (branch != null) queryParameters['branch'] = branch;
+if (event != null) queryParameters['event'] = event;
+if (status != null) queryParameters['status'] = status.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (created != null) queryParameters['created'] = created.toString();
+if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
+if (checkSuiteId != null) queryParameters['check_suite_id'] = checkSuiteId.toString();
+if (headSha != null) queryParameters['head_sha'] = headSha;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListWorkflowRunsForRepoResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a workflow run
+///
+/// Gets a specific workflow run.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}`
+Future<ApiResult<WorkflowRun, Never>> actionsGetWorkflowRun({required String owner, required String repo, required int runId, bool? excludePullRequests, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkflowRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a workflow run
+///
+/// Deletes a specific workflow run.
+/// 
+/// Anyone with write access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/runs/{run_id}`
+Future<ApiResult<void, Never>> actionsDeleteWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Get the review history for a workflow run
+///
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals`
+Future<ApiResult<List<EnvironmentApprovals>, Never>> actionsGetReviewsForRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/approvals',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => EnvironmentApprovals.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Approve a workflow run for a fork pull request
+///
+/// Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve`
+Future<ApiResult<EmptyObject, BasicError>> actionsApproveWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/approve',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List workflow run artifacts
+///
+/// Lists artifacts for a workflow run.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts`
+Future<ApiResult<ActionsListWorkflowRunArtifactsResponse, Never>> actionsListWorkflowRunArtifacts({required String owner, required String repo, required int runId, int? perPage, int? page, String? name, ActionsListWorkflowRunArtifactsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (name != null) queryParameters['name'] = name;
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/artifacts',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListWorkflowRunArtifactsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a workflow run attempt
+///
+/// Gets a specific workflow run attempt.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}`
+Future<ApiResult<WorkflowRun, Never>> actionsGetWorkflowRunAttempt({required String owner, required String repo, required int runId, required int attemptNumber, bool? excludePullRequests, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/attempts/${Uri.encodeComponent(attemptNumber.toString())}',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkflowRun.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List jobs for a workflow run attempt
+///
+/// Lists jobs for a specific workflow run attempt. You can use parameters to narrow the list of results. For more information
+/// about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint  with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs`
+Future<ApiResult<ActionsListJobsForWorkflowRunAttemptResponse, BasicError>> actionsListJobsForWorkflowRunAttempt({required String owner, required String repo, required int runId, required int attemptNumber, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/attempts/${Uri.encodeComponent(attemptNumber.toString())}/jobs',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListJobsForWorkflowRunAttemptResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Download workflow run attempt logs
+///
+/// Gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after
+/// 1 minute. Look for `Location:` in the response header to find the URL for the download.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs`
+Future<ApiResult<void, Never>> actionsDownloadWorkflowRunAttemptLogs({required String owner, required String repo, required int runId, required int attemptNumber, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/attempts/${Uri.encodeComponent(attemptNumber.toString())}/logs',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Cancel a workflow run
+///
+/// Cancels a workflow run using its `id`.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel`
+Future<ApiResult<EmptyObject, BasicError>> actionsCancelWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/cancel',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Review custom deployment protection rules for a workflow run
+///
+/// Approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
+/// 
+/// > [!NOTE]
+/// > GitHub Apps can only review their own custom deployment protection rules. To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule`
+Future<ApiResult<void, Never>> actionsReviewCustomGatesForRun({required String owner, required String repo, required int runId, required ActionsReviewCustomGatesForRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/deployment_protection_rule',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Force cancel a workflow run
+///
+/// Cancels a workflow run and bypasses conditions that would otherwise cause a workflow execution to continue, such as an `always()` condition on a job.
+/// You should only use this endpoint to cancel a workflow run when the workflow run is not responding to [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel`](/rest/actions/workflow-runs#cancel-a-workflow-run).
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel`
+Future<ApiResult<EmptyObject, BasicError>> actionsForceCancelWorkflowRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/force-cancel',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List jobs for a workflow run
+///
+/// Lists jobs for a workflow run. You can use parameters to narrow the list of results. For more information
+/// about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs`
+Future<ApiResult<ActionsListJobsForWorkflowRunResponse, Never>> actionsListJobsForWorkflowRun({required String owner, required String repo, required int runId, ActionsListJobsForWorkflowRunFilter? filter, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (filter != null) queryParameters['filter'] = filter.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/jobs',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListJobsForWorkflowRunResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Download workflow run logs
+///
+/// Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for
+/// `Location:` in the response header to find the URL for the download.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs`
+Future<ApiResult<void, Never>> actionsDownloadWorkflowRunLogs({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/logs',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Delete workflow run logs
+///
+/// Deletes all logs for a workflow run.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs`
+Future<ApiResult<void, BasicError>> actionsDeleteWorkflowRunLogs({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/logs',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get pending deployments for a workflow run
+///
+/// Get all deployment environments for a workflow run that are waiting for protection rules to pass.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`
+Future<ApiResult<List<PendingDeployment>, Never>> actionsGetPendingDeploymentsForRun({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/pending_deployments',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => PendingDeployment.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Review pending deployments for a workflow run
+///
+/// Approve or reject pending deployments that are waiting on approval by a required reviewer.
+/// 
+/// Required reviewers with read access to the repository contents and deployments can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`
+Future<ApiResult<List<Deployment>, Never>> actionsReviewPendingDeploymentsForRun({required String owner, required String repo, required int runId, required ActionsReviewPendingDeploymentsForRunRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/pending_deployments',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();
+  },
+);
+ } 
+/// Re-run a workflow
+///
+/// Re-runs your workflow run using its `id`.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun`
+Future<ApiResult<EmptyObject, Never>> actionsReRunWorkflow({required String owner, required String repo, required int runId, ActionsReRunWorkflowRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/rerun',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Re-run failed jobs from a workflow run
+///
+/// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs`
+Future<ApiResult<EmptyObject, Never>> actionsReRunWorkflowFailedJobs({required String owner, required String repo, required int runId, ActionsReRunWorkflowFailedJobsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/rerun-failed-jobs',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get workflow run usage
+///
+/// > [!WARNING]
+/// > This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information.
+/// 
+/// Gets the number of billable minutes and total run time for a specific workflow run. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing`
+Future<ApiResult<WorkflowRunUsage, Never>> actionsGetWorkflowRunUsage({required String owner, required String repo, required int runId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/runs/${Uri.encodeComponent(runId.toString())}/timing',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkflowRunUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List repository secrets
+///
+/// Lists all secrets available in a repository without revealing their encrypted
+/// values.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/secrets`
+Future<ApiResult<ActionsListRepoSecretsResponse, Never>> actionsListRepoSecrets({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/secrets',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListRepoSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a repository public key
+///
+/// Gets your public key, which you need to encrypt secrets. You need to
+/// encrypt a secret before you can create or update secrets.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/secrets/public-key`
+Future<ApiResult<ActionsPublicKey, Never>> actionsGetRepoPublicKey({required String owner, required String repo, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/secrets/public-key',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a repository secret
+///
+/// Gets a single repository secret without revealing its encrypted value.
+/// 
+/// The authenticated user must have collaborator access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/secrets/{secret_name}`
+Future<ApiResult<ActionsSecret, Never>> actionsGetRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create or update a repository secret
+///
+/// Creates or updates a repository secret with an encrypted value. Encrypt your secret using
+/// [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}`
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateRepoSecret({required String owner, required String repo, required String secretName, required ActionsCreateOrUpdateRepoSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a repository secret
+///
+/// Deletes a secret in a repository using the secret name.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}`
+Future<ApiResult<void, Never>> actionsDeleteRepoSecret({required String owner, required String repo, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List repository variables
+///
+/// Lists all repository variables.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/variables`
+Future<ApiResult<ActionsListRepoVariablesResponse, Never>> actionsListRepoVariables({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/variables',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListRepoVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a repository variable
+///
+/// Creates a repository variable that you can reference in a GitHub Actions workflow.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/variables`
+Future<ApiResult<EmptyObject, Never>> actionsCreateRepoVariable({required String owner, required String repo, required ActionsCreateRepoVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/variables',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a repository variable
+///
+/// Gets a specific variable in a repository.
+/// 
+/// The authenticated user must have collaborator access to the repository to use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/actions/variables/{name}`
+Future<ApiResult<ActionsVariable, Never>> actionsGetRepoVariable({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update a repository variable
+///
+/// Updates a repository variable that you can reference in a GitHub Actions workflow.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PATCH /repos/{owner}/{repo}/actions/variables/{name}`
+Future<ApiResult<void, Never>> actionsUpdateRepoVariable({required String owner, required String repo, required String name, required ActionsUpdateRepoVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Delete a repository variable
+///
+/// Deletes a repository variable using the variable name.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/actions/variables/{name}`
+Future<ApiResult<void, Never>> actionsDeleteRepoVariable({required String owner, required String repo, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List repository workflows
+///
+/// Lists the workflows in a repository.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/workflows`
+Future<ApiResult<ActionsListRepoWorkflowsResponse, Never>> actionsListRepoWorkflows({required String owner, required String repo, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListRepoWorkflowsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get a workflow
+///
+/// Gets a specific workflow. You can replace `workflow_id` with the workflow
+/// file name. For example, you could use `main.yaml`.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}`
+Future<ApiResult<Workflow, Never>> actionsGetWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Workflow.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Disable a workflow
+///
+/// Disables a workflow and sets the `state` of the workflow to `disabled_manually`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable`
+Future<ApiResult<void, Never>> actionsDisableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/disable',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Create a workflow dispatch event
+///
+/// You can use this endpoint to manually trigger a GitHub Actions workflow run. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
+/// 
+/// You must configure your GitHub Actions workflow to run when the [`workflow_dispatch` webhook](/developers/webhooks-and-events/webhook-events-and-payloads#workflow_dispatch) event occurs. The `inputs` are configured in the workflow file. For more information about how to configure the `workflow_dispatch` event in the workflow file, see "[Events that trigger workflows](/actions/reference/events-that-trigger-workflows#workflow_dispatch)."
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches`
+Future<ApiResult<WorkflowDispatchResponse, Never>> actionsCreateWorkflowDispatch({required String owner, required String repo, required dynamic workflowId, required ActionsCreateWorkflowDispatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/dispatches',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkflowDispatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Enable a workflow
+///
+/// Enables a workflow and sets the `state` of the workflow to `active`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable`
+Future<ApiResult<void, Never>> actionsEnableWorkflow({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/enable',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List workflow runs for a workflow
+///
+/// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).
+/// 
+/// Anyone with read access to the repository can use this endpoint
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+/// 
+/// This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
+///
+/// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs`
+Future<ApiResult<ActionsListWorkflowRunsResponse, Never>> actionsListWorkflowRuns({required String owner, required String repo, required dynamic workflowId, String? actor, String? branch, String? event, ActionsListWorkflowRunsStatus? status, int? perPage, int? page, DateTime? created, bool? excludePullRequests, int? checkSuiteId, String? headSha, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (actor != null) queryParameters['actor'] = actor;
+if (branch != null) queryParameters['branch'] = branch;
+if (event != null) queryParameters['event'] = event;
+if (status != null) queryParameters['status'] = status.toJson();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (created != null) queryParameters['created'] = created.toString();
+if (excludePullRequests != null) queryParameters['exclude_pull_requests'] = excludePullRequests.toString();
+if (checkSuiteId != null) queryParameters['check_suite_id'] = checkSuiteId.toString();
+if (headSha != null) queryParameters['head_sha'] = headSha;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/runs',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListWorkflowRunsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get workflow usage
+///
+/// > [!WARNING]
+/// > This endpoint is in the process of closing down. Refer to "[Actions Get workflow usage and Get workflow run usage endpoints closing down](https://github.blog/changelog/2025-02-02-actions-get-workflow-usage-and-get-workflow-run-usage-endpoints-closing-down/)" for more information.
+/// 
+/// Gets the number of billable minutes used by a specific workflow during the current billing cycle. Billable minutes only apply to workflows in private repositories that use GitHub-hosted runners. Usage is listed for each GitHub-hosted runner operating system in milliseconds. Any job re-runs are also included in the usage. The usage does not include the multiplier for macOS and Windows runners and is not rounded up to the nearest whole minute. For more information, see "[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)".
+/// 
+/// You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+///
+/// `GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing`
+Future<ApiResult<WorkflowUsage, Never>> actionsGetWorkflowUsage({required String owner, required String repo, required dynamic workflowId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/actions/workflows/${Uri.encodeComponent(workflowId.toString())}/timing',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkflowUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List environment secrets
+///
+/// Lists all secrets available in an environment without revealing their
+/// encrypted values.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/environments/{environment_name}/secrets`
+Future<ApiResult<ActionsListEnvironmentSecretsResponse, Never>> actionsListEnvironmentSecrets({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/secrets',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListEnvironmentSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an environment public key
+///
+/// Get the public key for an environment, which you need to encrypt environment
+/// secrets. You need to encrypt a secret before you can create or update secrets.
+/// 
+/// Anyone with read access to the repository can use this endpoint.
+/// 
+/// If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key`
+Future<ApiResult<ActionsPublicKey, Never>> actionsGetEnvironmentPublicKey({required String owner, required String repo, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/secrets/public-key',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsPublicKey.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an environment secret
+///
+/// Gets a single environment secret without revealing its encrypted value.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
+Future<ApiResult<ActionsSecret, Never>> actionsGetEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create or update an environment secret
+///
+/// Creates or updates an environment secret with an encrypted value. Encrypt your secret using
+/// [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
+Future<ApiResult<EmptyObject, Never>> actionsCreateOrUpdateEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, required ActionsCreateOrUpdateEnvironmentSecretRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete an environment secret
+///
+/// Deletes a secret in an environment using the secret name.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}`
+Future<ApiResult<void, Never>> actionsDeleteEnvironmentSecret({required String owner, required String repo, required String environmentName, required String secretName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/secrets/${Uri.encodeComponent(secretName)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// List environment variables
+///
+/// Lists all environment variables.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/environments/{environment_name}/variables`
+Future<ApiResult<ActionsListEnvironmentVariablesResponse, Never>> actionsListEnvironmentVariables({required String owner, required String repo, required String environmentName, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/variables',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsListEnvironmentVariablesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create an environment variable
+///
+/// Create an environment variable that you can reference in a GitHub Actions workflow.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `POST /repos/{owner}/{repo}/environments/{environment_name}/variables`
+Future<ApiResult<EmptyObject, Never>> actionsCreateEnvironmentVariable({required String owner, required String repo, required String environmentName, required ActionsCreateEnvironmentVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/variables',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return EmptyObject.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get an environment variable
+///
+/// Gets a specific variable in an environment.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}`
+Future<ApiResult<ActionsVariable, Never>> actionsGetEnvironmentVariable({required String owner, required String repo, required String environmentName, required String name, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ActionsVariable.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update an environment variable
+///
+/// Updates an environment variable that you can reference in a GitHub Actions workflow.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}`
+Future<ApiResult<void, Never>> actionsUpdateEnvironmentVariable({required String owner, required String repo, required String name, required String environmentName, required ActionsUpdateEnvironmentVariableRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Delete an environment variable
+///
+/// Deletes an environment variable using the variable name.
+/// 
+/// Authenticated users must have collaborator access to a repository to create, update, or read variables.
+/// 
+/// OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+///
+/// `DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}`
+Future<ApiResult<void, Never>> actionsDeleteEnvironmentVariable({required String owner, required String repo, required String name, required String environmentName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/repos/${Uri.encodeComponent(owner)}/${Uri.encodeComponent(repo)}/environments/${Uri.encodeComponent(environmentName)}/variables/${Uri.encodeComponent(name)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+ }

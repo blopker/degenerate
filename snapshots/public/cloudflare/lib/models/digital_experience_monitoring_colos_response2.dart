@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DigitalExperienceMonitoringColosResponse2 {const DigitalExperienceMonitoringColosResponse2({required this.airportCode, required this.city, required this.countryCode, });
+
+factory DigitalExperienceMonitoringColosResponse2.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringColosResponse2(
+  airportCode: json['airportCode'] as String,
+  city: json['city'] as String,
+  countryCode: json['countryCode'] as String,
+); }
+
+/// Airport code
+final String airportCode;
+
+/// City
+final String city;
+
+/// Country code
+final String countryCode;
+
+Map<String, dynamic> toJson() { return {
+  'airportCode': airportCode,
+  'city': city,
+  'countryCode': countryCode,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('airportCode') && json['airportCode'] is String &&
+      json.containsKey('city') && json['city'] is String &&
+      json.containsKey('countryCode') && json['countryCode'] is String; } 
+DigitalExperienceMonitoringColosResponse2 copyWith({String? airportCode, String? city, String? countryCode, }) { return DigitalExperienceMonitoringColosResponse2(
+  airportCode: airportCode ?? this.airportCode,
+  city: city ?? this.city,
+  countryCode: countryCode ?? this.countryCode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringColosResponse2 &&
+          airportCode == other.airportCode &&
+          city == other.city &&
+          countryCode == other.countryCode; } 
+@override int get hashCode { return Object.hash(airportCode, city, countryCode); } 
+@override String toString() { return 'DigitalExperienceMonitoringColosResponse2(airportCode: $airportCode, city: $city, countryCode: $countryCode)'; } 
+ }

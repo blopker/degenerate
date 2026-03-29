@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPlansRequestTransformUsageRound {const PostPlansRequestTransformUsageRound._(this.value);
+
+factory PostPlansRequestTransformUsageRound.fromJson(String json) { return switch (json) {
+  'down' => down,
+  'up' => up,
+  _ => PostPlansRequestTransformUsageRound._(json),
+}; }
+
+static const PostPlansRequestTransformUsageRound down = PostPlansRequestTransformUsageRound._('down');
+
+static const PostPlansRequestTransformUsageRound up = PostPlansRequestTransformUsageRound._('up');
+
+static const List<PostPlansRequestTransformUsageRound> values = [down, up];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPlansRequestTransformUsageRound && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPlansRequestTransformUsageRound($value)'; } 
+ }
+/// Apply a transformation to the reported usage or set quantity before computing the billed price. Cannot be combined with `tiers`.
+final class PostPlansRequestTransformUsage {const PostPlansRequestTransformUsage({required this.divideBy, required this.round, });
+
+factory PostPlansRequestTransformUsage.fromJson(Map<String, dynamic> json) { return PostPlansRequestTransformUsage(
+  divideBy: (json['divide_by'] as num).toInt(),
+  round: PostPlansRequestTransformUsageRound.fromJson(json['round'] as String),
+); }
+
+final int divideBy;
+
+final PostPlansRequestTransformUsageRound round;
+
+Map<String, dynamic> toJson() { return {
+  'divide_by': divideBy,
+  'round': round.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('divide_by') && json['divide_by'] is num &&
+      json.containsKey('round'); } 
+PostPlansRequestTransformUsage copyWith({int? divideBy, PostPlansRequestTransformUsageRound? round, }) { return PostPlansRequestTransformUsage(
+  divideBy: divideBy ?? this.divideBy,
+  round: round ?? this.round,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPlansRequestTransformUsage &&
+          divideBy == other.divideBy &&
+          round == other.round; } 
+@override int get hashCode { return Object.hash(divideBy, round); } 
+@override String toString() { return 'PostPlansRequestTransformUsage(divideBy: $divideBy, round: $round)'; } 
+ }

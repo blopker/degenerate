@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtime_conversation_item.dart';import 'realtime_conversation_item_function_call.dart';import 'realtime_conversation_item_function_call_output.dart';import 'realtime_conversation_item_message_assistant.dart';import 'realtime_conversation_item_message_system.dart';import 'realtime_conversation_item_message_user.dart';import 'realtime_mcp_approval_request.dart';import 'realtime_mcp_approval_response.dart';import 'realtime_mcp_list_tools.dart';import 'realtime_mcp_tool_call.dart';import 'realtime_response_audio.dart';import 'realtime_response_max_output_tokens.dart';import 'realtime_response_status_details.dart';import 'realtime_response_usage.dart';/// The object type, must be `realtime.response`.
+final class RealtimeResponseObject {const RealtimeResponseObject._(this.value);
+
+factory RealtimeResponseObject.fromJson(String json) { return switch (json) {
+  'realtime.response' => realtimeResponse,
+  _ => RealtimeResponseObject._(json),
+}; }
+
+static const RealtimeResponseObject realtimeResponse = RealtimeResponseObject._('realtime.response');
+
+static const List<RealtimeResponseObject> values = [realtimeResponse];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeResponseObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeResponseObject($value)'; } 
+ }
+/// The final status of the response (`completed`, `cancelled`, `failed`, or
+/// `incomplete`, `in_progress`).
+/// 
+final class RealtimeResponseStatus {const RealtimeResponseStatus._(this.value);
+
+factory RealtimeResponseStatus.fromJson(String json) { return switch (json) {
+  'completed' => completed,
+  'cancelled' => cancelled,
+  'failed' => failed,
+  'incomplete' => incomplete,
+  'in_progress' => inProgress,
+  _ => RealtimeResponseStatus._(json),
+}; }
+
+static const RealtimeResponseStatus completed = RealtimeResponseStatus._('completed');
+
+static const RealtimeResponseStatus cancelled = RealtimeResponseStatus._('cancelled');
+
+static const RealtimeResponseStatus failed = RealtimeResponseStatus._('failed');
+
+static const RealtimeResponseStatus incomplete = RealtimeResponseStatus._('incomplete');
+
+static const RealtimeResponseStatus inProgress = RealtimeResponseStatus._('in_progress');
+
+static const List<RealtimeResponseStatus> values = [completed, cancelled, failed, incomplete, inProgress];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeResponseStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeResponseStatus($value)'; } 
+ }
+final class RealtimeResponseOutputModalities {const RealtimeResponseOutputModalities._(this.value);
+
+factory RealtimeResponseOutputModalities.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'audio' => audio,
+  _ => RealtimeResponseOutputModalities._(json),
+}; }
+
+static const RealtimeResponseOutputModalities text = RealtimeResponseOutputModalities._('text');
+
+static const RealtimeResponseOutputModalities audio = RealtimeResponseOutputModalities._('audio');
+
+static const List<RealtimeResponseOutputModalities> values = [text, audio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeResponseOutputModalities && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeResponseOutputModalities($value)'; } 
+ }
+/// The response resource.
+final class RealtimeResponse {const RealtimeResponse({this.id, this.object, this.status, this.statusDetails, this.output, this.metadata, this.audio, this.usage, this.conversationId, this.outputModalities, this.maxOutputTokens, });
+
+factory RealtimeResponse.fromJson(Map<String, dynamic> json) { return RealtimeResponse(
+  id: json['id'] as String?,
+  object: json['object'] != null ? RealtimeResponseObject.fromJson(json['object'] as String) : null,
+  status: json['status'] != null ? RealtimeResponseStatus.fromJson(json['status'] as String) : null,
+  statusDetails: json['status_details'] != null ? RealtimeResponseStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
+  output: (json['output'] as List<dynamic>?)?.map((e) => OneOf9.parse(e, fromA: (v) => RealtimeConversationItemMessageSystem.fromJson(v as Map<String, dynamic>), fromB: (v) => RealtimeConversationItemMessageUser.fromJson(v as Map<String, dynamic>), fromC: (v) => RealtimeConversationItemMessageAssistant.fromJson(v as Map<String, dynamic>), fromD: (v) => RealtimeConversationItemFunctionCall.fromJson(v as Map<String, dynamic>), fromE: (v) => RealtimeConversationItemFunctionCallOutput.fromJson(v as Map<String, dynamic>), fromF: (v) => RealtimeMcpApprovalResponse.fromJson(v as Map<String, dynamic>), fromG: (v) => RealtimeMcpListTools.fromJson(v as Map<String, dynamic>), fromH: (v) => RealtimeMcpToolCall.fromJson(v as Map<String, dynamic>), fromI: (v) => RealtimeMcpApprovalRequest.fromJson(v as Map<String, dynamic>),)).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  audio: json['audio'] != null ? RealtimeResponseAudio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  usage: json['usage'] != null ? RealtimeResponseUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
+  conversationId: json['conversation_id'] as String?,
+  outputModalities: (json['output_modalities'] as List<dynamic>?)?.map((e) => RealtimeResponseOutputModalities.fromJson(e as String)).toList(),
+  maxOutputTokens: json['max_output_tokens'] != null ? OneOf2.parse(json['max_output_tokens'], fromA: (v) => (v as num).toInt(), fromB: (v) => RealtimeResponseMaxOutputTokensVariant2.fromJson(v as String),) : null,
+); }
+
+/// The unique ID of the response, will look like `resp_1234`.
+final String? id;
+
+/// The object type, must be `realtime.response`.
+final RealtimeResponseObject? object;
+
+/// The final status of the response (`completed`, `cancelled`, `failed`, or
+/// `incomplete`, `in_progress`).
+/// 
+final RealtimeResponseStatus? status;
+
+/// Additional details about the status.
+final RealtimeResponseStatusDetails? statusDetails;
+
+/// The list of output items generated by the response.
+final List<RealtimeConversationItem>? output;
+
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard.
+/// 
+/// Keys are strings with a maximum length of 64 characters. Values are strings
+/// with a maximum length of 512 characters.
+/// 
+final Map<String,String>? metadata;
+
+/// Configuration for audio output.
+final RealtimeResponseAudio? audio;
+
+/// Usage statistics for the Response, this will correspond to billing. A
+/// Realtime API session will maintain a conversation context and append new
+/// Items to the Conversation, thus output from previous turns (text and
+/// audio tokens) will become the input for later turns.
+/// 
+final RealtimeResponseUsage? usage;
+
+/// Which conversation the response is added to, determined by the `conversation`
+/// field in the `response.create` event. If `auto`, the response will be added to
+/// the default conversation and the value of `conversation_id` will be an id like
+/// `conv_1234`. If `none`, the response will not be added to any conversation and
+/// the value of `conversation_id` will be `null`. If responses are being triggered
+/// automatically by VAD the response will be added to the default conversation
+/// 
+final String? conversationId;
+
+/// The set of modalities the model used to respond, currently the only possible values are
+/// `[\"audio\"]`, `[\"text\"]`. Audio output always include a text transcript. Setting the
+/// output to mode `text` will disable audio output from the model.
+/// 
+final List<RealtimeResponseOutputModalities>? outputModalities;
+
+/// Maximum number of output tokens for a single assistant response,
+/// inclusive of tool calls, that was used in this response.
+/// 
+final RealtimeResponseMaxOutputTokens? maxOutputTokens;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  if (object != null) 'object': object?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (statusDetails != null) 'status_details': statusDetails?.toJson(),
+  if (output != null) 'output': output?.map((e) => e.toJson()).toList(),
+  'metadata': ?metadata,
+  if (audio != null) 'audio': audio?.toJson(),
+  if (usage != null) 'usage': usage?.toJson(),
+  'conversation_id': ?conversationId,
+  if (outputModalities != null) 'output_modalities': outputModalities?.map((e) => e.toJson()).toList(),
+  if (maxOutputTokens != null) 'max_output_tokens': maxOutputTokens?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimeResponse copyWith({String Function()? id, RealtimeResponseObject Function()? object, RealtimeResponseStatus Function()? status, RealtimeResponseStatusDetails Function()? statusDetails, List<RealtimeConversationItem> Function()? output, Map<String, String>? Function()? metadata, RealtimeResponseAudio Function()? audio, RealtimeResponseUsage Function()? usage, String Function()? conversationId, List<RealtimeResponseOutputModalities> Function()? outputModalities, RealtimeResponseMaxOutputTokens Function()? maxOutputTokens, }) { return RealtimeResponse(
+  id: id != null ? id() : this.id,
+  object: object != null ? object() : this.object,
+  status: status != null ? status() : this.status,
+  statusDetails: statusDetails != null ? statusDetails() : this.statusDetails,
+  output: output != null ? output() : this.output,
+  metadata: metadata != null ? metadata() : this.metadata,
+  audio: audio != null ? audio() : this.audio,
+  usage: usage != null ? usage() : this.usage,
+  conversationId: conversationId != null ? conversationId() : this.conversationId,
+  outputModalities: outputModalities != null ? outputModalities() : this.outputModalities,
+  maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeResponse &&
+          id == other.id &&
+          object == other.object &&
+          status == other.status &&
+          statusDetails == other.statusDetails &&
+          listEquals(output, other.output) &&
+          metadata == other.metadata &&
+          audio == other.audio &&
+          usage == other.usage &&
+          conversationId == other.conversationId &&
+          listEquals(outputModalities, other.outputModalities) &&
+          maxOutputTokens == other.maxOutputTokens; } 
+@override int get hashCode { return Object.hash(id, object, status, statusDetails, Object.hashAll(output ?? const []), metadata, audio, usage, conversationId, Object.hashAll(outputModalities ?? const []), maxOutputTokens); } 
+@override String toString() { return 'RealtimeResponse(id: $id, object: $object, status: $status, statusDetails: $statusDetails, output: $output, metadata: $metadata, audio: $audio, usage: $usage, conversationId: $conversationId, outputModalities: $outputModalities, maxOutputTokens: $maxOutputTokens)'; } 
+ }

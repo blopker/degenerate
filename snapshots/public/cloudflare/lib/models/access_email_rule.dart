@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_email_rule_email.dart';/// Matches a specific email.
+final class AccessEmailRule {const AccessEmailRule({required this.email});
+
+factory AccessEmailRule.fromJson(Map<String, dynamic> json) { return AccessEmailRule(
+  email: AccessEmailRuleEmail.fromJson(json['email'] as Map<String, dynamic>),
+); }
+
+final AccessEmailRuleEmail email;
+
+Map<String, dynamic> toJson() { return {
+  'email': email.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('email'); } 
+AccessEmailRule copyWith({AccessEmailRuleEmail? email}) { return AccessEmailRule(
+  email: email ?? this.email,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessEmailRule &&
+          email == other.email; } 
+@override int get hashCode { return email.hashCode; } 
+@override String toString() { return 'AccessEmailRule(email: $email)'; } 
+ }

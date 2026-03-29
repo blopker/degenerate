@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The public key used for setting user Codespaces' Secrets.
+final class CodespacesUserPublicKey {const CodespacesUserPublicKey({required this.keyId, required this.key, });
+
+factory CodespacesUserPublicKey.fromJson(Map<String, dynamic> json) { return CodespacesUserPublicKey(
+  keyId: json['key_id'] as String,
+  key: json['key'] as String,
+); }
+
+/// The identifier for the key.
+final String keyId;
+
+/// The Base64 encoded public key.
+final String key;
+
+Map<String, dynamic> toJson() { return {
+  'key_id': keyId,
+  'key': key,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_id') && json['key_id'] is String &&
+      json.containsKey('key') && json['key'] is String; } 
+CodespacesUserPublicKey copyWith({String? keyId, String? key, }) { return CodespacesUserPublicKey(
+  keyId: keyId ?? this.keyId,
+  key: key ?? this.key,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodespacesUserPublicKey &&
+          keyId == other.keyId &&
+          key == other.key; } 
+@override int get hashCode { return Object.hash(keyId, key); } 
+@override String toString() { return 'CodespacesUserPublicKey(keyId: $keyId, key: $key)'; } 
+ }

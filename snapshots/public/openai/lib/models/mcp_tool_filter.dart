@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// A filter object to specify which tools are allowed.
+/// 
+final class McpToolFilter {const McpToolFilter({this.toolNames, this.readOnly, });
+
+factory McpToolFilter.fromJson(Map<String, dynamic> json) { return McpToolFilter(
+  toolNames: (json['tool_names'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  readOnly: json['read_only'] as bool?,
+); }
+
+/// List of allowed tool names.
+final List<String>? toolNames;
+
+/// Indicates whether or not a tool modifies data or is read-only. If an
+/// MCP server is [annotated with `readOnlyHint`](https://modelcontextprotocol.io/specification/2025-06-18/schema#toolannotations-readonlyhint),
+/// it will match this filter.
+/// 
+final bool? readOnly;
+
+Map<String, dynamic> toJson() { return {
+  'tool_names': ?toolNames,
+  'read_only': ?readOnly,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+McpToolFilter copyWith({List<String> Function()? toolNames, bool Function()? readOnly, }) { return McpToolFilter(
+  toolNames: toolNames != null ? toolNames() : this.toolNames,
+  readOnly: readOnly != null ? readOnly() : this.readOnly,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McpToolFilter &&
+          listEquals(toolNames, other.toolNames) &&
+          readOnly == other.readOnly; } 
+@override int get hashCode { return Object.hash(Object.hashAll(toolNames ?? const []), readOnly); } 
+@override String toString() { return 'McpToolFilter(toolNames: $toolNames, readOnly: $readOnly)'; } 
+ }

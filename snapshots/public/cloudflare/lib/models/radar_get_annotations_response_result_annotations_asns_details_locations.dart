@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations {const RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations({required this.code, required this.name, });
+
+factory RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations.fromJson(Map<String, dynamic> json) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations(
+  code: json['code'] as String,
+  name: json['name'] as String,
+); }
+
+final String code;
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations copyWith({String? code, String? name, }) { return RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations(
+  code: code ?? this.code,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations &&
+          code == other.code &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(code, name); } 
+@override String toString() { return 'RadarGetAnnotationsResponseResultAnnotationsAsnsDetailsLocations(code: $code, name: $name)'; } 
+ }

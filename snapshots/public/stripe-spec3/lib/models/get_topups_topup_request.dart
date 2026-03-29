@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTopupsTopupRequest {const GetTopupsTopupRequest();
+
+factory GetTopupsTopupRequest.fromJson(Map<String, dynamic> json) { return GetTopupsTopupRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetTopupsTopupRequest copyWith() { return GetTopupsTopupRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetTopupsTopupRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetTopupsTopupRequest()'; } 
+ }

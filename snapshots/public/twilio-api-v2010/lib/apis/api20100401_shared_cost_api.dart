@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/list_available_phone_number_shared_cost_response.dart';/// Api20100401SharedCostApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401SharedCostApi with ApiExecutor {const Api20100401SharedCostApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// 
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}/SharedCost.json`
+Future<ApiResult<ListAvailablePhoneNumberSharedCostResponse, Never>> listAvailablePhoneNumberSharedCost({required String accountSid, required String countryCode, int? areaCode, String? contains, bool? smsEnabled, bool? mmsEnabled, bool? voiceEnabled, bool? excludeAllAddressRequired, bool? excludeLocalAddressRequired, bool? excludeForeignAddressRequired, bool? beta, String? nearNumber, String? nearLatLong, int? distance, String? inPostalCode, String? inRegion, String? inRateCenter, String? inLata, String? inLocality, bool? faxEnabled, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (areaCode != null) queryParameters['AreaCode'] = areaCode.toString();
+if (contains != null) queryParameters['Contains'] = contains;
+if (smsEnabled != null) queryParameters['SmsEnabled'] = smsEnabled.toString();
+if (mmsEnabled != null) queryParameters['MmsEnabled'] = mmsEnabled.toString();
+if (voiceEnabled != null) queryParameters['VoiceEnabled'] = voiceEnabled.toString();
+if (excludeAllAddressRequired != null) queryParameters['ExcludeAllAddressRequired'] = excludeAllAddressRequired.toString();
+if (excludeLocalAddressRequired != null) queryParameters['ExcludeLocalAddressRequired'] = excludeLocalAddressRequired.toString();
+if (excludeForeignAddressRequired != null) queryParameters['ExcludeForeignAddressRequired'] = excludeForeignAddressRequired.toString();
+if (beta != null) queryParameters['Beta'] = beta.toString();
+if (nearNumber != null) queryParameters['NearNumber'] = nearNumber;
+if (nearLatLong != null) queryParameters['NearLatLong'] = nearLatLong;
+if (distance != null) queryParameters['Distance'] = distance.toString();
+if (inPostalCode != null) queryParameters['InPostalCode'] = inPostalCode;
+if (inRegion != null) queryParameters['InRegion'] = inRegion;
+if (inRateCenter != null) queryParameters['InRateCenter'] = inRateCenter;
+if (inLata != null) queryParameters['InLata'] = inLata;
+if (inLocality != null) queryParameters['InLocality'] = inLocality;
+if (faxEnabled != null) queryParameters['FaxEnabled'] = faxEnabled.toString();
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode)}/SharedCost.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListAvailablePhoneNumberSharedCostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

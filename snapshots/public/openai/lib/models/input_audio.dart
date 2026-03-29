@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'input_audio_input_audio.dart';/// The type of the input item. Always `input_audio`.
+/// 
+final class InputAudioType {const InputAudioType._(this.value);
+
+factory InputAudioType.fromJson(String json) { return switch (json) {
+  'input_audio' => inputAudio,
+  _ => InputAudioType._(json),
+}; }
+
+static const InputAudioType inputAudio = InputAudioType._('input_audio');
+
+static const List<InputAudioType> values = [inputAudio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InputAudioType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InputAudioType($value)'; } 
+ }
+/// An audio input to the model.
+/// 
+final class InputAudio {const InputAudio({required this.type, required this.inputAudio, });
+
+factory InputAudio.fromJson(Map<String, dynamic> json) { return InputAudio(
+  type: InputAudioType.fromJson(json['type'] as String),
+  inputAudio: InputAudioInputAudio.fromJson(json['input_audio'] as Map<String, dynamic>),
+); }
+
+/// The type of the input item. Always `input_audio`.
+/// 
+final InputAudioType type;
+
+final InputAudioInputAudio inputAudio;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'input_audio': inputAudio.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('input_audio'); } 
+InputAudio copyWith({InputAudioType? type, InputAudioInputAudio? inputAudio, }) { return InputAudio(
+  type: type ?? this.type,
+  inputAudio: inputAudio ?? this.inputAudio,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InputAudio &&
+          type == other.type &&
+          inputAudio == other.inputAudio; } 
+@override int get hashCode { return Object.hash(type, inputAudio); } 
+@override String toString() { return 'InputAudio(type: $type, inputAudio: $inputAudio)'; } 
+ }

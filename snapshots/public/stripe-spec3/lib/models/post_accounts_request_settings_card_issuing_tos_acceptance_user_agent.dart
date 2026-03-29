@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 {const PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2._(this.value);
+
+factory PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2._(json),
+}; }
+
+static const PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 $empty = PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2._('');
+
+static const List<PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2($value)'; } 
+ }
+typedef PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgent = OneOf2<String,PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2>;

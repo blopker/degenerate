@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope {const UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope();
+
+factory UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope copyWith() { return UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'UsersListAttestationsBulkResponseAttestationsSubjectDigestsValueBundleDsseEnvelope()'; } 
+ }

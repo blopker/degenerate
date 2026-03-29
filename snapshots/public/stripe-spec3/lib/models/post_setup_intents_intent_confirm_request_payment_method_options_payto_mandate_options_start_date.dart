@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2 {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2._(this.value);
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2._(json),
+}; }
+
+static const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2 $empty = PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2._('');
+
+static const List<PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2($value)'; } 
+ }
+typedef PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDate = OneOf2<String,PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsPaytoMandateOptionsStartDateVariant2>;

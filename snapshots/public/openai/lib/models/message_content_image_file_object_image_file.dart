@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
+final class MessageContentImageFileObjectImageFileDetail {const MessageContentImageFileObjectImageFileDetail._(this.value);
+
+factory MessageContentImageFileObjectImageFileDetail.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'low' => low,
+  'high' => high,
+  _ => MessageContentImageFileObjectImageFileDetail._(json),
+}; }
+
+static const MessageContentImageFileObjectImageFileDetail auto = MessageContentImageFileObjectImageFileDetail._('auto');
+
+static const MessageContentImageFileObjectImageFileDetail low = MessageContentImageFileObjectImageFileDetail._('low');
+
+static const MessageContentImageFileObjectImageFileDetail high = MessageContentImageFileObjectImageFileDetail._('high');
+
+static const List<MessageContentImageFileObjectImageFileDetail> values = [auto, low, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageContentImageFileObjectImageFileDetail && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageContentImageFileObjectImageFileDetail($value)'; } 
+ }
+final class MessageContentImageFileObjectImageFile {const MessageContentImageFileObjectImageFile({required this.fileId, this.detail = MessageContentImageFileObjectImageFileDetail.auto, });
+
+factory MessageContentImageFileObjectImageFile.fromJson(Map<String, dynamic> json) { return MessageContentImageFileObjectImageFile(
+  fileId: json['file_id'] as String,
+  detail: json.containsKey('detail') ? MessageContentImageFileObjectImageFileDetail.fromJson(json['detail'] as String) : MessageContentImageFileObjectImageFileDetail.auto,
+); }
+
+/// The [File](/docs/api-reference/files) ID of the image in the message content. Set `purpose="vision"` when uploading the File if you need to later display the file content.
+final String fileId;
+
+/// Specifies the detail level of the image if specified by the user. `low` uses fewer tokens, you can opt in to high resolution using `high`.
+final MessageContentImageFileObjectImageFileDetail detail;
+
+Map<String, dynamic> toJson() { return {
+  'file_id': fileId,
+  'detail': detail.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_id') && json['file_id'] is String; } 
+MessageContentImageFileObjectImageFile copyWith({String? fileId, MessageContentImageFileObjectImageFileDetail Function()? detail, }) { return MessageContentImageFileObjectImageFile(
+  fileId: fileId ?? this.fileId,
+  detail: detail != null ? detail() : this.detail,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MessageContentImageFileObjectImageFile &&
+          fileId == other.fileId &&
+          detail == other.detail; } 
+@override int get hashCode { return Object.hash(fileId, detail); } 
+@override String toString() { return 'MessageContentImageFileObjectImageFile(fileId: $fileId, detail: $detail)'; } 
+ }

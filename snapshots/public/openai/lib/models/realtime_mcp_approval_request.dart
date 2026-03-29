@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the item. Always `mcp_approval_request`.
+final class RealtimeMcpApprovalRequestType {const RealtimeMcpApprovalRequestType._(this.value);
+
+factory RealtimeMcpApprovalRequestType.fromJson(String json) { return switch (json) {
+  'mcp_approval_request' => mcpApprovalRequest,
+  _ => RealtimeMcpApprovalRequestType._(json),
+}; }
+
+static const RealtimeMcpApprovalRequestType mcpApprovalRequest = RealtimeMcpApprovalRequestType._('mcp_approval_request');
+
+static const List<RealtimeMcpApprovalRequestType> values = [mcpApprovalRequest];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeMcpApprovalRequestType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeMcpApprovalRequestType($value)'; } 
+ }
+/// A Realtime item requesting human approval of a tool invocation.
+/// 
+final class RealtimeMcpApprovalRequest {const RealtimeMcpApprovalRequest({required this.type, required this.id, required this.serverLabel, required this.name, required this.arguments, });
+
+factory RealtimeMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return RealtimeMcpApprovalRequest(
+  type: RealtimeMcpApprovalRequestType.fromJson(json['type'] as String),
+  id: json['id'] as String,
+  serverLabel: json['server_label'] as String,
+  name: json['name'] as String,
+  arguments: json['arguments'] as String,
+); }
+
+/// The type of the item. Always `mcp_approval_request`.
+final RealtimeMcpApprovalRequestType type;
+
+/// The unique ID of the approval request.
+final String id;
+
+/// The label of the MCP server making the request.
+final String serverLabel;
+
+/// The name of the tool to run.
+final String name;
+
+/// A JSON string of arguments for the tool.
+final String arguments;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'id': id,
+  'server_label': serverLabel,
+  'name': name,
+  'arguments': arguments,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('server_label') && json['server_label'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('arguments') && json['arguments'] is String; } 
+RealtimeMcpApprovalRequest copyWith({RealtimeMcpApprovalRequestType? type, String? id, String? serverLabel, String? name, String? arguments, }) { return RealtimeMcpApprovalRequest(
+  type: type ?? this.type,
+  id: id ?? this.id,
+  serverLabel: serverLabel ?? this.serverLabel,
+  name: name ?? this.name,
+  arguments: arguments ?? this.arguments,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeMcpApprovalRequest &&
+          type == other.type &&
+          id == other.id &&
+          serverLabel == other.serverLabel &&
+          name == other.name &&
+          arguments == other.arguments; } 
+@override int get hashCode { return Object.hash(type, id, serverLabel, name, arguments); } 
+@override String toString() { return 'RealtimeMcpApprovalRequest(type: $type, id: $id, serverLabel: $serverLabel, name: $name, arguments: $arguments)'; } 
+ }

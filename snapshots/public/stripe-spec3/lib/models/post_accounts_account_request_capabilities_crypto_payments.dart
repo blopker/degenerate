@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsAccountRequestCapabilitiesCryptoPayments {const PostAccountsAccountRequestCapabilitiesCryptoPayments({this.requested});
+
+factory PostAccountsAccountRequestCapabilitiesCryptoPayments.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestCapabilitiesCryptoPayments(
+  requested: json['requested'] as bool?,
+); }
+
+final bool? requested;
+
+Map<String, dynamic> toJson() { return {
+  'requested': ?requested,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountRequestCapabilitiesCryptoPayments copyWith({bool Function()? requested}) { return PostAccountsAccountRequestCapabilitiesCryptoPayments(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountRequestCapabilitiesCryptoPayments &&
+          requested == other.requested; } 
+@override int get hashCode { return requested.hashCode; } 
+@override String toString() { return 'PostAccountsAccountRequestCapabilitiesCryptoPayments(requested: $requested)'; } 
+ }

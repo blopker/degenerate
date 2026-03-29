@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The translucency of the image. A value of `0.0` makes the image completely transparent, and `1.0` makes the image completely opaque. Note that if the image is already semi-transparent, setting this to `1.0` will not make the image completely opaque.
+extension type const StreamOpacity(double value) {
+factory StreamOpacity.fromJson(num json) => StreamOpacity(json.toDouble());
+
+num toJson() => value;
+
+}

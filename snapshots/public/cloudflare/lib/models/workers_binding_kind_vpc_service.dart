@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_binding_name.dart';final class WorkersBindingKindVpcService {const WorkersBindingKindVpcService({required this.name, required this.serviceId, required this.type, });
+
+factory WorkersBindingKindVpcService.fromJson(Map<String, dynamic> json) { return WorkersBindingKindVpcService(
+  name: WorkersBindingName.fromJson(json['name'] as String),
+  serviceId: json['service_id'] as String,
+  type: json['type'] as String,
+); }
+
+final WorkersBindingName name;
+
+/// Identifier of the VPC service to bind to.
+final String serviceId;
+
+/// The kind of resource that the binding provides.
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'name': name.toJson(),
+  'service_id': serviceId,
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+      json.containsKey('service_id') && json['service_id'] is String &&
+      json.containsKey('type') && json['type'] is String; } 
+WorkersBindingKindVpcService copyWith({WorkersBindingName? name, String? serviceId, String? type, }) { return WorkersBindingKindVpcService(
+  name: name ?? this.name,
+  serviceId: serviceId ?? this.serviceId,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersBindingKindVpcService &&
+          name == other.name &&
+          serviceId == other.serviceId &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(name, serviceId, type); } 
+@override String toString() { return 'WorkersBindingKindVpcService(name: $name, serviceId: $serviceId, type: $type)'; } 
+ }

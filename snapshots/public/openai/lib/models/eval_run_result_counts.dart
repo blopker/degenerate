@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Counters summarizing the outcomes of the evaluation run.
+final class EvalRunResultCounts {const EvalRunResultCounts({required this.total, required this.errored, required this.failed, required this.passed, });
+
+factory EvalRunResultCounts.fromJson(Map<String, dynamic> json) { return EvalRunResultCounts(
+  total: (json['total'] as num).toInt(),
+  errored: (json['errored'] as num).toInt(),
+  failed: (json['failed'] as num).toInt(),
+  passed: (json['passed'] as num).toInt(),
+); }
+
+/// Total number of executed output items.
+final int total;
+
+/// Number of output items that resulted in an error.
+final int errored;
+
+/// Number of output items that failed to pass the evaluation.
+final int failed;
+
+/// Number of output items that passed the evaluation.
+final int passed;
+
+Map<String, dynamic> toJson() { return {
+  'total': total,
+  'errored': errored,
+  'failed': failed,
+  'passed': passed,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total') && json['total'] is num &&
+      json.containsKey('errored') && json['errored'] is num &&
+      json.containsKey('failed') && json['failed'] is num &&
+      json.containsKey('passed') && json['passed'] is num; } 
+EvalRunResultCounts copyWith({int? total, int? errored, int? failed, int? passed, }) { return EvalRunResultCounts(
+  total: total ?? this.total,
+  errored: errored ?? this.errored,
+  failed: failed ?? this.failed,
+  passed: passed ?? this.passed,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EvalRunResultCounts &&
+          total == other.total &&
+          errored == other.errored &&
+          failed == other.failed &&
+          passed == other.passed; } 
+@override int get hashCode { return Object.hash(total, errored, failed, passed); } 
+@override String toString() { return 'EvalRunResultCounts(total: $total, errored: $errored, failed: $failed, passed: $passed)'; } 
+ }

@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'firewall_components_ua_rule_id.dart';import 'firewall_schemas_configuration.dart';import 'firewall_schemas_paused.dart';/// The action to apply to a matched request.
+extension type FirewallComponentsSchemasMode(dynamic value) {
+factory FirewallComponentsSchemasMode.fromJson(dynamic json) => FirewallComponentsSchemasMode(json);
+
+dynamic toJson() => value;
+
+}
+/// An informative summary of the rule.
+extension type const FirewallFirewalluablockComponentsSchemasDescription(String value) {
+factory FirewallFirewalluablockComponentsSchemasDescription.fromJson(String json) => FirewallFirewalluablockComponentsSchemasDescription(json);
+
+String toJson() => value;
+
+}
+final class FirewallFirewalluablock {const FirewallFirewalluablock({this.configuration, this.description, this.id, this.mode, this.paused, });
+
+factory FirewallFirewalluablock.fromJson(Map<String, dynamic> json) { return FirewallFirewalluablock(
+  configuration: json['configuration'] != null ? FirewallSchemasConfiguration.fromJson(json['configuration'] as Map<String, dynamic>) : null,
+  description: json['description'] != null ? FirewallFirewalluablockComponentsSchemasDescription.fromJson(json['description'] as String) : null,
+  id: json['id'] != null ? FirewallComponentsUaRuleId.fromJson(json['id'] as String) : null,
+  mode: json['mode'] != null ? FirewallComponentsSchemasMode.fromJson(json['mode'] as dynamic) : null,
+  paused: json['paused'] != null ? FirewallSchemasPaused.fromJson(json['paused'] as bool) : null,
+); }
+
+final FirewallSchemasConfiguration? configuration;
+
+final FirewallFirewalluablockComponentsSchemasDescription? description;
+
+/// The unique identifier of the User Agent Blocking rule.
+final FirewallComponentsUaRuleId? id;
+
+/// The action to apply to a matched request.
+final FirewallComponentsSchemasMode? mode;
+
+final FirewallSchemasPaused? paused;
+
+Map<String, dynamic> toJson() { return {
+  if (configuration != null) 'configuration': configuration?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (mode != null) 'mode': mode?.toJson(),
+  if (paused != null) 'paused': paused?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FirewallFirewalluablock copyWith({FirewallSchemasConfiguration Function()? configuration, FirewallFirewalluablockComponentsSchemasDescription Function()? description, FirewallComponentsUaRuleId Function()? id, FirewallComponentsSchemasMode? Function()? mode, FirewallSchemasPaused Function()? paused, }) { return FirewallFirewalluablock(
+  configuration: configuration != null ? configuration() : this.configuration,
+  description: description != null ? description() : this.description,
+  id: id != null ? id() : this.id,
+  mode: mode != null ? mode() : this.mode,
+  paused: paused != null ? paused() : this.paused,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FirewallFirewalluablock &&
+          configuration == other.configuration &&
+          description == other.description &&
+          id == other.id &&
+          mode == other.mode &&
+          paused == other.paused; } 
+@override int get hashCode { return Object.hash(configuration, description, id, mode, paused); } 
+@override String toString() { return 'FirewallFirewalluablock(configuration: $configuration, description: $description, id: $id, mode: $mode, paused: $paused)'; } 
+ }

@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'invoices_payments_invoice_payment_associated_payment_charge.dart';import 'invoices_payments_invoice_payment_associated_payment_payment_intent.dart';import 'invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'payment_intent.dart';import 'payment_record.dart';/// Type of payment object associated with this invoice payment.
+final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(this.value);
+
+factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) { return switch (json) {
+  'charge' => charge,
+  'payment_intent' => paymentIntent,
+  'payment_record' => paymentRecord,
+  _ => InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(json),
+}; }
+
+static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType charge = InvoicesPaymentsInvoicePaymentAssociatedPaymentType._('charge');
+
+static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentIntent = InvoicesPaymentsInvoicePaymentAssociatedPaymentType._('payment_intent');
+
+static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentRecord = InvoicesPaymentsInvoicePaymentAssociatedPaymentType._('payment_record');
+
+static const List<InvoicesPaymentsInvoicePaymentAssociatedPaymentType> values = [charge, paymentIntent, paymentRecord];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)'; } 
+ }
+/// 
+final class InvoicesPaymentsInvoicePaymentAssociatedPayment {const InvoicesPaymentsInvoicePaymentAssociatedPayment({this.charge, this.paymentIntent, this.paymentRecord, required this.type, });
+
+factory InvoicesPaymentsInvoicePaymentAssociatedPayment.fromJson(Map<String, dynamic> json) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
+  charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentRecord: json['payment_record'] != null ? OneOf2.parse(json['payment_record'], fromA: (v) => v as String, fromB: (v) => PaymentRecord.fromJson(v as Map<String, dynamic>),) : null,
+  type: InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(json['type'] as String),
+); }
+
+/// ID of the successful charge for this payment when `type` is `charge`.Note: charge is only surfaced if the charge object is not associated with a payment intent. If the charge object does have a payment intent, the Invoice Payment surfaces the payment intent instead.
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge? charge;
+
+/// ID of the PaymentIntent associated with this payment when `type` is `payment_intent`. Note: This property is only populated for invoices finalized on or after March 15th, 2019.
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent? paymentIntent;
+
+/// ID of the PaymentRecord associated with this payment when `type` is `payment_record`.
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord? paymentRecord;
+
+/// Type of payment object associated with this invoice payment.
+final InvoicesPaymentsInvoicePaymentAssociatedPaymentType type;
+
+Map<String, dynamic> toJson() { return {
+  if (charge != null) 'charge': charge?.toJson(),
+  if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
+  if (paymentRecord != null) 'payment_record': paymentRecord?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+InvoicesPaymentsInvoicePaymentAssociatedPayment copyWith({InvoicesPaymentsInvoicePaymentAssociatedPaymentCharge Function()? charge, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentIntent Function()? paymentIntent, InvoicesPaymentsInvoicePaymentAssociatedPaymentPaymentRecord Function()? paymentRecord, InvoicesPaymentsInvoicePaymentAssociatedPaymentType? type, }) { return InvoicesPaymentsInvoicePaymentAssociatedPayment(
+  charge: charge != null ? charge() : this.charge,
+  paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
+  paymentRecord: paymentRecord != null ? paymentRecord() : this.paymentRecord,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoicesPaymentsInvoicePaymentAssociatedPayment &&
+          charge == other.charge &&
+          paymentIntent == other.paymentIntent &&
+          paymentRecord == other.paymentRecord &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(charge, paymentIntent, paymentRecord, type); } 
+@override String toString() { return 'InvoicesPaymentsInvoicePaymentAssociatedPayment(charge: $charge, paymentIntent: $paymentIntent, paymentRecord: $paymentRecord, type: $type)'; } 
+ }

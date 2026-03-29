@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'treasury_outbound_payments_resource_ach_tracking_details.dart';import 'treasury_outbound_payments_resource_us_domestic_wire_tracking_details.dart';/// The US bank account network used to send funds.
+final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._(this.value);
+
+factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType.fromJson(String json) { return switch (json) {
+  'ach' => ach,
+  'us_domestic_wire' => usDomesticWire,
+  _ => TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._(json),
+}; }
+
+static const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType ach = TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._('ach');
+
+static const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType usDomesticWire = TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType._('us_domestic_wire');
+
+static const List<TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType> values = [ach, usDomesticWire];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType($value)'; } 
+ }
+/// 
+final class TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails {const TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails({this.ach, required this.type, this.usDomesticWire, });
+
+factory TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
+  ach: json['ach'] != null ? TreasuryOutboundPaymentsResourceAchTrackingDetails.fromJson(json['ach'] as Map<String, dynamic>) : null,
+  type: TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType.fromJson(json['type'] as String),
+  usDomesticWire: json['us_domestic_wire'] != null ? TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
+); }
+
+final TreasuryOutboundPaymentsResourceAchTrackingDetails? ach;
+
+/// The US bank account network used to send funds.
+final TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType type;
+
+final TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails? usDomesticWire;
+
+Map<String, dynamic> toJson() { return {
+  if (ach != null) 'ach': ach?.toJson(),
+  'type': type.toJson(),
+  if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails copyWith({TreasuryOutboundPaymentsResourceAchTrackingDetails Function()? ach, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetailsType? type, TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails Function()? usDomesticWire, }) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(
+  ach: ach != null ? ach() : this.ach,
+  type: type ?? this.type,
+  usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails &&
+          ach == other.ach &&
+          type == other.type &&
+          usDomesticWire == other.usDomesticWire; } 
+@override int get hashCode { return Object.hash(ach, type, usDomesticWire); } 
+@override String toString() { return 'TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails(ach: $ach, type: $type, usDomesticWire: $usDomesticWire)'; } 
+ }

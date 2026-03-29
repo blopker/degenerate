@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookIssuesEditedChangesBody {const WebhookIssuesEditedChangesBody({required this.from});
+
+factory WebhookIssuesEditedChangesBody.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedChangesBody(
+  from: json['from'] as String,
+); }
+
+/// The previous version of the body.
+final String from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+WebhookIssuesEditedChangesBody copyWith({String? from}) { return WebhookIssuesEditedChangesBody(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssuesEditedChangesBody &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookIssuesEditedChangesBody(from: $from)'; } 
+ }

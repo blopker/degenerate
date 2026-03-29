@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_passthrough_card.dart';/// funding type of the underlying payment method.
+final class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
+
+factory AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) { return switch (json) {
+  'card' => card,
+  _ => AmazonPayUnderlyingPaymentMethodFundingDetailsType._(json),
+}; }
+
+static const AmazonPayUnderlyingPaymentMethodFundingDetailsType card = AmazonPayUnderlyingPaymentMethodFundingDetailsType._('card');
+
+static const List<AmazonPayUnderlyingPaymentMethodFundingDetailsType> values = [card];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AmazonPayUnderlyingPaymentMethodFundingDetailsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AmazonPayUnderlyingPaymentMethodFundingDetailsType($value)'; } 
+ }
+/// 
+final class AmazonPayUnderlyingPaymentMethodFundingDetails {const AmazonPayUnderlyingPaymentMethodFundingDetails({this.card, this.type, });
+
+factory AmazonPayUnderlyingPaymentMethodFundingDetails.fromJson(Map<String, dynamic> json) { return AmazonPayUnderlyingPaymentMethodFundingDetails(
+  card: json['card'] != null ? PaymentMethodDetailsPassthroughCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  type: json['type'] != null ? AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(json['type'] as String) : null,
+); }
+
+final PaymentMethodDetailsPassthroughCard? card;
+
+/// funding type of the underlying payment method.
+final AmazonPayUnderlyingPaymentMethodFundingDetailsType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (card != null) 'card': card?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AmazonPayUnderlyingPaymentMethodFundingDetails copyWith({PaymentMethodDetailsPassthroughCard Function()? card, AmazonPayUnderlyingPaymentMethodFundingDetailsType? Function()? type, }) { return AmazonPayUnderlyingPaymentMethodFundingDetails(
+  card: card != null ? card() : this.card,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AmazonPayUnderlyingPaymentMethodFundingDetails &&
+          card == other.card &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(card, type); } 
+@override String toString() { return 'AmazonPayUnderlyingPaymentMethodFundingDetails(card: $card, type: $type)'; } 
+ }

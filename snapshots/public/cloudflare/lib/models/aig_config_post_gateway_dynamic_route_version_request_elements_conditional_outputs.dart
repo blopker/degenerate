@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_post_gateway_dynamic_route_version_request_elements_conditional_outputs_false.dart';import 'aig_config_post_gateway_dynamic_route_version_request_elements_conditional_outputs_true.dart';final class AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs {const AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs({required this.$false, required this.$true, });
+
+factory AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs(
+  $false: AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputsFalse.fromJson(json['false'] as Map<String, dynamic>),
+  $true: AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputsTrue.fromJson(json['true'] as Map<String, dynamic>),
+); }
+
+final AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputsFalse $false;
+
+final AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputsTrue $true;
+
+Map<String, dynamic> toJson() { return {
+  'false': $false.toJson(),
+  'true': $true.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('false') &&
+      json.containsKey('true'); } 
+AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs copyWith({AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputsFalse? $false, AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputsTrue? $true, }) { return AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs(
+  $false: $false ?? this.$false,
+  $true: $true ?? this.$true,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs &&
+          $false == other.$false &&
+          $true == other.$true; } 
+@override int get hashCode { return Object.hash($false, $true); } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionRequestElementsConditionalOutputs(\$false: ${$false}, \$true: ${$true})'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookMemberEditedChangesOldPermission {const WebhookMemberEditedChangesOldPermission({required this.from});
+
+factory WebhookMemberEditedChangesOldPermission.fromJson(Map<String, dynamic> json) { return WebhookMemberEditedChangesOldPermission(
+  from: json['from'] as String,
+); }
+
+/// The previous permissions of the collaborator if the action was edited.
+final String from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+WebhookMemberEditedChangesOldPermission copyWith({String? from}) { return WebhookMemberEditedChangesOldPermission(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookMemberEditedChangesOldPermission &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookMemberEditedChangesOldPermission(from: $from)'; } 
+ }

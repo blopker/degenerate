@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Code of Conduct Simple
+final class CodeOfConductSimple {const CodeOfConductSimple({required this.url, required this.key, required this.name, required this.htmlUrl, });
+
+factory CodeOfConductSimple.fromJson(Map<String, dynamic> json) { return CodeOfConductSimple(
+  url: Uri.parse(json['url'] as String),
+  key: json['key'] as String,
+  name: json['name'] as String,
+  htmlUrl: json['html_url'] != null ? Uri.parse(json['html_url'] as String) : null,
+); }
+
+final Uri url;
+
+final String key;
+
+final String name;
+
+final Uri? htmlUrl;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'key': key,
+  'name': name,
+  if (htmlUrl != null) 'html_url': htmlUrl?.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('key') && json['key'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String; } 
+CodeOfConductSimple copyWith({Uri? url, String? key, String? name, Uri? Function()? htmlUrl, }) { return CodeOfConductSimple(
+  url: url ?? this.url,
+  key: key ?? this.key,
+  name: name ?? this.name,
+  htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeOfConductSimple &&
+          url == other.url &&
+          key == other.key &&
+          name == other.name &&
+          htmlUrl == other.htmlUrl; } 
+@override int get hashCode { return Object.hash(url, key, name, htmlUrl); } 
+@override String toString() { return 'CodeOfConductSimple(url: $url, key: $key, name: $name, htmlUrl: $htmlUrl)'; } 
+ }

@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_create_new_workflow_instance_response_errors.dart';import 'wor_create_new_workflow_instance_response_messages.dart';import 'wor_create_new_workflow_instance_response_result.dart';import 'wor_create_new_workflow_instance_response_result_info.dart';final class WorCreateNewWorkflowInstanceResponse {const WorCreateNewWorkflowInstanceResponse({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+
+factory WorCreateNewWorkflowInstanceResponse.fromJson(Map<String, dynamic> json) { return WorCreateNewWorkflowInstanceResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => WorCreateNewWorkflowInstanceResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => WorCreateNewWorkflowInstanceResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  result: WorCreateNewWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  resultInfo: json['result_info'] != null ? WorCreateNewWorkflowInstanceResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  success: json['success'] as bool,
+); }
+
+final List<WorCreateNewWorkflowInstanceResponseErrors> errors;
+
+final List<WorCreateNewWorkflowInstanceResponseMessages> messages;
+
+final WorCreateNewWorkflowInstanceResponseResult result;
+
+final WorCreateNewWorkflowInstanceResponseResultInfo? resultInfo;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.toJson(),
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+WorCreateNewWorkflowInstanceResponse copyWith({List<WorCreateNewWorkflowInstanceResponseErrors>? errors, List<WorCreateNewWorkflowInstanceResponseMessages>? messages, WorCreateNewWorkflowInstanceResponseResult? result, WorCreateNewWorkflowInstanceResponseResultInfo Function()? resultInfo, bool? success, }) { return WorCreateNewWorkflowInstanceResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorCreateNewWorkflowInstanceResponse &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          result == other.result &&
+          resultInfo == other.resultInfo &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, resultInfo, success); } 
+@override String toString() { return 'WorCreateNewWorkflowInstanceResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_allow_iframe.dart';import 'access_skip_interstitial.dart';final class AccessAppSettingsRequest {const AccessAppSettingsRequest({this.allowIframe, this.skipInterstitial, });
+
+factory AccessAppSettingsRequest.fromJson(Map<String, dynamic> json) { return AccessAppSettingsRequest(
+  allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,
+  skipInterstitial: json['skip_interstitial'] != null ? AccessSkipInterstitial.fromJson(json['skip_interstitial'] as bool) : null,
+); }
+
+/// Enables loading application content in an iFrame.
+final AccessAllowIframe? allowIframe;
+
+final AccessSkipInterstitial? skipInterstitial;
+
+Map<String, dynamic> toJson() { return {
+  if (allowIframe != null) 'allow_iframe': allowIframe?.toJson(),
+  if (skipInterstitial != null) 'skip_interstitial': skipInterstitial?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessAppSettingsRequest copyWith({AccessAllowIframe Function()? allowIframe, AccessSkipInterstitial Function()? skipInterstitial, }) { return AccessAppSettingsRequest(
+  allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
+  skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessAppSettingsRequest &&
+          allowIframe == other.allowIframe &&
+          skipInterstitial == other.skipInterstitial; } 
+@override int get hashCode { return Object.hash(allowIframe, skipInterstitial); } 
+@override String toString() { return 'AccessAppSettingsRequest(allowIframe: $allowIframe, skipInterstitial: $skipInterstitial)'; } 
+ }

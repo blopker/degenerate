@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits {const RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits({required this.name, required this.value, });
+
+factory RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits(
+  name: json['name'] as String,
+  value: json['value'] as String,
+); }
+
+final String name;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits copyWith({String? name, String? value, }) { return RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits(
+  name: name ?? this.name,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits &&
+          name == other.name &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(name, value); } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryBySpamResponseResultMetaUnits(name: $name, value: $value)'; } 
+ }

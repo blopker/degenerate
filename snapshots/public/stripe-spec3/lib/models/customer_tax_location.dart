@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The data source used to infer the customer's location.
+final class CustomerTaxLocationSource {const CustomerTaxLocationSource._(this.value);
+
+factory CustomerTaxLocationSource.fromJson(String json) { return switch (json) {
+  'billing_address' => billingAddress,
+  'ip_address' => ipAddress,
+  'payment_method' => paymentMethod,
+  'shipping_destination' => shippingDestination,
+  _ => CustomerTaxLocationSource._(json),
+}; }
+
+static const CustomerTaxLocationSource billingAddress = CustomerTaxLocationSource._('billing_address');
+
+static const CustomerTaxLocationSource ipAddress = CustomerTaxLocationSource._('ip_address');
+
+static const CustomerTaxLocationSource paymentMethod = CustomerTaxLocationSource._('payment_method');
+
+static const CustomerTaxLocationSource shippingDestination = CustomerTaxLocationSource._('shipping_destination');
+
+static const List<CustomerTaxLocationSource> values = [billingAddress, ipAddress, paymentMethod, shippingDestination];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CustomerTaxLocationSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CustomerTaxLocationSource($value)'; } 
+ }
+/// 
+final class CustomerTaxLocation {const CustomerTaxLocation({required this.country, required this.source, this.state, });
+
+factory CustomerTaxLocation.fromJson(Map<String, dynamic> json) { return CustomerTaxLocation(
+  country: json['country'] as String,
+  source: CustomerTaxLocationSource.fromJson(json['source'] as String),
+  state: json['state'] as String?,
+); }
+
+/// The identified tax country of the customer.
+final String country;
+
+/// The data source used to infer the customer's location.
+final CustomerTaxLocationSource source;
+
+/// The identified tax state, county, province, or region of the customer.
+final String? state;
+
+Map<String, dynamic> toJson() { return {
+  'country': country,
+  'source': source.toJson(),
+  'state': ?state,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String &&
+      json.containsKey('source'); } 
+CustomerTaxLocation copyWith({String? country, CustomerTaxLocationSource? source, String? Function()? state, }) { return CustomerTaxLocation(
+  country: country ?? this.country,
+  source: source ?? this.source,
+  state: state != null ? state() : this.state,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomerTaxLocation &&
+          country == other.country &&
+          source == other.source &&
+          state == other.state; } 
+@override int get hashCode { return Object.hash(country, source, state); } 
+@override String toString() { return 'CustomerTaxLocation(country: $country, source: $source, state: $state)'; } 
+ }

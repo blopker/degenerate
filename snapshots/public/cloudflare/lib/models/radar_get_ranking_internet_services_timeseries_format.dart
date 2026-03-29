@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetRankingInternetServicesTimeseriesFormat {const RadarGetRankingInternetServicesTimeseriesFormat._(this.value);
+
+factory RadarGetRankingInternetServicesTimeseriesFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetRankingInternetServicesTimeseriesFormat._(json),
+}; }
+
+static const RadarGetRankingInternetServicesTimeseriesFormat $json = RadarGetRankingInternetServicesTimeseriesFormat._('JSON');
+
+static const RadarGetRankingInternetServicesTimeseriesFormat csv = RadarGetRankingInternetServicesTimeseriesFormat._('CSV');
+
+static const List<RadarGetRankingInternetServicesTimeseriesFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetRankingInternetServicesTimeseriesFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetRankingInternetServicesTimeseriesFormat($value)'; } 
+ }

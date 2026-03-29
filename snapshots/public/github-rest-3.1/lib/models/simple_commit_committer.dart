@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Information about the Git committer
+final class SimpleCommitCommitter {const SimpleCommitCommitter({required this.name, required this.email, });
+
+factory SimpleCommitCommitter.fromJson(Map<String, dynamic> json) { return SimpleCommitCommitter(
+  name: json['name'] as String,
+  email: json['email'] as String,
+); }
+
+/// Name of the commit's committer
+final String name;
+
+/// Git email address of the commit's committer
+final String email;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'email': email,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('email') && json['email'] is String; } 
+SimpleCommitCommitter copyWith({String? name, String? email, }) { return SimpleCommitCommitter(
+  name: name ?? this.name,
+  email: email ?? this.email,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SimpleCommitCommitter &&
+          name == other.name &&
+          email == other.email; } 
+@override int get hashCode { return Object.hash(name, email); } 
+@override String toString() { return 'SimpleCommitCommitter(name: $name, email: $email)'; } 
+ }

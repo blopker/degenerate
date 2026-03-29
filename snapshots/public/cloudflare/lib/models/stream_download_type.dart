@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of downloads available are: `default`, `audio`.
+final class StreamDownloadType {const StreamDownloadType._(this.value);
+
+factory StreamDownloadType.fromJson(String json) { return switch (json) {
+  'default' => $default,
+  'audio' => audio,
+  _ => StreamDownloadType._(json),
+}; }
+
+static const StreamDownloadType $default = StreamDownloadType._('default');
+
+static const StreamDownloadType audio = StreamDownloadType._('audio');
+
+static const List<StreamDownloadType> values = [$default, audio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is StreamDownloadType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'StreamDownloadType($value)'; } 
+ }

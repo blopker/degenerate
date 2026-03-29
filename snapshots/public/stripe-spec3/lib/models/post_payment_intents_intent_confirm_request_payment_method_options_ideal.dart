@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param88.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2._(this.value);
+
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2._(json),
+}; }
+
+static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2._('');
+
+static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdeal = OneOf2<PaymentMethodOptionsParam88,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsIdealVariant2>;

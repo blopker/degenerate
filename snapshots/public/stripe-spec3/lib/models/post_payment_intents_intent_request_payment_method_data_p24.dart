@@ -1,0 +1,119 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank {const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._(this.value);
+
+factory PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(String json) { return switch (json) {
+  'alior_bank' => aliorBank,
+  'bank_millennium' => bankMillennium,
+  'bank_nowy_bfg_sa' => bankNowyBfgSa,
+  'bank_pekao_sa' => bankPekaoSa,
+  'banki_spbdzielcze' => bankiSpbdzielcze,
+  'blik' => blik,
+  'bnp_paribas' => bnpParibas,
+  'boz' => boz,
+  'citi_handlowy' => citiHandlowy,
+  'credit_agricole' => creditAgricole,
+  'envelobank' => envelobank,
+  'etransfer_pocztowy24' => etransferPocztowy24,
+  'getin_bank' => getinBank,
+  'ideabank' => ideabank,
+  'ing' => ing,
+  'inteligo' => inteligo,
+  'mbank_mtransfer' => mbankMtransfer,
+  'nest_przelew' => nestPrzelew,
+  'noble_pay' => noblePay,
+  'pbac_z_ipko' => pbacZIpko,
+  'plus_bank' => plusBank,
+  'santander_przelew24' => santanderPrzelew24,
+  'tmobile_usbugi_bankowe' => tmobileUsbugiBankowe,
+  'toyota_bank' => toyotaBank,
+  'velobank' => velobank,
+  'volkswagen_bank' => volkswagenBank,
+  _ => PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._(json),
+}; }
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank aliorBank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('alior_bank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank bankMillennium = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('bank_millennium');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank bankNowyBfgSa = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('bank_nowy_bfg_sa');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank bankPekaoSa = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('bank_pekao_sa');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank bankiSpbdzielcze = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('banki_spbdzielcze');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank blik = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('blik');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank bnpParibas = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('bnp_paribas');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank boz = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('boz');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank citiHandlowy = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('citi_handlowy');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank creditAgricole = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('credit_agricole');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank envelobank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('envelobank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank etransferPocztowy24 = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('etransfer_pocztowy24');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank getinBank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('getin_bank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank ideabank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('ideabank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank ing = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('ing');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank inteligo = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('inteligo');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank mbankMtransfer = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('mbank_mtransfer');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank nestPrzelew = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('nest_przelew');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank noblePay = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('noble_pay');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank pbacZIpko = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('pbac_z_ipko');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank plusBank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('plus_bank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank santanderPrzelew24 = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('santander_przelew24');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank tmobileUsbugiBankowe = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('tmobile_usbugi_bankowe');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank toyotaBank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('toyota_bank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank velobank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('velobank');
+
+static const PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank volkswagenBank = PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank._('volkswagen_bank');
+
+static const List<PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank> values = [aliorBank, bankMillennium, bankNowyBfgSa, bankPekaoSa, bankiSpbdzielcze, blik, bnpParibas, boz, citiHandlowy, creditAgricole, envelobank, etransferPocztowy24, getinBank, ideabank, ing, inteligo, mbankMtransfer, nestPrzelew, noblePay, pbacZIpko, plusBank, santanderPrzelew24, tmobileUsbugiBankowe, toyotaBank, velobank, volkswagenBank];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank($value)'; } 
+ }
+final class PostPaymentIntentsIntentRequestPaymentMethodDataP24 {const PostPaymentIntentsIntentRequestPaymentMethodDataP24({this.bank});
+
+factory PostPaymentIntentsIntentRequestPaymentMethodDataP24.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentRequestPaymentMethodDataP24(
+  bank: json['bank'] != null ? PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank.fromJson(json['bank'] as String) : null,
+); }
+
+final PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank? bank;
+
+Map<String, dynamic> toJson() { return {
+  if (bank != null) 'bank': bank?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsIntentRequestPaymentMethodDataP24 copyWith({PostPaymentIntentsIntentRequestPaymentMethodDataP24Bank Function()? bank}) { return PostPaymentIntentsIntentRequestPaymentMethodDataP24(
+  bank: bank != null ? bank() : this.bank,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentIntentsIntentRequestPaymentMethodDataP24 &&
+          bank == other.bank; } 
+@override int get hashCode { return bank.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentRequestPaymentMethodDataP24(bank: $bank)'; } 
+ }

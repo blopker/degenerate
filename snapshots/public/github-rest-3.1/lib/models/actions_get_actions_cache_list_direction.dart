@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection._(this.value);
+
+factory ActionsGetActionsCacheListDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => ActionsGetActionsCacheListDirection._(json),
+}; }
+
+static const ActionsGetActionsCacheListDirection asc = ActionsGetActionsCacheListDirection._('asc');
+
+static const ActionsGetActionsCacheListDirection desc = ActionsGetActionsCacheListDirection._('desc');
+
+static const List<ActionsGetActionsCacheListDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ActionsGetActionsCacheListDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ActionsGetActionsCacheListDirection($value)'; } 
+ }

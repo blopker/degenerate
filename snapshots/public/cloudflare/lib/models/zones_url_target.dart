@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_string_constraint.dart';/// URL target.
+final class ZonesUrlTarget {const ZonesUrlTarget({this.constraint, this.target, });
+
+factory ZonesUrlTarget.fromJson(Map<String, dynamic> json) { return ZonesUrlTarget(
+  constraint: json['constraint'] != null ? ZonesStringConstraint.fromJson(json['constraint'] as Map<String, dynamic>) : null,
+  target: json['target'],
+); }
+
+/// The constraint of a target.
+final ZonesStringConstraint? constraint;
+
+/// A target based on the URL of the request.
+final dynamic target;
+
+Map<String, dynamic> toJson() { return {
+  if (constraint != null) 'constraint': constraint?.toJson(),
+  'target': ?target,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesUrlTarget copyWith({ZonesStringConstraint Function()? constraint, dynamic Function()? target, }) { return ZonesUrlTarget(
+  constraint: constraint != null ? constraint() : this.constraint,
+  target: target != null ? target() : this.target,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesUrlTarget &&
+          constraint == other.constraint &&
+          target == other.target; } 
+@override int get hashCode { return Object.hash(constraint, target); } 
+@override String toString() { return 'ZonesUrlTarget(constraint: $constraint, target: $target)'; } 
+ }

@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'integration.dart';import 'simple_user.dart';import 'team.dart';final class ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions {const ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions({required this.url, required this.usersUrl, required this.teamsUrl, required this.users, required this.teams, this.apps, });
+
+factory ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions.fromJson(Map<String, dynamic> json) { return ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
+  url: Uri.parse(json['url'] as String),
+  usersUrl: Uri.parse(json['users_url'] as String),
+  teamsUrl: Uri.parse(json['teams_url'] as String),
+  users: (json['users'] as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList(),
+  teams: (json['teams'] as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList(),
+  apps: (json['apps'] as List<dynamic>?)?.map((e) => Integration.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final Uri url;
+
+final Uri usersUrl;
+
+final Uri teamsUrl;
+
+final List<SimpleUser> users;
+
+final List<Team> teams;
+
+final List<Integration>? apps;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'users_url': usersUrl.toString(),
+  'teams_url': teamsUrl.toString(),
+  'users': users.map((e) => e.toJson()).toList(),
+  'teams': teams.map((e) => e.toJson()).toList(),
+  if (apps != null) 'apps': apps?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('users_url') && json['users_url'] is String &&
+      json.containsKey('teams_url') && json['teams_url'] is String &&
+      json.containsKey('users') &&
+      json.containsKey('teams'); } 
+ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions copyWith({Uri? url, Uri? usersUrl, Uri? teamsUrl, List<SimpleUser>? users, List<Team>? teams, List<Integration> Function()? apps, }) { return ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(
+  url: url ?? this.url,
+  usersUrl: usersUrl ?? this.usersUrl,
+  teamsUrl: teamsUrl ?? this.teamsUrl,
+  users: users ?? this.users,
+  teams: teams ?? this.teams,
+  apps: apps != null ? apps() : this.apps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions &&
+          url == other.url &&
+          usersUrl == other.usersUrl &&
+          teamsUrl == other.teamsUrl &&
+          listEquals(users, other.users) &&
+          listEquals(teams, other.teams) &&
+          listEquals(apps, other.apps); } 
+@override int get hashCode { return Object.hash(url, usersUrl, teamsUrl, Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps ?? const [])); } 
+@override String toString() { return 'ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions(url: $url, usersUrl: $usersUrl, teamsUrl: $teamsUrl, users: $users, teams: $teams, apps: $apps)'; } 
+ }

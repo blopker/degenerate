@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSubscriptionsRequestAutomaticTaxLiabilityType {const PostSubscriptionsRequestAutomaticTaxLiabilityType._(this.value);
+
+factory PostSubscriptionsRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'self' => self,
+  _ => PostSubscriptionsRequestAutomaticTaxLiabilityType._(json),
+}; }
+
+static const PostSubscriptionsRequestAutomaticTaxLiabilityType account = PostSubscriptionsRequestAutomaticTaxLiabilityType._('account');
+
+static const PostSubscriptionsRequestAutomaticTaxLiabilityType self = PostSubscriptionsRequestAutomaticTaxLiabilityType._('self');
+
+static const List<PostSubscriptionsRequestAutomaticTaxLiabilityType> values = [account, self];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsRequestAutomaticTaxLiabilityType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsRequestAutomaticTaxLiabilityType($value)'; } 
+ }
+final class PostSubscriptionsRequestAutomaticTaxLiability {const PostSubscriptionsRequestAutomaticTaxLiability({this.account, required this.type, });
+
+factory PostSubscriptionsRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAutomaticTaxLiability(
+  account: json['account'] as String?,
+  type: PostSubscriptionsRequestAutomaticTaxLiabilityType.fromJson(json['type'] as String),
+); }
+
+final String? account;
+
+final PostSubscriptionsRequestAutomaticTaxLiabilityType type;
+
+Map<String, dynamic> toJson() { return {
+  'account': ?account,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostSubscriptionsRequestAutomaticTaxLiability copyWith({String Function()? account, PostSubscriptionsRequestAutomaticTaxLiabilityType? type, }) { return PostSubscriptionsRequestAutomaticTaxLiability(
+  account: account != null ? account() : this.account,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionsRequestAutomaticTaxLiability &&
+          account == other.account &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(account, type); } 
+@override String toString() { return 'PostSubscriptionsRequestAutomaticTaxLiability(account: $account, type: $type)'; } 
+ }

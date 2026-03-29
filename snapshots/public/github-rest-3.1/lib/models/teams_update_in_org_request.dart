@@ -1,0 +1,151 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:
+/// **For a non-nested team:**
+///  * `secret` - only visible to organization owners and members of this team.
+///  * `closed` - visible to all members of this organization.
+/// **For a parent or child team:**
+///  * `closed` - visible to all members of this organization.
+final class TeamsUpdateInOrgRequestPrivacy {const TeamsUpdateInOrgRequestPrivacy._(this.value);
+
+factory TeamsUpdateInOrgRequestPrivacy.fromJson(String json) { return switch (json) {
+  'secret' => secret,
+  'closed' => closed,
+  _ => TeamsUpdateInOrgRequestPrivacy._(json),
+}; }
+
+static const TeamsUpdateInOrgRequestPrivacy secret = TeamsUpdateInOrgRequestPrivacy._('secret');
+
+static const TeamsUpdateInOrgRequestPrivacy closed = TeamsUpdateInOrgRequestPrivacy._('closed');
+
+static const List<TeamsUpdateInOrgRequestPrivacy> values = [secret, closed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsUpdateInOrgRequestPrivacy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsUpdateInOrgRequestPrivacy($value)'; } 
+ }
+/// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:
+///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.
+///  * `notifications_disabled` - no one receives notifications.
+final class TeamsUpdateInOrgRequestNotificationSetting {const TeamsUpdateInOrgRequestNotificationSetting._(this.value);
+
+factory TeamsUpdateInOrgRequestNotificationSetting.fromJson(String json) { return switch (json) {
+  'notifications_enabled' => notificationsEnabled,
+  'notifications_disabled' => notificationsDisabled,
+  _ => TeamsUpdateInOrgRequestNotificationSetting._(json),
+}; }
+
+static const TeamsUpdateInOrgRequestNotificationSetting notificationsEnabled = TeamsUpdateInOrgRequestNotificationSetting._('notifications_enabled');
+
+static const TeamsUpdateInOrgRequestNotificationSetting notificationsDisabled = TeamsUpdateInOrgRequestNotificationSetting._('notifications_disabled');
+
+static const List<TeamsUpdateInOrgRequestNotificationSetting> values = [notificationsEnabled, notificationsDisabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsUpdateInOrgRequestNotificationSetting && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsUpdateInOrgRequestNotificationSetting($value)'; } 
+ }
+/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+final class TeamsUpdateInOrgRequestPermission {const TeamsUpdateInOrgRequestPermission._(this.value);
+
+factory TeamsUpdateInOrgRequestPermission.fromJson(String json) { return switch (json) {
+  'pull' => pull,
+  'push' => push,
+  'admin' => admin,
+  _ => TeamsUpdateInOrgRequestPermission._(json),
+}; }
+
+static const TeamsUpdateInOrgRequestPermission pull = TeamsUpdateInOrgRequestPermission._('pull');
+
+static const TeamsUpdateInOrgRequestPermission push = TeamsUpdateInOrgRequestPermission._('push');
+
+static const TeamsUpdateInOrgRequestPermission admin = TeamsUpdateInOrgRequestPermission._('admin');
+
+static const List<TeamsUpdateInOrgRequestPermission> values = [pull, push, admin];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsUpdateInOrgRequestPermission && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsUpdateInOrgRequestPermission($value)'; } 
+ }
+final class TeamsUpdateInOrgRequest {const TeamsUpdateInOrgRequest({this.name, this.description, this.privacy, this.notificationSetting, this.permission = TeamsUpdateInOrgRequestPermission.pull, this.parentTeamId, });
+
+factory TeamsUpdateInOrgRequest.fromJson(Map<String, dynamic> json) { return TeamsUpdateInOrgRequest(
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  privacy: json['privacy'] != null ? TeamsUpdateInOrgRequestPrivacy.fromJson(json['privacy'] as String) : null,
+  notificationSetting: json['notification_setting'] != null ? TeamsUpdateInOrgRequestNotificationSetting.fromJson(json['notification_setting'] as String) : null,
+  permission: json.containsKey('permission') ? TeamsUpdateInOrgRequestPermission.fromJson(json['permission'] as String) : TeamsUpdateInOrgRequestPermission.pull,
+  parentTeamId: json['parent_team_id'] != null ? (json['parent_team_id'] as num).toInt() : null,
+); }
+
+/// The name of the team.
+final String? name;
+
+/// The description of the team.
+final String? description;
+
+/// The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:
+/// **For a non-nested team:**
+///  * `secret` - only visible to organization owners and members of this team.
+///  * `closed` - visible to all members of this organization.
+/// **For a parent or child team:**
+///  * `closed` - visible to all members of this organization.
+final TeamsUpdateInOrgRequestPrivacy? privacy;
+
+/// The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:
+///  * `notifications_enabled` - team members receive notifications when the team is @mentioned.
+///  * `notifications_disabled` - no one receives notifications.
+final TeamsUpdateInOrgRequestNotificationSetting? notificationSetting;
+
+/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
+final TeamsUpdateInOrgRequestPermission permission;
+
+/// The ID of a team to set as the parent team.
+final int? parentTeamId;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  'description': ?description,
+  if (privacy != null) 'privacy': privacy?.toJson(),
+  if (notificationSetting != null) 'notification_setting': notificationSetting?.toJson(),
+  'permission': permission.toJson(),
+  'parent_team_id': ?parentTeamId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TeamsUpdateInOrgRequest copyWith({String Function()? name, String Function()? description, TeamsUpdateInOrgRequestPrivacy Function()? privacy, TeamsUpdateInOrgRequestNotificationSetting Function()? notificationSetting, TeamsUpdateInOrgRequestPermission Function()? permission, int? Function()? parentTeamId, }) { return TeamsUpdateInOrgRequest(
+  name: name != null ? name() : this.name,
+  description: description != null ? description() : this.description,
+  privacy: privacy != null ? privacy() : this.privacy,
+  notificationSetting: notificationSetting != null ? notificationSetting() : this.notificationSetting,
+  permission: permission != null ? permission() : this.permission,
+  parentTeamId: parentTeamId != null ? parentTeamId() : this.parentTeamId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsUpdateInOrgRequest &&
+          name == other.name &&
+          description == other.description &&
+          privacy == other.privacy &&
+          notificationSetting == other.notificationSetting &&
+          permission == other.permission &&
+          parentTeamId == other.parentTeamId; } 
+@override int get hashCode { return Object.hash(name, description, privacy, notificationSetting, permission, parentTeamId); } 
+@override String toString() { return 'TeamsUpdateInOrgRequest(name: $name, description: $description, privacy: $privacy, notificationSetting: $notificationSetting, permission: $permission, parentTeamId: $parentTeamId)'; } 
+ }

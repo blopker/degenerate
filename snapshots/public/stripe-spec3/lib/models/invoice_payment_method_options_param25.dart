@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoice_payment_method_options_param25_installments.dart';final class InvoicePaymentMethodOptionsParam25RequestThreeDSecure {const InvoicePaymentMethodOptionsParam25RequestThreeDSecure._(this.value);
+
+factory InvoicePaymentMethodOptionsParam25RequestThreeDSecure.fromJson(String json) { return switch (json) {
+  'any' => any,
+  'automatic' => automatic,
+  'challenge' => challenge,
+  _ => InvoicePaymentMethodOptionsParam25RequestThreeDSecure._(json),
+}; }
+
+static const InvoicePaymentMethodOptionsParam25RequestThreeDSecure any = InvoicePaymentMethodOptionsParam25RequestThreeDSecure._('any');
+
+static const InvoicePaymentMethodOptionsParam25RequestThreeDSecure automatic = InvoicePaymentMethodOptionsParam25RequestThreeDSecure._('automatic');
+
+static const InvoicePaymentMethodOptionsParam25RequestThreeDSecure challenge = InvoicePaymentMethodOptionsParam25RequestThreeDSecure._('challenge');
+
+static const List<InvoicePaymentMethodOptionsParam25RequestThreeDSecure> values = [any, automatic, challenge];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam25RequestThreeDSecure && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam25RequestThreeDSecure($value)'; } 
+ }
+final class InvoicePaymentMethodOptionsParam25 {const InvoicePaymentMethodOptionsParam25({this.installments, this.requestThreeDSecure, });
+
+factory InvoicePaymentMethodOptionsParam25.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam25(
+  installments: json['installments'] != null ? InvoicePaymentMethodOptionsParam25Installments.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  requestThreeDSecure: json['request_three_d_secure'] != null ? InvoicePaymentMethodOptionsParam25RequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
+); }
+
+final InvoicePaymentMethodOptionsParam25Installments? installments;
+
+final InvoicePaymentMethodOptionsParam25RequestThreeDSecure? requestThreeDSecure;
+
+Map<String, dynamic> toJson() { return {
+  if (installments != null) 'installments': installments?.toJson(),
+  if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoicePaymentMethodOptionsParam25 copyWith({InvoicePaymentMethodOptionsParam25Installments Function()? installments, InvoicePaymentMethodOptionsParam25RequestThreeDSecure Function()? requestThreeDSecure, }) { return InvoicePaymentMethodOptionsParam25(
+  installments: installments != null ? installments() : this.installments,
+  requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoicePaymentMethodOptionsParam25 &&
+          installments == other.installments &&
+          requestThreeDSecure == other.requestThreeDSecure; } 
+@override int get hashCode { return Object.hash(installments, requestThreeDSecure); } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam25(installments: $installments, requestThreeDSecure: $requestThreeDSecure)'; } 
+ }

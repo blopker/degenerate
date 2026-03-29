@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'empty_model_param.dart';final class FunctionToolParamType {const FunctionToolParamType._(this.value);
+
+factory FunctionToolParamType.fromJson(String json) { return switch (json) {
+  'function' => function,
+  _ => FunctionToolParamType._(json),
+}; }
+
+static const FunctionToolParamType function = FunctionToolParamType._('function');
+
+static const List<FunctionToolParamType> values = [function];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionToolParamType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FunctionToolParamType($value)'; } 
+ }
+final class FunctionToolParam {const FunctionToolParam({required this.name, this.description, this.parameters, this.strict, this.type = FunctionToolParamType.function, });
+
+factory FunctionToolParam.fromJson(Map<String, dynamic> json) { return FunctionToolParam(
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  parameters: json['parameters'] != null ? EmptyModelParam.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+  strict: json['strict'] as bool?,
+  type: FunctionToolParamType.fromJson(json['type'] as String),
+); }
+
+final String name;
+
+final String? description;
+
+final EmptyModelParam? parameters;
+
+final bool? strict;
+
+final FunctionToolParamType type;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'description': ?description,
+  if (parameters != null) 'parameters': parameters?.toJson(),
+  'strict': ?strict,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('type'); } 
+FunctionToolParam copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, FunctionToolParamType? type, }) { return FunctionToolParam(
+  name: name ?? this.name,
+  description: description != null ? description() : this.description,
+  parameters: parameters != null ? parameters() : this.parameters,
+  strict: strict != null ? strict() : this.strict,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FunctionToolParam &&
+          name == other.name &&
+          description == other.description &&
+          parameters == other.parameters &&
+          strict == other.strict &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(name, description, parameters, strict, type); } 
+@override String toString() { return 'FunctionToolParam(name: $name, description: $description, parameters: $parameters, strict: $strict, type: $type)'; } 
+ }

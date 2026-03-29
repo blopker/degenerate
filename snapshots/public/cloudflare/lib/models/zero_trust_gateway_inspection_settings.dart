@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Define the proxy inspection mode.   1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443).   2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.
+final class ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode._(this.value);
+
+factory ZeroTrustGatewayInspectionSettingsMode.fromJson(String json) { return switch (json) {
+  'static' => $static,
+  'dynamic' => $dynamic,
+  _ => ZeroTrustGatewayInspectionSettingsMode._(json),
+}; }
+
+static const ZeroTrustGatewayInspectionSettingsMode $static = ZeroTrustGatewayInspectionSettingsMode._('static');
+
+static const ZeroTrustGatewayInspectionSettingsMode $dynamic = ZeroTrustGatewayInspectionSettingsMode._('dynamic');
+
+static const List<ZeroTrustGatewayInspectionSettingsMode> values = [$static, $dynamic];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZeroTrustGatewayInspectionSettingsMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayInspectionSettingsMode($value)'; } 
+ }
+/// Define the proxy inspection mode.
+final class ZeroTrustGatewayInspectionSettings {const ZeroTrustGatewayInspectionSettings({this.mode});
+
+factory ZeroTrustGatewayInspectionSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayInspectionSettings(
+  mode: json['mode'] != null ? ZeroTrustGatewayInspectionSettingsMode.fromJson(json['mode'] as String) : null,
+); }
+
+/// Define the proxy inspection mode.   1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443).   2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.
+final ZeroTrustGatewayInspectionSettingsMode? mode;
+
+Map<String, dynamic> toJson() { return {
+  if (mode != null) 'mode': mode?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustGatewayInspectionSettings copyWith({ZeroTrustGatewayInspectionSettingsMode Function()? mode}) { return ZeroTrustGatewayInspectionSettings(
+  mode: mode != null ? mode() : this.mode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayInspectionSettings &&
+          mode == other.mode; } 
+@override int get hashCode { return mode.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayInspectionSettings(mode: $mode)'; } 
+ }

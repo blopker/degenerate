@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'quotes_resource_automatic_tax_liability.dart';/// The status of the most recent automated tax calculation for this quote.
+final class QuotesResourceAutomaticTaxStatus {const QuotesResourceAutomaticTaxStatus._(this.value);
+
+factory QuotesResourceAutomaticTaxStatus.fromJson(String json) { return switch (json) {
+  'complete' => complete,
+  'failed' => failed,
+  'requires_location_inputs' => requiresLocationInputs,
+  _ => QuotesResourceAutomaticTaxStatus._(json),
+}; }
+
+static const QuotesResourceAutomaticTaxStatus complete = QuotesResourceAutomaticTaxStatus._('complete');
+
+static const QuotesResourceAutomaticTaxStatus failed = QuotesResourceAutomaticTaxStatus._('failed');
+
+static const QuotesResourceAutomaticTaxStatus requiresLocationInputs = QuotesResourceAutomaticTaxStatus._('requires_location_inputs');
+
+static const List<QuotesResourceAutomaticTaxStatus> values = [complete, failed, requiresLocationInputs];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is QuotesResourceAutomaticTaxStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'QuotesResourceAutomaticTaxStatus($value)'; } 
+ }
+/// 
+final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({required this.enabled, this.liability, this.provider, this.status, });
+
+factory QuotesResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return QuotesResourceAutomaticTax(
+  enabled: json['enabled'] as bool,
+  liability: json['liability'] != null ? QuotesResourceAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
+  provider: json['provider'] as String?,
+  status: json['status'] != null ? QuotesResourceAutomaticTaxStatus.fromJson(json['status'] as String) : null,
+); }
+
+/// Automatically calculate taxes
+final bool enabled;
+
+/// The account that's liable for tax. If set, the business address and tax registrations required to perform the tax calculation are loaded from this account. The tax transaction is returned in the report of the connected account.
+final QuotesResourceAutomaticTaxLiability? liability;
+
+/// The tax provider powering automatic tax.
+final String? provider;
+
+/// The status of the most recent automated tax calculation for this quote.
+final QuotesResourceAutomaticTaxStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  if (liability != null) 'liability': liability?.toJson(),
+  'provider': ?provider,
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+QuotesResourceAutomaticTax copyWith({bool? enabled, QuotesResourceAutomaticTaxLiability? Function()? liability, String? Function()? provider, QuotesResourceAutomaticTaxStatus? Function()? status, }) { return QuotesResourceAutomaticTax(
+  enabled: enabled ?? this.enabled,
+  liability: liability != null ? liability() : this.liability,
+  provider: provider != null ? provider() : this.provider,
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is QuotesResourceAutomaticTax &&
+          enabled == other.enabled &&
+          liability == other.liability &&
+          provider == other.provider &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(enabled, liability, provider, status); } 
+@override String toString() { return 'QuotesResourceAutomaticTax(enabled: $enabled, liability: $liability, provider: $provider, status: $status)'; } 
+ }

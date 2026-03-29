@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'prompt43_audio_variant1_voice.dart';import 'prompt43_audio_variant1_voice_variant2.dart';final class Prompt43AudioVariant1Format {const Prompt43AudioVariant1Format._(this.value);
+
+factory Prompt43AudioVariant1Format.fromJson(String json) { return switch (json) {
+  'wav' => wav,
+  'aac' => aac,
+  'mp3' => mp3,
+  'flac' => flac,
+  'opus' => opus,
+  'pcm16' => pcm16,
+  _ => Prompt43AudioVariant1Format._(json),
+}; }
+
+static const Prompt43AudioVariant1Format wav = Prompt43AudioVariant1Format._('wav');
+
+static const Prompt43AudioVariant1Format aac = Prompt43AudioVariant1Format._('aac');
+
+static const Prompt43AudioVariant1Format mp3 = Prompt43AudioVariant1Format._('mp3');
+
+static const Prompt43AudioVariant1Format flac = Prompt43AudioVariant1Format._('flac');
+
+static const Prompt43AudioVariant1Format opus = Prompt43AudioVariant1Format._('opus');
+
+static const Prompt43AudioVariant1Format pcm16 = Prompt43AudioVariant1Format._('pcm16');
+
+static const List<Prompt43AudioVariant1Format> values = [wav, aac, mp3, flac, opus, pcm16];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Prompt43AudioVariant1Format && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Prompt43AudioVariant1Format($value)'; } 
+ }
+/// Parameters for audio output. Required when modalities includes 'audio'.
+final class Prompt43AudioVariant1 {const Prompt43AudioVariant1({required this.format, required this.voice, });
+
+factory Prompt43AudioVariant1.fromJson(Map<String, dynamic> json) { return Prompt43AudioVariant1(
+  format: Prompt43AudioVariant1Format.fromJson(json['format'] as String),
+  voice: OneOf2.parse(json['voice'], fromA: (v) => v as String, fromB: (v) => Prompt43AudioVariant1VoiceVariant2.fromJson(v as Map<String, dynamic>),),
+); }
+
+final Prompt43AudioVariant1Format format;
+
+final Prompt43AudioVariant1Voice voice;
+
+Map<String, dynamic> toJson() { return {
+  'format': format.toJson(),
+  'voice': voice.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('format') &&
+      json.containsKey('voice'); } 
+Prompt43AudioVariant1 copyWith({Prompt43AudioVariant1Format? format, Prompt43AudioVariant1Voice? voice, }) { return Prompt43AudioVariant1(
+  format: format ?? this.format,
+  voice: voice ?? this.voice,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt43AudioVariant1 &&
+          format == other.format &&
+          voice == other.voice; } 
+@override int get hashCode { return Object.hash(format, voice); } 
+@override String toString() { return 'Prompt43AudioVariant1(format: $format, voice: $voice)'; } 
+ }

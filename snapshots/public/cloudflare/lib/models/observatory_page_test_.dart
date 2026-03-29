@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'observatory_labeled_region.dart';import 'observatory_lighthouse_report.dart';import 'observatory_schedule_frequency.dart';import 'observatory_timestamp.dart';import 'observatory_url.dart';/// UUID.
+extension type const ObservatoryUuid(String value) {
+factory ObservatoryUuid.fromJson(String json) => ObservatoryUuid(json);
+
+String toJson() => value;
+
+}
+final class ObservatoryPageTest {const ObservatoryPageTest({this.date, this.desktopReport, this.id, this.mobileReport, this.region, this.scheduleFrequency, this.url, });
+
+factory ObservatoryPageTest.fromJson(Map<String, dynamic> json) { return ObservatoryPageTest(
+  date: json['date'] != null ? ObservatoryTimestamp.fromJson(json['date'] as String) : null,
+  desktopReport: json['desktopReport'] != null ? ObservatoryLighthouseReport.fromJson(json['desktopReport'] as Map<String, dynamic>) : null,
+  id: json['id'] != null ? ObservatoryUuid.fromJson(json['id'] as String) : null,
+  mobileReport: json['mobileReport'] != null ? ObservatoryLighthouseReport.fromJson(json['mobileReport'] as Map<String, dynamic>) : null,
+  region: json['region'] != null ? ObservatoryLabeledRegion.fromJson(json['region'] as Map<String, dynamic>) : null,
+  scheduleFrequency: json['scheduleFrequency'] != null ? ObservatoryScheduleFrequency.fromJson(json['scheduleFrequency'] as String) : null,
+  url: json['url'] != null ? ObservatoryUrl.fromJson(json['url'] as String) : null,
+); }
+
+final ObservatoryTimestamp? date;
+
+final ObservatoryLighthouseReport? desktopReport;
+
+final ObservatoryUuid? id;
+
+final ObservatoryLighthouseReport? mobileReport;
+
+final ObservatoryLabeledRegion? region;
+
+final ObservatoryScheduleFrequency? scheduleFrequency;
+
+final ObservatoryUrl? url;
+
+Map<String, dynamic> toJson() { return {
+  if (date != null) 'date': date?.toJson(),
+  if (desktopReport != null) 'desktopReport': desktopReport?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (mobileReport != null) 'mobileReport': mobileReport?.toJson(),
+  if (region != null) 'region': region?.toJson(),
+  if (scheduleFrequency != null) 'scheduleFrequency': scheduleFrequency?.toJson(),
+  if (url != null) 'url': url?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ObservatoryPageTest copyWith({ObservatoryTimestamp Function()? date, ObservatoryLighthouseReport Function()? desktopReport, ObservatoryUuid Function()? id, ObservatoryLighthouseReport Function()? mobileReport, ObservatoryLabeledRegion Function()? region, ObservatoryScheduleFrequency Function()? scheduleFrequency, ObservatoryUrl Function()? url, }) { return ObservatoryPageTest(
+  date: date != null ? date() : this.date,
+  desktopReport: desktopReport != null ? desktopReport() : this.desktopReport,
+  id: id != null ? id() : this.id,
+  mobileReport: mobileReport != null ? mobileReport() : this.mobileReport,
+  region: region != null ? region() : this.region,
+  scheduleFrequency: scheduleFrequency != null ? scheduleFrequency() : this.scheduleFrequency,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ObservatoryPageTest &&
+          date == other.date &&
+          desktopReport == other.desktopReport &&
+          id == other.id &&
+          mobileReport == other.mobileReport &&
+          region == other.region &&
+          scheduleFrequency == other.scheduleFrequency &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(date, desktopReport, id, mobileReport, region, scheduleFrequency, url); } 
+@override String toString() { return 'ObservatoryPageTest(date: $date, desktopReport: $desktopReport, id: $id, mobileReport: $mobileReport, region: $region, scheduleFrequency: $scheduleFrequency, url: $url)'; } 
+ }

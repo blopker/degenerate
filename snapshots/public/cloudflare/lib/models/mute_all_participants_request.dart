@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class MuteAllParticipantsRequest {const MuteAllParticipantsRequest({required this.allowUnmute});
+
+factory MuteAllParticipantsRequest.fromJson(Map<String, dynamic> json) { return MuteAllParticipantsRequest(
+  allowUnmute: json['allow_unmute'] as bool,
+); }
+
+/// if false, participants won't be able to unmute themselves after they are muted
+final bool allowUnmute;
+
+Map<String, dynamic> toJson() { return {
+  'allow_unmute': allowUnmute,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow_unmute') && json['allow_unmute'] is bool; } 
+MuteAllParticipantsRequest copyWith({bool? allowUnmute}) { return MuteAllParticipantsRequest(
+  allowUnmute: allowUnmute ?? this.allowUnmute,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MuteAllParticipantsRequest &&
+          allowUnmute == other.allowUnmute; } 
+@override int get hashCode { return allowUnmute.hashCode; } 
+@override String toString() { return 'MuteAllParticipantsRequest(allowUnmute: $allowUnmute)'; } 
+ }

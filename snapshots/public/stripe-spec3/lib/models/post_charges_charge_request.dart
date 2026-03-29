@@ -1,0 +1,73 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_charges_charge_request_fraud_details.dart';import 'post_charges_charge_request_metadata.dart';import 'post_charges_charge_request_shipping.dart';final class PostChargesChargeRequest {const PostChargesChargeRequest({this.customer, this.description, this.expand, this.fraudDetails, this.metadata, this.receiptEmail, this.shipping, this.transferGroup, });
+
+factory PostChargesChargeRequest.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequest(
+  customer: json['customer'] as String?,
+  description: json['description'] as String?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  fraudDetails: json['fraud_details'] != null ? PostChargesChargeRequestFraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostChargesChargeRequestMetadataVariant2.fromJson(v as String),) : null,
+  receiptEmail: json['receipt_email'] as String?,
+  shipping: json['shipping'] != null ? PostChargesChargeRequestShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  transferGroup: json['transfer_group'] as String?,
+); }
+
+/// The ID of an existing customer that will be associated with this request. This field may only be updated if there is no existing associated customer with this charge.
+final String? customer;
+
+/// An arbitrary string which you can attach to a charge object. It is displayed when in the web interface alongside the charge. Note that if you use Stripe to send automatic email receipts to your customers, your receipt emails will include the `description` of the charge(s) that they are describing.
+final String? description;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// A set of key-value pairs you can attach to a charge giving information about its riskiness. If you believe a charge is fraudulent, include a `user_report` key with a value of `fraudulent`. If you believe a charge is safe, include a `user_report` key with a value of `safe`. Stripe will use the information you send to improve our fraud detection algorithms.
+final PostChargesChargeRequestFraudDetails? fraudDetails;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostChargesChargeRequestMetadata? metadata;
+
+/// This is the email address that the receipt for this charge will be sent to. If this field is updated, then a new email receipt will be sent to the updated address.
+final String? receiptEmail;
+
+/// Shipping information for the charge. Helps prevent fraud on charges for physical goods.
+final PostChargesChargeRequestShipping? shipping;
+
+/// A string that identifies this transaction as part of a group. `transfer_group` may only be provided if it has not been set. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
+final String? transferGroup;
+
+Map<String, dynamic> toJson() { return {
+  'customer': ?customer,
+  'description': ?description,
+  'expand': ?expand,
+  if (fraudDetails != null) 'fraud_details': fraudDetails?.toJson(),
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  'receipt_email': ?receiptEmail,
+  if (shipping != null) 'shipping': shipping?.toJson(),
+  'transfer_group': ?transferGroup,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostChargesChargeRequest copyWith({String Function()? customer, String Function()? description, List<String> Function()? expand, PostChargesChargeRequestFraudDetails Function()? fraudDetails, PostChargesChargeRequestMetadata Function()? metadata, String Function()? receiptEmail, PostChargesChargeRequestShipping Function()? shipping, String Function()? transferGroup, }) { return PostChargesChargeRequest(
+  customer: customer != null ? customer() : this.customer,
+  description: description != null ? description() : this.description,
+  expand: expand != null ? expand() : this.expand,
+  fraudDetails: fraudDetails != null ? fraudDetails() : this.fraudDetails,
+  metadata: metadata != null ? metadata() : this.metadata,
+  receiptEmail: receiptEmail != null ? receiptEmail() : this.receiptEmail,
+  shipping: shipping != null ? shipping() : this.shipping,
+  transferGroup: transferGroup != null ? transferGroup() : this.transferGroup,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostChargesChargeRequest &&
+          customer == other.customer &&
+          description == other.description &&
+          listEquals(expand, other.expand) &&
+          fraudDetails == other.fraudDetails &&
+          metadata == other.metadata &&
+          receiptEmail == other.receiptEmail &&
+          shipping == other.shipping &&
+          transferGroup == other.transferGroup; } 
+@override int get hashCode { return Object.hash(customer, description, Object.hashAll(expand ?? const []), fraudDetails, metadata, receiptEmail, shipping, transferGroup); } 
+@override String toString() { return 'PostChargesChargeRequest(customer: $customer, description: $description, expand: $expand, fraudDetails: $fraudDetails, metadata: $metadata, receiptEmail: $receiptEmail, shipping: $shipping, transferGroup: $transferGroup)'; } 
+ }

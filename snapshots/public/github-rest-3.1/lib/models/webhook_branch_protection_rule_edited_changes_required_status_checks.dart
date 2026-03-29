@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks {const WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks({required this.from});
+
+factory WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks(
+  from: (json['from'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final List<String> from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from'); } 
+WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks copyWith({List<String>? from}) { return WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks &&
+          listEquals(from, other.from); } 
+@override int get hashCode { return Object.hashAll(from).hashCode; } 
+@override String toString() { return 'WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks(from: $from)'; } 
+ }

@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'realtime_beta_response.dart';/// The event type, must be `response.done`.
+final class RealtimeBetaServerEventResponseDoneType {const RealtimeBetaServerEventResponseDoneType._(this.value);
+
+factory RealtimeBetaServerEventResponseDoneType.fromJson(String json) { return switch (json) {
+  'response.done' => responseDone,
+  _ => RealtimeBetaServerEventResponseDoneType._(json),
+}; }
+
+static const RealtimeBetaServerEventResponseDoneType responseDone = RealtimeBetaServerEventResponseDoneType._('response.done');
+
+static const List<RealtimeBetaServerEventResponseDoneType> values = [responseDone];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeBetaServerEventResponseDoneType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeBetaServerEventResponseDoneType($value)'; } 
+ }
+/// Returned when a Response is done streaming. Always emitted, no matter the
+/// final state. The Response object included in the `response.done` event will
+/// include all output Items in the Response but will omit the raw audio data.
+/// 
+final class RealtimeBetaServerEventResponseDone {const RealtimeBetaServerEventResponseDone({required this.eventId, required this.type, required this.response, });
+
+factory RealtimeBetaServerEventResponseDone.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseDone(
+  eventId: json['event_id'] as String,
+  type: RealtimeBetaServerEventResponseDoneType.fromJson(json['type'] as String),
+  response: RealtimeBetaResponse.fromJson(json['response'] as Map<String, dynamic>),
+); }
+
+/// The unique ID of the server event.
+final String eventId;
+
+/// The event type, must be `response.done`.
+final RealtimeBetaServerEventResponseDoneType type;
+
+final RealtimeBetaResponse response;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': eventId,
+  'type': type.toJson(),
+  'response': response.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+      json.containsKey('type') &&
+      json.containsKey('response'); } 
+RealtimeBetaServerEventResponseDone copyWith({String? eventId, RealtimeBetaServerEventResponseDoneType? type, RealtimeBetaResponse? response, }) { return RealtimeBetaServerEventResponseDone(
+  eventId: eventId ?? this.eventId,
+  type: type ?? this.type,
+  response: response ?? this.response,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeBetaServerEventResponseDone &&
+          eventId == other.eventId &&
+          type == other.type &&
+          response == other.response; } 
+@override int get hashCode { return Object.hash(eventId, type, response); } 
+@override String toString() { return 'RealtimeBetaServerEventResponseDone(eventId: $eventId, type: $type, response: $response)'; } 
+ }

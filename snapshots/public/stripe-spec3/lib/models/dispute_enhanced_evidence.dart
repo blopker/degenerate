@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dispute_enhanced_evidence_visa_compelling_evidence3.dart';import 'dispute_enhanced_evidence_visa_compliance.dart';/// 
+final class DisputeEnhancedEvidence {const DisputeEnhancedEvidence({this.visaCompellingEvidence3, this.visaCompliance, });
+
+factory DisputeEnhancedEvidence.fromJson(Map<String, dynamic> json) { return DisputeEnhancedEvidence(
+  visaCompellingEvidence3: json['visa_compelling_evidence_3'] != null ? DisputeEnhancedEvidenceVisaCompellingEvidence3.fromJson(json['visa_compelling_evidence_3'] as Map<String, dynamic>) : null,
+  visaCompliance: json['visa_compliance'] != null ? DisputeEnhancedEvidenceVisaCompliance.fromJson(json['visa_compliance'] as Map<String, dynamic>) : null,
+); }
+
+final DisputeEnhancedEvidenceVisaCompellingEvidence3? visaCompellingEvidence3;
+
+final DisputeEnhancedEvidenceVisaCompliance? visaCompliance;
+
+Map<String, dynamic> toJson() { return {
+  if (visaCompellingEvidence3 != null) 'visa_compelling_evidence_3': visaCompellingEvidence3?.toJson(),
+  if (visaCompliance != null) 'visa_compliance': visaCompliance?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DisputeEnhancedEvidence copyWith({DisputeEnhancedEvidenceVisaCompellingEvidence3 Function()? visaCompellingEvidence3, DisputeEnhancedEvidenceVisaCompliance Function()? visaCompliance, }) { return DisputeEnhancedEvidence(
+  visaCompellingEvidence3: visaCompellingEvidence3 != null ? visaCompellingEvidence3() : this.visaCompellingEvidence3,
+  visaCompliance: visaCompliance != null ? visaCompliance() : this.visaCompliance,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DisputeEnhancedEvidence &&
+          visaCompellingEvidence3 == other.visaCompellingEvidence3 &&
+          visaCompliance == other.visaCompliance; } 
+@override int get hashCode { return Object.hash(visaCompellingEvidence3, visaCompliance); } 
+@override String toString() { return 'DisputeEnhancedEvidence(visaCompellingEvidence3: $visaCompellingEvidence3, visaCompliance: $visaCompliance)'; } 
+ }

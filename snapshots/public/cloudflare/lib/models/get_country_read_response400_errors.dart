@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetCountryReadResponse400Errors {const GetCountryReadResponse400Errors({required this.message});
+
+factory GetCountryReadResponse400Errors.fromJson(Map<String, dynamic> json) { return GetCountryReadResponse400Errors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+GetCountryReadResponse400Errors copyWith({String? message}) { return GetCountryReadResponse400Errors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetCountryReadResponse400Errors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'GetCountryReadResponse400Errors(message: $message)'; } 
+ }

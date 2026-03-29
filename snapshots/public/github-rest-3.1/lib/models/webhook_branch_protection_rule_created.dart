@@ -1,0 +1,83 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_rule.dart';final class WebhookBranchProtectionRuleCreatedAction {const WebhookBranchProtectionRuleCreatedAction._(this.value);
+
+factory WebhookBranchProtectionRuleCreatedAction.fromJson(String json) { return switch (json) {
+  'created' => created,
+  _ => WebhookBranchProtectionRuleCreatedAction._(json),
+}; }
+
+static const WebhookBranchProtectionRuleCreatedAction created = WebhookBranchProtectionRuleCreatedAction._('created');
+
+static const List<WebhookBranchProtectionRuleCreatedAction> values = [created];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookBranchProtectionRuleCreatedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookBranchProtectionRuleCreatedAction($value)'; } 
+ }
+final class WebhookBranchProtectionRuleCreated {const WebhookBranchProtectionRuleCreated({required this.action, this.enterprise, this.installation, this.organization, required this.repository, required this.rule, required this.sender, });
+
+factory WebhookBranchProtectionRuleCreated.fromJson(Map<String, dynamic> json) { return WebhookBranchProtectionRuleCreated(
+  action: WebhookBranchProtectionRuleCreatedAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  rule: WebhooksRule.fromJson(json['rule'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookBranchProtectionRuleCreatedAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks repository;
+
+final WebhooksRule rule;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'repository': repository.toJson(),
+  'rule': rule.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('repository') &&
+      json.containsKey('rule') &&
+      json.containsKey('sender'); } 
+WebhookBranchProtectionRuleCreated copyWith({WebhookBranchProtectionRuleCreatedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, WebhooksRule? rule, SimpleUser? sender, }) { return WebhookBranchProtectionRuleCreated(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository ?? this.repository,
+  rule: rule ?? this.rule,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookBranchProtectionRuleCreated &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          organization == other.organization &&
+          repository == other.repository &&
+          rule == other.rule &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, organization, repository, rule, sender); } 
+@override String toString() { return 'WebhookBranchProtectionRuleCreated(action: $action, enterprise: $enterprise, installation: $installation, organization: $organization, repository: $repository, rule: $rule, sender: $sender)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'mcn_resource_id.dart';final class McnDeletedResource {const McnDeletedResource({required this.id});
+
+factory McnDeletedResource.fromJson(Map<String, dynamic> json) { return McnDeletedResource(
+  id: McnResourceId.fromJson(json['id'] as String),
+); }
+
+final McnResourceId id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id'); } 
+McnDeletedResource copyWith({McnResourceId? id}) { return McnDeletedResource(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnDeletedResource &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'McnDeletedResource(id: $id)'; } 
+ }

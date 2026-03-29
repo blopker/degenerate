@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class EnterpriseTeamOrganizationsBulkRemoveRequest {const EnterpriseTeamOrganizationsBulkRemoveRequest({required this.organizationSlugs});
+
+factory EnterpriseTeamOrganizationsBulkRemoveRequest.fromJson(Map<String, dynamic> json) { return EnterpriseTeamOrganizationsBulkRemoveRequest(
+  organizationSlugs: (json['organization_slugs'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// Organization slug to unassign the team from.
+final List<String> organizationSlugs;
+
+Map<String, dynamic> toJson() { return {
+  'organization_slugs': organizationSlugs,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('organization_slugs'); } 
+EnterpriseTeamOrganizationsBulkRemoveRequest copyWith({List<String>? organizationSlugs}) { return EnterpriseTeamOrganizationsBulkRemoveRequest(
+  organizationSlugs: organizationSlugs ?? this.organizationSlugs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EnterpriseTeamOrganizationsBulkRemoveRequest &&
+          listEquals(organizationSlugs, other.organizationSlugs); } 
+@override int get hashCode { return Object.hashAll(organizationSlugs).hashCode; } 
+@override String toString() { return 'EnterpriseTeamOrganizationsBulkRemoveRequest(organizationSlugs: $organizationSlugs)'; } 
+ }

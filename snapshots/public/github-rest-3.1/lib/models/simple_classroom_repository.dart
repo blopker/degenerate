@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A GitHub repository view for Classroom
+final class SimpleClassroomRepository {const SimpleClassroomRepository({required this.id, required this.fullName, required this.htmlUrl, required this.nodeId, required this.private, required this.defaultBranch, });
+
+factory SimpleClassroomRepository.fromJson(Map<String, dynamic> json) { return SimpleClassroomRepository(
+  id: (json['id'] as num).toInt(),
+  fullName: json['full_name'] as String,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  nodeId: json['node_id'] as String,
+  private: json['private'] as bool,
+  defaultBranch: json['default_branch'] as String,
+); }
+
+/// A unique identifier of the repository.
+final int id;
+
+/// The full, globally unique name of the repository.
+final String fullName;
+
+/// The URL to view the repository on GitHub.com.
+final Uri htmlUrl;
+
+/// The GraphQL identifier of the repository.
+final String nodeId;
+
+/// Whether the repository is private.
+final bool private;
+
+/// The default branch for the repository.
+final String defaultBranch;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'full_name': fullName,
+  'html_url': htmlUrl.toString(),
+  'node_id': nodeId,
+  'private': private,
+  'default_branch': defaultBranch,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('full_name') && json['full_name'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('private') && json['private'] is bool &&
+      json.containsKey('default_branch') && json['default_branch'] is String; } 
+SimpleClassroomRepository copyWith({int? id, String? fullName, Uri? htmlUrl, String? nodeId, bool? private, String? defaultBranch, }) { return SimpleClassroomRepository(
+  id: id ?? this.id,
+  fullName: fullName ?? this.fullName,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  nodeId: nodeId ?? this.nodeId,
+  private: private ?? this.private,
+  defaultBranch: defaultBranch ?? this.defaultBranch,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SimpleClassroomRepository &&
+          id == other.id &&
+          fullName == other.fullName &&
+          htmlUrl == other.htmlUrl &&
+          nodeId == other.nodeId &&
+          private == other.private &&
+          defaultBranch == other.defaultBranch; } 
+@override int get hashCode { return Object.hash(id, fullName, htmlUrl, nodeId, private, defaultBranch); } 
+@override String toString() { return 'SimpleClassroomRepository(id: $id, fullName: $fullName, htmlUrl: $htmlUrl, nodeId: $nodeId, private: $private, defaultBranch: $defaultBranch)'; } 
+ }

@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentMethodsRequestFpxBank {const PostPaymentMethodsRequestFpxBank._(this.value);
+
+factory PostPaymentMethodsRequestFpxBank.fromJson(String json) { return switch (json) {
+  'affin_bank' => affinBank,
+  'agrobank' => agrobank,
+  'alliance_bank' => allianceBank,
+  'ambank' => ambank,
+  'bank_islam' => bankIslam,
+  'bank_muamalat' => bankMuamalat,
+  'bank_of_china' => bankOfChina,
+  'bank_rakyat' => bankRakyat,
+  'bsn' => bsn,
+  'cimb' => cimb,
+  'deutsche_bank' => deutscheBank,
+  'hong_leong_bank' => hongLeongBank,
+  'hsbc' => hsbc,
+  'kfh' => kfh,
+  'maybank2e' => maybank2e,
+  'maybank2u' => maybank2u,
+  'ocbc' => ocbc,
+  'pb_enterprise' => pbEnterprise,
+  'public_bank' => publicBank,
+  'rhb' => rhb,
+  'standard_chartered' => standardChartered,
+  'uob' => uob,
+  _ => PostPaymentMethodsRequestFpxBank._(json),
+}; }
+
+static const PostPaymentMethodsRequestFpxBank affinBank = PostPaymentMethodsRequestFpxBank._('affin_bank');
+
+static const PostPaymentMethodsRequestFpxBank agrobank = PostPaymentMethodsRequestFpxBank._('agrobank');
+
+static const PostPaymentMethodsRequestFpxBank allianceBank = PostPaymentMethodsRequestFpxBank._('alliance_bank');
+
+static const PostPaymentMethodsRequestFpxBank ambank = PostPaymentMethodsRequestFpxBank._('ambank');
+
+static const PostPaymentMethodsRequestFpxBank bankIslam = PostPaymentMethodsRequestFpxBank._('bank_islam');
+
+static const PostPaymentMethodsRequestFpxBank bankMuamalat = PostPaymentMethodsRequestFpxBank._('bank_muamalat');
+
+static const PostPaymentMethodsRequestFpxBank bankOfChina = PostPaymentMethodsRequestFpxBank._('bank_of_china');
+
+static const PostPaymentMethodsRequestFpxBank bankRakyat = PostPaymentMethodsRequestFpxBank._('bank_rakyat');
+
+static const PostPaymentMethodsRequestFpxBank bsn = PostPaymentMethodsRequestFpxBank._('bsn');
+
+static const PostPaymentMethodsRequestFpxBank cimb = PostPaymentMethodsRequestFpxBank._('cimb');
+
+static const PostPaymentMethodsRequestFpxBank deutscheBank = PostPaymentMethodsRequestFpxBank._('deutsche_bank');
+
+static const PostPaymentMethodsRequestFpxBank hongLeongBank = PostPaymentMethodsRequestFpxBank._('hong_leong_bank');
+
+static const PostPaymentMethodsRequestFpxBank hsbc = PostPaymentMethodsRequestFpxBank._('hsbc');
+
+static const PostPaymentMethodsRequestFpxBank kfh = PostPaymentMethodsRequestFpxBank._('kfh');
+
+static const PostPaymentMethodsRequestFpxBank maybank2e = PostPaymentMethodsRequestFpxBank._('maybank2e');
+
+static const PostPaymentMethodsRequestFpxBank maybank2u = PostPaymentMethodsRequestFpxBank._('maybank2u');
+
+static const PostPaymentMethodsRequestFpxBank ocbc = PostPaymentMethodsRequestFpxBank._('ocbc');
+
+static const PostPaymentMethodsRequestFpxBank pbEnterprise = PostPaymentMethodsRequestFpxBank._('pb_enterprise');
+
+static const PostPaymentMethodsRequestFpxBank publicBank = PostPaymentMethodsRequestFpxBank._('public_bank');
+
+static const PostPaymentMethodsRequestFpxBank rhb = PostPaymentMethodsRequestFpxBank._('rhb');
+
+static const PostPaymentMethodsRequestFpxBank standardChartered = PostPaymentMethodsRequestFpxBank._('standard_chartered');
+
+static const PostPaymentMethodsRequestFpxBank uob = PostPaymentMethodsRequestFpxBank._('uob');
+
+static const List<PostPaymentMethodsRequestFpxBank> values = [affinBank, agrobank, allianceBank, ambank, bankIslam, bankMuamalat, bankOfChina, bankRakyat, bsn, cimb, deutscheBank, hongLeongBank, hsbc, kfh, maybank2e, maybank2u, ocbc, pbEnterprise, publicBank, rhb, standardChartered, uob];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodsRequestFpxBank && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestFpxBank($value)'; } 
+ }
+/// If this is an `fpx` PaymentMethod, this hash contains details about the FPX payment method.
+final class PostPaymentMethodsRequestFpx {const PostPaymentMethodsRequestFpx({required this.bank});
+
+factory PostPaymentMethodsRequestFpx.fromJson(Map<String, dynamic> json) { return PostPaymentMethodsRequestFpx(
+  bank: PostPaymentMethodsRequestFpxBank.fromJson(json['bank'] as String),
+); }
+
+final PostPaymentMethodsRequestFpxBank bank;
+
+Map<String, dynamic> toJson() { return {
+  'bank': bank.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank'); } 
+PostPaymentMethodsRequestFpx copyWith({PostPaymentMethodsRequestFpxBank? bank}) { return PostPaymentMethodsRequestFpx(
+  bank: bank ?? this.bank,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodsRequestFpx &&
+          bank == other.bank; } 
+@override int get hashCode { return bank.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestFpx(bank: $bank)'; } 
+ }

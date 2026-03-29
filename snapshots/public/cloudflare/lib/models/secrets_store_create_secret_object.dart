@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'secrets_store_comment.dart';import 'secrets_store_secret_name.dart';/// The value of the secret. Note that this is 'write only' - no API reponse will provide this value, it is only used to create/modify secrets.
+extension type const SecretsStoreValue(String value) {
+factory SecretsStoreValue.fromJson(String json) => SecretsStoreValue(json);
+
+String toJson() => value;
+
+}
+final class SecretsStoreCreateSecretObject {const SecretsStoreCreateSecretObject({this.comment, required this.name, required this.scopes, required this.value, });
+
+factory SecretsStoreCreateSecretObject.fromJson(Map<String, dynamic> json) { return SecretsStoreCreateSecretObject(
+  comment: json['comment'] != null ? SecretsStoreComment.fromJson(json['comment'] as String) : null,
+  name: SecretsStoreSecretName.fromJson(json['name'] as String),
+  scopes: (json['scopes'] as List<dynamic>).map((e) => e as String).toList(),
+  value: SecretsStoreValue.fromJson(json['value'] as String),
+); }
+
+/// Freeform text describing the secret
+final SecretsStoreComment? comment;
+
+final SecretsStoreSecretName name;
+
+final List<String> scopes;
+
+final SecretsStoreValue value;
+
+Map<String, dynamic> toJson() { return {
+  if (comment != null) 'comment': comment?.toJson(),
+  'name': name.toJson(),
+  'scopes': scopes,
+  'value': value.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+      json.containsKey('scopes') &&
+      json.containsKey('value'); } 
+SecretsStoreCreateSecretObject copyWith({SecretsStoreComment Function()? comment, SecretsStoreSecretName? name, List<String>? scopes, SecretsStoreValue? value, }) { return SecretsStoreCreateSecretObject(
+  comment: comment != null ? comment() : this.comment,
+  name: name ?? this.name,
+  scopes: scopes ?? this.scopes,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretsStoreCreateSecretObject &&
+          comment == other.comment &&
+          name == other.name &&
+          listEquals(scopes, other.scopes) &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(comment, name, Object.hashAll(scopes), value); } 
+@override String toString() { return 'SecretsStoreCreateSecretObject(comment: $comment, name: $name, scopes: $scopes, value: $value)'; } 
+ }

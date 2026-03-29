@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_email_routing_timeseries_group_by_spf_response_result_meta_confidence_info.dart';import 'radar_get_email_routing_timeseries_group_by_spf_response_result_meta_date_range.dart';import 'radar_get_email_routing_timeseries_group_by_spf_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval fifteenMinutes = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval oneHour = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval oneDay = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval oneWeek = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval oneMonth = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._(this.value);
+
+factory RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization percentage = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization min0Max = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization minMax = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization rawValues = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization percentageChange = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization rollingAverage = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization overlappedPercentage = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization ratio = RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta(
+  aggInterval: RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval aggInterval;
+
+final RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta copyWith({RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaAggInterval? aggInterval, RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaNormalization? normalization, List<RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMetaUnits>? units, }) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

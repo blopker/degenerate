@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_entities_asn_by_id_response_result_asn_estimated_users_locations.dart';final class RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers {const RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers({this.estimatedUsers, required this.locations, });
+
+factory RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers.fromJson(Map<String, dynamic> json) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers(
+  estimatedUsers: json['estimatedUsers'] != null ? (json['estimatedUsers'] as num).toInt() : null,
+  locations: (json['locations'] as List<dynamic>).map((e) => RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Total estimated users.
+final int? estimatedUsers;
+
+final List<RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations> locations;
+
+Map<String, dynamic> toJson() { return {
+  'estimatedUsers': ?estimatedUsers,
+  'locations': locations.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('locations'); } 
+RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers copyWith({int Function()? estimatedUsers, List<RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsersLocations>? locations, }) { return RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers(
+  estimatedUsers: estimatedUsers != null ? estimatedUsers() : this.estimatedUsers,
+  locations: locations ?? this.locations,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers &&
+          estimatedUsers == other.estimatedUsers &&
+          listEquals(locations, other.locations); } 
+@override int get hashCode { return Object.hash(estimatedUsers, Object.hashAll(locations)); } 
+@override String toString() { return 'RadarGetEntitiesAsnByIdResponseResultAsnEstimatedUsers(estimatedUsers: $estimatedUsers, locations: $locations)'; } 
+ }

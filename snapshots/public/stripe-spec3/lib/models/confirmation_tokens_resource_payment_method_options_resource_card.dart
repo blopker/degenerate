@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'confirmation_tokens_resource_payment_method_options_resource_card_resource_installment.dart';/// This hash contains the card payment method options.
+final class ConfirmationTokensResourcePaymentMethodOptionsResourceCard {const ConfirmationTokensResourcePaymentMethodOptionsResourceCard({this.cvcToken, this.installments, });
+
+factory ConfirmationTokensResourcePaymentMethodOptionsResourceCard.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodOptionsResourceCard(
+  cvcToken: json['cvc_token'] as String?,
+  installments: json['installments'] != null ? ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment.fromJson(json['installments'] as Map<String, dynamic>) : null,
+); }
+
+/// The `cvc_update` Token collected from the Payment Element.
+final String? cvcToken;
+
+final ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment? installments;
+
+Map<String, dynamic> toJson() { return {
+  'cvc_token': ?cvcToken,
+  if (installments != null) 'installments': installments?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ConfirmationTokensResourcePaymentMethodOptionsResourceCard copyWith({String? Function()? cvcToken, ConfirmationTokensResourcePaymentMethodOptionsResourceCardResourceInstallment Function()? installments, }) { return ConfirmationTokensResourcePaymentMethodOptionsResourceCard(
+  cvcToken: cvcToken != null ? cvcToken() : this.cvcToken,
+  installments: installments != null ? installments() : this.installments,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ConfirmationTokensResourcePaymentMethodOptionsResourceCard &&
+          cvcToken == other.cvcToken &&
+          installments == other.installments; } 
+@override int get hashCode { return Object.hash(cvcToken, installments); } 
+@override String toString() { return 'ConfirmationTokensResourcePaymentMethodOptionsResourceCard(cvcToken: $cvcToken, installments: $installments)'; } 
+ }

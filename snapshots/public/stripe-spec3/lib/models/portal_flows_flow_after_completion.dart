@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'portal_flows_flow_after_completion_hosted_confirmation.dart';import 'portal_flows_flow_after_completion_redirect.dart';/// The specified type of behavior after the flow is completed.
+final class PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType._(this.value);
+
+factory PortalFlowsFlowAfterCompletionType.fromJson(String json) { return switch (json) {
+  'hosted_confirmation' => hostedConfirmation,
+  'portal_homepage' => portalHomepage,
+  'redirect' => redirect,
+  _ => PortalFlowsFlowAfterCompletionType._(json),
+}; }
+
+static const PortalFlowsFlowAfterCompletionType hostedConfirmation = PortalFlowsFlowAfterCompletionType._('hosted_confirmation');
+
+static const PortalFlowsFlowAfterCompletionType portalHomepage = PortalFlowsFlowAfterCompletionType._('portal_homepage');
+
+static const PortalFlowsFlowAfterCompletionType redirect = PortalFlowsFlowAfterCompletionType._('redirect');
+
+static const List<PortalFlowsFlowAfterCompletionType> values = [hostedConfirmation, portalHomepage, redirect];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PortalFlowsFlowAfterCompletionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PortalFlowsFlowAfterCompletionType($value)'; } 
+ }
+/// 
+final class PortalFlowsFlowAfterCompletion {const PortalFlowsFlowAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
+
+factory PortalFlowsFlowAfterCompletion.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowAfterCompletion(
+  hostedConfirmation: json['hosted_confirmation'] != null ? PortalFlowsFlowAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? PortalFlowsFlowAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
+  type: PortalFlowsFlowAfterCompletionType.fromJson(json['type'] as String),
+); }
+
+/// Configuration when `after_completion.type=hosted_confirmation`.
+final PortalFlowsFlowAfterCompletionHostedConfirmation? hostedConfirmation;
+
+/// Configuration when `after_completion.type=redirect`.
+final PortalFlowsFlowAfterCompletionRedirect? redirect;
+
+/// The specified type of behavior after the flow is completed.
+final PortalFlowsFlowAfterCompletionType type;
+
+Map<String, dynamic> toJson() { return {
+  if (hostedConfirmation != null) 'hosted_confirmation': hostedConfirmation?.toJson(),
+  if (redirect != null) 'redirect': redirect?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PortalFlowsFlowAfterCompletion copyWith({PortalFlowsFlowAfterCompletionHostedConfirmation? Function()? hostedConfirmation, PortalFlowsFlowAfterCompletionRedirect? Function()? redirect, PortalFlowsFlowAfterCompletionType? type, }) { return PortalFlowsFlowAfterCompletion(
+  hostedConfirmation: hostedConfirmation != null ? hostedConfirmation() : this.hostedConfirmation,
+  redirect: redirect != null ? redirect() : this.redirect,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PortalFlowsFlowAfterCompletion &&
+          hostedConfirmation == other.hostedConfirmation &&
+          redirect == other.redirect &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(hostedConfirmation, redirect, type); } 
+@override String toString() { return 'PortalFlowsFlowAfterCompletion(hostedConfirmation: $hostedConfirmation, redirect: $redirect, type: $type)'; } 
+ }

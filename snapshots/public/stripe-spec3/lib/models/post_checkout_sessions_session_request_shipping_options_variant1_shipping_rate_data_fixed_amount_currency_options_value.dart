@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._(this.value);
+
+factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(String json) { return switch (json) {
+  'exclusive' => exclusive,
+  'inclusive' => inclusive,
+  'unspecified' => unspecified,
+  _ => PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._(json),
+}; }
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior exclusive = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._('exclusive');
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior inclusive = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._('inclusive');
+
+static const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior unspecified = PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior._('unspecified');
+
+static const List<PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior> values = [exclusive, inclusive, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior($value)'; } 
+ }
+final class PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue {const PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue({required this.amount, this.taxBehavior, });
+
+factory PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue(
+  amount: (json['amount'] as num).toInt(),
+  taxBehavior: json['tax_behavior'] != null ? PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+); }
+
+final int amount;
+
+final PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior? taxBehavior;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num; } 
+PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue copyWith({int? amount, PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValueTaxBehavior Function()? taxBehavior, }) { return PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue(
+  amount: amount ?? this.amount,
+  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue &&
+          amount == other.amount &&
+          taxBehavior == other.taxBehavior; } 
+@override int get hashCode { return Object.hash(amount, taxBehavior); } 
+@override String toString() { return 'PostCheckoutSessionsSessionRequestShippingOptionsVariant1ShippingRateDataFixedAmountCurrencyOptionsValue(amount: $amount, taxBehavior: $taxBehavior)'; } 
+ }

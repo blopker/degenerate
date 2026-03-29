@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_card_checks.dart';/// Checks on Card address and CVC if provided.
+final class PaymentMethodCardChecks2 {const PaymentMethodCardChecks2({this.paymentMethodCardChecks});
+
+factory PaymentMethodCardChecks2.fromJson(Map<String, dynamic> json) { return PaymentMethodCardChecks2(
+  paymentMethodCardChecks: PaymentMethodCardChecks.canParse(json) ? PaymentMethodCardChecks.fromJson(json) : null,
+); }
+
+final PaymentMethodCardChecks? paymentMethodCardChecks;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodCardChecks != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodCardChecks?.toJson(),
+}; } 
+ }

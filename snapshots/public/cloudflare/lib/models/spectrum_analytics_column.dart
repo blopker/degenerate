@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'spectrum_analytics_column_metrics.dart';final class SpectrumAnalyticsColumn {const SpectrumAnalyticsColumn({this.dimensions, this.metrics, });
+
+factory SpectrumAnalyticsColumn.fromJson(Map<String, dynamic> json) { return SpectrumAnalyticsColumn(
+  dimensions: (json['dimensions'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metrics: json['metrics'] != null ? OneOf2.parse(json['metrics'], fromA: (v) => (v as List<dynamic>).map((e) => (e as num).toDouble()).toList(), fromB: (v) => (v as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toDouble()).toList()).toList(),) : null,
+); }
+
+final List<String>? dimensions;
+
+final SpectrumAnalyticsColumnMetrics? metrics;
+
+Map<String, dynamic> toJson() { return {
+  'dimensions': ?dimensions,
+  if (metrics != null) 'metrics': metrics?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SpectrumAnalyticsColumn copyWith({List<String> Function()? dimensions, SpectrumAnalyticsColumnMetrics Function()? metrics, }) { return SpectrumAnalyticsColumn(
+  dimensions: dimensions != null ? dimensions() : this.dimensions,
+  metrics: metrics != null ? metrics() : this.metrics,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SpectrumAnalyticsColumn &&
+          listEquals(dimensions, other.dimensions) &&
+          metrics == other.metrics; } 
+@override int get hashCode { return Object.hash(Object.hashAll(dimensions ?? const []), metrics); } 
+@override String toString() { return 'SpectrumAnalyticsColumn(dimensions: $dimensions, metrics: $metrics)'; } 
+ }

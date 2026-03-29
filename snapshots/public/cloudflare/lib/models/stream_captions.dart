@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'stream_language.dart';/// The status of a generated caption.
+final class StreamCaptionStatus {const StreamCaptionStatus._(this.value);
+
+factory StreamCaptionStatus.fromJson(String json) { return switch (json) {
+  'ready' => ready,
+  'inprogress' => inprogress,
+  'error' => error,
+  _ => StreamCaptionStatus._(json),
+}; }
+
+static const StreamCaptionStatus ready = StreamCaptionStatus._('ready');
+
+static const StreamCaptionStatus inprogress = StreamCaptionStatus._('inprogress');
+
+static const StreamCaptionStatus error = StreamCaptionStatus._('error');
+
+static const List<StreamCaptionStatus> values = [ready, inprogress, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is StreamCaptionStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'StreamCaptionStatus($value)'; } 
+ }
+/// Whether the caption was generated via AI.
+extension type const StreamGeneratedCaption(bool value) {
+factory StreamGeneratedCaption.fromJson(bool json) => StreamGeneratedCaption(json);
+
+bool toJson() => value;
+
+}
+/// The language label displayed in the native language to users.
+extension type const StreamLabel(String value) {
+factory StreamLabel.fromJson(String json) => StreamLabel(json);
+
+String toJson() => value;
+
+}
+final class StreamCaptions {const StreamCaptions({this.generated, this.label, this.language, this.status, });
+
+factory StreamCaptions.fromJson(Map<String, dynamic> json) { return StreamCaptions(
+  generated: json['generated'] != null ? StreamGeneratedCaption.fromJson(json['generated'] as bool) : null,
+  label: json['label'] != null ? StreamLabel.fromJson(json['label'] as String) : null,
+  language: json['language'] != null ? StreamLanguage.fromJson(json['language'] as String) : null,
+  status: json['status'] != null ? StreamCaptionStatus.fromJson(json['status'] as String) : null,
+); }
+
+final StreamGeneratedCaption? generated;
+
+final StreamLabel? label;
+
+final StreamLanguage? language;
+
+/// The status of a generated caption.
+final StreamCaptionStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  if (generated != null) 'generated': generated?.toJson(),
+  if (label != null) 'label': label?.toJson(),
+  if (language != null) 'language': language?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamCaptions copyWith({StreamGeneratedCaption Function()? generated, StreamLabel Function()? label, StreamLanguage Function()? language, StreamCaptionStatus Function()? status, }) { return StreamCaptions(
+  generated: generated != null ? generated() : this.generated,
+  label: label != null ? label() : this.label,
+  language: language != null ? language() : this.language,
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamCaptions &&
+          generated == other.generated &&
+          label == other.label &&
+          language == other.language &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(generated, label, language, status); } 
+@override String toString() { return 'StreamCaptions(generated: $generated, label: $label, language: $language, status: $status)'; } 
+ }

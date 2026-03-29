@@ -1,0 +1,254 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_dispute_evidence.dart';import 'issuing_dispute_transaction.dart';import 'issuing_dispute_treasury2.dart';import 'issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
+final class IssuingDisputeLossReason {const IssuingDisputeLossReason._(this.value);
+
+factory IssuingDisputeLossReason.fromJson(String json) { return switch (json) {
+  'cardholder_authentication_issuer_liability' => cardholderAuthenticationIssuerLiability,
+  'eci5_token_transaction_with_tavv' => eci5TokenTransactionWithTavv,
+  'excess_disputes_in_timeframe' => excessDisputesInTimeframe,
+  'has_not_met_the_minimum_dispute_amount_requirements' => hasNotMetTheMinimumDisputeAmountRequirements,
+  'invalid_duplicate_dispute' => invalidDuplicateDispute,
+  'invalid_incorrect_amount_dispute' => invalidIncorrectAmountDispute,
+  'invalid_no_authorization' => invalidNoAuthorization,
+  'invalid_use_of_disputes' => invalidUseOfDisputes,
+  'merchandise_delivered_or_shipped' => merchandiseDeliveredOrShipped,
+  'merchandise_or_service_as_described' => merchandiseOrServiceAsDescribed,
+  'not_cancelled' => notCancelled,
+  'other' => $other,
+  'refund_issued' => refundIssued,
+  'submitted_beyond_allowable_time_limit' => submittedBeyondAllowableTimeLimit,
+  'transaction_3ds_required' => transaction3dsRequired,
+  'transaction_approved_after_prior_fraud_dispute' => transactionApprovedAfterPriorFraudDispute,
+  'transaction_authorized' => transactionAuthorized,
+  'transaction_electronically_read' => transactionElectronicallyRead,
+  'transaction_qualifies_for_visa_easy_payment_service' => transactionQualifiesForVisaEasyPaymentService,
+  'transaction_unattended' => transactionUnattended,
+  _ => IssuingDisputeLossReason._(json),
+}; }
+
+static const IssuingDisputeLossReason cardholderAuthenticationIssuerLiability = IssuingDisputeLossReason._('cardholder_authentication_issuer_liability');
+
+static const IssuingDisputeLossReason eci5TokenTransactionWithTavv = IssuingDisputeLossReason._('eci5_token_transaction_with_tavv');
+
+static const IssuingDisputeLossReason excessDisputesInTimeframe = IssuingDisputeLossReason._('excess_disputes_in_timeframe');
+
+static const IssuingDisputeLossReason hasNotMetTheMinimumDisputeAmountRequirements = IssuingDisputeLossReason._('has_not_met_the_minimum_dispute_amount_requirements');
+
+static const IssuingDisputeLossReason invalidDuplicateDispute = IssuingDisputeLossReason._('invalid_duplicate_dispute');
+
+static const IssuingDisputeLossReason invalidIncorrectAmountDispute = IssuingDisputeLossReason._('invalid_incorrect_amount_dispute');
+
+static const IssuingDisputeLossReason invalidNoAuthorization = IssuingDisputeLossReason._('invalid_no_authorization');
+
+static const IssuingDisputeLossReason invalidUseOfDisputes = IssuingDisputeLossReason._('invalid_use_of_disputes');
+
+static const IssuingDisputeLossReason merchandiseDeliveredOrShipped = IssuingDisputeLossReason._('merchandise_delivered_or_shipped');
+
+static const IssuingDisputeLossReason merchandiseOrServiceAsDescribed = IssuingDisputeLossReason._('merchandise_or_service_as_described');
+
+static const IssuingDisputeLossReason notCancelled = IssuingDisputeLossReason._('not_cancelled');
+
+static const IssuingDisputeLossReason $other = IssuingDisputeLossReason._('other');
+
+static const IssuingDisputeLossReason refundIssued = IssuingDisputeLossReason._('refund_issued');
+
+static const IssuingDisputeLossReason submittedBeyondAllowableTimeLimit = IssuingDisputeLossReason._('submitted_beyond_allowable_time_limit');
+
+static const IssuingDisputeLossReason transaction3dsRequired = IssuingDisputeLossReason._('transaction_3ds_required');
+
+static const IssuingDisputeLossReason transactionApprovedAfterPriorFraudDispute = IssuingDisputeLossReason._('transaction_approved_after_prior_fraud_dispute');
+
+static const IssuingDisputeLossReason transactionAuthorized = IssuingDisputeLossReason._('transaction_authorized');
+
+static const IssuingDisputeLossReason transactionElectronicallyRead = IssuingDisputeLossReason._('transaction_electronically_read');
+
+static const IssuingDisputeLossReason transactionQualifiesForVisaEasyPaymentService = IssuingDisputeLossReason._('transaction_qualifies_for_visa_easy_payment_service');
+
+static const IssuingDisputeLossReason transactionUnattended = IssuingDisputeLossReason._('transaction_unattended');
+
+static const List<IssuingDisputeLossReason> values = [cardholderAuthenticationIssuerLiability, eci5TokenTransactionWithTavv, excessDisputesInTimeframe, hasNotMetTheMinimumDisputeAmountRequirements, invalidDuplicateDispute, invalidIncorrectAmountDispute, invalidNoAuthorization, invalidUseOfDisputes, merchandiseDeliveredOrShipped, merchandiseOrServiceAsDescribed, notCancelled, $other, refundIssued, submittedBeyondAllowableTimeLimit, transaction3dsRequired, transactionApprovedAfterPriorFraudDispute, transactionAuthorized, transactionElectronicallyRead, transactionQualifiesForVisaEasyPaymentService, transactionUnattended];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingDisputeLossReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingDisputeLossReason($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class IssuingDisputeObject {const IssuingDisputeObject._(this.value);
+
+factory IssuingDisputeObject.fromJson(String json) { return switch (json) {
+  'issuing.dispute' => issuingDispute,
+  _ => IssuingDisputeObject._(json),
+}; }
+
+static const IssuingDisputeObject issuingDispute = IssuingDisputeObject._('issuing.dispute');
+
+static const List<IssuingDisputeObject> values = [issuingDispute];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingDisputeObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingDisputeObject($value)'; } 
+ }
+/// Current status of the dispute.
+final class IssuingDisputeStatus {const IssuingDisputeStatus._(this.value);
+
+factory IssuingDisputeStatus.fromJson(String json) { return switch (json) {
+  'expired' => expired,
+  'lost' => lost,
+  'submitted' => submitted,
+  'unsubmitted' => unsubmitted,
+  'won' => won,
+  _ => IssuingDisputeStatus._(json),
+}; }
+
+static const IssuingDisputeStatus expired = IssuingDisputeStatus._('expired');
+
+static const IssuingDisputeStatus lost = IssuingDisputeStatus._('lost');
+
+static const IssuingDisputeStatus submitted = IssuingDisputeStatus._('submitted');
+
+static const IssuingDisputeStatus unsubmitted = IssuingDisputeStatus._('unsubmitted');
+
+static const IssuingDisputeStatus won = IssuingDisputeStatus._('won');
+
+static const List<IssuingDisputeStatus> values = [expired, lost, submitted, unsubmitted, won];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingDisputeStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingDisputeStatus($value)'; } 
+ }
+/// As a [card issuer](https://docs.stripe.com/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.
+/// 
+/// Related guide: [Issuing disputes](https://docs.stripe.com/issuing/purchases/disputes)
+final class IssuingDispute {const IssuingDispute({required this.amount, this.balanceTransactions, required this.created, required this.currency, required this.evidence, required this.id, required this.livemode, this.lossReason, required this.metadata, required this.object, required this.status, required this.transaction, this.treasury, });
+
+factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispute(
+  amount: (json['amount'] as num).toInt(),
+  balanceTransactions: (json['balance_transactions'] as List<dynamic>?)?.map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
+  created: (json['created'] as num).toInt(),
+  currency: json['currency'] as String,
+  evidence: IssuingDisputeEvidence.fromJson(json['evidence'] as Map<String, dynamic>),
+  id: json['id'] as String,
+  livemode: json['livemode'] as bool,
+  lossReason: json['loss_reason'] != null ? IssuingDisputeLossReason.fromJson(json['loss_reason'] as String) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  object: IssuingDisputeObject.fromJson(json['object'] as String),
+  status: IssuingDisputeStatus.fromJson(json['status'] as String),
+  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => IssuingTransaction.fromJson(v as Map<String, dynamic>),),
+  treasury: json['treasury'] != null ? IssuingDisputeTreasury2.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+); }
+
+/// Disputed amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Usually the amount of the `transaction`, but can differ (usually because of currency fluctuation).
+final int amount;
+
+/// List of balance transactions associated with the dispute.
+final List<BalanceTransaction>? balanceTransactions;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// The currency the `transaction` was made in.
+final String currency;
+
+final IssuingDisputeEvidence evidence;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
+final IssuingDisputeLossReason? lossReason;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String> metadata;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final IssuingDisputeObject object;
+
+/// Current status of the dispute.
+final IssuingDisputeStatus status;
+
+/// The transaction being disputed.
+final IssuingDisputeTransaction transaction;
+
+/// [Treasury](https://docs.stripe.com/api/treasury) details related to this dispute if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
+final IssuingDisputeTreasury2? treasury;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  if (balanceTransactions != null) 'balance_transactions': balanceTransactions?.map((e) => e.toJson()).toList(),
+  'created': created,
+  'currency': currency,
+  'evidence': evidence.toJson(),
+  'id': id,
+  'livemode': livemode,
+  if (lossReason != null) 'loss_reason': lossReason?.toJson(),
+  'metadata': metadata,
+  'object': object.toJson(),
+  'status': status.toJson(),
+  'transaction': transaction.toJson(),
+  if (treasury != null) 'treasury': treasury?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('evidence') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('metadata') &&
+      json.containsKey('object') &&
+      json.containsKey('status') &&
+      json.containsKey('transaction'); } 
+IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, IssuingDisputeLossReason Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, IssuingDisputeTreasury2? Function()? treasury, }) { return IssuingDispute(
+  amount: amount ?? this.amount,
+  balanceTransactions: balanceTransactions != null ? balanceTransactions() : this.balanceTransactions,
+  created: created ?? this.created,
+  currency: currency ?? this.currency,
+  evidence: evidence ?? this.evidence,
+  id: id ?? this.id,
+  livemode: livemode ?? this.livemode,
+  lossReason: lossReason != null ? lossReason() : this.lossReason,
+  metadata: metadata ?? this.metadata,
+  object: object ?? this.object,
+  status: status ?? this.status,
+  transaction: transaction ?? this.transaction,
+  treasury: treasury != null ? treasury() : this.treasury,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingDispute &&
+          amount == other.amount &&
+          listEquals(balanceTransactions, other.balanceTransactions) &&
+          created == other.created &&
+          currency == other.currency &&
+          evidence == other.evidence &&
+          id == other.id &&
+          livemode == other.livemode &&
+          lossReason == other.lossReason &&
+          metadata == other.metadata &&
+          object == other.object &&
+          status == other.status &&
+          transaction == other.transaction &&
+          treasury == other.treasury; } 
+@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions ?? const []), created, currency, evidence, id, livemode, lossReason, metadata, object, status, transaction, treasury); } 
+@override String toString() { return 'IssuingDispute(amount: $amount, balanceTransactions: $balanceTransactions, created: $created, currency: $currency, evidence: $evidence, id: $id, livemode: $livemode, lossReason: $lossReason, metadata: $metadata, object: $object, status: $status, transaction: $transaction, treasury: $treasury)'; } 
+ }

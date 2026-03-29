@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_configuration_request_paynow_display_preference.dart';/// PayNow is a Singapore-based payment method that allows customers to make a payment using their preferred app from participating banks and participating non-bank financial institutions. Check this [page](https://docs.stripe.com/payments/paynow) for more details.
+final class PostPaymentMethodConfigurationsConfigurationRequestPaynow {const PostPaymentMethodConfigurationsConfigurationRequestPaynow({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestPaynow.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestPaynowDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestPaynowDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestPaynow copyWith({PostPaymentMethodConfigurationsConfigurationRequestPaynowDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestPaynow(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestPaynow &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestPaynow(displayPreference: $displayPreference)'; } 
+ }

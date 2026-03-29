@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Certificate's required validation record.
+final class TlsCertificatesAndHostnamesValidationRecord {const TlsCertificatesAndHostnamesValidationRecord({this.cname, this.cnameTarget, this.emails, this.httpBody, this.httpUrl, this.status, this.txtName, this.txtValue, });
+
+factory TlsCertificatesAndHostnamesValidationRecord.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesValidationRecord(
+  cname: json['cname'] as String?,
+  cnameTarget: json['cname_target'] as String?,
+  emails: (json['emails'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  httpBody: json['http_body'] as String?,
+  httpUrl: json['http_url'] as String?,
+  status: json['status'] as String?,
+  txtName: json['txt_name'] as String?,
+  txtValue: json['txt_value'] as String?,
+); }
+
+/// The CNAME record hostname for DCV delegation.
+final String? cname;
+
+/// The CNAME record target value for DCV delegation.
+final String? cnameTarget;
+
+/// The set of email addresses that the certificate authority (CA) will use to complete domain validation.
+final List<String>? emails;
+
+/// The content that the certificate authority (CA) will expect to find at the http_url during the domain validation.
+final String? httpBody;
+
+/// The url that will be checked during domain validation.
+final String? httpUrl;
+
+/// Status of the validation record.
+final String? status;
+
+/// The hostname that the certificate authority (CA) will check for a TXT record during domain validation .
+final String? txtName;
+
+/// The TXT record that the certificate authority (CA) will check during domain validation.
+final String? txtValue;
+
+Map<String, dynamic> toJson() { return {
+  'cname': ?cname,
+  'cname_target': ?cnameTarget,
+  'emails': ?emails,
+  'http_body': ?httpBody,
+  'http_url': ?httpUrl,
+  'status': ?status,
+  'txt_name': ?txtName,
+  'txt_value': ?txtValue,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TlsCertificatesAndHostnamesValidationRecord copyWith({String Function()? cname, String Function()? cnameTarget, List<String> Function()? emails, String Function()? httpBody, String Function()? httpUrl, String Function()? status, String Function()? txtName, String Function()? txtValue, }) { return TlsCertificatesAndHostnamesValidationRecord(
+  cname: cname != null ? cname() : this.cname,
+  cnameTarget: cnameTarget != null ? cnameTarget() : this.cnameTarget,
+  emails: emails != null ? emails() : this.emails,
+  httpBody: httpBody != null ? httpBody() : this.httpBody,
+  httpUrl: httpUrl != null ? httpUrl() : this.httpUrl,
+  status: status != null ? status() : this.status,
+  txtName: txtName != null ? txtName() : this.txtName,
+  txtValue: txtValue != null ? txtValue() : this.txtValue,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesValidationRecord &&
+          cname == other.cname &&
+          cnameTarget == other.cnameTarget &&
+          listEquals(emails, other.emails) &&
+          httpBody == other.httpBody &&
+          httpUrl == other.httpUrl &&
+          status == other.status &&
+          txtName == other.txtName &&
+          txtValue == other.txtValue; } 
+@override int get hashCode { return Object.hash(cname, cnameTarget, Object.hashAll(emails ?? const []), httpBody, httpUrl, status, txtName, txtValue); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesValidationRecord(cname: $cname, cnameTarget: $cnameTarget, emails: $emails, httpBody: $httpBody, httpUrl: $httpUrl, status: $status, txtName: $txtName, txtValue: $txtValue)'; } 
+ }

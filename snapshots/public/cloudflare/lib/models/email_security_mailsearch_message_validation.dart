@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EmailSecurityValidationStatus {const EmailSecurityValidationStatus._(this.value);
+
+factory EmailSecurityValidationStatus.fromJson(String json) { return switch (json) {
+  'pass' => pass,
+  'neutral' => neutral,
+  'fail' => fail,
+  'error' => error,
+  'none' => none,
+  _ => EmailSecurityValidationStatus._(json),
+}; }
+
+static const EmailSecurityValidationStatus pass = EmailSecurityValidationStatus._('pass');
+
+static const EmailSecurityValidationStatus neutral = EmailSecurityValidationStatus._('neutral');
+
+static const EmailSecurityValidationStatus fail = EmailSecurityValidationStatus._('fail');
+
+static const EmailSecurityValidationStatus error = EmailSecurityValidationStatus._('error');
+
+static const EmailSecurityValidationStatus none = EmailSecurityValidationStatus._('none');
+
+static const List<EmailSecurityValidationStatus> values = [pass, neutral, fail, error, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EmailSecurityValidationStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EmailSecurityValidationStatus($value)'; } 
+ }
+final class EmailSecurityMailsearchMessageValidation {const EmailSecurityMailsearchMessageValidation({this.comment, this.dkim, this.dmarc, this.spf, });
+
+factory EmailSecurityMailsearchMessageValidation.fromJson(Map<String, dynamic> json) { return EmailSecurityMailsearchMessageValidation(
+  comment: json['comment'] as String?,
+  dkim: json['dkim'] != null ? EmailSecurityValidationStatus.fromJson(json['dkim'] as String) : null,
+  dmarc: json['dmarc'] != null ? EmailSecurityValidationStatus.fromJson(json['dmarc'] as String) : null,
+  spf: json['spf'] != null ? EmailSecurityValidationStatus.fromJson(json['spf'] as String) : null,
+); }
+
+final String? comment;
+
+final EmailSecurityValidationStatus? dkim;
+
+final EmailSecurityValidationStatus? dmarc;
+
+final EmailSecurityValidationStatus? spf;
+
+Map<String, dynamic> toJson() { return {
+  'comment': ?comment,
+  if (dkim != null) 'dkim': dkim?.toJson(),
+  if (dmarc != null) 'dmarc': dmarc?.toJson(),
+  if (spf != null) 'spf': spf?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EmailSecurityMailsearchMessageValidation copyWith({String? Function()? comment, EmailSecurityValidationStatus? Function()? dkim, EmailSecurityValidationStatus? Function()? dmarc, EmailSecurityValidationStatus? Function()? spf, }) { return EmailSecurityMailsearchMessageValidation(
+  comment: comment != null ? comment() : this.comment,
+  dkim: dkim != null ? dkim() : this.dkim,
+  dmarc: dmarc != null ? dmarc() : this.dmarc,
+  spf: spf != null ? spf() : this.spf,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityMailsearchMessageValidation &&
+          comment == other.comment &&
+          dkim == other.dkim &&
+          dmarc == other.dmarc &&
+          spf == other.spf; } 
+@override int get hashCode { return Object.hash(comment, dkim, dmarc, spf); } 
+@override String toString() { return 'EmailSecurityMailsearchMessageValidation(comment: $comment, dkim: $dkim, dmarc: $dmarc, spf: $spf)'; } 
+ }

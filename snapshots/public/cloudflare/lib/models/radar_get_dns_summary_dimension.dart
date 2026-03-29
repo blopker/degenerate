@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the attribute by which to group the results.
+final class RadarGetDnsSummaryDimension {const RadarGetDnsSummaryDimension._(this.value);
+
+factory RadarGetDnsSummaryDimension.fromJson(String json) { return switch (json) {
+  'AS' => $as,
+  'CACHE_HIT' => cacheHit,
+  'DNSSEC' => dnssec,
+  'DNSSEC_AWARE' => dnssecAware,
+  'DNSSEC_E2E' => dnssecE2E,
+  'IP_VERSION' => ipVersion,
+  'LOCATION' => location,
+  'MATCHING_ANSWER' => matchingAnswer,
+  'PROTOCOL' => protocol,
+  'QUERY_TYPE' => queryType,
+  'RESPONSE_CODE' => responseCode,
+  'RESPONSE_TTL' => responseTtl,
+  'TLD' => tld,
+  'TLD_DNS_MAGNITUDE' => tldDnsMagnitude,
+  _ => RadarGetDnsSummaryDimension._(json),
+}; }
+
+static const RadarGetDnsSummaryDimension $as = RadarGetDnsSummaryDimension._('AS');
+
+static const RadarGetDnsSummaryDimension cacheHit = RadarGetDnsSummaryDimension._('CACHE_HIT');
+
+static const RadarGetDnsSummaryDimension dnssec = RadarGetDnsSummaryDimension._('DNSSEC');
+
+static const RadarGetDnsSummaryDimension dnssecAware = RadarGetDnsSummaryDimension._('DNSSEC_AWARE');
+
+static const RadarGetDnsSummaryDimension dnssecE2E = RadarGetDnsSummaryDimension._('DNSSEC_E2E');
+
+static const RadarGetDnsSummaryDimension ipVersion = RadarGetDnsSummaryDimension._('IP_VERSION');
+
+static const RadarGetDnsSummaryDimension location = RadarGetDnsSummaryDimension._('LOCATION');
+
+static const RadarGetDnsSummaryDimension matchingAnswer = RadarGetDnsSummaryDimension._('MATCHING_ANSWER');
+
+static const RadarGetDnsSummaryDimension protocol = RadarGetDnsSummaryDimension._('PROTOCOL');
+
+static const RadarGetDnsSummaryDimension queryType = RadarGetDnsSummaryDimension._('QUERY_TYPE');
+
+static const RadarGetDnsSummaryDimension responseCode = RadarGetDnsSummaryDimension._('RESPONSE_CODE');
+
+static const RadarGetDnsSummaryDimension responseTtl = RadarGetDnsSummaryDimension._('RESPONSE_TTL');
+
+static const RadarGetDnsSummaryDimension tld = RadarGetDnsSummaryDimension._('TLD');
+
+static const RadarGetDnsSummaryDimension tldDnsMagnitude = RadarGetDnsSummaryDimension._('TLD_DNS_MAGNITUDE');
+
+static const List<RadarGetDnsSummaryDimension> values = [$as, cacheHit, dnssec, dnssecAware, dnssecE2E, ipVersion, location, matchingAnswer, protocol, queryType, responseCode, responseTtl, tld, tldDnsMagnitude];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryDimension && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryDimension($value)'; } 
+ }

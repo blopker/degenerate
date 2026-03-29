@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'digital_experience_monitoring_uuid.dart';final class DigitalExperienceMonitoringWarpConfigDetails {const DigitalExperienceMonitoringWarpConfigDetails({this.accountName, this.accountTag, this.configName, });
+
+factory DigitalExperienceMonitoringWarpConfigDetails.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringWarpConfigDetails(
+  accountName: json['account_name'] as String?,
+  accountTag: json['account_tag'] != null ? DigitalExperienceMonitoringUuid.fromJson(json['account_tag'] as String) : null,
+  configName: json['config_name'] as String?,
+); }
+
+/// The account name.
+final String? accountName;
+
+/// API Resource UUID tag.
+final DigitalExperienceMonitoringUuid? accountTag;
+
+/// The name of the WARP configuration.
+final String? configName;
+
+Map<String, dynamic> toJson() { return {
+  'account_name': ?accountName,
+  if (accountTag != null) 'account_tag': accountTag?.toJson(),
+  'config_name': ?configName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DigitalExperienceMonitoringWarpConfigDetails copyWith({String Function()? accountName, DigitalExperienceMonitoringUuid Function()? accountTag, String Function()? configName, }) { return DigitalExperienceMonitoringWarpConfigDetails(
+  accountName: accountName != null ? accountName() : this.accountName,
+  accountTag: accountTag != null ? accountTag() : this.accountTag,
+  configName: configName != null ? configName() : this.configName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringWarpConfigDetails &&
+          accountName == other.accountName &&
+          accountTag == other.accountTag &&
+          configName == other.configName; } 
+@override int get hashCode { return Object.hash(accountName, accountTag, configName); } 
+@override String toString() { return 'DigitalExperienceMonitoringWarpConfigDetails(accountName: $accountName, accountTag: $accountTag, configName: $configName)'; } 
+ }

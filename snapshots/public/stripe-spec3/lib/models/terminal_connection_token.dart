@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class TerminalConnectionTokenObject {const TerminalConnectionTokenObject._(this.value);
+
+factory TerminalConnectionTokenObject.fromJson(String json) { return switch (json) {
+  'terminal.connection_token' => terminalConnectionToken,
+  _ => TerminalConnectionTokenObject._(json),
+}; }
+
+static const TerminalConnectionTokenObject terminalConnectionToken = TerminalConnectionTokenObject._('terminal.connection_token');
+
+static const List<TerminalConnectionTokenObject> values = [terminalConnectionToken];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TerminalConnectionTokenObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TerminalConnectionTokenObject($value)'; } 
+ }
+/// A Connection Token is used by the Stripe Terminal SDK to connect to a reader.
+/// 
+/// Related guide: [Fleet management](https://docs.stripe.com/terminal/fleet/locations)
+final class TerminalConnectionToken {const TerminalConnectionToken({this.location, required this.object, required this.secret, });
+
+factory TerminalConnectionToken.fromJson(Map<String, dynamic> json) { return TerminalConnectionToken(
+  location: json['location'] as String?,
+  object: TerminalConnectionTokenObject.fromJson(json['object'] as String),
+  secret: json['secret'] as String,
+); }
+
+/// The id of the location that this connection token is scoped to. Note that location scoping only applies to internet-connected readers. For more details, see [the docs on scoping connection tokens](https://docs.stripe.com/terminal/fleet/locations-and-zones?dashboard-or-api=api#connection-tokens).
+final String? location;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final TerminalConnectionTokenObject object;
+
+/// Your application should pass this token to the Stripe Terminal SDK.
+final String secret;
+
+Map<String, dynamic> toJson() { return {
+  'location': ?location,
+  'object': object.toJson(),
+  'secret': secret,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('secret') && json['secret'] is String; } 
+TerminalConnectionToken copyWith({String Function()? location, TerminalConnectionTokenObject? object, String? secret, }) { return TerminalConnectionToken(
+  location: location != null ? location() : this.location,
+  object: object ?? this.object,
+  secret: secret ?? this.secret,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TerminalConnectionToken &&
+          location == other.location &&
+          object == other.object &&
+          secret == other.secret; } 
+@override int get hashCode { return Object.hash(location, object, secret); } 
+@override String toString() { return 'TerminalConnectionToken(location: $location, object: $object, secret: $secret)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
+extension type AccessPreviousClientSecretExpiresAt(DateTime value) {
+factory AccessPreviousClientSecretExpiresAt.fromJson(String json) => AccessPreviousClientSecretExpiresAt(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}

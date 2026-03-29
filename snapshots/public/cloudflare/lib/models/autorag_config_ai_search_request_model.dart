@@ -1,0 +1,117 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AutoragConfigAiSearchRequestModelVariant1 {const AutoragConfigAiSearchRequestModelVariant1._(this.value);
+
+factory AutoragConfigAiSearchRequestModelVariant1.fromJson(String json) { return switch (json) {
+  '@cf/meta/llama-3.3-70b-instruct-fp8-fast' => cfMetaLlama3370bInstructFp8Fast,
+  '@cf/meta/llama-3.1-8b-instruct-fast' => cfMetaLlama318bInstructFast,
+  '@cf/meta/llama-3.1-8b-instruct-fp8' => cfMetaLlama318bInstructFp8,
+  '@cf/meta/llama-4-scout-17b-16e-instruct' => cfMetaLlama4Scout17b16eInstruct,
+  '@cf/qwen/qwen3-30b-a3b-fp8' => cfQwenQwen330bA3bFp8,
+  '@cf/deepseek-ai/deepseek-r1-distill-qwen-32b' => cfDeepseekAiDeepseekR1DistillQwen32b,
+  '@cf/moonshotai/kimi-k2-instruct' => cfMoonshotaiKimiK2Instruct,
+  'anthropic/claude-3-7-sonnet' => anthropicClaude37Sonnet,
+  'anthropic/claude-sonnet-4' => anthropicClaudeSonnet4,
+  'anthropic/claude-opus-4' => anthropicClaudeOpus4,
+  'anthropic/claude-3-5-haiku' => anthropicClaude35Haiku,
+  'cerebras/qwen-3-235b-a22b-instruct' => cerebrasQwen3235bA22bInstruct,
+  'cerebras/qwen-3-235b-a22b-thinking' => cerebrasQwen3235bA22bThinking,
+  'cerebras/llama-3.3-70b' => cerebrasLlama3370b,
+  'cerebras/llama-4-maverick-17b-128e-instruct' => cerebrasLlama4Maverick17b128eInstruct,
+  'cerebras/llama-4-scout-17b-16e-instruct' => cerebrasLlama4Scout17b16eInstruct,
+  'cerebras/gpt-oss-120b' => cerebrasGptOss120b,
+  'google-ai-studio/gemini-2.5-flash' => googleAiStudioGemini25Flash,
+  'google-ai-studio/gemini-2.5-pro' => googleAiStudioGemini25Pro,
+  'grok/grok-4' => grokGrok4,
+  'groq/llama-3.3-70b-versatile' => groqLlama3370bVersatile,
+  'groq/llama-3.1-8b-instant' => groqLlama318bInstant,
+  'openai/gpt-5' => openaiGpt5,
+  'openai/gpt-5-mini' => openaiGpt5Mini,
+  'openai/gpt-5-nano' => openaiGpt5Nano,
+  _ => AutoragConfigAiSearchRequestModelVariant1._(json),
+}; }
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfMetaLlama3370bInstructFp8Fast = AutoragConfigAiSearchRequestModelVariant1._('@cf/meta/llama-3.3-70b-instruct-fp8-fast');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfMetaLlama318bInstructFast = AutoragConfigAiSearchRequestModelVariant1._('@cf/meta/llama-3.1-8b-instruct-fast');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfMetaLlama318bInstructFp8 = AutoragConfigAiSearchRequestModelVariant1._('@cf/meta/llama-3.1-8b-instruct-fp8');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfMetaLlama4Scout17b16eInstruct = AutoragConfigAiSearchRequestModelVariant1._('@cf/meta/llama-4-scout-17b-16e-instruct');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfQwenQwen330bA3bFp8 = AutoragConfigAiSearchRequestModelVariant1._('@cf/qwen/qwen3-30b-a3b-fp8');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfDeepseekAiDeepseekR1DistillQwen32b = AutoragConfigAiSearchRequestModelVariant1._('@cf/deepseek-ai/deepseek-r1-distill-qwen-32b');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cfMoonshotaiKimiK2Instruct = AutoragConfigAiSearchRequestModelVariant1._('@cf/moonshotai/kimi-k2-instruct');
+
+static const AutoragConfigAiSearchRequestModelVariant1 anthropicClaude37Sonnet = AutoragConfigAiSearchRequestModelVariant1._('anthropic/claude-3-7-sonnet');
+
+static const AutoragConfigAiSearchRequestModelVariant1 anthropicClaudeSonnet4 = AutoragConfigAiSearchRequestModelVariant1._('anthropic/claude-sonnet-4');
+
+static const AutoragConfigAiSearchRequestModelVariant1 anthropicClaudeOpus4 = AutoragConfigAiSearchRequestModelVariant1._('anthropic/claude-opus-4');
+
+static const AutoragConfigAiSearchRequestModelVariant1 anthropicClaude35Haiku = AutoragConfigAiSearchRequestModelVariant1._('anthropic/claude-3-5-haiku');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cerebrasQwen3235bA22bInstruct = AutoragConfigAiSearchRequestModelVariant1._('cerebras/qwen-3-235b-a22b-instruct');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cerebrasQwen3235bA22bThinking = AutoragConfigAiSearchRequestModelVariant1._('cerebras/qwen-3-235b-a22b-thinking');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cerebrasLlama3370b = AutoragConfigAiSearchRequestModelVariant1._('cerebras/llama-3.3-70b');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cerebrasLlama4Maverick17b128eInstruct = AutoragConfigAiSearchRequestModelVariant1._('cerebras/llama-4-maverick-17b-128e-instruct');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cerebrasLlama4Scout17b16eInstruct = AutoragConfigAiSearchRequestModelVariant1._('cerebras/llama-4-scout-17b-16e-instruct');
+
+static const AutoragConfigAiSearchRequestModelVariant1 cerebrasGptOss120b = AutoragConfigAiSearchRequestModelVariant1._('cerebras/gpt-oss-120b');
+
+static const AutoragConfigAiSearchRequestModelVariant1 googleAiStudioGemini25Flash = AutoragConfigAiSearchRequestModelVariant1._('google-ai-studio/gemini-2.5-flash');
+
+static const AutoragConfigAiSearchRequestModelVariant1 googleAiStudioGemini25Pro = AutoragConfigAiSearchRequestModelVariant1._('google-ai-studio/gemini-2.5-pro');
+
+static const AutoragConfigAiSearchRequestModelVariant1 grokGrok4 = AutoragConfigAiSearchRequestModelVariant1._('grok/grok-4');
+
+static const AutoragConfigAiSearchRequestModelVariant1 groqLlama3370bVersatile = AutoragConfigAiSearchRequestModelVariant1._('groq/llama-3.3-70b-versatile');
+
+static const AutoragConfigAiSearchRequestModelVariant1 groqLlama318bInstant = AutoragConfigAiSearchRequestModelVariant1._('groq/llama-3.1-8b-instant');
+
+static const AutoragConfigAiSearchRequestModelVariant1 openaiGpt5 = AutoragConfigAiSearchRequestModelVariant1._('openai/gpt-5');
+
+static const AutoragConfigAiSearchRequestModelVariant1 openaiGpt5Mini = AutoragConfigAiSearchRequestModelVariant1._('openai/gpt-5-mini');
+
+static const AutoragConfigAiSearchRequestModelVariant1 openaiGpt5Nano = AutoragConfigAiSearchRequestModelVariant1._('openai/gpt-5-nano');
+
+static const List<AutoragConfigAiSearchRequestModelVariant1> values = [cfMetaLlama3370bInstructFp8Fast, cfMetaLlama318bInstructFast, cfMetaLlama318bInstructFp8, cfMetaLlama4Scout17b16eInstruct, cfQwenQwen330bA3bFp8, cfDeepseekAiDeepseekR1DistillQwen32b, cfMoonshotaiKimiK2Instruct, anthropicClaude37Sonnet, anthropicClaudeSonnet4, anthropicClaudeOpus4, anthropicClaude35Haiku, cerebrasQwen3235bA22bInstruct, cerebrasQwen3235bA22bThinking, cerebrasLlama3370b, cerebrasLlama4Maverick17b128eInstruct, cerebrasLlama4Scout17b16eInstruct, cerebrasGptOss120b, googleAiStudioGemini25Flash, googleAiStudioGemini25Pro, grokGrok4, groqLlama3370bVersatile, groqLlama318bInstant, openaiGpt5, openaiGpt5Mini, openaiGpt5Nano];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AutoragConfigAiSearchRequestModelVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AutoragConfigAiSearchRequestModelVariant1($value)'; } 
+ }
+final class AutoragConfigAiSearchRequestModelVariant2 {const AutoragConfigAiSearchRequestModelVariant2._(this.value);
+
+factory AutoragConfigAiSearchRequestModelVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => AutoragConfigAiSearchRequestModelVariant2._(json),
+}; }
+
+static const AutoragConfigAiSearchRequestModelVariant2 $empty = AutoragConfigAiSearchRequestModelVariant2._('');
+
+static const List<AutoragConfigAiSearchRequestModelVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AutoragConfigAiSearchRequestModelVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AutoragConfigAiSearchRequestModelVariant2($value)'; } 
+ }
+typedef AutoragConfigAiSearchRequestModel = OneOf2<AutoragConfigAiSearchRequestModelVariant1,AutoragConfigAiSearchRequestModelVariant2>;

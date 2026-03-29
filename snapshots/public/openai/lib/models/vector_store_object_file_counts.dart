@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class VectorStoreObjectFileCounts {const VectorStoreObjectFileCounts({required this.inProgress, required this.completed, required this.failed, required this.cancelled, required this.total, });
+
+factory VectorStoreObjectFileCounts.fromJson(Map<String, dynamic> json) { return VectorStoreObjectFileCounts(
+  inProgress: (json['in_progress'] as num).toInt(),
+  completed: (json['completed'] as num).toInt(),
+  failed: (json['failed'] as num).toInt(),
+  cancelled: (json['cancelled'] as num).toInt(),
+  total: (json['total'] as num).toInt(),
+); }
+
+/// The number of files that are currently being processed.
+final int inProgress;
+
+/// The number of files that have been successfully processed.
+final int completed;
+
+/// The number of files that have failed to process.
+final int failed;
+
+/// The number of files that were cancelled.
+final int cancelled;
+
+/// The total number of files.
+final int total;
+
+Map<String, dynamic> toJson() { return {
+  'in_progress': inProgress,
+  'completed': completed,
+  'failed': failed,
+  'cancelled': cancelled,
+  'total': total,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('in_progress') && json['in_progress'] is num &&
+      json.containsKey('completed') && json['completed'] is num &&
+      json.containsKey('failed') && json['failed'] is num &&
+      json.containsKey('cancelled') && json['cancelled'] is num &&
+      json.containsKey('total') && json['total'] is num; } 
+VectorStoreObjectFileCounts copyWith({int? inProgress, int? completed, int? failed, int? cancelled, int? total, }) { return VectorStoreObjectFileCounts(
+  inProgress: inProgress ?? this.inProgress,
+  completed: completed ?? this.completed,
+  failed: failed ?? this.failed,
+  cancelled: cancelled ?? this.cancelled,
+  total: total ?? this.total,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VectorStoreObjectFileCounts &&
+          inProgress == other.inProgress &&
+          completed == other.completed &&
+          failed == other.failed &&
+          cancelled == other.cancelled &&
+          total == other.total; } 
+@override int get hashCode { return Object.hash(inProgress, completed, failed, cancelled, total); } 
+@override String toString() { return 'VectorStoreObjectFileCounts(inProgress: $inProgress, completed: $completed, failed: $failed, cancelled: $cancelled, total: $total)'; } 
+ }

@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Finished crypt key rotation
+final class MconnEventFinishRotateCryptKeySuccessK {const MconnEventFinishRotateCryptKeySuccessK._(this.value);
+
+factory MconnEventFinishRotateCryptKeySuccessK.fromJson(String json) { return switch (json) {
+  'FinishRotateCryptKeySuccess' => finishRotateCryptKeySuccess,
+  _ => MconnEventFinishRotateCryptKeySuccessK._(json),
+}; }
+
+static const MconnEventFinishRotateCryptKeySuccessK finishRotateCryptKeySuccess = MconnEventFinishRotateCryptKeySuccessK._('FinishRotateCryptKeySuccess');
+
+static const List<MconnEventFinishRotateCryptKeySuccessK> values = [finishRotateCryptKeySuccess];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MconnEventFinishRotateCryptKeySuccessK && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MconnEventFinishRotateCryptKeySuccessK($value)'; } 
+ }
+final class MconnEventFinishRotateCryptKeySuccess {const MconnEventFinishRotateCryptKeySuccess({required this.k});
+
+factory MconnEventFinishRotateCryptKeySuccess.fromJson(Map<String, dynamic> json) { return MconnEventFinishRotateCryptKeySuccess(
+  k: MconnEventFinishRotateCryptKeySuccessK.fromJson(json['k'] as String),
+); }
+
+/// Finished crypt key rotation
+final MconnEventFinishRotateCryptKeySuccessK k;
+
+Map<String, dynamic> toJson() { return {
+  'k': k.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+MconnEventFinishRotateCryptKeySuccess copyWith({MconnEventFinishRotateCryptKeySuccessK? k}) { return MconnEventFinishRotateCryptKeySuccess(
+  k: k ?? this.k,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnEventFinishRotateCryptKeySuccess &&
+          k == other.k; } 
+@override int get hashCode { return k.hashCode; } 
+@override String toString() { return 'MconnEventFinishRotateCryptKeySuccess(k: $k)'; } 
+ }

@@ -1,0 +1,275 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_post_run_cf_deepgram_aura1_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura1_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_en_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_en_response400.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_es_request.dart';import '../models/workers_ai_post_run_cf_deepgram_aura2_es_response400.dart';import '../models/workers_ai_post_run_cf_myshell_ai_melotts_request.dart';import '../models/workers_ai_post_run_cf_myshell_ai_melotts_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura1_internal_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura1_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_en_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_es_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura2_response400.dart';import '../models/workers_ai_post_websocket_run_cf_deepgram_aura_response400.dart';/// WorkersAiTextToSpeechApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class WorkersAiTextToSpeechApi with ApiExecutor {const WorkersAiTextToSpeechApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Open Websocket connection with @cf/deepgram/aura model.
+///
+/// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura model.
+///
+/// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura`
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAuraResponse400>> workersAiPostWebsocketRunCfDeepgramAura({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return WorkersAiPostWebsocketRunCfDeepgramAuraResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Open Websocket connection with @cf/deepgram/aura-1 model.
+///
+/// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1 model.
+///
+/// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1Response400>> workersAiPostWebsocketRunCfDeepgramAura1({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-1',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return WorkersAiPostWebsocketRunCfDeepgramAura1Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/deepgram/aura-1 model.
+///
+/// Runs inference on the @cf/deepgram/aura-1 model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-1`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura1Response400>> workersAiPostRunCfDeepgramAura1({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura1Request? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-1',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfDeepgramAura1Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Open Websocket connection with @cf/deepgram/aura-1-internal model.
+///
+/// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1-internal model.
+///
+/// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-1-internal`
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400>> workersAiPostWebsocketRunCfDeepgramAura1Internal({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-1-internal',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Open Websocket connection with @cf/deepgram/aura-2 model.
+///
+/// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2 model.
+///
+/// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2`
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2Response400>> workersAiPostWebsocketRunCfDeepgramAura2({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return WorkersAiPostWebsocketRunCfDeepgramAura2Response400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Open Websocket connection with @cf/deepgram/aura-2-en model.
+///
+/// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-en model.
+///
+/// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400>> workersAiPostWebsocketRunCfDeepgramAura2En({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2-en',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/deepgram/aura-2-en model.
+///
+/// Runs inference on the @cf/deepgram/aura-2-en model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-en`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EnResponse400>> workersAiPostRunCfDeepgramAura2En({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EnRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2-en',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Open Websocket connection with @cf/deepgram/aura-2-es model.
+///
+/// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-es model.
+///
+/// `GET /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
+Future<ApiResult<void, WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400>> workersAiPostWebsocketRunCfDeepgramAura2Es({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2-es',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+  onError: (response) {
+    return WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/deepgram/aura-2-es model.
+///
+/// Runs inference on the @cf/deepgram/aura-2-es model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/deepgram/aura-2-es`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfDeepgramAura2EsResponse400>> workersAiPostRunCfDeepgramAura2Es({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfDeepgramAura2EsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/deepgram/aura-2-es',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfDeepgramAura2EsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute @cf/myshell-ai/melotts model.
+///
+/// Runs inference on the @cf/myshell-ai/melotts model.
+///
+/// `POST /accounts/{account_id}/ai/run/@cf/myshell-ai/melotts`
+Future<ApiResult<Map<String, dynamic>, WorkersAiPostRunCfMyshellAiMelottsResponse400>> workersAiPostRunCfMyshellAiMelotts({required String accountId, String? queueRequest, String? tags, WorkersAiPostRunCfMyshellAiMelottsRequest? body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (queueRequest != null) queryParameters['queueRequest'] = queueRequest;
+if (tags != null) queryParameters['tags'] = tags;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/@cf/myshell-ai/melotts',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v));
+  },
+  onError: (response) {
+    return WorkersAiPostRunCfMyshellAiMelottsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

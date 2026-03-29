@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class InvoiceSettingCustomField {const InvoiceSettingCustomField({required this.name, required this.value, });
+
+factory InvoiceSettingCustomField.fromJson(Map<String, dynamic> json) { return InvoiceSettingCustomField(
+  name: json['name'] as String,
+  value: json['value'] as String,
+); }
+
+/// The name of the custom field.
+final String name;
+
+/// The value of the custom field.
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+InvoiceSettingCustomField copyWith({String? name, String? value, }) { return InvoiceSettingCustomField(
+  name: name ?? this.name,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoiceSettingCustomField &&
+          name == other.name &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(name, value); } 
+@override String toString() { return 'InvoiceSettingCustomField(name: $name, value: $value)'; } 
+ }

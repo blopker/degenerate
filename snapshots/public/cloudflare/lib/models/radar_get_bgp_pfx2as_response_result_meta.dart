@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetBgpPfx2asResponseResultMeta {const RadarGetBgpPfx2asResponseResultMeta({required this.dataTime, required this.queryTime, required this.totalPeers, });
+
+factory RadarGetBgpPfx2asResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asResponseResultMeta(
+  dataTime: json['data_time'] as String,
+  queryTime: json['query_time'] as String,
+  totalPeers: (json['total_peers'] as num).toInt(),
+); }
+
+final String dataTime;
+
+final String queryTime;
+
+final int totalPeers;
+
+Map<String, dynamic> toJson() { return {
+  'data_time': dataTime,
+  'query_time': queryTime,
+  'total_peers': totalPeers,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_time') && json['data_time'] is String &&
+      json.containsKey('query_time') && json['query_time'] is String &&
+      json.containsKey('total_peers') && json['total_peers'] is num; } 
+RadarGetBgpPfx2asResponseResultMeta copyWith({String? dataTime, String? queryTime, int? totalPeers, }) { return RadarGetBgpPfx2asResponseResultMeta(
+  dataTime: dataTime ?? this.dataTime,
+  queryTime: queryTime ?? this.queryTime,
+  totalPeers: totalPeers ?? this.totalPeers,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpPfx2asResponseResultMeta &&
+          dataTime == other.dataTime &&
+          queryTime == other.queryTime &&
+          totalPeers == other.totalPeers; } 
+@override int get hashCode { return Object.hash(dataTime, queryTime, totalPeers); } 
+@override String toString() { return 'RadarGetBgpPfx2asResponseResultMeta(dataTime: $dataTime, queryTime: $queryTime, totalPeers: $totalPeers)'; } 
+ }

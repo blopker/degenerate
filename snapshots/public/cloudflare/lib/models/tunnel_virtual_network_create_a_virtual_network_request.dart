@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tunnel_is_default_network_optional.dart';import 'tunnel_virtual_network_comment.dart';import 'tunnel_virtual_network_name.dart';final class TunnelVirtualNetworkCreateAVirtualNetworkRequest {const TunnelVirtualNetworkCreateAVirtualNetworkRequest({this.comment, this.isDefault, this.isDefaultNetwork, required this.name, });
+
+factory TunnelVirtualNetworkCreateAVirtualNetworkRequest.fromJson(Map<String, dynamic> json) { return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
+  comment: json['comment'] != null ? TunnelVirtualNetworkComment.fromJson(json['comment'] as String) : null,
+  isDefault: json['is_default'] as bool?,
+  isDefaultNetwork: json['is_default_network'] != null ? TunnelIsDefaultNetworkOptional.fromJson(json['is_default_network'] as bool) : null,
+  name: TunnelVirtualNetworkName.fromJson(json['name'] as String),
+); }
+
+/// Optional remark describing the virtual network.
+final TunnelVirtualNetworkComment? comment;
+
+/// If `true`, this virtual network is the default for the account.
+final bool? isDefault;
+
+/// If `true`, this virtual network is the default for the account.
+final TunnelIsDefaultNetworkOptional? isDefaultNetwork;
+
+/// A user-friendly name for the virtual network.
+final TunnelVirtualNetworkName name;
+
+Map<String, dynamic> toJson() { return {
+  if (comment != null) 'comment': comment?.toJson(),
+  'is_default': ?isDefault,
+  if (isDefaultNetwork != null) 'is_default_network': isDefaultNetwork?.toJson(),
+  'name': name.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
+TunnelVirtualNetworkCreateAVirtualNetworkRequest copyWith({TunnelVirtualNetworkComment Function()? comment, bool Function()? isDefault, TunnelIsDefaultNetworkOptional Function()? isDefaultNetwork, TunnelVirtualNetworkName? name, }) { return TunnelVirtualNetworkCreateAVirtualNetworkRequest(
+  comment: comment != null ? comment() : this.comment,
+  isDefault: isDefault != null ? isDefault() : this.isDefault,
+  isDefaultNetwork: isDefaultNetwork != null ? isDefaultNetwork() : this.isDefaultNetwork,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TunnelVirtualNetworkCreateAVirtualNetworkRequest &&
+          comment == other.comment &&
+          isDefault == other.isDefault &&
+          isDefaultNetwork == other.isDefaultNetwork &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(comment, isDefault, isDefaultNetwork, name); } 
+@override String toString() { return 'TunnelVirtualNetworkCreateAVirtualNetworkRequest(comment: $comment, isDefault: $isDefault, isDefaultNetwork: $isDefaultNetwork, name: $name)'; } 
+ }

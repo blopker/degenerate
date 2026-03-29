@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecurityTopTldsBySpamSpf {const RadarGetEmailSecurityTopTldsBySpamSpf._(this.value);
+
+factory RadarGetEmailSecurityTopTldsBySpamSpf.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailSecurityTopTldsBySpamSpf._(json),
+}; }
+
+static const RadarGetEmailSecurityTopTldsBySpamSpf pass = RadarGetEmailSecurityTopTldsBySpamSpf._('PASS');
+
+static const RadarGetEmailSecurityTopTldsBySpamSpf none = RadarGetEmailSecurityTopTldsBySpamSpf._('NONE');
+
+static const RadarGetEmailSecurityTopTldsBySpamSpf fail = RadarGetEmailSecurityTopTldsBySpamSpf._('FAIL');
+
+static const List<RadarGetEmailSecurityTopTldsBySpamSpf> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTopTldsBySpamSpf && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTopTldsBySpamSpf($value)'; } 
+ }

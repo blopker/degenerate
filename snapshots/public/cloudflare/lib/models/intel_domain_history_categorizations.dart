@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_domain_history_categorizations_categories.dart';final class IntelDomainHistoryCategorizations {const IntelDomainHistoryCategorizations({this.categories, this.end, this.start, });
+
+factory IntelDomainHistoryCategorizations.fromJson(Map<String, dynamic> json) { return IntelDomainHistoryCategorizations(
+  categories: (json['categories'] as List<dynamic>?)?.map((e) => IntelDomainHistoryCategorizationsCategories.fromJson(e as Map<String, dynamic>)).toList(),
+  end: json['end'] as String?,
+  start: json['start'] as String?,
+); }
+
+final List<IntelDomainHistoryCategorizationsCategories>? categories;
+
+final String? end;
+
+final String? start;
+
+Map<String, dynamic> toJson() { return {
+  if (categories != null) 'categories': categories?.map((e) => e.toJson()).toList(),
+  'end': ?end,
+  'start': ?start,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelDomainHistoryCategorizations copyWith({List<IntelDomainHistoryCategorizationsCategories> Function()? categories, String Function()? end, String Function()? start, }) { return IntelDomainHistoryCategorizations(
+  categories: categories != null ? categories() : this.categories,
+  end: end != null ? end() : this.end,
+  start: start != null ? start() : this.start,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelDomainHistoryCategorizations &&
+          listEquals(categories, other.categories) &&
+          end == other.end &&
+          start == other.start; } 
+@override int get hashCode { return Object.hash(Object.hashAll(categories ?? const []), end, start); } 
+@override String toString() { return 'IntelDomainHistoryCategorizations(categories: $categories, end: $end, start: $start)'; } 
+ }

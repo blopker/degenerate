@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TextToSpeech2Variant1 {const TextToSpeech2Variant1({this.audio});
+
+factory TextToSpeech2Variant1.fromJson(Map<String, dynamic> json) { return TextToSpeech2Variant1(
+  audio: json['audio'] as String?,
+); }
+
+/// The generated audio in MP3 format, base64-encoded
+final String? audio;
+
+Map<String, dynamic> toJson() { return {
+  'audio': ?audio,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TextToSpeech2Variant1 copyWith({String Function()? audio}) { return TextToSpeech2Variant1(
+  audio: audio != null ? audio() : this.audio,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TextToSpeech2Variant1 &&
+          audio == other.audio; } 
+@override int get hashCode { return audio.hashCode; } 
+@override String toString() { return 'TextToSpeech2Variant1(audio: $audio)'; } 
+ }

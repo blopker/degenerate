@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AiSearchUpdateInstancesRequestEmbeddingModelVariant1 {const AiSearchUpdateInstancesRequestEmbeddingModelVariant1._(this.value);
+
+factory AiSearchUpdateInstancesRequestEmbeddingModelVariant1.fromJson(String json) { return switch (json) {
+  '@cf/qwen/qwen3-embedding-0.6b' => cfQwenQwen3Embedding06b,
+  '@cf/baai/bge-m3' => cfBaaiBgeM3,
+  '@cf/baai/bge-large-en-v1.5' => cfBaaiBgeLargeEnV15,
+  '@cf/google/embeddinggemma-300m' => cfGoogleEmbeddinggemma300m,
+  'google-ai-studio/gemini-embedding-001' => googleAiStudioGeminiEmbedding001,
+  'openai/text-embedding-3-small' => openaiTextEmbedding3Small,
+  'openai/text-embedding-3-large' => openaiTextEmbedding3Large,
+  _ => AiSearchUpdateInstancesRequestEmbeddingModelVariant1._(json),
+}; }
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 cfQwenQwen3Embedding06b = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('@cf/qwen/qwen3-embedding-0.6b');
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 cfBaaiBgeM3 = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('@cf/baai/bge-m3');
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 cfBaaiBgeLargeEnV15 = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('@cf/baai/bge-large-en-v1.5');
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 cfGoogleEmbeddinggemma300m = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('@cf/google/embeddinggemma-300m');
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 googleAiStudioGeminiEmbedding001 = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('google-ai-studio/gemini-embedding-001');
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 openaiTextEmbedding3Small = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('openai/text-embedding-3-small');
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant1 openaiTextEmbedding3Large = AiSearchUpdateInstancesRequestEmbeddingModelVariant1._('openai/text-embedding-3-large');
+
+static const List<AiSearchUpdateInstancesRequestEmbeddingModelVariant1> values = [cfQwenQwen3Embedding06b, cfBaaiBgeM3, cfBaaiBgeLargeEnV15, cfGoogleEmbeddinggemma300m, googleAiStudioGeminiEmbedding001, openaiTextEmbedding3Small, openaiTextEmbedding3Large];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchUpdateInstancesRequestEmbeddingModelVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchUpdateInstancesRequestEmbeddingModelVariant1($value)'; } 
+ }
+final class AiSearchUpdateInstancesRequestEmbeddingModelVariant2 {const AiSearchUpdateInstancesRequestEmbeddingModelVariant2._(this.value);
+
+factory AiSearchUpdateInstancesRequestEmbeddingModelVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => AiSearchUpdateInstancesRequestEmbeddingModelVariant2._(json),
+}; }
+
+static const AiSearchUpdateInstancesRequestEmbeddingModelVariant2 $empty = AiSearchUpdateInstancesRequestEmbeddingModelVariant2._('');
+
+static const List<AiSearchUpdateInstancesRequestEmbeddingModelVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchUpdateInstancesRequestEmbeddingModelVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchUpdateInstancesRequestEmbeddingModelVariant2($value)'; } 
+ }
+typedef AiSearchUpdateInstancesRequestEmbeddingModel = OneOf2<AiSearchUpdateInstancesRequestEmbeddingModelVariant1,AiSearchUpdateInstancesRequestEmbeddingModelVariant2>;

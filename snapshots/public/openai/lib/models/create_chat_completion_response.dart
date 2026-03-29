@@ -1,0 +1,101 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'completion_usage.dart';import 'create_chat_completion_response_choices.dart';import 'service_tier.dart';/// The object type, which is always `chat.completion`.
+final class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject._(this.value);
+
+factory CreateChatCompletionResponseObject.fromJson(String json) { return switch (json) {
+  'chat.completion' => chatCompletion,
+  _ => CreateChatCompletionResponseObject._(json),
+}; }
+
+static const CreateChatCompletionResponseObject chatCompletion = CreateChatCompletionResponseObject._('chat.completion');
+
+static const List<CreateChatCompletionResponseObject> values = [chatCompletion];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateChatCompletionResponseObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateChatCompletionResponseObject($value)'; } 
+ }
+/// Represents a chat completion response returned by model, based on the provided input.
+final class CreateChatCompletionResponse {const CreateChatCompletionResponse({required this.id, required this.choices, required this.created, required this.model, this.serviceTier, this.systemFingerprint, required this.object, this.usage, });
+
+factory CreateChatCompletionResponse.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponse(
+  id: json['id'] as String,
+  choices: (json['choices'] as List<dynamic>).map((e) => CreateChatCompletionResponseChoices.fromJson(e as Map<String, dynamic>)).toList(),
+  created: (json['created'] as num).toInt(),
+  model: json['model'] as String,
+  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  systemFingerprint: json['system_fingerprint'] as String?,
+  object: CreateChatCompletionResponseObject.fromJson(json['object'] as String),
+  usage: json['usage'] != null ? CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>) : null,
+); }
+
+/// A unique identifier for the chat completion.
+final String id;
+
+/// A list of chat completion choices. Can be more than one if `n` is greater than 1.
+final List<CreateChatCompletionResponseChoices> choices;
+
+/// The Unix timestamp (in seconds) of when the chat completion was created.
+final int created;
+
+/// The model used for the chat completion.
+final String model;
+
+final ServiceTier? serviceTier;
+
+/// This fingerprint represents the backend configuration that the model runs with.
+/// 
+/// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
+/// 
+final String? systemFingerprint;
+
+/// The object type, which is always `chat.completion`.
+final CreateChatCompletionResponseObject object;
+
+final CompletionUsage? usage;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'choices': choices.map((e) => e.toJson()).toList(),
+  'created': created,
+  'model': model,
+  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  'system_fingerprint': ?systemFingerprint,
+  'object': object.toJson(),
+  if (usage != null) 'usage': usage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('choices') &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('model') && json['model'] is String &&
+      json.containsKey('object'); } 
+CreateChatCompletionResponse copyWith({String? id, List<CreateChatCompletionResponseChoices>? choices, int? created, String? model, ServiceTier? Function()? serviceTier, String Function()? systemFingerprint, CreateChatCompletionResponseObject? object, CompletionUsage Function()? usage, }) { return CreateChatCompletionResponse(
+  id: id ?? this.id,
+  choices: choices ?? this.choices,
+  created: created ?? this.created,
+  model: model ?? this.model,
+  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  systemFingerprint: systemFingerprint != null ? systemFingerprint() : this.systemFingerprint,
+  object: object ?? this.object,
+  usage: usage != null ? usage() : this.usage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateChatCompletionResponse &&
+          id == other.id &&
+          listEquals(choices, other.choices) &&
+          created == other.created &&
+          model == other.model &&
+          serviceTier == other.serviceTier &&
+          systemFingerprint == other.systemFingerprint &&
+          object == other.object &&
+          usage == other.usage; } 
+@override int get hashCode { return Object.hash(id, Object.hashAll(choices), created, model, serviceTier, systemFingerprint, object, usage); } 
+@override String toString() { return 'CreateChatCompletionResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)'; } 
+ }

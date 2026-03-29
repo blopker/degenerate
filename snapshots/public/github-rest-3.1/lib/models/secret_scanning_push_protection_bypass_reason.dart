@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The reason for bypassing push protection.
+final class SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason._(this.value);
+
+factory SecretScanningPushProtectionBypassReason.fromJson(String json) { return switch (json) {
+  'false_positive' => falsePositive,
+  'used_in_tests' => usedInTests,
+  'will_fix_later' => willFixLater,
+  _ => SecretScanningPushProtectionBypassReason._(json),
+}; }
+
+static const SecretScanningPushProtectionBypassReason falsePositive = SecretScanningPushProtectionBypassReason._('false_positive');
+
+static const SecretScanningPushProtectionBypassReason usedInTests = SecretScanningPushProtectionBypassReason._('used_in_tests');
+
+static const SecretScanningPushProtectionBypassReason willFixLater = SecretScanningPushProtectionBypassReason._('will_fix_later');
+
+static const List<SecretScanningPushProtectionBypassReason> values = [falsePositive, usedInTests, willFixLater];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecretScanningPushProtectionBypassReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecretScanningPushProtectionBypassReason($value)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'enhanced_evidence.dart';final class PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2 {const PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2._(this.value);
+
+factory PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2._(json),
+}; }
+
+static const PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2 $empty = PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2._('');
+
+static const List<PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2($value)'; } 
+ }
+typedef PostChargesChargeDisputeRequestEvidenceEnhancedEvidence = OneOf2<EnhancedEvidence,PostChargesChargeDisputeRequestEvidenceEnhancedEvidenceVariant2>;

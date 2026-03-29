@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Started crypt key rotation
+final class MconnEventStartRotateCryptKeyK {const MconnEventStartRotateCryptKeyK._(this.value);
+
+factory MconnEventStartRotateCryptKeyK.fromJson(String json) { return switch (json) {
+  'StartRotateCryptKey' => startRotateCryptKey,
+  _ => MconnEventStartRotateCryptKeyK._(json),
+}; }
+
+static const MconnEventStartRotateCryptKeyK startRotateCryptKey = MconnEventStartRotateCryptKeyK._('StartRotateCryptKey');
+
+static const List<MconnEventStartRotateCryptKeyK> values = [startRotateCryptKey];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MconnEventStartRotateCryptKeyK && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MconnEventStartRotateCryptKeyK($value)'; } 
+ }
+final class MconnEventStartRotateCryptKey {const MconnEventStartRotateCryptKey({required this.k});
+
+factory MconnEventStartRotateCryptKey.fromJson(Map<String, dynamic> json) { return MconnEventStartRotateCryptKey(
+  k: MconnEventStartRotateCryptKeyK.fromJson(json['k'] as String),
+); }
+
+/// Started crypt key rotation
+final MconnEventStartRotateCryptKeyK k;
+
+Map<String, dynamic> toJson() { return {
+  'k': k.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+MconnEventStartRotateCryptKey copyWith({MconnEventStartRotateCryptKeyK? k}) { return MconnEventStartRotateCryptKey(
+  k: k ?? this.k,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnEventStartRotateCryptKey &&
+          k == other.k; } 
+@override int get hashCode { return k.hashCode; } 
+@override String toString() { return 'MconnEventStartRotateCryptKey(k: $k)'; } 
+ }

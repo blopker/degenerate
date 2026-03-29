@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Configuration overrides for this refund, such as customer cancellation settings.
+final class PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig {const PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig({this.enableCustomerCancellation});
+
+factory PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig.fromJson(Map<String, dynamic> json) { return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
+  enableCustomerCancellation: json['enable_customer_cancellation'] as bool?,
+); }
+
+final bool? enableCustomerCancellation;
+
+Map<String, dynamic> toJson() { return {
+  'enable_customer_cancellation': ?enableCustomerCancellation,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig copyWith({bool Function()? enableCustomerCancellation}) { return PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(
+  enableCustomerCancellation: enableCustomerCancellation != null ? enableCustomerCancellation() : this.enableCustomerCancellation,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig &&
+          enableCustomerCancellation == other.enableCustomerCancellation; } 
+@override int get hashCode { return enableCustomerCancellation.hashCode; } 
+@override String toString() { return 'PostTerminalReadersReaderRefundPaymentRequestRefundPaymentConfig(enableCustomerCancellation: $enableCustomerCancellation)'; } 
+ }

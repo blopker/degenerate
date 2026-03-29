@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_balance_resource_cash_balance_transaction_resource_refunded_from_payment_transaction_refund.dart';import 'refund.dart';/// 
+final class CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction {const CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction({required this.refund});
+
+factory CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
+  refund: OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// The [Refund](https://docs.stripe.com/api/refunds/object) that moved these funds into the customer's cash balance.
+final CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund refund;
+
+Map<String, dynamic> toJson() { return {
+  'refund': refund.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('refund'); } 
+CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransactionRefund? refund}) { return CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(
+  refund: refund ?? this.refund,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction &&
+          refund == other.refund; } 
+@override int get hashCode { return refund.hashCode; } 
+@override String toString() { return 'CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction(refund: $refund)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'cache_rules_base.dart';final class CacheRulesCacheReserveResponseValue {const CacheRulesCacheReserveResponseValue({this.result});
+
+factory CacheRulesCacheReserveResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesCacheReserveResponseValue(
+  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+); }
+
+/// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare's persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
+final CacheRulesBase? result;
+
+Map<String, dynamic> toJson() { return {
+  if (result != null) 'result': result?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CacheRulesCacheReserveResponseValue copyWith({CacheRulesBase Function()? result}) { return CacheRulesCacheReserveResponseValue(
+  result: result != null ? result() : this.result,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CacheRulesCacheReserveResponseValue &&
+          result == other.result; } 
+@override int get hashCode { return result.hashCode; } 
+@override String toString() { return 'CacheRulesCacheReserveResponseValue(result: $result)'; } 
+ }

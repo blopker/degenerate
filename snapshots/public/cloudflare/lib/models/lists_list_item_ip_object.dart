@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
+extension type const ListsItemIp(String value) {
+factory ListsItemIp.fromJson(String json) => ListsItemIp(json);
+
+String toJson() => value;
+
+}
+final class ListsListItemIpObject {const ListsListItemIpObject({required this.ip});
+
+factory ListsListItemIpObject.fromJson(Map<String, dynamic> json) { return ListsListItemIpObject(
+  ip: ListsItemIp.fromJson(json['ip'] as String),
+); }
+
+/// An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.
+final ListsItemIp ip;
+
+Map<String, dynamic> toJson() { return {
+  'ip': ip.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip'); } 
+ListsListItemIpObject copyWith({ListsItemIp? ip}) { return ListsListItemIpObject(
+  ip: ip ?? this.ip,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ListsListItemIpObject &&
+          ip == other.ip; } 
+@override int get hashCode { return ip.hashCode; } 
+@override String toString() { return 'ListsListItemIpObject(ip: $ip)'; } 
+ }

@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_issuing_disputes_dispute_request_evidence.dart';import 'post_issuing_disputes_dispute_request_metadata.dart';final class PostIssuingDisputesDisputeRequest {const PostIssuingDisputesDisputeRequest({this.amount, this.evidence, this.expand, this.metadata, });
+
+factory PostIssuingDisputesDisputeRequest.fromJson(Map<String, dynamic> json) { return PostIssuingDisputesDisputeRequest(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  evidence: json['evidence'] != null ? PostIssuingDisputesDisputeRequestEvidence.fromJson(json['evidence'] as Map<String, dynamic>) : null,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostIssuingDisputesDisputeRequestMetadataVariant2.fromJson(v as String),) : null,
+); }
+
+/// The dispute amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
+final int? amount;
+
+/// Evidence provided for the dispute.
+final PostIssuingDisputesDisputeRequestEvidence? evidence;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostIssuingDisputesDisputeRequestMetadata? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  if (evidence != null) 'evidence': evidence?.toJson(),
+  'expand': ?expand,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostIssuingDisputesDisputeRequest copyWith({int Function()? amount, PostIssuingDisputesDisputeRequestEvidence Function()? evidence, List<String> Function()? expand, PostIssuingDisputesDisputeRequestMetadata Function()? metadata, }) { return PostIssuingDisputesDisputeRequest(
+  amount: amount != null ? amount() : this.amount,
+  evidence: evidence != null ? evidence() : this.evidence,
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostIssuingDisputesDisputeRequest &&
+          amount == other.amount &&
+          evidence == other.evidence &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(amount, evidence, Object.hashAll(expand ?? const []), metadata); } 
+@override String toString() { return 'PostIssuingDisputesDisputeRequest(amount: $amount, evidence: $evidence, expand: $expand, metadata: $metadata)'; } 
+ }

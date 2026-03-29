@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// D1 binding.
+final class PagesDeploymentConfigValuesD1DatabasesValue {const PagesDeploymentConfigValuesD1DatabasesValue({required this.id});
+
+factory PagesDeploymentConfigValuesD1DatabasesValue.fromJson(Map<String, dynamic> json) { return PagesDeploymentConfigValuesD1DatabasesValue(
+  id: json['id'] as String,
+); }
+
+/// UUID of the D1 database.
+final String id;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+PagesDeploymentConfigValuesD1DatabasesValue copyWith({String? id}) { return PagesDeploymentConfigValuesD1DatabasesValue(
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDeploymentConfigValuesD1DatabasesValue &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'PagesDeploymentConfigValuesD1DatabasesValue(id: $id)'; } 
+ }

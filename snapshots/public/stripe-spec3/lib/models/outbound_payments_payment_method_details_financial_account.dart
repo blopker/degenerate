@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The rails used to send funds.
+final class OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork {const OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork._(this.value);
+
+factory OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork.fromJson(String json) { return switch (json) {
+  'stripe' => stripe,
+  _ => OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork._(json),
+}; }
+
+static const OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork stripe = OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork._('stripe');
+
+static const List<OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork> values = [stripe];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork($value)'; } 
+ }
+/// 
+final class OutboundPaymentsPaymentMethodDetailsFinancialAccount {const OutboundPaymentsPaymentMethodDetailsFinancialAccount({required this.id, required this.network, });
+
+factory OutboundPaymentsPaymentMethodDetailsFinancialAccount.fromJson(Map<String, dynamic> json) { return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
+  id: json['id'] as String,
+  network: OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork.fromJson(json['network'] as String),
+); }
+
+/// Token of the FinancialAccount.
+final String id;
+
+/// The rails used to send funds.
+final OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork network;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'network': network.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('network'); } 
+OutboundPaymentsPaymentMethodDetailsFinancialAccount copyWith({String? id, OutboundPaymentsPaymentMethodDetailsFinancialAccountNetwork? network, }) { return OutboundPaymentsPaymentMethodDetailsFinancialAccount(
+  id: id ?? this.id,
+  network: network ?? this.network,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OutboundPaymentsPaymentMethodDetailsFinancialAccount &&
+          id == other.id &&
+          network == other.network; } 
+@override int get hashCode { return Object.hash(id, network); } 
+@override String toString() { return 'OutboundPaymentsPaymentMethodDetailsFinancialAccount(id: $id, network: $network)'; } 
+ }

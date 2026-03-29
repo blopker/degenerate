@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'treasury_financial_accounts_resource_outbound_ach_toggle_settings.dart';import 'treasury_financial_accounts_resource_toggle_settings.dart';/// OutboundTransfers contains outbound transfers features for a FinancialAccount.
+final class TreasuryFinancialAccountsResourceOutboundTransfers {const TreasuryFinancialAccountsResourceOutboundTransfers({this.ach, this.usDomesticWire, });
+
+factory TreasuryFinancialAccountsResourceOutboundTransfers.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceOutboundTransfers(
+  ach: json['ach'] != null ? TreasuryFinancialAccountsResourceOutboundAchToggleSettings.fromJson(json['ach'] as Map<String, dynamic>) : null,
+  usDomesticWire: json['us_domestic_wire'] != null ? TreasuryFinancialAccountsResourceToggleSettings.fromJson(json['us_domestic_wire'] as Map<String, dynamic>) : null,
+); }
+
+final TreasuryFinancialAccountsResourceOutboundAchToggleSettings? ach;
+
+final TreasuryFinancialAccountsResourceToggleSettings? usDomesticWire;
+
+Map<String, dynamic> toJson() { return {
+  if (ach != null) 'ach': ach?.toJson(),
+  if (usDomesticWire != null) 'us_domestic_wire': usDomesticWire?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TreasuryFinancialAccountsResourceOutboundTransfers copyWith({TreasuryFinancialAccountsResourceOutboundAchToggleSettings Function()? ach, TreasuryFinancialAccountsResourceToggleSettings Function()? usDomesticWire, }) { return TreasuryFinancialAccountsResourceOutboundTransfers(
+  ach: ach != null ? ach() : this.ach,
+  usDomesticWire: usDomesticWire != null ? usDomesticWire() : this.usDomesticWire,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TreasuryFinancialAccountsResourceOutboundTransfers &&
+          ach == other.ach &&
+          usDomesticWire == other.usDomesticWire; } 
+@override int get hashCode { return Object.hash(ach, usDomesticWire); } 
+@override String toString() { return 'TreasuryFinancialAccountsResourceOutboundTransfers(ach: $ach, usDomesticWire: $usDomesticWire)'; } 
+ }

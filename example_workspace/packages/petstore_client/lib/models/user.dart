@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class User {const User({this.id, this.username, this.firstName, this.lastName, this.email, this.password, this.phone, this.userStatus, });
+
+factory User.fromJson(Map<String, dynamic> json) { return User(
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  username: json['username'] as String?,
+  firstName: json['firstName'] as String?,
+  lastName: json['lastName'] as String?,
+  email: json['email'] as String?,
+  password: json['password'] as String?,
+  phone: json['phone'] as String?,
+  userStatus: json['userStatus'] != null ? (json['userStatus'] as num).toInt() : null,
+); }
+
+final int? id;
+
+final String? username;
+
+final String? firstName;
+
+final String? lastName;
+
+final String? email;
+
+final String? password;
+
+final String? phone;
+
+/// User Status
+final int? userStatus;
+
+Map<String, dynamic> toJson() { return {
+  'id': ?id,
+  'username': ?username,
+  'firstName': ?firstName,
+  'lastName': ?lastName,
+  'email': ?email,
+  'password': ?password,
+  'phone': ?phone,
+  'userStatus': ?userStatus,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+User copyWith({int Function()? id, String Function()? username, String Function()? firstName, String Function()? lastName, String Function()? email, String Function()? password, String Function()? phone, int Function()? userStatus, }) { return User(
+  id: id != null ? id() : this.id,
+  username: username != null ? username() : this.username,
+  firstName: firstName != null ? firstName() : this.firstName,
+  lastName: lastName != null ? lastName() : this.lastName,
+  email: email != null ? email() : this.email,
+  password: password != null ? password() : this.password,
+  phone: phone != null ? phone() : this.phone,
+  userStatus: userStatus != null ? userStatus() : this.userStatus,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is User &&
+          id == other.id &&
+          username == other.username &&
+          firstName == other.firstName &&
+          lastName == other.lastName &&
+          email == other.email &&
+          password == other.password &&
+          phone == other.phone &&
+          userStatus == other.userStatus; } 
+@override int get hashCode { return Object.hash(id, username, firstName, lastName, email, password, phone, userStatus); } 
+@override String toString() { return 'User(id: $id, username: $username, firstName: $firstName, lastName: $lastName, email: $email, password: $password, phone: $phone, userStatus: $userStatus)'; } 
+ }

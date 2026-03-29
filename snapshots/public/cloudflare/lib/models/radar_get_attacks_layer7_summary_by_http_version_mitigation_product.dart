@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct {const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._(this.value);
+
+factory RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct.fromJson(String json) { return switch (json) {
+  'DDOS' => ddos,
+  'WAF' => waf,
+  'BOT_MANAGEMENT' => botManagement,
+  'ACCESS_RULES' => accessRules,
+  'IP_REPUTATION' => ipReputation,
+  'API_SHIELD' => apiShield,
+  'DATA_LOSS_PREVENTION' => dataLossPrevention,
+  _ => RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._(json),
+}; }
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct ddos = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('DDOS');
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct waf = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('WAF');
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct botManagement = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('BOT_MANAGEMENT');
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct accessRules = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('ACCESS_RULES');
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct ipReputation = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('IP_REPUTATION');
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct apiShield = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('API_SHIELD');
+
+static const RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct dataLossPrevention = RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct._('DATA_LOSS_PREVENTION');
+
+static const List<RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7SummaryByHttpVersionMitigationProduct($value)'; } 
+ }

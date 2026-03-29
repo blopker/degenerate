@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issues_set_labels_request_variant1.dart';import 'issues_set_labels_request_variant3.dart';import 'issues_set_labels_request_variant4.dart';typedef IssuesSetLabelsRequest = OneOf5<IssuesSetLabelsRequestVariant1,List<String>,IssuesSetLabelsRequestVariant3,List<IssuesSetLabelsRequestVariant4>,String>;

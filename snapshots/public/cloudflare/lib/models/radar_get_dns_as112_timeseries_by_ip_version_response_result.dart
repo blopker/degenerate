@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_dns_as112_timeseries_by_ip_version_response_result_meta.dart';import 'radar_get_dns_as112_timeseries_by_ip_version_response_result_summary0.dart';final class RadarGetDnsAs112TimeseriesByIpVersionResponseResult {const RadarGetDnsAs112TimeseriesByIpVersionResponseResult({required this.meta, required this.summary0, });
+
+factory RadarGetDnsAs112TimeseriesByIpVersionResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesByIpVersionResponseResult(
+  meta: RadarGetDnsAs112TimeseriesByIpVersionResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  summary0: RadarGetDnsAs112TimeseriesByIpVersionResponseResultSummary0.fromJson(json['summary_0'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetDnsAs112TimeseriesByIpVersionResponseResultMeta meta;
+
+final RadarGetDnsAs112TimeseriesByIpVersionResponseResultSummary0 summary0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'summary_0': summary0.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('summary_0'); } 
+RadarGetDnsAs112TimeseriesByIpVersionResponseResult copyWith({RadarGetDnsAs112TimeseriesByIpVersionResponseResultMeta? meta, RadarGetDnsAs112TimeseriesByIpVersionResponseResultSummary0? summary0, }) { return RadarGetDnsAs112TimeseriesByIpVersionResponseResult(
+  meta: meta ?? this.meta,
+  summary0: summary0 ?? this.summary0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TimeseriesByIpVersionResponseResult &&
+          meta == other.meta &&
+          summary0 == other.summary0; } 
+@override int get hashCode { return Object.hash(meta, summary0); } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesByIpVersionResponseResult(meta: $meta, summary0: $summary0)'; } 
+ }

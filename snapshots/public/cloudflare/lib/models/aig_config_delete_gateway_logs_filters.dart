@@ -1,0 +1,163 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AigConfigDeleteGatewayLogsFiltersKey {const AigConfigDeleteGatewayLogsFiltersKey._(this.value);
+
+factory AigConfigDeleteGatewayLogsFiltersKey.fromJson(String json) { return switch (json) {
+  'id' => id,
+  'created_at' => createdAt,
+  'request_content_type' => requestContentType,
+  'response_content_type' => responseContentType,
+  'request_type' => requestType,
+  'success' => success,
+  'cached' => cached,
+  'provider' => provider,
+  'model' => model,
+  'model_type' => modelType,
+  'cost' => cost,
+  'tokens' => tokens,
+  'tokens_in' => tokensIn,
+  'tokens_out' => tokensOut,
+  'duration' => duration,
+  'feedback' => feedback,
+  'event_id' => eventId,
+  'metadata.key' => metadataKey,
+  'metadata.value' => metadataValue,
+  'prompts.prompt_id' => promptsPromptId,
+  'prompts.version_id' => promptsVersionId,
+  'authentication' => authentication,
+  'wholesale' => wholesale,
+  'compatibilityMode' => compatibilityMode,
+  'dlp_action' => dlpAction,
+  _ => AigConfigDeleteGatewayLogsFiltersKey._(json),
+}; }
+
+static const AigConfigDeleteGatewayLogsFiltersKey id = AigConfigDeleteGatewayLogsFiltersKey._('id');
+
+static const AigConfigDeleteGatewayLogsFiltersKey createdAt = AigConfigDeleteGatewayLogsFiltersKey._('created_at');
+
+static const AigConfigDeleteGatewayLogsFiltersKey requestContentType = AigConfigDeleteGatewayLogsFiltersKey._('request_content_type');
+
+static const AigConfigDeleteGatewayLogsFiltersKey responseContentType = AigConfigDeleteGatewayLogsFiltersKey._('response_content_type');
+
+static const AigConfigDeleteGatewayLogsFiltersKey requestType = AigConfigDeleteGatewayLogsFiltersKey._('request_type');
+
+static const AigConfigDeleteGatewayLogsFiltersKey success = AigConfigDeleteGatewayLogsFiltersKey._('success');
+
+static const AigConfigDeleteGatewayLogsFiltersKey cached = AigConfigDeleteGatewayLogsFiltersKey._('cached');
+
+static const AigConfigDeleteGatewayLogsFiltersKey provider = AigConfigDeleteGatewayLogsFiltersKey._('provider');
+
+static const AigConfigDeleteGatewayLogsFiltersKey model = AigConfigDeleteGatewayLogsFiltersKey._('model');
+
+static const AigConfigDeleteGatewayLogsFiltersKey modelType = AigConfigDeleteGatewayLogsFiltersKey._('model_type');
+
+static const AigConfigDeleteGatewayLogsFiltersKey cost = AigConfigDeleteGatewayLogsFiltersKey._('cost');
+
+static const AigConfigDeleteGatewayLogsFiltersKey tokens = AigConfigDeleteGatewayLogsFiltersKey._('tokens');
+
+static const AigConfigDeleteGatewayLogsFiltersKey tokensIn = AigConfigDeleteGatewayLogsFiltersKey._('tokens_in');
+
+static const AigConfigDeleteGatewayLogsFiltersKey tokensOut = AigConfigDeleteGatewayLogsFiltersKey._('tokens_out');
+
+static const AigConfigDeleteGatewayLogsFiltersKey duration = AigConfigDeleteGatewayLogsFiltersKey._('duration');
+
+static const AigConfigDeleteGatewayLogsFiltersKey feedback = AigConfigDeleteGatewayLogsFiltersKey._('feedback');
+
+static const AigConfigDeleteGatewayLogsFiltersKey eventId = AigConfigDeleteGatewayLogsFiltersKey._('event_id');
+
+static const AigConfigDeleteGatewayLogsFiltersKey metadataKey = AigConfigDeleteGatewayLogsFiltersKey._('metadata.key');
+
+static const AigConfigDeleteGatewayLogsFiltersKey metadataValue = AigConfigDeleteGatewayLogsFiltersKey._('metadata.value');
+
+static const AigConfigDeleteGatewayLogsFiltersKey promptsPromptId = AigConfigDeleteGatewayLogsFiltersKey._('prompts.prompt_id');
+
+static const AigConfigDeleteGatewayLogsFiltersKey promptsVersionId = AigConfigDeleteGatewayLogsFiltersKey._('prompts.version_id');
+
+static const AigConfigDeleteGatewayLogsFiltersKey authentication = AigConfigDeleteGatewayLogsFiltersKey._('authentication');
+
+static const AigConfigDeleteGatewayLogsFiltersKey wholesale = AigConfigDeleteGatewayLogsFiltersKey._('wholesale');
+
+static const AigConfigDeleteGatewayLogsFiltersKey compatibilityMode = AigConfigDeleteGatewayLogsFiltersKey._('compatibilityMode');
+
+static const AigConfigDeleteGatewayLogsFiltersKey dlpAction = AigConfigDeleteGatewayLogsFiltersKey._('dlp_action');
+
+static const List<AigConfigDeleteGatewayLogsFiltersKey> values = [id, createdAt, requestContentType, responseContentType, requestType, success, cached, provider, model, modelType, cost, tokens, tokensIn, tokensOut, duration, feedback, eventId, metadataKey, metadataValue, promptsPromptId, promptsVersionId, authentication, wholesale, compatibilityMode, dlpAction];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigDeleteGatewayLogsFiltersKey && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigDeleteGatewayLogsFiltersKey($value)'; } 
+ }
+final class AigConfigDeleteGatewayLogsFiltersOperator {const AigConfigDeleteGatewayLogsFiltersOperator._(this.value);
+
+factory AigConfigDeleteGatewayLogsFiltersOperator.fromJson(String json) { return switch (json) {
+  'eq' => eq,
+  'neq' => neq,
+  'contains' => contains,
+  'lt' => lt,
+  'gt' => gt,
+  _ => AigConfigDeleteGatewayLogsFiltersOperator._(json),
+}; }
+
+static const AigConfigDeleteGatewayLogsFiltersOperator eq = AigConfigDeleteGatewayLogsFiltersOperator._('eq');
+
+static const AigConfigDeleteGatewayLogsFiltersOperator neq = AigConfigDeleteGatewayLogsFiltersOperator._('neq');
+
+static const AigConfigDeleteGatewayLogsFiltersOperator contains = AigConfigDeleteGatewayLogsFiltersOperator._('contains');
+
+static const AigConfigDeleteGatewayLogsFiltersOperator lt = AigConfigDeleteGatewayLogsFiltersOperator._('lt');
+
+static const AigConfigDeleteGatewayLogsFiltersOperator gt = AigConfigDeleteGatewayLogsFiltersOperator._('gt');
+
+static const List<AigConfigDeleteGatewayLogsFiltersOperator> values = [eq, neq, contains, lt, gt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigDeleteGatewayLogsFiltersOperator && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigDeleteGatewayLogsFiltersOperator($value)'; } 
+ }
+final class AigConfigDeleteGatewayLogsFilters {const AigConfigDeleteGatewayLogsFilters({required this.key, required this.$operator, required this.value, });
+
+factory AigConfigDeleteGatewayLogsFilters.fromJson(Map<String, dynamic> json) { return AigConfigDeleteGatewayLogsFilters(
+  key: AigConfigDeleteGatewayLogsFiltersKey.fromJson(json['key'] as String),
+  $operator: AigConfigDeleteGatewayLogsFiltersOperator.fromJson(json['operator'] as String),
+  value: (json['value'] as List<dynamic>).map((e) => e).toList(),
+); }
+
+final AigConfigDeleteGatewayLogsFiltersKey key;
+
+final AigConfigDeleteGatewayLogsFiltersOperator $operator;
+
+final List<dynamic> value;
+
+Map<String, dynamic> toJson() { return {
+  'key': key.toJson(),
+  'operator': $operator.toJson(),
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') &&
+      json.containsKey('operator') &&
+      json.containsKey('value'); } 
+AigConfigDeleteGatewayLogsFilters copyWith({AigConfigDeleteGatewayLogsFiltersKey? key, AigConfigDeleteGatewayLogsFiltersOperator? $operator, List<dynamic>? value, }) { return AigConfigDeleteGatewayLogsFilters(
+  key: key ?? this.key,
+  $operator: $operator ?? this.$operator,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigDeleteGatewayLogsFilters &&
+          key == other.key &&
+          $operator == other.$operator &&
+          listEquals(value, other.value); } 
+@override int get hashCode { return Object.hash(key, $operator, Object.hashAll(value)); } 
+@override String toString() { return 'AigConfigDeleteGatewayLogsFilters(key: $key, \$operator: ${$operator}, value: $value)'; } 
+ }

@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Zones0HoldPatchRequest {const Zones0HoldPatchRequest({this.holdAfter = '', this.includeSubdomains = false, });
+
+factory Zones0HoldPatchRequest.fromJson(Map<String, dynamic> json) { return Zones0HoldPatchRequest(
+  holdAfter: json.containsKey('hold_after') ? json['hold_after'] as String : '',
+  includeSubdomains: json.containsKey('include_subdomains') ? json['include_subdomains'] as bool : false,
+); }
+
+/// If `hold_after` is provided and future-dated, the hold will be temporarily disabled,
+/// then automatically re-enabled by the system at the time specified
+/// in this RFC3339-formatted timestamp. A past-dated `hold_after` value will have
+/// no effect on an existing, enabled hold. Providing an empty string will set its value
+/// to the current time.
+final String holdAfter;
+
+/// If `true`, the zone hold will extend to block any subdomain of the given zone, as well
+/// as SSL4SaaS Custom Hostnames. For example, a zone hold on a zone with the hostname
+/// 'example.com' and include_subdomains=true will block 'example.com',
+/// 'staging.example.com', 'api.staging.example.com', etc.
+final bool includeSubdomains;
+
+Map<String, dynamic> toJson() { return {
+  'hold_after': holdAfter,
+  'include_subdomains': includeSubdomains,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Zones0HoldPatchRequest copyWith({String Function()? holdAfter, bool Function()? includeSubdomains, }) { return Zones0HoldPatchRequest(
+  holdAfter: holdAfter != null ? holdAfter() : this.holdAfter,
+  includeSubdomains: includeSubdomains != null ? includeSubdomains() : this.includeSubdomains,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Zones0HoldPatchRequest &&
+          holdAfter == other.holdAfter &&
+          includeSubdomains == other.includeSubdomains; } 
+@override int get hashCode { return Object.hash(holdAfter, includeSubdomains); } 
+@override String toString() { return 'Zones0HoldPatchRequest(holdAfter: $holdAfter, includeSubdomains: $includeSubdomains)'; } 
+ }

@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_groups_components_schemas_name.dart';import 'access_rule.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessSchemasGroups {const AccessSchemasGroups({this.createdAt, this.exclude, this.id, this.include, this.isDefault, this.name, this.require, this.updatedAt, });
+
+factory AccessSchemasGroups.fromJson(Map<String, dynamic> json) { return AccessSchemasGroups(
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
+  include: (json['include'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  isDefault: (json['is_default'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  name: json['name'] != null ? AccessGroupsComponentsSchemasName.fromJson(json['name'] as String) : null,
+  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+final AccessTimestamp? createdAt;
+
+/// Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
+final List<AccessRule>? exclude;
+
+final AccessUuid? id;
+
+/// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+final List<AccessRule>? include;
+
+/// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
+final List<AccessRule>? isDefault;
+
+/// The name of the Access group.
+final AccessGroupsComponentsSchemasName? name;
+
+/// Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
+final List<AccessRule>? require;
+
+final AccessTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
+  if (id != null) 'id': id?.toJson(),
+  if (include != null) 'include': include?.map((e) => e.toJson()).toList(),
+  if (isDefault != null) 'is_default': isDefault?.map((e) => e.toJson()).toList(),
+  if (name != null) 'name': name?.toJson(),
+  if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessSchemasGroups copyWith({AccessTimestamp Function()? createdAt, List<AccessRule> Function()? exclude, AccessUuid Function()? id, List<AccessRule> Function()? include, List<AccessRule> Function()? isDefault, AccessGroupsComponentsSchemasName Function()? name, List<AccessRule> Function()? require, AccessTimestamp Function()? updatedAt, }) { return AccessSchemasGroups(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  exclude: exclude != null ? exclude() : this.exclude,
+  id: id != null ? id() : this.id,
+  include: include != null ? include() : this.include,
+  isDefault: isDefault != null ? isDefault() : this.isDefault,
+  name: name != null ? name() : this.name,
+  require: require != null ? require() : this.require,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessSchemasGroups &&
+          createdAt == other.createdAt &&
+          listEquals(exclude, other.exclude) &&
+          id == other.id &&
+          listEquals(include, other.include) &&
+          listEquals(isDefault, other.isDefault) &&
+          name == other.name &&
+          listEquals(require, other.require) &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(createdAt, Object.hashAll(exclude ?? const []), id, Object.hashAll(include ?? const []), Object.hashAll(isDefault ?? const []), name, Object.hashAll(require ?? const []), updatedAt); } 
+@override String toString() { return 'AccessSchemasGroups(createdAt: $createdAt, exclude: $exclude, id: $id, include: $include, isDefault: $isDefault, name: $name, require: $require, updatedAt: $updatedAt)'; } 
+ }

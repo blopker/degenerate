@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TranscriptionWord {const TranscriptionWord({required this.word, required this.start, required this.end, });
+
+factory TranscriptionWord.fromJson(Map<String, dynamic> json) { return TranscriptionWord(
+  word: json['word'] as String,
+  start: (json['start'] as num).toDouble(),
+  end: (json['end'] as num).toDouble(),
+); }
+
+/// The text content of the word.
+final String word;
+
+/// Start time of the word in seconds.
+final double start;
+
+/// End time of the word in seconds.
+final double end;
+
+Map<String, dynamic> toJson() { return {
+  'word': word,
+  'start': start,
+  'end': end,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('word') && json['word'] is String &&
+      json.containsKey('start') && json['start'] is num &&
+      json.containsKey('end') && json['end'] is num; } 
+TranscriptionWord copyWith({String? word, double? start, double? end, }) { return TranscriptionWord(
+  word: word ?? this.word,
+  start: start ?? this.start,
+  end: end ?? this.end,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TranscriptionWord &&
+          word == other.word &&
+          start == other.start &&
+          end == other.end; } 
+@override int get hashCode { return Object.hash(word, start, end); } 
+@override String toString() { return 'TranscriptionWord(word: $word, start: $start, end: $end)'; } 
+ }

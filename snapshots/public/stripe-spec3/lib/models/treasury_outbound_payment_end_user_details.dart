@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';/// Details about the end user.
+final class TreasuryOutboundPaymentEndUserDetails {const TreasuryOutboundPaymentEndUserDetails({this.treasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails});
+
+factory TreasuryOutboundPaymentEndUserDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentEndUserDetails(
+  treasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails: TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails.canParse(json) ? TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails.fromJson(json) : null,
+); }
+
+final TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? treasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails;
+
+/// At least one variant must be present.
+bool get isValid { return treasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?treasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails?.toJson(),
+}; } 
+ }

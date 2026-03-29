@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'model_response_properties.dart';/// The type of the event. Always `response.failed`.
+/// 
+final class ResponseFailedEventType {const ResponseFailedEventType._(this.value);
+
+factory ResponseFailedEventType.fromJson(String json) { return switch (json) {
+  'response.failed' => responseFailed,
+  _ => ResponseFailedEventType._(json),
+}; }
+
+static const ResponseFailedEventType responseFailed = ResponseFailedEventType._('response.failed');
+
+static const List<ResponseFailedEventType> values = [responseFailed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseFailedEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseFailedEventType($value)'; } 
+ }
+/// An event that is emitted when a response fails.
+/// 
+final class ResponseFailedEvent {const ResponseFailedEvent({required this.type, required this.sequenceNumber, required this.response, });
+
+factory ResponseFailedEvent.fromJson(Map<String, dynamic> json) { return ResponseFailedEvent(
+  type: ResponseFailedEventType.fromJson(json['type'] as String),
+  sequenceNumber: (json['sequence_number'] as num).toInt(),
+  response: ModelResponseProperties.fromJson(json['response'] as Map<String, dynamic>),
+); }
+
+/// The type of the event. Always `response.failed`.
+/// 
+final ResponseFailedEventType type;
+
+/// The sequence number of this event.
+final int sequenceNumber;
+
+/// The response that failed.
+/// 
+final ModelResponseProperties response;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'sequence_number': sequenceNumber,
+  'response': response.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('sequence_number') && json['sequence_number'] is num &&
+      json.containsKey('response'); } 
+ResponseFailedEvent copyWith({ResponseFailedEventType? type, int? sequenceNumber, ModelResponseProperties? response, }) { return ResponseFailedEvent(
+  type: type ?? this.type,
+  sequenceNumber: sequenceNumber ?? this.sequenceNumber,
+  response: response ?? this.response,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseFailedEvent &&
+          type == other.type &&
+          sequenceNumber == other.sequenceNumber &&
+          response == other.response; } 
+@override int get hashCode { return Object.hash(type, sequenceNumber, response); } 
+@override String toString() { return 'ResponseFailedEvent(type: $type, sequenceNumber: $sequenceNumber, response: $response)'; } 
+ }

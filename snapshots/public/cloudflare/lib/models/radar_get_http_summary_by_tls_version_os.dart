@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpSummaryByTlsVersionOs {const RadarGetHttpSummaryByTlsVersionOs._(this.value);
+
+factory RadarGetHttpSummaryByTlsVersionOs.fromJson(String json) { return switch (json) {
+  'WINDOWS' => windows,
+  'MACOSX' => macosx,
+  'IOS' => ios,
+  'ANDROID' => android,
+  'CHROMEOS' => chromeos,
+  'LINUX' => linux,
+  'SMART_TV' => smartTv,
+  _ => RadarGetHttpSummaryByTlsVersionOs._(json),
+}; }
+
+static const RadarGetHttpSummaryByTlsVersionOs windows = RadarGetHttpSummaryByTlsVersionOs._('WINDOWS');
+
+static const RadarGetHttpSummaryByTlsVersionOs macosx = RadarGetHttpSummaryByTlsVersionOs._('MACOSX');
+
+static const RadarGetHttpSummaryByTlsVersionOs ios = RadarGetHttpSummaryByTlsVersionOs._('IOS');
+
+static const RadarGetHttpSummaryByTlsVersionOs android = RadarGetHttpSummaryByTlsVersionOs._('ANDROID');
+
+static const RadarGetHttpSummaryByTlsVersionOs chromeos = RadarGetHttpSummaryByTlsVersionOs._('CHROMEOS');
+
+static const RadarGetHttpSummaryByTlsVersionOs linux = RadarGetHttpSummaryByTlsVersionOs._('LINUX');
+
+static const RadarGetHttpSummaryByTlsVersionOs smartTv = RadarGetHttpSummaryByTlsVersionOs._('SMART_TV');
+
+static const List<RadarGetHttpSummaryByTlsVersionOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByTlsVersionOs && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByTlsVersionOs($value)'; } 
+ }

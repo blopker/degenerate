@@ -1,0 +1,125 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_checkout_sessions_request_payment_method_options_acss_debit_mandate_options.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
+  'cad' => cad,
+  'usd' => usd,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency cad = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency._('cad');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency usd = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency._('usd');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency> values = [cad, usd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off_session' => offSession,
+  'on_session' => onSession,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._('none');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage offSession = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._('off_session');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage onSession = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage._('on_session');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage> values = [none, offSession, onSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(String json) { return switch (json) {
+  'automatic' => automatic,
+  'instant' => instant,
+  'microdeposits' => microdeposits,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod automatic = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._('automatic');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod instant = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._('instant');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod microdeposits = PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod._('microdeposits');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod> values = [automatic, instant, microdeposits];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit({this.currency, this.mandateOptions, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(
+  currency: json['currency'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency.fromJson(json['currency'] as String) : null,
+  mandateOptions: json['mandate_options'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  targetDate: json['target_date'] as String?,
+  verificationMethod: json['verification_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod.fromJson(json['verification_method'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency? currency;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions? mandateOptions;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage? setupFutureUsage;
+
+final String? targetDate;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod? verificationMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (currency != null) 'currency': currency?.toJson(),
+  if (mandateOptions != null) 'mandate_options': mandateOptions?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+  'target_date': ?targetDate,
+  if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitCurrency Function()? currency, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitMandateOptions Function()? mandateOptions, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebitVerificationMethod Function()? verificationMethod, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(
+  currency: currency != null ? currency() : this.currency,
+  mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+  targetDate: targetDate != null ? targetDate() : this.targetDate,
+  verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit &&
+          currency == other.currency &&
+          mandateOptions == other.mandateOptions &&
+          setupFutureUsage == other.setupFutureUsage &&
+          targetDate == other.targetDate &&
+          verificationMethod == other.verificationMethod; } 
+@override int get hashCode { return Object.hash(currency, mandateOptions, setupFutureUsage, targetDate, verificationMethod); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAcssDebit(currency: $currency, mandateOptions: $mandateOptions, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
+ }

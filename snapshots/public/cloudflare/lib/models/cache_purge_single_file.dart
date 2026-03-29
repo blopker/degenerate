@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CachePurgeSingleFile {const CachePurgeSingleFile({this.files});
+
+factory CachePurgeSingleFile.fromJson(Map<String, dynamic> json) { return CachePurgeSingleFile(
+  files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// For more information on purging files, please refer to [purge by single-file documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/).
+final List<String>? files;
+
+Map<String, dynamic> toJson() { return {
+  'files': ?files,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CachePurgeSingleFile copyWith({List<String> Function()? files}) { return CachePurgeSingleFile(
+  files: files != null ? files() : this.files,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CachePurgeSingleFile &&
+          listEquals(files, other.files); } 
+@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override String toString() { return 'CachePurgeSingleFile(files: $files)'; } 
+ }

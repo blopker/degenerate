@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_branch.dart';import 'builds_build_seed_repo_input_file.dart';import 'builds_scm_provider_type.dart';final class BuildsBuildSeedRepoInput {const BuildsBuildSeedRepoInput({required this.branch, this.files, required this.owner, required this.path, required this.provider, required this.repository, });
+
+factory BuildsBuildSeedRepoInput.fromJson(Map<String, dynamic> json) { return BuildsBuildSeedRepoInput(
+  branch: BuildsBranch.fromJson(json['branch'] as String),
+  files: (json['files'] as List<dynamic>?)?.map((e) => BuildsBuildSeedRepoInputFile.fromJson(e as Map<String, dynamic>)).toList(),
+  owner: json['owner'] as String,
+  path: json['path'] as String,
+  provider: BuildsScmProviderType.fromJson(json['provider'] as String),
+  repository: json['repository'] as String,
+); }
+
+final BuildsBranch branch;
+
+final List<BuildsBuildSeedRepoInputFile>? files;
+
+final String owner;
+
+final String path;
+
+final BuildsScmProviderType provider;
+
+final String repository;
+
+Map<String, dynamic> toJson() { return {
+  'branch': branch.toJson(),
+  if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
+  'owner': owner,
+  'path': path,
+  'provider': provider.toJson(),
+  'repository': repository,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('branch') &&
+      json.containsKey('owner') && json['owner'] is String &&
+      json.containsKey('path') && json['path'] is String &&
+      json.containsKey('provider') &&
+      json.containsKey('repository') && json['repository'] is String; } 
+BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile> Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) { return BuildsBuildSeedRepoInput(
+  branch: branch ?? this.branch,
+  files: files != null ? files() : this.files,
+  owner: owner ?? this.owner,
+  path: path ?? this.path,
+  provider: provider ?? this.provider,
+  repository: repository ?? this.repository,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BuildsBuildSeedRepoInput &&
+          branch == other.branch &&
+          listEquals(files, other.files) &&
+          owner == other.owner &&
+          path == other.path &&
+          provider == other.provider &&
+          repository == other.repository; } 
+@override int get hashCode { return Object.hash(branch, Object.hashAll(files ?? const []), owner, path, provider, repository); } 
+@override String toString() { return 'BuildsBuildSeedRepoInput(branch: $branch, files: $files, owner: $owner, path: $path, provider: $provider, repository: $repository)'; } 
+ }

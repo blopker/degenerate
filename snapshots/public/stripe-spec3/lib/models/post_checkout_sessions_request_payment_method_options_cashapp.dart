@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod.fromJson(String json) { return switch (json) {
+  'manual' => manual,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod manual = PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod._('manual');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod> values = [manual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off_session' => offSession,
+  'on_session' => onSession,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._('none');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage offSession = PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._('off_session');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage onSession = PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage._('on_session');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage> values = [none, offSession, onSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsCashapp {const PostCheckoutSessionsRequestPaymentMethodOptionsCashapp({this.captureMethod, this.setupFutureUsage, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsCashapp.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsCashapp(
+  captureMethod: json['capture_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod.fromJson(json['capture_method'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod? captureMethod;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (captureMethod != null) 'capture_method': captureMethod?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsCashapp copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsCashappCaptureMethod Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsCashappSetupFutureUsage Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCashapp(
+  captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsCashapp &&
+          captureMethod == other.captureMethod &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(captureMethod, setupFutureUsage); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsCashapp(captureMethod: $captureMethod, setupFutureUsage: $setupFutureUsage)'; } 
+ }

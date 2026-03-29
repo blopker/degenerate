@@ -1,0 +1,271 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_deployment_status_created_deployment_performed_via_github_app_owner.dart';import 'webhook_deployment_status_created_deployment_performed_via_github_app_permissions.dart';final class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents {const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._(this.value);
+
+factory WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
+  'branch_protection_rule' => branchProtectionRule,
+  'check_run' => checkRun,
+  'check_suite' => checkSuite,
+  'code_scanning_alert' => codeScanningAlert,
+  'commit_comment' => commitComment,
+  'content_reference' => contentReference,
+  'create' => create,
+  'delete' => delete,
+  'deployment' => deployment,
+  'deployment_review' => deploymentReview,
+  'deployment_status' => deploymentStatus,
+  'deploy_key' => deployKey,
+  'discussion' => discussion,
+  'discussion_comment' => discussionComment,
+  'fork' => fork,
+  'gollum' => gollum,
+  'issues' => issues,
+  'issue_comment' => issueComment,
+  'label' => label,
+  'member' => member,
+  'membership' => membership,
+  'milestone' => milestone,
+  'organization' => organization,
+  'org_block' => orgBlock,
+  'page_build' => pageBuild,
+  'project' => project,
+  'project_card' => projectCard,
+  'project_column' => projectColumn,
+  'public' => public,
+  'pull_request' => pullRequest,
+  'pull_request_review' => pullRequestReview,
+  'pull_request_review_comment' => pullRequestReviewComment,
+  'push' => push,
+  'registry_package' => registryPackage,
+  'release' => release,
+  'repository' => repository,
+  'repository_dispatch' => repositoryDispatch,
+  'secret_scanning_alert' => secretScanningAlert,
+  'star' => star,
+  'status' => status,
+  'team' => team,
+  'team_add' => teamAdd,
+  'watch' => watch,
+  'workflow_dispatch' => workflowDispatch,
+  'workflow_run' => workflowRun,
+  'merge_queue_entry' => mergeQueueEntry,
+  'workflow_job' => workflowJob,
+  'pull_request_review_thread' => pullRequestReviewThread,
+  'secret_scanning_alert_location' => secretScanningAlertLocation,
+  'merge_group' => mergeGroup,
+  _ => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._(json),
+}; }
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents branchProtectionRule = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('branch_protection_rule');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents checkRun = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('check_run');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents checkSuite = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('check_suite');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents codeScanningAlert = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('code_scanning_alert');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents commitComment = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('commit_comment');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents contentReference = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('content_reference');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents create = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('create');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents delete = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('delete');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents deployment = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('deployment');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents deploymentReview = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('deployment_review');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents deploymentStatus = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('deployment_status');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents deployKey = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('deploy_key');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents discussion = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('discussion');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents discussionComment = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('discussion_comment');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents fork = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('fork');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents gollum = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('gollum');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents issues = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('issues');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents issueComment = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('issue_comment');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents label = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('label');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents member = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('member');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents membership = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('membership');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents milestone = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('milestone');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents organization = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('organization');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents orgBlock = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('org_block');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents pageBuild = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('page_build');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents project = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('project');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents projectCard = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('project_card');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents projectColumn = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('project_column');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents public = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('public');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents pullRequest = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('pull_request');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents pullRequestReview = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('pull_request_review');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents pullRequestReviewComment = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('pull_request_review_comment');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents push = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('push');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents registryPackage = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('registry_package');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents release = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('release');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents repository = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('repository');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents repositoryDispatch = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('repository_dispatch');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents secretScanningAlert = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('secret_scanning_alert');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents star = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('star');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents status = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('status');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents team = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('team');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents teamAdd = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('team_add');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents watch = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('watch');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents workflowDispatch = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('workflow_dispatch');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents workflowRun = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('workflow_run');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents mergeQueueEntry = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('merge_queue_entry');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents workflowJob = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('workflow_job');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents pullRequestReviewThread = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('pull_request_review_thread');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents secretScanningAlertLocation = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('secret_scanning_alert_location');
+
+static const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents mergeGroup = WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents._('merge_group');
+
+static const List<WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, mergeQueueEntry, workflowJob, pullRequestReviewThread, secretScanningAlertLocation, mergeGroup];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents($value)'; } 
+ }
+/// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+final class WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp {const WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp({required this.createdAt, required this.description, this.events, required this.externalUrl, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.owner, this.permissions, this.slug, required this.updatedAt, });
+
+factory WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp.fromJson(Map<String, dynamic> json) { return WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp(
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  description: json['description'] as String?,
+  events: (json['events'] as List<dynamic>?)?.map((e) => WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents.fromJson(e as String)).toList(),
+  externalUrl: json['external_url'] != null ? Uri.parse(json['external_url'] as String) : null,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  owner: json['owner'] != null ? WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  slug: json['slug'] as String?,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+); }
+
+final DateTime? createdAt;
+
+final String? description;
+
+/// The list of events for the GitHub app
+final List<WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents>? events;
+
+final Uri? externalUrl;
+
+final Uri htmlUrl;
+
+/// Unique identifier of the GitHub app
+final int? id;
+
+/// The name of the GitHub app
+final String name;
+
+final String nodeId;
+
+final WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppOwner? owner;
+
+/// The set of permissions for the GitHub app
+final WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissions? permissions;
+
+/// The slug name of the GitHub app
+final String? slug;
+
+final DateTime? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'description': ?description,
+  if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
+  if (externalUrl != null) 'external_url': externalUrl?.toString(),
+  'html_url': htmlUrl.toString(),
+  'id': ?id,
+  'name': name,
+  'node_id': nodeId,
+  if (owner != null) 'owner': owner?.toJson(),
+  if (permissions != null) 'permissions': permissions?.toJson(),
+  'slug': ?slug,
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('external_url') && json['external_url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('owner') &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp copyWith({DateTime? Function()? createdAt, String? Function()? description, List<WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppEvents> Function()? events, Uri? Function()? externalUrl, Uri? htmlUrl, int? Function()? id, String? name, String? nodeId, WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppOwner? Function()? owner, WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubAppPermissions Function()? permissions, String Function()? slug, DateTime? Function()? updatedAt, }) { return WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  description: description != null ? description() : this.description,
+  events: events != null ? events() : this.events,
+  externalUrl: externalUrl != null ? externalUrl() : this.externalUrl,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id != null ? id() : this.id,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  owner: owner != null ? owner() : this.owner,
+  permissions: permissions != null ? permissions() : this.permissions,
+  slug: slug != null ? slug() : this.slug,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp &&
+          createdAt == other.createdAt &&
+          description == other.description &&
+          listEquals(events, other.events) &&
+          externalUrl == other.externalUrl &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          owner == other.owner &&
+          permissions == other.permissions &&
+          slug == other.slug &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(createdAt, description, Object.hashAll(events ?? const []), externalUrl, htmlUrl, id, name, nodeId, owner, permissions, slug, updatedAt); } 
+@override String toString() { return 'WebhookDeploymentStatusCreatedDeploymentPerformedViaGithubApp(createdAt: $createdAt, description: $description, events: $events, externalUrl: $externalUrl, htmlUrl: $htmlUrl, id: $id, name: $name, nodeId: $nodeId, owner: $owner, permissions: $permissions, slug: $slug, updatedAt: $updatedAt)'; } 
+ }

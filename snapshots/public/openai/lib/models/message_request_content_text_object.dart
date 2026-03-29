@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Always `text`.
+final class MessageRequestContentTextObjectType {const MessageRequestContentTextObjectType._(this.value);
+
+factory MessageRequestContentTextObjectType.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => MessageRequestContentTextObjectType._(json),
+}; }
+
+static const MessageRequestContentTextObjectType text = MessageRequestContentTextObjectType._('text');
+
+static const List<MessageRequestContentTextObjectType> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageRequestContentTextObjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageRequestContentTextObjectType($value)'; } 
+ }
+/// The text content that is part of a message.
+final class MessageRequestContentTextObject {const MessageRequestContentTextObject({required this.type, required this.text, });
+
+factory MessageRequestContentTextObject.fromJson(Map<String, dynamic> json) { return MessageRequestContentTextObject(
+  type: MessageRequestContentTextObjectType.fromJson(json['type'] as String),
+  text: json['text'] as String,
+); }
+
+/// Always `text`.
+final MessageRequestContentTextObjectType type;
+
+/// Text content to be sent to the model
+final String text;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'text': text,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String; } 
+MessageRequestContentTextObject copyWith({MessageRequestContentTextObjectType? type, String? text, }) { return MessageRequestContentTextObject(
+  type: type ?? this.type,
+  text: text ?? this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MessageRequestContentTextObject &&
+          type == other.type &&
+          text == other.text; } 
+@override int get hashCode { return Object.hash(type, text); } 
+@override String toString() { return 'MessageRequestContentTextObject(type: $type, text: $text)'; } 
+ }

@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookTeamRemovedFromRepositoryRepositoryLicense {const WebhookTeamRemovedFromRepositoryRepositoryLicense({required this.key, required this.name, required this.nodeId, required this.spdxId, required this.url, });
+
+factory WebhookTeamRemovedFromRepositoryRepositoryLicense.fromJson(Map<String, dynamic> json) { return WebhookTeamRemovedFromRepositoryRepositoryLicense(
+  key: json['key'] as String,
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  spdxId: json['spdx_id'] as String,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
+); }
+
+final String key;
+
+final String name;
+
+final String nodeId;
+
+final String spdxId;
+
+final Uri? url;
+
+Map<String, dynamic> toJson() { return {
+  'key': key,
+  'name': name,
+  'node_id': nodeId,
+  'spdx_id': spdxId,
+  if (url != null) 'url': url?.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('spdx_id') && json['spdx_id'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookTeamRemovedFromRepositoryRepositoryLicense copyWith({String? key, String? name, String? nodeId, String? spdxId, Uri? Function()? url, }) { return WebhookTeamRemovedFromRepositoryRepositoryLicense(
+  key: key ?? this.key,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  spdxId: spdxId ?? this.spdxId,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookTeamRemovedFromRepositoryRepositoryLicense &&
+          key == other.key &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          spdxId == other.spdxId &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(key, name, nodeId, spdxId, url); } 
+@override String toString() { return 'WebhookTeamRemovedFromRepositoryRepositoryLicense(key: $key, name: $name, nodeId: $nodeId, spdxId: $spdxId, url: $url)'; } 
+ }

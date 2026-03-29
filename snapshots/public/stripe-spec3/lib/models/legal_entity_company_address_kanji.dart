@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'legal_entity_japan_address.dart';/// The Kanji variation of the company's primary address (Japan only).
+final class LegalEntityCompanyAddressKanji {const LegalEntityCompanyAddressKanji({this.legalEntityJapanAddress});
+
+factory LegalEntityCompanyAddressKanji.fromJson(Map<String, dynamic> json) { return LegalEntityCompanyAddressKanji(
+  legalEntityJapanAddress: LegalEntityJapanAddress.canParse(json) ? LegalEntityJapanAddress.fromJson(json) : null,
+); }
+
+final LegalEntityJapanAddress? legalEntityJapanAddress;
+
+/// At least one variant must be present.
+bool get isValid { return legalEntityJapanAddress != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?legalEntityJapanAddress?.toJson(),
+}; } 
+ }

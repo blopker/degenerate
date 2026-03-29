@@ -1,0 +1,158 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'author_association.dart';import 'integration.dart';import 'issue.dart';import 'issue_event_dismissed_review.dart';import 'issue_event_label.dart';import 'issue_event_milestone.dart';import 'issue_event_project_card.dart';import 'issue_event_rename.dart';import 'simple_user.dart';import 'team.dart';/// Issue Event
+final class IssueEvent {const IssueEvent({required this.id, required this.nodeId, required this.url, required this.actor, required this.event, required this.commitId, required this.commitUrl, required this.createdAt, this.issue, this.label, this.assignee, this.assigner, this.reviewRequester, this.requestedReviewer, this.requestedTeam, this.dismissedReview, this.milestone, this.projectCard, this.rename, this.authorAssociation, this.lockReason, this.performedViaGithubApp, });
+
+factory IssueEvent.fromJson(Map<String, dynamic> json) { return IssueEvent(
+  id: (json['id'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  url: Uri.parse(json['url'] as String),
+  actor: json['actor'] != null ? SimpleUser.fromJson(json['actor'] as Map<String, dynamic>) : null,
+  event: json['event'] as String,
+  commitId: json['commit_id'] as String?,
+  commitUrl: json['commit_url'] as String?,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  issue: json['issue'] != null ? Issue.fromJson(json['issue'] as Map<String, dynamic>) : null,
+  label: json['label'] != null ? IssueEventLabel.fromJson(json['label'] as Map<String, dynamic>) : null,
+  assignee: json['assignee'] != null ? SimpleUser.fromJson(json['assignee'] as Map<String, dynamic>) : null,
+  assigner: json['assigner'] != null ? SimpleUser.fromJson(json['assigner'] as Map<String, dynamic>) : null,
+  reviewRequester: json['review_requester'] != null ? SimpleUser.fromJson(json['review_requester'] as Map<String, dynamic>) : null,
+  requestedReviewer: json['requested_reviewer'] != null ? SimpleUser.fromJson(json['requested_reviewer'] as Map<String, dynamic>) : null,
+  requestedTeam: json['requested_team'] != null ? Team.fromJson(json['requested_team'] as Map<String, dynamic>) : null,
+  dismissedReview: json['dismissed_review'] != null ? IssueEventDismissedReview.fromJson(json['dismissed_review'] as Map<String, dynamic>) : null,
+  milestone: json['milestone'] != null ? IssueEventMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
+  projectCard: json['project_card'] != null ? IssueEventProjectCard.fromJson(json['project_card'] as Map<String, dynamic>) : null,
+  rename: json['rename'] != null ? IssueEventRename.fromJson(json['rename'] as Map<String, dynamic>) : null,
+  authorAssociation: json['author_association'] != null ? AuthorAssociation.fromJson(json['author_association'] as String) : null,
+  lockReason: json['lock_reason'] as String?,
+  performedViaGithubApp: json['performed_via_github_app'] != null ? Integration.fromJson(json['performed_via_github_app'] as Map<String, dynamic>) : null,
+); }
+
+final int id;
+
+final String nodeId;
+
+final Uri url;
+
+final SimpleUser? actor;
+
+final String event;
+
+final String? commitId;
+
+final String? commitUrl;
+
+final DateTime createdAt;
+
+final Issue? issue;
+
+final IssueEventLabel? label;
+
+final SimpleUser? assignee;
+
+final SimpleUser? assigner;
+
+final SimpleUser? reviewRequester;
+
+final SimpleUser? requestedReviewer;
+
+final Team? requestedTeam;
+
+final IssueEventDismissedReview? dismissedReview;
+
+final IssueEventMilestone? milestone;
+
+final IssueEventProjectCard? projectCard;
+
+final IssueEventRename? rename;
+
+/// How the author is associated with the repository.
+final AuthorAssociation? authorAssociation;
+
+final String? lockReason;
+
+final Integration? performedViaGithubApp;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'node_id': nodeId,
+  'url': url.toString(),
+  if (actor != null) 'actor': actor?.toJson(),
+  'event': event,
+  'commit_id': ?commitId,
+  'commit_url': ?commitUrl,
+  'created_at': createdAt.toIso8601String(),
+  if (issue != null) 'issue': issue?.toJson(),
+  if (label != null) 'label': label?.toJson(),
+  if (assignee != null) 'assignee': assignee?.toJson(),
+  if (assigner != null) 'assigner': assigner?.toJson(),
+  if (reviewRequester != null) 'review_requester': reviewRequester?.toJson(),
+  if (requestedReviewer != null) 'requested_reviewer': requestedReviewer?.toJson(),
+  if (requestedTeam != null) 'requested_team': requestedTeam?.toJson(),
+  if (dismissedReview != null) 'dismissed_review': dismissedReview?.toJson(),
+  if (milestone != null) 'milestone': milestone?.toJson(),
+  if (projectCard != null) 'project_card': projectCard?.toJson(),
+  if (rename != null) 'rename': rename?.toJson(),
+  if (authorAssociation != null) 'author_association': authorAssociation?.toJson(),
+  'lock_reason': ?lockReason,
+  if (performedViaGithubApp != null) 'performed_via_github_app': performedViaGithubApp?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('actor') &&
+      json.containsKey('event') && json['event'] is String &&
+      json.containsKey('commit_id') && json['commit_id'] is String &&
+      json.containsKey('commit_url') && json['commit_url'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String; } 
+IssueEvent copyWith({int? id, String? nodeId, Uri? url, SimpleUser? Function()? actor, String? event, String? Function()? commitId, String? Function()? commitUrl, DateTime? createdAt, Issue? Function()? issue, IssueEventLabel Function()? label, SimpleUser? Function()? assignee, SimpleUser? Function()? assigner, SimpleUser? Function()? reviewRequester, SimpleUser? Function()? requestedReviewer, Team Function()? requestedTeam, IssueEventDismissedReview Function()? dismissedReview, IssueEventMilestone Function()? milestone, IssueEventProjectCard Function()? projectCard, IssueEventRename Function()? rename, AuthorAssociation Function()? authorAssociation, String? Function()? lockReason, Integration? Function()? performedViaGithubApp, }) { return IssueEvent(
+  id: id ?? this.id,
+  nodeId: nodeId ?? this.nodeId,
+  url: url ?? this.url,
+  actor: actor != null ? actor() : this.actor,
+  event: event ?? this.event,
+  commitId: commitId != null ? commitId() : this.commitId,
+  commitUrl: commitUrl != null ? commitUrl() : this.commitUrl,
+  createdAt: createdAt ?? this.createdAt,
+  issue: issue != null ? issue() : this.issue,
+  label: label != null ? label() : this.label,
+  assignee: assignee != null ? assignee() : this.assignee,
+  assigner: assigner != null ? assigner() : this.assigner,
+  reviewRequester: reviewRequester != null ? reviewRequester() : this.reviewRequester,
+  requestedReviewer: requestedReviewer != null ? requestedReviewer() : this.requestedReviewer,
+  requestedTeam: requestedTeam != null ? requestedTeam() : this.requestedTeam,
+  dismissedReview: dismissedReview != null ? dismissedReview() : this.dismissedReview,
+  milestone: milestone != null ? milestone() : this.milestone,
+  projectCard: projectCard != null ? projectCard() : this.projectCard,
+  rename: rename != null ? rename() : this.rename,
+  authorAssociation: authorAssociation != null ? authorAssociation() : this.authorAssociation,
+  lockReason: lockReason != null ? lockReason() : this.lockReason,
+  performedViaGithubApp: performedViaGithubApp != null ? performedViaGithubApp() : this.performedViaGithubApp,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssueEvent &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          url == other.url &&
+          actor == other.actor &&
+          event == other.event &&
+          commitId == other.commitId &&
+          commitUrl == other.commitUrl &&
+          createdAt == other.createdAt &&
+          issue == other.issue &&
+          label == other.label &&
+          assignee == other.assignee &&
+          assigner == other.assigner &&
+          reviewRequester == other.reviewRequester &&
+          requestedReviewer == other.requestedReviewer &&
+          requestedTeam == other.requestedTeam &&
+          dismissedReview == other.dismissedReview &&
+          milestone == other.milestone &&
+          projectCard == other.projectCard &&
+          rename == other.rename &&
+          authorAssociation == other.authorAssociation &&
+          lockReason == other.lockReason &&
+          performedViaGithubApp == other.performedViaGithubApp; } 
+@override int get hashCode { return Object.hashAll([id, nodeId, url, actor, event, commitId, commitUrl, createdAt, issue, label, assignee, assigner, reviewRequester, requestedReviewer, requestedTeam, dismissedReview, milestone, projectCard, rename, authorAssociation, lockReason, performedViaGithubApp]); } 
+@override String toString() { return 'IssueEvent(id: $id, nodeId: $nodeId, url: $url, actor: $actor, event: $event, commitId: $commitId, commitUrl: $commitUrl, createdAt: $createdAt, issue: $issue, label: $label, assignee: $assignee, assigner: $assigner, reviewRequester: $reviewRequester, requestedReviewer: $requestedReviewer, requestedTeam: $requestedTeam, dismissedReview: $dismissedReview, milestone: $milestone, projectCard: $projectCard, rename: $rename, authorAssociation: $authorAssociation, lockReason: $lockReason, performedViaGithubApp: $performedViaGithubApp)'; } 
+ }

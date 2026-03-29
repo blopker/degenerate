@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'treasury_outbound_transfers_resource_returned_details.dart';/// Details about a returned OutboundTransfer. Only set when the status is `returned`.
+final class TreasuryOutboundTransferReturnedDetails {const TreasuryOutboundTransferReturnedDetails({this.treasuryOutboundTransfersResourceReturnedDetails});
+
+factory TreasuryOutboundTransferReturnedDetails.fromJson(Map<String, dynamic> json) { return TreasuryOutboundTransferReturnedDetails(
+  treasuryOutboundTransfersResourceReturnedDetails: TreasuryOutboundTransfersResourceReturnedDetails.canParse(json) ? TreasuryOutboundTransfersResourceReturnedDetails.fromJson(json) : null,
+); }
+
+final TreasuryOutboundTransfersResourceReturnedDetails? treasuryOutboundTransfersResourceReturnedDetails;
+
+/// At least one variant must be present.
+bool get isValid { return treasuryOutboundTransfersResourceReturnedDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?treasuryOutboundTransfersResourceReturnedDetails?.toJson(),
+}; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_request_custom_fields_dropdown_options.dart';final class PostPaymentLinksRequestCustomFieldsDropdown {const PostPaymentLinksRequestCustomFieldsDropdown({this.defaultValue, required this.options, });
+
+factory PostPaymentLinksRequestCustomFieldsDropdown.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomFieldsDropdown(
+  defaultValue: json['default_value'] as String?,
+  options: (json['options'] as List<dynamic>).map((e) => PostPaymentLinksRequestCustomFieldsDropdownOptions.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final String? defaultValue;
+
+final List<PostPaymentLinksRequestCustomFieldsDropdownOptions> options;
+
+Map<String, dynamic> toJson() { return {
+  'default_value': ?defaultValue,
+  'options': options.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('options'); } 
+PostPaymentLinksRequestCustomFieldsDropdown copyWith({String Function()? defaultValue, List<PostPaymentLinksRequestCustomFieldsDropdownOptions>? options, }) { return PostPaymentLinksRequestCustomFieldsDropdown(
+  defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
+  options: options ?? this.options,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksRequestCustomFieldsDropdown &&
+          defaultValue == other.defaultValue &&
+          listEquals(options, other.options); } 
+@override int get hashCode { return Object.hash(defaultValue, Object.hashAll(options)); } 
+@override String toString() { return 'PostPaymentLinksRequestCustomFieldsDropdown(defaultValue: $defaultValue, options: $options)'; } 
+ }

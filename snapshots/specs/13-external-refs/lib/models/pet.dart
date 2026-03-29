@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'owner.dart';final class Pet {const Pet({required this.id, required this.name, this.tag, this.owner, });
+
+factory Pet.fromJson(Map<String, dynamic> json) { return Pet(
+  id: (json['id'] as num).toInt(),
+  name: json['name'] as String,
+  tag: json['tag'] as String?,
+  owner: json['owner'] != null ? Owner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+); }
+
+final int id;
+
+final String name;
+
+final String? tag;
+
+final Owner? owner;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'name': name,
+  'tag': ?tag,
+  if (owner != null) 'owner': owner?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String; } 
+Pet copyWith({int? id, String? name, String Function()? tag, Owner Function()? owner, }) { return Pet(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  tag: tag != null ? tag() : this.tag,
+  owner: owner != null ? owner() : this.owner,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Pet &&
+          id == other.id &&
+          name == other.name &&
+          tag == other.tag &&
+          owner == other.owner; } 
+@override int get hashCode { return Object.hash(id, name, tag, owner); } 
+@override String toString() { return 'Pet(id: $id, name: $name, tag: $tag, owner: $owner)'; } 
+ }

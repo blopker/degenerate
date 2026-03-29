@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Issue Event Milestone
+final class IssueEventMilestone {const IssueEventMilestone({required this.title});
+
+factory IssueEventMilestone.fromJson(Map<String, dynamic> json) { return IssueEventMilestone(
+  title: json['title'] as String,
+); }
+
+final String title;
+
+Map<String, dynamic> toJson() { return {
+  'title': title,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('title') && json['title'] is String; } 
+IssueEventMilestone copyWith({String? title}) { return IssueEventMilestone(
+  title: title ?? this.title,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssueEventMilestone &&
+          title == other.title; } 
+@override int get hashCode { return title.hashCode; } 
+@override String toString() { return 'IssueEventMilestone(title: $title)'; } 
+ }

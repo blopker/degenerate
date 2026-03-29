@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetBillingCreditBalanceTransactionsRequest {const GetBillingCreditBalanceTransactionsRequest();
+
+factory GetBillingCreditBalanceTransactionsRequest.fromJson(Map<String, dynamic> json) { return GetBillingCreditBalanceTransactionsRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetBillingCreditBalanceTransactionsRequest copyWith() { return GetBillingCreditBalanceTransactionsRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetBillingCreditBalanceTransactionsRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetBillingCreditBalanceTransactionsRequest()'; } 
+ }

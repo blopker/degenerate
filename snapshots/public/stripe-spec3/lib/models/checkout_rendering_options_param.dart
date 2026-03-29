@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CheckoutRenderingOptionsParamAmountTaxDisplay {const CheckoutRenderingOptionsParamAmountTaxDisplay._(this.value);
+
+factory CheckoutRenderingOptionsParamAmountTaxDisplay.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'exclude_tax' => excludeTax,
+  'include_inclusive_tax' => includeInclusiveTax,
+  _ => CheckoutRenderingOptionsParamAmountTaxDisplay._(json),
+}; }
+
+static const CheckoutRenderingOptionsParamAmountTaxDisplay $empty = CheckoutRenderingOptionsParamAmountTaxDisplay._('');
+
+static const CheckoutRenderingOptionsParamAmountTaxDisplay excludeTax = CheckoutRenderingOptionsParamAmountTaxDisplay._('exclude_tax');
+
+static const CheckoutRenderingOptionsParamAmountTaxDisplay includeInclusiveTax = CheckoutRenderingOptionsParamAmountTaxDisplay._('include_inclusive_tax');
+
+static const List<CheckoutRenderingOptionsParamAmountTaxDisplay> values = [$empty, excludeTax, includeInclusiveTax];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CheckoutRenderingOptionsParamAmountTaxDisplay && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CheckoutRenderingOptionsParamAmountTaxDisplay($value)'; } 
+ }
+final class CheckoutRenderingOptionsParam {const CheckoutRenderingOptionsParam({this.amountTaxDisplay, this.template, });
+
+factory CheckoutRenderingOptionsParam.fromJson(Map<String, dynamic> json) { return CheckoutRenderingOptionsParam(
+  amountTaxDisplay: json['amount_tax_display'] != null ? CheckoutRenderingOptionsParamAmountTaxDisplay.fromJson(json['amount_tax_display'] as String) : null,
+  template: json['template'] as String?,
+); }
+
+final CheckoutRenderingOptionsParamAmountTaxDisplay? amountTaxDisplay;
+
+final String? template;
+
+Map<String, dynamic> toJson() { return {
+  if (amountTaxDisplay != null) 'amount_tax_display': amountTaxDisplay?.toJson(),
+  'template': ?template,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CheckoutRenderingOptionsParam copyWith({CheckoutRenderingOptionsParamAmountTaxDisplay Function()? amountTaxDisplay, String Function()? template, }) { return CheckoutRenderingOptionsParam(
+  amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
+  template: template != null ? template() : this.template,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CheckoutRenderingOptionsParam &&
+          amountTaxDisplay == other.amountTaxDisplay &&
+          template == other.template; } 
+@override int get hashCode { return Object.hash(amountTaxDisplay, template); } 
+@override String toString() { return 'CheckoutRenderingOptionsParam(amountTaxDisplay: $amountTaxDisplay, template: $template)'; } 
+ }

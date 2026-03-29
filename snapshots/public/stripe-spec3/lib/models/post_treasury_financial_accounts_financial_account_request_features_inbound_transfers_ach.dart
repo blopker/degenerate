@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch {const PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch({required this.requested});
+
+factory PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch.fromJson(Map<String, dynamic> json) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch(
+  requested: json['requested'] as bool,
+); }
+
+final bool requested;
+
+Map<String, dynamic> toJson() { return {
+  'requested': requested,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('requested') && json['requested'] is bool; } 
+PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch copyWith({bool? requested}) { return PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch(
+  requested: requested ?? this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch &&
+          requested == other.requested; } 
+@override int get hashCode { return requested.hashCode; } 
+@override String toString() { return 'PostTreasuryFinancialAccountsFinancialAccountRequestFeaturesInboundTransfersAch(requested: $requested)'; } 
+ }

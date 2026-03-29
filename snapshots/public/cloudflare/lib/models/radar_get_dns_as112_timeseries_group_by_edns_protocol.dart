@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsAs112TimeseriesGroupByEdnsProtocol {const RadarGetDnsAs112TimeseriesGroupByEdnsProtocol._(this.value);
+
+factory RadarGetDnsAs112TimeseriesGroupByEdnsProtocol.fromJson(String json) { return switch (json) {
+  'UDP' => udp,
+  'TCP' => tcp,
+  'HTTPS' => https,
+  'TLS' => tls,
+  _ => RadarGetDnsAs112TimeseriesGroupByEdnsProtocol._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesGroupByEdnsProtocol udp = RadarGetDnsAs112TimeseriesGroupByEdnsProtocol._('UDP');
+
+static const RadarGetDnsAs112TimeseriesGroupByEdnsProtocol tcp = RadarGetDnsAs112TimeseriesGroupByEdnsProtocol._('TCP');
+
+static const RadarGetDnsAs112TimeseriesGroupByEdnsProtocol https = RadarGetDnsAs112TimeseriesGroupByEdnsProtocol._('HTTPS');
+
+static const RadarGetDnsAs112TimeseriesGroupByEdnsProtocol tls = RadarGetDnsAs112TimeseriesGroupByEdnsProtocol._('TLS');
+
+static const List<RadarGetDnsAs112TimeseriesGroupByEdnsProtocol> values = [udp, tcp, https, tls];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByEdnsProtocol && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByEdnsProtocol($value)'; } 
+ }

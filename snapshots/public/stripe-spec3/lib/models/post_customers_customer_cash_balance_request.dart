@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_cash_balance_request_settings.dart';final class PostCustomersCustomerCashBalanceRequest {const PostCustomersCustomerCashBalanceRequest({this.expand, this.settings, });
+
+factory PostCustomersCustomerCashBalanceRequest.fromJson(Map<String, dynamic> json) { return PostCustomersCustomerCashBalanceRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  settings: json['settings'] != null ? PostCustomersCustomerCashBalanceRequestSettings.fromJson(json['settings'] as Map<String, dynamic>) : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// A hash of settings for this cash balance.
+final PostCustomersCustomerCashBalanceRequestSettings? settings;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  if (settings != null) 'settings': settings?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCustomersCustomerCashBalanceRequest copyWith({List<String> Function()? expand, PostCustomersCustomerCashBalanceRequestSettings Function()? settings, }) { return PostCustomersCustomerCashBalanceRequest(
+  expand: expand != null ? expand() : this.expand,
+  settings: settings != null ? settings() : this.settings,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCustomersCustomerCashBalanceRequest &&
+          listEquals(expand, other.expand) &&
+          settings == other.settings; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), settings); } 
+@override String toString() { return 'PostCustomersCustomerCashBalanceRequest(expand: $expand, settings: $settings)'; } 
+ }

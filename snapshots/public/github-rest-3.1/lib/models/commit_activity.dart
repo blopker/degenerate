@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Commit Activity
+final class CommitActivity {const CommitActivity({required this.days, required this.total, required this.week, });
+
+factory CommitActivity.fromJson(Map<String, dynamic> json) { return CommitActivity(
+  days: (json['days'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+  total: (json['total'] as num).toInt(),
+  week: (json['week'] as num).toInt(),
+); }
+
+final List<int> days;
+
+final int total;
+
+final int week;
+
+Map<String, dynamic> toJson() { return {
+  'days': days,
+  'total': total,
+  'week': week,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('days') &&
+      json.containsKey('total') && json['total'] is num &&
+      json.containsKey('week') && json['week'] is num; } 
+CommitActivity copyWith({List<int>? days, int? total, int? week, }) { return CommitActivity(
+  days: days ?? this.days,
+  total: total ?? this.total,
+  week: week ?? this.week,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CommitActivity &&
+          listEquals(days, other.days) &&
+          total == other.total &&
+          week == other.week; } 
+@override int get hashCode { return Object.hash(Object.hashAll(days), total, week); } 
+@override String toString() { return 'CommitActivity(days: $days, total: $total, week: $week)'; } 
+ }

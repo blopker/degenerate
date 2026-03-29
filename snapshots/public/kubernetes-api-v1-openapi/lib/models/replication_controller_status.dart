@@ -1,0 +1,60 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'replication_controller_condition.dart';/// ReplicationControllerStatus represents the current status of a replication controller.
+final class ReplicationControllerStatus {const ReplicationControllerStatus({this.availableReplicas, this.conditions, this.fullyLabeledReplicas, this.observedGeneration, this.readyReplicas, this.replicas = 0, });
+
+factory ReplicationControllerStatus.fromJson(Map<String, dynamic> json) { return ReplicationControllerStatus(
+  availableReplicas: json['availableReplicas'] != null ? (json['availableReplicas'] as num).toInt() : null,
+  conditions: (json['conditions'] as List<dynamic>?)?.map((e) => ReplicationControllerCondition.fromJson(e as Map<String, dynamic>)).toList(),
+  fullyLabeledReplicas: json['fullyLabeledReplicas'] != null ? (json['fullyLabeledReplicas'] as num).toInt() : null,
+  observedGeneration: json['observedGeneration'] != null ? (json['observedGeneration'] as num).toInt() : null,
+  readyReplicas: json['readyReplicas'] != null ? (json['readyReplicas'] as num).toInt() : null,
+  replicas: (json['replicas'] as num).toInt(),
+); }
+
+/// The number of available replicas (ready for at least minReadySeconds) for this replication controller.
+final int? availableReplicas;
+
+/// Represents the latest available observations of a replication controller's current state.
+final List<ReplicationControllerCondition>? conditions;
+
+/// The number of pods that have labels matching the labels of the pod template of the replication controller.
+final int? fullyLabeledReplicas;
+
+/// ObservedGeneration reflects the generation of the most recently observed replication controller.
+final int? observedGeneration;
+
+/// The number of ready replicas for this replication controller.
+final int? readyReplicas;
+
+/// Replicas is the most recently observed number of replicas. More info: https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller#what-is-a-replicationcontroller
+final int replicas;
+
+Map<String, dynamic> toJson() { return {
+  'availableReplicas': ?availableReplicas,
+  if (conditions != null) 'conditions': conditions?.map((e) => e.toJson()).toList(),
+  'fullyLabeledReplicas': ?fullyLabeledReplicas,
+  'observedGeneration': ?observedGeneration,
+  'readyReplicas': ?readyReplicas,
+  'replicas': replicas,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('replicas') && json['replicas'] is num; } 
+ReplicationControllerStatus copyWith({int Function()? availableReplicas, List<ReplicationControllerCondition> Function()? conditions, int Function()? fullyLabeledReplicas, int Function()? observedGeneration, int Function()? readyReplicas, int? replicas, }) { return ReplicationControllerStatus(
+  availableReplicas: availableReplicas != null ? availableReplicas() : this.availableReplicas,
+  conditions: conditions != null ? conditions() : this.conditions,
+  fullyLabeledReplicas: fullyLabeledReplicas != null ? fullyLabeledReplicas() : this.fullyLabeledReplicas,
+  observedGeneration: observedGeneration != null ? observedGeneration() : this.observedGeneration,
+  readyReplicas: readyReplicas != null ? readyReplicas() : this.readyReplicas,
+  replicas: replicas ?? this.replicas,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReplicationControllerStatus &&
+          availableReplicas == other.availableReplicas &&
+          listEquals(conditions, other.conditions) &&
+          fullyLabeledReplicas == other.fullyLabeledReplicas &&
+          observedGeneration == other.observedGeneration &&
+          readyReplicas == other.readyReplicas &&
+          replicas == other.replicas; } 
+@override int get hashCode { return Object.hash(availableReplicas, Object.hashAll(conditions ?? const []), fullyLabeledReplicas, observedGeneration, readyReplicas, replicas); } 
+@override String toString() { return 'ReplicationControllerStatus(availableReplicas: $availableReplicas, conditions: $conditions, fullyLabeledReplicas: $fullyLabeledReplicas, observedGeneration: $observedGeneration, readyReplicas: $readyReplicas, replicas: $replicas)'; } 
+ }

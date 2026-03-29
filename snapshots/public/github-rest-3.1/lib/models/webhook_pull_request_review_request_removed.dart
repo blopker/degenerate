@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'webhook_pull_request_review_request_removed_review_request_removed.dart';import 'webhook_pull_request_review_request_removed_review_request_removed2.dart';typedef WebhookPullRequestReviewRequestRemoved = OneOf2<WebhookPullRequestReviewRequestRemovedReviewRequestRemoved,WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2>;

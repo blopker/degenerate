@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_klarna_dob.dart';/// 
+final class PaymentMethodKlarna {const PaymentMethodKlarna({this.dob});
+
+factory PaymentMethodKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodKlarna(
+  dob: json['dob'] != null ? PaymentMethodKlarnaDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
+); }
+
+/// The customer's date of birth, if provided.
+final PaymentMethodKlarnaDob? dob;
+
+Map<String, dynamic> toJson() { return {
+  if (dob != null) 'dob': dob?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodKlarna copyWith({PaymentMethodKlarnaDob? Function()? dob}) { return PaymentMethodKlarna(
+  dob: dob != null ? dob() : this.dob,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodKlarna &&
+          dob == other.dob; } 
+@override int get hashCode { return dob.hashCode; } 
+@override String toString() { return 'PaymentMethodKlarna(dob: $dob)'; } 
+ }

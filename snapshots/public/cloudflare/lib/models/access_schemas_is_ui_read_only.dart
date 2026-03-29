@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
+extension type const AccessSchemasIsUiReadOnly(bool value) {
+factory AccessSchemasIsUiReadOnly.fromJson(bool json) => AccessSchemasIsUiReadOnly(json);
+
+bool toJson() => value;
+
+}

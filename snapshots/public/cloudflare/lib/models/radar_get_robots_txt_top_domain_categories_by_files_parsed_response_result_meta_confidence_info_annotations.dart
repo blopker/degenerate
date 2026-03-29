@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations {const RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

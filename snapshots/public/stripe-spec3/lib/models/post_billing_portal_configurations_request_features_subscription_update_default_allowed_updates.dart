@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._(this.value);
+
+factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1.fromJson(String json) { return switch (json) {
+  'price' => price,
+  'promotion_code' => promotionCode,
+  'quantity' => quantity,
+  _ => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._(json),
+}; }
+
+static const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 price = PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._('price');
+
+static const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 promotionCode = PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._('promotion_code');
+
+static const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 quantity = PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1._('quantity');
+
+static const List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1> values = [price, promotionCode, quantity];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1($value)'; } 
+ }
+final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._(this.value);
+
+factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._(json),
+}; }
+
+static const PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 $empty = PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2._('');
+
+static const List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2($value)'; } 
+ }
+typedef PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdates = OneOf2<List<PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant1>,PostBillingPortalConfigurationsRequestFeaturesSubscriptionUpdateDefaultAllowedUpdatesVariant2>;

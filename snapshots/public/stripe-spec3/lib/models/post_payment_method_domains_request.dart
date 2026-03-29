@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentMethodDomainsRequest {const PostPaymentMethodDomainsRequest({required this.domainName, this.enabled, this.expand, });
+
+factory PostPaymentMethodDomainsRequest.fromJson(Map<String, dynamic> json) { return PostPaymentMethodDomainsRequest(
+  domainName: json['domain_name'] as String,
+  enabled: json['enabled'] as bool?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The domain name that this payment method domain object represents.
+final String domainName;
+
+/// Whether this payment method domain is enabled. If the domain is not enabled, payment methods that require a payment method domain will not appear in Elements or Embedded Checkout.
+final bool? enabled;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+Map<String, dynamic> toJson() { return {
+  'domain_name': domainName,
+  'enabled': ?enabled,
+  'expand': ?expand,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain_name') && json['domain_name'] is String; } 
+PostPaymentMethodDomainsRequest copyWith({String? domainName, bool Function()? enabled, List<String> Function()? expand, }) { return PostPaymentMethodDomainsRequest(
+  domainName: domainName ?? this.domainName,
+  enabled: enabled != null ? enabled() : this.enabled,
+  expand: expand != null ? expand() : this.expand,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodDomainsRequest &&
+          domainName == other.domainName &&
+          enabled == other.enabled &&
+          listEquals(expand, other.expand); } 
+@override int get hashCode { return Object.hash(domainName, enabled, Object.hashAll(expand ?? const [])); } 
+@override String toString() { return 'PostPaymentMethodDomainsRequest(domainName: $domainName, enabled: $enabled, expand: $expand)'; } 
+ }

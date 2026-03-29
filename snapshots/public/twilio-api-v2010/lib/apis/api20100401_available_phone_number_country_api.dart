@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_available_phone_number_country.dart';import '../models/list_available_phone_number_country_response.dart';/// Api20100401AvailablePhoneNumberCountryApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401AvailablePhoneNumberCountryApi with ApiExecutor {const Api20100401AvailablePhoneNumberCountryApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// 
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers.json`
+Future<ApiResult<ListAvailablePhoneNumberCountryResponse, Never>> listAvailablePhoneNumberCountry({required String accountSid, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/AvailablePhoneNumbers.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListAvailablePhoneNumberCountryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// 
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/AvailablePhoneNumbers/{CountryCode}.json`
+Future<ApiResult<AccountAvailablePhoneNumberCountry, Never>> fetchAvailablePhoneNumberCountry({required String accountSid, required String countryCode, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountAvailablePhoneNumberCountry.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

@@ -1,0 +1,239 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_batch_move_accounts_request.dart';import '../models/accounts_batch_move_accounts_response.dart';import '../models/accounts_get_account_profile_response.dart';import '../models/accounts_list_account_organizations_response.dart';import '../models/accounts_list_accounts_direction.dart';import '../models/accounts_move_accounts_request.dart';import '../models/accounts_move_accounts_response.dart';import '../models/iam_account.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_create_account.dart';import '../models/profile.dart';import '../models/response_common35.dart';/// AccountsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class AccountsApi with ApiExecutor {const AccountsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List Accounts
+///
+/// List all accounts you have ownership or verified access to.
+///
+/// `GET /accounts`
+Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) queryParameters['name'] = name;
+if (page != null) queryParameters['page'] = page.toString();
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (direction != null) queryParameters['direction'] = direction.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create an account
+///
+/// Create an account (only available for tenant admins at this time)
+///
+/// `POST /accounts`
+Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Account Details
+///
+/// Get information about a specific account that you are a member of.
+///
+/// `GET /accounts/{account_id}`
+Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update Account
+///
+/// Update an existing account.
+///
+/// `PUT /accounts/{account_id}`
+Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a specific account
+///
+/// Delete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account
+///
+/// `DELETE /accounts/{account_id}`
+Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Move account
+///
+/// Move an account within an organization hierarchy or an account outside an organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
+///
+/// `POST /accounts/{account_id}/move`
+Future<ApiResult<AccountsMoveAccountsResponse, Never>> accountsMoveAccounts({required String accountId, required AccountsMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/move',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountsMoveAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List account organizations
+///
+/// Retrieve a list of the organizations that "contain" this account or are
+/// managing it.
+/// 
+/// The returned list will be in order from "root" to "leaf", where the "leaf"
+/// will be the organization that _immediately_ contains the specified
+/// account.
+///
+/// `GET /accounts/{account_id}/organizations`
+Future<ApiResult<AccountsListAccountOrganizationsResponse, Never>> accountsListAccountOrganizations({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/organizations',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountsListAccountOrganizationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get account profile
+///
+/// `GET /accounts/{account_id}/profile`
+Future<ApiResult<AccountsGetAccountProfileResponse, Never>> accountsGetAccountProfile({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountsGetAccountProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Modify account profile
+///
+/// `PUT /accounts/{account_id}/profile`
+Future<ApiResult<void, Never>> accountsModifyAccountProfile({required String accountId, required Profile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/profile',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Batch move accounts
+///
+/// Batch move a collection of accounts to a specific organization. ⚠️ Not implemented.
+///
+/// `POST /accounts/move`
+Future<ApiResult<AccountsBatchMoveAccountsResponse, Never>> accountsBatchMoveAccounts({required AccountsBatchMoveAccountsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/move',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountsBatchMoveAccountsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

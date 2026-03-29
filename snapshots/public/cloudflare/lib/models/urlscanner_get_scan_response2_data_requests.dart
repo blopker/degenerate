@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_data_requests_request.dart';import 'urlscanner_get_scan_response2_data_requests_requests.dart';import 'urlscanner_get_scan_response2_data_requests_response.dart';final class UrlscannerGetScanResponse2DataRequests {const UrlscannerGetScanResponse2DataRequests({required this.request, this.requests, required this.response, });
+
+factory UrlscannerGetScanResponse2DataRequests.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2DataRequests(
+  request: UrlscannerGetScanResponse2DataRequestsRequest.fromJson(json['request'] as Map<String, dynamic>),
+  requests: (json['requests'] as List<dynamic>?)?.map((e) => UrlscannerGetScanResponse2DataRequestsRequests.fromJson(e as Map<String, dynamic>)).toList(),
+  response: UrlscannerGetScanResponse2DataRequestsResponse.fromJson(json['response'] as Map<String, dynamic>),
+); }
+
+final UrlscannerGetScanResponse2DataRequestsRequest request;
+
+final List<UrlscannerGetScanResponse2DataRequestsRequests>? requests;
+
+final UrlscannerGetScanResponse2DataRequestsResponse response;
+
+Map<String, dynamic> toJson() { return {
+  'request': request.toJson(),
+  if (requests != null) 'requests': requests?.map((e) => e.toJson()).toList(),
+  'response': response.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('request') &&
+      json.containsKey('response'); } 
+UrlscannerGetScanResponse2DataRequests copyWith({UrlscannerGetScanResponse2DataRequestsRequest? request, List<UrlscannerGetScanResponse2DataRequestsRequests> Function()? requests, UrlscannerGetScanResponse2DataRequestsResponse? response, }) { return UrlscannerGetScanResponse2DataRequests(
+  request: request ?? this.request,
+  requests: requests != null ? requests() : this.requests,
+  response: response ?? this.response,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2DataRequests &&
+          request == other.request &&
+          listEquals(requests, other.requests) &&
+          response == other.response; } 
+@override int get hashCode { return Object.hash(request, Object.hashAll(requests ?? const []), response); } 
+@override String toString() { return 'UrlscannerGetScanResponse2DataRequests(request: $request, requests: $requests, response: $response)'; } 
+ }

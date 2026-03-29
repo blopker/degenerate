@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_setup_intents_intent_request_payment_method_options_klarna_subscriptions_variant1.dart';final class PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 {const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(this.value);
+
+factory PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._(json),
+}; }
+
+static const PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 $empty = PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2._('');
+
+static const List<PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2($value)'; } 
+ }
+typedef PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptions = OneOf2<List<PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1>,PostSetupIntentsIntentRequestPaymentMethodOptionsKlarnaSubscriptionsVariant2>;

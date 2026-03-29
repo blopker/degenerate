@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// How to use characteristics of the request user agent in the cache key.
+final class RulesetsSetCacheSettingsCustomCacheKeyUser {const RulesetsSetCacheSettingsCustomCacheKeyUser({this.deviceType, this.geo, this.lang, });
+
+factory RulesetsSetCacheSettingsCustomCacheKeyUser.fromJson(Map<String, dynamic> json) { return RulesetsSetCacheSettingsCustomCacheKeyUser(
+  deviceType: json['device_type'] as bool?,
+  geo: json['geo'] as bool?,
+  lang: json['lang'] as bool?,
+); }
+
+/// Whether to use the user agent's device type in the cache key.
+final bool? deviceType;
+
+/// Whether to use the user agents's country in the cache key.
+final bool? geo;
+
+/// Whether to use the user agent's language in the cache key.
+final bool? lang;
+
+Map<String, dynamic> toJson() { return {
+  'device_type': ?deviceType,
+  'geo': ?geo,
+  'lang': ?lang,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RulesetsSetCacheSettingsCustomCacheKeyUser copyWith({bool Function()? deviceType, bool Function()? geo, bool Function()? lang, }) { return RulesetsSetCacheSettingsCustomCacheKeyUser(
+  deviceType: deviceType != null ? deviceType() : this.deviceType,
+  geo: geo != null ? geo() : this.geo,
+  lang: lang != null ? lang() : this.lang,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RulesetsSetCacheSettingsCustomCacheKeyUser &&
+          deviceType == other.deviceType &&
+          geo == other.geo &&
+          lang == other.lang; } 
+@override int get hashCode { return Object.hash(deviceType, geo, lang); } 
+@override String toString() { return 'RulesetsSetCacheSettingsCustomCacheKeyUser(deviceType: $deviceType, geo: $geo, lang: $lang)'; } 
+ }

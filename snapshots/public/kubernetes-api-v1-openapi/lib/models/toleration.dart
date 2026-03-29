@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The pod this Toleration is attached to tolerates any taint that matches the triple `<key,value,effect>` using the matching operator `<operator>`.
+final class Toleration {const Toleration({this.effect, this.key, this.$operator, this.tolerationSeconds, this.value, });
+
+factory Toleration.fromJson(Map<String, dynamic> json) { return Toleration(
+  effect: json['effect'] as String?,
+  key: json['key'] as String?,
+  $operator: json['operator'] as String?,
+  tolerationSeconds: json['tolerationSeconds'] != null ? (json['tolerationSeconds'] as num).toInt() : null,
+  value: json['value'] as String?,
+); }
+
+/// Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.
+final String? effect;
+
+/// Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.
+final String? key;
+
+/// Operator represents a key's relationship to the value. Valid operators are Exists, Equal, Lt, and Gt. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category. Lt and Gt perform numeric comparisons (requires feature gate TaintTolerationComparisonOperators).
+final String? $operator;
+
+/// TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.
+final int? tolerationSeconds;
+
+/// Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.
+final String? value;
+
+Map<String, dynamic> toJson() { return {
+  'effect': ?effect,
+  'key': ?key,
+  'operator': ?$operator,
+  'tolerationSeconds': ?tolerationSeconds,
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Toleration copyWith({String Function()? effect, String Function()? key, String Function()? $operator, int Function()? tolerationSeconds, String Function()? value, }) { return Toleration(
+  effect: effect != null ? effect() : this.effect,
+  key: key != null ? key() : this.key,
+  $operator: $operator != null ? $operator() : this.$operator,
+  tolerationSeconds: tolerationSeconds != null ? tolerationSeconds() : this.tolerationSeconds,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Toleration &&
+          effect == other.effect &&
+          key == other.key &&
+          $operator == other.$operator &&
+          tolerationSeconds == other.tolerationSeconds &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(effect, key, $operator, tolerationSeconds, value); } 
+@override String toString() { return 'Toleration(effect: $effect, key: $key, \$operator: ${$operator}, tolerationSeconds: $tolerationSeconds, value: $value)'; } 
+ }

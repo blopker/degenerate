@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'frequency2.dart';final class PostConfigUpdateRequest {const PostConfigUpdateRequest({this.frequency, this.ips, this.ports, });
+
+factory PostConfigUpdateRequest.fromJson(Map<String, dynamic> json) { return PostConfigUpdateRequest(
+  frequency: json['frequency'] != null ? Frequency2.fromJson(json['frequency'] as num) : null,
+  ips: (json['ips'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  ports: (json['ports'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Defines the number of days between each scan (0 = One-off scan).
+final Frequency2? frequency;
+
+/// Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.
+final List<String>? ips;
+
+/// Defines a list of ports to scan. Valid values are:"default", "all", or a comma-separated list of ports or range of ports (e.g. ["1-80", "443"]). "default" scans the 100 most commonly open ports.
+final List<String>? ports;
+
+Map<String, dynamic> toJson() { return {
+  if (frequency != null) 'frequency': frequency?.toJson(),
+  'ips': ?ips,
+  'ports': ?ports,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostConfigUpdateRequest copyWith({Frequency2 Function()? frequency, List<String> Function()? ips, List<String> Function()? ports, }) { return PostConfigUpdateRequest(
+  frequency: frequency != null ? frequency() : this.frequency,
+  ips: ips != null ? ips() : this.ips,
+  ports: ports != null ? ports() : this.ports,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostConfigUpdateRequest &&
+          frequency == other.frequency &&
+          listEquals(ips, other.ips) &&
+          listEquals(ports, other.ports); } 
+@override int get hashCode { return Object.hash(frequency, Object.hashAll(ips ?? const []), Object.hashAll(ports ?? const [])); } 
+@override String toString() { return 'PostConfigUpdateRequest(frequency: $frequency, ips: $ips, ports: $ports)'; } 
+ }

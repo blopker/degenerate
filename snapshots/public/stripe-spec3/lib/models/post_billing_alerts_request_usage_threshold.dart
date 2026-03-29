@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_alerts_request_usage_threshold_filters.dart';final class PostBillingAlertsRequestUsageThresholdRecurrence {const PostBillingAlertsRequestUsageThresholdRecurrence._(this.value);
+
+factory PostBillingAlertsRequestUsageThresholdRecurrence.fromJson(String json) { return switch (json) {
+  'one_time' => oneTime,
+  _ => PostBillingAlertsRequestUsageThresholdRecurrence._(json),
+}; }
+
+static const PostBillingAlertsRequestUsageThresholdRecurrence oneTime = PostBillingAlertsRequestUsageThresholdRecurrence._('one_time');
+
+static const List<PostBillingAlertsRequestUsageThresholdRecurrence> values = [oneTime];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingAlertsRequestUsageThresholdRecurrence && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingAlertsRequestUsageThresholdRecurrence($value)'; } 
+ }
+/// The configuration of the usage threshold.
+final class PostBillingAlertsRequestUsageThreshold {const PostBillingAlertsRequestUsageThreshold({this.filters, required this.gte, required this.meter, required this.recurrence, });
+
+factory PostBillingAlertsRequestUsageThreshold.fromJson(Map<String, dynamic> json) { return PostBillingAlertsRequestUsageThreshold(
+  filters: (json['filters'] as List<dynamic>?)?.map((e) => PostBillingAlertsRequestUsageThresholdFilters.fromJson(e as Map<String, dynamic>)).toList(),
+  gte: (json['gte'] as num).toInt(),
+  meter: json['meter'] as String,
+  recurrence: PostBillingAlertsRequestUsageThresholdRecurrence.fromJson(json['recurrence'] as String),
+); }
+
+final List<PostBillingAlertsRequestUsageThresholdFilters>? filters;
+
+final int gte;
+
+final String meter;
+
+final PostBillingAlertsRequestUsageThresholdRecurrence recurrence;
+
+Map<String, dynamic> toJson() { return {
+  if (filters != null) 'filters': filters?.map((e) => e.toJson()).toList(),
+  'gte': gte,
+  'meter': meter,
+  'recurrence': recurrence.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('gte') && json['gte'] is num &&
+      json.containsKey('meter') && json['meter'] is String &&
+      json.containsKey('recurrence'); } 
+PostBillingAlertsRequestUsageThreshold copyWith({List<PostBillingAlertsRequestUsageThresholdFilters> Function()? filters, int? gte, String? meter, PostBillingAlertsRequestUsageThresholdRecurrence? recurrence, }) { return PostBillingAlertsRequestUsageThreshold(
+  filters: filters != null ? filters() : this.filters,
+  gte: gte ?? this.gte,
+  meter: meter ?? this.meter,
+  recurrence: recurrence ?? this.recurrence,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingAlertsRequestUsageThreshold &&
+          listEquals(filters, other.filters) &&
+          gte == other.gte &&
+          meter == other.meter &&
+          recurrence == other.recurrence; } 
+@override int get hashCode { return Object.hash(Object.hashAll(filters ?? const []), gte, meter, recurrence); } 
+@override String toString() { return 'PostBillingAlertsRequestUsageThreshold(filters: $filters, gte: $gte, meter: $meter, recurrence: $recurrence)'; } 
+ }

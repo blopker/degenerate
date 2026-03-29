@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of credit the user is receiving.
+final class SecurityAdvisoryCreditTypes {const SecurityAdvisoryCreditTypes._(this.value);
+
+factory SecurityAdvisoryCreditTypes.fromJson(String json) { return switch (json) {
+  'analyst' => analyst,
+  'finder' => finder,
+  'reporter' => reporter,
+  'coordinator' => coordinator,
+  'remediation_developer' => remediationDeveloper,
+  'remediation_reviewer' => remediationReviewer,
+  'remediation_verifier' => remediationVerifier,
+  'tool' => tool,
+  'sponsor' => sponsor,
+  'other' => $other,
+  _ => SecurityAdvisoryCreditTypes._(json),
+}; }
+
+static const SecurityAdvisoryCreditTypes analyst = SecurityAdvisoryCreditTypes._('analyst');
+
+static const SecurityAdvisoryCreditTypes finder = SecurityAdvisoryCreditTypes._('finder');
+
+static const SecurityAdvisoryCreditTypes reporter = SecurityAdvisoryCreditTypes._('reporter');
+
+static const SecurityAdvisoryCreditTypes coordinator = SecurityAdvisoryCreditTypes._('coordinator');
+
+static const SecurityAdvisoryCreditTypes remediationDeveloper = SecurityAdvisoryCreditTypes._('remediation_developer');
+
+static const SecurityAdvisoryCreditTypes remediationReviewer = SecurityAdvisoryCreditTypes._('remediation_reviewer');
+
+static const SecurityAdvisoryCreditTypes remediationVerifier = SecurityAdvisoryCreditTypes._('remediation_verifier');
+
+static const SecurityAdvisoryCreditTypes tool = SecurityAdvisoryCreditTypes._('tool');
+
+static const SecurityAdvisoryCreditTypes sponsor = SecurityAdvisoryCreditTypes._('sponsor');
+
+static const SecurityAdvisoryCreditTypes $other = SecurityAdvisoryCreditTypes._('other');
+
+static const List<SecurityAdvisoryCreditTypes> values = [analyst, finder, reporter, coordinator, remediationDeveloper, remediationReviewer, remediationVerifier, tool, sponsor, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecurityAdvisoryCreditTypes && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecurityAdvisoryCreditTypes($value)'; } 
+ }

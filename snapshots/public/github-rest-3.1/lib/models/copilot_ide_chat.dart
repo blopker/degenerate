@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'copilot_ide_chat_editors.dart';/// Usage metrics for Copilot Chat in the IDE.
+final class CopilotIdeChat {const CopilotIdeChat({this.totalEngagedUsers, this.editors, });
+
+factory CopilotIdeChat.fromJson(Map<String, dynamic> json) { return CopilotIdeChat(
+  totalEngagedUsers: json['total_engaged_users'] != null ? (json['total_engaged_users'] as num).toInt() : null,
+  editors: (json['editors'] as List<dynamic>?)?.map((e) => CopilotIdeChatEditors.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Total number of users who prompted Copilot Chat in the IDE.
+final int? totalEngagedUsers;
+
+final List<CopilotIdeChatEditors>? editors;
+
+Map<String, dynamic> toJson() { return {
+  'total_engaged_users': ?totalEngagedUsers,
+  if (editors != null) 'editors': editors?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CopilotIdeChat copyWith({int Function()? totalEngagedUsers, List<CopilotIdeChatEditors> Function()? editors, }) { return CopilotIdeChat(
+  totalEngagedUsers: totalEngagedUsers != null ? totalEngagedUsers() : this.totalEngagedUsers,
+  editors: editors != null ? editors() : this.editors,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CopilotIdeChat &&
+          totalEngagedUsers == other.totalEngagedUsers &&
+          listEquals(editors, other.editors); } 
+@override int get hashCode { return Object.hash(totalEngagedUsers, Object.hashAll(editors ?? const [])); } 
+@override String toString() { return 'CopilotIdeChat(totalEngagedUsers: $totalEngagedUsers, editors: $editors)'; } 
+ }

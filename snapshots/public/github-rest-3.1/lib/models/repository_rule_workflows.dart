@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'repository_rule_workflows_parameters.dart';final class RepositoryRuleWorkflowsType {const RepositoryRuleWorkflowsType._(this.value);
+
+factory RepositoryRuleWorkflowsType.fromJson(String json) { return switch (json) {
+  'workflows' => workflows,
+  _ => RepositoryRuleWorkflowsType._(json),
+}; }
+
+static const RepositoryRuleWorkflowsType workflows = RepositoryRuleWorkflowsType._('workflows');
+
+static const List<RepositoryRuleWorkflowsType> values = [workflows];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRuleWorkflowsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRuleWorkflowsType($value)'; } 
+ }
+/// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
+final class RepositoryRuleWorkflows {const RepositoryRuleWorkflows({required this.type, this.parameters, });
+
+factory RepositoryRuleWorkflows.fromJson(Map<String, dynamic> json) { return RepositoryRuleWorkflows(
+  type: RepositoryRuleWorkflowsType.fromJson(json['type'] as String),
+  parameters: json['parameters'] != null ? RepositoryRuleWorkflowsParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+); }
+
+final RepositoryRuleWorkflowsType type;
+
+final RepositoryRuleWorkflowsParameters? parameters;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  if (parameters != null) 'parameters': parameters?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+RepositoryRuleWorkflows copyWith({RepositoryRuleWorkflowsType? type, RepositoryRuleWorkflowsParameters Function()? parameters, }) { return RepositoryRuleWorkflows(
+  type: type ?? this.type,
+  parameters: parameters != null ? parameters() : this.parameters,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRuleWorkflows &&
+          type == other.type &&
+          parameters == other.parameters; } 
+@override int get hashCode { return Object.hash(type, parameters); } 
+@override String toString() { return 'RepositoryRuleWorkflows(type: $type, parameters: $parameters)'; } 
+ }

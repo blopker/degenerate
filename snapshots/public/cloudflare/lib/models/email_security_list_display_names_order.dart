@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EmailSecurityListDisplayNamesOrder {const EmailSecurityListDisplayNamesOrder._(this.value);
+
+factory EmailSecurityListDisplayNamesOrder.fromJson(String json) { return switch (json) {
+  'name' => $name,
+  'email' => email,
+  'created_at' => createdAt,
+  _ => EmailSecurityListDisplayNamesOrder._(json),
+}; }
+
+static const EmailSecurityListDisplayNamesOrder $name = EmailSecurityListDisplayNamesOrder._('name');
+
+static const EmailSecurityListDisplayNamesOrder email = EmailSecurityListDisplayNamesOrder._('email');
+
+static const EmailSecurityListDisplayNamesOrder createdAt = EmailSecurityListDisplayNamesOrder._('created_at');
+
+static const List<EmailSecurityListDisplayNamesOrder> values = [$name, email, createdAt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EmailSecurityListDisplayNamesOrder && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EmailSecurityListDisplayNamesOrder($value)'; } 
+ }

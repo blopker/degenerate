@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param109.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2._(this.value);
+
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2._(json),
+}; }
+
+static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2._('');
+
+static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwint = OneOf2<PaymentMethodOptionsParam109,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsTwintVariant2>;

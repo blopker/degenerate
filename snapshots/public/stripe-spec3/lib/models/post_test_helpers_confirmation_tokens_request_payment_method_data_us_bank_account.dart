@@ -1,0 +1,95 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType._(this.value);
+
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+  'company' => company,
+  'individual' => individual,
+  _ => PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType._(json),
+}; }
+
+static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType company = PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType._('company');
+
+static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType individual = PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType._('individual');
+
+static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType> values = [company, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType($value)'; } 
+ }
+final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType._(this.value);
+
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'savings' => savings,
+  _ => PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType._(json),
+}; }
+
+static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType checking = PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType._('checking');
+
+static const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType savings = PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType._('savings');
+
+static const List<PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType> values = [checking, savings];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType($value)'; } 
+ }
+final class PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount {const PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount({this.accountHolderType, this.accountNumber, this.accountType, this.financialConnectionsAccount, this.routingNumber, });
+
+factory PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount.fromJson(Map<String, dynamic> json) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount(
+  accountHolderType: json['account_holder_type'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountNumber: json['account_number'] as String?,
+  accountType: json['account_type'] != null ? PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+  financialConnectionsAccount: json['financial_connections_account'] as String?,
+  routingNumber: json['routing_number'] as String?,
+); }
+
+final PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType? accountHolderType;
+
+final String? accountNumber;
+
+final PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType? accountType;
+
+final String? financialConnectionsAccount;
+
+final String? routingNumber;
+
+Map<String, dynamic> toJson() { return {
+  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
+  'account_number': ?accountNumber,
+  if (accountType != null) 'account_type': accountType?.toJson(),
+  'financial_connections_account': ?financialConnectionsAccount,
+  'routing_number': ?routingNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount copyWith({PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountHolderType Function()? accountHolderType, String Function()? accountNumber, PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccountAccountType Function()? accountType, String Function()? financialConnectionsAccount, String Function()? routingNumber, }) { return PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount(
+  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
+  accountNumber: accountNumber != null ? accountNumber() : this.accountNumber,
+  accountType: accountType != null ? accountType() : this.accountType,
+  financialConnectionsAccount: financialConnectionsAccount != null ? financialConnectionsAccount() : this.financialConnectionsAccount,
+  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount &&
+          accountHolderType == other.accountHolderType &&
+          accountNumber == other.accountNumber &&
+          accountType == other.accountType &&
+          financialConnectionsAccount == other.financialConnectionsAccount &&
+          routingNumber == other.routingNumber; } 
+@override int get hashCode { return Object.hash(accountHolderType, accountNumber, accountType, financialConnectionsAccount, routingNumber); } 
+@override String toString() { return 'PostTestHelpersConfirmationTokensRequestPaymentMethodDataUsBankAccount(accountHolderType: $accountHolderType, accountNumber: $accountNumber, accountType: $accountType, financialConnectionsAccount: $financialConnectionsAccount, routingNumber: $routingNumber)'; } 
+ }

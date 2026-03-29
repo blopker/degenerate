@@ -53,10 +53,8 @@ final class RecordingClient implements ApiClient {
   @override
   Future<StreamedApiResponse> sendStreaming(ApiRequest request) async {
     requests.add(request);
-    return nextStreamedResponse ?? StreamedApiResponse(
-      statusCode: 200,
-      byteStream: const Stream.empty(),
-    );
+    return nextStreamedResponse ??
+        StreamedApiResponse(statusCode: 200, byteStream: const Stream.empty());
   }
 
   @override

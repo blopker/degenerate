@@ -1,0 +1,83 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Reason for the failure.
+final class TreasuryInboundTransfersResourceFailureDetailsCode {const TreasuryInboundTransfersResourceFailureDetailsCode._(this.value);
+
+factory TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(String json) { return switch (json) {
+  'account_closed' => accountClosed,
+  'account_frozen' => accountFrozen,
+  'bank_account_restricted' => bankAccountRestricted,
+  'bank_ownership_changed' => bankOwnershipChanged,
+  'debit_not_authorized' => debitNotAuthorized,
+  'incorrect_account_holder_address' => incorrectAccountHolderAddress,
+  'incorrect_account_holder_name' => incorrectAccountHolderName,
+  'incorrect_account_holder_tax_id' => incorrectAccountHolderTaxId,
+  'insufficient_funds' => insufficientFunds,
+  'invalid_account_number' => invalidAccountNumber,
+  'invalid_currency' => invalidCurrency,
+  'no_account' => noAccount,
+  'other' => $other,
+  _ => TreasuryInboundTransfersResourceFailureDetailsCode._(json),
+}; }
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode accountClosed = TreasuryInboundTransfersResourceFailureDetailsCode._('account_closed');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode accountFrozen = TreasuryInboundTransfersResourceFailureDetailsCode._('account_frozen');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode bankAccountRestricted = TreasuryInboundTransfersResourceFailureDetailsCode._('bank_account_restricted');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode bankOwnershipChanged = TreasuryInboundTransfersResourceFailureDetailsCode._('bank_ownership_changed');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode debitNotAuthorized = TreasuryInboundTransfersResourceFailureDetailsCode._('debit_not_authorized');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode incorrectAccountHolderAddress = TreasuryInboundTransfersResourceFailureDetailsCode._('incorrect_account_holder_address');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode incorrectAccountHolderName = TreasuryInboundTransfersResourceFailureDetailsCode._('incorrect_account_holder_name');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode incorrectAccountHolderTaxId = TreasuryInboundTransfersResourceFailureDetailsCode._('incorrect_account_holder_tax_id');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode insufficientFunds = TreasuryInboundTransfersResourceFailureDetailsCode._('insufficient_funds');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode invalidAccountNumber = TreasuryInboundTransfersResourceFailureDetailsCode._('invalid_account_number');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode invalidCurrency = TreasuryInboundTransfersResourceFailureDetailsCode._('invalid_currency');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode noAccount = TreasuryInboundTransfersResourceFailureDetailsCode._('no_account');
+
+static const TreasuryInboundTransfersResourceFailureDetailsCode $other = TreasuryInboundTransfersResourceFailureDetailsCode._('other');
+
+static const List<TreasuryInboundTransfersResourceFailureDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, debitNotAuthorized, incorrectAccountHolderAddress, incorrectAccountHolderName, incorrectAccountHolderTaxId, insufficientFunds, invalidAccountNumber, invalidCurrency, noAccount, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TreasuryInboundTransfersResourceFailureDetailsCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TreasuryInboundTransfersResourceFailureDetailsCode($value)'; } 
+ }
+/// 
+final class TreasuryInboundTransfersResourceFailureDetails {const TreasuryInboundTransfersResourceFailureDetails({required this.code});
+
+factory TreasuryInboundTransfersResourceFailureDetails.fromJson(Map<String, dynamic> json) { return TreasuryInboundTransfersResourceFailureDetails(
+  code: TreasuryInboundTransfersResourceFailureDetailsCode.fromJson(json['code'] as String),
+); }
+
+/// Reason for the failure.
+final TreasuryInboundTransfersResourceFailureDetailsCode code;
+
+Map<String, dynamic> toJson() { return {
+  'code': code.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'); } 
+TreasuryInboundTransfersResourceFailureDetails copyWith({TreasuryInboundTransfersResourceFailureDetailsCode? code}) { return TreasuryInboundTransfersResourceFailureDetails(
+  code: code ?? this.code,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TreasuryInboundTransfersResourceFailureDetails &&
+          code == other.code; } 
+@override int get hashCode { return code.hashCode; } 
+@override String toString() { return 'TreasuryInboundTransfersResourceFailureDetails(code: $code)'; } 
+ }

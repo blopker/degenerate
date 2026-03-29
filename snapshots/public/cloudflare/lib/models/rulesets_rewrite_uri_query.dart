@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A URI query rewrite.
+final class RulesetsRewriteUriQuery {const RulesetsRewriteUriQuery({this.expression, this.value, });
+
+factory RulesetsRewriteUriQuery.fromJson(Map<String, dynamic> json) { return RulesetsRewriteUriQuery(
+  expression: json['expression'] as String?,
+  value: json['value'] as String?,
+); }
+
+/// An expression that evaluates to a value to rewrite the URI query to.
+final String? expression;
+
+/// A value to rewrite the URI query to.
+final String? value;
+
+Map<String, dynamic> toJson() { return {
+  'expression': ?expression,
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RulesetsRewriteUriQuery copyWith({String Function()? expression, String Function()? value, }) { return RulesetsRewriteUriQuery(
+  expression: expression != null ? expression() : this.expression,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RulesetsRewriteUriQuery &&
+          expression == other.expression &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(expression, value); } 
+@override String toString() { return 'RulesetsRewriteUriQuery(expression: $expression, value: $value)'; } 
+ }

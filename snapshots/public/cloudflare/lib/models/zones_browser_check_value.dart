@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Value of the zone setting.
+final class ZonesBrowserCheckValue {const ZonesBrowserCheckValue._(this.value);
+
+factory ZonesBrowserCheckValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesBrowserCheckValue._(json),
+}; }
+
+static const ZonesBrowserCheckValue $on = ZonesBrowserCheckValue._('on');
+
+static const ZonesBrowserCheckValue off = ZonesBrowserCheckValue._('off');
+
+static const List<ZonesBrowserCheckValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesBrowserCheckValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesBrowserCheckValue($value)'; } 
+ }

@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class IssuingAuthorizationFleetFuelPriceData {const IssuingAuthorizationFleetFuelPriceData({this.grossAmountDecimal});
+
+factory IssuingAuthorizationFleetFuelPriceData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetFuelPriceData(
+  grossAmountDecimal: json['gross_amount_decimal'] as String?,
+); }
+
+/// Gross fuel amount that should equal Fuel Quantity multiplied by Fuel Unit Cost, inclusive of taxes.
+final String? grossAmountDecimal;
+
+Map<String, dynamic> toJson() { return {
+  'gross_amount_decimal': ?grossAmountDecimal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuingAuthorizationFleetFuelPriceData copyWith({String? Function()? grossAmountDecimal}) { return IssuingAuthorizationFleetFuelPriceData(
+  grossAmountDecimal: grossAmountDecimal != null ? grossAmountDecimal() : this.grossAmountDecimal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingAuthorizationFleetFuelPriceData &&
+          grossAmountDecimal == other.grossAmountDecimal; } 
+@override int get hashCode { return grossAmountDecimal.hashCode; } 
+@override String toString() { return 'IssuingAuthorizationFleetFuelPriceData(grossAmountDecimal: $grossAmountDecimal)'; } 
+ }

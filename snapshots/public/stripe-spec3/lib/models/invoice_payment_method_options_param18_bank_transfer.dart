@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoice_payment_method_options_param18_bank_transfer_eu_bank_transfer.dart';final class InvoicePaymentMethodOptionsParam18BankTransfer {const InvoicePaymentMethodOptionsParam18BankTransfer({this.euBankTransfer, this.type, });
+
+factory InvoicePaymentMethodOptionsParam18BankTransfer.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam18BankTransfer(
+  euBankTransfer: json['eu_bank_transfer'] != null ? InvoicePaymentMethodOptionsParam18BankTransferEuBankTransfer.fromJson(json['eu_bank_transfer'] as Map<String, dynamic>) : null,
+  type: json['type'] as String?,
+); }
+
+final InvoicePaymentMethodOptionsParam18BankTransferEuBankTransfer? euBankTransfer;
+
+final String? type;
+
+Map<String, dynamic> toJson() { return {
+  if (euBankTransfer != null) 'eu_bank_transfer': euBankTransfer?.toJson(),
+  'type': ?type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoicePaymentMethodOptionsParam18BankTransfer copyWith({InvoicePaymentMethodOptionsParam18BankTransferEuBankTransfer Function()? euBankTransfer, String Function()? type, }) { return InvoicePaymentMethodOptionsParam18BankTransfer(
+  euBankTransfer: euBankTransfer != null ? euBankTransfer() : this.euBankTransfer,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoicePaymentMethodOptionsParam18BankTransfer &&
+          euBankTransfer == other.euBankTransfer &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(euBankTransfer, type); } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam18BankTransfer(euBankTransfer: $euBankTransfer, type: $type)'; } 
+ }

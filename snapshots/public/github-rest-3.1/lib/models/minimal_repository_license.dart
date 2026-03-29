@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class MinimalRepositoryLicense {const MinimalRepositoryLicense({this.key, this.name, this.spdxId, this.url, this.nodeId, });
+
+factory MinimalRepositoryLicense.fromJson(Map<String, dynamic> json) { return MinimalRepositoryLicense(
+  key: json['key'] as String?,
+  name: json['name'] as String?,
+  spdxId: json['spdx_id'] as String?,
+  url: json['url'] as String?,
+  nodeId: json['node_id'] as String?,
+); }
+
+final String? key;
+
+final String? name;
+
+final String? spdxId;
+
+final String? url;
+
+final String? nodeId;
+
+Map<String, dynamic> toJson() { return {
+  'key': ?key,
+  'name': ?name,
+  'spdx_id': ?spdxId,
+  'url': ?url,
+  'node_id': ?nodeId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MinimalRepositoryLicense copyWith({String Function()? key, String Function()? name, String Function()? spdxId, String? Function()? url, String Function()? nodeId, }) { return MinimalRepositoryLicense(
+  key: key != null ? key() : this.key,
+  name: name != null ? name() : this.name,
+  spdxId: spdxId != null ? spdxId() : this.spdxId,
+  url: url != null ? url() : this.url,
+  nodeId: nodeId != null ? nodeId() : this.nodeId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MinimalRepositoryLicense &&
+          key == other.key &&
+          name == other.name &&
+          spdxId == other.spdxId &&
+          url == other.url &&
+          nodeId == other.nodeId; } 
+@override int get hashCode { return Object.hash(key, name, spdxId, url, nodeId); } 
+@override String toString() { return 'MinimalRepositoryLicense(key: $key, name: $name, spdxId: $spdxId, url: $url, nodeId: $nodeId)'; } 
+ }

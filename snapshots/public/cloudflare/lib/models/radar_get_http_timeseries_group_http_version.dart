@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTimeseriesGroupHttpVersion {const RadarGetHttpTimeseriesGroupHttpVersion._(this.value);
+
+factory RadarGetHttpTimeseriesGroupHttpVersion.fromJson(String json) { return switch (json) {
+  'HTTPv1' => httPv1,
+  'HTTPv2' => httPv2,
+  'HTTPv3' => httPv3,
+  _ => RadarGetHttpTimeseriesGroupHttpVersion._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupHttpVersion httPv1 = RadarGetHttpTimeseriesGroupHttpVersion._('HTTPv1');
+
+static const RadarGetHttpTimeseriesGroupHttpVersion httPv2 = RadarGetHttpTimeseriesGroupHttpVersion._('HTTPv2');
+
+static const RadarGetHttpTimeseriesGroupHttpVersion httPv3 = RadarGetHttpTimeseriesGroupHttpVersion._('HTTPv3');
+
+static const List<RadarGetHttpTimeseriesGroupHttpVersion> values = [httPv1, httPv2, httPv3];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupHttpVersion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupHttpVersion($value)'; } 
+ }

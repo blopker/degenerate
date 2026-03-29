@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_asn_info.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_changes.dart';import 'radar_get_bgp_rpki_aspa_changes_response_result_meta.dart';final class RadarGetBgpRpkiAspaChangesResponseResult {const RadarGetBgpRpkiAspaChangesResponseResult({required this.asnInfo, required this.changes, required this.meta, });
+
+factory RadarGetBgpRpkiAspaChangesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResult(
+  asnInfo: RadarGetBgpRpkiAspaChangesResponseResultAsnInfo.fromJson(json['asnInfo'] as Map<String, dynamic>),
+  changes: (json['changes'] as List<dynamic>).map((e) => RadarGetBgpRpkiAspaChangesResponseResultChanges.fromJson(e as Map<String, dynamic>)).toList(),
+  meta: RadarGetBgpRpkiAspaChangesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+); }
+
+final RadarGetBgpRpkiAspaChangesResponseResultAsnInfo asnInfo;
+
+final List<RadarGetBgpRpkiAspaChangesResponseResultChanges> changes;
+
+final RadarGetBgpRpkiAspaChangesResponseResultMeta meta;
+
+Map<String, dynamic> toJson() { return {
+  'asnInfo': asnInfo.toJson(),
+  'changes': changes.map((e) => e.toJson()).toList(),
+  'meta': meta.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('asnInfo') &&
+      json.containsKey('changes') &&
+      json.containsKey('meta'); } 
+RadarGetBgpRpkiAspaChangesResponseResult copyWith({RadarGetBgpRpkiAspaChangesResponseResultAsnInfo? asnInfo, List<RadarGetBgpRpkiAspaChangesResponseResultChanges>? changes, RadarGetBgpRpkiAspaChangesResponseResultMeta? meta, }) { return RadarGetBgpRpkiAspaChangesResponseResult(
+  asnInfo: asnInfo ?? this.asnInfo,
+  changes: changes ?? this.changes,
+  meta: meta ?? this.meta,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpRpkiAspaChangesResponseResult &&
+          asnInfo == other.asnInfo &&
+          listEquals(changes, other.changes) &&
+          meta == other.meta; } 
+@override int get hashCode { return Object.hash(asnInfo, Object.hashAll(changes), meta); } 
+@override String toString() { return 'RadarGetBgpRpkiAspaChangesResponseResult(asnInfo: $asnInfo, changes: $changes, meta: $meta)'; } 
+ }

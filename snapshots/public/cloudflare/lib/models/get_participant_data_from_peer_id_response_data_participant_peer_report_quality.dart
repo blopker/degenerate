@@ -1,0 +1,113 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer.dart';import 'get_participant_data_from_peer_id_response_data_participant_peer_report_quality_audio_producer_cumulative.dart';final class GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality {const GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality({this.audioConsumer, this.audioConsumerCumulative, this.audioProducer, this.audioProducerCumulative, this.screenshareAudioConsumer, this.screenshareAudioConsumerCumulative, this.screenshareAudioProducer, this.screenshareAudioProducerCumulative, this.screenshareVideoConsumer, this.screenshareVideoConsumerCumulative, this.screenshareVideoProducer, this.screenshareVideoProducerCumulative, this.videoConsumer, this.videoConsumerCumulative, this.videoProducer, this.videoProducerCumulative, });
+
+factory GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality.fromJson(Map<String, dynamic> json) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality(
+  audioConsumer: (json['audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  audioConsumerCumulative: (json['audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  audioProducer: (json['audio_producer'] as List<dynamic>?)?.map((e) => GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer.fromJson(e as Map<String, dynamic>)).toList(),
+  audioProducerCumulative: json['audio_producer_cumulative'] != null ? GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative.fromJson(json['audio_producer_cumulative'] as Map<String, dynamic>) : null,
+  screenshareAudioConsumer: (json['screenshare_audio_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareAudioConsumerCumulative: (json['screenshare_audio_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  screenshareAudioProducer: (json['screenshare_audio_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareAudioProducerCumulative: (json['screenshare_audio_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  screenshareVideoConsumer: (json['screenshare_video_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareVideoConsumerCumulative: (json['screenshare_video_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  screenshareVideoProducer: (json['screenshare_video_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  screenshareVideoProducerCumulative: (json['screenshare_video_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  videoConsumer: (json['video_consumer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  videoConsumerCumulative: (json['video_consumer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  videoProducer: (json['video_producer'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+  videoProducerCumulative: (json['video_producer_cumulative'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+); }
+
+final List<Map<String,dynamic>>? audioConsumer;
+
+final Map<String,dynamic>? audioConsumerCumulative;
+
+final List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer>? audioProducer;
+
+final GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative? audioProducerCumulative;
+
+final List<Map<String,dynamic>>? screenshareAudioConsumer;
+
+final Map<String,dynamic>? screenshareAudioConsumerCumulative;
+
+final List<Map<String,dynamic>>? screenshareAudioProducer;
+
+final Map<String,dynamic>? screenshareAudioProducerCumulative;
+
+final List<Map<String,dynamic>>? screenshareVideoConsumer;
+
+final Map<String,dynamic>? screenshareVideoConsumerCumulative;
+
+final List<Map<String,dynamic>>? screenshareVideoProducer;
+
+final Map<String,dynamic>? screenshareVideoProducerCumulative;
+
+final List<Map<String,dynamic>>? videoConsumer;
+
+final Map<String,dynamic>? videoConsumerCumulative;
+
+final List<Map<String,dynamic>>? videoProducer;
+
+final Map<String,dynamic>? videoProducerCumulative;
+
+Map<String, dynamic> toJson() { return {
+  if (audioConsumer != null) 'audio_consumer': audioConsumer?.map((e) => e).toList(),
+  'audio_consumer_cumulative': ?audioConsumerCumulative,
+  if (audioProducer != null) 'audio_producer': audioProducer?.map((e) => e.toJson()).toList(),
+  if (audioProducerCumulative != null) 'audio_producer_cumulative': audioProducerCumulative?.toJson(),
+  if (screenshareAudioConsumer != null) 'screenshare_audio_consumer': screenshareAudioConsumer?.map((e) => e).toList(),
+  'screenshare_audio_consumer_cumulative': ?screenshareAudioConsumerCumulative,
+  if (screenshareAudioProducer != null) 'screenshare_audio_producer': screenshareAudioProducer?.map((e) => e).toList(),
+  'screenshare_audio_producer_cumulative': ?screenshareAudioProducerCumulative,
+  if (screenshareVideoConsumer != null) 'screenshare_video_consumer': screenshareVideoConsumer?.map((e) => e).toList(),
+  'screenshare_video_consumer_cumulative': ?screenshareVideoConsumerCumulative,
+  if (screenshareVideoProducer != null) 'screenshare_video_producer': screenshareVideoProducer?.map((e) => e).toList(),
+  'screenshare_video_producer_cumulative': ?screenshareVideoProducerCumulative,
+  if (videoConsumer != null) 'video_consumer': videoConsumer?.map((e) => e).toList(),
+  'video_consumer_cumulative': ?videoConsumerCumulative,
+  if (videoProducer != null) 'video_producer': videoProducer?.map((e) => e).toList(),
+  'video_producer_cumulative': ?videoProducerCumulative,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality copyWith({List<Map<String, dynamic>> Function()? audioConsumer, Map<String, dynamic> Function()? audioConsumerCumulative, List<GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducer> Function()? audioProducer, GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQualityAudioProducerCumulative Function()? audioProducerCumulative, List<Map<String, dynamic>> Function()? screenshareAudioConsumer, Map<String, dynamic> Function()? screenshareAudioConsumerCumulative, List<Map<String, dynamic>> Function()? screenshareAudioProducer, Map<String, dynamic> Function()? screenshareAudioProducerCumulative, List<Map<String, dynamic>> Function()? screenshareVideoConsumer, Map<String, dynamic> Function()? screenshareVideoConsumerCumulative, List<Map<String, dynamic>> Function()? screenshareVideoProducer, Map<String, dynamic> Function()? screenshareVideoProducerCumulative, List<Map<String, dynamic>> Function()? videoConsumer, Map<String, dynamic> Function()? videoConsumerCumulative, List<Map<String, dynamic>> Function()? videoProducer, Map<String, dynamic> Function()? videoProducerCumulative, }) { return GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality(
+  audioConsumer: audioConsumer != null ? audioConsumer() : this.audioConsumer,
+  audioConsumerCumulative: audioConsumerCumulative != null ? audioConsumerCumulative() : this.audioConsumerCumulative,
+  audioProducer: audioProducer != null ? audioProducer() : this.audioProducer,
+  audioProducerCumulative: audioProducerCumulative != null ? audioProducerCumulative() : this.audioProducerCumulative,
+  screenshareAudioConsumer: screenshareAudioConsumer != null ? screenshareAudioConsumer() : this.screenshareAudioConsumer,
+  screenshareAudioConsumerCumulative: screenshareAudioConsumerCumulative != null ? screenshareAudioConsumerCumulative() : this.screenshareAudioConsumerCumulative,
+  screenshareAudioProducer: screenshareAudioProducer != null ? screenshareAudioProducer() : this.screenshareAudioProducer,
+  screenshareAudioProducerCumulative: screenshareAudioProducerCumulative != null ? screenshareAudioProducerCumulative() : this.screenshareAudioProducerCumulative,
+  screenshareVideoConsumer: screenshareVideoConsumer != null ? screenshareVideoConsumer() : this.screenshareVideoConsumer,
+  screenshareVideoConsumerCumulative: screenshareVideoConsumerCumulative != null ? screenshareVideoConsumerCumulative() : this.screenshareVideoConsumerCumulative,
+  screenshareVideoProducer: screenshareVideoProducer != null ? screenshareVideoProducer() : this.screenshareVideoProducer,
+  screenshareVideoProducerCumulative: screenshareVideoProducerCumulative != null ? screenshareVideoProducerCumulative() : this.screenshareVideoProducerCumulative,
+  videoConsumer: videoConsumer != null ? videoConsumer() : this.videoConsumer,
+  videoConsumerCumulative: videoConsumerCumulative != null ? videoConsumerCumulative() : this.videoConsumerCumulative,
+  videoProducer: videoProducer != null ? videoProducer() : this.videoProducer,
+  videoProducerCumulative: videoProducerCumulative != null ? videoProducerCumulative() : this.videoProducerCumulative,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality &&
+          listEquals(audioConsumer, other.audioConsumer) &&
+          audioConsumerCumulative == other.audioConsumerCumulative &&
+          listEquals(audioProducer, other.audioProducer) &&
+          audioProducerCumulative == other.audioProducerCumulative &&
+          listEquals(screenshareAudioConsumer, other.screenshareAudioConsumer) &&
+          screenshareAudioConsumerCumulative == other.screenshareAudioConsumerCumulative &&
+          listEquals(screenshareAudioProducer, other.screenshareAudioProducer) &&
+          screenshareAudioProducerCumulative == other.screenshareAudioProducerCumulative &&
+          listEquals(screenshareVideoConsumer, other.screenshareVideoConsumer) &&
+          screenshareVideoConsumerCumulative == other.screenshareVideoConsumerCumulative &&
+          listEquals(screenshareVideoProducer, other.screenshareVideoProducer) &&
+          screenshareVideoProducerCumulative == other.screenshareVideoProducerCumulative &&
+          listEquals(videoConsumer, other.videoConsumer) &&
+          videoConsumerCumulative == other.videoConsumerCumulative &&
+          listEquals(videoProducer, other.videoProducer) &&
+          videoProducerCumulative == other.videoProducerCumulative; } 
+@override int get hashCode { return Object.hash(Object.hashAll(audioConsumer ?? const []), audioConsumerCumulative, Object.hashAll(audioProducer ?? const []), audioProducerCumulative, Object.hashAll(screenshareAudioConsumer ?? const []), screenshareAudioConsumerCumulative, Object.hashAll(screenshareAudioProducer ?? const []), screenshareAudioProducerCumulative, Object.hashAll(screenshareVideoConsumer ?? const []), screenshareVideoConsumerCumulative, Object.hashAll(screenshareVideoProducer ?? const []), screenshareVideoProducerCumulative, Object.hashAll(videoConsumer ?? const []), videoConsumerCumulative, Object.hashAll(videoProducer ?? const []), videoProducerCumulative); } 
+@override String toString() { return 'GetParticipantDataFromPeerIdResponseDataParticipantPeerReportQuality(audioConsumer: $audioConsumer, audioConsumerCumulative: $audioConsumerCumulative, audioProducer: $audioProducer, audioProducerCumulative: $audioProducerCumulative, screenshareAudioConsumer: $screenshareAudioConsumer, screenshareAudioConsumerCumulative: $screenshareAudioConsumerCumulative, screenshareAudioProducer: $screenshareAudioProducer, screenshareAudioProducerCumulative: $screenshareAudioProducerCumulative, screenshareVideoConsumer: $screenshareVideoConsumer, screenshareVideoConsumerCumulative: $screenshareVideoConsumerCumulative, screenshareVideoProducer: $screenshareVideoProducer, screenshareVideoProducerCumulative: $screenshareVideoProducerCumulative, videoConsumer: $videoConsumer, videoConsumerCumulative: $videoConsumerCumulative, videoProducer: $videoProducer, videoProducerCumulative: $videoProducerCumulative)'; } 
+ }

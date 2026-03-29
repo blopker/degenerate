@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_review_resource_location.dart';/// Information related to the location of the payment. Note that this information is an approximation and attempts to locate the nearest population center - it should not be used to determine a specific address.
+final class ReviewIpAddressLocation {const ReviewIpAddressLocation({this.radarReviewResourceLocation});
+
+factory ReviewIpAddressLocation.fromJson(Map<String, dynamic> json) { return ReviewIpAddressLocation(
+  radarReviewResourceLocation: RadarReviewResourceLocation.canParse(json) ? RadarReviewResourceLocation.fromJson(json) : null,
+); }
+
+final RadarReviewResourceLocation? radarReviewResourceLocation;
+
+/// At least one variant must be present.
+bool get isValid { return radarReviewResourceLocation != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?radarReviewResourceLocation?.toJson(),
+}; } 
+ }

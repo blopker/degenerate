@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Messages51FunctionCallVariant2 {const Messages51FunctionCallVariant2({required this.name});
+
+factory Messages51FunctionCallVariant2.fromJson(Map<String, dynamic> json) { return Messages51FunctionCallVariant2(
+  name: json['name'] as String,
+); }
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+Messages51FunctionCallVariant2 copyWith({String? name}) { return Messages51FunctionCallVariant2(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages51FunctionCallVariant2 &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'Messages51FunctionCallVariant2(name: $name)'; } 
+ }

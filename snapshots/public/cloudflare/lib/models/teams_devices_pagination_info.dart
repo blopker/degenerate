@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TeamsDevicesPaginationInfo {const TeamsDevicesPaginationInfo({required this.count, required this.page, required this.perPage, required this.totalCount, this.totalPages, });
+
+factory TeamsDevicesPaginationInfo.fromJson(Map<String, dynamic> json) { return TeamsDevicesPaginationInfo(
+  count: (json['count'] as num).toInt(),
+  page: (json['page'] as num).toInt(),
+  perPage: (json['per_page'] as num).toInt(),
+  totalCount: (json['total_count'] as num).toInt(),
+  totalPages: json['total_pages'] != null ? (json['total_pages'] as num).toInt() : null,
+); }
+
+/// Number of records in the response.
+final int count;
+
+/// The page size number of the response.
+final int page;
+
+/// The limit for the number of records in the response.
+final int perPage;
+
+/// Total number of records available.
+final int totalCount;
+
+/// Total number of pages available.
+final int? totalPages;
+
+Map<String, dynamic> toJson() { return {
+  'count': count,
+  'page': page,
+  'per_page': perPage,
+  'total_count': totalCount,
+  'total_pages': ?totalPages,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('count') && json['count'] is num &&
+      json.containsKey('page') && json['page'] is num &&
+      json.containsKey('per_page') && json['per_page'] is num &&
+      json.containsKey('total_count') && json['total_count'] is num; } 
+TeamsDevicesPaginationInfo copyWith({int? count, int? page, int? perPage, int? totalCount, int Function()? totalPages, }) { return TeamsDevicesPaginationInfo(
+  count: count ?? this.count,
+  page: page ?? this.page,
+  perPage: perPage ?? this.perPage,
+  totalCount: totalCount ?? this.totalCount,
+  totalPages: totalPages != null ? totalPages() : this.totalPages,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesPaginationInfo &&
+          count == other.count &&
+          page == other.page &&
+          perPage == other.perPage &&
+          totalCount == other.totalCount &&
+          totalPages == other.totalPages; } 
+@override int get hashCode { return Object.hash(count, page, perPage, totalCount, totalPages); } 
+@override String toString() { return 'TeamsDevicesPaginationInfo(count: $count, page: $page, perPage: $perPage, totalCount: $totalCount, totalPages: $totalPages)'; } 
+ }

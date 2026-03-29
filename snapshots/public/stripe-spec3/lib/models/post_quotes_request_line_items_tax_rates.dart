@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesRequestLineItemsTaxRatesVariant2 {const PostQuotesRequestLineItemsTaxRatesVariant2._(this.value);
+
+factory PostQuotesRequestLineItemsTaxRatesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostQuotesRequestLineItemsTaxRatesVariant2._(json),
+}; }
+
+static const PostQuotesRequestLineItemsTaxRatesVariant2 $empty = PostQuotesRequestLineItemsTaxRatesVariant2._('');
+
+static const List<PostQuotesRequestLineItemsTaxRatesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostQuotesRequestLineItemsTaxRatesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostQuotesRequestLineItemsTaxRatesVariant2($value)'; } 
+ }
+typedef PostQuotesRequestLineItemsTaxRates = OneOf2<List<String>,PostQuotesRequestLineItemsTaxRatesVariant2>;

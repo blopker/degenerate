@@ -1,0 +1,138 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_pull_request_review_request_removed_review_request_removed2_requested_team_parent.dart';final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._(this.value);
+
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy.fromJson(String json) { return switch (json) {
+  'open' => open,
+  'closed' => closed,
+  'secret' => secret,
+  _ => WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._(json),
+}; }
+
+static const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy open = WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._('open');
+
+static const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy closed = WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._('closed');
+
+static const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy secret = WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy._('secret');
+
+static const List<WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy> values = [open, closed, secret];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy($value)'; } 
+ }
+/// Groups of organization members that gives permissions on specified repositories.
+final class WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam {const WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam({this.deleted, required this.description, required this.htmlUrl, required this.id, required this.membersUrl, required this.name, required this.nodeId, this.parent, required this.permission, required this.privacy, required this.repositoriesUrl, required this.slug, required this.url, });
+
+factory WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(
+  deleted: json['deleted'] as bool?,
+  description: json['description'] as String?,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  id: (json['id'] as num).toInt(),
+  membersUrl: json['members_url'] as String,
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  parent: json['parent'] != null ? WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  permission: json['permission'] as String,
+  privacy: WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy.fromJson(json['privacy'] as String),
+  repositoriesUrl: Uri.parse(json['repositories_url'] as String),
+  slug: json['slug'] as String,
+  url: Uri.parse(json['url'] as String),
+); }
+
+final bool? deleted;
+
+/// Description of the team
+final String? description;
+
+final Uri htmlUrl;
+
+/// Unique identifier of the team
+final int id;
+
+final String membersUrl;
+
+/// Name of the team
+final String name;
+
+final String nodeId;
+
+final WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent? parent;
+
+/// Permission that the team will have for its repositories
+final String permission;
+
+final WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy privacy;
+
+final Uri repositoriesUrl;
+
+final String slug;
+
+/// URL for the team
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'deleted': ?deleted,
+  'description': ?description,
+  'html_url': htmlUrl.toString(),
+  'id': id,
+  'members_url': membersUrl,
+  'name': name,
+  'node_id': nodeId,
+  if (parent != null) 'parent': parent?.toJson(),
+  'permission': permission,
+  'privacy': privacy.toJson(),
+  'repositories_url': repositoriesUrl.toString(),
+  'slug': slug,
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('members_url') && json['members_url'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('permission') && json['permission'] is String &&
+      json.containsKey('privacy') &&
+      json.containsKey('repositories_url') && json['repositories_url'] is String &&
+      json.containsKey('slug') && json['slug'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam copyWith({bool Function()? deleted, String? Function()? description, Uri? htmlUrl, int? id, String? membersUrl, String? name, String? nodeId, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamParent? Function()? parent, String? permission, WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeamPrivacy? privacy, Uri? repositoriesUrl, String? slug, Uri? url, }) { return WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(
+  deleted: deleted != null ? deleted() : this.deleted,
+  description: description != null ? description() : this.description,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id ?? this.id,
+  membersUrl: membersUrl ?? this.membersUrl,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  parent: parent != null ? parent() : this.parent,
+  permission: permission ?? this.permission,
+  privacy: privacy ?? this.privacy,
+  repositoriesUrl: repositoriesUrl ?? this.repositoriesUrl,
+  slug: slug ?? this.slug,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam &&
+          deleted == other.deleted &&
+          description == other.description &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          membersUrl == other.membersUrl &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          parent == other.parent &&
+          permission == other.permission &&
+          privacy == other.privacy &&
+          repositoriesUrl == other.repositoriesUrl &&
+          slug == other.slug &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(deleted, description, htmlUrl, id, membersUrl, name, nodeId, parent, permission, privacy, repositoriesUrl, slug, url); } 
+@override String toString() { return 'WebhookPullRequestReviewRequestRemovedReviewRequestRemoved2RequestedTeam(deleted: $deleted, description: $description, htmlUrl: $htmlUrl, id: $id, membersUrl: $membersUrl, name: $name, nodeId: $nodeId, parent: $parent, permission: $permission, privacy: $privacy, repositoriesUrl: $repositoriesUrl, slug: $slug, url: $url)'; } 
+ }

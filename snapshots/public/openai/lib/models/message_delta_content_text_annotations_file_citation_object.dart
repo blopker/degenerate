@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'message_delta_content_text_annotations_file_citation_object_file_citation.dart';/// Always `file_citation`.
+final class MessageDeltaContentTextAnnotationsFileCitationObjectType {const MessageDeltaContentTextAnnotationsFileCitationObjectType._(this.value);
+
+factory MessageDeltaContentTextAnnotationsFileCitationObjectType.fromJson(String json) { return switch (json) {
+  'file_citation' => fileCitation,
+  _ => MessageDeltaContentTextAnnotationsFileCitationObjectType._(json),
+}; }
+
+static const MessageDeltaContentTextAnnotationsFileCitationObjectType fileCitation = MessageDeltaContentTextAnnotationsFileCitationObjectType._('file_citation');
+
+static const List<MessageDeltaContentTextAnnotationsFileCitationObjectType> values = [fileCitation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MessageDeltaContentTextAnnotationsFileCitationObjectType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MessageDeltaContentTextAnnotationsFileCitationObjectType($value)'; } 
+ }
+/// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
+final class MessageDeltaContentTextAnnotationsFileCitationObject {const MessageDeltaContentTextAnnotationsFileCitationObject({required this.index, required this.type, this.text, this.fileCitation, this.startIndex, this.endIndex, });
+
+factory MessageDeltaContentTextAnnotationsFileCitationObject.fromJson(Map<String, dynamic> json) { return MessageDeltaContentTextAnnotationsFileCitationObject(
+  index: (json['index'] as num).toInt(),
+  type: MessageDeltaContentTextAnnotationsFileCitationObjectType.fromJson(json['type'] as String),
+  text: json['text'] as String?,
+  fileCitation: json['file_citation'] != null ? MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation.fromJson(json['file_citation'] as Map<String, dynamic>) : null,
+  startIndex: json['start_index'] != null ? (json['start_index'] as num).toInt() : null,
+  endIndex: json['end_index'] != null ? (json['end_index'] as num).toInt() : null,
+); }
+
+/// The index of the annotation in the text content part.
+final int index;
+
+/// Always `file_citation`.
+final MessageDeltaContentTextAnnotationsFileCitationObjectType type;
+
+/// The text in the message content that needs to be replaced.
+final String? text;
+
+final MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? fileCitation;
+
+final int? startIndex;
+
+final int? endIndex;
+
+Map<String, dynamic> toJson() { return {
+  'index': index,
+  'type': type.toJson(),
+  'text': ?text,
+  if (fileCitation != null) 'file_citation': fileCitation?.toJson(),
+  'start_index': ?startIndex,
+  'end_index': ?endIndex,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num &&
+      json.containsKey('type'); } 
+MessageDeltaContentTextAnnotationsFileCitationObject copyWith({int? index, MessageDeltaContentTextAnnotationsFileCitationObjectType? type, String Function()? text, MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation Function()? fileCitation, int Function()? startIndex, int Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFileCitationObject(
+  index: index ?? this.index,
+  type: type ?? this.type,
+  text: text != null ? text() : this.text,
+  fileCitation: fileCitation != null ? fileCitation() : this.fileCitation,
+  startIndex: startIndex != null ? startIndex() : this.startIndex,
+  endIndex: endIndex != null ? endIndex() : this.endIndex,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MessageDeltaContentTextAnnotationsFileCitationObject &&
+          index == other.index &&
+          type == other.type &&
+          text == other.text &&
+          fileCitation == other.fileCitation &&
+          startIndex == other.startIndex &&
+          endIndex == other.endIndex; } 
+@override int get hashCode { return Object.hash(index, type, text, fileCitation, startIndex, endIndex); } 
+@override String toString() { return 'MessageDeltaContentTextAnnotationsFileCitationObject(index: $index, type: $type, text: $text, fileCitation: $fileCitation, startIndex: $startIndex, endIndex: $endIndex)'; } 
+ }

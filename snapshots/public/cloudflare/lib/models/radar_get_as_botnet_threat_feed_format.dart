@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat._(this.value);
+
+factory RadarGetAsBotnetThreatFeedFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetAsBotnetThreatFeedFormat._(json),
+}; }
+
+static const RadarGetAsBotnetThreatFeedFormat $json = RadarGetAsBotnetThreatFeedFormat._('JSON');
+
+static const RadarGetAsBotnetThreatFeedFormat csv = RadarGetAsBotnetThreatFeedFormat._('CSV');
+
+static const List<RadarGetAsBotnetThreatFeedFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAsBotnetThreatFeedFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAsBotnetThreatFeedFormat($value)'; } 
+ }

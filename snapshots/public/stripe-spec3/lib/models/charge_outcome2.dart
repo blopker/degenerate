@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'charge_outcome.dart';/// Details about whether the payment was accepted, and why. See [understanding declines](https://docs.stripe.com/declines) for details.
+final class ChargeOutcome2 {const ChargeOutcome2({this.chargeOutcome});
+
+factory ChargeOutcome2.fromJson(Map<String, dynamic> json) { return ChargeOutcome2(
+  chargeOutcome: ChargeOutcome.canParse(json) ? ChargeOutcome.fromJson(json) : null,
+); }
+
+final ChargeOutcome? chargeOutcome;
+
+/// At least one variant must be present.
+bool get isValid { return chargeOutcome != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?chargeOutcome?.toJson(),
+}; } 
+ }

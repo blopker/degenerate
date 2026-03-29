@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_dataset_populate_response_properties_datasets_items_properties.dart';final class PostDatasetPopulateResponsePropertiesDatasetsItems {const PostDatasetPopulateResponsePropertiesDatasetsItems({required this.properties, required this.type, });
+
+factory PostDatasetPopulateResponsePropertiesDatasetsItems.fromJson(Map<String, dynamic> json) { return PostDatasetPopulateResponsePropertiesDatasetsItems(
+  properties: PostDatasetPopulateResponsePropertiesDatasetsItemsProperties.fromJson(json['properties'] as Map<String, dynamic>),
+  type: json['type'] as String,
+); }
+
+final PostDatasetPopulateResponsePropertiesDatasetsItemsProperties properties;
+
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'properties': properties.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('properties') &&
+      json.containsKey('type') && json['type'] is String; } 
+PostDatasetPopulateResponsePropertiesDatasetsItems copyWith({PostDatasetPopulateResponsePropertiesDatasetsItemsProperties? properties, String? type, }) { return PostDatasetPopulateResponsePropertiesDatasetsItems(
+  properties: properties ?? this.properties,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostDatasetPopulateResponsePropertiesDatasetsItems &&
+          properties == other.properties &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(properties, type); } 
+@override String toString() { return 'PostDatasetPopulateResponsePropertiesDatasetsItems(properties: $properties, type: $type)'; } 
+ }

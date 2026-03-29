@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_kv_namespace_identifier.dart';import 'workers_kv_namespace_title.dart';final class WorkersKvNamespace {const WorkersKvNamespace({required this.id, this.supportsUrlEncoding, required this.title, });
+
+factory WorkersKvNamespace.fromJson(Map<String, dynamic> json) { return WorkersKvNamespace(
+  id: WorkersKvNamespaceIdentifier.fromJson(json['id'] as String),
+  supportsUrlEncoding: json['supports_url_encoding'] as bool?,
+  title: WorkersKvNamespaceTitle.fromJson(json['title'] as String),
+); }
+
+final WorkersKvNamespaceIdentifier id;
+
+/// True if keys written on the URL will be URL-decoded before storing. For example, if set to "true", a key written on the URL as "%3F" will be stored as "?".
+final bool? supportsUrlEncoding;
+
+final WorkersKvNamespaceTitle title;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  'supports_url_encoding': ?supportsUrlEncoding,
+  'title': title.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('title'); } 
+WorkersKvNamespace copyWith({WorkersKvNamespaceIdentifier? id, bool Function()? supportsUrlEncoding, WorkersKvNamespaceTitle? title, }) { return WorkersKvNamespace(
+  id: id ?? this.id,
+  supportsUrlEncoding: supportsUrlEncoding != null ? supportsUrlEncoding() : this.supportsUrlEncoding,
+  title: title ?? this.title,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersKvNamespace &&
+          id == other.id &&
+          supportsUrlEncoding == other.supportsUrlEncoding &&
+          title == other.title; } 
+@override int get hashCode { return Object.hash(id, supportsUrlEncoding, title); } 
+@override String toString() { return 'WorkersKvNamespace(id: $id, supportsUrlEncoding: $supportsUrlEncoding, title: $title)'; } 
+ }

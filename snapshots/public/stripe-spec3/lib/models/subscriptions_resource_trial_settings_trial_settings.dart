@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'subscriptions_resource_trial_settings_end_behavior.dart';/// Configures how this subscription behaves during the trial period.
+final class SubscriptionsResourceTrialSettingsTrialSettings {const SubscriptionsResourceTrialSettingsTrialSettings({required this.endBehavior});
+
+factory SubscriptionsResourceTrialSettingsTrialSettings.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceTrialSettingsTrialSettings(
+  endBehavior: SubscriptionsResourceTrialSettingsEndBehavior.fromJson(json['end_behavior'] as Map<String, dynamic>),
+); }
+
+final SubscriptionsResourceTrialSettingsEndBehavior endBehavior;
+
+Map<String, dynamic> toJson() { return {
+  'end_behavior': endBehavior.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_behavior'); } 
+SubscriptionsResourceTrialSettingsTrialSettings copyWith({SubscriptionsResourceTrialSettingsEndBehavior? endBehavior}) { return SubscriptionsResourceTrialSettingsTrialSettings(
+  endBehavior: endBehavior ?? this.endBehavior,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SubscriptionsResourceTrialSettingsTrialSettings &&
+          endBehavior == other.endBehavior; } 
+@override int get hashCode { return endBehavior.hashCode; } 
+@override String toString() { return 'SubscriptionsResourceTrialSettingsTrialSettings(endBehavior: $endBehavior)'; } 
+ }

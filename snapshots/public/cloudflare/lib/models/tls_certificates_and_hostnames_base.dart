@@ -1,0 +1,134 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tls_certificates_and_hostnames_host.dart';import 'tls_certificates_and_hostnames_keyless_tunnel.dart';import 'tls_certificates_and_hostnames_port.dart';/// Whether or not the Keyless SSL is on or off.
+extension type const TlsCertificatesAndHostnamesEnabled(bool value) {
+factory TlsCertificatesAndHostnamesEnabled.fromJson(bool json) => TlsCertificatesAndHostnamesEnabled(json);
+
+bool toJson() => value;
+
+}
+/// The keyless SSL name.
+extension type const TlsCertificatesAndHostnamesName(String value) {
+factory TlsCertificatesAndHostnamesName.fromJson(String json) => TlsCertificatesAndHostnamesName(json);
+
+String toJson() => value;
+
+}
+/// Keyless certificate identifier tag.
+extension type const TlsCertificatesAndHostnamesSchemasIdentifier(String value) {
+factory TlsCertificatesAndHostnamesSchemasIdentifier.fromJson(String json) => TlsCertificatesAndHostnamesSchemasIdentifier(json);
+
+String toJson() => value;
+
+}
+/// Status of the Keyless SSL.
+final class TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus._(this.value);
+
+factory TlsCertificatesAndHostnamesSchemasStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'deleted' => deleted,
+  _ => TlsCertificatesAndHostnamesSchemasStatus._(json),
+}; }
+
+static const TlsCertificatesAndHostnamesSchemasStatus active = TlsCertificatesAndHostnamesSchemasStatus._('active');
+
+static const TlsCertificatesAndHostnamesSchemasStatus deleted = TlsCertificatesAndHostnamesSchemasStatus._('deleted');
+
+static const List<TlsCertificatesAndHostnamesSchemasStatus> values = [active, deleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TlsCertificatesAndHostnamesSchemasStatus($value)'; } 
+ }
+final class TlsCertificatesAndHostnamesBase {const TlsCertificatesAndHostnamesBase({required this.createdOn, required this.enabled, required this.host, required this.id, required this.modifiedOn, required this.name, required this.permissions, required this.port, required this.status, this.tunnel, });
+
+factory TlsCertificatesAndHostnamesBase.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesBase(
+  createdOn: DateTime.parse(json['created_on'] as String),
+  enabled: TlsCertificatesAndHostnamesEnabled.fromJson(json['enabled'] as bool),
+  host: TlsCertificatesAndHostnamesHost.fromJson(json['host'] as String),
+  id: TlsCertificatesAndHostnamesSchemasIdentifier.fromJson(json['id'] as String),
+  modifiedOn: DateTime.parse(json['modified_on'] as String),
+  name: TlsCertificatesAndHostnamesName.fromJson(json['name'] as String),
+  permissions: (json['permissions'] as List<dynamic>).map((e) => e as String).toList(),
+  port: TlsCertificatesAndHostnamesPort.fromJson(json['port'] as num),
+  status: TlsCertificatesAndHostnamesSchemasStatus.fromJson(json['status'] as String),
+  tunnel: json['tunnel'] != null ? TlsCertificatesAndHostnamesKeylessTunnel.fromJson(json['tunnel'] as Map<String, dynamic>) : null,
+); }
+
+/// When the Keyless SSL was created.
+final DateTime createdOn;
+
+final TlsCertificatesAndHostnamesEnabled enabled;
+
+final TlsCertificatesAndHostnamesHost host;
+
+final TlsCertificatesAndHostnamesSchemasIdentifier id;
+
+/// When the Keyless SSL was last modified.
+final DateTime modifiedOn;
+
+final TlsCertificatesAndHostnamesName name;
+
+/// Available permissions for the Keyless SSL for the current user requesting the item.
+final List<String> permissions;
+
+final TlsCertificatesAndHostnamesPort port;
+
+final TlsCertificatesAndHostnamesSchemasStatus status;
+
+final TlsCertificatesAndHostnamesKeylessTunnel? tunnel;
+
+Map<String, dynamic> toJson() { return {
+  'created_on': createdOn.toIso8601String(),
+  'enabled': enabled.toJson(),
+  'host': host.toJson(),
+  'id': id.toJson(),
+  'modified_on': modifiedOn.toIso8601String(),
+  'name': name.toJson(),
+  'permissions': permissions,
+  'port': port.toJson(),
+  'status': status.toJson(),
+  if (tunnel != null) 'tunnel': tunnel?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_on') && json['created_on'] is String &&
+      json.containsKey('enabled') &&
+      json.containsKey('host') &&
+      json.containsKey('id') &&
+      json.containsKey('modified_on') && json['modified_on'] is String &&
+      json.containsKey('name') &&
+      json.containsKey('permissions') &&
+      json.containsKey('port') &&
+      json.containsKey('status'); } 
+TlsCertificatesAndHostnamesBase copyWith({DateTime? createdOn, TlsCertificatesAndHostnamesEnabled? enabled, TlsCertificatesAndHostnamesHost? host, TlsCertificatesAndHostnamesSchemasIdentifier? id, DateTime? modifiedOn, TlsCertificatesAndHostnamesName? name, List<String>? permissions, TlsCertificatesAndHostnamesPort? port, TlsCertificatesAndHostnamesSchemasStatus? status, TlsCertificatesAndHostnamesKeylessTunnel Function()? tunnel, }) { return TlsCertificatesAndHostnamesBase(
+  createdOn: createdOn ?? this.createdOn,
+  enabled: enabled ?? this.enabled,
+  host: host ?? this.host,
+  id: id ?? this.id,
+  modifiedOn: modifiedOn ?? this.modifiedOn,
+  name: name ?? this.name,
+  permissions: permissions ?? this.permissions,
+  port: port ?? this.port,
+  status: status ?? this.status,
+  tunnel: tunnel != null ? tunnel() : this.tunnel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TlsCertificatesAndHostnamesBase &&
+          createdOn == other.createdOn &&
+          enabled == other.enabled &&
+          host == other.host &&
+          id == other.id &&
+          modifiedOn == other.modifiedOn &&
+          name == other.name &&
+          listEquals(permissions, other.permissions) &&
+          port == other.port &&
+          status == other.status &&
+          tunnel == other.tunnel; } 
+@override int get hashCode { return Object.hash(createdOn, enabled, host, id, modifiedOn, name, Object.hashAll(permissions), port, status, tunnel); } 
+@override String toString() { return 'TlsCertificatesAndHostnamesBase(createdOn: $createdOn, enabled: $enabled, host: $host, id: $id, modifiedOn: $modifiedOn, name: $name, permissions: $permissions, port: $port, status: $status, tunnel: $tunnel)'; } 
+ }

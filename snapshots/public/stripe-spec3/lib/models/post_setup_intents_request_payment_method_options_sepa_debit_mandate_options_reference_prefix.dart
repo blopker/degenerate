@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2 {const PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2 $empty = PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2._('');
+
+static const List<PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2($value)'; } 
+ }
+typedef PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefix = OneOf2<String,PostSetupIntentsRequestPaymentMethodOptionsSepaDebitMandateOptionsReferencePrefixVariant2>;

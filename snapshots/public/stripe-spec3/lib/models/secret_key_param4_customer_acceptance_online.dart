@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class SecretKeyParam4CustomerAcceptanceOnline {const SecretKeyParam4CustomerAcceptanceOnline({required this.ipAddress, required this.userAgent, });
+
+factory SecretKeyParam4CustomerAcceptanceOnline.fromJson(Map<String, dynamic> json) { return SecretKeyParam4CustomerAcceptanceOnline(
+  ipAddress: json['ip_address'] as String,
+  userAgent: json['user_agent'] as String,
+); }
+
+final String ipAddress;
+
+final String userAgent;
+
+Map<String, dynamic> toJson() { return {
+  'ip_address': ipAddress,
+  'user_agent': userAgent,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_address') && json['ip_address'] is String &&
+      json.containsKey('user_agent') && json['user_agent'] is String; } 
+SecretKeyParam4CustomerAcceptanceOnline copyWith({String? ipAddress, String? userAgent, }) { return SecretKeyParam4CustomerAcceptanceOnline(
+  ipAddress: ipAddress ?? this.ipAddress,
+  userAgent: userAgent ?? this.userAgent,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretKeyParam4CustomerAcceptanceOnline &&
+          ipAddress == other.ipAddress &&
+          userAgent == other.userAgent; } 
+@override int get hashCode { return Object.hash(ipAddress, userAgent); } 
+@override String toString() { return 'SecretKeyParam4CustomerAcceptanceOnline(ipAddress: $ipAddress, userAgent: $userAgent)'; } 
+ }

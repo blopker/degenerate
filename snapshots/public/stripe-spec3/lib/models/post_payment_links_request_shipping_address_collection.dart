@@ -1,0 +1,756 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostPaymentLinksRequestShippingAddressCollectionAllowedCountries {const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._(this.value);
+
+factory PostPaymentLinksRequestShippingAddressCollectionAllowedCountries.fromJson(String json) { return switch (json) {
+  'AC' => ac,
+  'AD' => ad,
+  'AE' => ae,
+  'AF' => af,
+  'AG' => ag,
+  'AI' => ai,
+  'AL' => al,
+  'AM' => am,
+  'AO' => ao,
+  'AQ' => aq,
+  'AR' => ar,
+  'AT' => at,
+  'AU' => au,
+  'AW' => aw,
+  'AX' => ax,
+  'AZ' => az,
+  'BA' => ba,
+  'BB' => bb,
+  'BD' => bd,
+  'BE' => be,
+  'BF' => bf,
+  'BG' => bg,
+  'BH' => bh,
+  'BI' => bi,
+  'BJ' => bj,
+  'BL' => bl,
+  'BM' => bm,
+  'BN' => bn,
+  'BO' => bo,
+  'BQ' => bq,
+  'BR' => br,
+  'BS' => bs,
+  'BT' => bt,
+  'BV' => bv,
+  'BW' => bw,
+  'BY' => by,
+  'BZ' => bz,
+  'CA' => ca,
+  'CD' => cd,
+  'CF' => cf,
+  'CG' => cg,
+  'CH' => ch,
+  'CI' => ci,
+  'CK' => ck,
+  'CL' => cl,
+  'CM' => cm,
+  'CN' => cn,
+  'CO' => co,
+  'CR' => cr,
+  'CV' => cv,
+  'CW' => cw,
+  'CY' => cy,
+  'CZ' => cz,
+  'DE' => de,
+  'DJ' => dj,
+  'DK' => dk,
+  'DM' => dm,
+  'DO' => $do,
+  'DZ' => dz,
+  'EC' => ec,
+  'EE' => ee,
+  'EG' => eg,
+  'EH' => eh,
+  'ER' => er,
+  'ES' => es,
+  'ET' => et,
+  'FI' => fi,
+  'FJ' => fj,
+  'FK' => fk,
+  'FO' => fo,
+  'FR' => fr,
+  'GA' => ga,
+  'GB' => gb,
+  'GD' => gd,
+  'GE' => ge,
+  'GF' => gf,
+  'GG' => gg,
+  'GH' => gh,
+  'GI' => gi,
+  'GL' => gl,
+  'GM' => gm,
+  'GN' => gn,
+  'GP' => gp,
+  'GQ' => gq,
+  'GR' => gr,
+  'GS' => gs,
+  'GT' => gt,
+  'GU' => gu,
+  'GW' => gw,
+  'GY' => gy,
+  'HK' => hk,
+  'HN' => hn,
+  'HR' => hr,
+  'HT' => ht,
+  'HU' => hu,
+  'ID' => id,
+  'IE' => ie,
+  'IL' => il,
+  'IM' => im,
+  'IN' => $in,
+  'IO' => io,
+  'IQ' => iq,
+  'IS' => $is,
+  'IT' => it,
+  'JE' => je,
+  'JM' => jm,
+  'JO' => jo,
+  'JP' => jp,
+  'KE' => ke,
+  'KG' => kg,
+  'KH' => kh,
+  'KI' => ki,
+  'KM' => km,
+  'KN' => kn,
+  'KR' => kr,
+  'KW' => kw,
+  'KY' => ky,
+  'KZ' => kz,
+  'LA' => la,
+  'LB' => lb,
+  'LC' => lc,
+  'LI' => li,
+  'LK' => lk,
+  'LR' => lr,
+  'LS' => ls,
+  'LT' => lt,
+  'LU' => lu,
+  'LV' => lv,
+  'LY' => ly,
+  'MA' => ma,
+  'MC' => mc,
+  'MD' => md,
+  'ME' => me,
+  'MF' => mf,
+  'MG' => mg,
+  'MK' => mk,
+  'ML' => ml,
+  'MM' => mm,
+  'MN' => mn,
+  'MO' => mo,
+  'MQ' => mq,
+  'MR' => mr,
+  'MS' => ms,
+  'MT' => mt,
+  'MU' => mu,
+  'MV' => mv,
+  'MW' => mw,
+  'MX' => mx,
+  'MY' => my,
+  'MZ' => mz,
+  'NA' => na,
+  'NC' => nc,
+  'NE' => ne,
+  'NG' => ng,
+  'NI' => ni,
+  'NL' => nl,
+  'NO' => no,
+  'NP' => np,
+  'NR' => nr,
+  'NU' => nu,
+  'NZ' => nz,
+  'OM' => om,
+  'PA' => pa,
+  'PE' => pe,
+  'PF' => pf,
+  'PG' => pg,
+  'PH' => ph,
+  'PK' => pk,
+  'PL' => pl,
+  'PM' => pm,
+  'PN' => pn,
+  'PR' => pr,
+  'PS' => ps,
+  'PT' => pt,
+  'PY' => py,
+  'QA' => qa,
+  'RE' => re,
+  'RO' => ro,
+  'RS' => rs,
+  'RU' => ru,
+  'RW' => rw,
+  'SA' => sa,
+  'SB' => sb,
+  'SC' => sc,
+  'SD' => sd,
+  'SE' => se,
+  'SG' => sg,
+  'SH' => sh,
+  'SI' => si,
+  'SJ' => sj,
+  'SK' => sk,
+  'SL' => sl,
+  'SM' => sm,
+  'SN' => sn,
+  'SO' => so,
+  'SR' => sr,
+  'SS' => ss,
+  'ST' => st,
+  'SV' => sv,
+  'SX' => sx,
+  'SZ' => sz,
+  'TA' => ta,
+  'TC' => tc,
+  'TD' => td,
+  'TF' => tf,
+  'TG' => tg,
+  'TH' => th,
+  'TJ' => tj,
+  'TK' => tk,
+  'TL' => tl,
+  'TM' => tm,
+  'TN' => tn,
+  'TO' => to,
+  'TR' => tr,
+  'TT' => tt,
+  'TV' => tv,
+  'TW' => tw,
+  'TZ' => tz,
+  'UA' => ua,
+  'UG' => ug,
+  'US' => us,
+  'UY' => uy,
+  'UZ' => uz,
+  'VA' => va,
+  'VC' => vc,
+  'VE' => ve,
+  'VG' => vg,
+  'VN' => vn,
+  'VU' => vu,
+  'WF' => wf,
+  'WS' => ws,
+  'XK' => xk,
+  'YE' => ye,
+  'YT' => yt,
+  'ZA' => za,
+  'ZM' => zm,
+  'ZW' => zw,
+  'ZZ' => zz,
+  _ => PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._(json),
+}; }
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ac = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ad = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ae = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries af = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ag = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ai = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries al = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries am = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ao = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries aq = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AQ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ar = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries at = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries au = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries aw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ax = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AX');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries az = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('AZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ba = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bb = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BB');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bd = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries be = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bh = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bi = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bj = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BJ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bo = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bq = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BQ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries br = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bs = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bv = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BV');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries by = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries bz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('BZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ca = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cd = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ch = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ci = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ck = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries co = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cv = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CV');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cy = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries cz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('CZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries de = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('DE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries dj = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('DJ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries dk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('DK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries dm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('DM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries $do = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('DO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries dz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('DZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ec = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('EC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ee = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('EE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries eg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('EG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries eh = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('EH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries er = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ER');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries es = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ES');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries et = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ET');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries fi = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('FI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries fj = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('FJ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries fk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('FK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries fo = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('FO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries fr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('FR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ga = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gb = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GB');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gd = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ge = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gh = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gi = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gp = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GP');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gq = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GQ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gs = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gu = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries gy = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('GY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries hk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('HK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries hn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('HN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries hr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('HR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ht = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('HT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries hu = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('HU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries id = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ID');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ie = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries il = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries im = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries $in = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries io = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries iq = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IQ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries $is = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries it = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('IT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries je = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('JE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries jm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('JM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries jo = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('JO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries jp = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('JP');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ke = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries kg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries kh = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ki = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries km = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries kn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries kr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries kw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ky = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries kz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('KZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries la = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lb = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LB');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lc = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries li = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ls = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lu = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries lv = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LV');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ly = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('LY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ma = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mc = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries md = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries me = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ME');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ml = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ML');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mo = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mq = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MQ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ms = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mu = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mv = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MV');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mx = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MX');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries my = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries mz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('MZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries na = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries nc = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ne = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ng = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ni = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries nl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries no = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries np = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NP');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries nr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries nu = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries nz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('NZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries om = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('OM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pa = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pe = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ph = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ps = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries pt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries py = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('PY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries qa = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('QA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries re = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('RE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ro = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('RO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries rs = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('RS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ru = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('RU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries rw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('RW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sa = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sb = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SB');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sc = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sd = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries se = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sh = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries si = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SI');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sj = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SJ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries so = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ss = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries st = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ST');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sv = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SV');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sx = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SX');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries sz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('SZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ta = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tc = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries td = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TD');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries th = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TH');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tj = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TJ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tl = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TL');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries to = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TO');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tr = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TR');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tv = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TV');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries tz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('TZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ua = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('UA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ug = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('UG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries us = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('US');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries uy = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('UY');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries uz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('UZ');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries va = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('VA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries vc = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('VC');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ve = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('VE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries vg = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('VG');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries vn = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('VN');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries vu = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('VU');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries wf = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('WF');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ws = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('WS');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries xk = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('XK');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries ye = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('YE');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries yt = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('YT');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries za = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ZA');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries zm = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ZM');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries zw = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ZW');
+
+static const PostPaymentLinksRequestShippingAddressCollectionAllowedCountries zz = PostPaymentLinksRequestShippingAddressCollectionAllowedCountries._('ZZ');
+
+static const List<PostPaymentLinksRequestShippingAddressCollectionAllowedCountries> values = [ac, ad, ae, af, ag, ai, al, am, ao, aq, ar, at, au, aw, ax, az, ba, bb, bd, be, bf, bg, bh, bi, bj, bl, bm, bn, bo, bq, br, bs, bt, bv, bw, by, bz, ca, cd, cf, cg, ch, ci, ck, cl, cm, cn, co, cr, cv, cw, cy, cz, de, dj, dk, dm, $do, dz, ec, ee, eg, eh, er, es, et, fi, fj, fk, fo, fr, ga, gb, gd, ge, gf, gg, gh, gi, gl, gm, gn, gp, gq, gr, gs, gt, gu, gw, gy, hk, hn, hr, ht, hu, id, ie, il, im, $in, io, iq, $is, it, je, jm, jo, jp, ke, kg, kh, ki, km, kn, kr, kw, ky, kz, la, lb, lc, li, lk, lr, ls, lt, lu, lv, ly, ma, mc, md, me, mf, mg, mk, ml, mm, mn, mo, mq, mr, ms, mt, mu, mv, mw, mx, my, mz, na, nc, ne, ng, ni, nl, no, np, nr, nu, nz, om, pa, pe, pf, pg, ph, pk, pl, pm, pn, pr, ps, pt, py, qa, re, ro, rs, ru, rw, sa, sb, sc, sd, se, sg, sh, si, sj, sk, sl, sm, sn, so, sr, ss, st, sv, sx, sz, ta, tc, td, tf, tg, th, tj, tk, tl, tm, tn, to, tr, tt, tv, tw, tz, ua, ug, us, uy, uz, va, vc, ve, vg, vn, vu, wf, ws, xk, ye, yt, za, zm, zw, zz];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentLinksRequestShippingAddressCollectionAllowedCountries && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentLinksRequestShippingAddressCollectionAllowedCountries($value)'; } 
+ }
+/// Configuration for collecting the customer's shipping address.
+final class PostPaymentLinksRequestShippingAddressCollection {const PostPaymentLinksRequestShippingAddressCollection({required this.allowedCountries});
+
+factory PostPaymentLinksRequestShippingAddressCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestShippingAddressCollection(
+  allowedCountries: (json['allowed_countries'] as List<dynamic>).map((e) => PostPaymentLinksRequestShippingAddressCollectionAllowedCountries.fromJson(e as String)).toList(),
+); }
+
+final List<PostPaymentLinksRequestShippingAddressCollectionAllowedCountries> allowedCountries;
+
+Map<String, dynamic> toJson() { return {
+  'allowed_countries': allowedCountries.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_countries'); } 
+PostPaymentLinksRequestShippingAddressCollection copyWith({List<PostPaymentLinksRequestShippingAddressCollectionAllowedCountries>? allowedCountries}) { return PostPaymentLinksRequestShippingAddressCollection(
+  allowedCountries: allowedCountries ?? this.allowedCountries,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksRequestShippingAddressCollection &&
+          listEquals(allowedCountries, other.allowedCountries); } 
+@override int get hashCode { return Object.hashAll(allowedCountries).hashCode; } 
+@override String toString() { return 'PostPaymentLinksRequestShippingAddressCollection(allowedCountries: $allowedCountries)'; } 
+ }

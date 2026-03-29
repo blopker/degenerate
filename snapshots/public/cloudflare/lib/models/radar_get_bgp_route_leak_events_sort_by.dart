@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Sorts results by the specified field.
+final class RadarGetBgpRouteLeakEventsSortBy {const RadarGetBgpRouteLeakEventsSortBy._(this.value);
+
+factory RadarGetBgpRouteLeakEventsSortBy.fromJson(String json) { return switch (json) {
+  'ID' => id,
+  'LEAKS' => leaks,
+  'PEERS' => peers,
+  'PREFIXES' => prefixes,
+  'ORIGINS' => origins,
+  'TIME' => time,
+  _ => RadarGetBgpRouteLeakEventsSortBy._(json),
+}; }
+
+static const RadarGetBgpRouteLeakEventsSortBy id = RadarGetBgpRouteLeakEventsSortBy._('ID');
+
+static const RadarGetBgpRouteLeakEventsSortBy leaks = RadarGetBgpRouteLeakEventsSortBy._('LEAKS');
+
+static const RadarGetBgpRouteLeakEventsSortBy peers = RadarGetBgpRouteLeakEventsSortBy._('PEERS');
+
+static const RadarGetBgpRouteLeakEventsSortBy prefixes = RadarGetBgpRouteLeakEventsSortBy._('PREFIXES');
+
+static const RadarGetBgpRouteLeakEventsSortBy origins = RadarGetBgpRouteLeakEventsSortBy._('ORIGINS');
+
+static const RadarGetBgpRouteLeakEventsSortBy time = RadarGetBgpRouteLeakEventsSortBy._('TIME');
+
+static const List<RadarGetBgpRouteLeakEventsSortBy> values = [id, leaks, peers, prefixes, origins, time];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetBgpRouteLeakEventsSortBy && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetBgpRouteLeakEventsSortBy($value)'; } 
+ }

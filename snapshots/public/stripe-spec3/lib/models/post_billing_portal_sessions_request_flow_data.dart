@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_billing_portal_sessions_request_flow_data_after_completion.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_cancel.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update.dart';import 'post_billing_portal_sessions_request_flow_data_subscription_update_confirm.dart';final class PostBillingPortalSessionsRequestFlowDataType {const PostBillingPortalSessionsRequestFlowDataType._(this.value);
+
+factory PostBillingPortalSessionsRequestFlowDataType.fromJson(String json) { return switch (json) {
+  'payment_method_update' => paymentMethodUpdate,
+  'subscription_cancel' => subscriptionCancel,
+  'subscription_update' => subscriptionUpdate,
+  'subscription_update_confirm' => subscriptionUpdateConfirm,
+  _ => PostBillingPortalSessionsRequestFlowDataType._(json),
+}; }
+
+static const PostBillingPortalSessionsRequestFlowDataType paymentMethodUpdate = PostBillingPortalSessionsRequestFlowDataType._('payment_method_update');
+
+static const PostBillingPortalSessionsRequestFlowDataType subscriptionCancel = PostBillingPortalSessionsRequestFlowDataType._('subscription_cancel');
+
+static const PostBillingPortalSessionsRequestFlowDataType subscriptionUpdate = PostBillingPortalSessionsRequestFlowDataType._('subscription_update');
+
+static const PostBillingPortalSessionsRequestFlowDataType subscriptionUpdateConfirm = PostBillingPortalSessionsRequestFlowDataType._('subscription_update_confirm');
+
+static const List<PostBillingPortalSessionsRequestFlowDataType> values = [paymentMethodUpdate, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingPortalSessionsRequestFlowDataType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingPortalSessionsRequestFlowDataType($value)'; } 
+ }
+/// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
+final class PostBillingPortalSessionsRequestFlowData {const PostBillingPortalSessionsRequestFlowData({this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, required this.type, });
+
+factory PostBillingPortalSessionsRequestFlowData.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequestFlowData(
+  afterCompletion: json['after_completion'] != null ? PostBillingPortalSessionsRequestFlowDataAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>) : null,
+  subscriptionCancel: json['subscription_cancel'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
+  subscriptionUpdate: json['subscription_update'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
+  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
+  type: PostBillingPortalSessionsRequestFlowDataType.fromJson(json['type'] as String),
+); }
+
+final PostBillingPortalSessionsRequestFlowDataAfterCompletion? afterCompletion;
+
+final PostBillingPortalSessionsRequestFlowDataSubscriptionCancel? subscriptionCancel;
+
+final PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate? subscriptionUpdate;
+
+final PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm? subscriptionUpdateConfirm;
+
+final PostBillingPortalSessionsRequestFlowDataType type;
+
+Map<String, dynamic> toJson() { return {
+  if (afterCompletion != null) 'after_completion': afterCompletion?.toJson(),
+  if (subscriptionCancel != null) 'subscription_cancel': subscriptionCancel?.toJson(),
+  if (subscriptionUpdate != null) 'subscription_update': subscriptionUpdate?.toJson(),
+  if (subscriptionUpdateConfirm != null) 'subscription_update_confirm': subscriptionUpdateConfirm?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostBillingPortalSessionsRequestFlowData copyWith({PostBillingPortalSessionsRequestFlowDataAfterCompletion Function()? afterCompletion, PostBillingPortalSessionsRequestFlowDataSubscriptionCancel Function()? subscriptionCancel, PostBillingPortalSessionsRequestFlowDataSubscriptionUpdate Function()? subscriptionUpdate, PostBillingPortalSessionsRequestFlowDataSubscriptionUpdateConfirm Function()? subscriptionUpdateConfirm, PostBillingPortalSessionsRequestFlowDataType? type, }) { return PostBillingPortalSessionsRequestFlowData(
+  afterCompletion: afterCompletion != null ? afterCompletion() : this.afterCompletion,
+  subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
+  subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,
+  subscriptionUpdateConfirm: subscriptionUpdateConfirm != null ? subscriptionUpdateConfirm() : this.subscriptionUpdateConfirm,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingPortalSessionsRequestFlowData &&
+          afterCompletion == other.afterCompletion &&
+          subscriptionCancel == other.subscriptionCancel &&
+          subscriptionUpdate == other.subscriptionUpdate &&
+          subscriptionUpdateConfirm == other.subscriptionUpdateConfirm &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(afterCompletion, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm, type); } 
+@override String toString() { return 'PostBillingPortalSessionsRequestFlowData(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)'; } 
+ }

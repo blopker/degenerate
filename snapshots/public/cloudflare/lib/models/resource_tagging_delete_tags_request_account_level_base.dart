@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'resource_tagging_resource_id.dart';/// Enum for base account-level resource types (those with no extra required fields).
+final class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum._(this.value);
+
+factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
+  'access_application' => accessApplication,
+  'access_group' => accessGroup,
+  'account' => account,
+  'ai_gateway' => aiGateway,
+  'alerting_policy' => alertingPolicy,
+  'alerting_webhook' => alertingWebhook,
+  'cloudflared_tunnel' => cloudflaredTunnel,
+  'd1_database' => d1Database,
+  'durable_object_namespace' => durableObjectNamespace,
+  'gateway_list' => gatewayList,
+  'gateway_rule' => gatewayRule,
+  'image' => image,
+  'kv_namespace' => kvNamespace,
+  'queue' => queue,
+  'r2_bucket' => r2Bucket,
+  'resource_share' => resourceShare,
+  'stream_live_input' => streamLiveInput,
+  'stream_video' => streamVideo,
+  'worker' => worker,
+  _ => ResourceTaggingAccountResourceTypeBaseEnum._(json),
+}; }
+
+static const ResourceTaggingAccountResourceTypeBaseEnum accessApplication = ResourceTaggingAccountResourceTypeBaseEnum._('access_application');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum accessGroup = ResourceTaggingAccountResourceTypeBaseEnum._('access_group');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum account = ResourceTaggingAccountResourceTypeBaseEnum._('account');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum aiGateway = ResourceTaggingAccountResourceTypeBaseEnum._('ai_gateway');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum alertingPolicy = ResourceTaggingAccountResourceTypeBaseEnum._('alerting_policy');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum alertingWebhook = ResourceTaggingAccountResourceTypeBaseEnum._('alerting_webhook');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum cloudflaredTunnel = ResourceTaggingAccountResourceTypeBaseEnum._('cloudflared_tunnel');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum d1Database = ResourceTaggingAccountResourceTypeBaseEnum._('d1_database');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum durableObjectNamespace = ResourceTaggingAccountResourceTypeBaseEnum._('durable_object_namespace');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum gatewayList = ResourceTaggingAccountResourceTypeBaseEnum._('gateway_list');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum gatewayRule = ResourceTaggingAccountResourceTypeBaseEnum._('gateway_rule');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum image = ResourceTaggingAccountResourceTypeBaseEnum._('image');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum kvNamespace = ResourceTaggingAccountResourceTypeBaseEnum._('kv_namespace');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum queue = ResourceTaggingAccountResourceTypeBaseEnum._('queue');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum r2Bucket = ResourceTaggingAccountResourceTypeBaseEnum._('r2_bucket');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum resourceShare = ResourceTaggingAccountResourceTypeBaseEnum._('resource_share');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum streamLiveInput = ResourceTaggingAccountResourceTypeBaseEnum._('stream_live_input');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum streamVideo = ResourceTaggingAccountResourceTypeBaseEnum._('stream_video');
+
+static const ResourceTaggingAccountResourceTypeBaseEnum worker = ResourceTaggingAccountResourceTypeBaseEnum._('worker');
+
+static const List<ResourceTaggingAccountResourceTypeBaseEnum> values = [accessApplication, accessGroup, account, aiGateway, alertingPolicy, alertingWebhook, cloudflaredTunnel, d1Database, durableObjectNamespace, gatewayList, gatewayRule, image, kvNamespace, queue, r2Bucket, resourceShare, streamLiveInput, streamVideo, worker];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResourceTaggingAccountResourceTypeBaseEnum && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResourceTaggingAccountResourceTypeBaseEnum($value)'; } 
+ }
+/// Request body schema for deleting tags from account-level resources.
+final class ResourceTaggingDeleteTagsRequestAccountLevelBase {const ResourceTaggingDeleteTagsRequestAccountLevelBase({required this.resourceId, required this.resourceType, });
+
+factory ResourceTaggingDeleteTagsRequestAccountLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestAccountLevelBase(
+  resourceId: ResourceTaggingResourceId.fromJson(json['resource_id'] as String),
+  resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson(json['resource_type'] as String),
+); }
+
+final ResourceTaggingResourceId resourceId;
+
+/// Enum for base account-level resource types (those with no extra required fields).
+final ResourceTaggingAccountResourceTypeBaseEnum resourceType;
+
+Map<String, dynamic> toJson() { return {
+  'resource_id': resourceId.toJson(),
+  'resource_type': resourceType.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
+      json.containsKey('resource_type'); } 
+ResourceTaggingDeleteTagsRequestAccountLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingAccountResourceTypeBaseEnum? resourceType, }) { return ResourceTaggingDeleteTagsRequestAccountLevelBase(
+  resourceId: resourceId ?? this.resourceId,
+  resourceType: resourceType ?? this.resourceType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResourceTaggingDeleteTagsRequestAccountLevelBase &&
+          resourceId == other.resourceId &&
+          resourceType == other.resourceType; } 
+@override int get hashCode { return Object.hash(resourceId, resourceType); } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceId: $resourceId, resourceType: $resourceType)'; } 
+ }

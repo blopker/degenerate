@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
+final class ReposUpdateBranchProtectionRequestRestrictions {const ReposUpdateBranchProtectionRequestRestrictions({required this.users, required this.teams, this.apps, });
+
+factory ReposUpdateBranchProtectionRequestRestrictions.fromJson(Map<String, dynamic> json) { return ReposUpdateBranchProtectionRequestRestrictions(
+  users: (json['users'] as List<dynamic>).map((e) => e as String).toList(),
+  teams: (json['teams'] as List<dynamic>).map((e) => e as String).toList(),
+  apps: (json['apps'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The list of user `login`s with push access
+final List<String> users;
+
+/// The list of team `slug`s with push access
+final List<String> teams;
+
+/// The list of app `slug`s with push access
+final List<String>? apps;
+
+Map<String, dynamic> toJson() { return {
+  'users': users,
+  'teams': teams,
+  'apps': ?apps,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('users') &&
+      json.containsKey('teams'); } 
+ReposUpdateBranchProtectionRequestRestrictions copyWith({List<String>? users, List<String>? teams, List<String> Function()? apps, }) { return ReposUpdateBranchProtectionRequestRestrictions(
+  users: users ?? this.users,
+  teams: teams ?? this.teams,
+  apps: apps != null ? apps() : this.apps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposUpdateBranchProtectionRequestRestrictions &&
+          listEquals(users, other.users) &&
+          listEquals(teams, other.teams) &&
+          listEquals(apps, other.apps); } 
+@override int get hashCode { return Object.hash(Object.hashAll(users), Object.hashAll(teams), Object.hashAll(apps ?? const [])); } 
+@override String toString() { return 'ReposUpdateBranchProtectionRequestRestrictions(users: $users, teams: $teams, apps: $apps)'; } 
+ }

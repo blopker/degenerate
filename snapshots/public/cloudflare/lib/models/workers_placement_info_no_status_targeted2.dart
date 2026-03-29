@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Targeted placement mode.
+final class WorkersPlacementInfoNoStatusTargeted2Mode {const WorkersPlacementInfoNoStatusTargeted2Mode._(this.value);
+
+factory WorkersPlacementInfoNoStatusTargeted2Mode.fromJson(String json) { return switch (json) {
+  'targeted' => targeted,
+  _ => WorkersPlacementInfoNoStatusTargeted2Mode._(json),
+}; }
+
+static const WorkersPlacementInfoNoStatusTargeted2Mode targeted = WorkersPlacementInfoNoStatusTargeted2Mode._('targeted');
+
+static const List<WorkersPlacementInfoNoStatusTargeted2Mode> values = [targeted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorkersPlacementInfoNoStatusTargeted2Mode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorkersPlacementInfoNoStatusTargeted2Mode($value)'; } 
+ }
+final class WorkersPlacementInfoNoStatusTargeted2 {const WorkersPlacementInfoNoStatusTargeted2({required this.hostname, required this.mode, });
+
+factory WorkersPlacementInfoNoStatusTargeted2.fromJson(Map<String, dynamic> json) { return WorkersPlacementInfoNoStatusTargeted2(
+  hostname: json['hostname'] as String,
+  mode: WorkersPlacementInfoNoStatusTargeted2Mode.fromJson(json['mode'] as String),
+); }
+
+/// HTTP hostname for targeted placement.
+final String hostname;
+
+/// Targeted placement mode.
+final WorkersPlacementInfoNoStatusTargeted2Mode mode;
+
+Map<String, dynamic> toJson() { return {
+  'hostname': hostname,
+  'mode': mode.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('hostname') && json['hostname'] is String &&
+      json.containsKey('mode'); } 
+WorkersPlacementInfoNoStatusTargeted2 copyWith({String? hostname, WorkersPlacementInfoNoStatusTargeted2Mode? mode, }) { return WorkersPlacementInfoNoStatusTargeted2(
+  hostname: hostname ?? this.hostname,
+  mode: mode ?? this.mode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersPlacementInfoNoStatusTargeted2 &&
+          hostname == other.hostname &&
+          mode == other.mode; } 
+@override int get hashCode { return Object.hash(hostname, mode); } 
+@override String toString() { return 'WorkersPlacementInfoNoStatusTargeted2(hostname: $hostname, mode: $mode)'; } 
+ }

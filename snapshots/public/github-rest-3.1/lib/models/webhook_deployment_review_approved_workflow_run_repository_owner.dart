@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner {const WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner({this.avatarUrl, this.eventsUrl, this.followersUrl, this.followingUrl, this.gistsUrl, this.gravatarId, this.htmlUrl, this.id, this.login, this.nodeId, this.organizationsUrl, this.receivedEventsUrl, this.reposUrl, this.siteAdmin, this.starredUrl, this.subscriptionsUrl, this.type, this.url, this.userViewType, });
+
+factory WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner(
+  avatarUrl: json['avatar_url'] as String?,
+  eventsUrl: json['events_url'] as String?,
+  followersUrl: json['followers_url'] as String?,
+  followingUrl: json['following_url'] as String?,
+  gistsUrl: json['gists_url'] as String?,
+  gravatarId: json['gravatar_id'] as String?,
+  htmlUrl: json['html_url'] as String?,
+  id: json['id'] != null ? (json['id'] as num).toInt() : null,
+  login: json['login'] as String?,
+  nodeId: json['node_id'] as String?,
+  organizationsUrl: json['organizations_url'] as String?,
+  receivedEventsUrl: json['received_events_url'] as String?,
+  reposUrl: json['repos_url'] as String?,
+  siteAdmin: json['site_admin'] as bool?,
+  starredUrl: json['starred_url'] as String?,
+  subscriptionsUrl: json['subscriptions_url'] as String?,
+  type: json['type'] as String?,
+  url: json['url'] as String?,
+  userViewType: json['user_view_type'] as String?,
+); }
+
+final String? avatarUrl;
+
+final String? eventsUrl;
+
+final String? followersUrl;
+
+final String? followingUrl;
+
+final String? gistsUrl;
+
+final String? gravatarId;
+
+final String? htmlUrl;
+
+final int? id;
+
+final String? login;
+
+final String? nodeId;
+
+final String? organizationsUrl;
+
+final String? receivedEventsUrl;
+
+final String? reposUrl;
+
+final bool? siteAdmin;
+
+final String? starredUrl;
+
+final String? subscriptionsUrl;
+
+final String? type;
+
+final String? url;
+
+final String? userViewType;
+
+Map<String, dynamic> toJson() { return {
+  'avatar_url': ?avatarUrl,
+  'events_url': ?eventsUrl,
+  'followers_url': ?followersUrl,
+  'following_url': ?followingUrl,
+  'gists_url': ?gistsUrl,
+  'gravatar_id': ?gravatarId,
+  'html_url': ?htmlUrl,
+  'id': ?id,
+  'login': ?login,
+  'node_id': ?nodeId,
+  'organizations_url': ?organizationsUrl,
+  'received_events_url': ?receivedEventsUrl,
+  'repos_url': ?reposUrl,
+  'site_admin': ?siteAdmin,
+  'starred_url': ?starredUrl,
+  'subscriptions_url': ?subscriptionsUrl,
+  'type': ?type,
+  'url': ?url,
+  'user_view_type': ?userViewType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner copyWith({String Function()? avatarUrl, String Function()? eventsUrl, String Function()? followersUrl, String Function()? followingUrl, String Function()? gistsUrl, String Function()? gravatarId, String Function()? htmlUrl, int Function()? id, String Function()? login, String Function()? nodeId, String Function()? organizationsUrl, String Function()? receivedEventsUrl, String Function()? reposUrl, bool Function()? siteAdmin, String Function()? starredUrl, String Function()? subscriptionsUrl, String Function()? type, String Function()? url, String Function()? userViewType, }) { return WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner(
+  avatarUrl: avatarUrl != null ? avatarUrl() : this.avatarUrl,
+  eventsUrl: eventsUrl != null ? eventsUrl() : this.eventsUrl,
+  followersUrl: followersUrl != null ? followersUrl() : this.followersUrl,
+  followingUrl: followingUrl != null ? followingUrl() : this.followingUrl,
+  gistsUrl: gistsUrl != null ? gistsUrl() : this.gistsUrl,
+  gravatarId: gravatarId != null ? gravatarId() : this.gravatarId,
+  htmlUrl: htmlUrl != null ? htmlUrl() : this.htmlUrl,
+  id: id != null ? id() : this.id,
+  login: login != null ? login() : this.login,
+  nodeId: nodeId != null ? nodeId() : this.nodeId,
+  organizationsUrl: organizationsUrl != null ? organizationsUrl() : this.organizationsUrl,
+  receivedEventsUrl: receivedEventsUrl != null ? receivedEventsUrl() : this.receivedEventsUrl,
+  reposUrl: reposUrl != null ? reposUrl() : this.reposUrl,
+  siteAdmin: siteAdmin != null ? siteAdmin() : this.siteAdmin,
+  starredUrl: starredUrl != null ? starredUrl() : this.starredUrl,
+  subscriptionsUrl: subscriptionsUrl != null ? subscriptionsUrl() : this.subscriptionsUrl,
+  type: type != null ? type() : this.type,
+  url: url != null ? url() : this.url,
+  userViewType: userViewType != null ? userViewType() : this.userViewType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner &&
+          avatarUrl == other.avatarUrl &&
+          eventsUrl == other.eventsUrl &&
+          followersUrl == other.followersUrl &&
+          followingUrl == other.followingUrl &&
+          gistsUrl == other.gistsUrl &&
+          gravatarId == other.gravatarId &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          login == other.login &&
+          nodeId == other.nodeId &&
+          organizationsUrl == other.organizationsUrl &&
+          receivedEventsUrl == other.receivedEventsUrl &&
+          reposUrl == other.reposUrl &&
+          siteAdmin == other.siteAdmin &&
+          starredUrl == other.starredUrl &&
+          subscriptionsUrl == other.subscriptionsUrl &&
+          type == other.type &&
+          url == other.url &&
+          userViewType == other.userViewType; } 
+@override int get hashCode { return Object.hash(avatarUrl, eventsUrl, followersUrl, followingUrl, gistsUrl, gravatarId, htmlUrl, id, login, nodeId, organizationsUrl, receivedEventsUrl, reposUrl, siteAdmin, starredUrl, subscriptionsUrl, type, url, userViewType); } 
+@override String toString() { return 'WebhookDeploymentReviewApprovedWorkflowRunRepositoryOwner(avatarUrl: $avatarUrl, eventsUrl: $eventsUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, gravatarId: $gravatarId, htmlUrl: $htmlUrl, id: $id, login: $login, nodeId: $nodeId, organizationsUrl: $organizationsUrl, receivedEventsUrl: $receivedEventsUrl, reposUrl: $reposUrl, siteAdmin: $siteAdmin, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, type: $type, url: $url, userViewType: $userViewType)'; } 
+ }

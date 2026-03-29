@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_payment_method_configurations_configuration_request_card_display_preference.dart';/// Cards are a popular way for consumers and businesses to pay online or in person. Stripe supports global and local card networks.
+final class PostPaymentMethodConfigurationsConfigurationRequestCard {const PostPaymentMethodConfigurationsConfigurationRequestCard({this.displayPreference});
+
+factory PostPaymentMethodConfigurationsConfigurationRequestCard.fromJson(Map<String, dynamic> json) { return PostPaymentMethodConfigurationsConfigurationRequestCard(
+  displayPreference: json['display_preference'] != null ? PostPaymentMethodConfigurationsConfigurationRequestCardDisplayPreference.fromJson(json['display_preference'] as Map<String, dynamic>) : null,
+); }
+
+final PostPaymentMethodConfigurationsConfigurationRequestCardDisplayPreference? displayPreference;
+
+Map<String, dynamic> toJson() { return {
+  if (displayPreference != null) 'display_preference': displayPreference?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentMethodConfigurationsConfigurationRequestCard copyWith({PostPaymentMethodConfigurationsConfigurationRequestCardDisplayPreference Function()? displayPreference}) { return PostPaymentMethodConfigurationsConfigurationRequestCard(
+  displayPreference: displayPreference != null ? displayPreference() : this.displayPreference,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentMethodConfigurationsConfigurationRequestCard &&
+          displayPreference == other.displayPreference; } 
+@override int get hashCode { return displayPreference.hashCode; } 
+@override String toString() { return 'PostPaymentMethodConfigurationsConfigurationRequestCard(displayPreference: $displayPreference)'; } 
+ }

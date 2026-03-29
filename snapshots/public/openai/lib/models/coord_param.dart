@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// An x/y coordinate pair, e.g. `{ x: 100, y: 200 }`.
+final class CoordParam {const CoordParam({required this.x, required this.y, });
+
+factory CoordParam.fromJson(Map<String, dynamic> json) { return CoordParam(
+  x: (json['x'] as num).toInt(),
+  y: (json['y'] as num).toInt(),
+); }
+
+/// The x-coordinate.
+final int x;
+
+/// The y-coordinate.
+final int y;
+
+Map<String, dynamic> toJson() { return {
+  'x': x,
+  'y': y,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('x') && json['x'] is num &&
+      json.containsKey('y') && json['y'] is num; } 
+CoordParam copyWith({int? x, int? y, }) { return CoordParam(
+  x: x ?? this.x,
+  y: y ?? this.y,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CoordParam &&
+          x == other.x &&
+          y == other.y; } 
+@override int get hashCode { return Object.hash(x, y); } 
+@override String toString() { return 'CoordParam(x: $x, y: $y)'; } 
+ }

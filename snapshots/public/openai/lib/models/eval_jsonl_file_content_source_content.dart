@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EvalJsonlFileContentSourceContent {const EvalJsonlFileContentSourceContent({required this.item, this.sample, });
+
+factory EvalJsonlFileContentSourceContent.fromJson(Map<String, dynamic> json) { return EvalJsonlFileContentSourceContent(
+  item: (json['item'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  sample: (json['sample'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+); }
+
+final Map<String,dynamic> item;
+
+final Map<String,dynamic>? sample;
+
+Map<String, dynamic> toJson() { return {
+  'item': item,
+  'sample': ?sample,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('item'); } 
+EvalJsonlFileContentSourceContent copyWith({Map<String,dynamic>? item, Map<String, dynamic> Function()? sample, }) { return EvalJsonlFileContentSourceContent(
+  item: item ?? this.item,
+  sample: sample != null ? sample() : this.sample,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EvalJsonlFileContentSourceContent &&
+          item == other.item &&
+          sample == other.sample; } 
+@override int get hashCode { return Object.hash(item, sample); } 
+@override String toString() { return 'EvalJsonlFileContentSourceContent(item: $item, sample: $sample)'; } 
+ }

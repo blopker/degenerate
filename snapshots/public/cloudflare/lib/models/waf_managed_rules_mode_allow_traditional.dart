@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
+final class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional._(this.value);
+
+factory WafManagedRulesModeAllowTraditional.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => WafManagedRulesModeAllowTraditional._(json),
+}; }
+
+static const WafManagedRulesModeAllowTraditional $on = WafManagedRulesModeAllowTraditional._('on');
+
+static const WafManagedRulesModeAllowTraditional off = WafManagedRulesModeAllowTraditional._('off');
+
+static const List<WafManagedRulesModeAllowTraditional> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WafManagedRulesModeAllowTraditional && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WafManagedRulesModeAllowTraditional($value)'; } 
+ }

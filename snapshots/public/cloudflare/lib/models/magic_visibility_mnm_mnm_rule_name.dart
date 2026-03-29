@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
+extension type const MagicVisibilityMnmMnmRuleName(String value) {
+factory MagicVisibilityMnmMnmRuleName.fromJson(String json) => MagicVisibilityMnmMnmRuleName(json);
+
+String toJson() => value;
+
+}

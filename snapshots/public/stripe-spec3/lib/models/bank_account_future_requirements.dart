@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'external_account_requirements.dart';/// Information about the [upcoming new requirements for the bank account](https://docs.stripe.com/connect/custom-accounts/future-requirements), including what information needs to be collected, and by when.
+final class BankAccountFutureRequirements {const BankAccountFutureRequirements({this.externalAccountRequirements});
+
+factory BankAccountFutureRequirements.fromJson(Map<String, dynamic> json) { return BankAccountFutureRequirements(
+  externalAccountRequirements: ExternalAccountRequirements.canParse(json) ? ExternalAccountRequirements.fromJson(json) : null,
+); }
+
+final ExternalAccountRequirements? externalAccountRequirements;
+
+/// At least one variant must be present.
+bool get isValid { return externalAccountRequirements != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?externalAccountRequirements?.toJson(),
+}; } 
+ }

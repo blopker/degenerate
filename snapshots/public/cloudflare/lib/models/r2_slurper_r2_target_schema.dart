@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'r2_slurper_jurisdiction.dart';import 'r2_slurper_s3_like_creds_schema.dart';final class R2SlurperR2TargetSchemaVendor {const R2SlurperR2TargetSchemaVendor._(this.value);
+
+factory R2SlurperR2TargetSchemaVendor.fromJson(String json) { return switch (json) {
+  'r2' => r2,
+  _ => R2SlurperR2TargetSchemaVendor._(json),
+}; }
+
+static const R2SlurperR2TargetSchemaVendor r2 = R2SlurperR2TargetSchemaVendor._('r2');
+
+static const List<R2SlurperR2TargetSchemaVendor> values = [r2];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is R2SlurperR2TargetSchemaVendor && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'R2SlurperR2TargetSchemaVendor($value)'; } 
+ }
+final class R2SlurperR2TargetSchema {const R2SlurperR2TargetSchema({required this.bucket, this.jurisdiction, required this.secret, required this.vendor, });
+
+factory R2SlurperR2TargetSchema.fromJson(Map<String, dynamic> json) { return R2SlurperR2TargetSchema(
+  bucket: json['bucket'] as String,
+  jurisdiction: json['jurisdiction'] != null ? R2SlurperJurisdiction.fromJson(json['jurisdiction'] as String) : null,
+  secret: R2SlurperS3LikeCredsSchema.fromJson(json['secret'] as Map<String, dynamic>),
+  vendor: R2SlurperR2TargetSchemaVendor.fromJson(json['vendor'] as String),
+); }
+
+final String bucket;
+
+final R2SlurperJurisdiction? jurisdiction;
+
+final R2SlurperS3LikeCredsSchema secret;
+
+final R2SlurperR2TargetSchemaVendor vendor;
+
+Map<String, dynamic> toJson() { return {
+  'bucket': bucket,
+  if (jurisdiction != null) 'jurisdiction': jurisdiction?.toJson(),
+  'secret': secret.toJson(),
+  'vendor': vendor.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucket') && json['bucket'] is String &&
+      json.containsKey('secret') &&
+      json.containsKey('vendor'); } 
+R2SlurperR2TargetSchema copyWith({String? bucket, R2SlurperJurisdiction Function()? jurisdiction, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2TargetSchemaVendor? vendor, }) { return R2SlurperR2TargetSchema(
+  bucket: bucket ?? this.bucket,
+  jurisdiction: jurisdiction != null ? jurisdiction() : this.jurisdiction,
+  secret: secret ?? this.secret,
+  vendor: vendor ?? this.vendor,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2SlurperR2TargetSchema &&
+          bucket == other.bucket &&
+          jurisdiction == other.jurisdiction &&
+          secret == other.secret &&
+          vendor == other.vendor; } 
+@override int get hashCode { return Object.hash(bucket, jurisdiction, secret, vendor); } 
+@override String toString() { return 'R2SlurperR2TargetSchema(bucket: $bucket, jurisdiction: $jurisdiction, secret: $secret, vendor: $vendor)'; } 
+ }

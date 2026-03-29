@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_pull_request_review_comment_created_comment_links_html.dart';import 'webhook_pull_request_review_comment_created_comment_links_pull_request.dart';import 'webhook_pull_request_review_comment_created_comment_links_self.dart';final class WebhookPullRequestReviewCommentCreatedCommentLinks {const WebhookPullRequestReviewCommentCreatedCommentLinks({required this.html, required this.pullRequest, required this.self, });
+
+factory WebhookPullRequestReviewCommentCreatedCommentLinks.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewCommentCreatedCommentLinks(
+  html: WebhookPullRequestReviewCommentCreatedCommentLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
+  pullRequest: WebhookPullRequestReviewCommentCreatedCommentLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+  self: WebhookPullRequestReviewCommentCreatedCommentLinksSelf.fromJson(json['self'] as Map<String, dynamic>),
+); }
+
+final WebhookPullRequestReviewCommentCreatedCommentLinksHtml html;
+
+final WebhookPullRequestReviewCommentCreatedCommentLinksPullRequest pullRequest;
+
+final WebhookPullRequestReviewCommentCreatedCommentLinksSelf self;
+
+Map<String, dynamic> toJson() { return {
+  'html': html.toJson(),
+  'pull_request': pullRequest.toJson(),
+  'self': self.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('html') &&
+      json.containsKey('pull_request') &&
+      json.containsKey('self'); } 
+WebhookPullRequestReviewCommentCreatedCommentLinks copyWith({WebhookPullRequestReviewCommentCreatedCommentLinksHtml? html, WebhookPullRequestReviewCommentCreatedCommentLinksPullRequest? pullRequest, WebhookPullRequestReviewCommentCreatedCommentLinksSelf? self, }) { return WebhookPullRequestReviewCommentCreatedCommentLinks(
+  html: html ?? this.html,
+  pullRequest: pullRequest ?? this.pullRequest,
+  self: self ?? this.self,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewCommentCreatedCommentLinks &&
+          html == other.html &&
+          pullRequest == other.pullRequest &&
+          self == other.self; } 
+@override int get hashCode { return Object.hash(html, pullRequest, self); } 
+@override String toString() { return 'WebhookPullRequestReviewCommentCreatedCommentLinks(html: $html, pullRequest: $pullRequest, self: $self)'; } 
+ }

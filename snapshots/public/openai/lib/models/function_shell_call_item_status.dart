@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Status values reported for shell tool calls.
+final class FunctionShellCallItemStatus {const FunctionShellCallItemStatus._(this.value);
+
+factory FunctionShellCallItemStatus.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'completed' => completed,
+  'incomplete' => incomplete,
+  _ => FunctionShellCallItemStatus._(json),
+}; }
+
+static const FunctionShellCallItemStatus inProgress = FunctionShellCallItemStatus._('in_progress');
+
+static const FunctionShellCallItemStatus completed = FunctionShellCallItemStatus._('completed');
+
+static const FunctionShellCallItemStatus incomplete = FunctionShellCallItemStatus._('incomplete');
+
+static const List<FunctionShellCallItemStatus> values = [inProgress, completed, incomplete];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionShellCallItemStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FunctionShellCallItemStatus($value)'; } 
+ }

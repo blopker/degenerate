@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_processing_customer_notification.dart';/// 
+final class PaymentIntentCardProcessing {const PaymentIntentCardProcessing({this.customerNotification});
+
+factory PaymentIntentCardProcessing.fromJson(Map<String, dynamic> json) { return PaymentIntentCardProcessing(
+  customerNotification: json['customer_notification'] != null ? PaymentIntentProcessingCustomerNotification.fromJson(json['customer_notification'] as Map<String, dynamic>) : null,
+); }
+
+final PaymentIntentProcessingCustomerNotification? customerNotification;
+
+Map<String, dynamic> toJson() { return {
+  if (customerNotification != null) 'customer_notification': customerNotification?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentCardProcessing copyWith({PaymentIntentProcessingCustomerNotification Function()? customerNotification}) { return PaymentIntentCardProcessing(
+  customerNotification: customerNotification != null ? customerNotification() : this.customerNotification,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentCardProcessing &&
+          customerNotification == other.customerNotification; } 
+@override int get hashCode { return customerNotification.hashCode; } 
+@override String toString() { return 'PaymentIntentCardProcessing(customerNotification: $customerNotification)'; } 
+ }

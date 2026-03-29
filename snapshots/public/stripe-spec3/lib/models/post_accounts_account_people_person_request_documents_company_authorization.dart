@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_people_person_request_documents_company_authorization_files.dart';final class PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization {const PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization({this.files});
+
+factory PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization(
+  files: (json['files'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorizationFilesVariant2.fromJson(v as String),)).toList(),
+); }
+
+final List<PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorizationFiles>? files;
+
+Map<String, dynamic> toJson() { return {
+  if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization copyWith({List<PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorizationFiles> Function()? files}) { return PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization(
+  files: files != null ? files() : this.files,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization &&
+          listEquals(files, other.files); } 
+@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override String toString() { return 'PostAccountsAccountPeoplePersonRequestDocumentsCompanyAuthorization(files: $files)'; } 
+ }

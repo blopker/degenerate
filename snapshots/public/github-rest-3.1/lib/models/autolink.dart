@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// An autolink reference.
+final class Autolink {const Autolink({required this.id, required this.keyPrefix, required this.urlTemplate, required this.isAlphanumeric, this.updatedAt, });
+
+factory Autolink.fromJson(Map<String, dynamic> json) { return Autolink(
+  id: (json['id'] as num).toInt(),
+  keyPrefix: json['key_prefix'] as String,
+  urlTemplate: json['url_template'] as String,
+  isAlphanumeric: json['is_alphanumeric'] as bool,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+); }
+
+final int id;
+
+/// The prefix of a key that is linkified.
+final String keyPrefix;
+
+/// A template for the target URL that is generated if a key was found.
+final String urlTemplate;
+
+/// Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
+final bool isAlphanumeric;
+
+final DateTime? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'key_prefix': keyPrefix,
+  'url_template': urlTemplate,
+  'is_alphanumeric': isAlphanumeric,
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('key_prefix') && json['key_prefix'] is String &&
+      json.containsKey('url_template') && json['url_template'] is String &&
+      json.containsKey('is_alphanumeric') && json['is_alphanumeric'] is bool; } 
+Autolink copyWith({int? id, String? keyPrefix, String? urlTemplate, bool? isAlphanumeric, DateTime? Function()? updatedAt, }) { return Autolink(
+  id: id ?? this.id,
+  keyPrefix: keyPrefix ?? this.keyPrefix,
+  urlTemplate: urlTemplate ?? this.urlTemplate,
+  isAlphanumeric: isAlphanumeric ?? this.isAlphanumeric,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Autolink &&
+          id == other.id &&
+          keyPrefix == other.keyPrefix &&
+          urlTemplate == other.urlTemplate &&
+          isAlphanumeric == other.isAlphanumeric &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(id, keyPrefix, urlTemplate, isAlphanumeric, updatedAt); } 
+@override String toString() { return 'Autolink(id: $id, keyPrefix: $keyPrefix, urlTemplate: $urlTemplate, isAlphanumeric: $isAlphanumeric, updatedAt: $updatedAt)'; } 
+ }

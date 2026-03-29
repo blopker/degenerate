@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repos_create_webhook_request_config.dart';final class ReposCreateWebhookRequest {const ReposCreateWebhookRequest({this.name, this.config, this.events, this.active = true, });
+
+factory ReposCreateWebhookRequest.fromJson(Map<String, dynamic> json) { return ReposCreateWebhookRequest(
+  name: json['name'] as String?,
+  config: json['config'] != null ? ReposCreateWebhookRequestConfig.fromJson(json['config'] as Map<String, dynamic>) : null,
+  events: (json['events'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  active: json.containsKey('active') ? json['active'] as bool : true,
+); }
+
+/// Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
+final String? name;
+
+/// Key/value pairs to provide settings for this webhook.
+final ReposCreateWebhookRequestConfig? config;
+
+/// Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
+final List<String>? events;
+
+/// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+final bool active;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  if (config != null) 'config': config?.toJson(),
+  'events': ?events,
+  'active': active,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposCreateWebhookRequest copyWith({String Function()? name, ReposCreateWebhookRequestConfig Function()? config, List<String> Function()? events, bool Function()? active, }) { return ReposCreateWebhookRequest(
+  name: name != null ? name() : this.name,
+  config: config != null ? config() : this.config,
+  events: events != null ? events() : this.events,
+  active: active != null ? active() : this.active,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposCreateWebhookRequest &&
+          name == other.name &&
+          config == other.config &&
+          listEquals(events, other.events) &&
+          active == other.active; } 
+@override int get hashCode { return Object.hash(name, config, Object.hashAll(events ?? const []), active); } 
+@override String toString() { return 'ReposCreateWebhookRequest(name: $name, config: $config, events: $events, active: $active)'; } 
+ }

@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_org_analytics_response_data_session_stats_day_stats.dart';/// Session statistics of an App during the range specified
+final class GetOrgAnalyticsResponseDataSessionStats {const GetOrgAnalyticsResponseDataSessionStats({this.dayStats, this.sessionsCount, this.sessionsMinutesConsumed, });
+
+factory GetOrgAnalyticsResponseDataSessionStats.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseDataSessionStats(
+  dayStats: (json['day_stats'] as List<dynamic>?)?.map((e) => GetOrgAnalyticsResponseDataSessionStatsDayStats.fromJson(e as Map<String, dynamic>)).toList(),
+  sessionsCount: json['sessions_count'] != null ? (json['sessions_count'] as num).toInt() : null,
+  sessionsMinutesConsumed: json['sessions_minutes_consumed'] != null ? (json['sessions_minutes_consumed'] as num).toDouble() : null,
+); }
+
+/// Day wise session stats
+final List<GetOrgAnalyticsResponseDataSessionStatsDayStats>? dayStats;
+
+/// Total number of sessions during the range specified
+final int? sessionsCount;
+
+/// Total session minutes during the range specified
+final double? sessionsMinutesConsumed;
+
+Map<String, dynamic> toJson() { return {
+  if (dayStats != null) 'day_stats': dayStats?.map((e) => e.toJson()).toList(),
+  'sessions_count': ?sessionsCount,
+  'sessions_minutes_consumed': ?sessionsMinutesConsumed,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetOrgAnalyticsResponseDataSessionStats copyWith({List<GetOrgAnalyticsResponseDataSessionStatsDayStats> Function()? dayStats, int Function()? sessionsCount, double Function()? sessionsMinutesConsumed, }) { return GetOrgAnalyticsResponseDataSessionStats(
+  dayStats: dayStats != null ? dayStats() : this.dayStats,
+  sessionsCount: sessionsCount != null ? sessionsCount() : this.sessionsCount,
+  sessionsMinutesConsumed: sessionsMinutesConsumed != null ? sessionsMinutesConsumed() : this.sessionsMinutesConsumed,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetOrgAnalyticsResponseDataSessionStats &&
+          listEquals(dayStats, other.dayStats) &&
+          sessionsCount == other.sessionsCount &&
+          sessionsMinutesConsumed == other.sessionsMinutesConsumed; } 
+@override int get hashCode { return Object.hash(Object.hashAll(dayStats ?? const []), sessionsCount, sessionsMinutesConsumed); } 
+@override String toString() { return 'GetOrgAnalyticsResponseDataSessionStats(dayStats: $dayStats, sessionsCount: $sessionsCount, sessionsMinutesConsumed: $sessionsMinutesConsumed)'; } 
+ }

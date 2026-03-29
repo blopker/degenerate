@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to check all disks for encryption.
+extension type const TeamsDevicesRequireAll(bool value) {
+factory TeamsDevicesRequireAll.fromJson(bool json) => TeamsDevicesRequireAll(json);
+
+bool toJson() => value;
+
+}
+final class TeamsDevicesDiskEncryptionInputRequest {const TeamsDevicesDiskEncryptionInputRequest({this.checkDisks, this.requireAll, });
+
+factory TeamsDevicesDiskEncryptionInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesDiskEncryptionInputRequest(
+  checkDisks: (json['checkDisks'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  requireAll: json['requireAll'] != null ? TeamsDevicesRequireAll.fromJson(json['requireAll'] as bool) : null,
+); }
+
+/// List of volume names to be checked for encryption.
+final List<String>? checkDisks;
+
+final TeamsDevicesRequireAll? requireAll;
+
+Map<String, dynamic> toJson() { return {
+  'checkDisks': ?checkDisks,
+  if (requireAll != null) 'requireAll': requireAll?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TeamsDevicesDiskEncryptionInputRequest copyWith({List<String> Function()? checkDisks, TeamsDevicesRequireAll Function()? requireAll, }) { return TeamsDevicesDiskEncryptionInputRequest(
+  checkDisks: checkDisks != null ? checkDisks() : this.checkDisks,
+  requireAll: requireAll != null ? requireAll() : this.requireAll,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesDiskEncryptionInputRequest &&
+          listEquals(checkDisks, other.checkDisks) &&
+          requireAll == other.requireAll; } 
+@override int get hashCode { return Object.hash(Object.hashAll(checkDisks ?? const []), requireAll); } 
+@override String toString() { return 'TeamsDevicesDiskEncryptionInputRequest(checkDisks: $checkDisks, requireAll: $requireAll)'; } 
+ }

@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tracing_configuration.dart';/// Default tracing mode for the session.
+/// 
+final class RealtimeSessionTracingVariant1 {const RealtimeSessionTracingVariant1._(this.value);
+
+factory RealtimeSessionTracingVariant1.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  _ => RealtimeSessionTracingVariant1._(json),
+}; }
+
+static const RealtimeSessionTracingVariant1 auto = RealtimeSessionTracingVariant1._('auto');
+
+static const List<RealtimeSessionTracingVariant1> values = [auto];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeSessionTracingVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeSessionTracingVariant1($value)'; } 
+ }
+typedef RealtimeSessionTracing = OneOf2<RealtimeSessionTracingVariant1,TracingConfiguration>;

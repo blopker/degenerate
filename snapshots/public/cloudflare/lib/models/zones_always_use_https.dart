@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// If enabled, any `http://`` URL is converted to `https://` through a`
+/// 301 redirect.
+/// 
+final class ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId._(this.value);
+
+factory ZonesAlwaysUseHttpsId.fromJson(String json) { return switch (json) {
+  'always_use_https' => alwaysUseHttps,
+  _ => ZonesAlwaysUseHttpsId._(json),
+}; }
+
+static const ZonesAlwaysUseHttpsId alwaysUseHttps = ZonesAlwaysUseHttpsId._('always_use_https');
+
+static const List<ZonesAlwaysUseHttpsId> values = [alwaysUseHttps];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesAlwaysUseHttpsId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesAlwaysUseHttpsId($value)'; } 
+ }
+final class ZonesAlwaysUseHttps {const ZonesAlwaysUseHttps({this.id});
+
+factory ZonesAlwaysUseHttps.fromJson(Map<String, dynamic> json) { return ZonesAlwaysUseHttps(
+  id: json['id'] != null ? ZonesAlwaysUseHttpsId.fromJson(json['id'] as String) : null,
+); }
+
+/// If enabled, any `http://`` URL is converted to `https://` through a`
+/// 301 redirect.
+/// 
+final ZonesAlwaysUseHttpsId? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesAlwaysUseHttps copyWith({ZonesAlwaysUseHttpsId Function()? id}) { return ZonesAlwaysUseHttps(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesAlwaysUseHttps &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'ZonesAlwaysUseHttps(id: $id)'; } 
+ }

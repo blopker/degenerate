@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payload used to update the API key.
+final class AuditLogKeyUpdatedChangesRequested {const AuditLogKeyUpdatedChangesRequested({this.scopes});
+
+factory AuditLogKeyUpdatedChangesRequested.fromJson(Map<String, dynamic> json) { return AuditLogKeyUpdatedChangesRequested(
+  scopes: (json['scopes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// A list of scopes allowed for the API key, e.g. `["api.model.request"]`
+final List<String>? scopes;
+
+Map<String, dynamic> toJson() { return {
+  'scopes': ?scopes,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AuditLogKeyUpdatedChangesRequested copyWith({List<String> Function()? scopes}) { return AuditLogKeyUpdatedChangesRequested(
+  scopes: scopes != null ? scopes() : this.scopes,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AuditLogKeyUpdatedChangesRequested &&
+          listEquals(scopes, other.scopes); } 
+@override int get hashCode { return Object.hashAll(scopes ?? const []).hashCode; } 
+@override String toString() { return 'AuditLogKeyUpdatedChangesRequested(scopes: $scopes)'; } 
+ }

@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Controls phone number collection settings during checkout.
+/// 
+/// We recommend that you review your privacy policy and check with your legal contacts.
+final class PostPaymentLinksPaymentLinkRequestPhoneNumberCollection {const PostPaymentLinksPaymentLinkRequestPhoneNumberCollection({required this.enabled});
+
+factory PostPaymentLinksPaymentLinkRequestPhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestPhoneNumberCollection(
+  enabled: json['enabled'] as bool,
+); }
+
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PostPaymentLinksPaymentLinkRequestPhoneNumberCollection copyWith({bool? enabled}) { return PostPaymentLinksPaymentLinkRequestPhoneNumberCollection(
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestPhoneNumberCollection &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'PostPaymentLinksPaymentLinkRequestPhoneNumberCollection(enabled: $enabled)'; } 
+ }

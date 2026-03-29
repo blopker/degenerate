@@ -1,0 +1,79 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject._(this.value);
+
+factory TaxDeductedAtSourceObject.fromJson(String json) { return switch (json) {
+  'tax_deducted_at_source' => taxDeductedAtSource,
+  _ => TaxDeductedAtSourceObject._(json),
+}; }
+
+static const TaxDeductedAtSourceObject taxDeductedAtSource = TaxDeductedAtSourceObject._('tax_deducted_at_source');
+
+static const List<TaxDeductedAtSourceObject> values = [taxDeductedAtSource];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxDeductedAtSourceObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxDeductedAtSourceObject($value)'; } 
+ }
+/// 
+final class TaxDeductedAtSource {const TaxDeductedAtSource({required this.id, required this.object, required this.periodEnd, required this.periodStart, required this.taxDeductionAccountNumber, });
+
+factory TaxDeductedAtSource.fromJson(Map<String, dynamic> json) { return TaxDeductedAtSource(
+  id: json['id'] as String,
+  object: TaxDeductedAtSourceObject.fromJson(json['object'] as String),
+  periodEnd: (json['period_end'] as num).toInt(),
+  periodStart: (json['period_start'] as num).toInt(),
+  taxDeductionAccountNumber: json['tax_deduction_account_number'] as String,
+); }
+
+/// Unique identifier for the object.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final TaxDeductedAtSourceObject object;
+
+/// The end of the invoicing period. This TDS applies to Stripe fees collected during this invoicing period.
+final int periodEnd;
+
+/// The start of the invoicing period. This TDS applies to Stripe fees collected during this invoicing period.
+final int periodStart;
+
+/// The TAN that was supplied to Stripe when TDS was assessed
+final String taxDeductionAccountNumber;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'period_end': periodEnd,
+  'period_start': periodStart,
+  'tax_deduction_account_number': taxDeductionAccountNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('period_end') && json['period_end'] is num &&
+      json.containsKey('period_start') && json['period_start'] is num &&
+      json.containsKey('tax_deduction_account_number') && json['tax_deduction_account_number'] is String; } 
+TaxDeductedAtSource copyWith({String? id, TaxDeductedAtSourceObject? object, int? periodEnd, int? periodStart, String? taxDeductionAccountNumber, }) { return TaxDeductedAtSource(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  periodEnd: periodEnd ?? this.periodEnd,
+  periodStart: periodStart ?? this.periodStart,
+  taxDeductionAccountNumber: taxDeductionAccountNumber ?? this.taxDeductionAccountNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxDeductedAtSource &&
+          id == other.id &&
+          object == other.object &&
+          periodEnd == other.periodEnd &&
+          periodStart == other.periodStart &&
+          taxDeductionAccountNumber == other.taxDeductionAccountNumber; } 
+@override int get hashCode { return Object.hash(id, object, periodEnd, periodStart, taxDeductionAccountNumber); } 
+@override String toString() { return 'TaxDeductedAtSource(id: $id, object: $object, periodEnd: $periodEnd, periodStart: $periodStart, taxDeductionAccountNumber: $taxDeductionAccountNumber)'; } 
+ }

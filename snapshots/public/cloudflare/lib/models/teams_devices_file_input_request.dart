@@ -1,0 +1,81 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Operating system.
+final class TeamsDevicesFileInputRequestOperatingSystem {const TeamsDevicesFileInputRequestOperatingSystem._(this.value);
+
+factory TeamsDevicesFileInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
+  'windows' => windows,
+  'linux' => linux,
+  'mac' => mac,
+  _ => TeamsDevicesFileInputRequestOperatingSystem._(json),
+}; }
+
+static const TeamsDevicesFileInputRequestOperatingSystem windows = TeamsDevicesFileInputRequestOperatingSystem._('windows');
+
+static const TeamsDevicesFileInputRequestOperatingSystem linux = TeamsDevicesFileInputRequestOperatingSystem._('linux');
+
+static const TeamsDevicesFileInputRequestOperatingSystem mac = TeamsDevicesFileInputRequestOperatingSystem._('mac');
+
+static const List<TeamsDevicesFileInputRequestOperatingSystem> values = [windows, linux, mac];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesFileInputRequestOperatingSystem && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesFileInputRequestOperatingSystem($value)'; } 
+ }
+final class TeamsDevicesFileInputRequest {const TeamsDevicesFileInputRequest({this.exists, required this.operatingSystem, required this.path, this.sha256, this.thumbprint, });
+
+factory TeamsDevicesFileInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesFileInputRequest(
+  exists: json['exists'] as bool?,
+  operatingSystem: TeamsDevicesFileInputRequestOperatingSystem.fromJson(json['operating_system'] as String),
+  path: json['path'] as String,
+  sha256: json['sha256'] as String?,
+  thumbprint: json['thumbprint'] as String?,
+); }
+
+/// Whether or not file exists.
+final bool? exists;
+
+/// Operating system.
+final TeamsDevicesFileInputRequestOperatingSystem operatingSystem;
+
+/// File path.
+final String path;
+
+/// SHA-256.
+final String? sha256;
+
+/// Signing certificate thumbprint.
+final String? thumbprint;
+
+Map<String, dynamic> toJson() { return {
+  'exists': ?exists,
+  'operating_system': operatingSystem.toJson(),
+  'path': path,
+  'sha256': ?sha256,
+  'thumbprint': ?thumbprint,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('operating_system') &&
+      json.containsKey('path') && json['path'] is String; } 
+TeamsDevicesFileInputRequest copyWith({bool Function()? exists, TeamsDevicesFileInputRequestOperatingSystem? operatingSystem, String? path, String Function()? sha256, String Function()? thumbprint, }) { return TeamsDevicesFileInputRequest(
+  exists: exists != null ? exists() : this.exists,
+  operatingSystem: operatingSystem ?? this.operatingSystem,
+  path: path ?? this.path,
+  sha256: sha256 != null ? sha256() : this.sha256,
+  thumbprint: thumbprint != null ? thumbprint() : this.thumbprint,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesFileInputRequest &&
+          exists == other.exists &&
+          operatingSystem == other.operatingSystem &&
+          path == other.path &&
+          sha256 == other.sha256 &&
+          thumbprint == other.thumbprint; } 
+@override int get hashCode { return Object.hash(exists, operatingSystem, path, sha256, thumbprint); } 
+@override String toString() { return 'TeamsDevicesFileInputRequest(exists: $exists, operatingSystem: $operatingSystem, path: $path, sha256: $sha256, thumbprint: $thumbprint)'; } 
+ }

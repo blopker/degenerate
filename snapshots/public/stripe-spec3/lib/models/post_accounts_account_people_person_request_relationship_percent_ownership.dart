@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2 {const PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2._(this.value);
+
+factory PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2._(json),
+}; }
+
+static const PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2 $empty = PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2._('');
+
+static const List<PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2($value)'; } 
+ }
+typedef PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnership = OneOf2<double,PostAccountsAccountPeoplePersonRequestRelationshipPercentOwnershipVariant2>;

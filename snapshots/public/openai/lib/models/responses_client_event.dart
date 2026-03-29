@@ -1,0 +1,18 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'model_response_properties.dart';/// Client events accepted by the Responses WebSocket server.
+/// 
+final class ResponsesClientEvent {const ResponsesClientEvent({this.modelResponseProperties});
+
+factory ResponsesClientEvent.fromJson(Map<String, dynamic> json) { return ResponsesClientEvent(
+  modelResponseProperties: ModelResponseProperties.canParse(json) ? ModelResponseProperties.fromJson(json) : null,
+); }
+
+final ModelResponseProperties? modelResponseProperties;
+
+/// At least one variant must be present.
+bool get isValid { return modelResponseProperties != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?modelResponseProperties?.toJson(),
+}; } 
+ }

@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_har_response2_log_creator.dart';import 'urlscanner_get_scan_har_response2_log_entries.dart';import 'urlscanner_get_scan_har_response2_log_pages.dart';final class UrlscannerGetScanHarResponse2Log {const UrlscannerGetScanHarResponse2Log({required this.creator, required this.entries, required this.pages, required this.version, });
+
+factory UrlscannerGetScanHarResponse2Log.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse2Log(
+  creator: UrlscannerGetScanHarResponse2LogCreator.fromJson(json['creator'] as Map<String, dynamic>),
+  entries: (json['entries'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponse2LogEntries.fromJson(e as Map<String, dynamic>)).toList(),
+  pages: (json['pages'] as List<dynamic>).map((e) => UrlscannerGetScanHarResponse2LogPages.fromJson(e as Map<String, dynamic>)).toList(),
+  version: json['version'] as String,
+); }
+
+final UrlscannerGetScanHarResponse2LogCreator creator;
+
+final List<UrlscannerGetScanHarResponse2LogEntries> entries;
+
+final List<UrlscannerGetScanHarResponse2LogPages> pages;
+
+final String version;
+
+Map<String, dynamic> toJson() { return {
+  'creator': creator.toJson(),
+  'entries': entries.map((e) => e.toJson()).toList(),
+  'pages': pages.map((e) => e.toJson()).toList(),
+  'version': version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('creator') &&
+      json.containsKey('entries') &&
+      json.containsKey('pages') &&
+      json.containsKey('version') && json['version'] is String; } 
+UrlscannerGetScanHarResponse2Log copyWith({UrlscannerGetScanHarResponse2LogCreator? creator, List<UrlscannerGetScanHarResponse2LogEntries>? entries, List<UrlscannerGetScanHarResponse2LogPages>? pages, String? version, }) { return UrlscannerGetScanHarResponse2Log(
+  creator: creator ?? this.creator,
+  entries: entries ?? this.entries,
+  pages: pages ?? this.pages,
+  version: version ?? this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanHarResponse2Log &&
+          creator == other.creator &&
+          listEquals(entries, other.entries) &&
+          listEquals(pages, other.pages) &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(creator, Object.hashAll(entries), Object.hashAll(pages), version); } 
+@override String toString() { return 'UrlscannerGetScanHarResponse2Log(creator: $creator, entries: $entries, pages: $pages, version: $version)'; } 
+ }

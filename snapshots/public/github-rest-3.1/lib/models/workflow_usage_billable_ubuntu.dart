@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkflowUsageBillableUbuntu {const WorkflowUsageBillableUbuntu({this.totalMs});
+
+factory WorkflowUsageBillableUbuntu.fromJson(Map<String, dynamic> json) { return WorkflowUsageBillableUbuntu(
+  totalMs: json['total_ms'] != null ? (json['total_ms'] as num).toInt() : null,
+); }
+
+final int? totalMs;
+
+Map<String, dynamic> toJson() { return {
+  'total_ms': ?totalMs,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WorkflowUsageBillableUbuntu copyWith({int Function()? totalMs}) { return WorkflowUsageBillableUbuntu(
+  totalMs: totalMs != null ? totalMs() : this.totalMs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkflowUsageBillableUbuntu &&
+          totalMs == other.totalMs; } 
+@override int get hashCode { return totalMs.hashCode; } 
+@override String toString() { return 'WorkflowUsageBillableUbuntu(totalMs: $totalMs)'; } 
+ }

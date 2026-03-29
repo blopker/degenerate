@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations {const RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_configurations_request_features_subscription_cancel_cancellation_reason_options.dart';final class PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason {const PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason({required this.enabled, required this.options, });
+
+factory PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason.fromJson(Map<String, dynamic> json) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
+  enabled: json['enabled'] as bool,
+  options: OneOf2.parse(json['options'], fromA: (v) => (v as List<dynamic>).map((e) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant1.fromJson(e as String)).toList(), fromB: (v) => PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptionsVariant2.fromJson(v as String),),
+); }
+
+final bool enabled;
+
+final PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions options;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  'options': options.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('options'); } 
+PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason copyWith({bool? enabled, PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReasonOptions? options, }) { return PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(
+  enabled: enabled ?? this.enabled,
+  options: options ?? this.options,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason &&
+          enabled == other.enabled &&
+          options == other.options; } 
+@override int get hashCode { return Object.hash(enabled, options); } 
+@override String toString() { return 'PostBillingPortalConfigurationsRequestFeaturesSubscriptionCancelCancellationReason(enabled: $enabled, options: $options)'; } 
+ }

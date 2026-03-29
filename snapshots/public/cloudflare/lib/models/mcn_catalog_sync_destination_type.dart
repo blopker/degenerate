@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class McnCatalogSyncDestinationType {const McnCatalogSyncDestinationType._(this.value);
+
+factory McnCatalogSyncDestinationType.fromJson(String json) { return switch (json) {
+  'NONE' => none,
+  'ZERO_TRUST_LIST' => zeroTrustList,
+  _ => McnCatalogSyncDestinationType._(json),
+}; }
+
+static const McnCatalogSyncDestinationType none = McnCatalogSyncDestinationType._('NONE');
+
+static const McnCatalogSyncDestinationType zeroTrustList = McnCatalogSyncDestinationType._('ZERO_TRUST_LIST');
+
+static const List<McnCatalogSyncDestinationType> values = [none, zeroTrustList];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is McnCatalogSyncDestinationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'McnCatalogSyncDestinationType($value)'; } 
+ }

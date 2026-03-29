@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Alert frequency (immediate or daily)
+final class PostEventQueryAlertUpdateRequestFrequency {const PostEventQueryAlertUpdateRequestFrequency._(this.value);
+
+factory PostEventQueryAlertUpdateRequestFrequency.fromJson(String json) { return switch (json) {
+  'immediate' => immediate,
+  'daily' => daily,
+  _ => PostEventQueryAlertUpdateRequestFrequency._(json),
+}; }
+
+static const PostEventQueryAlertUpdateRequestFrequency immediate = PostEventQueryAlertUpdateRequestFrequency._('immediate');
+
+static const PostEventQueryAlertUpdateRequestFrequency daily = PostEventQueryAlertUpdateRequestFrequency._('daily');
+
+static const List<PostEventQueryAlertUpdateRequestFrequency> values = [immediate, daily];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostEventQueryAlertUpdateRequestFrequency && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostEventQueryAlertUpdateRequestFrequency($value)'; } 
+ }
+final class PostEventQueryAlertUpdateRequest {const PostEventQueryAlertUpdateRequest({this.enabled, this.frequency, this.notificationType, });
+
+factory PostEventQueryAlertUpdateRequest.fromJson(Map<String, dynamic> json) { return PostEventQueryAlertUpdateRequest(
+  enabled: json['enabled'] as bool?,
+  frequency: json['frequency'] != null ? PostEventQueryAlertUpdateRequestFrequency.fromJson(json['frequency'] as String) : null,
+  notificationType: json['notification_type'] as String?,
+); }
+
+/// Whether the alert is enabled
+final bool? enabled;
+
+/// Alert frequency (immediate or daily)
+final PostEventQueryAlertUpdateRequestFrequency? frequency;
+
+/// Type of notification (e.g., ans)
+final String? notificationType;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': ?enabled,
+  if (frequency != null) 'frequency': frequency?.toJson(),
+  'notification_type': ?notificationType,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostEventQueryAlertUpdateRequest copyWith({bool Function()? enabled, PostEventQueryAlertUpdateRequestFrequency Function()? frequency, String Function()? notificationType, }) { return PostEventQueryAlertUpdateRequest(
+  enabled: enabled != null ? enabled() : this.enabled,
+  frequency: frequency != null ? frequency() : this.frequency,
+  notificationType: notificationType != null ? notificationType() : this.notificationType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostEventQueryAlertUpdateRequest &&
+          enabled == other.enabled &&
+          frequency == other.frequency &&
+          notificationType == other.notificationType; } 
+@override int get hashCode { return Object.hash(enabled, frequency, notificationType); } 
+@override String toString() { return 'PostEventQueryAlertUpdateRequest(enabled: $enabled, frequency: $frequency, notificationType: $notificationType)'; } 
+ }

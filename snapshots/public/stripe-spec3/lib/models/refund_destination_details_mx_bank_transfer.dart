@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class RefundDestinationDetailsMxBankTransfer {const RefundDestinationDetailsMxBankTransfer({this.reference, this.referenceStatus, });
+
+factory RefundDestinationDetailsMxBankTransfer.fromJson(Map<String, dynamic> json) { return RefundDestinationDetailsMxBankTransfer(
+  reference: json['reference'] as String?,
+  referenceStatus: json['reference_status'] as String?,
+); }
+
+/// The reference assigned to the refund.
+final String? reference;
+
+/// Status of the reference on the refund. This can be `pending`, `available` or `unavailable`.
+final String? referenceStatus;
+
+Map<String, dynamic> toJson() { return {
+  'reference': ?reference,
+  'reference_status': ?referenceStatus,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RefundDestinationDetailsMxBankTransfer copyWith({String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsMxBankTransfer(
+  reference: reference != null ? reference() : this.reference,
+  referenceStatus: referenceStatus != null ? referenceStatus() : this.referenceStatus,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RefundDestinationDetailsMxBankTransfer &&
+          reference == other.reference &&
+          referenceStatus == other.referenceStatus; } 
+@override int get hashCode { return Object.hash(reference, referenceStatus); } 
+@override String toString() { return 'RefundDestinationDetailsMxBankTransfer(reference: $reference, referenceStatus: $referenceStatus)'; } 
+ }

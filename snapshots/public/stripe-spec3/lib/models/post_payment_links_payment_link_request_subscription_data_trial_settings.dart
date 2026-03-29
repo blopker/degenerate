@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'trial_settings_config.dart';final class PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2 {const PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2._(this.value);
+
+factory PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2._(json),
+}; }
+
+static const PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2 $empty = PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2._('');
+
+static const List<PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2($value)'; } 
+ }
+typedef PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettings = OneOf2<TrialSettingsConfig,PostPaymentLinksPaymentLinkRequestSubscriptionDataTrialSettingsVariant2>;

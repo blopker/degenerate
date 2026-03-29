@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetClimateProductsProductRequest {const GetClimateProductsProductRequest();
+
+factory GetClimateProductsProductRequest.fromJson(Map<String, dynamic> json) { return GetClimateProductsProductRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetClimateProductsProductRequest copyWith() { return GetClimateProductsProductRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetClimateProductsProductRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetClimateProductsProductRequest()'; } 
+ }

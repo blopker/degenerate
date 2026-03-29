@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse {const AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse({required this.elementId});
+
+factory AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse(
+  elementId: json['elementId'] as String,
+); }
+
+final String elementId;
+
+Map<String, dynamic> toJson() { return {
+  'elementId': elementId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
+AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse copyWith({String? elementId}) { return AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse(
+  elementId: elementId ?? this.elementId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse &&
+          elementId == other.elementId; } 
+@override int get hashCode { return elementId.hashCode; } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteVersionResponseResultElementsConditionalOutputsFalse(elementId: $elementId)'; } 
+ }

@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ListMessagesOrder {const ListMessagesOrder._(this.value);
+
+factory ListMessagesOrder.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => ListMessagesOrder._(json),
+}; }
+
+static const ListMessagesOrder asc = ListMessagesOrder._('asc');
+
+static const ListMessagesOrder desc = ListMessagesOrder._('desc');
+
+static const List<ListMessagesOrder> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ListMessagesOrder && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ListMessagesOrder($value)'; } 
+ }

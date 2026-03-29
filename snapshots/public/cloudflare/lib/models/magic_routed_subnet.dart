@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_cidr.dart';import 'magic_ip_address.dart';import 'magic_nat.dart';final class MagicRoutedSubnet {const MagicRoutedSubnet({this.nat, required this.nextHop, required this.prefix, });
+
+factory MagicRoutedSubnet.fromJson(Map<String, dynamic> json) { return MagicRoutedSubnet(
+  nat: json['nat'] != null ? MagicNat.fromJson(json['nat'] as Map<String, dynamic>) : null,
+  nextHop: MagicIpAddress.fromJson(json['next_hop'] as String),
+  prefix: MagicCidr.fromJson(json['prefix'] as String),
+); }
+
+final MagicNat? nat;
+
+/// A valid IPv4 address.
+final MagicIpAddress nextHop;
+
+/// A valid CIDR notation representing an IP range.
+final MagicCidr prefix;
+
+Map<String, dynamic> toJson() { return {
+  if (nat != null) 'nat': nat?.toJson(),
+  'next_hop': nextHop.toJson(),
+  'prefix': prefix.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('next_hop') &&
+      json.containsKey('prefix'); } 
+MagicRoutedSubnet copyWith({MagicNat Function()? nat, MagicIpAddress? nextHop, MagicCidr? prefix, }) { return MagicRoutedSubnet(
+  nat: nat != null ? nat() : this.nat,
+  nextHop: nextHop ?? this.nextHop,
+  prefix: prefix ?? this.prefix,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicRoutedSubnet &&
+          nat == other.nat &&
+          nextHop == other.nextHop &&
+          prefix == other.prefix; } 
+@override int get hashCode { return Object.hash(nat, nextHop, prefix); } 
+@override String toString() { return 'MagicRoutedSubnet(nat: $nat, nextHop: $nextHop, prefix: $prefix)'; } 
+ }

@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_post_quantum_timeseries_groups_response_result_meta_confidence_info_annotations.dart';final class RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo {const RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo({required this.annotations, required this.level, });
+
+factory RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo.fromJson(Map<String, dynamic> json) { return RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo(
+  annotations: (json['annotations'] as List<dynamic>).map((e) => RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfoAnnotations.fromJson(e as Map<String, dynamic>)).toList(),
+  level: (json['level'] as num).toInt(),
+); }
+
+final List<RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfoAnnotations> annotations;
+
+/// Provides an indication of how much confidence Cloudflare has in the data.
+final int level;
+
+Map<String, dynamic> toJson() { return {
+  'annotations': annotations.map((e) => e.toJson()).toList(),
+  'level': level,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('annotations') &&
+      json.containsKey('level') && json['level'] is num; } 
+RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo copyWith({List<RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfoAnnotations>? annotations, int? level, }) { return RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo(
+  annotations: annotations ?? this.annotations,
+  level: level ?? this.level,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo &&
+          listEquals(annotations, other.annotations) &&
+          level == other.level; } 
+@override int get hashCode { return Object.hash(Object.hashAll(annotations), level); } 
+@override String toString() { return 'RadarGetOriginPostQuantumTimeseriesGroupsResponseResultMetaConfidenceInfo(annotations: $annotations, level: $level)'; } 
+ }

@@ -1,0 +1,127 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject._(this.value);
+
+factory InvoiceRenderingTemplateObject.fromJson(String json) { return switch (json) {
+  'invoice_rendering_template' => invoiceRenderingTemplate,
+  _ => InvoiceRenderingTemplateObject._(json),
+}; }
+
+static const InvoiceRenderingTemplateObject invoiceRenderingTemplate = InvoiceRenderingTemplateObject._('invoice_rendering_template');
+
+static const List<InvoiceRenderingTemplateObject> values = [invoiceRenderingTemplate];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InvoiceRenderingTemplateObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InvoiceRenderingTemplateObject($value)'; } 
+ }
+/// The status of the template, one of `active` or `archived`.
+final class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus._(this.value);
+
+factory InvoiceRenderingTemplateStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'archived' => archived,
+  _ => InvoiceRenderingTemplateStatus._(json),
+}; }
+
+static const InvoiceRenderingTemplateStatus active = InvoiceRenderingTemplateStatus._('active');
+
+static const InvoiceRenderingTemplateStatus archived = InvoiceRenderingTemplateStatus._('archived');
+
+static const List<InvoiceRenderingTemplateStatus> values = [active, archived];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InvoiceRenderingTemplateStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InvoiceRenderingTemplateStatus($value)'; } 
+ }
+/// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates
+/// can be created from within the Dashboard, and they can be used over the API when creating invoices.
+final class InvoiceRenderingTemplate {const InvoiceRenderingTemplate({required this.created, required this.id, required this.livemode, this.metadata, this.nickname, required this.object, required this.status, required this.version, });
+
+factory InvoiceRenderingTemplate.fromJson(Map<String, dynamic> json) { return InvoiceRenderingTemplate(
+  created: (json['created'] as num).toInt(),
+  id: json['id'] as String,
+  livemode: json['livemode'] as bool,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  nickname: json['nickname'] as String?,
+  object: InvoiceRenderingTemplateObject.fromJson(json['object'] as String),
+  status: InvoiceRenderingTemplateStatus.fromJson(json['status'] as String),
+  version: (json['version'] as num).toInt(),
+); }
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String>? metadata;
+
+/// A brief description of the template, hidden from customers
+final String? nickname;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final InvoiceRenderingTemplateObject object;
+
+/// The status of the template, one of `active` or `archived`.
+final InvoiceRenderingTemplateStatus status;
+
+/// Version of this template; version increases by one when an update on the template changes any field that controls invoice rendering
+final int version;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  'id': id,
+  'livemode': livemode,
+  'metadata': ?metadata,
+  'nickname': ?nickname,
+  'object': object.toJson(),
+  'status': status.toJson(),
+  'version': version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('status') &&
+      json.containsKey('version') && json['version'] is num; } 
+InvoiceRenderingTemplate copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, InvoiceRenderingTemplateObject? object, InvoiceRenderingTemplateStatus? status, int? version, }) { return InvoiceRenderingTemplate(
+  created: created ?? this.created,
+  id: id ?? this.id,
+  livemode: livemode ?? this.livemode,
+  metadata: metadata != null ? metadata() : this.metadata,
+  nickname: nickname != null ? nickname() : this.nickname,
+  object: object ?? this.object,
+  status: status ?? this.status,
+  version: version ?? this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoiceRenderingTemplate &&
+          created == other.created &&
+          id == other.id &&
+          livemode == other.livemode &&
+          metadata == other.metadata &&
+          nickname == other.nickname &&
+          object == other.object &&
+          status == other.status &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(created, id, livemode, metadata, nickname, object, status, version); } 
+@override String toString() { return 'InvoiceRenderingTemplate(created: $created, id: $id, livemode: $livemode, metadata: $metadata, nickname: $nickname, object: $object, status: $status, version: $version)'; } 
+ }

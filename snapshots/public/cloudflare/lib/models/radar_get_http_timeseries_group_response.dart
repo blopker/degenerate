@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_http_timeseries_group_response_result.dart';final class RadarGetHttpTimeseriesGroupResponse {const RadarGetHttpTimeseriesGroupResponse({required this.result, required this.success, });
+
+factory RadarGetHttpTimeseriesGroupResponse.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupResponse(
+  result: RadarGetHttpTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final RadarGetHttpTimeseriesGroupResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+RadarGetHttpTimeseriesGroupResponse copyWith({RadarGetHttpTimeseriesGroupResponseResult? result, bool? success, }) { return RadarGetHttpTimeseriesGroupResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupResponse(result: $result, success: $success)'; } 
+ }

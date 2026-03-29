@@ -1,0 +1,151 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhooks_comment_reactions.dart';import 'webhooks_comment_user.dart';/// How the author is associated with the repository.
+final class WebhooksCommentAuthorAssociation {const WebhooksCommentAuthorAssociation._(this.value);
+
+factory WebhooksCommentAuthorAssociation.fromJson(String json) { return switch (json) {
+  'COLLABORATOR' => collaborator,
+  'CONTRIBUTOR' => contributor,
+  'FIRST_TIMER' => firstTimer,
+  'FIRST_TIME_CONTRIBUTOR' => firstTimeContributor,
+  'MANNEQUIN' => mannequin,
+  'MEMBER' => member,
+  'NONE' => none,
+  'OWNER' => owner,
+  _ => WebhooksCommentAuthorAssociation._(json),
+}; }
+
+static const WebhooksCommentAuthorAssociation collaborator = WebhooksCommentAuthorAssociation._('COLLABORATOR');
+
+static const WebhooksCommentAuthorAssociation contributor = WebhooksCommentAuthorAssociation._('CONTRIBUTOR');
+
+static const WebhooksCommentAuthorAssociation firstTimer = WebhooksCommentAuthorAssociation._('FIRST_TIMER');
+
+static const WebhooksCommentAuthorAssociation firstTimeContributor = WebhooksCommentAuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+
+static const WebhooksCommentAuthorAssociation mannequin = WebhooksCommentAuthorAssociation._('MANNEQUIN');
+
+static const WebhooksCommentAuthorAssociation member = WebhooksCommentAuthorAssociation._('MEMBER');
+
+static const WebhooksCommentAuthorAssociation none = WebhooksCommentAuthorAssociation._('NONE');
+
+static const WebhooksCommentAuthorAssociation owner = WebhooksCommentAuthorAssociation._('OWNER');
+
+static const List<WebhooksCommentAuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhooksCommentAuthorAssociation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhooksCommentAuthorAssociation($value)'; } 
+ }
+final class WebhooksComment {const WebhooksComment({required this.authorAssociation, required this.body, required this.childCommentCount, required this.createdAt, required this.discussionId, required this.htmlUrl, required this.id, required this.nodeId, required this.parentId, required this.reactions, required this.repositoryUrl, required this.updatedAt, required this.user, });
+
+factory WebhooksComment.fromJson(Map<String, dynamic> json) { return WebhooksComment(
+  authorAssociation: WebhooksCommentAuthorAssociation.fromJson(json['author_association'] as String),
+  body: json['body'] as String,
+  childCommentCount: (json['child_comment_count'] as num).toInt(),
+  createdAt: json['created_at'] as String,
+  discussionId: (json['discussion_id'] as num).toInt(),
+  htmlUrl: json['html_url'] as String,
+  id: (json['id'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  parentId: json['parent_id'] != null ? (json['parent_id'] as num).toInt() : null,
+  reactions: WebhooksCommentReactions.fromJson(json['reactions'] as Map<String, dynamic>),
+  repositoryUrl: json['repository_url'] as String,
+  updatedAt: json['updated_at'] as String,
+  user: json['user'] != null ? WebhooksCommentUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+); }
+
+/// How the author is associated with the repository.
+final WebhooksCommentAuthorAssociation authorAssociation;
+
+final String body;
+
+final int childCommentCount;
+
+final String createdAt;
+
+final int discussionId;
+
+final String htmlUrl;
+
+final int id;
+
+final String nodeId;
+
+final int? parentId;
+
+final WebhooksCommentReactions reactions;
+
+final String repositoryUrl;
+
+final String updatedAt;
+
+final WebhooksCommentUser? user;
+
+Map<String, dynamic> toJson() { return {
+  'author_association': authorAssociation.toJson(),
+  'body': body,
+  'child_comment_count': childCommentCount,
+  'created_at': createdAt,
+  'discussion_id': discussionId,
+  'html_url': htmlUrl,
+  'id': id,
+  'node_id': nodeId,
+  'parent_id': ?parentId,
+  'reactions': reactions.toJson(),
+  'repository_url': repositoryUrl,
+  'updated_at': updatedAt,
+  if (user != null) 'user': user?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('author_association') &&
+      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('child_comment_count') && json['child_comment_count'] is num &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('discussion_id') && json['discussion_id'] is num &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('parent_id') && json['parent_id'] is num &&
+      json.containsKey('reactions') &&
+      json.containsKey('repository_url') && json['repository_url'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('user'); } 
+WebhooksComment copyWith({WebhooksCommentAuthorAssociation? authorAssociation, String? body, int? childCommentCount, String? createdAt, int? discussionId, String? htmlUrl, int? id, String? nodeId, int? Function()? parentId, WebhooksCommentReactions? reactions, String? repositoryUrl, String? updatedAt, WebhooksCommentUser? Function()? user, }) { return WebhooksComment(
+  authorAssociation: authorAssociation ?? this.authorAssociation,
+  body: body ?? this.body,
+  childCommentCount: childCommentCount ?? this.childCommentCount,
+  createdAt: createdAt ?? this.createdAt,
+  discussionId: discussionId ?? this.discussionId,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id ?? this.id,
+  nodeId: nodeId ?? this.nodeId,
+  parentId: parentId != null ? parentId() : this.parentId,
+  reactions: reactions ?? this.reactions,
+  repositoryUrl: repositoryUrl ?? this.repositoryUrl,
+  updatedAt: updatedAt ?? this.updatedAt,
+  user: user != null ? user() : this.user,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhooksComment &&
+          authorAssociation == other.authorAssociation &&
+          body == other.body &&
+          childCommentCount == other.childCommentCount &&
+          createdAt == other.createdAt &&
+          discussionId == other.discussionId &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          parentId == other.parentId &&
+          reactions == other.reactions &&
+          repositoryUrl == other.repositoryUrl &&
+          updatedAt == other.updatedAt &&
+          user == other.user; } 
+@override int get hashCode { return Object.hash(authorAssociation, body, childCommentCount, createdAt, discussionId, htmlUrl, id, nodeId, parentId, reactions, repositoryUrl, updatedAt, user); } 
+@override String toString() { return 'WebhooksComment(authorAssociation: $authorAssociation, body: $body, childCommentCount: $childCommentCount, createdAt: $createdAt, discussionId: $discussionId, htmlUrl: $htmlUrl, id: $id, nodeId: $nodeId, parentId: $parentId, reactions: $reactions, repositoryUrl: $repositoryUrl, updatedAt: $updatedAt, user: $user)'; } 
+ }

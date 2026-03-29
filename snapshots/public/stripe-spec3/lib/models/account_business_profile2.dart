@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'account_business_profile.dart';/// Business information about the account.
+final class AccountBusinessProfile2 {const AccountBusinessProfile2({this.accountBusinessProfile});
+
+factory AccountBusinessProfile2.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile2(
+  accountBusinessProfile: AccountBusinessProfile.canParse(json) ? AccountBusinessProfile.fromJson(json) : null,
+); }
+
+final AccountBusinessProfile? accountBusinessProfile;
+
+/// At least one variant must be present.
+bool get isValid { return accountBusinessProfile != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?accountBusinessProfile?.toJson(),
+}; } 
+ }

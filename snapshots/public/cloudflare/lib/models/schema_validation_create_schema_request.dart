@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The kind of the schema
+final class SchemaValidationCreateSchemaRequestKind {const SchemaValidationCreateSchemaRequestKind._(this.value);
+
+factory SchemaValidationCreateSchemaRequestKind.fromJson(String json) { return switch (json) {
+  'openapi_v3' => openapiV3,
+  _ => SchemaValidationCreateSchemaRequestKind._(json),
+}; }
+
+static const SchemaValidationCreateSchemaRequestKind openapiV3 = SchemaValidationCreateSchemaRequestKind._('openapi_v3');
+
+static const List<SchemaValidationCreateSchemaRequestKind> values = [openapiV3];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SchemaValidationCreateSchemaRequestKind && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SchemaValidationCreateSchemaRequestKind($value)'; } 
+ }
+final class SchemaValidationCreateSchemaRequest {const SchemaValidationCreateSchemaRequest({required this.kind, required this.name, required this.source, required this.validationEnabled, });
+
+factory SchemaValidationCreateSchemaRequest.fromJson(Map<String, dynamic> json) { return SchemaValidationCreateSchemaRequest(
+  kind: SchemaValidationCreateSchemaRequestKind.fromJson(json['kind'] as String),
+  name: json['name'] as String,
+  source: json['source'] as String,
+  validationEnabled: json['validation_enabled'] as bool,
+); }
+
+/// The kind of the schema
+final SchemaValidationCreateSchemaRequestKind kind;
+
+/// A human-readable name for the schema
+final String name;
+
+/// The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
+final String source;
+
+/// An indicator if this schema is enabled
+final bool validationEnabled;
+
+Map<String, dynamic> toJson() { return {
+  'kind': kind.toJson(),
+  'name': name,
+  'source': source,
+  'validation_enabled': validationEnabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind') &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('source') && json['source'] is String &&
+      json.containsKey('validation_enabled') && json['validation_enabled'] is bool; } 
+SchemaValidationCreateSchemaRequest copyWith({SchemaValidationCreateSchemaRequestKind? kind, String? name, String? source, bool? validationEnabled, }) { return SchemaValidationCreateSchemaRequest(
+  kind: kind ?? this.kind,
+  name: name ?? this.name,
+  source: source ?? this.source,
+  validationEnabled: validationEnabled ?? this.validationEnabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SchemaValidationCreateSchemaRequest &&
+          kind == other.kind &&
+          name == other.name &&
+          source == other.source &&
+          validationEnabled == other.validationEnabled; } 
+@override int get hashCode { return Object.hash(kind, name, source, validationEnabled); } 
+@override String toString() { return 'SchemaValidationCreateSchemaRequest(kind: $kind, name: $name, source: $source, validationEnabled: $validationEnabled)'; } 
+ }

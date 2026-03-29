@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_netflows_timeseries_response_result_meta_confidence_info.dart';import 'radar_get_netflows_timeseries_response_result_meta_date_range.dart';import 'radar_get_netflows_timeseries_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetNetflowsTimeseriesResponseResultMetaAggInterval {const RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetNetflowsTimeseriesResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaAggInterval fifteenMinutes = RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaAggInterval oneHour = RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaAggInterval oneDay = RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaAggInterval oneWeek = RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaAggInterval oneMonth = RadarGetNetflowsTimeseriesResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetNetflowsTimeseriesResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetNetflowsTimeseriesResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsTimeseriesResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetNetflowsTimeseriesResponseResultMetaNormalization {const RadarGetNetflowsTimeseriesResponseResultMetaNormalization._(this.value);
+
+factory RadarGetNetflowsTimeseriesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetNetflowsTimeseriesResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization percentage = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization min0Max = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization minMax = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization rawValues = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization percentageChange = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization rollingAverage = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization overlappedPercentage = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetNetflowsTimeseriesResponseResultMetaNormalization ratio = RadarGetNetflowsTimeseriesResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetNetflowsTimeseriesResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetNetflowsTimeseriesResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsTimeseriesResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetNetflowsTimeseriesResponseResultMeta {const RadarGetNetflowsTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetNetflowsTimeseriesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsTimeseriesResponseResultMeta(
+  aggInterval: RadarGetNetflowsTimeseriesResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetNetflowsTimeseriesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetNetflowsTimeseriesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetNetflowsTimeseriesResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetNetflowsTimeseriesResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetNetflowsTimeseriesResponseResultMetaAggInterval aggInterval;
+
+final RadarGetNetflowsTimeseriesResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetNetflowsTimeseriesResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetNetflowsTimeseriesResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetNetflowsTimeseriesResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetNetflowsTimeseriesResponseResultMeta copyWith({RadarGetNetflowsTimeseriesResponseResultMetaAggInterval? aggInterval, RadarGetNetflowsTimeseriesResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetNetflowsTimeseriesResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetNetflowsTimeseriesResponseResultMetaNormalization? normalization, List<RadarGetNetflowsTimeseriesResponseResultMetaUnits>? units, }) { return RadarGetNetflowsTimeseriesResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetNetflowsTimeseriesResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetNetflowsTimeseriesResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

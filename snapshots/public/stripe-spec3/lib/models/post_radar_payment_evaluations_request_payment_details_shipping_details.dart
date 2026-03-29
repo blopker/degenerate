@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_radar_payment_evaluations_request_payment_details_shipping_details_address.dart';final class PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails {const PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails({this.address, this.name, this.phone, });
+
+factory PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails.fromJson(Map<String, dynamic> json) { return PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails(
+  address: json['address'] != null ? PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  name: json['name'] as String?,
+  phone: json['phone'] as String?,
+); }
+
+final PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetailsAddress? address;
+
+final String? name;
+
+final String? phone;
+
+Map<String, dynamic> toJson() { return {
+  if (address != null) 'address': address?.toJson(),
+  'name': ?name,
+  'phone': ?phone,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails copyWith({PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetailsAddress Function()? address, String Function()? name, String Function()? phone, }) { return PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails(
+  address: address != null ? address() : this.address,
+  name: name != null ? name() : this.name,
+  phone: phone != null ? phone() : this.phone,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails &&
+          address == other.address &&
+          name == other.name &&
+          phone == other.phone; } 
+@override int get hashCode { return Object.hash(address, name, phone); } 
+@override String toString() { return 'PostRadarPaymentEvaluationsRequestPaymentDetailsShippingDetails(address: $address, name: $name, phone: $phone)'; } 
+ }

@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RemovedFromProjectIssueEventProjectCard {const RemovedFromProjectIssueEventProjectCard({required this.id, required this.url, required this.projectId, required this.projectUrl, required this.columnName, this.previousColumnName, });
+
+factory RemovedFromProjectIssueEventProjectCard.fromJson(Map<String, dynamic> json) { return RemovedFromProjectIssueEventProjectCard(
+  id: (json['id'] as num).toInt(),
+  url: Uri.parse(json['url'] as String),
+  projectId: (json['project_id'] as num).toInt(),
+  projectUrl: Uri.parse(json['project_url'] as String),
+  columnName: json['column_name'] as String,
+  previousColumnName: json['previous_column_name'] as String?,
+); }
+
+final int id;
+
+final Uri url;
+
+final int projectId;
+
+final Uri projectUrl;
+
+final String columnName;
+
+final String? previousColumnName;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'url': url.toString(),
+  'project_id': projectId,
+  'project_url': projectUrl.toString(),
+  'column_name': columnName,
+  'previous_column_name': ?previousColumnName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('project_id') && json['project_id'] is num &&
+      json.containsKey('project_url') && json['project_url'] is String &&
+      json.containsKey('column_name') && json['column_name'] is String; } 
+RemovedFromProjectIssueEventProjectCard copyWith({int? id, Uri? url, int? projectId, Uri? projectUrl, String? columnName, String Function()? previousColumnName, }) { return RemovedFromProjectIssueEventProjectCard(
+  id: id ?? this.id,
+  url: url ?? this.url,
+  projectId: projectId ?? this.projectId,
+  projectUrl: projectUrl ?? this.projectUrl,
+  columnName: columnName ?? this.columnName,
+  previousColumnName: previousColumnName != null ? previousColumnName() : this.previousColumnName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RemovedFromProjectIssueEventProjectCard &&
+          id == other.id &&
+          url == other.url &&
+          projectId == other.projectId &&
+          projectUrl == other.projectUrl &&
+          columnName == other.columnName &&
+          previousColumnName == other.previousColumnName; } 
+@override int get hashCode { return Object.hash(id, url, projectId, projectUrl, columnName, previousColumnName); } 
+@override String toString() { return 'RemovedFromProjectIssueEventProjectCard(id: $id, url: $url, projectId: $projectId, projectUrl: $projectUrl, columnName: $columnName, previousColumnName: $previousColumnName)'; } 
+ }

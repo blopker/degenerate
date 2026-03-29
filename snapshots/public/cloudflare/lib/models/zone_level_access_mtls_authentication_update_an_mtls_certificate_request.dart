@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_certificates_components_schemas_name2.dart';final class ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest {const ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest({required this.associatedHostnames, this.name, });
+
+factory ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest.fromJson(Map<String, dynamic> json) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
+  associatedHostnames: (json['associated_hostnames'] as List<dynamic>).map((e) => e as String).toList(),
+  name: json['name'] != null ? AccessCertificatesComponentsSchemasName2.fromJson(json['name'] as String) : null,
+); }
+
+/// The hostnames of the applications that will use this certificate.
+final List<String> associatedHostnames;
+
+/// The name of the certificate.
+final AccessCertificatesComponentsSchemasName2? name;
+
+Map<String, dynamic> toJson() { return {
+  'associated_hostnames': associatedHostnames,
+  if (name != null) 'name': name?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('associated_hostnames'); } 
+ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest copyWith({List<String>? associatedHostnames, AccessCertificatesComponentsSchemasName2 Function()? name, }) { return ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(
+  associatedHostnames: associatedHostnames ?? this.associatedHostnames,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest &&
+          listEquals(associatedHostnames, other.associatedHostnames) &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(Object.hashAll(associatedHostnames), name); } 
+@override String toString() { return 'ZoneLevelAccessMtlsAuthenticationUpdateAnMtlsCertificateRequest(associatedHostnames: $associatedHostnames, name: $name)'; } 
+ }

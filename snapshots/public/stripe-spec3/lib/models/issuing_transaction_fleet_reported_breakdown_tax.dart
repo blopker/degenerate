@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_transaction_fleet_tax_data.dart';/// Information about tax included in this transaction.
+final class IssuingTransactionFleetReportedBreakdownTax {const IssuingTransactionFleetReportedBreakdownTax({this.issuingTransactionFleetTaxData});
+
+factory IssuingTransactionFleetReportedBreakdownTax.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetReportedBreakdownTax(
+  issuingTransactionFleetTaxData: IssuingTransactionFleetTaxData.canParse(json) ? IssuingTransactionFleetTaxData.fromJson(json) : null,
+); }
+
+final IssuingTransactionFleetTaxData? issuingTransactionFleetTaxData;
+
+/// At least one variant must be present.
+bool get isValid { return issuingTransactionFleetTaxData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingTransactionFleetTaxData?.toJson(),
+}; } 
+ }

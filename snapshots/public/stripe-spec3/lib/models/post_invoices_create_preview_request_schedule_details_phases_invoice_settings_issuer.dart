@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType._(this.value);
+
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'self' => self,
+  _ => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType._(json),
+}; }
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType account = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType._('account');
+
+static const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType self = PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType._('self');
+
+static const List<PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType> values = [account, self];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType($value)'; } 
+ }
+final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer({this.account, required this.type, });
+
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer(
+  account: json['account'] as String?,
+  type: PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType.fromJson(json['type'] as String),
+); }
+
+final String? account;
+
+final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType type;
+
+Map<String, dynamic> toJson() { return {
+  'account': ?account,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer copyWith({String Function()? account, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuerType? type, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer(
+  account: account != null ? account() : this.account,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer &&
+          account == other.account &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(account, type); } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesInvoiceSettingsIssuer(account: $account, type: $type)'; } 
+ }

@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The operator to use for matching.
+final class RepositoryRuleCommitterEmailPatternParametersOperator {const RepositoryRuleCommitterEmailPatternParametersOperator._(this.value);
+
+factory RepositoryRuleCommitterEmailPatternParametersOperator.fromJson(String json) { return switch (json) {
+  'starts_with' => startsWith,
+  'ends_with' => endsWith,
+  'contains' => contains,
+  'regex' => regex,
+  _ => RepositoryRuleCommitterEmailPatternParametersOperator._(json),
+}; }
+
+static const RepositoryRuleCommitterEmailPatternParametersOperator startsWith = RepositoryRuleCommitterEmailPatternParametersOperator._('starts_with');
+
+static const RepositoryRuleCommitterEmailPatternParametersOperator endsWith = RepositoryRuleCommitterEmailPatternParametersOperator._('ends_with');
+
+static const RepositoryRuleCommitterEmailPatternParametersOperator contains = RepositoryRuleCommitterEmailPatternParametersOperator._('contains');
+
+static const RepositoryRuleCommitterEmailPatternParametersOperator regex = RepositoryRuleCommitterEmailPatternParametersOperator._('regex');
+
+static const List<RepositoryRuleCommitterEmailPatternParametersOperator> values = [startsWith, endsWith, contains, regex];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRuleCommitterEmailPatternParametersOperator && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRuleCommitterEmailPatternParametersOperator($value)'; } 
+ }
+final class RepositoryRuleCommitterEmailPatternParameters {const RepositoryRuleCommitterEmailPatternParameters({this.name, this.negate, required this.$operator, required this.pattern, });
+
+factory RepositoryRuleCommitterEmailPatternParameters.fromJson(Map<String, dynamic> json) { return RepositoryRuleCommitterEmailPatternParameters(
+  name: json['name'] as String?,
+  negate: json['negate'] as bool?,
+  $operator: RepositoryRuleCommitterEmailPatternParametersOperator.fromJson(json['operator'] as String),
+  pattern: json['pattern'] as String,
+); }
+
+/// How this rule appears when configuring it.
+final String? name;
+
+/// If true, the rule will fail if the pattern matches.
+final bool? negate;
+
+/// The operator to use for matching.
+final RepositoryRuleCommitterEmailPatternParametersOperator $operator;
+
+/// The pattern to match with.
+final String pattern;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  'negate': ?negate,
+  'operator': $operator.toJson(),
+  'pattern': pattern,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('operator') &&
+      json.containsKey('pattern') && json['pattern'] is String; } 
+RepositoryRuleCommitterEmailPatternParameters copyWith({String Function()? name, bool Function()? negate, RepositoryRuleCommitterEmailPatternParametersOperator? $operator, String? pattern, }) { return RepositoryRuleCommitterEmailPatternParameters(
+  name: name != null ? name() : this.name,
+  negate: negate != null ? negate() : this.negate,
+  $operator: $operator ?? this.$operator,
+  pattern: pattern ?? this.pattern,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRuleCommitterEmailPatternParameters &&
+          name == other.name &&
+          negate == other.negate &&
+          $operator == other.$operator &&
+          pattern == other.pattern; } 
+@override int get hashCode { return Object.hash(name, negate, $operator, pattern); } 
+@override String toString() { return 'RepositoryRuleCommitterEmailPatternParameters(name: $name, negate: $negate, \$operator: ${$operator}, pattern: $pattern)'; } 
+ }

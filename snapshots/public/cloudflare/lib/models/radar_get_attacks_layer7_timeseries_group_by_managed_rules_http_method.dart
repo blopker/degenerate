@@ -1,0 +1,158 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._(this.value);
+
+factory RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod.fromJson(String json) { return switch (json) {
+  'GET' => $get,
+  'POST' => post,
+  'DELETE' => delete,
+  'PUT' => put,
+  'HEAD' => head,
+  'PURGE' => purge,
+  'OPTIONS' => options,
+  'PROPFIND' => propfind,
+  'MKCOL' => mkcol,
+  'PATCH' => patch,
+  'ACL' => acl,
+  'BCOPY' => bcopy,
+  'BDELETE' => bdelete,
+  'BMOVE' => bmove,
+  'BPROPFIND' => bpropfind,
+  'BPROPPATCH' => bproppatch,
+  'CHECKIN' => checkin,
+  'CHECKOUT' => checkout,
+  'CONNECT' => connect,
+  'COPY' => copy,
+  'LABEL' => label,
+  'LOCK' => lock,
+  'MERGE' => merge,
+  'MKACTIVITY' => mkactivity,
+  'MKWORKSPACE' => mkworkspace,
+  'MOVE' => move,
+  'NOTIFY' => notify,
+  'ORDERPATCH' => orderpatch,
+  'POLL' => poll,
+  'PROPPATCH' => proppatch,
+  'REPORT' => report,
+  'SEARCH' => search,
+  'SUBSCRIBE' => subscribe,
+  'TRACE' => trace,
+  'UNCHECKOUT' => uncheckout,
+  'UNLOCK' => unlock,
+  'UNSUBSCRIBE' => unsubscribe,
+  'UPDATE' => update,
+  'VERSIONCONTROL' => versioncontrol,
+  'BASELINECONTROL' => baselinecontrol,
+  'XMSENUMATTS' => xmsenumatts,
+  'RPC_OUT_DATA' => rpcOutData,
+  'RPC_IN_DATA' => rpcInData,
+  'JSON' => $json,
+  'COOK' => cook,
+  'TRACK' => track,
+  _ => RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._(json),
+}; }
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod $get = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('GET');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod post = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('POST');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod delete = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('DELETE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod put = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('PUT');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod head = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('HEAD');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod purge = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('PURGE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod options = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('OPTIONS');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod propfind = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('PROPFIND');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod mkcol = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('MKCOL');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod patch = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('PATCH');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod acl = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('ACL');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod bcopy = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('BCOPY');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod bdelete = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('BDELETE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod bmove = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('BMOVE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod bpropfind = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('BPROPFIND');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod bproppatch = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('BPROPPATCH');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod checkin = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('CHECKIN');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod checkout = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('CHECKOUT');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod connect = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('CONNECT');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod copy = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('COPY');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod label = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('LABEL');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod lock = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('LOCK');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod merge = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('MERGE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod mkactivity = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('MKACTIVITY');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod mkworkspace = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('MKWORKSPACE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod move = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('MOVE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod notify = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('NOTIFY');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod orderpatch = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('ORDERPATCH');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod poll = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('POLL');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod proppatch = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('PROPPATCH');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod report = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('REPORT');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod search = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('SEARCH');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod subscribe = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('SUBSCRIBE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod trace = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('TRACE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod uncheckout = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('UNCHECKOUT');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod unlock = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('UNLOCK');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod unsubscribe = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('UNSUBSCRIBE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod update = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('UPDATE');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod versioncontrol = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('VERSIONCONTROL');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod baselinecontrol = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('BASELINECONTROL');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod xmsenumatts = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('XMSENUMATTS');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod rpcOutData = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('RPC_OUT_DATA');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod rpcInData = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('RPC_IN_DATA');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod $json = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('JSON');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod cook = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('COOK');
+
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod track = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod._('TRACK');
+
+static const List<RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7TimeseriesGroupByManagedRulesHttpMethod($value)'; } 
+ }

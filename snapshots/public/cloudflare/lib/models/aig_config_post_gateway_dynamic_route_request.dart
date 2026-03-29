@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_post_gateway_dynamic_route_request_elements.dart';import 'aig_config_post_gateway_dynamic_route_request_elements_conditional.dart';import 'aig_config_post_gateway_dynamic_route_request_elements_end.dart';import 'aig_config_post_gateway_dynamic_route_request_elements_model.dart';import 'aig_config_post_gateway_dynamic_route_request_elements_percentage.dart';import 'aig_config_post_gateway_dynamic_route_request_elements_rate.dart';import 'aig_config_post_gateway_dynamic_route_request_elements_start.dart';final class AigConfigPostGatewayDynamicRouteRequest {const AigConfigPostGatewayDynamicRouteRequest({required this.elements, required this.name, });
+
+factory AigConfigPostGatewayDynamicRouteRequest.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteRequest(
+  elements: (json['elements'] as List<dynamic>).map((e) => OneOf6.parse(e, fromA: (v) => AigConfigPostGatewayDynamicRouteRequestElementsStart.fromJson(v as Map<String, dynamic>), fromB: (v) => AigConfigPostGatewayDynamicRouteRequestElementsConditional.fromJson(v as Map<String, dynamic>), fromC: (v) => AigConfigPostGatewayDynamicRouteRequestElementsPercentage.fromJson(v as Map<String, dynamic>), fromD: (v) => AigConfigPostGatewayDynamicRouteRequestElementsRate.fromJson(v as Map<String, dynamic>), fromE: (v) => AigConfigPostGatewayDynamicRouteRequestElementsModel.fromJson(v as Map<String, dynamic>), fromF: (v) => AigConfigPostGatewayDynamicRouteRequestElementsEnd.fromJson(v as Map<String, dynamic>),)).toList(),
+  name: json['name'] as String,
+); }
+
+final List<AigConfigPostGatewayDynamicRouteRequestElements> elements;
+
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'elements': elements.map((e) => e.toJson()).toList(),
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('elements') &&
+      json.containsKey('name') && json['name'] is String; } 
+AigConfigPostGatewayDynamicRouteRequest copyWith({List<AigConfigPostGatewayDynamicRouteRequestElements>? elements, String? name, }) { return AigConfigPostGatewayDynamicRouteRequest(
+  elements: elements ?? this.elements,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteRequest &&
+          listEquals(elements, other.elements) &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(Object.hashAll(elements), name); } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteRequest(elements: $elements, name: $name)'; } 
+ }

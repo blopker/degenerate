@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue {const WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue({required this.href});
+
+factory WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue.fromJson(Map<String, dynamic> json) { return WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
+  href: json['href'] as String,
+); }
+
+final String href;
+
+Map<String, dynamic> toJson() { return {
+  'href': href,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
+WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue copyWith({String? href}) { return WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(
+  href: href ?? this.href,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue &&
+          href == other.href; } 
+@override int get hashCode { return href.hashCode; } 
+@override String toString() { return 'WebhookPullRequestAutoMergeDisabledPullRequestLinksIssue(href: $href)'; } 
+ }

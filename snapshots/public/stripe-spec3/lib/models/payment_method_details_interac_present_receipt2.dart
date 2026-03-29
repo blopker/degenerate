@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_interac_present_receipt.dart';/// A collection of fields required to be displayed on receipts. Only required for EMV transactions.
+final class PaymentMethodDetailsInteracPresentReceipt2 {const PaymentMethodDetailsInteracPresentReceipt2({this.paymentMethodDetailsInteracPresentReceipt});
+
+factory PaymentMethodDetailsInteracPresentReceipt2.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsInteracPresentReceipt2(
+  paymentMethodDetailsInteracPresentReceipt: PaymentMethodDetailsInteracPresentReceipt.canParse(json) ? PaymentMethodDetailsInteracPresentReceipt.fromJson(json) : null,
+); }
+
+final PaymentMethodDetailsInteracPresentReceipt? paymentMethodDetailsInteracPresentReceipt;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodDetailsInteracPresentReceipt != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodDetailsInteracPresentReceipt?.toJson(),
+}; } 
+ }

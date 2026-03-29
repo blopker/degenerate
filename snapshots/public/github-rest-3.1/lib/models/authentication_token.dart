@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';/// Describe whether all repositories have been selected or there's a selection involved
+final class AuthenticationTokenRepositorySelection {const AuthenticationTokenRepositorySelection._(this.value);
+
+factory AuthenticationTokenRepositorySelection.fromJson(String json) { return switch (json) {
+  'all' => all,
+  'selected' => selected,
+  _ => AuthenticationTokenRepositorySelection._(json),
+}; }
+
+static const AuthenticationTokenRepositorySelection all = AuthenticationTokenRepositorySelection._('all');
+
+static const AuthenticationTokenRepositorySelection selected = AuthenticationTokenRepositorySelection._('selected');
+
+static const List<AuthenticationTokenRepositorySelection> values = [all, selected];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AuthenticationTokenRepositorySelection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AuthenticationTokenRepositorySelection($value)'; } 
+ }
+/// Authentication Token
+final class AuthenticationToken {const AuthenticationToken({required this.token, required this.expiresAt, this.permissions, this.repositories, this.singleFile, this.repositorySelection, });
+
+factory AuthenticationToken.fromJson(Map<String, dynamic> json) { return AuthenticationToken(
+  token: json['token'] as String,
+  expiresAt: DateTime.parse(json['expires_at'] as String),
+  permissions: (json['permissions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  repositories: (json['repositories'] as List<dynamic>?)?.map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
+  singleFile: json['single_file'] as String?,
+  repositorySelection: json['repository_selection'] != null ? AuthenticationTokenRepositorySelection.fromJson(json['repository_selection'] as String) : null,
+); }
+
+/// The token used for authentication
+final String token;
+
+/// The time this token expires
+final DateTime expiresAt;
+
+final Map<String,dynamic>? permissions;
+
+/// The repositories this token has access to
+final List<Repository>? repositories;
+
+final String? singleFile;
+
+/// Describe whether all repositories have been selected or there's a selection involved
+final AuthenticationTokenRepositorySelection? repositorySelection;
+
+Map<String, dynamic> toJson() { return {
+  'token': token,
+  'expires_at': expiresAt.toIso8601String(),
+  'permissions': ?permissions,
+  if (repositories != null) 'repositories': repositories?.map((e) => e.toJson()).toList(),
+  'single_file': ?singleFile,
+  if (repositorySelection != null) 'repository_selection': repositorySelection?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('token') && json['token'] is String &&
+      json.containsKey('expires_at') && json['expires_at'] is String; } 
+AuthenticationToken copyWith({String? token, DateTime? expiresAt, Map<String, dynamic> Function()? permissions, List<Repository> Function()? repositories, String? Function()? singleFile, AuthenticationTokenRepositorySelection Function()? repositorySelection, }) { return AuthenticationToken(
+  token: token ?? this.token,
+  expiresAt: expiresAt ?? this.expiresAt,
+  permissions: permissions != null ? permissions() : this.permissions,
+  repositories: repositories != null ? repositories() : this.repositories,
+  singleFile: singleFile != null ? singleFile() : this.singleFile,
+  repositorySelection: repositorySelection != null ? repositorySelection() : this.repositorySelection,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AuthenticationToken &&
+          token == other.token &&
+          expiresAt == other.expiresAt &&
+          permissions == other.permissions &&
+          listEquals(repositories, other.repositories) &&
+          singleFile == other.singleFile &&
+          repositorySelection == other.repositorySelection; } 
+@override int get hashCode { return Object.hash(token, expiresAt, permissions, Object.hashAll(repositories ?? const []), singleFile, repositorySelection); } 
+@override String toString() { return 'AuthenticationToken(token: $token, expiresAt: $expiresAt, permissions: $permissions, repositories: $repositories, singleFile: $singleFile, repositorySelection: $repositorySelection)'; } 
+ }

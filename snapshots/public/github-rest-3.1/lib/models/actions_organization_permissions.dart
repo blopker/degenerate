@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'allowed_actions.dart';import 'enabled_repositories.dart';import 'selected_actions_url.dart';import 'sha_pinning_required.dart';final class ActionsOrganizationPermissions {const ActionsOrganizationPermissions({required this.enabledRepositories, this.selectedRepositoriesUrl, this.allowedActions, this.selectedActionsUrl, this.shaPinningRequired, });
+
+factory ActionsOrganizationPermissions.fromJson(Map<String, dynamic> json) { return ActionsOrganizationPermissions(
+  enabledRepositories: EnabledRepositories.fromJson(json['enabled_repositories'] as String),
+  selectedRepositoriesUrl: json['selected_repositories_url'] as String?,
+  allowedActions: json['allowed_actions'] != null ? AllowedActions.fromJson(json['allowed_actions'] as String) : null,
+  selectedActionsUrl: json['selected_actions_url'] != null ? SelectedActionsUrl.fromJson(json['selected_actions_url'] as String) : null,
+  shaPinningRequired: json['sha_pinning_required'] != null ? ShaPinningRequired.fromJson(json['sha_pinning_required'] as bool) : null,
+); }
+
+/// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
+final EnabledRepositories enabledRepositories;
+
+/// The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
+final String? selectedRepositoriesUrl;
+
+/// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+final AllowedActions? allowedActions;
+
+/// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+final SelectedActionsUrl? selectedActionsUrl;
+
+/// Whether actions must be pinned to a full-length commit SHA.
+final ShaPinningRequired? shaPinningRequired;
+
+Map<String, dynamic> toJson() { return {
+  'enabled_repositories': enabledRepositories.toJson(),
+  'selected_repositories_url': ?selectedRepositoriesUrl,
+  if (allowedActions != null) 'allowed_actions': allowedActions?.toJson(),
+  if (selectedActionsUrl != null) 'selected_actions_url': selectedActionsUrl?.toJson(),
+  if (shaPinningRequired != null) 'sha_pinning_required': shaPinningRequired?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_repositories'); } 
+ActionsOrganizationPermissions copyWith({EnabledRepositories? enabledRepositories, String Function()? selectedRepositoriesUrl, AllowedActions Function()? allowedActions, SelectedActionsUrl Function()? selectedActionsUrl, ShaPinningRequired Function()? shaPinningRequired, }) { return ActionsOrganizationPermissions(
+  enabledRepositories: enabledRepositories ?? this.enabledRepositories,
+  selectedRepositoriesUrl: selectedRepositoriesUrl != null ? selectedRepositoriesUrl() : this.selectedRepositoriesUrl,
+  allowedActions: allowedActions != null ? allowedActions() : this.allowedActions,
+  selectedActionsUrl: selectedActionsUrl != null ? selectedActionsUrl() : this.selectedActionsUrl,
+  shaPinningRequired: shaPinningRequired != null ? shaPinningRequired() : this.shaPinningRequired,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsOrganizationPermissions &&
+          enabledRepositories == other.enabledRepositories &&
+          selectedRepositoriesUrl == other.selectedRepositoriesUrl &&
+          allowedActions == other.allowedActions &&
+          selectedActionsUrl == other.selectedActionsUrl &&
+          shaPinningRequired == other.shaPinningRequired; } 
+@override int get hashCode { return Object.hash(enabledRepositories, selectedRepositoriesUrl, allowedActions, selectedActionsUrl, shaPinningRequired); } 
+@override String toString() { return 'ActionsOrganizationPermissions(enabledRepositories: $enabledRepositories, selectedRepositoriesUrl: $selectedRepositoriesUrl, allowedActions: $allowedActions, selectedActionsUrl: $selectedActionsUrl, shaPinningRequired: $shaPinningRequired)'; } 
+ }

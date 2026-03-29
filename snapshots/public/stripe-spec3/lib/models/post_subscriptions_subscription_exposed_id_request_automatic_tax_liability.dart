@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType {const PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._(this.value);
+
+factory PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'self' => self,
+  _ => PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._(json),
+}; }
+
+static const PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType account = PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._('account');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType self = PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType._('self');
+
+static const List<PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType> values = [account, self];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType($value)'; } 
+ }
+final class PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability {const PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability({this.account, required this.type, });
+
+factory PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(
+  account: json['account'] as String?,
+  type: PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType.fromJson(json['type'] as String),
+); }
+
+final String? account;
+
+final PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType type;
+
+Map<String, dynamic> toJson() { return {
+  'account': ?account,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability copyWith({String Function()? account, PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiabilityType? type, }) { return PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(
+  account: account != null ? account() : this.account,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability &&
+          account == other.account &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(account, type); } 
+@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestAutomaticTaxLiability(account: $account, type: $type)'; } 
+ }

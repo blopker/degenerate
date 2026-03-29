@@ -1,0 +1,277 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logpush_dataset.dart';import '../models/logpush_id.dart';import '../models/logpush_identifier.dart';import '../models/post_zones_zone_id_logpush_jobs_request.dart';import '../models/post_zones_zone_id_logpush_ownership_request.dart';import '../models/post_zones_zone_id_logpush_ownership_validate_request.dart';import '../models/post_zones_zone_id_logpush_validate_destination_exists_request.dart';import '../models/post_zones_zone_id_logpush_validate_destination_request.dart';import '../models/post_zones_zone_id_logpush_validate_origin_request.dart';import '../models/put_zones_zone_id_logpush_jobs_job_id_request.dart';import '../models/response_common44.dart';/// LogpushJobsForAZoneApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class LogpushJobsForAZoneApi with ApiExecutor {const LogpushJobsForAZoneApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List fields
+///
+/// Lists all fields available for a dataset. The response result is. an object with key-value pairs, where keys are field names, and values are descriptions.
+///
+/// `GET /zones/{zone_id}/logpush/datasets/{dataset_id}/fields`
+Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushDatasetsDatasetIdFields({required LogpushDataset datasetId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/fields',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List Logpush jobs for a dataset
+///
+/// Lists Logpush jobs for a zone for a dataset.
+///
+/// `GET /zones/{zone_id}/logpush/datasets/{dataset_id}/jobs`
+Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushDatasetsDatasetIdJobs({required LogpushDataset datasetId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/datasets/${Uri.encodeComponent(datasetId.toString())}/jobs',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// List Logpush jobs
+///
+/// Lists Logpush jobs for a zone.
+///
+/// `GET /zones/{zone_id}/logpush/jobs`
+Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create Logpush job
+///
+/// Creates a new Logpush job for a zone.
+///
+/// `POST /zones/{zone_id}/logpush/jobs`
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get Logpush job details
+///
+/// Gets the details of a Logpush job.
+///
+/// `GET /zones/{zone_id}/logpush/jobs/{job_id}`
+Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update Logpush job
+///
+/// Updates a Logpush job.
+///
+/// `PUT /zones/{zone_id}/logpush/jobs/{job_id}`
+Future<ApiResult<ResponseCommon44, Never>> putZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, required PutZonesZoneIdLogpushJobsJobIdRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PUT',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete Logpush job
+///
+/// Deletes a Logpush job.
+///
+/// `DELETE /zones/{zone_id}/logpush/jobs/{job_id}`
+Future<ApiResult<ResponseCommon44, Never>> deleteZonesZoneIdLogpushJobsJobId({required LogpushId jobId, required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/jobs/${Uri.encodeComponent(jobId.toString())}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get ownership challenge
+///
+/// Gets a new ownership challenge sent to your destination.
+///
+/// `POST /zones/{zone_id}/logpush/ownership`
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushOwnership({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushOwnershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/ownership',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Validate ownership challenge
+///
+/// Validates ownership challenge of the destination.
+///
+/// `POST /zones/{zone_id}/logpush/ownership/validate`
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushOwnershipValidate({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushOwnershipValidateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/ownership/validate',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Validate destination
+///
+/// Validates destination.
+///
+/// `POST /zones/{zone_id}/logpush/validate/destination`
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushValidateDestination({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateDestinationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/validate/destination',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Check destination exists
+///
+/// Checks if there is an existing job with a destination.
+///
+/// `POST /zones/{zone_id}/logpush/validate/destination/exists`
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushValidateDestinationExists({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateDestinationExistsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/validate/destination/exists',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Validate origin
+///
+/// Validates logpull origin with logpull_options.
+///
+/// `POST /zones/{zone_id}/logpush/validate/origin`
+Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushValidateOrigin({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushValidateOriginRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/logpush/validate/origin',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

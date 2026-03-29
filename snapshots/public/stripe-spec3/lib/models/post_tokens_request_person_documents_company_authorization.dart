@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_tokens_request_person_documents_company_authorization_files.dart';final class PostTokensRequestPersonDocumentsCompanyAuthorization {const PostTokensRequestPersonDocumentsCompanyAuthorization({this.files});
+
+factory PostTokensRequestPersonDocumentsCompanyAuthorization.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonDocumentsCompanyAuthorization(
+  files: (json['files'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => v as String, fromB: (v) => PostTokensRequestPersonDocumentsCompanyAuthorizationFilesVariant2.fromJson(v as String),)).toList(),
+); }
+
+final List<PostTokensRequestPersonDocumentsCompanyAuthorizationFiles>? files;
+
+Map<String, dynamic> toJson() { return {
+  if (files != null) 'files': files?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTokensRequestPersonDocumentsCompanyAuthorization copyWith({List<PostTokensRequestPersonDocumentsCompanyAuthorizationFiles> Function()? files}) { return PostTokensRequestPersonDocumentsCompanyAuthorization(
+  files: files != null ? files() : this.files,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTokensRequestPersonDocumentsCompanyAuthorization &&
+          listEquals(files, other.files); } 
+@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override String toString() { return 'PostTokensRequestPersonDocumentsCompanyAuthorization(files: $files)'; } 
+ }

@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_description.dart';import 'shield_title.dart';import 'shield_token_sources2.dart';final class TokenValidationConfigEditRequest {const TokenValidationConfigEditRequest({this.description, this.title, this.tokenSources, });
+
+factory TokenValidationConfigEditRequest.fromJson(Map<String, dynamic> json) { return TokenValidationConfigEditRequest(
+  description: json['description'] != null ? ShieldDescription.fromJson(json['description'] as String) : null,
+  title: json['title'] != null ? ShieldTitle.fromJson(json['title'] as String) : null,
+  tokenSources: (json['token_sources'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ShieldHeader.fromJson(v as String), fromB: (v) => ShieldCookie.fromJson(v as String),)).toList(),
+); }
+
+final ShieldDescription? description;
+
+final ShieldTitle? title;
+
+final List<ShieldTokenSources2>? tokenSources;
+
+Map<String, dynamic> toJson() { return {
+  if (description != null) 'description': description?.toJson(),
+  if (title != null) 'title': title?.toJson(),
+  if (tokenSources != null) 'token_sources': tokenSources?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TokenValidationConfigEditRequest copyWith({ShieldDescription Function()? description, ShieldTitle Function()? title, List<ShieldTokenSources2> Function()? tokenSources, }) { return TokenValidationConfigEditRequest(
+  description: description != null ? description() : this.description,
+  title: title != null ? title() : this.title,
+  tokenSources: tokenSources != null ? tokenSources() : this.tokenSources,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TokenValidationConfigEditRequest &&
+          description == other.description &&
+          title == other.title &&
+          listEquals(tokenSources, other.tokenSources); } 
+@override int get hashCode { return Object.hash(description, title, Object.hashAll(tokenSources ?? const [])); } 
+@override String toString() { return 'TokenValidationConfigEditRequest(description: $description, title: $title, tokenSources: $tokenSources)'; } 
+ }

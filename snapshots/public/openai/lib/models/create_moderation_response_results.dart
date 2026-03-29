@@ -1,0 +1,48 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'create_moderation_response_results_categories.dart';import 'create_moderation_response_results_category_applied_input_types.dart';import 'create_moderation_response_results_category_scores.dart';final class CreateModerationResponseResults {const CreateModerationResponseResults({required this.flagged, required this.categories, required this.categoryScores, required this.categoryAppliedInputTypes, });
+
+factory CreateModerationResponseResults.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResults(
+  flagged: json['flagged'] as bool,
+  categories: CreateModerationResponseResultsCategories.fromJson(json['categories'] as Map<String, dynamic>),
+  categoryScores: CreateModerationResponseResultsCategoryScores.fromJson(json['category_scores'] as Map<String, dynamic>),
+  categoryAppliedInputTypes: CreateModerationResponseResultsCategoryAppliedInputTypes.fromJson(json['category_applied_input_types'] as Map<String, dynamic>),
+); }
+
+/// Whether any of the below categories are flagged.
+final bool flagged;
+
+/// A list of the categories, and whether they are flagged or not.
+final CreateModerationResponseResultsCategories categories;
+
+/// A list of the categories along with their scores as predicted by model.
+final CreateModerationResponseResultsCategoryScores categoryScores;
+
+/// A list of the categories along with the input type(s) that the score applies to.
+final CreateModerationResponseResultsCategoryAppliedInputTypes categoryAppliedInputTypes;
+
+Map<String, dynamic> toJson() { return {
+  'flagged': flagged,
+  'categories': categories.toJson(),
+  'category_scores': categoryScores.toJson(),
+  'category_applied_input_types': categoryAppliedInputTypes.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('flagged') && json['flagged'] is bool &&
+      json.containsKey('categories') &&
+      json.containsKey('category_scores') &&
+      json.containsKey('category_applied_input_types'); } 
+CreateModerationResponseResults copyWith({bool? flagged, CreateModerationResponseResultsCategories? categories, CreateModerationResponseResultsCategoryScores? categoryScores, CreateModerationResponseResultsCategoryAppliedInputTypes? categoryAppliedInputTypes, }) { return CreateModerationResponseResults(
+  flagged: flagged ?? this.flagged,
+  categories: categories ?? this.categories,
+  categoryScores: categoryScores ?? this.categoryScores,
+  categoryAppliedInputTypes: categoryAppliedInputTypes ?? this.categoryAppliedInputTypes,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModerationResponseResults &&
+          flagged == other.flagged &&
+          categories == other.categories &&
+          categoryScores == other.categoryScores &&
+          categoryAppliedInputTypes == other.categoryAppliedInputTypes; } 
+@override int get hashCode { return Object.hash(flagged, categories, categoryScores, categoryAppliedInputTypes); } 
+@override String toString() { return 'CreateModerationResponseResults(flagged: $flagged, categories: $categories, categoryScores: $categoryScores, categoryAppliedInputTypes: $categoryAppliedInputTypes)'; } 
+ }

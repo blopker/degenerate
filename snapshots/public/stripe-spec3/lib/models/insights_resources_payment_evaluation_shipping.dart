@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_address.dart';/// Shipping details attached to this payment.
+final class InsightsResourcesPaymentEvaluationShipping {const InsightsResourcesPaymentEvaluationShipping({required this.address, this.name, this.phone, });
+
+factory InsightsResourcesPaymentEvaluationShipping.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationShipping(
+  address: InsightsResourcesPaymentEvaluationAddress.fromJson(json['address'] as Map<String, dynamic>),
+  name: json['name'] as String?,
+  phone: json['phone'] as String?,
+); }
+
+final InsightsResourcesPaymentEvaluationAddress address;
+
+/// Shipping name.
+final String? name;
+
+/// Shipping phone number.
+final String? phone;
+
+Map<String, dynamic> toJson() { return {
+  'address': address.toJson(),
+  'name': ?name,
+  'phone': ?phone,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('address'); } 
+InsightsResourcesPaymentEvaluationShipping copyWith({InsightsResourcesPaymentEvaluationAddress? address, String? Function()? name, String? Function()? phone, }) { return InsightsResourcesPaymentEvaluationShipping(
+  address: address ?? this.address,
+  name: name != null ? name() : this.name,
+  phone: phone != null ? phone() : this.phone,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InsightsResourcesPaymentEvaluationShipping &&
+          address == other.address &&
+          name == other.name &&
+          phone == other.phone; } 
+@override int get hashCode { return Object.hash(address, name, phone); } 
+@override String toString() { return 'InsightsResourcesPaymentEvaluationShipping(address: $address, name: $name, phone: $phone)'; } 
+ }

@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'workers_ai_post_run_cf_baai_bge_reranker_base_request_contexts.dart';final class WorkersAiPostRunCfBaaiBgeRerankerBaseRequest {const WorkersAiPostRunCfBaaiBgeRerankerBaseRequest({required this.contexts, required this.query, this.topK, });
+
+factory WorkersAiPostRunCfBaaiBgeRerankerBaseRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(
+  contexts: (json['contexts'] as List<dynamic>).map((e) => WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts.fromJson(e as Map<String, dynamic>)).toList(),
+  query: json['query'] as String,
+  topK: json['top_k'] != null ? (json['top_k'] as num).toInt() : null,
+); }
+
+/// List of provided contexts. Note that the index in this array is important, as the response will refer to it.
+final List<WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts> contexts;
+
+/// A query you wish to perform against the provided contexts.
+final String query;
+
+/// Number of returned results starting with the best score.
+final int? topK;
+
+Map<String, dynamic> toJson() { return {
+  'contexts': contexts.map((e) => e.toJson()).toList(),
+  'query': query,
+  'top_k': ?topK,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('contexts') &&
+      json.containsKey('query') && json['query'] is String; } 
+WorkersAiPostRunCfBaaiBgeRerankerBaseRequest copyWith({List<WorkersAiPostRunCfBaaiBgeRerankerBaseRequestContexts>? contexts, String? query, int Function()? topK, }) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(
+  contexts: contexts ?? this.contexts,
+  query: query ?? this.query,
+  topK: topK != null ? topK() : this.topK,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfBaaiBgeRerankerBaseRequest &&
+          listEquals(contexts, other.contexts) &&
+          query == other.query &&
+          topK == other.topK; } 
+@override int get hashCode { return Object.hash(Object.hashAll(contexts), query, topK); } 
+@override String toString() { return 'WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(contexts: $contexts, query: $query, topK: $topK)'; } 
+ }

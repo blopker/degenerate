@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpSummaryByTlsVersionBotClass {const RadarGetHttpSummaryByTlsVersionBotClass._(this.value);
+
+factory RadarGetHttpSummaryByTlsVersionBotClass.fromJson(String json) { return switch (json) {
+  'LIKELY_AUTOMATED' => likelyAutomated,
+  'LIKELY_HUMAN' => likelyHuman,
+  _ => RadarGetHttpSummaryByTlsVersionBotClass._(json),
+}; }
+
+static const RadarGetHttpSummaryByTlsVersionBotClass likelyAutomated = RadarGetHttpSummaryByTlsVersionBotClass._('LIKELY_AUTOMATED');
+
+static const RadarGetHttpSummaryByTlsVersionBotClass likelyHuman = RadarGetHttpSummaryByTlsVersionBotClass._('LIKELY_HUMAN');
+
+static const List<RadarGetHttpSummaryByTlsVersionBotClass> values = [likelyAutomated, likelyHuman];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpSummaryByTlsVersionBotClass && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpSummaryByTlsVersionBotClass($value)'; } 
+ }

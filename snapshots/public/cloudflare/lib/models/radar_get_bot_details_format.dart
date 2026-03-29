@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetBotDetailsFormat {const RadarGetBotDetailsFormat._(this.value);
+
+factory RadarGetBotDetailsFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetBotDetailsFormat._(json),
+}; }
+
+static const RadarGetBotDetailsFormat $json = RadarGetBotDetailsFormat._('JSON');
+
+static const RadarGetBotDetailsFormat csv = RadarGetBotDetailsFormat._('CSV');
+
+static const List<RadarGetBotDetailsFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetBotDetailsFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetBotDetailsFormat($value)'; } 
+ }

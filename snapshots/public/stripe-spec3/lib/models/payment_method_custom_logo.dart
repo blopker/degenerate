@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'custom_logo.dart';/// Contains information about the Dashboard-only CustomPaymentMethodType logo.
+final class PaymentMethodCustomLogo {const PaymentMethodCustomLogo({this.customLogo});
+
+factory PaymentMethodCustomLogo.fromJson(Map<String, dynamic> json) { return PaymentMethodCustomLogo(
+  customLogo: CustomLogo.canParse(json) ? CustomLogo.fromJson(json) : null,
+); }
+
+final CustomLogo? customLogo;
+
+/// At least one variant must be present.
+bool get isValid { return customLogo != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?customLogo?.toJson(),
+}; } 
+ }

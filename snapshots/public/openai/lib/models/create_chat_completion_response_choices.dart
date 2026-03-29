@@ -1,0 +1,89 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'chat_completion_response_message.dart';import 'create_chat_completion_response_choices_logprobs.dart';/// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
+/// `length` if the maximum number of tokens specified in the request was reached,
+/// `content_filter` if content was omitted due to a flag from our content filters,
+/// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
+/// 
+final class CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason._(this.value);
+
+factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
+  'stop' => stop,
+  'length' => length,
+  'tool_calls' => toolCalls,
+  'content_filter' => contentFilter,
+  'function_call' => functionCall,
+  _ => CreateChatCompletionResponseChoicesFinishReason._(json),
+}; }
+
+static const CreateChatCompletionResponseChoicesFinishReason stop = CreateChatCompletionResponseChoicesFinishReason._('stop');
+
+static const CreateChatCompletionResponseChoicesFinishReason length = CreateChatCompletionResponseChoicesFinishReason._('length');
+
+static const CreateChatCompletionResponseChoicesFinishReason toolCalls = CreateChatCompletionResponseChoicesFinishReason._('tool_calls');
+
+static const CreateChatCompletionResponseChoicesFinishReason contentFilter = CreateChatCompletionResponseChoicesFinishReason._('content_filter');
+
+static const CreateChatCompletionResponseChoicesFinishReason functionCall = CreateChatCompletionResponseChoicesFinishReason._('function_call');
+
+static const List<CreateChatCompletionResponseChoicesFinishReason> values = [stop, length, toolCalls, contentFilter, functionCall];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateChatCompletionResponseChoicesFinishReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateChatCompletionResponseChoicesFinishReason($value)'; } 
+ }
+final class CreateChatCompletionResponseChoices {const CreateChatCompletionResponseChoices({required this.finishReason, required this.index, required this.message, required this.logprobs, });
+
+factory CreateChatCompletionResponseChoices.fromJson(Map<String, dynamic> json) { return CreateChatCompletionResponseChoices(
+  finishReason: CreateChatCompletionResponseChoicesFinishReason.fromJson(json['finish_reason'] as String),
+  index: (json['index'] as num).toInt(),
+  message: ChatCompletionResponseMessage.fromJson(json['message'] as Map<String, dynamic>),
+  logprobs: json['logprobs'] != null ? CreateChatCompletionResponseChoicesLogprobs.fromJson(json['logprobs'] as Map<String, dynamic>) : null,
+); }
+
+/// The reason the model stopped generating tokens. This will be `stop` if the model hit a natural stop point or a provided stop sequence,
+/// `length` if the maximum number of tokens specified in the request was reached,
+/// `content_filter` if content was omitted due to a flag from our content filters,
+/// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
+/// 
+final CreateChatCompletionResponseChoicesFinishReason finishReason;
+
+/// The index of the choice in the list of choices.
+final int index;
+
+final ChatCompletionResponseMessage message;
+
+/// Log probability information for the choice.
+final CreateChatCompletionResponseChoicesLogprobs? logprobs;
+
+Map<String, dynamic> toJson() { return {
+  'finish_reason': finishReason.toJson(),
+  'index': index,
+  'message': message.toJson(),
+  if (logprobs != null) 'logprobs': logprobs?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('finish_reason') &&
+      json.containsKey('index') && json['index'] is num &&
+      json.containsKey('message') &&
+      json.containsKey('logprobs'); } 
+CreateChatCompletionResponseChoices copyWith({CreateChatCompletionResponseChoicesFinishReason? finishReason, int? index, ChatCompletionResponseMessage? message, CreateChatCompletionResponseChoicesLogprobs? Function()? logprobs, }) { return CreateChatCompletionResponseChoices(
+  finishReason: finishReason ?? this.finishReason,
+  index: index ?? this.index,
+  message: message ?? this.message,
+  logprobs: logprobs != null ? logprobs() : this.logprobs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateChatCompletionResponseChoices &&
+          finishReason == other.finishReason &&
+          index == other.index &&
+          message == other.message &&
+          logprobs == other.logprobs; } 
+@override int get hashCode { return Object.hash(finishReason, index, message, logprobs); } 
+@override String toString() { return 'CreateChatCompletionResponseChoices(finishReason: $finishReason, index: $index, message: $message, logprobs: $logprobs)'; } 
+ }

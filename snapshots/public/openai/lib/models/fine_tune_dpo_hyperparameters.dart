@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_dpo_hyperparameters_batch_size.dart';import 'fine_tune_dpo_hyperparameters_beta.dart';import 'fine_tune_dpo_hyperparameters_learning_rate_multiplier.dart';import 'fine_tune_dpo_hyperparameters_n_epochs.dart';/// The hyperparameters used for the DPO fine-tuning job.
+final class FineTuneDpoHyperparameters {const FineTuneDpoHyperparameters({this.beta, this.batchSize, this.learningRateMultiplier, this.nEpochs, });
+
+factory FineTuneDpoHyperparameters.fromJson(Map<String, dynamic> json) { return FineTuneDpoHyperparameters(
+  beta: json['beta'] != null ? OneOf2.parse(json['beta'], fromA: (v) => FineTuneDpoHyperparametersBetaVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
+  batchSize: json['batch_size'] != null ? OneOf2.parse(json['batch_size'], fromA: (v) => FineTuneDpoHyperparametersBatchSizeVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+  learningRateMultiplier: json['learning_rate_multiplier'] != null ? OneOf2.parse(json['learning_rate_multiplier'], fromA: (v) => FineTuneDpoHyperparametersLearningRateMultiplierVariant1.fromJson(v as String), fromB: (v) => (v as num).toDouble(),) : null,
+  nEpochs: json['n_epochs'] != null ? OneOf2.parse(json['n_epochs'], fromA: (v) => FineTuneDpoHyperparametersNEpochsVariant1.fromJson(v as String), fromB: (v) => (v as num).toInt(),) : null,
+); }
+
+/// The beta value for the DPO method. A higher beta value will increase the weight of the penalty between the policy and reference model.
+/// 
+final FineTuneDpoHyperparametersBeta? beta;
+
+/// Number of examples in each batch. A larger batch size means that model parameters are updated less frequently, but with lower variance.
+/// 
+final FineTuneDpoHyperparametersBatchSize? batchSize;
+
+/// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.
+/// 
+final FineTuneDpoHyperparametersLearningRateMultiplier? learningRateMultiplier;
+
+/// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.
+/// 
+final FineTuneDpoHyperparametersNEpochs? nEpochs;
+
+Map<String, dynamic> toJson() { return {
+  if (beta != null) 'beta': beta?.toJson(),
+  if (batchSize != null) 'batch_size': batchSize?.toJson(),
+  if (learningRateMultiplier != null) 'learning_rate_multiplier': learningRateMultiplier?.toJson(),
+  if (nEpochs != null) 'n_epochs': nEpochs?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FineTuneDpoHyperparameters copyWith({FineTuneDpoHyperparametersBeta Function()? beta, FineTuneDpoHyperparametersBatchSize Function()? batchSize, FineTuneDpoHyperparametersLearningRateMultiplier Function()? learningRateMultiplier, FineTuneDpoHyperparametersNEpochs Function()? nEpochs, }) { return FineTuneDpoHyperparameters(
+  beta: beta != null ? beta() : this.beta,
+  batchSize: batchSize != null ? batchSize() : this.batchSize,
+  learningRateMultiplier: learningRateMultiplier != null ? learningRateMultiplier() : this.learningRateMultiplier,
+  nEpochs: nEpochs != null ? nEpochs() : this.nEpochs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FineTuneDpoHyperparameters &&
+          beta == other.beta &&
+          batchSize == other.batchSize &&
+          learningRateMultiplier == other.learningRateMultiplier &&
+          nEpochs == other.nEpochs; } 
+@override int get hashCode { return Object.hash(beta, batchSize, learningRateMultiplier, nEpochs); } 
+@override String toString() { return 'FineTuneDpoHyperparameters(beta: $beta, batchSize: $batchSize, learningRateMultiplier: $learningRateMultiplier, nEpochs: $nEpochs)'; } 
+ }

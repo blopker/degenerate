@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'r2_data_catalog_snapshot_expiration_config.dart';import 'r2_data_catalog_table_compaction_config.dart';/// Configures maintenance for the table.
+final class R2DataCatalogTableMaintenanceConfig {const R2DataCatalogTableMaintenanceConfig({this.compaction, this.snapshotExpiration, });
+
+factory R2DataCatalogTableMaintenanceConfig.fromJson(Map<String, dynamic> json) { return R2DataCatalogTableMaintenanceConfig(
+  compaction: json['compaction'] != null ? R2DataCatalogTableCompactionConfig.fromJson(json['compaction'] as Map<String, dynamic>) : null,
+  snapshotExpiration: json['snapshot_expiration'] != null ? R2DataCatalogSnapshotExpirationConfig.fromJson(json['snapshot_expiration'] as Map<String, dynamic>) : null,
+); }
+
+final R2DataCatalogTableCompactionConfig? compaction;
+
+final R2DataCatalogSnapshotExpirationConfig? snapshotExpiration;
+
+Map<String, dynamic> toJson() { return {
+  if (compaction != null) 'compaction': compaction?.toJson(),
+  if (snapshotExpiration != null) 'snapshot_expiration': snapshotExpiration?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2DataCatalogTableMaintenanceConfig copyWith({R2DataCatalogTableCompactionConfig Function()? compaction, R2DataCatalogSnapshotExpirationConfig Function()? snapshotExpiration, }) { return R2DataCatalogTableMaintenanceConfig(
+  compaction: compaction != null ? compaction() : this.compaction,
+  snapshotExpiration: snapshotExpiration != null ? snapshotExpiration() : this.snapshotExpiration,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2DataCatalogTableMaintenanceConfig &&
+          compaction == other.compaction &&
+          snapshotExpiration == other.snapshotExpiration; } 
+@override int get hashCode { return Object.hash(compaction, snapshotExpiration); } 
+@override String toString() { return 'R2DataCatalogTableMaintenanceConfig(compaction: $compaction, snapshotExpiration: $snapshotExpiration)'; } 
+ }

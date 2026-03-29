@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// EndpointPort is a tuple that describes a single port. Deprecated: This API is deprecated in v1.33+.
+final class EndpointPort {const EndpointPort({this.appProtocol, this.name, this.port = 0, this.protocol, });
+
+factory EndpointPort.fromJson(Map<String, dynamic> json) { return EndpointPort(
+  appProtocol: json['appProtocol'] as String?,
+  name: json['name'] as String?,
+  port: (json['port'] as num).toInt(),
+  protocol: json['protocol'] as String?,
+); }
+
+/// The application protocol for this port. This is used as a hint for implementations to offer richer behavior for protocols that they understand. This field follows standard Kubernetes label syntax. Valid values are either:
+/// 
+/// * Un-prefixed protocol names - reserved for IANA standard service names (as per RFC-6335 and https://www.iana.org/assignments/service-names).
+/// 
+/// * Kubernetes-defined prefixed names:
+///   * 'kubernetes.io/h2c' - HTTP/2 prior knowledge over cleartext as described in https://www.rfc-editor.org/rfc/rfc9113.html#name-starting-http-2-with-prior-
+///   * 'kubernetes.io/ws'  - WebSocket over cleartext as described in https://www.rfc-editor.org/rfc/rfc6455
+///   * 'kubernetes.io/wss' - WebSocket over TLS as described in https://www.rfc-editor.org/rfc/rfc6455
+/// 
+/// * Other protocols should use implementation-defined prefixed names such as mycompany.com/my-custom-protocol.
+final String? appProtocol;
+
+/// The name of this port.  This must match the 'name' field in the corresponding ServicePort. Must be a DNS_LABEL. Optional only if one port is defined.
+final String? name;
+
+/// The port number of the endpoint.
+final int port;
+
+/// The IP protocol for this port. Must be UDP, TCP, or SCTP. Default is TCP.
+final String? protocol;
+
+Map<String, dynamic> toJson() { return {
+  'appProtocol': ?appProtocol,
+  'name': ?name,
+  'port': port,
+  'protocol': ?protocol,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('port') && json['port'] is num; } 
+EndpointPort copyWith({String Function()? appProtocol, String Function()? name, int? port, String Function()? protocol, }) { return EndpointPort(
+  appProtocol: appProtocol != null ? appProtocol() : this.appProtocol,
+  name: name != null ? name() : this.name,
+  port: port ?? this.port,
+  protocol: protocol != null ? protocol() : this.protocol,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EndpointPort &&
+          appProtocol == other.appProtocol &&
+          name == other.name &&
+          port == other.port &&
+          protocol == other.protocol; } 
+@override int get hashCode { return Object.hash(appProtocol, name, port, protocol); } 
+@override String toString() { return 'EndpointPort(appProtocol: $appProtocol, name: $name, port: $port, protocol: $protocol)'; } 
+ }

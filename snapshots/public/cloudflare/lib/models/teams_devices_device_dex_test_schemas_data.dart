@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The configuration object which contains the details for the WARP client to conduct the test.
+final class TeamsDevicesDeviceDexTestSchemasData {const TeamsDevicesDeviceDexTestSchemasData({this.host, this.kind, this.method, });
+
+factory TeamsDevicesDeviceDexTestSchemasData.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceDexTestSchemasData(
+  host: json['host'] as String?,
+  kind: json['kind'] as String?,
+  method: json['method'] as String?,
+); }
+
+/// The desired endpoint to test.
+final String? host;
+
+/// The type of test.
+final String? kind;
+
+/// The HTTP request method type.
+final String? method;
+
+Map<String, dynamic> toJson() { return {
+  'host': ?host,
+  'kind': ?kind,
+  'method': ?method,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TeamsDevicesDeviceDexTestSchemasData copyWith({String Function()? host, String Function()? kind, String Function()? method, }) { return TeamsDevicesDeviceDexTestSchemasData(
+  host: host != null ? host() : this.host,
+  kind: kind != null ? kind() : this.kind,
+  method: method != null ? method() : this.method,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesDeviceDexTestSchemasData &&
+          host == other.host &&
+          kind == other.kind &&
+          method == other.method; } 
+@override int get hashCode { return Object.hash(host, kind, method); } 
+@override String toString() { return 'TeamsDevicesDeviceDexTestSchemasData(host: $host, kind: $kind, method: $method)'; } 
+ }

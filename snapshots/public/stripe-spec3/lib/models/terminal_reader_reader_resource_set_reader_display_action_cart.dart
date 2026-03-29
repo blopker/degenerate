@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'terminal_reader_reader_resource_cart.dart';/// Cart object to be displayed by the reader, including line items, amounts, and currency.
+final class TerminalReaderReaderResourceSetReaderDisplayActionCart {const TerminalReaderReaderResourceSetReaderDisplayActionCart({this.terminalReaderReaderResourceCart});
+
+factory TerminalReaderReaderResourceSetReaderDisplayActionCart.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSetReaderDisplayActionCart(
+  terminalReaderReaderResourceCart: TerminalReaderReaderResourceCart.canParse(json) ? TerminalReaderReaderResourceCart.fromJson(json) : null,
+); }
+
+final TerminalReaderReaderResourceCart? terminalReaderReaderResourceCart;
+
+/// At least one variant must be present.
+bool get isValid { return terminalReaderReaderResourceCart != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?terminalReaderReaderResourceCart?.toJson(),
+}; } 
+ }

@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'realtimekit_participant_peer_stats_peer_stats_device_info.dart';import 'realtimekit_participant_peer_stats_peer_stats_events.dart';import 'realtimekit_participant_peer_stats_peer_stats_ip_information.dart';import 'realtimekit_participant_peer_stats_peer_stats_precall_network_information.dart';final class RealtimekitParticipantPeerStatsPeerStats {const RealtimekitParticipantPeerStatsPeerStats({this.config, this.deviceInfo, this.events, this.ipInformation, this.precallNetworkInformation, this.status, });
+
+factory RealtimekitParticipantPeerStatsPeerStats.fromJson(Map<String, dynamic> json) { return RealtimekitParticipantPeerStatsPeerStats(
+  config: json['config'] as String?,
+  deviceInfo: json['device_info'] != null ? RealtimekitParticipantPeerStatsPeerStatsDeviceInfo.fromJson(json['device_info'] as Map<String, dynamic>) : null,
+  events: (json['events'] as List<dynamic>?)?.map((e) => RealtimekitParticipantPeerStatsPeerStatsEvents.fromJson(e as Map<String, dynamic>)).toList(),
+  ipInformation: json['ip_information'] != null ? RealtimekitParticipantPeerStatsPeerStatsIpInformation.fromJson(json['ip_information'] as Map<String, dynamic>) : null,
+  precallNetworkInformation: json['precall_network_information'] != null ? RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation.fromJson(json['precall_network_information'] as Map<String, dynamic>) : null,
+  status: json['status'] as String?,
+); }
+
+final String? config;
+
+final RealtimekitParticipantPeerStatsPeerStatsDeviceInfo? deviceInfo;
+
+final List<RealtimekitParticipantPeerStatsPeerStatsEvents>? events;
+
+final RealtimekitParticipantPeerStatsPeerStatsIpInformation? ipInformation;
+
+final RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation? precallNetworkInformation;
+
+final String? status;
+
+Map<String, dynamic> toJson() { return {
+  'config': ?config,
+  if (deviceInfo != null) 'device_info': deviceInfo?.toJson(),
+  if (events != null) 'events': events?.map((e) => e.toJson()).toList(),
+  if (ipInformation != null) 'ip_information': ipInformation?.toJson(),
+  if (precallNetworkInformation != null) 'precall_network_information': precallNetworkInformation?.toJson(),
+  'status': ?status,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitParticipantPeerStatsPeerStats copyWith({String Function()? config, RealtimekitParticipantPeerStatsPeerStatsDeviceInfo Function()? deviceInfo, List<RealtimekitParticipantPeerStatsPeerStatsEvents> Function()? events, RealtimekitParticipantPeerStatsPeerStatsIpInformation Function()? ipInformation, RealtimekitParticipantPeerStatsPeerStatsPrecallNetworkInformation Function()? precallNetworkInformation, String Function()? status, }) { return RealtimekitParticipantPeerStatsPeerStats(
+  config: config != null ? config() : this.config,
+  deviceInfo: deviceInfo != null ? deviceInfo() : this.deviceInfo,
+  events: events != null ? events() : this.events,
+  ipInformation: ipInformation != null ? ipInformation() : this.ipInformation,
+  precallNetworkInformation: precallNetworkInformation != null ? precallNetworkInformation() : this.precallNetworkInformation,
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitParticipantPeerStatsPeerStats &&
+          config == other.config &&
+          deviceInfo == other.deviceInfo &&
+          listEquals(events, other.events) &&
+          ipInformation == other.ipInformation &&
+          precallNetworkInformation == other.precallNetworkInformation &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(config, deviceInfo, Object.hashAll(events ?? const []), ipInformation, precallNetworkInformation, status); } 
+@override String toString() { return 'RealtimekitParticipantPeerStatsPeerStats(config: $config, deviceInfo: $deviceInfo, events: $events, ipInformation: $ipInformation, precallNetworkInformation: $precallNetworkInformation, status: $status)'; } 
+ }

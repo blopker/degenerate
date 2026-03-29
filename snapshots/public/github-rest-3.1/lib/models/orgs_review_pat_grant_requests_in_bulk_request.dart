@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Action to apply to the requests.
+final class OrgsReviewPatGrantRequestsInBulkRequestAction {const OrgsReviewPatGrantRequestsInBulkRequestAction._(this.value);
+
+factory OrgsReviewPatGrantRequestsInBulkRequestAction.fromJson(String json) { return switch (json) {
+  'approve' => approve,
+  'deny' => deny,
+  _ => OrgsReviewPatGrantRequestsInBulkRequestAction._(json),
+}; }
+
+static const OrgsReviewPatGrantRequestsInBulkRequestAction approve = OrgsReviewPatGrantRequestsInBulkRequestAction._('approve');
+
+static const OrgsReviewPatGrantRequestsInBulkRequestAction deny = OrgsReviewPatGrantRequestsInBulkRequestAction._('deny');
+
+static const List<OrgsReviewPatGrantRequestsInBulkRequestAction> values = [approve, deny];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OrgsReviewPatGrantRequestsInBulkRequestAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'OrgsReviewPatGrantRequestsInBulkRequestAction($value)'; } 
+ }
+final class OrgsReviewPatGrantRequestsInBulkRequest {const OrgsReviewPatGrantRequestsInBulkRequest({this.patRequestIds, required this.action, this.reason, });
+
+factory OrgsReviewPatGrantRequestsInBulkRequest.fromJson(Map<String, dynamic> json) { return OrgsReviewPatGrantRequestsInBulkRequest(
+  patRequestIds: (json['pat_request_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+  action: OrgsReviewPatGrantRequestsInBulkRequestAction.fromJson(json['action'] as String),
+  reason: json['reason'] as String?,
+); }
+
+/// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
+final List<int>? patRequestIds;
+
+/// Action to apply to the requests.
+final OrgsReviewPatGrantRequestsInBulkRequestAction action;
+
+/// Reason for approving or denying the requests. Max 1024 characters.
+final String? reason;
+
+Map<String, dynamic> toJson() { return {
+  'pat_request_ids': ?patRequestIds,
+  'action': action.toJson(),
+  'reason': ?reason,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action'); } 
+OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int> Function()? patRequestIds, OrgsReviewPatGrantRequestsInBulkRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(
+  patRequestIds: patRequestIds != null ? patRequestIds() : this.patRequestIds,
+  action: action ?? this.action,
+  reason: reason != null ? reason() : this.reason,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is OrgsReviewPatGrantRequestsInBulkRequest &&
+          listEquals(patRequestIds, other.patRequestIds) &&
+          action == other.action &&
+          reason == other.reason; } 
+@override int get hashCode { return Object.hash(Object.hashAll(patRequestIds ?? const []), action, reason); } 
+@override String toString() { return 'OrgsReviewPatGrantRequestsInBulkRequest(patRequestIds: $patRequestIds, action: $action, reason: $reason)'; } 
+ }

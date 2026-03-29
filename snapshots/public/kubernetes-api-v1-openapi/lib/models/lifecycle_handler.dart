@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'exec_action.dart';import 'http_get_action.dart';import 'sleep_action.dart';import 'tcp_socket_action.dart';/// LifecycleHandler defines a specific action that should be taken in a lifecycle hook. One and only one of the fields, except TCPSocket must be specified.
+final class LifecycleHandler {const LifecycleHandler({this.exec, this.httpGet, this.sleep, this.tcpSocket, });
+
+factory LifecycleHandler.fromJson(Map<String, dynamic> json) { return LifecycleHandler(
+  exec: json['exec'] != null ? ExecAction.fromJson(json['exec'] as Map<String, dynamic>) : null,
+  httpGet: json['httpGet'] != null ? HttpGetAction.fromJson(json['httpGet'] as Map<String, dynamic>) : null,
+  sleep: json['sleep'] != null ? SleepAction.fromJson(json['sleep'] as Map<String, dynamic>) : null,
+  tcpSocket: json['tcpSocket'] != null ? TcpSocketAction.fromJson(json['tcpSocket'] as Map<String, dynamic>) : null,
+); }
+
+/// Exec specifies a command to execute in the container.
+final ExecAction? exec;
+
+/// HTTPGet specifies an HTTP GET request to perform.
+final HttpGetAction? httpGet;
+
+/// Sleep represents a duration that the container should sleep.
+final SleepAction? sleep;
+
+/// Deprecated. TCPSocket is NOT supported as a LifecycleHandler and kept for backward compatibility. There is no validation of this field and lifecycle hooks will fail at runtime when it is specified.
+final TcpSocketAction? tcpSocket;
+
+Map<String, dynamic> toJson() { return {
+  if (exec != null) 'exec': exec?.toJson(),
+  if (httpGet != null) 'httpGet': httpGet?.toJson(),
+  if (sleep != null) 'sleep': sleep?.toJson(),
+  if (tcpSocket != null) 'tcpSocket': tcpSocket?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LifecycleHandler copyWith({ExecAction Function()? exec, HttpGetAction Function()? httpGet, SleepAction Function()? sleep, TcpSocketAction Function()? tcpSocket, }) { return LifecycleHandler(
+  exec: exec != null ? exec() : this.exec,
+  httpGet: httpGet != null ? httpGet() : this.httpGet,
+  sleep: sleep != null ? sleep() : this.sleep,
+  tcpSocket: tcpSocket != null ? tcpSocket() : this.tcpSocket,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LifecycleHandler &&
+          exec == other.exec &&
+          httpGet == other.httpGet &&
+          sleep == other.sleep &&
+          tcpSocket == other.tcpSocket; } 
+@override int get hashCode { return Object.hash(exec, httpGet, sleep, tcpSocket); } 
+@override String toString() { return 'LifecycleHandler(exec: $exec, httpGet: $httpGet, sleep: $sleep, tcpSocket: $tcpSocket)'; } 
+ }

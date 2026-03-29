@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations {const RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetAiBotsTimeseriesResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

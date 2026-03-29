@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer_rendering_options_param.dart';final class PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2 {const PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2._(this.value);
+
+factory PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2._(json),
+}; }
+
+static const PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2 $empty = PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2._('');
+
+static const List<PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2($value)'; } 
+ }
+typedef PostCustomersRequestInvoiceSettingsRenderingOptions = OneOf2<CustomerRenderingOptionsParam,PostCustomersRequestInvoiceSettingsRenderingOptionsVariant2>;

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class R2RemoveCustomDomainResponse {const R2RemoveCustomDomainResponse({required this.domain});
+
+factory R2RemoveCustomDomainResponse.fromJson(Map<String, dynamic> json) { return R2RemoveCustomDomainResponse(
+  domain: json['domain'] as String,
+); }
+
+/// Name of the removed custom domain.
+final String domain;
+
+Map<String, dynamic> toJson() { return {
+  'domain': domain,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') && json['domain'] is String; } 
+R2RemoveCustomDomainResponse copyWith({String? domain}) { return R2RemoveCustomDomainResponse(
+  domain: domain ?? this.domain,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2RemoveCustomDomainResponse &&
+          domain == other.domain; } 
+@override int get hashCode { return domain.hashCode; } 
+@override String toString() { return 'R2RemoveCustomDomainResponse(domain: $domain)'; } 
+ }

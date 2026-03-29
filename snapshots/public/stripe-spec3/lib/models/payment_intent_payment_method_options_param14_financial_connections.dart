@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_intent_payment_method_options_param14_financial_connections_filters.dart';final class PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions {const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions.fromJson(String json) { return switch (json) {
+  'balances' => balances,
+  'ownership' => ownership,
+  'payment_method' => paymentMethod,
+  'transactions' => transactions,
+  _ => PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions balances = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions._('balances');
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions ownership = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions._('ownership');
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions paymentMethod = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions._('payment_method');
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions transactions = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions._('transactions');
+
+static const List<PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions> values = [balances, ownership, paymentMethod, transactions];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch {const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch.fromJson(String json) { return switch (json) {
+  'balances' => balances,
+  'ownership' => ownership,
+  'transactions' => transactions,
+  _ => PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch balances = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch._('balances');
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch ownership = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch._('ownership');
+
+static const PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch transactions = PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch._('transactions');
+
+static const List<PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch> values = [balances, ownership, transactions];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParam14FinancialConnections {const PaymentIntentPaymentMethodOptionsParam14FinancialConnections({this.filters, this.permissions, this.prefetch, this.returnUrl, });
+
+factory PaymentIntentPaymentMethodOptionsParam14FinancialConnections.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam14FinancialConnections(
+  filters: json['filters'] != null ? PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
+  permissions: (json['permissions'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions.fromJson(e as String)).toList(),
+  prefetch: (json['prefetch'] as List<dynamic>?)?.map((e) => PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch.fromJson(e as String)).toList(),
+  returnUrl: json['return_url'] as String?,
+); }
+
+final PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsFilters? filters;
+
+final List<PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions>? permissions;
+
+final List<PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch>? prefetch;
+
+final String? returnUrl;
+
+Map<String, dynamic> toJson() { return {
+  if (filters != null) 'filters': filters?.toJson(),
+  if (permissions != null) 'permissions': permissions?.map((e) => e.toJson()).toList(),
+  if (prefetch != null) 'prefetch': prefetch?.map((e) => e.toJson()).toList(),
+  'return_url': ?returnUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsParam14FinancialConnections copyWith({PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsFilters Function()? filters, List<PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPermissions> Function()? permissions, List<PaymentIntentPaymentMethodOptionsParam14FinancialConnectionsPrefetch> Function()? prefetch, String Function()? returnUrl, }) { return PaymentIntentPaymentMethodOptionsParam14FinancialConnections(
+  filters: filters != null ? filters() : this.filters,
+  permissions: permissions != null ? permissions() : this.permissions,
+  prefetch: prefetch != null ? prefetch() : this.prefetch,
+  returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParam14FinancialConnections &&
+          filters == other.filters &&
+          listEquals(permissions, other.permissions) &&
+          listEquals(prefetch, other.prefetch) &&
+          returnUrl == other.returnUrl; } 
+@override int get hashCode { return Object.hash(filters, Object.hashAll(permissions ?? const []), Object.hashAll(prefetch ?? const []), returnUrl); } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam14FinancialConnections(filters: $filters, permissions: $permissions, prefetch: $prefetch, returnUrl: $returnUrl)'; } 
+ }

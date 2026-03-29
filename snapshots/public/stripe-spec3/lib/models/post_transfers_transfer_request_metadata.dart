@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTransfersTransferRequestMetadataVariant2 {const PostTransfersTransferRequestMetadataVariant2._(this.value);
+
+factory PostTransfersTransferRequestMetadataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostTransfersTransferRequestMetadataVariant2._(json),
+}; }
+
+static const PostTransfersTransferRequestMetadataVariant2 $empty = PostTransfersTransferRequestMetadataVariant2._('');
+
+static const List<PostTransfersTransferRequestMetadataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTransfersTransferRequestMetadataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTransfersTransferRequestMetadataVariant2($value)'; } 
+ }
+typedef PostTransfersTransferRequestMetadata = OneOf2<Map<String,String>,PostTransfersTransferRequestMetadataVariant2>;

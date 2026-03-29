@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PaymentMethodOptionsParam52 {const PaymentMethodOptionsParam52();
+
+factory PaymentMethodOptionsParam52.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsParam52(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsParam52 copyWith() { return PaymentMethodOptionsParam52(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodOptionsParam52; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsParam52()'; } 
+ }

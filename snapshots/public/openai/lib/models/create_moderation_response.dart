@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_moderation_response_results.dart';/// Represents if a given text input is potentially harmful.
+final class CreateModerationResponse {const CreateModerationResponse({required this.id, required this.model, required this.results, });
+
+factory CreateModerationResponse.fromJson(Map<String, dynamic> json) { return CreateModerationResponse(
+  id: json['id'] as String,
+  model: json['model'] as String,
+  results: (json['results'] as List<dynamic>).map((e) => CreateModerationResponseResults.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The unique identifier for the moderation request.
+final String id;
+
+/// The model used to generate the moderation results.
+final String model;
+
+/// A list of moderation objects.
+final List<CreateModerationResponseResults> results;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'model': model,
+  'results': results.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('model') && json['model'] is String &&
+      json.containsKey('results'); } 
+CreateModerationResponse copyWith({String? id, String? model, List<CreateModerationResponseResults>? results, }) { return CreateModerationResponse(
+  id: id ?? this.id,
+  model: model ?? this.model,
+  results: results ?? this.results,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModerationResponse &&
+          id == other.id &&
+          model == other.model &&
+          listEquals(results, other.results); } 
+@override int get hashCode { return Object.hash(id, model, Object.hashAll(results)); } 
+@override String toString() { return 'CreateModerationResponse(id: $id, model: $model, results: $results)'; } 
+ }

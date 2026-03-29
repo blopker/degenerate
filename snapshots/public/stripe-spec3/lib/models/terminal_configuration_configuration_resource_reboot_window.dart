@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class TerminalConfigurationConfigurationResourceRebootWindow {const TerminalConfigurationConfigurationResourceRebootWindow({required this.endHour, required this.startHour, });
+
+factory TerminalConfigurationConfigurationResourceRebootWindow.fromJson(Map<String, dynamic> json) { return TerminalConfigurationConfigurationResourceRebootWindow(
+  endHour: (json['end_hour'] as num).toInt(),
+  startHour: (json['start_hour'] as num).toInt(),
+); }
+
+/// Integer between 0 to 23 that represents the end hour of the reboot time window. The value must be different than the start_hour.
+final int endHour;
+
+/// Integer between 0 to 23 that represents the start hour of the reboot time window.
+final int startHour;
+
+Map<String, dynamic> toJson() { return {
+  'end_hour': endHour,
+  'start_hour': startHour,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_hour') && json['end_hour'] is num &&
+      json.containsKey('start_hour') && json['start_hour'] is num; } 
+TerminalConfigurationConfigurationResourceRebootWindow copyWith({int? endHour, int? startHour, }) { return TerminalConfigurationConfigurationResourceRebootWindow(
+  endHour: endHour ?? this.endHour,
+  startHour: startHour ?? this.startHour,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TerminalConfigurationConfigurationResourceRebootWindow &&
+          endHour == other.endHour &&
+          startHour == other.startHour; } 
+@override int get hashCode { return Object.hash(endHour, startHour); } 
+@override String toString() { return 'TerminalConfigurationConfigurationResourceRebootWindow(endHour: $endHour, startHour: $startHour)'; } 
+ }

@@ -1,0 +1,34 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// State of operation in API Discovery
+///   * `review` - Operation is not saved into API Shield Endpoint Management
+///   * `saved` - Operation is saved into API Shield Endpoint Management
+///   * `ignored` - Operation is marked as ignored
+/// 
+final class DiscoveryState {const DiscoveryState._(this.value);
+
+factory DiscoveryState.fromJson(String json) { return switch (json) {
+  'review' => review,
+  'saved' => saved,
+  'ignored' => ignored,
+  _ => DiscoveryState._(json),
+}; }
+
+static const DiscoveryState review = DiscoveryState._('review');
+
+static const DiscoveryState saved = DiscoveryState._('saved');
+
+static const DiscoveryState ignored = DiscoveryState._('ignored');
+
+static const List<DiscoveryState> values = [review, saved, ignored];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DiscoveryState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DiscoveryState($value)'; } 
+ }

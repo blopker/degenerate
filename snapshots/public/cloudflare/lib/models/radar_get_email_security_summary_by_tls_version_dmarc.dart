@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc._(this.value);
+
+factory RadarGetEmailSecuritySummaryByTlsVersionDmarc.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailSecuritySummaryByTlsVersionDmarc._(json),
+}; }
+
+static const RadarGetEmailSecuritySummaryByTlsVersionDmarc pass = RadarGetEmailSecuritySummaryByTlsVersionDmarc._('PASS');
+
+static const RadarGetEmailSecuritySummaryByTlsVersionDmarc none = RadarGetEmailSecuritySummaryByTlsVersionDmarc._('NONE');
+
+static const RadarGetEmailSecuritySummaryByTlsVersionDmarc fail = RadarGetEmailSecuritySummaryByTlsVersionDmarc._('FAIL');
+
+static const List<RadarGetEmailSecuritySummaryByTlsVersionDmarc> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecuritySummaryByTlsVersionDmarc && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryByTlsVersionDmarc($value)'; } 
+ }

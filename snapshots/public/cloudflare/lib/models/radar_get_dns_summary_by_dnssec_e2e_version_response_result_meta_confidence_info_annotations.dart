@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetDnsSummaryByDnssecE2eVersionResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

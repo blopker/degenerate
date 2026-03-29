@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tls_certificates_and_hostnames_custom_origin_server.dart';import 'tls_certificates_and_hostnames_custom_origin_sni.dart';import 'tls_certificates_and_hostnames_sslpost.dart';final class CustomHostnameForAZoneEditCustomHostnameRequest {const CustomHostnameForAZoneEditCustomHostnameRequest({this.customMetadata, this.customOriginServer, this.customOriginSni, this.ssl, });
+
+factory CustomHostnameForAZoneEditCustomHostnameRequest.fromJson(Map<String, dynamic> json) { return CustomHostnameForAZoneEditCustomHostnameRequest(
+  customMetadata: (json['custom_metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  customOriginServer: json['custom_origin_server'] != null ? TlsCertificatesAndHostnamesCustomOriginServer.fromJson(json['custom_origin_server'] as String) : null,
+  customOriginSni: json['custom_origin_sni'] != null ? TlsCertificatesAndHostnamesCustomOriginSni.fromJson(json['custom_origin_sni'] as String) : null,
+  ssl: json['ssl'] != null ? TlsCertificatesAndHostnamesSslpost.fromJson(json['ssl'] as Map<String, dynamic>) : null,
+); }
+
+/// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
+final Map<String,String>? customMetadata;
+
+/// a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.
+final TlsCertificatesAndHostnamesCustomOriginServer? customOriginServer;
+
+/// A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
+final TlsCertificatesAndHostnamesCustomOriginSni? customOriginSni;
+
+final TlsCertificatesAndHostnamesSslpost? ssl;
+
+Map<String, dynamic> toJson() { return {
+  'custom_metadata': ?customMetadata,
+  if (customOriginServer != null) 'custom_origin_server': customOriginServer?.toJson(),
+  if (customOriginSni != null) 'custom_origin_sni': customOriginSni?.toJson(),
+  if (ssl != null) 'ssl': ssl?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CustomHostnameForAZoneEditCustomHostnameRequest copyWith({Map<String, String> Function()? customMetadata, TlsCertificatesAndHostnamesCustomOriginServer Function()? customOriginServer, TlsCertificatesAndHostnamesCustomOriginSni Function()? customOriginSni, TlsCertificatesAndHostnamesSslpost Function()? ssl, }) { return CustomHostnameForAZoneEditCustomHostnameRequest(
+  customMetadata: customMetadata != null ? customMetadata() : this.customMetadata,
+  customOriginServer: customOriginServer != null ? customOriginServer() : this.customOriginServer,
+  customOriginSni: customOriginSni != null ? customOriginSni() : this.customOriginSni,
+  ssl: ssl != null ? ssl() : this.ssl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomHostnameForAZoneEditCustomHostnameRequest &&
+          customMetadata == other.customMetadata &&
+          customOriginServer == other.customOriginServer &&
+          customOriginSni == other.customOriginSni &&
+          ssl == other.ssl; } 
+@override int get hashCode { return Object.hash(customMetadata, customOriginServer, customOriginSni, ssl); } 
+@override String toString() { return 'CustomHostnameForAZoneEditCustomHostnameRequest(customMetadata: $customMetadata, customOriginServer: $customOriginServer, customOriginSni: $customOriginSni, ssl: $ssl)'; } 
+ }

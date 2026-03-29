@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The secret key to use when streaming via RTMPS to a live input.
+extension type const StreamInputRtmpsStreamKey(String value) {
+factory StreamInputRtmpsStreamKey.fromJson(String json) => StreamInputRtmpsStreamKey(json);
+
+String toJson() => value;
+
+}
+/// The RTMPS URL you provide to the broadcaster, which they stream live video to.
+extension type const StreamInputRtmpsUrl(String value) {
+factory StreamInputRtmpsUrl.fromJson(String json) => StreamInputRtmpsUrl(json);
+
+String toJson() => value;
+
+}
+/// Details for streaming to an live input using RTMPS.
+final class StreamInputRtmps {const StreamInputRtmps({this.streamKey, this.url, });
+
+factory StreamInputRtmps.fromJson(Map<String, dynamic> json) { return StreamInputRtmps(
+  streamKey: json['streamKey'] != null ? StreamInputRtmpsStreamKey.fromJson(json['streamKey'] as String) : null,
+  url: json['url'] != null ? StreamInputRtmpsUrl.fromJson(json['url'] as String) : null,
+); }
+
+final StreamInputRtmpsStreamKey? streamKey;
+
+final StreamInputRtmpsUrl? url;
+
+Map<String, dynamic> toJson() { return {
+  if (streamKey != null) 'streamKey': streamKey?.toJson(),
+  if (url != null) 'url': url?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamInputRtmps copyWith({StreamInputRtmpsStreamKey Function()? streamKey, StreamInputRtmpsUrl Function()? url, }) { return StreamInputRtmps(
+  streamKey: streamKey != null ? streamKey() : this.streamKey,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamInputRtmps &&
+          streamKey == other.streamKey &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(streamKey, url); } 
+@override String toString() { return 'StreamInputRtmps(streamKey: $streamKey, url: $url)'; } 
+ }

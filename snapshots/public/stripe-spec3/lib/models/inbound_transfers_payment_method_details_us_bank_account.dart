@@ -1,0 +1,146 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers_payment_method_details_us_bank_account_mandate.dart';import 'mandate.dart';/// Account holder type: individual or company.
+final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(this.value);
+
+factory InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
+  'company' => company,
+  'individual' => individual,
+  _ => InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._(json),
+}; }
+
+static const InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType company = InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._('company');
+
+static const InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType individual = InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType._('individual');
+
+static const List<InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType> values = [company, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType($value)'; } 
+ }
+/// Account type: checkings or savings. Defaults to checking if omitted.
+final class InboundTransfersPaymentMethodDetailsUsBankAccountAccountType {const InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(this.value);
+
+factory InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'savings' => savings,
+  _ => InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._(json),
+}; }
+
+static const InboundTransfersPaymentMethodDetailsUsBankAccountAccountType checking = InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._('checking');
+
+static const InboundTransfersPaymentMethodDetailsUsBankAccountAccountType savings = InboundTransfersPaymentMethodDetailsUsBankAccountAccountType._('savings');
+
+static const List<InboundTransfersPaymentMethodDetailsUsBankAccountAccountType> values = [checking, savings];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InboundTransfersPaymentMethodDetailsUsBankAccountAccountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountAccountType($value)'; } 
+ }
+/// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
+final class InboundTransfersPaymentMethodDetailsUsBankAccountNetwork {const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(this.value);
+
+factory InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) { return switch (json) {
+  'ach' => ach,
+  _ => InboundTransfersPaymentMethodDetailsUsBankAccountNetwork._(json),
+}; }
+
+static const InboundTransfersPaymentMethodDetailsUsBankAccountNetwork ach = InboundTransfersPaymentMethodDetailsUsBankAccountNetwork._('ach');
+
+static const List<InboundTransfersPaymentMethodDetailsUsBankAccountNetwork> values = [ach];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InboundTransfersPaymentMethodDetailsUsBankAccountNetwork && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccountNetwork($value)'; } 
+ }
+/// 
+final class InboundTransfersPaymentMethodDetailsUsBankAccount {const InboundTransfersPaymentMethodDetailsUsBankAccount({this.accountHolderType, this.accountType, this.bankName, this.fingerprint, this.last4, this.mandate, required this.network, this.routingNumber, });
+
+factory InboundTransfersPaymentMethodDetailsUsBankAccount.fromJson(Map<String, dynamic> json) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
+  accountHolderType: json['account_holder_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? InboundTransfersPaymentMethodDetailsUsBankAccountAccountType.fromJson(json['account_type'] as String) : null,
+  bankName: json['bank_name'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  last4: json['last4'] as String?,
+  mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
+  network: InboundTransfersPaymentMethodDetailsUsBankAccountNetwork.fromJson(json['network'] as String),
+  routingNumber: json['routing_number'] as String?,
+); }
+
+/// Account holder type: individual or company.
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? accountHolderType;
+
+/// Account type: checkings or savings. Defaults to checking if omitted.
+final InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? accountType;
+
+/// Name of the bank associated with the bank account.
+final String? bankName;
+
+/// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
+final String? fingerprint;
+
+/// Last four digits of the bank account number.
+final String? last4;
+
+/// ID of the mandate used to make this payment.
+final InboundTransfersPaymentMethodDetailsUsBankAccountMandate? mandate;
+
+/// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
+final InboundTransfersPaymentMethodDetailsUsBankAccountNetwork network;
+
+/// Routing number of the bank account.
+final String? routingNumber;
+
+Map<String, dynamic> toJson() { return {
+  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
+  if (accountType != null) 'account_type': accountType?.toJson(),
+  'bank_name': ?bankName,
+  'fingerprint': ?fingerprint,
+  'last4': ?last4,
+  if (mandate != null) 'mandate': mandate?.toJson(),
+  'network': network.toJson(),
+  'routing_number': ?routingNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('network'); } 
+InboundTransfersPaymentMethodDetailsUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? fingerprint, String? Function()? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate Function()? mandate, InboundTransfersPaymentMethodDetailsUsBankAccountNetwork? network, String? Function()? routingNumber, }) { return InboundTransfersPaymentMethodDetailsUsBankAccount(
+  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
+  accountType: accountType != null ? accountType() : this.accountType,
+  bankName: bankName != null ? bankName() : this.bankName,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  last4: last4 != null ? last4() : this.last4,
+  mandate: mandate != null ? mandate() : this.mandate,
+  network: network ?? this.network,
+  routingNumber: routingNumber != null ? routingNumber() : this.routingNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InboundTransfersPaymentMethodDetailsUsBankAccount &&
+          accountHolderType == other.accountHolderType &&
+          accountType == other.accountType &&
+          bankName == other.bankName &&
+          fingerprint == other.fingerprint &&
+          last4 == other.last4 &&
+          mandate == other.mandate &&
+          network == other.network &&
+          routingNumber == other.routingNumber; } 
+@override int get hashCode { return Object.hash(accountHolderType, accountType, bankName, fingerprint, last4, mandate, network, routingNumber); } 
+@override String toString() { return 'InboundTransfersPaymentMethodDetailsUsBankAccount(accountHolderType: $accountHolderType, accountType: $accountType, bankName: $bankName, fingerprint: $fingerprint, last4: $last4, mandate: $mandate, network: $network, routingNumber: $routingNumber)'; } 
+ }

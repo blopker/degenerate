@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class LabeledIssueEventLabel {const LabeledIssueEventLabel({required this.name, required this.color, });
+
+factory LabeledIssueEventLabel.fromJson(Map<String, dynamic> json) { return LabeledIssueEventLabel(
+  name: json['name'] as String,
+  color: json['color'] as String,
+); }
+
+final String name;
+
+final String color;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'color': color,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('color') && json['color'] is String; } 
+LabeledIssueEventLabel copyWith({String? name, String? color, }) { return LabeledIssueEventLabel(
+  name: name ?? this.name,
+  color: color ?? this.color,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LabeledIssueEventLabel &&
+          name == other.name &&
+          color == other.color; } 
+@override int get hashCode { return Object.hash(name, color); } 
+@override String toString() { return 'LabeledIssueEventLabel(name: $name, color: $color)'; } 
+ }

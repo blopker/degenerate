@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Breakdown of tokens used in the prompt.
+final class CompletionUsagePromptTokensDetails {const CompletionUsagePromptTokensDetails({this.audioTokens = 0, this.cachedTokens = 0, });
+
+factory CompletionUsagePromptTokensDetails.fromJson(Map<String, dynamic> json) { return CompletionUsagePromptTokensDetails(
+  audioTokens: json.containsKey('audio_tokens') ? (json['audio_tokens'] as num).toInt() : 0,
+  cachedTokens: json.containsKey('cached_tokens') ? (json['cached_tokens'] as num).toInt() : 0,
+); }
+
+/// Audio input tokens present in the prompt.
+final int audioTokens;
+
+/// Cached tokens present in the prompt.
+final int cachedTokens;
+
+Map<String, dynamic> toJson() { return {
+  'audio_tokens': audioTokens,
+  'cached_tokens': cachedTokens,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CompletionUsagePromptTokensDetails copyWith({int Function()? audioTokens, int Function()? cachedTokens, }) { return CompletionUsagePromptTokensDetails(
+  audioTokens: audioTokens != null ? audioTokens() : this.audioTokens,
+  cachedTokens: cachedTokens != null ? cachedTokens() : this.cachedTokens,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CompletionUsagePromptTokensDetails &&
+          audioTokens == other.audioTokens &&
+          cachedTokens == other.cachedTokens; } 
+@override int get hashCode { return Object.hash(audioTokens, cachedTokens); } 
+@override String toString() { return 'CompletionUsagePromptTokensDetails(audioTokens: $audioTokens, cachedTokens: $cachedTokens)'; } 
+ }

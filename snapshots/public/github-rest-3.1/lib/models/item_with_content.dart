@@ -1,0 +1,98 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_content_type.dart';import 'simple_user.dart';/// An item belonging to a project
+final class ItemWithContent {const ItemWithContent({required this.id, this.nodeId, this.projectUrl, required this.contentType, this.content, this.creator, required this.createdAt, required this.updatedAt, required this.archivedAt, this.itemUrl, this.fields, });
+
+factory ItemWithContent.fromJson(Map<String, dynamic> json) { return ItemWithContent(
+  id: (json['id'] as num).toDouble(),
+  nodeId: json['node_id'] as String?,
+  projectUrl: json['project_url'] != null ? Uri.parse(json['project_url'] as String) : null,
+  contentType: ItemContentType.fromJson(json['content_type'] as String),
+  content: (json['content'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  creator: json['creator'] != null ? SimpleUser.fromJson(json['creator'] as Map<String, dynamic>) : null,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  archivedAt: json['archived_at'] != null ? DateTime.parse(json['archived_at'] as String) : null,
+  itemUrl: json['item_url'] != null ? Uri.parse(json['item_url'] as String) : null,
+  fields: (json['fields'] as List<dynamic>?)?.map((e) => (e as Map<String, dynamic>).map((k, v) => MapEntry(k, v))).toList(),
+); }
+
+/// The unique identifier of the project item.
+final double id;
+
+/// The node ID of the project item.
+final String? nodeId;
+
+/// The API URL of the project that contains this item.
+final Uri? projectUrl;
+
+/// The type of content tracked in a project item
+final ItemContentType contentType;
+
+/// The content of the item, which varies by content type.
+final Map<String,dynamic>? content;
+
+final SimpleUser? creator;
+
+/// The time when the item was created.
+final DateTime createdAt;
+
+/// The time when the item was last updated.
+final DateTime updatedAt;
+
+/// The time when the item was archived.
+final DateTime? archivedAt;
+
+/// The API URL of this item.
+final Uri? itemUrl;
+
+/// The fields and values associated with this item.
+final List<Map<String,dynamic>>? fields;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'node_id': ?nodeId,
+  if (projectUrl != null) 'project_url': projectUrl?.toString(),
+  'content_type': contentType.toJson(),
+  'content': ?content,
+  if (creator != null) 'creator': creator?.toJson(),
+  'created_at': createdAt.toIso8601String(),
+  'updated_at': updatedAt.toIso8601String(),
+  if (archivedAt != null) 'archived_at': archivedAt?.toIso8601String(),
+  if (itemUrl != null) 'item_url': itemUrl?.toString(),
+  if (fields != null) 'fields': fields?.map((e) => e).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('content_type') &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('archived_at') && json['archived_at'] is String; } 
+ItemWithContent copyWith({double? id, String Function()? nodeId, Uri Function()? projectUrl, ItemContentType? contentType, Map<String, dynamic>? Function()? content, SimpleUser Function()? creator, DateTime? createdAt, DateTime? updatedAt, DateTime? Function()? archivedAt, Uri? Function()? itemUrl, List<Map<String, dynamic>> Function()? fields, }) { return ItemWithContent(
+  id: id ?? this.id,
+  nodeId: nodeId != null ? nodeId() : this.nodeId,
+  projectUrl: projectUrl != null ? projectUrl() : this.projectUrl,
+  contentType: contentType ?? this.contentType,
+  content: content != null ? content() : this.content,
+  creator: creator != null ? creator() : this.creator,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  archivedAt: archivedAt != null ? archivedAt() : this.archivedAt,
+  itemUrl: itemUrl != null ? itemUrl() : this.itemUrl,
+  fields: fields != null ? fields() : this.fields,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ItemWithContent &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          projectUrl == other.projectUrl &&
+          contentType == other.contentType &&
+          content == other.content &&
+          creator == other.creator &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          archivedAt == other.archivedAt &&
+          itemUrl == other.itemUrl &&
+          listEquals(fields, other.fields); } 
+@override int get hashCode { return Object.hash(id, nodeId, projectUrl, contentType, content, creator, createdAt, updatedAt, archivedAt, itemUrl, Object.hashAll(fields ?? const [])); } 
+@override String toString() { return 'ItemWithContent(id: $id, nodeId: $nodeId, projectUrl: $projectUrl, contentType: $contentType, content: $content, creator: $creator, createdAt: $createdAt, updatedAt: $updatedAt, archivedAt: $archivedAt, itemUrl: $itemUrl, fields: $fields)'; } 
+ }

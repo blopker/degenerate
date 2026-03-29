@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentIntentsRequestPaymentMethodDataCashapp {const PostPaymentIntentsRequestPaymentMethodDataCashapp();
+
+factory PostPaymentIntentsRequestPaymentMethodDataCashapp.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsRequestPaymentMethodDataCashapp(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentIntentsRequestPaymentMethodDataCashapp copyWith() { return PostPaymentIntentsRequestPaymentMethodDataCashapp(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostPaymentIntentsRequestPaymentMethodDataCashapp; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodDataCashapp()'; } 
+ }

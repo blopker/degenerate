@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Details on the account's acceptance of the [Stripe Services Agreement](/connect/updating-accounts#tos-acceptance). This property can only be updated for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `application`, which includes Custom accounts. This property defaults to a `full` service agreement when empty.
+final class PostAccountsAccountRequestTosAcceptance {const PostAccountsAccountRequestTosAcceptance({this.date, this.ip, this.serviceAgreement, this.userAgent, });
+
+factory PostAccountsAccountRequestTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestTosAcceptance(
+  date: json['date'] != null ? (json['date'] as num).toInt() : null,
+  ip: json['ip'] as String?,
+  serviceAgreement: json['service_agreement'] as String?,
+  userAgent: json['user_agent'] as String?,
+); }
+
+final int? date;
+
+final String? ip;
+
+final String? serviceAgreement;
+
+final String? userAgent;
+
+Map<String, dynamic> toJson() { return {
+  'date': ?date,
+  'ip': ?ip,
+  'service_agreement': ?serviceAgreement,
+  'user_agent': ?userAgent,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountRequestTosAcceptance copyWith({int Function()? date, String Function()? ip, String Function()? serviceAgreement, String Function()? userAgent, }) { return PostAccountsAccountRequestTosAcceptance(
+  date: date != null ? date() : this.date,
+  ip: ip != null ? ip() : this.ip,
+  serviceAgreement: serviceAgreement != null ? serviceAgreement() : this.serviceAgreement,
+  userAgent: userAgent != null ? userAgent() : this.userAgent,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountRequestTosAcceptance &&
+          date == other.date &&
+          ip == other.ip &&
+          serviceAgreement == other.serviceAgreement &&
+          userAgent == other.userAgent; } 
+@override int get hashCode { return Object.hash(date, ip, serviceAgreement, userAgent); } 
+@override String toString() { return 'PostAccountsAccountRequestTosAcceptance(date: $date, ip: $ip, serviceAgreement: $serviceAgreement, userAgent: $userAgent)'; } 
+ }

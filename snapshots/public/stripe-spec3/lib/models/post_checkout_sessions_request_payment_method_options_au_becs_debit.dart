@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage._('none');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit {const PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit({this.setupFutureUsage, this.targetDate, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(
+  setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  targetDate: json['target_date'] as String?,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage? setupFutureUsage;
+
+final String? targetDate;
+
+Map<String, dynamic> toJson() { return {
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+  'target_date': ?targetDate,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebitSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+  targetDate: targetDate != null ? targetDate() : this.targetDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit &&
+          setupFutureUsage == other.setupFutureUsage &&
+          targetDate == other.targetDate; } 
+@override int get hashCode { return Object.hash(setupFutureUsage, targetDate); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsAuBecsDebit(setupFutureUsage: $setupFutureUsage, targetDate: $targetDate)'; } 
+ }

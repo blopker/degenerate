@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// An ISO 8601 timestamp used for time travel operations. The database will be restored to the nearest available bookmark at or before this timestamp.
+extension type D1TimeTravelTimestamp(DateTime value) {
+factory D1TimeTravelTimestamp.fromJson(String json) => D1TimeTravelTimestamp(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}

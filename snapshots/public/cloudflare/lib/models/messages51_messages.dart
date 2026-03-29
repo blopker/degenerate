@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_messages_assistant.dart';import 'messages51_messages_developer.dart';import 'messages51_messages_function.dart';import 'messages51_messages_system.dart';import 'messages51_messages_tool.dart';import 'messages51_messages_user.dart';typedef Messages51Messages = OneOf6<Messages51MessagesDeveloper,Messages51MessagesSystem,Messages51MessagesUser,Messages51MessagesAssistant,Messages51MessagesTool,Messages51MessagesFunction>;

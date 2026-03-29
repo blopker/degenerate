@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_accounts_account_request_individual_verification_additional_document.dart';import 'post_accounts_account_request_individual_verification_document.dart';final class PostAccountsAccountRequestIndividualVerification {const PostAccountsAccountRequestIndividualVerification({this.additionalDocument, this.document, });
+
+factory PostAccountsAccountRequestIndividualVerification.fromJson(Map<String, dynamic> json) { return PostAccountsAccountRequestIndividualVerification(
+  additionalDocument: json['additional_document'] != null ? PostAccountsAccountRequestIndividualVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
+  document: json['document'] != null ? PostAccountsAccountRequestIndividualVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
+); }
+
+final PostAccountsAccountRequestIndividualVerificationAdditionalDocument? additionalDocument;
+
+final PostAccountsAccountRequestIndividualVerificationDocument? document;
+
+Map<String, dynamic> toJson() { return {
+  if (additionalDocument != null) 'additional_document': additionalDocument?.toJson(),
+  if (document != null) 'document': document?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountRequestIndividualVerification copyWith({PostAccountsAccountRequestIndividualVerificationAdditionalDocument Function()? additionalDocument, PostAccountsAccountRequestIndividualVerificationDocument Function()? document, }) { return PostAccountsAccountRequestIndividualVerification(
+  additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
+  document: document != null ? document() : this.document,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountRequestIndividualVerification &&
+          additionalDocument == other.additionalDocument &&
+          document == other.document; } 
+@override int get hashCode { return Object.hash(additionalDocument, document); } 
+@override String toString() { return 'PostAccountsAccountRequestIndividualVerification(additionalDocument: $additionalDocument, document: $document)'; } 
+ }

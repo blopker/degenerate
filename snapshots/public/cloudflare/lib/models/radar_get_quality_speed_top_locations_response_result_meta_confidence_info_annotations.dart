@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations {const RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetQualitySpeedTopLocationsResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

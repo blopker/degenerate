@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AmountDetailsParamLineItemsVariant1Tax {const AmountDetailsParamLineItemsVariant1Tax({required this.totalTaxAmount});
+
+factory AmountDetailsParamLineItemsVariant1Tax.fromJson(Map<String, dynamic> json) { return AmountDetailsParamLineItemsVariant1Tax(
+  totalTaxAmount: (json['total_tax_amount'] as num).toInt(),
+); }
+
+final int totalTaxAmount;
+
+Map<String, dynamic> toJson() { return {
+  'total_tax_amount': totalTaxAmount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_tax_amount') && json['total_tax_amount'] is num; } 
+AmountDetailsParamLineItemsVariant1Tax copyWith({int? totalTaxAmount}) { return AmountDetailsParamLineItemsVariant1Tax(
+  totalTaxAmount: totalTaxAmount ?? this.totalTaxAmount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AmountDetailsParamLineItemsVariant1Tax &&
+          totalTaxAmount == other.totalTaxAmount; } 
+@override int get hashCode { return totalTaxAmount.hashCode; } 
+@override String toString() { return 'AmountDetailsParamLineItemsVariant1Tax(totalTaxAmount: $totalTaxAmount)'; } 
+ }

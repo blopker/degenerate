@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_fetch_tokens_response400_errors.dart';final class AiSearchFetchTokensResponse400 {const AiSearchFetchTokensResponse400({required this.errors, required this.success, });
+
+factory AiSearchFetchTokensResponse400.fromJson(Map<String, dynamic> json) { return AiSearchFetchTokensResponse400(
+  errors: (json['errors'] as List<dynamic>).map((e) => AiSearchFetchTokensResponse400Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<AiSearchFetchTokensResponse400Errors> errors;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AiSearchFetchTokensResponse400 copyWith({List<AiSearchFetchTokensResponse400Errors>? errors, bool? success, }) { return AiSearchFetchTokensResponse400(
+  errors: errors ?? this.errors,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchFetchTokensResponse400 &&
+          listEquals(errors, other.errors) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), success); } 
+@override String toString() { return 'AiSearchFetchTokensResponse400(errors: $errors, success: $success)'; } 
+ }

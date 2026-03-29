@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_tag_indicators_list_response_indicators.dart';import 'get_tag_indicators_list_response_pagination.dart';final class GetTagIndicatorsListResponse {const GetTagIndicatorsListResponse({required this.indicators, required this.pagination, });
+
+factory GetTagIndicatorsListResponse.fromJson(Map<String, dynamic> json) { return GetTagIndicatorsListResponse(
+  indicators: (json['indicators'] as List<dynamic>).map((e) => GetTagIndicatorsListResponseIndicators.fromJson(e as Map<String, dynamic>)).toList(),
+  pagination: GetTagIndicatorsListResponsePagination.fromJson(json['pagination'] as Map<String, dynamic>),
+); }
+
+final List<GetTagIndicatorsListResponseIndicators> indicators;
+
+final GetTagIndicatorsListResponsePagination pagination;
+
+Map<String, dynamic> toJson() { return {
+  'indicators': indicators.map((e) => e.toJson()).toList(),
+  'pagination': pagination.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('indicators') &&
+      json.containsKey('pagination'); } 
+GetTagIndicatorsListResponse copyWith({List<GetTagIndicatorsListResponseIndicators>? indicators, GetTagIndicatorsListResponsePagination? pagination, }) { return GetTagIndicatorsListResponse(
+  indicators: indicators ?? this.indicators,
+  pagination: pagination ?? this.pagination,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetTagIndicatorsListResponse &&
+          listEquals(indicators, other.indicators) &&
+          pagination == other.pagination; } 
+@override int get hashCode { return Object.hash(Object.hashAll(indicators), pagination); } 
+@override String toString() { return 'GetTagIndicatorsListResponse(indicators: $indicators, pagination: $pagination)'; } 
+ }

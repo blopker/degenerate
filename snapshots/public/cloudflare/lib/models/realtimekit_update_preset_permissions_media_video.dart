@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Can produce video
+final class RealtimekitUpdatePresetPermissionsMediaVideoCanProduce {const RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._(this.value);
+
+factory RealtimekitUpdatePresetPermissionsMediaVideoCanProduce.fromJson(String json) { return switch (json) {
+  'ALLOWED' => allowed,
+  'NOT_ALLOWED' => notAllowed,
+  'CAN_REQUEST' => canRequest,
+  _ => RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._(json),
+}; }
+
+static const RealtimekitUpdatePresetPermissionsMediaVideoCanProduce allowed = RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._('ALLOWED');
+
+static const RealtimekitUpdatePresetPermissionsMediaVideoCanProduce notAllowed = RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._('NOT_ALLOWED');
+
+static const RealtimekitUpdatePresetPermissionsMediaVideoCanProduce canRequest = RealtimekitUpdatePresetPermissionsMediaVideoCanProduce._('CAN_REQUEST');
+
+static const List<RealtimekitUpdatePresetPermissionsMediaVideoCanProduce> values = [allowed, notAllowed, canRequest];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimekitUpdatePresetPermissionsMediaVideoCanProduce && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaVideoCanProduce($value)'; } 
+ }
+/// Video permissions
+final class RealtimekitUpdatePresetPermissionsMediaVideo {const RealtimekitUpdatePresetPermissionsMediaVideo({this.canProduce});
+
+factory RealtimekitUpdatePresetPermissionsMediaVideo.fromJson(Map<String, dynamic> json) { return RealtimekitUpdatePresetPermissionsMediaVideo(
+  canProduce: json['can_produce'] != null ? RealtimekitUpdatePresetPermissionsMediaVideoCanProduce.fromJson(json['can_produce'] as String) : null,
+); }
+
+/// Can produce video
+final RealtimekitUpdatePresetPermissionsMediaVideoCanProduce? canProduce;
+
+Map<String, dynamic> toJson() { return {
+  if (canProduce != null) 'can_produce': canProduce?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimekitUpdatePresetPermissionsMediaVideo copyWith({RealtimekitUpdatePresetPermissionsMediaVideoCanProduce Function()? canProduce}) { return RealtimekitUpdatePresetPermissionsMediaVideo(
+  canProduce: canProduce != null ? canProduce() : this.canProduce,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitUpdatePresetPermissionsMediaVideo &&
+          canProduce == other.canProduce; } 
+@override int get hashCode { return canProduce.hashCode; } 
+@override String toString() { return 'RealtimekitUpdatePresetPermissionsMediaVideo(canProduce: $canProduce)'; } 
+ }

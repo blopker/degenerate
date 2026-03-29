@@ -1,0 +1,81 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The color associated with the option.
+final class FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor._(this.value);
+
+factory FieldSingleSelectOptionColor.fromJson(String json) { return switch (json) {
+  'BLUE' => blue,
+  'GRAY' => gray,
+  'GREEN' => green,
+  'ORANGE' => orange,
+  'PINK' => pink,
+  'PURPLE' => purple,
+  'RED' => red,
+  'YELLOW' => yellow,
+  _ => FieldSingleSelectOptionColor._(json),
+}; }
+
+static const FieldSingleSelectOptionColor blue = FieldSingleSelectOptionColor._('BLUE');
+
+static const FieldSingleSelectOptionColor gray = FieldSingleSelectOptionColor._('GRAY');
+
+static const FieldSingleSelectOptionColor green = FieldSingleSelectOptionColor._('GREEN');
+
+static const FieldSingleSelectOptionColor orange = FieldSingleSelectOptionColor._('ORANGE');
+
+static const FieldSingleSelectOptionColor pink = FieldSingleSelectOptionColor._('PINK');
+
+static const FieldSingleSelectOptionColor purple = FieldSingleSelectOptionColor._('PURPLE');
+
+static const FieldSingleSelectOptionColor red = FieldSingleSelectOptionColor._('RED');
+
+static const FieldSingleSelectOptionColor yellow = FieldSingleSelectOptionColor._('YELLOW');
+
+static const List<FieldSingleSelectOptionColor> values = [blue, gray, green, orange, pink, purple, red, yellow];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FieldSingleSelectOptionColor && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FieldSingleSelectOptionColor($value)'; } 
+ }
+final class FieldSingleSelectOption {const FieldSingleSelectOption({this.name, this.color, this.description, });
+
+factory FieldSingleSelectOption.fromJson(Map<String, dynamic> json) { return FieldSingleSelectOption(
+  name: json['name'] as String?,
+  color: json['color'] != null ? FieldSingleSelectOptionColor.fromJson(json['color'] as String) : null,
+  description: json['description'] as String?,
+); }
+
+/// The display name of the option.
+final String? name;
+
+/// The color associated with the option.
+final FieldSingleSelectOptionColor? color;
+
+/// The description of the option.
+final String? description;
+
+Map<String, dynamic> toJson() { return {
+  'name': ?name,
+  if (color != null) 'color': color?.toJson(),
+  'description': ?description,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FieldSingleSelectOption copyWith({String Function()? name, FieldSingleSelectOptionColor Function()? color, String Function()? description, }) { return FieldSingleSelectOption(
+  name: name != null ? name() : this.name,
+  color: color != null ? color() : this.color,
+  description: description != null ? description() : this.description,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FieldSingleSelectOption &&
+          name == other.name &&
+          color == other.color &&
+          description == other.description; } 
+@override int get hashCode { return Object.hash(name, color, description); } 
+@override String toString() { return 'FieldSingleSelectOption(name: $name, color: $color, description: $description)'; } 
+ }

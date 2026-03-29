@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_details_card_present_offline.dart';/// Details about payments collected offline.
+final class PaymentMethodDetailsCardPresentOffline2 {const PaymentMethodDetailsCardPresentOffline2({this.paymentMethodDetailsCardPresentOffline});
+
+factory PaymentMethodDetailsCardPresentOffline2.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsCardPresentOffline2(
+  paymentMethodDetailsCardPresentOffline: PaymentMethodDetailsCardPresentOffline.canParse(json) ? PaymentMethodDetailsCardPresentOffline.fromJson(json) : null,
+); }
+
+final PaymentMethodDetailsCardPresentOffline? paymentMethodDetailsCardPresentOffline;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodDetailsCardPresentOffline != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodDetailsCardPresentOffline?.toJson(),
+}; } 
+ }

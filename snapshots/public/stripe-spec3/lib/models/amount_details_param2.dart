@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_param2_discount_amount.dart';import 'amount_details_param2_line_items.dart';import 'amount_details_param2_line_items_variant1.dart';import 'amount_details_param2_shipping.dart';import 'amount_details_param2_tax.dart';import 'amount_details_shipping_param4.dart';import 'amount_details_tax_param4.dart';final class AmountDetailsParam2 {const AmountDetailsParam2({this.discountAmount, this.enforceArithmeticValidation, this.lineItems, this.shipping, this.tax, });
+
+factory AmountDetailsParam2.fromJson(Map<String, dynamic> json) { return AmountDetailsParam2(
+  discountAmount: json['discount_amount'] != null ? OneOf2.parse(json['discount_amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => AmountDetailsParam2DiscountAmountVariant2.fromJson(v as String),) : null,
+  enforceArithmeticValidation: json['enforce_arithmetic_validation'] as bool?,
+  lineItems: json['line_items'] != null ? OneOf2.parse(json['line_items'], fromA: (v) => (v as List<dynamic>).map((e) => AmountDetailsParam2LineItemsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => AmountDetailsParam2LineItemsVariant2.fromJson(v as String),) : null,
+  shipping: json['shipping'] != null ? OneOf2.parse(json['shipping'], fromA: (v) => AmountDetailsShippingParam4.fromJson(v as Map<String, dynamic>), fromB: (v) => AmountDetailsParam2ShippingVariant2.fromJson(v as String),) : null,
+  tax: json['tax'] != null ? OneOf2.parse(json['tax'], fromA: (v) => AmountDetailsTaxParam4.fromJson(v as Map<String, dynamic>), fromB: (v) => AmountDetailsParam2TaxVariant2.fromJson(v as String),) : null,
+); }
+
+final AmountDetailsParam2DiscountAmount? discountAmount;
+
+final bool? enforceArithmeticValidation;
+
+final AmountDetailsParam2LineItems? lineItems;
+
+final AmountDetailsParam2Shipping? shipping;
+
+final AmountDetailsParam2Tax? tax;
+
+Map<String, dynamic> toJson() { return {
+  if (discountAmount != null) 'discount_amount': discountAmount?.toJson(),
+  'enforce_arithmetic_validation': ?enforceArithmeticValidation,
+  if (lineItems != null) 'line_items': lineItems?.toJson(),
+  if (shipping != null) 'shipping': shipping?.toJson(),
+  if (tax != null) 'tax': tax?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AmountDetailsParam2 copyWith({AmountDetailsParam2DiscountAmount Function()? discountAmount, bool Function()? enforceArithmeticValidation, AmountDetailsParam2LineItems Function()? lineItems, AmountDetailsParam2Shipping Function()? shipping, AmountDetailsParam2Tax Function()? tax, }) { return AmountDetailsParam2(
+  discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
+  enforceArithmeticValidation: enforceArithmeticValidation != null ? enforceArithmeticValidation() : this.enforceArithmeticValidation,
+  lineItems: lineItems != null ? lineItems() : this.lineItems,
+  shipping: shipping != null ? shipping() : this.shipping,
+  tax: tax != null ? tax() : this.tax,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AmountDetailsParam2 &&
+          discountAmount == other.discountAmount &&
+          enforceArithmeticValidation == other.enforceArithmeticValidation &&
+          lineItems == other.lineItems &&
+          shipping == other.shipping &&
+          tax == other.tax; } 
+@override int get hashCode { return Object.hash(discountAmount, enforceArithmeticValidation, lineItems, shipping, tax); } 
+@override String toString() { return 'AmountDetailsParam2(discountAmount: $discountAmount, enforceArithmeticValidation: $enforceArithmeticValidation, lineItems: $lineItems, shipping: $shipping, tax: $tax)'; } 
+ }

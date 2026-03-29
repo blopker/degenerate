@@ -1,0 +1,104 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tunnel_account_id.dart';import 'tunnel_config_src.dart';import 'tunnel_conns_active_at.dart';import 'tunnel_conns_inactive_at.dart';import 'tunnel_created_at.dart';import 'tunnel_deleted_at.dart';import 'tunnel_schemas_connection.dart';import 'tunnel_status.dart';import 'tunnel_tunnel_id.dart';import 'tunnel_tunnel_name.dart';import 'tunnel_tunnel_type.dart';/// If `true`, the tunnel can be configured remotely from the Zero Trust dashboard. If `false`, the tunnel must be configured locally on the origin machine.
+extension type const TunnelRemoteConfig(bool value) {
+factory TunnelRemoteConfig.fromJson(bool json) => TunnelRemoteConfig(json);
+
+bool toJson() => value;
+
+}
+/// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+final class TunnelCfdTunnel {const TunnelCfdTunnel({this.accountTag, this.configSrc, this.connections, this.connsActiveAt, this.connsInactiveAt, this.createdAt, this.deletedAt, this.id, this.metadata, this.name, this.remoteConfig, this.status, this.tunType, });
+
+factory TunnelCfdTunnel.fromJson(Map<String, dynamic> json) { return TunnelCfdTunnel(
+  accountTag: json['account_tag'] != null ? TunnelAccountId.fromJson(json['account_tag'] as String) : null,
+  configSrc: json['config_src'] != null ? TunnelConfigSrc.fromJson(json['config_src'] as String) : null,
+  connections: (json['connections'] as List<dynamic>?)?.map((e) => TunnelSchemasConnection.fromJson(e as Map<String, dynamic>)).toList(),
+  connsActiveAt: json['conns_active_at'] != null ? TunnelConnsActiveAt.fromJson(json['conns_active_at'] as String) : null,
+  connsInactiveAt: json['conns_inactive_at'] != null ? TunnelConnsInactiveAt.fromJson(json['conns_inactive_at'] as String) : null,
+  createdAt: json['created_at'] != null ? TunnelCreatedAt.fromJson(json['created_at'] as String) : null,
+  deletedAt: json['deleted_at'] != null ? TunnelDeletedAt.fromJson(json['deleted_at'] as String) : null,
+  id: json['id'] != null ? TunnelTunnelId.fromJson(json['id'] as String) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  name: json['name'] != null ? TunnelTunnelName.fromJson(json['name'] as String) : null,
+  remoteConfig: json['remote_config'] != null ? TunnelRemoteConfig.fromJson(json['remote_config'] as bool) : null,
+  status: json['status'] != null ? TunnelStatus.fromJson(json['status'] as String) : null,
+  tunType: json['tun_type'] != null ? TunnelTunnelType.fromJson(json['tun_type'] as String) : null,
+); }
+
+/// Cloudflare account ID
+final TunnelAccountId? accountTag;
+
+final TunnelConfigSrc? configSrc;
+
+final List<TunnelSchemasConnection>? connections;
+
+final TunnelConnsActiveAt? connsActiveAt;
+
+final TunnelConnsInactiveAt? connsInactiveAt;
+
+final TunnelCreatedAt? createdAt;
+
+final TunnelDeletedAt? deletedAt;
+
+final TunnelTunnelId? id;
+
+final Map<String,dynamic>? metadata;
+
+final TunnelTunnelName? name;
+
+final TunnelRemoteConfig? remoteConfig;
+
+final TunnelStatus? status;
+
+final TunnelTunnelType? tunType;
+
+Map<String, dynamic> toJson() { return {
+  if (accountTag != null) 'account_tag': accountTag?.toJson(),
+  if (configSrc != null) 'config_src': configSrc?.toJson(),
+  if (connections != null) 'connections': connections?.map((e) => e.toJson()).toList(),
+  if (connsActiveAt != null) 'conns_active_at': connsActiveAt?.toJson(),
+  if (connsInactiveAt != null) 'conns_inactive_at': connsInactiveAt?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (deletedAt != null) 'deleted_at': deletedAt?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  'metadata': ?metadata,
+  if (name != null) 'name': name?.toJson(),
+  if (remoteConfig != null) 'remote_config': remoteConfig?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (tunType != null) 'tun_type': tunType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TunnelCfdTunnel copyWith({TunnelAccountId Function()? accountTag, TunnelConfigSrc Function()? configSrc, List<TunnelSchemasConnection> Function()? connections, TunnelConnsActiveAt Function()? connsActiveAt, TunnelConnsInactiveAt Function()? connsInactiveAt, TunnelCreatedAt Function()? createdAt, TunnelDeletedAt Function()? deletedAt, TunnelTunnelId Function()? id, Map<String, dynamic> Function()? metadata, TunnelTunnelName Function()? name, TunnelRemoteConfig Function()? remoteConfig, TunnelStatus Function()? status, TunnelTunnelType Function()? tunType, }) { return TunnelCfdTunnel(
+  accountTag: accountTag != null ? accountTag() : this.accountTag,
+  configSrc: configSrc != null ? configSrc() : this.configSrc,
+  connections: connections != null ? connections() : this.connections,
+  connsActiveAt: connsActiveAt != null ? connsActiveAt() : this.connsActiveAt,
+  connsInactiveAt: connsInactiveAt != null ? connsInactiveAt() : this.connsInactiveAt,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  deletedAt: deletedAt != null ? deletedAt() : this.deletedAt,
+  id: id != null ? id() : this.id,
+  metadata: metadata != null ? metadata() : this.metadata,
+  name: name != null ? name() : this.name,
+  remoteConfig: remoteConfig != null ? remoteConfig() : this.remoteConfig,
+  status: status != null ? status() : this.status,
+  tunType: tunType != null ? tunType() : this.tunType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TunnelCfdTunnel &&
+          accountTag == other.accountTag &&
+          configSrc == other.configSrc &&
+          listEquals(connections, other.connections) &&
+          connsActiveAt == other.connsActiveAt &&
+          connsInactiveAt == other.connsInactiveAt &&
+          createdAt == other.createdAt &&
+          deletedAt == other.deletedAt &&
+          id == other.id &&
+          metadata == other.metadata &&
+          name == other.name &&
+          remoteConfig == other.remoteConfig &&
+          status == other.status &&
+          tunType == other.tunType; } 
+@override int get hashCode { return Object.hash(accountTag, configSrc, Object.hashAll(connections ?? const []), connsActiveAt, connsInactiveAt, createdAt, deletedAt, id, metadata, name, remoteConfig, status, tunType); } 
+@override String toString() { return 'TunnelCfdTunnel(accountTag: $accountTag, configSrc: $configSrc, connections: $connections, connsActiveAt: $connsActiveAt, connsInactiveAt: $connsInactiveAt, createdAt: $createdAt, deletedAt: $deletedAt, id: $id, metadata: $metadata, name: $name, remoteConfig: $remoteConfig, status: $status, tunType: $tunType)'; } 
+ }

@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_flows_private_payment_methods_klarna_dob.dart';/// The customer's date of birth, if provided.
+final class PaymentMethodKlarnaDob {const PaymentMethodKlarnaDob({this.paymentFlowsPrivatePaymentMethodsKlarnaDob});
+
+factory PaymentMethodKlarnaDob.fromJson(Map<String, dynamic> json) { return PaymentMethodKlarnaDob(
+  paymentFlowsPrivatePaymentMethodsKlarnaDob: PaymentFlowsPrivatePaymentMethodsKlarnaDob.canParse(json) ? PaymentFlowsPrivatePaymentMethodsKlarnaDob.fromJson(json) : null,
+); }
+
+final PaymentFlowsPrivatePaymentMethodsKlarnaDob? paymentFlowsPrivatePaymentMethodsKlarnaDob;
+
+/// At least one variant must be present.
+bool get isValid { return paymentFlowsPrivatePaymentMethodsKlarnaDob != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentFlowsPrivatePaymentMethodsKlarnaDob?.toJson(),
+}; } 
+ }

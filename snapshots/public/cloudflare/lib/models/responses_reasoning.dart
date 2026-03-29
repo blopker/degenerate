@@ -1,0 +1,87 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+final class ResponsesReasoningEffort {const ResponsesReasoningEffort._(this.value);
+
+factory ResponsesReasoningEffort.fromJson(String json) { return switch (json) {
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  _ => ResponsesReasoningEffort._(json),
+}; }
+
+static const ResponsesReasoningEffort low = ResponsesReasoningEffort._('low');
+
+static const ResponsesReasoningEffort medium = ResponsesReasoningEffort._('medium');
+
+static const ResponsesReasoningEffort high = ResponsesReasoningEffort._('high');
+
+static const List<ResponsesReasoningEffort> values = [low, medium, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponsesReasoningEffort && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponsesReasoningEffort($value)'; } 
+ }
+/// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
+final class ResponsesReasoningSummary {const ResponsesReasoningSummary._(this.value);
+
+factory ResponsesReasoningSummary.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'concise' => concise,
+  'detailed' => detailed,
+  _ => ResponsesReasoningSummary._(json),
+}; }
+
+static const ResponsesReasoningSummary auto = ResponsesReasoningSummary._('auto');
+
+static const ResponsesReasoningSummary concise = ResponsesReasoningSummary._('concise');
+
+static const ResponsesReasoningSummary detailed = ResponsesReasoningSummary._('detailed');
+
+static const List<ResponsesReasoningSummary> values = [auto, concise, detailed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponsesReasoningSummary && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponsesReasoningSummary($value)'; } 
+ }
+final class ResponsesReasoning {const ResponsesReasoning({this.effort, this.summary, });
+
+factory ResponsesReasoning.fromJson(Map<String, dynamic> json) { return ResponsesReasoning(
+  effort: json['effort'] != null ? ResponsesReasoningEffort.fromJson(json['effort'] as String) : null,
+  summary: json['summary'] != null ? ResponsesReasoningSummary.fromJson(json['summary'] as String) : null,
+); }
+
+/// Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.
+final ResponsesReasoningEffort? effort;
+
+/// A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model's reasoning process. One of auto, concise, or detailed.
+final ResponsesReasoningSummary? summary;
+
+Map<String, dynamic> toJson() { return {
+  if (effort != null) 'effort': effort?.toJson(),
+  if (summary != null) 'summary': summary?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ResponsesReasoning copyWith({ResponsesReasoningEffort Function()? effort, ResponsesReasoningSummary Function()? summary, }) { return ResponsesReasoning(
+  effort: effort != null ? effort() : this.effort,
+  summary: summary != null ? summary() : this.summary,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponsesReasoning &&
+          effort == other.effort &&
+          summary == other.summary; } 
+@override int get hashCode { return Object.hash(effort, summary); } 
+@override String toString() { return 'ResponsesReasoning(effort: $effort, summary: $summary)'; } 
+ }

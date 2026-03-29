@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates._(this.value);
+
+factory PortalCustomerUpdateAllowedUpdates.fromJson(String json) { return switch (json) {
+  'address' => address,
+  'email' => email,
+  'name' => $name,
+  'phone' => phone,
+  'shipping' => shipping,
+  'tax_id' => taxId,
+  _ => PortalCustomerUpdateAllowedUpdates._(json),
+}; }
+
+static const PortalCustomerUpdateAllowedUpdates address = PortalCustomerUpdateAllowedUpdates._('address');
+
+static const PortalCustomerUpdateAllowedUpdates email = PortalCustomerUpdateAllowedUpdates._('email');
+
+static const PortalCustomerUpdateAllowedUpdates $name = PortalCustomerUpdateAllowedUpdates._('name');
+
+static const PortalCustomerUpdateAllowedUpdates phone = PortalCustomerUpdateAllowedUpdates._('phone');
+
+static const PortalCustomerUpdateAllowedUpdates shipping = PortalCustomerUpdateAllowedUpdates._('shipping');
+
+static const PortalCustomerUpdateAllowedUpdates taxId = PortalCustomerUpdateAllowedUpdates._('tax_id');
+
+static const List<PortalCustomerUpdateAllowedUpdates> values = [address, email, $name, phone, shipping, taxId];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PortalCustomerUpdateAllowedUpdates && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PortalCustomerUpdateAllowedUpdates($value)'; } 
+ }
+/// 
+final class PortalCustomerUpdate {const PortalCustomerUpdate({required this.allowedUpdates, required this.enabled, });
+
+factory PortalCustomerUpdate.fromJson(Map<String, dynamic> json) { return PortalCustomerUpdate(
+  allowedUpdates: (json['allowed_updates'] as List<dynamic>).map((e) => PortalCustomerUpdateAllowedUpdates.fromJson(e as String)).toList(),
+  enabled: json['enabled'] as bool,
+); }
+
+/// The types of customer updates that are supported. When empty, customers are not updateable.
+final List<PortalCustomerUpdateAllowedUpdates> allowedUpdates;
+
+/// Whether the feature is enabled.
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'allowed_updates': allowedUpdates.map((e) => e.toJson()).toList(),
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('allowed_updates') &&
+      json.containsKey('enabled') && json['enabled'] is bool; } 
+PortalCustomerUpdate copyWith({List<PortalCustomerUpdateAllowedUpdates>? allowedUpdates, bool? enabled, }) { return PortalCustomerUpdate(
+  allowedUpdates: allowedUpdates ?? this.allowedUpdates,
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PortalCustomerUpdate &&
+          listEquals(allowedUpdates, other.allowedUpdates) &&
+          enabled == other.enabled; } 
+@override int get hashCode { return Object.hash(Object.hashAll(allowedUpdates), enabled); } 
+@override String toString() { return 'PortalCustomerUpdate(allowedUpdates: $allowedUpdates, enabled: $enabled)'; } 
+ }

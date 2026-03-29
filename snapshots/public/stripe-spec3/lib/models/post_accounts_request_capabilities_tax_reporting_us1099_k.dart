@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsRequestCapabilitiesTaxReportingUs1099K {const PostAccountsRequestCapabilitiesTaxReportingUs1099K({this.requested});
+
+factory PostAccountsRequestCapabilitiesTaxReportingUs1099K.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesTaxReportingUs1099K(
+  requested: json['requested'] as bool?,
+); }
+
+final bool? requested;
+
+Map<String, dynamic> toJson() { return {
+  'requested': ?requested,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsRequestCapabilitiesTaxReportingUs1099K copyWith({bool Function()? requested}) { return PostAccountsRequestCapabilitiesTaxReportingUs1099K(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsRequestCapabilitiesTaxReportingUs1099K &&
+          requested == other.requested; } 
+@override int get hashCode { return requested.hashCode; } 
+@override String toString() { return 'PostAccountsRequestCapabilitiesTaxReportingUs1099K(requested: $requested)'; } 
+ }

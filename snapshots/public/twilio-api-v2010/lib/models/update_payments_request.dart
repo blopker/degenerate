@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
+final class PaymentsEnumCapture {const PaymentsEnumCapture._(this.value);
+
+factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
+  'payment-card-number' => paymentCardNumber,
+  'expiration-date' => expirationDate,
+  'security-code' => securityCode,
+  'postal-code' => postalCode,
+  'bank-routing-number' => bankRoutingNumber,
+  'bank-account-number' => bankAccountNumber,
+  _ => PaymentsEnumCapture._(json),
+}; }
+
+static const PaymentsEnumCapture paymentCardNumber = PaymentsEnumCapture._('payment-card-number');
+
+static const PaymentsEnumCapture expirationDate = PaymentsEnumCapture._('expiration-date');
+
+static const PaymentsEnumCapture securityCode = PaymentsEnumCapture._('security-code');
+
+static const PaymentsEnumCapture postalCode = PaymentsEnumCapture._('postal-code');
+
+static const PaymentsEnumCapture bankRoutingNumber = PaymentsEnumCapture._('bank-routing-number');
+
+static const PaymentsEnumCapture bankAccountNumber = PaymentsEnumCapture._('bank-account-number');
+
+static const List<PaymentsEnumCapture> values = [paymentCardNumber, expirationDate, securityCode, postalCode, bankRoutingNumber, bankAccountNumber];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentsEnumCapture && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentsEnumCapture($value)'; } 
+ }
+/// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
+final class PaymentsEnumStatus {const PaymentsEnumStatus._(this.value);
+
+factory PaymentsEnumStatus.fromJson(String json) { return switch (json) {
+  'complete' => complete,
+  'cancel' => cancel,
+  _ => PaymentsEnumStatus._(json),
+}; }
+
+static const PaymentsEnumStatus complete = PaymentsEnumStatus._('complete');
+
+static const PaymentsEnumStatus cancel = PaymentsEnumStatus._('cancel');
+
+static const List<PaymentsEnumStatus> values = [complete, cancel];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentsEnumStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentsEnumStatus($value)'; } 
+ }
+final class UpdatePaymentsRequest {const UpdatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.capture, this.status, });
+
+factory UpdatePaymentsRequest.fromJson(Map<String, dynamic> json) { return UpdatePaymentsRequest(
+  idempotencyKey: json['IdempotencyKey'] as String,
+  statusCallback: Uri.parse(json['StatusCallback'] as String),
+  capture: json['Capture'] != null ? PaymentsEnumCapture.fromJson(json['Capture'] as String) : null,
+  status: json['Status'] != null ? PaymentsEnumStatus.fromJson(json['Status'] as String) : null,
+); }
+
+/// A unique token that will be used to ensure that multiple API calls with the same information do not result in multiple transactions. This should be a unique string value per API call and can be a randomly generated.
+final String idempotencyKey;
+
+/// Provide an absolute or relative URL to receive status updates regarding your Pay session. Read more about the [Update](https://www.twilio.com/docs/voice/api/payment-resource#statuscallback-update) and [Complete/Cancel](https://www.twilio.com/docs/voice/api/payment-resource#statuscallback-cancelcomplete) POST requests.
+final Uri statusCallback;
+
+/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
+final PaymentsEnumCapture? capture;
+
+/// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
+final PaymentsEnumStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  'IdempotencyKey': idempotencyKey,
+  'StatusCallback': statusCallback.toString(),
+  if (capture != null) 'Capture': capture?.toJson(),
+  if (status != null) 'Status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('IdempotencyKey') && json['IdempotencyKey'] is String &&
+      json.containsKey('StatusCallback') && json['StatusCallback'] is String; } 
+UpdatePaymentsRequest copyWith({String? idempotencyKey, Uri? statusCallback, PaymentsEnumCapture Function()? capture, PaymentsEnumStatus Function()? status, }) { return UpdatePaymentsRequest(
+  idempotencyKey: idempotencyKey ?? this.idempotencyKey,
+  statusCallback: statusCallback ?? this.statusCallback,
+  capture: capture != null ? capture() : this.capture,
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UpdatePaymentsRequest &&
+          idempotencyKey == other.idempotencyKey &&
+          statusCallback == other.statusCallback &&
+          capture == other.capture &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(idempotencyKey, statusCallback, capture, status); } 
+@override String toString() { return 'UpdatePaymentsRequest(idempotencyKey: $idempotencyKey, statusCallback: $statusCallback, capture: $capture, status: $status)'; } 
+ }

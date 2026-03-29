@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_quotes_quote_request_automatic_tax_liability.dart';/// Settings for automatic tax lookup for this quote and resulting invoices and subscriptions.
+final class PostQuotesQuoteRequestAutomaticTax {const PostQuotesQuoteRequestAutomaticTax({required this.enabled, this.liability, });
+
+factory PostQuotesQuoteRequestAutomaticTax.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteRequestAutomaticTax(
+  enabled: json['enabled'] as bool,
+  liability: json['liability'] != null ? PostQuotesQuoteRequestAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
+); }
+
+final bool enabled;
+
+final PostQuotesQuoteRequestAutomaticTaxLiability? liability;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+  if (liability != null) 'liability': liability?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PostQuotesQuoteRequestAutomaticTax copyWith({bool? enabled, PostQuotesQuoteRequestAutomaticTaxLiability Function()? liability, }) { return PostQuotesQuoteRequestAutomaticTax(
+  enabled: enabled ?? this.enabled,
+  liability: liability != null ? liability() : this.liability,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostQuotesQuoteRequestAutomaticTax &&
+          enabled == other.enabled &&
+          liability == other.liability; } 
+@override int get hashCode { return Object.hash(enabled, liability); } 
+@override String toString() { return 'PostQuotesQuoteRequestAutomaticTax(enabled: $enabled, liability: $liability)'; } 
+ }

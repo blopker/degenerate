@@ -1,0 +1,68 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'ai_search_update_instances_request_source_params_web_crawler_crawl_options.dart';import 'ai_search_update_instances_request_source_params_web_crawler_parse_options.dart';import 'ai_search_update_instances_request_source_params_web_crawler_store_options.dart';final class AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType {const AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._(this.value);
+
+factory AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson(String json) { return switch (json) {
+  'sitemap' => sitemap,
+  'feed-rss' => feedRss,
+  'crawl' => crawl,
+  _ => AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._(json),
+}; }
+
+static const AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType sitemap = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._('sitemap');
+
+static const AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType feedRss = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._('feed-rss');
+
+static const AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType crawl = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType._('crawl');
+
+static const List<AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType> values = [sitemap, feedRss, crawl];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType($value)'; } 
+ }
+final class AiSearchUpdateInstancesRequestSourceParamsWebCrawler {const AiSearchUpdateInstancesRequestSourceParamsWebCrawler({this.crawlOptions, this.parseOptions, this.parseType = AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap, this.storeOptions, });
+
+factory AiSearchUpdateInstancesRequestSourceParamsWebCrawler.fromJson(Map<String, dynamic> json) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
+  crawlOptions: json['crawl_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions.fromJson(json['crawl_options'] as Map<String, dynamic>) : null,
+  parseOptions: json['parse_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions.fromJson(json['parse_options'] as Map<String, dynamic>) : null,
+  parseType: json.containsKey('parse_type') ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.fromJson(json['parse_type'] as String) : AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType.sitemap,
+  storeOptions: json['store_options'] != null ? AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions.fromJson(json['store_options'] as Map<String, dynamic>) : null,
+); }
+
+final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions? crawlOptions;
+
+final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions? parseOptions;
+
+final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType parseType;
+
+final AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions? storeOptions;
+
+Map<String, dynamic> toJson() { return {
+  if (crawlOptions != null) 'crawl_options': crawlOptions?.toJson(),
+  if (parseOptions != null) 'parse_options': parseOptions?.toJson(),
+  'parse_type': parseType.toJson(),
+  if (storeOptions != null) 'store_options': storeOptions?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AiSearchUpdateInstancesRequestSourceParamsWebCrawler copyWith({AiSearchUpdateInstancesRequestSourceParamsWebCrawlerCrawlOptions Function()? crawlOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseOptions Function()? parseOptions, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerParseType Function()? parseType, AiSearchUpdateInstancesRequestSourceParamsWebCrawlerStoreOptions Function()? storeOptions, }) { return AiSearchUpdateInstancesRequestSourceParamsWebCrawler(
+  crawlOptions: crawlOptions != null ? crawlOptions() : this.crawlOptions,
+  parseOptions: parseOptions != null ? parseOptions() : this.parseOptions,
+  parseType: parseType != null ? parseType() : this.parseType,
+  storeOptions: storeOptions != null ? storeOptions() : this.storeOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchUpdateInstancesRequestSourceParamsWebCrawler &&
+          crawlOptions == other.crawlOptions &&
+          parseOptions == other.parseOptions &&
+          parseType == other.parseType &&
+          storeOptions == other.storeOptions; } 
+@override int get hashCode { return Object.hash(crawlOptions, parseOptions, parseType, storeOptions); } 
+@override String toString() { return 'AiSearchUpdateInstancesRequestSourceParamsWebCrawler(crawlOptions: $crawlOptions, parseOptions: $parseOptions, parseType: $parseType, storeOptions: $storeOptions)'; } 
+ }

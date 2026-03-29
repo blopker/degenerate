@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSourcesSourceVerifyRequest {const PostSourcesSourceVerifyRequest({this.expand, required this.values, });
+
+factory PostSourcesSourceVerifyRequest.fromJson(Map<String, dynamic> json) { return PostSourcesSourceVerifyRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  values: (json['values'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// The values needed to verify the source.
+final List<String> values;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'values': values,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('values'); } 
+PostSourcesSourceVerifyRequest copyWith({List<String> Function()? expand, List<String>? values, }) { return PostSourcesSourceVerifyRequest(
+  expand: expand != null ? expand() : this.expand,
+  values: values ?? this.values,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSourcesSourceVerifyRequest &&
+          listEquals(expand, other.expand) &&
+          listEquals(values, other.values); } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), Object.hashAll(values)); } 
+@override String toString() { return 'PostSourcesSourceVerifyRequest(expand: $expand, values: $values)'; } 
+ }

@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'portal_flows_flow_after_completion.dart';import 'portal_flows_flow_subscription_cancel2.dart';import 'portal_flows_flow_subscription_update2.dart';import 'portal_flows_flow_subscription_update_confirm2.dart';/// Type of flow that the customer will go through.
+final class PortalFlowsFlowType {const PortalFlowsFlowType._(this.value);
+
+factory PortalFlowsFlowType.fromJson(String json) { return switch (json) {
+  'payment_method_update' => paymentMethodUpdate,
+  'subscription_cancel' => subscriptionCancel,
+  'subscription_update' => subscriptionUpdate,
+  'subscription_update_confirm' => subscriptionUpdateConfirm,
+  _ => PortalFlowsFlowType._(json),
+}; }
+
+static const PortalFlowsFlowType paymentMethodUpdate = PortalFlowsFlowType._('payment_method_update');
+
+static const PortalFlowsFlowType subscriptionCancel = PortalFlowsFlowType._('subscription_cancel');
+
+static const PortalFlowsFlowType subscriptionUpdate = PortalFlowsFlowType._('subscription_update');
+
+static const PortalFlowsFlowType subscriptionUpdateConfirm = PortalFlowsFlowType._('subscription_update_confirm');
+
+static const List<PortalFlowsFlowType> values = [paymentMethodUpdate, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PortalFlowsFlowType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PortalFlowsFlowType($value)'; } 
+ }
+/// 
+final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletion, this.subscriptionCancel, this.subscriptionUpdate, this.subscriptionUpdateConfirm, required this.type, });
+
+factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) { return PortalFlowsFlow(
+  afterCompletion: PortalFlowsFlowAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
+  subscriptionCancel: json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel2.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
+  subscriptionUpdate: json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate2.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
+  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm2.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
+  type: PortalFlowsFlowType.fromJson(json['type'] as String),
+); }
+
+final PortalFlowsFlowAfterCompletion afterCompletion;
+
+/// Configuration when `flow.type=subscription_cancel`.
+final PortalFlowsFlowSubscriptionCancel2? subscriptionCancel;
+
+/// Configuration when `flow.type=subscription_update`.
+final PortalFlowsFlowSubscriptionUpdate2? subscriptionUpdate;
+
+/// Configuration when `flow.type=subscription_update_confirm`.
+final PortalFlowsFlowSubscriptionUpdateConfirm2? subscriptionUpdateConfirm;
+
+/// Type of flow that the customer will go through.
+final PortalFlowsFlowType type;
+
+Map<String, dynamic> toJson() { return {
+  'after_completion': afterCompletion.toJson(),
+  if (subscriptionCancel != null) 'subscription_cancel': subscriptionCancel?.toJson(),
+  if (subscriptionUpdate != null) 'subscription_update': subscriptionUpdate?.toJson(),
+  if (subscriptionUpdateConfirm != null) 'subscription_update_confirm': subscriptionUpdateConfirm?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_completion') &&
+      json.containsKey('type'); } 
+PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, PortalFlowsFlowSubscriptionCancel2? Function()? subscriptionCancel, PortalFlowsFlowSubscriptionUpdate2? Function()? subscriptionUpdate, PortalFlowsFlowSubscriptionUpdateConfirm2? Function()? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return PortalFlowsFlow(
+  afterCompletion: afterCompletion ?? this.afterCompletion,
+  subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
+  subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,
+  subscriptionUpdateConfirm: subscriptionUpdateConfirm != null ? subscriptionUpdateConfirm() : this.subscriptionUpdateConfirm,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PortalFlowsFlow &&
+          afterCompletion == other.afterCompletion &&
+          subscriptionCancel == other.subscriptionCancel &&
+          subscriptionUpdate == other.subscriptionUpdate &&
+          subscriptionUpdateConfirm == other.subscriptionUpdateConfirm &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(afterCompletion, subscriptionCancel, subscriptionUpdate, subscriptionUpdateConfirm, type); } 
+@override String toString() { return 'PortalFlowsFlow(afterCompletion: $afterCompletion, subscriptionCancel: $subscriptionCancel, subscriptionUpdate: $subscriptionUpdate, subscriptionUpdateConfirm: $subscriptionUpdateConfirm, type: $type)'; } 
+ }

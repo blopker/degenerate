@@ -1,0 +1,85 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'secondary_dns_components_schemas_identifier.dart';import 'secondary_dns_components_schemas_name.dart';/// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
+extension type const SecondaryDnsIp(String value) {
+factory SecondaryDnsIp.fromJson(String json) => SecondaryDnsIp(json);
+
+String toJson() => value;
+
+}
+/// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
+extension type const SecondaryDnsIxfrEnable(bool value) {
+factory SecondaryDnsIxfrEnable.fromJson(bool json) => SecondaryDnsIxfrEnable(json);
+
+bool toJson() => value;
+
+}
+/// DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.
+extension type const SecondaryDnsPort(double value) {
+factory SecondaryDnsPort.fromJson(num json) => SecondaryDnsPort(json.toDouble());
+
+num toJson() => value;
+
+}
+/// TSIG authentication will be used for zone transfer if configured.
+extension type const SecondaryDnsTsigId(String value) {
+factory SecondaryDnsTsigId.fromJson(String json) => SecondaryDnsTsigId(json);
+
+String toJson() => value;
+
+}
+final class SecondaryDnsPeer {const SecondaryDnsPeer({required this.id, this.ip, this.ixfrEnable, required this.name, this.port, this.tsigId, });
+
+factory SecondaryDnsPeer.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeer(
+  id: SecondaryDnsComponentsSchemasIdentifier.fromJson(json['id'] as String),
+  ip: json['ip'] != null ? SecondaryDnsIp.fromJson(json['ip'] as String) : null,
+  ixfrEnable: json['ixfr_enable'] != null ? SecondaryDnsIxfrEnable.fromJson(json['ixfr_enable'] as bool) : null,
+  name: SecondaryDnsComponentsSchemasName.fromJson(json['name'] as String),
+  port: json['port'] != null ? SecondaryDnsPort.fromJson(json['port'] as num) : null,
+  tsigId: json['tsig_id'] != null ? SecondaryDnsTsigId.fromJson(json['tsig_id'] as String) : null,
+); }
+
+final SecondaryDnsComponentsSchemasIdentifier id;
+
+/// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
+final SecondaryDnsIp? ip;
+
+/// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
+final SecondaryDnsIxfrEnable? ixfrEnable;
+
+/// The name of the peer.
+final SecondaryDnsComponentsSchemasName name;
+
+final SecondaryDnsPort? port;
+
+final SecondaryDnsTsigId? tsigId;
+
+Map<String, dynamic> toJson() { return {
+  'id': id.toJson(),
+  if (ip != null) 'ip': ip?.toJson(),
+  if (ixfrEnable != null) 'ixfr_enable': ixfrEnable?.toJson(),
+  'name': name.toJson(),
+  if (port != null) 'port': port?.toJson(),
+  if (tsigId != null) 'tsig_id': tsigId?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') &&
+      json.containsKey('name'); } 
+SecondaryDnsPeer copyWith({SecondaryDnsComponentsSchemasIdentifier? id, SecondaryDnsIp Function()? ip, SecondaryDnsIxfrEnable Function()? ixfrEnable, SecondaryDnsComponentsSchemasName? name, SecondaryDnsPort Function()? port, SecondaryDnsTsigId Function()? tsigId, }) { return SecondaryDnsPeer(
+  id: id ?? this.id,
+  ip: ip != null ? ip() : this.ip,
+  ixfrEnable: ixfrEnable != null ? ixfrEnable() : this.ixfrEnable,
+  name: name ?? this.name,
+  port: port != null ? port() : this.port,
+  tsigId: tsigId != null ? tsigId() : this.tsigId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecondaryDnsPeer &&
+          id == other.id &&
+          ip == other.ip &&
+          ixfrEnable == other.ixfrEnable &&
+          name == other.name &&
+          port == other.port &&
+          tsigId == other.tsigId; } 
+@override int get hashCode { return Object.hash(id, ip, ixfrEnable, name, port, tsigId); } 
+@override String toString() { return 'SecondaryDnsPeer(id: $id, ip: $ip, ixfrEnable: $ixfrEnable, name: $name, port: $port, tsigId: $tsigId)'; } 
+ }

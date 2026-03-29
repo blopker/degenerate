@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'container_reference_resource.dart';import 'local_environment_resource.dart';sealed class FunctionShellCallEnvironment {const FunctionShellCallEnvironment();
+
+/// Deserialize from JSON, dispatching on the `type` discriminator.
+factory FunctionShellCallEnvironment.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+  'LocalEnvironmentResource' => FunctionShellCallEnvironmentLocalEnvironmentResource.fromJson(json),
+  'ContainerReferenceResource' => FunctionShellCallEnvironmentContainerReferenceResource.fromJson(json),
+  _ => FunctionShellCallEnvironment$Unknown(json),
+}; }
+
+/// The discriminator value identifying this variant.
+String get type;
+Map<String, dynamic> toJson();
+/// Whether this variant is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is FunctionShellCallEnvironment$Unknown; } 
+ }
+final class FunctionShellCallEnvironmentLocalEnvironmentResource extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentLocalEnvironmentResource(this.localEnvironmentResource);
+
+factory FunctionShellCallEnvironmentLocalEnvironmentResource.fromJson(Map<String, dynamic> json) { return FunctionShellCallEnvironmentLocalEnvironmentResource(LocalEnvironmentResource.fromJson(json)); }
+
+final LocalEnvironmentResource localEnvironmentResource;
+
+@override String get type { return 'LocalEnvironmentResource'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...localEnvironmentResource.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionShellCallEnvironmentLocalEnvironmentResource && localEnvironmentResource == other.localEnvironmentResource; } 
+@override int get hashCode { return localEnvironmentResource.hashCode; } 
+@override String toString() { return 'FunctionShellCallEnvironmentLocalEnvironmentResource(localEnvironmentResource: $localEnvironmentResource)'; } 
+ }
+final class FunctionShellCallEnvironmentContainerReferenceResource extends FunctionShellCallEnvironment {const FunctionShellCallEnvironmentContainerReferenceResource(this.containerReferenceResource);
+
+factory FunctionShellCallEnvironmentContainerReferenceResource.fromJson(Map<String, dynamic> json) { return FunctionShellCallEnvironmentContainerReferenceResource(ContainerReferenceResource.fromJson(json)); }
+
+final ContainerReferenceResource containerReferenceResource;
+
+@override String get type { return 'ContainerReferenceResource'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...containerReferenceResource.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionShellCallEnvironmentContainerReferenceResource && containerReferenceResource == other.containerReferenceResource; } 
+@override int get hashCode { return containerReferenceResource.hashCode; } 
+@override String toString() { return 'FunctionShellCallEnvironmentContainerReferenceResource(containerReferenceResource: $containerReferenceResource)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+/// Returned when the server sends a discriminator value that this client does not recognize.
+final class FunctionShellCallEnvironment$Unknown extends FunctionShellCallEnvironment {const FunctionShellCallEnvironment$Unknown(this.json);
+
+final Map<String, dynamic> json;
+
+@override String get type { return json['type'] as String? ?? ''; } 
+@override Map<String, dynamic> toJson() { return json; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FunctionShellCallEnvironment$Unknown && json == other.json; } 
+@override int get hashCode { return json.hashCode; } 
+@override String toString() { return 'FunctionShellCallEnvironment.unknown($json)'; } 
+ }

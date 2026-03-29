@@ -1,0 +1,284 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType {const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._(this.value);
+
+factory RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType.fromJson(String json) { return switch (json) {
+  'A' => a,
+  'AAAA' => aaaa,
+  'A6' => a6,
+  'AFSDB' => afsdb,
+  'ANY' => any,
+  'APL' => apl,
+  'ATMA' => atma,
+  'AXFR' => axfr,
+  'CAA' => caa,
+  'CDNSKEY' => cdnskey,
+  'CDS' => cds,
+  'CERT' => cert,
+  'CNAME' => cname,
+  'CSYNC' => csync,
+  'DHCID' => dhcid,
+  'DLV' => dlv,
+  'DNAME' => dname,
+  'DNSKEY' => dnskey,
+  'DOA' => doa,
+  'DS' => ds,
+  'EID' => eid,
+  'EUI48' => eui48,
+  'EUI64' => eui64,
+  'GPOS' => gpos,
+  'GID' => gid,
+  'HINFO' => hinfo,
+  'HIP' => hip,
+  'HTTPS' => https,
+  'IPSECKEY' => ipseckey,
+  'ISDN' => isdn,
+  'IXFR' => ixfr,
+  'KEY' => key,
+  'KX' => kx,
+  'L32' => l32,
+  'L64' => l64,
+  'LOC' => loc,
+  'LP' => lp,
+  'MAILA' => maila,
+  'MAILB' => mailb,
+  'MB' => mb,
+  'MD' => md,
+  'MF' => mf,
+  'MG' => mg,
+  'MINFO' => minfo,
+  'MR' => mr,
+  'MX' => mx,
+  'NAPTR' => naptr,
+  'NB' => nb,
+  'NBSTAT' => nbstat,
+  'NID' => nid,
+  'NIMLOC' => nimloc,
+  'NINFO' => ninfo,
+  'NS' => ns,
+  'NSAP' => nsap,
+  'NSEC' => nsec,
+  'NSEC3' => nsec3,
+  'NSEC3PARAM' => nsec3Param,
+  'NULL' => $null,
+  'NXT' => nxt,
+  'OPENPGPKEY' => openpgpkey,
+  'OPT' => opt,
+  'PTR' => ptr,
+  'PX' => px,
+  'RKEY' => rkey,
+  'RP' => rp,
+  'RRSIG' => rrsig,
+  'RT' => rt,
+  'SIG' => sig,
+  'SINK' => sink,
+  'SMIMEA' => smimea,
+  'SOA' => soa,
+  'SPF' => spf,
+  'SRV' => srv,
+  'SSHFP' => sshfp,
+  'SVCB' => svcb,
+  'TA' => ta,
+  'TALINK' => talink,
+  'TKEY' => tkey,
+  'TLSA' => tlsa,
+  'TSIG' => tsig,
+  'TXT' => txt,
+  'UINFO' => uinfo,
+  'UID' => uid,
+  'UNSPEC' => unspec,
+  'URI' => uri,
+  'WKS' => wks,
+  'X25' => x25,
+  'ZONEMD' => zonemd,
+  _ => RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._(json),
+}; }
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType a = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('A');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType aaaa = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('AAAA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType a6 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('A6');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType afsdb = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('AFSDB');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType any = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('ANY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType apl = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('APL');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType atma = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('ATMA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType axfr = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('AXFR');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType caa = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('CAA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType cdnskey = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('CDNSKEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType cds = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('CDS');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType cert = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('CERT');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType cname = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('CNAME');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType csync = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('CSYNC');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType dhcid = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('DHCID');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType dlv = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('DLV');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType dname = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('DNAME');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType dnskey = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('DNSKEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType doa = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('DOA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ds = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('DS');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType eid = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('EID');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType eui48 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('EUI48');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType eui64 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('EUI64');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType gpos = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('GPOS');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType gid = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('GID');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType hinfo = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('HINFO');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType hip = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('HIP');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType https = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('HTTPS');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ipseckey = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('IPSECKEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType isdn = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('ISDN');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ixfr = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('IXFR');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType key = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('KEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType kx = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('KX');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType l32 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('L32');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType l64 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('L64');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType loc = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('LOC');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType lp = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('LP');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType maila = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MAILA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType mailb = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MAILB');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType mb = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MB');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType md = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MD');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType mf = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MF');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType mg = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MG');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType minfo = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MINFO');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType mr = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MR');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType mx = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('MX');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType naptr = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NAPTR');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nb = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NB');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nbstat = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NBSTAT');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nid = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NID');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nimloc = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NIMLOC');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ninfo = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NINFO');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ns = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NS');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nsap = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NSAP');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nsec = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NSEC');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nsec3 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NSEC3');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nsec3Param = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NSEC3PARAM');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType $null = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NULL');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType nxt = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('NXT');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType openpgpkey = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('OPENPGPKEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType opt = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('OPT');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ptr = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('PTR');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType px = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('PX');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType rkey = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('RKEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType rp = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('RP');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType rrsig = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('RRSIG');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType rt = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('RT');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType sig = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SIG');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType sink = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SINK');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType smimea = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SMIMEA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType soa = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SOA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType spf = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SPF');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType srv = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SRV');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType sshfp = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SSHFP');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType svcb = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('SVCB');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType ta = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('TA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType talink = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('TALINK');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType tkey = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('TKEY');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType tlsa = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('TLSA');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType tsig = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('TSIG');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType txt = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('TXT');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType uinfo = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('UINFO');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType uid = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('UID');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType unspec = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('UNSPEC');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType uri = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('URI');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType wks = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('WKS');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType x25 = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('X25');
+
+static const RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType zonemd = RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType._('ZONEMD');
+
+static const List<RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsTimeseriesGroupByCacheHitStatusQueryType($value)'; } 
+ }

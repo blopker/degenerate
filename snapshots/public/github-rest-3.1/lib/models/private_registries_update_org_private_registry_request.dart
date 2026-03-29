@@ -1,0 +1,165 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// The registry type.
+final class PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType {const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._(this.value);
+
+factory PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(String json) { return switch (json) {
+  'maven_repository' => mavenRepository,
+  'nuget_feed' => nugetFeed,
+  'goproxy_server' => goproxyServer,
+  'npm_registry' => npmRegistry,
+  'rubygems_server' => rubygemsServer,
+  'cargo_registry' => cargoRegistry,
+  'composer_repository' => composerRepository,
+  'docker_registry' => dockerRegistry,
+  'git_source' => gitSource,
+  'helm_registry' => helmRegistry,
+  'hex_organization' => hexOrganization,
+  'hex_repository' => hexRepository,
+  'pub_repository' => pubRepository,
+  'python_index' => pythonIndex,
+  'terraform_registry' => terraformRegistry,
+  _ => PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._(json),
+}; }
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType mavenRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('maven_repository');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType nugetFeed = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('nuget_feed');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType goproxyServer = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('goproxy_server');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType npmRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('npm_registry');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType rubygemsServer = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('rubygems_server');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType cargoRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('cargo_registry');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType composerRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('composer_repository');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType dockerRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('docker_registry');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType gitSource = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('git_source');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType helmRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('helm_registry');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType hexOrganization = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('hex_organization');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType hexRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('hex_repository');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType pubRepository = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('pub_repository');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType pythonIndex = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('python_index');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType terraformRegistry = PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType._('terraform_registry');
+
+static const List<PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType> values = [mavenRepository, nugetFeed, goproxyServer, npmRegistry, rubygemsServer, cargoRegistry, composerRepository, dockerRegistry, gitSource, helmRegistry, hexOrganization, hexRepository, pubRepository, pythonIndex, terraformRegistry];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType($value)'; } 
+ }
+/// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
+final class PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility {const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._(this.value);
+
+factory PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility.fromJson(String json) { return switch (json) {
+  'all' => all,
+  'private' => private,
+  'selected' => selected,
+  _ => PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._(json),
+}; }
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility all = PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._('all');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility private = PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._('private');
+
+static const PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility selected = PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility._('selected');
+
+static const List<PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility> values = [all, private, selected];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility($value)'; } 
+ }
+final class PrivateRegistriesUpdateOrgPrivateRegistryRequest {const PrivateRegistriesUpdateOrgPrivateRegistryRequest({this.registryType, this.url, this.username, this.replacesBase = false, this.encryptedValue, this.keyId, this.visibility, this.selectedRepositoryIds, });
+
+factory PrivateRegistriesUpdateOrgPrivateRegistryRequest.fromJson(Map<String, dynamic> json) { return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
+  registryType: json['registry_type'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType.fromJson(json['registry_type'] as String) : null,
+  url: json['url'] != null ? Uri.parse(json['url'] as String) : null,
+  username: json['username'] as String?,
+  replacesBase: json.containsKey('replaces_base') ? json['replaces_base'] as bool : false,
+  encryptedValue: json['encrypted_value'] as String?,
+  keyId: json['key_id'] as String?,
+  visibility: json['visibility'] != null ? PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility.fromJson(json['visibility'] as String) : null,
+  selectedRepositoryIds: (json['selected_repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+); }
+
+/// The registry type.
+final PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType? registryType;
+
+/// The URL of the private registry.
+final Uri? url;
+
+/// The username to use when authenticating with the private registry. This field should be omitted if the private registry does not require a username for authentication.
+final String? username;
+
+/// Whether this private registry should replace the base registry (e.g., npmjs.org for npm, rubygems.org for rubygems). When set to `true`, Dependabot will only use this registry and will not fall back to the public registry. When set to `false` (default), Dependabot will use this registry for scoped packages but may fall back to the public registry for other packages.
+final bool replacesBase;
+
+/// The value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get private registries public key for an organization](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization) endpoint.
+final String? encryptedValue;
+
+/// The ID of the key you used to encrypt the secret.
+final String? keyId;
+
+/// Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
+final PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility? visibility;
+
+/// An array of repository IDs that can access the organization private registry. You can only provide a list of repository IDs when `visibility` is set to `selected`. This field should be omitted if `visibility` is set to `all` or `private`.
+final List<int>? selectedRepositoryIds;
+
+Map<String, dynamic> toJson() { return {
+  if (registryType != null) 'registry_type': registryType?.toJson(),
+  if (url != null) 'url': url?.toString(),
+  'username': ?username,
+  'replaces_base': replacesBase,
+  'encrypted_value': ?encryptedValue,
+  'key_id': ?keyId,
+  if (visibility != null) 'visibility': visibility?.toJson(),
+  'selected_repository_ids': ?selectedRepositoryIds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PrivateRegistriesUpdateOrgPrivateRegistryRequest copyWith({PrivateRegistriesUpdateOrgPrivateRegistryRequestRegistryType Function()? registryType, Uri Function()? url, String? Function()? username, bool Function()? replacesBase, String Function()? encryptedValue, String Function()? keyId, PrivateRegistriesUpdateOrgPrivateRegistryRequestVisibility Function()? visibility, List<int> Function()? selectedRepositoryIds, }) { return PrivateRegistriesUpdateOrgPrivateRegistryRequest(
+  registryType: registryType != null ? registryType() : this.registryType,
+  url: url != null ? url() : this.url,
+  username: username != null ? username() : this.username,
+  replacesBase: replacesBase != null ? replacesBase() : this.replacesBase,
+  encryptedValue: encryptedValue != null ? encryptedValue() : this.encryptedValue,
+  keyId: keyId != null ? keyId() : this.keyId,
+  visibility: visibility != null ? visibility() : this.visibility,
+  selectedRepositoryIds: selectedRepositoryIds != null ? selectedRepositoryIds() : this.selectedRepositoryIds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PrivateRegistriesUpdateOrgPrivateRegistryRequest &&
+          registryType == other.registryType &&
+          url == other.url &&
+          username == other.username &&
+          replacesBase == other.replacesBase &&
+          encryptedValue == other.encryptedValue &&
+          keyId == other.keyId &&
+          visibility == other.visibility &&
+          listEquals(selectedRepositoryIds, other.selectedRepositoryIds); } 
+@override int get hashCode { return Object.hash(registryType, url, username, replacesBase, encryptedValue, keyId, visibility, Object.hashAll(selectedRepositoryIds ?? const [])); } 
+@override String toString() { return 'PrivateRegistriesUpdateOrgPrivateRegistryRequest(registryType: $registryType, url: $url, username: $username, replacesBase: $replacesBase, encryptedValue: $encryptedValue, keyId: $keyId, visibility: $visibility, selectedRepositoryIds: $selectedRepositoryIds)'; } 
+ }

@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'input_item.dart';final class CreateConversationBody {const CreateConversationBody({this.metadata, this.items, });
+
+factory CreateConversationBody.fromJson(Map<String, dynamic> json) { return CreateConversationBody(
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  items: (json['items'] as List<dynamic>?)?.map((e) => InputItem.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Set of 16 key-value pairs that can be attached to an object. This can be
+/// useful for storing additional information about the object in a structured
+/// format, and querying for objects via API or the dashboard.
+/// 
+/// Keys are strings with a maximum length of 64 characters. Values are strings
+/// with a maximum length of 512 characters.
+/// 
+final Map<String,String>? metadata;
+
+/// Initial items to include in the conversation context. You may add up to 20 items at a time.
+final List<InputItem>? items;
+
+Map<String, dynamic> toJson() { return {
+  'metadata': ?metadata,
+  if (items != null) 'items': items?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CreateConversationBody copyWith({Map<String, String>? Function()? metadata, List<InputItem>? Function()? items, }) { return CreateConversationBody(
+  metadata: metadata != null ? metadata() : this.metadata,
+  items: items != null ? items() : this.items,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateConversationBody &&
+          metadata == other.metadata &&
+          listEquals(items, other.items); } 
+@override int get hashCode { return Object.hash(metadata, Object.hashAll(items ?? const [])); } 
+@override String toString() { return 'CreateConversationBody(metadata: $metadata, items: $items)'; } 
+ }

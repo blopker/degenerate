@@ -16,10 +16,7 @@ void main() {
     });
 
     test('.from() throws on invalid type', () {
-      expect(
-        () => OneOf2<String, int>.from(3.14),
-        throwsArgumentError,
-      );
+      expect(() => OneOf2<String, int>.from(3.14), throwsArgumentError);
     });
 
     test('toJson returns primitive values directly', () {
@@ -159,19 +156,21 @@ void main() {
     test('OneOf9.parse selects correct variant by type', () {
       final v =
           OneOf9.parse<String, int, double, bool, List, Map, Set, Uri, Symbol>(
-        #test,
-        fromA: (v) => v as String,
-        fromB: (v) => v as int,
-        fromC: (v) => v as double,
-        fromD: (v) => v as bool,
-        fromE: (v) => v as List,
-        fromF: (v) => v as Map,
-        fromG: (v) => v as Set,
-        fromH: (v) => v as Uri,
-        fromI: (v) => v as Symbol,
+            #test,
+            fromA: (v) => v as String,
+            fromB: (v) => v as int,
+            fromC: (v) => v as double,
+            fromD: (v) => v as bool,
+            fromE: (v) => v as List,
+            fromF: (v) => v as Map,
+            fromG: (v) => v as Set,
+            fromH: (v) => v as Uri,
+            fromI: (v) => v as Symbol,
+          );
+      expect(
+        v,
+        isA<OneOf9I<String, int, double, bool, List, Map, Set, Uri, Symbol>>(),
       );
-      expect(v,
-          isA<OneOf9I<String, int, double, bool, List, Map, Set, Uri, Symbol>>());
       expect(v.value, #test);
     });
 
@@ -186,10 +185,7 @@ void main() {
           isA<ArgumentError>().having(
             (e) => e.message,
             'message',
-            allOf(
-              contains('_Cat'),
-              contains('_Dog'),
-            ),
+            allOf(contains('_Cat'), contains('_Dog')),
           ),
         ),
       );
@@ -207,11 +203,7 @@ void main() {
           isA<ArgumentError>().having(
             (e) => e.message,
             'message',
-            allOf(
-              contains('_Cat'),
-              contains('_Dog'),
-              contains('int'),
-            ),
+            allOf(contains('_Cat'), contains('_Dog'), contains('int')),
           ),
         ),
       );

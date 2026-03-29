@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final class CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage {const CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage._(this.value);
+
+factory CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage._(json),
+}; }
+
+static const CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage none = CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage._('none');
+
+static const List<CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage($value)'; } 
+ }
+/// 
+final class CheckoutKonbiniPaymentMethodOptions {const CheckoutKonbiniPaymentMethodOptions({this.expiresAfterDays, this.setupFutureUsage, });
+
+factory CheckoutKonbiniPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return CheckoutKonbiniPaymentMethodOptions(
+  expiresAfterDays: json['expires_after_days'] != null ? (json['expires_after_days'] as num).toInt() : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+/// The number of calendar days (between 1 and 60) after which Konbini payment instructions will expire. For example, if a PaymentIntent is confirmed with Konbini and `expires_after_days` set to 2 on Monday JST, the instructions will expire on Wednesday 23:59:59 JST.
+final int? expiresAfterDays;
+
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  'expires_after_days': ?expiresAfterDays,
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CheckoutKonbiniPaymentMethodOptions copyWith({int? Function()? expiresAfterDays, CheckoutKonbiniPaymentMethodOptionsSetupFutureUsage Function()? setupFutureUsage, }) { return CheckoutKonbiniPaymentMethodOptions(
+  expiresAfterDays: expiresAfterDays != null ? expiresAfterDays() : this.expiresAfterDays,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CheckoutKonbiniPaymentMethodOptions &&
+          expiresAfterDays == other.expiresAfterDays &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(expiresAfterDays, setupFutureUsage); } 
+@override String toString() { return 'CheckoutKonbiniPaymentMethodOptions(expiresAfterDays: $expiresAfterDays, setupFutureUsage: $setupFutureUsage)'; } 
+ }

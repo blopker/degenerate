@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
+extension type const WorkersKvCursor(String value) {
+factory WorkersKvCursor.fromJson(String json) => WorkersKvCursor(json);
+
+String toJson() => value;
+
+}
+final class WorkersKvCursorResultInfo {const WorkersKvCursorResultInfo({this.count, this.cursor, });
+
+factory WorkersKvCursorResultInfo.fromJson(Map<String, dynamic> json) { return WorkersKvCursorResultInfo(
+  count: json['count'] != null ? (json['count'] as num).toDouble() : null,
+  cursor: json['cursor'] != null ? WorkersKvCursor.fromJson(json['cursor'] as String) : null,
+); }
+
+/// Total results returned based on your list parameters.
+final double? count;
+
+/// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
+final WorkersKvCursor? cursor;
+
+Map<String, dynamic> toJson() { return {
+  'count': ?count,
+  if (cursor != null) 'cursor': cursor?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WorkersKvCursorResultInfo copyWith({double Function()? count, WorkersKvCursor Function()? cursor, }) { return WorkersKvCursorResultInfo(
+  count: count != null ? count() : this.count,
+  cursor: cursor != null ? cursor() : this.cursor,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersKvCursorResultInfo &&
+          count == other.count &&
+          cursor == other.cursor; } 
+@override int get hashCode { return Object.hash(count, cursor); } 
+@override String toString() { return 'WorkersKvCursorResultInfo(count: $count, cursor: $cursor)'; } 
+ }

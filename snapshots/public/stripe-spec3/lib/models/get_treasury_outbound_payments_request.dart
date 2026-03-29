@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTreasuryOutboundPaymentsRequest {const GetTreasuryOutboundPaymentsRequest();
+
+factory GetTreasuryOutboundPaymentsRequest.fromJson(Map<String, dynamic> json) { return GetTreasuryOutboundPaymentsRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetTreasuryOutboundPaymentsRequest copyWith() { return GetTreasuryOutboundPaymentsRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetTreasuryOutboundPaymentsRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetTreasuryOutboundPaymentsRequest()'; } 
+ }

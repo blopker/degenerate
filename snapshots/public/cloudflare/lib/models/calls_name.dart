@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A short description of Calls app, not shown to end users.
+extension type const CallsName(String value) {
+factory CallsName.fromJson(String json) => CallsName(json);
+
+String toJson() => value;
+
+}

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPullRequestUnlabeledPullRequestLinksCommits {const WebhookPullRequestUnlabeledPullRequestLinksCommits({required this.href});
+
+factory WebhookPullRequestUnlabeledPullRequestLinksCommits.fromJson(Map<String, dynamic> json) { return WebhookPullRequestUnlabeledPullRequestLinksCommits(
+  href: json['href'] as String,
+); }
+
+final String href;
+
+Map<String, dynamic> toJson() { return {
+  'href': href,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
+WebhookPullRequestUnlabeledPullRequestLinksCommits copyWith({String? href}) { return WebhookPullRequestUnlabeledPullRequestLinksCommits(
+  href: href ?? this.href,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestUnlabeledPullRequestLinksCommits &&
+          href == other.href; } 
+@override int get hashCode { return href.hashCode; } 
+@override String toString() { return 'WebhookPullRequestUnlabeledPullRequestLinksCommits(href: $href)'; } 
+ }

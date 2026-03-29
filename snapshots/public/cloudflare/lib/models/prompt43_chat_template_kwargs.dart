@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Prompt43ChatTemplateKwargs {const Prompt43ChatTemplateKwargs({this.clearThinking = false, this.enableThinking = true, });
+
+factory Prompt43ChatTemplateKwargs.fromJson(Map<String, dynamic> json) { return Prompt43ChatTemplateKwargs(
+  clearThinking: json.containsKey('clear_thinking') ? json['clear_thinking'] as bool : false,
+  enableThinking: json.containsKey('enable_thinking') ? json['enable_thinking'] as bool : true,
+); }
+
+/// If false, preserves reasoning context between turns.
+final bool clearThinking;
+
+/// Wether to enable reasoning, enabled by default.
+final bool enableThinking;
+
+Map<String, dynamic> toJson() { return {
+  'clear_thinking': clearThinking,
+  'enable_thinking': enableThinking,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+Prompt43ChatTemplateKwargs copyWith({bool Function()? clearThinking, bool Function()? enableThinking, }) { return Prompt43ChatTemplateKwargs(
+  clearThinking: clearThinking != null ? clearThinking() : this.clearThinking,
+  enableThinking: enableThinking != null ? enableThinking() : this.enableThinking,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt43ChatTemplateKwargs &&
+          clearThinking == other.clearThinking &&
+          enableThinking == other.enableThinking; } 
+@override int get hashCode { return Object.hash(clearThinking, enableThinking); } 
+@override String toString() { return 'Prompt43ChatTemplateKwargs(clearThinking: $clearThinking, enableThinking: $enableThinking)'; } 
+ }

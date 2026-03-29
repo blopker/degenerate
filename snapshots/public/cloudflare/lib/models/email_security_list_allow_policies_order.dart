@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EmailSecurityListAllowPoliciesOrder {const EmailSecurityListAllowPoliciesOrder._(this.value);
+
+factory EmailSecurityListAllowPoliciesOrder.fromJson(String json) { return switch (json) {
+  'pattern' => pattern,
+  'created_at' => createdAt,
+  _ => EmailSecurityListAllowPoliciesOrder._(json),
+}; }
+
+static const EmailSecurityListAllowPoliciesOrder pattern = EmailSecurityListAllowPoliciesOrder._('pattern');
+
+static const EmailSecurityListAllowPoliciesOrder createdAt = EmailSecurityListAllowPoliciesOrder._('created_at');
+
+static const List<EmailSecurityListAllowPoliciesOrder> values = [pattern, createdAt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EmailSecurityListAllowPoliciesOrder && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EmailSecurityListAllowPoliciesOrder($value)'; } 
+ }

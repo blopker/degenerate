@@ -1,0 +1,147 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'assistant_object_tool_resources.dart';import 'assistant_object_tools.dart';import 'assistant_tools_code.dart';import 'assistant_tools_file_search.dart';import 'assistant_tools_function.dart';import 'response_format_json_object.dart';import 'response_format_json_schema.dart';import 'response_format_option.dart';import 'response_format_text.dart';/// The object type, which is always `assistant`.
+final class AssistantObjectObject {const AssistantObjectObject._(this.value);
+
+factory AssistantObjectObject.fromJson(String json) { return switch (json) {
+  'assistant' => assistant,
+  _ => AssistantObjectObject._(json),
+}; }
+
+static const AssistantObjectObject assistant = AssistantObjectObject._('assistant');
+
+static const List<AssistantObjectObject> values = [assistant];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AssistantObjectObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AssistantObjectObject($value)'; } 
+ }
+/// Represents an `assistant` that can call the model and use tools.
+final class AssistantObject {const AssistantObject({required this.id, required this.object, required this.createdAt, required this.name, required this.description, required this.model, required this.instructions, this.tools = const [], this.toolResources, required this.metadata, this.temperature, this.topP, this.responseFormat, });
+
+factory AssistantObject.fromJson(Map<String, dynamic> json) { return AssistantObject(
+  id: json['id'] as String,
+  object: AssistantObjectObject.fromJson(json['object'] as String),
+  createdAt: (json['created_at'] as num).toInt(),
+  name: json['name'] as String?,
+  description: json['description'] as String?,
+  model: json['model'] as String,
+  instructions: json['instructions'] as String?,
+  tools: (json['tools'] as List<dynamic>).map((e) => OneOf3.parse(e, fromA: (v) => AssistantToolsCode.fromJson(v as Map<String, dynamic>), fromB: (v) => AssistantToolsFileSearch.fromJson(v as Map<String, dynamic>), fromC: (v) => AssistantToolsFunction.fromJson(v as Map<String, dynamic>),)).toList(),
+  toolResources: json['tool_resources'] != null ? AssistantObjectToolResources.fromJson(json['tool_resources'] as Map<String, dynamic>) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  responseFormat: json['response_format'] != null ? OneOf4.parse(json['response_format'], fromA: (v) => ResponseFormatOptionVariant1.fromJson(v as String), fromB: (v) => ResponseFormatText.fromJson(v as Map<String, dynamic>), fromC: (v) => ResponseFormatJsonObject.fromJson(v as Map<String, dynamic>), fromD: (v) => ResponseFormatJsonSchema.fromJson(v as Map<String, dynamic>),) : null,
+); }
+
+/// The identifier, which can be referenced in API endpoints.
+final String id;
+
+/// The object type, which is always `assistant`.
+final AssistantObjectObject object;
+
+/// The Unix timestamp (in seconds) for when the assistant was created.
+final int createdAt;
+
+/// The name of the assistant. The maximum length is 256 characters.
+/// 
+final String? name;
+
+/// The description of the assistant. The maximum length is 512 characters.
+/// 
+final String? description;
+
+/// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+/// 
+final String model;
+
+/// The system instructions that the assistant uses. The maximum length is 256,000 characters.
+/// 
+final String? instructions;
+
+/// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.
+/// 
+final List<AssistantObjectTools> tools;
+
+/// A set of resources that are used by the assistant's tools. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
+/// 
+final AssistantObjectToolResources? toolResources;
+
+final Map<String,String>? metadata;
+
+/// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+/// 
+final double? temperature;
+
+/// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+/// 
+/// We generally recommend altering this or temperature but not both.
+/// 
+final double? topP;
+
+final ResponseFormatOption? responseFormat;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'created_at': createdAt,
+  'name': ?name,
+  'description': ?description,
+  'model': model,
+  'instructions': ?instructions,
+  'tools': tools.map((e) => e.toJson()).toList(),
+  if (toolResources != null) 'tool_resources': toolResources?.toJson(),
+  'metadata': ?metadata,
+  'temperature': ?temperature,
+  'top_p': ?topP,
+  if (responseFormat != null) 'response_format': responseFormat?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('model') && json['model'] is String &&
+      json.containsKey('instructions') && json['instructions'] is String &&
+      json.containsKey('tools') &&
+      json.containsKey('metadata'); } 
+AssistantObject copyWith({String? id, AssistantObjectObject? object, int? createdAt, String? Function()? name, String? Function()? description, String? model, String? Function()? instructions, List<AssistantObjectTools>? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, ResponseFormatOption? Function()? responseFormat, }) { return AssistantObject(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  createdAt: createdAt ?? this.createdAt,
+  name: name != null ? name() : this.name,
+  description: description != null ? description() : this.description,
+  model: model ?? this.model,
+  instructions: instructions != null ? instructions() : this.instructions,
+  tools: tools ?? this.tools,
+  toolResources: toolResources != null ? toolResources() : this.toolResources,
+  metadata: metadata != null ? metadata() : this.metadata,
+  temperature: temperature != null ? temperature() : this.temperature,
+  topP: topP != null ? topP() : this.topP,
+  responseFormat: responseFormat != null ? responseFormat() : this.responseFormat,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AssistantObject &&
+          id == other.id &&
+          object == other.object &&
+          createdAt == other.createdAt &&
+          name == other.name &&
+          description == other.description &&
+          model == other.model &&
+          instructions == other.instructions &&
+          listEquals(tools, other.tools) &&
+          toolResources == other.toolResources &&
+          metadata == other.metadata &&
+          temperature == other.temperature &&
+          topP == other.topP &&
+          responseFormat == other.responseFormat; } 
+@override int get hashCode { return Object.hash(id, object, createdAt, name, description, model, instructions, Object.hashAll(tools), toolResources, metadata, temperature, topP, responseFormat); } 
+@override String toString() { return 'AssistantObject(id: $id, object: $object, createdAt: $createdAt, name: $name, description: $description, model: $model, instructions: $instructions, tools: $tools, toolResources: $toolResources, metadata: $metadata, temperature: $temperature, topP: $topP, responseFormat: $responseFormat)'; } 
+ }

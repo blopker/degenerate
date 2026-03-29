@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_issues_edited_changes_body.dart';import 'webhook_issues_edited_changes_title.dart';/// The changes to the issue.
+final class WebhookIssuesEditedChanges {const WebhookIssuesEditedChanges({this.body, this.title, });
+
+factory WebhookIssuesEditedChanges.fromJson(Map<String, dynamic> json) { return WebhookIssuesEditedChanges(
+  body: json['body'] != null ? WebhookIssuesEditedChangesBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  title: json['title'] != null ? WebhookIssuesEditedChangesTitle.fromJson(json['title'] as Map<String, dynamic>) : null,
+); }
+
+final WebhookIssuesEditedChangesBody? body;
+
+final WebhookIssuesEditedChangesTitle? title;
+
+Map<String, dynamic> toJson() { return {
+  if (body != null) 'body': body?.toJson(),
+  if (title != null) 'title': title?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookIssuesEditedChanges copyWith({WebhookIssuesEditedChangesBody Function()? body, WebhookIssuesEditedChangesTitle Function()? title, }) { return WebhookIssuesEditedChanges(
+  body: body != null ? body() : this.body,
+  title: title != null ? title() : this.title,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssuesEditedChanges &&
+          body == other.body &&
+          title == other.title; } 
+@override int get hashCode { return Object.hash(body, title); } 
+@override String toString() { return 'WebhookIssuesEditedChanges(body: $body, title: $title)'; } 
+ }

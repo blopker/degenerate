@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A message which can be returned in either the 'errors' or 'messages' fields in a v4 API response.
+final class ResponseMessage {const ResponseMessage({required this.code, required this.message, });
+
+factory ResponseMessage.fromJson(Map<String, dynamic> json) { return ResponseMessage(
+  code: (json['code'] as num).toInt(),
+  message: json['message'] as String,
+); }
+
+final int code;
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String; } 
+ResponseMessage copyWith({int? code, String? message, }) { return ResponseMessage(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseMessage &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'ResponseMessage(code: $code, message: $message)'; } 
+ }

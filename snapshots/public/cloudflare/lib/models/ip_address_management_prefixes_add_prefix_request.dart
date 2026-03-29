@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'addressing_asn.dart';import 'addressing_cidr.dart';import 'addressing_delegate_loa_creation.dart';import 'addressing_description.dart';import 'addressing_loa_document_identifier.dart';final class IpAddressManagementPrefixesAddPrefixRequest {const IpAddressManagementPrefixesAddPrefixRequest({required this.asn, required this.cidr, this.delegateLoaCreation, this.description, this.loaDocumentId, });
+
+factory IpAddressManagementPrefixesAddPrefixRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementPrefixesAddPrefixRequest(
+  asn: AddressingAsn.fromJson(json['asn'] as num),
+  cidr: AddressingCidr.fromJson(json['cidr'] as String),
+  delegateLoaCreation: json['delegate_loa_creation'] != null ? AddressingDelegateLoaCreation.fromJson(json['delegate_loa_creation'] as bool) : null,
+  description: json['description'] != null ? AddressingDescription.fromJson(json['description'] as String) : null,
+  loaDocumentId: json['loa_document_id'] != null ? AddressingLoaDocumentIdentifier.fromJson(json['loa_document_id'] as String) : null,
+); }
+
+/// Autonomous System Number (ASN) the prefix will be advertised under.
+final AddressingAsn asn;
+
+/// IP Prefix in Classless Inter-Domain Routing format.
+final AddressingCidr cidr;
+
+/// Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.
+final AddressingDelegateLoaCreation? delegateLoaCreation;
+
+/// Description of the prefix.
+final AddressingDescription? description;
+
+/// Identifier for the uploaded LOA document.
+final AddressingLoaDocumentIdentifier? loaDocumentId;
+
+Map<String, dynamic> toJson() { return {
+  'asn': asn.toJson(),
+  'cidr': cidr.toJson(),
+  if (delegateLoaCreation != null) 'delegate_loa_creation': delegateLoaCreation?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (loaDocumentId != null) 'loa_document_id': loaDocumentId?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') &&
+      json.containsKey('cidr'); } 
+IpAddressManagementPrefixesAddPrefixRequest copyWith({AddressingAsn? asn, AddressingCidr? cidr, AddressingDelegateLoaCreation Function()? delegateLoaCreation, AddressingDescription Function()? description, AddressingLoaDocumentIdentifier? Function()? loaDocumentId, }) { return IpAddressManagementPrefixesAddPrefixRequest(
+  asn: asn ?? this.asn,
+  cidr: cidr ?? this.cidr,
+  delegateLoaCreation: delegateLoaCreation != null ? delegateLoaCreation() : this.delegateLoaCreation,
+  description: description != null ? description() : this.description,
+  loaDocumentId: loaDocumentId != null ? loaDocumentId() : this.loaDocumentId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IpAddressManagementPrefixesAddPrefixRequest &&
+          asn == other.asn &&
+          cidr == other.cidr &&
+          delegateLoaCreation == other.delegateLoaCreation &&
+          description == other.description &&
+          loaDocumentId == other.loaDocumentId; } 
+@override int get hashCode { return Object.hash(asn, cidr, delegateLoaCreation, description, loaDocumentId); } 
+@override String toString() { return 'IpAddressManagementPrefixesAddPrefixRequest(asn: $asn, cidr: $cidr, delegateLoaCreation: $delegateLoaCreation, description: $description, loaDocumentId: $loaDocumentId)'; } 
+ }

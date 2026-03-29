@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_invoices_invoice_add_lines_request_lines_price_data_product_data.dart';final class PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior {const PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior._(this.value);
+
+factory PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior.fromJson(String json) { return switch (json) {
+  'exclusive' => exclusive,
+  'inclusive' => inclusive,
+  'unspecified' => unspecified,
+  _ => PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior._(json),
+}; }
+
+static const PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior exclusive = PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior._('exclusive');
+
+static const PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior inclusive = PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior._('inclusive');
+
+static const PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior unspecified = PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior._('unspecified');
+
+static const List<PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior> values = [exclusive, inclusive, unspecified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior($value)'; } 
+ }
+final class PostInvoicesInvoiceAddLinesRequestLinesPriceData {const PostInvoicesInvoiceAddLinesRequestLinesPriceData({required this.currency, this.product, this.productData, this.taxBehavior, this.unitAmount, this.unitAmountDecimal, });
+
+factory PostInvoicesInvoiceAddLinesRequestLinesPriceData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceAddLinesRequestLinesPriceData(
+  currency: json['currency'] as String,
+  product: json['product'] as String?,
+  productData: json['product_data'] != null ? PostInvoicesInvoiceAddLinesRequestLinesPriceDataProductData.fromJson(json['product_data'] as Map<String, dynamic>) : null,
+  taxBehavior: json['tax_behavior'] != null ? PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
+  unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
+  unitAmountDecimal: json['unit_amount_decimal'] as String?,
+); }
+
+final String currency;
+
+final String? product;
+
+final PostInvoicesInvoiceAddLinesRequestLinesPriceDataProductData? productData;
+
+final PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior? taxBehavior;
+
+final int? unitAmount;
+
+final String? unitAmountDecimal;
+
+Map<String, dynamic> toJson() { return {
+  'currency': currency,
+  'product': ?product,
+  if (productData != null) 'product_data': productData?.toJson(),
+  if (taxBehavior != null) 'tax_behavior': taxBehavior?.toJson(),
+  'unit_amount': ?unitAmount,
+  'unit_amount_decimal': ?unitAmountDecimal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String; } 
+PostInvoicesInvoiceAddLinesRequestLinesPriceData copyWith({String? currency, String Function()? product, PostInvoicesInvoiceAddLinesRequestLinesPriceDataProductData Function()? productData, PostInvoicesInvoiceAddLinesRequestLinesPriceDataTaxBehavior Function()? taxBehavior, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return PostInvoicesInvoiceAddLinesRequestLinesPriceData(
+  currency: currency ?? this.currency,
+  product: product != null ? product() : this.product,
+  productData: productData != null ? productData() : this.productData,
+  taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
+  unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
+  unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesInvoiceAddLinesRequestLinesPriceData &&
+          currency == other.currency &&
+          product == other.product &&
+          productData == other.productData &&
+          taxBehavior == other.taxBehavior &&
+          unitAmount == other.unitAmount &&
+          unitAmountDecimal == other.unitAmountDecimal; } 
+@override int get hashCode { return Object.hash(currency, product, productData, taxBehavior, unitAmount, unitAmountDecimal); } 
+@override String toString() { return 'PostInvoicesInvoiceAddLinesRequestLinesPriceData(currency: $currency, product: $product, productData: $productData, taxBehavior: $taxBehavior, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+ }

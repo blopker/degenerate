@@ -1,0 +1,100 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'turbo_request_audio.dart';import 'turbo_request_audio_variant2.dart';final class TurboRequest {const TurboRequest({required this.audio, this.beamSize = 5, this.compressionRatioThreshold = 2.4, this.conditionOnPreviousText = true, this.hallucinationSilenceThreshold, this.initialPrompt, this.language, this.logProbThreshold = -1.0, this.noSpeechThreshold = 0.6, this.prefix, this.task = 'transcribe', this.vadFilter = false, });
+
+factory TurboRequest.fromJson(Map<String, dynamic> json) { return TurboRequest(
+  audio: OneOf2.parse(json['audio'], fromA: (v) => v as String, fromB: (v) => TurboRequestAudioVariant2.fromJson(v as Map<String, dynamic>),),
+  beamSize: json.containsKey('beam_size') ? (json['beam_size'] as num).toInt() : 5,
+  compressionRatioThreshold: json.containsKey('compression_ratio_threshold') ? (json['compression_ratio_threshold'] as num).toDouble() : 2.4,
+  conditionOnPreviousText: json.containsKey('condition_on_previous_text') ? json['condition_on_previous_text'] as bool : true,
+  hallucinationSilenceThreshold: json['hallucination_silence_threshold'] != null ? (json['hallucination_silence_threshold'] as num).toDouble() : null,
+  initialPrompt: json['initial_prompt'] as String?,
+  language: json['language'] as String?,
+  logProbThreshold: json.containsKey('log_prob_threshold') ? (json['log_prob_threshold'] as num).toDouble() : -1.0,
+  noSpeechThreshold: json.containsKey('no_speech_threshold') ? (json['no_speech_threshold'] as num).toDouble() : 0.6,
+  prefix: json['prefix'] as String?,
+  task: json.containsKey('task') ? json['task'] as String : 'transcribe',
+  vadFilter: json.containsKey('vad_filter') ? json['vad_filter'] as bool : false,
+); }
+
+final TurboRequestAudio audio;
+
+/// The number of beams to use in beam search decoding. Higher values may improve accuracy at the cost of speed.
+final int beamSize;
+
+/// Threshold for filtering out segments with high compression ratio, which often indicate repetitive or hallucinated text.
+final double compressionRatioThreshold;
+
+/// Whether to condition on previous text during transcription. Setting to false may help prevent hallucination loops.
+final bool conditionOnPreviousText;
+
+/// Optional threshold (in seconds) to skip silent periods that may cause hallucinations.
+final double? hallucinationSilenceThreshold;
+
+/// A text prompt to help provide context to the model on the contents of the audio.
+final String? initialPrompt;
+
+/// The language of the audio being transcribed or translated.
+final String? language;
+
+/// Threshold for filtering out segments with low average log probability, indicating low confidence.
+final double logProbThreshold;
+
+/// Threshold for detecting no-speech segments. Segments with no-speech probability above this value are skipped.
+final double noSpeechThreshold;
+
+/// The prefix appended to the beginning of the output of the transcription and can guide the transcription result.
+final String? prefix;
+
+/// Supported tasks are 'translate' or 'transcribe'.
+final String task;
+
+/// Preprocess the audio with a voice activity detection model.
+final bool vadFilter;
+
+Map<String, dynamic> toJson() { return {
+  'audio': audio.toJson(),
+  'beam_size': beamSize,
+  'compression_ratio_threshold': compressionRatioThreshold,
+  'condition_on_previous_text': conditionOnPreviousText,
+  'hallucination_silence_threshold': ?hallucinationSilenceThreshold,
+  'initial_prompt': ?initialPrompt,
+  'language': ?language,
+  'log_prob_threshold': logProbThreshold,
+  'no_speech_threshold': noSpeechThreshold,
+  'prefix': ?prefix,
+  'task': task,
+  'vad_filter': vadFilter,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('audio'); } 
+TurboRequest copyWith({TurboRequestAudio? audio, int Function()? beamSize, double Function()? compressionRatioThreshold, bool Function()? conditionOnPreviousText, double Function()? hallucinationSilenceThreshold, String Function()? initialPrompt, String Function()? language, double Function()? logProbThreshold, double Function()? noSpeechThreshold, String Function()? prefix, String Function()? task, bool Function()? vadFilter, }) { return TurboRequest(
+  audio: audio ?? this.audio,
+  beamSize: beamSize != null ? beamSize() : this.beamSize,
+  compressionRatioThreshold: compressionRatioThreshold != null ? compressionRatioThreshold() : this.compressionRatioThreshold,
+  conditionOnPreviousText: conditionOnPreviousText != null ? conditionOnPreviousText() : this.conditionOnPreviousText,
+  hallucinationSilenceThreshold: hallucinationSilenceThreshold != null ? hallucinationSilenceThreshold() : this.hallucinationSilenceThreshold,
+  initialPrompt: initialPrompt != null ? initialPrompt() : this.initialPrompt,
+  language: language != null ? language() : this.language,
+  logProbThreshold: logProbThreshold != null ? logProbThreshold() : this.logProbThreshold,
+  noSpeechThreshold: noSpeechThreshold != null ? noSpeechThreshold() : this.noSpeechThreshold,
+  prefix: prefix != null ? prefix() : this.prefix,
+  task: task != null ? task() : this.task,
+  vadFilter: vadFilter != null ? vadFilter() : this.vadFilter,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TurboRequest &&
+          audio == other.audio &&
+          beamSize == other.beamSize &&
+          compressionRatioThreshold == other.compressionRatioThreshold &&
+          conditionOnPreviousText == other.conditionOnPreviousText &&
+          hallucinationSilenceThreshold == other.hallucinationSilenceThreshold &&
+          initialPrompt == other.initialPrompt &&
+          language == other.language &&
+          logProbThreshold == other.logProbThreshold &&
+          noSpeechThreshold == other.noSpeechThreshold &&
+          prefix == other.prefix &&
+          task == other.task &&
+          vadFilter == other.vadFilter; } 
+@override int get hashCode { return Object.hash(audio, beamSize, compressionRatioThreshold, conditionOnPreviousText, hallucinationSilenceThreshold, initialPrompt, language, logProbThreshold, noSpeechThreshold, prefix, task, vadFilter); } 
+@override String toString() { return 'TurboRequest(audio: $audio, beamSize: $beamSize, compressionRatioThreshold: $compressionRatioThreshold, conditionOnPreviousText: $conditionOnPreviousText, hallucinationSilenceThreshold: $hallucinationSilenceThreshold, initialPrompt: $initialPrompt, language: $language, logProbThreshold: $logProbThreshold, noSpeechThreshold: $noSpeechThreshold, prefix: $prefix, task: $task, vadFilter: $vadFilter)'; } 
+ }

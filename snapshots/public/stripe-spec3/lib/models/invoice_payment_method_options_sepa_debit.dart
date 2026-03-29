@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class InvoicePaymentMethodOptionsSepaDebit {const InvoicePaymentMethodOptionsSepaDebit();
+
+factory InvoicePaymentMethodOptionsSepaDebit.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsSepaDebit(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoicePaymentMethodOptionsSepaDebit copyWith() { return InvoicePaymentMethodOptionsSepaDebit(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is InvoicePaymentMethodOptionsSepaDebit; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsSepaDebit()'; } 
+ }

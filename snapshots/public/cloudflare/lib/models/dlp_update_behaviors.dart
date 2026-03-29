@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dlp_update_behavior.dart';final class DlpUpdateBehaviors {const DlpUpdateBehaviors({required this.behaviors});
+
+factory DlpUpdateBehaviors.fromJson(Map<String, dynamic> json) { return DlpUpdateBehaviors(
+  behaviors: (json['behaviors'] as Map<String, dynamic>).map((k, v) => MapEntry(k, DlpUpdateBehavior.fromJson(v as Map<String, dynamic>))),
+); }
+
+final Map<String,DlpUpdateBehavior> behaviors;
+
+Map<String, dynamic> toJson() { return {
+  'behaviors': behaviors.map((k, v) => MapEntry(k, v.toJson())),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('behaviors'); } 
+DlpUpdateBehaviors copyWith({Map<String,DlpUpdateBehavior>? behaviors}) { return DlpUpdateBehaviors(
+  behaviors: behaviors ?? this.behaviors,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpUpdateBehaviors &&
+          behaviors == other.behaviors; } 
+@override int get hashCode { return behaviors.hashCode; } 
+@override String toString() { return 'DlpUpdateBehaviors(behaviors: $behaviors)'; } 
+ }

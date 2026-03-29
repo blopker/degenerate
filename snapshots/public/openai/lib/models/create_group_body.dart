@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Request payload for creating a new group in the organization.
+final class CreateGroupBody {const CreateGroupBody({required this.name});
+
+factory CreateGroupBody.fromJson(Map<String, dynamic> json) { return CreateGroupBody(
+  name: json['name'] as String,
+); }
+
+/// Human readable name for the group.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+CreateGroupBody copyWith({String? name}) { return CreateGroupBody(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateGroupBody &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'CreateGroupBody(name: $name)'; } 
+ }

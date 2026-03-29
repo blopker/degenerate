@@ -1,0 +1,91 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_test_helpers_treasury_received_debits_request_initiating_payment_method_details.dart';/// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
+final class PostTestHelpersTreasuryReceivedDebitsRequestNetwork {const PostTestHelpersTreasuryReceivedDebitsRequestNetwork._(this.value);
+
+factory PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(String json) { return switch (json) {
+  'ach' => ach,
+  _ => PostTestHelpersTreasuryReceivedDebitsRequestNetwork._(json),
+}; }
+
+static const PostTestHelpersTreasuryReceivedDebitsRequestNetwork ach = PostTestHelpersTreasuryReceivedDebitsRequestNetwork._('ach');
+
+static const List<PostTestHelpersTreasuryReceivedDebitsRequestNetwork> values = [ach];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersTreasuryReceivedDebitsRequestNetwork && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersTreasuryReceivedDebitsRequestNetwork($value)'; } 
+ }
+final class PostTestHelpersTreasuryReceivedDebitsRequest {const PostTestHelpersTreasuryReceivedDebitsRequest({required this.amount, required this.currency, this.description, this.expand, required this.financialAccount, this.initiatingPaymentMethodDetails, required this.network, });
+
+factory PostTestHelpersTreasuryReceivedDebitsRequest.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryReceivedDebitsRequest(
+  amount: (json['amount'] as num).toInt(),
+  currency: json['currency'] as String,
+  description: json['description'] as String?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  financialAccount: json['financial_account'] as String,
+  initiatingPaymentMethodDetails: json['initiating_payment_method_details'] != null ? PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails.fromJson(json['initiating_payment_method_details'] as Map<String, dynamic>) : null,
+  network: PostTestHelpersTreasuryReceivedDebitsRequestNetwork.fromJson(json['network'] as String),
+); }
+
+/// Amount (in cents) to be transferred.
+final int amount;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// An arbitrary string attached to the object. Often useful for displaying to users.
+final String? description;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// The FinancialAccount to pull funds from.
+final String financialAccount;
+
+/// Initiating payment method details for the object.
+final PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails;
+
+/// Specifies the network rails to be used. If not set, will default to the PaymentMethod's preferred network. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
+final PostTestHelpersTreasuryReceivedDebitsRequestNetwork network;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'currency': currency,
+  'description': ?description,
+  'expand': ?expand,
+  'financial_account': financialAccount,
+  if (initiatingPaymentMethodDetails != null) 'initiating_payment_method_details': initiatingPaymentMethodDetails?.toJson(),
+  'network': network.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('financial_account') && json['financial_account'] is String &&
+      json.containsKey('network'); } 
+PostTestHelpersTreasuryReceivedDebitsRequest copyWith({int? amount, String? currency, String Function()? description, List<String> Function()? expand, String? financialAccount, PostTestHelpersTreasuryReceivedDebitsRequestInitiatingPaymentMethodDetails Function()? initiatingPaymentMethodDetails, PostTestHelpersTreasuryReceivedDebitsRequestNetwork? network, }) { return PostTestHelpersTreasuryReceivedDebitsRequest(
+  amount: amount ?? this.amount,
+  currency: currency ?? this.currency,
+  description: description != null ? description() : this.description,
+  expand: expand != null ? expand() : this.expand,
+  financialAccount: financialAccount ?? this.financialAccount,
+  initiatingPaymentMethodDetails: initiatingPaymentMethodDetails != null ? initiatingPaymentMethodDetails() : this.initiatingPaymentMethodDetails,
+  network: network ?? this.network,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersTreasuryReceivedDebitsRequest &&
+          amount == other.amount &&
+          currency == other.currency &&
+          description == other.description &&
+          listEquals(expand, other.expand) &&
+          financialAccount == other.financialAccount &&
+          initiatingPaymentMethodDetails == other.initiatingPaymentMethodDetails &&
+          network == other.network; } 
+@override int get hashCode { return Object.hash(amount, currency, description, Object.hashAll(expand ?? const []), financialAccount, initiatingPaymentMethodDetails, network); } 
+@override String toString() { return 'PostTestHelpersTreasuryReceivedDebitsRequest(amount: $amount, currency: $currency, description: $description, expand: $expand, financialAccount: $financialAccount, initiatingPaymentMethodDetails: $initiatingPaymentMethodDetails, network: $network)'; } 
+ }

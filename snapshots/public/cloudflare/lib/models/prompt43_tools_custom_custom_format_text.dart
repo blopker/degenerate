@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Prompt43ToolsCustomCustomFormatTextType {const Prompt43ToolsCustomCustomFormatTextType._(this.value);
+
+factory Prompt43ToolsCustomCustomFormatTextType.fromJson(String json) { return switch (json) {
+  'text' => text,
+  _ => Prompt43ToolsCustomCustomFormatTextType._(json),
+}; }
+
+static const Prompt43ToolsCustomCustomFormatTextType text = Prompt43ToolsCustomCustomFormatTextType._('text');
+
+static const List<Prompt43ToolsCustomCustomFormatTextType> values = [text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Prompt43ToolsCustomCustomFormatTextType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Prompt43ToolsCustomCustomFormatTextType($value)'; } 
+ }
+final class Prompt43ToolsCustomCustomFormatText {const Prompt43ToolsCustomCustomFormatText({required this.type});
+
+factory Prompt43ToolsCustomCustomFormatText.fromJson(Map<String, dynamic> json) { return Prompt43ToolsCustomCustomFormatText(
+  type: Prompt43ToolsCustomCustomFormatTextType.fromJson(json['type'] as String),
+); }
+
+final Prompt43ToolsCustomCustomFormatTextType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+Prompt43ToolsCustomCustomFormatText copyWith({Prompt43ToolsCustomCustomFormatTextType? type}) { return Prompt43ToolsCustomCustomFormatText(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Prompt43ToolsCustomCustomFormatText &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'Prompt43ToolsCustomCustomFormatText(type: $type)'; } 
+ }

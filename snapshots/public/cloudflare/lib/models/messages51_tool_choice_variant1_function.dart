@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'messages51_tool_choice_variant1_function_function.dart';final class Messages51ToolChoiceVariant1FunctionType {const Messages51ToolChoiceVariant1FunctionType._(this.value);
+
+factory Messages51ToolChoiceVariant1FunctionType.fromJson(String json) { return switch (json) {
+  'function' => function,
+  _ => Messages51ToolChoiceVariant1FunctionType._(json),
+}; }
+
+static const Messages51ToolChoiceVariant1FunctionType function = Messages51ToolChoiceVariant1FunctionType._('function');
+
+static const List<Messages51ToolChoiceVariant1FunctionType> values = [function];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51ToolChoiceVariant1FunctionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51ToolChoiceVariant1FunctionType($value)'; } 
+ }
+/// Force a specific function tool.
+final class Messages51ToolChoiceVariant1Function {const Messages51ToolChoiceVariant1Function({required this.function, required this.type, });
+
+factory Messages51ToolChoiceVariant1Function.fromJson(Map<String, dynamic> json) { return Messages51ToolChoiceVariant1Function(
+  function: Messages51ToolChoiceVariant1FunctionFunction.fromJson(json['function'] as Map<String, dynamic>),
+  type: Messages51ToolChoiceVariant1FunctionType.fromJson(json['type'] as String),
+); }
+
+final Messages51ToolChoiceVariant1FunctionFunction function;
+
+final Messages51ToolChoiceVariant1FunctionType type;
+
+Map<String, dynamic> toJson() { return {
+  'function': function.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('function') &&
+      json.containsKey('type'); } 
+Messages51ToolChoiceVariant1Function copyWith({Messages51ToolChoiceVariant1FunctionFunction? function, Messages51ToolChoiceVariant1FunctionType? type, }) { return Messages51ToolChoiceVariant1Function(
+  function: function ?? this.function,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages51ToolChoiceVariant1Function &&
+          function == other.function &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(function, type); } 
+@override String toString() { return 'Messages51ToolChoiceVariant1Function(function: $function, type: $type)'; } 
+ }

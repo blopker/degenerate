@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesRequestRenderingTemplateVersionVariant2 {const PostInvoicesRequestRenderingTemplateVersionVariant2._(this.value);
+
+factory PostInvoicesRequestRenderingTemplateVersionVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesRequestRenderingTemplateVersionVariant2._(json),
+}; }
+
+static const PostInvoicesRequestRenderingTemplateVersionVariant2 $empty = PostInvoicesRequestRenderingTemplateVersionVariant2._('');
+
+static const List<PostInvoicesRequestRenderingTemplateVersionVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesRequestRenderingTemplateVersionVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesRequestRenderingTemplateVersionVariant2($value)'; } 
+ }
+typedef PostInvoicesRequestRenderingTemplateVersion = OneOf2<int,PostInvoicesRequestRenderingTemplateVersionVariant2>;

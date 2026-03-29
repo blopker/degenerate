@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
+final class FirewallSchemasIpConfigurationTarget {const FirewallSchemasIpConfigurationTarget._(this.value);
+
+factory FirewallSchemasIpConfigurationTarget.fromJson(String json) { return switch (json) {
+  'ip' => ip,
+  _ => FirewallSchemasIpConfigurationTarget._(json),
+}; }
+
+static const FirewallSchemasIpConfigurationTarget ip = FirewallSchemasIpConfigurationTarget._('ip');
+
+static const List<FirewallSchemasIpConfigurationTarget> values = [ip];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FirewallSchemasIpConfigurationTarget && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FirewallSchemasIpConfigurationTarget($value)'; } 
+ }
+final class FirewallSchemasIpConfiguration {const FirewallSchemasIpConfiguration({this.target, this.value, });
+
+factory FirewallSchemasIpConfiguration.fromJson(Map<String, dynamic> json) { return FirewallSchemasIpConfiguration(
+  target: json['target'] != null ? FirewallSchemasIpConfigurationTarget.fromJson(json['target'] as String) : null,
+  value: json['value'] as String?,
+); }
+
+/// The configuration target. You must set the target to `ip` when specifying an IP address in the Zone Lockdown rule.
+final FirewallSchemasIpConfigurationTarget? target;
+
+/// The IP address to match. This address will be compared to the IP address of incoming requests.
+final String? value;
+
+Map<String, dynamic> toJson() { return {
+  if (target != null) 'target': target?.toJson(),
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+FirewallSchemasIpConfiguration copyWith({FirewallSchemasIpConfigurationTarget Function()? target, String Function()? value, }) { return FirewallSchemasIpConfiguration(
+  target: target != null ? target() : this.target,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FirewallSchemasIpConfiguration &&
+          target == other.target &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(target, value); } 
+@override String toString() { return 'FirewallSchemasIpConfiguration(target: $target, value: $value)'; } 
+ }

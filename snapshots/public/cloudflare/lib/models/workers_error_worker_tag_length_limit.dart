@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersErrorWorkerTagLengthLimit {const WorkersErrorWorkerTagLengthLimit({required this.code, required this.message, });
+
+factory WorkersErrorWorkerTagLengthLimit.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerTagLengthLimit(
+  code: (json['code'] as num).toInt(),
+  message: json['message'] as String,
+); }
+
+/// Code indicating that the Worker has a tag that exceeds the maximum tag length.
+final int code;
+
+/// Message explaining why the tag is too long, including the maximum tag length.
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String; } 
+WorkersErrorWorkerTagLengthLimit copyWith({int? code, String? message, }) { return WorkersErrorWorkerTagLengthLimit(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersErrorWorkerTagLengthLimit &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'WorkersErrorWorkerTagLengthLimit(code: $code, message: $message)'; } 
+ }

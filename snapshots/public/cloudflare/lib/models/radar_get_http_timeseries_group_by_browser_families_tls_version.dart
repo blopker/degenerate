@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion {const RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion.fromJson(String json) { return switch (json) {
+  'TLSv1_0' => tlSv10,
+  'TLSv1_1' => tlSv11,
+  'TLSv1_2' => tlSv12,
+  'TLSv1_3' => tlSv13,
+  'TLSvQUIC' => tlSvQuic,
+  _ => RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion tlSv10 = RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._('TLSv1_0');
+
+static const RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion tlSv11 = RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._('TLSv1_1');
+
+static const RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion tlSv12 = RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._('TLSv1_2');
+
+static const RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion tlSv13 = RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._('TLSv1_3');
+
+static const RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion tlSvQuic = RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion._('TLSvQUIC');
+
+static const List<RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion> values = [tlSv10, tlSv11, tlSv12, tlSv13, tlSvQuic];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBrowserFamiliesTlsVersion($value)'; } 
+ }

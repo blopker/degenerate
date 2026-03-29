@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'amount_details_shipping_param2_amount.dart';import 'amount_details_shipping_param2_from_postal_code.dart';import 'amount_details_shipping_param2_to_postal_code.dart';final class AmountDetailsShippingParam2 {const AmountDetailsShippingParam2({this.amount, this.fromPostalCode, this.toPostalCode, });
+
+factory AmountDetailsShippingParam2.fromJson(Map<String, dynamic> json) { return AmountDetailsShippingParam2(
+  amount: json['amount'] != null ? OneOf2.parse(json['amount'], fromA: (v) => (v as num).toInt(), fromB: (v) => AmountDetailsShippingParam2AmountVariant2.fromJson(v as String),) : null,
+  fromPostalCode: json['from_postal_code'] != null ? OneOf2.parse(json['from_postal_code'], fromA: (v) => v as String, fromB: (v) => AmountDetailsShippingParam2FromPostalCodeVariant2.fromJson(v as String),) : null,
+  toPostalCode: json['to_postal_code'] != null ? OneOf2.parse(json['to_postal_code'], fromA: (v) => v as String, fromB: (v) => AmountDetailsShippingParam2ToPostalCodeVariant2.fromJson(v as String),) : null,
+); }
+
+final AmountDetailsShippingParam2Amount? amount;
+
+final AmountDetailsShippingParam2FromPostalCode? fromPostalCode;
+
+final AmountDetailsShippingParam2ToPostalCode? toPostalCode;
+
+Map<String, dynamic> toJson() { return {
+  if (amount != null) 'amount': amount?.toJson(),
+  if (fromPostalCode != null) 'from_postal_code': fromPostalCode?.toJson(),
+  if (toPostalCode != null) 'to_postal_code': toPostalCode?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AmountDetailsShippingParam2 copyWith({AmountDetailsShippingParam2Amount Function()? amount, AmountDetailsShippingParam2FromPostalCode Function()? fromPostalCode, AmountDetailsShippingParam2ToPostalCode Function()? toPostalCode, }) { return AmountDetailsShippingParam2(
+  amount: amount != null ? amount() : this.amount,
+  fromPostalCode: fromPostalCode != null ? fromPostalCode() : this.fromPostalCode,
+  toPostalCode: toPostalCode != null ? toPostalCode() : this.toPostalCode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AmountDetailsShippingParam2 &&
+          amount == other.amount &&
+          fromPostalCode == other.fromPostalCode &&
+          toPostalCode == other.toPostalCode; } 
+@override int get hashCode { return Object.hash(amount, fromPostalCode, toPostalCode); } 
+@override String toString() { return 'AmountDetailsShippingParam2(amount: $amount, fromPostalCode: $fromPostalCode, toPostalCode: $toPostalCode)'; } 
+ }

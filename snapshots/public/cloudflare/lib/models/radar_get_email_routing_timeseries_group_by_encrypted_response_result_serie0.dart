@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 {const RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0({required this.encrypted, required this.notEncrypted, });
+
+factory RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(
+  encrypted: (json['ENCRYPTED'] as List<dynamic>).map((e) => e as String).toList(),
+  notEncrypted: (json['NOT_ENCRYPTED'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final List<String> encrypted;
+
+final List<String> notEncrypted;
+
+Map<String, dynamic> toJson() { return {
+  'ENCRYPTED': encrypted,
+  'NOT_ENCRYPTED': notEncrypted,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ENCRYPTED') &&
+      json.containsKey('NOT_ENCRYPTED'); } 
+RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 copyWith({List<String>? encrypted, List<String>? notEncrypted, }) { return RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(
+  encrypted: encrypted ?? this.encrypted,
+  notEncrypted: notEncrypted ?? this.notEncrypted,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0 &&
+          listEquals(encrypted, other.encrypted) &&
+          listEquals(notEncrypted, other.notEncrypted); } 
+@override int get hashCode { return Object.hash(Object.hashAll(encrypted), Object.hashAll(notEncrypted)); } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupByEncryptedResponseResultSerie0(encrypted: $encrypted, notEncrypted: $notEncrypted)'; } 
+ }

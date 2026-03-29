@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'person_us_cfpb_data_ethnicity_details.dart';import 'person_us_cfpb_data_race_details.dart';/// 
+final class PersonUsCfpbData {const PersonUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
+
+factory PersonUsCfpbData.fromJson(Map<String, dynamic> json) { return PersonUsCfpbData(
+  ethnicityDetails: json['ethnicity_details'] != null ? PersonUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>) : null,
+  raceDetails: json['race_details'] != null ? PersonUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>) : null,
+  selfIdentifiedGender: json['self_identified_gender'] as String?,
+); }
+
+/// The persons ethnicity details
+final PersonUsCfpbDataEthnicityDetails? ethnicityDetails;
+
+/// The persons race details
+final PersonUsCfpbDataRaceDetails? raceDetails;
+
+/// The persons self-identified gender
+final String? selfIdentifiedGender;
+
+Map<String, dynamic> toJson() { return {
+  if (ethnicityDetails != null) 'ethnicity_details': ethnicityDetails?.toJson(),
+  if (raceDetails != null) 'race_details': raceDetails?.toJson(),
+  'self_identified_gender': ?selfIdentifiedGender,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PersonUsCfpbData copyWith({PersonUsCfpbDataEthnicityDetails? Function()? ethnicityDetails, PersonUsCfpbDataRaceDetails? Function()? raceDetails, String? Function()? selfIdentifiedGender, }) { return PersonUsCfpbData(
+  ethnicityDetails: ethnicityDetails != null ? ethnicityDetails() : this.ethnicityDetails,
+  raceDetails: raceDetails != null ? raceDetails() : this.raceDetails,
+  selfIdentifiedGender: selfIdentifiedGender != null ? selfIdentifiedGender() : this.selfIdentifiedGender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PersonUsCfpbData &&
+          ethnicityDetails == other.ethnicityDetails &&
+          raceDetails == other.raceDetails &&
+          selfIdentifiedGender == other.selfIdentifiedGender; } 
+@override int get hashCode { return Object.hash(ethnicityDetails, raceDetails, selfIdentifiedGender); } 
+@override String toString() { return 'PersonUsCfpbData(ethnicityDetails: $ethnicityDetails, raceDetails: $raceDetails, selfIdentifiedGender: $selfIdentifiedGender)'; } 
+ }

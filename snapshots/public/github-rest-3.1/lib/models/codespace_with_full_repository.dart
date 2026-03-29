@@ -1,0 +1,348 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'codespace_machine.dart';import 'codespace_with_full_repository_git_status.dart';import 'codespace_with_full_repository_runtime_constraints.dart';import 'full_repository.dart';import 'simple_user.dart';/// State of this codespace.
+final class CodespaceWithFullRepositoryState {const CodespaceWithFullRepositoryState._(this.value);
+
+factory CodespaceWithFullRepositoryState.fromJson(String json) { return switch (json) {
+  'Unknown' => unknown,
+  'Created' => created,
+  'Queued' => queued,
+  'Provisioning' => provisioning,
+  'Available' => available,
+  'Awaiting' => awaiting,
+  'Unavailable' => unavailable,
+  'Deleted' => deleted,
+  'Moved' => moved,
+  'Shutdown' => shutdown,
+  'Archived' => archived,
+  'Starting' => starting,
+  'ShuttingDown' => shuttingDown,
+  'Failed' => failed,
+  'Exporting' => exporting,
+  'Updating' => updating,
+  'Rebuilding' => rebuilding,
+  _ => CodespaceWithFullRepositoryState._(json),
+}; }
+
+static const CodespaceWithFullRepositoryState unknown = CodespaceWithFullRepositoryState._('Unknown');
+
+static const CodespaceWithFullRepositoryState created = CodespaceWithFullRepositoryState._('Created');
+
+static const CodespaceWithFullRepositoryState queued = CodespaceWithFullRepositoryState._('Queued');
+
+static const CodespaceWithFullRepositoryState provisioning = CodespaceWithFullRepositoryState._('Provisioning');
+
+static const CodespaceWithFullRepositoryState available = CodespaceWithFullRepositoryState._('Available');
+
+static const CodespaceWithFullRepositoryState awaiting = CodespaceWithFullRepositoryState._('Awaiting');
+
+static const CodespaceWithFullRepositoryState unavailable = CodespaceWithFullRepositoryState._('Unavailable');
+
+static const CodespaceWithFullRepositoryState deleted = CodespaceWithFullRepositoryState._('Deleted');
+
+static const CodespaceWithFullRepositoryState moved = CodespaceWithFullRepositoryState._('Moved');
+
+static const CodespaceWithFullRepositoryState shutdown = CodespaceWithFullRepositoryState._('Shutdown');
+
+static const CodespaceWithFullRepositoryState archived = CodespaceWithFullRepositoryState._('Archived');
+
+static const CodespaceWithFullRepositoryState starting = CodespaceWithFullRepositoryState._('Starting');
+
+static const CodespaceWithFullRepositoryState shuttingDown = CodespaceWithFullRepositoryState._('ShuttingDown');
+
+static const CodespaceWithFullRepositoryState failed = CodespaceWithFullRepositoryState._('Failed');
+
+static const CodespaceWithFullRepositoryState exporting = CodespaceWithFullRepositoryState._('Exporting');
+
+static const CodespaceWithFullRepositoryState updating = CodespaceWithFullRepositoryState._('Updating');
+
+static const CodespaceWithFullRepositoryState rebuilding = CodespaceWithFullRepositoryState._('Rebuilding');
+
+static const List<CodespaceWithFullRepositoryState> values = [unknown, created, queued, provisioning, available, awaiting, unavailable, deleted, moved, shutdown, archived, starting, shuttingDown, failed, exporting, updating, rebuilding];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodespaceWithFullRepositoryState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodespaceWithFullRepositoryState($value)'; } 
+ }
+/// The initally assigned location of a new codespace.
+final class CodespaceWithFullRepositoryLocation {const CodespaceWithFullRepositoryLocation._(this.value);
+
+factory CodespaceWithFullRepositoryLocation.fromJson(String json) { return switch (json) {
+  'EastUs' => eastUs,
+  'SouthEastAsia' => southEastAsia,
+  'WestEurope' => westEurope,
+  'WestUs2' => westUs2,
+  _ => CodespaceWithFullRepositoryLocation._(json),
+}; }
+
+static const CodespaceWithFullRepositoryLocation eastUs = CodespaceWithFullRepositoryLocation._('EastUs');
+
+static const CodespaceWithFullRepositoryLocation southEastAsia = CodespaceWithFullRepositoryLocation._('SouthEastAsia');
+
+static const CodespaceWithFullRepositoryLocation westEurope = CodespaceWithFullRepositoryLocation._('WestEurope');
+
+static const CodespaceWithFullRepositoryLocation westUs2 = CodespaceWithFullRepositoryLocation._('WestUs2');
+
+static const List<CodespaceWithFullRepositoryLocation> values = [eastUs, southEastAsia, westEurope, westUs2];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodespaceWithFullRepositoryLocation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodespaceWithFullRepositoryLocation($value)'; } 
+ }
+/// A codespace.
+final class CodespaceWithFullRepository {const CodespaceWithFullRepository({required this.id, required this.name, this.displayName, required this.environmentId, required this.owner, required this.billableOwner, required this.repository, required this.machine, this.devcontainerPath, required this.prebuild, required this.createdAt, required this.updatedAt, required this.lastUsedAt, required this.state, required this.url, required this.gitStatus, required this.location, required this.idleTimeoutMinutes, required this.webUrl, required this.machinesUrl, required this.startUrl, required this.stopUrl, this.publishUrl, required this.pullsUrl, required this.recentFolders, this.runtimeConstraints, this.pendingOperation, this.pendingOperationDisabledReason, this.idleTimeoutNotice, this.retentionPeriodMinutes, this.retentionExpiresAt, });
+
+factory CodespaceWithFullRepository.fromJson(Map<String, dynamic> json) { return CodespaceWithFullRepository(
+  id: (json['id'] as num).toInt(),
+  name: json['name'] as String,
+  displayName: json['display_name'] as String?,
+  environmentId: json['environment_id'] as String?,
+  owner: SimpleUser.fromJson(json['owner'] as Map<String, dynamic>),
+  billableOwner: SimpleUser.fromJson(json['billable_owner'] as Map<String, dynamic>),
+  repository: FullRepository.fromJson(json['repository'] as Map<String, dynamic>),
+  machine: json['machine'] != null ? CodespaceMachine.fromJson(json['machine'] as Map<String, dynamic>) : null,
+  devcontainerPath: json['devcontainer_path'] as String?,
+  prebuild: json['prebuild'] as bool?,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  lastUsedAt: DateTime.parse(json['last_used_at'] as String),
+  state: CodespaceWithFullRepositoryState.fromJson(json['state'] as String),
+  url: Uri.parse(json['url'] as String),
+  gitStatus: CodespaceWithFullRepositoryGitStatus.fromJson(json['git_status'] as Map<String, dynamic>),
+  location: CodespaceWithFullRepositoryLocation.fromJson(json['location'] as String),
+  idleTimeoutMinutes: json['idle_timeout_minutes'] != null ? (json['idle_timeout_minutes'] as num).toInt() : null,
+  webUrl: Uri.parse(json['web_url'] as String),
+  machinesUrl: Uri.parse(json['machines_url'] as String),
+  startUrl: Uri.parse(json['start_url'] as String),
+  stopUrl: Uri.parse(json['stop_url'] as String),
+  publishUrl: json['publish_url'] != null ? Uri.parse(json['publish_url'] as String) : null,
+  pullsUrl: json['pulls_url'] != null ? Uri.parse(json['pulls_url'] as String) : null,
+  recentFolders: (json['recent_folders'] as List<dynamic>).map((e) => e as String).toList(),
+  runtimeConstraints: json['runtime_constraints'] != null ? CodespaceWithFullRepositoryRuntimeConstraints.fromJson(json['runtime_constraints'] as Map<String, dynamic>) : null,
+  pendingOperation: json['pending_operation'] as bool?,
+  pendingOperationDisabledReason: json['pending_operation_disabled_reason'] as String?,
+  idleTimeoutNotice: json['idle_timeout_notice'] as String?,
+  retentionPeriodMinutes: json['retention_period_minutes'] != null ? (json['retention_period_minutes'] as num).toInt() : null,
+  retentionExpiresAt: json['retention_expires_at'] != null ? DateTime.parse(json['retention_expires_at'] as String) : null,
+); }
+
+final int id;
+
+/// Automatically generated name of this codespace.
+final String name;
+
+/// Display name for this codespace.
+final String? displayName;
+
+/// UUID identifying this codespace's environment.
+final String? environmentId;
+
+final SimpleUser owner;
+
+final SimpleUser billableOwner;
+
+final FullRepository repository;
+
+final CodespaceMachine? machine;
+
+/// Path to devcontainer.json from repo root used to create Codespace.
+final String? devcontainerPath;
+
+/// Whether the codespace was created from a prebuild.
+final bool? prebuild;
+
+final DateTime createdAt;
+
+final DateTime updatedAt;
+
+/// Last known time this codespace was started.
+final DateTime lastUsedAt;
+
+/// State of this codespace.
+final CodespaceWithFullRepositoryState state;
+
+/// API URL for this codespace.
+final Uri url;
+
+/// Details about the codespace's git repository.
+final CodespaceWithFullRepositoryGitStatus gitStatus;
+
+/// The initally assigned location of a new codespace.
+final CodespaceWithFullRepositoryLocation location;
+
+/// The number of minutes of inactivity after which this codespace will be automatically stopped.
+final int? idleTimeoutMinutes;
+
+/// URL to access this codespace on the web.
+final Uri webUrl;
+
+/// API URL to access available alternate machine types for this codespace.
+final Uri machinesUrl;
+
+/// API URL to start this codespace.
+final Uri startUrl;
+
+/// API URL to stop this codespace.
+final Uri stopUrl;
+
+/// API URL to publish this codespace to a new repository.
+final Uri? publishUrl;
+
+/// API URL for the Pull Request associated with this codespace, if any.
+final Uri? pullsUrl;
+
+final List<String> recentFolders;
+
+final CodespaceWithFullRepositoryRuntimeConstraints? runtimeConstraints;
+
+/// Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
+final bool? pendingOperation;
+
+/// Text to show user when codespace is disabled by a pending operation
+final String? pendingOperationDisabledReason;
+
+/// Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+final String? idleTimeoutNotice;
+
+/// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+final int? retentionPeriodMinutes;
+
+/// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
+final DateTime? retentionExpiresAt;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'name': name,
+  'display_name': ?displayName,
+  'environment_id': ?environmentId,
+  'owner': owner.toJson(),
+  'billable_owner': billableOwner.toJson(),
+  'repository': repository.toJson(),
+  if (machine != null) 'machine': machine?.toJson(),
+  'devcontainer_path': ?devcontainerPath,
+  'prebuild': ?prebuild,
+  'created_at': createdAt.toIso8601String(),
+  'updated_at': updatedAt.toIso8601String(),
+  'last_used_at': lastUsedAt.toIso8601String(),
+  'state': state.toJson(),
+  'url': url.toString(),
+  'git_status': gitStatus.toJson(),
+  'location': location.toJson(),
+  'idle_timeout_minutes': ?idleTimeoutMinutes,
+  'web_url': webUrl.toString(),
+  'machines_url': machinesUrl.toString(),
+  'start_url': startUrl.toString(),
+  'stop_url': stopUrl.toString(),
+  if (publishUrl != null) 'publish_url': publishUrl?.toString(),
+  if (pullsUrl != null) 'pulls_url': pullsUrl?.toString(),
+  'recent_folders': recentFolders,
+  if (runtimeConstraints != null) 'runtime_constraints': runtimeConstraints?.toJson(),
+  'pending_operation': ?pendingOperation,
+  'pending_operation_disabled_reason': ?pendingOperationDisabledReason,
+  'idle_timeout_notice': ?idleTimeoutNotice,
+  'retention_period_minutes': ?retentionPeriodMinutes,
+  if (retentionExpiresAt != null) 'retention_expires_at': retentionExpiresAt?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('environment_id') && json['environment_id'] is String &&
+      json.containsKey('owner') &&
+      json.containsKey('billable_owner') &&
+      json.containsKey('repository') &&
+      json.containsKey('machine') &&
+      json.containsKey('prebuild') && json['prebuild'] is bool &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('last_used_at') && json['last_used_at'] is String &&
+      json.containsKey('state') &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('git_status') &&
+      json.containsKey('location') &&
+      json.containsKey('idle_timeout_minutes') && json['idle_timeout_minutes'] is num &&
+      json.containsKey('web_url') && json['web_url'] is String &&
+      json.containsKey('machines_url') && json['machines_url'] is String &&
+      json.containsKey('start_url') && json['start_url'] is String &&
+      json.containsKey('stop_url') && json['stop_url'] is String &&
+      json.containsKey('pulls_url') && json['pulls_url'] is String &&
+      json.containsKey('recent_folders'); } 
+CodespaceWithFullRepository copyWith({int? id, String? name, String? Function()? displayName, String? Function()? environmentId, SimpleUser? owner, SimpleUser? billableOwner, FullRepository? repository, CodespaceMachine? Function()? machine, String? Function()? devcontainerPath, bool? Function()? prebuild, DateTime? createdAt, DateTime? updatedAt, DateTime? lastUsedAt, CodespaceWithFullRepositoryState? state, Uri? url, CodespaceWithFullRepositoryGitStatus? gitStatus, CodespaceWithFullRepositoryLocation? location, int? Function()? idleTimeoutMinutes, Uri? webUrl, Uri? machinesUrl, Uri? startUrl, Uri? stopUrl, Uri? Function()? publishUrl, Uri? Function()? pullsUrl, List<String>? recentFolders, CodespaceWithFullRepositoryRuntimeConstraints Function()? runtimeConstraints, bool? Function()? pendingOperation, String? Function()? pendingOperationDisabledReason, String? Function()? idleTimeoutNotice, int? Function()? retentionPeriodMinutes, DateTime? Function()? retentionExpiresAt, }) { return CodespaceWithFullRepository(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  displayName: displayName != null ? displayName() : this.displayName,
+  environmentId: environmentId != null ? environmentId() : this.environmentId,
+  owner: owner ?? this.owner,
+  billableOwner: billableOwner ?? this.billableOwner,
+  repository: repository ?? this.repository,
+  machine: machine != null ? machine() : this.machine,
+  devcontainerPath: devcontainerPath != null ? devcontainerPath() : this.devcontainerPath,
+  prebuild: prebuild != null ? prebuild() : this.prebuild,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  lastUsedAt: lastUsedAt ?? this.lastUsedAt,
+  state: state ?? this.state,
+  url: url ?? this.url,
+  gitStatus: gitStatus ?? this.gitStatus,
+  location: location ?? this.location,
+  idleTimeoutMinutes: idleTimeoutMinutes != null ? idleTimeoutMinutes() : this.idleTimeoutMinutes,
+  webUrl: webUrl ?? this.webUrl,
+  machinesUrl: machinesUrl ?? this.machinesUrl,
+  startUrl: startUrl ?? this.startUrl,
+  stopUrl: stopUrl ?? this.stopUrl,
+  publishUrl: publishUrl != null ? publishUrl() : this.publishUrl,
+  pullsUrl: pullsUrl != null ? pullsUrl() : this.pullsUrl,
+  recentFolders: recentFolders ?? this.recentFolders,
+  runtimeConstraints: runtimeConstraints != null ? runtimeConstraints() : this.runtimeConstraints,
+  pendingOperation: pendingOperation != null ? pendingOperation() : this.pendingOperation,
+  pendingOperationDisabledReason: pendingOperationDisabledReason != null ? pendingOperationDisabledReason() : this.pendingOperationDisabledReason,
+  idleTimeoutNotice: idleTimeoutNotice != null ? idleTimeoutNotice() : this.idleTimeoutNotice,
+  retentionPeriodMinutes: retentionPeriodMinutes != null ? retentionPeriodMinutes() : this.retentionPeriodMinutes,
+  retentionExpiresAt: retentionExpiresAt != null ? retentionExpiresAt() : this.retentionExpiresAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodespaceWithFullRepository &&
+          id == other.id &&
+          name == other.name &&
+          displayName == other.displayName &&
+          environmentId == other.environmentId &&
+          owner == other.owner &&
+          billableOwner == other.billableOwner &&
+          repository == other.repository &&
+          machine == other.machine &&
+          devcontainerPath == other.devcontainerPath &&
+          prebuild == other.prebuild &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          lastUsedAt == other.lastUsedAt &&
+          state == other.state &&
+          url == other.url &&
+          gitStatus == other.gitStatus &&
+          location == other.location &&
+          idleTimeoutMinutes == other.idleTimeoutMinutes &&
+          webUrl == other.webUrl &&
+          machinesUrl == other.machinesUrl &&
+          startUrl == other.startUrl &&
+          stopUrl == other.stopUrl &&
+          publishUrl == other.publishUrl &&
+          pullsUrl == other.pullsUrl &&
+          listEquals(recentFolders, other.recentFolders) &&
+          runtimeConstraints == other.runtimeConstraints &&
+          pendingOperation == other.pendingOperation &&
+          pendingOperationDisabledReason == other.pendingOperationDisabledReason &&
+          idleTimeoutNotice == other.idleTimeoutNotice &&
+          retentionPeriodMinutes == other.retentionPeriodMinutes &&
+          retentionExpiresAt == other.retentionExpiresAt; } 
+@override int get hashCode { return Object.hashAll([id, name, displayName, environmentId, owner, billableOwner, repository, machine, devcontainerPath, prebuild, createdAt, updatedAt, lastUsedAt, state, url, gitStatus, location, idleTimeoutMinutes, webUrl, machinesUrl, startUrl, stopUrl, publishUrl, pullsUrl, Object.hashAll(recentFolders), runtimeConstraints, pendingOperation, pendingOperationDisabledReason, idleTimeoutNotice, retentionPeriodMinutes, retentionExpiresAt]); } 
+@override String toString() { return 'CodespaceWithFullRepository(id: $id, name: $name, displayName: $displayName, environmentId: $environmentId, owner: $owner, billableOwner: $billableOwner, repository: $repository, machine: $machine, devcontainerPath: $devcontainerPath, prebuild: $prebuild, createdAt: $createdAt, updatedAt: $updatedAt, lastUsedAt: $lastUsedAt, state: $state, url: $url, gitStatus: $gitStatus, location: $location, idleTimeoutMinutes: $idleTimeoutMinutes, webUrl: $webUrl, machinesUrl: $machinesUrl, startUrl: $startUrl, stopUrl: $stopUrl, publishUrl: $publishUrl, pullsUrl: $pullsUrl, recentFolders: $recentFolders, runtimeConstraints: $runtimeConstraints, pendingOperation: $pendingOperation, pendingOperationDisabledReason: $pendingOperationDisabledReason, idleTimeoutNotice: $idleTimeoutNotice, retentionPeriodMinutes: $retentionPeriodMinutes, retentionExpiresAt: $retentionExpiresAt)'; } 
+ }

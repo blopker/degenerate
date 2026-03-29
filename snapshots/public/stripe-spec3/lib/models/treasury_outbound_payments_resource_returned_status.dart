@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_payments_resource_returned_status_transaction.dart';import 'treasury_transaction.dart';/// Reason for the return.
+final class TreasuryOutboundPaymentsResourceReturnedStatusCode {const TreasuryOutboundPaymentsResourceReturnedStatusCode._(this.value);
+
+factory TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(String json) { return switch (json) {
+  'account_closed' => accountClosed,
+  'account_frozen' => accountFrozen,
+  'bank_account_restricted' => bankAccountRestricted,
+  'bank_ownership_changed' => bankOwnershipChanged,
+  'declined' => declined,
+  'incorrect_account_holder_name' => incorrectAccountHolderName,
+  'invalid_account_number' => invalidAccountNumber,
+  'invalid_currency' => invalidCurrency,
+  'no_account' => noAccount,
+  'other' => $other,
+  _ => TreasuryOutboundPaymentsResourceReturnedStatusCode._(json),
+}; }
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode accountClosed = TreasuryOutboundPaymentsResourceReturnedStatusCode._('account_closed');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode accountFrozen = TreasuryOutboundPaymentsResourceReturnedStatusCode._('account_frozen');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode bankAccountRestricted = TreasuryOutboundPaymentsResourceReturnedStatusCode._('bank_account_restricted');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode bankOwnershipChanged = TreasuryOutboundPaymentsResourceReturnedStatusCode._('bank_ownership_changed');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode declined = TreasuryOutboundPaymentsResourceReturnedStatusCode._('declined');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode incorrectAccountHolderName = TreasuryOutboundPaymentsResourceReturnedStatusCode._('incorrect_account_holder_name');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode invalidAccountNumber = TreasuryOutboundPaymentsResourceReturnedStatusCode._('invalid_account_number');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode invalidCurrency = TreasuryOutboundPaymentsResourceReturnedStatusCode._('invalid_currency');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode noAccount = TreasuryOutboundPaymentsResourceReturnedStatusCode._('no_account');
+
+static const TreasuryOutboundPaymentsResourceReturnedStatusCode $other = TreasuryOutboundPaymentsResourceReturnedStatusCode._('other');
+
+static const List<TreasuryOutboundPaymentsResourceReturnedStatusCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TreasuryOutboundPaymentsResourceReturnedStatusCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TreasuryOutboundPaymentsResourceReturnedStatusCode($value)'; } 
+ }
+/// 
+final class TreasuryOutboundPaymentsResourceReturnedStatus {const TreasuryOutboundPaymentsResourceReturnedStatus({required this.code, required this.transaction, });
+
+factory TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(Map<String, dynamic> json) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+  code: TreasuryOutboundPaymentsResourceReturnedStatusCode.fromJson(json['code'] as String),
+  transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
+); }
+
+/// Reason for the return.
+final TreasuryOutboundPaymentsResourceReturnedStatusCode code;
+
+/// The Transaction associated with this object.
+final TreasuryOutboundPaymentsResourceReturnedStatusTransaction transaction;
+
+Map<String, dynamic> toJson() { return {
+  'code': code.toJson(),
+  'transaction': transaction.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') &&
+      json.containsKey('transaction'); } 
+TreasuryOutboundPaymentsResourceReturnedStatus copyWith({TreasuryOutboundPaymentsResourceReturnedStatusCode? code, TreasuryOutboundPaymentsResourceReturnedStatusTransaction? transaction, }) { return TreasuryOutboundPaymentsResourceReturnedStatus(
+  code: code ?? this.code,
+  transaction: transaction ?? this.transaction,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TreasuryOutboundPaymentsResourceReturnedStatus &&
+          code == other.code &&
+          transaction == other.transaction; } 
+@override int get hashCode { return Object.hash(code, transaction); } 
+@override String toString() { return 'TreasuryOutboundPaymentsResourceReturnedStatus(code: $code, transaction: $transaction)'; } 
+ }

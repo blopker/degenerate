@@ -1,0 +1,34 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Value of the zone setting.
+/// Notes: Depends on the zone's plan level
+final class ZonesSslValue {const ZonesSslValue._(this.value);
+
+factory ZonesSslValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'flexible' => flexible,
+  'full' => full,
+  'strict' => strict,
+  _ => ZonesSslValue._(json),
+}; }
+
+static const ZonesSslValue off = ZonesSslValue._('off');
+
+static const ZonesSslValue flexible = ZonesSslValue._('flexible');
+
+static const ZonesSslValue full = ZonesSslValue._('full');
+
+static const ZonesSslValue strict = ZonesSslValue._('strict');
+
+static const List<ZonesSslValue> values = [off, flexible, full, strict];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSslValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesSslValue($value)'; } 
+ }

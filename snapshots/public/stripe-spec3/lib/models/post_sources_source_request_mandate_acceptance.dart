@@ -1,0 +1,113 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_sources_source_request_mandate_acceptance_offline.dart';import 'post_sources_source_request_mandate_acceptance_online.dart';final class PostSourcesSourceRequestMandateAcceptanceStatus {const PostSourcesSourceRequestMandateAcceptanceStatus._(this.value);
+
+factory PostSourcesSourceRequestMandateAcceptanceStatus.fromJson(String json) { return switch (json) {
+  'accepted' => accepted,
+  'pending' => pending,
+  'refused' => refused,
+  'revoked' => revoked,
+  _ => PostSourcesSourceRequestMandateAcceptanceStatus._(json),
+}; }
+
+static const PostSourcesSourceRequestMandateAcceptanceStatus accepted = PostSourcesSourceRequestMandateAcceptanceStatus._('accepted');
+
+static const PostSourcesSourceRequestMandateAcceptanceStatus pending = PostSourcesSourceRequestMandateAcceptanceStatus._('pending');
+
+static const PostSourcesSourceRequestMandateAcceptanceStatus refused = PostSourcesSourceRequestMandateAcceptanceStatus._('refused');
+
+static const PostSourcesSourceRequestMandateAcceptanceStatus revoked = PostSourcesSourceRequestMandateAcceptanceStatus._('revoked');
+
+static const List<PostSourcesSourceRequestMandateAcceptanceStatus> values = [accepted, pending, refused, revoked];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSourcesSourceRequestMandateAcceptanceStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSourcesSourceRequestMandateAcceptanceStatus($value)'; } 
+ }
+final class PostSourcesSourceRequestMandateAcceptanceType {const PostSourcesSourceRequestMandateAcceptanceType._(this.value);
+
+factory PostSourcesSourceRequestMandateAcceptanceType.fromJson(String json) { return switch (json) {
+  'offline' => offline,
+  'online' => online,
+  _ => PostSourcesSourceRequestMandateAcceptanceType._(json),
+}; }
+
+static const PostSourcesSourceRequestMandateAcceptanceType offline = PostSourcesSourceRequestMandateAcceptanceType._('offline');
+
+static const PostSourcesSourceRequestMandateAcceptanceType online = PostSourcesSourceRequestMandateAcceptanceType._('online');
+
+static const List<PostSourcesSourceRequestMandateAcceptanceType> values = [offline, online];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSourcesSourceRequestMandateAcceptanceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSourcesSourceRequestMandateAcceptanceType($value)'; } 
+ }
+final class PostSourcesSourceRequestMandateAcceptance {const PostSourcesSourceRequestMandateAcceptance({this.date, this.ip, this.offline, this.online, required this.status, this.type, this.userAgent, });
+
+factory PostSourcesSourceRequestMandateAcceptance.fromJson(Map<String, dynamic> json) { return PostSourcesSourceRequestMandateAcceptance(
+  date: json['date'] != null ? (json['date'] as num).toInt() : null,
+  ip: json['ip'] as String?,
+  offline: json['offline'] != null ? PostSourcesSourceRequestMandateAcceptanceOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  online: json['online'] != null ? PostSourcesSourceRequestMandateAcceptanceOnline.fromJson(json['online'] as Map<String, dynamic>) : null,
+  status: PostSourcesSourceRequestMandateAcceptanceStatus.fromJson(json['status'] as String),
+  type: json['type'] != null ? PostSourcesSourceRequestMandateAcceptanceType.fromJson(json['type'] as String) : null,
+  userAgent: json['user_agent'] as String?,
+); }
+
+final int? date;
+
+final String? ip;
+
+final PostSourcesSourceRequestMandateAcceptanceOffline? offline;
+
+final PostSourcesSourceRequestMandateAcceptanceOnline? online;
+
+final PostSourcesSourceRequestMandateAcceptanceStatus status;
+
+final PostSourcesSourceRequestMandateAcceptanceType? type;
+
+final String? userAgent;
+
+Map<String, dynamic> toJson() { return {
+  'date': ?date,
+  'ip': ?ip,
+  if (offline != null) 'offline': offline?.toJson(),
+  if (online != null) 'online': online?.toJson(),
+  'status': status.toJson(),
+  if (type != null) 'type': type?.toJson(),
+  'user_agent': ?userAgent,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+PostSourcesSourceRequestMandateAcceptance copyWith({int Function()? date, String Function()? ip, PostSourcesSourceRequestMandateAcceptanceOffline Function()? offline, PostSourcesSourceRequestMandateAcceptanceOnline Function()? online, PostSourcesSourceRequestMandateAcceptanceStatus? status, PostSourcesSourceRequestMandateAcceptanceType Function()? type, String Function()? userAgent, }) { return PostSourcesSourceRequestMandateAcceptance(
+  date: date != null ? date() : this.date,
+  ip: ip != null ? ip() : this.ip,
+  offline: offline != null ? offline() : this.offline,
+  online: online != null ? online() : this.online,
+  status: status ?? this.status,
+  type: type != null ? type() : this.type,
+  userAgent: userAgent != null ? userAgent() : this.userAgent,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSourcesSourceRequestMandateAcceptance &&
+          date == other.date &&
+          ip == other.ip &&
+          offline == other.offline &&
+          online == other.online &&
+          status == other.status &&
+          type == other.type &&
+          userAgent == other.userAgent; } 
+@override int get hashCode { return Object.hash(date, ip, offline, online, status, type, userAgent); } 
+@override String toString() { return 'PostSourcesSourceRequestMandateAcceptance(date: $date, ip: $ip, offline: $offline, online: $online, status: $status, type: $type, userAgent: $userAgent)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.
+extension type const AccessDenyUnmatchedRequests(bool value) {
+factory AccessDenyUnmatchedRequests.fromJson(bool json) => AccessDenyUnmatchedRequests(json);
+
+bool toJson() => value;
+
+}

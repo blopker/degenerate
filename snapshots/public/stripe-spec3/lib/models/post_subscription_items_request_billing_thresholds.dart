@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param5.dart';final class PostSubscriptionItemsRequestBillingThresholdsVariant2 {const PostSubscriptionItemsRequestBillingThresholdsVariant2._(this.value);
+
+factory PostSubscriptionItemsRequestBillingThresholdsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSubscriptionItemsRequestBillingThresholdsVariant2._(json),
+}; }
+
+static const PostSubscriptionItemsRequestBillingThresholdsVariant2 $empty = PostSubscriptionItemsRequestBillingThresholdsVariant2._('');
+
+static const List<PostSubscriptionItemsRequestBillingThresholdsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionItemsRequestBillingThresholdsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionItemsRequestBillingThresholdsVariant2($value)'; } 
+ }
+typedef PostSubscriptionItemsRequestBillingThresholds = OneOf2<ItemBillingThresholdsParam5,PostSubscriptionItemsRequestBillingThresholdsVariant2>;

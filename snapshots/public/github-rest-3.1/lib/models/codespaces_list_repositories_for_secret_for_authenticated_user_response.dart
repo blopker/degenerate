@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'minimal_repository.dart';final class CodespacesListRepositoriesForSecretForAuthenticatedUserResponse {const CodespacesListRepositoriesForSecretForAuthenticatedUserResponse({required this.totalCount, required this.repositories, });
+
+factory CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(Map<String, dynamic> json) { return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+  totalCount: (json['total_count'] as num).toInt(),
+  repositories: (json['repositories'] as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final int totalCount;
+
+final List<MinimalRepository> repositories;
+
+Map<String, dynamic> toJson() { return {
+  'total_count': totalCount,
+  'repositories': repositories.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('repositories'); } 
+CodespacesListRepositoriesForSecretForAuthenticatedUserResponse copyWith({int? totalCount, List<MinimalRepository>? repositories, }) { return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(
+  totalCount: totalCount ?? this.totalCount,
+  repositories: repositories ?? this.repositories,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodespacesListRepositoriesForSecretForAuthenticatedUserResponse &&
+          totalCount == other.totalCount &&
+          listEquals(repositories, other.repositories); } 
+@override int get hashCode { return Object.hash(totalCount, Object.hashAll(repositories)); } 
+@override String toString() { return 'CodespacesListRepositoriesForSecretForAuthenticatedUserResponse(totalCount: $totalCount, repositories: $repositories)'; } 
+ }

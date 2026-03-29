@@ -1,0 +1,237 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'stream_creator.dart';import 'stream_identifier.dart';import 'stream_input.dart';import 'stream_max_duration_seconds.dart';import 'stream_media_status.dart';import 'stream_one_time_upload_expiry.dart';import 'stream_playback.dart';import 'stream_preview.dart';import 'stream_require_signed_ur_ls.dart';import 'stream_scheduled_deletion.dart';import 'stream_thumbnail_timestamp_pct.dart';import 'stream_watermarks.dart';/// The date and time the media item was created.
+extension type StreamCreated(DateTime value) {
+factory StreamCreated.fromJson(String json) => StreamCreated(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// The duration of the video in seconds. A value of `-1` means the duration is unknown. The duration becomes available after the upload and before the video is ready.
+extension type const StreamDuration(double value) {
+factory StreamDuration.fromJson(num json) => StreamDuration(json.toDouble());
+
+num toJson() => value;
+
+}
+/// The live input ID used to upload a video with Stream Live.
+extension type const StreamLiveInput2(String value) {
+factory StreamLiveInput2.fromJson(String json) => StreamLiveInput2(json);
+
+String toJson() => value;
+
+}
+/// The date and time the media item was last modified.
+extension type StreamModified(DateTime value) {
+factory StreamModified.fromJson(String json) => StreamModified(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// Indicates whether the video is playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+extension type const StreamReadyToStream(bool value) {
+factory StreamReadyToStream.fromJson(bool json) => StreamReadyToStream(json);
+
+bool toJson() => value;
+
+}
+/// Indicates the time at which the video became playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+extension type StreamReadyToStreamAt(DateTime value) {
+factory StreamReadyToStreamAt.fromJson(String json) => StreamReadyToStreamAt(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// The size of the media item in bytes.
+extension type const StreamSize(double value) {
+factory StreamSize.fromJson(num json) => StreamSize(json.toDouble());
+
+num toJson() => value;
+
+}
+/// The media item's thumbnail URI. This field is omitted until encoding is complete.
+extension type StreamThumbnailUrl(Uri value) {
+factory StreamThumbnailUrl.fromJson(String json) => StreamThumbnailUrl(Uri.parse(json));
+
+String toJson() => value.toString();
+
+}
+/// The date and time the media item was uploaded.
+extension type StreamUploaded(DateTime value) {
+factory StreamUploaded.fromJson(String json) => StreamUploaded(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+final class StreamVideos {const StreamVideos({this.allowedOrigins, this.created, this.creator, this.duration, this.input, this.liveInput, this.maxDurationSeconds, this.meta, this.modified, this.playback, this.preview, this.readyToStream, this.readyToStreamAt, this.requireSignedUrLs, this.scheduledDeletion, this.size, this.status, this.thumbnail, this.thumbnailTimestampPct, this.uid, this.uploadExpiry, this.uploaded, this.watermark, });
+
+factory StreamVideos.fromJson(Map<String, dynamic> json) { return StreamVideos(
+  allowedOrigins: (json['allowedOrigins'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  created: json['created'] != null ? StreamCreated.fromJson(json['created'] as String) : null,
+  creator: json['creator'] != null ? StreamCreator.fromJson(json['creator'] as String) : null,
+  duration: json['duration'] != null ? StreamDuration.fromJson(json['duration'] as num) : null,
+  input: json['input'] != null ? StreamInput.fromJson(json['input'] as Map<String, dynamic>) : null,
+  liveInput: json['liveInput'] != null ? StreamLiveInput2.fromJson(json['liveInput'] as String) : null,
+  maxDurationSeconds: json['maxDurationSeconds'] != null ? StreamMaxDurationSeconds.fromJson(json['maxDurationSeconds'] as num) : null,
+  meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  modified: json['modified'] != null ? StreamModified.fromJson(json['modified'] as String) : null,
+  playback: json['playback'] != null ? StreamPlayback.fromJson(json['playback'] as Map<String, dynamic>) : null,
+  preview: json['preview'] != null ? StreamPreview.fromJson(json['preview'] as String) : null,
+  readyToStream: json['readyToStream'] != null ? StreamReadyToStream.fromJson(json['readyToStream'] as bool) : null,
+  readyToStreamAt: json['readyToStreamAt'] != null ? StreamReadyToStreamAt.fromJson(json['readyToStreamAt'] as String) : null,
+  requireSignedUrLs: json['requireSignedURLs'] != null ? StreamRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
+  scheduledDeletion: json['scheduledDeletion'] != null ? StreamScheduledDeletion.fromJson(json['scheduledDeletion'] as String) : null,
+  size: json['size'] != null ? StreamSize.fromJson(json['size'] as num) : null,
+  status: json['status'] != null ? StreamMediaStatus.fromJson(json['status'] as Map<String, dynamic>) : null,
+  thumbnail: json['thumbnail'] != null ? StreamThumbnailUrl.fromJson(json['thumbnail'] as String) : null,
+  thumbnailTimestampPct: json['thumbnailTimestampPct'] != null ? StreamThumbnailTimestampPct.fromJson(json['thumbnailTimestampPct'] as num) : null,
+  uid: json['uid'] != null ? StreamIdentifier.fromJson(json['uid'] as String) : null,
+  uploadExpiry: json['uploadExpiry'] != null ? StreamOneTimeUploadExpiry.fromJson(json['uploadExpiry'] as String) : null,
+  uploaded: json['uploaded'] != null ? StreamUploaded.fromJson(json['uploaded'] as String) : null,
+  watermark: json['watermark'] != null ? StreamWatermarks.fromJson(json['watermark'] as Map<String, dynamic>) : null,
+); }
+
+/// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
+final List<String>? allowedOrigins;
+
+/// The date and time the media item was created.
+final StreamCreated? created;
+
+/// A user-defined identifier for the media creator.
+final StreamCreator? creator;
+
+/// The duration of the video in seconds. A value of `-1` means the duration is unknown. The duration becomes available after the upload and before the video is ready.
+final StreamDuration? duration;
+
+final StreamInput? input;
+
+/// The live input ID used to upload a video with Stream Live.
+final StreamLiveInput2? liveInput;
+
+/// The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
+final StreamMaxDurationSeconds? maxDurationSeconds;
+
+/// A user modifiable key-value store used to reference other systems of record for managing videos.
+final Map<String,dynamic>? meta;
+
+/// The date and time the media item was last modified.
+final StreamModified? modified;
+
+final StreamPlayback? playback;
+
+/// The video's preview page URI. This field is omitted until encoding is complete.
+final StreamPreview? preview;
+
+/// Indicates whether the video is playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+final StreamReadyToStream? readyToStream;
+
+/// Indicates the time at which the video became playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+final StreamReadyToStreamAt? readyToStreamAt;
+
+/// Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
+final StreamRequireSignedUrLs? requireSignedUrLs;
+
+/// Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
+final StreamScheduledDeletion? scheduledDeletion;
+
+/// The size of the media item in bytes.
+final StreamSize? size;
+
+final StreamMediaStatus? status;
+
+/// The media item's thumbnail URI. This field is omitted until encoding is complete.
+final StreamThumbnailUrl? thumbnail;
+
+/// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.
+final StreamThumbnailTimestampPct? thumbnailTimestampPct;
+
+/// A Cloudflare-generated unique identifier for a media item.
+final StreamIdentifier? uid;
+
+/// The date and time when the video upload URL is no longer valid for direct user uploads.
+final StreamOneTimeUploadExpiry? uploadExpiry;
+
+/// The date and time the media item was uploaded.
+final StreamUploaded? uploaded;
+
+final StreamWatermarks? watermark;
+
+Map<String, dynamic> toJson() { return {
+  'allowedOrigins': ?allowedOrigins,
+  if (created != null) 'created': created?.toJson(),
+  if (creator != null) 'creator': creator?.toJson(),
+  if (duration != null) 'duration': duration?.toJson(),
+  if (input != null) 'input': input?.toJson(),
+  if (liveInput != null) 'liveInput': liveInput?.toJson(),
+  if (maxDurationSeconds != null) 'maxDurationSeconds': maxDurationSeconds?.toJson(),
+  'meta': ?meta,
+  if (modified != null) 'modified': modified?.toJson(),
+  if (playback != null) 'playback': playback?.toJson(),
+  if (preview != null) 'preview': preview?.toJson(),
+  if (readyToStream != null) 'readyToStream': readyToStream?.toJson(),
+  if (readyToStreamAt != null) 'readyToStreamAt': readyToStreamAt?.toJson(),
+  if (requireSignedUrLs != null) 'requireSignedURLs': requireSignedUrLs?.toJson(),
+  if (scheduledDeletion != null) 'scheduledDeletion': scheduledDeletion?.toJson(),
+  if (size != null) 'size': size?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (thumbnail != null) 'thumbnail': thumbnail?.toJson(),
+  if (thumbnailTimestampPct != null) 'thumbnailTimestampPct': thumbnailTimestampPct?.toJson(),
+  if (uid != null) 'uid': uid?.toJson(),
+  if (uploadExpiry != null) 'uploadExpiry': uploadExpiry?.toJson(),
+  if (uploaded != null) 'uploaded': uploaded?.toJson(),
+  if (watermark != null) 'watermark': watermark?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamVideos copyWith({List<String> Function()? allowedOrigins, StreamCreated Function()? created, StreamCreator Function()? creator, StreamDuration Function()? duration, StreamInput Function()? input, StreamLiveInput2 Function()? liveInput, StreamMaxDurationSeconds Function()? maxDurationSeconds, Map<String, dynamic> Function()? meta, StreamModified Function()? modified, StreamPlayback Function()? playback, StreamPreview Function()? preview, StreamReadyToStream Function()? readyToStream, StreamReadyToStreamAt Function()? readyToStreamAt, StreamRequireSignedUrLs Function()? requireSignedUrLs, StreamScheduledDeletion Function()? scheduledDeletion, StreamSize Function()? size, StreamMediaStatus Function()? status, StreamThumbnailUrl Function()? thumbnail, StreamThumbnailTimestampPct Function()? thumbnailTimestampPct, StreamIdentifier Function()? uid, StreamOneTimeUploadExpiry Function()? uploadExpiry, StreamUploaded Function()? uploaded, StreamWatermarks Function()? watermark, }) { return StreamVideos(
+  allowedOrigins: allowedOrigins != null ? allowedOrigins() : this.allowedOrigins,
+  created: created != null ? created() : this.created,
+  creator: creator != null ? creator() : this.creator,
+  duration: duration != null ? duration() : this.duration,
+  input: input != null ? input() : this.input,
+  liveInput: liveInput != null ? liveInput() : this.liveInput,
+  maxDurationSeconds: maxDurationSeconds != null ? maxDurationSeconds() : this.maxDurationSeconds,
+  meta: meta != null ? meta() : this.meta,
+  modified: modified != null ? modified() : this.modified,
+  playback: playback != null ? playback() : this.playback,
+  preview: preview != null ? preview() : this.preview,
+  readyToStream: readyToStream != null ? readyToStream() : this.readyToStream,
+  readyToStreamAt: readyToStreamAt != null ? readyToStreamAt() : this.readyToStreamAt,
+  requireSignedUrLs: requireSignedUrLs != null ? requireSignedUrLs() : this.requireSignedUrLs,
+  scheduledDeletion: scheduledDeletion != null ? scheduledDeletion() : this.scheduledDeletion,
+  size: size != null ? size() : this.size,
+  status: status != null ? status() : this.status,
+  thumbnail: thumbnail != null ? thumbnail() : this.thumbnail,
+  thumbnailTimestampPct: thumbnailTimestampPct != null ? thumbnailTimestampPct() : this.thumbnailTimestampPct,
+  uid: uid != null ? uid() : this.uid,
+  uploadExpiry: uploadExpiry != null ? uploadExpiry() : this.uploadExpiry,
+  uploaded: uploaded != null ? uploaded() : this.uploaded,
+  watermark: watermark != null ? watermark() : this.watermark,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamVideos &&
+          listEquals(allowedOrigins, other.allowedOrigins) &&
+          created == other.created &&
+          creator == other.creator &&
+          duration == other.duration &&
+          input == other.input &&
+          liveInput == other.liveInput &&
+          maxDurationSeconds == other.maxDurationSeconds &&
+          meta == other.meta &&
+          modified == other.modified &&
+          playback == other.playback &&
+          preview == other.preview &&
+          readyToStream == other.readyToStream &&
+          readyToStreamAt == other.readyToStreamAt &&
+          requireSignedUrLs == other.requireSignedUrLs &&
+          scheduledDeletion == other.scheduledDeletion &&
+          size == other.size &&
+          status == other.status &&
+          thumbnail == other.thumbnail &&
+          thumbnailTimestampPct == other.thumbnailTimestampPct &&
+          uid == other.uid &&
+          uploadExpiry == other.uploadExpiry &&
+          uploaded == other.uploaded &&
+          watermark == other.watermark; } 
+@override int get hashCode { return Object.hashAll([Object.hashAll(allowedOrigins ?? const []), created, creator, duration, input, liveInput, maxDurationSeconds, meta, modified, playback, preview, readyToStream, readyToStreamAt, requireSignedUrLs, scheduledDeletion, size, status, thumbnail, thumbnailTimestampPct, uid, uploadExpiry, uploaded, watermark]); } 
+@override String toString() { return 'StreamVideos(allowedOrigins: $allowedOrigins, created: $created, creator: $creator, duration: $duration, input: $input, liveInput: $liveInput, maxDurationSeconds: $maxDurationSeconds, meta: $meta, modified: $modified, playback: $playback, preview: $preview, readyToStream: $readyToStream, readyToStreamAt: $readyToStreamAt, requireSignedUrLs: $requireSignedUrLs, scheduledDeletion: $scheduledDeletion, size: $size, status: $status, thumbnail: $thumbnail, thumbnailTimestampPct: $thumbnailTimestampPct, uid: $uid, uploadExpiry: $uploadExpiry, uploaded: $uploaded, watermark: $watermark)'; } 
+ }

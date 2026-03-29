@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_context_awareness.dart';import 'dlp_predefined_profile_entry_update.dart';final class DlpPredefinedProfileUpdate {const DlpPredefinedProfileUpdate({this.aiContextEnabled = false, this.allowedMatchCount = 0, this.confidenceThreshold = 'low', this.contextAwareness, this.entries, this.ocrEnabled = false, });
+
+factory DlpPredefinedProfileUpdate.fromJson(Map<String, dynamic> json) { return DlpPredefinedProfileUpdate(
+  aiContextEnabled: json.containsKey('ai_context_enabled') ? json['ai_context_enabled'] as bool : false,
+  allowedMatchCount: json.containsKey('allowed_match_count') ? json['allowed_match_count'] != null ? (json['allowed_match_count'] as num).toInt() : null : 0,
+  confidenceThreshold: json.containsKey('confidence_threshold') ? json['confidence_threshold'] as String? : 'low',
+  contextAwareness: json['context_awareness'] != null ? DlpContextAwareness.fromJson(json['context_awareness'] as Map<String, dynamic>) : null,
+  entries: (json['entries'] as List<dynamic>?)?.map((e) => DlpPredefinedProfileEntryUpdate.fromJson(e as Map<String, dynamic>)).toList(),
+  ocrEnabled: json.containsKey('ocr_enabled') ? json['ocr_enabled'] as bool : false,
+); }
+
+final bool aiContextEnabled;
+
+final int? allowedMatchCount;
+
+final String? confidenceThreshold;
+
+final DlpContextAwareness? contextAwareness;
+
+final List<DlpPredefinedProfileEntryUpdate>? entries;
+
+final bool ocrEnabled;
+
+Map<String, dynamic> toJson() { return {
+  'ai_context_enabled': aiContextEnabled,
+  'allowed_match_count': ?allowedMatchCount,
+  'confidence_threshold': ?confidenceThreshold,
+  if (contextAwareness != null) 'context_awareness': contextAwareness?.toJson(),
+  if (entries != null) 'entries': entries?.map((e) => e.toJson()).toList(),
+  'ocr_enabled': ocrEnabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DlpPredefinedProfileUpdate copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate> Function()? entries, bool Function()? ocrEnabled, }) { return DlpPredefinedProfileUpdate(
+  aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,
+  allowedMatchCount: allowedMatchCount != null ? allowedMatchCount() : this.allowedMatchCount,
+  confidenceThreshold: confidenceThreshold != null ? confidenceThreshold() : this.confidenceThreshold,
+  contextAwareness: contextAwareness != null ? contextAwareness() : this.contextAwareness,
+  entries: entries != null ? entries() : this.entries,
+  ocrEnabled: ocrEnabled != null ? ocrEnabled() : this.ocrEnabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpPredefinedProfileUpdate &&
+          aiContextEnabled == other.aiContextEnabled &&
+          allowedMatchCount == other.allowedMatchCount &&
+          confidenceThreshold == other.confidenceThreshold &&
+          contextAwareness == other.contextAwareness &&
+          listEquals(entries, other.entries) &&
+          ocrEnabled == other.ocrEnabled; } 
+@override int get hashCode { return Object.hash(aiContextEnabled, allowedMatchCount, confidenceThreshold, contextAwareness, Object.hashAll(entries ?? const []), ocrEnabled); } 
+@override String toString() { return 'DlpPredefinedProfileUpdate(aiContextEnabled: $aiContextEnabled, allowedMatchCount: $allowedMatchCount, confidenceThreshold: $confidenceThreshold, contextAwareness: $contextAwareness, entries: $entries, ocrEnabled: $ocrEnabled)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_pfx2as_moas_response_result_moas_origins.dart';final class RadarGetBgpPfx2asMoasResponseResultMoas {const RadarGetBgpPfx2asMoasResponseResultMoas({required this.origins, required this.prefix, });
+
+factory RadarGetBgpPfx2asMoasResponseResultMoas.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asMoasResponseResultMoas(
+  origins: (json['origins'] as List<dynamic>).map((e) => RadarGetBgpPfx2asMoasResponseResultMoasOrigins.fromJson(e as Map<String, dynamic>)).toList(),
+  prefix: json['prefix'] as String,
+); }
+
+final List<RadarGetBgpPfx2asMoasResponseResultMoasOrigins> origins;
+
+final String prefix;
+
+Map<String, dynamic> toJson() { return {
+  'origins': origins.map((e) => e.toJson()).toList(),
+  'prefix': prefix,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('origins') &&
+      json.containsKey('prefix') && json['prefix'] is String; } 
+RadarGetBgpPfx2asMoasResponseResultMoas copyWith({List<RadarGetBgpPfx2asMoasResponseResultMoasOrigins>? origins, String? prefix, }) { return RadarGetBgpPfx2asMoasResponseResultMoas(
+  origins: origins ?? this.origins,
+  prefix: prefix ?? this.prefix,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpPfx2asMoasResponseResultMoas &&
+          listEquals(origins, other.origins) &&
+          prefix == other.prefix; } 
+@override int get hashCode { return Object.hash(Object.hashAll(origins), prefix); } 
+@override String toString() { return 'RadarGetBgpPfx2asMoasResponseResultMoas(origins: $origins, prefix: $prefix)'; } 
+ }

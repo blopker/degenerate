@@ -1,0 +1,95 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_credit_notes_preview_lines_lines_tax_amounts.dart';import 'get_credit_notes_preview_lines_lines_tax_amounts_variant1.dart';import 'get_credit_notes_preview_lines_lines_tax_rates.dart';final class GetCreditNotesPreviewLinesLinesType {const GetCreditNotesPreviewLinesLinesType._(this.value);
+
+factory GetCreditNotesPreviewLinesLinesType.fromJson(String json) { return switch (json) {
+  'custom_line_item' => customLineItem,
+  'invoice_line_item' => invoiceLineItem,
+  _ => GetCreditNotesPreviewLinesLinesType._(json),
+}; }
+
+static const GetCreditNotesPreviewLinesLinesType customLineItem = GetCreditNotesPreviewLinesLinesType._('custom_line_item');
+
+static const GetCreditNotesPreviewLinesLinesType invoiceLineItem = GetCreditNotesPreviewLinesLinesType._('invoice_line_item');
+
+static const List<GetCreditNotesPreviewLinesLinesType> values = [customLineItem, invoiceLineItem];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetCreditNotesPreviewLinesLinesType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetCreditNotesPreviewLinesLinesType($value)'; } 
+ }
+final class GetCreditNotesPreviewLinesLines {const GetCreditNotesPreviewLinesLines({this.amount, this.description, this.invoiceLineItem, this.quantity, this.taxAmounts, this.taxRates, required this.type, this.unitAmount, this.unitAmountDecimal, });
+
+factory GetCreditNotesPreviewLinesLines.fromJson(Map<String, dynamic> json) { return GetCreditNotesPreviewLinesLines(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  description: json['description'] as String?,
+  invoiceLineItem: json['invoice_line_item'] as String?,
+  quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
+  taxAmounts: json['tax_amounts'] != null ? OneOf2.parse(json['tax_amounts'], fromA: (v) => (v as List<dynamic>).map((e) => GetCreditNotesPreviewLinesLinesTaxAmountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => GetCreditNotesPreviewLinesLinesTaxAmountsVariant2.fromJson(v as String),) : null,
+  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => GetCreditNotesPreviewLinesLinesTaxRatesVariant2.fromJson(v as String),) : null,
+  type: GetCreditNotesPreviewLinesLinesType.fromJson(json['type'] as String),
+  unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
+  unitAmountDecimal: json['unit_amount_decimal'] as String?,
+); }
+
+final int? amount;
+
+final String? description;
+
+final String? invoiceLineItem;
+
+final int? quantity;
+
+final GetCreditNotesPreviewLinesLinesTaxAmounts? taxAmounts;
+
+final GetCreditNotesPreviewLinesLinesTaxRates? taxRates;
+
+final GetCreditNotesPreviewLinesLinesType type;
+
+final int? unitAmount;
+
+final String? unitAmountDecimal;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  'description': ?description,
+  'invoice_line_item': ?invoiceLineItem,
+  'quantity': ?quantity,
+  if (taxAmounts != null) 'tax_amounts': taxAmounts?.toJson(),
+  if (taxRates != null) 'tax_rates': taxRates?.toJson(),
+  'type': type.toJson(),
+  'unit_amount': ?unitAmount,
+  'unit_amount_decimal': ?unitAmountDecimal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+GetCreditNotesPreviewLinesLines copyWith({int Function()? amount, String Function()? description, String Function()? invoiceLineItem, int Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts Function()? taxAmounts, GetCreditNotesPreviewLinesLinesTaxRates Function()? taxRates, GetCreditNotesPreviewLinesLinesType? type, int Function()? unitAmount, String Function()? unitAmountDecimal, }) { return GetCreditNotesPreviewLinesLines(
+  amount: amount != null ? amount() : this.amount,
+  description: description != null ? description() : this.description,
+  invoiceLineItem: invoiceLineItem != null ? invoiceLineItem() : this.invoiceLineItem,
+  quantity: quantity != null ? quantity() : this.quantity,
+  taxAmounts: taxAmounts != null ? taxAmounts() : this.taxAmounts,
+  taxRates: taxRates != null ? taxRates() : this.taxRates,
+  type: type ?? this.type,
+  unitAmount: unitAmount != null ? unitAmount() : this.unitAmount,
+  unitAmountDecimal: unitAmountDecimal != null ? unitAmountDecimal() : this.unitAmountDecimal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetCreditNotesPreviewLinesLines &&
+          amount == other.amount &&
+          description == other.description &&
+          invoiceLineItem == other.invoiceLineItem &&
+          quantity == other.quantity &&
+          taxAmounts == other.taxAmounts &&
+          taxRates == other.taxRates &&
+          type == other.type &&
+          unitAmount == other.unitAmount &&
+          unitAmountDecimal == other.unitAmountDecimal; } 
+@override int get hashCode { return Object.hash(amount, description, invoiceLineItem, quantity, taxAmounts, taxRates, type, unitAmount, unitAmountDecimal); } 
+@override String toString() { return 'GetCreditNotesPreviewLinesLines(amount: $amount, description: $description, invoiceLineItem: $invoiceLineItem, quantity: $quantity, taxAmounts: $taxAmounts, taxRates: $taxRates, type: $type, unitAmount: $unitAmount, unitAmountDecimal: $unitAmountDecimal)'; } 
+ }

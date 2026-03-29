@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Controls enablement of Automatic SSL/TLS.
+final class CacheSchemasValue {const CacheSchemasValue._(this.value);
+
+factory CacheSchemasValue.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'custom' => custom,
+  _ => CacheSchemasValue._(json),
+}; }
+
+static const CacheSchemasValue auto = CacheSchemasValue._('auto');
+
+static const CacheSchemasValue custom = CacheSchemasValue._('custom');
+
+static const List<CacheSchemasValue> values = [auto, custom];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CacheSchemasValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CacheSchemasValue($value)'; } 
+ }
+/// Update enablement of Automatic SSL/TLS.
+final class CacheSchemasPatch {const CacheSchemasPatch({required this.value});
+
+factory CacheSchemasPatch.fromJson(Map<String, dynamic> json) { return CacheSchemasPatch(
+  value: CacheSchemasValue.fromJson(json['value'] as String),
+); }
+
+final CacheSchemasValue value;
+
+Map<String, dynamic> toJson() { return {
+  'value': value.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('value'); } 
+CacheSchemasPatch copyWith({CacheSchemasValue? value}) { return CacheSchemasPatch(
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CacheSchemasPatch &&
+          value == other.value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CacheSchemasPatch(value: $value)'; } 
+ }

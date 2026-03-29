@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_call_realtime_transcription.dart';import '../models/create_realtime_transcription_request.dart';import '../models/update_realtime_transcription_request.dart';/// Api20100401CallTranscriptionApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401CallTranscriptionApi with ApiExecutor {const Api20100401CallTranscriptionApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Create a Transcription
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Transcriptions.json`
+Future<ApiResult<AccountCallRealtimeTranscription, Never>> createRealtimeTranscription({required String accountSid, required String callSid, CreateRealtimeTranscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Transcriptions.json',
+  headers: headers,
+  body: body == null ? null : [
+    if (body.name case final name$?)
+      'Name=${Uri.encodeQueryComponent(name$)}',
+    if (body.track case final track$?)
+      'Track=${Uri.encodeQueryComponent(track$.toJson())}',
+    if (body.statusCallbackUrl case final statusCallbackUrl$?)
+      'StatusCallbackUrl=${Uri.encodeQueryComponent(statusCallbackUrl$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
+    if (body.inboundTrackLabel case final inboundTrackLabel$?)
+      'InboundTrackLabel=${Uri.encodeQueryComponent(inboundTrackLabel$)}',
+    if (body.outboundTrackLabel case final outboundTrackLabel$?)
+      'OutboundTrackLabel=${Uri.encodeQueryComponent(outboundTrackLabel$)}',
+    if (body.partialResults case final partialResults$?)
+      'PartialResults=${Uri.encodeQueryComponent(partialResults$.toString())}',
+    if (body.languageCode case final languageCode$?)
+      'LanguageCode=${Uri.encodeQueryComponent(languageCode$)}',
+    if (body.transcriptionEngine case final transcriptionEngine$?)
+      'TranscriptionEngine=${Uri.encodeQueryComponent(transcriptionEngine$)}',
+    if (body.profanityFilter case final profanityFilter$?)
+      'ProfanityFilter=${Uri.encodeQueryComponent(profanityFilter$.toString())}',
+    if (body.speechModel case final speechModel$?)
+      'SpeechModel=${Uri.encodeQueryComponent(speechModel$)}',
+    if (body.hints case final hints$?)
+      'Hints=${Uri.encodeQueryComponent(hints$)}',
+    if (body.enableAutomaticPunctuation case final enableAutomaticPunctuation$?)
+      'EnableAutomaticPunctuation=${Uri.encodeQueryComponent(enableAutomaticPunctuation$.toString())}',
+    if (body.intelligenceService case final intelligenceService$?)
+      'IntelligenceService=${Uri.encodeQueryComponent(intelligenceService$)}',
+    if (body.enableProviderData case final enableProviderData$?)
+      'EnableProviderData=${Uri.encodeQueryComponent(enableProviderData$.toString())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountCallRealtimeTranscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Stop a Transcription using either the SID of the Transcription resource or the `name` used when creating the resource
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Transcriptions/{Sid}.json`
+Future<ApiResult<AccountCallRealtimeTranscription, Never>> updateRealtimeTranscription({required String accountSid, required String callSid, required String sid, UpdateRealtimeTranscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/Transcriptions/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  body: body == null ? null : [
+    'Status=${Uri.encodeQueryComponent(body.status.toJson())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountCallRealtimeTranscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

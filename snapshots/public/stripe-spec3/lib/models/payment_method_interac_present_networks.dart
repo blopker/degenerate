@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_method_card_present_networks.dart';/// Contains information about card networks that can be used to process the payment.
+final class PaymentMethodInteracPresentNetworks {const PaymentMethodInteracPresentNetworks({this.paymentMethodCardPresentNetworks});
+
+factory PaymentMethodInteracPresentNetworks.fromJson(Map<String, dynamic> json) { return PaymentMethodInteracPresentNetworks(
+  paymentMethodCardPresentNetworks: PaymentMethodCardPresentNetworks.canParse(json) ? PaymentMethodCardPresentNetworks.fromJson(json) : null,
+); }
+
+final PaymentMethodCardPresentNetworks? paymentMethodCardPresentNetworks;
+
+/// At least one variant must be present.
+bool get isValid { return paymentMethodCardPresentNetworks != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentMethodCardPresentNetworks?.toJson(),
+}; } 
+ }

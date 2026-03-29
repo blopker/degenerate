@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_payment_method_options.dart';/// Payment method-specific information for line items.
+final class PaymentIntentAmountDetailsLineItemPaymentMethodOptions {const PaymentIntentAmountDetailsLineItemPaymentMethodOptions({this.paymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions});
+
+factory PaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PaymentIntentAmountDetailsLineItemPaymentMethodOptions(
+  paymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions: PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions.canParse(json) ? PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions.fromJson(json) : null,
+); }
+
+final PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions? paymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions;
+
+/// At least one variant must be present.
+bool get isValid { return paymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions?.toJson(),
+}; } 
+ }

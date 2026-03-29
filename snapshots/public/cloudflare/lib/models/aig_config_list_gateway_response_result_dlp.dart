@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_response_result_dlp_variant1.dart';import 'aig_config_list_gateway_response_result_dlp_variant2.dart';typedef AigConfigListGatewayResponseResultDlp = OneOf2<AigConfigListGatewayResponseResultDlpVariant1,AigConfigListGatewayResponseResultDlpVariant2>;

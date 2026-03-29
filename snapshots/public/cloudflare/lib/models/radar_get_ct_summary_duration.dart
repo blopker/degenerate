@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetCtSummaryDuration {const RadarGetCtSummaryDuration._(this.value);
+
+factory RadarGetCtSummaryDuration.fromJson(String json) { return switch (json) {
+  'LTE_3D' => lte3D,
+  'GT_3D_LTE_7D' => gt3DLte7D,
+  'GT_7D_LTE_10D' => gt7DLte10D,
+  'GT_10D_LTE_47D' => gt10DLte47D,
+  'GT_47D_LTE_100D' => gt47DLte100D,
+  'GT_100D_LTE_200D' => gt100DLte200D,
+  'GT_200D' => gt200D,
+  _ => RadarGetCtSummaryDuration._(json),
+}; }
+
+static const RadarGetCtSummaryDuration lte3D = RadarGetCtSummaryDuration._('LTE_3D');
+
+static const RadarGetCtSummaryDuration gt3DLte7D = RadarGetCtSummaryDuration._('GT_3D_LTE_7D');
+
+static const RadarGetCtSummaryDuration gt7DLte10D = RadarGetCtSummaryDuration._('GT_7D_LTE_10D');
+
+static const RadarGetCtSummaryDuration gt10DLte47D = RadarGetCtSummaryDuration._('GT_10D_LTE_47D');
+
+static const RadarGetCtSummaryDuration gt47DLte100D = RadarGetCtSummaryDuration._('GT_47D_LTE_100D');
+
+static const RadarGetCtSummaryDuration gt100DLte200D = RadarGetCtSummaryDuration._('GT_100D_LTE_200D');
+
+static const RadarGetCtSummaryDuration gt200D = RadarGetCtSummaryDuration._('GT_200D');
+
+static const List<RadarGetCtSummaryDuration> values = [lte3D, gt3DLte7D, gt7DLte10D, gt10DLte47D, gt47DLte100D, gt100DLte200D, gt200D];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetCtSummaryDuration && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetCtSummaryDuration($value)'; } 
+ }

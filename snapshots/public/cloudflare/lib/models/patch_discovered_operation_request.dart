@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'discovery_state_patch.dart';final class PatchDiscoveredOperationRequest {const PatchDiscoveredOperationRequest({this.state});
+
+factory PatchDiscoveredOperationRequest.fromJson(Map<String, dynamic> json) { return PatchDiscoveredOperationRequest(
+  state: json['state'] != null ? DiscoveryStatePatch.fromJson(json['state'] as String) : null,
+); }
+
+/// Mark state of operation in API Discovery
+///   * `review` - Mark operation as for review
+///   * `ignored` - Mark operation as ignored
+/// 
+final DiscoveryStatePatch? state;
+
+Map<String, dynamic> toJson() { return {
+  if (state != null) 'state': state?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PatchDiscoveredOperationRequest copyWith({DiscoveryStatePatch Function()? state}) { return PatchDiscoveredOperationRequest(
+  state: state != null ? state() : this.state,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PatchDiscoveredOperationRequest &&
+          state == other.state; } 
+@override int get hashCode { return state.hashCode; } 
+@override String toString() { return 'PatchDiscoveredOperationRequest(state: $state)'; } 
+ }

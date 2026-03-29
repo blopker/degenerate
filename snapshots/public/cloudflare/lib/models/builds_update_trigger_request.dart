@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'builds_build_caching_enabled.dart';import 'builds_build_command.dart';import 'builds_build_token_uuid.dart';import 'builds_deploy_command.dart';import 'builds_root_directory.dart';import 'builds_trigger_name.dart';final class BuildsUpdateTriggerRequest {const BuildsUpdateTriggerRequest({this.branchExcludes, this.branchIncludes, this.buildCachingEnabled, this.buildCommand, this.buildTokenUuid, this.deployCommand, this.pathExcludes, this.pathIncludes, this.rootDirectory, this.triggerName, });
+
+factory BuildsUpdateTriggerRequest.fromJson(Map<String, dynamic> json) { return BuildsUpdateTriggerRequest(
+  branchExcludes: (json['branch_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  branchIncludes: (json['branch_includes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  buildCachingEnabled: json['build_caching_enabled'] != null ? BuildsBuildCachingEnabled.fromJson(json['build_caching_enabled'] as bool) : null,
+  buildCommand: json['build_command'] != null ? BuildsBuildCommand.fromJson(json['build_command'] as String) : null,
+  buildTokenUuid: json['build_token_uuid'] != null ? BuildsBuildTokenUuid.fromJson(json['build_token_uuid'] as String) : null,
+  deployCommand: json['deploy_command'] != null ? BuildsDeployCommand.fromJson(json['deploy_command'] as String) : null,
+  pathExcludes: (json['path_excludes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  pathIncludes: (json['path_includes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  rootDirectory: json['root_directory'] != null ? BuildsRootDirectory.fromJson(json['root_directory'] as String) : null,
+  triggerName: json['trigger_name'] != null ? BuildsTriggerName.fromJson(json['trigger_name'] as String) : null,
+); }
+
+final List<String>? branchExcludes;
+
+final List<String>? branchIncludes;
+
+final BuildsBuildCachingEnabled? buildCachingEnabled;
+
+final BuildsBuildCommand? buildCommand;
+
+final BuildsBuildTokenUuid? buildTokenUuid;
+
+final BuildsDeployCommand? deployCommand;
+
+final List<String>? pathExcludes;
+
+final List<String>? pathIncludes;
+
+final BuildsRootDirectory? rootDirectory;
+
+final BuildsTriggerName? triggerName;
+
+Map<String, dynamic> toJson() { return {
+  'branch_excludes': ?branchExcludes,
+  'branch_includes': ?branchIncludes,
+  if (buildCachingEnabled != null) 'build_caching_enabled': buildCachingEnabled?.toJson(),
+  if (buildCommand != null) 'build_command': buildCommand?.toJson(),
+  if (buildTokenUuid != null) 'build_token_uuid': buildTokenUuid?.toJson(),
+  if (deployCommand != null) 'deploy_command': deployCommand?.toJson(),
+  'path_excludes': ?pathExcludes,
+  'path_includes': ?pathIncludes,
+  if (rootDirectory != null) 'root_directory': rootDirectory?.toJson(),
+  if (triggerName != null) 'trigger_name': triggerName?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+BuildsUpdateTriggerRequest copyWith({List<String> Function()? branchExcludes, List<String> Function()? branchIncludes, BuildsBuildCachingEnabled Function()? buildCachingEnabled, BuildsBuildCommand Function()? buildCommand, BuildsBuildTokenUuid Function()? buildTokenUuid, BuildsDeployCommand Function()? deployCommand, List<String> Function()? pathExcludes, List<String> Function()? pathIncludes, BuildsRootDirectory Function()? rootDirectory, BuildsTriggerName Function()? triggerName, }) { return BuildsUpdateTriggerRequest(
+  branchExcludes: branchExcludes != null ? branchExcludes() : this.branchExcludes,
+  branchIncludes: branchIncludes != null ? branchIncludes() : this.branchIncludes,
+  buildCachingEnabled: buildCachingEnabled != null ? buildCachingEnabled() : this.buildCachingEnabled,
+  buildCommand: buildCommand != null ? buildCommand() : this.buildCommand,
+  buildTokenUuid: buildTokenUuid != null ? buildTokenUuid() : this.buildTokenUuid,
+  deployCommand: deployCommand != null ? deployCommand() : this.deployCommand,
+  pathExcludes: pathExcludes != null ? pathExcludes() : this.pathExcludes,
+  pathIncludes: pathIncludes != null ? pathIncludes() : this.pathIncludes,
+  rootDirectory: rootDirectory != null ? rootDirectory() : this.rootDirectory,
+  triggerName: triggerName != null ? triggerName() : this.triggerName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BuildsUpdateTriggerRequest &&
+          listEquals(branchExcludes, other.branchExcludes) &&
+          listEquals(branchIncludes, other.branchIncludes) &&
+          buildCachingEnabled == other.buildCachingEnabled &&
+          buildCommand == other.buildCommand &&
+          buildTokenUuid == other.buildTokenUuid &&
+          deployCommand == other.deployCommand &&
+          listEquals(pathExcludes, other.pathExcludes) &&
+          listEquals(pathIncludes, other.pathIncludes) &&
+          rootDirectory == other.rootDirectory &&
+          triggerName == other.triggerName; } 
+@override int get hashCode { return Object.hash(Object.hashAll(branchExcludes ?? const []), Object.hashAll(branchIncludes ?? const []), buildCachingEnabled, buildCommand, buildTokenUuid, deployCommand, Object.hashAll(pathExcludes ?? const []), Object.hashAll(pathIncludes ?? const []), rootDirectory, triggerName); } 
+@override String toString() { return 'BuildsUpdateTriggerRequest(branchExcludes: $branchExcludes, branchIncludes: $branchIncludes, buildCachingEnabled: $buildCachingEnabled, buildCommand: $buildCommand, buildTokenUuid: $buildTokenUuid, deployCommand: $deployCommand, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, rootDirectory: $rootDirectory, triggerName: $triggerName)'; } 
+ }

@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The source of this message.
+final class RulesetsMessageSource {const RulesetsMessageSource({required this.pointer});
+
+factory RulesetsMessageSource.fromJson(Map<String, dynamic> json) { return RulesetsMessageSource(
+  pointer: json['pointer'] as String,
+); }
+
+/// A JSON pointer to the field that is the source of the message.
+final String pointer;
+
+Map<String, dynamic> toJson() { return {
+  'pointer': pointer,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('pointer') && json['pointer'] is String; } 
+RulesetsMessageSource copyWith({String? pointer}) { return RulesetsMessageSource(
+  pointer: pointer ?? this.pointer,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RulesetsMessageSource &&
+          pointer == other.pointer; } 
+@override int get hashCode { return pointer.hashCode; } 
+@override String toString() { return 'RulesetsMessageSource(pointer: $pointer)'; } 
+ }

@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class DeletedApplePayDomainObject {const DeletedApplePayDomainObject._(this.value);
+
+factory DeletedApplePayDomainObject.fromJson(String json) { return switch (json) {
+  'apple_pay_domain' => applePayDomain,
+  _ => DeletedApplePayDomainObject._(json),
+}; }
+
+static const DeletedApplePayDomainObject applePayDomain = DeletedApplePayDomainObject._('apple_pay_domain');
+
+static const List<DeletedApplePayDomainObject> values = [applePayDomain];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DeletedApplePayDomainObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DeletedApplePayDomainObject($value)'; } 
+ }
+/// 
+final class DeletedApplePayDomain {const DeletedApplePayDomain({required this.deleted, required this.id, required this.object, });
+
+factory DeletedApplePayDomain.fromJson(Map<String, dynamic> json) { return DeletedApplePayDomain(
+  deleted: json['deleted'] as bool,
+  id: json['id'] as String,
+  object: DeletedApplePayDomainObject.fromJson(json['object'] as String),
+); }
+
+/// Always true for a deleted object
+final bool deleted;
+
+/// Unique identifier for the object.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final DeletedApplePayDomainObject object;
+
+Map<String, dynamic> toJson() { return {
+  'deleted': deleted,
+  'id': id,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('deleted') && json['deleted'] is bool &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object'); } 
+DeletedApplePayDomain copyWith({bool? deleted, String? id, DeletedApplePayDomainObject? object, }) { return DeletedApplePayDomain(
+  deleted: deleted ?? this.deleted,
+  id: id ?? this.id,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeletedApplePayDomain &&
+          deleted == other.deleted &&
+          id == other.id &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(deleted, id, object); } 
+@override String toString() { return 'DeletedApplePayDomain(deleted: $deleted, id: $id, object: $object)'; } 
+ }

@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_indicator_create_response_related_events.dart';import 'post_indicator_create_response_tags.dart';final class PostIndicatorCreateResponse {const PostIndicatorCreateResponse({required this.createdAt, this.datasetId, required this.indicatorType, this.relatedEvents, this.tags, required this.updatedAt, required this.uuid, required this.value, });
+
+factory PostIndicatorCreateResponse.fromJson(Map<String, dynamic> json) { return PostIndicatorCreateResponse(
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  datasetId: json['datasetId'] as String?,
+  indicatorType: json['indicatorType'] as String,
+  relatedEvents: (json['relatedEvents'] as List<dynamic>?)?.map((e) => PostIndicatorCreateResponseRelatedEvents.fromJson(e as Map<String, dynamic>)).toList(),
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => PostIndicatorCreateResponseTags.fromJson(e as Map<String, dynamic>)).toList(),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  uuid: json['uuid'] as String,
+  value: json['value'] as String,
+); }
+
+final DateTime createdAt;
+
+/// The dataset ID this indicator belongs to. Included in list responses.
+final String? datasetId;
+
+final String indicatorType;
+
+final List<PostIndicatorCreateResponseRelatedEvents>? relatedEvents;
+
+final List<PostIndicatorCreateResponseTags>? tags;
+
+final DateTime updatedAt;
+
+final String uuid;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'createdAt': createdAt.toIso8601String(),
+  'datasetId': ?datasetId,
+  'indicatorType': indicatorType,
+  if (relatedEvents != null) 'relatedEvents': relatedEvents?.map((e) => e.toJson()).toList(),
+  if (tags != null) 'tags': tags?.map((e) => e.toJson()).toList(),
+  'updatedAt': updatedAt.toIso8601String(),
+  'uuid': uuid,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('createdAt') && json['createdAt'] is String &&
+      json.containsKey('indicatorType') && json['indicatorType'] is String &&
+      json.containsKey('updatedAt') && json['updatedAt'] is String &&
+      json.containsKey('uuid') && json['uuid'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+PostIndicatorCreateResponse copyWith({DateTime? createdAt, String Function()? datasetId, String? indicatorType, List<PostIndicatorCreateResponseRelatedEvents> Function()? relatedEvents, List<PostIndicatorCreateResponseTags> Function()? tags, DateTime? updatedAt, String? uuid, String? value, }) { return PostIndicatorCreateResponse(
+  createdAt: createdAt ?? this.createdAt,
+  datasetId: datasetId != null ? datasetId() : this.datasetId,
+  indicatorType: indicatorType ?? this.indicatorType,
+  relatedEvents: relatedEvents != null ? relatedEvents() : this.relatedEvents,
+  tags: tags != null ? tags() : this.tags,
+  updatedAt: updatedAt ?? this.updatedAt,
+  uuid: uuid ?? this.uuid,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostIndicatorCreateResponse &&
+          createdAt == other.createdAt &&
+          datasetId == other.datasetId &&
+          indicatorType == other.indicatorType &&
+          listEquals(relatedEvents, other.relatedEvents) &&
+          listEquals(tags, other.tags) &&
+          updatedAt == other.updatedAt &&
+          uuid == other.uuid &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(createdAt, datasetId, indicatorType, Object.hashAll(relatedEvents ?? const []), Object.hashAll(tags ?? const []), updatedAt, uuid, value); } 
+@override String toString() { return 'PostIndicatorCreateResponse(createdAt: $createdAt, datasetId: $datasetId, indicatorType: $indicatorType, relatedEvents: $relatedEvents, tags: $tags, updatedAt: $updatedAt, uuid: $uuid, value: $value)'; } 
+ }

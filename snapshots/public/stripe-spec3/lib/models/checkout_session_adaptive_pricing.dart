@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_adaptive_pricing.dart';/// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
+final class CheckoutSessionAdaptivePricing {const CheckoutSessionAdaptivePricing({this.paymentPagesCheckoutSessionAdaptivePricing});
+
+factory CheckoutSessionAdaptivePricing.fromJson(Map<String, dynamic> json) { return CheckoutSessionAdaptivePricing(
+  paymentPagesCheckoutSessionAdaptivePricing: PaymentPagesCheckoutSessionAdaptivePricing.canParse(json) ? PaymentPagesCheckoutSessionAdaptivePricing.fromJson(json) : null,
+); }
+
+final PaymentPagesCheckoutSessionAdaptivePricing? paymentPagesCheckoutSessionAdaptivePricing;
+
+/// At least one variant must be present.
+bool get isValid { return paymentPagesCheckoutSessionAdaptivePricing != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentPagesCheckoutSessionAdaptivePricing?.toJson(),
+}; } 
+ }

@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The display name of the option, in raw text and HTML formats.
+final class SingleSelectOptionsName {const SingleSelectOptionsName({required this.raw, required this.html, });
+
+factory SingleSelectOptionsName.fromJson(Map<String, dynamic> json) { return SingleSelectOptionsName(
+  raw: json['raw'] as String,
+  html: json['html'] as String,
+); }
+
+final String raw;
+
+final String html;
+
+Map<String, dynamic> toJson() { return {
+  'raw': raw,
+  'html': html,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('raw') && json['raw'] is String &&
+      json.containsKey('html') && json['html'] is String; } 
+SingleSelectOptionsName copyWith({String? raw, String? html, }) { return SingleSelectOptionsName(
+  raw: raw ?? this.raw,
+  html: html ?? this.html,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SingleSelectOptionsName &&
+          raw == other.raw &&
+          html == other.html; } 
+@override int get hashCode { return Object.hash(raw, html); } 
+@override String toString() { return 'SingleSelectOptionsName(raw: $raw, html: $html)'; } 
+ }

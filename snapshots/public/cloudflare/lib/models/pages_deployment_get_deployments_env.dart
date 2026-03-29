@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// What type of deployments to fetch.
+final class PagesDeploymentGetDeploymentsEnv {const PagesDeploymentGetDeploymentsEnv._(this.value);
+
+factory PagesDeploymentGetDeploymentsEnv.fromJson(String json) { return switch (json) {
+  'production' => production,
+  'preview' => preview,
+  _ => PagesDeploymentGetDeploymentsEnv._(json),
+}; }
+
+static const PagesDeploymentGetDeploymentsEnv production = PagesDeploymentGetDeploymentsEnv._('production');
+
+static const PagesDeploymentGetDeploymentsEnv preview = PagesDeploymentGetDeploymentsEnv._('preview');
+
+static const List<PagesDeploymentGetDeploymentsEnv> values = [production, preview];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDeploymentGetDeploymentsEnv && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PagesDeploymentGetDeploymentsEnv($value)'; } 
+ }

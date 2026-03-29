@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Denotes whether an email is publicly visible.
+final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility._(this.value);
+
+factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.fromJson(String json) { return switch (json) {
+  'public' => public,
+  'private' => private,
+  _ => UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility._(json),
+}; }
+
+static const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility public = UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility._('public');
+
+static const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility private = UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility._('private');
+
+static const List<UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility> values = [public, private];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility($value)'; } 
+ }
+final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest({required this.visibility});
+
+factory UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest.fromJson(Map<String, dynamic> json) { return UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(
+  visibility: UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility.fromJson(json['visibility'] as String),
+); }
+
+/// Denotes whether an email is publicly visible.
+final UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility visibility;
+
+Map<String, dynamic> toJson() { return {
+  'visibility': visibility.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('visibility'); } 
+UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest copyWith({UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequestVisibility? visibility}) { return UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(
+  visibility: visibility ?? this.visibility,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest &&
+          visibility == other.visibility; } 
+@override int get hashCode { return visibility.hashCode; } 
+@override String toString() { return 'UsersSetPrimaryEmailVisibilityForAuthenticatedUserRequest(visibility: $visibility)'; } 
+ }

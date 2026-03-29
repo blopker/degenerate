@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_dns_record_shared_fields.dart';typedef DnsRecordsDnsRecordWithoutData = OneOf8<DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields,DnsRecordsDnsRecordSharedFields>;

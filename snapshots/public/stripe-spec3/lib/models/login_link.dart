@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class LoginLinkObject {const LoginLinkObject._(this.value);
+
+factory LoginLinkObject.fromJson(String json) { return switch (json) {
+  'login_link' => loginLink,
+  _ => LoginLinkObject._(json),
+}; }
+
+static const LoginLinkObject loginLink = LoginLinkObject._('login_link');
+
+static const List<LoginLinkObject> values = [loginLink];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is LoginLinkObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'LoginLinkObject($value)'; } 
+ }
+/// Login Links are single-use URLs that takes an Express account to the login page for their Stripe dashboard.
+/// A Login Link differs from an [Account Link](https://docs.stripe.com/api/account_links) in that it takes the user directly to their [Express dashboard for the specified account](https://docs.stripe.com/connect/integrate-express-dashboard#create-login-link)
+final class LoginLink {const LoginLink({required this.created, required this.object, required this.url, });
+
+factory LoginLink.fromJson(Map<String, dynamic> json) { return LoginLink(
+  created: (json['created'] as num).toInt(),
+  object: LoginLinkObject.fromJson(json['object'] as String),
+  url: json['url'] as String,
+); }
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final LoginLinkObject object;
+
+/// The URL for the login link.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  'object': object.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+      json.containsKey('object') &&
+      json.containsKey('url') && json['url'] is String; } 
+LoginLink copyWith({int? created, LoginLinkObject? object, String? url, }) { return LoginLink(
+  created: created ?? this.created,
+  object: object ?? this.object,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LoginLink &&
+          created == other.created &&
+          object == other.object &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(created, object, url); } 
+@override String toString() { return 'LoginLink(created: $created, object: $object, url: $url)'; } 
+ }

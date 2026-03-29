@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'teams_devices_components_schemas_type.dart';import 'teams_devices_device_managed_networks_components_schemas_name.dart';import 'teams_devices_schemas_config_response.dart';import 'teams_devices_uuid.dart';final class TeamsDevicesDeviceManagedNetworks {const TeamsDevicesDeviceManagedNetworks({this.config, this.name, this.networkId, this.type, });
+
+factory TeamsDevicesDeviceManagedNetworks.fromJson(Map<String, dynamic> json) { return TeamsDevicesDeviceManagedNetworks(
+  config: json['config'] != null ? TeamsDevicesSchemasConfigResponse.fromJson(json['config'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? TeamsDevicesDeviceManagedNetworksComponentsSchemasName.fromJson(json['name'] as String) : null,
+  networkId: json['network_id'] != null ? TeamsDevicesUuid.fromJson(json['network_id'] as String) : null,
+  type: json['type'] != null ? TeamsDevicesComponentsSchemasType.fromJson(json['type'] as String) : null,
+); }
+
+final TeamsDevicesSchemasConfigResponse? config;
+
+final TeamsDevicesDeviceManagedNetworksComponentsSchemasName? name;
+
+final TeamsDevicesUuid? networkId;
+
+/// The type of device managed network.
+final TeamsDevicesComponentsSchemasType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (config != null) 'config': config?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (networkId != null) 'network_id': networkId?.toJson(),
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TeamsDevicesDeviceManagedNetworks copyWith({TeamsDevicesSchemasConfigResponse Function()? config, TeamsDevicesDeviceManagedNetworksComponentsSchemasName Function()? name, TeamsDevicesUuid Function()? networkId, TeamsDevicesComponentsSchemasType Function()? type, }) { return TeamsDevicesDeviceManagedNetworks(
+  config: config != null ? config() : this.config,
+  name: name != null ? name() : this.name,
+  networkId: networkId != null ? networkId() : this.networkId,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesDeviceManagedNetworks &&
+          config == other.config &&
+          name == other.name &&
+          networkId == other.networkId &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(config, name, networkId, type); } 
+@override String toString() { return 'TeamsDevicesDeviceManagedNetworks(config: $config, name: $name, networkId: $networkId, type: $type)'; } 
+ }

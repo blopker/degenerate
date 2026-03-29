@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
+extension type const MagicUnidirectional(bool value) {
+factory MagicUnidirectional.fromJson(bool json) => MagicUnidirectional(json);
+
+bool toJson() => value;
+
+}

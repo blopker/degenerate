@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostBillingCreditGrantsRequestAmountMonetary {const PostBillingCreditGrantsRequestAmountMonetary({required this.currency, required this.value, });
+
+factory PostBillingCreditGrantsRequestAmountMonetary.fromJson(Map<String, dynamic> json) { return PostBillingCreditGrantsRequestAmountMonetary(
+  currency: json['currency'] as String,
+  value: (json['value'] as num).toInt(),
+); }
+
+final String currency;
+
+final int value;
+
+Map<String, dynamic> toJson() { return {
+  'currency': currency,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('value') && json['value'] is num; } 
+PostBillingCreditGrantsRequestAmountMonetary copyWith({String? currency, int? value, }) { return PostBillingCreditGrantsRequestAmountMonetary(
+  currency: currency ?? this.currency,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingCreditGrantsRequestAmountMonetary &&
+          currency == other.currency &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(currency, value); } 
+@override String toString() { return 'PostBillingCreditGrantsRequestAmountMonetary(currency: $currency, value: $value)'; } 
+ }

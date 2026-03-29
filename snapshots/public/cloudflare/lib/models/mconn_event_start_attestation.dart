@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Started attestation
+final class MconnEventStartAttestationK {const MconnEventStartAttestationK._(this.value);
+
+factory MconnEventStartAttestationK.fromJson(String json) { return switch (json) {
+  'StartAttestation' => startAttestation,
+  _ => MconnEventStartAttestationK._(json),
+}; }
+
+static const MconnEventStartAttestationK startAttestation = MconnEventStartAttestationK._('StartAttestation');
+
+static const List<MconnEventStartAttestationK> values = [startAttestation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MconnEventStartAttestationK && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MconnEventStartAttestationK($value)'; } 
+ }
+final class MconnEventStartAttestation {const MconnEventStartAttestation({required this.k});
+
+factory MconnEventStartAttestation.fromJson(Map<String, dynamic> json) { return MconnEventStartAttestation(
+  k: MconnEventStartAttestationK.fromJson(json['k'] as String),
+); }
+
+/// Started attestation
+final MconnEventStartAttestationK k;
+
+Map<String, dynamic> toJson() { return {
+  'k': k.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('k'); } 
+MconnEventStartAttestation copyWith({MconnEventStartAttestationK? k}) { return MconnEventStartAttestation(
+  k: k ?? this.k,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnEventStartAttestation &&
+          k == other.k; } 
+@override int get hashCode { return k.hashCode; } 
+@override String toString() { return 'MconnEventStartAttestation(k: $k)'; } 
+ }

@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
+extension type const WorkersKvKeyName(String value) {
+factory WorkersKvKeyName.fromJson(String json) => WorkersKvKeyName(json);
+
+String toJson() => value;
+
+}

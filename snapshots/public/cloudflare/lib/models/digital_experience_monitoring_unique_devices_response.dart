@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DigitalExperienceMonitoringUniqueDevicesResponse {const DigitalExperienceMonitoringUniqueDevicesResponse({required this.uniqueDevicesTotal});
+
+factory DigitalExperienceMonitoringUniqueDevicesResponse.fromJson(Map<String, dynamic> json) { return DigitalExperienceMonitoringUniqueDevicesResponse(
+  uniqueDevicesTotal: (json['uniqueDevicesTotal'] as num).toInt(),
+); }
+
+/// total number of unique devices
+final int uniqueDevicesTotal;
+
+Map<String, dynamic> toJson() { return {
+  'uniqueDevicesTotal': uniqueDevicesTotal,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('uniqueDevicesTotal') && json['uniqueDevicesTotal'] is num; } 
+DigitalExperienceMonitoringUniqueDevicesResponse copyWith({int? uniqueDevicesTotal}) { return DigitalExperienceMonitoringUniqueDevicesResponse(
+  uniqueDevicesTotal: uniqueDevicesTotal ?? this.uniqueDevicesTotal,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DigitalExperienceMonitoringUniqueDevicesResponse &&
+          uniqueDevicesTotal == other.uniqueDevicesTotal; } 
+@override int get hashCode { return uniqueDevicesTotal.hashCode; } 
+@override String toString() { return 'DigitalExperienceMonitoringUniqueDevicesResponse(uniqueDevicesTotal: $uniqueDevicesTotal)'; } 
+ }

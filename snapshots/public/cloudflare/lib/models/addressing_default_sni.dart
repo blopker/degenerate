@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// If you have legacy TLS clients which do not send the TLS server name indicator, then you can specify one default SNI on the map. If Cloudflare receives a TLS handshake from a client without an SNI, it will respond with the default SNI on those IPs. The default SNI can be any valid zone or subdomain owned by the account.
+extension type const AddressingDefaultSni(String value) {
+factory AddressingDefaultSni.fromJson(String json) => AddressingDefaultSni(json);
+
+String toJson() => value;
+
+}

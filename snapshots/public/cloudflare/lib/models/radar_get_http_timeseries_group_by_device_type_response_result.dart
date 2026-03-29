@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_http_timeseries_group_by_device_type_response_result_meta.dart';import 'radar_get_http_timeseries_group_by_device_type_response_result_serie0.dart';final class RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult {const RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult({required this.meta, required this.serie0, });
+
+factory RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult(
+  meta: RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  serie0: RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultMeta meta;
+
+final RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0 serie0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'serie_0': serie0.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('serie_0'); } 
+RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult copyWith({RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultMeta? meta, RadarGetHttpTimeseriesGroupByDeviceTypeResponseResultSerie0? serie0, }) { return RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult(
+  meta: meta ?? this.meta,
+  serie0: serie0 ?? this.serie0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult &&
+          meta == other.meta &&
+          serie0 == other.serie0; } 
+@override int get hashCode { return Object.hash(meta, serie0); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByDeviceTypeResponseResult(meta: $meta, serie0: $serie0)'; } 
+ }

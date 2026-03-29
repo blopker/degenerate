@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostChargesChargeRequestFraudDetailsUserReport {const PostChargesChargeRequestFraudDetailsUserReport._(this.value);
+
+factory PostChargesChargeRequestFraudDetailsUserReport.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'fraudulent' => fraudulent,
+  'safe' => safe,
+  _ => PostChargesChargeRequestFraudDetailsUserReport._(json),
+}; }
+
+static const PostChargesChargeRequestFraudDetailsUserReport $empty = PostChargesChargeRequestFraudDetailsUserReport._('');
+
+static const PostChargesChargeRequestFraudDetailsUserReport fraudulent = PostChargesChargeRequestFraudDetailsUserReport._('fraudulent');
+
+static const PostChargesChargeRequestFraudDetailsUserReport safe = PostChargesChargeRequestFraudDetailsUserReport._('safe');
+
+static const List<PostChargesChargeRequestFraudDetailsUserReport> values = [$empty, fraudulent, safe];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostChargesChargeRequestFraudDetailsUserReport && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostChargesChargeRequestFraudDetailsUserReport($value)'; } 
+ }
+/// A set of key-value pairs you can attach to a charge giving information about its riskiness. If you believe a charge is fraudulent, include a `user_report` key with a value of `fraudulent`. If you believe a charge is safe, include a `user_report` key with a value of `safe`. Stripe will use the information you send to improve our fraud detection algorithms.
+final class PostChargesChargeRequestFraudDetails {const PostChargesChargeRequestFraudDetails({required this.userReport});
+
+factory PostChargesChargeRequestFraudDetails.fromJson(Map<String, dynamic> json) { return PostChargesChargeRequestFraudDetails(
+  userReport: PostChargesChargeRequestFraudDetailsUserReport.fromJson(json['user_report'] as String),
+); }
+
+final PostChargesChargeRequestFraudDetailsUserReport userReport;
+
+Map<String, dynamic> toJson() { return {
+  'user_report': userReport.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('user_report'); } 
+PostChargesChargeRequestFraudDetails copyWith({PostChargesChargeRequestFraudDetailsUserReport? userReport}) { return PostChargesChargeRequestFraudDetails(
+  userReport: userReport ?? this.userReport,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostChargesChargeRequestFraudDetails &&
+          userReport == other.userReport; } 
+@override int get hashCode { return userReport.hashCode; } 
+@override String toString() { return 'PostChargesChargeRequestFraudDetails(userReport: $userReport)'; } 
+ }

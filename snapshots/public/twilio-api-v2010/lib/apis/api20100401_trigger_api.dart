@@ -1,0 +1,138 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_usage_usage_trigger.dart';import '../models/create_usage_trigger_request.dart';import '../models/list_usage_trigger_response.dart';import '../models/update_usage_trigger_request.dart';import '../models/usage_trigger_enum_recurring.dart';import '../models/usage_trigger_enum_trigger_field.dart';/// Api20100401TriggerApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401TriggerApi with ApiExecutor {const Api20100401TriggerApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Fetch and instance of a usage-trigger
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
+Future<ApiResult<AccountUsageUsageTrigger, Never>> fetchUsageTrigger({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountUsageUsageTrigger.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update an instance of a usage trigger
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
+Future<ApiResult<AccountUsageUsageTrigger, Never>> updateUsageTrigger({required String accountSid, required String sid, UpdateUsageTriggerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  body: body == null ? null : [
+    if (body.callbackMethod case final callbackMethod$?)
+      'CallbackMethod=${Uri.encodeQueryComponent(callbackMethod$.toJson())}',
+    if (body.callbackUrl case final callbackUrl$?)
+      'CallbackUrl=${Uri.encodeQueryComponent(callbackUrl$.toString())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountUsageUsageTrigger.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// 
+///
+/// `DELETE /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
+Future<ApiResult<void, Never>> deleteUsageTrigger({required String accountSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+/// Retrieve a list of usage-triggers belonging to the account used to make the request
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
+Future<ApiResult<ListUsageTriggerResponse, Never>> listUsageTrigger({required String accountSid, UsageTriggerEnumRecurring? recurring, UsageTriggerEnumTriggerField? triggerBy, String? usageCategory, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (recurring != null) queryParameters['Recurring'] = recurring.toJson();
+if (triggerBy != null) queryParameters['TriggerBy'] = triggerBy.toJson();
+if (usageCategory != null) queryParameters['UsageCategory'] = usageCategory;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListUsageTriggerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Create a new UsageTrigger
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
+Future<ApiResult<AccountUsageUsageTrigger, Never>> createUsageTrigger({required String accountSid, CreateUsageTriggerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Usage/Triggers.json',
+  headers: headers,
+  body: body == null ? null : [
+    'CallbackUrl=${Uri.encodeQueryComponent(body.callbackUrl.toString())}',
+    'TriggerValue=${Uri.encodeQueryComponent(body.triggerValue)}',
+    'UsageCategory=${Uri.encodeQueryComponent(body.usageCategory)}',
+    if (body.callbackMethod case final callbackMethod$?)
+      'CallbackMethod=${Uri.encodeQueryComponent(callbackMethod$.toJson())}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.recurring case final recurring$?)
+      'Recurring=${Uri.encodeQueryComponent(recurring$.toJson())}',
+    if (body.triggerBy case final triggerBy$?)
+      'TriggerBy=${Uri.encodeQueryComponent(triggerBy$.toJson())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountUsageUsageTrigger.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

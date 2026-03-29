@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetPlansRequest {const GetPlansRequest();
+
+factory GetPlansRequest.fromJson(Map<String, dynamic> json) { return GetPlansRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetPlansRequest copyWith() { return GetPlansRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetPlansRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetPlansRequest()'; } 
+ }

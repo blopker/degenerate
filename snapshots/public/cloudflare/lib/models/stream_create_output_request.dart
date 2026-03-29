@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'stream_output_enabled.dart';import 'stream_output_stream_key.dart';import 'stream_output_url.dart';final class StreamCreateOutputRequest {const StreamCreateOutputRequest({this.enabled, required this.streamKey, required this.url, });
+
+factory StreamCreateOutputRequest.fromJson(Map<String, dynamic> json) { return StreamCreateOutputRequest(
+  enabled: json['enabled'] != null ? StreamOutputEnabled.fromJson(json['enabled'] as bool) : null,
+  streamKey: StreamOutputStreamKey.fromJson(json['streamKey'] as String),
+  url: StreamOutputUrl.fromJson(json['url'] as String),
+); }
+
+final StreamOutputEnabled? enabled;
+
+final StreamOutputStreamKey streamKey;
+
+final StreamOutputUrl url;
+
+Map<String, dynamic> toJson() { return {
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  'streamKey': streamKey.toJson(),
+  'url': url.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('streamKey') &&
+      json.containsKey('url'); } 
+StreamCreateOutputRequest copyWith({StreamOutputEnabled Function()? enabled, StreamOutputStreamKey? streamKey, StreamOutputUrl? url, }) { return StreamCreateOutputRequest(
+  enabled: enabled != null ? enabled() : this.enabled,
+  streamKey: streamKey ?? this.streamKey,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamCreateOutputRequest &&
+          enabled == other.enabled &&
+          streamKey == other.streamKey &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(enabled, streamKey, url); } 
+@override String toString() { return 'StreamCreateOutputRequest(enabled: $enabled, streamKey: $streamKey, url: $url)'; } 
+ }

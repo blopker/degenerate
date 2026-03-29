@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Provides a partial word match of the `name` key in the `meta` field. Slow for medium to large video libraries. May be unavailable for very large libraries.
+extension type const StreamSearch(String value) {
+factory StreamSearch.fromJson(String json) => StreamSearch(json);
+
+String toJson() => value;
+
+}

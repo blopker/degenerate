@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ArchiveSecurityCenterInsightDeprecatedRequest {const ArchiveSecurityCenterInsightDeprecatedRequest({this.dismiss = true});
+
+factory ArchiveSecurityCenterInsightDeprecatedRequest.fromJson(Map<String, dynamic> json) { return ArchiveSecurityCenterInsightDeprecatedRequest(
+  dismiss: json.containsKey('dismiss') ? json['dismiss'] as bool : true,
+); }
+
+final bool dismiss;
+
+Map<String, dynamic> toJson() { return {
+  'dismiss': dismiss,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ArchiveSecurityCenterInsightDeprecatedRequest copyWith({bool Function()? dismiss}) { return ArchiveSecurityCenterInsightDeprecatedRequest(
+  dismiss: dismiss != null ? dismiss() : this.dismiss,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ArchiveSecurityCenterInsightDeprecatedRequest &&
+          dismiss == other.dismiss; } 
+@override int get hashCode { return dismiss.hashCode; } 
+@override String toString() { return 'ArchiveSecurityCenterInsightDeprecatedRequest(dismiss: $dismiss)'; } 
+ }

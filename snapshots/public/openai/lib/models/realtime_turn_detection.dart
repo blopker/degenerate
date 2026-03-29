@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'semantic_vad.dart';import 'server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
+/// 
+/// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
+/// 
+/// Semantic VAD is more advanced and uses a turn detection model (in conjunction with VAD) to semantically estimate whether the user has finished speaking, then dynamically sets a timeout based on this probability. For example, if user audio trails off with "uhhm", the model will score a low probability of turn end and wait longer for the user to continue speaking. This can be useful for more natural conversations, but may have a higher latency.
+/// 
+sealed class RealtimeTurnDetection {const RealtimeTurnDetection();
+
+/// Deserialize from JSON, dispatching on the `type` discriminator.
+factory RealtimeTurnDetection.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+  'ServerVad' => RealtimeTurnDetectionServerVad.fromJson(json),
+  'SemanticVad' => RealtimeTurnDetectionSemanticVad.fromJson(json),
+  _ => RealtimeTurnDetection$Unknown(json),
+}; }
+
+/// The discriminator value identifying this variant.
+String get type;
+Map<String, dynamic> toJson();
+/// Whether this variant is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is RealtimeTurnDetection$Unknown; } 
+ }
+final class RealtimeTurnDetectionServerVad extends RealtimeTurnDetection {const RealtimeTurnDetectionServerVad(this.serverVad);
+
+factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) { return RealtimeTurnDetectionServerVad(ServerVad.fromJson(json)); }
+
+final ServerVad serverVad;
+
+@override String get type { return 'ServerVad'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...serverVad.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeTurnDetectionServerVad && serverVad == other.serverVad; } 
+@override int get hashCode { return serverVad.hashCode; } 
+@override String toString() { return 'RealtimeTurnDetectionServerVad(serverVad: $serverVad)'; } 
+ }
+final class RealtimeTurnDetectionSemanticVad extends RealtimeTurnDetection {const RealtimeTurnDetectionSemanticVad(this.semanticVad);
+
+factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) { return RealtimeTurnDetectionSemanticVad(SemanticVad.fromJson(json)); }
+
+final SemanticVad semanticVad;
+
+@override String get type { return 'SemanticVad'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...semanticVad.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeTurnDetectionSemanticVad && semanticVad == other.semanticVad; } 
+@override int get hashCode { return semanticVad.hashCode; } 
+@override String toString() { return 'RealtimeTurnDetectionSemanticVad(semanticVad: $semanticVad)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+/// Returned when the server sends a discriminator value that this client does not recognize.
+final class RealtimeTurnDetection$Unknown extends RealtimeTurnDetection {const RealtimeTurnDetection$Unknown(this.json);
+
+final Map<String, dynamic> json;
+
+@override String get type { return json['type'] as String? ?? ''; } 
+@override Map<String, dynamic> toJson() { return json; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeTurnDetection$Unknown && json == other.json; } 
+@override int get hashCode { return json.hashCode; } 
+@override String toString() { return 'RealtimeTurnDetection.unknown($json)'; } 
+ }

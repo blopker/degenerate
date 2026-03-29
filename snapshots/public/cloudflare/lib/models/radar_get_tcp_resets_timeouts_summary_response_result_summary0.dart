@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 {const RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, });
+
+factory RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0(
+  laterInFlow: json['later_in_flow'] as String,
+  noMatch: json['no_match'] as String,
+  postAck: json['post_ack'] as String,
+  postPsh: json['post_psh'] as String,
+  postSyn: json['post_syn'] as String,
+); }
+
+/// Connection resets within the first 10 packets from the client, but after the server has received multiple data packets.
+final String laterInFlow;
+
+/// All other connections.
+final String noMatch;
+
+/// Connection resets or timeouts after the server received both a SYN packet and an ACK packet, meaning the connection was successfully established.
+final String postAck;
+
+/// Connection resets or timeouts after the server received a packet with PSH flag set, following connection establishment.
+final String postPsh;
+
+/// Connection resets or timeouts after the server received only a single SYN packet.
+final String postSyn;
+
+Map<String, dynamic> toJson() { return {
+  'later_in_flow': laterInFlow,
+  'no_match': noMatch,
+  'post_ack': postAck,
+  'post_psh': postPsh,
+  'post_syn': postSyn,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('later_in_flow') && json['later_in_flow'] is String &&
+      json.containsKey('no_match') && json['no_match'] is String &&
+      json.containsKey('post_ack') && json['post_ack'] is String &&
+      json.containsKey('post_psh') && json['post_psh'] is String &&
+      json.containsKey('post_syn') && json['post_syn'] is String; } 
+RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 copyWith({String? laterInFlow, String? noMatch, String? postAck, String? postPsh, String? postSyn, }) { return RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0(
+  laterInFlow: laterInFlow ?? this.laterInFlow,
+  noMatch: noMatch ?? this.noMatch,
+  postAck: postAck ?? this.postAck,
+  postPsh: postPsh ?? this.postPsh,
+  postSyn: postSyn ?? this.postSyn,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0 &&
+          laterInFlow == other.laterInFlow &&
+          noMatch == other.noMatch &&
+          postAck == other.postAck &&
+          postPsh == other.postPsh &&
+          postSyn == other.postSyn; } 
+@override int get hashCode { return Object.hash(laterInFlow, noMatch, postAck, postPsh, postSyn); } 
+@override String toString() { return 'RadarGetTcpResetsTimeoutsSummaryResponseResultSummary0(laterInFlow: $laterInFlow, noMatch: $noMatch, postAck: $postAck, postPsh: $postPsh, postSyn: $postSyn)'; } 
+ }

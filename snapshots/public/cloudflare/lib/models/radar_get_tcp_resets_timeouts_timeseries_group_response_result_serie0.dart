@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 {const RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0({required this.laterInFlow, required this.noMatch, required this.postAck, required this.postPsh, required this.postSyn, required this.timestamps, });
+
+factory RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0(
+  laterInFlow: (json['later_in_flow'] as List<dynamic>).map((e) => e as String).toList(),
+  noMatch: (json['no_match'] as List<dynamic>).map((e) => e as String).toList(),
+  postAck: (json['post_ack'] as List<dynamic>).map((e) => e as String).toList(),
+  postPsh: (json['post_psh'] as List<dynamic>).map((e) => e as String).toList(),
+  postSyn: (json['post_syn'] as List<dynamic>).map((e) => e as String).toList(),
+  timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
+); }
+
+final List<String> laterInFlow;
+
+final List<String> noMatch;
+
+final List<String> postAck;
+
+final List<String> postPsh;
+
+final List<String> postSyn;
+
+final List<DateTime> timestamps;
+
+Map<String, dynamic> toJson() { return {
+  'later_in_flow': laterInFlow,
+  'no_match': noMatch,
+  'post_ack': postAck,
+  'post_psh': postPsh,
+  'post_syn': postSyn,
+  'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('later_in_flow') &&
+      json.containsKey('no_match') &&
+      json.containsKey('post_ack') &&
+      json.containsKey('post_psh') &&
+      json.containsKey('post_syn') &&
+      json.containsKey('timestamps'); } 
+RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 copyWith({List<String>? laterInFlow, List<String>? noMatch, List<String>? postAck, List<String>? postPsh, List<String>? postSyn, List<DateTime>? timestamps, }) { return RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0(
+  laterInFlow: laterInFlow ?? this.laterInFlow,
+  noMatch: noMatch ?? this.noMatch,
+  postAck: postAck ?? this.postAck,
+  postPsh: postPsh ?? this.postPsh,
+  postSyn: postSyn ?? this.postSyn,
+  timestamps: timestamps ?? this.timestamps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0 &&
+          listEquals(laterInFlow, other.laterInFlow) &&
+          listEquals(noMatch, other.noMatch) &&
+          listEquals(postAck, other.postAck) &&
+          listEquals(postPsh, other.postPsh) &&
+          listEquals(postSyn, other.postSyn) &&
+          listEquals(timestamps, other.timestamps); } 
+@override int get hashCode { return Object.hash(Object.hashAll(laterInFlow), Object.hashAll(noMatch), Object.hashAll(postAck), Object.hashAll(postPsh), Object.hashAll(postSyn), Object.hashAll(timestamps)); } 
+@override String toString() { return 'RadarGetTcpResetsTimeoutsTimeseriesGroupResponseResultSerie0(laterInFlow: $laterInFlow, noMatch: $noMatch, postAck: $postAck, postPsh: $postPsh, postSyn: $postSyn, timestamps: $timestamps)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'check_suite.dart';final class ChecksListSuitesForRefResponse {const ChecksListSuitesForRefResponse({required this.totalCount, required this.checkSuites, });
+
+factory ChecksListSuitesForRefResponse.fromJson(Map<String, dynamic> json) { return ChecksListSuitesForRefResponse(
+  totalCount: (json['total_count'] as num).toInt(),
+  checkSuites: (json['check_suites'] as List<dynamic>).map((e) => CheckSuite.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final int totalCount;
+
+final List<CheckSuite> checkSuites;
+
+Map<String, dynamic> toJson() { return {
+  'total_count': totalCount,
+  'check_suites': checkSuites.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('check_suites'); } 
+ChecksListSuitesForRefResponse copyWith({int? totalCount, List<CheckSuite>? checkSuites, }) { return ChecksListSuitesForRefResponse(
+  totalCount: totalCount ?? this.totalCount,
+  checkSuites: checkSuites ?? this.checkSuites,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChecksListSuitesForRefResponse &&
+          totalCount == other.totalCount &&
+          listEquals(checkSuites, other.checkSuites); } 
+@override int get hashCode { return Object.hash(totalCount, Object.hashAll(checkSuites)); } 
+@override String toString() { return 'ChecksListSuitesForRefResponse(totalCount: $totalCount, checkSuites: $checkSuites)'; } 
+ }

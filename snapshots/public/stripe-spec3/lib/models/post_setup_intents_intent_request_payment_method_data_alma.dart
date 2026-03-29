@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodDataAlma {const PostSetupIntentsIntentRequestPaymentMethodDataAlma();
+
+factory PostSetupIntentsIntentRequestPaymentMethodDataAlma.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataAlma(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodDataAlma copyWith() { return PostSetupIntentsIntentRequestPaymentMethodDataAlma(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataAlma; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataAlma()'; } 
+ }

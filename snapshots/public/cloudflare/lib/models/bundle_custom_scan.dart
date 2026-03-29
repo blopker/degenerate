@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'bundle_custom_scan_payload.dart';import 'bundle_identifier.dart';/// Defines a custom scan expression to match Content Scanning on.
+final class BundleCustomScan {const BundleCustomScan({this.id, this.payload, });
+
+factory BundleCustomScan.fromJson(Map<String, dynamic> json) { return BundleCustomScan(
+  id: json['id'] != null ? BundleIdentifier.fromJson(json['id'] as String) : null,
+  payload: json['payload'] != null ? BundleCustomScanPayload.fromJson(json['payload'] as String) : null,
+); }
+
+final BundleIdentifier? id;
+
+final BundleCustomScanPayload? payload;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (payload != null) 'payload': payload?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+BundleCustomScan copyWith({BundleIdentifier Function()? id, BundleCustomScanPayload Function()? payload, }) { return BundleCustomScan(
+  id: id != null ? id() : this.id,
+  payload: payload != null ? payload() : this.payload,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BundleCustomScan &&
+          id == other.id &&
+          payload == other.payload; } 
+@override int get hashCode { return Object.hash(id, payload); } 
+@override String toString() { return 'BundleCustomScan(id: $id, payload: $payload)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties({this.conditions});
+
+factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties(
+  conditions: (json['conditions'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+); }
+
+final Map<String,dynamic>? conditions;
+
+Map<String, dynamic> toJson() { return {
+  'conditions': ?conditions,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties copyWith({Map<String, dynamic> Function()? conditions}) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties(
+  conditions: conditions != null ? conditions() : this.conditions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties &&
+          conditions == other.conditions; } 
+@override int get hashCode { return conditions.hashCode; } 
+@override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultElementsConditionalProperties(conditions: $conditions)'; } 
+ }

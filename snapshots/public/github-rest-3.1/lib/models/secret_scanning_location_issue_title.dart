@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Represents an 'issue_title' secret scanning location type. This location type shows that a secret was detected in the title of an issue.
+final class SecretScanningLocationIssueTitle {const SecretScanningLocationIssueTitle({required this.issueTitleUrl});
+
+factory SecretScanningLocationIssueTitle.fromJson(Map<String, dynamic> json) { return SecretScanningLocationIssueTitle(
+  issueTitleUrl: Uri.parse(json['issue_title_url'] as String),
+); }
+
+/// The API URL to get the issue where the secret was detected.
+final Uri issueTitleUrl;
+
+Map<String, dynamic> toJson() { return {
+  'issue_title_url': issueTitleUrl.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('issue_title_url') && json['issue_title_url'] is String; } 
+SecretScanningLocationIssueTitle copyWith({Uri? issueTitleUrl}) { return SecretScanningLocationIssueTitle(
+  issueTitleUrl: issueTitleUrl ?? this.issueTitleUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretScanningLocationIssueTitle &&
+          issueTitleUrl == other.issueTitleUrl; } 
+@override int get hashCode { return issueTitleUrl.hashCode; } 
+@override String toString() { return 'SecretScanningLocationIssueTitle(issueTitleUrl: $issueTitleUrl)'; } 
+ }

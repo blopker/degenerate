@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetBotsTimeseriesBotKind {const RadarGetBotsTimeseriesBotKind._(this.value);
+
+factory RadarGetBotsTimeseriesBotKind.fromJson(String json) { return switch (json) {
+  'AGENT' => agent,
+  'BOT' => bot,
+  _ => RadarGetBotsTimeseriesBotKind._(json),
+}; }
+
+static const RadarGetBotsTimeseriesBotKind agent = RadarGetBotsTimeseriesBotKind._('AGENT');
+
+static const RadarGetBotsTimeseriesBotKind bot = RadarGetBotsTimeseriesBotKind._('BOT');
+
+static const List<RadarGetBotsTimeseriesBotKind> values = [agent, bot];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetBotsTimeseriesBotKind && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetBotsTimeseriesBotKind($value)'; } 
+ }

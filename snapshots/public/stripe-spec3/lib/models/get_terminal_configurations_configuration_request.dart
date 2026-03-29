@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTerminalConfigurationsConfigurationRequest {const GetTerminalConfigurationsConfigurationRequest();
+
+factory GetTerminalConfigurationsConfigurationRequest.fromJson(Map<String, dynamic> json) { return GetTerminalConfigurationsConfigurationRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetTerminalConfigurationsConfigurationRequest copyWith() { return GetTerminalConfigurationsConfigurationRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetTerminalConfigurationsConfigurationRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetTerminalConfigurationsConfigurationRequest()'; } 
+ }

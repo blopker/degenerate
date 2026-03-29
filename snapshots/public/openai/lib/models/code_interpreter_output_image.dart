@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the output. Always `image`.
+final class CodeInterpreterOutputImageType {const CodeInterpreterOutputImageType._(this.value);
+
+factory CodeInterpreterOutputImageType.fromJson(String json) { return switch (json) {
+  'image' => image,
+  _ => CodeInterpreterOutputImageType._(json),
+}; }
+
+static const CodeInterpreterOutputImageType image = CodeInterpreterOutputImageType._('image');
+
+static const List<CodeInterpreterOutputImageType> values = [image];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeInterpreterOutputImageType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeInterpreterOutputImageType($value)'; } 
+ }
+/// The image output from the code interpreter.
+final class CodeInterpreterOutputImage {const CodeInterpreterOutputImage({this.type = CodeInterpreterOutputImageType.image, required this.url, });
+
+factory CodeInterpreterOutputImage.fromJson(Map<String, dynamic> json) { return CodeInterpreterOutputImage(
+  type: CodeInterpreterOutputImageType.fromJson(json['type'] as String),
+  url: json['url'] as String,
+); }
+
+/// The type of the output. Always `image`.
+final CodeInterpreterOutputImageType type;
+
+/// The URL of the image output from the code interpreter.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('url') && json['url'] is String; } 
+CodeInterpreterOutputImage copyWith({CodeInterpreterOutputImageType? type, String? url, }) { return CodeInterpreterOutputImage(
+  type: type ?? this.type,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeInterpreterOutputImage &&
+          type == other.type &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(type, url); } 
+@override String toString() { return 'CodeInterpreterOutputImage(type: $type, url: $url)'; } 
+ }

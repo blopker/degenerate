@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'messages51_tools_function_function.dart';final class Messages51ToolsFunctionType {const Messages51ToolsFunctionType._(this.value);
+
+factory Messages51ToolsFunctionType.fromJson(String json) { return switch (json) {
+  'function' => function,
+  _ => Messages51ToolsFunctionType._(json),
+}; }
+
+static const Messages51ToolsFunctionType function = Messages51ToolsFunctionType._('function');
+
+static const List<Messages51ToolsFunctionType> values = [function];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Messages51ToolsFunctionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Messages51ToolsFunctionType($value)'; } 
+ }
+final class Messages51ToolsFunction {const Messages51ToolsFunction({required this.function, required this.type, });
+
+factory Messages51ToolsFunction.fromJson(Map<String, dynamic> json) { return Messages51ToolsFunction(
+  function: Messages51ToolsFunctionFunction.fromJson(json['function'] as Map<String, dynamic>),
+  type: Messages51ToolsFunctionType.fromJson(json['type'] as String),
+); }
+
+final Messages51ToolsFunctionFunction function;
+
+final Messages51ToolsFunctionType type;
+
+Map<String, dynamic> toJson() { return {
+  'function': function.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('function') &&
+      json.containsKey('type'); } 
+Messages51ToolsFunction copyWith({Messages51ToolsFunctionFunction? function, Messages51ToolsFunctionType? type, }) { return Messages51ToolsFunction(
+  function: function ?? this.function,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Messages51ToolsFunction &&
+          function == other.function &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(function, type); } 
+@override String toString() { return 'Messages51ToolsFunction(function: $function, type: $type)'; } 
+ }

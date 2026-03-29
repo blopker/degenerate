@@ -1,0 +1,213 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session.dart';import 'credit_note.dart';import 'customer.dart';import 'customer_balance_transaction_checkout_session.dart';import 'customer_balance_transaction_credit_note.dart';import 'customer_balance_transaction_customer.dart';import 'customer_balance_transaction_invoice.dart';import 'invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
+
+factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
+  'customer_balance_transaction' => customerBalanceTransaction,
+  _ => CustomerBalanceTransactionObject._(json),
+}; }
+
+static const CustomerBalanceTransactionObject customerBalanceTransaction = CustomerBalanceTransactionObject._('customer_balance_transaction');
+
+static const List<CustomerBalanceTransactionObject> values = [customerBalanceTransaction];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CustomerBalanceTransactionObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CustomerBalanceTransactionObject($value)'; } 
+ }
+/// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
+final class CustomerBalanceTransactionType {const CustomerBalanceTransactionType._(this.value);
+
+factory CustomerBalanceTransactionType.fromJson(String json) { return switch (json) {
+  'adjustment' => adjustment,
+  'applied_to_invoice' => appliedToInvoice,
+  'checkout_session_subscription_payment' => checkoutSessionSubscriptionPayment,
+  'checkout_session_subscription_payment_canceled' => checkoutSessionSubscriptionPaymentCanceled,
+  'credit_note' => creditNote,
+  'initial' => initial,
+  'invoice_overpaid' => invoiceOverpaid,
+  'invoice_too_large' => invoiceTooLarge,
+  'invoice_too_small' => invoiceTooSmall,
+  'migration' => migration,
+  'unapplied_from_invoice' => unappliedFromInvoice,
+  'unspent_receiver_credit' => unspentReceiverCredit,
+  _ => CustomerBalanceTransactionType._(json),
+}; }
+
+static const CustomerBalanceTransactionType adjustment = CustomerBalanceTransactionType._('adjustment');
+
+static const CustomerBalanceTransactionType appliedToInvoice = CustomerBalanceTransactionType._('applied_to_invoice');
+
+static const CustomerBalanceTransactionType checkoutSessionSubscriptionPayment = CustomerBalanceTransactionType._('checkout_session_subscription_payment');
+
+static const CustomerBalanceTransactionType checkoutSessionSubscriptionPaymentCanceled = CustomerBalanceTransactionType._('checkout_session_subscription_payment_canceled');
+
+static const CustomerBalanceTransactionType creditNote = CustomerBalanceTransactionType._('credit_note');
+
+static const CustomerBalanceTransactionType initial = CustomerBalanceTransactionType._('initial');
+
+static const CustomerBalanceTransactionType invoiceOverpaid = CustomerBalanceTransactionType._('invoice_overpaid');
+
+static const CustomerBalanceTransactionType invoiceTooLarge = CustomerBalanceTransactionType._('invoice_too_large');
+
+static const CustomerBalanceTransactionType invoiceTooSmall = CustomerBalanceTransactionType._('invoice_too_small');
+
+static const CustomerBalanceTransactionType migration = CustomerBalanceTransactionType._('migration');
+
+static const CustomerBalanceTransactionType unappliedFromInvoice = CustomerBalanceTransactionType._('unapplied_from_invoice');
+
+static const CustomerBalanceTransactionType unspentReceiverCredit = CustomerBalanceTransactionType._('unspent_receiver_credit');
+
+static const List<CustomerBalanceTransactionType> values = [adjustment, appliedToInvoice, checkoutSessionSubscriptionPayment, checkoutSessionSubscriptionPaymentCanceled, creditNote, initial, invoiceOverpaid, invoiceTooLarge, invoiceTooSmall, migration, unappliedFromInvoice, unspentReceiverCredit];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CustomerBalanceTransactionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CustomerBalanceTransactionType($value)'; } 
+ }
+/// Each customer has a [Balance](https://docs.stripe.com/api/customers/object#customer_object-balance) value,
+/// which denotes a debit or credit that's automatically applied to their next invoice upon finalization.
+/// You may modify the value directly by using the [update customer API](https://docs.stripe.com/api/customers/update),
+/// or by creating a Customer Balance Transaction, which increments or decrements the customer's `balance` by the specified `amount`.
+/// 
+/// Related guide: [Customer balance](https://docs.stripe.com/billing/customer/balance)
+final class CustomerBalanceTransaction {const CustomerBalanceTransaction({required this.amount, this.checkoutSession, required this.created, this.creditNote, required this.currency, required this.customer, this.customerAccount, this.description, required this.endingBalance, required this.id, this.invoice, required this.livemode, this.metadata, required this.object, required this.type, });
+
+factory CustomerBalanceTransaction.fromJson(Map<String, dynamic> json) { return CustomerBalanceTransaction(
+  amount: (json['amount'] as num).toInt(),
+  checkoutSession: json['checkout_session'] != null ? OneOf2.parse(json['checkout_session'], fromA: (v) => v as String, fromB: (v) => CheckoutSession.fromJson(v as Map<String, dynamic>),) : null,
+  created: (json['created'] as num).toInt(),
+  creditNote: json['credit_note'] != null ? OneOf2.parse(json['credit_note'], fromA: (v) => v as String, fromB: (v) => CreditNote.fromJson(v as Map<String, dynamic>),) : null,
+  currency: json['currency'] as String,
+  customer: OneOf2.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>),),
+  customerAccount: json['customer_account'] as String?,
+  description: json['description'] as String?,
+  endingBalance: (json['ending_balance'] as num).toInt(),
+  id: json['id'] as String,
+  invoice: json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null,
+  livemode: json['livemode'] as bool,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  object: CustomerBalanceTransactionObject.fromJson(json['object'] as String),
+  type: CustomerBalanceTransactionType.fromJson(json['type'] as String),
+); }
+
+/// The amount of the transaction. A negative value is a credit for the customer's balance, and a positive value is a debit to the customer's `balance`.
+final int amount;
+
+/// The ID of the checkout session (if any) that created the transaction.
+final CustomerBalanceTransactionCheckoutSession? checkoutSession;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// The ID of the credit note (if any) related to the transaction.
+final CustomerBalanceTransactionCreditNote? creditNote;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// The ID of the customer the transaction belongs to.
+final CustomerBalanceTransactionCustomer customer;
+
+/// The ID of an Account representing a customer that the transaction belongs to.
+final String? customerAccount;
+
+/// An arbitrary string attached to the object. Often useful for displaying to users.
+final String? description;
+
+/// The customer's `balance` after the transaction was applied. A negative value decreases the amount due on the customer's next invoice. A positive value increases the amount due on the customer's next invoice.
+final int endingBalance;
+
+/// Unique identifier for the object.
+final String id;
+
+/// The ID of the invoice (if any) related to the transaction.
+final CustomerBalanceTransactionInvoice? invoice;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String>? metadata;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final CustomerBalanceTransactionObject object;
+
+/// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
+final CustomerBalanceTransactionType type;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  if (checkoutSession != null) 'checkout_session': checkoutSession?.toJson(),
+  'created': created,
+  if (creditNote != null) 'credit_note': creditNote?.toJson(),
+  'currency': currency,
+  'customer': customer.toJson(),
+  'customer_account': ?customerAccount,
+  'description': ?description,
+  'ending_balance': endingBalance,
+  'id': id,
+  if (invoice != null) 'invoice': invoice?.toJson(),
+  'livemode': livemode,
+  'metadata': ?metadata,
+  'object': object.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('customer') &&
+      json.containsKey('ending_balance') && json['ending_balance'] is num &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object') &&
+      json.containsKey('type'); } 
+CustomerBalanceTransaction copyWith({int? amount, CustomerBalanceTransactionCheckoutSession? Function()? checkoutSession, int? created, CustomerBalanceTransactionCreditNote? Function()? creditNote, String? currency, CustomerBalanceTransactionCustomer? customer, String? Function()? customerAccount, String? Function()? description, int? endingBalance, String? id, CustomerBalanceTransactionInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, CustomerBalanceTransactionObject? object, CustomerBalanceTransactionType? type, }) { return CustomerBalanceTransaction(
+  amount: amount ?? this.amount,
+  checkoutSession: checkoutSession != null ? checkoutSession() : this.checkoutSession,
+  created: created ?? this.created,
+  creditNote: creditNote != null ? creditNote() : this.creditNote,
+  currency: currency ?? this.currency,
+  customer: customer ?? this.customer,
+  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  description: description != null ? description() : this.description,
+  endingBalance: endingBalance ?? this.endingBalance,
+  id: id ?? this.id,
+  invoice: invoice != null ? invoice() : this.invoice,
+  livemode: livemode ?? this.livemode,
+  metadata: metadata != null ? metadata() : this.metadata,
+  object: object ?? this.object,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomerBalanceTransaction &&
+          amount == other.amount &&
+          checkoutSession == other.checkoutSession &&
+          created == other.created &&
+          creditNote == other.creditNote &&
+          currency == other.currency &&
+          customer == other.customer &&
+          customerAccount == other.customerAccount &&
+          description == other.description &&
+          endingBalance == other.endingBalance &&
+          id == other.id &&
+          invoice == other.invoice &&
+          livemode == other.livemode &&
+          metadata == other.metadata &&
+          object == other.object &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(amount, checkoutSession, created, creditNote, currency, customer, customerAccount, description, endingBalance, id, invoice, livemode, metadata, object, type); } 
+@override String toString() { return 'CustomerBalanceTransaction(amount: $amount, checkoutSession: $checkoutSession, created: $created, creditNote: $creditNote, currency: $currency, customer: $customer, customerAccount: $customerAccount, description: $description, endingBalance: $endingBalance, id: $id, invoice: $invoice, livemode: $livemode, metadata: $metadata, object: $object, type: $type)'; } 
+ }

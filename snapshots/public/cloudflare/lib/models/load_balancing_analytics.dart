@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'load_balancing_origin_analytics.dart';final class LoadBalancingAnalytics {const LoadBalancingAnalytics({this.id = 1, this.origins, this.pool, this.timestamp, });
+
+factory LoadBalancingAnalytics.fromJson(Map<String, dynamic> json) { return LoadBalancingAnalytics(
+  id: json.containsKey('id') ? (json['id'] as num).toInt() : 1,
+  origins: (json['origins'] as List<dynamic>?)?.map((e) => LoadBalancingOriginAnalytics.fromJson(e as Map<String, dynamic>)).toList(),
+  pool: (json['pool'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
+); }
+
+final int id;
+
+final List<LoadBalancingOriginAnalytics>? origins;
+
+final Map<String,dynamic>? pool;
+
+final DateTime? timestamp;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  if (origins != null) 'origins': origins?.map((e) => e.toJson()).toList(),
+  'pool': ?pool,
+  if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LoadBalancingAnalytics copyWith({int Function()? id, List<LoadBalancingOriginAnalytics> Function()? origins, Map<String, dynamic> Function()? pool, DateTime Function()? timestamp, }) { return LoadBalancingAnalytics(
+  id: id != null ? id() : this.id,
+  origins: origins != null ? origins() : this.origins,
+  pool: pool != null ? pool() : this.pool,
+  timestamp: timestamp != null ? timestamp() : this.timestamp,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LoadBalancingAnalytics &&
+          id == other.id &&
+          listEquals(origins, other.origins) &&
+          pool == other.pool &&
+          timestamp == other.timestamp; } 
+@override int get hashCode { return Object.hash(id, Object.hashAll(origins ?? const []), pool, timestamp); } 
+@override String toString() { return 'LoadBalancingAnalytics(id: $id, origins: $origins, pool: $pool, timestamp: $timestamp)'; } 
+ }

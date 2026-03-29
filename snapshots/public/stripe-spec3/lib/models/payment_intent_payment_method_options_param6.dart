@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_intent_payment_method_options_param6_bank_transfer.dart';final class PaymentIntentPaymentMethodOptionsParam6FundingType {const PaymentIntentPaymentMethodOptionsParam6FundingType._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParam6FundingType.fromJson(String json) { return switch (json) {
+  'bank_transfer' => bankTransfer,
+  _ => PaymentIntentPaymentMethodOptionsParam6FundingType._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParam6FundingType bankTransfer = PaymentIntentPaymentMethodOptionsParam6FundingType._('bank_transfer');
+
+static const List<PaymentIntentPaymentMethodOptionsParam6FundingType> values = [bankTransfer];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam6FundingType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6FundingType($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage._('none');
+
+static const List<PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage($value)'; } 
+ }
+final class PaymentIntentPaymentMethodOptionsParam6 {const PaymentIntentPaymentMethodOptionsParam6({this.bankTransfer, this.fundingType, this.setupFutureUsage, });
+
+factory PaymentIntentPaymentMethodOptionsParam6.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsParam6(
+  bankTransfer: json['bank_transfer'] != null ? PaymentIntentPaymentMethodOptionsParam6BankTransfer.fromJson(json['bank_transfer'] as Map<String, dynamic>) : null,
+  fundingType: json['funding_type'] != null ? PaymentIntentPaymentMethodOptionsParam6FundingType.fromJson(json['funding_type'] as String) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+final PaymentIntentPaymentMethodOptionsParam6BankTransfer? bankTransfer;
+
+final PaymentIntentPaymentMethodOptionsParam6FundingType? fundingType;
+
+final PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  if (bankTransfer != null) 'bank_transfer': bankTransfer?.toJson(),
+  if (fundingType != null) 'funding_type': fundingType?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsParam6 copyWith({PaymentIntentPaymentMethodOptionsParam6BankTransfer Function()? bankTransfer, PaymentIntentPaymentMethodOptionsParam6FundingType Function()? fundingType, PaymentIntentPaymentMethodOptionsParam6SetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam6(
+  bankTransfer: bankTransfer != null ? bankTransfer() : this.bankTransfer,
+  fundingType: fundingType != null ? fundingType() : this.fundingType,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsParam6 &&
+          bankTransfer == other.bankTransfer &&
+          fundingType == other.fundingType &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(bankTransfer, fundingType, setupFutureUsage); } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsParam6(bankTransfer: $bankTransfer, fundingType: $fundingType, setupFutureUsage: $setupFutureUsage)'; } 
+ }

@@ -1,0 +1,68 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType {const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._(this.value);
+
+factory RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType.fromJson(String json) { return switch (json) {
+  'CustomerAdded' => customerAdded,
+  'CustomerRemoved' => customerRemoved,
+  'ProvidersAdded' => providersAdded,
+  'ProvidersRemoved' => providersRemoved,
+  _ => RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._(json),
+}; }
+
+static const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType customerAdded = RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._('CustomerAdded');
+
+static const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType customerRemoved = RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._('CustomerRemoved');
+
+static const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType providersAdded = RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._('ProvidersAdded');
+
+static const RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType providersRemoved = RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType._('ProvidersRemoved');
+
+static const List<RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType> values = [customerAdded, customerRemoved, providersAdded, providersRemoved];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType($value)'; } 
+ }
+final class RadarGetBgpRpkiAspaChangesResponseResultChangesEntries {const RadarGetBgpRpkiAspaChangesResponseResultChangesEntries({required this.customerAsn, required this.providers, required this.type, });
+
+factory RadarGetBgpRpkiAspaChangesResponseResultChangesEntries.fromJson(Map<String, dynamic> json) { return RadarGetBgpRpkiAspaChangesResponseResultChangesEntries(
+  customerAsn: (json['customerAsn'] as num).toInt(),
+  providers: (json['providers'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+  type: RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType.fromJson(json['type'] as String),
+); }
+
+/// The customer ASN affected.
+final int customerAsn;
+
+final List<int> providers;
+
+final RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType type;
+
+Map<String, dynamic> toJson() { return {
+  'customerAsn': customerAsn,
+  'providers': providers,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('customerAsn') && json['customerAsn'] is num &&
+      json.containsKey('providers') &&
+      json.containsKey('type'); } 
+RadarGetBgpRpkiAspaChangesResponseResultChangesEntries copyWith({int? customerAsn, List<int>? providers, RadarGetBgpRpkiAspaChangesResponseResultChangesEntriesType? type, }) { return RadarGetBgpRpkiAspaChangesResponseResultChangesEntries(
+  customerAsn: customerAsn ?? this.customerAsn,
+  providers: providers ?? this.providers,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpRpkiAspaChangesResponseResultChangesEntries &&
+          customerAsn == other.customerAsn &&
+          listEquals(providers, other.providers) &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(customerAsn, Object.hashAll(providers), type); } 
+@override String toString() { return 'RadarGetBgpRpkiAspaChangesResponseResultChangesEntries(customerAsn: $customerAsn, providers: $providers, type: $type)'; } 
+ }

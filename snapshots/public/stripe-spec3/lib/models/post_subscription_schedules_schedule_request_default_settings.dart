@@ -1,0 +1,126 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_thresholds_param6.dart';import 'post_subscription_schedules_schedule_request_default_settings_automatic_tax.dart';import 'post_subscription_schedules_schedule_request_default_settings_billing_thresholds.dart';import 'post_subscription_schedules_schedule_request_default_settings_description.dart';import 'post_subscription_schedules_schedule_request_default_settings_invoice_settings.dart';import 'post_subscription_schedules_schedule_request_default_settings_on_behalf_of.dart';import 'post_subscription_schedules_schedule_request_default_settings_transfer_data.dart';import 'transfer_data_specs6.dart';final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor {const PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor._(this.value);
+
+factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor.fromJson(String json) { return switch (json) {
+  'automatic' => automatic,
+  'phase_start' => phaseStart,
+  _ => PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor._(json),
+}; }
+
+static const PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor automatic = PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor._('automatic');
+
+static const PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor phaseStart = PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor._('phase_start');
+
+static const List<PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor> values = [automatic, phaseStart];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor($value)'; } 
+ }
+final class PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod {const PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod._(this.value);
+
+factory PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod.fromJson(String json) { return switch (json) {
+  'charge_automatically' => chargeAutomatically,
+  'send_invoice' => sendInvoice,
+  _ => PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod._(json),
+}; }
+
+static const PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod chargeAutomatically = PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod._('charge_automatically');
+
+static const PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod sendInvoice = PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod._('send_invoice');
+
+static const List<PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod> values = [chargeAutomatically, sendInvoice];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod($value)'; } 
+ }
+/// Object representing the subscription schedule's default settings.
+final class PostSubscriptionSchedulesScheduleRequestDefaultSettings {const PostSubscriptionSchedulesScheduleRequestDefaultSettings({this.applicationFeePercent, this.automaticTax, this.billingCycleAnchor, this.billingThresholds, this.collectionMethod, this.defaultPaymentMethod, this.description, this.invoiceSettings, this.onBehalfOf, this.transferData, });
+
+factory PostSubscriptionSchedulesScheduleRequestDefaultSettings.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesScheduleRequestDefaultSettings(
+  applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
+  automaticTax: json['automatic_tax'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
+  billingCycleAnchor: json['billing_cycle_anchor'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
+  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => BillingThresholdsParam6.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholdsVariant2.fromJson(v as String),) : null,
+  collectionMethod: json['collection_method'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod.fromJson(json['collection_method'] as String) : null,
+  defaultPaymentMethod: json['default_payment_method'] as String?,
+  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionSchedulesScheduleRequestDefaultSettingsDescriptionVariant2.fromJson(v as String),) : null,
+  invoiceSettings: json['invoice_settings'] != null ? PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
+  onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => PostSubscriptionSchedulesScheduleRequestDefaultSettingsOnBehalfOfVariant2.fromJson(v as String),) : null,
+  transferData: json['transfer_data'] != null ? OneOf2.parse(json['transfer_data'], fromA: (v) => TransferDataSpecs6.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferDataVariant2.fromJson(v as String),) : null,
+); }
+
+final double? applicationFeePercent;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsAutomaticTax? automaticTax;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor? billingCycleAnchor;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholds? billingThresholds;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod? collectionMethod;
+
+final String? defaultPaymentMethod;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsDescription? description;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings? invoiceSettings;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsOnBehalfOf? onBehalfOf;
+
+final PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData? transferData;
+
+Map<String, dynamic> toJson() { return {
+  'application_fee_percent': ?applicationFeePercent,
+  if (automaticTax != null) 'automatic_tax': automaticTax?.toJson(),
+  if (billingCycleAnchor != null) 'billing_cycle_anchor': billingCycleAnchor?.toJson(),
+  if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
+  if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
+  'default_payment_method': ?defaultPaymentMethod,
+  if (description != null) 'description': description?.toJson(),
+  if (invoiceSettings != null) 'invoice_settings': invoiceSettings?.toJson(),
+  if (onBehalfOf != null) 'on_behalf_of': onBehalfOf?.toJson(),
+  if (transferData != null) 'transfer_data': transferData?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSubscriptionSchedulesScheduleRequestDefaultSettings copyWith({double Function()? applicationFeePercent, PostSubscriptionSchedulesScheduleRequestDefaultSettingsAutomaticTax Function()? automaticTax, PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingCycleAnchor Function()? billingCycleAnchor, PostSubscriptionSchedulesScheduleRequestDefaultSettingsBillingThresholds Function()? billingThresholds, PostSubscriptionSchedulesScheduleRequestDefaultSettingsCollectionMethod Function()? collectionMethod, String Function()? defaultPaymentMethod, PostSubscriptionSchedulesScheduleRequestDefaultSettingsDescription Function()? description, PostSubscriptionSchedulesScheduleRequestDefaultSettingsInvoiceSettings Function()? invoiceSettings, PostSubscriptionSchedulesScheduleRequestDefaultSettingsOnBehalfOf Function()? onBehalfOf, PostSubscriptionSchedulesScheduleRequestDefaultSettingsTransferData Function()? transferData, }) { return PostSubscriptionSchedulesScheduleRequestDefaultSettings(
+  applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
+  automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,
+  billingCycleAnchor: billingCycleAnchor != null ? billingCycleAnchor() : this.billingCycleAnchor,
+  billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
+  collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
+  defaultPaymentMethod: defaultPaymentMethod != null ? defaultPaymentMethod() : this.defaultPaymentMethod,
+  description: description != null ? description() : this.description,
+  invoiceSettings: invoiceSettings != null ? invoiceSettings() : this.invoiceSettings,
+  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  transferData: transferData != null ? transferData() : this.transferData,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionSchedulesScheduleRequestDefaultSettings &&
+          applicationFeePercent == other.applicationFeePercent &&
+          automaticTax == other.automaticTax &&
+          billingCycleAnchor == other.billingCycleAnchor &&
+          billingThresholds == other.billingThresholds &&
+          collectionMethod == other.collectionMethod &&
+          defaultPaymentMethod == other.defaultPaymentMethod &&
+          description == other.description &&
+          invoiceSettings == other.invoiceSettings &&
+          onBehalfOf == other.onBehalfOf &&
+          transferData == other.transferData; } 
+@override int get hashCode { return Object.hash(applicationFeePercent, automaticTax, billingCycleAnchor, billingThresholds, collectionMethod, defaultPaymentMethod, description, invoiceSettings, onBehalfOf, transferData); } 
+@override String toString() { return 'PostSubscriptionSchedulesScheduleRequestDefaultSettings(applicationFeePercent: $applicationFeePercent, automaticTax: $automaticTax, billingCycleAnchor: $billingCycleAnchor, billingThresholds: $billingThresholds, collectionMethod: $collectionMethod, defaultPaymentMethod: $defaultPaymentMethod, description: $description, invoiceSettings: $invoiceSettings, onBehalfOf: $onBehalfOf, transferData: $transferData)'; } 
+ }

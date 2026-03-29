@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2 {const PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2 $empty = PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2._('');
+
+static const List<PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2($value)'; } 
+ }
+typedef PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhone = OneOf2<String,PostSetupIntentsRequestPaymentMethodDataBillingDetailsPhoneVariant2>;

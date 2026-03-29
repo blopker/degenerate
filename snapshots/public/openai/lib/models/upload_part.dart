@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The object type, which is always `upload.part`.
+final class UploadPartObject {const UploadPartObject._(this.value);
+
+factory UploadPartObject.fromJson(String json) { return switch (json) {
+  'upload.part' => uploadPart,
+  _ => UploadPartObject._(json),
+}; }
+
+static const UploadPartObject uploadPart = UploadPartObject._('upload.part');
+
+static const List<UploadPartObject> values = [uploadPart];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UploadPartObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UploadPartObject($value)'; } 
+ }
+/// The upload Part represents a chunk of bytes we can add to an Upload object.
+/// 
+final class UploadPart {const UploadPart({required this.id, required this.createdAt, required this.uploadId, required this.object, });
+
+factory UploadPart.fromJson(Map<String, dynamic> json) { return UploadPart(
+  id: json['id'] as String,
+  createdAt: (json['created_at'] as num).toInt(),
+  uploadId: json['upload_id'] as String,
+  object: UploadPartObject.fromJson(json['object'] as String),
+); }
+
+/// The upload Part unique identifier, which can be referenced in API endpoints.
+final String id;
+
+/// The Unix timestamp (in seconds) for when the Part was created.
+final int createdAt;
+
+/// The ID of the Upload object that this Part was added to.
+final String uploadId;
+
+/// The object type, which is always `upload.part`.
+final UploadPartObject object;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'created_at': createdAt,
+  'upload_id': uploadId,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('upload_id') && json['upload_id'] is String &&
+      json.containsKey('object'); } 
+UploadPart copyWith({String? id, int? createdAt, String? uploadId, UploadPartObject? object, }) { return UploadPart(
+  id: id ?? this.id,
+  createdAt: createdAt ?? this.createdAt,
+  uploadId: uploadId ?? this.uploadId,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UploadPart &&
+          id == other.id &&
+          createdAt == other.createdAt &&
+          uploadId == other.uploadId &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(id, createdAt, uploadId, object); } 
+@override String toString() { return 'UploadPart(id: $id, createdAt: $createdAt, uploadId: $uploadId, object: $object)'; } 
+ }

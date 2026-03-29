@@ -1,0 +1,57 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'file_annotation.dart';import 'url_annotation.dart';/// Annotation object describing a cited source.
+sealed class ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations();
+
+/// Deserialize from JSON, dispatching on the `type` discriminator.
+factory ResponseOutputTextAnnotations.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
+  'FileAnnotation' => ResponseOutputTextAnnotationsFileAnnotation.fromJson(json),
+  'UrlAnnotation' => ResponseOutputTextAnnotationsUrlAnnotation.fromJson(json),
+  _ => ResponseOutputTextAnnotations$Unknown(json),
+}; }
+
+/// The discriminator value identifying this variant.
+String get type;
+Map<String, dynamic> toJson();
+/// Whether this variant is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ResponseOutputTextAnnotations$Unknown; } 
+ }
+final class ResponseOutputTextAnnotationsFileAnnotation extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsFileAnnotation(this.fileAnnotation);
+
+factory ResponseOutputTextAnnotationsFileAnnotation.fromJson(Map<String, dynamic> json) { return ResponseOutputTextAnnotationsFileAnnotation(FileAnnotation.fromJson(json)); }
+
+final FileAnnotation fileAnnotation;
+
+@override String get type { return 'FileAnnotation'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...fileAnnotation.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseOutputTextAnnotationsFileAnnotation && fileAnnotation == other.fileAnnotation; } 
+@override int get hashCode { return fileAnnotation.hashCode; } 
+@override String toString() { return 'ResponseOutputTextAnnotationsFileAnnotation(fileAnnotation: $fileAnnotation)'; } 
+ }
+final class ResponseOutputTextAnnotationsUrlAnnotation extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotationsUrlAnnotation(this.urlAnnotation);
+
+factory ResponseOutputTextAnnotationsUrlAnnotation.fromJson(Map<String, dynamic> json) { return ResponseOutputTextAnnotationsUrlAnnotation(UrlAnnotation.fromJson(json)); }
+
+final UrlAnnotation urlAnnotation;
+
+@override String get type { return 'UrlAnnotation'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...urlAnnotation.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseOutputTextAnnotationsUrlAnnotation && urlAnnotation == other.urlAnnotation; } 
+@override int get hashCode { return urlAnnotation.hashCode; } 
+@override String toString() { return 'ResponseOutputTextAnnotationsUrlAnnotation(urlAnnotation: $urlAnnotation)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+/// Returned when the server sends a discriminator value that this client does not recognize.
+final class ResponseOutputTextAnnotations$Unknown extends ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations$Unknown(this.json);
+
+final Map<String, dynamic> json;
+
+@override String get type { return json['type'] as String? ?? ''; } 
+@override Map<String, dynamic> toJson() { return json; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseOutputTextAnnotations$Unknown && json == other.json; } 
+@override int get hashCode { return json.hashCode; } 
+@override String toString() { return 'ResponseOutputTextAnnotations.unknown($json)'; } 
+ }

@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf {const RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf.fromJson(String json) { return switch (json) {
+  'PASS' => pass,
+  'NONE' => none,
+  'FAIL' => fail,
+  _ => RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf pass = RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf._('PASS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf none = RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf._('NONE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf fail = RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf._('FAIL');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf> values = [pass, none, fail];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByMaliciousSpf($value)'; } 
+ }

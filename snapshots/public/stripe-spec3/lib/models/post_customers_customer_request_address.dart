@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'optional_fields_customer_address2.dart';final class PostCustomersCustomerRequestAddressVariant2 {const PostCustomersCustomerRequestAddressVariant2._(this.value);
+
+factory PostCustomersCustomerRequestAddressVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersCustomerRequestAddressVariant2._(json),
+}; }
+
+static const PostCustomersCustomerRequestAddressVariant2 $empty = PostCustomersCustomerRequestAddressVariant2._('');
+
+static const List<PostCustomersCustomerRequestAddressVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerRequestAddressVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerRequestAddressVariant2($value)'; } 
+ }
+typedef PostCustomersCustomerRequestAddress = OneOf2<OptionalFieldsCustomerAddress2,PostCustomersCustomerRequestAddressVariant2>;

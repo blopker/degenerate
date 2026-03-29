@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// String representing the object's type. Objects of the same type share the same value.
+final class EphemeralKeyObject {const EphemeralKeyObject._(this.value);
+
+factory EphemeralKeyObject.fromJson(String json) { return switch (json) {
+  'ephemeral_key' => ephemeralKey,
+  _ => EphemeralKeyObject._(json),
+}; }
+
+static const EphemeralKeyObject ephemeralKey = EphemeralKeyObject._('ephemeral_key');
+
+static const List<EphemeralKeyObject> values = [ephemeralKey];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EphemeralKeyObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EphemeralKeyObject($value)'; } 
+ }
+/// 
+final class EphemeralKey {const EphemeralKey({required this.created, required this.expires, required this.id, required this.livemode, required this.object, this.secret, });
+
+factory EphemeralKey.fromJson(Map<String, dynamic> json) { return EphemeralKey(
+  created: (json['created'] as num).toInt(),
+  expires: (json['expires'] as num).toInt(),
+  id: json['id'] as String,
+  livemode: json['livemode'] as bool,
+  object: EphemeralKeyObject.fromJson(json['object'] as String),
+  secret: json['secret'] as String?,
+); }
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// Time at which the key will expire. Measured in seconds since the Unix epoch.
+final int expires;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final EphemeralKeyObject object;
+
+/// The key's secret. You can use this value to make authorized requests to the Stripe API.
+final String? secret;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  'expires': expires,
+  'id': id,
+  'livemode': livemode,
+  'object': object.toJson(),
+  'secret': ?secret,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is num &&
+      json.containsKey('expires') && json['expires'] is num &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('object'); } 
+EphemeralKey copyWith({int? created, int? expires, String? id, bool? livemode, EphemeralKeyObject? object, String Function()? secret, }) { return EphemeralKey(
+  created: created ?? this.created,
+  expires: expires ?? this.expires,
+  id: id ?? this.id,
+  livemode: livemode ?? this.livemode,
+  object: object ?? this.object,
+  secret: secret != null ? secret() : this.secret,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EphemeralKey &&
+          created == other.created &&
+          expires == other.expires &&
+          id == other.id &&
+          livemode == other.livemode &&
+          object == other.object &&
+          secret == other.secret; } 
+@override int get hashCode { return Object.hash(created, expires, id, livemode, object, secret); } 
+@override String toString() { return 'EphemeralKey(created: $created, expires: $expires, id: $id, livemode: $livemode, object: $object, secret: $secret)'; } 
+ }

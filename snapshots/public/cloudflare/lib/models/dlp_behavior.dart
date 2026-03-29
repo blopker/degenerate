@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dlp_risk_level.dart';final class DlpBehavior {const DlpBehavior({required this.description, required this.enabled, required this.name, required this.riskLevel, });
+
+factory DlpBehavior.fromJson(Map<String, dynamic> json) { return DlpBehavior(
+  description: json['description'] as String,
+  enabled: json['enabled'] as bool,
+  name: json['name'] as String,
+  riskLevel: DlpRiskLevel.fromJson(json['risk_level'] as String),
+); }
+
+final String description;
+
+final bool enabled;
+
+final String name;
+
+final DlpRiskLevel riskLevel;
+
+Map<String, dynamic> toJson() { return {
+  'description': description,
+  'enabled': enabled,
+  'name': name,
+  'risk_level': riskLevel.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('description') && json['description'] is String &&
+      json.containsKey('enabled') && json['enabled'] is bool &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('risk_level'); } 
+DlpBehavior copyWith({String? description, bool? enabled, String? name, DlpRiskLevel? riskLevel, }) { return DlpBehavior(
+  description: description ?? this.description,
+  enabled: enabled ?? this.enabled,
+  name: name ?? this.name,
+  riskLevel: riskLevel ?? this.riskLevel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpBehavior &&
+          description == other.description &&
+          enabled == other.enabled &&
+          name == other.name &&
+          riskLevel == other.riskLevel; } 
+@override int get hashCode { return Object.hash(description, enabled, name, riskLevel); } 
+@override String toString() { return 'DlpBehavior(description: $description, enabled: $enabled, name: $name, riskLevel: $riskLevel)'; } 
+ }

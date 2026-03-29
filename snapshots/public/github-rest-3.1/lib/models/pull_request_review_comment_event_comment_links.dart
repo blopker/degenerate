@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'pull_request_review_comment_event_comment_links_html.dart';import 'pull_request_review_comment_event_comment_links_pull_request.dart';import 'pull_request_review_comment_event_comment_links_self.dart';final class PullRequestReviewCommentEventCommentLinks {const PullRequestReviewCommentEventCommentLinks({required this.html, required this.pullRequest, required this.self, });
+
+factory PullRequestReviewCommentEventCommentLinks.fromJson(Map<String, dynamic> json) { return PullRequestReviewCommentEventCommentLinks(
+  html: PullRequestReviewCommentEventCommentLinksHtml.fromJson(json['html'] as Map<String, dynamic>),
+  pullRequest: PullRequestReviewCommentEventCommentLinksPullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+  self: PullRequestReviewCommentEventCommentLinksSelf.fromJson(json['self'] as Map<String, dynamic>),
+); }
+
+final PullRequestReviewCommentEventCommentLinksHtml html;
+
+final PullRequestReviewCommentEventCommentLinksPullRequest pullRequest;
+
+final PullRequestReviewCommentEventCommentLinksSelf self;
+
+Map<String, dynamic> toJson() { return {
+  'html': html.toJson(),
+  'pull_request': pullRequest.toJson(),
+  'self': self.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('html') &&
+      json.containsKey('pull_request') &&
+      json.containsKey('self'); } 
+PullRequestReviewCommentEventCommentLinks copyWith({PullRequestReviewCommentEventCommentLinksHtml? html, PullRequestReviewCommentEventCommentLinksPullRequest? pullRequest, PullRequestReviewCommentEventCommentLinksSelf? self, }) { return PullRequestReviewCommentEventCommentLinks(
+  html: html ?? this.html,
+  pullRequest: pullRequest ?? this.pullRequest,
+  self: self ?? this.self,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullRequestReviewCommentEventCommentLinks &&
+          html == other.html &&
+          pullRequest == other.pullRequest &&
+          self == other.self; } 
+@override int get hashCode { return Object.hash(html, pullRequest, self); } 
+@override String toString() { return 'PullRequestReviewCommentEventCommentLinks(html: $html, pullRequest: $pullRequest, self: $self)'; } 
+ }

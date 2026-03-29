@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Direction to order memberships.
+final class UserSAccountMembershipsListMembershipsDirection {const UserSAccountMembershipsListMembershipsDirection._(this.value);
+
+factory UserSAccountMembershipsListMembershipsDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => UserSAccountMembershipsListMembershipsDirection._(json),
+}; }
+
+static const UserSAccountMembershipsListMembershipsDirection asc = UserSAccountMembershipsListMembershipsDirection._('asc');
+
+static const UserSAccountMembershipsListMembershipsDirection desc = UserSAccountMembershipsListMembershipsDirection._('desc');
+
+static const List<UserSAccountMembershipsListMembershipsDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UserSAccountMembershipsListMembershipsDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UserSAccountMembershipsListMembershipsDirection($value)'; } 
+ }

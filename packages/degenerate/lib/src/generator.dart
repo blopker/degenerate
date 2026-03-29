@@ -18,9 +18,24 @@ import 'normalizer/schema_normalizer.dart';
 import 'emitter/file_emitter.dart';
 import 'ir/ir_types.dart';
 
+// packageVersion updated by scripts/release.dart
+const packageVersion = '0.1.5';
+const defaultPackageName = 'api_client';
+const defaultOutputDir = 'lib';
+const defaultWorkspaceOutputDir = 'packages';
+
 class GeneratorConfig {
   final String inputPath;
-  final String outputDir;
+
+  /// Base output directory. The package name is appended to this.
+  /// When `null`, defaults to `lib` or `packages` (workspace mode).
+  final String? outputDir;
+
+  /// Resolved full output path (set during generation).
+  String? resolvedOutputDir;
+
+  /// Resolved package name (set during generation).
+  String? resolvedPackageName;
   final String? packageName;
   final bool includeDeprecated;
   final bool verbose;
@@ -36,16 +51,17 @@ class GeneratorConfig {
   /// these prefixes.
   final List<String> paths;
 
-  /// Whether to add `resolution: workspace` to the generated pubspec.yaml.
+  /// Whether to generate a standalone package with pubspec.yaml
+  /// (includes `resolution: workspace`).
   final bool workspace;
 
   /// Pre-read spec content (e.g. from stdin). When provided, the generator
   /// reads from this string instead of from [inputPath].
   final String? stdinContent;
 
-  const GeneratorConfig({
+  GeneratorConfig({
     required this.inputPath,
-    this.outputDir = 'lib/src/generated',
+    this.outputDir,
     this.packageName,
     this.includeDeprecated = false,
     this.verbose = false,
@@ -245,14 +261,17 @@ class Generator {
       }
     }
 
-    // 6. Emit all files
+    // 6. Resolve package name and output directory
+    final outputBase =
+        config.outputDir ??
+        (config.workspace ? defaultWorkspaceOutputDir : defaultOutputDir);
+    final packageName = config.packageName ?? defaultPackageName;
+
+    final outputDir = p.join(outputBase, packageName);
+    config.resolvedOutputDir = outputDir;
+    config.resolvedPackageName = packageName;
+
     _log('Emitting Dart source files...');
-    final packageName =
-        config.packageName ??
-        _existingPackageName(config.outputDir) ??
-        _inferPackageName(inlinedDoc.title);
-    final specFileName = isStdin ? 'stdin' : p.basename(config.inputPath);
-    final specVersion = inlinedDoc.version;
 
     final fileEmitter = FileEmitter();
     final emitterWarnings = <String>[];
@@ -261,18 +280,25 @@ class Generator {
     final defaultServerUrl = inlinedDoc.servers.isNotEmpty
         ? inlinedDoc.servers.first['url'] as String?
         : null;
-    final files = fileEmitter.emitAll(
+    var files = fileEmitter.emitAll(
       types: irTypes,
       apis: irApis,
       securitySchemes: securitySchemes,
       globalSecurity: globalSecurity,
       packageName: packageName,
-      specFileName: specFileName,
-      specVersion: specVersion,
       workspace: config.workspace,
       defaultServerUrl: defaultServerUrl,
       warnings: emitterWarnings,
     );
+
+    // In workspace mode, Dart source files live under lib/.
+    if (config.workspace) {
+      files = {
+        for (final entry in files.entries)
+          entry.key.endsWith('.dart') ? 'lib/${entry.key}' : entry.key:
+              entry.value,
+      };
+    }
 
     if (emitterWarnings.isNotEmpty) {
       for (final warning in emitterWarnings) {
@@ -284,10 +310,10 @@ class Generator {
 
     // 7. Clean output directory if requested
     if (config.clean) {
-      final outputDir = Directory(config.outputDir);
-      if (outputDir.existsSync()) {
-        _log('Cleaning ${config.outputDir}...');
-        outputDir.deleteSync(recursive: true);
+      final dir = Directory(outputDir);
+      if (dir.existsSync()) {
+        _log('Cleaning $outputDir...');
+        dir.deleteSync(recursive: true);
       }
     }
 
@@ -295,16 +321,16 @@ class Generator {
     if (config.dryRun) {
       _log('Dry run - skipping file writes.');
       for (final filePath in files.keys.toList()..sort()) {
-        _log('  Would write: ${p.join(config.outputDir, filePath)}');
+        _log('  Would write: ${p.join(outputDir, filePath)}');
       }
       return files;
     }
 
-    _log('Writing to ${config.outputDir}...');
+    _log('Writing to $outputDir...');
     var written = 0;
     var skipped = 0;
     for (final entry in files.entries) {
-      final filePath = p.join(config.outputDir, entry.key);
+      final filePath = p.join(outputDir, entry.key);
       final file = File(filePath);
 
       // Skip write if existing file already has identical content.
@@ -328,7 +354,7 @@ class Generator {
     }
 
     _log(
-      'Done! Wrote $written files to ${config.outputDir}'
+      'Done! Wrote $written files to $outputDir'
       '${skipped > 0 ? ' ($skipped unchanged)' : ''}',
     );
 
@@ -624,35 +650,6 @@ class Generator {
       IrMap(:final values) => 'Map<String, ${_irTypeName(values)}>',
       IrTypeRef(:final name) => 'Ref($name)',
     };
-  }
-
-  /// Read the package name from an existing pubspec.yaml in the output directory.
-  static String? _existingPackageName(String outputDir) {
-    final pubspec = File(p.join(outputDir, 'pubspec.yaml'));
-    if (!pubspec.existsSync()) return null;
-    final match = RegExp(
-      r'^name:\s*(\S+)',
-    ).firstMatch(pubspec.readAsStringSync());
-    return match?.group(1);
-  }
-
-  /// Infer a valid Dart package name from the spec title.
-  static String _inferPackageName(String title) {
-    if (title.isEmpty) return 'api_client';
-
-    // Convert to snake_case and sanitize
-    var name = title
-        .replaceAll(RegExp(r'[^a-zA-Z0-9\s_]'), '')
-        .trim()
-        .replaceAll(RegExp(r'\s+'), '_')
-        .toLowerCase();
-
-    // Remove leading digits
-    name = name.replaceAll(RegExp(r'^[0-9]+'), '');
-
-    if (name.isEmpty) return 'api_client';
-
-    return name;
   }
 }
 

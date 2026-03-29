@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'waitingroom_custom_page_html.dart';final class WaitingroomQueryPreview {const WaitingroomQueryPreview({required this.customHtml});
+
+factory WaitingroomQueryPreview.fromJson(Map<String, dynamic> json) { return WaitingroomQueryPreview(
+  customHtml: WaitingroomCustomPageHtml.fromJson(json['custom_html'] as String),
+); }
+
+/// Only available for the Waiting Room Advanced subscription. This is a template html file that will be rendered at the edge. If no custom_page_html is provided, the default waiting room will be used. The template is based on mustache ( https://mustache.github.io/ ). There are several variables that are evaluated by the Cloudflare edge:
+/// 1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to take when wait time is not available, for instance when queue_all is **true**.
+/// 2. {{`waitTimeFormatted`}} Estimated wait time for the user. For example, five minutes. Alternatively, you can use:
+/// 3. {{`waitTime`}} Number of minutes of estimated wait for a user.
+/// 4. {{`waitTimeHours`}} Number of hours of estimated wait for a user (`Math.floor(waitTime/60)`).
+/// 5. {{`waitTimeHourMinutes`}} Number of minutes above the `waitTimeHours` value (`waitTime%60`).
+/// 6. {{`queueIsFull`}} Changes to **true** when no more people can be added to the queue.
+/// 
+/// To view the full list of variables, look at the `cfWaitingRoom` object described under the `json_response_enabled` property in other Waiting Room API calls.
+final WaitingroomCustomPageHtml customHtml;
+
+Map<String, dynamic> toJson() { return {
+  'custom_html': customHtml.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('custom_html'); } 
+WaitingroomQueryPreview copyWith({WaitingroomCustomPageHtml? customHtml}) { return WaitingroomQueryPreview(
+  customHtml: customHtml ?? this.customHtml,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WaitingroomQueryPreview &&
+          customHtml == other.customHtml; } 
+@override int get hashCode { return customHtml.hashCode; } 
+@override String toString() { return 'WaitingroomQueryPreview(customHtml: $customHtml)'; } 
+ }

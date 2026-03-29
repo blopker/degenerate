@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_decision.dart';import 'access_policy_components_schemas_name.dart';import 'access_rule.dart';final class AccessBasePolicyReq {const AccessBasePolicyReq({required this.decision, this.exclude, required this.include, required this.name, this.require, });
+
+factory AccessBasePolicyReq.fromJson(Map<String, dynamic> json) { return AccessBasePolicyReq(
+  decision: AccessDecision.fromJson(json['decision'] as String),
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  include: (json['include'] as List<dynamic>).map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+  name: AccessPolicyComponentsSchemasName.fromJson(json['name'] as String),
+  require: (json['require'] as List<dynamic>?)?.map((e) => AccessRule.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final AccessDecision decision;
+
+final List<AccessRule>? exclude;
+
+final List<AccessRule> include;
+
+final AccessPolicyComponentsSchemasName name;
+
+final List<AccessRule>? require;
+
+Map<String, dynamic> toJson() { return {
+  'decision': decision.toJson(),
+  if (exclude != null) 'exclude': exclude?.map((e) => e.toJson()).toList(),
+  'include': include.map((e) => e.toJson()).toList(),
+  'name': name.toJson(),
+  if (require != null) 'require': require?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('decision') &&
+      json.containsKey('include') &&
+      json.containsKey('name'); } 
+AccessBasePolicyReq copyWith({AccessDecision? decision, List<AccessRule> Function()? exclude, List<AccessRule>? include, AccessPolicyComponentsSchemasName? name, List<AccessRule> Function()? require, }) { return AccessBasePolicyReq(
+  decision: decision ?? this.decision,
+  exclude: exclude != null ? exclude() : this.exclude,
+  include: include ?? this.include,
+  name: name ?? this.name,
+  require: require != null ? require() : this.require,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessBasePolicyReq &&
+          decision == other.decision &&
+          listEquals(exclude, other.exclude) &&
+          listEquals(include, other.include) &&
+          name == other.name &&
+          listEquals(require, other.require); } 
+@override int get hashCode { return Object.hash(decision, Object.hashAll(exclude ?? const []), Object.hashAll(include), name, Object.hashAll(require ?? const [])); } 
+@override String toString() { return 'AccessBasePolicyReq(decision: $decision, exclude: $exclude, include: $include, name: $name, require: $require)'; } 
+ }

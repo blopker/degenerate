@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_accounts_request_settings_card_issuing_tos_acceptance.dart';final class PostAccountsRequestSettingsCardIssuing {const PostAccountsRequestSettingsCardIssuing({this.tosAcceptance});
+
+factory PostAccountsRequestSettingsCardIssuing.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsCardIssuing(
+  tosAcceptance: json['tos_acceptance'] != null ? PostAccountsRequestSettingsCardIssuingTosAcceptance.fromJson(json['tos_acceptance'] as Map<String, dynamic>) : null,
+); }
+
+final PostAccountsRequestSettingsCardIssuingTosAcceptance? tosAcceptance;
+
+Map<String, dynamic> toJson() { return {
+  if (tosAcceptance != null) 'tos_acceptance': tosAcceptance?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsRequestSettingsCardIssuing copyWith({PostAccountsRequestSettingsCardIssuingTosAcceptance Function()? tosAcceptance}) { return PostAccountsRequestSettingsCardIssuing(
+  tosAcceptance: tosAcceptance != null ? tosAcceptance() : this.tosAcceptance,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsRequestSettingsCardIssuing &&
+          tosAcceptance == other.tosAcceptance; } 
+@override int get hashCode { return tosAcceptance.hashCode; } 
+@override String toString() { return 'PostAccountsRequestSettingsCardIssuing(tosAcceptance: $tosAcceptance)'; } 
+ }

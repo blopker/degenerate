@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the enablement value of Smart Tiered Cache.
+final class SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue {const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue._(this.value);
+
+factory SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue._(json),
+}; }
+
+static const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue $on = SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue._('on');
+
+static const SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue off = SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue._('off');
+
+static const List<SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue($value)'; } 
+ }
+final class SmartshieldSmartShieldSettingsPatchBodySmartTieredCache {const SmartshieldSmartShieldSettingsPatchBodySmartTieredCache({this.value});
+
+factory SmartshieldSmartShieldSettingsPatchBodySmartTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsPatchBodySmartTieredCache(
+  value: json['value'] != null ? SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Specifies the enablement value of Smart Tiered Cache.
+final SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SmartshieldSmartShieldSettingsPatchBodySmartTieredCache copyWith({SmartshieldSmartShieldSettingsPatchBodySmartTieredCacheValue Function()? value}) { return SmartshieldSmartShieldSettingsPatchBodySmartTieredCache(
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SmartshieldSmartShieldSettingsPatchBodySmartTieredCache &&
+          value == other.value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SmartshieldSmartShieldSettingsPatchBodySmartTieredCache(value: $value)'; } 
+ }

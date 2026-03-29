@@ -1,0 +1,101 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of actor that can bypass a ruleset.
+final class RepositoryRulesetBypassActorActorType {const RepositoryRulesetBypassActorActorType._(this.value);
+
+factory RepositoryRulesetBypassActorActorType.fromJson(String json) { return switch (json) {
+  'Integration' => integration,
+  'OrganizationAdmin' => organizationAdmin,
+  'RepositoryRole' => repositoryRole,
+  'Team' => team,
+  'DeployKey' => deployKey,
+  _ => RepositoryRulesetBypassActorActorType._(json),
+}; }
+
+static const RepositoryRulesetBypassActorActorType integration = RepositoryRulesetBypassActorActorType._('Integration');
+
+static const RepositoryRulesetBypassActorActorType organizationAdmin = RepositoryRulesetBypassActorActorType._('OrganizationAdmin');
+
+static const RepositoryRulesetBypassActorActorType repositoryRole = RepositoryRulesetBypassActorActorType._('RepositoryRole');
+
+static const RepositoryRulesetBypassActorActorType team = RepositoryRulesetBypassActorActorType._('Team');
+
+static const RepositoryRulesetBypassActorActorType deployKey = RepositoryRulesetBypassActorActorType._('DeployKey');
+
+static const List<RepositoryRulesetBypassActorActorType> values = [integration, organizationAdmin, repositoryRole, team, deployKey];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRulesetBypassActorActorType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRulesetBypassActorActorType($value)'; } 
+ }
+/// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
+final class RepositoryRulesetBypassActorBypassMode {const RepositoryRulesetBypassActorBypassMode._(this.value);
+
+factory RepositoryRulesetBypassActorBypassMode.fromJson(String json) { return switch (json) {
+  'always' => always,
+  'pull_request' => pullRequest,
+  'exempt' => exempt,
+  _ => RepositoryRulesetBypassActorBypassMode._(json),
+}; }
+
+static const RepositoryRulesetBypassActorBypassMode always = RepositoryRulesetBypassActorBypassMode._('always');
+
+static const RepositoryRulesetBypassActorBypassMode pullRequest = RepositoryRulesetBypassActorBypassMode._('pull_request');
+
+static const RepositoryRulesetBypassActorBypassMode exempt = RepositoryRulesetBypassActorBypassMode._('exempt');
+
+static const List<RepositoryRulesetBypassActorBypassMode> values = [always, pullRequest, exempt];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRulesetBypassActorBypassMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRulesetBypassActorBypassMode($value)'; } 
+ }
+/// An actor that can bypass rules in a ruleset
+final class RepositoryRulesetBypassActor {const RepositoryRulesetBypassActor({this.actorId, required this.actorType, this.bypassMode = RepositoryRulesetBypassActorBypassMode.always, });
+
+factory RepositoryRulesetBypassActor.fromJson(Map<String, dynamic> json) { return RepositoryRulesetBypassActor(
+  actorId: json['actor_id'] != null ? (json['actor_id'] as num).toInt() : null,
+  actorType: RepositoryRulesetBypassActorActorType.fromJson(json['actor_type'] as String),
+  bypassMode: json.containsKey('bypass_mode') ? RepositoryRulesetBypassActorBypassMode.fromJson(json['bypass_mode'] as String) : RepositoryRulesetBypassActorBypassMode.always,
+); }
+
+/// The ID of the actor that can bypass a ruleset. Required for `Integration`, `RepositoryRole`, and `Team` actor types. If `actor_type` is `OrganizationAdmin`, `actor_id` is ignored. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.
+final int? actorId;
+
+/// The type of actor that can bypass a ruleset.
+final RepositoryRulesetBypassActorActorType actorType;
+
+/// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
+final RepositoryRulesetBypassActorBypassMode bypassMode;
+
+Map<String, dynamic> toJson() { return {
+  'actor_id': ?actorId,
+  'actor_type': actorType.toJson(),
+  'bypass_mode': bypassMode.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('actor_type'); } 
+RepositoryRulesetBypassActor copyWith({int? Function()? actorId, RepositoryRulesetBypassActorActorType? actorType, RepositoryRulesetBypassActorBypassMode Function()? bypassMode, }) { return RepositoryRulesetBypassActor(
+  actorId: actorId != null ? actorId() : this.actorId,
+  actorType: actorType ?? this.actorType,
+  bypassMode: bypassMode != null ? bypassMode() : this.bypassMode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRulesetBypassActor &&
+          actorId == other.actorId &&
+          actorType == other.actorType &&
+          bypassMode == other.bypassMode; } 
+@override int get hashCode { return Object.hash(actorId, actorType, bypassMode); } 
+@override String toString() { return 'RepositoryRulesetBypassActor(actorId: $actorId, actorType: $actorType, bypassMode: $bypassMode)'; } 
+ }

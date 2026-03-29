@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PackagesGetPackageVersionForOrganizationPackageType {const PackagesGetPackageVersionForOrganizationPackageType._(this.value);
+
+factory PackagesGetPackageVersionForOrganizationPackageType.fromJson(String json) { return switch (json) {
+  'npm' => npm,
+  'maven' => maven,
+  'rubygems' => rubygems,
+  'docker' => docker,
+  'nuget' => nuget,
+  'container' => container,
+  _ => PackagesGetPackageVersionForOrganizationPackageType._(json),
+}; }
+
+static const PackagesGetPackageVersionForOrganizationPackageType npm = PackagesGetPackageVersionForOrganizationPackageType._('npm');
+
+static const PackagesGetPackageVersionForOrganizationPackageType maven = PackagesGetPackageVersionForOrganizationPackageType._('maven');
+
+static const PackagesGetPackageVersionForOrganizationPackageType rubygems = PackagesGetPackageVersionForOrganizationPackageType._('rubygems');
+
+static const PackagesGetPackageVersionForOrganizationPackageType docker = PackagesGetPackageVersionForOrganizationPackageType._('docker');
+
+static const PackagesGetPackageVersionForOrganizationPackageType nuget = PackagesGetPackageVersionForOrganizationPackageType._('nuget');
+
+static const PackagesGetPackageVersionForOrganizationPackageType container = PackagesGetPackageVersionForOrganizationPackageType._('container');
+
+static const List<PackagesGetPackageVersionForOrganizationPackageType> values = [npm, maven, rubygems, docker, nuget, container];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PackagesGetPackageVersionForOrganizationPackageType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PackagesGetPackageVersionForOrganizationPackageType($value)'; } 
+ }

@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_response_completed_data.dart';/// The object of the event. Always `event`.
+/// 
+final class WebhookResponseCompletedObject {const WebhookResponseCompletedObject._(this.value);
+
+factory WebhookResponseCompletedObject.fromJson(String json) { return switch (json) {
+  'event' => event,
+  _ => WebhookResponseCompletedObject._(json),
+}; }
+
+static const WebhookResponseCompletedObject event = WebhookResponseCompletedObject._('event');
+
+static const List<WebhookResponseCompletedObject> values = [event];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookResponseCompletedObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookResponseCompletedObject($value)'; } 
+ }
+/// The type of the event. Always `response.completed`.
+/// 
+final class WebhookResponseCompletedType {const WebhookResponseCompletedType._(this.value);
+
+factory WebhookResponseCompletedType.fromJson(String json) { return switch (json) {
+  'response.completed' => responseCompleted,
+  _ => WebhookResponseCompletedType._(json),
+}; }
+
+static const WebhookResponseCompletedType responseCompleted = WebhookResponseCompletedType._('response.completed');
+
+static const List<WebhookResponseCompletedType> values = [responseCompleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookResponseCompletedType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookResponseCompletedType($value)'; } 
+ }
+/// Sent when a background response has been completed.
+/// 
+final class WebhookResponseCompleted {const WebhookResponseCompleted({required this.createdAt, required this.id, required this.data, this.object, required this.type, });
+
+factory WebhookResponseCompleted.fromJson(Map<String, dynamic> json) { return WebhookResponseCompleted(
+  createdAt: (json['created_at'] as num).toInt(),
+  id: json['id'] as String,
+  data: WebhookResponseCompletedData.fromJson(json['data'] as Map<String, dynamic>),
+  object: json['object'] != null ? WebhookResponseCompletedObject.fromJson(json['object'] as String) : null,
+  type: WebhookResponseCompletedType.fromJson(json['type'] as String),
+); }
+
+/// The Unix timestamp (in seconds) of when the model response was completed.
+/// 
+final int createdAt;
+
+/// The unique ID of the event.
+/// 
+final String id;
+
+/// Event data payload.
+/// 
+final WebhookResponseCompletedData data;
+
+/// The object of the event. Always `event`.
+/// 
+final WebhookResponseCompletedObject? object;
+
+/// The type of the event. Always `response.completed`.
+/// 
+final WebhookResponseCompletedType type;
+
+Map<String, dynamic> toJson() { return {
+  'created_at': createdAt,
+  'id': id,
+  'data': data.toJson(),
+  if (object != null) 'object': object?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') && json['created_at'] is num &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('data') &&
+      json.containsKey('type'); } 
+WebhookResponseCompleted copyWith({int? createdAt, String? id, WebhookResponseCompletedData? data, WebhookResponseCompletedObject Function()? object, WebhookResponseCompletedType? type, }) { return WebhookResponseCompleted(
+  createdAt: createdAt ?? this.createdAt,
+  id: id ?? this.id,
+  data: data ?? this.data,
+  object: object != null ? object() : this.object,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookResponseCompleted &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          data == other.data &&
+          object == other.object &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(createdAt, id, data, object, type); } 
+@override String toString() { return 'WebhookResponseCompleted(createdAt: $createdAt, id: $id, data: $data, object: $object, type: $type)'; } 
+ }

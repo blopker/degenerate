@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CreateTokenRequest {const CreateTokenRequest({required this.grantType, this.scope, this.timeout, });
+
+factory CreateTokenRequest.fromJson(Map<String, dynamic> json) { return CreateTokenRequest(
+  grantType: json['grant_type'] as String,
+  scope: json['scope'] as String?,
+  timeout: json['timeout'] != null ? (json['timeout'] as num).toInt() : null,
+); }
+
+final String grantType;
+
+final String? scope;
+
+final int? timeout;
+
+Map<String, dynamic> toJson() { return {
+  'grant_type': grantType,
+  'scope': ?scope,
+  'timeout': ?timeout,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('grant_type') && json['grant_type'] is String; } 
+CreateTokenRequest copyWith({String? grantType, String Function()? scope, int Function()? timeout, }) { return CreateTokenRequest(
+  grantType: grantType ?? this.grantType,
+  scope: scope != null ? scope() : this.scope,
+  timeout: timeout != null ? timeout() : this.timeout,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateTokenRequest &&
+          grantType == other.grantType &&
+          scope == other.scope &&
+          timeout == other.timeout; } 
+@override int get hashCode { return Object.hash(grantType, scope, timeout); } 
+@override String toString() { return 'CreateTokenRequest(grantType: $grantType, scope: $scope, timeout: $timeout)'; } 
+ }

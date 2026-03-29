@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The content type ("text", "audio").
+final class RealtimeBetaServerEventResponseContentPartDonePartType {const RealtimeBetaServerEventResponseContentPartDonePartType._(this.value);
+
+factory RealtimeBetaServerEventResponseContentPartDonePartType.fromJson(String json) { return switch (json) {
+  'audio' => audio,
+  'text' => text,
+  _ => RealtimeBetaServerEventResponseContentPartDonePartType._(json),
+}; }
+
+static const RealtimeBetaServerEventResponseContentPartDonePartType audio = RealtimeBetaServerEventResponseContentPartDonePartType._('audio');
+
+static const RealtimeBetaServerEventResponseContentPartDonePartType text = RealtimeBetaServerEventResponseContentPartDonePartType._('text');
+
+static const List<RealtimeBetaServerEventResponseContentPartDonePartType> values = [audio, text];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeBetaServerEventResponseContentPartDonePartType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeBetaServerEventResponseContentPartDonePartType($value)'; } 
+ }
+/// The content part that is done.
+final class RealtimeBetaServerEventResponseContentPartDonePart {const RealtimeBetaServerEventResponseContentPartDonePart({this.type, this.text, this.audio, this.transcript, });
+
+factory RealtimeBetaServerEventResponseContentPartDonePart.fromJson(Map<String, dynamic> json) { return RealtimeBetaServerEventResponseContentPartDonePart(
+  type: json['type'] != null ? RealtimeBetaServerEventResponseContentPartDonePartType.fromJson(json['type'] as String) : null,
+  text: json['text'] as String?,
+  audio: json['audio'] as String?,
+  transcript: json['transcript'] as String?,
+); }
+
+/// The content type ("text", "audio").
+final RealtimeBetaServerEventResponseContentPartDonePartType? type;
+
+/// The text content (if type is "text").
+final String? text;
+
+/// Base64-encoded audio data (if type is "audio").
+final String? audio;
+
+/// The transcript of the audio (if type is "audio").
+final String? transcript;
+
+Map<String, dynamic> toJson() { return {
+  if (type != null) 'type': type?.toJson(),
+  'text': ?text,
+  'audio': ?audio,
+  'transcript': ?transcript,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimeBetaServerEventResponseContentPartDonePart copyWith({RealtimeBetaServerEventResponseContentPartDonePartType Function()? type, String Function()? text, String Function()? audio, String Function()? transcript, }) { return RealtimeBetaServerEventResponseContentPartDonePart(
+  type: type != null ? type() : this.type,
+  text: text != null ? text() : this.text,
+  audio: audio != null ? audio() : this.audio,
+  transcript: transcript != null ? transcript() : this.transcript,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeBetaServerEventResponseContentPartDonePart &&
+          type == other.type &&
+          text == other.text &&
+          audio == other.audio &&
+          transcript == other.transcript; } 
+@override int get hashCode { return Object.hash(type, text, audio, transcript); } 
+@override String toString() { return 'RealtimeBetaServerEventResponseContentPartDonePart(type: $type, text: $text, audio: $audio, transcript: $transcript)'; } 
+ }

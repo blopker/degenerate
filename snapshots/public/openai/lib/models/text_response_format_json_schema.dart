@@ -1,0 +1,90 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of response format being defined. Always `json_schema`.
+final class TextResponseFormatJsonSchemaType {const TextResponseFormatJsonSchemaType._(this.value);
+
+factory TextResponseFormatJsonSchemaType.fromJson(String json) { return switch (json) {
+  'json_schema' => jsonSchema,
+  _ => TextResponseFormatJsonSchemaType._(json),
+}; }
+
+static const TextResponseFormatJsonSchemaType jsonSchema = TextResponseFormatJsonSchemaType._('json_schema');
+
+static const List<TextResponseFormatJsonSchemaType> values = [jsonSchema];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TextResponseFormatJsonSchemaType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TextResponseFormatJsonSchemaType($value)'; } 
+ }
+/// JSON Schema response format. Used to generate structured JSON responses.
+/// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
+/// 
+final class TextResponseFormatJsonSchema {const TextResponseFormatJsonSchema({required this.type, this.description, required this.name, required this.schema, this.strict, });
+
+factory TextResponseFormatJsonSchema.fromJson(Map<String, dynamic> json) { return TextResponseFormatJsonSchema(
+  type: TextResponseFormatJsonSchemaType.fromJson(json['type'] as String),
+  description: json['description'] as String?,
+  name: json['name'] as String,
+  schema: (json['schema'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  strict: json['strict'] as bool?,
+); }
+
+/// The type of response format being defined. Always `json_schema`.
+final TextResponseFormatJsonSchemaType type;
+
+/// A description of what the response format is for, used by the model to
+/// determine how to respond in the format.
+/// 
+final String? description;
+
+/// The name of the response format. Must be a-z, A-Z, 0-9, or contain
+/// underscores and dashes, with a maximum length of 64.
+/// 
+final String name;
+
+/// The schema for the response format, described as a JSON Schema object.
+/// Learn how to build JSON schemas [here](https://json-schema.org/).
+/// 
+final Map<String,dynamic> schema;
+
+/// Whether to enable strict schema adherence when generating the output.
+/// If set to true, the model will always follow the exact schema defined
+/// in the `schema` field. Only a subset of JSON Schema is supported when
+/// `strict` is `true`. To learn more, read the [Structured Outputs
+/// guide](/docs/guides/structured-outputs).
+/// 
+final bool? strict;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'description': ?description,
+  'name': name,
+  'schema': schema,
+  'strict': ?strict,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('schema'); } 
+TextResponseFormatJsonSchema copyWith({TextResponseFormatJsonSchemaType? type, String Function()? description, String? name, Map<String,dynamic>? schema, bool? Function()? strict, }) { return TextResponseFormatJsonSchema(
+  type: type ?? this.type,
+  description: description != null ? description() : this.description,
+  name: name ?? this.name,
+  schema: schema ?? this.schema,
+  strict: strict != null ? strict() : this.strict,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TextResponseFormatJsonSchema &&
+          type == other.type &&
+          description == other.description &&
+          name == other.name &&
+          schema == other.schema &&
+          strict == other.strict; } 
+@override int get hashCode { return Object.hash(type, description, name, schema, strict); } 
+@override String toString() { return 'TextResponseFormatJsonSchema(type: $type, description: $description, name: $name, schema: $schema, strict: $strict)'; } 
+ }

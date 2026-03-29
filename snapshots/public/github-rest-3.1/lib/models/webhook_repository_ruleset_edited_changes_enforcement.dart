@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookRepositoryRulesetEditedChangesEnforcement {const WebhookRepositoryRulesetEditedChangesEnforcement({this.from});
+
+factory WebhookRepositoryRulesetEditedChangesEnforcement.fromJson(Map<String, dynamic> json) { return WebhookRepositoryRulesetEditedChangesEnforcement(
+  from: json['from'] as String?,
+); }
+
+final String? from;
+
+Map<String, dynamic> toJson() { return {
+  'from': ?from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WebhookRepositoryRulesetEditedChangesEnforcement copyWith({String Function()? from}) { return WebhookRepositoryRulesetEditedChangesEnforcement(
+  from: from != null ? from() : this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookRepositoryRulesetEditedChangesEnforcement &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookRepositoryRulesetEditedChangesEnforcement(from: $from)'; } 
+ }

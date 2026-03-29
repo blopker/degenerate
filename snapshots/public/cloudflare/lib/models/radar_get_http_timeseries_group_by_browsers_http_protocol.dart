@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol {const RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol.fromJson(String json) { return switch (json) {
+  'HTTP' => http,
+  'HTTPS' => https,
+  _ => RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol http = RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol._('HTTP');
+
+static const RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol https = RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol._('HTTPS');
+
+static const List<RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol> values = [http, https];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBrowsersHttpProtocol($value)'; } 
+ }

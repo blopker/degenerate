@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_post_gateway_dynamic_route_deployment_response_result_elements_start_outputs.dart';final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType._(this.value);
+
+factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType.fromJson(String json) { return switch (json) {
+  'start' => start,
+  _ => AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType._(json),
+}; }
+
+static const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType start = AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType._('start');
+
+static const List<AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType> values = [start];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType($value)'; } 
+ }
+final class AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart {const AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart({required this.id, required this.outputs, required this.type, });
+
+factory AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart.fromJson(Map<String, dynamic> json) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart(
+  id: json['id'] as String,
+  outputs: AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs.fromJson(json['outputs'] as Map<String, dynamic>),
+  type: AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType.fromJson(json['type'] as String),
+); }
+
+final String id;
+
+final AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs outputs;
+
+final AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType type;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'outputs': outputs.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('outputs') &&
+      json.containsKey('type'); } 
+AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart copyWith({String? id, AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartOutputs? outputs, AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStartType? type, }) { return AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart(
+  id: id ?? this.id,
+  outputs: outputs ?? this.outputs,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart &&
+          id == other.id &&
+          outputs == other.outputs &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(id, outputs, type); } 
+@override String toString() { return 'AigConfigPostGatewayDynamicRouteDeploymentResponseResultElementsStart(id: $id, outputs: $outputs, type: $type)'; } 
+ }

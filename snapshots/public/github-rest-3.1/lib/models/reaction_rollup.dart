@@ -1,0 +1,86 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReactionRollup {const ReactionRollup({required this.url, required this.totalCount, required this.plus1, required this.minus1, required this.laugh, required this.confused, required this.heart, required this.hooray, required this.eyes, required this.rocket, });
+
+factory ReactionRollup.fromJson(Map<String, dynamic> json) { return ReactionRollup(
+  url: Uri.parse(json['url'] as String),
+  totalCount: (json['total_count'] as num).toInt(),
+  plus1: (json['+1'] as num).toInt(),
+  minus1: (json['-1'] as num).toInt(),
+  laugh: (json['laugh'] as num).toInt(),
+  confused: (json['confused'] as num).toInt(),
+  heart: (json['heart'] as num).toInt(),
+  hooray: (json['hooray'] as num).toInt(),
+  eyes: (json['eyes'] as num).toInt(),
+  rocket: (json['rocket'] as num).toInt(),
+); }
+
+final Uri url;
+
+final int totalCount;
+
+final int plus1;
+
+final int minus1;
+
+final int laugh;
+
+final int confused;
+
+final int heart;
+
+final int hooray;
+
+final int eyes;
+
+final int rocket;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'total_count': totalCount,
+  '+1': plus1,
+  '-1': minus1,
+  'laugh': laugh,
+  'confused': confused,
+  'heart': heart,
+  'hooray': hooray,
+  'eyes': eyes,
+  'rocket': rocket,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String &&
+      json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('+1') && json['+1'] is num &&
+      json.containsKey('-1') && json['-1'] is num &&
+      json.containsKey('laugh') && json['laugh'] is num &&
+      json.containsKey('confused') && json['confused'] is num &&
+      json.containsKey('heart') && json['heart'] is num &&
+      json.containsKey('hooray') && json['hooray'] is num &&
+      json.containsKey('eyes') && json['eyes'] is num &&
+      json.containsKey('rocket') && json['rocket'] is num; } 
+ReactionRollup copyWith({Uri? url, int? totalCount, int? plus1, int? minus1, int? laugh, int? confused, int? heart, int? hooray, int? eyes, int? rocket, }) { return ReactionRollup(
+  url: url ?? this.url,
+  totalCount: totalCount ?? this.totalCount,
+  plus1: plus1 ?? this.plus1,
+  minus1: minus1 ?? this.minus1,
+  laugh: laugh ?? this.laugh,
+  confused: confused ?? this.confused,
+  heart: heart ?? this.heart,
+  hooray: hooray ?? this.hooray,
+  eyes: eyes ?? this.eyes,
+  rocket: rocket ?? this.rocket,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReactionRollup &&
+          url == other.url &&
+          totalCount == other.totalCount &&
+          plus1 == other.plus1 &&
+          minus1 == other.minus1 &&
+          laugh == other.laugh &&
+          confused == other.confused &&
+          heart == other.heart &&
+          hooray == other.hooray &&
+          eyes == other.eyes &&
+          rocket == other.rocket; } 
+@override int get hashCode { return Object.hash(url, totalCount, plus1, minus1, laugh, confused, heart, hooray, eyes, rocket); } 
+@override String toString() { return 'ReactionRollup(url: $url, totalCount: $totalCount, plus1: $plus1, minus1: $minus1, laugh: $laugh, confused: $confused, heart: $heart, hooray: $hooray, eyes: $eyes, rocket: $rocket)'; } 
+ }

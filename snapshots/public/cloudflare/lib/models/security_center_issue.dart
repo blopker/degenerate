@@ -1,0 +1,110 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'security_center_issue_class.dart';import 'security_center_issue_payload.dart';import 'security_center_issue_type.dart';import 'security_center_subject.dart';final class SecurityCenterIssueSeverity {const SecurityCenterIssueSeverity._(this.value);
+
+factory SecurityCenterIssueSeverity.fromJson(String json) { return switch (json) {
+  'Low' => low,
+  'Moderate' => moderate,
+  'Critical' => critical,
+  _ => SecurityCenterIssueSeverity._(json),
+}; }
+
+static const SecurityCenterIssueSeverity low = SecurityCenterIssueSeverity._('Low');
+
+static const SecurityCenterIssueSeverity moderate = SecurityCenterIssueSeverity._('Moderate');
+
+static const SecurityCenterIssueSeverity critical = SecurityCenterIssueSeverity._('Critical');
+
+static const List<SecurityCenterIssueSeverity> values = [low, moderate, critical];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SecurityCenterIssueSeverity && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SecurityCenterIssueSeverity($value)'; } 
+ }
+final class SecurityCenterIssue {const SecurityCenterIssue({this.dismissed, this.id, this.issueClass, this.issueType, this.payload, this.resolveLink, this.resolveText, this.severity, this.since, this.subject, this.timestamp, });
+
+factory SecurityCenterIssue.fromJson(Map<String, dynamic> json) { return SecurityCenterIssue(
+  dismissed: json['dismissed'] as bool?,
+  id: json['id'] as String?,
+  issueClass: json['issue_class'] != null ? SecurityCenterIssueClass.fromJson(json['issue_class'] as String) : null,
+  issueType: json['issue_type'] != null ? SecurityCenterIssueType.fromJson(json['issue_type'] as String) : null,
+  payload: json['payload'] != null ? SecurityCenterIssuePayload.fromJson(json['payload'] as Map<String, dynamic>) : null,
+  resolveLink: json['resolve_link'] as String?,
+  resolveText: json['resolve_text'] as String?,
+  severity: json['severity'] != null ? SecurityCenterIssueSeverity.fromJson(json['severity'] as String) : null,
+  since: json['since'] != null ? DateTime.parse(json['since'] as String) : null,
+  subject: json['subject'] != null ? SecurityCenterSubject.fromJson(json['subject'] as String) : null,
+  timestamp: json['timestamp'] != null ? DateTime.parse(json['timestamp'] as String) : null,
+); }
+
+final bool? dismissed;
+
+final String? id;
+
+final SecurityCenterIssueClass? issueClass;
+
+final SecurityCenterIssueType? issueType;
+
+final SecurityCenterIssuePayload? payload;
+
+final String? resolveLink;
+
+final String? resolveText;
+
+final SecurityCenterIssueSeverity? severity;
+
+final DateTime? since;
+
+final SecurityCenterSubject? subject;
+
+final DateTime? timestamp;
+
+Map<String, dynamic> toJson() { return {
+  'dismissed': ?dismissed,
+  'id': ?id,
+  if (issueClass != null) 'issue_class': issueClass?.toJson(),
+  if (issueType != null) 'issue_type': issueType?.toJson(),
+  if (payload != null) 'payload': payload?.toJson(),
+  'resolve_link': ?resolveLink,
+  'resolve_text': ?resolveText,
+  if (severity != null) 'severity': severity?.toJson(),
+  if (since != null) 'since': since?.toIso8601String(),
+  if (subject != null) 'subject': subject?.toJson(),
+  if (timestamp != null) 'timestamp': timestamp?.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SecurityCenterIssue copyWith({bool Function()? dismissed, String Function()? id, SecurityCenterIssueClass Function()? issueClass, SecurityCenterIssueType Function()? issueType, SecurityCenterIssuePayload Function()? payload, String Function()? resolveLink, String Function()? resolveText, SecurityCenterIssueSeverity Function()? severity, DateTime Function()? since, SecurityCenterSubject Function()? subject, DateTime Function()? timestamp, }) { return SecurityCenterIssue(
+  dismissed: dismissed != null ? dismissed() : this.dismissed,
+  id: id != null ? id() : this.id,
+  issueClass: issueClass != null ? issueClass() : this.issueClass,
+  issueType: issueType != null ? issueType() : this.issueType,
+  payload: payload != null ? payload() : this.payload,
+  resolveLink: resolveLink != null ? resolveLink() : this.resolveLink,
+  resolveText: resolveText != null ? resolveText() : this.resolveText,
+  severity: severity != null ? severity() : this.severity,
+  since: since != null ? since() : this.since,
+  subject: subject != null ? subject() : this.subject,
+  timestamp: timestamp != null ? timestamp() : this.timestamp,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecurityCenterIssue &&
+          dismissed == other.dismissed &&
+          id == other.id &&
+          issueClass == other.issueClass &&
+          issueType == other.issueType &&
+          payload == other.payload &&
+          resolveLink == other.resolveLink &&
+          resolveText == other.resolveText &&
+          severity == other.severity &&
+          since == other.since &&
+          subject == other.subject &&
+          timestamp == other.timestamp; } 
+@override int get hashCode { return Object.hash(dismissed, id, issueClass, issueType, payload, resolveLink, resolveText, severity, since, subject, timestamp); } 
+@override String toString() { return 'SecurityCenterIssue(dismissed: $dismissed, id: $id, issueClass: $issueClass, issueType: $issueType, payload: $payload, resolveLink: $resolveLink, resolveText: $resolveText, severity: $severity, since: $since, subject: $subject, timestamp: $timestamp)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class InputQueryAndContextsContexts {const InputQueryAndContextsContexts({this.text});
+
+factory InputQueryAndContextsContexts.fromJson(Map<String, dynamic> json) { return InputQueryAndContextsContexts(
+  text: json['text'] as String?,
+); }
+
+/// One of the provided context content
+final String? text;
+
+Map<String, dynamic> toJson() { return {
+  'text': ?text,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InputQueryAndContextsContexts copyWith({String Function()? text}) { return InputQueryAndContextsContexts(
+  text: text != null ? text() : this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InputQueryAndContextsContexts &&
+          text == other.text; } 
+@override int get hashCode { return text.hashCode; } 
+@override String toString() { return 'InputQueryAndContextsContexts(text: $text)'; } 
+ }

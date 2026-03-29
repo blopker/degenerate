@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'source_owner.dart';/// Information about the owner of the payment instrument that may be used or required by particular source types.
+final class SourceOwner2 {const SourceOwner2({this.sourceOwner});
+
+factory SourceOwner2.fromJson(Map<String, dynamic> json) { return SourceOwner2(
+  sourceOwner: SourceOwner.canParse(json) ? SourceOwner.fromJson(json) : null,
+); }
+
+final SourceOwner? sourceOwner;
+
+/// At least one variant must be present.
+bool get isValid { return sourceOwner != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?sourceOwner?.toJson(),
+}; } 
+ }

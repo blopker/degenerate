@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AccountsMoveAccountsRequest {const AccountsMoveAccountsRequest({required this.destinationOrganizationId});
+
+factory AccountsMoveAccountsRequest.fromJson(Map<String, dynamic> json) { return AccountsMoveAccountsRequest(
+  destinationOrganizationId: json['destination_organization_id'] as String,
+); }
+
+final String destinationOrganizationId;
+
+Map<String, dynamic> toJson() { return {
+  'destination_organization_id': destinationOrganizationId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('destination_organization_id') && json['destination_organization_id'] is String; } 
+AccountsMoveAccountsRequest copyWith({String? destinationOrganizationId}) { return AccountsMoveAccountsRequest(
+  destinationOrganizationId: destinationOrganizationId ?? this.destinationOrganizationId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountsMoveAccountsRequest &&
+          destinationOrganizationId == other.destinationOrganizationId; } 
+@override int get hashCode { return destinationOrganizationId.hashCode; } 
+@override String toString() { return 'AccountsMoveAccountsRequest(destinationOrganizationId: $destinationOrganizationId)'; } 
+ }

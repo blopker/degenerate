@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
+extension type const IamDnsVerificationCode(String value) {
+factory IamDnsVerificationCode.fromJson(String json) => IamDnsVerificationCode(json);
+
+String toJson() => value;
+
+}
+/// The status of the verification code from the verification process.
+final class IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus._(this.value);
+
+factory IamSsoConnectorVerificationInfoStatus.fromJson(String json) { return switch (json) {
+  'awaiting' => awaiting,
+  'pending' => pending,
+  'failed' => failed,
+  'verified' => verified,
+  _ => IamSsoConnectorVerificationInfoStatus._(json),
+}; }
+
+static const IamSsoConnectorVerificationInfoStatus awaiting = IamSsoConnectorVerificationInfoStatus._('awaiting');
+
+static const IamSsoConnectorVerificationInfoStatus pending = IamSsoConnectorVerificationInfoStatus._('pending');
+
+static const IamSsoConnectorVerificationInfoStatus failed = IamSsoConnectorVerificationInfoStatus._('failed');
+
+static const IamSsoConnectorVerificationInfoStatus verified = IamSsoConnectorVerificationInfoStatus._('verified');
+
+static const List<IamSsoConnectorVerificationInfoStatus> values = [awaiting, pending, failed, verified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IamSsoConnectorVerificationInfoStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IamSsoConnectorVerificationInfoStatus($value)'; } 
+ }
+final class IamSsoConnectorVerificationInfo {const IamSsoConnectorVerificationInfo({this.code, this.status, });
+
+factory IamSsoConnectorVerificationInfo.fromJson(Map<String, dynamic> json) { return IamSsoConnectorVerificationInfo(
+  code: json['code'] != null ? IamDnsVerificationCode.fromJson(json['code'] as String) : null,
+  status: json['status'] != null ? IamSsoConnectorVerificationInfoStatus.fromJson(json['status'] as String) : null,
+); }
+
+/// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
+final IamDnsVerificationCode? code;
+
+/// The status of the verification code from the verification process.
+final IamSsoConnectorVerificationInfoStatus? status;
+
+Map<String, dynamic> toJson() { return {
+  if (code != null) 'code': code?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IamSsoConnectorVerificationInfo copyWith({IamDnsVerificationCode Function()? code, IamSsoConnectorVerificationInfoStatus Function()? status, }) { return IamSsoConnectorVerificationInfo(
+  code: code != null ? code() : this.code,
+  status: status != null ? status() : this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IamSsoConnectorVerificationInfo &&
+          code == other.code &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(code, status); } 
+@override String toString() { return 'IamSsoConnectorVerificationInfo(code: $code, status: $status)'; } 
+ }

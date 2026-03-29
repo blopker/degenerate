@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_authorization_three_d_secure.dart';/// 3D Secure details.
+final class IssuingAuthorizationVerificationDataThreeDSecure {const IssuingAuthorizationVerificationDataThreeDSecure({this.issuingAuthorizationThreeDSecure});
+
+factory IssuingAuthorizationVerificationDataThreeDSecure.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationVerificationDataThreeDSecure(
+  issuingAuthorizationThreeDSecure: IssuingAuthorizationThreeDSecure.canParse(json) ? IssuingAuthorizationThreeDSecure.fromJson(json) : null,
+); }
+
+final IssuingAuthorizationThreeDSecure? issuingAuthorizationThreeDSecure;
+
+/// At least one variant must be present.
+bool get isValid { return issuingAuthorizationThreeDSecure != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingAuthorizationThreeDSecure?.toJson(),
+}; } 
+ }

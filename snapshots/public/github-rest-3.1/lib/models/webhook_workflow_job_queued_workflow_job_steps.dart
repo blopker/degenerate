@@ -1,0 +1,121 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookWorkflowJobQueuedWorkflowJobStepsConclusion {const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._(this.value);
+
+factory WebhookWorkflowJobQueuedWorkflowJobStepsConclusion.fromJson(String json) { return switch (json) {
+  'failure' => failure,
+  'skipped' => skipped,
+  'success' => success,
+  'cancelled' => cancelled,
+  'null' => $null,
+  _ => WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._(json),
+}; }
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion failure = WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._('failure');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion skipped = WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._('skipped');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion success = WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._('success');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion cancelled = WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._('cancelled');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsConclusion $null = WebhookWorkflowJobQueuedWorkflowJobStepsConclusion._('null');
+
+static const List<WebhookWorkflowJobQueuedWorkflowJobStepsConclusion> values = [failure, skipped, success, cancelled, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookWorkflowJobQueuedWorkflowJobStepsConclusion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookWorkflowJobQueuedWorkflowJobStepsConclusion($value)'; } 
+ }
+final class WebhookWorkflowJobQueuedWorkflowJobStepsStatus {const WebhookWorkflowJobQueuedWorkflowJobStepsStatus._(this.value);
+
+factory WebhookWorkflowJobQueuedWorkflowJobStepsStatus.fromJson(String json) { return switch (json) {
+  'completed' => completed,
+  'in_progress' => inProgress,
+  'queued' => queued,
+  'pending' => pending,
+  _ => WebhookWorkflowJobQueuedWorkflowJobStepsStatus._(json),
+}; }
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsStatus completed = WebhookWorkflowJobQueuedWorkflowJobStepsStatus._('completed');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsStatus inProgress = WebhookWorkflowJobQueuedWorkflowJobStepsStatus._('in_progress');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsStatus queued = WebhookWorkflowJobQueuedWorkflowJobStepsStatus._('queued');
+
+static const WebhookWorkflowJobQueuedWorkflowJobStepsStatus pending = WebhookWorkflowJobQueuedWorkflowJobStepsStatus._('pending');
+
+static const List<WebhookWorkflowJobQueuedWorkflowJobStepsStatus> values = [completed, inProgress, queued, pending];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookWorkflowJobQueuedWorkflowJobStepsStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookWorkflowJobQueuedWorkflowJobStepsStatus($value)'; } 
+ }
+final class WebhookWorkflowJobQueuedWorkflowJobSteps {const WebhookWorkflowJobQueuedWorkflowJobSteps({required this.completedAt, required this.conclusion, required this.name, required this.number, required this.startedAt, required this.status, });
+
+factory WebhookWorkflowJobQueuedWorkflowJobSteps.fromJson(Map<String, dynamic> json) { return WebhookWorkflowJobQueuedWorkflowJobSteps(
+  completedAt: json['completed_at'] as String?,
+  conclusion: json['conclusion'] != null ? WebhookWorkflowJobQueuedWorkflowJobStepsConclusion.fromJson(json['conclusion'] as String) : null,
+  name: json['name'] as String,
+  number: (json['number'] as num).toInt(),
+  startedAt: json['started_at'] as String?,
+  status: WebhookWorkflowJobQueuedWorkflowJobStepsStatus.fromJson(json['status'] as String),
+); }
+
+final String? completedAt;
+
+final WebhookWorkflowJobQueuedWorkflowJobStepsConclusion? conclusion;
+
+final String name;
+
+final int number;
+
+final String? startedAt;
+
+final WebhookWorkflowJobQueuedWorkflowJobStepsStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'completed_at': ?completedAt,
+  if (conclusion != null) 'conclusion': conclusion?.toJson(),
+  'name': name,
+  'number': number,
+  'started_at': ?startedAt,
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('completed_at') && json['completed_at'] is String &&
+      json.containsKey('conclusion') &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('number') && json['number'] is num &&
+      json.containsKey('started_at') && json['started_at'] is String &&
+      json.containsKey('status'); } 
+WebhookWorkflowJobQueuedWorkflowJobSteps copyWith({String? Function()? completedAt, WebhookWorkflowJobQueuedWorkflowJobStepsConclusion? Function()? conclusion, String? name, int? number, String? Function()? startedAt, WebhookWorkflowJobQueuedWorkflowJobStepsStatus? status, }) { return WebhookWorkflowJobQueuedWorkflowJobSteps(
+  completedAt: completedAt != null ? completedAt() : this.completedAt,
+  conclusion: conclusion != null ? conclusion() : this.conclusion,
+  name: name ?? this.name,
+  number: number ?? this.number,
+  startedAt: startedAt != null ? startedAt() : this.startedAt,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookWorkflowJobQueuedWorkflowJobSteps &&
+          completedAt == other.completedAt &&
+          conclusion == other.conclusion &&
+          name == other.name &&
+          number == other.number &&
+          startedAt == other.startedAt &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(completedAt, conclusion, name, number, startedAt, status); } 
+@override String toString() { return 'WebhookWorkflowJobQueuedWorkflowJobSteps(completedAt: $completedAt, conclusion: $conclusion, name: $name, number: $number, startedAt: $startedAt, status: $status)'; } 
+ }

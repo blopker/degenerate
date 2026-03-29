@@ -1,0 +1,180 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
+final class PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType {const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(String json) { return switch (json) {
+  'fixed' => fixed,
+  'maximum' => maximum,
+  _ => PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType fixed = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._('fixed');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType maximum = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType._('maximum');
+
+static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType> values = [fixed, maximum];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType($value)'; } 
+ }
+/// The periodicity at which payments will be collected. Defaults to `adhoc`.
+final class PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule {const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(String json) { return switch (json) {
+  'adhoc' => adhoc,
+  'annual' => annual,
+  'daily' => daily,
+  'fortnightly' => fortnightly,
+  'monthly' => monthly,
+  'quarterly' => quarterly,
+  'semi_annual' => semiAnnual,
+  'weekly' => weekly,
+  _ => PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule adhoc = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('adhoc');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule annual = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('annual');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule daily = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('daily');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule fortnightly = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('fortnightly');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule monthly = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('monthly');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule quarterly = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('quarterly');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule semiAnnual = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('semi_annual');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule weekly = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule._('weekly');
+
+static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule> values = [adhoc, annual, daily, fortnightly, monthly, quarterly, semiAnnual, weekly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule($value)'; } 
+ }
+/// The purpose for which payments are made. Has a default value based on your merchant category code.
+final class PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose {const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(String json) { return switch (json) {
+  'dependant_support' => dependantSupport,
+  'government' => government,
+  'loan' => loan,
+  'mortgage' => mortgage,
+  'other' => $other,
+  'pension' => pension,
+  'personal' => personal,
+  'retail' => retail,
+  'salary' => salary,
+  'tax' => tax,
+  'utility' => utility,
+  _ => PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose dependantSupport = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('dependant_support');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose government = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('government');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose loan = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('loan');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose mortgage = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('mortgage');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose $other = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('other');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose pension = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('pension');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose personal = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('personal');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose retail = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('retail');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose salary = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('salary');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose tax = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('tax');
+
+static const PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose utility = PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose._('utility');
+
+static const List<PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose($value)'; } 
+ }
+/// 
+final class PaymentIntentPaymentMethodOptionsMandateOptionsPayto {const PaymentIntentPaymentMethodOptionsMandateOptionsPayto({this.amount, this.amountType, this.endDate, this.paymentSchedule, this.paymentsPerPeriod, this.purpose, });
+
+factory PaymentIntentPaymentMethodOptionsMandateOptionsPayto.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  amountType: json['amount_type'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType.fromJson(json['amount_type'] as String) : null,
+  endDate: json['end_date'] as String?,
+  paymentSchedule: json['payment_schedule'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule.fromJson(json['payment_schedule'] as String) : null,
+  paymentsPerPeriod: json['payments_per_period'] != null ? (json['payments_per_period'] as num).toInt() : null,
+  purpose: json['purpose'] != null ? PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose.fromJson(json['purpose'] as String) : null,
+); }
+
+/// Amount that will be collected. It is required when `amount_type` is `fixed`.
+final int? amount;
+
+/// The type of amount that will be collected. The amount charged must be exact or up to the value of `amount` param for `fixed` or `maximum` type respectively. Defaults to `maximum`.
+final PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType? amountType;
+
+/// Date, in YYYY-MM-DD format, after which payments will not be collected. Defaults to no end date.
+final String? endDate;
+
+/// The periodicity at which payments will be collected. Defaults to `adhoc`.
+final PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule? paymentSchedule;
+
+/// The number of payments that will be made during a payment period. Defaults to 1 except for when `payment_schedule` is `adhoc`. In that case, it defaults to no limit.
+final int? paymentsPerPeriod;
+
+/// The purpose for which payments are made. Has a default value based on your merchant category code.
+final PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose? purpose;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  if (amountType != null) 'amount_type': amountType?.toJson(),
+  'end_date': ?endDate,
+  if (paymentSchedule != null) 'payment_schedule': paymentSchedule?.toJson(),
+  'payments_per_period': ?paymentsPerPeriod,
+  if (purpose != null) 'purpose': purpose?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsMandateOptionsPayto copyWith({int? Function()? amount, PaymentIntentPaymentMethodOptionsMandateOptionsPaytoAmountType? Function()? amountType, String? Function()? endDate, PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPaymentSchedule? Function()? paymentSchedule, int? Function()? paymentsPerPeriod, PaymentIntentPaymentMethodOptionsMandateOptionsPaytoPurpose? Function()? purpose, }) { return PaymentIntentPaymentMethodOptionsMandateOptionsPayto(
+  amount: amount != null ? amount() : this.amount,
+  amountType: amountType != null ? amountType() : this.amountType,
+  endDate: endDate != null ? endDate() : this.endDate,
+  paymentSchedule: paymentSchedule != null ? paymentSchedule() : this.paymentSchedule,
+  paymentsPerPeriod: paymentsPerPeriod != null ? paymentsPerPeriod() : this.paymentsPerPeriod,
+  purpose: purpose != null ? purpose() : this.purpose,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsMandateOptionsPayto &&
+          amount == other.amount &&
+          amountType == other.amountType &&
+          endDate == other.endDate &&
+          paymentSchedule == other.paymentSchedule &&
+          paymentsPerPeriod == other.paymentsPerPeriod &&
+          purpose == other.purpose; } 
+@override int get hashCode { return Object.hash(amount, amountType, endDate, paymentSchedule, paymentsPerPeriod, purpose); } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsMandateOptionsPayto(amount: $amount, amountType: $amountType, endDate: $endDate, paymentSchedule: $paymentSchedule, paymentsPerPeriod: $paymentsPerPeriod, purpose: $purpose)'; } 
+ }

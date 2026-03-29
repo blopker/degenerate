@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UserDeleteResponseObject {const UserDeleteResponseObject._(this.value);
+
+factory UserDeleteResponseObject.fromJson(String json) { return switch (json) {
+  'organization.user.deleted' => organizationUserDeleted,
+  _ => UserDeleteResponseObject._(json),
+}; }
+
+static const UserDeleteResponseObject organizationUserDeleted = UserDeleteResponseObject._('organization.user.deleted');
+
+static const List<UserDeleteResponseObject> values = [organizationUserDeleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UserDeleteResponseObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UserDeleteResponseObject($value)'; } 
+ }
+final class UserDeleteResponse {const UserDeleteResponse({required this.object, required this.id, required this.deleted, });
+
+factory UserDeleteResponse.fromJson(Map<String, dynamic> json) { return UserDeleteResponse(
+  object: UserDeleteResponseObject.fromJson(json['object'] as String),
+  id: json['id'] as String,
+  deleted: json['deleted'] as bool,
+); }
+
+final UserDeleteResponseObject object;
+
+final String id;
+
+final bool deleted;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'id': id,
+  'deleted': deleted,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('deleted') && json['deleted'] is bool; } 
+UserDeleteResponse copyWith({UserDeleteResponseObject? object, String? id, bool? deleted, }) { return UserDeleteResponse(
+  object: object ?? this.object,
+  id: id ?? this.id,
+  deleted: deleted ?? this.deleted,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UserDeleteResponse &&
+          object == other.object &&
+          id == other.id &&
+          deleted == other.deleted; } 
+@override int get hashCode { return Object.hash(object, id, deleted); } 
+@override String toString() { return 'UserDeleteResponse(object: $object, id: $id, deleted: $deleted)'; } 
+ }

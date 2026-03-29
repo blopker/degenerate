@@ -1,0 +1,1866 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_spending_limit.dart';final class IssuingCardholderAuthorizationControlsAllowedCategories {const IssuingCardholderAuthorizationControlsAllowedCategories._(this.value);
+
+factory IssuingCardholderAuthorizationControlsAllowedCategories.fromJson(String json) { return switch (json) {
+  'ac_refrigeration_repair' => acRefrigerationRepair,
+  'accounting_bookkeeping_services' => accountingBookkeepingServices,
+  'advertising_services' => advertisingServices,
+  'agricultural_cooperative' => agriculturalCooperative,
+  'airlines_air_carriers' => airlinesAirCarriers,
+  'airports_flying_fields' => airportsFlyingFields,
+  'ambulance_services' => ambulanceServices,
+  'amusement_parks_carnivals' => amusementParksCarnivals,
+  'antique_reproductions' => antiqueReproductions,
+  'antique_shops' => antiqueShops,
+  'aquariums' => aquariums,
+  'architectural_surveying_services' => architecturalSurveyingServices,
+  'art_dealers_and_galleries' => artDealersAndGalleries,
+  'artists_supply_and_craft_shops' => artistsSupplyAndCraftShops,
+  'auto_and_home_supply_stores' => autoAndHomeSupplyStores,
+  'auto_body_repair_shops' => autoBodyRepairShops,
+  'auto_paint_shops' => autoPaintShops,
+  'auto_service_shops' => autoServiceShops,
+  'automated_cash_disburse' => automatedCashDisburse,
+  'automated_fuel_dispensers' => automatedFuelDispensers,
+  'automobile_associations' => automobileAssociations,
+  'automotive_parts_and_accessories_stores' => automotivePartsAndAccessoriesStores,
+  'automotive_tire_stores' => automotiveTireStores,
+  'bail_and_bond_payments' => bailAndBondPayments,
+  'bakeries' => bakeries,
+  'bands_orchestras' => bandsOrchestras,
+  'barber_and_beauty_shops' => barberAndBeautyShops,
+  'betting_casino_gambling' => bettingCasinoGambling,
+  'bicycle_shops' => bicycleShops,
+  'billiard_pool_establishments' => billiardPoolEstablishments,
+  'boat_dealers' => boatDealers,
+  'boat_rentals_and_leases' => boatRentalsAndLeases,
+  'book_stores' => bookStores,
+  'books_periodicals_and_newspapers' => booksPeriodicalsAndNewspapers,
+  'bowling_alleys' => bowlingAlleys,
+  'bus_lines' => busLines,
+  'business_secretarial_schools' => businessSecretarialSchools,
+  'buying_shopping_services' => buyingShoppingServices,
+  'cable_satellite_and_other_pay_television_and_radio' => cableSatelliteAndOtherPayTelevisionAndRadio,
+  'camera_and_photographic_supply_stores' => cameraAndPhotographicSupplyStores,
+  'candy_nut_and_confectionery_stores' => candyNutAndConfectioneryStores,
+  'car_and_truck_dealers_new_used' => carAndTruckDealersNewUsed,
+  'car_and_truck_dealers_used_only' => carAndTruckDealersUsedOnly,
+  'car_rental_agencies' => carRentalAgencies,
+  'car_washes' => carWashes,
+  'carpentry_services' => carpentryServices,
+  'carpet_upholstery_cleaning' => carpetUpholsteryCleaning,
+  'caterers' => caterers,
+  'charitable_and_social_service_organizations_fundraising' => charitableAndSocialServiceOrganizationsFundraising,
+  'chemicals_and_allied_products' => chemicalsAndAlliedProducts,
+  'child_care_services' => childCareServices,
+  'childrens_and_infants_wear_stores' => childrensAndInfantsWearStores,
+  'chiropodists_podiatrists' => chiropodistsPodiatrists,
+  'chiropractors' => chiropractors,
+  'cigar_stores_and_stands' => cigarStoresAndStands,
+  'civic_social_fraternal_associations' => civicSocialFraternalAssociations,
+  'cleaning_and_maintenance' => cleaningAndMaintenance,
+  'clothing_rental' => clothingRental,
+  'colleges_universities' => collegesUniversities,
+  'commercial_equipment' => commercialEquipment,
+  'commercial_footwear' => commercialFootwear,
+  'commercial_photography_art_and_graphics' => commercialPhotographyArtAndGraphics,
+  'commuter_transport_and_ferries' => commuterTransportAndFerries,
+  'computer_network_services' => computerNetworkServices,
+  'computer_programming' => computerProgramming,
+  'computer_repair' => computerRepair,
+  'computer_software_stores' => computerSoftwareStores,
+  'computers_peripherals_and_software' => computersPeripheralsAndSoftware,
+  'concrete_work_services' => concreteWorkServices,
+  'construction_materials' => constructionMaterials,
+  'consulting_public_relations' => consultingPublicRelations,
+  'correspondence_schools' => correspondenceSchools,
+  'cosmetic_stores' => cosmeticStores,
+  'counseling_services' => counselingServices,
+  'country_clubs' => countryClubs,
+  'courier_services' => courierServices,
+  'court_costs' => courtCosts,
+  'credit_reporting_agencies' => creditReportingAgencies,
+  'cruise_lines' => cruiseLines,
+  'dairy_products_stores' => dairyProductsStores,
+  'dance_hall_studios_schools' => danceHallStudiosSchools,
+  'dating_escort_services' => datingEscortServices,
+  'dentists_orthodontists' => dentistsOrthodontists,
+  'department_stores' => departmentStores,
+  'detective_agencies' => detectiveAgencies,
+  'digital_goods_applications' => digitalGoodsApplications,
+  'digital_goods_games' => digitalGoodsGames,
+  'digital_goods_large_volume' => digitalGoodsLargeVolume,
+  'digital_goods_media' => digitalGoodsMedia,
+  'direct_marketing_catalog_merchant' => directMarketingCatalogMerchant,
+  'direct_marketing_combination_catalog_and_retail_merchant' => directMarketingCombinationCatalogAndRetailMerchant,
+  'direct_marketing_inbound_telemarketing' => directMarketingInboundTelemarketing,
+  'direct_marketing_insurance_services' => directMarketingInsuranceServices,
+  'direct_marketing_other' => directMarketingOther,
+  'direct_marketing_outbound_telemarketing' => directMarketingOutboundTelemarketing,
+  'direct_marketing_subscription' => directMarketingSubscription,
+  'direct_marketing_travel' => directMarketingTravel,
+  'discount_stores' => discountStores,
+  'doctors' => doctors,
+  'door_to_door_sales' => doorToDoorSales,
+  'drapery_window_covering_and_upholstery_stores' => draperyWindowCoveringAndUpholsteryStores,
+  'drinking_places' => drinkingPlaces,
+  'drug_stores_and_pharmacies' => drugStoresAndPharmacies,
+  'drugs_drug_proprietaries_and_druggist_sundries' => drugsDrugProprietariesAndDruggistSundries,
+  'dry_cleaners' => dryCleaners,
+  'durable_goods' => durableGoods,
+  'duty_free_stores' => dutyFreeStores,
+  'eating_places_restaurants' => eatingPlacesRestaurants,
+  'educational_services' => educationalServices,
+  'electric_razor_stores' => electricRazorStores,
+  'electric_vehicle_charging' => electricVehicleCharging,
+  'electrical_parts_and_equipment' => electricalPartsAndEquipment,
+  'electrical_services' => electricalServices,
+  'electronics_repair_shops' => electronicsRepairShops,
+  'electronics_stores' => electronicsStores,
+  'elementary_secondary_schools' => elementarySecondarySchools,
+  'emergency_services_gcas_visa_use_only' => emergencyServicesGcasVisaUseOnly,
+  'employment_temp_agencies' => employmentTempAgencies,
+  'equipment_rental' => equipmentRental,
+  'exterminating_services' => exterminatingServices,
+  'family_clothing_stores' => familyClothingStores,
+  'fast_food_restaurants' => fastFoodRestaurants,
+  'financial_institutions' => financialInstitutions,
+  'fines_government_administrative_entities' => finesGovernmentAdministrativeEntities,
+  'fireplace_fireplace_screens_and_accessories_stores' => fireplaceFireplaceScreensAndAccessoriesStores,
+  'floor_covering_stores' => floorCoveringStores,
+  'florists' => florists,
+  'florists_supplies_nursery_stock_and_flowers' => floristsSuppliesNurseryStockAndFlowers,
+  'freezer_and_locker_meat_provisioners' => freezerAndLockerMeatProvisioners,
+  'fuel_dealers_non_automotive' => fuelDealersNonAutomotive,
+  'funeral_services_crematories' => funeralServicesCrematories,
+  'furniture_home_furnishings_and_equipment_stores_except_appliances' => furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances,
+  'furniture_repair_refinishing' => furnitureRepairRefinishing,
+  'furriers_and_fur_shops' => furriersAndFurShops,
+  'general_services' => generalServices,
+  'gift_card_novelty_and_souvenir_shops' => giftCardNoveltyAndSouvenirShops,
+  'glass_paint_and_wallpaper_stores' => glassPaintAndWallpaperStores,
+  'glassware_crystal_stores' => glasswareCrystalStores,
+  'golf_courses_public' => golfCoursesPublic,
+  'government_licensed_horse_dog_racing_us_region_only' => governmentLicensedHorseDogRacingUsRegionOnly,
+  'government_licensed_online_casions_online_gambling_us_region_only' => governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly,
+  'government_owned_lotteries_non_us_region' => governmentOwnedLotteriesNonUsRegion,
+  'government_owned_lotteries_us_region_only' => governmentOwnedLotteriesUsRegionOnly,
+  'government_services' => governmentServices,
+  'grocery_stores_supermarkets' => groceryStoresSupermarkets,
+  'hardware_equipment_and_supplies' => hardwareEquipmentAndSupplies,
+  'hardware_stores' => hardwareStores,
+  'health_and_beauty_spas' => healthAndBeautySpas,
+  'hearing_aids_sales_and_supplies' => hearingAidsSalesAndSupplies,
+  'heating_plumbing_a_c' => heatingPlumbingAC,
+  'hobby_toy_and_game_shops' => hobbyToyAndGameShops,
+  'home_supply_warehouse_stores' => homeSupplyWarehouseStores,
+  'hospitals' => hospitals,
+  'hotels_motels_and_resorts' => hotelsMotelsAndResorts,
+  'household_appliance_stores' => householdApplianceStores,
+  'industrial_supplies' => industrialSupplies,
+  'information_retrieval_services' => informationRetrievalServices,
+  'insurance_default' => insuranceDefault,
+  'insurance_underwriting_premiums' => insuranceUnderwritingPremiums,
+  'intra_company_purchases' => intraCompanyPurchases,
+  'jewelry_stores_watches_clocks_and_silverware_stores' => jewelryStoresWatchesClocksAndSilverwareStores,
+  'landscaping_services' => landscapingServices,
+  'laundries' => laundries,
+  'laundry_cleaning_services' => laundryCleaningServices,
+  'legal_services_attorneys' => legalServicesAttorneys,
+  'luggage_and_leather_goods_stores' => luggageAndLeatherGoodsStores,
+  'lumber_building_materials_stores' => lumberBuildingMaterialsStores,
+  'manual_cash_disburse' => manualCashDisburse,
+  'marinas_service_and_supplies' => marinasServiceAndSupplies,
+  'marketplaces' => marketplaces,
+  'masonry_stonework_and_plaster' => masonryStoneworkAndPlaster,
+  'massage_parlors' => massageParlors,
+  'medical_and_dental_labs' => medicalAndDentalLabs,
+  'medical_dental_ophthalmic_and_hospital_equipment_and_supplies' => medicalDentalOphthalmicAndHospitalEquipmentAndSupplies,
+  'medical_services' => medicalServices,
+  'membership_organizations' => membershipOrganizations,
+  'mens_and_boys_clothing_and_accessories_stores' => mensAndBoysClothingAndAccessoriesStores,
+  'mens_womens_clothing_stores' => mensWomensClothingStores,
+  'metal_service_centers' => metalServiceCenters,
+  'miscellaneous' => miscellaneous,
+  'miscellaneous_apparel_and_accessory_shops' => miscellaneousApparelAndAccessoryShops,
+  'miscellaneous_auto_dealers' => miscellaneousAutoDealers,
+  'miscellaneous_business_services' => miscellaneousBusinessServices,
+  'miscellaneous_food_stores' => miscellaneousFoodStores,
+  'miscellaneous_general_merchandise' => miscellaneousGeneralMerchandise,
+  'miscellaneous_general_services' => miscellaneousGeneralServices,
+  'miscellaneous_home_furnishing_specialty_stores' => miscellaneousHomeFurnishingSpecialtyStores,
+  'miscellaneous_publishing_and_printing' => miscellaneousPublishingAndPrinting,
+  'miscellaneous_recreation_services' => miscellaneousRecreationServices,
+  'miscellaneous_repair_shops' => miscellaneousRepairShops,
+  'miscellaneous_specialty_retail' => miscellaneousSpecialtyRetail,
+  'mobile_home_dealers' => mobileHomeDealers,
+  'motion_picture_theaters' => motionPictureTheaters,
+  'motor_freight_carriers_and_trucking' => motorFreightCarriersAndTrucking,
+  'motor_homes_dealers' => motorHomesDealers,
+  'motor_vehicle_supplies_and_new_parts' => motorVehicleSuppliesAndNewParts,
+  'motorcycle_shops_and_dealers' => motorcycleShopsAndDealers,
+  'motorcycle_shops_dealers' => motorcycleShopsDealers,
+  'music_stores_musical_instruments_pianos_and_sheet_music' => musicStoresMusicalInstrumentsPianosAndSheetMusic,
+  'news_dealers_and_newsstands' => newsDealersAndNewsstands,
+  'non_fi_money_orders' => nonFiMoneyOrders,
+  'non_fi_stored_value_card_purchase_load' => nonFiStoredValueCardPurchaseLoad,
+  'nondurable_goods' => nondurableGoods,
+  'nurseries_lawn_and_garden_supply_stores' => nurseriesLawnAndGardenSupplyStores,
+  'nursing_personal_care' => nursingPersonalCare,
+  'office_and_commercial_furniture' => officeAndCommercialFurniture,
+  'opticians_eyeglasses' => opticiansEyeglasses,
+  'optometrists_ophthalmologist' => optometristsOphthalmologist,
+  'orthopedic_goods_prosthetic_devices' => orthopedicGoodsProstheticDevices,
+  'osteopaths' => osteopaths,
+  'package_stores_beer_wine_and_liquor' => packageStoresBeerWineAndLiquor,
+  'paints_varnishes_and_supplies' => paintsVarnishesAndSupplies,
+  'parking_lots_garages' => parkingLotsGarages,
+  'passenger_railways' => passengerRailways,
+  'pawn_shops' => pawnShops,
+  'pet_shops_pet_food_and_supplies' => petShopsPetFoodAndSupplies,
+  'petroleum_and_petroleum_products' => petroleumAndPetroleumProducts,
+  'photo_developing' => photoDeveloping,
+  'photographic_photocopy_microfilm_equipment_and_supplies' => photographicPhotocopyMicrofilmEquipmentAndSupplies,
+  'photographic_studios' => photographicStudios,
+  'picture_video_production' => pictureVideoProduction,
+  'piece_goods_notions_and_other_dry_goods' => pieceGoodsNotionsAndOtherDryGoods,
+  'plumbing_heating_equipment_and_supplies' => plumbingHeatingEquipmentAndSupplies,
+  'political_organizations' => politicalOrganizations,
+  'postal_services_government_only' => postalServicesGovernmentOnly,
+  'precious_stones_and_metals_watches_and_jewelry' => preciousStonesAndMetalsWatchesAndJewelry,
+  'professional_services' => professionalServices,
+  'public_warehousing_and_storage' => publicWarehousingAndStorage,
+  'quick_copy_repro_and_blueprint' => quickCopyReproAndBlueprint,
+  'railroads' => railroads,
+  'real_estate_agents_and_managers_rentals' => realEstateAgentsAndManagersRentals,
+  'record_stores' => recordStores,
+  'recreational_vehicle_rentals' => recreationalVehicleRentals,
+  'religious_goods_stores' => religiousGoodsStores,
+  'religious_organizations' => religiousOrganizations,
+  'roofing_siding_sheet_metal' => roofingSidingSheetMetal,
+  'secretarial_support_services' => secretarialSupportServices,
+  'security_brokers_dealers' => securityBrokersDealers,
+  'service_stations' => serviceStations,
+  'sewing_needlework_fabric_and_piece_goods_stores' => sewingNeedleworkFabricAndPieceGoodsStores,
+  'shoe_repair_hat_cleaning' => shoeRepairHatCleaning,
+  'shoe_stores' => shoeStores,
+  'small_appliance_repair' => smallApplianceRepair,
+  'snowmobile_dealers' => snowmobileDealers,
+  'special_trade_services' => specialTradeServices,
+  'specialty_cleaning' => specialtyCleaning,
+  'sporting_goods_stores' => sportingGoodsStores,
+  'sporting_recreation_camps' => sportingRecreationCamps,
+  'sports_and_riding_apparel_stores' => sportsAndRidingApparelStores,
+  'sports_clubs_fields' => sportsClubsFields,
+  'stamp_and_coin_stores' => stampAndCoinStores,
+  'stationary_office_supplies_printing_and_writing_paper' => stationaryOfficeSuppliesPrintingAndWritingPaper,
+  'stationery_stores_office_and_school_supply_stores' => stationeryStoresOfficeAndSchoolSupplyStores,
+  'swimming_pools_sales' => swimmingPoolsSales,
+  't_ui_travel_germany' => tUiTravelGermany,
+  'tailors_alterations' => tailorsAlterations,
+  'tax_payments_government_agencies' => taxPaymentsGovernmentAgencies,
+  'tax_preparation_services' => taxPreparationServices,
+  'taxicabs_limousines' => taxicabsLimousines,
+  'telecommunication_equipment_and_telephone_sales' => telecommunicationEquipmentAndTelephoneSales,
+  'telecommunication_services' => telecommunicationServices,
+  'telegraph_services' => telegraphServices,
+  'tent_and_awning_shops' => tentAndAwningShops,
+  'testing_laboratories' => testingLaboratories,
+  'theatrical_ticket_agencies' => theatricalTicketAgencies,
+  'timeshares' => timeshares,
+  'tire_retreading_and_repair' => tireRetreadingAndRepair,
+  'tolls_bridge_fees' => tollsBridgeFees,
+  'tourist_attractions_and_exhibits' => touristAttractionsAndExhibits,
+  'towing_services' => towingServices,
+  'trailer_parks_campgrounds' => trailerParksCampgrounds,
+  'transportation_services' => transportationServices,
+  'travel_agencies_tour_operators' => travelAgenciesTourOperators,
+  'truck_stop_iteration' => truckStopIteration,
+  'truck_utility_trailer_rentals' => truckUtilityTrailerRentals,
+  'typesetting_plate_making_and_related_services' => typesettingPlateMakingAndRelatedServices,
+  'typewriter_stores' => typewriterStores,
+  'u_s_federal_government_agencies_or_departments' => uSFederalGovernmentAgenciesOrDepartments,
+  'uniforms_commercial_clothing' => uniformsCommercialClothing,
+  'used_merchandise_and_secondhand_stores' => usedMerchandiseAndSecondhandStores,
+  'utilities' => utilities,
+  'variety_stores' => varietyStores,
+  'veterinary_services' => veterinaryServices,
+  'video_amusement_game_supplies' => videoAmusementGameSupplies,
+  'video_game_arcades' => videoGameArcades,
+  'video_tape_rental_stores' => videoTapeRentalStores,
+  'vocational_trade_schools' => vocationalTradeSchools,
+  'watch_jewelry_repair' => watchJewelryRepair,
+  'welding_repair' => weldingRepair,
+  'wholesale_clubs' => wholesaleClubs,
+  'wig_and_toupee_stores' => wigAndToupeeStores,
+  'wires_money_orders' => wiresMoneyOrders,
+  'womens_accessory_and_specialty_shops' => womensAccessoryAndSpecialtyShops,
+  'womens_ready_to_wear_stores' => womensReadyToWearStores,
+  'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
+  _ => IssuingCardholderAuthorizationControlsAllowedCategories._(json),
+}; }
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories acRefrigerationRepair = IssuingCardholderAuthorizationControlsAllowedCategories._('ac_refrigeration_repair');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories accountingBookkeepingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('accounting_bookkeeping_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories advertisingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('advertising_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories agriculturalCooperative = IssuingCardholderAuthorizationControlsAllowedCategories._('agricultural_cooperative');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories airlinesAirCarriers = IssuingCardholderAuthorizationControlsAllowedCategories._('airlines_air_carriers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories airportsFlyingFields = IssuingCardholderAuthorizationControlsAllowedCategories._('airports_flying_fields');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories ambulanceServices = IssuingCardholderAuthorizationControlsAllowedCategories._('ambulance_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories amusementParksCarnivals = IssuingCardholderAuthorizationControlsAllowedCategories._('amusement_parks_carnivals');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories antiqueReproductions = IssuingCardholderAuthorizationControlsAllowedCategories._('antique_reproductions');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories antiqueShops = IssuingCardholderAuthorizationControlsAllowedCategories._('antique_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories aquariums = IssuingCardholderAuthorizationControlsAllowedCategories._('aquariums');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories architecturalSurveyingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('architectural_surveying_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories artDealersAndGalleries = IssuingCardholderAuthorizationControlsAllowedCategories._('art_dealers_and_galleries');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories artistsSupplyAndCraftShops = IssuingCardholderAuthorizationControlsAllowedCategories._('artists_supply_and_craft_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories autoAndHomeSupplyStores = IssuingCardholderAuthorizationControlsAllowedCategories._('auto_and_home_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories autoBodyRepairShops = IssuingCardholderAuthorizationControlsAllowedCategories._('auto_body_repair_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories autoPaintShops = IssuingCardholderAuthorizationControlsAllowedCategories._('auto_paint_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories autoServiceShops = IssuingCardholderAuthorizationControlsAllowedCategories._('auto_service_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories automatedCashDisburse = IssuingCardholderAuthorizationControlsAllowedCategories._('automated_cash_disburse');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories automatedFuelDispensers = IssuingCardholderAuthorizationControlsAllowedCategories._('automated_fuel_dispensers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories automobileAssociations = IssuingCardholderAuthorizationControlsAllowedCategories._('automobile_associations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories automotivePartsAndAccessoriesStores = IssuingCardholderAuthorizationControlsAllowedCategories._('automotive_parts_and_accessories_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories automotiveTireStores = IssuingCardholderAuthorizationControlsAllowedCategories._('automotive_tire_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bailAndBondPayments = IssuingCardholderAuthorizationControlsAllowedCategories._('bail_and_bond_payments');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bakeries = IssuingCardholderAuthorizationControlsAllowedCategories._('bakeries');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bandsOrchestras = IssuingCardholderAuthorizationControlsAllowedCategories._('bands_orchestras');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories barberAndBeautyShops = IssuingCardholderAuthorizationControlsAllowedCategories._('barber_and_beauty_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bettingCasinoGambling = IssuingCardholderAuthorizationControlsAllowedCategories._('betting_casino_gambling');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bicycleShops = IssuingCardholderAuthorizationControlsAllowedCategories._('bicycle_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories billiardPoolEstablishments = IssuingCardholderAuthorizationControlsAllowedCategories._('billiard_pool_establishments');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories boatDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('boat_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories boatRentalsAndLeases = IssuingCardholderAuthorizationControlsAllowedCategories._('boat_rentals_and_leases');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bookStores = IssuingCardholderAuthorizationControlsAllowedCategories._('book_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories booksPeriodicalsAndNewspapers = IssuingCardholderAuthorizationControlsAllowedCategories._('books_periodicals_and_newspapers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories bowlingAlleys = IssuingCardholderAuthorizationControlsAllowedCategories._('bowling_alleys');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories busLines = IssuingCardholderAuthorizationControlsAllowedCategories._('bus_lines');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories businessSecretarialSchools = IssuingCardholderAuthorizationControlsAllowedCategories._('business_secretarial_schools');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories buyingShoppingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('buying_shopping_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories cableSatelliteAndOtherPayTelevisionAndRadio = IssuingCardholderAuthorizationControlsAllowedCategories._('cable_satellite_and_other_pay_television_and_radio');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories cameraAndPhotographicSupplyStores = IssuingCardholderAuthorizationControlsAllowedCategories._('camera_and_photographic_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories candyNutAndConfectioneryStores = IssuingCardholderAuthorizationControlsAllowedCategories._('candy_nut_and_confectionery_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories carAndTruckDealersNewUsed = IssuingCardholderAuthorizationControlsAllowedCategories._('car_and_truck_dealers_new_used');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories carAndTruckDealersUsedOnly = IssuingCardholderAuthorizationControlsAllowedCategories._('car_and_truck_dealers_used_only');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories carRentalAgencies = IssuingCardholderAuthorizationControlsAllowedCategories._('car_rental_agencies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories carWashes = IssuingCardholderAuthorizationControlsAllowedCategories._('car_washes');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories carpentryServices = IssuingCardholderAuthorizationControlsAllowedCategories._('carpentry_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories carpetUpholsteryCleaning = IssuingCardholderAuthorizationControlsAllowedCategories._('carpet_upholstery_cleaning');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories caterers = IssuingCardholderAuthorizationControlsAllowedCategories._('caterers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories charitableAndSocialServiceOrganizationsFundraising = IssuingCardholderAuthorizationControlsAllowedCategories._('charitable_and_social_service_organizations_fundraising');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories chemicalsAndAlliedProducts = IssuingCardholderAuthorizationControlsAllowedCategories._('chemicals_and_allied_products');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories childCareServices = IssuingCardholderAuthorizationControlsAllowedCategories._('child_care_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories childrensAndInfantsWearStores = IssuingCardholderAuthorizationControlsAllowedCategories._('childrens_and_infants_wear_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories chiropodistsPodiatrists = IssuingCardholderAuthorizationControlsAllowedCategories._('chiropodists_podiatrists');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories chiropractors = IssuingCardholderAuthorizationControlsAllowedCategories._('chiropractors');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories cigarStoresAndStands = IssuingCardholderAuthorizationControlsAllowedCategories._('cigar_stores_and_stands');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories civicSocialFraternalAssociations = IssuingCardholderAuthorizationControlsAllowedCategories._('civic_social_fraternal_associations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories cleaningAndMaintenance = IssuingCardholderAuthorizationControlsAllowedCategories._('cleaning_and_maintenance');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories clothingRental = IssuingCardholderAuthorizationControlsAllowedCategories._('clothing_rental');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories collegesUniversities = IssuingCardholderAuthorizationControlsAllowedCategories._('colleges_universities');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories commercialEquipment = IssuingCardholderAuthorizationControlsAllowedCategories._('commercial_equipment');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories commercialFootwear = IssuingCardholderAuthorizationControlsAllowedCategories._('commercial_footwear');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories commercialPhotographyArtAndGraphics = IssuingCardholderAuthorizationControlsAllowedCategories._('commercial_photography_art_and_graphics');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories commuterTransportAndFerries = IssuingCardholderAuthorizationControlsAllowedCategories._('commuter_transport_and_ferries');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories computerNetworkServices = IssuingCardholderAuthorizationControlsAllowedCategories._('computer_network_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories computerProgramming = IssuingCardholderAuthorizationControlsAllowedCategories._('computer_programming');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories computerRepair = IssuingCardholderAuthorizationControlsAllowedCategories._('computer_repair');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories computerSoftwareStores = IssuingCardholderAuthorizationControlsAllowedCategories._('computer_software_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories computersPeripheralsAndSoftware = IssuingCardholderAuthorizationControlsAllowedCategories._('computers_peripherals_and_software');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories concreteWorkServices = IssuingCardholderAuthorizationControlsAllowedCategories._('concrete_work_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories constructionMaterials = IssuingCardholderAuthorizationControlsAllowedCategories._('construction_materials');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories consultingPublicRelations = IssuingCardholderAuthorizationControlsAllowedCategories._('consulting_public_relations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories correspondenceSchools = IssuingCardholderAuthorizationControlsAllowedCategories._('correspondence_schools');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories cosmeticStores = IssuingCardholderAuthorizationControlsAllowedCategories._('cosmetic_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories counselingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('counseling_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories countryClubs = IssuingCardholderAuthorizationControlsAllowedCategories._('country_clubs');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories courierServices = IssuingCardholderAuthorizationControlsAllowedCategories._('courier_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories courtCosts = IssuingCardholderAuthorizationControlsAllowedCategories._('court_costs');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories creditReportingAgencies = IssuingCardholderAuthorizationControlsAllowedCategories._('credit_reporting_agencies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories cruiseLines = IssuingCardholderAuthorizationControlsAllowedCategories._('cruise_lines');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories dairyProductsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('dairy_products_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories danceHallStudiosSchools = IssuingCardholderAuthorizationControlsAllowedCategories._('dance_hall_studios_schools');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories datingEscortServices = IssuingCardholderAuthorizationControlsAllowedCategories._('dating_escort_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories dentistsOrthodontists = IssuingCardholderAuthorizationControlsAllowedCategories._('dentists_orthodontists');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories departmentStores = IssuingCardholderAuthorizationControlsAllowedCategories._('department_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories detectiveAgencies = IssuingCardholderAuthorizationControlsAllowedCategories._('detective_agencies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories digitalGoodsApplications = IssuingCardholderAuthorizationControlsAllowedCategories._('digital_goods_applications');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories digitalGoodsGames = IssuingCardholderAuthorizationControlsAllowedCategories._('digital_goods_games');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories digitalGoodsLargeVolume = IssuingCardholderAuthorizationControlsAllowedCategories._('digital_goods_large_volume');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories digitalGoodsMedia = IssuingCardholderAuthorizationControlsAllowedCategories._('digital_goods_media');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingCatalogMerchant = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_catalog_merchant');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingCombinationCatalogAndRetailMerchant = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_combination_catalog_and_retail_merchant');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingInboundTelemarketing = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_inbound_telemarketing');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingInsuranceServices = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_insurance_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingOther = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_other');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingOutboundTelemarketing = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_outbound_telemarketing');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingSubscription = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_subscription');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories directMarketingTravel = IssuingCardholderAuthorizationControlsAllowedCategories._('direct_marketing_travel');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories discountStores = IssuingCardholderAuthorizationControlsAllowedCategories._('discount_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories doctors = IssuingCardholderAuthorizationControlsAllowedCategories._('doctors');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories doorToDoorSales = IssuingCardholderAuthorizationControlsAllowedCategories._('door_to_door_sales');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories draperyWindowCoveringAndUpholsteryStores = IssuingCardholderAuthorizationControlsAllowedCategories._('drapery_window_covering_and_upholstery_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories drinkingPlaces = IssuingCardholderAuthorizationControlsAllowedCategories._('drinking_places');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories drugStoresAndPharmacies = IssuingCardholderAuthorizationControlsAllowedCategories._('drug_stores_and_pharmacies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories drugsDrugProprietariesAndDruggistSundries = IssuingCardholderAuthorizationControlsAllowedCategories._('drugs_drug_proprietaries_and_druggist_sundries');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories dryCleaners = IssuingCardholderAuthorizationControlsAllowedCategories._('dry_cleaners');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories durableGoods = IssuingCardholderAuthorizationControlsAllowedCategories._('durable_goods');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories dutyFreeStores = IssuingCardholderAuthorizationControlsAllowedCategories._('duty_free_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories eatingPlacesRestaurants = IssuingCardholderAuthorizationControlsAllowedCategories._('eating_places_restaurants');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories educationalServices = IssuingCardholderAuthorizationControlsAllowedCategories._('educational_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories electricRazorStores = IssuingCardholderAuthorizationControlsAllowedCategories._('electric_razor_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories electricVehicleCharging = IssuingCardholderAuthorizationControlsAllowedCategories._('electric_vehicle_charging');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories electricalPartsAndEquipment = IssuingCardholderAuthorizationControlsAllowedCategories._('electrical_parts_and_equipment');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories electricalServices = IssuingCardholderAuthorizationControlsAllowedCategories._('electrical_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories electronicsRepairShops = IssuingCardholderAuthorizationControlsAllowedCategories._('electronics_repair_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories electronicsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('electronics_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories elementarySecondarySchools = IssuingCardholderAuthorizationControlsAllowedCategories._('elementary_secondary_schools');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories emergencyServicesGcasVisaUseOnly = IssuingCardholderAuthorizationControlsAllowedCategories._('emergency_services_gcas_visa_use_only');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories employmentTempAgencies = IssuingCardholderAuthorizationControlsAllowedCategories._('employment_temp_agencies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories equipmentRental = IssuingCardholderAuthorizationControlsAllowedCategories._('equipment_rental');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories exterminatingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('exterminating_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories familyClothingStores = IssuingCardholderAuthorizationControlsAllowedCategories._('family_clothing_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories fastFoodRestaurants = IssuingCardholderAuthorizationControlsAllowedCategories._('fast_food_restaurants');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories financialInstitutions = IssuingCardholderAuthorizationControlsAllowedCategories._('financial_institutions');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories finesGovernmentAdministrativeEntities = IssuingCardholderAuthorizationControlsAllowedCategories._('fines_government_administrative_entities');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories fireplaceFireplaceScreensAndAccessoriesStores = IssuingCardholderAuthorizationControlsAllowedCategories._('fireplace_fireplace_screens_and_accessories_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories floorCoveringStores = IssuingCardholderAuthorizationControlsAllowedCategories._('floor_covering_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories florists = IssuingCardholderAuthorizationControlsAllowedCategories._('florists');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories floristsSuppliesNurseryStockAndFlowers = IssuingCardholderAuthorizationControlsAllowedCategories._('florists_supplies_nursery_stock_and_flowers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories freezerAndLockerMeatProvisioners = IssuingCardholderAuthorizationControlsAllowedCategories._('freezer_and_locker_meat_provisioners');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories fuelDealersNonAutomotive = IssuingCardholderAuthorizationControlsAllowedCategories._('fuel_dealers_non_automotive');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories funeralServicesCrematories = IssuingCardholderAuthorizationControlsAllowedCategories._('funeral_services_crematories');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances = IssuingCardholderAuthorizationControlsAllowedCategories._('furniture_home_furnishings_and_equipment_stores_except_appliances');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories furnitureRepairRefinishing = IssuingCardholderAuthorizationControlsAllowedCategories._('furniture_repair_refinishing');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories furriersAndFurShops = IssuingCardholderAuthorizationControlsAllowedCategories._('furriers_and_fur_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories generalServices = IssuingCardholderAuthorizationControlsAllowedCategories._('general_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories giftCardNoveltyAndSouvenirShops = IssuingCardholderAuthorizationControlsAllowedCategories._('gift_card_novelty_and_souvenir_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories glassPaintAndWallpaperStores = IssuingCardholderAuthorizationControlsAllowedCategories._('glass_paint_and_wallpaper_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories glasswareCrystalStores = IssuingCardholderAuthorizationControlsAllowedCategories._('glassware_crystal_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories golfCoursesPublic = IssuingCardholderAuthorizationControlsAllowedCategories._('golf_courses_public');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories governmentLicensedHorseDogRacingUsRegionOnly = IssuingCardholderAuthorizationControlsAllowedCategories._('government_licensed_horse_dog_racing_us_region_only');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly = IssuingCardholderAuthorizationControlsAllowedCategories._('government_licensed_online_casions_online_gambling_us_region_only');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories governmentOwnedLotteriesNonUsRegion = IssuingCardholderAuthorizationControlsAllowedCategories._('government_owned_lotteries_non_us_region');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories governmentOwnedLotteriesUsRegionOnly = IssuingCardholderAuthorizationControlsAllowedCategories._('government_owned_lotteries_us_region_only');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories governmentServices = IssuingCardholderAuthorizationControlsAllowedCategories._('government_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories groceryStoresSupermarkets = IssuingCardholderAuthorizationControlsAllowedCategories._('grocery_stores_supermarkets');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories hardwareEquipmentAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('hardware_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories hardwareStores = IssuingCardholderAuthorizationControlsAllowedCategories._('hardware_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories healthAndBeautySpas = IssuingCardholderAuthorizationControlsAllowedCategories._('health_and_beauty_spas');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories hearingAidsSalesAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('hearing_aids_sales_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories heatingPlumbingAC = IssuingCardholderAuthorizationControlsAllowedCategories._('heating_plumbing_a_c');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories hobbyToyAndGameShops = IssuingCardholderAuthorizationControlsAllowedCategories._('hobby_toy_and_game_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories homeSupplyWarehouseStores = IssuingCardholderAuthorizationControlsAllowedCategories._('home_supply_warehouse_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories hospitals = IssuingCardholderAuthorizationControlsAllowedCategories._('hospitals');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories hotelsMotelsAndResorts = IssuingCardholderAuthorizationControlsAllowedCategories._('hotels_motels_and_resorts');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories householdApplianceStores = IssuingCardholderAuthorizationControlsAllowedCategories._('household_appliance_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories industrialSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('industrial_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories informationRetrievalServices = IssuingCardholderAuthorizationControlsAllowedCategories._('information_retrieval_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories insuranceDefault = IssuingCardholderAuthorizationControlsAllowedCategories._('insurance_default');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories insuranceUnderwritingPremiums = IssuingCardholderAuthorizationControlsAllowedCategories._('insurance_underwriting_premiums');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories intraCompanyPurchases = IssuingCardholderAuthorizationControlsAllowedCategories._('intra_company_purchases');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories jewelryStoresWatchesClocksAndSilverwareStores = IssuingCardholderAuthorizationControlsAllowedCategories._('jewelry_stores_watches_clocks_and_silverware_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories landscapingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('landscaping_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories laundries = IssuingCardholderAuthorizationControlsAllowedCategories._('laundries');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories laundryCleaningServices = IssuingCardholderAuthorizationControlsAllowedCategories._('laundry_cleaning_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories legalServicesAttorneys = IssuingCardholderAuthorizationControlsAllowedCategories._('legal_services_attorneys');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories luggageAndLeatherGoodsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('luggage_and_leather_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories lumberBuildingMaterialsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('lumber_building_materials_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories manualCashDisburse = IssuingCardholderAuthorizationControlsAllowedCategories._('manual_cash_disburse');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories marinasServiceAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('marinas_service_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories marketplaces = IssuingCardholderAuthorizationControlsAllowedCategories._('marketplaces');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories masonryStoneworkAndPlaster = IssuingCardholderAuthorizationControlsAllowedCategories._('masonry_stonework_and_plaster');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories massageParlors = IssuingCardholderAuthorizationControlsAllowedCategories._('massage_parlors');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories medicalAndDentalLabs = IssuingCardholderAuthorizationControlsAllowedCategories._('medical_and_dental_labs');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories medicalDentalOphthalmicAndHospitalEquipmentAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('medical_dental_ophthalmic_and_hospital_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories medicalServices = IssuingCardholderAuthorizationControlsAllowedCategories._('medical_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories membershipOrganizations = IssuingCardholderAuthorizationControlsAllowedCategories._('membership_organizations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories mensAndBoysClothingAndAccessoriesStores = IssuingCardholderAuthorizationControlsAllowedCategories._('mens_and_boys_clothing_and_accessories_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories mensWomensClothingStores = IssuingCardholderAuthorizationControlsAllowedCategories._('mens_womens_clothing_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories metalServiceCenters = IssuingCardholderAuthorizationControlsAllowedCategories._('metal_service_centers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneous = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousApparelAndAccessoryShops = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_apparel_and_accessory_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousAutoDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_auto_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousBusinessServices = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_business_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousFoodStores = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_food_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousGeneralMerchandise = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_general_merchandise');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousGeneralServices = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_general_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousHomeFurnishingSpecialtyStores = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_home_furnishing_specialty_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousPublishingAndPrinting = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_publishing_and_printing');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousRecreationServices = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_recreation_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousRepairShops = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_repair_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories miscellaneousSpecialtyRetail = IssuingCardholderAuthorizationControlsAllowedCategories._('miscellaneous_specialty_retail');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories mobileHomeDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('mobile_home_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories motionPictureTheaters = IssuingCardholderAuthorizationControlsAllowedCategories._('motion_picture_theaters');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories motorFreightCarriersAndTrucking = IssuingCardholderAuthorizationControlsAllowedCategories._('motor_freight_carriers_and_trucking');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories motorHomesDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('motor_homes_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories motorVehicleSuppliesAndNewParts = IssuingCardholderAuthorizationControlsAllowedCategories._('motor_vehicle_supplies_and_new_parts');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories motorcycleShopsAndDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('motorcycle_shops_and_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories motorcycleShopsDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('motorcycle_shops_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories musicStoresMusicalInstrumentsPianosAndSheetMusic = IssuingCardholderAuthorizationControlsAllowedCategories._('music_stores_musical_instruments_pianos_and_sheet_music');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories newsDealersAndNewsstands = IssuingCardholderAuthorizationControlsAllowedCategories._('news_dealers_and_newsstands');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories nonFiMoneyOrders = IssuingCardholderAuthorizationControlsAllowedCategories._('non_fi_money_orders');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories nonFiStoredValueCardPurchaseLoad = IssuingCardholderAuthorizationControlsAllowedCategories._('non_fi_stored_value_card_purchase_load');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories nondurableGoods = IssuingCardholderAuthorizationControlsAllowedCategories._('nondurable_goods');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories nurseriesLawnAndGardenSupplyStores = IssuingCardholderAuthorizationControlsAllowedCategories._('nurseries_lawn_and_garden_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories nursingPersonalCare = IssuingCardholderAuthorizationControlsAllowedCategories._('nursing_personal_care');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories officeAndCommercialFurniture = IssuingCardholderAuthorizationControlsAllowedCategories._('office_and_commercial_furniture');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories opticiansEyeglasses = IssuingCardholderAuthorizationControlsAllowedCategories._('opticians_eyeglasses');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories optometristsOphthalmologist = IssuingCardholderAuthorizationControlsAllowedCategories._('optometrists_ophthalmologist');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories orthopedicGoodsProstheticDevices = IssuingCardholderAuthorizationControlsAllowedCategories._('orthopedic_goods_prosthetic_devices');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories osteopaths = IssuingCardholderAuthorizationControlsAllowedCategories._('osteopaths');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories packageStoresBeerWineAndLiquor = IssuingCardholderAuthorizationControlsAllowedCategories._('package_stores_beer_wine_and_liquor');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories paintsVarnishesAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('paints_varnishes_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories parkingLotsGarages = IssuingCardholderAuthorizationControlsAllowedCategories._('parking_lots_garages');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories passengerRailways = IssuingCardholderAuthorizationControlsAllowedCategories._('passenger_railways');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories pawnShops = IssuingCardholderAuthorizationControlsAllowedCategories._('pawn_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories petShopsPetFoodAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('pet_shops_pet_food_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories petroleumAndPetroleumProducts = IssuingCardholderAuthorizationControlsAllowedCategories._('petroleum_and_petroleum_products');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories photoDeveloping = IssuingCardholderAuthorizationControlsAllowedCategories._('photo_developing');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories photographicPhotocopyMicrofilmEquipmentAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('photographic_photocopy_microfilm_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories photographicStudios = IssuingCardholderAuthorizationControlsAllowedCategories._('photographic_studios');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories pictureVideoProduction = IssuingCardholderAuthorizationControlsAllowedCategories._('picture_video_production');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories pieceGoodsNotionsAndOtherDryGoods = IssuingCardholderAuthorizationControlsAllowedCategories._('piece_goods_notions_and_other_dry_goods');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories plumbingHeatingEquipmentAndSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('plumbing_heating_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories politicalOrganizations = IssuingCardholderAuthorizationControlsAllowedCategories._('political_organizations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories postalServicesGovernmentOnly = IssuingCardholderAuthorizationControlsAllowedCategories._('postal_services_government_only');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories preciousStonesAndMetalsWatchesAndJewelry = IssuingCardholderAuthorizationControlsAllowedCategories._('precious_stones_and_metals_watches_and_jewelry');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories professionalServices = IssuingCardholderAuthorizationControlsAllowedCategories._('professional_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories publicWarehousingAndStorage = IssuingCardholderAuthorizationControlsAllowedCategories._('public_warehousing_and_storage');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories quickCopyReproAndBlueprint = IssuingCardholderAuthorizationControlsAllowedCategories._('quick_copy_repro_and_blueprint');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories railroads = IssuingCardholderAuthorizationControlsAllowedCategories._('railroads');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories realEstateAgentsAndManagersRentals = IssuingCardholderAuthorizationControlsAllowedCategories._('real_estate_agents_and_managers_rentals');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories recordStores = IssuingCardholderAuthorizationControlsAllowedCategories._('record_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories recreationalVehicleRentals = IssuingCardholderAuthorizationControlsAllowedCategories._('recreational_vehicle_rentals');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories religiousGoodsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('religious_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories religiousOrganizations = IssuingCardholderAuthorizationControlsAllowedCategories._('religious_organizations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories roofingSidingSheetMetal = IssuingCardholderAuthorizationControlsAllowedCategories._('roofing_siding_sheet_metal');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories secretarialSupportServices = IssuingCardholderAuthorizationControlsAllowedCategories._('secretarial_support_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories securityBrokersDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('security_brokers_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories serviceStations = IssuingCardholderAuthorizationControlsAllowedCategories._('service_stations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories sewingNeedleworkFabricAndPieceGoodsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('sewing_needlework_fabric_and_piece_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories shoeRepairHatCleaning = IssuingCardholderAuthorizationControlsAllowedCategories._('shoe_repair_hat_cleaning');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories shoeStores = IssuingCardholderAuthorizationControlsAllowedCategories._('shoe_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories smallApplianceRepair = IssuingCardholderAuthorizationControlsAllowedCategories._('small_appliance_repair');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories snowmobileDealers = IssuingCardholderAuthorizationControlsAllowedCategories._('snowmobile_dealers');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories specialTradeServices = IssuingCardholderAuthorizationControlsAllowedCategories._('special_trade_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories specialtyCleaning = IssuingCardholderAuthorizationControlsAllowedCategories._('specialty_cleaning');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories sportingGoodsStores = IssuingCardholderAuthorizationControlsAllowedCategories._('sporting_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories sportingRecreationCamps = IssuingCardholderAuthorizationControlsAllowedCategories._('sporting_recreation_camps');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories sportsAndRidingApparelStores = IssuingCardholderAuthorizationControlsAllowedCategories._('sports_and_riding_apparel_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories sportsClubsFields = IssuingCardholderAuthorizationControlsAllowedCategories._('sports_clubs_fields');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories stampAndCoinStores = IssuingCardholderAuthorizationControlsAllowedCategories._('stamp_and_coin_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories stationaryOfficeSuppliesPrintingAndWritingPaper = IssuingCardholderAuthorizationControlsAllowedCategories._('stationary_office_supplies_printing_and_writing_paper');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories stationeryStoresOfficeAndSchoolSupplyStores = IssuingCardholderAuthorizationControlsAllowedCategories._('stationery_stores_office_and_school_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories swimmingPoolsSales = IssuingCardholderAuthorizationControlsAllowedCategories._('swimming_pools_sales');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories tUiTravelGermany = IssuingCardholderAuthorizationControlsAllowedCategories._('t_ui_travel_germany');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories tailorsAlterations = IssuingCardholderAuthorizationControlsAllowedCategories._('tailors_alterations');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories taxPaymentsGovernmentAgencies = IssuingCardholderAuthorizationControlsAllowedCategories._('tax_payments_government_agencies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories taxPreparationServices = IssuingCardholderAuthorizationControlsAllowedCategories._('tax_preparation_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories taxicabsLimousines = IssuingCardholderAuthorizationControlsAllowedCategories._('taxicabs_limousines');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories telecommunicationEquipmentAndTelephoneSales = IssuingCardholderAuthorizationControlsAllowedCategories._('telecommunication_equipment_and_telephone_sales');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories telecommunicationServices = IssuingCardholderAuthorizationControlsAllowedCategories._('telecommunication_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories telegraphServices = IssuingCardholderAuthorizationControlsAllowedCategories._('telegraph_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories tentAndAwningShops = IssuingCardholderAuthorizationControlsAllowedCategories._('tent_and_awning_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories testingLaboratories = IssuingCardholderAuthorizationControlsAllowedCategories._('testing_laboratories');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories theatricalTicketAgencies = IssuingCardholderAuthorizationControlsAllowedCategories._('theatrical_ticket_agencies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories timeshares = IssuingCardholderAuthorizationControlsAllowedCategories._('timeshares');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories tireRetreadingAndRepair = IssuingCardholderAuthorizationControlsAllowedCategories._('tire_retreading_and_repair');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories tollsBridgeFees = IssuingCardholderAuthorizationControlsAllowedCategories._('tolls_bridge_fees');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories touristAttractionsAndExhibits = IssuingCardholderAuthorizationControlsAllowedCategories._('tourist_attractions_and_exhibits');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories towingServices = IssuingCardholderAuthorizationControlsAllowedCategories._('towing_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories trailerParksCampgrounds = IssuingCardholderAuthorizationControlsAllowedCategories._('trailer_parks_campgrounds');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories transportationServices = IssuingCardholderAuthorizationControlsAllowedCategories._('transportation_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories travelAgenciesTourOperators = IssuingCardholderAuthorizationControlsAllowedCategories._('travel_agencies_tour_operators');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories truckStopIteration = IssuingCardholderAuthorizationControlsAllowedCategories._('truck_stop_iteration');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories truckUtilityTrailerRentals = IssuingCardholderAuthorizationControlsAllowedCategories._('truck_utility_trailer_rentals');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories typesettingPlateMakingAndRelatedServices = IssuingCardholderAuthorizationControlsAllowedCategories._('typesetting_plate_making_and_related_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories typewriterStores = IssuingCardholderAuthorizationControlsAllowedCategories._('typewriter_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories uSFederalGovernmentAgenciesOrDepartments = IssuingCardholderAuthorizationControlsAllowedCategories._('u_s_federal_government_agencies_or_departments');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories uniformsCommercialClothing = IssuingCardholderAuthorizationControlsAllowedCategories._('uniforms_commercial_clothing');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories usedMerchandiseAndSecondhandStores = IssuingCardholderAuthorizationControlsAllowedCategories._('used_merchandise_and_secondhand_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories utilities = IssuingCardholderAuthorizationControlsAllowedCategories._('utilities');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories varietyStores = IssuingCardholderAuthorizationControlsAllowedCategories._('variety_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories veterinaryServices = IssuingCardholderAuthorizationControlsAllowedCategories._('veterinary_services');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories videoAmusementGameSupplies = IssuingCardholderAuthorizationControlsAllowedCategories._('video_amusement_game_supplies');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories videoGameArcades = IssuingCardholderAuthorizationControlsAllowedCategories._('video_game_arcades');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories videoTapeRentalStores = IssuingCardholderAuthorizationControlsAllowedCategories._('video_tape_rental_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories vocationalTradeSchools = IssuingCardholderAuthorizationControlsAllowedCategories._('vocational_trade_schools');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories watchJewelryRepair = IssuingCardholderAuthorizationControlsAllowedCategories._('watch_jewelry_repair');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories weldingRepair = IssuingCardholderAuthorizationControlsAllowedCategories._('welding_repair');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories wholesaleClubs = IssuingCardholderAuthorizationControlsAllowedCategories._('wholesale_clubs');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories wigAndToupeeStores = IssuingCardholderAuthorizationControlsAllowedCategories._('wig_and_toupee_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories wiresMoneyOrders = IssuingCardholderAuthorizationControlsAllowedCategories._('wires_money_orders');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories womensAccessoryAndSpecialtyShops = IssuingCardholderAuthorizationControlsAllowedCategories._('womens_accessory_and_specialty_shops');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories womensReadyToWearStores = IssuingCardholderAuthorizationControlsAllowedCategories._('womens_ready_to_wear_stores');
+
+static const IssuingCardholderAuthorizationControlsAllowedCategories wreckingAndSalvageYards = IssuingCardholderAuthorizationControlsAllowedCategories._('wrecking_and_salvage_yards');
+
+static const List<IssuingCardholderAuthorizationControlsAllowedCategories> values = [acRefrigerationRepair, accountingBookkeepingServices, advertisingServices, agriculturalCooperative, airlinesAirCarriers, airportsFlyingFields, ambulanceServices, amusementParksCarnivals, antiqueReproductions, antiqueShops, aquariums, architecturalSurveyingServices, artDealersAndGalleries, artistsSupplyAndCraftShops, autoAndHomeSupplyStores, autoBodyRepairShops, autoPaintShops, autoServiceShops, automatedCashDisburse, automatedFuelDispensers, automobileAssociations, automotivePartsAndAccessoriesStores, automotiveTireStores, bailAndBondPayments, bakeries, bandsOrchestras, barberAndBeautyShops, bettingCasinoGambling, bicycleShops, billiardPoolEstablishments, boatDealers, boatRentalsAndLeases, bookStores, booksPeriodicalsAndNewspapers, bowlingAlleys, busLines, businessSecretarialSchools, buyingShoppingServices, cableSatelliteAndOtherPayTelevisionAndRadio, cameraAndPhotographicSupplyStores, candyNutAndConfectioneryStores, carAndTruckDealersNewUsed, carAndTruckDealersUsedOnly, carRentalAgencies, carWashes, carpentryServices, carpetUpholsteryCleaning, caterers, charitableAndSocialServiceOrganizationsFundraising, chemicalsAndAlliedProducts, childCareServices, childrensAndInfantsWearStores, chiropodistsPodiatrists, chiropractors, cigarStoresAndStands, civicSocialFraternalAssociations, cleaningAndMaintenance, clothingRental, collegesUniversities, commercialEquipment, commercialFootwear, commercialPhotographyArtAndGraphics, commuterTransportAndFerries, computerNetworkServices, computerProgramming, computerRepair, computerSoftwareStores, computersPeripheralsAndSoftware, concreteWorkServices, constructionMaterials, consultingPublicRelations, correspondenceSchools, cosmeticStores, counselingServices, countryClubs, courierServices, courtCosts, creditReportingAgencies, cruiseLines, dairyProductsStores, danceHallStudiosSchools, datingEscortServices, dentistsOrthodontists, departmentStores, detectiveAgencies, digitalGoodsApplications, digitalGoodsGames, digitalGoodsLargeVolume, digitalGoodsMedia, directMarketingCatalogMerchant, directMarketingCombinationCatalogAndRetailMerchant, directMarketingInboundTelemarketing, directMarketingInsuranceServices, directMarketingOther, directMarketingOutboundTelemarketing, directMarketingSubscription, directMarketingTravel, discountStores, doctors, doorToDoorSales, draperyWindowCoveringAndUpholsteryStores, drinkingPlaces, drugStoresAndPharmacies, drugsDrugProprietariesAndDruggistSundries, dryCleaners, durableGoods, dutyFreeStores, eatingPlacesRestaurants, educationalServices, electricRazorStores, electricVehicleCharging, electricalPartsAndEquipment, electricalServices, electronicsRepairShops, electronicsStores, elementarySecondarySchools, emergencyServicesGcasVisaUseOnly, employmentTempAgencies, equipmentRental, exterminatingServices, familyClothingStores, fastFoodRestaurants, financialInstitutions, finesGovernmentAdministrativeEntities, fireplaceFireplaceScreensAndAccessoriesStores, floorCoveringStores, florists, floristsSuppliesNurseryStockAndFlowers, freezerAndLockerMeatProvisioners, fuelDealersNonAutomotive, funeralServicesCrematories, furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, furnitureRepairRefinishing, furriersAndFurShops, generalServices, giftCardNoveltyAndSouvenirShops, glassPaintAndWallpaperStores, glasswareCrystalStores, golfCoursesPublic, governmentLicensedHorseDogRacingUsRegionOnly, governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, governmentOwnedLotteriesNonUsRegion, governmentOwnedLotteriesUsRegionOnly, governmentServices, groceryStoresSupermarkets, hardwareEquipmentAndSupplies, hardwareStores, healthAndBeautySpas, hearingAidsSalesAndSupplies, heatingPlumbingAC, hobbyToyAndGameShops, homeSupplyWarehouseStores, hospitals, hotelsMotelsAndResorts, householdApplianceStores, industrialSupplies, informationRetrievalServices, insuranceDefault, insuranceUnderwritingPremiums, intraCompanyPurchases, jewelryStoresWatchesClocksAndSilverwareStores, landscapingServices, laundries, laundryCleaningServices, legalServicesAttorneys, luggageAndLeatherGoodsStores, lumberBuildingMaterialsStores, manualCashDisburse, marinasServiceAndSupplies, marketplaces, masonryStoneworkAndPlaster, massageParlors, medicalAndDentalLabs, medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, medicalServices, membershipOrganizations, mensAndBoysClothingAndAccessoriesStores, mensWomensClothingStores, metalServiceCenters, miscellaneous, miscellaneousApparelAndAccessoryShops, miscellaneousAutoDealers, miscellaneousBusinessServices, miscellaneousFoodStores, miscellaneousGeneralMerchandise, miscellaneousGeneralServices, miscellaneousHomeFurnishingSpecialtyStores, miscellaneousPublishingAndPrinting, miscellaneousRecreationServices, miscellaneousRepairShops, miscellaneousSpecialtyRetail, mobileHomeDealers, motionPictureTheaters, motorFreightCarriersAndTrucking, motorHomesDealers, motorVehicleSuppliesAndNewParts, motorcycleShopsAndDealers, motorcycleShopsDealers, musicStoresMusicalInstrumentsPianosAndSheetMusic, newsDealersAndNewsstands, nonFiMoneyOrders, nonFiStoredValueCardPurchaseLoad, nondurableGoods, nurseriesLawnAndGardenSupplyStores, nursingPersonalCare, officeAndCommercialFurniture, opticiansEyeglasses, optometristsOphthalmologist, orthopedicGoodsProstheticDevices, osteopaths, packageStoresBeerWineAndLiquor, paintsVarnishesAndSupplies, parkingLotsGarages, passengerRailways, pawnShops, petShopsPetFoodAndSupplies, petroleumAndPetroleumProducts, photoDeveloping, photographicPhotocopyMicrofilmEquipmentAndSupplies, photographicStudios, pictureVideoProduction, pieceGoodsNotionsAndOtherDryGoods, plumbingHeatingEquipmentAndSupplies, politicalOrganizations, postalServicesGovernmentOnly, preciousStonesAndMetalsWatchesAndJewelry, professionalServices, publicWarehousingAndStorage, quickCopyReproAndBlueprint, railroads, realEstateAgentsAndManagersRentals, recordStores, recreationalVehicleRentals, religiousGoodsStores, religiousOrganizations, roofingSidingSheetMetal, secretarialSupportServices, securityBrokersDealers, serviceStations, sewingNeedleworkFabricAndPieceGoodsStores, shoeRepairHatCleaning, shoeStores, smallApplianceRepair, snowmobileDealers, specialTradeServices, specialtyCleaning, sportingGoodsStores, sportingRecreationCamps, sportsAndRidingApparelStores, sportsClubsFields, stampAndCoinStores, stationaryOfficeSuppliesPrintingAndWritingPaper, stationeryStoresOfficeAndSchoolSupplyStores, swimmingPoolsSales, tUiTravelGermany, tailorsAlterations, taxPaymentsGovernmentAgencies, taxPreparationServices, taxicabsLimousines, telecommunicationEquipmentAndTelephoneSales, telecommunicationServices, telegraphServices, tentAndAwningShops, testingLaboratories, theatricalTicketAgencies, timeshares, tireRetreadingAndRepair, tollsBridgeFees, touristAttractionsAndExhibits, towingServices, trailerParksCampgrounds, transportationServices, travelAgenciesTourOperators, truckStopIteration, truckUtilityTrailerRentals, typesettingPlateMakingAndRelatedServices, typewriterStores, uSFederalGovernmentAgenciesOrDepartments, uniformsCommercialClothing, usedMerchandiseAndSecondhandStores, utilities, varietyStores, veterinaryServices, videoAmusementGameSupplies, videoGameArcades, videoTapeRentalStores, vocationalTradeSchools, watchJewelryRepair, weldingRepair, wholesaleClubs, wigAndToupeeStores, wiresMoneyOrders, womensAccessoryAndSpecialtyShops, womensReadyToWearStores, wreckingAndSalvageYards];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingCardholderAuthorizationControlsAllowedCategories && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingCardholderAuthorizationControlsAllowedCategories($value)'; } 
+ }
+final class IssuingCardholderAuthorizationControlsBlockedCategories {const IssuingCardholderAuthorizationControlsBlockedCategories._(this.value);
+
+factory IssuingCardholderAuthorizationControlsBlockedCategories.fromJson(String json) { return switch (json) {
+  'ac_refrigeration_repair' => acRefrigerationRepair,
+  'accounting_bookkeeping_services' => accountingBookkeepingServices,
+  'advertising_services' => advertisingServices,
+  'agricultural_cooperative' => agriculturalCooperative,
+  'airlines_air_carriers' => airlinesAirCarriers,
+  'airports_flying_fields' => airportsFlyingFields,
+  'ambulance_services' => ambulanceServices,
+  'amusement_parks_carnivals' => amusementParksCarnivals,
+  'antique_reproductions' => antiqueReproductions,
+  'antique_shops' => antiqueShops,
+  'aquariums' => aquariums,
+  'architectural_surveying_services' => architecturalSurveyingServices,
+  'art_dealers_and_galleries' => artDealersAndGalleries,
+  'artists_supply_and_craft_shops' => artistsSupplyAndCraftShops,
+  'auto_and_home_supply_stores' => autoAndHomeSupplyStores,
+  'auto_body_repair_shops' => autoBodyRepairShops,
+  'auto_paint_shops' => autoPaintShops,
+  'auto_service_shops' => autoServiceShops,
+  'automated_cash_disburse' => automatedCashDisburse,
+  'automated_fuel_dispensers' => automatedFuelDispensers,
+  'automobile_associations' => automobileAssociations,
+  'automotive_parts_and_accessories_stores' => automotivePartsAndAccessoriesStores,
+  'automotive_tire_stores' => automotiveTireStores,
+  'bail_and_bond_payments' => bailAndBondPayments,
+  'bakeries' => bakeries,
+  'bands_orchestras' => bandsOrchestras,
+  'barber_and_beauty_shops' => barberAndBeautyShops,
+  'betting_casino_gambling' => bettingCasinoGambling,
+  'bicycle_shops' => bicycleShops,
+  'billiard_pool_establishments' => billiardPoolEstablishments,
+  'boat_dealers' => boatDealers,
+  'boat_rentals_and_leases' => boatRentalsAndLeases,
+  'book_stores' => bookStores,
+  'books_periodicals_and_newspapers' => booksPeriodicalsAndNewspapers,
+  'bowling_alleys' => bowlingAlleys,
+  'bus_lines' => busLines,
+  'business_secretarial_schools' => businessSecretarialSchools,
+  'buying_shopping_services' => buyingShoppingServices,
+  'cable_satellite_and_other_pay_television_and_radio' => cableSatelliteAndOtherPayTelevisionAndRadio,
+  'camera_and_photographic_supply_stores' => cameraAndPhotographicSupplyStores,
+  'candy_nut_and_confectionery_stores' => candyNutAndConfectioneryStores,
+  'car_and_truck_dealers_new_used' => carAndTruckDealersNewUsed,
+  'car_and_truck_dealers_used_only' => carAndTruckDealersUsedOnly,
+  'car_rental_agencies' => carRentalAgencies,
+  'car_washes' => carWashes,
+  'carpentry_services' => carpentryServices,
+  'carpet_upholstery_cleaning' => carpetUpholsteryCleaning,
+  'caterers' => caterers,
+  'charitable_and_social_service_organizations_fundraising' => charitableAndSocialServiceOrganizationsFundraising,
+  'chemicals_and_allied_products' => chemicalsAndAlliedProducts,
+  'child_care_services' => childCareServices,
+  'childrens_and_infants_wear_stores' => childrensAndInfantsWearStores,
+  'chiropodists_podiatrists' => chiropodistsPodiatrists,
+  'chiropractors' => chiropractors,
+  'cigar_stores_and_stands' => cigarStoresAndStands,
+  'civic_social_fraternal_associations' => civicSocialFraternalAssociations,
+  'cleaning_and_maintenance' => cleaningAndMaintenance,
+  'clothing_rental' => clothingRental,
+  'colleges_universities' => collegesUniversities,
+  'commercial_equipment' => commercialEquipment,
+  'commercial_footwear' => commercialFootwear,
+  'commercial_photography_art_and_graphics' => commercialPhotographyArtAndGraphics,
+  'commuter_transport_and_ferries' => commuterTransportAndFerries,
+  'computer_network_services' => computerNetworkServices,
+  'computer_programming' => computerProgramming,
+  'computer_repair' => computerRepair,
+  'computer_software_stores' => computerSoftwareStores,
+  'computers_peripherals_and_software' => computersPeripheralsAndSoftware,
+  'concrete_work_services' => concreteWorkServices,
+  'construction_materials' => constructionMaterials,
+  'consulting_public_relations' => consultingPublicRelations,
+  'correspondence_schools' => correspondenceSchools,
+  'cosmetic_stores' => cosmeticStores,
+  'counseling_services' => counselingServices,
+  'country_clubs' => countryClubs,
+  'courier_services' => courierServices,
+  'court_costs' => courtCosts,
+  'credit_reporting_agencies' => creditReportingAgencies,
+  'cruise_lines' => cruiseLines,
+  'dairy_products_stores' => dairyProductsStores,
+  'dance_hall_studios_schools' => danceHallStudiosSchools,
+  'dating_escort_services' => datingEscortServices,
+  'dentists_orthodontists' => dentistsOrthodontists,
+  'department_stores' => departmentStores,
+  'detective_agencies' => detectiveAgencies,
+  'digital_goods_applications' => digitalGoodsApplications,
+  'digital_goods_games' => digitalGoodsGames,
+  'digital_goods_large_volume' => digitalGoodsLargeVolume,
+  'digital_goods_media' => digitalGoodsMedia,
+  'direct_marketing_catalog_merchant' => directMarketingCatalogMerchant,
+  'direct_marketing_combination_catalog_and_retail_merchant' => directMarketingCombinationCatalogAndRetailMerchant,
+  'direct_marketing_inbound_telemarketing' => directMarketingInboundTelemarketing,
+  'direct_marketing_insurance_services' => directMarketingInsuranceServices,
+  'direct_marketing_other' => directMarketingOther,
+  'direct_marketing_outbound_telemarketing' => directMarketingOutboundTelemarketing,
+  'direct_marketing_subscription' => directMarketingSubscription,
+  'direct_marketing_travel' => directMarketingTravel,
+  'discount_stores' => discountStores,
+  'doctors' => doctors,
+  'door_to_door_sales' => doorToDoorSales,
+  'drapery_window_covering_and_upholstery_stores' => draperyWindowCoveringAndUpholsteryStores,
+  'drinking_places' => drinkingPlaces,
+  'drug_stores_and_pharmacies' => drugStoresAndPharmacies,
+  'drugs_drug_proprietaries_and_druggist_sundries' => drugsDrugProprietariesAndDruggistSundries,
+  'dry_cleaners' => dryCleaners,
+  'durable_goods' => durableGoods,
+  'duty_free_stores' => dutyFreeStores,
+  'eating_places_restaurants' => eatingPlacesRestaurants,
+  'educational_services' => educationalServices,
+  'electric_razor_stores' => electricRazorStores,
+  'electric_vehicle_charging' => electricVehicleCharging,
+  'electrical_parts_and_equipment' => electricalPartsAndEquipment,
+  'electrical_services' => electricalServices,
+  'electronics_repair_shops' => electronicsRepairShops,
+  'electronics_stores' => electronicsStores,
+  'elementary_secondary_schools' => elementarySecondarySchools,
+  'emergency_services_gcas_visa_use_only' => emergencyServicesGcasVisaUseOnly,
+  'employment_temp_agencies' => employmentTempAgencies,
+  'equipment_rental' => equipmentRental,
+  'exterminating_services' => exterminatingServices,
+  'family_clothing_stores' => familyClothingStores,
+  'fast_food_restaurants' => fastFoodRestaurants,
+  'financial_institutions' => financialInstitutions,
+  'fines_government_administrative_entities' => finesGovernmentAdministrativeEntities,
+  'fireplace_fireplace_screens_and_accessories_stores' => fireplaceFireplaceScreensAndAccessoriesStores,
+  'floor_covering_stores' => floorCoveringStores,
+  'florists' => florists,
+  'florists_supplies_nursery_stock_and_flowers' => floristsSuppliesNurseryStockAndFlowers,
+  'freezer_and_locker_meat_provisioners' => freezerAndLockerMeatProvisioners,
+  'fuel_dealers_non_automotive' => fuelDealersNonAutomotive,
+  'funeral_services_crematories' => funeralServicesCrematories,
+  'furniture_home_furnishings_and_equipment_stores_except_appliances' => furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances,
+  'furniture_repair_refinishing' => furnitureRepairRefinishing,
+  'furriers_and_fur_shops' => furriersAndFurShops,
+  'general_services' => generalServices,
+  'gift_card_novelty_and_souvenir_shops' => giftCardNoveltyAndSouvenirShops,
+  'glass_paint_and_wallpaper_stores' => glassPaintAndWallpaperStores,
+  'glassware_crystal_stores' => glasswareCrystalStores,
+  'golf_courses_public' => golfCoursesPublic,
+  'government_licensed_horse_dog_racing_us_region_only' => governmentLicensedHorseDogRacingUsRegionOnly,
+  'government_licensed_online_casions_online_gambling_us_region_only' => governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly,
+  'government_owned_lotteries_non_us_region' => governmentOwnedLotteriesNonUsRegion,
+  'government_owned_lotteries_us_region_only' => governmentOwnedLotteriesUsRegionOnly,
+  'government_services' => governmentServices,
+  'grocery_stores_supermarkets' => groceryStoresSupermarkets,
+  'hardware_equipment_and_supplies' => hardwareEquipmentAndSupplies,
+  'hardware_stores' => hardwareStores,
+  'health_and_beauty_spas' => healthAndBeautySpas,
+  'hearing_aids_sales_and_supplies' => hearingAidsSalesAndSupplies,
+  'heating_plumbing_a_c' => heatingPlumbingAC,
+  'hobby_toy_and_game_shops' => hobbyToyAndGameShops,
+  'home_supply_warehouse_stores' => homeSupplyWarehouseStores,
+  'hospitals' => hospitals,
+  'hotels_motels_and_resorts' => hotelsMotelsAndResorts,
+  'household_appliance_stores' => householdApplianceStores,
+  'industrial_supplies' => industrialSupplies,
+  'information_retrieval_services' => informationRetrievalServices,
+  'insurance_default' => insuranceDefault,
+  'insurance_underwriting_premiums' => insuranceUnderwritingPremiums,
+  'intra_company_purchases' => intraCompanyPurchases,
+  'jewelry_stores_watches_clocks_and_silverware_stores' => jewelryStoresWatchesClocksAndSilverwareStores,
+  'landscaping_services' => landscapingServices,
+  'laundries' => laundries,
+  'laundry_cleaning_services' => laundryCleaningServices,
+  'legal_services_attorneys' => legalServicesAttorneys,
+  'luggage_and_leather_goods_stores' => luggageAndLeatherGoodsStores,
+  'lumber_building_materials_stores' => lumberBuildingMaterialsStores,
+  'manual_cash_disburse' => manualCashDisburse,
+  'marinas_service_and_supplies' => marinasServiceAndSupplies,
+  'marketplaces' => marketplaces,
+  'masonry_stonework_and_plaster' => masonryStoneworkAndPlaster,
+  'massage_parlors' => massageParlors,
+  'medical_and_dental_labs' => medicalAndDentalLabs,
+  'medical_dental_ophthalmic_and_hospital_equipment_and_supplies' => medicalDentalOphthalmicAndHospitalEquipmentAndSupplies,
+  'medical_services' => medicalServices,
+  'membership_organizations' => membershipOrganizations,
+  'mens_and_boys_clothing_and_accessories_stores' => mensAndBoysClothingAndAccessoriesStores,
+  'mens_womens_clothing_stores' => mensWomensClothingStores,
+  'metal_service_centers' => metalServiceCenters,
+  'miscellaneous' => miscellaneous,
+  'miscellaneous_apparel_and_accessory_shops' => miscellaneousApparelAndAccessoryShops,
+  'miscellaneous_auto_dealers' => miscellaneousAutoDealers,
+  'miscellaneous_business_services' => miscellaneousBusinessServices,
+  'miscellaneous_food_stores' => miscellaneousFoodStores,
+  'miscellaneous_general_merchandise' => miscellaneousGeneralMerchandise,
+  'miscellaneous_general_services' => miscellaneousGeneralServices,
+  'miscellaneous_home_furnishing_specialty_stores' => miscellaneousHomeFurnishingSpecialtyStores,
+  'miscellaneous_publishing_and_printing' => miscellaneousPublishingAndPrinting,
+  'miscellaneous_recreation_services' => miscellaneousRecreationServices,
+  'miscellaneous_repair_shops' => miscellaneousRepairShops,
+  'miscellaneous_specialty_retail' => miscellaneousSpecialtyRetail,
+  'mobile_home_dealers' => mobileHomeDealers,
+  'motion_picture_theaters' => motionPictureTheaters,
+  'motor_freight_carriers_and_trucking' => motorFreightCarriersAndTrucking,
+  'motor_homes_dealers' => motorHomesDealers,
+  'motor_vehicle_supplies_and_new_parts' => motorVehicleSuppliesAndNewParts,
+  'motorcycle_shops_and_dealers' => motorcycleShopsAndDealers,
+  'motorcycle_shops_dealers' => motorcycleShopsDealers,
+  'music_stores_musical_instruments_pianos_and_sheet_music' => musicStoresMusicalInstrumentsPianosAndSheetMusic,
+  'news_dealers_and_newsstands' => newsDealersAndNewsstands,
+  'non_fi_money_orders' => nonFiMoneyOrders,
+  'non_fi_stored_value_card_purchase_load' => nonFiStoredValueCardPurchaseLoad,
+  'nondurable_goods' => nondurableGoods,
+  'nurseries_lawn_and_garden_supply_stores' => nurseriesLawnAndGardenSupplyStores,
+  'nursing_personal_care' => nursingPersonalCare,
+  'office_and_commercial_furniture' => officeAndCommercialFurniture,
+  'opticians_eyeglasses' => opticiansEyeglasses,
+  'optometrists_ophthalmologist' => optometristsOphthalmologist,
+  'orthopedic_goods_prosthetic_devices' => orthopedicGoodsProstheticDevices,
+  'osteopaths' => osteopaths,
+  'package_stores_beer_wine_and_liquor' => packageStoresBeerWineAndLiquor,
+  'paints_varnishes_and_supplies' => paintsVarnishesAndSupplies,
+  'parking_lots_garages' => parkingLotsGarages,
+  'passenger_railways' => passengerRailways,
+  'pawn_shops' => pawnShops,
+  'pet_shops_pet_food_and_supplies' => petShopsPetFoodAndSupplies,
+  'petroleum_and_petroleum_products' => petroleumAndPetroleumProducts,
+  'photo_developing' => photoDeveloping,
+  'photographic_photocopy_microfilm_equipment_and_supplies' => photographicPhotocopyMicrofilmEquipmentAndSupplies,
+  'photographic_studios' => photographicStudios,
+  'picture_video_production' => pictureVideoProduction,
+  'piece_goods_notions_and_other_dry_goods' => pieceGoodsNotionsAndOtherDryGoods,
+  'plumbing_heating_equipment_and_supplies' => plumbingHeatingEquipmentAndSupplies,
+  'political_organizations' => politicalOrganizations,
+  'postal_services_government_only' => postalServicesGovernmentOnly,
+  'precious_stones_and_metals_watches_and_jewelry' => preciousStonesAndMetalsWatchesAndJewelry,
+  'professional_services' => professionalServices,
+  'public_warehousing_and_storage' => publicWarehousingAndStorage,
+  'quick_copy_repro_and_blueprint' => quickCopyReproAndBlueprint,
+  'railroads' => railroads,
+  'real_estate_agents_and_managers_rentals' => realEstateAgentsAndManagersRentals,
+  'record_stores' => recordStores,
+  'recreational_vehicle_rentals' => recreationalVehicleRentals,
+  'religious_goods_stores' => religiousGoodsStores,
+  'religious_organizations' => religiousOrganizations,
+  'roofing_siding_sheet_metal' => roofingSidingSheetMetal,
+  'secretarial_support_services' => secretarialSupportServices,
+  'security_brokers_dealers' => securityBrokersDealers,
+  'service_stations' => serviceStations,
+  'sewing_needlework_fabric_and_piece_goods_stores' => sewingNeedleworkFabricAndPieceGoodsStores,
+  'shoe_repair_hat_cleaning' => shoeRepairHatCleaning,
+  'shoe_stores' => shoeStores,
+  'small_appliance_repair' => smallApplianceRepair,
+  'snowmobile_dealers' => snowmobileDealers,
+  'special_trade_services' => specialTradeServices,
+  'specialty_cleaning' => specialtyCleaning,
+  'sporting_goods_stores' => sportingGoodsStores,
+  'sporting_recreation_camps' => sportingRecreationCamps,
+  'sports_and_riding_apparel_stores' => sportsAndRidingApparelStores,
+  'sports_clubs_fields' => sportsClubsFields,
+  'stamp_and_coin_stores' => stampAndCoinStores,
+  'stationary_office_supplies_printing_and_writing_paper' => stationaryOfficeSuppliesPrintingAndWritingPaper,
+  'stationery_stores_office_and_school_supply_stores' => stationeryStoresOfficeAndSchoolSupplyStores,
+  'swimming_pools_sales' => swimmingPoolsSales,
+  't_ui_travel_germany' => tUiTravelGermany,
+  'tailors_alterations' => tailorsAlterations,
+  'tax_payments_government_agencies' => taxPaymentsGovernmentAgencies,
+  'tax_preparation_services' => taxPreparationServices,
+  'taxicabs_limousines' => taxicabsLimousines,
+  'telecommunication_equipment_and_telephone_sales' => telecommunicationEquipmentAndTelephoneSales,
+  'telecommunication_services' => telecommunicationServices,
+  'telegraph_services' => telegraphServices,
+  'tent_and_awning_shops' => tentAndAwningShops,
+  'testing_laboratories' => testingLaboratories,
+  'theatrical_ticket_agencies' => theatricalTicketAgencies,
+  'timeshares' => timeshares,
+  'tire_retreading_and_repair' => tireRetreadingAndRepair,
+  'tolls_bridge_fees' => tollsBridgeFees,
+  'tourist_attractions_and_exhibits' => touristAttractionsAndExhibits,
+  'towing_services' => towingServices,
+  'trailer_parks_campgrounds' => trailerParksCampgrounds,
+  'transportation_services' => transportationServices,
+  'travel_agencies_tour_operators' => travelAgenciesTourOperators,
+  'truck_stop_iteration' => truckStopIteration,
+  'truck_utility_trailer_rentals' => truckUtilityTrailerRentals,
+  'typesetting_plate_making_and_related_services' => typesettingPlateMakingAndRelatedServices,
+  'typewriter_stores' => typewriterStores,
+  'u_s_federal_government_agencies_or_departments' => uSFederalGovernmentAgenciesOrDepartments,
+  'uniforms_commercial_clothing' => uniformsCommercialClothing,
+  'used_merchandise_and_secondhand_stores' => usedMerchandiseAndSecondhandStores,
+  'utilities' => utilities,
+  'variety_stores' => varietyStores,
+  'veterinary_services' => veterinaryServices,
+  'video_amusement_game_supplies' => videoAmusementGameSupplies,
+  'video_game_arcades' => videoGameArcades,
+  'video_tape_rental_stores' => videoTapeRentalStores,
+  'vocational_trade_schools' => vocationalTradeSchools,
+  'watch_jewelry_repair' => watchJewelryRepair,
+  'welding_repair' => weldingRepair,
+  'wholesale_clubs' => wholesaleClubs,
+  'wig_and_toupee_stores' => wigAndToupeeStores,
+  'wires_money_orders' => wiresMoneyOrders,
+  'womens_accessory_and_specialty_shops' => womensAccessoryAndSpecialtyShops,
+  'womens_ready_to_wear_stores' => womensReadyToWearStores,
+  'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
+  _ => IssuingCardholderAuthorizationControlsBlockedCategories._(json),
+}; }
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories acRefrigerationRepair = IssuingCardholderAuthorizationControlsBlockedCategories._('ac_refrigeration_repair');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories accountingBookkeepingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('accounting_bookkeeping_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories advertisingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('advertising_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories agriculturalCooperative = IssuingCardholderAuthorizationControlsBlockedCategories._('agricultural_cooperative');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories airlinesAirCarriers = IssuingCardholderAuthorizationControlsBlockedCategories._('airlines_air_carriers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories airportsFlyingFields = IssuingCardholderAuthorizationControlsBlockedCategories._('airports_flying_fields');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories ambulanceServices = IssuingCardholderAuthorizationControlsBlockedCategories._('ambulance_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories amusementParksCarnivals = IssuingCardholderAuthorizationControlsBlockedCategories._('amusement_parks_carnivals');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories antiqueReproductions = IssuingCardholderAuthorizationControlsBlockedCategories._('antique_reproductions');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories antiqueShops = IssuingCardholderAuthorizationControlsBlockedCategories._('antique_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories aquariums = IssuingCardholderAuthorizationControlsBlockedCategories._('aquariums');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories architecturalSurveyingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('architectural_surveying_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories artDealersAndGalleries = IssuingCardholderAuthorizationControlsBlockedCategories._('art_dealers_and_galleries');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories artistsSupplyAndCraftShops = IssuingCardholderAuthorizationControlsBlockedCategories._('artists_supply_and_craft_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories autoAndHomeSupplyStores = IssuingCardholderAuthorizationControlsBlockedCategories._('auto_and_home_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories autoBodyRepairShops = IssuingCardholderAuthorizationControlsBlockedCategories._('auto_body_repair_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories autoPaintShops = IssuingCardholderAuthorizationControlsBlockedCategories._('auto_paint_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories autoServiceShops = IssuingCardholderAuthorizationControlsBlockedCategories._('auto_service_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories automatedCashDisburse = IssuingCardholderAuthorizationControlsBlockedCategories._('automated_cash_disburse');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories automatedFuelDispensers = IssuingCardholderAuthorizationControlsBlockedCategories._('automated_fuel_dispensers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories automobileAssociations = IssuingCardholderAuthorizationControlsBlockedCategories._('automobile_associations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories automotivePartsAndAccessoriesStores = IssuingCardholderAuthorizationControlsBlockedCategories._('automotive_parts_and_accessories_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories automotiveTireStores = IssuingCardholderAuthorizationControlsBlockedCategories._('automotive_tire_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bailAndBondPayments = IssuingCardholderAuthorizationControlsBlockedCategories._('bail_and_bond_payments');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bakeries = IssuingCardholderAuthorizationControlsBlockedCategories._('bakeries');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bandsOrchestras = IssuingCardholderAuthorizationControlsBlockedCategories._('bands_orchestras');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories barberAndBeautyShops = IssuingCardholderAuthorizationControlsBlockedCategories._('barber_and_beauty_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bettingCasinoGambling = IssuingCardholderAuthorizationControlsBlockedCategories._('betting_casino_gambling');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bicycleShops = IssuingCardholderAuthorizationControlsBlockedCategories._('bicycle_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories billiardPoolEstablishments = IssuingCardholderAuthorizationControlsBlockedCategories._('billiard_pool_establishments');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories boatDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('boat_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories boatRentalsAndLeases = IssuingCardholderAuthorizationControlsBlockedCategories._('boat_rentals_and_leases');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bookStores = IssuingCardholderAuthorizationControlsBlockedCategories._('book_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories booksPeriodicalsAndNewspapers = IssuingCardholderAuthorizationControlsBlockedCategories._('books_periodicals_and_newspapers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories bowlingAlleys = IssuingCardholderAuthorizationControlsBlockedCategories._('bowling_alleys');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories busLines = IssuingCardholderAuthorizationControlsBlockedCategories._('bus_lines');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories businessSecretarialSchools = IssuingCardholderAuthorizationControlsBlockedCategories._('business_secretarial_schools');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories buyingShoppingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('buying_shopping_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories cableSatelliteAndOtherPayTelevisionAndRadio = IssuingCardholderAuthorizationControlsBlockedCategories._('cable_satellite_and_other_pay_television_and_radio');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories cameraAndPhotographicSupplyStores = IssuingCardholderAuthorizationControlsBlockedCategories._('camera_and_photographic_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories candyNutAndConfectioneryStores = IssuingCardholderAuthorizationControlsBlockedCategories._('candy_nut_and_confectionery_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories carAndTruckDealersNewUsed = IssuingCardholderAuthorizationControlsBlockedCategories._('car_and_truck_dealers_new_used');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories carAndTruckDealersUsedOnly = IssuingCardholderAuthorizationControlsBlockedCategories._('car_and_truck_dealers_used_only');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories carRentalAgencies = IssuingCardholderAuthorizationControlsBlockedCategories._('car_rental_agencies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories carWashes = IssuingCardholderAuthorizationControlsBlockedCategories._('car_washes');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories carpentryServices = IssuingCardholderAuthorizationControlsBlockedCategories._('carpentry_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories carpetUpholsteryCleaning = IssuingCardholderAuthorizationControlsBlockedCategories._('carpet_upholstery_cleaning');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories caterers = IssuingCardholderAuthorizationControlsBlockedCategories._('caterers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories charitableAndSocialServiceOrganizationsFundraising = IssuingCardholderAuthorizationControlsBlockedCategories._('charitable_and_social_service_organizations_fundraising');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories chemicalsAndAlliedProducts = IssuingCardholderAuthorizationControlsBlockedCategories._('chemicals_and_allied_products');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories childCareServices = IssuingCardholderAuthorizationControlsBlockedCategories._('child_care_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories childrensAndInfantsWearStores = IssuingCardholderAuthorizationControlsBlockedCategories._('childrens_and_infants_wear_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories chiropodistsPodiatrists = IssuingCardholderAuthorizationControlsBlockedCategories._('chiropodists_podiatrists');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories chiropractors = IssuingCardholderAuthorizationControlsBlockedCategories._('chiropractors');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories cigarStoresAndStands = IssuingCardholderAuthorizationControlsBlockedCategories._('cigar_stores_and_stands');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories civicSocialFraternalAssociations = IssuingCardholderAuthorizationControlsBlockedCategories._('civic_social_fraternal_associations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories cleaningAndMaintenance = IssuingCardholderAuthorizationControlsBlockedCategories._('cleaning_and_maintenance');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories clothingRental = IssuingCardholderAuthorizationControlsBlockedCategories._('clothing_rental');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories collegesUniversities = IssuingCardholderAuthorizationControlsBlockedCategories._('colleges_universities');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories commercialEquipment = IssuingCardholderAuthorizationControlsBlockedCategories._('commercial_equipment');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories commercialFootwear = IssuingCardholderAuthorizationControlsBlockedCategories._('commercial_footwear');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories commercialPhotographyArtAndGraphics = IssuingCardholderAuthorizationControlsBlockedCategories._('commercial_photography_art_and_graphics');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories commuterTransportAndFerries = IssuingCardholderAuthorizationControlsBlockedCategories._('commuter_transport_and_ferries');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories computerNetworkServices = IssuingCardholderAuthorizationControlsBlockedCategories._('computer_network_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories computerProgramming = IssuingCardholderAuthorizationControlsBlockedCategories._('computer_programming');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories computerRepair = IssuingCardholderAuthorizationControlsBlockedCategories._('computer_repair');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories computerSoftwareStores = IssuingCardholderAuthorizationControlsBlockedCategories._('computer_software_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories computersPeripheralsAndSoftware = IssuingCardholderAuthorizationControlsBlockedCategories._('computers_peripherals_and_software');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories concreteWorkServices = IssuingCardholderAuthorizationControlsBlockedCategories._('concrete_work_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories constructionMaterials = IssuingCardholderAuthorizationControlsBlockedCategories._('construction_materials');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories consultingPublicRelations = IssuingCardholderAuthorizationControlsBlockedCategories._('consulting_public_relations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories correspondenceSchools = IssuingCardholderAuthorizationControlsBlockedCategories._('correspondence_schools');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories cosmeticStores = IssuingCardholderAuthorizationControlsBlockedCategories._('cosmetic_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories counselingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('counseling_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories countryClubs = IssuingCardholderAuthorizationControlsBlockedCategories._('country_clubs');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories courierServices = IssuingCardholderAuthorizationControlsBlockedCategories._('courier_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories courtCosts = IssuingCardholderAuthorizationControlsBlockedCategories._('court_costs');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories creditReportingAgencies = IssuingCardholderAuthorizationControlsBlockedCategories._('credit_reporting_agencies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories cruiseLines = IssuingCardholderAuthorizationControlsBlockedCategories._('cruise_lines');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories dairyProductsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('dairy_products_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories danceHallStudiosSchools = IssuingCardholderAuthorizationControlsBlockedCategories._('dance_hall_studios_schools');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories datingEscortServices = IssuingCardholderAuthorizationControlsBlockedCategories._('dating_escort_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories dentistsOrthodontists = IssuingCardholderAuthorizationControlsBlockedCategories._('dentists_orthodontists');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories departmentStores = IssuingCardholderAuthorizationControlsBlockedCategories._('department_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories detectiveAgencies = IssuingCardholderAuthorizationControlsBlockedCategories._('detective_agencies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories digitalGoodsApplications = IssuingCardholderAuthorizationControlsBlockedCategories._('digital_goods_applications');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories digitalGoodsGames = IssuingCardholderAuthorizationControlsBlockedCategories._('digital_goods_games');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories digitalGoodsLargeVolume = IssuingCardholderAuthorizationControlsBlockedCategories._('digital_goods_large_volume');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories digitalGoodsMedia = IssuingCardholderAuthorizationControlsBlockedCategories._('digital_goods_media');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingCatalogMerchant = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_catalog_merchant');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingCombinationCatalogAndRetailMerchant = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_combination_catalog_and_retail_merchant');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingInboundTelemarketing = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_inbound_telemarketing');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingInsuranceServices = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_insurance_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingOther = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_other');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingOutboundTelemarketing = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_outbound_telemarketing');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingSubscription = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_subscription');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories directMarketingTravel = IssuingCardholderAuthorizationControlsBlockedCategories._('direct_marketing_travel');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories discountStores = IssuingCardholderAuthorizationControlsBlockedCategories._('discount_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories doctors = IssuingCardholderAuthorizationControlsBlockedCategories._('doctors');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories doorToDoorSales = IssuingCardholderAuthorizationControlsBlockedCategories._('door_to_door_sales');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories draperyWindowCoveringAndUpholsteryStores = IssuingCardholderAuthorizationControlsBlockedCategories._('drapery_window_covering_and_upholstery_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories drinkingPlaces = IssuingCardholderAuthorizationControlsBlockedCategories._('drinking_places');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories drugStoresAndPharmacies = IssuingCardholderAuthorizationControlsBlockedCategories._('drug_stores_and_pharmacies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories drugsDrugProprietariesAndDruggistSundries = IssuingCardholderAuthorizationControlsBlockedCategories._('drugs_drug_proprietaries_and_druggist_sundries');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories dryCleaners = IssuingCardholderAuthorizationControlsBlockedCategories._('dry_cleaners');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories durableGoods = IssuingCardholderAuthorizationControlsBlockedCategories._('durable_goods');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories dutyFreeStores = IssuingCardholderAuthorizationControlsBlockedCategories._('duty_free_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories eatingPlacesRestaurants = IssuingCardholderAuthorizationControlsBlockedCategories._('eating_places_restaurants');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories educationalServices = IssuingCardholderAuthorizationControlsBlockedCategories._('educational_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories electricRazorStores = IssuingCardholderAuthorizationControlsBlockedCategories._('electric_razor_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories electricVehicleCharging = IssuingCardholderAuthorizationControlsBlockedCategories._('electric_vehicle_charging');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories electricalPartsAndEquipment = IssuingCardholderAuthorizationControlsBlockedCategories._('electrical_parts_and_equipment');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories electricalServices = IssuingCardholderAuthorizationControlsBlockedCategories._('electrical_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories electronicsRepairShops = IssuingCardholderAuthorizationControlsBlockedCategories._('electronics_repair_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories electronicsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('electronics_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories elementarySecondarySchools = IssuingCardholderAuthorizationControlsBlockedCategories._('elementary_secondary_schools');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories emergencyServicesGcasVisaUseOnly = IssuingCardholderAuthorizationControlsBlockedCategories._('emergency_services_gcas_visa_use_only');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories employmentTempAgencies = IssuingCardholderAuthorizationControlsBlockedCategories._('employment_temp_agencies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories equipmentRental = IssuingCardholderAuthorizationControlsBlockedCategories._('equipment_rental');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories exterminatingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('exterminating_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories familyClothingStores = IssuingCardholderAuthorizationControlsBlockedCategories._('family_clothing_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories fastFoodRestaurants = IssuingCardholderAuthorizationControlsBlockedCategories._('fast_food_restaurants');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories financialInstitutions = IssuingCardholderAuthorizationControlsBlockedCategories._('financial_institutions');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories finesGovernmentAdministrativeEntities = IssuingCardholderAuthorizationControlsBlockedCategories._('fines_government_administrative_entities');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories fireplaceFireplaceScreensAndAccessoriesStores = IssuingCardholderAuthorizationControlsBlockedCategories._('fireplace_fireplace_screens_and_accessories_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories floorCoveringStores = IssuingCardholderAuthorizationControlsBlockedCategories._('floor_covering_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories florists = IssuingCardholderAuthorizationControlsBlockedCategories._('florists');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories floristsSuppliesNurseryStockAndFlowers = IssuingCardholderAuthorizationControlsBlockedCategories._('florists_supplies_nursery_stock_and_flowers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories freezerAndLockerMeatProvisioners = IssuingCardholderAuthorizationControlsBlockedCategories._('freezer_and_locker_meat_provisioners');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories fuelDealersNonAutomotive = IssuingCardholderAuthorizationControlsBlockedCategories._('fuel_dealers_non_automotive');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories funeralServicesCrematories = IssuingCardholderAuthorizationControlsBlockedCategories._('funeral_services_crematories');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances = IssuingCardholderAuthorizationControlsBlockedCategories._('furniture_home_furnishings_and_equipment_stores_except_appliances');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories furnitureRepairRefinishing = IssuingCardholderAuthorizationControlsBlockedCategories._('furniture_repair_refinishing');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories furriersAndFurShops = IssuingCardholderAuthorizationControlsBlockedCategories._('furriers_and_fur_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories generalServices = IssuingCardholderAuthorizationControlsBlockedCategories._('general_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories giftCardNoveltyAndSouvenirShops = IssuingCardholderAuthorizationControlsBlockedCategories._('gift_card_novelty_and_souvenir_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories glassPaintAndWallpaperStores = IssuingCardholderAuthorizationControlsBlockedCategories._('glass_paint_and_wallpaper_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories glasswareCrystalStores = IssuingCardholderAuthorizationControlsBlockedCategories._('glassware_crystal_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories golfCoursesPublic = IssuingCardholderAuthorizationControlsBlockedCategories._('golf_courses_public');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories governmentLicensedHorseDogRacingUsRegionOnly = IssuingCardholderAuthorizationControlsBlockedCategories._('government_licensed_horse_dog_racing_us_region_only');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly = IssuingCardholderAuthorizationControlsBlockedCategories._('government_licensed_online_casions_online_gambling_us_region_only');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories governmentOwnedLotteriesNonUsRegion = IssuingCardholderAuthorizationControlsBlockedCategories._('government_owned_lotteries_non_us_region');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories governmentOwnedLotteriesUsRegionOnly = IssuingCardholderAuthorizationControlsBlockedCategories._('government_owned_lotteries_us_region_only');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories governmentServices = IssuingCardholderAuthorizationControlsBlockedCategories._('government_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories groceryStoresSupermarkets = IssuingCardholderAuthorizationControlsBlockedCategories._('grocery_stores_supermarkets');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories hardwareEquipmentAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('hardware_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories hardwareStores = IssuingCardholderAuthorizationControlsBlockedCategories._('hardware_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories healthAndBeautySpas = IssuingCardholderAuthorizationControlsBlockedCategories._('health_and_beauty_spas');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories hearingAidsSalesAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('hearing_aids_sales_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories heatingPlumbingAC = IssuingCardholderAuthorizationControlsBlockedCategories._('heating_plumbing_a_c');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories hobbyToyAndGameShops = IssuingCardholderAuthorizationControlsBlockedCategories._('hobby_toy_and_game_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories homeSupplyWarehouseStores = IssuingCardholderAuthorizationControlsBlockedCategories._('home_supply_warehouse_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories hospitals = IssuingCardholderAuthorizationControlsBlockedCategories._('hospitals');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories hotelsMotelsAndResorts = IssuingCardholderAuthorizationControlsBlockedCategories._('hotels_motels_and_resorts');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories householdApplianceStores = IssuingCardholderAuthorizationControlsBlockedCategories._('household_appliance_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories industrialSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('industrial_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories informationRetrievalServices = IssuingCardholderAuthorizationControlsBlockedCategories._('information_retrieval_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories insuranceDefault = IssuingCardholderAuthorizationControlsBlockedCategories._('insurance_default');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories insuranceUnderwritingPremiums = IssuingCardholderAuthorizationControlsBlockedCategories._('insurance_underwriting_premiums');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories intraCompanyPurchases = IssuingCardholderAuthorizationControlsBlockedCategories._('intra_company_purchases');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories jewelryStoresWatchesClocksAndSilverwareStores = IssuingCardholderAuthorizationControlsBlockedCategories._('jewelry_stores_watches_clocks_and_silverware_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories landscapingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('landscaping_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories laundries = IssuingCardholderAuthorizationControlsBlockedCategories._('laundries');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories laundryCleaningServices = IssuingCardholderAuthorizationControlsBlockedCategories._('laundry_cleaning_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories legalServicesAttorneys = IssuingCardholderAuthorizationControlsBlockedCategories._('legal_services_attorneys');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories luggageAndLeatherGoodsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('luggage_and_leather_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories lumberBuildingMaterialsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('lumber_building_materials_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories manualCashDisburse = IssuingCardholderAuthorizationControlsBlockedCategories._('manual_cash_disburse');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories marinasServiceAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('marinas_service_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories marketplaces = IssuingCardholderAuthorizationControlsBlockedCategories._('marketplaces');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories masonryStoneworkAndPlaster = IssuingCardholderAuthorizationControlsBlockedCategories._('masonry_stonework_and_plaster');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories massageParlors = IssuingCardholderAuthorizationControlsBlockedCategories._('massage_parlors');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories medicalAndDentalLabs = IssuingCardholderAuthorizationControlsBlockedCategories._('medical_and_dental_labs');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories medicalDentalOphthalmicAndHospitalEquipmentAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('medical_dental_ophthalmic_and_hospital_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories medicalServices = IssuingCardholderAuthorizationControlsBlockedCategories._('medical_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories membershipOrganizations = IssuingCardholderAuthorizationControlsBlockedCategories._('membership_organizations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories mensAndBoysClothingAndAccessoriesStores = IssuingCardholderAuthorizationControlsBlockedCategories._('mens_and_boys_clothing_and_accessories_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories mensWomensClothingStores = IssuingCardholderAuthorizationControlsBlockedCategories._('mens_womens_clothing_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories metalServiceCenters = IssuingCardholderAuthorizationControlsBlockedCategories._('metal_service_centers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneous = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousApparelAndAccessoryShops = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_apparel_and_accessory_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousAutoDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_auto_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousBusinessServices = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_business_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousFoodStores = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_food_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousGeneralMerchandise = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_general_merchandise');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousGeneralServices = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_general_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousHomeFurnishingSpecialtyStores = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_home_furnishing_specialty_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousPublishingAndPrinting = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_publishing_and_printing');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousRecreationServices = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_recreation_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousRepairShops = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_repair_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories miscellaneousSpecialtyRetail = IssuingCardholderAuthorizationControlsBlockedCategories._('miscellaneous_specialty_retail');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories mobileHomeDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('mobile_home_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories motionPictureTheaters = IssuingCardholderAuthorizationControlsBlockedCategories._('motion_picture_theaters');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories motorFreightCarriersAndTrucking = IssuingCardholderAuthorizationControlsBlockedCategories._('motor_freight_carriers_and_trucking');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories motorHomesDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('motor_homes_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories motorVehicleSuppliesAndNewParts = IssuingCardholderAuthorizationControlsBlockedCategories._('motor_vehicle_supplies_and_new_parts');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories motorcycleShopsAndDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('motorcycle_shops_and_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories motorcycleShopsDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('motorcycle_shops_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories musicStoresMusicalInstrumentsPianosAndSheetMusic = IssuingCardholderAuthorizationControlsBlockedCategories._('music_stores_musical_instruments_pianos_and_sheet_music');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories newsDealersAndNewsstands = IssuingCardholderAuthorizationControlsBlockedCategories._('news_dealers_and_newsstands');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories nonFiMoneyOrders = IssuingCardholderAuthorizationControlsBlockedCategories._('non_fi_money_orders');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories nonFiStoredValueCardPurchaseLoad = IssuingCardholderAuthorizationControlsBlockedCategories._('non_fi_stored_value_card_purchase_load');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories nondurableGoods = IssuingCardholderAuthorizationControlsBlockedCategories._('nondurable_goods');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories nurseriesLawnAndGardenSupplyStores = IssuingCardholderAuthorizationControlsBlockedCategories._('nurseries_lawn_and_garden_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories nursingPersonalCare = IssuingCardholderAuthorizationControlsBlockedCategories._('nursing_personal_care');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories officeAndCommercialFurniture = IssuingCardholderAuthorizationControlsBlockedCategories._('office_and_commercial_furniture');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories opticiansEyeglasses = IssuingCardholderAuthorizationControlsBlockedCategories._('opticians_eyeglasses');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories optometristsOphthalmologist = IssuingCardholderAuthorizationControlsBlockedCategories._('optometrists_ophthalmologist');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories orthopedicGoodsProstheticDevices = IssuingCardholderAuthorizationControlsBlockedCategories._('orthopedic_goods_prosthetic_devices');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories osteopaths = IssuingCardholderAuthorizationControlsBlockedCategories._('osteopaths');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories packageStoresBeerWineAndLiquor = IssuingCardholderAuthorizationControlsBlockedCategories._('package_stores_beer_wine_and_liquor');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories paintsVarnishesAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('paints_varnishes_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories parkingLotsGarages = IssuingCardholderAuthorizationControlsBlockedCategories._('parking_lots_garages');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories passengerRailways = IssuingCardholderAuthorizationControlsBlockedCategories._('passenger_railways');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories pawnShops = IssuingCardholderAuthorizationControlsBlockedCategories._('pawn_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories petShopsPetFoodAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('pet_shops_pet_food_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories petroleumAndPetroleumProducts = IssuingCardholderAuthorizationControlsBlockedCategories._('petroleum_and_petroleum_products');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories photoDeveloping = IssuingCardholderAuthorizationControlsBlockedCategories._('photo_developing');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories photographicPhotocopyMicrofilmEquipmentAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('photographic_photocopy_microfilm_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories photographicStudios = IssuingCardholderAuthorizationControlsBlockedCategories._('photographic_studios');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories pictureVideoProduction = IssuingCardholderAuthorizationControlsBlockedCategories._('picture_video_production');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories pieceGoodsNotionsAndOtherDryGoods = IssuingCardholderAuthorizationControlsBlockedCategories._('piece_goods_notions_and_other_dry_goods');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories plumbingHeatingEquipmentAndSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('plumbing_heating_equipment_and_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories politicalOrganizations = IssuingCardholderAuthorizationControlsBlockedCategories._('political_organizations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories postalServicesGovernmentOnly = IssuingCardholderAuthorizationControlsBlockedCategories._('postal_services_government_only');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories preciousStonesAndMetalsWatchesAndJewelry = IssuingCardholderAuthorizationControlsBlockedCategories._('precious_stones_and_metals_watches_and_jewelry');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories professionalServices = IssuingCardholderAuthorizationControlsBlockedCategories._('professional_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories publicWarehousingAndStorage = IssuingCardholderAuthorizationControlsBlockedCategories._('public_warehousing_and_storage');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories quickCopyReproAndBlueprint = IssuingCardholderAuthorizationControlsBlockedCategories._('quick_copy_repro_and_blueprint');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories railroads = IssuingCardholderAuthorizationControlsBlockedCategories._('railroads');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories realEstateAgentsAndManagersRentals = IssuingCardholderAuthorizationControlsBlockedCategories._('real_estate_agents_and_managers_rentals');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories recordStores = IssuingCardholderAuthorizationControlsBlockedCategories._('record_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories recreationalVehicleRentals = IssuingCardholderAuthorizationControlsBlockedCategories._('recreational_vehicle_rentals');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories religiousGoodsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('religious_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories religiousOrganizations = IssuingCardholderAuthorizationControlsBlockedCategories._('religious_organizations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories roofingSidingSheetMetal = IssuingCardholderAuthorizationControlsBlockedCategories._('roofing_siding_sheet_metal');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories secretarialSupportServices = IssuingCardholderAuthorizationControlsBlockedCategories._('secretarial_support_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories securityBrokersDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('security_brokers_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories serviceStations = IssuingCardholderAuthorizationControlsBlockedCategories._('service_stations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories sewingNeedleworkFabricAndPieceGoodsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('sewing_needlework_fabric_and_piece_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories shoeRepairHatCleaning = IssuingCardholderAuthorizationControlsBlockedCategories._('shoe_repair_hat_cleaning');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories shoeStores = IssuingCardholderAuthorizationControlsBlockedCategories._('shoe_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories smallApplianceRepair = IssuingCardholderAuthorizationControlsBlockedCategories._('small_appliance_repair');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories snowmobileDealers = IssuingCardholderAuthorizationControlsBlockedCategories._('snowmobile_dealers');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories specialTradeServices = IssuingCardholderAuthorizationControlsBlockedCategories._('special_trade_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories specialtyCleaning = IssuingCardholderAuthorizationControlsBlockedCategories._('specialty_cleaning');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories sportingGoodsStores = IssuingCardholderAuthorizationControlsBlockedCategories._('sporting_goods_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories sportingRecreationCamps = IssuingCardholderAuthorizationControlsBlockedCategories._('sporting_recreation_camps');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories sportsAndRidingApparelStores = IssuingCardholderAuthorizationControlsBlockedCategories._('sports_and_riding_apparel_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories sportsClubsFields = IssuingCardholderAuthorizationControlsBlockedCategories._('sports_clubs_fields');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories stampAndCoinStores = IssuingCardholderAuthorizationControlsBlockedCategories._('stamp_and_coin_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories stationaryOfficeSuppliesPrintingAndWritingPaper = IssuingCardholderAuthorizationControlsBlockedCategories._('stationary_office_supplies_printing_and_writing_paper');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories stationeryStoresOfficeAndSchoolSupplyStores = IssuingCardholderAuthorizationControlsBlockedCategories._('stationery_stores_office_and_school_supply_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories swimmingPoolsSales = IssuingCardholderAuthorizationControlsBlockedCategories._('swimming_pools_sales');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories tUiTravelGermany = IssuingCardholderAuthorizationControlsBlockedCategories._('t_ui_travel_germany');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories tailorsAlterations = IssuingCardholderAuthorizationControlsBlockedCategories._('tailors_alterations');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories taxPaymentsGovernmentAgencies = IssuingCardholderAuthorizationControlsBlockedCategories._('tax_payments_government_agencies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories taxPreparationServices = IssuingCardholderAuthorizationControlsBlockedCategories._('tax_preparation_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories taxicabsLimousines = IssuingCardholderAuthorizationControlsBlockedCategories._('taxicabs_limousines');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories telecommunicationEquipmentAndTelephoneSales = IssuingCardholderAuthorizationControlsBlockedCategories._('telecommunication_equipment_and_telephone_sales');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories telecommunicationServices = IssuingCardholderAuthorizationControlsBlockedCategories._('telecommunication_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories telegraphServices = IssuingCardholderAuthorizationControlsBlockedCategories._('telegraph_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories tentAndAwningShops = IssuingCardholderAuthorizationControlsBlockedCategories._('tent_and_awning_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories testingLaboratories = IssuingCardholderAuthorizationControlsBlockedCategories._('testing_laboratories');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories theatricalTicketAgencies = IssuingCardholderAuthorizationControlsBlockedCategories._('theatrical_ticket_agencies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories timeshares = IssuingCardholderAuthorizationControlsBlockedCategories._('timeshares');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories tireRetreadingAndRepair = IssuingCardholderAuthorizationControlsBlockedCategories._('tire_retreading_and_repair');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories tollsBridgeFees = IssuingCardholderAuthorizationControlsBlockedCategories._('tolls_bridge_fees');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories touristAttractionsAndExhibits = IssuingCardholderAuthorizationControlsBlockedCategories._('tourist_attractions_and_exhibits');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories towingServices = IssuingCardholderAuthorizationControlsBlockedCategories._('towing_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories trailerParksCampgrounds = IssuingCardholderAuthorizationControlsBlockedCategories._('trailer_parks_campgrounds');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories transportationServices = IssuingCardholderAuthorizationControlsBlockedCategories._('transportation_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories travelAgenciesTourOperators = IssuingCardholderAuthorizationControlsBlockedCategories._('travel_agencies_tour_operators');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories truckStopIteration = IssuingCardholderAuthorizationControlsBlockedCategories._('truck_stop_iteration');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories truckUtilityTrailerRentals = IssuingCardholderAuthorizationControlsBlockedCategories._('truck_utility_trailer_rentals');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories typesettingPlateMakingAndRelatedServices = IssuingCardholderAuthorizationControlsBlockedCategories._('typesetting_plate_making_and_related_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories typewriterStores = IssuingCardholderAuthorizationControlsBlockedCategories._('typewriter_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories uSFederalGovernmentAgenciesOrDepartments = IssuingCardholderAuthorizationControlsBlockedCategories._('u_s_federal_government_agencies_or_departments');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories uniformsCommercialClothing = IssuingCardholderAuthorizationControlsBlockedCategories._('uniforms_commercial_clothing');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories usedMerchandiseAndSecondhandStores = IssuingCardholderAuthorizationControlsBlockedCategories._('used_merchandise_and_secondhand_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories utilities = IssuingCardholderAuthorizationControlsBlockedCategories._('utilities');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories varietyStores = IssuingCardholderAuthorizationControlsBlockedCategories._('variety_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories veterinaryServices = IssuingCardholderAuthorizationControlsBlockedCategories._('veterinary_services');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories videoAmusementGameSupplies = IssuingCardholderAuthorizationControlsBlockedCategories._('video_amusement_game_supplies');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories videoGameArcades = IssuingCardholderAuthorizationControlsBlockedCategories._('video_game_arcades');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories videoTapeRentalStores = IssuingCardholderAuthorizationControlsBlockedCategories._('video_tape_rental_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories vocationalTradeSchools = IssuingCardholderAuthorizationControlsBlockedCategories._('vocational_trade_schools');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories watchJewelryRepair = IssuingCardholderAuthorizationControlsBlockedCategories._('watch_jewelry_repair');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories weldingRepair = IssuingCardholderAuthorizationControlsBlockedCategories._('welding_repair');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories wholesaleClubs = IssuingCardholderAuthorizationControlsBlockedCategories._('wholesale_clubs');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories wigAndToupeeStores = IssuingCardholderAuthorizationControlsBlockedCategories._('wig_and_toupee_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories wiresMoneyOrders = IssuingCardholderAuthorizationControlsBlockedCategories._('wires_money_orders');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories womensAccessoryAndSpecialtyShops = IssuingCardholderAuthorizationControlsBlockedCategories._('womens_accessory_and_specialty_shops');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories womensReadyToWearStores = IssuingCardholderAuthorizationControlsBlockedCategories._('womens_ready_to_wear_stores');
+
+static const IssuingCardholderAuthorizationControlsBlockedCategories wreckingAndSalvageYards = IssuingCardholderAuthorizationControlsBlockedCategories._('wrecking_and_salvage_yards');
+
+static const List<IssuingCardholderAuthorizationControlsBlockedCategories> values = [acRefrigerationRepair, accountingBookkeepingServices, advertisingServices, agriculturalCooperative, airlinesAirCarriers, airportsFlyingFields, ambulanceServices, amusementParksCarnivals, antiqueReproductions, antiqueShops, aquariums, architecturalSurveyingServices, artDealersAndGalleries, artistsSupplyAndCraftShops, autoAndHomeSupplyStores, autoBodyRepairShops, autoPaintShops, autoServiceShops, automatedCashDisburse, automatedFuelDispensers, automobileAssociations, automotivePartsAndAccessoriesStores, automotiveTireStores, bailAndBondPayments, bakeries, bandsOrchestras, barberAndBeautyShops, bettingCasinoGambling, bicycleShops, billiardPoolEstablishments, boatDealers, boatRentalsAndLeases, bookStores, booksPeriodicalsAndNewspapers, bowlingAlleys, busLines, businessSecretarialSchools, buyingShoppingServices, cableSatelliteAndOtherPayTelevisionAndRadio, cameraAndPhotographicSupplyStores, candyNutAndConfectioneryStores, carAndTruckDealersNewUsed, carAndTruckDealersUsedOnly, carRentalAgencies, carWashes, carpentryServices, carpetUpholsteryCleaning, caterers, charitableAndSocialServiceOrganizationsFundraising, chemicalsAndAlliedProducts, childCareServices, childrensAndInfantsWearStores, chiropodistsPodiatrists, chiropractors, cigarStoresAndStands, civicSocialFraternalAssociations, cleaningAndMaintenance, clothingRental, collegesUniversities, commercialEquipment, commercialFootwear, commercialPhotographyArtAndGraphics, commuterTransportAndFerries, computerNetworkServices, computerProgramming, computerRepair, computerSoftwareStores, computersPeripheralsAndSoftware, concreteWorkServices, constructionMaterials, consultingPublicRelations, correspondenceSchools, cosmeticStores, counselingServices, countryClubs, courierServices, courtCosts, creditReportingAgencies, cruiseLines, dairyProductsStores, danceHallStudiosSchools, datingEscortServices, dentistsOrthodontists, departmentStores, detectiveAgencies, digitalGoodsApplications, digitalGoodsGames, digitalGoodsLargeVolume, digitalGoodsMedia, directMarketingCatalogMerchant, directMarketingCombinationCatalogAndRetailMerchant, directMarketingInboundTelemarketing, directMarketingInsuranceServices, directMarketingOther, directMarketingOutboundTelemarketing, directMarketingSubscription, directMarketingTravel, discountStores, doctors, doorToDoorSales, draperyWindowCoveringAndUpholsteryStores, drinkingPlaces, drugStoresAndPharmacies, drugsDrugProprietariesAndDruggistSundries, dryCleaners, durableGoods, dutyFreeStores, eatingPlacesRestaurants, educationalServices, electricRazorStores, electricVehicleCharging, electricalPartsAndEquipment, electricalServices, electronicsRepairShops, electronicsStores, elementarySecondarySchools, emergencyServicesGcasVisaUseOnly, employmentTempAgencies, equipmentRental, exterminatingServices, familyClothingStores, fastFoodRestaurants, financialInstitutions, finesGovernmentAdministrativeEntities, fireplaceFireplaceScreensAndAccessoriesStores, floorCoveringStores, florists, floristsSuppliesNurseryStockAndFlowers, freezerAndLockerMeatProvisioners, fuelDealersNonAutomotive, funeralServicesCrematories, furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, furnitureRepairRefinishing, furriersAndFurShops, generalServices, giftCardNoveltyAndSouvenirShops, glassPaintAndWallpaperStores, glasswareCrystalStores, golfCoursesPublic, governmentLicensedHorseDogRacingUsRegionOnly, governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, governmentOwnedLotteriesNonUsRegion, governmentOwnedLotteriesUsRegionOnly, governmentServices, groceryStoresSupermarkets, hardwareEquipmentAndSupplies, hardwareStores, healthAndBeautySpas, hearingAidsSalesAndSupplies, heatingPlumbingAC, hobbyToyAndGameShops, homeSupplyWarehouseStores, hospitals, hotelsMotelsAndResorts, householdApplianceStores, industrialSupplies, informationRetrievalServices, insuranceDefault, insuranceUnderwritingPremiums, intraCompanyPurchases, jewelryStoresWatchesClocksAndSilverwareStores, landscapingServices, laundries, laundryCleaningServices, legalServicesAttorneys, luggageAndLeatherGoodsStores, lumberBuildingMaterialsStores, manualCashDisburse, marinasServiceAndSupplies, marketplaces, masonryStoneworkAndPlaster, massageParlors, medicalAndDentalLabs, medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, medicalServices, membershipOrganizations, mensAndBoysClothingAndAccessoriesStores, mensWomensClothingStores, metalServiceCenters, miscellaneous, miscellaneousApparelAndAccessoryShops, miscellaneousAutoDealers, miscellaneousBusinessServices, miscellaneousFoodStores, miscellaneousGeneralMerchandise, miscellaneousGeneralServices, miscellaneousHomeFurnishingSpecialtyStores, miscellaneousPublishingAndPrinting, miscellaneousRecreationServices, miscellaneousRepairShops, miscellaneousSpecialtyRetail, mobileHomeDealers, motionPictureTheaters, motorFreightCarriersAndTrucking, motorHomesDealers, motorVehicleSuppliesAndNewParts, motorcycleShopsAndDealers, motorcycleShopsDealers, musicStoresMusicalInstrumentsPianosAndSheetMusic, newsDealersAndNewsstands, nonFiMoneyOrders, nonFiStoredValueCardPurchaseLoad, nondurableGoods, nurseriesLawnAndGardenSupplyStores, nursingPersonalCare, officeAndCommercialFurniture, opticiansEyeglasses, optometristsOphthalmologist, orthopedicGoodsProstheticDevices, osteopaths, packageStoresBeerWineAndLiquor, paintsVarnishesAndSupplies, parkingLotsGarages, passengerRailways, pawnShops, petShopsPetFoodAndSupplies, petroleumAndPetroleumProducts, photoDeveloping, photographicPhotocopyMicrofilmEquipmentAndSupplies, photographicStudios, pictureVideoProduction, pieceGoodsNotionsAndOtherDryGoods, plumbingHeatingEquipmentAndSupplies, politicalOrganizations, postalServicesGovernmentOnly, preciousStonesAndMetalsWatchesAndJewelry, professionalServices, publicWarehousingAndStorage, quickCopyReproAndBlueprint, railroads, realEstateAgentsAndManagersRentals, recordStores, recreationalVehicleRentals, religiousGoodsStores, religiousOrganizations, roofingSidingSheetMetal, secretarialSupportServices, securityBrokersDealers, serviceStations, sewingNeedleworkFabricAndPieceGoodsStores, shoeRepairHatCleaning, shoeStores, smallApplianceRepair, snowmobileDealers, specialTradeServices, specialtyCleaning, sportingGoodsStores, sportingRecreationCamps, sportsAndRidingApparelStores, sportsClubsFields, stampAndCoinStores, stationaryOfficeSuppliesPrintingAndWritingPaper, stationeryStoresOfficeAndSchoolSupplyStores, swimmingPoolsSales, tUiTravelGermany, tailorsAlterations, taxPaymentsGovernmentAgencies, taxPreparationServices, taxicabsLimousines, telecommunicationEquipmentAndTelephoneSales, telecommunicationServices, telegraphServices, tentAndAwningShops, testingLaboratories, theatricalTicketAgencies, timeshares, tireRetreadingAndRepair, tollsBridgeFees, touristAttractionsAndExhibits, towingServices, trailerParksCampgrounds, transportationServices, travelAgenciesTourOperators, truckStopIteration, truckUtilityTrailerRentals, typesettingPlateMakingAndRelatedServices, typewriterStores, uSFederalGovernmentAgenciesOrDepartments, uniformsCommercialClothing, usedMerchandiseAndSecondhandStores, utilities, varietyStores, veterinaryServices, videoAmusementGameSupplies, videoGameArcades, videoTapeRentalStores, vocationalTradeSchools, watchJewelryRepair, weldingRepair, wholesaleClubs, wigAndToupeeStores, wiresMoneyOrders, womensAccessoryAndSpecialtyShops, womensReadyToWearStores, wreckingAndSalvageYards];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingCardholderAuthorizationControlsBlockedCategories && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingCardholderAuthorizationControlsBlockedCategories($value)'; } 
+ }
+/// 
+final class IssuingCardholderAuthorizationControls {const IssuingCardholderAuthorizationControls({this.allowedCategories, this.allowedMerchantCountries, this.blockedCategories, this.blockedMerchantCountries, this.spendingLimits, this.spendingLimitsCurrency, });
+
+factory IssuingCardholderAuthorizationControls.fromJson(Map<String, dynamic> json) { return IssuingCardholderAuthorizationControls(
+  allowedCategories: (json['allowed_categories'] as List<dynamic>?)?.map((e) => IssuingCardholderAuthorizationControlsAllowedCategories.fromJson(e as String)).toList(),
+  allowedMerchantCountries: (json['allowed_merchant_countries'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  blockedCategories: (json['blocked_categories'] as List<dynamic>?)?.map((e) => IssuingCardholderAuthorizationControlsBlockedCategories.fromJson(e as String)).toList(),
+  blockedMerchantCountries: (json['blocked_merchant_countries'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  spendingLimits: (json['spending_limits'] as List<dynamic>?)?.map((e) => IssuingCardholderSpendingLimit.fromJson(e as Map<String, dynamic>)).toList(),
+  spendingLimitsCurrency: json['spending_limits_currency'] as String?,
+); }
+
+/// Array of strings containing [categories](https://docs.stripe.com/api#issuing_authorization_object-merchant_data-category) of authorizations to allow. All other categories will be blocked. Cannot be set with `blocked_categories`.
+final List<IssuingCardholderAuthorizationControlsAllowedCategories>? allowedCategories;
+
+/// Array of strings containing representing countries from which authorizations will be allowed. Authorizations from merchants in all other countries will be declined. Country codes should be ISO 3166 alpha-2 country codes (e.g. `US`). Cannot be set with `blocked_merchant_countries`. Provide an empty value to unset this control.
+final List<String>? allowedMerchantCountries;
+
+/// Array of strings containing [categories](https://docs.stripe.com/api#issuing_authorization_object-merchant_data-category) of authorizations to decline. All other categories will be allowed. Cannot be set with `allowed_categories`.
+final List<IssuingCardholderAuthorizationControlsBlockedCategories>? blockedCategories;
+
+/// Array of strings containing representing countries from which authorizations will be declined. Country codes should be ISO 3166 alpha-2 country codes (e.g. `US`). Cannot be set with `allowed_merchant_countries`. Provide an empty value to unset this control.
+final List<String>? blockedMerchantCountries;
+
+/// Limit spending with amount-based rules that apply across this cardholder's cards.
+final List<IssuingCardholderSpendingLimit>? spendingLimits;
+
+/// Currency of the amounts within `spending_limits`.
+final String? spendingLimitsCurrency;
+
+Map<String, dynamic> toJson() { return {
+  if (allowedCategories != null) 'allowed_categories': allowedCategories?.map((e) => e.toJson()).toList(),
+  'allowed_merchant_countries': ?allowedMerchantCountries,
+  if (blockedCategories != null) 'blocked_categories': blockedCategories?.map((e) => e.toJson()).toList(),
+  'blocked_merchant_countries': ?blockedMerchantCountries,
+  if (spendingLimits != null) 'spending_limits': spendingLimits?.map((e) => e.toJson()).toList(),
+  'spending_limits_currency': ?spendingLimitsCurrency,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuingCardholderAuthorizationControls copyWith({List<IssuingCardholderAuthorizationControlsAllowedCategories>? Function()? allowedCategories, List<String>? Function()? allowedMerchantCountries, List<IssuingCardholderAuthorizationControlsBlockedCategories>? Function()? blockedCategories, List<String>? Function()? blockedMerchantCountries, List<IssuingCardholderSpendingLimit>? Function()? spendingLimits, String? Function()? spendingLimitsCurrency, }) { return IssuingCardholderAuthorizationControls(
+  allowedCategories: allowedCategories != null ? allowedCategories() : this.allowedCategories,
+  allowedMerchantCountries: allowedMerchantCountries != null ? allowedMerchantCountries() : this.allowedMerchantCountries,
+  blockedCategories: blockedCategories != null ? blockedCategories() : this.blockedCategories,
+  blockedMerchantCountries: blockedMerchantCountries != null ? blockedMerchantCountries() : this.blockedMerchantCountries,
+  spendingLimits: spendingLimits != null ? spendingLimits() : this.spendingLimits,
+  spendingLimitsCurrency: spendingLimitsCurrency != null ? spendingLimitsCurrency() : this.spendingLimitsCurrency,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingCardholderAuthorizationControls &&
+          listEquals(allowedCategories, other.allowedCategories) &&
+          listEquals(allowedMerchantCountries, other.allowedMerchantCountries) &&
+          listEquals(blockedCategories, other.blockedCategories) &&
+          listEquals(blockedMerchantCountries, other.blockedMerchantCountries) &&
+          listEquals(spendingLimits, other.spendingLimits) &&
+          spendingLimitsCurrency == other.spendingLimitsCurrency; } 
+@override int get hashCode { return Object.hash(Object.hashAll(allowedCategories ?? const []), Object.hashAll(allowedMerchantCountries ?? const []), Object.hashAll(blockedCategories ?? const []), Object.hashAll(blockedMerchantCountries ?? const []), Object.hashAll(spendingLimits ?? const []), spendingLimitsCurrency); } 
+@override String toString() { return 'IssuingCardholderAuthorizationControls(allowedCategories: $allowedCategories, allowedMerchantCountries: $allowedMerchantCountries, blockedCategories: $blockedCategories, blockedMerchantCountries: $blockedMerchantCountries, spendingLimits: $spendingLimits, spendingLimitsCurrency: $spendingLimitsCurrency)'; } 
+ }

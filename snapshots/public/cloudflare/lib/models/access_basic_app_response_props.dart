@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'access_schemas_aud.dart';import 'access_timestamp.dart';import 'access_uuid.dart';final class AccessBasicAppResponseProps {const AccessBasicAppResponseProps({this.aud, this.createdAt, this.id, this.updatedAt, });
+
+factory AccessBasicAppResponseProps.fromJson(Map<String, dynamic> json) { return AccessBasicAppResponseProps(
+  aud: json['aud'] != null ? AccessSchemasAud.fromJson(json['aud'] as String) : null,
+  createdAt: json['created_at'] != null ? AccessTimestamp.fromJson(json['created_at'] as String) : null,
+  id: json['id'] != null ? AccessUuid.fromJson(json['id'] as String) : null,
+  updatedAt: json['updated_at'] != null ? AccessTimestamp.fromJson(json['updated_at'] as String) : null,
+); }
+
+final AccessSchemasAud? aud;
+
+final AccessTimestamp? createdAt;
+
+final AccessUuid? id;
+
+final AccessTimestamp? updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (aud != null) 'aud': aud?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccessBasicAppResponseProps copyWith({AccessSchemasAud Function()? aud, AccessTimestamp Function()? createdAt, AccessUuid Function()? id, AccessTimestamp Function()? updatedAt, }) { return AccessBasicAppResponseProps(
+  aud: aud != null ? aud() : this.aud,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  id: id != null ? id() : this.id,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessBasicAppResponseProps &&
+          aud == other.aud &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(aud, createdAt, id, updatedAt); } 
+@override String toString() { return 'AccessBasicAppResponseProps(aud: $aud, createdAt: $createdAt, id: $id, updatedAt: $updatedAt)'; } 
+ }

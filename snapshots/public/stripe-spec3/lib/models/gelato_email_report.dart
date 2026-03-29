@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'gelato_email_report_error2.dart';/// Status of this `email` check.
+final class GelatoEmailReportStatus {const GelatoEmailReportStatus._(this.value);
+
+factory GelatoEmailReportStatus.fromJson(String json) { return switch (json) {
+  'unverified' => unverified,
+  'verified' => verified,
+  _ => GelatoEmailReportStatus._(json),
+}; }
+
+static const GelatoEmailReportStatus unverified = GelatoEmailReportStatus._('unverified');
+
+static const GelatoEmailReportStatus verified = GelatoEmailReportStatus._('verified');
+
+static const List<GelatoEmailReportStatus> values = [unverified, verified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GelatoEmailReportStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GelatoEmailReportStatus($value)'; } 
+ }
+/// Result from a email check
+final class GelatoEmailReport {const GelatoEmailReport({this.email, this.error, required this.status, });
+
+factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEmailReport(
+  email: json['email'] as String?,
+  error: json['error'] != null ? GelatoEmailReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
+  status: GelatoEmailReportStatus.fromJson(json['status'] as String),
+); }
+
+/// Email to be verified.
+final String? email;
+
+/// Details on the verification error. Present when status is `unverified`.
+final GelatoEmailReportError2? error;
+
+/// Status of this `email` check.
+final GelatoEmailReportStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'email': ?email,
+  if (error != null) 'error': error?.toJson(),
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError2? Function()? error, GelatoEmailReportStatus? status, }) { return GelatoEmailReport(
+  email: email != null ? email() : this.email,
+  error: error != null ? error() : this.error,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GelatoEmailReport &&
+          email == other.email &&
+          error == other.error &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(email, error, status); } 
+@override String toString() { return 'GelatoEmailReport(email: $email, error: $error, status: $status)'; } 
+ }

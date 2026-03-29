@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'not_received_additional_documentation.dart';import 'not_received_expected_at.dart';import 'not_received_explanation.dart';import 'not_received_product_description.dart';final class NotReceivedProductType {const NotReceivedProductType._(this.value);
+
+factory NotReceivedProductType.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'merchandise' => merchandise,
+  'service' => service,
+  _ => NotReceivedProductType._(json),
+}; }
+
+static const NotReceivedProductType $empty = NotReceivedProductType._('');
+
+static const NotReceivedProductType merchandise = NotReceivedProductType._('merchandise');
+
+static const NotReceivedProductType service = NotReceivedProductType._('service');
+
+static const List<NotReceivedProductType> values = [$empty, merchandise, service];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NotReceivedProductType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'NotReceivedProductType($value)'; } 
+ }
+final class NotReceived {const NotReceived({this.additionalDocumentation, this.expectedAt, this.explanation, this.productDescription, this.productType, });
+
+factory NotReceived.fromJson(Map<String, dynamic> json) { return NotReceived(
+  additionalDocumentation: json['additional_documentation'] != null ? OneOf2.parse(json['additional_documentation'], fromA: (v) => v as String, fromB: (v) => NotReceivedAdditionalDocumentationVariant2.fromJson(v as String),) : null,
+  expectedAt: json['expected_at'] != null ? OneOf2.parse(json['expected_at'], fromA: (v) => (v as num).toInt(), fromB: (v) => NotReceivedExpectedAtVariant2.fromJson(v as String),) : null,
+  explanation: json['explanation'] != null ? OneOf2.parse(json['explanation'], fromA: (v) => v as String, fromB: (v) => NotReceivedExplanationVariant2.fromJson(v as String),) : null,
+  productDescription: json['product_description'] != null ? OneOf2.parse(json['product_description'], fromA: (v) => v as String, fromB: (v) => NotReceivedProductDescriptionVariant2.fromJson(v as String),) : null,
+  productType: json['product_type'] != null ? NotReceivedProductType.fromJson(json['product_type'] as String) : null,
+); }
+
+final NotReceivedAdditionalDocumentation? additionalDocumentation;
+
+final NotReceivedExpectedAt? expectedAt;
+
+final NotReceivedExplanation? explanation;
+
+final NotReceivedProductDescription? productDescription;
+
+final NotReceivedProductType? productType;
+
+Map<String, dynamic> toJson() { return {
+  if (additionalDocumentation != null) 'additional_documentation': additionalDocumentation?.toJson(),
+  if (expectedAt != null) 'expected_at': expectedAt?.toJson(),
+  if (explanation != null) 'explanation': explanation?.toJson(),
+  if (productDescription != null) 'product_description': productDescription?.toJson(),
+  if (productType != null) 'product_type': productType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+NotReceived copyWith({NotReceivedAdditionalDocumentation Function()? additionalDocumentation, NotReceivedExpectedAt Function()? expectedAt, NotReceivedExplanation Function()? explanation, NotReceivedProductDescription Function()? productDescription, NotReceivedProductType Function()? productType, }) { return NotReceived(
+  additionalDocumentation: additionalDocumentation != null ? additionalDocumentation() : this.additionalDocumentation,
+  expectedAt: expectedAt != null ? expectedAt() : this.expectedAt,
+  explanation: explanation != null ? explanation() : this.explanation,
+  productDescription: productDescription != null ? productDescription() : this.productDescription,
+  productType: productType != null ? productType() : this.productType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NotReceived &&
+          additionalDocumentation == other.additionalDocumentation &&
+          expectedAt == other.expectedAt &&
+          explanation == other.explanation &&
+          productDescription == other.productDescription &&
+          productType == other.productType; } 
+@override int get hashCode { return Object.hash(additionalDocumentation, expectedAt, explanation, productDescription, productType); } 
+@override String toString() { return 'NotReceived(additionalDocumentation: $additionalDocumentation, expectedAt: $expectedAt, explanation: $explanation, productDescription: $productDescription, productType: $productType)'; } 
+ }

@@ -1,0 +1,131 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The local credit or debit card brand.
+final class PaymentMethodDetailsKrCardBrand {const PaymentMethodDetailsKrCardBrand._(this.value);
+
+factory PaymentMethodDetailsKrCardBrand.fromJson(String json) { return switch (json) {
+  'bc' => bc,
+  'citi' => citi,
+  'hana' => hana,
+  'hyundai' => hyundai,
+  'jeju' => jeju,
+  'jeonbuk' => jeonbuk,
+  'kakaobank' => kakaobank,
+  'kbank' => kbank,
+  'kdbbank' => kdbbank,
+  'kookmin' => kookmin,
+  'kwangju' => kwangju,
+  'lotte' => lotte,
+  'mg' => mg,
+  'nh' => nh,
+  'post' => post,
+  'samsung' => samsung,
+  'savingsbank' => savingsbank,
+  'shinhan' => shinhan,
+  'shinhyup' => shinhyup,
+  'suhyup' => suhyup,
+  'tossbank' => tossbank,
+  'woori' => woori,
+  _ => PaymentMethodDetailsKrCardBrand._(json),
+}; }
+
+static const PaymentMethodDetailsKrCardBrand bc = PaymentMethodDetailsKrCardBrand._('bc');
+
+static const PaymentMethodDetailsKrCardBrand citi = PaymentMethodDetailsKrCardBrand._('citi');
+
+static const PaymentMethodDetailsKrCardBrand hana = PaymentMethodDetailsKrCardBrand._('hana');
+
+static const PaymentMethodDetailsKrCardBrand hyundai = PaymentMethodDetailsKrCardBrand._('hyundai');
+
+static const PaymentMethodDetailsKrCardBrand jeju = PaymentMethodDetailsKrCardBrand._('jeju');
+
+static const PaymentMethodDetailsKrCardBrand jeonbuk = PaymentMethodDetailsKrCardBrand._('jeonbuk');
+
+static const PaymentMethodDetailsKrCardBrand kakaobank = PaymentMethodDetailsKrCardBrand._('kakaobank');
+
+static const PaymentMethodDetailsKrCardBrand kbank = PaymentMethodDetailsKrCardBrand._('kbank');
+
+static const PaymentMethodDetailsKrCardBrand kdbbank = PaymentMethodDetailsKrCardBrand._('kdbbank');
+
+static const PaymentMethodDetailsKrCardBrand kookmin = PaymentMethodDetailsKrCardBrand._('kookmin');
+
+static const PaymentMethodDetailsKrCardBrand kwangju = PaymentMethodDetailsKrCardBrand._('kwangju');
+
+static const PaymentMethodDetailsKrCardBrand lotte = PaymentMethodDetailsKrCardBrand._('lotte');
+
+static const PaymentMethodDetailsKrCardBrand mg = PaymentMethodDetailsKrCardBrand._('mg');
+
+static const PaymentMethodDetailsKrCardBrand nh = PaymentMethodDetailsKrCardBrand._('nh');
+
+static const PaymentMethodDetailsKrCardBrand post = PaymentMethodDetailsKrCardBrand._('post');
+
+static const PaymentMethodDetailsKrCardBrand samsung = PaymentMethodDetailsKrCardBrand._('samsung');
+
+static const PaymentMethodDetailsKrCardBrand savingsbank = PaymentMethodDetailsKrCardBrand._('savingsbank');
+
+static const PaymentMethodDetailsKrCardBrand shinhan = PaymentMethodDetailsKrCardBrand._('shinhan');
+
+static const PaymentMethodDetailsKrCardBrand shinhyup = PaymentMethodDetailsKrCardBrand._('shinhyup');
+
+static const PaymentMethodDetailsKrCardBrand suhyup = PaymentMethodDetailsKrCardBrand._('suhyup');
+
+static const PaymentMethodDetailsKrCardBrand tossbank = PaymentMethodDetailsKrCardBrand._('tossbank');
+
+static const PaymentMethodDetailsKrCardBrand woori = PaymentMethodDetailsKrCardBrand._('woori');
+
+static const List<PaymentMethodDetailsKrCardBrand> values = [bc, citi, hana, hyundai, jeju, jeonbuk, kakaobank, kbank, kdbbank, kookmin, kwangju, lotte, mg, nh, post, samsung, savingsbank, shinhan, shinhyup, suhyup, tossbank, woori];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodDetailsKrCardBrand && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodDetailsKrCardBrand($value)'; } 
+ }
+/// 
+final class PaymentMethodDetailsKrCard {const PaymentMethodDetailsKrCard({this.brand, this.buyerId, this.last4, this.transactionId, });
+
+factory PaymentMethodDetailsKrCard.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKrCard(
+  brand: json['brand'] != null ? PaymentMethodDetailsKrCardBrand.fromJson(json['brand'] as String) : null,
+  buyerId: json['buyer_id'] as String?,
+  last4: json['last4'] as String?,
+  transactionId: json['transaction_id'] as String?,
+); }
+
+/// The local credit or debit card brand.
+final PaymentMethodDetailsKrCardBrand? brand;
+
+/// A unique identifier for the buyer as determined by the local payment processor.
+final String? buyerId;
+
+/// The last four digits of the card. This may not be present for American Express cards.
+final String? last4;
+
+/// The Korean Card transaction ID associated with this payment.
+final String? transactionId;
+
+Map<String, dynamic> toJson() { return {
+  if (brand != null) 'brand': brand?.toJson(),
+  'buyer_id': ?buyerId,
+  'last4': ?last4,
+  'transaction_id': ?transactionId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand, String? Function()? buyerId, String? Function()? last4, String? Function()? transactionId, }) { return PaymentMethodDetailsKrCard(
+  brand: brand != null ? brand() : this.brand,
+  buyerId: buyerId != null ? buyerId() : this.buyerId,
+  last4: last4 != null ? last4() : this.last4,
+  transactionId: transactionId != null ? transactionId() : this.transactionId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsKrCard &&
+          brand == other.brand &&
+          buyerId == other.buyerId &&
+          last4 == other.last4 &&
+          transactionId == other.transactionId; } 
+@override int get hashCode { return Object.hash(brand, buyerId, last4, transactionId); } 
+@override String toString() { return 'PaymentMethodDetailsKrCard(brand: $brand, buyerId: $buyerId, last4: $last4, transactionId: $transactionId)'; } 
+ }

@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecuritySummaryBySpfResponseResultSummary0 {const RadarGetEmailSecuritySummaryBySpfResponseResultSummary0({required this.fail, required this.none, required this.pass, });
+
+factory RadarGetEmailSecuritySummaryBySpfResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpfResponseResultSummary0(
+  fail: json['FAIL'] as String,
+  none: json['NONE'] as String,
+  pass: json['PASS'] as String,
+); }
+
+/// A numeric string.
+final String fail;
+
+/// A numeric string.
+final String none;
+
+/// A numeric string.
+final String pass;
+
+Map<String, dynamic> toJson() { return {
+  'FAIL': fail,
+  'NONE': none,
+  'PASS': pass,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('FAIL') && json['FAIL'] is String &&
+      json.containsKey('NONE') && json['NONE'] is String &&
+      json.containsKey('PASS') && json['PASS'] is String; } 
+RadarGetEmailSecuritySummaryBySpfResponseResultSummary0 copyWith({String? fail, String? none, String? pass, }) { return RadarGetEmailSecuritySummaryBySpfResponseResultSummary0(
+  fail: fail ?? this.fail,
+  none: none ?? this.none,
+  pass: pass ?? this.pass,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailSecuritySummaryBySpfResponseResultSummary0 &&
+          fail == other.fail &&
+          none == other.none &&
+          pass == other.pass; } 
+@override int get hashCode { return Object.hash(fail, none, pass); } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryBySpfResponseResultSummary0(fail: $fail, none: $none, pass: $pass)'; } 
+ }

@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TelemetryKeysListResponseMessagesMessage {const TelemetryKeysListResponseMessagesMessage._(this.value);
+
+factory TelemetryKeysListResponseMessagesMessage.fromJson(String json) { return switch (json) {
+  'Successful request' => successfulRequest,
+  _ => TelemetryKeysListResponseMessagesMessage._(json),
+}; }
+
+static const TelemetryKeysListResponseMessagesMessage successfulRequest = TelemetryKeysListResponseMessagesMessage._('Successful request');
+
+static const List<TelemetryKeysListResponseMessagesMessage> values = [successfulRequest];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TelemetryKeysListResponseMessagesMessage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TelemetryKeysListResponseMessagesMessage($value)'; } 
+ }
+final class TelemetryKeysListResponseMessages {const TelemetryKeysListResponseMessages({required this.message});
+
+factory TelemetryKeysListResponseMessages.fromJson(Map<String, dynamic> json) { return TelemetryKeysListResponseMessages(
+  message: TelemetryKeysListResponseMessagesMessage.fromJson(json['message'] as String),
+); }
+
+final TelemetryKeysListResponseMessagesMessage message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
+TelemetryKeysListResponseMessages copyWith({TelemetryKeysListResponseMessagesMessage? message}) { return TelemetryKeysListResponseMessages(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TelemetryKeysListResponseMessages &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'TelemetryKeysListResponseMessages(message: $message)'; } 
+ }

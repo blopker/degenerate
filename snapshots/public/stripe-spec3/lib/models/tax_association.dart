@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_tax_association_transaction_attempts.dart';/// String representing the object's type. Objects of the same type share the same value.
+final class TaxAssociationObject {const TaxAssociationObject._(this.value);
+
+factory TaxAssociationObject.fromJson(String json) { return switch (json) {
+  'tax.association' => taxAssociation,
+  _ => TaxAssociationObject._(json),
+}; }
+
+static const TaxAssociationObject taxAssociation = TaxAssociationObject._('tax.association');
+
+static const List<TaxAssociationObject> values = [taxAssociation];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxAssociationObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxAssociationObject($value)'; } 
+ }
+/// A Tax Association exposes the Tax Transactions that Stripe attempted to create on your behalf based on the PaymentIntent input
+final class TaxAssociation {const TaxAssociation({required this.calculation, required this.id, required this.object, required this.paymentIntent, this.taxTransactionAttempts, });
+
+factory TaxAssociation.fromJson(Map<String, dynamic> json) { return TaxAssociation(
+  calculation: json['calculation'] as String,
+  id: json['id'] as String,
+  object: TaxAssociationObject.fromJson(json['object'] as String),
+  paymentIntent: json['payment_intent'] as String,
+  taxTransactionAttempts: (json['tax_transaction_attempts'] as List<dynamic>?)?.map((e) => TaxProductResourceTaxAssociationTransactionAttempts.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The [Tax Calculation](https://docs.stripe.com/api/tax/calculations/object) that was included in PaymentIntent.
+final String calculation;
+
+/// Unique identifier for the object.
+final String id;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final TaxAssociationObject object;
+
+/// The [PaymentIntent](https://docs.stripe.com/api/payment_intents/object) that this Tax Association is tracking.
+final String paymentIntent;
+
+/// Information about the tax transactions linked to this payment intent
+final List<TaxProductResourceTaxAssociationTransactionAttempts>? taxTransactionAttempts;
+
+Map<String, dynamic> toJson() { return {
+  'calculation': calculation,
+  'id': id,
+  'object': object.toJson(),
+  'payment_intent': paymentIntent,
+  if (taxTransactionAttempts != null) 'tax_transaction_attempts': taxTransactionAttempts?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('payment_intent') && json['payment_intent'] is String; } 
+TaxAssociation copyWith({String? calculation, String? id, TaxAssociationObject? object, String? paymentIntent, List<TaxProductResourceTaxAssociationTransactionAttempts>? Function()? taxTransactionAttempts, }) { return TaxAssociation(
+  calculation: calculation ?? this.calculation,
+  id: id ?? this.id,
+  object: object ?? this.object,
+  paymentIntent: paymentIntent ?? this.paymentIntent,
+  taxTransactionAttempts: taxTransactionAttempts != null ? taxTransactionAttempts() : this.taxTransactionAttempts,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxAssociation &&
+          calculation == other.calculation &&
+          id == other.id &&
+          object == other.object &&
+          paymentIntent == other.paymentIntent &&
+          listEquals(taxTransactionAttempts, other.taxTransactionAttempts); } 
+@override int get hashCode { return Object.hash(calculation, id, object, paymentIntent, Object.hashAll(taxTransactionAttempts ?? const [])); } 
+@override String toString() { return 'TaxAssociation(calculation: $calculation, id: $id, object: $object, paymentIntent: $paymentIntent, taxTransactionAttempts: $taxTransactionAttempts)'; } 
+ }

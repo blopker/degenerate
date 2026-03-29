@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType {const InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType._(this.value);
+
+factory InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType.fromJson(String json) { return switch (json) {
+  'business' => business,
+  'personal' => personal,
+  _ => InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType._(json),
+}; }
+
+static const InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType business = InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType._('business');
+
+static const InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType personal = InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType._('personal');
+
+static const List<InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType> values = [business, personal];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType($value)'; } 
+ }
+final class InvoicePaymentMethodOptionsParam15MandateOptions {const InvoicePaymentMethodOptionsParam15MandateOptions({this.transactionType});
+
+factory InvoicePaymentMethodOptionsParam15MandateOptions.fromJson(Map<String, dynamic> json) { return InvoicePaymentMethodOptionsParam15MandateOptions(
+  transactionType: json['transaction_type'] != null ? InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType.fromJson(json['transaction_type'] as String) : null,
+); }
+
+final InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType? transactionType;
+
+Map<String, dynamic> toJson() { return {
+  if (transactionType != null) 'transaction_type': transactionType?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+InvoicePaymentMethodOptionsParam15MandateOptions copyWith({InvoicePaymentMethodOptionsParam15MandateOptionsTransactionType Function()? transactionType}) { return InvoicePaymentMethodOptionsParam15MandateOptions(
+  transactionType: transactionType != null ? transactionType() : this.transactionType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is InvoicePaymentMethodOptionsParam15MandateOptions &&
+          transactionType == other.transactionType; } 
+@override int get hashCode { return transactionType.hashCode; } 
+@override String toString() { return 'InvoicePaymentMethodOptionsParam15MandateOptions(transactionType: $transactionType)'; } 
+ }

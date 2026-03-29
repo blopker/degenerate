@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_bgp_pfx2as_response_result_meta.dart';import 'radar_get_bgp_pfx2as_response_result_prefix_origins.dart';final class RadarGetBgpPfx2asResponseResult {const RadarGetBgpPfx2asResponseResult({required this.meta, required this.prefixOrigins, });
+
+factory RadarGetBgpPfx2asResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetBgpPfx2asResponseResult(
+  meta: RadarGetBgpPfx2asResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  prefixOrigins: (json['prefix_origins'] as List<dynamic>).map((e) => RadarGetBgpPfx2asResponseResultPrefixOrigins.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final RadarGetBgpPfx2asResponseResultMeta meta;
+
+final List<RadarGetBgpPfx2asResponseResultPrefixOrigins> prefixOrigins;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'prefix_origins': prefixOrigins.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('prefix_origins'); } 
+RadarGetBgpPfx2asResponseResult copyWith({RadarGetBgpPfx2asResponseResultMeta? meta, List<RadarGetBgpPfx2asResponseResultPrefixOrigins>? prefixOrigins, }) { return RadarGetBgpPfx2asResponseResult(
+  meta: meta ?? this.meta,
+  prefixOrigins: prefixOrigins ?? this.prefixOrigins,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetBgpPfx2asResponseResult &&
+          meta == other.meta &&
+          listEquals(prefixOrigins, other.prefixOrigins); } 
+@override int get hashCode { return Object.hash(meta, Object.hashAll(prefixOrigins)); } 
+@override String toString() { return 'RadarGetBgpPfx2asResponseResult(meta: $meta, prefixOrigins: $prefixOrigins)'; } 
+ }

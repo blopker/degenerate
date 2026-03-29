@@ -1,0 +1,92 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_checkout_sessions_request_payment_method_options_us_bank_account_financial_connections.dart';final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  'off_session' => offSession,
+  'on_session' => onSession,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage none = PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._('none');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage offSession = PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._('off_session');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage onSession = PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage._('on_session');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage> values = [none, offSession, onSession];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(this.value);
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(String json) { return switch (json) {
+  'automatic' => automatic,
+  'instant' => instant,
+  _ => PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._(json),
+}; }
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod automatic = PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._('automatic');
+
+static const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod instant = PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod._('instant');
+
+static const List<PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod> values = [automatic, instant];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod($value)'; } 
+ }
+final class PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount {const PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount({this.financialConnections, this.setupFutureUsage, this.targetDate, this.verificationMethod, });
+
+factory PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(
+  financialConnections: json['financial_connections'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections.fromJson(json['financial_connections'] as Map<String, dynamic>) : null,
+  setupFutureUsage: json['setup_future_usage'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+  targetDate: json['target_date'] as String?,
+  verificationMethod: json['verification_method'] != null ? PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod.fromJson(json['verification_method'] as String) : null,
+); }
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections? financialConnections;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage? setupFutureUsage;
+
+final String? targetDate;
+
+final PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod? verificationMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (financialConnections != null) 'financial_connections': financialConnections?.toJson(),
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+  'target_date': ?targetDate,
+  if (verificationMethod != null) 'verification_method': verificationMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount copyWith({PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountFinancialConnections Function()? financialConnections, PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountSetupFutureUsage Function()? setupFutureUsage, String Function()? targetDate, PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccountVerificationMethod Function()? verificationMethod, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(
+  financialConnections: financialConnections != null ? financialConnections() : this.financialConnections,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+  targetDate: targetDate != null ? targetDate() : this.targetDate,
+  verificationMethod: verificationMethod != null ? verificationMethod() : this.verificationMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount &&
+          financialConnections == other.financialConnections &&
+          setupFutureUsage == other.setupFutureUsage &&
+          targetDate == other.targetDate &&
+          verificationMethod == other.verificationMethod; } 
+@override int get hashCode { return Object.hash(financialConnections, setupFutureUsage, targetDate, verificationMethod); } 
+@override String toString() { return 'PostCheckoutSessionsRequestPaymentMethodOptionsUsBankAccount(financialConnections: $financialConnections, setupFutureUsage: $setupFutureUsage, targetDate: $targetDate, verificationMethod: $verificationMethod)'; } 
+ }

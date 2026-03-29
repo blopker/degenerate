@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'text_generation2_variant1_tool_calls.dart';import 'text_generation2_variant1_usage.dart';final class TextGeneration2Variant1 {const TextGeneration2Variant1({required this.response, this.toolCalls, this.usage, });
+
+factory TextGeneration2Variant1.fromJson(Map<String, dynamic> json) { return TextGeneration2Variant1(
+  response: json['response'] as String,
+  toolCalls: (json['tool_calls'] as List<dynamic>?)?.map((e) => TextGeneration2Variant1ToolCalls.fromJson(e as Map<String, dynamic>)).toList(),
+  usage: json['usage'] != null ? TextGeneration2Variant1Usage.fromJson(json['usage'] as Map<String, dynamic>) : null,
+); }
+
+/// The generated text response from the model
+final String response;
+
+/// An array of tool calls requests made during the response generation
+final List<TextGeneration2Variant1ToolCalls>? toolCalls;
+
+/// Usage statistics for the inference request
+final TextGeneration2Variant1Usage? usage;
+
+Map<String, dynamic> toJson() { return {
+  'response': response,
+  if (toolCalls != null) 'tool_calls': toolCalls?.map((e) => e.toJson()).toList(),
+  if (usage != null) 'usage': usage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('response') && json['response'] is String; } 
+TextGeneration2Variant1 copyWith({String? response, List<TextGeneration2Variant1ToolCalls> Function()? toolCalls, TextGeneration2Variant1Usage Function()? usage, }) { return TextGeneration2Variant1(
+  response: response ?? this.response,
+  toolCalls: toolCalls != null ? toolCalls() : this.toolCalls,
+  usage: usage != null ? usage() : this.usage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TextGeneration2Variant1 &&
+          response == other.response &&
+          listEquals(toolCalls, other.toolCalls) &&
+          usage == other.usage; } 
+@override int get hashCode { return Object.hash(response, Object.hashAll(toolCalls ?? const []), usage); } 
+@override String toString() { return 'TextGeneration2Variant1(response: $response, toolCalls: $toolCalls, usage: $usage)'; } 
+ }

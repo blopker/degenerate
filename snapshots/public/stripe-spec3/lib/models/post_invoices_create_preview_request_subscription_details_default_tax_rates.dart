@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 {const PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2._(this.value);
+
+factory PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2._(json),
+}; }
+
+static const PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 $empty = PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2._('');
+
+static const List<PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2($value)'; } 
+ }
+typedef PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRates = OneOf2<List<String>,PostInvoicesCreatePreviewRequestSubscriptionDetailsDefaultTaxRatesVariant2>;

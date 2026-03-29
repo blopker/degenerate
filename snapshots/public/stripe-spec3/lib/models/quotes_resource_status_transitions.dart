@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class QuotesResourceStatusTransitions {const QuotesResourceStatusTransitions({this.acceptedAt, this.canceledAt, this.finalizedAt, });
+
+factory QuotesResourceStatusTransitions.fromJson(Map<String, dynamic> json) { return QuotesResourceStatusTransitions(
+  acceptedAt: json['accepted_at'] != null ? (json['accepted_at'] as num).toInt() : null,
+  canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
+  finalizedAt: json['finalized_at'] != null ? (json['finalized_at'] as num).toInt() : null,
+); }
+
+/// The time that the quote was accepted. Measured in seconds since Unix epoch.
+final int? acceptedAt;
+
+/// The time that the quote was canceled. Measured in seconds since Unix epoch.
+final int? canceledAt;
+
+/// The time that the quote was finalized. Measured in seconds since Unix epoch.
+final int? finalizedAt;
+
+Map<String, dynamic> toJson() { return {
+  'accepted_at': ?acceptedAt,
+  'canceled_at': ?canceledAt,
+  'finalized_at': ?finalizedAt,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+QuotesResourceStatusTransitions copyWith({int? Function()? acceptedAt, int? Function()? canceledAt, int? Function()? finalizedAt, }) { return QuotesResourceStatusTransitions(
+  acceptedAt: acceptedAt != null ? acceptedAt() : this.acceptedAt,
+  canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,
+  finalizedAt: finalizedAt != null ? finalizedAt() : this.finalizedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is QuotesResourceStatusTransitions &&
+          acceptedAt == other.acceptedAt &&
+          canceledAt == other.canceledAt &&
+          finalizedAt == other.finalizedAt; } 
+@override int get hashCode { return Object.hash(acceptedAt, canceledAt, finalizedAt); } 
+@override String toString() { return 'QuotesResourceStatusTransitions(acceptedAt: $acceptedAt, canceledAt: $canceledAt, finalizedAt: $finalizedAt)'; } 
+ }

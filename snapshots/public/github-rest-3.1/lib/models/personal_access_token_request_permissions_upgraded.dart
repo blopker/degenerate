@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Requested permissions that elevate access for a previously approved request for access, categorized by type of permission.
+final class PersonalAccessTokenRequestPermissionsUpgraded {const PersonalAccessTokenRequestPermissionsUpgraded({this.organization, this.repository, this.other, });
+
+factory PersonalAccessTokenRequestPermissionsUpgraded.fromJson(Map<String, dynamic> json) { return PersonalAccessTokenRequestPermissionsUpgraded(
+  organization: (json['organization'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  repository: (json['repository'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  other: (json['other'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+); }
+
+final Map<String,String>? organization;
+
+final Map<String,String>? repository;
+
+final Map<String,String>? other;
+
+Map<String, dynamic> toJson() { return {
+  'organization': ?organization,
+  'repository': ?repository,
+  'other': ?other,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PersonalAccessTokenRequestPermissionsUpgraded copyWith({Map<String, String> Function()? organization, Map<String, String> Function()? repository, Map<String, String> Function()? other, }) { return PersonalAccessTokenRequestPermissionsUpgraded(
+  organization: organization != null ? organization() : this.organization,
+  repository: repository != null ? repository() : this.repository,
+  other: other != null ? other() : this.other,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PersonalAccessTokenRequestPermissionsUpgraded &&
+          organization == other.organization &&
+          repository == other.repository &&
+          this.other == other.other; } 
+@override int get hashCode { return Object.hash(organization, repository, other); } 
+@override String toString() { return 'PersonalAccessTokenRequestPermissionsUpgraded(organization: $organization, repository: $repository, other: $other)'; } 
+ }

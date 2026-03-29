@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_whois_identifier.dart';import '../models/response_common15.dart';/// WhoisRecordApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class WhoisRecordApi with ApiExecutor {const WhoisRecordApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get WHOIS Record
+///
+/// `GET /accounts/{account_id}/intel/whois`
+Future<ApiResult<ResponseCommon15, Never>> whoisRecordGetWhoisRecord({required CloudforceOneWhoisIdentifier accountId, String? domain, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (domain != null) queryParameters['domain'] = domain;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId.toString())}/intel/whois',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon15.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

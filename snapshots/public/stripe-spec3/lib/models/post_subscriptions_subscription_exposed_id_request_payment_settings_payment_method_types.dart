@@ -1,0 +1,168 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._(this.value);
+
+factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+  'ach_credit_transfer' => achCreditTransfer,
+  'ach_debit' => achDebit,
+  'acss_debit' => acssDebit,
+  'affirm' => affirm,
+  'amazon_pay' => amazonPay,
+  'au_becs_debit' => auBecsDebit,
+  'bacs_debit' => bacsDebit,
+  'bancontact' => bancontact,
+  'boleto' => boleto,
+  'card' => card,
+  'cashapp' => cashapp,
+  'crypto' => crypto,
+  'custom' => custom,
+  'customer_balance' => customerBalance,
+  'eps' => eps,
+  'fpx' => fpx,
+  'giropay' => giropay,
+  'grabpay' => grabpay,
+  'ideal' => ideal,
+  'jp_credit_transfer' => jpCreditTransfer,
+  'kakao_pay' => kakaoPay,
+  'klarna' => klarna,
+  'konbini' => konbini,
+  'kr_card' => krCard,
+  'link' => link,
+  'multibanco' => multibanco,
+  'naver_pay' => naverPay,
+  'nz_bank_account' => nzBankAccount,
+  'p24' => p24,
+  'pay_by_bank' => payByBank,
+  'payco' => payco,
+  'paynow' => paynow,
+  'paypal' => paypal,
+  'payto' => payto,
+  'promptpay' => promptpay,
+  'revolut_pay' => revolutPay,
+  'sepa_credit_transfer' => sepaCreditTransfer,
+  'sepa_debit' => sepaDebit,
+  'sofort' => sofort,
+  'swish' => swish,
+  'us_bank_account' => usBankAccount,
+  'wechat_pay' => wechatPay,
+  _ => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._(json),
+}; }
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 achCreditTransfer = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('ach_credit_transfer');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 achDebit = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('ach_debit');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 acssDebit = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('acss_debit');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 affirm = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('affirm');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 amazonPay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('amazon_pay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 auBecsDebit = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('au_becs_debit');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 bacsDebit = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('bacs_debit');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 bancontact = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('bancontact');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 boleto = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('boleto');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 card = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('card');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 cashapp = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('cashapp');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 crypto = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('crypto');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 custom = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('custom');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 customerBalance = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('customer_balance');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 eps = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('eps');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 fpx = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('fpx');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 giropay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('giropay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 grabpay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('grabpay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 ideal = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('ideal');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 jpCreditTransfer = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('jp_credit_transfer');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 kakaoPay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('kakao_pay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 klarna = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('klarna');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 konbini = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('konbini');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 krCard = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('kr_card');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 link = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('link');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 multibanco = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('multibanco');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 naverPay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('naver_pay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 nzBankAccount = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('nz_bank_account');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 p24 = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('p24');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 payByBank = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('pay_by_bank');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 payco = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('payco');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 paynow = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('paynow');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 paypal = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('paypal');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 payto = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('payto');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 promptpay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('promptpay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 revolutPay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('revolut_pay');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 sepaCreditTransfer = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('sepa_credit_transfer');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 sepaDebit = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('sepa_debit');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 sofort = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('sofort');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 swish = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('swish');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 usBankAccount = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('us_bank_account');
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 wechatPay = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1._('wechat_pay');
+
+static const List<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1> values = [achCreditTransfer, achDebit, acssDebit, affirm, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cashapp, crypto, custom, customerBalance, eps, fpx, giropay, grabpay, ideal, jpCreditTransfer, kakaoPay, klarna, konbini, krCard, link, multibanco, naverPay, nzBankAccount, p24, payByBank, payco, paynow, paypal, payto, promptpay, revolutPay, sepaCreditTransfer, sepaDebit, sofort, swish, usBankAccount, wechatPay];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1($value)'; } 
+ }
+final class PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2 {const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2._(this.value);
+
+factory PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2._(json),
+}; }
+
+static const PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2 $empty = PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2._('');
+
+static const List<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2($value)'; } 
+ }
+typedef PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypes = OneOf2<List<PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant1>,PostSubscriptionsSubscriptionExposedIdRequestPaymentSettingsPaymentMethodTypesVariant2>;

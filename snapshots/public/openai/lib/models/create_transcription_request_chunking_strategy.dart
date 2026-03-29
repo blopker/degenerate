@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'vad_config.dart';/// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
+/// 
+final class CreateTranscriptionRequestChunkingStrategyVariant1 {const CreateTranscriptionRequestChunkingStrategyVariant1._(this.value);
+
+factory CreateTranscriptionRequestChunkingStrategyVariant1.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  _ => CreateTranscriptionRequestChunkingStrategyVariant1._(json),
+}; }
+
+static const CreateTranscriptionRequestChunkingStrategyVariant1 auto = CreateTranscriptionRequestChunkingStrategyVariant1._('auto');
+
+static const List<CreateTranscriptionRequestChunkingStrategyVariant1> values = [auto];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CreateTranscriptionRequestChunkingStrategyVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CreateTranscriptionRequestChunkingStrategyVariant1($value)'; } 
+ }
+typedef CreateTranscriptionRequestChunkingStrategy = OneOf2<CreateTranscriptionRequestChunkingStrategyVariant1,VadConfig>;

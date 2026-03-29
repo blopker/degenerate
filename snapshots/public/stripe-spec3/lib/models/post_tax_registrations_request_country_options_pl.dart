@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_tax_registrations_request_country_options_pl_standard.dart';final class PostTaxRegistrationsRequestCountryOptionsPlType {const PostTaxRegistrationsRequestCountryOptionsPlType._(this.value);
+
+factory PostTaxRegistrationsRequestCountryOptionsPlType.fromJson(String json) { return switch (json) {
+  'ioss' => ioss,
+  'oss_non_union' => ossNonUnion,
+  'oss_union' => ossUnion,
+  'standard' => standard,
+  _ => PostTaxRegistrationsRequestCountryOptionsPlType._(json),
+}; }
+
+static const PostTaxRegistrationsRequestCountryOptionsPlType ioss = PostTaxRegistrationsRequestCountryOptionsPlType._('ioss');
+
+static const PostTaxRegistrationsRequestCountryOptionsPlType ossNonUnion = PostTaxRegistrationsRequestCountryOptionsPlType._('oss_non_union');
+
+static const PostTaxRegistrationsRequestCountryOptionsPlType ossUnion = PostTaxRegistrationsRequestCountryOptionsPlType._('oss_union');
+
+static const PostTaxRegistrationsRequestCountryOptionsPlType standard = PostTaxRegistrationsRequestCountryOptionsPlType._('standard');
+
+static const List<PostTaxRegistrationsRequestCountryOptionsPlType> values = [ioss, ossNonUnion, ossUnion, standard];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsPlType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsPlType($value)'; } 
+ }
+final class PostTaxRegistrationsRequestCountryOptionsPl {const PostTaxRegistrationsRequestCountryOptionsPl({this.standard, required this.type, });
+
+factory PostTaxRegistrationsRequestCountryOptionsPl.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsPl(
+  standard: json['standard'] != null ? PostTaxRegistrationsRequestCountryOptionsPlStandard.fromJson(json['standard'] as Map<String, dynamic>) : null,
+  type: PostTaxRegistrationsRequestCountryOptionsPlType.fromJson(json['type'] as String),
+); }
+
+final PostTaxRegistrationsRequestCountryOptionsPlStandard? standard;
+
+final PostTaxRegistrationsRequestCountryOptionsPlType type;
+
+Map<String, dynamic> toJson() { return {
+  if (standard != null) 'standard': standard?.toJson(),
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostTaxRegistrationsRequestCountryOptionsPl copyWith({PostTaxRegistrationsRequestCountryOptionsPlStandard Function()? standard, PostTaxRegistrationsRequestCountryOptionsPlType? type, }) { return PostTaxRegistrationsRequestCountryOptionsPl(
+  standard: standard != null ? standard() : this.standard,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTaxRegistrationsRequestCountryOptionsPl &&
+          standard == other.standard &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(standard, type); } 
+@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsPl(standard: $standard, type: $type)'; } 
+ }

@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'aig_config_list_gateway_response_result.dart';final class AigConfigListGatewayResponse {const AigConfigListGatewayResponse({required this.result, required this.success, });
+
+factory AigConfigListGatewayResponse.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayResponse(
+  result: (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<AigConfigListGatewayResponseResult> result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AigConfigListGatewayResponse copyWith({List<AigConfigListGatewayResponseResult>? result, bool? success, }) { return AigConfigListGatewayResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigListGatewayResponse &&
+          listEquals(result, other.result) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(result), success); } 
+@override String toString() { return 'AigConfigListGatewayResponse(result: $result, success: $success)'; } 
+ }

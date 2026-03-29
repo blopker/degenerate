@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AccessCountryRuleGeo {const AccessCountryRuleGeo({required this.countryCode});
+
+factory AccessCountryRuleGeo.fromJson(Map<String, dynamic> json) { return AccessCountryRuleGeo(
+  countryCode: json['country_code'] as String,
+); }
+
+/// The country code that should be matched.
+final String countryCode;
+
+Map<String, dynamic> toJson() { return {
+  'country_code': countryCode,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('country_code') && json['country_code'] is String; } 
+AccessCountryRuleGeo copyWith({String? countryCode}) { return AccessCountryRuleGeo(
+  countryCode: countryCode ?? this.countryCode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessCountryRuleGeo &&
+          countryCode == other.countryCode; } 
+@override int get hashCode { return countryCode.hashCode; } 
+@override String toString() { return 'AccessCountryRuleGeo(countryCode: $countryCode)'; } 
+ }

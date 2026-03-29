@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetBillingAlertsAlertType {const GetBillingAlertsAlertType._(this.value);
+
+factory GetBillingAlertsAlertType.fromJson(String json) { return switch (json) {
+  'usage_threshold' => usageThreshold,
+  _ => GetBillingAlertsAlertType._(json),
+}; }
+
+static const GetBillingAlertsAlertType usageThreshold = GetBillingAlertsAlertType._('usage_threshold');
+
+static const List<GetBillingAlertsAlertType> values = [usageThreshold];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetBillingAlertsAlertType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetBillingAlertsAlertType($value)'; } 
+ }

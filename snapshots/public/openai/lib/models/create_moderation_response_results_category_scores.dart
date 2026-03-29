@@ -1,0 +1,121 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A list of the categories along with their scores as predicted by model.
+final class CreateModerationResponseResultsCategoryScores {const CreateModerationResponseResultsCategoryScores({required this.hate, required this.hateThreatening, required this.harassment, required this.harassmentThreatening, required this.illicit, required this.illicitViolent, required this.selfHarm, required this.selfHarmIntent, required this.selfHarmInstructions, required this.sexual, required this.sexualMinors, required this.violence, required this.violenceGraphic, });
+
+factory CreateModerationResponseResultsCategoryScores.fromJson(Map<String, dynamic> json) { return CreateModerationResponseResultsCategoryScores(
+  hate: (json['hate'] as num).toDouble(),
+  hateThreatening: (json['hate/threatening'] as num).toDouble(),
+  harassment: (json['harassment'] as num).toDouble(),
+  harassmentThreatening: (json['harassment/threatening'] as num).toDouble(),
+  illicit: (json['illicit'] as num).toDouble(),
+  illicitViolent: (json['illicit/violent'] as num).toDouble(),
+  selfHarm: (json['self-harm'] as num).toDouble(),
+  selfHarmIntent: (json['self-harm/intent'] as num).toDouble(),
+  selfHarmInstructions: (json['self-harm/instructions'] as num).toDouble(),
+  sexual: (json['sexual'] as num).toDouble(),
+  sexualMinors: (json['sexual/minors'] as num).toDouble(),
+  violence: (json['violence'] as num).toDouble(),
+  violenceGraphic: (json['violence/graphic'] as num).toDouble(),
+); }
+
+/// The score for the category 'hate'.
+final double hate;
+
+/// The score for the category 'hate/threatening'.
+final double hateThreatening;
+
+/// The score for the category 'harassment'.
+final double harassment;
+
+/// The score for the category 'harassment/threatening'.
+final double harassmentThreatening;
+
+/// The score for the category 'illicit'.
+final double illicit;
+
+/// The score for the category 'illicit/violent'.
+final double illicitViolent;
+
+/// The score for the category 'self-harm'.
+final double selfHarm;
+
+/// The score for the category 'self-harm/intent'.
+final double selfHarmIntent;
+
+/// The score for the category 'self-harm/instructions'.
+final double selfHarmInstructions;
+
+/// The score for the category 'sexual'.
+final double sexual;
+
+/// The score for the category 'sexual/minors'.
+final double sexualMinors;
+
+/// The score for the category 'violence'.
+final double violence;
+
+/// The score for the category 'violence/graphic'.
+final double violenceGraphic;
+
+Map<String, dynamic> toJson() { return {
+  'hate': hate,
+  'hate/threatening': hateThreatening,
+  'harassment': harassment,
+  'harassment/threatening': harassmentThreatening,
+  'illicit': illicit,
+  'illicit/violent': illicitViolent,
+  'self-harm': selfHarm,
+  'self-harm/intent': selfHarmIntent,
+  'self-harm/instructions': selfHarmInstructions,
+  'sexual': sexual,
+  'sexual/minors': sexualMinors,
+  'violence': violence,
+  'violence/graphic': violenceGraphic,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('hate') && json['hate'] is num &&
+      json.containsKey('hate/threatening') && json['hate/threatening'] is num &&
+      json.containsKey('harassment') && json['harassment'] is num &&
+      json.containsKey('harassment/threatening') && json['harassment/threatening'] is num &&
+      json.containsKey('illicit') && json['illicit'] is num &&
+      json.containsKey('illicit/violent') && json['illicit/violent'] is num &&
+      json.containsKey('self-harm') && json['self-harm'] is num &&
+      json.containsKey('self-harm/intent') && json['self-harm/intent'] is num &&
+      json.containsKey('self-harm/instructions') && json['self-harm/instructions'] is num &&
+      json.containsKey('sexual') && json['sexual'] is num &&
+      json.containsKey('sexual/minors') && json['sexual/minors'] is num &&
+      json.containsKey('violence') && json['violence'] is num &&
+      json.containsKey('violence/graphic') && json['violence/graphic'] is num; } 
+CreateModerationResponseResultsCategoryScores copyWith({double? hate, double? hateThreatening, double? harassment, double? harassmentThreatening, double? illicit, double? illicitViolent, double? selfHarm, double? selfHarmIntent, double? selfHarmInstructions, double? sexual, double? sexualMinors, double? violence, double? violenceGraphic, }) { return CreateModerationResponseResultsCategoryScores(
+  hate: hate ?? this.hate,
+  hateThreatening: hateThreatening ?? this.hateThreatening,
+  harassment: harassment ?? this.harassment,
+  harassmentThreatening: harassmentThreatening ?? this.harassmentThreatening,
+  illicit: illicit ?? this.illicit,
+  illicitViolent: illicitViolent ?? this.illicitViolent,
+  selfHarm: selfHarm ?? this.selfHarm,
+  selfHarmIntent: selfHarmIntent ?? this.selfHarmIntent,
+  selfHarmInstructions: selfHarmInstructions ?? this.selfHarmInstructions,
+  sexual: sexual ?? this.sexual,
+  sexualMinors: sexualMinors ?? this.sexualMinors,
+  violence: violence ?? this.violence,
+  violenceGraphic: violenceGraphic ?? this.violenceGraphic,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateModerationResponseResultsCategoryScores &&
+          hate == other.hate &&
+          hateThreatening == other.hateThreatening &&
+          harassment == other.harassment &&
+          harassmentThreatening == other.harassmentThreatening &&
+          illicit == other.illicit &&
+          illicitViolent == other.illicitViolent &&
+          selfHarm == other.selfHarm &&
+          selfHarmIntent == other.selfHarmIntent &&
+          selfHarmInstructions == other.selfHarmInstructions &&
+          sexual == other.sexual &&
+          sexualMinors == other.sexualMinors &&
+          violence == other.violence &&
+          violenceGraphic == other.violenceGraphic; } 
+@override int get hashCode { return Object.hash(hate, hateThreatening, harassment, harassmentThreatening, illicit, illicitViolent, selfHarm, selfHarmIntent, selfHarmInstructions, sexual, sexualMinors, violence, violenceGraphic); } 
+@override String toString() { return 'CreateModerationResponseResultsCategoryScores(hate: $hate, hateThreatening: $hateThreatening, harassment: $harassment, harassmentThreatening: $harassmentThreatening, illicit: $illicit, illicitViolent: $illicitViolent, selfHarm: $selfHarm, selfHarmIntent: $selfHarmIntent, selfHarmInstructions: $selfHarmInstructions, sexual: $sexual, sexualMinors: $sexualMinors, violence: $violence, violenceGraphic: $violenceGraphic)'; } 
+ }

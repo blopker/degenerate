@@ -1,0 +1,105 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_records_id_report_payment_attempt_request_failed.dart';import 'post_payment_records_id_report_payment_attempt_request_guaranteed.dart';import 'post_payment_records_id_report_payment_attempt_request_metadata.dart';import 'post_payment_records_id_report_payment_attempt_request_payment_method_details.dart';import 'post_payment_records_id_report_payment_attempt_request_shipping_details.dart';/// The outcome of the reported payment.
+final class PostPaymentRecordsIdReportPaymentAttemptRequestOutcome {const PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._(this.value);
+
+factory PostPaymentRecordsIdReportPaymentAttemptRequestOutcome.fromJson(String json) { return switch (json) {
+  'failed' => failed,
+  'guaranteed' => guaranteed,
+  _ => PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._(json),
+}; }
+
+static const PostPaymentRecordsIdReportPaymentAttemptRequestOutcome failed = PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._('failed');
+
+static const PostPaymentRecordsIdReportPaymentAttemptRequestOutcome guaranteed = PostPaymentRecordsIdReportPaymentAttemptRequestOutcome._('guaranteed');
+
+static const List<PostPaymentRecordsIdReportPaymentAttemptRequestOutcome> values = [failed, guaranteed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentRecordsIdReportPaymentAttemptRequestOutcome && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequestOutcome($value)'; } 
+ }
+final class PostPaymentRecordsIdReportPaymentAttemptRequest {const PostPaymentRecordsIdReportPaymentAttemptRequest({this.description, this.expand, this.failed, this.guaranteed, required this.initiatedAt, this.metadata, this.outcome, this.paymentMethodDetails, this.shippingDetails, });
+
+factory PostPaymentRecordsIdReportPaymentAttemptRequest.fromJson(Map<String, dynamic> json) { return PostPaymentRecordsIdReportPaymentAttemptRequest(
+  description: json['description'] as String?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  failed: json['failed'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestFailed.fromJson(json['failed'] as Map<String, dynamic>) : null,
+  guaranteed: json['guaranteed'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestGuaranteed.fromJson(json['guaranteed'] as Map<String, dynamic>) : null,
+  initiatedAt: (json['initiated_at'] as num).toInt(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostPaymentRecordsIdReportPaymentAttemptRequestMetadataVariant2.fromJson(v as String),) : null,
+  outcome: json['outcome'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestOutcome.fromJson(json['outcome'] as String) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+); }
+
+/// An arbitrary string attached to the object. Often useful for displaying to users.
+final String? description;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Information about the payment attempt failure.
+final PostPaymentRecordsIdReportPaymentAttemptRequestFailed? failed;
+
+/// Information about the payment attempt guarantee.
+final PostPaymentRecordsIdReportPaymentAttemptRequestGuaranteed? guaranteed;
+
+/// When the reported payment was initiated. Measured in seconds since the Unix epoch.
+final int initiatedAt;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostPaymentRecordsIdReportPaymentAttemptRequestMetadata? metadata;
+
+/// The outcome of the reported payment.
+final PostPaymentRecordsIdReportPaymentAttemptRequestOutcome? outcome;
+
+/// Information about the Payment Method debited for this payment.
+final PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails? paymentMethodDetails;
+
+/// Shipping information for this payment.
+final PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails? shippingDetails;
+
+Map<String, dynamic> toJson() { return {
+  'description': ?description,
+  'expand': ?expand,
+  if (failed != null) 'failed': failed?.toJson(),
+  if (guaranteed != null) 'guaranteed': guaranteed?.toJson(),
+  'initiated_at': initiatedAt,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  if (outcome != null) 'outcome': outcome?.toJson(),
+  if (paymentMethodDetails != null) 'payment_method_details': paymentMethodDetails?.toJson(),
+  if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('initiated_at') && json['initiated_at'] is num; } 
+PostPaymentRecordsIdReportPaymentAttemptRequest copyWith({String Function()? description, List<String> Function()? expand, PostPaymentRecordsIdReportPaymentAttemptRequestFailed Function()? failed, PostPaymentRecordsIdReportPaymentAttemptRequestGuaranteed Function()? guaranteed, int? initiatedAt, PostPaymentRecordsIdReportPaymentAttemptRequestMetadata Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptRequestOutcome Function()? outcome, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails Function()? paymentMethodDetails, PostPaymentRecordsIdReportPaymentAttemptRequestShippingDetails Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptRequest(
+  description: description != null ? description() : this.description,
+  expand: expand != null ? expand() : this.expand,
+  failed: failed != null ? failed() : this.failed,
+  guaranteed: guaranteed != null ? guaranteed() : this.guaranteed,
+  initiatedAt: initiatedAt ?? this.initiatedAt,
+  metadata: metadata != null ? metadata() : this.metadata,
+  outcome: outcome != null ? outcome() : this.outcome,
+  paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
+  shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentRecordsIdReportPaymentAttemptRequest &&
+          description == other.description &&
+          listEquals(expand, other.expand) &&
+          failed == other.failed &&
+          guaranteed == other.guaranteed &&
+          initiatedAt == other.initiatedAt &&
+          metadata == other.metadata &&
+          outcome == other.outcome &&
+          paymentMethodDetails == other.paymentMethodDetails &&
+          shippingDetails == other.shippingDetails; } 
+@override int get hashCode { return Object.hash(description, Object.hashAll(expand ?? const []), failed, guaranteed, initiatedAt, metadata, outcome, paymentMethodDetails, shippingDetails); } 
+@override String toString() { return 'PostPaymentRecordsIdReportPaymentAttemptRequest(description: $description, expand: $expand, failed: $failed, guaranteed: $guaranteed, initiatedAt: $initiatedAt, metadata: $metadata, outcome: $outcome, paymentMethodDetails: $paymentMethodDetails, shippingDetails: $shippingDetails)'; } 
+ }

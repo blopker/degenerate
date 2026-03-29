@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
+final class ChatCompletionRequestMessageContentPartImageImageUrlDetail {const ChatCompletionRequestMessageContentPartImageImageUrlDetail._(this.value);
+
+factory ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'low' => low,
+  'high' => high,
+  _ => ChatCompletionRequestMessageContentPartImageImageUrlDetail._(json),
+}; }
+
+static const ChatCompletionRequestMessageContentPartImageImageUrlDetail auto = ChatCompletionRequestMessageContentPartImageImageUrlDetail._('auto');
+
+static const ChatCompletionRequestMessageContentPartImageImageUrlDetail low = ChatCompletionRequestMessageContentPartImageImageUrlDetail._('low');
+
+static const ChatCompletionRequestMessageContentPartImageImageUrlDetail high = ChatCompletionRequestMessageContentPartImageImageUrlDetail._('high');
+
+static const List<ChatCompletionRequestMessageContentPartImageImageUrlDetail> values = [auto, low, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ChatCompletionRequestMessageContentPartImageImageUrlDetail && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrlDetail($value)'; } 
+ }
+final class ChatCompletionRequestMessageContentPartImageImageUrl {const ChatCompletionRequestMessageContentPartImageImageUrl({required this.url, this.detail = ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto, });
+
+factory ChatCompletionRequestMessageContentPartImageImageUrl.fromJson(Map<String, dynamic> json) { return ChatCompletionRequestMessageContentPartImageImageUrl(
+  url: Uri.parse(json['url'] as String),
+  detail: json.containsKey('detail') ? ChatCompletionRequestMessageContentPartImageImageUrlDetail.fromJson(json['detail'] as String) : ChatCompletionRequestMessageContentPartImageImageUrlDetail.auto,
+); }
+
+/// Either a URL of the image or the base64 encoded image data.
+final Uri url;
+
+/// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).
+final ChatCompletionRequestMessageContentPartImageImageUrlDetail detail;
+
+Map<String, dynamic> toJson() { return {
+  'url': url.toString(),
+  'detail': detail.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('url') && json['url'] is String; } 
+ChatCompletionRequestMessageContentPartImageImageUrl copyWith({Uri? url, ChatCompletionRequestMessageContentPartImageImageUrlDetail Function()? detail, }) { return ChatCompletionRequestMessageContentPartImageImageUrl(
+  url: url ?? this.url,
+  detail: detail != null ? detail() : this.detail,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChatCompletionRequestMessageContentPartImageImageUrl &&
+          url == other.url &&
+          detail == other.detail; } 
+@override int get hashCode { return Object.hash(url, detail); } 
+@override String toString() { return 'ChatCompletionRequestMessageContentPartImageImageUrl(url: $url, detail: $detail)'; } 
+ }

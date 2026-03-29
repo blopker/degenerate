@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_deployment_review_requested_workflow_run_pull_requests_base.dart';import 'webhook_deployment_review_requested_workflow_run_pull_requests_head.dart';final class WebhookDeploymentReviewRequestedWorkflowRunPullRequests {const WebhookDeploymentReviewRequestedWorkflowRunPullRequests({required this.base, required this.head, required this.id, required this.number, required this.url, });
+
+factory WebhookDeploymentReviewRequestedWorkflowRunPullRequests.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewRequestedWorkflowRunPullRequests(
+  base: WebhookDeploymentReviewRequestedWorkflowRunPullRequestsBase.fromJson(json['base'] as Map<String, dynamic>),
+  head: WebhookDeploymentReviewRequestedWorkflowRunPullRequestsHead.fromJson(json['head'] as Map<String, dynamic>),
+  id: (json['id'] as num).toInt(),
+  number: (json['number'] as num).toInt(),
+  url: Uri.parse(json['url'] as String),
+); }
+
+final WebhookDeploymentReviewRequestedWorkflowRunPullRequestsBase base;
+
+final WebhookDeploymentReviewRequestedWorkflowRunPullRequestsHead head;
+
+final int id;
+
+final int number;
+
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'base': base.toJson(),
+  'head': head.toJson(),
+  'id': id,
+  'number': number,
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('base') &&
+      json.containsKey('head') &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('number') && json['number'] is num &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookDeploymentReviewRequestedWorkflowRunPullRequests copyWith({WebhookDeploymentReviewRequestedWorkflowRunPullRequestsBase? base, WebhookDeploymentReviewRequestedWorkflowRunPullRequestsHead? head, int? id, int? number, Uri? url, }) { return WebhookDeploymentReviewRequestedWorkflowRunPullRequests(
+  base: base ?? this.base,
+  head: head ?? this.head,
+  id: id ?? this.id,
+  number: number ?? this.number,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookDeploymentReviewRequestedWorkflowRunPullRequests &&
+          base == other.base &&
+          head == other.head &&
+          id == other.id &&
+          number == other.number &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(base, head, id, number, url); } 
+@override String toString() { return 'WebhookDeploymentReviewRequestedWorkflowRunPullRequests(base: $base, head: $head, id: $id, number: $number, url: $url)'; } 
+ }

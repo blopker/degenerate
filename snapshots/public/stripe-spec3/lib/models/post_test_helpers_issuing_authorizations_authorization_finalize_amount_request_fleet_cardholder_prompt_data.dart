@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData {const PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData({this.driverId, this.odometer, this.unspecifiedId, this.userId, this.vehicleNumber, });
+
+factory PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData(
+  driverId: json['driver_id'] as String?,
+  odometer: json['odometer'] != null ? (json['odometer'] as num).toInt() : null,
+  unspecifiedId: json['unspecified_id'] as String?,
+  userId: json['user_id'] as String?,
+  vehicleNumber: json['vehicle_number'] as String?,
+); }
+
+final String? driverId;
+
+final int? odometer;
+
+final String? unspecifiedId;
+
+final String? userId;
+
+final String? vehicleNumber;
+
+Map<String, dynamic> toJson() { return {
+  'driver_id': ?driverId,
+  'odometer': ?odometer,
+  'unspecified_id': ?unspecifiedId,
+  'user_id': ?userId,
+  'vehicle_number': ?vehicleNumber,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData copyWith({String Function()? driverId, int Function()? odometer, String Function()? unspecifiedId, String Function()? userId, String Function()? vehicleNumber, }) { return PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData(
+  driverId: driverId != null ? driverId() : this.driverId,
+  odometer: odometer != null ? odometer() : this.odometer,
+  unspecifiedId: unspecifiedId != null ? unspecifiedId() : this.unspecifiedId,
+  userId: userId != null ? userId() : this.userId,
+  vehicleNumber: vehicleNumber != null ? vehicleNumber() : this.vehicleNumber,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData &&
+          driverId == other.driverId &&
+          odometer == other.odometer &&
+          unspecifiedId == other.unspecifiedId &&
+          userId == other.userId &&
+          vehicleNumber == other.vehicleNumber; } 
+@override int get hashCode { return Object.hash(driverId, odometer, unspecifiedId, userId, vehicleNumber); } 
+@override String toString() { return 'PostTestHelpersIssuingAuthorizationsAuthorizationFinalizeAmountRequestFleetCardholderPromptData(driverId: $driverId, odometer: $odometer, unspecifiedId: $unspecifiedId, userId: $userId, vehicleNumber: $vehicleNumber)'; } 
+ }

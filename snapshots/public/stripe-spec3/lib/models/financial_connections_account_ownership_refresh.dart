@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'bank_connections_resource_ownership_refresh.dart';/// The state of the most recent attempt to refresh the account owners.
+final class FinancialConnectionsAccountOwnershipRefresh {const FinancialConnectionsAccountOwnershipRefresh({this.bankConnectionsResourceOwnershipRefresh});
+
+factory FinancialConnectionsAccountOwnershipRefresh.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccountOwnershipRefresh(
+  bankConnectionsResourceOwnershipRefresh: BankConnectionsResourceOwnershipRefresh.canParse(json) ? BankConnectionsResourceOwnershipRefresh.fromJson(json) : null,
+); }
+
+final BankConnectionsResourceOwnershipRefresh? bankConnectionsResourceOwnershipRefresh;
+
+/// At least one variant must be present.
+bool get isValid { return bankConnectionsResourceOwnershipRefresh != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?bankConnectionsResourceOwnershipRefresh?.toJson(),
+}; } 
+ }

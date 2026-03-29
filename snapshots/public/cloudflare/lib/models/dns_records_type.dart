@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Record type.
+final class DnsRecordsType {const DnsRecordsType._(this.value);
+
+factory DnsRecordsType.fromJson(String json) { return switch (json) {
+  'A' => a,
+  'AAAA' => aaaa,
+  'CAA' => caa,
+  'CERT' => cert,
+  'CNAME' => cname,
+  'DNSKEY' => dnskey,
+  'DS' => ds,
+  'HTTPS' => https,
+  'LOC' => loc,
+  'MX' => mx,
+  'NAPTR' => naptr,
+  'NS' => ns,
+  'OPENPGPKEY' => openpgpkey,
+  'PTR' => ptr,
+  'SMIMEA' => smimea,
+  'SRV' => srv,
+  'SSHFP' => sshfp,
+  'SVCB' => svcb,
+  'TLSA' => tlsa,
+  'TXT' => txt,
+  'URI' => uri,
+  _ => DnsRecordsType._(json),
+}; }
+
+static const DnsRecordsType a = DnsRecordsType._('A');
+
+static const DnsRecordsType aaaa = DnsRecordsType._('AAAA');
+
+static const DnsRecordsType caa = DnsRecordsType._('CAA');
+
+static const DnsRecordsType cert = DnsRecordsType._('CERT');
+
+static const DnsRecordsType cname = DnsRecordsType._('CNAME');
+
+static const DnsRecordsType dnskey = DnsRecordsType._('DNSKEY');
+
+static const DnsRecordsType ds = DnsRecordsType._('DS');
+
+static const DnsRecordsType https = DnsRecordsType._('HTTPS');
+
+static const DnsRecordsType loc = DnsRecordsType._('LOC');
+
+static const DnsRecordsType mx = DnsRecordsType._('MX');
+
+static const DnsRecordsType naptr = DnsRecordsType._('NAPTR');
+
+static const DnsRecordsType ns = DnsRecordsType._('NS');
+
+static const DnsRecordsType openpgpkey = DnsRecordsType._('OPENPGPKEY');
+
+static const DnsRecordsType ptr = DnsRecordsType._('PTR');
+
+static const DnsRecordsType smimea = DnsRecordsType._('SMIMEA');
+
+static const DnsRecordsType srv = DnsRecordsType._('SRV');
+
+static const DnsRecordsType sshfp = DnsRecordsType._('SSHFP');
+
+static const DnsRecordsType svcb = DnsRecordsType._('SVCB');
+
+static const DnsRecordsType tlsa = DnsRecordsType._('TLSA');
+
+static const DnsRecordsType txt = DnsRecordsType._('TXT');
+
+static const DnsRecordsType uri = DnsRecordsType._('URI');
+
+static const List<DnsRecordsType> values = [a, aaaa, caa, cert, cname, dnskey, ds, https, loc, mx, naptr, ns, openpgpkey, ptr, smimea, srv, sshfp, svcb, tlsa, txt, uri];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DnsRecordsType($value)'; } 
+ }

@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer3TopAttacksResponseResultTop0 {const RadarGetAttacksLayer3TopAttacksResponseResultTop0({required this.originCountryAlpha2, required this.originCountryName, required this.value, });
+
+factory RadarGetAttacksLayer3TopAttacksResponseResultTop0.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TopAttacksResponseResultTop0(
+  originCountryAlpha2: json['originCountryAlpha2'] as String,
+  originCountryName: json['originCountryName'] as String,
+  value: json['value'] as String,
+); }
+
+final String originCountryAlpha2;
+
+final String originCountryName;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'originCountryAlpha2': originCountryAlpha2,
+  'originCountryName': originCountryName,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('originCountryAlpha2') && json['originCountryAlpha2'] is String &&
+      json.containsKey('originCountryName') && json['originCountryName'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+RadarGetAttacksLayer3TopAttacksResponseResultTop0 copyWith({String? originCountryAlpha2, String? originCountryName, String? value, }) { return RadarGetAttacksLayer3TopAttacksResponseResultTop0(
+  originCountryAlpha2: originCountryAlpha2 ?? this.originCountryAlpha2,
+  originCountryName: originCountryName ?? this.originCountryName,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TopAttacksResponseResultTop0 &&
+          originCountryAlpha2 == other.originCountryAlpha2 &&
+          originCountryName == other.originCountryName &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(originCountryAlpha2, originCountryName, value); } 
+@override String toString() { return 'RadarGetAttacksLayer3TopAttacksResponseResultTop0(originCountryAlpha2: $originCountryAlpha2, originCountryName: $originCountryName, value: $value)'; } 
+ }

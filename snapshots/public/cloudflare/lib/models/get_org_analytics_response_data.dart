@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'get_org_analytics_response_data_recording_stats.dart';import 'get_org_analytics_response_data_session_stats.dart';final class GetOrgAnalyticsResponseData {const GetOrgAnalyticsResponseData({this.recordingStats, this.sessionStats, });
+
+factory GetOrgAnalyticsResponseData.fromJson(Map<String, dynamic> json) { return GetOrgAnalyticsResponseData(
+  recordingStats: json['recording_stats'] != null ? GetOrgAnalyticsResponseDataRecordingStats.fromJson(json['recording_stats'] as Map<String, dynamic>) : null,
+  sessionStats: json['session_stats'] != null ? GetOrgAnalyticsResponseDataSessionStats.fromJson(json['session_stats'] as Map<String, dynamic>) : null,
+); }
+
+/// Recording statistics of an App during the range specified
+final GetOrgAnalyticsResponseDataRecordingStats? recordingStats;
+
+/// Session statistics of an App during the range specified
+final GetOrgAnalyticsResponseDataSessionStats? sessionStats;
+
+Map<String, dynamic> toJson() { return {
+  if (recordingStats != null) 'recording_stats': recordingStats?.toJson(),
+  if (sessionStats != null) 'session_stats': sessionStats?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetOrgAnalyticsResponseData copyWith({GetOrgAnalyticsResponseDataRecordingStats Function()? recordingStats, GetOrgAnalyticsResponseDataSessionStats Function()? sessionStats, }) { return GetOrgAnalyticsResponseData(
+  recordingStats: recordingStats != null ? recordingStats() : this.recordingStats,
+  sessionStats: sessionStats != null ? sessionStats() : this.sessionStats,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GetOrgAnalyticsResponseData &&
+          recordingStats == other.recordingStats &&
+          sessionStats == other.sessionStats; } 
+@override int get hashCode { return Object.hash(recordingStats, sessionStats); } 
+@override String toString() { return 'GetOrgAnalyticsResponseData(recordingStats: $recordingStats, sessionStats: $sessionStats)'; } 
+ }

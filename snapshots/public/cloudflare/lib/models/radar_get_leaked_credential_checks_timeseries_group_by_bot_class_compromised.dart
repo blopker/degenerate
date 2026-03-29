@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised._(this.value);
+
+factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised.fromJson(String json) { return switch (json) {
+  'CLEAN' => clean,
+  'COMPROMISED' => compromised,
+  _ => RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised._(json),
+}; }
+
+static const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised clean = RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised._('CLEAN');
+
+static const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised compromised = RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised._('COMPROMISED');
+
+static const List<RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised> values = [clean, compromised];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassCompromised($value)'; } 
+ }

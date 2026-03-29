@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'insights_resources_payment_evaluation_money_movement_details.dart';/// Details about the payment's customer presence and type.
+final class InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails {const InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails({this.insightsResourcesPaymentEvaluationMoneyMovementDetails});
+
+factory InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails(
+  insightsResourcesPaymentEvaluationMoneyMovementDetails: InsightsResourcesPaymentEvaluationMoneyMovementDetails.canParse(json) ? InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(json) : null,
+); }
+
+final InsightsResourcesPaymentEvaluationMoneyMovementDetails? insightsResourcesPaymentEvaluationMoneyMovementDetails;
+
+/// At least one variant must be present.
+bool get isValid { return insightsResourcesPaymentEvaluationMoneyMovementDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?insightsResourcesPaymentEvaluationMoneyMovementDetails?.toJson(),
+}; } 
+ }

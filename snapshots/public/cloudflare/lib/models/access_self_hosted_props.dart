@@ -1,0 +1,249 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_allow_iframe.dart';import 'access_app_launcher_visible.dart';import 'access_apps_components_schemas_name.dart';import 'access_cors_headers.dart';import 'access_custom_deny_message.dart';import 'access_custom_deny_url.dart';import 'access_custom_non_identity_deny_url.dart';import 'access_destinations2.dart';import 'access_domain.dart';import 'access_enable_binding_cookie.dart';import 'access_http_only_cookie_attribute.dart';import 'access_logo_url.dart';import 'access_mfa_config.dart';import 'access_oauth_configuration.dart';import 'access_options_preflight_bypass.dart';import 'access_same_site_cookie_attribute.dart';import 'access_schemas_allow_authenticate_via_warp.dart';import 'access_schemas_auto_redirect_to_identity.dart';import 'access_schemas_session_duration.dart';import 'access_scim_config.dart';import 'access_service_auth401_redirect.dart';import 'access_skip_interstitial.dart';import 'access_type.dart';import 'access_use_clientless_isolation_app_launcher_url.dart';import 'private_destination.dart';import 'public_destination.dart';import 'via_mcp_server_portal_destination.dart';/// Enables cookie paths to scope an application's JWT to the application path. If disabled, the JWT will scope to the hostname by default
+extension type const AccessPathCookieAttribute(bool value) {
+factory AccessPathCookieAttribute.fromJson(bool json) => AccessPathCookieAttribute(json);
+
+bool toJson() => value;
+
+}
+/// Allows matching Access Service Tokens passed HTTP in a single header with this name.
+/// This works as an alternative to the (CF-Access-Client-Id, CF-Access-Client-Secret) pair of headers.
+/// The header value will be interpreted as a json object similar to:
+///   {
+///     "cf-access-client-id": "88bf3b6d86161464f6509f7219099e57.access.example.com",
+///     "cf-access-client-secret": "bdd31cbc4dec990953e39163fbbb194c93313ca9f0a6e420346af9d326b1d2a5"
+///   }
+/// 
+extension type const AccessReadServiceTokensFromHeader(String value) {
+factory AccessReadServiceTokensFromHeader.fromJson(String json) => AccessReadServiceTokensFromHeader(json);
+
+String toJson() => value;
+
+}
+final class AccessSelfHostedProps {const AccessSelfHostedProps({this.allowAuthenticateViaWarp, this.allowIframe, this.allowedIdps, this.appLauncherVisible, this.autoRedirectToIdentity, this.corsHeaders, this.customDenyMessage, this.customDenyUrl, this.customNonIdentityDenyUrl, this.customPages, this.destinations, required this.domain, this.enableBindingCookie, this.httpOnlyCookieAttribute, this.logoUrl, this.mfaConfig, this.name, this.oauthConfiguration, this.optionsPreflightBypass, this.pathCookieAttribute, this.readServiceTokensFromHeader, this.sameSiteCookieAttribute, this.scimConfig, this.selfHostedDomains, this.serviceAuth401Redirect, this.sessionDuration, this.skipInterstitial, this.tags, required this.type, this.useClientlessIsolationAppLauncherUrl, });
+
+factory AccessSelfHostedProps.fromJson(Map<String, dynamic> json) { return AccessSelfHostedProps(
+  allowAuthenticateViaWarp: json['allow_authenticate_via_warp'] != null ? AccessSchemasAllowAuthenticateViaWarp.fromJson(json['allow_authenticate_via_warp'] as bool) : null,
+  allowIframe: json['allow_iframe'] != null ? AccessAllowIframe.fromJson(json['allow_iframe'] as bool) : null,
+  allowedIdps: (json['allowed_idps'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  appLauncherVisible: json['app_launcher_visible'] != null ? AccessAppLauncherVisible.fromJson(json['app_launcher_visible'] as bool) : null,
+  autoRedirectToIdentity: json['auto_redirect_to_identity'] != null ? AccessSchemasAutoRedirectToIdentity.fromJson(json['auto_redirect_to_identity'] as bool) : null,
+  corsHeaders: json['cors_headers'] != null ? AccessCorsHeaders.fromJson(json['cors_headers'] as Map<String, dynamic>) : null,
+  customDenyMessage: json['custom_deny_message'] != null ? AccessCustomDenyMessage.fromJson(json['custom_deny_message'] as String) : null,
+  customDenyUrl: json['custom_deny_url'] != null ? AccessCustomDenyUrl.fromJson(json['custom_deny_url'] as String) : null,
+  customNonIdentityDenyUrl: json['custom_non_identity_deny_url'] != null ? AccessCustomNonIdentityDenyUrl.fromJson(json['custom_non_identity_deny_url'] as String) : null,
+  customPages: (json['custom_pages'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  destinations: (json['destinations'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => PublicDestination.fromJson(v as Map<String, dynamic>), fromB: (v) => PrivateDestination.fromJson(v as Map<String, dynamic>), fromC: (v) => ViaMcpServerPortalDestination.fromJson(v as Map<String, dynamic>),)).toList(),
+  domain: AccessDomain.fromJson(json['domain'] as String),
+  enableBindingCookie: json['enable_binding_cookie'] != null ? AccessEnableBindingCookie.fromJson(json['enable_binding_cookie'] as bool) : null,
+  httpOnlyCookieAttribute: json['http_only_cookie_attribute'] != null ? AccessHttpOnlyCookieAttribute.fromJson(json['http_only_cookie_attribute'] as bool) : null,
+  logoUrl: json['logo_url'] != null ? AccessLogoUrl.fromJson(json['logo_url'] as String) : null,
+  mfaConfig: json['mfa_config'] != null ? AccessMfaConfig.fromJson(json['mfa_config'] as Map<String, dynamic>) : null,
+  name: json['name'] != null ? AccessAppsComponentsSchemasName.fromJson(json['name'] as String) : null,
+  oauthConfiguration: json['oauth_configuration'] != null ? AccessOauthConfiguration.fromJson(json['oauth_configuration'] as Map<String, dynamic>) : null,
+  optionsPreflightBypass: json['options_preflight_bypass'] != null ? AccessOptionsPreflightBypass.fromJson(json['options_preflight_bypass'] as bool) : null,
+  pathCookieAttribute: json['path_cookie_attribute'] != null ? AccessPathCookieAttribute.fromJson(json['path_cookie_attribute'] as bool) : null,
+  readServiceTokensFromHeader: json['read_service_tokens_from_header'] != null ? AccessReadServiceTokensFromHeader.fromJson(json['read_service_tokens_from_header'] as String) : null,
+  sameSiteCookieAttribute: json['same_site_cookie_attribute'] != null ? AccessSameSiteCookieAttribute.fromJson(json['same_site_cookie_attribute'] as String) : null,
+  scimConfig: json['scim_config'] != null ? AccessScimConfig.fromJson(json['scim_config'] as Map<String, dynamic>) : null,
+  selfHostedDomains: (json['self_hosted_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  serviceAuth401Redirect: json['service_auth_401_redirect'] != null ? AccessServiceAuth401Redirect.fromJson(json['service_auth_401_redirect'] as bool) : null,
+  sessionDuration: json['session_duration'] != null ? AccessSchemasSessionDuration.fromJson(json['session_duration'] as String) : null,
+  skipInterstitial: json['skip_interstitial'] != null ? AccessSkipInterstitial.fromJson(json['skip_interstitial'] as bool) : null,
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  type: AccessType.fromJson(json['type'] as String),
+  useClientlessIsolationAppLauncherUrl: json['use_clientless_isolation_app_launcher_url'] != null ? AccessUseClientlessIsolationAppLauncherUrl.fromJson(json['use_clientless_isolation_app_launcher_url'] as bool) : null,
+); }
+
+/// When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
+final AccessSchemasAllowAuthenticateViaWarp? allowAuthenticateViaWarp;
+
+/// Enables loading application content in an iFrame.
+final AccessAllowIframe? allowIframe;
+
+/// The identity providers your users can select when connecting to this application. Defaults to all IdPs configured in your account.
+final List<String>? allowedIdps;
+
+/// Displays the application in the App Launcher.
+final AccessAppLauncherVisible? appLauncherVisible;
+
+/// When set to `true`, users skip the identity provider selection step during login. You must specify only one identity provider in allowed_idps.
+final AccessSchemasAutoRedirectToIdentity? autoRedirectToIdentity;
+
+final AccessCorsHeaders? corsHeaders;
+
+/// The custom error message shown to a user when they are denied access to the application.
+final AccessCustomDenyMessage? customDenyMessage;
+
+/// The custom URL a user is redirected to when they are denied access to the application when failing identity-based rules.
+final AccessCustomDenyUrl? customDenyUrl;
+
+/// The custom URL a user is redirected to when they are denied access to the application when failing non-identity rules.
+final AccessCustomNonIdentityDenyUrl? customNonIdentityDenyUrl;
+
+/// The custom pages that will be displayed when applicable for this application
+final List<String>? customPages;
+
+/// List of destinations secured by Access. This supersedes `self_hosted_domains` to allow for more flexibility in defining different types of domains. If `destinations` are provided, then `self_hosted_domains` will be ignored.
+/// 
+final List<AccessDestinations2>? destinations;
+
+/// The primary hostname and path secured by Access. This domain will be displayed if the app is visible in the App Launcher.
+final AccessDomain domain;
+
+/// Enables the binding cookie, which increases security against compromised authorization tokens and CSRF attacks.
+final AccessEnableBindingCookie? enableBindingCookie;
+
+/// Enables the HttpOnly cookie attribute, which increases security against XSS attacks.
+final AccessHttpOnlyCookieAttribute? httpOnlyCookieAttribute;
+
+/// The image URL for the logo shown in the App Launcher dashboard.
+final AccessLogoUrl? logoUrl;
+
+final AccessMfaConfig? mfaConfig;
+
+/// The name of the application.
+final AccessAppsComponentsSchemasName? name;
+
+final AccessOauthConfiguration? oauthConfiguration;
+
+/// Allows options preflight requests to bypass Access authentication and go directly to the origin. Cannot turn on if cors_headers is set.
+final AccessOptionsPreflightBypass? optionsPreflightBypass;
+
+/// Enables cookie paths to scope an application's JWT to the application path. If disabled, the JWT will scope to the hostname by default
+final AccessPathCookieAttribute? pathCookieAttribute;
+
+/// Allows matching Access Service Tokens passed HTTP in a single header with this name.
+/// This works as an alternative to the (CF-Access-Client-Id, CF-Access-Client-Secret) pair of headers.
+/// The header value will be interpreted as a json object similar to:
+///   {
+///     "cf-access-client-id": "88bf3b6d86161464f6509f7219099e57.access.example.com",
+///     "cf-access-client-secret": "bdd31cbc4dec990953e39163fbbb194c93313ca9f0a6e420346af9d326b1d2a5"
+///   }
+/// 
+final AccessReadServiceTokensFromHeader? readServiceTokensFromHeader;
+
+/// Sets the SameSite cookie setting, which provides increased security against CSRF attacks.
+final AccessSameSiteCookieAttribute? sameSiteCookieAttribute;
+
+final AccessScimConfig? scimConfig;
+
+/// List of public domains that Access will secure. This field is deprecated in favor of `destinations` and will be supported until **November 21, 2025.** If `destinations` are provided, then `self_hosted_domains` will be ignored.
+/// 
+final List<String>? selfHostedDomains;
+
+final AccessServiceAuth401Redirect? serviceAuth401Redirect;
+
+/// The amount of time that tokens issued for this application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note: unsupported for infrastructure type applications.
+final AccessSchemasSessionDuration? sessionDuration;
+
+final AccessSkipInterstitial? skipInterstitial;
+
+final List<String>? tags;
+
+final AccessType type;
+
+final AccessUseClientlessIsolationAppLauncherUrl? useClientlessIsolationAppLauncherUrl;
+
+Map<String, dynamic> toJson() { return {
+  if (allowAuthenticateViaWarp != null) 'allow_authenticate_via_warp': allowAuthenticateViaWarp?.toJson(),
+  if (allowIframe != null) 'allow_iframe': allowIframe?.toJson(),
+  'allowed_idps': ?allowedIdps,
+  if (appLauncherVisible != null) 'app_launcher_visible': appLauncherVisible?.toJson(),
+  if (autoRedirectToIdentity != null) 'auto_redirect_to_identity': autoRedirectToIdentity?.toJson(),
+  if (corsHeaders != null) 'cors_headers': corsHeaders?.toJson(),
+  if (customDenyMessage != null) 'custom_deny_message': customDenyMessage?.toJson(),
+  if (customDenyUrl != null) 'custom_deny_url': customDenyUrl?.toJson(),
+  if (customNonIdentityDenyUrl != null) 'custom_non_identity_deny_url': customNonIdentityDenyUrl?.toJson(),
+  'custom_pages': ?customPages,
+  if (destinations != null) 'destinations': destinations?.map((e) => e.toJson()).toList(),
+  'domain': domain.toJson(),
+  if (enableBindingCookie != null) 'enable_binding_cookie': enableBindingCookie?.toJson(),
+  if (httpOnlyCookieAttribute != null) 'http_only_cookie_attribute': httpOnlyCookieAttribute?.toJson(),
+  if (logoUrl != null) 'logo_url': logoUrl?.toJson(),
+  if (mfaConfig != null) 'mfa_config': mfaConfig?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (oauthConfiguration != null) 'oauth_configuration': oauthConfiguration?.toJson(),
+  if (optionsPreflightBypass != null) 'options_preflight_bypass': optionsPreflightBypass?.toJson(),
+  if (pathCookieAttribute != null) 'path_cookie_attribute': pathCookieAttribute?.toJson(),
+  if (readServiceTokensFromHeader != null) 'read_service_tokens_from_header': readServiceTokensFromHeader?.toJson(),
+  if (sameSiteCookieAttribute != null) 'same_site_cookie_attribute': sameSiteCookieAttribute?.toJson(),
+  if (scimConfig != null) 'scim_config': scimConfig?.toJson(),
+  'self_hosted_domains': ?selfHostedDomains,
+  if (serviceAuth401Redirect != null) 'service_auth_401_redirect': serviceAuth401Redirect?.toJson(),
+  if (sessionDuration != null) 'session_duration': sessionDuration?.toJson(),
+  if (skipInterstitial != null) 'skip_interstitial': skipInterstitial?.toJson(),
+  'tags': ?tags,
+  'type': type.toJson(),
+  if (useClientlessIsolationAppLauncherUrl != null) 'use_clientless_isolation_app_launcher_url': useClientlessIsolationAppLauncherUrl?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('domain') &&
+      json.containsKey('type'); } 
+AccessSelfHostedProps copyWith({AccessSchemasAllowAuthenticateViaWarp Function()? allowAuthenticateViaWarp, AccessAllowIframe Function()? allowIframe, List<String> Function()? allowedIdps, AccessAppLauncherVisible Function()? appLauncherVisible, AccessSchemasAutoRedirectToIdentity Function()? autoRedirectToIdentity, AccessCorsHeaders Function()? corsHeaders, AccessCustomDenyMessage Function()? customDenyMessage, AccessCustomDenyUrl Function()? customDenyUrl, AccessCustomNonIdentityDenyUrl Function()? customNonIdentityDenyUrl, List<String> Function()? customPages, List<AccessDestinations2> Function()? destinations, AccessDomain? domain, AccessEnableBindingCookie Function()? enableBindingCookie, AccessHttpOnlyCookieAttribute Function()? httpOnlyCookieAttribute, AccessLogoUrl Function()? logoUrl, AccessMfaConfig Function()? mfaConfig, AccessAppsComponentsSchemasName Function()? name, AccessOauthConfiguration Function()? oauthConfiguration, AccessOptionsPreflightBypass Function()? optionsPreflightBypass, AccessPathCookieAttribute Function()? pathCookieAttribute, AccessReadServiceTokensFromHeader Function()? readServiceTokensFromHeader, AccessSameSiteCookieAttribute Function()? sameSiteCookieAttribute, AccessScimConfig Function()? scimConfig, List<String> Function()? selfHostedDomains, AccessServiceAuth401Redirect Function()? serviceAuth401Redirect, AccessSchemasSessionDuration Function()? sessionDuration, AccessSkipInterstitial Function()? skipInterstitial, List<String> Function()? tags, AccessType? type, AccessUseClientlessIsolationAppLauncherUrl Function()? useClientlessIsolationAppLauncherUrl, }) { return AccessSelfHostedProps(
+  allowAuthenticateViaWarp: allowAuthenticateViaWarp != null ? allowAuthenticateViaWarp() : this.allowAuthenticateViaWarp,
+  allowIframe: allowIframe != null ? allowIframe() : this.allowIframe,
+  allowedIdps: allowedIdps != null ? allowedIdps() : this.allowedIdps,
+  appLauncherVisible: appLauncherVisible != null ? appLauncherVisible() : this.appLauncherVisible,
+  autoRedirectToIdentity: autoRedirectToIdentity != null ? autoRedirectToIdentity() : this.autoRedirectToIdentity,
+  corsHeaders: corsHeaders != null ? corsHeaders() : this.corsHeaders,
+  customDenyMessage: customDenyMessage != null ? customDenyMessage() : this.customDenyMessage,
+  customDenyUrl: customDenyUrl != null ? customDenyUrl() : this.customDenyUrl,
+  customNonIdentityDenyUrl: customNonIdentityDenyUrl != null ? customNonIdentityDenyUrl() : this.customNonIdentityDenyUrl,
+  customPages: customPages != null ? customPages() : this.customPages,
+  destinations: destinations != null ? destinations() : this.destinations,
+  domain: domain ?? this.domain,
+  enableBindingCookie: enableBindingCookie != null ? enableBindingCookie() : this.enableBindingCookie,
+  httpOnlyCookieAttribute: httpOnlyCookieAttribute != null ? httpOnlyCookieAttribute() : this.httpOnlyCookieAttribute,
+  logoUrl: logoUrl != null ? logoUrl() : this.logoUrl,
+  mfaConfig: mfaConfig != null ? mfaConfig() : this.mfaConfig,
+  name: name != null ? name() : this.name,
+  oauthConfiguration: oauthConfiguration != null ? oauthConfiguration() : this.oauthConfiguration,
+  optionsPreflightBypass: optionsPreflightBypass != null ? optionsPreflightBypass() : this.optionsPreflightBypass,
+  pathCookieAttribute: pathCookieAttribute != null ? pathCookieAttribute() : this.pathCookieAttribute,
+  readServiceTokensFromHeader: readServiceTokensFromHeader != null ? readServiceTokensFromHeader() : this.readServiceTokensFromHeader,
+  sameSiteCookieAttribute: sameSiteCookieAttribute != null ? sameSiteCookieAttribute() : this.sameSiteCookieAttribute,
+  scimConfig: scimConfig != null ? scimConfig() : this.scimConfig,
+  selfHostedDomains: selfHostedDomains != null ? selfHostedDomains() : this.selfHostedDomains,
+  serviceAuth401Redirect: serviceAuth401Redirect != null ? serviceAuth401Redirect() : this.serviceAuth401Redirect,
+  sessionDuration: sessionDuration != null ? sessionDuration() : this.sessionDuration,
+  skipInterstitial: skipInterstitial != null ? skipInterstitial() : this.skipInterstitial,
+  tags: tags != null ? tags() : this.tags,
+  type: type ?? this.type,
+  useClientlessIsolationAppLauncherUrl: useClientlessIsolationAppLauncherUrl != null ? useClientlessIsolationAppLauncherUrl() : this.useClientlessIsolationAppLauncherUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccessSelfHostedProps &&
+          allowAuthenticateViaWarp == other.allowAuthenticateViaWarp &&
+          allowIframe == other.allowIframe &&
+          listEquals(allowedIdps, other.allowedIdps) &&
+          appLauncherVisible == other.appLauncherVisible &&
+          autoRedirectToIdentity == other.autoRedirectToIdentity &&
+          corsHeaders == other.corsHeaders &&
+          customDenyMessage == other.customDenyMessage &&
+          customDenyUrl == other.customDenyUrl &&
+          customNonIdentityDenyUrl == other.customNonIdentityDenyUrl &&
+          listEquals(customPages, other.customPages) &&
+          listEquals(destinations, other.destinations) &&
+          domain == other.domain &&
+          enableBindingCookie == other.enableBindingCookie &&
+          httpOnlyCookieAttribute == other.httpOnlyCookieAttribute &&
+          logoUrl == other.logoUrl &&
+          mfaConfig == other.mfaConfig &&
+          name == other.name &&
+          oauthConfiguration == other.oauthConfiguration &&
+          optionsPreflightBypass == other.optionsPreflightBypass &&
+          pathCookieAttribute == other.pathCookieAttribute &&
+          readServiceTokensFromHeader == other.readServiceTokensFromHeader &&
+          sameSiteCookieAttribute == other.sameSiteCookieAttribute &&
+          scimConfig == other.scimConfig &&
+          listEquals(selfHostedDomains, other.selfHostedDomains) &&
+          serviceAuth401Redirect == other.serviceAuth401Redirect &&
+          sessionDuration == other.sessionDuration &&
+          skipInterstitial == other.skipInterstitial &&
+          listEquals(tags, other.tags) &&
+          type == other.type &&
+          useClientlessIsolationAppLauncherUrl == other.useClientlessIsolationAppLauncherUrl; } 
+@override int get hashCode { return Object.hashAll([allowAuthenticateViaWarp, allowIframe, Object.hashAll(allowedIdps ?? const []), appLauncherVisible, autoRedirectToIdentity, corsHeaders, customDenyMessage, customDenyUrl, customNonIdentityDenyUrl, Object.hashAll(customPages ?? const []), Object.hashAll(destinations ?? const []), domain, enableBindingCookie, httpOnlyCookieAttribute, logoUrl, mfaConfig, name, oauthConfiguration, optionsPreflightBypass, pathCookieAttribute, readServiceTokensFromHeader, sameSiteCookieAttribute, scimConfig, Object.hashAll(selfHostedDomains ?? const []), serviceAuth401Redirect, sessionDuration, skipInterstitial, Object.hashAll(tags ?? const []), type, useClientlessIsolationAppLauncherUrl]); } 
+@override String toString() { return 'AccessSelfHostedProps(allowAuthenticateViaWarp: $allowAuthenticateViaWarp, allowIframe: $allowIframe, allowedIdps: $allowedIdps, appLauncherVisible: $appLauncherVisible, autoRedirectToIdentity: $autoRedirectToIdentity, corsHeaders: $corsHeaders, customDenyMessage: $customDenyMessage, customDenyUrl: $customDenyUrl, customNonIdentityDenyUrl: $customNonIdentityDenyUrl, customPages: $customPages, destinations: $destinations, domain: $domain, enableBindingCookie: $enableBindingCookie, httpOnlyCookieAttribute: $httpOnlyCookieAttribute, logoUrl: $logoUrl, mfaConfig: $mfaConfig, name: $name, oauthConfiguration: $oauthConfiguration, optionsPreflightBypass: $optionsPreflightBypass, pathCookieAttribute: $pathCookieAttribute, readServiceTokensFromHeader: $readServiceTokensFromHeader, sameSiteCookieAttribute: $sameSiteCookieAttribute, scimConfig: $scimConfig, selfHostedDomains: $selfHostedDomains, serviceAuth401Redirect: $serviceAuth401Redirect, sessionDuration: $sessionDuration, skipInterstitial: $skipInterstitial, tags: $tags, type: $type, useClientlessIsolationAppLauncherUrl: $useClientlessIsolationAppLauncherUrl)'; } 
+ }

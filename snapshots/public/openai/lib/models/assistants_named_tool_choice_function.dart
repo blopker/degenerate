@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AssistantsNamedToolChoiceFunction {const AssistantsNamedToolChoiceFunction({required this.name});
+
+factory AssistantsNamedToolChoiceFunction.fromJson(Map<String, dynamic> json) { return AssistantsNamedToolChoiceFunction(
+  name: json['name'] as String,
+); }
+
+/// The name of the function to call.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+AssistantsNamedToolChoiceFunction copyWith({String? name}) { return AssistantsNamedToolChoiceFunction(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AssistantsNamedToolChoiceFunction &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'AssistantsNamedToolChoiceFunction(name: $name)'; } 
+ }

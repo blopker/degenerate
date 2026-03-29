@@ -1,0 +1,117 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_tag_category_delete_response.dart';import '../models/delete_tag_category_delete_response400.dart';import '../models/get_tag_category_list_response.dart';import '../models/get_tag_category_list_response400.dart';import '../models/patch_tag_category_update_request.dart';import '../models/patch_tag_category_update_response.dart';import '../models/patch_tag_category_update_response400.dart';import '../models/post_tag_category_create_request.dart';import '../models/post_tag_category_create_response.dart';import '../models/post_tag_category_create_response400.dart';/// TagCategoryApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class TagCategoryApi with ApiExecutor {const TagCategoryApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Lists all tag categories (SoT)
+///
+/// Returns all Source-of-Truth tag categories for an account.
+///
+/// `GET /accounts/{account_id}/cloudforce-one/events/tags/categories`
+Future<ApiResult<GetTagCategoryListResponse, GetTagCategoryListResponse400>> getTagCategoryList({required String accountId, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (search != null) queryParameters['search'] = search;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return GetTagCategoryListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return GetTagCategoryListResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Updates a tag category (SoT)
+///
+/// Updates a Source-of-Truth tag category by UUID.
+///
+/// `PATCH /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
+Future<ApiResult<PatchTagCategoryUpdateResponse, PatchTagCategoryUpdateResponse400>> patchTagCategoryUpdate({required String accountId, required String categoryUuid, PatchTagCategoryUpdateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/${Uri.encodeComponent(categoryUuid)}',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PatchTagCategoryUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return PatchTagCategoryUpdateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Deletes a tag category (SoT)
+///
+/// Deletes a Source-of-Truth tag category by UUID.
+///
+/// `DELETE /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}`
+Future<ApiResult<DeleteTagCategoryDeleteResponse, DeleteTagCategoryDeleteResponse400>> deleteTagCategoryDelete({required String accountId, required String categoryUuid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/${Uri.encodeComponent(categoryUuid)}',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return DeleteTagCategoryDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return DeleteTagCategoryDeleteResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Creates a new tag category (SoT)
+///
+/// Creates a new Source-of-Truth tag category for an account.
+///
+/// `POST /accounts/{account_id}/cloudforce-one/events/tags/categories/create`
+Future<ApiResult<PostTagCategoryCreateResponse, PostTagCategoryCreateResponse400>> postTagCategoryCreate({required String accountId, PostTagCategoryCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/cloudforce-one/events/tags/categories/create',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return PostTagCategoryCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return PostTagCategoryCreateResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

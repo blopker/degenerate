@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CachePurgeFlexPurgeByTags {const CachePurgeFlexPurgeByTags({this.tags});
+
+factory CachePurgeFlexPurgeByTags.fromJson(Map<String, dynamic> json) { return CachePurgeFlexPurgeByTags(
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// For more information on cache tags and purging by tags, please refer to [purge by cache-tags documentation page](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-tags/).
+final List<String>? tags;
+
+Map<String, dynamic> toJson() { return {
+  'tags': ?tags,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CachePurgeFlexPurgeByTags copyWith({List<String> Function()? tags}) { return CachePurgeFlexPurgeByTags(
+  tags: tags != null ? tags() : this.tags,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CachePurgeFlexPurgeByTags &&
+          listEquals(tags, other.tags); } 
+@override int get hashCode { return Object.hashAll(tags ?? const []).hashCode; } 
+@override String toString() { return 'CachePurgeFlexPurgeByTags(tags: $tags)'; } 
+ }

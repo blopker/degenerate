@@ -1,0 +1,93 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPackageUpdatedPackagePackageVersionPackageFiles {const WebhookPackageUpdatedPackagePackageVersionPackageFiles({required this.contentType, required this.createdAt, required this.downloadUrl, required this.id, required this.md5, required this.name, required this.sha1, required this.sha256, required this.size, required this.state, required this.updatedAt, });
+
+factory WebhookPackageUpdatedPackagePackageVersionPackageFiles.fromJson(Map<String, dynamic> json) { return WebhookPackageUpdatedPackagePackageVersionPackageFiles(
+  contentType: json['content_type'] as String,
+  createdAt: json['created_at'] as String,
+  downloadUrl: Uri.parse(json['download_url'] as String),
+  id: (json['id'] as num).toInt(),
+  md5: json['md5'] as String?,
+  name: json['name'] as String,
+  sha1: json['sha1'] as String?,
+  sha256: json['sha256'] as String,
+  size: (json['size'] as num).toInt(),
+  state: json['state'] as String,
+  updatedAt: json['updated_at'] as String,
+); }
+
+final String contentType;
+
+final String createdAt;
+
+final Uri downloadUrl;
+
+final int id;
+
+final String? md5;
+
+final String name;
+
+final String? sha1;
+
+final String sha256;
+
+final int size;
+
+final String state;
+
+final String updatedAt;
+
+Map<String, dynamic> toJson() { return {
+  'content_type': contentType,
+  'created_at': createdAt,
+  'download_url': downloadUrl.toString(),
+  'id': id,
+  'md5': ?md5,
+  'name': name,
+  'sha1': ?sha1,
+  'sha256': sha256,
+  'size': size,
+  'state': state,
+  'updated_at': updatedAt,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content_type') && json['content_type'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('download_url') && json['download_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('md5') && json['md5'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('sha1') && json['sha1'] is String &&
+      json.containsKey('sha256') && json['sha256'] is String &&
+      json.containsKey('size') && json['size'] is num &&
+      json.containsKey('state') && json['state'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String; } 
+WebhookPackageUpdatedPackagePackageVersionPackageFiles copyWith({String? contentType, String? createdAt, Uri? downloadUrl, int? id, String? Function()? md5, String? name, String? Function()? sha1, String? sha256, int? size, String? state, String? updatedAt, }) { return WebhookPackageUpdatedPackagePackageVersionPackageFiles(
+  contentType: contentType ?? this.contentType,
+  createdAt: createdAt ?? this.createdAt,
+  downloadUrl: downloadUrl ?? this.downloadUrl,
+  id: id ?? this.id,
+  md5: md5 != null ? md5() : this.md5,
+  name: name ?? this.name,
+  sha1: sha1 != null ? sha1() : this.sha1,
+  sha256: sha256 ?? this.sha256,
+  size: size ?? this.size,
+  state: state ?? this.state,
+  updatedAt: updatedAt ?? this.updatedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPackageUpdatedPackagePackageVersionPackageFiles &&
+          contentType == other.contentType &&
+          createdAt == other.createdAt &&
+          downloadUrl == other.downloadUrl &&
+          id == other.id &&
+          md5 == other.md5 &&
+          name == other.name &&
+          sha1 == other.sha1 &&
+          sha256 == other.sha256 &&
+          size == other.size &&
+          state == other.state &&
+          updatedAt == other.updatedAt; } 
+@override int get hashCode { return Object.hash(contentType, createdAt, downloadUrl, id, md5, name, sha1, sha256, size, state, updatedAt); } 
+@override String toString() { return 'WebhookPackageUpdatedPackagePackageVersionPackageFiles(contentType: $contentType, createdAt: $createdAt, downloadUrl: $downloadUrl, id: $id, md5: $md5, name: $name, sha1: $sha1, sha256: $sha256, size: $size, state: $state, updatedAt: $updatedAt)'; } 
+ }

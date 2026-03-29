@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoice_setting_checkout_rendering_options.dart';/// Options for invoice PDF rendering.
+final class PaymentLinksResourceInvoiceSettingsRenderingOptions {const PaymentLinksResourceInvoiceSettingsRenderingOptions({this.invoiceSettingCheckoutRenderingOptions});
+
+factory PaymentLinksResourceInvoiceSettingsRenderingOptions.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceInvoiceSettingsRenderingOptions(
+  invoiceSettingCheckoutRenderingOptions: InvoiceSettingCheckoutRenderingOptions.canParse(json) ? InvoiceSettingCheckoutRenderingOptions.fromJson(json) : null,
+); }
+
+final InvoiceSettingCheckoutRenderingOptions? invoiceSettingCheckoutRenderingOptions;
+
+/// At least one variant must be present.
+bool get isValid { return invoiceSettingCheckoutRenderingOptions != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?invoiceSettingCheckoutRenderingOptions?.toJson(),
+}; } 
+ }

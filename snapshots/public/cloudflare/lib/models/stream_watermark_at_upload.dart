@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class StreamWatermarkAtUpload {const StreamWatermarkAtUpload({this.uid});
+
+factory StreamWatermarkAtUpload.fromJson(Map<String, dynamic> json) { return StreamWatermarkAtUpload(
+  uid: json['uid'] as String?,
+); }
+
+/// The unique identifier for the watermark profile.
+final String? uid;
+
+Map<String, dynamic> toJson() { return {
+  'uid': ?uid,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamWatermarkAtUpload copyWith({String Function()? uid}) { return StreamWatermarkAtUpload(
+  uid: uid != null ? uid() : this.uid,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamWatermarkAtUpload &&
+          uid == other.uid; } 
+@override int get hashCode { return uid.hashCode; } 
+@override String toString() { return 'StreamWatermarkAtUpload(uid: $uid)'; } 
+ }

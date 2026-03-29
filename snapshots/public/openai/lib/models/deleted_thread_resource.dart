@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Type discriminator that is always `chatkit.thread.deleted`.
+final class DeletedThreadResourceObject {const DeletedThreadResourceObject._(this.value);
+
+factory DeletedThreadResourceObject.fromJson(String json) { return switch (json) {
+  'chatkit.thread.deleted' => chatkitThreadDeleted,
+  _ => DeletedThreadResourceObject._(json),
+}; }
+
+static const DeletedThreadResourceObject chatkitThreadDeleted = DeletedThreadResourceObject._('chatkit.thread.deleted');
+
+static const List<DeletedThreadResourceObject> values = [chatkitThreadDeleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DeletedThreadResourceObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DeletedThreadResourceObject($value)'; } 
+ }
+/// Confirmation payload returned after deleting a thread.
+final class DeletedThreadResource {const DeletedThreadResource({required this.id, this.object = DeletedThreadResourceObject.chatkitThreadDeleted, required this.deleted, });
+
+factory DeletedThreadResource.fromJson(Map<String, dynamic> json) { return DeletedThreadResource(
+  id: json['id'] as String,
+  object: DeletedThreadResourceObject.fromJson(json['object'] as String),
+  deleted: json['deleted'] as bool,
+); }
+
+/// Identifier of the deleted thread.
+final String id;
+
+/// Type discriminator that is always `chatkit.thread.deleted`.
+final DeletedThreadResourceObject object;
+
+/// Indicates that the thread has been deleted.
+final bool deleted;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'object': object.toJson(),
+  'deleted': deleted,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('object') &&
+      json.containsKey('deleted') && json['deleted'] is bool; } 
+DeletedThreadResource copyWith({String? id, DeletedThreadResourceObject? object, bool? deleted, }) { return DeletedThreadResource(
+  id: id ?? this.id,
+  object: object ?? this.object,
+  deleted: deleted ?? this.deleted,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeletedThreadResource &&
+          id == other.id &&
+          object == other.object &&
+          deleted == other.deleted; } 
+@override int get hashCode { return Object.hash(id, object, deleted); } 
+@override String toString() { return 'DeletedThreadResource(id: $id, object: $object, deleted: $deleted)'; } 
+ }

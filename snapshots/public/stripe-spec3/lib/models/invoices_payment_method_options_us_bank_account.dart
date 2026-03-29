@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'invoice_payment_method_options_us_bank_account.dart';/// If paying by `us_bank_account`, this sub-hash contains details about the ACH direct debit payment method options to pass to the invoice’s PaymentIntent.
+final class InvoicesPaymentMethodOptionsUsBankAccount {const InvoicesPaymentMethodOptionsUsBankAccount({this.invoicePaymentMethodOptionsUsBankAccount});
+
+factory InvoicesPaymentMethodOptionsUsBankAccount.fromJson(Map<String, dynamic> json) { return InvoicesPaymentMethodOptionsUsBankAccount(
+  invoicePaymentMethodOptionsUsBankAccount: InvoicePaymentMethodOptionsUsBankAccount.canParse(json) ? InvoicePaymentMethodOptionsUsBankAccount.fromJson(json) : null,
+); }
+
+final InvoicePaymentMethodOptionsUsBankAccount? invoicePaymentMethodOptionsUsBankAccount;
+
+/// At least one variant must be present.
+bool get isValid { return invoicePaymentMethodOptionsUsBankAccount != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?invoicePaymentMethodOptionsUsBankAccount?.toJson(),
+}; } 
+ }

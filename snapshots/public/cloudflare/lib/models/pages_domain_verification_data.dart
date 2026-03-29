@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PagesDomainVerificationDataStatus {const PagesDomainVerificationDataStatus._(this.value);
+
+factory PagesDomainVerificationDataStatus.fromJson(String json) { return switch (json) {
+  'pending' => pending,
+  'active' => active,
+  'deactivated' => deactivated,
+  'blocked' => blocked,
+  'error' => error,
+  _ => PagesDomainVerificationDataStatus._(json),
+}; }
+
+static const PagesDomainVerificationDataStatus pending = PagesDomainVerificationDataStatus._('pending');
+
+static const PagesDomainVerificationDataStatus active = PagesDomainVerificationDataStatus._('active');
+
+static const PagesDomainVerificationDataStatus deactivated = PagesDomainVerificationDataStatus._('deactivated');
+
+static const PagesDomainVerificationDataStatus blocked = PagesDomainVerificationDataStatus._('blocked');
+
+static const PagesDomainVerificationDataStatus error = PagesDomainVerificationDataStatus._('error');
+
+static const List<PagesDomainVerificationDataStatus> values = [pending, active, deactivated, blocked, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesDomainVerificationDataStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PagesDomainVerificationDataStatus($value)'; } 
+ }
+final class PagesDomainVerificationData {const PagesDomainVerificationData({this.errorMessage, required this.status, });
+
+factory PagesDomainVerificationData.fromJson(Map<String, dynamic> json) { return PagesDomainVerificationData(
+  errorMessage: json['error_message'] as String?,
+  status: PagesDomainVerificationDataStatus.fromJson(json['status'] as String),
+); }
+
+final String? errorMessage;
+
+final PagesDomainVerificationDataStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'error_message': ?errorMessage,
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
+PagesDomainVerificationData copyWith({String Function()? errorMessage, PagesDomainVerificationDataStatus? status, }) { return PagesDomainVerificationData(
+  errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesDomainVerificationData &&
+          errorMessage == other.errorMessage &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(errorMessage, status); } 
+@override String toString() { return 'PagesDomainVerificationData(errorMessage: $errorMessage, status: $status)'; } 
+ }

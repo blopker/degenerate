@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoice_payment_method_options_param15.dart';import 'invoice_payment_method_options_param16.dart';import 'invoice_payment_method_options_param17.dart';import 'invoice_payment_method_options_param18.dart';import 'invoice_payment_method_options_param19.dart';import 'invoice_payment_method_options_param20.dart';import 'invoice_payment_method_options_param21.dart';import 'invoice_payment_method_options_param22.dart';import 'post_invoices_request_payment_settings_payment_method_options_acss_debit.dart';import 'post_invoices_request_payment_settings_payment_method_options_bancontact.dart';import 'post_invoices_request_payment_settings_payment_method_options_card.dart';import 'post_invoices_request_payment_settings_payment_method_options_customer_balance.dart';import 'post_invoices_request_payment_settings_payment_method_options_konbini.dart';import 'post_invoices_request_payment_settings_payment_method_options_payto.dart';import 'post_invoices_request_payment_settings_payment_method_options_sepa_debit.dart';import 'post_invoices_request_payment_settings_payment_method_options_us_bank_account.dart';final class PostInvoicesRequestPaymentSettingsPaymentMethodOptions {const PostInvoicesRequestPaymentSettingsPaymentMethodOptions({this.acssDebit, this.bancontact, this.card, this.customerBalance, this.konbini, this.payto, this.sepaDebit, this.usBankAccount, });
+
+factory PostInvoicesRequestPaymentSettingsPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return PostInvoicesRequestPaymentSettingsPaymentMethodOptions(
+  acssDebit: json['acss_debit'] != null ? OneOf2.parse(json['acss_debit'], fromA: (v) => InvoicePaymentMethodOptionsParam15.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsAcssDebitVariant2.fromJson(v as String),) : null,
+  bancontact: json['bancontact'] != null ? OneOf2.parse(json['bancontact'], fromA: (v) => InvoicePaymentMethodOptionsParam16.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontactVariant2.fromJson(v as String),) : null,
+  card: json['card'] != null ? OneOf2.parse(json['card'], fromA: (v) => InvoicePaymentMethodOptionsParam17.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCardVariant2.fromJson(v as String),) : null,
+  customerBalance: json['customer_balance'] != null ? OneOf2.parse(json['customer_balance'], fromA: (v) => InvoicePaymentMethodOptionsParam18.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCustomerBalanceVariant2.fromJson(v as String),) : null,
+  konbini: json['konbini'] != null ? OneOf2.parse(json['konbini'], fromA: (v) => InvoicePaymentMethodOptionsParam19.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsKonbiniVariant2.fromJson(v as String),) : null,
+  payto: json['payto'] != null ? OneOf2.parse(json['payto'], fromA: (v) => InvoicePaymentMethodOptionsParam20.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsPaytoVariant2.fromJson(v as String),) : null,
+  sepaDebit: json['sepa_debit'] != null ? OneOf2.parse(json['sepa_debit'], fromA: (v) => InvoicePaymentMethodOptionsParam21.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebitVariant2.fromJson(v as String),) : null,
+  usBankAccount: json['us_bank_account'] != null ? OneOf2.parse(json['us_bank_account'], fromA: (v) => InvoicePaymentMethodOptionsParam22.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesRequestPaymentSettingsPaymentMethodOptionsUsBankAccountVariant2.fromJson(v as String),) : null,
+); }
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsAcssDebit? acssDebit;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontact? bancontact;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard? card;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCustomerBalance? customerBalance;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsKonbini? konbini;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsPayto? payto;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebit? sepaDebit;
+
+final PostInvoicesRequestPaymentSettingsPaymentMethodOptionsUsBankAccount? usBankAccount;
+
+Map<String, dynamic> toJson() { return {
+  if (acssDebit != null) 'acss_debit': acssDebit?.toJson(),
+  if (bancontact != null) 'bancontact': bancontact?.toJson(),
+  if (card != null) 'card': card?.toJson(),
+  if (customerBalance != null) 'customer_balance': customerBalance?.toJson(),
+  if (konbini != null) 'konbini': konbini?.toJson(),
+  if (payto != null) 'payto': payto?.toJson(),
+  if (sepaDebit != null) 'sepa_debit': sepaDebit?.toJson(),
+  if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostInvoicesRequestPaymentSettingsPaymentMethodOptions copyWith({PostInvoicesRequestPaymentSettingsPaymentMethodOptionsAcssDebit Function()? acssDebit, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsBancontact Function()? bancontact, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCard Function()? card, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsCustomerBalance Function()? customerBalance, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsKonbini Function()? konbini, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsPayto Function()? payto, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsSepaDebit Function()? sepaDebit, PostInvoicesRequestPaymentSettingsPaymentMethodOptionsUsBankAccount Function()? usBankAccount, }) { return PostInvoicesRequestPaymentSettingsPaymentMethodOptions(
+  acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,
+  bancontact: bancontact != null ? bancontact() : this.bancontact,
+  card: card != null ? card() : this.card,
+  customerBalance: customerBalance != null ? customerBalance() : this.customerBalance,
+  konbini: konbini != null ? konbini() : this.konbini,
+  payto: payto != null ? payto() : this.payto,
+  sepaDebit: sepaDebit != null ? sepaDebit() : this.sepaDebit,
+  usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesRequestPaymentSettingsPaymentMethodOptions &&
+          acssDebit == other.acssDebit &&
+          bancontact == other.bancontact &&
+          card == other.card &&
+          customerBalance == other.customerBalance &&
+          konbini == other.konbini &&
+          payto == other.payto &&
+          sepaDebit == other.sepaDebit &&
+          usBankAccount == other.usBankAccount; } 
+@override int get hashCode { return Object.hash(acssDebit, bancontact, card, customerBalance, konbini, payto, sepaDebit, usBankAccount); } 
+@override String toString() { return 'PostInvoicesRequestPaymentSettingsPaymentMethodOptions(acssDebit: $acssDebit, bancontact: $bancontact, card: $card, customerBalance: $customerBalance, konbini: $konbini, payto: $payto, sepaDebit: $sepaDebit, usBankAccount: $usBankAccount)'; } 
+ }

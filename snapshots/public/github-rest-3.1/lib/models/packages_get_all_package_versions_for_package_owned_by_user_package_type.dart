@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType {const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._(this.value);
+
+factory PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType.fromJson(String json) { return switch (json) {
+  'npm' => npm,
+  'maven' => maven,
+  'rubygems' => rubygems,
+  'docker' => docker,
+  'nuget' => nuget,
+  'container' => container,
+  _ => PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._(json),
+}; }
+
+static const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType npm = PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._('npm');
+
+static const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType maven = PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._('maven');
+
+static const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType rubygems = PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._('rubygems');
+
+static const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType docker = PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._('docker');
+
+static const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType nuget = PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._('nuget');
+
+static const PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType container = PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType._('container');
+
+static const List<PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType> values = [npm, maven, rubygems, docker, nuget, container];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PackagesGetAllPackageVersionsForPackageOwnedByUserPackageType($value)'; } 
+ }

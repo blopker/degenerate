@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Components of the zone's SOA record.
+final class DnsSettingsSoaBase {const DnsSettingsSoaBase({this.expire, this.minTtl, this.mname, this.refresh, this.retry, this.rname, this.ttl, });
+
+factory DnsSettingsSoaBase.fromJson(Map<String, dynamic> json) { return DnsSettingsSoaBase(
+  expire: json['expire'] != null ? (json['expire'] as num).toDouble() : null,
+  minTtl: json['min_ttl'] != null ? (json['min_ttl'] as num).toDouble() : null,
+  mname: json['mname'] as String?,
+  refresh: json['refresh'] != null ? (json['refresh'] as num).toDouble() : null,
+  retry: json['retry'] != null ? (json['retry'] as num).toDouble() : null,
+  rname: json['rname'] as String?,
+  ttl: json['ttl'] != null ? (json['ttl'] as num).toDouble() : null,
+); }
+
+/// Time in seconds of being unable to query the primary server after which secondary servers should stop serving the zone.
+final double? expire;
+
+/// The time to live (TTL) for negative caching of records within the zone.
+final double? minTtl;
+
+/// The primary nameserver, which may be used for outbound zone transfers. If null, a Cloudflare-assigned value will be used.
+final String? mname;
+
+/// Time in seconds after which secondary servers should re-check the SOA record to see if the zone has been updated.
+final double? refresh;
+
+/// Time in seconds after which secondary servers should retry queries after the primary server was unresponsive.
+final double? retry;
+
+/// The email address of the zone administrator, with the first label representing the local part of the email address.
+final String? rname;
+
+/// The time to live (TTL) of the SOA record itself.
+final double? ttl;
+
+Map<String, dynamic> toJson() { return {
+  'expire': ?expire,
+  'min_ttl': ?minTtl,
+  'mname': ?mname,
+  'refresh': ?refresh,
+  'retry': ?retry,
+  'rname': ?rname,
+  'ttl': ?ttl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DnsSettingsSoaBase copyWith({double Function()? expire, double Function()? minTtl, String? Function()? mname, double Function()? refresh, double Function()? retry, String Function()? rname, double Function()? ttl, }) { return DnsSettingsSoaBase(
+  expire: expire != null ? expire() : this.expire,
+  minTtl: minTtl != null ? minTtl() : this.minTtl,
+  mname: mname != null ? mname() : this.mname,
+  refresh: refresh != null ? refresh() : this.refresh,
+  retry: retry != null ? retry() : this.retry,
+  rname: rname != null ? rname() : this.rname,
+  ttl: ttl != null ? ttl() : this.ttl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsSettingsSoaBase &&
+          expire == other.expire &&
+          minTtl == other.minTtl &&
+          mname == other.mname &&
+          refresh == other.refresh &&
+          retry == other.retry &&
+          rname == other.rname &&
+          ttl == other.ttl; } 
+@override int get hashCode { return Object.hash(expire, minTtl, mname, refresh, retry, rname, ttl); } 
+@override String toString() { return 'DnsSettingsSoaBase(expire: $expire, minTtl: $minTtl, mname: $mname, refresh: $refresh, retry: $retry, rname: $rname, ttl: $ttl)'; } 
+ }

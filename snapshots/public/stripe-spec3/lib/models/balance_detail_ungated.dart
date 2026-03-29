@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_amount.dart';/// 
+final class BalanceDetailUngated {const BalanceDetailUngated({required this.available, required this.pending, });
+
+factory BalanceDetailUngated.fromJson(Map<String, dynamic> json) { return BalanceDetailUngated(
+  available: (json['available'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
+  pending: (json['pending'] as List<dynamic>).map((e) => BalanceAmount.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Funds that are available for use.
+final List<BalanceAmount> available;
+
+/// Funds that are pending
+final List<BalanceAmount> pending;
+
+Map<String, dynamic> toJson() { return {
+  'available': available.map((e) => e.toJson()).toList(),
+  'pending': pending.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('available') &&
+      json.containsKey('pending'); } 
+BalanceDetailUngated copyWith({List<BalanceAmount>? available, List<BalanceAmount>? pending, }) { return BalanceDetailUngated(
+  available: available ?? this.available,
+  pending: pending ?? this.pending,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BalanceDetailUngated &&
+          listEquals(available, other.available) &&
+          listEquals(pending, other.pending); } 
+@override int get hashCode { return Object.hash(Object.hashAll(available), Object.hashAll(pending)); } 
+@override String toString() { return 'BalanceDetailUngated(available: $available, pending: $pending)'; } 
+ }

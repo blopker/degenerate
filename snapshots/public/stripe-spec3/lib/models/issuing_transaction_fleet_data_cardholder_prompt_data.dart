@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_transaction_fleet_cardholder_prompt_data.dart';/// Answers to prompts presented to cardholder at point of sale.
+final class IssuingTransactionFleetDataCardholderPromptData {const IssuingTransactionFleetDataCardholderPromptData({this.issuingTransactionFleetCardholderPromptData});
+
+factory IssuingTransactionFleetDataCardholderPromptData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetDataCardholderPromptData(
+  issuingTransactionFleetCardholderPromptData: IssuingTransactionFleetCardholderPromptData.canParse(json) ? IssuingTransactionFleetCardholderPromptData.fromJson(json) : null,
+); }
+
+final IssuingTransactionFleetCardholderPromptData? issuingTransactionFleetCardholderPromptData;
+
+/// At least one variant must be present.
+bool get isValid { return issuingTransactionFleetCardholderPromptData != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingTransactionFleetCardholderPromptData?.toJson(),
+}; } 
+ }

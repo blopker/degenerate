@@ -1,0 +1,203 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersObservabilityTelemetryEvent$metadata {const WorkersObservabilityTelemetryEvent$metadata({this.account, this.cloudService, this.coldStart, this.cost, this.duration, this.endTime, this.error, this.errorTemplate, this.fingerprint, required this.id, this.level, this.message, this.messageTemplate, this.metricName, this.origin, this.parentSpanId, this.provider, this.region, this.requestId, this.service, this.spanId, this.spanName, this.stackId, this.startTime, this.statusCode, this.traceDuration, this.traceId, this.transactionName, this.trigger, this.type, this.url, });
+
+factory WorkersObservabilityTelemetryEvent$metadata.fromJson(Map<String, dynamic> json) { return WorkersObservabilityTelemetryEvent$metadata(
+  account: json['account'] as String?,
+  cloudService: json['cloudService'] as String?,
+  coldStart: json['coldStart'] != null ? (json['coldStart'] as num).toInt() : null,
+  cost: json['cost'] != null ? (json['cost'] as num).toInt() : null,
+  duration: json['duration'] != null ? (json['duration'] as num).toInt() : null,
+  endTime: json['endTime'] != null ? (json['endTime'] as num).toInt() : null,
+  error: json['error'] as String?,
+  errorTemplate: json['errorTemplate'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  id: json['id'] as String,
+  level: json['level'] as String?,
+  message: json['message'] as String?,
+  messageTemplate: json['messageTemplate'] as String?,
+  metricName: json['metricName'] as String?,
+  origin: json['origin'] as String?,
+  parentSpanId: json['parentSpanId'] as String?,
+  provider: json['provider'] as String?,
+  region: json['region'] as String?,
+  requestId: json['requestId'] as String?,
+  service: json['service'] as String?,
+  spanId: json['spanId'] as String?,
+  spanName: json['spanName'] as String?,
+  stackId: json['stackId'] as String?,
+  startTime: json['startTime'] != null ? (json['startTime'] as num).toInt() : null,
+  statusCode: json['statusCode'] != null ? (json['statusCode'] as num).toInt() : null,
+  traceDuration: json['traceDuration'] != null ? (json['traceDuration'] as num).toInt() : null,
+  traceId: json['traceId'] as String?,
+  transactionName: json['transactionName'] as String?,
+  trigger: json['trigger'] as String?,
+  type: json['type'] as String?,
+  url: json['url'] as String?,
+); }
+
+final String? account;
+
+final String? cloudService;
+
+final int? coldStart;
+
+final int? cost;
+
+final int? duration;
+
+final int? endTime;
+
+final String? error;
+
+final String? errorTemplate;
+
+final String? fingerprint;
+
+final String id;
+
+final String? level;
+
+final String? message;
+
+final String? messageTemplate;
+
+final String? metricName;
+
+final String? origin;
+
+final String? parentSpanId;
+
+final String? provider;
+
+final String? region;
+
+final String? requestId;
+
+final String? service;
+
+final String? spanId;
+
+final String? spanName;
+
+final String? stackId;
+
+final int? startTime;
+
+final int? statusCode;
+
+final int? traceDuration;
+
+final String? traceId;
+
+final String? transactionName;
+
+final String? trigger;
+
+final String? type;
+
+final String? url;
+
+Map<String, dynamic> toJson() { return {
+  'account': ?account,
+  'cloudService': ?cloudService,
+  'coldStart': ?coldStart,
+  'cost': ?cost,
+  'duration': ?duration,
+  'endTime': ?endTime,
+  'error': ?error,
+  'errorTemplate': ?errorTemplate,
+  'fingerprint': ?fingerprint,
+  'id': id,
+  'level': ?level,
+  'message': ?message,
+  'messageTemplate': ?messageTemplate,
+  'metricName': ?metricName,
+  'origin': ?origin,
+  'parentSpanId': ?parentSpanId,
+  'provider': ?provider,
+  'region': ?region,
+  'requestId': ?requestId,
+  'service': ?service,
+  'spanId': ?spanId,
+  'spanName': ?spanName,
+  'stackId': ?stackId,
+  'startTime': ?startTime,
+  'statusCode': ?statusCode,
+  'traceDuration': ?traceDuration,
+  'traceId': ?traceId,
+  'transactionName': ?transactionName,
+  'trigger': ?trigger,
+  'type': ?type,
+  'url': ?url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
+WorkersObservabilityTelemetryEvent$metadata copyWith({String Function()? account, String Function()? cloudService, int Function()? coldStart, int Function()? cost, int Function()? duration, int Function()? endTime, String Function()? error, String Function()? errorTemplate, String Function()? fingerprint, String? id, String Function()? level, String Function()? message, String Function()? messageTemplate, String Function()? metricName, String Function()? origin, String Function()? parentSpanId, String Function()? provider, String Function()? region, String Function()? requestId, String Function()? service, String Function()? spanId, String Function()? spanName, String Function()? stackId, int Function()? startTime, int Function()? statusCode, int Function()? traceDuration, String Function()? traceId, String Function()? transactionName, String Function()? trigger, String Function()? type, String Function()? url, }) { return WorkersObservabilityTelemetryEvent$metadata(
+  account: account != null ? account() : this.account,
+  cloudService: cloudService != null ? cloudService() : this.cloudService,
+  coldStart: coldStart != null ? coldStart() : this.coldStart,
+  cost: cost != null ? cost() : this.cost,
+  duration: duration != null ? duration() : this.duration,
+  endTime: endTime != null ? endTime() : this.endTime,
+  error: error != null ? error() : this.error,
+  errorTemplate: errorTemplate != null ? errorTemplate() : this.errorTemplate,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  id: id ?? this.id,
+  level: level != null ? level() : this.level,
+  message: message != null ? message() : this.message,
+  messageTemplate: messageTemplate != null ? messageTemplate() : this.messageTemplate,
+  metricName: metricName != null ? metricName() : this.metricName,
+  origin: origin != null ? origin() : this.origin,
+  parentSpanId: parentSpanId != null ? parentSpanId() : this.parentSpanId,
+  provider: provider != null ? provider() : this.provider,
+  region: region != null ? region() : this.region,
+  requestId: requestId != null ? requestId() : this.requestId,
+  service: service != null ? service() : this.service,
+  spanId: spanId != null ? spanId() : this.spanId,
+  spanName: spanName != null ? spanName() : this.spanName,
+  stackId: stackId != null ? stackId() : this.stackId,
+  startTime: startTime != null ? startTime() : this.startTime,
+  statusCode: statusCode != null ? statusCode() : this.statusCode,
+  traceDuration: traceDuration != null ? traceDuration() : this.traceDuration,
+  traceId: traceId != null ? traceId() : this.traceId,
+  transactionName: transactionName != null ? transactionName() : this.transactionName,
+  trigger: trigger != null ? trigger() : this.trigger,
+  type: type != null ? type() : this.type,
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersObservabilityTelemetryEvent$metadata &&
+          account == other.account &&
+          cloudService == other.cloudService &&
+          coldStart == other.coldStart &&
+          cost == other.cost &&
+          duration == other.duration &&
+          endTime == other.endTime &&
+          error == other.error &&
+          errorTemplate == other.errorTemplate &&
+          fingerprint == other.fingerprint &&
+          id == other.id &&
+          level == other.level &&
+          message == other.message &&
+          messageTemplate == other.messageTemplate &&
+          metricName == other.metricName &&
+          origin == other.origin &&
+          parentSpanId == other.parentSpanId &&
+          provider == other.provider &&
+          region == other.region &&
+          requestId == other.requestId &&
+          service == other.service &&
+          spanId == other.spanId &&
+          spanName == other.spanName &&
+          stackId == other.stackId &&
+          startTime == other.startTime &&
+          statusCode == other.statusCode &&
+          traceDuration == other.traceDuration &&
+          traceId == other.traceId &&
+          transactionName == other.transactionName &&
+          trigger == other.trigger &&
+          type == other.type &&
+          url == other.url; } 
+@override int get hashCode { return Object.hashAll([account, cloudService, coldStart, cost, duration, endTime, error, errorTemplate, fingerprint, id, level, message, messageTemplate, metricName, origin, parentSpanId, provider, region, requestId, service, spanId, spanName, stackId, startTime, statusCode, traceDuration, traceId, transactionName, trigger, type, url]); } 
+@override String toString() { return 'WorkersObservabilityTelemetryEvent\$metadata(account: $account, cloudService: $cloudService, coldStart: $coldStart, cost: $cost, duration: $duration, endTime: $endTime, error: $error, errorTemplate: $errorTemplate, fingerprint: $fingerprint, id: $id, level: $level, message: $message, messageTemplate: $messageTemplate, metricName: $metricName, origin: $origin, parentSpanId: $parentSpanId, provider: $provider, region: $region, requestId: $requestId, service: $service, spanId: $spanId, spanName: $spanName, stackId: $stackId, startTime: $startTime, statusCode: $statusCode, traceDuration: $traceDuration, traceId: $traceId, transactionName: $transactionName, trigger: $trigger, type: $type, url: $url)'; } 
+ }

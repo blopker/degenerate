@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions {const PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions({required this.label, required this.value, });
+
+factory PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions.fromJson(Map<String, dynamic> json) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions(
+  label: json['label'] as String,
+  value: json['value'] as String,
+); }
+
+final String label;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'label': label,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('label') && json['label'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions copyWith({String? label, String? value, }) { return PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions(
+  label: label ?? this.label,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions &&
+          label == other.label &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(label, value); } 
+@override String toString() { return 'PostPaymentLinksPaymentLinkRequestCustomFieldsVariant1DropdownOptions(label: $label, value: $value)'; } 
+ }

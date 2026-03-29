@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages35_messages_content_variant2.dart';import 'messages35_messages_content_variant3.dart';typedef Messages35MessagesContent = OneOf3<String,List<Messages35MessagesContentVariant2>,Messages35MessagesContentVariant3>;

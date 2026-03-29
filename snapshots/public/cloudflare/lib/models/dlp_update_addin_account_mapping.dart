@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_addin_auth.dart';import 'dlp_addin_auth_no_auth.dart';import 'dlp_addin_auth_org.dart';final class DlpUpdateAddinAccountMapping {const DlpUpdateAddinAccountMapping({required this.authRequirements});
+
+factory DlpUpdateAddinAccountMapping.fromJson(Map<String, dynamic> json) { return DlpUpdateAddinAccountMapping(
+  authRequirements: OneOf2.parse(json['auth_requirements'], fromA: (v) => DlpAddinAuthOrg.fromJson(v as Map<String, dynamic>), fromB: (v) => DlpAddinAuthNoAuth.fromJson(v as Map<String, dynamic>),),
+); }
+
+final DlpAddinAuth authRequirements;
+
+Map<String, dynamic> toJson() { return {
+  'auth_requirements': authRequirements.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_requirements'); } 
+DlpUpdateAddinAccountMapping copyWith({DlpAddinAuth? authRequirements}) { return DlpUpdateAddinAccountMapping(
+  authRequirements: authRequirements ?? this.authRequirements,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DlpUpdateAddinAccountMapping &&
+          authRequirements == other.authRequirements; } 
+@override int get hashCode { return authRequirements.hashCode; } 
+@override String toString() { return 'DlpUpdateAddinAccountMapping(authRequirements: $authRequirements)'; } 
+ }

@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_ip_address.dart';final class MagicLanDhcpServer {const MagicLanDhcpServer({this.dhcpPoolEnd, this.dhcpPoolStart, this.dnsServer, this.dnsServers, this.reservations, });
+
+factory MagicLanDhcpServer.fromJson(Map<String, dynamic> json) { return MagicLanDhcpServer(
+  dhcpPoolEnd: json['dhcp_pool_end'] != null ? MagicIpAddress.fromJson(json['dhcp_pool_end'] as String) : null,
+  dhcpPoolStart: json['dhcp_pool_start'] != null ? MagicIpAddress.fromJson(json['dhcp_pool_start'] as String) : null,
+  dnsServer: json['dns_server'] != null ? MagicIpAddress.fromJson(json['dns_server'] as String) : null,
+  dnsServers: (json['dns_servers'] as List<dynamic>?)?.map((e) => MagicIpAddress.fromJson(e as String)).toList(),
+  reservations: (json['reservations'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+); }
+
+/// A valid IPv4 address.
+final MagicIpAddress? dhcpPoolEnd;
+
+/// A valid IPv4 address.
+final MagicIpAddress? dhcpPoolStart;
+
+/// A valid IPv4 address.
+final MagicIpAddress? dnsServer;
+
+final List<MagicIpAddress>? dnsServers;
+
+/// Mapping of MAC addresses to IP addresses
+final Map<String,String>? reservations;
+
+Map<String, dynamic> toJson() { return {
+  if (dhcpPoolEnd != null) 'dhcp_pool_end': dhcpPoolEnd?.toJson(),
+  if (dhcpPoolStart != null) 'dhcp_pool_start': dhcpPoolStart?.toJson(),
+  if (dnsServer != null) 'dns_server': dnsServer?.toJson(),
+  if (dnsServers != null) 'dns_servers': dnsServers?.map((e) => e.toJson()).toList(),
+  'reservations': ?reservations,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicLanDhcpServer copyWith({MagicIpAddress Function()? dhcpPoolEnd, MagicIpAddress Function()? dhcpPoolStart, MagicIpAddress Function()? dnsServer, List<MagicIpAddress> Function()? dnsServers, Map<String, String> Function()? reservations, }) { return MagicLanDhcpServer(
+  dhcpPoolEnd: dhcpPoolEnd != null ? dhcpPoolEnd() : this.dhcpPoolEnd,
+  dhcpPoolStart: dhcpPoolStart != null ? dhcpPoolStart() : this.dhcpPoolStart,
+  dnsServer: dnsServer != null ? dnsServer() : this.dnsServer,
+  dnsServers: dnsServers != null ? dnsServers() : this.dnsServers,
+  reservations: reservations != null ? reservations() : this.reservations,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicLanDhcpServer &&
+          dhcpPoolEnd == other.dhcpPoolEnd &&
+          dhcpPoolStart == other.dhcpPoolStart &&
+          dnsServer == other.dnsServer &&
+          listEquals(dnsServers, other.dnsServers) &&
+          reservations == other.reservations; } 
+@override int get hashCode { return Object.hash(dhcpPoolEnd, dhcpPoolStart, dnsServer, Object.hashAll(dnsServers ?? const []), reservations); } 
+@override String toString() { return 'MagicLanDhcpServer(dhcpPoolEnd: $dhcpPoolEnd, dhcpPoolStart: $dhcpPoolStart, dnsServer: $dnsServer, dnsServers: $dnsServers, reservations: $reservations)'; } 
+ }

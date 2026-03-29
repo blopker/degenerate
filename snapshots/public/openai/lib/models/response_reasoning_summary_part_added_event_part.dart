@@ -1,0 +1,56 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the summary part. Always `summary_text`.
+final class ResponseReasoningSummaryPartAddedEventPartType {const ResponseReasoningSummaryPartAddedEventPartType._(this.value);
+
+factory ResponseReasoningSummaryPartAddedEventPartType.fromJson(String json) { return switch (json) {
+  'summary_text' => summaryText,
+  _ => ResponseReasoningSummaryPartAddedEventPartType._(json),
+}; }
+
+static const ResponseReasoningSummaryPartAddedEventPartType summaryText = ResponseReasoningSummaryPartAddedEventPartType._('summary_text');
+
+static const List<ResponseReasoningSummaryPartAddedEventPartType> values = [summaryText];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponseReasoningSummaryPartAddedEventPartType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponseReasoningSummaryPartAddedEventPartType($value)'; } 
+ }
+/// The summary part that was added.
+/// 
+final class ResponseReasoningSummaryPartAddedEventPart {const ResponseReasoningSummaryPartAddedEventPart({required this.type, required this.text, });
+
+factory ResponseReasoningSummaryPartAddedEventPart.fromJson(Map<String, dynamic> json) { return ResponseReasoningSummaryPartAddedEventPart(
+  type: ResponseReasoningSummaryPartAddedEventPartType.fromJson(json['type'] as String),
+  text: json['text'] as String,
+); }
+
+/// The type of the summary part. Always `summary_text`.
+final ResponseReasoningSummaryPartAddedEventPartType type;
+
+/// The text of the summary part.
+final String text;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'text': text,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('text') && json['text'] is String; } 
+ResponseReasoningSummaryPartAddedEventPart copyWith({ResponseReasoningSummaryPartAddedEventPartType? type, String? text, }) { return ResponseReasoningSummaryPartAddedEventPart(
+  type: type ?? this.type,
+  text: text ?? this.text,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseReasoningSummaryPartAddedEventPart &&
+          type == other.type &&
+          text == other.text; } 
+@override int get hashCode { return Object.hash(type, text); } 
+@override String toString() { return 'ResponseReasoningSummaryPartAddedEventPart(type: $type, text: $text)'; } 
+ }

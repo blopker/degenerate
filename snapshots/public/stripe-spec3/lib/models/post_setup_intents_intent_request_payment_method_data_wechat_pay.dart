@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentRequestPaymentMethodDataWechatPay {const PostSetupIntentsIntentRequestPaymentMethodDataWechatPay();
+
+factory PostSetupIntentsIntentRequestPaymentMethodDataWechatPay.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentRequestPaymentMethodDataWechatPay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsIntentRequestPaymentMethodDataWechatPay copyWith() { return PostSetupIntentsIntentRequestPaymentMethodDataWechatPay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostSetupIntentsIntentRequestPaymentMethodDataWechatPay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostSetupIntentsIntentRequestPaymentMethodDataWechatPay()'; } 
+ }

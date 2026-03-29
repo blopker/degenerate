@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'wor_list_workflows_response_errors.dart';import 'wor_list_workflows_response_messages.dart';import 'wor_list_workflows_response_result.dart';import 'wor_list_workflows_response_result_info.dart';final class WorListWorkflowsResponse {const WorListWorkflowsResponse({required this.errors, required this.messages, required this.result, this.resultInfo, required this.success, });
+
+factory WorListWorkflowsResponse.fromJson(Map<String, dynamic> json) { return WorListWorkflowsResponse(
+  errors: (json['errors'] as List<dynamic>).map((e) => WorListWorkflowsResponseErrors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => WorListWorkflowsResponseMessages.fromJson(e as Map<String, dynamic>)).toList(),
+  result: (json['result'] as List<dynamic>).map((e) => WorListWorkflowsResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  resultInfo: json['result_info'] != null ? WorListWorkflowsResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  success: json['success'] as bool,
+); }
+
+final List<WorListWorkflowsResponseErrors> errors;
+
+final List<WorListWorkflowsResponseMessages> messages;
+
+final List<WorListWorkflowsResponseResult> result;
+
+final WorListWorkflowsResponseResultInfo? resultInfo;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'result': result.map((e) => e.toJson()).toList(),
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+WorListWorkflowsResponse copyWith({List<WorListWorkflowsResponseErrors>? errors, List<WorListWorkflowsResponseMessages>? messages, List<WorListWorkflowsResponseResult>? result, WorListWorkflowsResponseResultInfo Function()? resultInfo, bool? success, }) { return WorListWorkflowsResponse(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  result: result ?? this.result,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorListWorkflowsResponse &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          listEquals(result, other.result) &&
+          resultInfo == other.resultInfo &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), Object.hashAll(result), resultInfo, success); } 
+@override String toString() { return 'WorListWorkflowsResponse(errors: $errors, messages: $messages, result: $result, resultInfo: $resultInfo, success: $success)'; } 
+ }

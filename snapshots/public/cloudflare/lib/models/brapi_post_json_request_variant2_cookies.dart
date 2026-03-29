@@ -1,0 +1,183 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class BrapiPostJsonRequestVariant2CookiesPriority {const BrapiPostJsonRequestVariant2CookiesPriority._(this.value);
+
+factory BrapiPostJsonRequestVariant2CookiesPriority.fromJson(String json) { return switch (json) {
+  'Low' => low,
+  'Medium' => medium,
+  'High' => high,
+  _ => BrapiPostJsonRequestVariant2CookiesPriority._(json),
+}; }
+
+static const BrapiPostJsonRequestVariant2CookiesPriority low = BrapiPostJsonRequestVariant2CookiesPriority._('Low');
+
+static const BrapiPostJsonRequestVariant2CookiesPriority medium = BrapiPostJsonRequestVariant2CookiesPriority._('Medium');
+
+static const BrapiPostJsonRequestVariant2CookiesPriority high = BrapiPostJsonRequestVariant2CookiesPriority._('High');
+
+static const List<BrapiPostJsonRequestVariant2CookiesPriority> values = [low, medium, high];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BrapiPostJsonRequestVariant2CookiesPriority && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BrapiPostJsonRequestVariant2CookiesPriority($value)'; } 
+ }
+final class BrapiPostJsonRequestVariant2CookiesSameSite {const BrapiPostJsonRequestVariant2CookiesSameSite._(this.value);
+
+factory BrapiPostJsonRequestVariant2CookiesSameSite.fromJson(String json) { return switch (json) {
+  'Strict' => strict,
+  'Lax' => lax,
+  'None' => none,
+  _ => BrapiPostJsonRequestVariant2CookiesSameSite._(json),
+}; }
+
+static const BrapiPostJsonRequestVariant2CookiesSameSite strict = BrapiPostJsonRequestVariant2CookiesSameSite._('Strict');
+
+static const BrapiPostJsonRequestVariant2CookiesSameSite lax = BrapiPostJsonRequestVariant2CookiesSameSite._('Lax');
+
+static const BrapiPostJsonRequestVariant2CookiesSameSite none = BrapiPostJsonRequestVariant2CookiesSameSite._('None');
+
+static const List<BrapiPostJsonRequestVariant2CookiesSameSite> values = [strict, lax, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BrapiPostJsonRequestVariant2CookiesSameSite && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BrapiPostJsonRequestVariant2CookiesSameSite($value)'; } 
+ }
+final class BrapiPostJsonRequestVariant2CookiesSourceScheme {const BrapiPostJsonRequestVariant2CookiesSourceScheme._(this.value);
+
+factory BrapiPostJsonRequestVariant2CookiesSourceScheme.fromJson(String json) { return switch (json) {
+  'Unset' => unset,
+  'NonSecure' => nonSecure,
+  'Secure' => secure,
+  _ => BrapiPostJsonRequestVariant2CookiesSourceScheme._(json),
+}; }
+
+static const BrapiPostJsonRequestVariant2CookiesSourceScheme unset = BrapiPostJsonRequestVariant2CookiesSourceScheme._('Unset');
+
+static const BrapiPostJsonRequestVariant2CookiesSourceScheme nonSecure = BrapiPostJsonRequestVariant2CookiesSourceScheme._('NonSecure');
+
+static const BrapiPostJsonRequestVariant2CookiesSourceScheme secure = BrapiPostJsonRequestVariant2CookiesSourceScheme._('Secure');
+
+static const List<BrapiPostJsonRequestVariant2CookiesSourceScheme> values = [unset, nonSecure, secure];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BrapiPostJsonRequestVariant2CookiesSourceScheme && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BrapiPostJsonRequestVariant2CookiesSourceScheme($value)'; } 
+ }
+final class BrapiPostJsonRequestVariant2Cookies {const BrapiPostJsonRequestVariant2Cookies({this.domain, this.expires, this.httpOnly, required this.name, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, required this.value, });
+
+factory BrapiPostJsonRequestVariant2Cookies.fromJson(Map<String, dynamic> json) { return BrapiPostJsonRequestVariant2Cookies(
+  domain: json['domain'] as String?,
+  expires: json['expires'] != null ? (json['expires'] as num).toDouble() : null,
+  httpOnly: json['httpOnly'] as bool?,
+  name: json['name'] as String,
+  partitionKey: json['partitionKey'] as String?,
+  path: json['path'] as String?,
+  priority: json['priority'] != null ? BrapiPostJsonRequestVariant2CookiesPriority.fromJson(json['priority'] as String) : null,
+  sameParty: json['sameParty'] as bool?,
+  sameSite: json['sameSite'] != null ? BrapiPostJsonRequestVariant2CookiesSameSite.fromJson(json['sameSite'] as String) : null,
+  secure: json['secure'] as bool?,
+  sourcePort: json['sourcePort'] != null ? (json['sourcePort'] as num).toDouble() : null,
+  sourceScheme: json['sourceScheme'] != null ? BrapiPostJsonRequestVariant2CookiesSourceScheme.fromJson(json['sourceScheme'] as String) : null,
+  url: json['url'] as String?,
+  value: json['value'] as String,
+); }
+
+final String? domain;
+
+final double? expires;
+
+final bool? httpOnly;
+
+final String name;
+
+final String? partitionKey;
+
+final String? path;
+
+final BrapiPostJsonRequestVariant2CookiesPriority? priority;
+
+final bool? sameParty;
+
+final BrapiPostJsonRequestVariant2CookiesSameSite? sameSite;
+
+final bool? secure;
+
+final double? sourcePort;
+
+final BrapiPostJsonRequestVariant2CookiesSourceScheme? sourceScheme;
+
+final String? url;
+
+final String value;
+
+Map<String, dynamic> toJson() { return {
+  'domain': ?domain,
+  'expires': ?expires,
+  'httpOnly': ?httpOnly,
+  'name': name,
+  'partitionKey': ?partitionKey,
+  'path': ?path,
+  if (priority != null) 'priority': priority?.toJson(),
+  'sameParty': ?sameParty,
+  if (sameSite != null) 'sameSite': sameSite?.toJson(),
+  'secure': ?secure,
+  'sourcePort': ?sourcePort,
+  if (sourceScheme != null) 'sourceScheme': sourceScheme?.toJson(),
+  'url': ?url,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('value') && json['value'] is String; } 
+BrapiPostJsonRequestVariant2Cookies copyWith({String Function()? domain, double Function()? expires, bool Function()? httpOnly, String? name, String Function()? partitionKey, String Function()? path, BrapiPostJsonRequestVariant2CookiesPriority Function()? priority, bool Function()? sameParty, BrapiPostJsonRequestVariant2CookiesSameSite Function()? sameSite, bool Function()? secure, double Function()? sourcePort, BrapiPostJsonRequestVariant2CookiesSourceScheme Function()? sourceScheme, String Function()? url, String? value, }) { return BrapiPostJsonRequestVariant2Cookies(
+  domain: domain != null ? domain() : this.domain,
+  expires: expires != null ? expires() : this.expires,
+  httpOnly: httpOnly != null ? httpOnly() : this.httpOnly,
+  name: name ?? this.name,
+  partitionKey: partitionKey != null ? partitionKey() : this.partitionKey,
+  path: path != null ? path() : this.path,
+  priority: priority != null ? priority() : this.priority,
+  sameParty: sameParty != null ? sameParty() : this.sameParty,
+  sameSite: sameSite != null ? sameSite() : this.sameSite,
+  secure: secure != null ? secure() : this.secure,
+  sourcePort: sourcePort != null ? sourcePort() : this.sourcePort,
+  sourceScheme: sourceScheme != null ? sourceScheme() : this.sourceScheme,
+  url: url != null ? url() : this.url,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BrapiPostJsonRequestVariant2Cookies &&
+          domain == other.domain &&
+          expires == other.expires &&
+          httpOnly == other.httpOnly &&
+          name == other.name &&
+          partitionKey == other.partitionKey &&
+          path == other.path &&
+          priority == other.priority &&
+          sameParty == other.sameParty &&
+          sameSite == other.sameSite &&
+          secure == other.secure &&
+          sourcePort == other.sourcePort &&
+          sourceScheme == other.sourceScheme &&
+          url == other.url &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(domain, expires, httpOnly, name, partitionKey, path, priority, sameParty, sameSite, secure, sourcePort, sourceScheme, url, value); } 
+@override String toString() { return 'BrapiPostJsonRequestVariant2Cookies(domain: $domain, expires: $expires, httpOnly: $httpOnly, name: $name, partitionKey: $partitionKey, path: $path, priority: $priority, sameParty: $sameParty, sameSite: $sameSite, secure: $secure, sourcePort: $sourcePort, sourceScheme: $sourceScheme, url: $url, value: $value)'; } 
+ }

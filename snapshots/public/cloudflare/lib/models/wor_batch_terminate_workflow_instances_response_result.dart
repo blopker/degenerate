@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorBatchTerminateWorkflowInstancesResponseResultStatus {const WorBatchTerminateWorkflowInstancesResponseResultStatus._(this.value);
+
+factory WorBatchTerminateWorkflowInstancesResponseResultStatus.fromJson(String json) { return switch (json) {
+  'ok' => ok,
+  'already_running' => alreadyRunning,
+  _ => WorBatchTerminateWorkflowInstancesResponseResultStatus._(json),
+}; }
+
+static const WorBatchTerminateWorkflowInstancesResponseResultStatus ok = WorBatchTerminateWorkflowInstancesResponseResultStatus._('ok');
+
+static const WorBatchTerminateWorkflowInstancesResponseResultStatus alreadyRunning = WorBatchTerminateWorkflowInstancesResponseResultStatus._('already_running');
+
+static const List<WorBatchTerminateWorkflowInstancesResponseResultStatus> values = [ok, alreadyRunning];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WorBatchTerminateWorkflowInstancesResponseResultStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WorBatchTerminateWorkflowInstancesResponseResultStatus($value)'; } 
+ }
+final class WorBatchTerminateWorkflowInstancesResponseResult {const WorBatchTerminateWorkflowInstancesResponseResult({required this.instancesTerminated, required this.status, });
+
+factory WorBatchTerminateWorkflowInstancesResponseResult.fromJson(Map<String, dynamic> json) { return WorBatchTerminateWorkflowInstancesResponseResult(
+  instancesTerminated: (json['instancesTerminated'] as num).toDouble(),
+  status: WorBatchTerminateWorkflowInstancesResponseResultStatus.fromJson(json['status'] as String),
+); }
+
+final double instancesTerminated;
+
+final WorBatchTerminateWorkflowInstancesResponseResultStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'instancesTerminated': instancesTerminated,
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('instancesTerminated') && json['instancesTerminated'] is num &&
+      json.containsKey('status'); } 
+WorBatchTerminateWorkflowInstancesResponseResult copyWith({double? instancesTerminated, WorBatchTerminateWorkflowInstancesResponseResultStatus? status, }) { return WorBatchTerminateWorkflowInstancesResponseResult(
+  instancesTerminated: instancesTerminated ?? this.instancesTerminated,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorBatchTerminateWorkflowInstancesResponseResult &&
+          instancesTerminated == other.instancesTerminated &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(instancesTerminated, status); } 
+@override String toString() { return 'WorBatchTerminateWorkflowInstancesResponseResult(instancesTerminated: $instancesTerminated, status: $status)'; } 
+ }

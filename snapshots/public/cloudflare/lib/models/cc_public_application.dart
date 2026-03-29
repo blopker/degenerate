@@ -1,0 +1,144 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'cc_application_health_instances.dart';import 'cc_application_network.dart';import 'cc_custom_resource_allocation.dart';import 'cc_durable_objects_configuration_namespace_id.dart';import 'cc_instance_type.dart';import 'cc_observability.dart';import 'cc_public_instance_type.dart';/// An Application ID represents an identifier of an application
+extension type const CcApplicationId(String value) {
+factory CcApplicationId.fromJson(String json) => CcApplicationId(json);
+
+String toJson() => value;
+
+}
+/// Grace period for active instances to stay alive before becoming eligible for shutdown signal due to a rollout, in seconds.
+/// Defaults to 0.
+/// 
+extension type const CcApplicationRolloutActiveGracePeriod(int value) {
+factory CcApplicationRolloutActiveGracePeriod.fromJson(num json) => CcApplicationRolloutActiveGracePeriod(json.toInt());
+
+num toJson() => value;
+
+}
+/// UTC timestamp string in ISO 8601 format
+extension type const CcIso8601Timestamp(String value) {
+factory CcIso8601Timestamp.fromJson(String json) => CcIso8601Timestamp(json);
+
+String toJson() => value;
+
+}
+/// Image url
+extension type const CcImage(String value) {
+factory CcImage.fromJson(String json) => CcImage(json);
+
+String toJson() => value;
+
+}
+/// Provides the current state and configuration of a Containers application.
+final class CcPublicApplication {const CcPublicApplication({required this.createdAt, this.durableObject, required this.health, required this.id, required this.image, required this.instanceType, required this.maxInstances, required this.name, this.network, this.observability, this.rolloutActiveGracePeriod, required this.updatedAt, required this.version, });
+
+factory CcPublicApplication.fromJson(Map<String, dynamic> json) { return CcPublicApplication(
+  createdAt: CcIso8601Timestamp.fromJson(json['created_at'] as String),
+  durableObject: json['durable_object'] != null ? CcDurableObjectsConfigurationNamespaceId.fromJson(json['durable_object'] as Map<String, dynamic>) : null,
+  health: CcApplicationHealthInstances.fromJson(json['health'] as Map<String, dynamic>),
+  id: CcApplicationId.fromJson(json['id'] as String),
+  image: CcImage.fromJson(json['image'] as String),
+  instanceType: OneOf2.parse(json['instance_type'], fromA: (v) => CcCustomResourceAllocation.fromJson(v as Map<String, dynamic>), fromB: (v) => CcInstanceType.fromJson(v as Map<String, dynamic>),),
+  maxInstances: (json['max_instances'] as num).toInt(),
+  name: json['name'] as String,
+  network: json['network'] != null ? CcApplicationNetwork.fromJson(json['network'] as Map<String, dynamic>) : null,
+  observability: json['observability'] != null ? CcObservability.fromJson(json['observability'] as Map<String, dynamic>) : null,
+  rolloutActiveGracePeriod: json['rollout_active_grace_period'] != null ? CcApplicationRolloutActiveGracePeriod.fromJson(json['rollout_active_grace_period'] as num) : null,
+  updatedAt: CcIso8601Timestamp.fromJson(json['updated_at'] as String),
+  version: (json['version'] as num).toInt(),
+); }
+
+/// UTC timestamp string in ISO 8601 format
+final CcIso8601Timestamp createdAt;
+
+final CcDurableObjectsConfigurationNamespaceId? durableObject;
+
+final CcApplicationHealthInstances health;
+
+/// An Application ID represents an identifier of an application
+final CcApplicationId id;
+
+/// Image url
+final CcImage image;
+
+final CcPublicInstanceType instanceType;
+
+/// Maximum number of instances that the application will allow.
+final int maxInstances;
+
+/// The name of the application.
+final String name;
+
+final CcApplicationNetwork? network;
+
+final CcObservability? observability;
+
+/// Grace period for active instances to stay alive before becoming eligible for shutdown signal due to a rollout, in seconds.
+/// Defaults to 0.
+/// 
+final CcApplicationRolloutActiveGracePeriod? rolloutActiveGracePeriod;
+
+/// UTC timestamp string in ISO 8601 format
+final CcIso8601Timestamp updatedAt;
+
+/// The current version number of this application. This increments with application rollouts.
+final int version;
+
+Map<String, dynamic> toJson() { return {
+  'created_at': createdAt.toJson(),
+  if (durableObject != null) 'durable_object': durableObject?.toJson(),
+  'health': health.toJson(),
+  'id': id.toJson(),
+  'image': image.toJson(),
+  'instance_type': instanceType.toJson(),
+  'max_instances': maxInstances,
+  'name': name,
+  if (network != null) 'network': network?.toJson(),
+  if (observability != null) 'observability': observability?.toJson(),
+  if (rolloutActiveGracePeriod != null) 'rollout_active_grace_period': rolloutActiveGracePeriod?.toJson(),
+  'updated_at': updatedAt.toJson(),
+  'version': version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created_at') &&
+      json.containsKey('health') &&
+      json.containsKey('id') &&
+      json.containsKey('image') &&
+      json.containsKey('instance_type') &&
+      json.containsKey('max_instances') && json['max_instances'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('updated_at') &&
+      json.containsKey('version') && json['version'] is num; } 
+CcPublicApplication copyWith({CcIso8601Timestamp? createdAt, CcDurableObjectsConfigurationNamespaceId Function()? durableObject, CcApplicationHealthInstances? health, CcApplicationId? id, CcImage? image, CcPublicInstanceType? instanceType, int? maxInstances, String? name, CcApplicationNetwork Function()? network, CcObservability Function()? observability, CcApplicationRolloutActiveGracePeriod Function()? rolloutActiveGracePeriod, CcIso8601Timestamp? updatedAt, int? version, }) { return CcPublicApplication(
+  createdAt: createdAt ?? this.createdAt,
+  durableObject: durableObject != null ? durableObject() : this.durableObject,
+  health: health ?? this.health,
+  id: id ?? this.id,
+  image: image ?? this.image,
+  instanceType: instanceType ?? this.instanceType,
+  maxInstances: maxInstances ?? this.maxInstances,
+  name: name ?? this.name,
+  network: network != null ? network() : this.network,
+  observability: observability != null ? observability() : this.observability,
+  rolloutActiveGracePeriod: rolloutActiveGracePeriod != null ? rolloutActiveGracePeriod() : this.rolloutActiveGracePeriod,
+  updatedAt: updatedAt ?? this.updatedAt,
+  version: version ?? this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CcPublicApplication &&
+          createdAt == other.createdAt &&
+          durableObject == other.durableObject &&
+          health == other.health &&
+          id == other.id &&
+          image == other.image &&
+          instanceType == other.instanceType &&
+          maxInstances == other.maxInstances &&
+          name == other.name &&
+          network == other.network &&
+          observability == other.observability &&
+          rolloutActiveGracePeriod == other.rolloutActiveGracePeriod &&
+          updatedAt == other.updatedAt &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(createdAt, durableObject, health, id, image, instanceType, maxInstances, name, network, observability, rolloutActiveGracePeriod, updatedAt, version); } 
+@override String toString() { return 'CcPublicApplication(createdAt: $createdAt, durableObject: $durableObject, health: $health, id: $id, image: $image, instanceType: $instanceType, maxInstances: $maxInstances, name: $name, network: $network, observability: $observability, rolloutActiveGracePeriod: $rolloutActiveGracePeriod, updatedAt: $updatedAt, version: $version)'; } 
+ }

@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetCtTimeseriesGroupResponseResultSerie0Variant7 {const RadarGetCtTimeseriesGroupResponseResultSerie0Variant7({required this.dsa, required this.ecdsa, required this.rsa, });
+
+factory RadarGetCtTimeseriesGroupResponseResultSerie0Variant7.fromJson(Map<String, dynamic> json) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant7(
+  dsa: (json['DSA'] as List<dynamic>).map((e) => e as String).toList(),
+  ecdsa: (json['ECDSA'] as List<dynamic>).map((e) => e as String).toList(),
+  rsa: (json['RSA'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final List<String> dsa;
+
+final List<String> ecdsa;
+
+final List<String> rsa;
+
+Map<String, dynamic> toJson() { return {
+  'DSA': dsa,
+  'ECDSA': ecdsa,
+  'RSA': rsa,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('DSA') &&
+      json.containsKey('ECDSA') &&
+      json.containsKey('RSA'); } 
+RadarGetCtTimeseriesGroupResponseResultSerie0Variant7 copyWith({List<String>? dsa, List<String>? ecdsa, List<String>? rsa, }) { return RadarGetCtTimeseriesGroupResponseResultSerie0Variant7(
+  dsa: dsa ?? this.dsa,
+  ecdsa: ecdsa ?? this.ecdsa,
+  rsa: rsa ?? this.rsa,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetCtTimeseriesGroupResponseResultSerie0Variant7 &&
+          listEquals(dsa, other.dsa) &&
+          listEquals(ecdsa, other.ecdsa) &&
+          listEquals(rsa, other.rsa); } 
+@override int get hashCode { return Object.hash(Object.hashAll(dsa), Object.hashAll(ecdsa), Object.hashAll(rsa)); } 
+@override String toString() { return 'RadarGetCtTimeseriesGroupResponseResultSerie0Variant7(dsa: $dsa, ecdsa: $ecdsa, rsa: $rsa)'; } 
+ }

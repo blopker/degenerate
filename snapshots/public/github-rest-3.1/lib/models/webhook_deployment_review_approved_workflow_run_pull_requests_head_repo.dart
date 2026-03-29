@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo {const WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo({required this.id, required this.name, required this.url, });
+
+factory WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo.fromJson(Map<String, dynamic> json) { return WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo(
+  id: (json['id'] as num).toInt(),
+  name: json['name'] as String,
+  url: Uri.parse(json['url'] as String),
+); }
+
+final int id;
+
+final String name;
+
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'name': name,
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo copyWith({int? id, String? name, Uri? url, }) { return WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo(
+  id: id ?? this.id,
+  name: name ?? this.name,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo &&
+          id == other.id &&
+          name == other.name &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(id, name, url); } 
+@override String toString() { return 'WebhookDeploymentReviewApprovedWorkflowRunPullRequestsHeadRepo(id: $id, name: $name, url: $url)'; } 
+ }

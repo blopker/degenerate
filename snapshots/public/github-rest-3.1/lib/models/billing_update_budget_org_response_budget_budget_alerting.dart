@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class BillingUpdateBudgetOrgResponseBudgetBudgetAlerting {const BillingUpdateBudgetOrgResponseBudgetBudgetAlerting({required this.willAlert, required this.alertRecipients, });
+
+factory BillingUpdateBudgetOrgResponseBudgetBudgetAlerting.fromJson(Map<String, dynamic> json) { return BillingUpdateBudgetOrgResponseBudgetBudgetAlerting(
+  willAlert: json['will_alert'] as bool,
+  alertRecipients: (json['alert_recipients'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// Whether alerts are enabled for this budget
+final bool willAlert;
+
+/// Array of user login names who will receive alerts
+final List<String> alertRecipients;
+
+Map<String, dynamic> toJson() { return {
+  'will_alert': willAlert,
+  'alert_recipients': alertRecipients,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('will_alert') && json['will_alert'] is bool &&
+      json.containsKey('alert_recipients'); } 
+BillingUpdateBudgetOrgResponseBudgetBudgetAlerting copyWith({bool? willAlert, List<String>? alertRecipients, }) { return BillingUpdateBudgetOrgResponseBudgetBudgetAlerting(
+  willAlert: willAlert ?? this.willAlert,
+  alertRecipients: alertRecipients ?? this.alertRecipients,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingUpdateBudgetOrgResponseBudgetBudgetAlerting &&
+          willAlert == other.willAlert &&
+          listEquals(alertRecipients, other.alertRecipients); } 
+@override int get hashCode { return Object.hash(willAlert, Object.hashAll(alertRecipients)); } 
+@override String toString() { return 'BillingUpdateBudgetOrgResponseBudgetBudgetAlerting(willAlert: $willAlert, alertRecipients: $alertRecipients)'; } 
+ }

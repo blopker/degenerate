@@ -1,0 +1,119 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace {const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._(this.value);
+
+factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace.fromJson(String json) { return switch (json) {
+  'african_american' => africanAmerican,
+  'american_indian_or_alaska_native' => americanIndianOrAlaskaNative,
+  'asian' => asian,
+  'asian_indian' => asianIndian,
+  'black_or_african_american' => blackOrAfricanAmerican,
+  'chinese' => chinese,
+  'ethiopian' => ethiopian,
+  'filipino' => filipino,
+  'guamanian_or_chamorro' => guamanianOrChamorro,
+  'haitian' => haitian,
+  'jamaican' => jamaican,
+  'japanese' => japanese,
+  'korean' => korean,
+  'native_hawaiian' => nativeHawaiian,
+  'native_hawaiian_or_other_pacific_islander' => nativeHawaiianOrOtherPacificIslander,
+  'nigerian' => nigerian,
+  'other_asian' => otherAsian,
+  'other_black_or_african_american' => otherBlackOrAfricanAmerican,
+  'other_pacific_islander' => otherPacificIslander,
+  'prefer_not_to_answer' => preferNotToAnswer,
+  'samoan' => samoan,
+  'somali' => somali,
+  'vietnamese' => vietnamese,
+  'white' => white,
+  _ => PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._(json),
+}; }
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace africanAmerican = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('african_american');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace americanIndianOrAlaskaNative = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('american_indian_or_alaska_native');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace asian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('asian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace asianIndian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('asian_indian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace blackOrAfricanAmerican = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('black_or_african_american');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace chinese = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('chinese');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace ethiopian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('ethiopian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace filipino = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('filipino');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace guamanianOrChamorro = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('guamanian_or_chamorro');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace haitian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('haitian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace jamaican = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('jamaican');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace japanese = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('japanese');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace korean = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('korean');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace nativeHawaiian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('native_hawaiian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace nativeHawaiianOrOtherPacificIslander = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('native_hawaiian_or_other_pacific_islander');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace nigerian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('nigerian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace otherAsian = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('other_asian');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace otherBlackOrAfricanAmerican = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('other_black_or_african_american');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace otherPacificIslander = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('other_pacific_islander');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace preferNotToAnswer = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('prefer_not_to_answer');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace samoan = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('samoan');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace somali = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('somali');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace vietnamese = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('vietnamese');
+
+static const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace white = PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace._('white');
+
+static const List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace> values = [africanAmerican, americanIndianOrAlaskaNative, asian, asianIndian, blackOrAfricanAmerican, chinese, ethiopian, filipino, guamanianOrChamorro, haitian, jamaican, japanese, korean, nativeHawaiian, nativeHawaiianOrOtherPacificIslander, nigerian, otherAsian, otherBlackOrAfricanAmerican, otherPacificIslander, preferNotToAnswer, samoan, somali, vietnamese, white];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace($value)'; } 
+ }
+final class PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails {const PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails({this.race, this.raceOther, });
+
+factory PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails.fromJson(Map<String, dynamic> json) { return PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(
+  race: (json['race'] as List<dynamic>?)?.map((e) => PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace.fromJson(e as String)).toList(),
+  raceOther: json['race_other'] as String?,
+); }
+
+final List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace>? race;
+
+final String? raceOther;
+
+Map<String, dynamic> toJson() { return {
+  if (race != null) 'race': race?.map((e) => e.toJson()).toList(),
+  'race_other': ?raceOther,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails copyWith({List<PostAccountsAccountPersonsRequestUsCfpbDataRaceDetailsRace> Function()? race, String Function()? raceOther, }) { return PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(
+  race: race != null ? race() : this.race,
+  raceOther: raceOther != null ? raceOther() : this.raceOther,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails &&
+          listEquals(race, other.race) &&
+          raceOther == other.raceOther; } 
+@override int get hashCode { return Object.hash(Object.hashAll(race ?? const []), raceOther); } 
+@override String toString() { return 'PostAccountsAccountPersonsRequestUsCfpbDataRaceDetails(race: $race, raceOther: $raceOther)'; } 
+ }

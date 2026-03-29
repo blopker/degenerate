@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_subscription_schedules_request_phases_add_invoice_items_period_end.dart';import 'post_subscription_schedules_request_phases_add_invoice_items_period_start.dart';final class PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod {const PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod({required this.end, required this.start, });
+
+factory PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod(
+  end: PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),
+  start: PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriodStart.fromJson(json['start'] as Map<String, dynamic>),
+); }
+
+final PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriodEnd end;
+
+final PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriodStart start;
+
+Map<String, dynamic> toJson() { return {
+  'end': end.toJson(),
+  'start': start.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') &&
+      json.containsKey('start'); } 
+PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod copyWith({PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriodEnd? end, PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriodStart? start, }) { return PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod(
+  end: end ?? this.end,
+  start: start ?? this.start,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod &&
+          end == other.end &&
+          start == other.start; } 
+@override int get hashCode { return Object.hash(end, start); } 
+@override String toString() { return 'PostSubscriptionSchedulesRequestPhasesAddInvoiceItemsPeriod(end: $end, start: $start)'; } 
+ }

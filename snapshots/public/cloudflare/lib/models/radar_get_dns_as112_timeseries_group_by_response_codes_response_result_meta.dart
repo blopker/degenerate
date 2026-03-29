@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_dns_as112_timeseries_group_by_response_codes_response_result_meta_confidence_info.dart';import 'radar_get_dns_as112_timeseries_group_by_response_codes_response_result_meta_date_range.dart';import 'radar_get_dns_as112_timeseries_group_by_response_codes_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval {const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval fifteenMinutes = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval oneHour = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval oneDay = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval oneWeek = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval oneMonth = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization {const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._(this.value);
+
+factory RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization percentage = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization min0Max = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization minMax = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization rawValues = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization percentageChange = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization rollingAverage = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization overlappedPercentage = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization ratio = RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta {const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta(
+  aggInterval: RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval aggInterval;
+
+final RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta copyWith({RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaAggInterval? aggInterval, RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaNormalization? normalization, List<RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMetaUnits>? units, }) { return RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

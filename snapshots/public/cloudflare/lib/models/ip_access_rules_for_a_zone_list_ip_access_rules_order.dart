@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The field used to sort returned rules.
+final class IpAccessRulesForAZoneListIpAccessRulesOrder {const IpAccessRulesForAZoneListIpAccessRulesOrder._(this.value);
+
+factory IpAccessRulesForAZoneListIpAccessRulesOrder.fromJson(String json) { return switch (json) {
+  'configuration.target' => configurationTarget,
+  'configuration.value' => configurationValue,
+  'mode' => mode,
+  _ => IpAccessRulesForAZoneListIpAccessRulesOrder._(json),
+}; }
+
+static const IpAccessRulesForAZoneListIpAccessRulesOrder configurationTarget = IpAccessRulesForAZoneListIpAccessRulesOrder._('configuration.target');
+
+static const IpAccessRulesForAZoneListIpAccessRulesOrder configurationValue = IpAccessRulesForAZoneListIpAccessRulesOrder._('configuration.value');
+
+static const IpAccessRulesForAZoneListIpAccessRulesOrder mode = IpAccessRulesForAZoneListIpAccessRulesOrder._('mode');
+
+static const List<IpAccessRulesForAZoneListIpAccessRulesOrder> values = [configurationTarget, configurationValue, mode];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IpAccessRulesForAZoneListIpAccessRulesOrder && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IpAccessRulesForAZoneListIpAccessRulesOrder($value)'; } 
+ }

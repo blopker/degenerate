@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DeletedSkillResourceObject {const DeletedSkillResourceObject._(this.value);
+
+factory DeletedSkillResourceObject.fromJson(String json) { return switch (json) {
+  'skill.deleted' => skillDeleted,
+  _ => DeletedSkillResourceObject._(json),
+}; }
+
+static const DeletedSkillResourceObject skillDeleted = DeletedSkillResourceObject._('skill.deleted');
+
+static const List<DeletedSkillResourceObject> values = [skillDeleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DeletedSkillResourceObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DeletedSkillResourceObject($value)'; } 
+ }
+final class DeletedSkillResource {const DeletedSkillResource({this.object = DeletedSkillResourceObject.skillDeleted, required this.deleted, required this.id, });
+
+factory DeletedSkillResource.fromJson(Map<String, dynamic> json) { return DeletedSkillResource(
+  object: DeletedSkillResourceObject.fromJson(json['object'] as String),
+  deleted: json['deleted'] as bool,
+  id: json['id'] as String,
+); }
+
+final DeletedSkillResourceObject object;
+
+final bool deleted;
+
+final String id;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'deleted': deleted,
+  'id': id,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('deleted') && json['deleted'] is bool &&
+      json.containsKey('id') && json['id'] is String; } 
+DeletedSkillResource copyWith({DeletedSkillResourceObject? object, bool? deleted, String? id, }) { return DeletedSkillResource(
+  object: object ?? this.object,
+  deleted: deleted ?? this.deleted,
+  id: id ?? this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DeletedSkillResource &&
+          object == other.object &&
+          deleted == other.deleted &&
+          id == other.id; } 
+@override int get hashCode { return Object.hash(object, deleted, id); } 
+@override String toString() { return 'DeletedSkillResource(object: $object, deleted: $deleted, id: $id)'; } 
+ }

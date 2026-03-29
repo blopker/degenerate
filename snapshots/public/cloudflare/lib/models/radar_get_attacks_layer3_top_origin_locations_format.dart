@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetAttacksLayer3TopOriginLocationsFormat {const RadarGetAttacksLayer3TopOriginLocationsFormat._(this.value);
+
+factory RadarGetAttacksLayer3TopOriginLocationsFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetAttacksLayer3TopOriginLocationsFormat._(json),
+}; }
+
+static const RadarGetAttacksLayer3TopOriginLocationsFormat $json = RadarGetAttacksLayer3TopOriginLocationsFormat._('JSON');
+
+static const RadarGetAttacksLayer3TopOriginLocationsFormat csv = RadarGetAttacksLayer3TopOriginLocationsFormat._('CSV');
+
+static const List<RadarGetAttacksLayer3TopOriginLocationsFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TopOriginLocationsFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TopOriginLocationsFormat($value)'; } 
+ }

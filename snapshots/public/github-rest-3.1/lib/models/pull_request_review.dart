@@ -1,0 +1,109 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'author_association.dart';import 'pull_request_review_links.dart';import 'simple_user.dart';/// Pull Request Reviews are reviews on pull requests.
+final class PullRequestReview {const PullRequestReview({required this.id, required this.nodeId, required this.user, required this.body, required this.state, required this.htmlUrl, required this.pullRequestUrl, required this.links, this.submittedAt, required this.commitId, this.bodyHtml, this.bodyText, required this.authorAssociation, });
+
+factory PullRequestReview.fromJson(Map<String, dynamic> json) { return PullRequestReview(
+  id: (json['id'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  user: json['user'] != null ? SimpleUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  body: json['body'] as String,
+  state: json['state'] as String,
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  pullRequestUrl: Uri.parse(json['pull_request_url'] as String),
+  links: PullRequestReviewLinks.fromJson(json['_links'] as Map<String, dynamic>),
+  submittedAt: json['submitted_at'] != null ? DateTime.parse(json['submitted_at'] as String) : null,
+  commitId: json['commit_id'] as String?,
+  bodyHtml: json['body_html'] as String?,
+  bodyText: json['body_text'] as String?,
+  authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
+); }
+
+/// Unique identifier of the review
+final int id;
+
+final String nodeId;
+
+final SimpleUser? user;
+
+/// The text of the review.
+final String body;
+
+final String state;
+
+final Uri htmlUrl;
+
+final Uri pullRequestUrl;
+
+final PullRequestReviewLinks links;
+
+final DateTime? submittedAt;
+
+/// A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.
+final String? commitId;
+
+final String? bodyHtml;
+
+final String? bodyText;
+
+/// How the author is associated with the repository.
+final AuthorAssociation authorAssociation;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'node_id': nodeId,
+  if (user != null) 'user': user?.toJson(),
+  'body': body,
+  'state': state,
+  'html_url': htmlUrl.toString(),
+  'pull_request_url': pullRequestUrl.toString(),
+  '_links': links.toJson(),
+  if (submittedAt != null) 'submitted_at': submittedAt?.toIso8601String(),
+  'commit_id': ?commitId,
+  'body_html': ?bodyHtml,
+  'body_text': ?bodyText,
+  'author_association': authorAssociation.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('user') &&
+      json.containsKey('body') && json['body'] is String &&
+      json.containsKey('state') && json['state'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('pull_request_url') && json['pull_request_url'] is String &&
+      json.containsKey('_links') &&
+      json.containsKey('commit_id') && json['commit_id'] is String &&
+      json.containsKey('author_association'); } 
+PullRequestReview copyWith({int? id, String? nodeId, SimpleUser? Function()? user, String? body, String? state, Uri? htmlUrl, Uri? pullRequestUrl, PullRequestReviewLinks? links, DateTime Function()? submittedAt, String? Function()? commitId, String Function()? bodyHtml, String Function()? bodyText, AuthorAssociation? authorAssociation, }) { return PullRequestReview(
+  id: id ?? this.id,
+  nodeId: nodeId ?? this.nodeId,
+  user: user != null ? user() : this.user,
+  body: body ?? this.body,
+  state: state ?? this.state,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  pullRequestUrl: pullRequestUrl ?? this.pullRequestUrl,
+  links: links ?? this.links,
+  submittedAt: submittedAt != null ? submittedAt() : this.submittedAt,
+  commitId: commitId != null ? commitId() : this.commitId,
+  bodyHtml: bodyHtml != null ? bodyHtml() : this.bodyHtml,
+  bodyText: bodyText != null ? bodyText() : this.bodyText,
+  authorAssociation: authorAssociation ?? this.authorAssociation,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullRequestReview &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          user == other.user &&
+          body == other.body &&
+          state == other.state &&
+          htmlUrl == other.htmlUrl &&
+          pullRequestUrl == other.pullRequestUrl &&
+          links == other.links &&
+          submittedAt == other.submittedAt &&
+          commitId == other.commitId &&
+          bodyHtml == other.bodyHtml &&
+          bodyText == other.bodyText &&
+          authorAssociation == other.authorAssociation; } 
+@override int get hashCode { return Object.hash(id, nodeId, user, body, state, htmlUrl, pullRequestUrl, links, submittedAt, commitId, bodyHtml, bodyText, authorAssociation); } 
+@override String toString() { return 'PullRequestReview(id: $id, nodeId: $nodeId, user: $user, body: $body, state: $state, htmlUrl: $htmlUrl, pullRequestUrl: $pullRequestUrl, links: $links, submittedAt: $submittedAt, commitId: $commitId, bodyHtml: $bodyHtml, bodyText: $bodyText, authorAssociation: $authorAssociation)'; } 
+ }

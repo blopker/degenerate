@@ -1,0 +1,82 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_auto_install.dart';import 'rum_rule.dart';import 'rum_ruleset.dart';import 'rum_timestamp.dart';/// The Web Analytics site identifier.
+extension type const RumSiteTag(String value) {
+factory RumSiteTag.fromJson(String json) => RumSiteTag(json);
+
+String toJson() => value;
+
+}
+/// The Web Analytics site token.
+extension type const RumSiteToken(String value) {
+factory RumSiteToken.fromJson(String json) => RumSiteToken(json);
+
+String toJson() => value;
+
+}
+/// Encoded JavaScript snippet.
+extension type const RumSnippet(String value) {
+factory RumSnippet.fromJson(String json) => RumSnippet(json);
+
+String toJson() => value;
+
+}
+final class RumSite {const RumSite({this.autoInstall, this.created, this.rules, this.ruleset, this.siteTag, this.siteToken, this.snippet, });
+
+factory RumSite.fromJson(Map<String, dynamic> json) { return RumSite(
+  autoInstall: json['auto_install'] != null ? RumAutoInstall.fromJson(json['auto_install'] as bool) : null,
+  created: json['created'] != null ? RumTimestamp.fromJson(json['created'] as String) : null,
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => RumRule.fromJson(e as Map<String, dynamic>)).toList(),
+  ruleset: json['ruleset'] != null ? RumRuleset.fromJson(json['ruleset'] as Map<String, dynamic>) : null,
+  siteTag: json['site_tag'] != null ? RumSiteTag.fromJson(json['site_tag'] as String) : null,
+  siteToken: json['site_token'] != null ? RumSiteToken.fromJson(json['site_token'] as String) : null,
+  snippet: json['snippet'] != null ? RumSnippet.fromJson(json['snippet'] as String) : null,
+); }
+
+/// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
+final RumAutoInstall? autoInstall;
+
+final RumTimestamp? created;
+
+/// A list of rules.
+final List<RumRule>? rules;
+
+final RumRuleset? ruleset;
+
+final RumSiteTag? siteTag;
+
+final RumSiteToken? siteToken;
+
+final RumSnippet? snippet;
+
+Map<String, dynamic> toJson() { return {
+  if (autoInstall != null) 'auto_install': autoInstall?.toJson(),
+  if (created != null) 'created': created?.toJson(),
+  if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
+  if (ruleset != null) 'ruleset': ruleset?.toJson(),
+  if (siteTag != null) 'site_tag': siteTag?.toJson(),
+  if (siteToken != null) 'site_token': siteToken?.toJson(),
+  if (snippet != null) 'snippet': snippet?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RumSite copyWith({RumAutoInstall Function()? autoInstall, RumTimestamp Function()? created, List<RumRule> Function()? rules, RumRuleset Function()? ruleset, RumSiteTag Function()? siteTag, RumSiteToken Function()? siteToken, RumSnippet Function()? snippet, }) { return RumSite(
+  autoInstall: autoInstall != null ? autoInstall() : this.autoInstall,
+  created: created != null ? created() : this.created,
+  rules: rules != null ? rules() : this.rules,
+  ruleset: ruleset != null ? ruleset() : this.ruleset,
+  siteTag: siteTag != null ? siteTag() : this.siteTag,
+  siteToken: siteToken != null ? siteToken() : this.siteToken,
+  snippet: snippet != null ? snippet() : this.snippet,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RumSite &&
+          autoInstall == other.autoInstall &&
+          created == other.created &&
+          listEquals(rules, other.rules) &&
+          ruleset == other.ruleset &&
+          siteTag == other.siteTag &&
+          siteToken == other.siteToken &&
+          snippet == other.snippet; } 
+@override int get hashCode { return Object.hash(autoInstall, created, Object.hashAll(rules ?? const []), ruleset, siteTag, siteToken, snippet); } 
+@override String toString() { return 'RumSite(autoInstall: $autoInstall, created: $created, rules: $rules, ruleset: $ruleset, siteTag: $siteTag, siteToken: $siteToken, snippet: $snippet)'; } 
+ }

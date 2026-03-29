@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Tokens referencing a Person resource and it's associated account.
+final class PostIdentityVerificationSessionsRequestRelatedPerson {const PostIdentityVerificationSessionsRequestRelatedPerson({required this.account, required this.person, });
+
+factory PostIdentityVerificationSessionsRequestRelatedPerson.fromJson(Map<String, dynamic> json) { return PostIdentityVerificationSessionsRequestRelatedPerson(
+  account: json['account'] as String,
+  person: json['person'] as String,
+); }
+
+final String account;
+
+final String person;
+
+Map<String, dynamic> toJson() { return {
+  'account': account,
+  'person': person,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('account') && json['account'] is String &&
+      json.containsKey('person') && json['person'] is String; } 
+PostIdentityVerificationSessionsRequestRelatedPerson copyWith({String? account, String? person, }) { return PostIdentityVerificationSessionsRequestRelatedPerson(
+  account: account ?? this.account,
+  person: person ?? this.person,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostIdentityVerificationSessionsRequestRelatedPerson &&
+          account == other.account &&
+          person == other.person; } 
+@override int get hashCode { return Object.hash(account, person); } 
+@override String toString() { return 'PostIdentityVerificationSessionsRequestRelatedPerson(account: $account, person: $person)'; } 
+ }

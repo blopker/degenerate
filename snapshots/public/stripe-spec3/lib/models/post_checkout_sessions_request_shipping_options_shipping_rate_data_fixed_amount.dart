@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_checkout_sessions_request_shipping_options_shipping_rate_data_fixed_amount_currency_options_value.dart';final class PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount {const PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
+
+factory PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount.fromJson(Map<String, dynamic> json) { return PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount(
+  amount: (json['amount'] as num).toInt(),
+  currency: json['currency'] as String,
+  currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmountCurrencyOptionsValue.fromJson(v as Map<String, dynamic>))),
+); }
+
+final int amount;
+
+final String currency;
+
+final Map<String,PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmountCurrencyOptionsValue>? currencyOptions;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'currency': currency,
+  if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String; } 
+PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount copyWith({int? amount, String? currency, Map<String, PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmountCurrencyOptionsValue> Function()? currencyOptions, }) { return PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount(
+  amount: amount ?? this.amount,
+  currency: currency ?? this.currency,
+  currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount &&
+          amount == other.amount &&
+          currency == other.currency &&
+          currencyOptions == other.currencyOptions; } 
+@override int get hashCode { return Object.hash(amount, currency, currencyOptions); } 
+@override String toString() { return 'PostCheckoutSessionsRequestShippingOptionsShippingRateDataFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)'; } 
+ }

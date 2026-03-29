@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Turn off
+/// [Email Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/),
+/// [Rate Limiting (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-rate-limiting/),
+/// [Scrape Shield](https://developers.cloudflare.com/waf/tools/scrape-shield/),
+/// [URL (Zone) Lockdown](https://developers.cloudflare.com/waf/tools/zone-lockdown/), and
+/// [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
+/// 
+final class ZonesDisableSecurityId {const ZonesDisableSecurityId._(this.value);
+
+factory ZonesDisableSecurityId.fromJson(String json) { return switch (json) {
+  'disable_security' => disableSecurity,
+  _ => ZonesDisableSecurityId._(json),
+}; }
+
+static const ZonesDisableSecurityId disableSecurity = ZonesDisableSecurityId._('disable_security');
+
+static const List<ZonesDisableSecurityId> values = [disableSecurity];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesDisableSecurityId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesDisableSecurityId($value)'; } 
+ }
+final class ZonesDisableSecurity {const ZonesDisableSecurity({this.id});
+
+factory ZonesDisableSecurity.fromJson(Map<String, dynamic> json) { return ZonesDisableSecurity(
+  id: json['id'] != null ? ZonesDisableSecurityId.fromJson(json['id'] as String) : null,
+); }
+
+/// Turn off
+/// [Email Obfuscation](https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/),
+/// [Rate Limiting (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-rate-limiting/),
+/// [Scrape Shield](https://developers.cloudflare.com/waf/tools/scrape-shield/),
+/// [URL (Zone) Lockdown](https://developers.cloudflare.com/waf/tools/zone-lockdown/), and
+/// [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
+/// 
+final ZonesDisableSecurityId? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesDisableSecurity copyWith({ZonesDisableSecurityId Function()? id}) { return ZonesDisableSecurity(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesDisableSecurity &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'ZonesDisableSecurity(id: $id)'; } 
+ }

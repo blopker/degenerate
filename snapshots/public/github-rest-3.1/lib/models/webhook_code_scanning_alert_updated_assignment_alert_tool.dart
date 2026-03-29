@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookCodeScanningAlertUpdatedAssignmentAlertTool {const WebhookCodeScanningAlertUpdatedAssignmentAlertTool({required this.name, required this.version, });
+
+factory WebhookCodeScanningAlertUpdatedAssignmentAlertTool.fromJson(Map<String, dynamic> json) { return WebhookCodeScanningAlertUpdatedAssignmentAlertTool(
+  name: json['name'] as String,
+  version: json['version'] as String?,
+); }
+
+/// The name of the tool used to generate the code scanning analysis alert.
+final String name;
+
+/// The version of the tool used to detect the alert.
+final String? version;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+  'version': ?version,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String &&
+      json.containsKey('version') && json['version'] is String; } 
+WebhookCodeScanningAlertUpdatedAssignmentAlertTool copyWith({String? name, String? Function()? version, }) { return WebhookCodeScanningAlertUpdatedAssignmentAlertTool(
+  name: name ?? this.name,
+  version: version != null ? version() : this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookCodeScanningAlertUpdatedAssignmentAlertTool &&
+          name == other.name &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(name, version); } 
+@override String toString() { return 'WebhookCodeScanningAlertUpdatedAssignmentAlertTool(name: $name, version: $version)'; } 
+ }

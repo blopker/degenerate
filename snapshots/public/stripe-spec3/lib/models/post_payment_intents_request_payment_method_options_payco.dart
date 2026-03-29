@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param26.dart';final class PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2._(this.value);
+
+factory PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2._(json),
+}; }
+
+static const PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2 $empty = PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2._('');
+
+static const List<PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsRequestPaymentMethodOptionsPayco = OneOf2<PaymentMethodOptionsParam26,PostPaymentIntentsRequestPaymentMethodOptionsPaycoVariant2>;

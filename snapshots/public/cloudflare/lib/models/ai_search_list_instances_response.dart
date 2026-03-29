@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'ai_search_list_instances_response_result.dart';final class AiSearchListInstancesResponse {const AiSearchListInstancesResponse({required this.result, required this.success, });
+
+factory AiSearchListInstancesResponse.fromJson(Map<String, dynamic> json) { return AiSearchListInstancesResponse(
+  result: (json['result'] as List<dynamic>).map((e) => AiSearchListInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<AiSearchListInstancesResponseResult> result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AiSearchListInstancesResponse copyWith({List<AiSearchListInstancesResponseResult>? result, bool? success, }) { return AiSearchListInstancesResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AiSearchListInstancesResponse &&
+          listEquals(result, other.result) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(result), success); } 
+@override String toString() { return 'AiSearchListInstancesResponse(result: $result, success: $success)'; } 
+ }

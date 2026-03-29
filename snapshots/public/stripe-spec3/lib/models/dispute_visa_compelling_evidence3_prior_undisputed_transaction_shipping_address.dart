@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dispute_transaction_shipping_address.dart';/// The address to which a physical product was shipped. All fields are required for Visa Compelling Evidence 3.0 evidence submission.
+final class DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress {const DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress({this.disputeTransactionShippingAddress});
+
+factory DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress.fromJson(Map<String, dynamic> json) { return DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress(
+  disputeTransactionShippingAddress: DisputeTransactionShippingAddress.canParse(json) ? DisputeTransactionShippingAddress.fromJson(json) : null,
+); }
+
+final DisputeTransactionShippingAddress? disputeTransactionShippingAddress;
+
+/// At least one variant must be present.
+bool get isValid { return disputeTransactionShippingAddress != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?disputeTransactionShippingAddress?.toJson(),
+}; } 
+ }

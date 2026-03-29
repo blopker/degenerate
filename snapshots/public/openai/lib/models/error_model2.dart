@@ -1,0 +1,34 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// An object representing an error response from the Eval API.
+/// 
+final class ErrorModel2 {const ErrorModel2({required this.code, required this.message, });
+
+factory ErrorModel2.fromJson(Map<String, dynamic> json) { return ErrorModel2(
+  code: json['code'] as String,
+  message: json['message'] as String,
+); }
+
+/// The error code.
+final String code;
+
+/// The error message.
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is String &&
+      json.containsKey('message') && json['message'] is String; } 
+ErrorModel2 copyWith({String? code, String? message, }) { return ErrorModel2(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ErrorModel2 &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'ErrorModel2(code: $code, message: $message)'; } 
+ }

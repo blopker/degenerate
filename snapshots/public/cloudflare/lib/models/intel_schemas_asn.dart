@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';extension type const IntelAsnCountry(String value) {
+factory IntelAsnCountry.fromJson(String json) => IntelAsnCountry(json);
+
+String toJson() => value;
+
+}
+extension type const IntelAsnDescription(String value) {
+factory IntelAsnDescription.fromJson(String json) => IntelAsnDescription(json);
+
+String toJson() => value;
+
+}
+/// Infrastructure type of this ASN.
+final class IntelAsnType {const IntelAsnType._(this.value);
+
+factory IntelAsnType.fromJson(String json) { return switch (json) {
+  'hosting_provider' => hostingProvider,
+  'isp' => isp,
+  'organization' => organization,
+  _ => IntelAsnType._(json),
+}; }
+
+static const IntelAsnType hostingProvider = IntelAsnType._('hosting_provider');
+
+static const IntelAsnType isp = IntelAsnType._('isp');
+
+static const IntelAsnType organization = IntelAsnType._('organization');
+
+static const List<IntelAsnType> values = [hostingProvider, isp, organization];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IntelAsnType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IntelAsnType($value)'; } 
+ }
+final class IntelSchemasAsn {const IntelSchemasAsn({this.asn, this.country, this.description, this.domainCount, this.topDomains, this.type, });
+
+factory IntelSchemasAsn.fromJson(Map<String, dynamic> json) { return IntelSchemasAsn(
+  asn: json['asn'] != null ? IntelAsn.fromJson(json['asn'] as num) : null,
+  country: json['country'] != null ? IntelAsnCountry.fromJson(json['country'] as String) : null,
+  description: json['description'] != null ? IntelAsnDescription.fromJson(json['description'] as String) : null,
+  domainCount: json['domain_count'] != null ? (json['domain_count'] as num).toInt() : null,
+  topDomains: (json['top_domains'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  type: json['type'] != null ? IntelAsnType.fromJson(json['type'] as String) : null,
+); }
+
+final IntelAsn? asn;
+
+final IntelAsnCountry? country;
+
+final IntelAsnDescription? description;
+
+final int? domainCount;
+
+final List<String>? topDomains;
+
+/// Infrastructure type of this ASN.
+final IntelAsnType? type;
+
+Map<String, dynamic> toJson() { return {
+  if (asn != null) 'asn': asn?.toJson(),
+  if (country != null) 'country': country?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  'domain_count': ?domainCount,
+  'top_domains': ?topDomains,
+  if (type != null) 'type': type?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IntelSchemasAsn copyWith({IntelAsn Function()? asn, IntelAsnCountry Function()? country, IntelAsnDescription Function()? description, int Function()? domainCount, List<String> Function()? topDomains, IntelAsnType Function()? type, }) { return IntelSchemasAsn(
+  asn: asn != null ? asn() : this.asn,
+  country: country != null ? country() : this.country,
+  description: description != null ? description() : this.description,
+  domainCount: domainCount != null ? domainCount() : this.domainCount,
+  topDomains: topDomains != null ? topDomains() : this.topDomains,
+  type: type != null ? type() : this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IntelSchemasAsn &&
+          asn == other.asn &&
+          country == other.country &&
+          description == other.description &&
+          domainCount == other.domainCount &&
+          listEquals(topDomains, other.topDomains) &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(asn, country, description, domainCount, Object.hashAll(topDomains ?? const []), type); } 
+@override String toString() { return 'IntelSchemasAsn(asn: $asn, country: $country, description: $description, domainCount: $domainCount, topDomains: $topDomains, type: $type)'; } 
+ }

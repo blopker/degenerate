@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class MergedUpstreamMergeType {const MergedUpstreamMergeType._(this.value);
+
+factory MergedUpstreamMergeType.fromJson(String json) { return switch (json) {
+  'merge' => merge,
+  'fast-forward' => fastForward,
+  'none' => none,
+  _ => MergedUpstreamMergeType._(json),
+}; }
+
+static const MergedUpstreamMergeType merge = MergedUpstreamMergeType._('merge');
+
+static const MergedUpstreamMergeType fastForward = MergedUpstreamMergeType._('fast-forward');
+
+static const MergedUpstreamMergeType none = MergedUpstreamMergeType._('none');
+
+static const List<MergedUpstreamMergeType> values = [merge, fastForward, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is MergedUpstreamMergeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'MergedUpstreamMergeType($value)'; } 
+ }
+/// Results of a successful merge upstream request
+final class MergedUpstream {const MergedUpstream({this.message, this.mergeType, this.baseBranch, });
+
+factory MergedUpstream.fromJson(Map<String, dynamic> json) { return MergedUpstream(
+  message: json['message'] as String?,
+  mergeType: json['merge_type'] != null ? MergedUpstreamMergeType.fromJson(json['merge_type'] as String) : null,
+  baseBranch: json['base_branch'] as String?,
+); }
+
+final String? message;
+
+final MergedUpstreamMergeType? mergeType;
+
+final String? baseBranch;
+
+Map<String, dynamic> toJson() { return {
+  'message': ?message,
+  if (mergeType != null) 'merge_type': mergeType?.toJson(),
+  'base_branch': ?baseBranch,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MergedUpstream copyWith({String Function()? message, MergedUpstreamMergeType Function()? mergeType, String Function()? baseBranch, }) { return MergedUpstream(
+  message: message != null ? message() : this.message,
+  mergeType: mergeType != null ? mergeType() : this.mergeType,
+  baseBranch: baseBranch != null ? baseBranch() : this.baseBranch,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MergedUpstream &&
+          message == other.message &&
+          mergeType == other.mergeType &&
+          baseBranch == other.baseBranch; } 
+@override int get hashCode { return Object.hash(message, mergeType, baseBranch); } 
+@override String toString() { return 'MergedUpstream(message: $message, mergeType: $mergeType, baseBranch: $baseBranch)'; } 
+ }

@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetEmailSecurityTimeseriesGroupByArcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByArcAggInterval._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupByArcAggInterval.fromJson(String json) { return switch (json) {
+  '15m' => $15m,
+  '1h' => $1h,
+  '1d' => $1d,
+  '1w' => $1w,
+  _ => RadarGetEmailSecurityTimeseriesGroupByArcAggInterval._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupByArcAggInterval $15m = RadarGetEmailSecurityTimeseriesGroupByArcAggInterval._('15m');
+
+static const RadarGetEmailSecurityTimeseriesGroupByArcAggInterval $1h = RadarGetEmailSecurityTimeseriesGroupByArcAggInterval._('1h');
+
+static const RadarGetEmailSecurityTimeseriesGroupByArcAggInterval $1d = RadarGetEmailSecurityTimeseriesGroupByArcAggInterval._('1d');
+
+static const RadarGetEmailSecurityTimeseriesGroupByArcAggInterval $1w = RadarGetEmailSecurityTimeseriesGroupByArcAggInterval._('1w');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupByArcAggInterval> values = [$15m, $1h, $1d, $1w];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByArcAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByArcAggInterval($value)'; } 
+ }

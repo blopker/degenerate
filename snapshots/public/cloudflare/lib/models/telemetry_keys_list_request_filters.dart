@@ -1,0 +1,173 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class TelemetryKeysListRequestFiltersOperation {const TelemetryKeysListRequestFiltersOperation._(this.value);
+
+factory TelemetryKeysListRequestFiltersOperation.fromJson(String json) { return switch (json) {
+  'includes' => includes,
+  'not_includes' => notIncludes,
+  'starts_with' => startsWith,
+  'regex' => regex,
+  'exists' => exists,
+  'is_null' => isNull,
+  'in' => $in,
+  'not_in' => notIn,
+  'eq' => eq,
+  'neq' => neq,
+  'gt' => gt,
+  'gte' => gte,
+  'lt' => lt,
+  'lte' => lte,
+  '=' => $empty,
+  '!=' => $empty2,
+  '>' => $empty3,
+  '>=' => $empty4,
+  '<' => $empty5,
+  '<=' => $empty6,
+  'INCLUDES' => includes2,
+  'DOES_NOT_INCLUDE' => doesNotInclude,
+  'MATCH_REGEX' => matchRegex,
+  'EXISTS' => exists2,
+  'DOES_NOT_EXIST' => doesNotExist,
+  'IN' => $in2,
+  'NOT_IN' => notIn2,
+  'STARTS_WITH' => startsWith2,
+  _ => TelemetryKeysListRequestFiltersOperation._(json),
+}; }
+
+static const TelemetryKeysListRequestFiltersOperation includes = TelemetryKeysListRequestFiltersOperation._('includes');
+
+static const TelemetryKeysListRequestFiltersOperation notIncludes = TelemetryKeysListRequestFiltersOperation._('not_includes');
+
+static const TelemetryKeysListRequestFiltersOperation startsWith = TelemetryKeysListRequestFiltersOperation._('starts_with');
+
+static const TelemetryKeysListRequestFiltersOperation regex = TelemetryKeysListRequestFiltersOperation._('regex');
+
+static const TelemetryKeysListRequestFiltersOperation exists = TelemetryKeysListRequestFiltersOperation._('exists');
+
+static const TelemetryKeysListRequestFiltersOperation isNull = TelemetryKeysListRequestFiltersOperation._('is_null');
+
+static const TelemetryKeysListRequestFiltersOperation $in = TelemetryKeysListRequestFiltersOperation._('in');
+
+static const TelemetryKeysListRequestFiltersOperation notIn = TelemetryKeysListRequestFiltersOperation._('not_in');
+
+static const TelemetryKeysListRequestFiltersOperation eq = TelemetryKeysListRequestFiltersOperation._('eq');
+
+static const TelemetryKeysListRequestFiltersOperation neq = TelemetryKeysListRequestFiltersOperation._('neq');
+
+static const TelemetryKeysListRequestFiltersOperation gt = TelemetryKeysListRequestFiltersOperation._('gt');
+
+static const TelemetryKeysListRequestFiltersOperation gte = TelemetryKeysListRequestFiltersOperation._('gte');
+
+static const TelemetryKeysListRequestFiltersOperation lt = TelemetryKeysListRequestFiltersOperation._('lt');
+
+static const TelemetryKeysListRequestFiltersOperation lte = TelemetryKeysListRequestFiltersOperation._('lte');
+
+static const TelemetryKeysListRequestFiltersOperation $empty = TelemetryKeysListRequestFiltersOperation._('=');
+
+static const TelemetryKeysListRequestFiltersOperation $empty2 = TelemetryKeysListRequestFiltersOperation._('!=');
+
+static const TelemetryKeysListRequestFiltersOperation $empty3 = TelemetryKeysListRequestFiltersOperation._('>');
+
+static const TelemetryKeysListRequestFiltersOperation $empty4 = TelemetryKeysListRequestFiltersOperation._('>=');
+
+static const TelemetryKeysListRequestFiltersOperation $empty5 = TelemetryKeysListRequestFiltersOperation._('<');
+
+static const TelemetryKeysListRequestFiltersOperation $empty6 = TelemetryKeysListRequestFiltersOperation._('<=');
+
+static const TelemetryKeysListRequestFiltersOperation includes2 = TelemetryKeysListRequestFiltersOperation._('INCLUDES');
+
+static const TelemetryKeysListRequestFiltersOperation doesNotInclude = TelemetryKeysListRequestFiltersOperation._('DOES_NOT_INCLUDE');
+
+static const TelemetryKeysListRequestFiltersOperation matchRegex = TelemetryKeysListRequestFiltersOperation._('MATCH_REGEX');
+
+static const TelemetryKeysListRequestFiltersOperation exists2 = TelemetryKeysListRequestFiltersOperation._('EXISTS');
+
+static const TelemetryKeysListRequestFiltersOperation doesNotExist = TelemetryKeysListRequestFiltersOperation._('DOES_NOT_EXIST');
+
+static const TelemetryKeysListRequestFiltersOperation $in2 = TelemetryKeysListRequestFiltersOperation._('IN');
+
+static const TelemetryKeysListRequestFiltersOperation notIn2 = TelemetryKeysListRequestFiltersOperation._('NOT_IN');
+
+static const TelemetryKeysListRequestFiltersOperation startsWith2 = TelemetryKeysListRequestFiltersOperation._('STARTS_WITH');
+
+static const List<TelemetryKeysListRequestFiltersOperation> values = [includes, notIncludes, startsWith, regex, exists, isNull, $in, notIn, eq, neq, gt, gte, lt, lte, $empty, $empty2, $empty3, $empty4, $empty5, $empty6, includes2, doesNotInclude, matchRegex, exists2, doesNotExist, $in2, notIn2, startsWith2];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TelemetryKeysListRequestFiltersOperation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TelemetryKeysListRequestFiltersOperation($value)'; } 
+ }
+final class TelemetryKeysListRequestFiltersType {const TelemetryKeysListRequestFiltersType._(this.value);
+
+factory TelemetryKeysListRequestFiltersType.fromJson(String json) { return switch (json) {
+  'string' => string,
+  'number' => number,
+  'boolean' => boolean,
+  _ => TelemetryKeysListRequestFiltersType._(json),
+}; }
+
+static const TelemetryKeysListRequestFiltersType string = TelemetryKeysListRequestFiltersType._('string');
+
+static const TelemetryKeysListRequestFiltersType number = TelemetryKeysListRequestFiltersType._('number');
+
+static const TelemetryKeysListRequestFiltersType boolean = TelemetryKeysListRequestFiltersType._('boolean');
+
+static const List<TelemetryKeysListRequestFiltersType> values = [string, number, boolean];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TelemetryKeysListRequestFiltersType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TelemetryKeysListRequestFiltersType($value)'; } 
+ }
+final class TelemetryKeysListRequestFilters {const TelemetryKeysListRequestFilters({required this.key, required this.operation, required this.type, this.value, });
+
+factory TelemetryKeysListRequestFilters.fromJson(Map<String, dynamic> json) { return TelemetryKeysListRequestFilters(
+  key: json['key'] as String,
+  operation: TelemetryKeysListRequestFiltersOperation.fromJson(json['operation'] as String),
+  type: TelemetryKeysListRequestFiltersType.fromJson(json['type'] as String),
+  value: json['value'],
+); }
+
+final String key;
+
+final TelemetryKeysListRequestFiltersOperation operation;
+
+final TelemetryKeysListRequestFiltersType type;
+
+/// One of: String, double, bool
+final dynamic value;
+
+Map<String, dynamic> toJson() { return {
+  'key': key,
+  'operation': operation.toJson(),
+  'type': type.toJson(),
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+      json.containsKey('operation') &&
+      json.containsKey('type'); } 
+TelemetryKeysListRequestFilters copyWith({String? key, TelemetryKeysListRequestFiltersOperation? operation, TelemetryKeysListRequestFiltersType? type, dynamic Function()? value, }) { return TelemetryKeysListRequestFilters(
+  key: key ?? this.key,
+  operation: operation ?? this.operation,
+  type: type ?? this.type,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TelemetryKeysListRequestFilters &&
+          key == other.key &&
+          operation == other.operation &&
+          type == other.type &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(key, operation, type, value); } 
+@override String toString() { return 'TelemetryKeysListRequestFilters(key: $key, operation: $operation, type: $type, value: $value)'; } 
+ }

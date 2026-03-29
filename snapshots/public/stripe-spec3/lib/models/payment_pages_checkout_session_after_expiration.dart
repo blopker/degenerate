@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payment_pages_checkout_session_after_expiration_recovery2.dart';/// 
+final class PaymentPagesCheckoutSessionAfterExpiration {const PaymentPagesCheckoutSessionAfterExpiration({this.recovery});
+
+factory PaymentPagesCheckoutSessionAfterExpiration.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAfterExpiration(
+  recovery: json['recovery'] != null ? PaymentPagesCheckoutSessionAfterExpirationRecovery2.fromJson(json['recovery'] as Map<String, dynamic>) : null,
+); }
+
+/// When set, configuration used to recover the Checkout Session on expiry.
+final PaymentPagesCheckoutSessionAfterExpirationRecovery2? recovery;
+
+Map<String, dynamic> toJson() { return {
+  if (recovery != null) 'recovery': recovery?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentPagesCheckoutSessionAfterExpiration copyWith({PaymentPagesCheckoutSessionAfterExpirationRecovery2? Function()? recovery}) { return PaymentPagesCheckoutSessionAfterExpiration(
+  recovery: recovery != null ? recovery() : this.recovery,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionAfterExpiration &&
+          recovery == other.recovery; } 
+@override int get hashCode { return recovery.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionAfterExpiration(recovery: $recovery)'; } 
+ }

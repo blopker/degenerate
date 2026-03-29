@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'rulesets_rewrite_header_expression.dart';import 'rulesets_rewrite_header_operation.dart';/// A header with a dynamic value to add.
+final class AddDynamicHeader {const AddDynamicHeader({required this.expression, required this.operation, });
+
+factory AddDynamicHeader.fromJson(Map<String, dynamic> json) { return AddDynamicHeader(
+  expression: RulesetsRewriteHeaderExpression.fromJson(json['expression'] as String),
+  operation: RulesetsRewriteHeaderOperation.fromJson(json['operation'] as String),
+); }
+
+/// An expression that evaluates to a value for the header.
+final RulesetsRewriteHeaderExpression expression;
+
+/// The operation to perform on the header.
+final RulesetsRewriteHeaderOperation operation;
+
+Map<String, dynamic> toJson() { return {
+  'expression': expression.toJson(),
+  'operation': operation.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('expression') &&
+      json.containsKey('operation'); } 
+AddDynamicHeader copyWith({RulesetsRewriteHeaderExpression? expression, RulesetsRewriteHeaderOperation? operation, }) { return AddDynamicHeader(
+  expression: expression ?? this.expression,
+  operation: operation ?? this.operation,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AddDynamicHeader &&
+          expression == other.expression &&
+          operation == other.operation; } 
+@override int get hashCode { return Object.hash(expression, operation); } 
+@override String toString() { return 'AddDynamicHeader(expression: $expression, operation: $operation)'; } 
+ }

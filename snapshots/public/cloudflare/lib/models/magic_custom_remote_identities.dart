@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class MagicCustomRemoteIdentities {const MagicCustomRemoteIdentities({this.fqdnId});
+
+factory MagicCustomRemoteIdentities.fromJson(Map<String, dynamic> json) { return MagicCustomRemoteIdentities(
+  fqdnId: json['fqdn_id'] as String?,
+); }
+
+/// A custom IKE ID of type FQDN that may be used to identity the IPsec tunnel. The
+/// generated IKE IDs can still be used even if this custom value is specified.
+/// 
+/// Must be of the form `<custom label>.<account ID>.custom.ipsec.cloudflare.com`.
+/// 
+/// This custom ID does not need to be unique. Two IPsec tunnels may have the same custom
+/// fqdn_id. However, if another IPsec tunnel has the same value then the two tunnels
+/// cannot have the same cloudflare_endpoint.
+final String? fqdnId;
+
+Map<String, dynamic> toJson() { return {
+  'fqdn_id': ?fqdnId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicCustomRemoteIdentities copyWith({String Function()? fqdnId}) { return MagicCustomRemoteIdentities(
+  fqdnId: fqdnId != null ? fqdnId() : this.fqdnId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicCustomRemoteIdentities &&
+          fqdnId == other.fqdnId; } 
+@override int get hashCode { return fqdnId.hashCode; } 
+@override String toString() { return 'MagicCustomRemoteIdentities(fqdnId: $fqdnId)'; } 
+ }

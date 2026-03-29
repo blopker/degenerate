@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodCashapp {const PaymentMethodCashapp({this.buyerId, this.cashtag, });
+
+factory PaymentMethodCashapp.fromJson(Map<String, dynamic> json) { return PaymentMethodCashapp(
+  buyerId: json['buyer_id'] as String?,
+  cashtag: json['cashtag'] as String?,
+); }
+
+/// A unique and immutable identifier assigned by Cash App to every buyer.
+final String? buyerId;
+
+/// A public identifier for buyers using Cash App.
+final String? cashtag;
+
+Map<String, dynamic> toJson() { return {
+  'buyer_id': ?buyerId,
+  'cashtag': ?cashtag,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodCashapp copyWith({String? Function()? buyerId, String? Function()? cashtag, }) { return PaymentMethodCashapp(
+  buyerId: buyerId != null ? buyerId() : this.buyerId,
+  cashtag: cashtag != null ? cashtag() : this.cashtag,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodCashapp &&
+          buyerId == other.buyerId &&
+          cashtag == other.cashtag; } 
+@override int get hashCode { return Object.hash(buyerId, cashtag); } 
+@override String toString() { return 'PaymentMethodCashapp(buyerId: $buyerId, cashtag: $cashtag)'; } 
+ }

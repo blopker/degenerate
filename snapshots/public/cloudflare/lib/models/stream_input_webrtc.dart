@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The WebRTC URL you provide to the broadcaster, which they stream live video to.
+extension type const StreamInputWebrtcUrl(String value) {
+factory StreamInputWebrtcUrl.fromJson(String json) => StreamInputWebrtcUrl(json);
+
+String toJson() => value;
+
+}
+/// Details for streaming to a live input using WebRTC.
+final class StreamInputWebrtc {const StreamInputWebrtc({this.url});
+
+factory StreamInputWebrtc.fromJson(Map<String, dynamic> json) { return StreamInputWebrtc(
+  url: json['url'] != null ? StreamInputWebrtcUrl.fromJson(json['url'] as String) : null,
+); }
+
+final StreamInputWebrtcUrl? url;
+
+Map<String, dynamic> toJson() { return {
+  if (url != null) 'url': url?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+StreamInputWebrtc copyWith({StreamInputWebrtcUrl Function()? url}) { return StreamInputWebrtc(
+  url: url != null ? url() : this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is StreamInputWebrtc &&
+          url == other.url; } 
+@override int get hashCode { return url.hashCode; } 
+@override String toString() { return 'StreamInputWebrtc(url: $url)'; } 
+ }

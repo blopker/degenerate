@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerGetScanHarResponse202ResultScanTaskErrors {const UrlscannerGetScanHarResponse202ResultScanTaskErrors({required this.message});
+
+factory UrlscannerGetScanHarResponse202ResultScanTaskErrors.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanHarResponse202ResultScanTaskErrors(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+UrlscannerGetScanHarResponse202ResultScanTaskErrors copyWith({String? message}) { return UrlscannerGetScanHarResponse202ResultScanTaskErrors(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanHarResponse202ResultScanTaskErrors &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'UrlscannerGetScanHarResponse202ResultScanTaskErrors(message: $message)'; } 
+ }

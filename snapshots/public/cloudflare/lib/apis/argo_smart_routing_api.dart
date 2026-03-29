@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/argo_config_identifier.dart';import '../models/argo_config_patch.dart';import '../models/response_single6.dart';/// ArgoSmartRoutingApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class ArgoSmartRoutingApi with ApiExecutor {const ArgoSmartRoutingApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get Argo Smart Routing setting
+///
+/// Retrieves the value of Argo Smart Routing enablement setting.
+///
+/// `GET /zones/{zone_id}/argo/smart_routing`
+Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingGetArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseSingle6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Patch Argo Smart Routing setting
+///
+/// Configures the value of the Argo Smart Routing enablement setting.
+///
+/// `PATCH /zones/{zone_id}/argo/smart_routing`
+Future<ApiResult<ResponseSingle6, Never>> argoSmartRoutingPatchArgoSmartRoutingSetting({required ArgoConfigIdentifier zoneId, required ArgoConfigPatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/argo/smart_routing',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseSingle6.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class NscStatusInfoVariant4State {const NscStatusInfoVariant4State._(this.value);
+
+factory NscStatusInfoVariant4State.fromJson(String json) { return switch (json) {
+  'Healthy' => healthy,
+  _ => NscStatusInfoVariant4State._(json),
+}; }
+
+static const NscStatusInfoVariant4State healthy = NscStatusInfoVariant4State._('Healthy');
+
+static const List<NscStatusInfoVariant4State> values = [healthy];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NscStatusInfoVariant4State && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'NscStatusInfoVariant4State($value)'; } 
+ }
+final class NscStatusInfoVariant4 {const NscStatusInfoVariant4({required this.state});
+
+factory NscStatusInfoVariant4.fromJson(Map<String, dynamic> json) { return NscStatusInfoVariant4(
+  state: NscStatusInfoVariant4State.fromJson(json['state'] as String),
+); }
+
+final NscStatusInfoVariant4State state;
+
+Map<String, dynamic> toJson() { return {
+  'state': state.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('state'); } 
+NscStatusInfoVariant4 copyWith({NscStatusInfoVariant4State? state}) { return NscStatusInfoVariant4(
+  state: state ?? this.state,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is NscStatusInfoVariant4 &&
+          state == other.state; } 
+@override int get hashCode { return state.hashCode; } 
+@override String toString() { return 'NscStatusInfoVariant4(state: $state)'; } 
+ }

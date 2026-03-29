@@ -1,0 +1,62 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A response to an MCP approval request.
+/// 
+final class McpApprovalResponseResource {const McpApprovalResponseResource({required this.type, required this.id, required this.approvalRequestId, required this.approve, this.reason, });
+
+factory McpApprovalResponseResource.fromJson(Map<String, dynamic> json) { return McpApprovalResponseResource(
+  type: json['type'] as String,
+  id: json['id'] as String,
+  approvalRequestId: json['approval_request_id'] as String,
+  approve: json['approve'] as bool,
+  reason: json['reason'] as String?,
+); }
+
+/// The type of the item. Always `mcp_approval_response`.
+/// 
+final String type;
+
+/// The unique ID of the approval response
+/// 
+final String id;
+
+/// The ID of the approval request being answered.
+/// 
+final String approvalRequestId;
+
+/// Whether the request was approved.
+/// 
+final bool approve;
+
+/// Optional reason for the decision.
+/// 
+final String? reason;
+
+Map<String, dynamic> toJson() { return {
+  'type': type,
+  'id': id,
+  'approval_request_id': approvalRequestId,
+  'approve': approve,
+  'reason': ?reason,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('approval_request_id') && json['approval_request_id'] is String &&
+      json.containsKey('approve') && json['approve'] is bool; } 
+McpApprovalResponseResource copyWith({String? type, String? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return McpApprovalResponseResource(
+  type: type ?? this.type,
+  id: id ?? this.id,
+  approvalRequestId: approvalRequestId ?? this.approvalRequestId,
+  approve: approve ?? this.approve,
+  reason: reason != null ? reason() : this.reason,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McpApprovalResponseResource &&
+          type == other.type &&
+          id == other.id &&
+          approvalRequestId == other.approvalRequestId &&
+          approve == other.approve &&
+          reason == other.reason; } 
+@override int get hashCode { return Object.hash(type, id, approvalRequestId, approve, reason); } 
+@override String toString() { return 'McpApprovalResponseResource(type: $type, id: $id, approvalRequestId: $approvalRequestId, approve: $approve, reason: $reason)'; } 
+ }

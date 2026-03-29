@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class DependencyGraphSpdxSbomSbomCreationInfo {const DependencyGraphSpdxSbomSbomCreationInfo({required this.created, required this.creators, });
+
+factory DependencyGraphSpdxSbomSbomCreationInfo.fromJson(Map<String, dynamic> json) { return DependencyGraphSpdxSbomSbomCreationInfo(
+  created: json['created'] as String,
+  creators: (json['creators'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+/// The date and time the SPDX document was created.
+final String created;
+
+/// The tools that were used to generate the SPDX document.
+final List<String> creators;
+
+Map<String, dynamic> toJson() { return {
+  'created': created,
+  'creators': creators,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('created') && json['created'] is String &&
+      json.containsKey('creators'); } 
+DependencyGraphSpdxSbomSbomCreationInfo copyWith({String? created, List<String>? creators, }) { return DependencyGraphSpdxSbomSbomCreationInfo(
+  created: created ?? this.created,
+  creators: creators ?? this.creators,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DependencyGraphSpdxSbomSbomCreationInfo &&
+          created == other.created &&
+          listEquals(creators, other.creators); } 
+@override int get hashCode { return Object.hash(created, Object.hashAll(creators)); } 
+@override String toString() { return 'DependencyGraphSpdxSbomSbomCreationInfo(created: $created, creators: $creators)'; } 
+ }

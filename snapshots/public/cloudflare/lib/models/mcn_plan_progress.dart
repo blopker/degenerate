@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class McnPlanProgress {const McnPlanProgress({required this.done, required this.total, });
+
+factory McnPlanProgress.fromJson(Map<String, dynamic> json) { return McnPlanProgress(
+  done: (json['done'] as num).toInt(),
+  total: (json['total'] as num).toInt(),
+); }
+
+final int done;
+
+final int total;
+
+Map<String, dynamic> toJson() { return {
+  'done': done,
+  'total': total,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('done') && json['done'] is num &&
+      json.containsKey('total') && json['total'] is num; } 
+McnPlanProgress copyWith({int? done, int? total, }) { return McnPlanProgress(
+  done: done ?? this.done,
+  total: total ?? this.total,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is McnPlanProgress &&
+          done == other.done &&
+          total == other.total; } 
+@override int get hashCode { return Object.hash(done, total); } 
+@override String toString() { return 'McnPlanProgress(done: $done, total: $total)'; } 
+ }

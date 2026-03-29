@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations {const RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetNetflowsSummaryDeprecatedResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

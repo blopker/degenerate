@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_binding_name.dart';final class WorkersBindingKindJson {const WorkersBindingKindJson({required this.json, required this.name, required this.type, });
+
+factory WorkersBindingKindJson.fromJson(Map<String, dynamic> json) { return WorkersBindingKindJson(
+  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v)),
+  name: WorkersBindingName.fromJson(json['name'] as String),
+  type: json['type'] as String,
+); }
+
+/// JSON data to use.
+final Map<String,dynamic> json;
+
+final WorkersBindingName name;
+
+/// The kind of resource that the binding provides.
+final String type;
+
+Map<String, dynamic> toJson() { return {
+  'json': json,
+  'name': name.toJson(),
+  'type': type,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('json') &&
+      json.containsKey('name') &&
+      json.containsKey('type') && json['type'] is String; } 
+WorkersBindingKindJson copyWith({Map<String,dynamic>? json, WorkersBindingName? name, String? type, }) { return WorkersBindingKindJson(
+  json: json ?? this.json,
+  name: name ?? this.name,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersBindingKindJson &&
+          json == other.json &&
+          name == other.name &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(json, name, type); } 
+@override String toString() { return 'WorkersBindingKindJson(json: $json, name: $name, type: $type)'; } 
+ }

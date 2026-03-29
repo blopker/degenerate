@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0({required this.http1X, required this.http2, required this.http3, required this.timestamps, });
+
+factory RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0(
+  http1X: (json['HTTP/1.x'] as List<dynamic>).map((e) => e as String).toList(),
+  http2: (json['HTTP/2'] as List<dynamic>).map((e) => e as String).toList(),
+  http3: (json['HTTP/3'] as List<dynamic>).map((e) => e as String).toList(),
+  timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
+); }
+
+final List<String> http1X;
+
+final List<String> http2;
+
+final List<String> http3;
+
+final List<DateTime> timestamps;
+
+Map<String, dynamic> toJson() { return {
+  'HTTP/1.x': http1X,
+  'HTTP/2': http2,
+  'HTTP/3': http3,
+  'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('HTTP/1.x') &&
+      json.containsKey('HTTP/2') &&
+      json.containsKey('HTTP/3') &&
+      json.containsKey('timestamps'); } 
+RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0 copyWith({List<String>? http1X, List<String>? http2, List<String>? http3, List<DateTime>? timestamps, }) { return RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0(
+  http1X: http1X ?? this.http1X,
+  http2: http2 ?? this.http2,
+  http3: http3 ?? this.http3,
+  timestamps: timestamps ?? this.timestamps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0 &&
+          listEquals(http1X, other.http1X) &&
+          listEquals(http2, other.http2) &&
+          listEquals(http3, other.http3) &&
+          listEquals(timestamps, other.timestamps); } 
+@override int get hashCode { return Object.hash(Object.hashAll(http1X), Object.hashAll(http2), Object.hashAll(http3), Object.hashAll(timestamps)); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByHttpVersionResponseResultSerie0(http1X: $http1X, http2: $http2, http3: $http3, timestamps: $timestamps)'; } 
+ }

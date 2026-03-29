@@ -1,0 +1,73 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'account_request_tracer_request_trace_request_body.dart';import 'account_request_tracer_request_trace_request_context.dart';final class AccountRequestTracerRequestTraceRequest {const AccountRequestTracerRequestTraceRequest({this.body, this.context, this.cookies, this.headers, required this.method, this.protocol, this.skipResponse, required this.url, });
+
+factory AccountRequestTracerRequestTraceRequest.fromJson(Map<String, dynamic> json) { return AccountRequestTracerRequestTraceRequest(
+  body: json['body'] != null ? AccountRequestTracerRequestTraceRequestBody.fromJson(json['body'] as Map<String, dynamic>) : null,
+  context: json['context'] != null ? AccountRequestTracerRequestTraceRequestContext.fromJson(json['context'] as Map<String, dynamic>) : null,
+  cookies: (json['cookies'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  headers: (json['headers'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  method: json['method'] as String,
+  protocol: json['protocol'] as String?,
+  skipResponse: json['skip_response'] as bool?,
+  url: json['url'] as String,
+); }
+
+final AccountRequestTracerRequestTraceRequestBody? body;
+
+/// Additional request parameters
+final AccountRequestTracerRequestTraceRequestContext? context;
+
+/// Cookies added to tracing request
+final Map<String,String>? cookies;
+
+/// Headers added to tracing request
+final Map<String,String>? headers;
+
+/// HTTP Method of tracing request
+final String method;
+
+/// HTTP Protocol of tracing request
+final String? protocol;
+
+/// Skip sending the request to the Origin server after all rules evaluation
+final bool? skipResponse;
+
+/// URL to which perform tracing request
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  if (body != null) 'body': body?.toJson(),
+  if (context != null) 'context': context?.toJson(),
+  'cookies': ?cookies,
+  'headers': ?headers,
+  'method': method,
+  'protocol': ?protocol,
+  'skip_response': ?skipResponse,
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('method') && json['method'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+AccountRequestTracerRequestTraceRequest copyWith({AccountRequestTracerRequestTraceRequestBody Function()? body, AccountRequestTracerRequestTraceRequestContext Function()? context, Map<String, String> Function()? cookies, Map<String, String> Function()? headers, String? method, String Function()? protocol, bool Function()? skipResponse, String? url, }) { return AccountRequestTracerRequestTraceRequest(
+  body: body != null ? body() : this.body,
+  context: context != null ? context() : this.context,
+  cookies: cookies != null ? cookies() : this.cookies,
+  headers: headers != null ? headers() : this.headers,
+  method: method ?? this.method,
+  protocol: protocol != null ? protocol() : this.protocol,
+  skipResponse: skipResponse != null ? skipResponse() : this.skipResponse,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountRequestTracerRequestTraceRequest &&
+          body == other.body &&
+          context == other.context &&
+          cookies == other.cookies &&
+          headers == other.headers &&
+          method == other.method &&
+          protocol == other.protocol &&
+          skipResponse == other.skipResponse &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(body, context, cookies, headers, method, protocol, skipResponse, url); } 
+@override String toString() { return 'AccountRequestTracerRequestTraceRequest(body: $body, context: $context, cookies: $cookies, headers: $headers, method: $method, protocol: $protocol, skipResponse: $skipResponse, url: $url)'; } 
+ }

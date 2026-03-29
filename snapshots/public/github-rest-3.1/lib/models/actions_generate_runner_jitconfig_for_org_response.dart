@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'runner.dart';final class ActionsGenerateRunnerJitconfigForOrgResponse {const ActionsGenerateRunnerJitconfigForOrgResponse({required this.runner, required this.encodedJitConfig, });
+
+factory ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsGenerateRunnerJitconfigForOrgResponse(
+  runner: Runner.fromJson(json['runner'] as Map<String, dynamic>),
+  encodedJitConfig: json['encoded_jit_config'] as String,
+); }
+
+final Runner runner;
+
+/// The base64 encoded runner configuration.
+final String encodedJitConfig;
+
+Map<String, dynamic> toJson() { return {
+  'runner': runner.toJson(),
+  'encoded_jit_config': encodedJitConfig,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('runner') &&
+      json.containsKey('encoded_jit_config') && json['encoded_jit_config'] is String; } 
+ActionsGenerateRunnerJitconfigForOrgResponse copyWith({Runner? runner, String? encodedJitConfig, }) { return ActionsGenerateRunnerJitconfigForOrgResponse(
+  runner: runner ?? this.runner,
+  encodedJitConfig: encodedJitConfig ?? this.encodedJitConfig,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsGenerateRunnerJitconfigForOrgResponse &&
+          runner == other.runner &&
+          encodedJitConfig == other.encodedJitConfig; } 
+@override int get hashCode { return Object.hash(runner, encodedJitConfig); } 
+@override String toString() { return 'ActionsGenerateRunnerJitconfigForOrgResponse(runner: $runner, encodedJitConfig: $encodedJitConfig)'; } 
+ }

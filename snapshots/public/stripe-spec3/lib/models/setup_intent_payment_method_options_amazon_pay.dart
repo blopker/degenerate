@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class SetupIntentPaymentMethodOptionsAmazonPay {const SetupIntentPaymentMethodOptionsAmazonPay();
+
+factory SetupIntentPaymentMethodOptionsAmazonPay.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsAmazonPay(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SetupIntentPaymentMethodOptionsAmazonPay copyWith() { return SetupIntentPaymentMethodOptionsAmazonPay(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is SetupIntentPaymentMethodOptionsAmazonPay; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'SetupIntentPaymentMethodOptionsAmazonPay()'; } 
+ }

@@ -1,0 +1,68 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'resource_tagging_resource_id.dart';/// Enum for base zone-level resource types (those with no extra required fields).
+final class ResourceTaggingZoneResourceTypeBaseEnum {const ResourceTaggingZoneResourceTypeBaseEnum._(this.value);
+
+factory ResourceTaggingZoneResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
+  'api_gateway_operation' => apiGatewayOperation,
+  'custom_certificate' => customCertificate,
+  'custom_hostname' => customHostname,
+  'dns_record' => dnsRecord,
+  'managed_client_certificate' => managedClientCertificate,
+  'zone' => zone,
+  _ => ResourceTaggingZoneResourceTypeBaseEnum._(json),
+}; }
+
+static const ResourceTaggingZoneResourceTypeBaseEnum apiGatewayOperation = ResourceTaggingZoneResourceTypeBaseEnum._('api_gateway_operation');
+
+static const ResourceTaggingZoneResourceTypeBaseEnum customCertificate = ResourceTaggingZoneResourceTypeBaseEnum._('custom_certificate');
+
+static const ResourceTaggingZoneResourceTypeBaseEnum customHostname = ResourceTaggingZoneResourceTypeBaseEnum._('custom_hostname');
+
+static const ResourceTaggingZoneResourceTypeBaseEnum dnsRecord = ResourceTaggingZoneResourceTypeBaseEnum._('dns_record');
+
+static const ResourceTaggingZoneResourceTypeBaseEnum managedClientCertificate = ResourceTaggingZoneResourceTypeBaseEnum._('managed_client_certificate');
+
+static const ResourceTaggingZoneResourceTypeBaseEnum zone = ResourceTaggingZoneResourceTypeBaseEnum._('zone');
+
+static const List<ResourceTaggingZoneResourceTypeBaseEnum> values = [apiGatewayOperation, customCertificate, customHostname, dnsRecord, managedClientCertificate, zone];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResourceTaggingZoneResourceTypeBaseEnum && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResourceTaggingZoneResourceTypeBaseEnum($value)'; } 
+ }
+/// Request body schema for deleting tags from zone-level resources. Zone ID comes from URL path.
+final class ResourceTaggingDeleteTagsRequestZoneLevelBase {const ResourceTaggingDeleteTagsRequestZoneLevelBase({required this.resourceId, required this.resourceType, });
+
+factory ResourceTaggingDeleteTagsRequestZoneLevelBase.fromJson(Map<String, dynamic> json) { return ResourceTaggingDeleteTagsRequestZoneLevelBase(
+  resourceId: ResourceTaggingResourceId.fromJson(json['resource_id'] as String),
+  resourceType: ResourceTaggingZoneResourceTypeBaseEnum.fromJson(json['resource_type'] as String),
+); }
+
+final ResourceTaggingResourceId resourceId;
+
+final ResourceTaggingZoneResourceTypeBaseEnum resourceType;
+
+Map<String, dynamic> toJson() { return {
+  'resource_id': resourceId.toJson(),
+  'resource_type': resourceType.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('resource_id') &&
+      json.containsKey('resource_type'); } 
+ResourceTaggingDeleteTagsRequestZoneLevelBase copyWith({ResourceTaggingResourceId? resourceId, ResourceTaggingZoneResourceTypeBaseEnum? resourceType, }) { return ResourceTaggingDeleteTagsRequestZoneLevelBase(
+  resourceId: resourceId ?? this.resourceId,
+  resourceType: resourceType ?? this.resourceType,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResourceTaggingDeleteTagsRequestZoneLevelBase &&
+          resourceId == other.resourceId &&
+          resourceType == other.resourceType; } 
+@override int get hashCode { return Object.hash(resourceId, resourceType); } 
+@override String toString() { return 'ResourceTaggingDeleteTagsRequestZoneLevelBase(resourceId: $resourceId, resourceType: $resourceType)'; } 
+ }

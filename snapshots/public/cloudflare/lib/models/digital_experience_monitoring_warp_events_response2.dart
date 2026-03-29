@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'digital_experience_monitoring_warp_config_change_event.dart';import 'digital_experience_monitoring_warp_toggle_change_event.dart';typedef DigitalExperienceMonitoringWarpEventsResponse2 = OneOf2<DigitalExperienceMonitoringWarpToggleChangeEvent,DigitalExperienceMonitoringWarpConfigChangeEvent>;

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class CloudflarePipelinesWorkersPipelinesHttpSourceCors {const CloudflarePipelinesWorkersPipelinesHttpSourceCors({this.origins});
+
+factory CloudflarePipelinesWorkersPipelinesHttpSourceCors.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesWorkersPipelinesHttpSourceCors(
+  origins: (json['origins'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// Specifies allowed origins to allow Cross Origin HTTP Requests.
+final List<String>? origins;
+
+Map<String, dynamic> toJson() { return {
+  'origins': ?origins,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CloudflarePipelinesWorkersPipelinesHttpSourceCors copyWith({List<String> Function()? origins}) { return CloudflarePipelinesWorkersPipelinesHttpSourceCors(
+  origins: origins != null ? origins() : this.origins,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CloudflarePipelinesWorkersPipelinesHttpSourceCors &&
+          listEquals(origins, other.origins); } 
+@override int get hashCode { return Object.hashAll(origins ?? const []).hashCode; } 
+@override String toString() { return 'CloudflarePipelinesWorkersPipelinesHttpSourceCors(origins: $origins)'; } 
+ }

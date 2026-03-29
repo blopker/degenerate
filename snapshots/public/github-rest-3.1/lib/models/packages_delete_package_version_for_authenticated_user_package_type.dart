@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType._(this.value);
+
+factory PackagesDeletePackageVersionForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
+  'npm' => npm,
+  'maven' => maven,
+  'rubygems' => rubygems,
+  'docker' => docker,
+  'nuget' => nuget,
+  'container' => container,
+  _ => PackagesDeletePackageVersionForAuthenticatedUserPackageType._(json),
+}; }
+
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType npm = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('npm');
+
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType maven = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('maven');
+
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType rubygems = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('rubygems');
+
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType docker = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('docker');
+
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType nuget = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('nuget');
+
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType container = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('container');
+
+static const List<PackagesDeletePackageVersionForAuthenticatedUserPackageType> values = [npm, maven, rubygems, docker, nuget, container];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PackagesDeletePackageVersionForAuthenticatedUserPackageType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PackagesDeletePackageVersionForAuthenticatedUserPackageType($value)'; } 
+ }

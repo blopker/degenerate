@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling {const PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling({required this.amount, required this.date, });
+
+factory PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling.fromJson(Map<String, dynamic> json) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
+  amount: (json['amount'] as num).toInt(),
+  date: json['date'] as String,
+); }
+
+final int amount;
+
+final String date;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'date': date,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('date') && json['date'] is String; } 
+PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling copyWith({int? amount, String? date, }) { return PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(
+  amount: amount ?? this.amount,
+  date: date ?? this.date,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling &&
+          amount == other.amount &&
+          date == other.date; } 
+@override int get hashCode { return Object.hash(amount, date); } 
+@override String toString() { return 'PostSetupIntentsIntentConfirmRequestPaymentMethodOptionsKlarnaSubscriptionsVariant1NextBilling(amount: $amount, date: $date)'; } 
+ }

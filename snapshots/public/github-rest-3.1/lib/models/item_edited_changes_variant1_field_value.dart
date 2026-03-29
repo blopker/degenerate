@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_edited_changes_variant1_field_value_from.dart';import 'item_edited_changes_variant1_field_value_to.dart';import 'iteration_setting.dart';import 'single_select_option.dart';final class ItemEditedChangesVariant1FieldValue {const ItemEditedChangesVariant1FieldValue({this.fieldNodeId, this.fieldType, this.fieldName, this.projectNumber, this.from, this.to, });
+
+factory ItemEditedChangesVariant1FieldValue.fromJson(Map<String, dynamic> json) { return ItemEditedChangesVariant1FieldValue(
+  fieldNodeId: json['field_node_id'] as String?,
+  fieldType: json['field_type'] as String?,
+  fieldName: json['field_name'] as String?,
+  projectNumber: json['project_number'] != null ? (json['project_number'] as num).toInt() : null,
+  from: json['from'] != null ? OneOf4.parse(json['from'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => SingleSelectOption.fromJson(v as Map<String, dynamic>), fromD: (v) => IterationSetting.fromJson(v as Map<String, dynamic>),) : null,
+  to: json['to'] != null ? OneOf4.parse(json['to'], fromA: (v) => v as String, fromB: (v) => (v as num).toInt(), fromC: (v) => SingleSelectOption.fromJson(v as Map<String, dynamic>), fromD: (v) => IterationSetting.fromJson(v as Map<String, dynamic>),) : null,
+); }
+
+final String? fieldNodeId;
+
+final String? fieldType;
+
+final String? fieldName;
+
+final int? projectNumber;
+
+final ItemEditedChangesVariant1FieldValueFrom? from;
+
+final ItemEditedChangesVariant1FieldValueTo? to;
+
+Map<String, dynamic> toJson() { return {
+  'field_node_id': ?fieldNodeId,
+  'field_type': ?fieldType,
+  'field_name': ?fieldName,
+  'project_number': ?projectNumber,
+  if (from != null) 'from': from?.toJson(),
+  if (to != null) 'to': to?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ItemEditedChangesVariant1FieldValue copyWith({String Function()? fieldNodeId, String Function()? fieldType, String Function()? fieldName, int Function()? projectNumber, ItemEditedChangesVariant1FieldValueFrom? Function()? from, ItemEditedChangesVariant1FieldValueTo? Function()? to, }) { return ItemEditedChangesVariant1FieldValue(
+  fieldNodeId: fieldNodeId != null ? fieldNodeId() : this.fieldNodeId,
+  fieldType: fieldType != null ? fieldType() : this.fieldType,
+  fieldName: fieldName != null ? fieldName() : this.fieldName,
+  projectNumber: projectNumber != null ? projectNumber() : this.projectNumber,
+  from: from != null ? from() : this.from,
+  to: to != null ? to() : this.to,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ItemEditedChangesVariant1FieldValue &&
+          fieldNodeId == other.fieldNodeId &&
+          fieldType == other.fieldType &&
+          fieldName == other.fieldName &&
+          projectNumber == other.projectNumber &&
+          from == other.from &&
+          to == other.to; } 
+@override int get hashCode { return Object.hash(fieldNodeId, fieldType, fieldName, projectNumber, from, to); } 
+@override String toString() { return 'ItemEditedChangesVariant1FieldValue(fieldNodeId: $fieldNodeId, fieldType: $fieldType, fieldName: $fieldName, projectNumber: $projectNumber, from: $from, to: $to)'; } 
+ }

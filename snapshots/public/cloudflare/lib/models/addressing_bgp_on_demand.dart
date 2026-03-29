@@ -1,0 +1,69 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+extension type AddressingModifiedAtNullable(DateTime value) {
+factory AddressingModifiedAtNullable.fromJson(String json) => AddressingModifiedAtNullable(DateTime.parse(json));
+
+String toJson() => value.toIso8601String();
+
+}
+/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+extension type const AddressingSchemasAdvertised(bool value) {
+factory AddressingSchemasAdvertised.fromJson(bool json) => AddressingSchemasAdvertised(json);
+
+bool toJson() => value;
+
+}
+/// Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.
+extension type const AddressingSchemasOnDemandEnabled(bool value) {
+factory AddressingSchemasOnDemandEnabled.fromJson(bool json) => AddressingSchemasOnDemandEnabled(json);
+
+bool toJson() => value;
+
+}
+/// Whether the advertisement status of the prefix is locked, meaning it cannot be changed.
+extension type const AddressingSchemasOnDemandLocked(bool value) {
+factory AddressingSchemasOnDemandLocked.fromJson(bool json) => AddressingSchemasOnDemandLocked(json);
+
+bool toJson() => value;
+
+}
+final class AddressingBgpOnDemand {const AddressingBgpOnDemand({this.advertised, this.advertisedModifiedAt, this.onDemandEnabled, this.onDemandLocked, });
+
+factory AddressingBgpOnDemand.fromJson(Map<String, dynamic> json) { return AddressingBgpOnDemand(
+  advertised: json['advertised'] != null ? AddressingSchemasAdvertised.fromJson(json['advertised'] as bool) : null,
+  advertisedModifiedAt: json['advertised_modified_at'] != null ? AddressingModifiedAtNullable.fromJson(json['advertised_modified_at'] as String) : null,
+  onDemandEnabled: json['on_demand_enabled'] != null ? AddressingSchemasOnDemandEnabled.fromJson(json['on_demand_enabled'] as bool) : null,
+  onDemandLocked: json['on_demand_locked'] != null ? AddressingSchemasOnDemandLocked.fromJson(json['on_demand_locked'] as bool) : null,
+); }
+
+final AddressingSchemasAdvertised? advertised;
+
+final AddressingModifiedAtNullable? advertisedModifiedAt;
+
+final AddressingSchemasOnDemandEnabled? onDemandEnabled;
+
+final AddressingSchemasOnDemandLocked? onDemandLocked;
+
+Map<String, dynamic> toJson() { return {
+  if (advertised != null) 'advertised': advertised?.toJson(),
+  if (advertisedModifiedAt != null) 'advertised_modified_at': advertisedModifiedAt?.toJson(),
+  if (onDemandEnabled != null) 'on_demand_enabled': onDemandEnabled?.toJson(),
+  if (onDemandLocked != null) 'on_demand_locked': onDemandLocked?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AddressingBgpOnDemand copyWith({AddressingSchemasAdvertised? Function()? advertised, AddressingModifiedAtNullable? Function()? advertisedModifiedAt, AddressingSchemasOnDemandEnabled Function()? onDemandEnabled, AddressingSchemasOnDemandLocked Function()? onDemandLocked, }) { return AddressingBgpOnDemand(
+  advertised: advertised != null ? advertised() : this.advertised,
+  advertisedModifiedAt: advertisedModifiedAt != null ? advertisedModifiedAt() : this.advertisedModifiedAt,
+  onDemandEnabled: onDemandEnabled != null ? onDemandEnabled() : this.onDemandEnabled,
+  onDemandLocked: onDemandLocked != null ? onDemandLocked() : this.onDemandLocked,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AddressingBgpOnDemand &&
+          advertised == other.advertised &&
+          advertisedModifiedAt == other.advertisedModifiedAt &&
+          onDemandEnabled == other.onDemandEnabled &&
+          onDemandLocked == other.onDemandLocked; } 
+@override int get hashCode { return Object.hash(advertised, advertisedModifiedAt, onDemandEnabled, onDemandLocked); } 
+@override String toString() { return 'AddressingBgpOnDemand(advertised: $advertised, advertisedModifiedAt: $advertisedModifiedAt, onDemandEnabled: $onDemandEnabled, onDemandLocked: $onDemandLocked)'; } 
+ }

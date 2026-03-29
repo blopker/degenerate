@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_intents_intent_increment_authorization_request_hooks_inputs_tax_calculation.dart';final class PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax {const PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax({required this.calculation});
+
+factory PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax.fromJson(Map<String, dynamic> json) { return PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax(
+  calculation: OneOf2.parse(json['calculation'], fromA: (v) => v as String, fromB: (v) => PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculationVariant2.fromJson(v as String),),
+); }
+
+final PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculation calculation;
+
+Map<String, dynamic> toJson() { return {
+  'calculation': calculation.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation'); } 
+PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax copyWith({PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTaxCalculation? calculation}) { return PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax(
+  calculation: calculation ?? this.calculation,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax &&
+          calculation == other.calculation; } 
+@override int get hashCode { return calculation.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentIncrementAuthorizationRequestHooksInputsTax(calculation: $calculation)'; } 
+ }

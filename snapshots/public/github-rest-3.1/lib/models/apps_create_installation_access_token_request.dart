@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'app_permissions.dart';final class AppsCreateInstallationAccessTokenRequest {const AppsCreateInstallationAccessTokenRequest({this.repositories, this.repositoryIds, this.permissions, });
+
+factory AppsCreateInstallationAccessTokenRequest.fromJson(Map<String, dynamic> json) { return AppsCreateInstallationAccessTokenRequest(
+  repositories: (json['repositories'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  repositoryIds: (json['repository_ids'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
+  permissions: json['permissions'] != null ? AppPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+); }
+
+/// List of repository names that the token should have access to
+final List<String>? repositories;
+
+/// List of repository IDs that the token should have access to
+final List<int>? repositoryIds;
+
+final AppPermissions? permissions;
+
+Map<String, dynamic> toJson() { return {
+  'repositories': ?repositories,
+  'repository_ids': ?repositoryIds,
+  if (permissions != null) 'permissions': permissions?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AppsCreateInstallationAccessTokenRequest copyWith({List<String> Function()? repositories, List<int> Function()? repositoryIds, AppPermissions Function()? permissions, }) { return AppsCreateInstallationAccessTokenRequest(
+  repositories: repositories != null ? repositories() : this.repositories,
+  repositoryIds: repositoryIds != null ? repositoryIds() : this.repositoryIds,
+  permissions: permissions != null ? permissions() : this.permissions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AppsCreateInstallationAccessTokenRequest &&
+          listEquals(repositories, other.repositories) &&
+          listEquals(repositoryIds, other.repositoryIds) &&
+          permissions == other.permissions; } 
+@override int get hashCode { return Object.hash(Object.hashAll(repositories ?? const []), Object.hashAll(repositoryIds ?? const []), permissions); } 
+@override String toString() { return 'AppsCreateInstallationAccessTokenRequest(repositories: $repositories, repositoryIds: $repositoryIds, permissions: $permissions)'; } 
+ }

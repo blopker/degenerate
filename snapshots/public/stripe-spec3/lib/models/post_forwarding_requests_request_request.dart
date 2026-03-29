@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_forwarding_requests_request_request_headers.dart';/// The request body and headers to be sent to the destination endpoint.
+final class PostForwardingRequestsRequestRequest {const PostForwardingRequestsRequestRequest({this.body, this.headers, });
+
+factory PostForwardingRequestsRequestRequest.fromJson(Map<String, dynamic> json) { return PostForwardingRequestsRequestRequest(
+  body: json['body'] as String?,
+  headers: (json['headers'] as List<dynamic>?)?.map((e) => PostForwardingRequestsRequestRequestHeaders.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final String? body;
+
+final List<PostForwardingRequestsRequestRequestHeaders>? headers;
+
+Map<String, dynamic> toJson() { return {
+  'body': ?body,
+  if (headers != null) 'headers': headers?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostForwardingRequestsRequestRequest copyWith({String Function()? body, List<PostForwardingRequestsRequestRequestHeaders> Function()? headers, }) { return PostForwardingRequestsRequestRequest(
+  body: body != null ? body() : this.body,
+  headers: headers != null ? headers() : this.headers,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostForwardingRequestsRequestRequest &&
+          body == other.body &&
+          listEquals(headers, other.headers); } 
+@override int get hashCode { return Object.hash(body, Object.hashAll(headers ?? const [])); } 
+@override String toString() { return 'PostForwardingRequestsRequestRequest(body: $body, headers: $headers)'; } 
+ }

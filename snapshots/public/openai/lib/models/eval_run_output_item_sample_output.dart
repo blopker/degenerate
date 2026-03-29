@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class EvalRunOutputItemSampleOutput {const EvalRunOutputItemSampleOutput({this.role, this.content, });
+
+factory EvalRunOutputItemSampleOutput.fromJson(Map<String, dynamic> json) { return EvalRunOutputItemSampleOutput(
+  role: json['role'] as String?,
+  content: json['content'] as String?,
+); }
+
+/// The role of the message (e.g. "system", "assistant", "user").
+final String? role;
+
+/// The content of the message.
+final String? content;
+
+Map<String, dynamic> toJson() { return {
+  'role': ?role,
+  'content': ?content,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+EvalRunOutputItemSampleOutput copyWith({String Function()? role, String Function()? content, }) { return EvalRunOutputItemSampleOutput(
+  role: role != null ? role() : this.role,
+  content: content != null ? content() : this.content,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EvalRunOutputItemSampleOutput &&
+          role == other.role &&
+          content == other.content; } 
+@override int get hashCode { return Object.hash(role, content); } 
+@override String toString() { return 'EvalRunOutputItemSampleOutput(role: $role, content: $content)'; } 
+ }

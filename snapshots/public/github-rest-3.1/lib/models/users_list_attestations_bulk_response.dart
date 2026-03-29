@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'users_list_attestations_bulk_response_attestations_subject_digests_value.dart';import 'users_list_attestations_bulk_response_page_info.dart';final class UsersListAttestationsBulkResponse {const UsersListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
+
+factory UsersListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return UsersListAttestationsBulkResponse(
+  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
+  pageInfo: json['page_info'] != null ? UsersListAttestationsBulkResponsePageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
+); }
+
+/// Mapping of subject digest to bundles.
+final Map<String,List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>?>? attestationsSubjectDigests;
+
+/// Information about the current page.
+final UsersListAttestationsBulkResponsePageInfo? pageInfo;
+
+Map<String, dynamic> toJson() { return {
+  if (attestationsSubjectDigests != null) 'attestations_subject_digests': attestationsSubjectDigests?.map((k, v) => MapEntry(k, v?.map((e) => e.toJson()).toList())),
+  if (pageInfo != null) 'page_info': pageInfo?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+UsersListAttestationsBulkResponse copyWith({Map<String, List<UsersListAttestationsBulkResponseAttestationsSubjectDigestsValue>> Function()? attestationsSubjectDigests, UsersListAttestationsBulkResponsePageInfo Function()? pageInfo, }) { return UsersListAttestationsBulkResponse(
+  attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
+  pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UsersListAttestationsBulkResponse &&
+          attestationsSubjectDigests == other.attestationsSubjectDigests &&
+          pageInfo == other.pageInfo; } 
+@override int get hashCode { return Object.hash(attestationsSubjectDigests, pageInfo); } 
+@override String toString() { return 'UsersListAttestationsBulkResponse(attestationsSubjectDigests: $attestationsSubjectDigests, pageInfo: $pageInfo)'; } 
+ }

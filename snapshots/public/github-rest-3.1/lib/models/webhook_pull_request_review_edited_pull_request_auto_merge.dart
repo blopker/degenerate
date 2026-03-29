@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_pull_request_review_edited_pull_request_auto_merge_enabled_by.dart';/// The merge method to use.
+final class WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod {const WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod._(this.value);
+
+factory WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod.fromJson(String json) { return switch (json) {
+  'merge' => merge,
+  'squash' => squash,
+  'rebase' => rebase,
+  _ => WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod._(json),
+}; }
+
+static const WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod merge = WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod._('merge');
+
+static const WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod squash = WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod._('squash');
+
+static const WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod rebase = WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod._('rebase');
+
+static const List<WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod> values = [merge, squash, rebase];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod($value)'; } 
+ }
+/// The status of auto merging a pull request.
+final class WebhookPullRequestReviewEditedPullRequestAutoMerge {const WebhookPullRequestReviewEditedPullRequestAutoMerge({required this.commitMessage, required this.commitTitle, required this.enabledBy, required this.mergeMethod, });
+
+factory WebhookPullRequestReviewEditedPullRequestAutoMerge.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewEditedPullRequestAutoMerge(
+  commitMessage: json['commit_message'] as String?,
+  commitTitle: json['commit_title'] as String?,
+  enabledBy: json['enabled_by'] != null ? WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy.fromJson(json['enabled_by'] as Map<String, dynamic>) : null,
+  mergeMethod: WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod.fromJson(json['merge_method'] as String),
+); }
+
+/// Commit message for the merge commit.
+final String? commitMessage;
+
+/// Title for the merge commit message.
+final String? commitTitle;
+
+final WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy? enabledBy;
+
+/// The merge method to use.
+final WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod mergeMethod;
+
+Map<String, dynamic> toJson() { return {
+  'commit_message': ?commitMessage,
+  'commit_title': ?commitTitle,
+  if (enabledBy != null) 'enabled_by': enabledBy?.toJson(),
+  'merge_method': mergeMethod.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('commit_message') && json['commit_message'] is String &&
+      json.containsKey('commit_title') && json['commit_title'] is String &&
+      json.containsKey('enabled_by') &&
+      json.containsKey('merge_method'); } 
+WebhookPullRequestReviewEditedPullRequestAutoMerge copyWith({String? Function()? commitMessage, String? Function()? commitTitle, WebhookPullRequestReviewEditedPullRequestAutoMergeEnabledBy? Function()? enabledBy, WebhookPullRequestReviewEditedPullRequestAutoMergeMergeMethod? mergeMethod, }) { return WebhookPullRequestReviewEditedPullRequestAutoMerge(
+  commitMessage: commitMessage != null ? commitMessage() : this.commitMessage,
+  commitTitle: commitTitle != null ? commitTitle() : this.commitTitle,
+  enabledBy: enabledBy != null ? enabledBy() : this.enabledBy,
+  mergeMethod: mergeMethod ?? this.mergeMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewEditedPullRequestAutoMerge &&
+          commitMessage == other.commitMessage &&
+          commitTitle == other.commitTitle &&
+          enabledBy == other.enabledBy &&
+          mergeMethod == other.mergeMethod; } 
+@override int get hashCode { return Object.hash(commitMessage, commitTitle, enabledBy, mergeMethod); } 
+@override String toString() { return 'WebhookPullRequestReviewEditedPullRequestAutoMerge(commitMessage: $commitMessage, commitTitle: $commitTitle, enabledBy: $enabledBy, mergeMethod: $mergeMethod)'; } 
+ }

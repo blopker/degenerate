@@ -1,0 +1,171 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Network status of device.
+final class TeamsDevicesSentineloneS2sInputRequestNetworkStatus {const TeamsDevicesSentineloneS2sInputRequestNetworkStatus._(this.value);
+
+factory TeamsDevicesSentineloneS2sInputRequestNetworkStatus.fromJson(String json) { return switch (json) {
+  'connected' => connected,
+  'disconnected' => disconnected,
+  'disconnecting' => disconnecting,
+  'connecting' => connecting,
+  _ => TeamsDevicesSentineloneS2sInputRequestNetworkStatus._(json),
+}; }
+
+static const TeamsDevicesSentineloneS2sInputRequestNetworkStatus connected = TeamsDevicesSentineloneS2sInputRequestNetworkStatus._('connected');
+
+static const TeamsDevicesSentineloneS2sInputRequestNetworkStatus disconnected = TeamsDevicesSentineloneS2sInputRequestNetworkStatus._('disconnected');
+
+static const TeamsDevicesSentineloneS2sInputRequestNetworkStatus disconnecting = TeamsDevicesSentineloneS2sInputRequestNetworkStatus._('disconnecting');
+
+static const TeamsDevicesSentineloneS2sInputRequestNetworkStatus connecting = TeamsDevicesSentineloneS2sInputRequestNetworkStatus._('connecting');
+
+static const List<TeamsDevicesSentineloneS2sInputRequestNetworkStatus> values = [connected, disconnected, disconnecting, connecting];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesSentineloneS2sInputRequestNetworkStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesSentineloneS2sInputRequestNetworkStatus($value)'; } 
+ }
+/// Agent operational state.
+final class TeamsDevicesSentineloneS2sInputRequestOperationalState {const TeamsDevicesSentineloneS2sInputRequestOperationalState._(this.value);
+
+factory TeamsDevicesSentineloneS2sInputRequestOperationalState.fromJson(String json) { return switch (json) {
+  'na' => na,
+  'partially_disabled' => partiallyDisabled,
+  'auto_fully_disabled' => autoFullyDisabled,
+  'fully_disabled' => fullyDisabled,
+  'auto_partially_disabled' => autoPartiallyDisabled,
+  'disabled_error' => disabledError,
+  'db_corruption' => dbCorruption,
+  _ => TeamsDevicesSentineloneS2sInputRequestOperationalState._(json),
+}; }
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState na = TeamsDevicesSentineloneS2sInputRequestOperationalState._('na');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState partiallyDisabled = TeamsDevicesSentineloneS2sInputRequestOperationalState._('partially_disabled');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState autoFullyDisabled = TeamsDevicesSentineloneS2sInputRequestOperationalState._('auto_fully_disabled');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState fullyDisabled = TeamsDevicesSentineloneS2sInputRequestOperationalState._('fully_disabled');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState autoPartiallyDisabled = TeamsDevicesSentineloneS2sInputRequestOperationalState._('auto_partially_disabled');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState disabledError = TeamsDevicesSentineloneS2sInputRequestOperationalState._('disabled_error');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperationalState dbCorruption = TeamsDevicesSentineloneS2sInputRequestOperationalState._('db_corruption');
+
+static const List<TeamsDevicesSentineloneS2sInputRequestOperationalState> values = [na, partiallyDisabled, autoFullyDisabled, fullyDisabled, autoPartiallyDisabled, disabledError, dbCorruption];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesSentineloneS2sInputRequestOperationalState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesSentineloneS2sInputRequestOperationalState($value)'; } 
+ }
+/// Operator.
+final class TeamsDevicesSentineloneS2sInputRequestOperator {const TeamsDevicesSentineloneS2sInputRequestOperator._(this.value);
+
+factory TeamsDevicesSentineloneS2sInputRequestOperator.fromJson(String json) { return switch (json) {
+  '<' => $empty,
+  '<=' => $empty2,
+  '>' => $empty3,
+  '>=' => $empty4,
+  '==' => $empty5,
+  _ => TeamsDevicesSentineloneS2sInputRequestOperator._(json),
+}; }
+
+static const TeamsDevicesSentineloneS2sInputRequestOperator $empty = TeamsDevicesSentineloneS2sInputRequestOperator._('<');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperator $empty2 = TeamsDevicesSentineloneS2sInputRequestOperator._('<=');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperator $empty3 = TeamsDevicesSentineloneS2sInputRequestOperator._('>');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperator $empty4 = TeamsDevicesSentineloneS2sInputRequestOperator._('>=');
+
+static const TeamsDevicesSentineloneS2sInputRequestOperator $empty5 = TeamsDevicesSentineloneS2sInputRequestOperator._('==');
+
+static const List<TeamsDevicesSentineloneS2sInputRequestOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TeamsDevicesSentineloneS2sInputRequestOperator && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TeamsDevicesSentineloneS2sInputRequestOperator($value)'; } 
+ }
+final class TeamsDevicesSentineloneS2sInputRequest {const TeamsDevicesSentineloneS2sInputRequest({this.activeThreats, required this.connectionId, this.infected, this.isActive, this.networkStatus, this.operationalState, this.$operator, });
+
+factory TeamsDevicesSentineloneS2sInputRequest.fromJson(Map<String, dynamic> json) { return TeamsDevicesSentineloneS2sInputRequest(
+  activeThreats: json['active_threats'] != null ? (json['active_threats'] as num).toDouble() : null,
+  connectionId: json['connection_id'] as String,
+  infected: json['infected'] as bool?,
+  isActive: json['is_active'] as bool?,
+  networkStatus: json['network_status'] != null ? TeamsDevicesSentineloneS2sInputRequestNetworkStatus.fromJson(json['network_status'] as String) : null,
+  operationalState: json['operational_state'] != null ? TeamsDevicesSentineloneS2sInputRequestOperationalState.fromJson(json['operational_state'] as String) : null,
+  $operator: json['operator'] != null ? TeamsDevicesSentineloneS2sInputRequestOperator.fromJson(json['operator'] as String) : null,
+); }
+
+/// The Number of active threats.
+final double? activeThreats;
+
+/// Posture Integration ID.
+final String connectionId;
+
+/// Whether device is infected.
+final bool? infected;
+
+/// Whether device is active.
+final bool? isActive;
+
+/// Network status of device.
+final TeamsDevicesSentineloneS2sInputRequestNetworkStatus? networkStatus;
+
+/// Agent operational state.
+final TeamsDevicesSentineloneS2sInputRequestOperationalState? operationalState;
+
+/// Operator.
+final TeamsDevicesSentineloneS2sInputRequestOperator? $operator;
+
+Map<String, dynamic> toJson() { return {
+  'active_threats': ?activeThreats,
+  'connection_id': connectionId,
+  'infected': ?infected,
+  'is_active': ?isActive,
+  if (networkStatus != null) 'network_status': networkStatus?.toJson(),
+  if (operationalState != null) 'operational_state': operationalState?.toJson(),
+  if ($operator != null) 'operator': $operator?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('connection_id') && json['connection_id'] is String; } 
+TeamsDevicesSentineloneS2sInputRequest copyWith({double Function()? activeThreats, String? connectionId, bool Function()? infected, bool Function()? isActive, TeamsDevicesSentineloneS2sInputRequestNetworkStatus Function()? networkStatus, TeamsDevicesSentineloneS2sInputRequestOperationalState Function()? operationalState, TeamsDevicesSentineloneS2sInputRequestOperator Function()? $operator, }) { return TeamsDevicesSentineloneS2sInputRequest(
+  activeThreats: activeThreats != null ? activeThreats() : this.activeThreats,
+  connectionId: connectionId ?? this.connectionId,
+  infected: infected != null ? infected() : this.infected,
+  isActive: isActive != null ? isActive() : this.isActive,
+  networkStatus: networkStatus != null ? networkStatus() : this.networkStatus,
+  operationalState: operationalState != null ? operationalState() : this.operationalState,
+  $operator: $operator != null ? $operator() : this.$operator,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesSentineloneS2sInputRequest &&
+          activeThreats == other.activeThreats &&
+          connectionId == other.connectionId &&
+          infected == other.infected &&
+          isActive == other.isActive &&
+          networkStatus == other.networkStatus &&
+          operationalState == other.operationalState &&
+          $operator == other.$operator; } 
+@override int get hashCode { return Object.hash(activeThreats, connectionId, infected, isActive, networkStatus, operationalState, $operator); } 
+@override String toString() { return 'TeamsDevicesSentineloneS2sInputRequest(activeThreats: $activeThreats, connectionId: $connectionId, infected: $infected, isActive: $isActive, networkStatus: $networkStatus, operationalState: $operationalState, \$operator: ${$operator})'; } 
+ }

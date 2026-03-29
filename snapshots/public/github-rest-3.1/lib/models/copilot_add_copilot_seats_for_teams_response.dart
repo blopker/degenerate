@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The total number of seats created for members of the specified team(s).
+final class CopilotAddCopilotSeatsForTeamsResponse {const CopilotAddCopilotSeatsForTeamsResponse({required this.seatsCreated});
+
+factory CopilotAddCopilotSeatsForTeamsResponse.fromJson(Map<String, dynamic> json) { return CopilotAddCopilotSeatsForTeamsResponse(
+  seatsCreated: (json['seats_created'] as num).toInt(),
+); }
+
+final int seatsCreated;
+
+Map<String, dynamic> toJson() { return {
+  'seats_created': seatsCreated,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('seats_created') && json['seats_created'] is num; } 
+CopilotAddCopilotSeatsForTeamsResponse copyWith({int? seatsCreated}) { return CopilotAddCopilotSeatsForTeamsResponse(
+  seatsCreated: seatsCreated ?? this.seatsCreated,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CopilotAddCopilotSeatsForTeamsResponse &&
+          seatsCreated == other.seatsCreated; } 
+@override int get hashCode { return seatsCreated.hashCode; } 
+@override String toString() { return 'CopilotAddCopilotSeatsForTeamsResponse(seatsCreated: $seatsCreated)'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersErrorWorkerLimit {const WorkersErrorWorkerLimit({required this.code, required this.message, });
+
+factory WorkersErrorWorkerLimit.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerLimit(
+  code: (json['code'] as num).toInt(),
+  message: json['message'] as String,
+); }
+
+/// Code indicating that the account has exceeded the maximum number of Workers allowed.
+final int code;
+
+/// Message explaining that the Worker limit has been exceeded and providing guidance.
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String; } 
+WorkersErrorWorkerLimit copyWith({int? code, String? message, }) { return WorkersErrorWorkerLimit(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersErrorWorkerLimit &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'WorkersErrorWorkerLimit(code: $code, message: $message)'; } 
+ }

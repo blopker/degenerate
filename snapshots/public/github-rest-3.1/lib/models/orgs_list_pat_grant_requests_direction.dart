@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class OrgsListPatGrantRequestsDirection {const OrgsListPatGrantRequestsDirection._(this.value);
+
+factory OrgsListPatGrantRequestsDirection.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => OrgsListPatGrantRequestsDirection._(json),
+}; }
+
+static const OrgsListPatGrantRequestsDirection asc = OrgsListPatGrantRequestsDirection._('asc');
+
+static const OrgsListPatGrantRequestsDirection desc = OrgsListPatGrantRequestsDirection._('desc');
+
+static const List<OrgsListPatGrantRequestsDirection> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is OrgsListPatGrantRequestsDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'OrgsListPatGrantRequestsDirection($value)'; } 
+ }

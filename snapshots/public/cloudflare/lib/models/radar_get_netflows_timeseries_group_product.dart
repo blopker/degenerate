@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetNetflowsTimeseriesGroupProduct {const RadarGetNetflowsTimeseriesGroupProduct._(this.value);
+
+factory RadarGetNetflowsTimeseriesGroupProduct.fromJson(String json) { return switch (json) {
+  'HTTP' => http,
+  'ALL' => all,
+  _ => RadarGetNetflowsTimeseriesGroupProduct._(json),
+}; }
+
+static const RadarGetNetflowsTimeseriesGroupProduct http = RadarGetNetflowsTimeseriesGroupProduct._('HTTP');
+
+static const RadarGetNetflowsTimeseriesGroupProduct all = RadarGetNetflowsTimeseriesGroupProduct._('ALL');
+
+static const List<RadarGetNetflowsTimeseriesGroupProduct> values = [http, all];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetNetflowsTimeseriesGroupProduct && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsTimeseriesGroupProduct($value)'; } 
+ }

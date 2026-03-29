@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response_result_scan_meta_processors_tech_evidence_patterns.dart';final class UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence {const UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence({required this.impliedBy, required this.patterns, });
+
+factory UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence(
+  impliedBy: (json['impliedBy'] as List<dynamic>).map((e) => e as String).toList(),
+  patterns: (json['patterns'] as List<dynamic>).map((e) => UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<String> impliedBy;
+
+final List<UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns> patterns;
+
+Map<String, dynamic> toJson() { return {
+  'impliedBy': impliedBy,
+  'patterns': patterns.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('impliedBy') &&
+      json.containsKey('patterns'); } 
+UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence copyWith({List<String>? impliedBy, List<UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidencePatterns>? patterns, }) { return UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence(
+  impliedBy: impliedBy ?? this.impliedBy,
+  patterns: patterns ?? this.patterns,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence &&
+          listEquals(impliedBy, other.impliedBy) &&
+          listEquals(patterns, other.patterns); } 
+@override int get hashCode { return Object.hash(Object.hashAll(impliedBy), Object.hashAll(patterns)); } 
+@override String toString() { return 'UrlscannerGetScanResponseResultScanMetaProcessorsTechEvidence(impliedBy: $impliedBy, patterns: $patterns)'; } 
+ }

@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetNetflowsTimeseriesAggInterval {const RadarGetNetflowsTimeseriesAggInterval._(this.value);
+
+factory RadarGetNetflowsTimeseriesAggInterval.fromJson(String json) { return switch (json) {
+  '15m' => $15m,
+  '1h' => $1h,
+  '1d' => $1d,
+  '1w' => $1w,
+  _ => RadarGetNetflowsTimeseriesAggInterval._(json),
+}; }
+
+static const RadarGetNetflowsTimeseriesAggInterval $15m = RadarGetNetflowsTimeseriesAggInterval._('15m');
+
+static const RadarGetNetflowsTimeseriesAggInterval $1h = RadarGetNetflowsTimeseriesAggInterval._('1h');
+
+static const RadarGetNetflowsTimeseriesAggInterval $1d = RadarGetNetflowsTimeseriesAggInterval._('1d');
+
+static const RadarGetNetflowsTimeseriesAggInterval $1w = RadarGetNetflowsTimeseriesAggInterval._('1w');
+
+static const List<RadarGetNetflowsTimeseriesAggInterval> values = [$15m, $1h, $1d, $1w];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetNetflowsTimeseriesAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetNetflowsTimeseriesAggInterval($value)'; } 
+ }

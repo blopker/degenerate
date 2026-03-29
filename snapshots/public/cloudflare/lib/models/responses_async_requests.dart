@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'responses_async_requests_input.dart';import 'responses_async_requests_reasoning.dart';final class ResponsesAsyncRequests {const ResponsesAsyncRequests({required this.input, this.reasoning, });
+
+factory ResponsesAsyncRequests.fromJson(Map<String, dynamic> json) { return ResponsesAsyncRequests(
+  input: OneOf2.parse(json['input'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e).toList(),),
+  reasoning: json['reasoning'] != null ? ResponsesAsyncRequestsReasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
+); }
+
+/// Responses API Input messages. Refer to OpenAI Responses API docs to learn more about supported content types
+final ResponsesAsyncRequestsInput input;
+
+final ResponsesAsyncRequestsReasoning? reasoning;
+
+Map<String, dynamic> toJson() { return {
+  'input': input.toJson(),
+  if (reasoning != null) 'reasoning': reasoning?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('input'); } 
+ResponsesAsyncRequests copyWith({ResponsesAsyncRequestsInput? input, ResponsesAsyncRequestsReasoning Function()? reasoning, }) { return ResponsesAsyncRequests(
+  input: input ?? this.input,
+  reasoning: reasoning != null ? reasoning() : this.reasoning,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponsesAsyncRequests &&
+          input == other.input &&
+          reasoning == other.reasoning; } 
+@override int get hashCode { return Object.hash(input, reasoning); } 
+@override String toString() { return 'ResponsesAsyncRequests(input: $input, reasoning: $reasoning)'; } 
+ }

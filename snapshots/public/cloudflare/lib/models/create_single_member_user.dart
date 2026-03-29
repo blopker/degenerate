@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CreateSingleMemberUser {const CreateSingleMemberUser({required this.email});
+
+factory CreateSingleMemberUser.fromJson(Map<String, dynamic> json) { return CreateSingleMemberUser(
+  email: json['email'] as String,
+); }
+
+final String email;
+
+Map<String, dynamic> toJson() { return {
+  'email': email,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('email') && json['email'] is String; } 
+CreateSingleMemberUser copyWith({String? email}) { return CreateSingleMemberUser(
+  email: email ?? this.email,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CreateSingleMemberUser &&
+          email == other.email; } 
+@override int get hashCode { return email.hashCode; } 
+@override String toString() { return 'CreateSingleMemberUser(email: $email)'; } 
+ }

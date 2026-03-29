@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookProjectColumnEditedChangesName {const WebhookProjectColumnEditedChangesName({required this.from});
+
+factory WebhookProjectColumnEditedChangesName.fromJson(Map<String, dynamic> json) { return WebhookProjectColumnEditedChangesName(
+  from: json['from'] as String,
+); }
+
+final String from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is String; } 
+WebhookProjectColumnEditedChangesName copyWith({String? from}) { return WebhookProjectColumnEditedChangesName(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookProjectColumnEditedChangesName &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookProjectColumnEditedChangesName(from: $from)'; } 
+ }

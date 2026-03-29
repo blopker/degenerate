@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'infra_dual_stack_host.dart';import 'infra_hostname_host.dart';import 'infra_i_pv4_host.dart';import 'infra_i_pv6_host.dart';typedef InfraServiceHost = OneOf4<InfraIPv4Host,InfraIPv6Host,InfraDualStackHost,InfraHostnameHost>;

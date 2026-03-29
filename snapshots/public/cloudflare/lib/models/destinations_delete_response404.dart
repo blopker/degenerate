@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'destinations_delete_response404_errors.dart';import 'destinations_delete_response404_messages.dart';final class DestinationsDeleteResponse404 {const DestinationsDeleteResponse404({required this.errors, required this.messages, required this.success, });
+
+factory DestinationsDeleteResponse404.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponse404(
+  errors: (json['errors'] as List<dynamic>).map((e) => DestinationsDeleteResponse404Errors.fromJson(e as Map<String, dynamic>)).toList(),
+  messages: (json['messages'] as List<dynamic>).map((e) => DestinationsDeleteResponse404Messages.fromJson(e as Map<String, dynamic>)).toList(),
+  success: json['success'] as bool,
+); }
+
+final List<DestinationsDeleteResponse404Errors> errors;
+
+final List<DestinationsDeleteResponse404Messages> messages;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'errors': errors.map((e) => e.toJson()).toList(),
+  'messages': messages.map((e) => e.toJson()).toList(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
+      json.containsKey('messages') &&
+      json.containsKey('success') && json['success'] is bool; } 
+DestinationsDeleteResponse404 copyWith({List<DestinationsDeleteResponse404Errors>? errors, List<DestinationsDeleteResponse404Messages>? messages, bool? success, }) { return DestinationsDeleteResponse404(
+  errors: errors ?? this.errors,
+  messages: messages ?? this.messages,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DestinationsDeleteResponse404 &&
+          listEquals(errors, other.errors) &&
+          listEquals(messages, other.messages) &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(Object.hashAll(errors), Object.hashAll(messages), success); } 
+@override String toString() { return 'DestinationsDeleteResponse404(errors: $errors, messages: $messages, success: $success)'; } 
+ }

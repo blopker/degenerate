@@ -1,0 +1,20 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodBancontact {const PaymentMethodBancontact();
+
+factory PaymentMethodBancontact.fromJson(Map<String, dynamic> json) { return PaymentMethodBancontact(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodBancontact copyWith() { return PaymentMethodBancontact(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PaymentMethodBancontact; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PaymentMethodBancontact()'; } 
+ }

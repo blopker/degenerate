@@ -1,0 +1,77 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Snapshot Tunnels
+final class MconnSnapshotTunnel {const MconnSnapshotTunnel({this.connectorId, required this.healthState, required this.healthValue, required this.interfaceName, this.probedMtu, this.recentHealthyPings, this.recentUnhealthyPings, required this.tunnelId, });
+
+factory MconnSnapshotTunnel.fromJson(Map<String, dynamic> json) { return MconnSnapshotTunnel(
+  connectorId: json['connector_id'] as String?,
+  healthState: json['health_state'] as String,
+  healthValue: (json['health_value'] as num).toDouble(),
+  interfaceName: json['interface_name'] as String,
+  probedMtu: json['probed_mtu'] != null ? (json['probed_mtu'] as num).toDouble() : null,
+  recentHealthyPings: json['recent_healthy_pings'] != null ? (json['recent_healthy_pings'] as num).toDouble() : null,
+  recentUnhealthyPings: json['recent_unhealthy_pings'] != null ? (json['recent_unhealthy_pings'] as num).toDouble() : null,
+  tunnelId: json['tunnel_id'] as String,
+); }
+
+/// Connector identifier
+final String? connectorId;
+
+/// Name of tunnel health state (unknown, healthy, degraded, down)
+final String healthState;
+
+/// Numeric value associated with tunnel state (0 = unknown, 1 = healthy, 2 = degraded, 3 = down)
+final double healthValue;
+
+/// The tunnel interface name (i.e. xfrm1, xfrm3.99, etc.)
+final String interfaceName;
+
+/// MTU as measured between the two ends of the tunnel
+final double? probedMtu;
+
+/// Number of recent healthy pings for this tunnel
+final double? recentHealthyPings;
+
+/// Number of recent unhealthy pings for this tunnel
+final double? recentUnhealthyPings;
+
+/// Tunnel identifier
+final String tunnelId;
+
+Map<String, dynamic> toJson() { return {
+  'connector_id': ?connectorId,
+  'health_state': healthState,
+  'health_value': healthValue,
+  'interface_name': interfaceName,
+  'probed_mtu': ?probedMtu,
+  'recent_healthy_pings': ?recentHealthyPings,
+  'recent_unhealthy_pings': ?recentUnhealthyPings,
+  'tunnel_id': tunnelId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('health_state') && json['health_state'] is String &&
+      json.containsKey('health_value') && json['health_value'] is num &&
+      json.containsKey('interface_name') && json['interface_name'] is String &&
+      json.containsKey('tunnel_id') && json['tunnel_id'] is String; } 
+MconnSnapshotTunnel copyWith({String Function()? connectorId, String? healthState, double? healthValue, String? interfaceName, double Function()? probedMtu, double Function()? recentHealthyPings, double Function()? recentUnhealthyPings, String? tunnelId, }) { return MconnSnapshotTunnel(
+  connectorId: connectorId != null ? connectorId() : this.connectorId,
+  healthState: healthState ?? this.healthState,
+  healthValue: healthValue ?? this.healthValue,
+  interfaceName: interfaceName ?? this.interfaceName,
+  probedMtu: probedMtu != null ? probedMtu() : this.probedMtu,
+  recentHealthyPings: recentHealthyPings != null ? recentHealthyPings() : this.recentHealthyPings,
+  recentUnhealthyPings: recentUnhealthyPings != null ? recentUnhealthyPings() : this.recentUnhealthyPings,
+  tunnelId: tunnelId ?? this.tunnelId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MconnSnapshotTunnel &&
+          connectorId == other.connectorId &&
+          healthState == other.healthState &&
+          healthValue == other.healthValue &&
+          interfaceName == other.interfaceName &&
+          probedMtu == other.probedMtu &&
+          recentHealthyPings == other.recentHealthyPings &&
+          recentUnhealthyPings == other.recentUnhealthyPings &&
+          tunnelId == other.tunnelId; } 
+@override int get hashCode { return Object.hash(connectorId, healthState, healthValue, interfaceName, probedMtu, recentHealthyPings, recentUnhealthyPings, tunnelId); } 
+@override String toString() { return 'MconnSnapshotTunnel(connectorId: $connectorId, healthState: $healthState, healthValue: $healthValue, interfaceName: $interfaceName, probedMtu: $probedMtu, recentHealthyPings: $recentHealthyPings, recentUnhealthyPings: $recentUnhealthyPings, tunnelId: $tunnelId)'; } 
+ }

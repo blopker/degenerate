@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2 {const PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2._(this.value);
+
+factory PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2._(json),
+}; }
+
+static const PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2 $empty = PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2._('');
+
+static const List<PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2($value)'; } 
+ }
+typedef PostQuotesQuoteRequestSubscriptionDataTrialPeriodDays = OneOf2<int,PostQuotesQuoteRequestSubscriptionDataTrialPeriodDaysVariant2>;

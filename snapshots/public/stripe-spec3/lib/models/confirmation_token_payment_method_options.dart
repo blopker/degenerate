@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'confirmation_tokens_resource_payment_method_options.dart';/// Payment-method-specific configuration for this ConfirmationToken.
+final class ConfirmationTokenPaymentMethodOptions {const ConfirmationTokenPaymentMethodOptions({this.confirmationTokensResourcePaymentMethodOptions});
+
+factory ConfirmationTokenPaymentMethodOptions.fromJson(Map<String, dynamic> json) { return ConfirmationTokenPaymentMethodOptions(
+  confirmationTokensResourcePaymentMethodOptions: ConfirmationTokensResourcePaymentMethodOptions.canParse(json) ? ConfirmationTokensResourcePaymentMethodOptions.fromJson(json) : null,
+); }
+
+final ConfirmationTokensResourcePaymentMethodOptions? confirmationTokensResourcePaymentMethodOptions;
+
+/// At least one variant must be present.
+bool get isValid { return confirmationTokensResourcePaymentMethodOptions != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?confirmationTokensResourcePaymentMethodOptions?.toJson(),
+}; } 
+ }

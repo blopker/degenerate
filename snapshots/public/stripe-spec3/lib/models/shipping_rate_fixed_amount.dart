@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'shipping_rate_currency_option.dart';/// 
+final class ShippingRateFixedAmount {const ShippingRateFixedAmount({required this.amount, required this.currency, this.currencyOptions, });
+
+factory ShippingRateFixedAmount.fromJson(Map<String, dynamic> json) { return ShippingRateFixedAmount(
+  amount: (json['amount'] as num).toInt(),
+  currency: json['currency'] as String,
+  currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ShippingRateCurrencyOption.fromJson(v as Map<String, dynamic>))),
+); }
+
+/// A non-negative integer in cents representing how much to charge.
+final int amount;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// Shipping rates defined in each available currency option. Each key must be a three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html) and a [supported currency](https://stripe.com/docs/currencies).
+final Map<String,ShippingRateCurrencyOption>? currencyOptions;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'currency': currency,
+  if (currencyOptions != null) 'currency_options': currencyOptions?.map((k, v) => MapEntry(k, v.toJson())),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String; } 
+ShippingRateFixedAmount copyWith({int? amount, String? currency, Map<String, ShippingRateCurrencyOption> Function()? currencyOptions, }) { return ShippingRateFixedAmount(
+  amount: amount ?? this.amount,
+  currency: currency ?? this.currency,
+  currencyOptions: currencyOptions != null ? currencyOptions() : this.currencyOptions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ShippingRateFixedAmount &&
+          amount == other.amount &&
+          currency == other.currency &&
+          currencyOptions == other.currencyOptions; } 
+@override int get hashCode { return Object.hash(amount, currency, currencyOptions); } 
+@override String toString() { return 'ShippingRateFixedAmount(amount: $amount, currency: $currency, currencyOptions: $currencyOptions)'; } 
+ }

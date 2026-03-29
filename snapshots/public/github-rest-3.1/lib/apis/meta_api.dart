@@ -1,0 +1,133 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/basic_error.dart';import '../models/overview.dart';import '../models/root.dart';/// MetaApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class MetaApi with ApiExecutor {const MetaApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// GitHub API Root
+///
+/// Get Hypermedia links to resources accessible in GitHub's REST API
+///
+/// `GET /`
+Future<ApiResult<Root, Never>> metaRoot({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Root.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get GitHub meta information
+///
+/// Returns meta information about GitHub, including a list of GitHub's IP addresses. For more information, see "[About GitHub's IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/)."
+/// 
+/// The API's response also includes a list of GitHub's domain names.
+/// 
+/// The values shown in the documentation's response are example values. You must always query the API directly to get the latest values.
+/// 
+/// > [!NOTE]
+/// > This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
+///
+/// `GET /meta`
+Future<ApiResult<Overview, Never>> metaGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/meta',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return Overview.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get Octocat
+///
+/// Get the octocat as ASCII art
+///
+/// `GET /octocat`
+Future<ApiResult<String, Never>> metaGetOctocat({String? s, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (s != null) queryParameters['s'] = s;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/octocat',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return response.body;
+  },
+);
+ } 
+/// Get all API versions
+///
+/// Get all supported GitHub API versions.
+///
+/// `GET /versions`
+Future<ApiResult<List<String>, BasicError>> metaGetAllVersions({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/versions',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    final json = jsonDecode(response.body) as List<dynamic>;
+    return json.map((e) => e as String).toList();
+  },
+  onError: (response) {
+    return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get the Zen of GitHub
+///
+/// Get a random sentence from the Zen of GitHub
+///
+/// `GET /zen`
+Future<ApiResult<String, Never>> metaGetZen({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zen',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return response.body;
+  },
+);
+ } 
+ }

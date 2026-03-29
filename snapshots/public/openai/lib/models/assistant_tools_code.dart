@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of tool being defined: `code_interpreter`
+final class AssistantToolsCodeType {const AssistantToolsCodeType._(this.value);
+
+factory AssistantToolsCodeType.fromJson(String json) { return switch (json) {
+  'code_interpreter' => codeInterpreter,
+  _ => AssistantToolsCodeType._(json),
+}; }
+
+static const AssistantToolsCodeType codeInterpreter = AssistantToolsCodeType._('code_interpreter');
+
+static const List<AssistantToolsCodeType> values = [codeInterpreter];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AssistantToolsCodeType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AssistantToolsCodeType($value)'; } 
+ }
+final class AssistantToolsCode {const AssistantToolsCode({required this.type});
+
+factory AssistantToolsCode.fromJson(Map<String, dynamic> json) { return AssistantToolsCode(
+  type: AssistantToolsCodeType.fromJson(json['type'] as String),
+); }
+
+/// The type of tool being defined: `code_interpreter`
+final AssistantToolsCodeType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+AssistantToolsCode copyWith({AssistantToolsCodeType? type}) { return AssistantToolsCode(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AssistantToolsCode &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'AssistantToolsCode(type: $type)'; } 
+ }

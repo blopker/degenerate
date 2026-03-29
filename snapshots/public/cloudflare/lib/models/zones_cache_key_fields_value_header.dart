@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls which headers go into the Cache Key. Exactly one of
+/// `include` or `exclude` is expected.
+/// 
+final class ZonesCacheKeyFieldsValueHeader {const ZonesCacheKeyFieldsValueHeader({this.checkPresence, this.exclude, this.include, });
+
+factory ZonesCacheKeyFieldsValueHeader.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueHeader(
+  checkPresence: (json['check_presence'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  include: (json['include'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// A list of headers to check for the presence of, without
+/// including their actual values.
+/// 
+final List<String>? checkPresence;
+
+/// A list of headers to ignore.
+/// 
+final List<String>? exclude;
+
+/// A list of headers to include.
+/// 
+final List<String>? include;
+
+Map<String, dynamic> toJson() { return {
+  'check_presence': ?checkPresence,
+  'exclude': ?exclude,
+  'include': ?include,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesCacheKeyFieldsValueHeader copyWith({List<String> Function()? checkPresence, List<String> Function()? exclude, List<String> Function()? include, }) { return ZonesCacheKeyFieldsValueHeader(
+  checkPresence: checkPresence != null ? checkPresence() : this.checkPresence,
+  exclude: exclude != null ? exclude() : this.exclude,
+  include: include != null ? include() : this.include,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesCacheKeyFieldsValueHeader &&
+          listEquals(checkPresence, other.checkPresence) &&
+          listEquals(exclude, other.exclude) &&
+          listEquals(include, other.include); } 
+@override int get hashCode { return Object.hash(Object.hashAll(checkPresence ?? const []), Object.hashAll(exclude ?? const []), Object.hashAll(include ?? const [])); } 
+@override String toString() { return 'ZonesCacheKeyFieldsValueHeader(checkPresence: $checkPresence, exclude: $exclude, include: $include)'; } 
+ }

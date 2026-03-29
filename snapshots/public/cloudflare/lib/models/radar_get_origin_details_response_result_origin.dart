@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_origin_details_response_result_origin_regions.dart';final class RadarGetOriginDetailsResponseResultOrigin {const RadarGetOriginDetailsResponseResultOrigin({required this.regions, required this.slug, });
+
+factory RadarGetOriginDetailsResponseResultOrigin.fromJson(Map<String, dynamic> json) { return RadarGetOriginDetailsResponseResultOrigin(
+  regions: (json['regions'] as List<dynamic>).map((e) => RadarGetOriginDetailsResponseResultOriginRegions.fromJson(e as Map<String, dynamic>)).toList(),
+  slug: json['slug'] as String,
+); }
+
+final List<RadarGetOriginDetailsResponseResultOriginRegions> regions;
+
+/// The origin slug.
+final String slug;
+
+Map<String, dynamic> toJson() { return {
+  'regions': regions.map((e) => e.toJson()).toList(),
+  'slug': slug,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('regions') &&
+      json.containsKey('slug') && json['slug'] is String; } 
+RadarGetOriginDetailsResponseResultOrigin copyWith({List<RadarGetOriginDetailsResponseResultOriginRegions>? regions, String? slug, }) { return RadarGetOriginDetailsResponseResultOrigin(
+  regions: regions ?? this.regions,
+  slug: slug ?? this.slug,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetOriginDetailsResponseResultOrigin &&
+          listEquals(regions, other.regions) &&
+          slug == other.slug; } 
+@override int get hashCode { return Object.hash(Object.hashAll(regions), slug); } 
+@override String toString() { return 'RadarGetOriginDetailsResponseResultOrigin(regions: $regions, slug: $slug)'; } 
+ }

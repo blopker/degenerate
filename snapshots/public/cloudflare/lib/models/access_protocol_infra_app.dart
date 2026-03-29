@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The communication protocol your application secures.
+final class AccessProtocolInfraApp {const AccessProtocolInfraApp._(this.value);
+
+factory AccessProtocolInfraApp.fromJson(String json) { return switch (json) {
+  'SSH' => ssh,
+  _ => AccessProtocolInfraApp._(json),
+}; }
+
+static const AccessProtocolInfraApp ssh = AccessProtocolInfraApp._('SSH');
+
+static const List<AccessProtocolInfraApp> values = [ssh];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AccessProtocolInfraApp && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AccessProtocolInfraApp($value)'; } 
+ }

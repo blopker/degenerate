@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_list_gateway_dynamic_routes_response_data_routes_elements_start_outputs_next.dart';final class AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs {const AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs({required this.next});
+
+factory AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs.fromJson(Map<String, dynamic> json) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs(
+  next: AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputsNext.fromJson(json['next'] as Map<String, dynamic>),
+); }
+
+final AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputsNext next;
+
+Map<String, dynamic> toJson() { return {
+  'next': next.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('next'); } 
+AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs copyWith({AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputsNext? next}) { return AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs(
+  next: next ?? this.next,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs &&
+          next == other.next; } 
+@override int get hashCode { return next.hashCode; } 
+@override String toString() { return 'AigConfigListGatewayDynamicRoutesResponseDataRoutesElementsStartOutputs(next: $next)'; } 
+ }

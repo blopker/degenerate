@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class SecurityCenterSecurityTxt {const SecurityCenterSecurityTxt({this.acknowledgments, this.canonical, this.contact, this.enabled, this.encryption, this.expires, this.hiring, this.policy, this.preferredLanguages, });
+
+factory SecurityCenterSecurityTxt.fromJson(Map<String, dynamic> json) { return SecurityCenterSecurityTxt(
+  acknowledgments: (json['acknowledgments'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+  canonical: (json['canonical'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+  contact: (json['contact'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+  enabled: json['enabled'] as bool?,
+  encryption: (json['encryption'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+  expires: json['expires'] != null ? DateTime.parse(json['expires'] as String) : null,
+  hiring: (json['hiring'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+  policy: (json['policy'] as List<dynamic>?)?.map((e) => Uri.parse(e as String)).toList(),
+  preferredLanguages: json['preferred_languages'] as String?,
+); }
+
+final List<Uri>? acknowledgments;
+
+final List<Uri>? canonical;
+
+final List<Uri>? contact;
+
+final bool? enabled;
+
+final List<Uri>? encryption;
+
+final DateTime? expires;
+
+final List<Uri>? hiring;
+
+final List<Uri>? policy;
+
+final String? preferredLanguages;
+
+Map<String, dynamic> toJson() { return {
+  if (acknowledgments != null) 'acknowledgments': acknowledgments?.map((e) => e.toString()).toList(),
+  if (canonical != null) 'canonical': canonical?.map((e) => e.toString()).toList(),
+  if (contact != null) 'contact': contact?.map((e) => e.toString()).toList(),
+  'enabled': ?enabled,
+  if (encryption != null) 'encryption': encryption?.map((e) => e.toString()).toList(),
+  if (expires != null) 'expires': expires?.toIso8601String(),
+  if (hiring != null) 'hiring': hiring?.map((e) => e.toString()).toList(),
+  if (policy != null) 'policy': policy?.map((e) => e.toString()).toList(),
+  'preferred_languages': ?preferredLanguages,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SecurityCenterSecurityTxt copyWith({List<Uri> Function()? acknowledgments, List<Uri> Function()? canonical, List<Uri> Function()? contact, bool Function()? enabled, List<Uri> Function()? encryption, DateTime Function()? expires, List<Uri> Function()? hiring, List<Uri> Function()? policy, String Function()? preferredLanguages, }) { return SecurityCenterSecurityTxt(
+  acknowledgments: acknowledgments != null ? acknowledgments() : this.acknowledgments,
+  canonical: canonical != null ? canonical() : this.canonical,
+  contact: contact != null ? contact() : this.contact,
+  enabled: enabled != null ? enabled() : this.enabled,
+  encryption: encryption != null ? encryption() : this.encryption,
+  expires: expires != null ? expires() : this.expires,
+  hiring: hiring != null ? hiring() : this.hiring,
+  policy: policy != null ? policy() : this.policy,
+  preferredLanguages: preferredLanguages != null ? preferredLanguages() : this.preferredLanguages,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecurityCenterSecurityTxt &&
+          listEquals(acknowledgments, other.acknowledgments) &&
+          listEquals(canonical, other.canonical) &&
+          listEquals(contact, other.contact) &&
+          enabled == other.enabled &&
+          listEquals(encryption, other.encryption) &&
+          expires == other.expires &&
+          listEquals(hiring, other.hiring) &&
+          listEquals(policy, other.policy) &&
+          preferredLanguages == other.preferredLanguages; } 
+@override int get hashCode { return Object.hash(Object.hashAll(acknowledgments ?? const []), Object.hashAll(canonical ?? const []), Object.hashAll(contact ?? const []), enabled, Object.hashAll(encryption ?? const []), expires, Object.hashAll(hiring ?? const []), Object.hashAll(policy ?? const []), preferredLanguages); } 
+@override String toString() { return 'SecurityCenterSecurityTxt(acknowledgments: $acknowledgments, canonical: $canonical, contact: $contact, enabled: $enabled, encryption: $encryption, expires: $expires, hiring: $hiring, policy: $policy, preferredLanguages: $preferredLanguages)'; } 
+ }

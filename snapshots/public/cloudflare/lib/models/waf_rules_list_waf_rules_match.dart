@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Defines the search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
+final class WafRulesListWafRulesMatch {const WafRulesListWafRulesMatch._(this.value);
+
+factory WafRulesListWafRulesMatch.fromJson(String json) { return switch (json) {
+  'any' => any,
+  'all' => all,
+  _ => WafRulesListWafRulesMatch._(json),
+}; }
+
+static const WafRulesListWafRulesMatch any = WafRulesListWafRulesMatch._('any');
+
+static const WafRulesListWafRulesMatch all = WafRulesListWafRulesMatch._('all');
+
+static const List<WafRulesListWafRulesMatch> values = [any, all];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WafRulesListWafRulesMatch && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WafRulesListWafRulesMatch($value)'; } 
+ }

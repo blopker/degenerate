@@ -1,0 +1,1232 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_webhook_endpoints_request_description.dart';import 'post_webhook_endpoints_request_metadata.dart';final class PostWebhookEndpointsRequestEnabledEvents {const PostWebhookEndpointsRequestEnabledEvents._(this.value);
+
+factory PostWebhookEndpointsRequestEnabledEvents.fromJson(String json) { return switch (json) {
+  '*' => $empty,
+  'account.application.authorized' => accountApplicationAuthorized,
+  'account.application.deauthorized' => accountApplicationDeauthorized,
+  'account.external_account.created' => accountExternalAccountCreated,
+  'account.external_account.deleted' => accountExternalAccountDeleted,
+  'account.external_account.updated' => accountExternalAccountUpdated,
+  'account.updated' => accountUpdated,
+  'application_fee.created' => applicationFeeCreated,
+  'application_fee.refund.updated' => applicationFeeRefundUpdated,
+  'application_fee.refunded' => applicationFeeRefunded,
+  'balance.available' => balanceAvailable,
+  'balance_settings.updated' => balanceSettingsUpdated,
+  'billing.alert.triggered' => billingAlertTriggered,
+  'billing.credit_grant.created' => billingCreditGrantCreated,
+  'billing_portal.configuration.created' => billingPortalConfigurationCreated,
+  'billing_portal.configuration.updated' => billingPortalConfigurationUpdated,
+  'billing_portal.session.created' => billingPortalSessionCreated,
+  'capability.updated' => capabilityUpdated,
+  'cash_balance.funds_available' => cashBalanceFundsAvailable,
+  'charge.captured' => chargeCaptured,
+  'charge.dispute.closed' => chargeDisputeClosed,
+  'charge.dispute.created' => chargeDisputeCreated,
+  'charge.dispute.funds_reinstated' => chargeDisputeFundsReinstated,
+  'charge.dispute.funds_withdrawn' => chargeDisputeFundsWithdrawn,
+  'charge.dispute.updated' => chargeDisputeUpdated,
+  'charge.expired' => chargeExpired,
+  'charge.failed' => chargeFailed,
+  'charge.pending' => chargePending,
+  'charge.refund.updated' => chargeRefundUpdated,
+  'charge.refunded' => chargeRefunded,
+  'charge.succeeded' => chargeSucceeded,
+  'charge.updated' => chargeUpdated,
+  'checkout.session.async_payment_failed' => checkoutSessionAsyncPaymentFailed,
+  'checkout.session.async_payment_succeeded' => checkoutSessionAsyncPaymentSucceeded,
+  'checkout.session.completed' => checkoutSessionCompleted,
+  'checkout.session.expired' => checkoutSessionExpired,
+  'climate.order.canceled' => climateOrderCanceled,
+  'climate.order.created' => climateOrderCreated,
+  'climate.order.delayed' => climateOrderDelayed,
+  'climate.order.delivered' => climateOrderDelivered,
+  'climate.order.product_substituted' => climateOrderProductSubstituted,
+  'climate.product.created' => climateProductCreated,
+  'climate.product.pricing_updated' => climateProductPricingUpdated,
+  'coupon.created' => couponCreated,
+  'coupon.deleted' => couponDeleted,
+  'coupon.updated' => couponUpdated,
+  'credit_note.created' => creditNoteCreated,
+  'credit_note.updated' => creditNoteUpdated,
+  'credit_note.voided' => creditNoteVoided,
+  'customer.created' => customerCreated,
+  'customer.deleted' => customerDeleted,
+  'customer.discount.created' => customerDiscountCreated,
+  'customer.discount.deleted' => customerDiscountDeleted,
+  'customer.discount.updated' => customerDiscountUpdated,
+  'customer.source.created' => customerSourceCreated,
+  'customer.source.deleted' => customerSourceDeleted,
+  'customer.source.expiring' => customerSourceExpiring,
+  'customer.source.updated' => customerSourceUpdated,
+  'customer.subscription.created' => customerSubscriptionCreated,
+  'customer.subscription.deleted' => customerSubscriptionDeleted,
+  'customer.subscription.paused' => customerSubscriptionPaused,
+  'customer.subscription.pending_update_applied' => customerSubscriptionPendingUpdateApplied,
+  'customer.subscription.pending_update_expired' => customerSubscriptionPendingUpdateExpired,
+  'customer.subscription.resumed' => customerSubscriptionResumed,
+  'customer.subscription.trial_will_end' => customerSubscriptionTrialWillEnd,
+  'customer.subscription.updated' => customerSubscriptionUpdated,
+  'customer.tax_id.created' => customerTaxIdCreated,
+  'customer.tax_id.deleted' => customerTaxIdDeleted,
+  'customer.tax_id.updated' => customerTaxIdUpdated,
+  'customer.updated' => customerUpdated,
+  'customer_cash_balance_transaction.created' => customerCashBalanceTransactionCreated,
+  'entitlements.active_entitlement_summary.updated' => entitlementsActiveEntitlementSummaryUpdated,
+  'file.created' => fileCreated,
+  'financial_connections.account.account_numbers_updated' => financialConnectionsAccountAccountNumbersUpdated,
+  'financial_connections.account.created' => financialConnectionsAccountCreated,
+  'financial_connections.account.deactivated' => financialConnectionsAccountDeactivated,
+  'financial_connections.account.disconnected' => financialConnectionsAccountDisconnected,
+  'financial_connections.account.reactivated' => financialConnectionsAccountReactivated,
+  'financial_connections.account.refreshed_balance' => financialConnectionsAccountRefreshedBalance,
+  'financial_connections.account.refreshed_ownership' => financialConnectionsAccountRefreshedOwnership,
+  'financial_connections.account.refreshed_transactions' => financialConnectionsAccountRefreshedTransactions,
+  'financial_connections.account.upcoming_account_number_expiry' => financialConnectionsAccountUpcomingAccountNumberExpiry,
+  'identity.verification_session.canceled' => identityVerificationSessionCanceled,
+  'identity.verification_session.created' => identityVerificationSessionCreated,
+  'identity.verification_session.processing' => identityVerificationSessionProcessing,
+  'identity.verification_session.redacted' => identityVerificationSessionRedacted,
+  'identity.verification_session.requires_input' => identityVerificationSessionRequiresInput,
+  'identity.verification_session.verified' => identityVerificationSessionVerified,
+  'invoice.created' => invoiceCreated,
+  'invoice.deleted' => invoiceDeleted,
+  'invoice.finalization_failed' => invoiceFinalizationFailed,
+  'invoice.finalized' => invoiceFinalized,
+  'invoice.marked_uncollectible' => invoiceMarkedUncollectible,
+  'invoice.overdue' => invoiceOverdue,
+  'invoice.overpaid' => invoiceOverpaid,
+  'invoice.paid' => invoicePaid,
+  'invoice.payment_action_required' => invoicePaymentActionRequired,
+  'invoice.payment_attempt_required' => invoicePaymentAttemptRequired,
+  'invoice.payment_failed' => invoicePaymentFailed,
+  'invoice.payment_succeeded' => invoicePaymentSucceeded,
+  'invoice.sent' => invoiceSent,
+  'invoice.upcoming' => invoiceUpcoming,
+  'invoice.updated' => invoiceUpdated,
+  'invoice.voided' => invoiceVoided,
+  'invoice.will_be_due' => invoiceWillBeDue,
+  'invoice_payment.paid' => invoicePaymentPaid,
+  'invoiceitem.created' => invoiceitemCreated,
+  'invoiceitem.deleted' => invoiceitemDeleted,
+  'issuing_authorization.created' => issuingAuthorizationCreated,
+  'issuing_authorization.request' => issuingAuthorizationRequest,
+  'issuing_authorization.updated' => issuingAuthorizationUpdated,
+  'issuing_card.created' => issuingCardCreated,
+  'issuing_card.updated' => issuingCardUpdated,
+  'issuing_cardholder.created' => issuingCardholderCreated,
+  'issuing_cardholder.updated' => issuingCardholderUpdated,
+  'issuing_dispute.closed' => issuingDisputeClosed,
+  'issuing_dispute.created' => issuingDisputeCreated,
+  'issuing_dispute.funds_reinstated' => issuingDisputeFundsReinstated,
+  'issuing_dispute.funds_rescinded' => issuingDisputeFundsRescinded,
+  'issuing_dispute.submitted' => issuingDisputeSubmitted,
+  'issuing_dispute.updated' => issuingDisputeUpdated,
+  'issuing_personalization_design.activated' => issuingPersonalizationDesignActivated,
+  'issuing_personalization_design.deactivated' => issuingPersonalizationDesignDeactivated,
+  'issuing_personalization_design.rejected' => issuingPersonalizationDesignRejected,
+  'issuing_personalization_design.updated' => issuingPersonalizationDesignUpdated,
+  'issuing_token.created' => issuingTokenCreated,
+  'issuing_token.updated' => issuingTokenUpdated,
+  'issuing_transaction.created' => issuingTransactionCreated,
+  'issuing_transaction.purchase_details_receipt_updated' => issuingTransactionPurchaseDetailsReceiptUpdated,
+  'issuing_transaction.updated' => issuingTransactionUpdated,
+  'mandate.updated' => mandateUpdated,
+  'payment_intent.amount_capturable_updated' => paymentIntentAmountCapturableUpdated,
+  'payment_intent.canceled' => paymentIntentCanceled,
+  'payment_intent.created' => paymentIntentCreated,
+  'payment_intent.partially_funded' => paymentIntentPartiallyFunded,
+  'payment_intent.payment_failed' => paymentIntentPaymentFailed,
+  'payment_intent.processing' => paymentIntentProcessing,
+  'payment_intent.requires_action' => paymentIntentRequiresAction,
+  'payment_intent.succeeded' => paymentIntentSucceeded,
+  'payment_link.created' => paymentLinkCreated,
+  'payment_link.updated' => paymentLinkUpdated,
+  'payment_method.attached' => paymentMethodAttached,
+  'payment_method.automatically_updated' => paymentMethodAutomaticallyUpdated,
+  'payment_method.detached' => paymentMethodDetached,
+  'payment_method.updated' => paymentMethodUpdated,
+  'payout.canceled' => payoutCanceled,
+  'payout.created' => payoutCreated,
+  'payout.failed' => payoutFailed,
+  'payout.paid' => payoutPaid,
+  'payout.reconciliation_completed' => payoutReconciliationCompleted,
+  'payout.updated' => payoutUpdated,
+  'person.created' => personCreated,
+  'person.deleted' => personDeleted,
+  'person.updated' => personUpdated,
+  'plan.created' => planCreated,
+  'plan.deleted' => planDeleted,
+  'plan.updated' => planUpdated,
+  'price.created' => priceCreated,
+  'price.deleted' => priceDeleted,
+  'price.updated' => priceUpdated,
+  'product.created' => productCreated,
+  'product.deleted' => productDeleted,
+  'product.updated' => productUpdated,
+  'promotion_code.created' => promotionCodeCreated,
+  'promotion_code.updated' => promotionCodeUpdated,
+  'quote.accepted' => quoteAccepted,
+  'quote.canceled' => quoteCanceled,
+  'quote.created' => quoteCreated,
+  'quote.finalized' => quoteFinalized,
+  'radar.early_fraud_warning.created' => radarEarlyFraudWarningCreated,
+  'radar.early_fraud_warning.updated' => radarEarlyFraudWarningUpdated,
+  'refund.created' => refundCreated,
+  'refund.failed' => refundFailed,
+  'refund.updated' => refundUpdated,
+  'reporting.report_run.failed' => reportingReportRunFailed,
+  'reporting.report_run.succeeded' => reportingReportRunSucceeded,
+  'reporting.report_type.updated' => reportingReportTypeUpdated,
+  'reserve.hold.created' => reserveHoldCreated,
+  'reserve.hold.updated' => reserveHoldUpdated,
+  'reserve.plan.created' => reservePlanCreated,
+  'reserve.plan.disabled' => reservePlanDisabled,
+  'reserve.plan.expired' => reservePlanExpired,
+  'reserve.plan.updated' => reservePlanUpdated,
+  'reserve.release.created' => reserveReleaseCreated,
+  'review.closed' => reviewClosed,
+  'review.opened' => reviewOpened,
+  'setup_intent.canceled' => setupIntentCanceled,
+  'setup_intent.created' => setupIntentCreated,
+  'setup_intent.requires_action' => setupIntentRequiresAction,
+  'setup_intent.setup_failed' => setupIntentSetupFailed,
+  'setup_intent.succeeded' => setupIntentSucceeded,
+  'sigma.scheduled_query_run.created' => sigmaScheduledQueryRunCreated,
+  'source.canceled' => sourceCanceled,
+  'source.chargeable' => sourceChargeable,
+  'source.failed' => sourceFailed,
+  'source.mandate_notification' => sourceMandateNotification,
+  'source.refund_attributes_required' => sourceRefundAttributesRequired,
+  'source.transaction.created' => sourceTransactionCreated,
+  'source.transaction.updated' => sourceTransactionUpdated,
+  'subscription_schedule.aborted' => subscriptionScheduleAborted,
+  'subscription_schedule.canceled' => subscriptionScheduleCanceled,
+  'subscription_schedule.completed' => subscriptionScheduleCompleted,
+  'subscription_schedule.created' => subscriptionScheduleCreated,
+  'subscription_schedule.expiring' => subscriptionScheduleExpiring,
+  'subscription_schedule.released' => subscriptionScheduleReleased,
+  'subscription_schedule.updated' => subscriptionScheduleUpdated,
+  'tax.settings.updated' => taxSettingsUpdated,
+  'tax_rate.created' => taxRateCreated,
+  'tax_rate.updated' => taxRateUpdated,
+  'terminal.reader.action_failed' => terminalReaderActionFailed,
+  'terminal.reader.action_succeeded' => terminalReaderActionSucceeded,
+  'terminal.reader.action_updated' => terminalReaderActionUpdated,
+  'test_helpers.test_clock.advancing' => testHelpersTestClockAdvancing,
+  'test_helpers.test_clock.created' => testHelpersTestClockCreated,
+  'test_helpers.test_clock.deleted' => testHelpersTestClockDeleted,
+  'test_helpers.test_clock.internal_failure' => testHelpersTestClockInternalFailure,
+  'test_helpers.test_clock.ready' => testHelpersTestClockReady,
+  'topup.canceled' => topupCanceled,
+  'topup.created' => topupCreated,
+  'topup.failed' => topupFailed,
+  'topup.reversed' => topupReversed,
+  'topup.succeeded' => topupSucceeded,
+  'transfer.created' => transferCreated,
+  'transfer.reversed' => transferReversed,
+  'transfer.updated' => transferUpdated,
+  'treasury.credit_reversal.created' => treasuryCreditReversalCreated,
+  'treasury.credit_reversal.posted' => treasuryCreditReversalPosted,
+  'treasury.debit_reversal.completed' => treasuryDebitReversalCompleted,
+  'treasury.debit_reversal.created' => treasuryDebitReversalCreated,
+  'treasury.debit_reversal.initial_credit_granted' => treasuryDebitReversalInitialCreditGranted,
+  'treasury.financial_account.closed' => treasuryFinancialAccountClosed,
+  'treasury.financial_account.created' => treasuryFinancialAccountCreated,
+  'treasury.financial_account.features_status_updated' => treasuryFinancialAccountFeaturesStatusUpdated,
+  'treasury.inbound_transfer.canceled' => treasuryInboundTransferCanceled,
+  'treasury.inbound_transfer.created' => treasuryInboundTransferCreated,
+  'treasury.inbound_transfer.failed' => treasuryInboundTransferFailed,
+  'treasury.inbound_transfer.succeeded' => treasuryInboundTransferSucceeded,
+  'treasury.outbound_payment.canceled' => treasuryOutboundPaymentCanceled,
+  'treasury.outbound_payment.created' => treasuryOutboundPaymentCreated,
+  'treasury.outbound_payment.expected_arrival_date_updated' => treasuryOutboundPaymentExpectedArrivalDateUpdated,
+  'treasury.outbound_payment.failed' => treasuryOutboundPaymentFailed,
+  'treasury.outbound_payment.posted' => treasuryOutboundPaymentPosted,
+  'treasury.outbound_payment.returned' => treasuryOutboundPaymentReturned,
+  'treasury.outbound_payment.tracking_details_updated' => treasuryOutboundPaymentTrackingDetailsUpdated,
+  'treasury.outbound_transfer.canceled' => treasuryOutboundTransferCanceled,
+  'treasury.outbound_transfer.created' => treasuryOutboundTransferCreated,
+  'treasury.outbound_transfer.expected_arrival_date_updated' => treasuryOutboundTransferExpectedArrivalDateUpdated,
+  'treasury.outbound_transfer.failed' => treasuryOutboundTransferFailed,
+  'treasury.outbound_transfer.posted' => treasuryOutboundTransferPosted,
+  'treasury.outbound_transfer.returned' => treasuryOutboundTransferReturned,
+  'treasury.outbound_transfer.tracking_details_updated' => treasuryOutboundTransferTrackingDetailsUpdated,
+  'treasury.received_credit.created' => treasuryReceivedCreditCreated,
+  'treasury.received_credit.failed' => treasuryReceivedCreditFailed,
+  'treasury.received_credit.succeeded' => treasuryReceivedCreditSucceeded,
+  'treasury.received_debit.created' => treasuryReceivedDebitCreated,
+  _ => PostWebhookEndpointsRequestEnabledEvents._(json),
+}; }
+
+static const PostWebhookEndpointsRequestEnabledEvents $empty = PostWebhookEndpointsRequestEnabledEvents._('*');
+
+static const PostWebhookEndpointsRequestEnabledEvents accountApplicationAuthorized = PostWebhookEndpointsRequestEnabledEvents._('account.application.authorized');
+
+static const PostWebhookEndpointsRequestEnabledEvents accountApplicationDeauthorized = PostWebhookEndpointsRequestEnabledEvents._('account.application.deauthorized');
+
+static const PostWebhookEndpointsRequestEnabledEvents accountExternalAccountCreated = PostWebhookEndpointsRequestEnabledEvents._('account.external_account.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents accountExternalAccountDeleted = PostWebhookEndpointsRequestEnabledEvents._('account.external_account.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents accountExternalAccountUpdated = PostWebhookEndpointsRequestEnabledEvents._('account.external_account.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents accountUpdated = PostWebhookEndpointsRequestEnabledEvents._('account.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents applicationFeeCreated = PostWebhookEndpointsRequestEnabledEvents._('application_fee.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents applicationFeeRefundUpdated = PostWebhookEndpointsRequestEnabledEvents._('application_fee.refund.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents applicationFeeRefunded = PostWebhookEndpointsRequestEnabledEvents._('application_fee.refunded');
+
+static const PostWebhookEndpointsRequestEnabledEvents balanceAvailable = PostWebhookEndpointsRequestEnabledEvents._('balance.available');
+
+static const PostWebhookEndpointsRequestEnabledEvents balanceSettingsUpdated = PostWebhookEndpointsRequestEnabledEvents._('balance_settings.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents billingAlertTriggered = PostWebhookEndpointsRequestEnabledEvents._('billing.alert.triggered');
+
+static const PostWebhookEndpointsRequestEnabledEvents billingCreditGrantCreated = PostWebhookEndpointsRequestEnabledEvents._('billing.credit_grant.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents billingPortalConfigurationCreated = PostWebhookEndpointsRequestEnabledEvents._('billing_portal.configuration.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents billingPortalConfigurationUpdated = PostWebhookEndpointsRequestEnabledEvents._('billing_portal.configuration.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents billingPortalSessionCreated = PostWebhookEndpointsRequestEnabledEvents._('billing_portal.session.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents capabilityUpdated = PostWebhookEndpointsRequestEnabledEvents._('capability.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents cashBalanceFundsAvailable = PostWebhookEndpointsRequestEnabledEvents._('cash_balance.funds_available');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeCaptured = PostWebhookEndpointsRequestEnabledEvents._('charge.captured');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeDisputeClosed = PostWebhookEndpointsRequestEnabledEvents._('charge.dispute.closed');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeDisputeCreated = PostWebhookEndpointsRequestEnabledEvents._('charge.dispute.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeDisputeFundsReinstated = PostWebhookEndpointsRequestEnabledEvents._('charge.dispute.funds_reinstated');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeDisputeFundsWithdrawn = PostWebhookEndpointsRequestEnabledEvents._('charge.dispute.funds_withdrawn');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeDisputeUpdated = PostWebhookEndpointsRequestEnabledEvents._('charge.dispute.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeExpired = PostWebhookEndpointsRequestEnabledEvents._('charge.expired');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeFailed = PostWebhookEndpointsRequestEnabledEvents._('charge.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargePending = PostWebhookEndpointsRequestEnabledEvents._('charge.pending');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeRefundUpdated = PostWebhookEndpointsRequestEnabledEvents._('charge.refund.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeRefunded = PostWebhookEndpointsRequestEnabledEvents._('charge.refunded');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeSucceeded = PostWebhookEndpointsRequestEnabledEvents._('charge.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents chargeUpdated = PostWebhookEndpointsRequestEnabledEvents._('charge.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents checkoutSessionAsyncPaymentFailed = PostWebhookEndpointsRequestEnabledEvents._('checkout.session.async_payment_failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents checkoutSessionAsyncPaymentSucceeded = PostWebhookEndpointsRequestEnabledEvents._('checkout.session.async_payment_succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents checkoutSessionCompleted = PostWebhookEndpointsRequestEnabledEvents._('checkout.session.completed');
+
+static const PostWebhookEndpointsRequestEnabledEvents checkoutSessionExpired = PostWebhookEndpointsRequestEnabledEvents._('checkout.session.expired');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateOrderCanceled = PostWebhookEndpointsRequestEnabledEvents._('climate.order.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateOrderCreated = PostWebhookEndpointsRequestEnabledEvents._('climate.order.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateOrderDelayed = PostWebhookEndpointsRequestEnabledEvents._('climate.order.delayed');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateOrderDelivered = PostWebhookEndpointsRequestEnabledEvents._('climate.order.delivered');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateOrderProductSubstituted = PostWebhookEndpointsRequestEnabledEvents._('climate.order.product_substituted');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateProductCreated = PostWebhookEndpointsRequestEnabledEvents._('climate.product.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents climateProductPricingUpdated = PostWebhookEndpointsRequestEnabledEvents._('climate.product.pricing_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents couponCreated = PostWebhookEndpointsRequestEnabledEvents._('coupon.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents couponDeleted = PostWebhookEndpointsRequestEnabledEvents._('coupon.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents couponUpdated = PostWebhookEndpointsRequestEnabledEvents._('coupon.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents creditNoteCreated = PostWebhookEndpointsRequestEnabledEvents._('credit_note.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents creditNoteUpdated = PostWebhookEndpointsRequestEnabledEvents._('credit_note.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents creditNoteVoided = PostWebhookEndpointsRequestEnabledEvents._('credit_note.voided');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerCreated = PostWebhookEndpointsRequestEnabledEvents._('customer.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerDeleted = PostWebhookEndpointsRequestEnabledEvents._('customer.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerDiscountCreated = PostWebhookEndpointsRequestEnabledEvents._('customer.discount.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerDiscountDeleted = PostWebhookEndpointsRequestEnabledEvents._('customer.discount.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerDiscountUpdated = PostWebhookEndpointsRequestEnabledEvents._('customer.discount.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSourceCreated = PostWebhookEndpointsRequestEnabledEvents._('customer.source.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSourceDeleted = PostWebhookEndpointsRequestEnabledEvents._('customer.source.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSourceExpiring = PostWebhookEndpointsRequestEnabledEvents._('customer.source.expiring');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSourceUpdated = PostWebhookEndpointsRequestEnabledEvents._('customer.source.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionCreated = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionDeleted = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionPaused = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.paused');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionPendingUpdateApplied = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.pending_update_applied');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionPendingUpdateExpired = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.pending_update_expired');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionResumed = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.resumed');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionTrialWillEnd = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.trial_will_end');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerSubscriptionUpdated = PostWebhookEndpointsRequestEnabledEvents._('customer.subscription.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerTaxIdCreated = PostWebhookEndpointsRequestEnabledEvents._('customer.tax_id.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerTaxIdDeleted = PostWebhookEndpointsRequestEnabledEvents._('customer.tax_id.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerTaxIdUpdated = PostWebhookEndpointsRequestEnabledEvents._('customer.tax_id.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerUpdated = PostWebhookEndpointsRequestEnabledEvents._('customer.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents customerCashBalanceTransactionCreated = PostWebhookEndpointsRequestEnabledEvents._('customer_cash_balance_transaction.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents entitlementsActiveEntitlementSummaryUpdated = PostWebhookEndpointsRequestEnabledEvents._('entitlements.active_entitlement_summary.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents fileCreated = PostWebhookEndpointsRequestEnabledEvents._('file.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountAccountNumbersUpdated = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.account_numbers_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountCreated = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountDeactivated = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.deactivated');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountDisconnected = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.disconnected');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountReactivated = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.reactivated');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountRefreshedBalance = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.refreshed_balance');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountRefreshedOwnership = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.refreshed_ownership');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountRefreshedTransactions = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.refreshed_transactions');
+
+static const PostWebhookEndpointsRequestEnabledEvents financialConnectionsAccountUpcomingAccountNumberExpiry = PostWebhookEndpointsRequestEnabledEvents._('financial_connections.account.upcoming_account_number_expiry');
+
+static const PostWebhookEndpointsRequestEnabledEvents identityVerificationSessionCanceled = PostWebhookEndpointsRequestEnabledEvents._('identity.verification_session.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents identityVerificationSessionCreated = PostWebhookEndpointsRequestEnabledEvents._('identity.verification_session.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents identityVerificationSessionProcessing = PostWebhookEndpointsRequestEnabledEvents._('identity.verification_session.processing');
+
+static const PostWebhookEndpointsRequestEnabledEvents identityVerificationSessionRedacted = PostWebhookEndpointsRequestEnabledEvents._('identity.verification_session.redacted');
+
+static const PostWebhookEndpointsRequestEnabledEvents identityVerificationSessionRequiresInput = PostWebhookEndpointsRequestEnabledEvents._('identity.verification_session.requires_input');
+
+static const PostWebhookEndpointsRequestEnabledEvents identityVerificationSessionVerified = PostWebhookEndpointsRequestEnabledEvents._('identity.verification_session.verified');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceCreated = PostWebhookEndpointsRequestEnabledEvents._('invoice.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceDeleted = PostWebhookEndpointsRequestEnabledEvents._('invoice.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceFinalizationFailed = PostWebhookEndpointsRequestEnabledEvents._('invoice.finalization_failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceFinalized = PostWebhookEndpointsRequestEnabledEvents._('invoice.finalized');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceMarkedUncollectible = PostWebhookEndpointsRequestEnabledEvents._('invoice.marked_uncollectible');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceOverdue = PostWebhookEndpointsRequestEnabledEvents._('invoice.overdue');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceOverpaid = PostWebhookEndpointsRequestEnabledEvents._('invoice.overpaid');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoicePaid = PostWebhookEndpointsRequestEnabledEvents._('invoice.paid');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoicePaymentActionRequired = PostWebhookEndpointsRequestEnabledEvents._('invoice.payment_action_required');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoicePaymentAttemptRequired = PostWebhookEndpointsRequestEnabledEvents._('invoice.payment_attempt_required');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoicePaymentFailed = PostWebhookEndpointsRequestEnabledEvents._('invoice.payment_failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoicePaymentSucceeded = PostWebhookEndpointsRequestEnabledEvents._('invoice.payment_succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceSent = PostWebhookEndpointsRequestEnabledEvents._('invoice.sent');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceUpcoming = PostWebhookEndpointsRequestEnabledEvents._('invoice.upcoming');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceUpdated = PostWebhookEndpointsRequestEnabledEvents._('invoice.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceVoided = PostWebhookEndpointsRequestEnabledEvents._('invoice.voided');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceWillBeDue = PostWebhookEndpointsRequestEnabledEvents._('invoice.will_be_due');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoicePaymentPaid = PostWebhookEndpointsRequestEnabledEvents._('invoice_payment.paid');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceitemCreated = PostWebhookEndpointsRequestEnabledEvents._('invoiceitem.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents invoiceitemDeleted = PostWebhookEndpointsRequestEnabledEvents._('invoiceitem.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingAuthorizationCreated = PostWebhookEndpointsRequestEnabledEvents._('issuing_authorization.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingAuthorizationRequest = PostWebhookEndpointsRequestEnabledEvents._('issuing_authorization.request');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingAuthorizationUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_authorization.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingCardCreated = PostWebhookEndpointsRequestEnabledEvents._('issuing_card.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingCardUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_card.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingCardholderCreated = PostWebhookEndpointsRequestEnabledEvents._('issuing_cardholder.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingCardholderUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_cardholder.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingDisputeClosed = PostWebhookEndpointsRequestEnabledEvents._('issuing_dispute.closed');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingDisputeCreated = PostWebhookEndpointsRequestEnabledEvents._('issuing_dispute.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingDisputeFundsReinstated = PostWebhookEndpointsRequestEnabledEvents._('issuing_dispute.funds_reinstated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingDisputeFundsRescinded = PostWebhookEndpointsRequestEnabledEvents._('issuing_dispute.funds_rescinded');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingDisputeSubmitted = PostWebhookEndpointsRequestEnabledEvents._('issuing_dispute.submitted');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingDisputeUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_dispute.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingPersonalizationDesignActivated = PostWebhookEndpointsRequestEnabledEvents._('issuing_personalization_design.activated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingPersonalizationDesignDeactivated = PostWebhookEndpointsRequestEnabledEvents._('issuing_personalization_design.deactivated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingPersonalizationDesignRejected = PostWebhookEndpointsRequestEnabledEvents._('issuing_personalization_design.rejected');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingPersonalizationDesignUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_personalization_design.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingTokenCreated = PostWebhookEndpointsRequestEnabledEvents._('issuing_token.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingTokenUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_token.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingTransactionCreated = PostWebhookEndpointsRequestEnabledEvents._('issuing_transaction.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingTransactionPurchaseDetailsReceiptUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_transaction.purchase_details_receipt_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents issuingTransactionUpdated = PostWebhookEndpointsRequestEnabledEvents._('issuing_transaction.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents mandateUpdated = PostWebhookEndpointsRequestEnabledEvents._('mandate.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentAmountCapturableUpdated = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.amount_capturable_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentCanceled = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentCreated = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentPartiallyFunded = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.partially_funded');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentPaymentFailed = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.payment_failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentProcessing = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.processing');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentRequiresAction = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.requires_action');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentIntentSucceeded = PostWebhookEndpointsRequestEnabledEvents._('payment_intent.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentLinkCreated = PostWebhookEndpointsRequestEnabledEvents._('payment_link.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentLinkUpdated = PostWebhookEndpointsRequestEnabledEvents._('payment_link.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentMethodAttached = PostWebhookEndpointsRequestEnabledEvents._('payment_method.attached');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentMethodAutomaticallyUpdated = PostWebhookEndpointsRequestEnabledEvents._('payment_method.automatically_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentMethodDetached = PostWebhookEndpointsRequestEnabledEvents._('payment_method.detached');
+
+static const PostWebhookEndpointsRequestEnabledEvents paymentMethodUpdated = PostWebhookEndpointsRequestEnabledEvents._('payment_method.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents payoutCanceled = PostWebhookEndpointsRequestEnabledEvents._('payout.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents payoutCreated = PostWebhookEndpointsRequestEnabledEvents._('payout.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents payoutFailed = PostWebhookEndpointsRequestEnabledEvents._('payout.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents payoutPaid = PostWebhookEndpointsRequestEnabledEvents._('payout.paid');
+
+static const PostWebhookEndpointsRequestEnabledEvents payoutReconciliationCompleted = PostWebhookEndpointsRequestEnabledEvents._('payout.reconciliation_completed');
+
+static const PostWebhookEndpointsRequestEnabledEvents payoutUpdated = PostWebhookEndpointsRequestEnabledEvents._('payout.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents personCreated = PostWebhookEndpointsRequestEnabledEvents._('person.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents personDeleted = PostWebhookEndpointsRequestEnabledEvents._('person.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents personUpdated = PostWebhookEndpointsRequestEnabledEvents._('person.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents planCreated = PostWebhookEndpointsRequestEnabledEvents._('plan.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents planDeleted = PostWebhookEndpointsRequestEnabledEvents._('plan.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents planUpdated = PostWebhookEndpointsRequestEnabledEvents._('plan.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents priceCreated = PostWebhookEndpointsRequestEnabledEvents._('price.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents priceDeleted = PostWebhookEndpointsRequestEnabledEvents._('price.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents priceUpdated = PostWebhookEndpointsRequestEnabledEvents._('price.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents productCreated = PostWebhookEndpointsRequestEnabledEvents._('product.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents productDeleted = PostWebhookEndpointsRequestEnabledEvents._('product.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents productUpdated = PostWebhookEndpointsRequestEnabledEvents._('product.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents promotionCodeCreated = PostWebhookEndpointsRequestEnabledEvents._('promotion_code.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents promotionCodeUpdated = PostWebhookEndpointsRequestEnabledEvents._('promotion_code.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents quoteAccepted = PostWebhookEndpointsRequestEnabledEvents._('quote.accepted');
+
+static const PostWebhookEndpointsRequestEnabledEvents quoteCanceled = PostWebhookEndpointsRequestEnabledEvents._('quote.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents quoteCreated = PostWebhookEndpointsRequestEnabledEvents._('quote.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents quoteFinalized = PostWebhookEndpointsRequestEnabledEvents._('quote.finalized');
+
+static const PostWebhookEndpointsRequestEnabledEvents radarEarlyFraudWarningCreated = PostWebhookEndpointsRequestEnabledEvents._('radar.early_fraud_warning.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents radarEarlyFraudWarningUpdated = PostWebhookEndpointsRequestEnabledEvents._('radar.early_fraud_warning.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents refundCreated = PostWebhookEndpointsRequestEnabledEvents._('refund.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents refundFailed = PostWebhookEndpointsRequestEnabledEvents._('refund.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents refundUpdated = PostWebhookEndpointsRequestEnabledEvents._('refund.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents reportingReportRunFailed = PostWebhookEndpointsRequestEnabledEvents._('reporting.report_run.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents reportingReportRunSucceeded = PostWebhookEndpointsRequestEnabledEvents._('reporting.report_run.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents reportingReportTypeUpdated = PostWebhookEndpointsRequestEnabledEvents._('reporting.report_type.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents reserveHoldCreated = PostWebhookEndpointsRequestEnabledEvents._('reserve.hold.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents reserveHoldUpdated = PostWebhookEndpointsRequestEnabledEvents._('reserve.hold.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents reservePlanCreated = PostWebhookEndpointsRequestEnabledEvents._('reserve.plan.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents reservePlanDisabled = PostWebhookEndpointsRequestEnabledEvents._('reserve.plan.disabled');
+
+static const PostWebhookEndpointsRequestEnabledEvents reservePlanExpired = PostWebhookEndpointsRequestEnabledEvents._('reserve.plan.expired');
+
+static const PostWebhookEndpointsRequestEnabledEvents reservePlanUpdated = PostWebhookEndpointsRequestEnabledEvents._('reserve.plan.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents reserveReleaseCreated = PostWebhookEndpointsRequestEnabledEvents._('reserve.release.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents reviewClosed = PostWebhookEndpointsRequestEnabledEvents._('review.closed');
+
+static const PostWebhookEndpointsRequestEnabledEvents reviewOpened = PostWebhookEndpointsRequestEnabledEvents._('review.opened');
+
+static const PostWebhookEndpointsRequestEnabledEvents setupIntentCanceled = PostWebhookEndpointsRequestEnabledEvents._('setup_intent.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents setupIntentCreated = PostWebhookEndpointsRequestEnabledEvents._('setup_intent.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents setupIntentRequiresAction = PostWebhookEndpointsRequestEnabledEvents._('setup_intent.requires_action');
+
+static const PostWebhookEndpointsRequestEnabledEvents setupIntentSetupFailed = PostWebhookEndpointsRequestEnabledEvents._('setup_intent.setup_failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents setupIntentSucceeded = PostWebhookEndpointsRequestEnabledEvents._('setup_intent.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents sigmaScheduledQueryRunCreated = PostWebhookEndpointsRequestEnabledEvents._('sigma.scheduled_query_run.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceCanceled = PostWebhookEndpointsRequestEnabledEvents._('source.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceChargeable = PostWebhookEndpointsRequestEnabledEvents._('source.chargeable');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceFailed = PostWebhookEndpointsRequestEnabledEvents._('source.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceMandateNotification = PostWebhookEndpointsRequestEnabledEvents._('source.mandate_notification');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceRefundAttributesRequired = PostWebhookEndpointsRequestEnabledEvents._('source.refund_attributes_required');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceTransactionCreated = PostWebhookEndpointsRequestEnabledEvents._('source.transaction.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents sourceTransactionUpdated = PostWebhookEndpointsRequestEnabledEvents._('source.transaction.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleAborted = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.aborted');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleCanceled = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleCompleted = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.completed');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleCreated = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleExpiring = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.expiring');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleReleased = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.released');
+
+static const PostWebhookEndpointsRequestEnabledEvents subscriptionScheduleUpdated = PostWebhookEndpointsRequestEnabledEvents._('subscription_schedule.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents taxSettingsUpdated = PostWebhookEndpointsRequestEnabledEvents._('tax.settings.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents taxRateCreated = PostWebhookEndpointsRequestEnabledEvents._('tax_rate.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents taxRateUpdated = PostWebhookEndpointsRequestEnabledEvents._('tax_rate.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents terminalReaderActionFailed = PostWebhookEndpointsRequestEnabledEvents._('terminal.reader.action_failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents terminalReaderActionSucceeded = PostWebhookEndpointsRequestEnabledEvents._('terminal.reader.action_succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents terminalReaderActionUpdated = PostWebhookEndpointsRequestEnabledEvents._('terminal.reader.action_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents testHelpersTestClockAdvancing = PostWebhookEndpointsRequestEnabledEvents._('test_helpers.test_clock.advancing');
+
+static const PostWebhookEndpointsRequestEnabledEvents testHelpersTestClockCreated = PostWebhookEndpointsRequestEnabledEvents._('test_helpers.test_clock.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents testHelpersTestClockDeleted = PostWebhookEndpointsRequestEnabledEvents._('test_helpers.test_clock.deleted');
+
+static const PostWebhookEndpointsRequestEnabledEvents testHelpersTestClockInternalFailure = PostWebhookEndpointsRequestEnabledEvents._('test_helpers.test_clock.internal_failure');
+
+static const PostWebhookEndpointsRequestEnabledEvents testHelpersTestClockReady = PostWebhookEndpointsRequestEnabledEvents._('test_helpers.test_clock.ready');
+
+static const PostWebhookEndpointsRequestEnabledEvents topupCanceled = PostWebhookEndpointsRequestEnabledEvents._('topup.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents topupCreated = PostWebhookEndpointsRequestEnabledEvents._('topup.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents topupFailed = PostWebhookEndpointsRequestEnabledEvents._('topup.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents topupReversed = PostWebhookEndpointsRequestEnabledEvents._('topup.reversed');
+
+static const PostWebhookEndpointsRequestEnabledEvents topupSucceeded = PostWebhookEndpointsRequestEnabledEvents._('topup.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents transferCreated = PostWebhookEndpointsRequestEnabledEvents._('transfer.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents transferReversed = PostWebhookEndpointsRequestEnabledEvents._('transfer.reversed');
+
+static const PostWebhookEndpointsRequestEnabledEvents transferUpdated = PostWebhookEndpointsRequestEnabledEvents._('transfer.updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryCreditReversalCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.credit_reversal.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryCreditReversalPosted = PostWebhookEndpointsRequestEnabledEvents._('treasury.credit_reversal.posted');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryDebitReversalCompleted = PostWebhookEndpointsRequestEnabledEvents._('treasury.debit_reversal.completed');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryDebitReversalCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.debit_reversal.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryDebitReversalInitialCreditGranted = PostWebhookEndpointsRequestEnabledEvents._('treasury.debit_reversal.initial_credit_granted');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryFinancialAccountClosed = PostWebhookEndpointsRequestEnabledEvents._('treasury.financial_account.closed');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryFinancialAccountCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.financial_account.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryFinancialAccountFeaturesStatusUpdated = PostWebhookEndpointsRequestEnabledEvents._('treasury.financial_account.features_status_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryInboundTransferCanceled = PostWebhookEndpointsRequestEnabledEvents._('treasury.inbound_transfer.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryInboundTransferCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.inbound_transfer.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryInboundTransferFailed = PostWebhookEndpointsRequestEnabledEvents._('treasury.inbound_transfer.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryInboundTransferSucceeded = PostWebhookEndpointsRequestEnabledEvents._('treasury.inbound_transfer.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentCanceled = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentExpectedArrivalDateUpdated = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.expected_arrival_date_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentFailed = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentPosted = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.posted');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentReturned = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.returned');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundPaymentTrackingDetailsUpdated = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_payment.tracking_details_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferCanceled = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.canceled');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferExpectedArrivalDateUpdated = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.expected_arrival_date_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferFailed = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferPosted = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.posted');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferReturned = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.returned');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryOutboundTransferTrackingDetailsUpdated = PostWebhookEndpointsRequestEnabledEvents._('treasury.outbound_transfer.tracking_details_updated');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryReceivedCreditCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.received_credit.created');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryReceivedCreditFailed = PostWebhookEndpointsRequestEnabledEvents._('treasury.received_credit.failed');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryReceivedCreditSucceeded = PostWebhookEndpointsRequestEnabledEvents._('treasury.received_credit.succeeded');
+
+static const PostWebhookEndpointsRequestEnabledEvents treasuryReceivedDebitCreated = PostWebhookEndpointsRequestEnabledEvents._('treasury.received_debit.created');
+
+static const List<PostWebhookEndpointsRequestEnabledEvents> values = [$empty, accountApplicationAuthorized, accountApplicationDeauthorized, accountExternalAccountCreated, accountExternalAccountDeleted, accountExternalAccountUpdated, accountUpdated, applicationFeeCreated, applicationFeeRefundUpdated, applicationFeeRefunded, balanceAvailable, balanceSettingsUpdated, billingAlertTriggered, billingCreditGrantCreated, billingPortalConfigurationCreated, billingPortalConfigurationUpdated, billingPortalSessionCreated, capabilityUpdated, cashBalanceFundsAvailable, chargeCaptured, chargeDisputeClosed, chargeDisputeCreated, chargeDisputeFundsReinstated, chargeDisputeFundsWithdrawn, chargeDisputeUpdated, chargeExpired, chargeFailed, chargePending, chargeRefundUpdated, chargeRefunded, chargeSucceeded, chargeUpdated, checkoutSessionAsyncPaymentFailed, checkoutSessionAsyncPaymentSucceeded, checkoutSessionCompleted, checkoutSessionExpired, climateOrderCanceled, climateOrderCreated, climateOrderDelayed, climateOrderDelivered, climateOrderProductSubstituted, climateProductCreated, climateProductPricingUpdated, couponCreated, couponDeleted, couponUpdated, creditNoteCreated, creditNoteUpdated, creditNoteVoided, customerCreated, customerDeleted, customerDiscountCreated, customerDiscountDeleted, customerDiscountUpdated, customerSourceCreated, customerSourceDeleted, customerSourceExpiring, customerSourceUpdated, customerSubscriptionCreated, customerSubscriptionDeleted, customerSubscriptionPaused, customerSubscriptionPendingUpdateApplied, customerSubscriptionPendingUpdateExpired, customerSubscriptionResumed, customerSubscriptionTrialWillEnd, customerSubscriptionUpdated, customerTaxIdCreated, customerTaxIdDeleted, customerTaxIdUpdated, customerUpdated, customerCashBalanceTransactionCreated, entitlementsActiveEntitlementSummaryUpdated, fileCreated, financialConnectionsAccountAccountNumbersUpdated, financialConnectionsAccountCreated, financialConnectionsAccountDeactivated, financialConnectionsAccountDisconnected, financialConnectionsAccountReactivated, financialConnectionsAccountRefreshedBalance, financialConnectionsAccountRefreshedOwnership, financialConnectionsAccountRefreshedTransactions, financialConnectionsAccountUpcomingAccountNumberExpiry, identityVerificationSessionCanceled, identityVerificationSessionCreated, identityVerificationSessionProcessing, identityVerificationSessionRedacted, identityVerificationSessionRequiresInput, identityVerificationSessionVerified, invoiceCreated, invoiceDeleted, invoiceFinalizationFailed, invoiceFinalized, invoiceMarkedUncollectible, invoiceOverdue, invoiceOverpaid, invoicePaid, invoicePaymentActionRequired, invoicePaymentAttemptRequired, invoicePaymentFailed, invoicePaymentSucceeded, invoiceSent, invoiceUpcoming, invoiceUpdated, invoiceVoided, invoiceWillBeDue, invoicePaymentPaid, invoiceitemCreated, invoiceitemDeleted, issuingAuthorizationCreated, issuingAuthorizationRequest, issuingAuthorizationUpdated, issuingCardCreated, issuingCardUpdated, issuingCardholderCreated, issuingCardholderUpdated, issuingDisputeClosed, issuingDisputeCreated, issuingDisputeFundsReinstated, issuingDisputeFundsRescinded, issuingDisputeSubmitted, issuingDisputeUpdated, issuingPersonalizationDesignActivated, issuingPersonalizationDesignDeactivated, issuingPersonalizationDesignRejected, issuingPersonalizationDesignUpdated, issuingTokenCreated, issuingTokenUpdated, issuingTransactionCreated, issuingTransactionPurchaseDetailsReceiptUpdated, issuingTransactionUpdated, mandateUpdated, paymentIntentAmountCapturableUpdated, paymentIntentCanceled, paymentIntentCreated, paymentIntentPartiallyFunded, paymentIntentPaymentFailed, paymentIntentProcessing, paymentIntentRequiresAction, paymentIntentSucceeded, paymentLinkCreated, paymentLinkUpdated, paymentMethodAttached, paymentMethodAutomaticallyUpdated, paymentMethodDetached, paymentMethodUpdated, payoutCanceled, payoutCreated, payoutFailed, payoutPaid, payoutReconciliationCompleted, payoutUpdated, personCreated, personDeleted, personUpdated, planCreated, planDeleted, planUpdated, priceCreated, priceDeleted, priceUpdated, productCreated, productDeleted, productUpdated, promotionCodeCreated, promotionCodeUpdated, quoteAccepted, quoteCanceled, quoteCreated, quoteFinalized, radarEarlyFraudWarningCreated, radarEarlyFraudWarningUpdated, refundCreated, refundFailed, refundUpdated, reportingReportRunFailed, reportingReportRunSucceeded, reportingReportTypeUpdated, reserveHoldCreated, reserveHoldUpdated, reservePlanCreated, reservePlanDisabled, reservePlanExpired, reservePlanUpdated, reserveReleaseCreated, reviewClosed, reviewOpened, setupIntentCanceled, setupIntentCreated, setupIntentRequiresAction, setupIntentSetupFailed, setupIntentSucceeded, sigmaScheduledQueryRunCreated, sourceCanceled, sourceChargeable, sourceFailed, sourceMandateNotification, sourceRefundAttributesRequired, sourceTransactionCreated, sourceTransactionUpdated, subscriptionScheduleAborted, subscriptionScheduleCanceled, subscriptionScheduleCompleted, subscriptionScheduleCreated, subscriptionScheduleExpiring, subscriptionScheduleReleased, subscriptionScheduleUpdated, taxSettingsUpdated, taxRateCreated, taxRateUpdated, terminalReaderActionFailed, terminalReaderActionSucceeded, terminalReaderActionUpdated, testHelpersTestClockAdvancing, testHelpersTestClockCreated, testHelpersTestClockDeleted, testHelpersTestClockInternalFailure, testHelpersTestClockReady, topupCanceled, topupCreated, topupFailed, topupReversed, topupSucceeded, transferCreated, transferReversed, transferUpdated, treasuryCreditReversalCreated, treasuryCreditReversalPosted, treasuryDebitReversalCompleted, treasuryDebitReversalCreated, treasuryDebitReversalInitialCreditGranted, treasuryFinancialAccountClosed, treasuryFinancialAccountCreated, treasuryFinancialAccountFeaturesStatusUpdated, treasuryInboundTransferCanceled, treasuryInboundTransferCreated, treasuryInboundTransferFailed, treasuryInboundTransferSucceeded, treasuryOutboundPaymentCanceled, treasuryOutboundPaymentCreated, treasuryOutboundPaymentExpectedArrivalDateUpdated, treasuryOutboundPaymentFailed, treasuryOutboundPaymentPosted, treasuryOutboundPaymentReturned, treasuryOutboundPaymentTrackingDetailsUpdated, treasuryOutboundTransferCanceled, treasuryOutboundTransferCreated, treasuryOutboundTransferExpectedArrivalDateUpdated, treasuryOutboundTransferFailed, treasuryOutboundTransferPosted, treasuryOutboundTransferReturned, treasuryOutboundTransferTrackingDetailsUpdated, treasuryReceivedCreditCreated, treasuryReceivedCreditFailed, treasuryReceivedCreditSucceeded, treasuryReceivedDebitCreated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostWebhookEndpointsRequestEnabledEvents && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostWebhookEndpointsRequestEnabledEvents($value)'; } 
+ }
+/// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
+final class PostWebhookEndpointsRequestVersion {const PostWebhookEndpointsRequestVersion._(this.value);
+
+factory PostWebhookEndpointsRequestVersion.fromJson(String json) { return switch (json) {
+  '2011-01-01' => $20110101,
+  '2011-06-21' => $20110621,
+  '2011-06-28' => $20110628,
+  '2011-08-01' => $20110801,
+  '2011-09-15' => $20110915,
+  '2011-11-17' => $20111117,
+  '2012-02-23' => $20120223,
+  '2012-03-25' => $20120325,
+  '2012-06-18' => $20120618,
+  '2012-06-28' => $20120628,
+  '2012-07-09' => $20120709,
+  '2012-09-24' => $20120924,
+  '2012-10-26' => $20121026,
+  '2012-11-07' => $20121107,
+  '2013-02-11' => $20130211,
+  '2013-02-13' => $20130213,
+  '2013-07-05' => $20130705,
+  '2013-08-12' => $20130812,
+  '2013-08-13' => $20130813,
+  '2013-10-29' => $20131029,
+  '2013-12-03' => $20131203,
+  '2014-01-31' => $20140131,
+  '2014-03-13' => $20140313,
+  '2014-03-28' => $20140328,
+  '2014-05-19' => $20140519,
+  '2014-06-13' => $20140613,
+  '2014-06-17' => $20140617,
+  '2014-07-22' => $20140722,
+  '2014-07-26' => $20140726,
+  '2014-08-04' => $20140804,
+  '2014-08-20' => $20140820,
+  '2014-09-08' => $20140908,
+  '2014-10-07' => $20141007,
+  '2014-11-05' => $20141105,
+  '2014-11-20' => $20141120,
+  '2014-12-08' => $20141208,
+  '2014-12-17' => $20141217,
+  '2014-12-22' => $20141222,
+  '2015-01-11' => $20150111,
+  '2015-01-26' => $20150126,
+  '2015-02-10' => $20150210,
+  '2015-02-16' => $20150216,
+  '2015-02-18' => $20150218,
+  '2015-03-24' => $20150324,
+  '2015-04-07' => $20150407,
+  '2015-06-15' => $20150615,
+  '2015-07-07' => $20150707,
+  '2015-07-13' => $20150713,
+  '2015-07-28' => $20150728,
+  '2015-08-07' => $20150807,
+  '2015-08-19' => $20150819,
+  '2015-09-03' => $20150903,
+  '2015-09-08' => $20150908,
+  '2015-09-23' => $20150923,
+  '2015-10-01' => $20151001,
+  '2015-10-12' => $20151012,
+  '2015-10-16' => $20151016,
+  '2016-02-03' => $20160203,
+  '2016-02-19' => $20160219,
+  '2016-02-22' => $20160222,
+  '2016-02-23' => $20160223,
+  '2016-02-29' => $20160229,
+  '2016-03-07' => $20160307,
+  '2016-06-15' => $20160615,
+  '2016-07-06' => $20160706,
+  '2016-10-19' => $20161019,
+  '2017-01-27' => $20170127,
+  '2017-02-14' => $20170214,
+  '2017-04-06' => $20170406,
+  '2017-05-25' => $20170525,
+  '2017-06-05' => $20170605,
+  '2017-08-15' => $20170815,
+  '2017-12-14' => $20171214,
+  '2018-01-23' => $20180123,
+  '2018-02-05' => $20180205,
+  '2018-02-06' => $20180206,
+  '2018-02-28' => $20180228,
+  '2018-05-21' => $20180521,
+  '2018-07-27' => $20180727,
+  '2018-08-23' => $20180823,
+  '2018-09-06' => $20180906,
+  '2018-09-24' => $20180924,
+  '2018-10-31' => $20181031,
+  '2018-11-08' => $20181108,
+  '2019-02-11' => $20190211,
+  '2019-02-19' => $20190219,
+  '2019-03-14' => $20190314,
+  '2019-05-16' => $20190516,
+  '2019-08-14' => $20190814,
+  '2019-09-09' => $20190909,
+  '2019-10-08' => $20191008,
+  '2019-10-17' => $20191017,
+  '2019-11-05' => $20191105,
+  '2019-12-03' => $20191203,
+  '2020-03-02' => $20200302,
+  '2020-08-27' => $20200827,
+  '2022-08-01' => $20220801,
+  '2022-11-15' => $20221115,
+  '2023-08-16' => $20230816,
+  '2023-10-16' => $20231016,
+  '2024-04-10' => $20240410,
+  '2024-06-20' => $20240620,
+  '2024-09-30.acacia' => $20240930Acacia,
+  '2024-10-28.acacia' => $20241028Acacia,
+  '2024-11-20.acacia' => $20241120Acacia,
+  '2024-12-18.acacia' => $20241218Acacia,
+  '2025-01-27.acacia' => $20250127Acacia,
+  '2025-02-24.acacia' => $20250224Acacia,
+  '2025-03-01.dashboard' => $20250301Dashboard,
+  '2025-03-31.basil' => $20250331Basil,
+  '2025-04-30.basil' => $20250430Basil,
+  '2025-05-28.basil' => $20250528Basil,
+  '2025-06-30.basil' => $20250630Basil,
+  '2025-07-30.basil' => $20250730Basil,
+  '2025-08-27.basil' => $20250827Basil,
+  '2025-09-30.clover' => $20250930Clover,
+  '2025-10-29.clover' => $20251029Clover,
+  '2025-11-17.clover' => $20251117Clover,
+  '2025-12-15.clover' => $20251215Clover,
+  '2026-01-28.clover' => $20260128Clover,
+  '2026-02-25.clover' => $20260225Clover,
+  _ => PostWebhookEndpointsRequestVersion._(json),
+}; }
+
+static const PostWebhookEndpointsRequestVersion $20110101 = PostWebhookEndpointsRequestVersion._('2011-01-01');
+
+static const PostWebhookEndpointsRequestVersion $20110621 = PostWebhookEndpointsRequestVersion._('2011-06-21');
+
+static const PostWebhookEndpointsRequestVersion $20110628 = PostWebhookEndpointsRequestVersion._('2011-06-28');
+
+static const PostWebhookEndpointsRequestVersion $20110801 = PostWebhookEndpointsRequestVersion._('2011-08-01');
+
+static const PostWebhookEndpointsRequestVersion $20110915 = PostWebhookEndpointsRequestVersion._('2011-09-15');
+
+static const PostWebhookEndpointsRequestVersion $20111117 = PostWebhookEndpointsRequestVersion._('2011-11-17');
+
+static const PostWebhookEndpointsRequestVersion $20120223 = PostWebhookEndpointsRequestVersion._('2012-02-23');
+
+static const PostWebhookEndpointsRequestVersion $20120325 = PostWebhookEndpointsRequestVersion._('2012-03-25');
+
+static const PostWebhookEndpointsRequestVersion $20120618 = PostWebhookEndpointsRequestVersion._('2012-06-18');
+
+static const PostWebhookEndpointsRequestVersion $20120628 = PostWebhookEndpointsRequestVersion._('2012-06-28');
+
+static const PostWebhookEndpointsRequestVersion $20120709 = PostWebhookEndpointsRequestVersion._('2012-07-09');
+
+static const PostWebhookEndpointsRequestVersion $20120924 = PostWebhookEndpointsRequestVersion._('2012-09-24');
+
+static const PostWebhookEndpointsRequestVersion $20121026 = PostWebhookEndpointsRequestVersion._('2012-10-26');
+
+static const PostWebhookEndpointsRequestVersion $20121107 = PostWebhookEndpointsRequestVersion._('2012-11-07');
+
+static const PostWebhookEndpointsRequestVersion $20130211 = PostWebhookEndpointsRequestVersion._('2013-02-11');
+
+static const PostWebhookEndpointsRequestVersion $20130213 = PostWebhookEndpointsRequestVersion._('2013-02-13');
+
+static const PostWebhookEndpointsRequestVersion $20130705 = PostWebhookEndpointsRequestVersion._('2013-07-05');
+
+static const PostWebhookEndpointsRequestVersion $20130812 = PostWebhookEndpointsRequestVersion._('2013-08-12');
+
+static const PostWebhookEndpointsRequestVersion $20130813 = PostWebhookEndpointsRequestVersion._('2013-08-13');
+
+static const PostWebhookEndpointsRequestVersion $20131029 = PostWebhookEndpointsRequestVersion._('2013-10-29');
+
+static const PostWebhookEndpointsRequestVersion $20131203 = PostWebhookEndpointsRequestVersion._('2013-12-03');
+
+static const PostWebhookEndpointsRequestVersion $20140131 = PostWebhookEndpointsRequestVersion._('2014-01-31');
+
+static const PostWebhookEndpointsRequestVersion $20140313 = PostWebhookEndpointsRequestVersion._('2014-03-13');
+
+static const PostWebhookEndpointsRequestVersion $20140328 = PostWebhookEndpointsRequestVersion._('2014-03-28');
+
+static const PostWebhookEndpointsRequestVersion $20140519 = PostWebhookEndpointsRequestVersion._('2014-05-19');
+
+static const PostWebhookEndpointsRequestVersion $20140613 = PostWebhookEndpointsRequestVersion._('2014-06-13');
+
+static const PostWebhookEndpointsRequestVersion $20140617 = PostWebhookEndpointsRequestVersion._('2014-06-17');
+
+static const PostWebhookEndpointsRequestVersion $20140722 = PostWebhookEndpointsRequestVersion._('2014-07-22');
+
+static const PostWebhookEndpointsRequestVersion $20140726 = PostWebhookEndpointsRequestVersion._('2014-07-26');
+
+static const PostWebhookEndpointsRequestVersion $20140804 = PostWebhookEndpointsRequestVersion._('2014-08-04');
+
+static const PostWebhookEndpointsRequestVersion $20140820 = PostWebhookEndpointsRequestVersion._('2014-08-20');
+
+static const PostWebhookEndpointsRequestVersion $20140908 = PostWebhookEndpointsRequestVersion._('2014-09-08');
+
+static const PostWebhookEndpointsRequestVersion $20141007 = PostWebhookEndpointsRequestVersion._('2014-10-07');
+
+static const PostWebhookEndpointsRequestVersion $20141105 = PostWebhookEndpointsRequestVersion._('2014-11-05');
+
+static const PostWebhookEndpointsRequestVersion $20141120 = PostWebhookEndpointsRequestVersion._('2014-11-20');
+
+static const PostWebhookEndpointsRequestVersion $20141208 = PostWebhookEndpointsRequestVersion._('2014-12-08');
+
+static const PostWebhookEndpointsRequestVersion $20141217 = PostWebhookEndpointsRequestVersion._('2014-12-17');
+
+static const PostWebhookEndpointsRequestVersion $20141222 = PostWebhookEndpointsRequestVersion._('2014-12-22');
+
+static const PostWebhookEndpointsRequestVersion $20150111 = PostWebhookEndpointsRequestVersion._('2015-01-11');
+
+static const PostWebhookEndpointsRequestVersion $20150126 = PostWebhookEndpointsRequestVersion._('2015-01-26');
+
+static const PostWebhookEndpointsRequestVersion $20150210 = PostWebhookEndpointsRequestVersion._('2015-02-10');
+
+static const PostWebhookEndpointsRequestVersion $20150216 = PostWebhookEndpointsRequestVersion._('2015-02-16');
+
+static const PostWebhookEndpointsRequestVersion $20150218 = PostWebhookEndpointsRequestVersion._('2015-02-18');
+
+static const PostWebhookEndpointsRequestVersion $20150324 = PostWebhookEndpointsRequestVersion._('2015-03-24');
+
+static const PostWebhookEndpointsRequestVersion $20150407 = PostWebhookEndpointsRequestVersion._('2015-04-07');
+
+static const PostWebhookEndpointsRequestVersion $20150615 = PostWebhookEndpointsRequestVersion._('2015-06-15');
+
+static const PostWebhookEndpointsRequestVersion $20150707 = PostWebhookEndpointsRequestVersion._('2015-07-07');
+
+static const PostWebhookEndpointsRequestVersion $20150713 = PostWebhookEndpointsRequestVersion._('2015-07-13');
+
+static const PostWebhookEndpointsRequestVersion $20150728 = PostWebhookEndpointsRequestVersion._('2015-07-28');
+
+static const PostWebhookEndpointsRequestVersion $20150807 = PostWebhookEndpointsRequestVersion._('2015-08-07');
+
+static const PostWebhookEndpointsRequestVersion $20150819 = PostWebhookEndpointsRequestVersion._('2015-08-19');
+
+static const PostWebhookEndpointsRequestVersion $20150903 = PostWebhookEndpointsRequestVersion._('2015-09-03');
+
+static const PostWebhookEndpointsRequestVersion $20150908 = PostWebhookEndpointsRequestVersion._('2015-09-08');
+
+static const PostWebhookEndpointsRequestVersion $20150923 = PostWebhookEndpointsRequestVersion._('2015-09-23');
+
+static const PostWebhookEndpointsRequestVersion $20151001 = PostWebhookEndpointsRequestVersion._('2015-10-01');
+
+static const PostWebhookEndpointsRequestVersion $20151012 = PostWebhookEndpointsRequestVersion._('2015-10-12');
+
+static const PostWebhookEndpointsRequestVersion $20151016 = PostWebhookEndpointsRequestVersion._('2015-10-16');
+
+static const PostWebhookEndpointsRequestVersion $20160203 = PostWebhookEndpointsRequestVersion._('2016-02-03');
+
+static const PostWebhookEndpointsRequestVersion $20160219 = PostWebhookEndpointsRequestVersion._('2016-02-19');
+
+static const PostWebhookEndpointsRequestVersion $20160222 = PostWebhookEndpointsRequestVersion._('2016-02-22');
+
+static const PostWebhookEndpointsRequestVersion $20160223 = PostWebhookEndpointsRequestVersion._('2016-02-23');
+
+static const PostWebhookEndpointsRequestVersion $20160229 = PostWebhookEndpointsRequestVersion._('2016-02-29');
+
+static const PostWebhookEndpointsRequestVersion $20160307 = PostWebhookEndpointsRequestVersion._('2016-03-07');
+
+static const PostWebhookEndpointsRequestVersion $20160615 = PostWebhookEndpointsRequestVersion._('2016-06-15');
+
+static const PostWebhookEndpointsRequestVersion $20160706 = PostWebhookEndpointsRequestVersion._('2016-07-06');
+
+static const PostWebhookEndpointsRequestVersion $20161019 = PostWebhookEndpointsRequestVersion._('2016-10-19');
+
+static const PostWebhookEndpointsRequestVersion $20170127 = PostWebhookEndpointsRequestVersion._('2017-01-27');
+
+static const PostWebhookEndpointsRequestVersion $20170214 = PostWebhookEndpointsRequestVersion._('2017-02-14');
+
+static const PostWebhookEndpointsRequestVersion $20170406 = PostWebhookEndpointsRequestVersion._('2017-04-06');
+
+static const PostWebhookEndpointsRequestVersion $20170525 = PostWebhookEndpointsRequestVersion._('2017-05-25');
+
+static const PostWebhookEndpointsRequestVersion $20170605 = PostWebhookEndpointsRequestVersion._('2017-06-05');
+
+static const PostWebhookEndpointsRequestVersion $20170815 = PostWebhookEndpointsRequestVersion._('2017-08-15');
+
+static const PostWebhookEndpointsRequestVersion $20171214 = PostWebhookEndpointsRequestVersion._('2017-12-14');
+
+static const PostWebhookEndpointsRequestVersion $20180123 = PostWebhookEndpointsRequestVersion._('2018-01-23');
+
+static const PostWebhookEndpointsRequestVersion $20180205 = PostWebhookEndpointsRequestVersion._('2018-02-05');
+
+static const PostWebhookEndpointsRequestVersion $20180206 = PostWebhookEndpointsRequestVersion._('2018-02-06');
+
+static const PostWebhookEndpointsRequestVersion $20180228 = PostWebhookEndpointsRequestVersion._('2018-02-28');
+
+static const PostWebhookEndpointsRequestVersion $20180521 = PostWebhookEndpointsRequestVersion._('2018-05-21');
+
+static const PostWebhookEndpointsRequestVersion $20180727 = PostWebhookEndpointsRequestVersion._('2018-07-27');
+
+static const PostWebhookEndpointsRequestVersion $20180823 = PostWebhookEndpointsRequestVersion._('2018-08-23');
+
+static const PostWebhookEndpointsRequestVersion $20180906 = PostWebhookEndpointsRequestVersion._('2018-09-06');
+
+static const PostWebhookEndpointsRequestVersion $20180924 = PostWebhookEndpointsRequestVersion._('2018-09-24');
+
+static const PostWebhookEndpointsRequestVersion $20181031 = PostWebhookEndpointsRequestVersion._('2018-10-31');
+
+static const PostWebhookEndpointsRequestVersion $20181108 = PostWebhookEndpointsRequestVersion._('2018-11-08');
+
+static const PostWebhookEndpointsRequestVersion $20190211 = PostWebhookEndpointsRequestVersion._('2019-02-11');
+
+static const PostWebhookEndpointsRequestVersion $20190219 = PostWebhookEndpointsRequestVersion._('2019-02-19');
+
+static const PostWebhookEndpointsRequestVersion $20190314 = PostWebhookEndpointsRequestVersion._('2019-03-14');
+
+static const PostWebhookEndpointsRequestVersion $20190516 = PostWebhookEndpointsRequestVersion._('2019-05-16');
+
+static const PostWebhookEndpointsRequestVersion $20190814 = PostWebhookEndpointsRequestVersion._('2019-08-14');
+
+static const PostWebhookEndpointsRequestVersion $20190909 = PostWebhookEndpointsRequestVersion._('2019-09-09');
+
+static const PostWebhookEndpointsRequestVersion $20191008 = PostWebhookEndpointsRequestVersion._('2019-10-08');
+
+static const PostWebhookEndpointsRequestVersion $20191017 = PostWebhookEndpointsRequestVersion._('2019-10-17');
+
+static const PostWebhookEndpointsRequestVersion $20191105 = PostWebhookEndpointsRequestVersion._('2019-11-05');
+
+static const PostWebhookEndpointsRequestVersion $20191203 = PostWebhookEndpointsRequestVersion._('2019-12-03');
+
+static const PostWebhookEndpointsRequestVersion $20200302 = PostWebhookEndpointsRequestVersion._('2020-03-02');
+
+static const PostWebhookEndpointsRequestVersion $20200827 = PostWebhookEndpointsRequestVersion._('2020-08-27');
+
+static const PostWebhookEndpointsRequestVersion $20220801 = PostWebhookEndpointsRequestVersion._('2022-08-01');
+
+static const PostWebhookEndpointsRequestVersion $20221115 = PostWebhookEndpointsRequestVersion._('2022-11-15');
+
+static const PostWebhookEndpointsRequestVersion $20230816 = PostWebhookEndpointsRequestVersion._('2023-08-16');
+
+static const PostWebhookEndpointsRequestVersion $20231016 = PostWebhookEndpointsRequestVersion._('2023-10-16');
+
+static const PostWebhookEndpointsRequestVersion $20240410 = PostWebhookEndpointsRequestVersion._('2024-04-10');
+
+static const PostWebhookEndpointsRequestVersion $20240620 = PostWebhookEndpointsRequestVersion._('2024-06-20');
+
+static const PostWebhookEndpointsRequestVersion $20240930Acacia = PostWebhookEndpointsRequestVersion._('2024-09-30.acacia');
+
+static const PostWebhookEndpointsRequestVersion $20241028Acacia = PostWebhookEndpointsRequestVersion._('2024-10-28.acacia');
+
+static const PostWebhookEndpointsRequestVersion $20241120Acacia = PostWebhookEndpointsRequestVersion._('2024-11-20.acacia');
+
+static const PostWebhookEndpointsRequestVersion $20241218Acacia = PostWebhookEndpointsRequestVersion._('2024-12-18.acacia');
+
+static const PostWebhookEndpointsRequestVersion $20250127Acacia = PostWebhookEndpointsRequestVersion._('2025-01-27.acacia');
+
+static const PostWebhookEndpointsRequestVersion $20250224Acacia = PostWebhookEndpointsRequestVersion._('2025-02-24.acacia');
+
+static const PostWebhookEndpointsRequestVersion $20250301Dashboard = PostWebhookEndpointsRequestVersion._('2025-03-01.dashboard');
+
+static const PostWebhookEndpointsRequestVersion $20250331Basil = PostWebhookEndpointsRequestVersion._('2025-03-31.basil');
+
+static const PostWebhookEndpointsRequestVersion $20250430Basil = PostWebhookEndpointsRequestVersion._('2025-04-30.basil');
+
+static const PostWebhookEndpointsRequestVersion $20250528Basil = PostWebhookEndpointsRequestVersion._('2025-05-28.basil');
+
+static const PostWebhookEndpointsRequestVersion $20250630Basil = PostWebhookEndpointsRequestVersion._('2025-06-30.basil');
+
+static const PostWebhookEndpointsRequestVersion $20250730Basil = PostWebhookEndpointsRequestVersion._('2025-07-30.basil');
+
+static const PostWebhookEndpointsRequestVersion $20250827Basil = PostWebhookEndpointsRequestVersion._('2025-08-27.basil');
+
+static const PostWebhookEndpointsRequestVersion $20250930Clover = PostWebhookEndpointsRequestVersion._('2025-09-30.clover');
+
+static const PostWebhookEndpointsRequestVersion $20251029Clover = PostWebhookEndpointsRequestVersion._('2025-10-29.clover');
+
+static const PostWebhookEndpointsRequestVersion $20251117Clover = PostWebhookEndpointsRequestVersion._('2025-11-17.clover');
+
+static const PostWebhookEndpointsRequestVersion $20251215Clover = PostWebhookEndpointsRequestVersion._('2025-12-15.clover');
+
+static const PostWebhookEndpointsRequestVersion $20260128Clover = PostWebhookEndpointsRequestVersion._('2026-01-28.clover');
+
+static const PostWebhookEndpointsRequestVersion $20260225Clover = PostWebhookEndpointsRequestVersion._('2026-02-25.clover');
+
+static const List<PostWebhookEndpointsRequestVersion> values = [$20110101, $20110621, $20110628, $20110801, $20110915, $20111117, $20120223, $20120325, $20120618, $20120628, $20120709, $20120924, $20121026, $20121107, $20130211, $20130213, $20130705, $20130812, $20130813, $20131029, $20131203, $20140131, $20140313, $20140328, $20140519, $20140613, $20140617, $20140722, $20140726, $20140804, $20140820, $20140908, $20141007, $20141105, $20141120, $20141208, $20141217, $20141222, $20150111, $20150126, $20150210, $20150216, $20150218, $20150324, $20150407, $20150615, $20150707, $20150713, $20150728, $20150807, $20150819, $20150903, $20150908, $20150923, $20151001, $20151012, $20151016, $20160203, $20160219, $20160222, $20160223, $20160229, $20160307, $20160615, $20160706, $20161019, $20170127, $20170214, $20170406, $20170525, $20170605, $20170815, $20171214, $20180123, $20180205, $20180206, $20180228, $20180521, $20180727, $20180823, $20180906, $20180924, $20181031, $20181108, $20190211, $20190219, $20190314, $20190516, $20190814, $20190909, $20191008, $20191017, $20191105, $20191203, $20200302, $20200827, $20220801, $20221115, $20230816, $20231016, $20240410, $20240620, $20240930Acacia, $20241028Acacia, $20241120Acacia, $20241218Acacia, $20250127Acacia, $20250224Acacia, $20250301Dashboard, $20250331Basil, $20250430Basil, $20250528Basil, $20250630Basil, $20250730Basil, $20250827Basil, $20250930Clover, $20251029Clover, $20251117Clover, $20251215Clover, $20260128Clover, $20260225Clover];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostWebhookEndpointsRequestVersion && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostWebhookEndpointsRequestVersion($value)'; } 
+ }
+final class PostWebhookEndpointsRequest {const PostWebhookEndpointsRequest({this.apiVersion, this.connect, this.description, required this.enabledEvents, this.expand, this.metadata, required this.url, });
+
+factory PostWebhookEndpointsRequest.fromJson(Map<String, dynamic> json) { return PostWebhookEndpointsRequest(
+  apiVersion: json['api_version'] != null ? PostWebhookEndpointsRequestVersion.fromJson(json['api_version'] as String) : null,
+  connect: json['connect'] as bool?,
+  description: json['description'] != null ? OneOf2.parse(json['description'], fromA: (v) => v as String, fromB: (v) => PostWebhookEndpointsRequestDescriptionVariant2.fromJson(v as String),) : null,
+  enabledEvents: (json['enabled_events'] as List<dynamic>).map((e) => PostWebhookEndpointsRequestEnabledEvents.fromJson(e as String)).toList(),
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostWebhookEndpointsRequestMetadataVariant2.fromJson(v as String),) : null,
+  url: json['url'] as String,
+); }
+
+/// Events sent to this endpoint will be generated with this Stripe Version instead of your account's default Stripe Version.
+final PostWebhookEndpointsRequestVersion? apiVersion;
+
+/// Whether this endpoint should receive events from connected accounts (`true`), or from your account (`false`). Defaults to `false`.
+final bool? connect;
+
+/// An optional description of what the webhook is used for.
+final PostWebhookEndpointsRequestDescription? description;
+
+/// The list of events to enable for this endpoint. You may specify `['*']` to enable all events, except those that require explicit selection.
+final List<PostWebhookEndpointsRequestEnabledEvents> enabledEvents;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostWebhookEndpointsRequestMetadata? metadata;
+
+/// The URL of the webhook endpoint.
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  if (apiVersion != null) 'api_version': apiVersion?.toJson(),
+  'connect': ?connect,
+  if (description != null) 'description': description?.toJson(),
+  'enabled_events': enabledEvents.map((e) => e.toJson()).toList(),
+  'expand': ?expand,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled_events') &&
+      json.containsKey('url') && json['url'] is String; } 
+PostWebhookEndpointsRequest copyWith({PostWebhookEndpointsRequestVersion Function()? apiVersion, bool Function()? connect, PostWebhookEndpointsRequestDescription Function()? description, List<PostWebhookEndpointsRequestEnabledEvents>? enabledEvents, List<String> Function()? expand, PostWebhookEndpointsRequestMetadata Function()? metadata, String? url, }) { return PostWebhookEndpointsRequest(
+  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  connect: connect != null ? connect() : this.connect,
+  description: description != null ? description() : this.description,
+  enabledEvents: enabledEvents ?? this.enabledEvents,
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostWebhookEndpointsRequest &&
+          apiVersion == other.apiVersion &&
+          connect == other.connect &&
+          description == other.description &&
+          listEquals(enabledEvents, other.enabledEvents) &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(apiVersion, connect, description, Object.hashAll(enabledEvents), Object.hashAll(expand ?? const []), metadata, url); } 
+@override String toString() { return 'PostWebhookEndpointsRequest(apiVersion: $apiVersion, connect: $connect, description: $description, enabledEvents: $enabledEvents, expand: $expand, metadata: $metadata, url: $url)'; } 
+ }

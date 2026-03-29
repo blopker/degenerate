@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The period associated with this invoice item. When set to different values, the period will be rendered on the invoice. If you have [Stripe Revenue Recognition](https://docs.stripe.com/revenue-recognition) enabled, the period will be used to recognize and defer revenue. See the [Revenue Recognition documentation](https://docs.stripe.com/revenue-recognition/methodology/subscriptions-and-invoicing) for details.
+final class PostInvoiceitemsInvoiceitemRequestPeriod {const PostInvoiceitemsInvoiceitemRequestPeriod({required this.end, required this.start, });
+
+factory PostInvoiceitemsInvoiceitemRequestPeriod.fromJson(Map<String, dynamic> json) { return PostInvoiceitemsInvoiceitemRequestPeriod(
+  end: (json['end'] as num).toInt(),
+  start: (json['start'] as num).toInt(),
+); }
+
+final int end;
+
+final int start;
+
+Map<String, dynamic> toJson() { return {
+  'end': end,
+  'start': start,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') && json['end'] is num &&
+      json.containsKey('start') && json['start'] is num; } 
+PostInvoiceitemsInvoiceitemRequestPeriod copyWith({int? end, int? start, }) { return PostInvoiceitemsInvoiceitemRequestPeriod(
+  end: end ?? this.end,
+  start: start ?? this.start,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoiceitemsInvoiceitemRequestPeriod &&
+          end == other.end &&
+          start == other.start; } 
+@override int get hashCode { return Object.hash(end, start); } 
+@override String toString() { return 'PostInvoiceitemsInvoiceitemRequestPeriod(end: $end, start: $start)'; } 
+ }

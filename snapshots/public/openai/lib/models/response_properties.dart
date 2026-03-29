@@ -1,0 +1,137 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model_ids_responses.dart';import 'model_ids_shared.dart';import 'prompt.dart';import 'reasoning.dart';import 'response_text_param.dart';import 'specific_apply_patch_param.dart';import 'specific_function_shell_param.dart';import 'tool.dart';import 'tool_choice_allowed.dart';import 'tool_choice_custom.dart';import 'tool_choice_function.dart';import 'tool_choice_mcp.dart';import 'tool_choice_mode.dart';import 'tool_choice_param.dart';import 'tool_choice_types.dart';/// The truncation strategy to use for the model response.
+/// - `auto`: If the input to this Response exceeds
+///   the model's context window size, the model will truncate the
+///   response to fit the context window by dropping items from the beginning of the conversation.
+/// - `disabled` (default): If the input size will exceed the context window
+///   size for a model, the request will fail with a 400 error.
+/// 
+final class ResponsePropertiesTruncation {const ResponsePropertiesTruncation._(this.value);
+
+factory ResponsePropertiesTruncation.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'disabled' => disabled,
+  _ => ResponsePropertiesTruncation._(json),
+}; }
+
+static const ResponsePropertiesTruncation auto = ResponsePropertiesTruncation._('auto');
+
+static const ResponsePropertiesTruncation disabled = ResponsePropertiesTruncation._('disabled');
+
+static const List<ResponsePropertiesTruncation> values = [auto, disabled];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResponsePropertiesTruncation && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResponsePropertiesTruncation($value)'; } 
+ }
+final class ResponseProperties {const ResponseProperties({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, });
+
+factory ResponseProperties.fromJson(Map<String, dynamic> json) { return ResponseProperties(
+  previousResponseId: json['previous_response_id'] as String?,
+  model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),) : null,
+  reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
+  background: json['background'] as bool?,
+  maxOutputTokens: json['max_output_tokens'] != null ? (json['max_output_tokens'] as num).toInt() : null,
+  maxToolCalls: json['max_tool_calls'] != null ? (json['max_tool_calls'] as num).toInt() : null,
+  text: json['text'] != null ? ResponseTextParam.fromJson(json['text'] as Map<String, dynamic>) : null,
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => Tool.fromJson(e as Map<String, dynamic>)).toList(),
+  toolChoice: json['tool_choice'] != null ? OneOf8.parse(json['tool_choice'], fromA: (v) => ToolChoiceMode.fromJson(v as String), fromB: (v) => ToolChoiceAllowed.fromJson(v as Map<String, dynamic>), fromC: (v) => ToolChoiceTypes.fromJson(v as Map<String, dynamic>), fromD: (v) => ToolChoiceFunction.fromJson(v as Map<String, dynamic>), fromE: (v) => ToolChoiceMcp.fromJson(v as Map<String, dynamic>), fromF: (v) => ToolChoiceCustom.fromJson(v as Map<String, dynamic>), fromG: (v) => SpecificApplyPatchParam.fromJson(v as Map<String, dynamic>), fromH: (v) => SpecificFunctionShellParam.fromJson(v as Map<String, dynamic>),) : null,
+  prompt: json['prompt'] != null ? Prompt.fromJson(json['prompt'] as Map<String, dynamic>) : null,
+  truncation: json['truncation'] != null ? ResponsePropertiesTruncation.fromJson(json['truncation'] as String) : null,
+); }
+
+/// The unique ID of the previous response to the model. Use this to
+/// create multi-turn conversations. Learn more about
+/// [conversation state](/docs/guides/conversation-state). Cannot be used in conjunction with `conversation`.
+/// 
+final String? previousResponseId;
+
+/// Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI
+/// offers a wide range of models with different capabilities, performance
+/// characteristics, and price points. Refer to the [model guide](/docs/models)
+/// to browse and compare available models.
+/// 
+final ModelIdsResponses? model;
+
+final Reasoning? reasoning;
+
+/// Whether to run the model response in the background.
+/// [Learn more](/docs/guides/background).
+/// 
+final bool? background;
+
+/// An upper bound for the number of tokens that can be generated for a response, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+/// 
+final int? maxOutputTokens;
+
+/// The maximum number of total calls to built-in tools that can be processed in a response. This maximum number applies across all built-in tool calls, not per individual tool. Any further attempts to call a tool by the model will be ignored.
+/// 
+final int? maxToolCalls;
+
+final ResponseTextParam? text;
+
+final List<Tool>? tools;
+
+final ToolChoiceParam? toolChoice;
+
+final Prompt? prompt;
+
+/// The truncation strategy to use for the model response.
+/// - `auto`: If the input to this Response exceeds
+///   the model's context window size, the model will truncate the
+///   response to fit the context window by dropping items from the beginning of the conversation.
+/// - `disabled` (default): If the input size will exceed the context window
+///   size for a model, the request will fail with a 400 error.
+/// 
+final ResponsePropertiesTruncation? truncation;
+
+Map<String, dynamic> toJson() { return {
+  'previous_response_id': ?previousResponseId,
+  if (model != null) 'model': model?.toJson(),
+  if (reasoning != null) 'reasoning': reasoning?.toJson(),
+  'background': ?background,
+  'max_output_tokens': ?maxOutputTokens,
+  'max_tool_calls': ?maxToolCalls,
+  if (text != null) 'text': text?.toJson(),
+  if (tools != null) 'tools': tools?.map((e) => e.toJson()).toList(),
+  if (toolChoice != null) 'tool_choice': toolChoice?.toJson(),
+  if (prompt != null) 'prompt': prompt?.toJson(),
+  if (truncation != null) 'truncation': truncation?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ResponseProperties copyWith({String? Function()? previousResponseId, ModelIdsResponses Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam Function()? text, List<Tool> Function()? tools, ToolChoiceParam Function()? toolChoice, Prompt Function()? prompt, ResponsePropertiesTruncation? Function()? truncation, }) { return ResponseProperties(
+  previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
+  model: model != null ? model() : this.model,
+  reasoning: reasoning != null ? reasoning() : this.reasoning,
+  background: background != null ? background() : this.background,
+  maxOutputTokens: maxOutputTokens != null ? maxOutputTokens() : this.maxOutputTokens,
+  maxToolCalls: maxToolCalls != null ? maxToolCalls() : this.maxToolCalls,
+  text: text != null ? text() : this.text,
+  tools: tools != null ? tools() : this.tools,
+  toolChoice: toolChoice != null ? toolChoice() : this.toolChoice,
+  prompt: prompt != null ? prompt() : this.prompt,
+  truncation: truncation != null ? truncation() : this.truncation,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResponseProperties &&
+          previousResponseId == other.previousResponseId &&
+          model == other.model &&
+          reasoning == other.reasoning &&
+          background == other.background &&
+          maxOutputTokens == other.maxOutputTokens &&
+          maxToolCalls == other.maxToolCalls &&
+          text == other.text &&
+          listEquals(tools, other.tools) &&
+          toolChoice == other.toolChoice &&
+          prompt == other.prompt &&
+          truncation == other.truncation; } 
+@override int get hashCode { return Object.hash(previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation); } 
+@override String toString() { return 'ResponseProperties(previousResponseId: $previousResponseId, model: $model, reasoning: $reasoning, background: $background, maxOutputTokens: $maxOutputTokens, maxToolCalls: $maxToolCalls, text: $text, tools: $tools, toolChoice: $toolChoice, prompt: $prompt, truncation: $truncation)'; } 
+ }

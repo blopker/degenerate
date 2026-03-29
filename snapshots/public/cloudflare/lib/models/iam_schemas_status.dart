@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Status of this membership.
+final class IamSchemasStatus {const IamSchemasStatus._(this.value);
+
+factory IamSchemasStatus.fromJson(String json) { return switch (json) {
+  'accepted' => accepted,
+  'pending' => pending,
+  'rejected' => rejected,
+  _ => IamSchemasStatus._(json),
+}; }
+
+static const IamSchemasStatus accepted = IamSchemasStatus._('accepted');
+
+static const IamSchemasStatus pending = IamSchemasStatus._('pending');
+
+static const IamSchemasStatus rejected = IamSchemasStatus._('rejected');
+
+static const List<IamSchemasStatus> values = [accepted, pending, rejected];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IamSchemasStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IamSchemasStatus($value)'; } 
+ }

@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 {const RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0({required this.http, required this.https, required this.timestamps, });
+
+factory RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(
+  http: (json['http'] as List<dynamic>).map((e) => e as String).toList(),
+  https: (json['https'] as List<dynamic>).map((e) => e as String).toList(),
+  timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
+); }
+
+final List<String> http;
+
+final List<String> https;
+
+final List<DateTime> timestamps;
+
+Map<String, dynamic> toJson() { return {
+  'http': http,
+  'https': https,
+  'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('http') &&
+      json.containsKey('https') &&
+      json.containsKey('timestamps'); } 
+RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 copyWith({List<String>? http, List<String>? https, List<DateTime>? timestamps, }) { return RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(
+  http: http ?? this.http,
+  https: https ?? this.https,
+  timestamps: timestamps ?? this.timestamps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0 &&
+          listEquals(http, other.http) &&
+          listEquals(https, other.https) &&
+          listEquals(timestamps, other.timestamps); } 
+@override int get hashCode { return Object.hash(Object.hashAll(http), Object.hashAll(https), Object.hashAll(timestamps)); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByHttpProtocolResponseResultSerie0(http: $http, https: $https, timestamps: $timestamps)'; } 
+ }

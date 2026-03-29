@@ -1,0 +1,43 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class Triangle {const Triangle({required this.type, required this.base, required this.height, this.angles, });
+
+factory Triangle.fromJson(Map<String, dynamic> json) { return Triangle(
+  type: json['type'] as String,
+  base: (json['base'] as num).toDouble(),
+  height: (json['height'] as num).toDouble(),
+  angles: (json['angles'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
+); }
+
+final String type;
+
+final double base;
+
+final double height;
+
+final List<double>? angles;
+
+Map<String, dynamic> toJson() { return {
+  'type': type,
+  'base': base,
+  'height': height,
+  'angles': ?angles,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('base') && json['base'] is num &&
+      json.containsKey('height') && json['height'] is num; } 
+Triangle copyWith({String? type, double? base, double? height, List<double> Function()? angles, }) { return Triangle(
+  type: type ?? this.type,
+  base: base ?? this.base,
+  height: height ?? this.height,
+  angles: angles != null ? angles() : this.angles,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Triangle &&
+          type == other.type &&
+          base == other.base &&
+          height == other.height &&
+          listEquals(angles, other.angles); } 
+@override int get hashCode { return Object.hash(type, base, height, Object.hashAll(angles ?? const [])); } 
+@override String toString() { return 'Triangle(type: $type, base: $base, height: $height, angles: $angles)'; } 
+ }

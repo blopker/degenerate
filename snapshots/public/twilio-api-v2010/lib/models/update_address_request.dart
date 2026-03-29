@@ -1,0 +1,80 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UpdateAddressRequest {const UpdateAddressRequest({this.friendlyName, this.customerName, this.street, this.city, this.region, this.postalCode, this.emergencyEnabled, this.autoCorrectAddress, this.streetSecondary, });
+
+factory UpdateAddressRequest.fromJson(Map<String, dynamic> json) { return UpdateAddressRequest(
+  friendlyName: json['FriendlyName'] as String?,
+  customerName: json['CustomerName'] as String?,
+  street: json['Street'] as String?,
+  city: json['City'] as String?,
+  region: json['Region'] as String?,
+  postalCode: json['PostalCode'] as String?,
+  emergencyEnabled: json['EmergencyEnabled'] as bool?,
+  autoCorrectAddress: json['AutoCorrectAddress'] as bool?,
+  streetSecondary: json['StreetSecondary'] as String?,
+); }
+
+/// A descriptive string that you create to describe the new address. It can be up to 64 characters long for Regulatory Compliance addresses and 32 characters long for Emergency addresses.
+final String? friendlyName;
+
+/// The name to associate with the address.
+final String? customerName;
+
+/// The number and street address of the address.
+final String? street;
+
+/// The city of the address.
+final String? city;
+
+/// The state or region of the address.
+final String? region;
+
+/// The postal code of the address.
+final String? postalCode;
+
+/// Whether to enable emergency calling on the address. Can be: `true` or `false`.
+final bool? emergencyEnabled;
+
+/// Whether we should automatically correct the address. Can be: `true` or `false` and the default is `true`. If empty or `true`, we will correct the address you provide if necessary. If `false`, we won't alter the address you provide.
+final bool? autoCorrectAddress;
+
+/// The additional number and street address of the address.
+final String? streetSecondary;
+
+Map<String, dynamic> toJson() { return {
+  'FriendlyName': ?friendlyName,
+  'CustomerName': ?customerName,
+  'Street': ?street,
+  'City': ?city,
+  'Region': ?region,
+  'PostalCode': ?postalCode,
+  'EmergencyEnabled': ?emergencyEnabled,
+  'AutoCorrectAddress': ?autoCorrectAddress,
+  'StreetSecondary': ?streetSecondary,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+UpdateAddressRequest copyWith({String Function()? friendlyName, String Function()? customerName, String Function()? street, String Function()? city, String Function()? region, String Function()? postalCode, bool Function()? emergencyEnabled, bool Function()? autoCorrectAddress, String Function()? streetSecondary, }) { return UpdateAddressRequest(
+  friendlyName: friendlyName != null ? friendlyName() : this.friendlyName,
+  customerName: customerName != null ? customerName() : this.customerName,
+  street: street != null ? street() : this.street,
+  city: city != null ? city() : this.city,
+  region: region != null ? region() : this.region,
+  postalCode: postalCode != null ? postalCode() : this.postalCode,
+  emergencyEnabled: emergencyEnabled != null ? emergencyEnabled() : this.emergencyEnabled,
+  autoCorrectAddress: autoCorrectAddress != null ? autoCorrectAddress() : this.autoCorrectAddress,
+  streetSecondary: streetSecondary != null ? streetSecondary() : this.streetSecondary,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UpdateAddressRequest &&
+          friendlyName == other.friendlyName &&
+          customerName == other.customerName &&
+          street == other.street &&
+          city == other.city &&
+          region == other.region &&
+          postalCode == other.postalCode &&
+          emergencyEnabled == other.emergencyEnabled &&
+          autoCorrectAddress == other.autoCorrectAddress &&
+          streetSecondary == other.streetSecondary; } 
+@override int get hashCode { return Object.hash(friendlyName, customerName, street, city, region, postalCode, emergencyEnabled, autoCorrectAddress, streetSecondary); } 
+@override String toString() { return 'UpdateAddressRequest(friendlyName: $friendlyName, customerName: $customerName, street: $street, city: $city, region: $region, postalCode: $postalCode, emergencyEnabled: $emergencyEnabled, autoCorrectAddress: $autoCorrectAddress, streetSecondary: $streetSecondary)'; } 
+ }

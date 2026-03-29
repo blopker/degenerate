@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param17.dart';final class PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2 {const PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2._(this.value);
+
+factory PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2._(json),
+}; }
+
+static const PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2 $empty = PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2._('');
+
+static const List<PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsRequestPaymentMethodOptionsKlarna = OneOf2<PaymentMethodOptionsParam17,PostPaymentIntentsRequestPaymentMethodOptionsKlarnaVariant2>;

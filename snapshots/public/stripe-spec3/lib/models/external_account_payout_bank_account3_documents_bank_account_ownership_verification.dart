@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification {const ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification({this.files});
+
+factory ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification.fromJson(Map<String, dynamic> json) { return ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(
+  files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+final List<String>? files;
+
+Map<String, dynamic> toJson() { return {
+  'files': ?files,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification copyWith({List<String> Function()? files}) { return ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(
+  files: files != null ? files() : this.files,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification &&
+          listEquals(files, other.files); } 
+@override int get hashCode { return Object.hashAll(files ?? const []).hashCode; } 
+@override String toString() { return 'ExternalAccountPayoutBankAccount3DocumentsBankAccountOwnershipVerification(files: $files)'; } 
+ }

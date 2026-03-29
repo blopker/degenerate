@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersAiPostToMarkdownResponseResult {const WorkersAiPostToMarkdownResponseResult({required this.data, required this.format, required this.mimeType, required this.name, required this.tokens, });
+
+factory WorkersAiPostToMarkdownResponseResult.fromJson(Map<String, dynamic> json) { return WorkersAiPostToMarkdownResponseResult(
+  data: json['data'] as String,
+  format: json['format'] as String,
+  mimeType: json['mimeType'] as String,
+  name: json['name'] as String,
+  tokens: json['tokens'] as String,
+); }
+
+final String data;
+
+final String format;
+
+final String mimeType;
+
+final String name;
+
+final String tokens;
+
+Map<String, dynamic> toJson() { return {
+  'data': data,
+  'format': format,
+  'mimeType': mimeType,
+  'name': name,
+  'tokens': tokens,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data') && json['data'] is String &&
+      json.containsKey('format') && json['format'] is String &&
+      json.containsKey('mimeType') && json['mimeType'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('tokens') && json['tokens'] is String; } 
+WorkersAiPostToMarkdownResponseResult copyWith({String? data, String? format, String? mimeType, String? name, String? tokens, }) { return WorkersAiPostToMarkdownResponseResult(
+  data: data ?? this.data,
+  format: format ?? this.format,
+  mimeType: mimeType ?? this.mimeType,
+  name: name ?? this.name,
+  tokens: tokens ?? this.tokens,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostToMarkdownResponseResult &&
+          data == other.data &&
+          format == other.format &&
+          mimeType == other.mimeType &&
+          name == other.name &&
+          tokens == other.tokens; } 
+@override int get hashCode { return Object.hash(data, format, mimeType, name, tokens); } 
+@override String toString() { return 'WorkersAiPostToMarkdownResponseResult(data: $data, format: $format, mimeType: $mimeType, name: $name, tokens: $tokens)'; } 
+ }

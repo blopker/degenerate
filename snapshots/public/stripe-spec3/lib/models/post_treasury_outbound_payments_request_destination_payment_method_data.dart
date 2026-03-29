@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_treasury_outbound_payments_request_destination_payment_method_data_billing_details.dart';import 'post_treasury_outbound_payments_request_destination_payment_method_data_us_bank_account.dart';final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType._(this.value);
+
+factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType.fromJson(String json) { return switch (json) {
+  'financial_account' => financialAccount,
+  'us_bank_account' => usBankAccount,
+  _ => PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType._(json),
+}; }
+
+static const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType financialAccount = PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType._('financial_account');
+
+static const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType usBankAccount = PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType._('us_bank_account');
+
+static const List<PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType> values = [financialAccount, usBankAccount];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType($value)'; } 
+ }
+/// Hash used to generate the PaymentMethod to be used for this OutboundPayment. Exclusive with `destination_payment_method`.
+final class PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData {const PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData({this.billingDetails, this.financialAccount, this.metadata, required this.type, this.usBankAccount, });
+
+factory PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(
+  billingDetails: json['billing_details'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails.fromJson(json['billing_details'] as Map<String, dynamic>) : null,
+  financialAccount: json['financial_account'] as String?,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  type: PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType.fromJson(json['type'] as String),
+  usBankAccount: json['us_bank_account'] != null ? PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount.fromJson(json['us_bank_account'] as Map<String, dynamic>) : null,
+); }
+
+final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails? billingDetails;
+
+final String? financialAccount;
+
+final Map<String,String>? metadata;
+
+final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType type;
+
+final PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount? usBankAccount;
+
+Map<String, dynamic> toJson() { return {
+  if (billingDetails != null) 'billing_details': billingDetails?.toJson(),
+  'financial_account': ?financialAccount,
+  'metadata': ?metadata,
+  'type': type.toJson(),
+  if (usBankAccount != null) 'us_bank_account': usBankAccount?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData copyWith({PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataBillingDetails Function()? billingDetails, String Function()? financialAccount, Map<String, String> Function()? metadata, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataType? type, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodDataUsBankAccount Function()? usBankAccount, }) { return PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(
+  billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,
+  financialAccount: financialAccount != null ? financialAccount() : this.financialAccount,
+  metadata: metadata != null ? metadata() : this.metadata,
+  type: type ?? this.type,
+  usBankAccount: usBankAccount != null ? usBankAccount() : this.usBankAccount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData &&
+          billingDetails == other.billingDetails &&
+          financialAccount == other.financialAccount &&
+          metadata == other.metadata &&
+          type == other.type &&
+          usBankAccount == other.usBankAccount; } 
+@override int get hashCode { return Object.hash(billingDetails, financialAccount, metadata, type, usBankAccount); } 
+@override String toString() { return 'PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData(billingDetails: $billingDetails, financialAccount: $financialAccount, metadata: $metadata, type: $type, usBankAccount: $usBankAccount)'; } 
+ }

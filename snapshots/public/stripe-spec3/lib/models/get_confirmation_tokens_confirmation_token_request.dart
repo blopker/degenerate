@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetConfirmationTokensConfirmationTokenRequest {const GetConfirmationTokensConfirmationTokenRequest();
+
+factory GetConfirmationTokensConfirmationTokenRequest.fromJson(Map<String, dynamic> json) { return GetConfirmationTokensConfirmationTokenRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetConfirmationTokensConfirmationTokenRequest copyWith() { return GetConfirmationTokensConfirmationTokenRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetConfirmationTokensConfirmationTokenRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetConfirmationTokensConfirmationTokenRequest()'; } 
+ }

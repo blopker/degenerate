@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_customers_customer_subscriptions_subscription_exposed_id_request_items_discounts_variant1.dart';final class PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2 {const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2._(this.value);
+
+factory PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2._(json),
+}; }
+
+static const PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2 $empty = PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2._('');
+
+static const List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2($value)'; } 
+ }
+typedef PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscounts = OneOf2<List<PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant1>,PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestItemsDiscountsVariant2>;

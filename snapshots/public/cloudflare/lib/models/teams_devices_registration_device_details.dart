@@ -1,0 +1,40 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Device details embedded inside of a registration.
+final class TeamsDevicesRegistrationDeviceDetails {const TeamsDevicesRegistrationDeviceDetails({this.clientVersion, required this.id, required this.name, });
+
+factory TeamsDevicesRegistrationDeviceDetails.fromJson(Map<String, dynamic> json) { return TeamsDevicesRegistrationDeviceDetails(
+  clientVersion: json['client_version'] as String?,
+  id: json['id'] as String,
+  name: json['name'] as String,
+); }
+
+/// Version of the WARP client.
+final String? clientVersion;
+
+/// The ID of the device.
+final String id;
+
+/// The name of the device.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'client_version': ?clientVersion,
+  'id': id,
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String &&
+      json.containsKey('name') && json['name'] is String; } 
+TeamsDevicesRegistrationDeviceDetails copyWith({String Function()? clientVersion, String? id, String? name, }) { return TeamsDevicesRegistrationDeviceDetails(
+  clientVersion: clientVersion != null ? clientVersion() : this.clientVersion,
+  id: id ?? this.id,
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesRegistrationDeviceDetails &&
+          clientVersion == other.clientVersion &&
+          id == other.id &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(clientVersion, id, name); } 
+@override String toString() { return 'TeamsDevicesRegistrationDeviceDetails(clientVersion: $clientVersion, id: $id, name: $name)'; } 
+ }

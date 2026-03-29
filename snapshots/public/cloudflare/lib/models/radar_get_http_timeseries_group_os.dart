@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTimeseriesGroupOs {const RadarGetHttpTimeseriesGroupOs._(this.value);
+
+factory RadarGetHttpTimeseriesGroupOs.fromJson(String json) { return switch (json) {
+  'WINDOWS' => windows,
+  'MACOSX' => macosx,
+  'IOS' => ios,
+  'ANDROID' => android,
+  'CHROMEOS' => chromeos,
+  'LINUX' => linux,
+  'SMART_TV' => smartTv,
+  _ => RadarGetHttpTimeseriesGroupOs._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupOs windows = RadarGetHttpTimeseriesGroupOs._('WINDOWS');
+
+static const RadarGetHttpTimeseriesGroupOs macosx = RadarGetHttpTimeseriesGroupOs._('MACOSX');
+
+static const RadarGetHttpTimeseriesGroupOs ios = RadarGetHttpTimeseriesGroupOs._('IOS');
+
+static const RadarGetHttpTimeseriesGroupOs android = RadarGetHttpTimeseriesGroupOs._('ANDROID');
+
+static const RadarGetHttpTimeseriesGroupOs chromeos = RadarGetHttpTimeseriesGroupOs._('CHROMEOS');
+
+static const RadarGetHttpTimeseriesGroupOs linux = RadarGetHttpTimeseriesGroupOs._('LINUX');
+
+static const RadarGetHttpTimeseriesGroupOs smartTv = RadarGetHttpTimeseriesGroupOs._('SMART_TV');
+
+static const List<RadarGetHttpTimeseriesGroupOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupOs && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupOs($value)'; } 
+ }

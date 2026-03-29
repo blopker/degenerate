@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue {const AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue({required this.elementId});
+
+factory AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue.fromJson(Map<String, dynamic> json) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue(
+  elementId: json['elementId'] as String,
+); }
+
+final String elementId;
+
+Map<String, dynamic> toJson() { return {
+  'elementId': elementId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
+AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue copyWith({String? elementId}) { return AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue(
+  elementId: elementId ?? this.elementId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue &&
+          elementId == other.elementId; } 
+@override int get hashCode { return elementId.hashCode; } 
+@override String toString() { return 'AigConfigGetGatewayDynamicRouteVersionResponseResultElementsPercentageOutputsValue(elementId: $elementId)'; } 
+ }

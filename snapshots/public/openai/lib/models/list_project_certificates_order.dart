@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ListProjectCertificatesOrder {const ListProjectCertificatesOrder._(this.value);
+
+factory ListProjectCertificatesOrder.fromJson(String json) { return switch (json) {
+  'asc' => asc,
+  'desc' => desc,
+  _ => ListProjectCertificatesOrder._(json),
+}; }
+
+static const ListProjectCertificatesOrder asc = ListProjectCertificatesOrder._('asc');
+
+static const ListProjectCertificatesOrder desc = ListProjectCertificatesOrder._('desc');
+
+static const List<ListProjectCertificatesOrder> values = [asc, desc];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ListProjectCertificatesOrder && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ListProjectCertificatesOrder($value)'; } 
+ }

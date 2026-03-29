@@ -1,0 +1,18 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'firewall_custom_response_variant1.dart';/// A custom content type and reponse to return when the threshold is exceeded. The custom response configured in this object will override the custom error for the zone. This object is optional.
+/// Notes: If you omit this object, Cloudflare will use the default HTML error page. If "mode" is "challenge", "managed_challenge", or "js_challenge", Cloudflare will use the zone challenge pages and you should not provide the "response" object.
+final class FirewallCustomResponse {const FirewallCustomResponse({this.firewallCustomResponseVariant1});
+
+factory FirewallCustomResponse.fromJson(Map<String, dynamic> json) { return FirewallCustomResponse(
+  firewallCustomResponseVariant1: FirewallCustomResponseVariant1.canParse(json) ? FirewallCustomResponseVariant1.fromJson(json) : null,
+); }
+
+final FirewallCustomResponseVariant1? firewallCustomResponseVariant1;
+
+/// At least one variant must be present.
+bool get isValid { return firewallCustomResponseVariant1 != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?firewallCustomResponseVariant1?.toJson(),
+}; } 
+ }

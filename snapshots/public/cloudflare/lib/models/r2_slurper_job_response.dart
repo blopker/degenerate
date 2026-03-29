@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gcs_source_response_schema.dart';import 'r2_slurper_job_response_source.dart';import 'r2_slurper_job_response_target.dart';import 'r2_slurper_job_status.dart';import 'r2_source_response_schema.dart';import 's3_source_response_schema.dart';final class R2SlurperJobResponse {const R2SlurperJobResponse({this.createdAt, this.finishedAt, this.id, this.overwrite, this.source, this.status, this.target, });
+
+factory R2SlurperJobResponse.fromJson(Map<String, dynamic> json) { return R2SlurperJobResponse(
+  createdAt: json['createdAt'] as String?,
+  finishedAt: json['finishedAt'] as String?,
+  id: json['id'] as String?,
+  overwrite: json['overwrite'] as bool?,
+  source: json['source'] != null ? OneOf3.parse(json['source'], fromA: (v) => S3SourceResponseSchema.fromJson(v as Map<String, dynamic>), fromB: (v) => GcsSourceResponseSchema.fromJson(v as Map<String, dynamic>), fromC: (v) => R2SourceResponseSchema.fromJson(v as Map<String, dynamic>),) : null,
+  status: json['status'] != null ? R2SlurperJobStatus.fromJson(json['status'] as String) : null,
+  target: json['target'] != null ? R2SlurperJobResponseTarget.fromJson(json['target'] as Map<String, dynamic>) : null,
+); }
+
+final String? createdAt;
+
+final String? finishedAt;
+
+final String? id;
+
+final bool? overwrite;
+
+final R2SlurperJobResponseSource? source;
+
+final R2SlurperJobStatus? status;
+
+final R2SlurperJobResponseTarget? target;
+
+Map<String, dynamic> toJson() { return {
+  'createdAt': ?createdAt,
+  'finishedAt': ?finishedAt,
+  'id': ?id,
+  'overwrite': ?overwrite,
+  if (source != null) 'source': source?.toJson(),
+  if (status != null) 'status': status?.toJson(),
+  if (target != null) 'target': target?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2SlurperJobResponse copyWith({String Function()? createdAt, String? Function()? finishedAt, String Function()? id, bool Function()? overwrite, R2SlurperJobResponseSource Function()? source, R2SlurperJobStatus Function()? status, R2SlurperJobResponseTarget Function()? target, }) { return R2SlurperJobResponse(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  finishedAt: finishedAt != null ? finishedAt() : this.finishedAt,
+  id: id != null ? id() : this.id,
+  overwrite: overwrite != null ? overwrite() : this.overwrite,
+  source: source != null ? source() : this.source,
+  status: status != null ? status() : this.status,
+  target: target != null ? target() : this.target,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2SlurperJobResponse &&
+          createdAt == other.createdAt &&
+          finishedAt == other.finishedAt &&
+          id == other.id &&
+          overwrite == other.overwrite &&
+          source == other.source &&
+          status == other.status &&
+          target == other.target; } 
+@override int get hashCode { return Object.hash(createdAt, finishedAt, id, overwrite, source, status, target); } 
+@override String toString() { return 'R2SlurperJobResponse(createdAt: $createdAt, finishedAt: $finishedAt, id: $id, overwrite: $overwrite, source: $source, status: $status, target: $target)'; } 
+ }

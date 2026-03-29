@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'vectorize_index_dimensions.dart';import 'vectorize_mutation_uuid.dart';final class VectorizeIndexInfoResponse {const VectorizeIndexInfoResponse({this.dimensions, this.processedUpToDatetime, this.processedUpToMutation, this.vectorCount, });
+
+factory VectorizeIndexInfoResponse.fromJson(Map<String, dynamic> json) { return VectorizeIndexInfoResponse(
+  dimensions: json['dimensions'] != null ? VectorizeIndexDimensions.fromJson(json['dimensions'] as num) : null,
+  processedUpToDatetime: json['processedUpToDatetime'] != null ? DateTime.parse(json['processedUpToDatetime'] as String) : null,
+  processedUpToMutation: json['processedUpToMutation'] != null ? VectorizeMutationUuid.fromJson(json['processedUpToMutation'] as dynamic) : null,
+  vectorCount: json['vectorCount'] != null ? (json['vectorCount'] as num).toInt() : null,
+); }
+
+/// Specifies the number of dimensions for the index
+final VectorizeIndexDimensions? dimensions;
+
+/// Specifies the timestamp the last mutation batch was processed as an ISO8601 string.
+final DateTime? processedUpToDatetime;
+
+final VectorizeMutationUuid? processedUpToMutation;
+
+/// Specifies the number of vectors present in the index
+final int? vectorCount;
+
+Map<String, dynamic> toJson() { return {
+  if (dimensions != null) 'dimensions': dimensions?.toJson(),
+  if (processedUpToDatetime != null) 'processedUpToDatetime': processedUpToDatetime?.toIso8601String(),
+  if (processedUpToMutation != null) 'processedUpToMutation': processedUpToMutation?.toJson(),
+  'vectorCount': ?vectorCount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+VectorizeIndexInfoResponse copyWith({VectorizeIndexDimensions Function()? dimensions, DateTime? Function()? processedUpToDatetime, VectorizeMutationUuid? Function()? processedUpToMutation, int Function()? vectorCount, }) { return VectorizeIndexInfoResponse(
+  dimensions: dimensions != null ? dimensions() : this.dimensions,
+  processedUpToDatetime: processedUpToDatetime != null ? processedUpToDatetime() : this.processedUpToDatetime,
+  processedUpToMutation: processedUpToMutation != null ? processedUpToMutation() : this.processedUpToMutation,
+  vectorCount: vectorCount != null ? vectorCount() : this.vectorCount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is VectorizeIndexInfoResponse &&
+          dimensions == other.dimensions &&
+          processedUpToDatetime == other.processedUpToDatetime &&
+          processedUpToMutation == other.processedUpToMutation &&
+          vectorCount == other.vectorCount; } 
+@override int get hashCode { return Object.hash(dimensions, processedUpToDatetime, processedUpToMutation, vectorCount); } 
+@override String toString() { return 'VectorizeIndexInfoResponse(dimensions: $dimensions, processedUpToDatetime: $processedUpToDatetime, processedUpToMutation: $processedUpToMutation, vectorCount: $vectorCount)'; } 
+ }

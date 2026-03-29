@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specify the inspection mode as either `deep` or `shallow`.
+final class ZeroTrustGatewayBodyScanningSettingsInspectionMode {const ZeroTrustGatewayBodyScanningSettingsInspectionMode._(this.value);
+
+factory ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(String json) { return switch (json) {
+  'deep' => deep,
+  'shallow' => shallow,
+  _ => ZeroTrustGatewayBodyScanningSettingsInspectionMode._(json),
+}; }
+
+static const ZeroTrustGatewayBodyScanningSettingsInspectionMode deep = ZeroTrustGatewayBodyScanningSettingsInspectionMode._('deep');
+
+static const ZeroTrustGatewayBodyScanningSettingsInspectionMode shallow = ZeroTrustGatewayBodyScanningSettingsInspectionMode._('shallow');
+
+static const List<ZeroTrustGatewayBodyScanningSettingsInspectionMode> values = [deep, shallow];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZeroTrustGatewayBodyScanningSettingsInspectionMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayBodyScanningSettingsInspectionMode($value)'; } 
+ }
+/// Specify the DLP inspection mode.
+final class ZeroTrustGatewayBodyScanningSettings {const ZeroTrustGatewayBodyScanningSettings({this.inspectionMode});
+
+factory ZeroTrustGatewayBodyScanningSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayBodyScanningSettings(
+  inspectionMode: json['inspection_mode'] != null ? ZeroTrustGatewayBodyScanningSettingsInspectionMode.fromJson(json['inspection_mode'] as String) : null,
+); }
+
+/// Specify the inspection mode as either `deep` or `shallow`.
+final ZeroTrustGatewayBodyScanningSettingsInspectionMode? inspectionMode;
+
+Map<String, dynamic> toJson() { return {
+  if (inspectionMode != null) 'inspection_mode': inspectionMode?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustGatewayBodyScanningSettings copyWith({ZeroTrustGatewayBodyScanningSettingsInspectionMode Function()? inspectionMode}) { return ZeroTrustGatewayBodyScanningSettings(
+  inspectionMode: inspectionMode != null ? inspectionMode() : this.inspectionMode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayBodyScanningSettings &&
+          inspectionMode == other.inspectionMode; } 
+@override int get hashCode { return inspectionMode.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayBodyScanningSettings(inspectionMode: $inspectionMode)'; } 
+ }

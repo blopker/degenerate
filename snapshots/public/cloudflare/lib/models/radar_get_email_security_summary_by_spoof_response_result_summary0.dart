@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0 {const RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0({required this.notSpoof, required this.spoof, });
+
+factory RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0(
+  notSpoof: json['NOT_SPOOF'] as String,
+  spoof: json['SPOOF'] as String,
+); }
+
+/// A numeric string.
+final String notSpoof;
+
+/// A numeric string.
+final String spoof;
+
+Map<String, dynamic> toJson() { return {
+  'NOT_SPOOF': notSpoof,
+  'SPOOF': spoof,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_SPOOF') && json['NOT_SPOOF'] is String &&
+      json.containsKey('SPOOF') && json['SPOOF'] is String; } 
+RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0 copyWith({String? notSpoof, String? spoof, }) { return RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0(
+  notSpoof: notSpoof ?? this.notSpoof,
+  spoof: spoof ?? this.spoof,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0 &&
+          notSpoof == other.notSpoof &&
+          spoof == other.spoof; } 
+@override int get hashCode { return Object.hash(notSpoof, spoof); } 
+@override String toString() { return 'RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0(notSpoof: $notSpoof, spoof: $spoof)'; } 
+ }

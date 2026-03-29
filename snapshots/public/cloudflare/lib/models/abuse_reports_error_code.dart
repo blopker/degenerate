@@ -1,0 +1,517 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Report has invalid type
+extension type const AbuseReportsBadActError(String value) {
+factory AbuseReportsBadActError.fromJson(String json) => AbuseReportsBadActError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsBadAddressError(String value) {
+factory AbuseReportsBadAddressError.fromJson(String json) => AbuseReportsBadAddressError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsBadAgentNameError(String value) {
+factory AbuseReportsBadAgentNameError.fromJson(String json) => AbuseReportsBadAgentNameError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsBadCityError(String value) {
+factory AbuseReportsBadCityError.fromJson(String json) => AbuseReportsBadCityError(json);
+
+String toJson() => value;
+
+}
+/// Comment maximum length of 2000 characters exceeded
+extension type const AbuseReportsBadCommentsError(String value) {
+factory AbuseReportsBadCommentsError.fromJson(String json) => AbuseReportsBadCommentsError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsBadCountryError(String value) {
+factory AbuseReportsBadCountryError.fromJson(String json) => AbuseReportsBadCountryError(json);
+
+String toJson() => value;
+
+}
+/// Provided email was invalid
+extension type const AbuseReportsBadEmailError(String value) {
+factory AbuseReportsBadEmailError.fromJson(String json) => AbuseReportsBadEmailError(json);
+
+String toJson() => value;
+
+}
+/// Invalid IP passed to api
+extension type const AbuseReportsBadIpError(String value) {
+factory AbuseReportsBadIpError.fromJson(String json) => AbuseReportsBadIpError(json);
+
+String toJson() => value;
+
+}
+/// Please provide a more detailed description of the infringement between 1 and 5000 characters
+extension type const AbuseReportsBadJustError(String value) {
+factory AbuseReportsBadJustError.fromJson(String json) => AbuseReportsBadJustError(json);
+
+String toJson() => value;
+
+}
+/// Missing a required field
+extension type const AbuseReportsBadNameError(String value) {
+factory AbuseReportsBadNameError.fromJson(String json) => AbuseReportsBadNameError(json);
+
+String toJson() => value;
+
+}
+/// Invalid Port and Protocol passed to api
+extension type const AbuseReportsBadPortsProtocolError(String value) {
+factory AbuseReportsBadPortsProtocolError.fromJson(String json) => AbuseReportsBadPortsProtocolError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsBadStateError(String value) {
+factory AbuseReportsBadStateError.fromJson(String json) => AbuseReportsBadStateError(json);
+
+String toJson() => value;
+
+}
+/// Invalid URL (http://example.com/) Invalid URL Scheme (http or https) Missing hostname in url Missing a required field Could not determine encoding of field
+/// 
+extension type const AbuseReportsBadUrlsError(String value) {
+factory AbuseReportsBadUrlsError.fromJson(String json) => AbuseReportsBadUrlsError(json);
+
+String toJson() => value;
+
+}
+/// Failed while reading from database Failed while writing to the database This service error will trigger an alert for Cloudflare engineers to investigate the cause resolve it.
+/// 
+extension type const AbuseReportsDbError(String value) {
+factory AbuseReportsDbError.fromJson(String json) => AbuseReportsDbError(json);
+
+String toJson() => value;
+
+}
+/// You have already submitted this URL in the last 7 days
+extension type const AbuseReportsDedupeError(String value) {
+factory AbuseReportsDedupeError.fromJson(String json) => AbuseReportsDedupeError(json);
+
+String toJson() => value;
+
+}
+/// Provided emails did not match
+extension type const AbuseReportsDiffEmailError(String value) {
+factory AbuseReportsDiffEmailError.fromJson(String json) => AbuseReportsDiffEmailError(json);
+
+String toJson() => value;
+
+}
+/// Failed to send confirmation email
+extension type const AbuseReportsEmailError(String value) {
+factory AbuseReportsEmailError.fromJson(String json) => AbuseReportsEmailError(json);
+
+String toJson() => value;
+
+}
+/// Failed to translate email
+extension type const AbuseReportsInternalError(String value) {
+factory AbuseReportsInternalError.fromJson(String json) => AbuseReportsInternalError(json);
+
+String toJson() => value;
+
+}
+/// Invalid value for notification preference
+extension type const AbuseReportsInvalidNotifyError(String value) {
+factory AbuseReportsInvalidNotifyError.fromJson(String json) => AbuseReportsInvalidNotifyError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsMaxIPsError(String value) {
+factory AbuseReportsMaxIPsError.fromJson(String json) => AbuseReportsMaxIPsError(json);
+
+String toJson() => value;
+
+}
+/// Please pick one party to notify about this report
+extension type const AbuseReportsMustNotifyError(String value) {
+factory AbuseReportsMustNotifyError.fromJson(String json) => AbuseReportsMustNotifyError(json);
+
+String toJson() => value;
+
+}
+/// Must acknowledge that you are bound by 512(f), that you have a good faith belief about the material, and that you have the authority to act
+extension type const AbuseReportsNoAgreeError(String value) {
+factory AbuseReportsNoAgreeError.fromJson(String json) => AbuseReportsNoAgreeError(json);
+
+String toJson() => value;
+
+}
+/// Original Work section must be between 1 and 2000 characters
+extension type const AbuseReportsNoOriginalWorkError(String value) {
+factory AbuseReportsNoOriginalWorkError.fromJson(String json) => AbuseReportsNoOriginalWorkError(json);
+
+String toJson() => value;
+
+}
+/// Signature must match your name
+extension type const AbuseReportsNoSigError(String value) {
+factory AbuseReportsNoSigError.fromJson(String json) => AbuseReportsNoSigError(json);
+
+String toJson() => value;
+
+}
+/// Provided value has invalid size
+extension type const AbuseReportsPortsProtocolError(String value) {
+factory AbuseReportsPortsProtocolError.fromJson(String json) => AbuseReportsPortsProtocolError(json);
+
+String toJson() => value;
+
+}
+/// Report has the wrong type
+extension type const AbuseReportsUnexpectedActError(String value) {
+factory AbuseReportsUnexpectedActError.fromJson(String json) => AbuseReportsUnexpectedActError(json);
+
+String toJson() => value;
+
+}
+/// An unexpected error occurred
+extension type const AbuseReportsUnknownError(String value) {
+factory AbuseReportsUnknownError.fromJson(String json) => AbuseReportsUnknownError(json);
+
+String toJson() => value;
+
+}
+/// A URL contains a domain that is not active on Cloudflare
+extension type const AbuseReportsUrlNotOrangeError(String value) {
+factory AbuseReportsUrlNotOrangeError.fromJson(String json) => AbuseReportsUrlNotOrangeError(json);
+
+String toJson() => value;
+
+}
+/// You have entered URLs that contain more than 1 unique hostname. A single report may only include 1 unique hostname (i.e, www.example.com). To report URLs related to another hostname (i.e. other.example.com) you'll need to file a separate report.
+extension type const AbuseReportsUrlNotvalidError(String value) {
+factory AbuseReportsUrlNotvalidError.fromJson(String json) => AbuseReportsUrlNotvalidError(json);
+
+String toJson() => value;
+
+}
+/// A value that is one of: `AbuseReportsBadActError`, `AbuseReportsBadAddressError`, `AbuseReportsBadAgentNameError`, `AbuseReportsBadCityError`, `AbuseReportsBadCountryError`, `AbuseReportsBadPortsProtocolError`, `AbuseReportsBadStateError`, `AbuseReportsMaxIPsError`, `AbuseReportsPortsProtocolError`, `AbuseReportsBadCommentsError`, `AbuseReportsBadEmailError`, `AbuseReportsBadIpError`, `AbuseReportsBadJustError`, `AbuseReportsBadNameError`, `AbuseReportsBadUrlsError`, `AbuseReportsDbError`, `AbuseReportsDedupeError`, `AbuseReportsDiffEmailError`, `AbuseReportsEmailError`, `AbuseReportsInternalError`, `AbuseReportsInvalidNotifyError`, `AbuseReportsMustNotifyError`, `AbuseReportsNoAgreeError`, `AbuseReportsNoOriginalWorkError`, `AbuseReportsNoSigError`, `AbuseReportsUnexpectedActError`, `AbuseReportsUnknownError`, `AbuseReportsUrlNotOrangeError`, `AbuseReportsUrlNotvalidError`.
+sealed class AbuseReportsErrorCode {const AbuseReportsErrorCode();
+
+factory AbuseReportsErrorCode.fromJson(Map<String, dynamic> json) {   return AbuseReportsErrorCode$Unknown(json); }
+
+/// The underlying raw value.
+dynamic get value;
+dynamic toJson() { return value; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadActError(this._value);
+
+final AbuseReportsBadActError _value;
+
+@override AbuseReportsBadActError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadActError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadActError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadAddressError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadAddressError(this._value);
+
+final AbuseReportsBadAddressError _value;
+
+@override AbuseReportsBadAddressError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadAddressError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadAddressError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadAgentNameError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadAgentNameError(this._value);
+
+final AbuseReportsBadAgentNameError _value;
+
+@override AbuseReportsBadAgentNameError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadAgentNameError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadAgentNameError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadCityError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadCityError(this._value);
+
+final AbuseReportsBadCityError _value;
+
+@override AbuseReportsBadCityError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadCityError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadCityError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadCountryError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadCountryError(this._value);
+
+final AbuseReportsBadCountryError _value;
+
+@override AbuseReportsBadCountryError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadCountryError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadCountryError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadPortsProtocolError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadPortsProtocolError(this._value);
+
+final AbuseReportsBadPortsProtocolError _value;
+
+@override AbuseReportsBadPortsProtocolError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadPortsProtocolError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadPortsProtocolError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadStateError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadStateError(this._value);
+
+final AbuseReportsBadStateError _value;
+
+@override AbuseReportsBadStateError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadStateError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadStateError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsMaxIPsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMaxIPsError(this._value);
+
+final AbuseReportsMaxIPsError _value;
+
+@override AbuseReportsMaxIPsError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsMaxIPsError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsMaxIPsError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsPortsProtocolError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsPortsProtocolError(this._value);
+
+final AbuseReportsPortsProtocolError _value;
+
+@override AbuseReportsPortsProtocolError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsPortsProtocolError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsPortsProtocolError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadCommentsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadCommentsError(this._value);
+
+final AbuseReportsBadCommentsError _value;
+
+@override AbuseReportsBadCommentsError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadCommentsError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadCommentsError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadEmailError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadEmailError(this._value);
+
+final AbuseReportsBadEmailError _value;
+
+@override AbuseReportsBadEmailError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadEmailError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadEmailError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadIpError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadIpError(this._value);
+
+final AbuseReportsBadIpError _value;
+
+@override AbuseReportsBadIpError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadIpError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadIpError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadJustError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadJustError(this._value);
+
+final AbuseReportsBadJustError _value;
+
+@override AbuseReportsBadJustError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadJustError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadJustError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadNameError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadNameError(this._value);
+
+final AbuseReportsBadNameError _value;
+
+@override AbuseReportsBadNameError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadNameError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadNameError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsBadUrlsError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsBadUrlsError(this._value);
+
+final AbuseReportsBadUrlsError _value;
+
+@override AbuseReportsBadUrlsError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsBadUrlsError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsBadUrlsError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsDbError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsDbError(this._value);
+
+final AbuseReportsDbError _value;
+
+@override AbuseReportsDbError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsDbError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsDbError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsDedupeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsDedupeError(this._value);
+
+final AbuseReportsDedupeError _value;
+
+@override AbuseReportsDedupeError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsDedupeError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsDedupeError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsDiffEmailError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsDiffEmailError(this._value);
+
+final AbuseReportsDiffEmailError _value;
+
+@override AbuseReportsDiffEmailError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsDiffEmailError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsDiffEmailError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsEmailError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsEmailError(this._value);
+
+final AbuseReportsEmailError _value;
+
+@override AbuseReportsEmailError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsEmailError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsEmailError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsInternalError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInternalError(this._value);
+
+final AbuseReportsInternalError _value;
+
+@override AbuseReportsInternalError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsInternalError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsInternalError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsInvalidNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsInvalidNotifyError(this._value);
+
+final AbuseReportsInvalidNotifyError _value;
+
+@override AbuseReportsInvalidNotifyError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsInvalidNotifyError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsInvalidNotifyError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsMustNotifyError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsMustNotifyError(this._value);
+
+final AbuseReportsMustNotifyError _value;
+
+@override AbuseReportsMustNotifyError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsMustNotifyError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsMustNotifyError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsNoAgreeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoAgreeError(this._value);
+
+final AbuseReportsNoAgreeError _value;
+
+@override AbuseReportsNoAgreeError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsNoAgreeError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoAgreeError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError(this._value);
+
+final AbuseReportsNoOriginalWorkError _value;
+
+@override AbuseReportsNoOriginalWorkError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsNoOriginalWorkError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoOriginalWorkError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsNoSigError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsNoSigError(this._value);
+
+final AbuseReportsNoSigError _value;
+
+@override AbuseReportsNoSigError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsNoSigError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsNoSigError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsUnexpectedActError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnexpectedActError(this._value);
+
+final AbuseReportsUnexpectedActError _value;
+
+@override AbuseReportsUnexpectedActError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUnexpectedActError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUnexpectedActError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsUnknownError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUnknownError(this._value);
+
+final AbuseReportsUnknownError _value;
+
+@override AbuseReportsUnknownError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUnknownError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUnknownError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError(this._value);
+
+final AbuseReportsUrlNotOrangeError _value;
+
+@override AbuseReportsUrlNotOrangeError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUrlNotOrangeError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUrlNotOrangeError($_value)'; } 
+ }
+final class AbuseReportsErrorCodeAbuseReportsUrlNotvalidError extends AbuseReportsErrorCode {const AbuseReportsErrorCodeAbuseReportsUrlNotvalidError(this._value);
+
+final AbuseReportsUrlNotvalidError _value;
+
+@override AbuseReportsUrlNotvalidError get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCodeAbuseReportsUrlNotvalidError && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.abuseReportsUrlNotvalidError($_value)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+final class AbuseReportsErrorCode$Unknown extends AbuseReportsErrorCode {const AbuseReportsErrorCode$Unknown(this._value);
+
+final dynamic _value;
+
+@override dynamic get value { return _value ?? ''; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AbuseReportsErrorCode$Unknown && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'AbuseReportsErrorCode.unknown($_value)'; } 
+ }

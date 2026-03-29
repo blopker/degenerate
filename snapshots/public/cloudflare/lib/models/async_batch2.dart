@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'async_batch2_requests.dart';final class AsyncBatch2 {const AsyncBatch2({this.requests});
+
+factory AsyncBatch2.fromJson(Map<String, dynamic> json) { return AsyncBatch2(
+  requests: (json['requests'] as List<dynamic>?)?.map((e) => AsyncBatch2Requests.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<AsyncBatch2Requests>? requests;
+
+Map<String, dynamic> toJson() { return {
+  if (requests != null) 'requests': requests?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AsyncBatch2 copyWith({List<AsyncBatch2Requests> Function()? requests}) { return AsyncBatch2(
+  requests: requests != null ? requests() : this.requests,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AsyncBatch2 &&
+          listEquals(requests, other.requests); } 
+@override int get hashCode { return Object.hashAll(requests ?? const []).hashCode; } 
+@override String toString() { return 'AsyncBatch2(requests: $requests)'; } 
+ }

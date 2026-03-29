@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsSummaryByDnssecProtocol {const RadarGetDnsSummaryByDnssecProtocol._(this.value);
+
+factory RadarGetDnsSummaryByDnssecProtocol.fromJson(String json) { return switch (json) {
+  'UDP' => udp,
+  'TCP' => tcp,
+  'HTTPS' => https,
+  'TLS' => tls,
+  _ => RadarGetDnsSummaryByDnssecProtocol._(json),
+}; }
+
+static const RadarGetDnsSummaryByDnssecProtocol udp = RadarGetDnsSummaryByDnssecProtocol._('UDP');
+
+static const RadarGetDnsSummaryByDnssecProtocol tcp = RadarGetDnsSummaryByDnssecProtocol._('TCP');
+
+static const RadarGetDnsSummaryByDnssecProtocol https = RadarGetDnsSummaryByDnssecProtocol._('HTTPS');
+
+static const RadarGetDnsSummaryByDnssecProtocol tls = RadarGetDnsSummaryByDnssecProtocol._('TLS');
+
+static const List<RadarGetDnsSummaryByDnssecProtocol> values = [udp, tcp, https, tls];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsSummaryByDnssecProtocol && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsSummaryByDnssecProtocol($value)'; } 
+ }

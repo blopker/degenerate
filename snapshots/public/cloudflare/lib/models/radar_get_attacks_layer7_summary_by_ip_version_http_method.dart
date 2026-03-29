@@ -1,0 +1,158 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetAttacksLayer7SummaryByIpVersionHttpMethod {const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._(this.value);
+
+factory RadarGetAttacksLayer7SummaryByIpVersionHttpMethod.fromJson(String json) { return switch (json) {
+  'GET' => $get,
+  'POST' => post,
+  'DELETE' => delete,
+  'PUT' => put,
+  'HEAD' => head,
+  'PURGE' => purge,
+  'OPTIONS' => options,
+  'PROPFIND' => propfind,
+  'MKCOL' => mkcol,
+  'PATCH' => patch,
+  'ACL' => acl,
+  'BCOPY' => bcopy,
+  'BDELETE' => bdelete,
+  'BMOVE' => bmove,
+  'BPROPFIND' => bpropfind,
+  'BPROPPATCH' => bproppatch,
+  'CHECKIN' => checkin,
+  'CHECKOUT' => checkout,
+  'CONNECT' => connect,
+  'COPY' => copy,
+  'LABEL' => label,
+  'LOCK' => lock,
+  'MERGE' => merge,
+  'MKACTIVITY' => mkactivity,
+  'MKWORKSPACE' => mkworkspace,
+  'MOVE' => move,
+  'NOTIFY' => notify,
+  'ORDERPATCH' => orderpatch,
+  'POLL' => poll,
+  'PROPPATCH' => proppatch,
+  'REPORT' => report,
+  'SEARCH' => search,
+  'SUBSCRIBE' => subscribe,
+  'TRACE' => trace,
+  'UNCHECKOUT' => uncheckout,
+  'UNLOCK' => unlock,
+  'UNSUBSCRIBE' => unsubscribe,
+  'UPDATE' => update,
+  'VERSIONCONTROL' => versioncontrol,
+  'BASELINECONTROL' => baselinecontrol,
+  'XMSENUMATTS' => xmsenumatts,
+  'RPC_OUT_DATA' => rpcOutData,
+  'RPC_IN_DATA' => rpcInData,
+  'JSON' => $json,
+  'COOK' => cook,
+  'TRACK' => track,
+  _ => RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._(json),
+}; }
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod $get = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('GET');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod post = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('POST');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod delete = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('DELETE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod put = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('PUT');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod head = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('HEAD');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod purge = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('PURGE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod options = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('OPTIONS');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod propfind = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('PROPFIND');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod mkcol = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('MKCOL');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod patch = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('PATCH');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod acl = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('ACL');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod bcopy = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('BCOPY');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod bdelete = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('BDELETE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod bmove = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('BMOVE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod bpropfind = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('BPROPFIND');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod bproppatch = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('BPROPPATCH');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod checkin = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('CHECKIN');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod checkout = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('CHECKOUT');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod connect = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('CONNECT');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod copy = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('COPY');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod label = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('LABEL');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod lock = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('LOCK');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod merge = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('MERGE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod mkactivity = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('MKACTIVITY');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod mkworkspace = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('MKWORKSPACE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod move = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('MOVE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod notify = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('NOTIFY');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod orderpatch = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('ORDERPATCH');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod poll = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('POLL');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod proppatch = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('PROPPATCH');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod report = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('REPORT');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod search = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('SEARCH');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod subscribe = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('SUBSCRIBE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod trace = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('TRACE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod uncheckout = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('UNCHECKOUT');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod unlock = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('UNLOCK');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod unsubscribe = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('UNSUBSCRIBE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod update = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('UPDATE');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod versioncontrol = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('VERSIONCONTROL');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod baselinecontrol = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('BASELINECONTROL');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod xmsenumatts = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('XMSENUMATTS');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod rpcOutData = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('RPC_OUT_DATA');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod rpcInData = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('RPC_IN_DATA');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod $json = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('JSON');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod cook = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('COOK');
+
+static const RadarGetAttacksLayer7SummaryByIpVersionHttpMethod track = RadarGetAttacksLayer7SummaryByIpVersionHttpMethod._('TRACK');
+
+static const List<RadarGetAttacksLayer7SummaryByIpVersionHttpMethod> values = [$get, post, delete, put, head, purge, options, propfind, mkcol, patch, acl, bcopy, bdelete, bmove, bpropfind, bproppatch, checkin, checkout, connect, copy, label, lock, merge, mkactivity, mkworkspace, move, notify, orderpatch, poll, proppatch, report, search, subscribe, trace, uncheckout, unlock, unsubscribe, update, versioncontrol, baselinecontrol, xmsenumatts, rpcOutData, rpcInData, $json, cook, track];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7SummaryByIpVersionHttpMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7SummaryByIpVersionHttpMethod($value)'; } 
+ }

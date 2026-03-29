@@ -1,0 +1,139 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'custom_indicator_feeds_description.dart';import 'custom_indicator_feeds_id.dart';import 'custom_indicator_feeds_is_attributable.dart';import 'custom_indicator_feeds_is_downloadable.dart';import 'custom_indicator_feeds_is_public.dart';import 'custom_indicator_feeds_name.dart';/// The unique identifier for the provider
+extension type const CustomIndicatorFeedsProviderId(String value) {
+factory CustomIndicatorFeedsProviderId.fromJson(String json) => CustomIndicatorFeedsProviderId(json);
+
+String toJson() => value;
+
+}
+/// The provider of the indicator feed
+extension type const CustomIndicatorFeedsProviderName(String value) {
+factory CustomIndicatorFeedsProviderName.fromJson(String json) => CustomIndicatorFeedsProviderName(json);
+
+String toJson() => value;
+
+}
+/// Status of the latest snapshot uploaded
+final class CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus {const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._(this.value);
+
+factory CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus.fromJson(String json) { return switch (json) {
+  'Mirroring' => mirroring,
+  'Unifying' => unifying,
+  'Loading' => loading,
+  'Provisioning' => provisioning,
+  'Complete' => complete,
+  'Error' => error,
+  _ => CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._(json),
+}; }
+
+static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus mirroring = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Mirroring');
+
+static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus unifying = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Unifying');
+
+static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus loading = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Loading');
+
+static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus provisioning = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Provisioning');
+
+static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus complete = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Complete');
+
+static const CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus error = CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus._('Error');
+
+static const List<CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus> values = [mirroring, unifying, loading, provisioning, complete, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus($value)'; } 
+ }
+final class CustomIndicatorFeedsIndicatorFeedMetadata {const CustomIndicatorFeedsIndicatorFeedMetadata({this.createdOn, this.description, this.id, this.isAttributable, this.isDownloadable, this.isPublic, this.latestUploadStatus, this.modifiedOn, this.name, this.providerId, this.providerName, });
+
+factory CustomIndicatorFeedsIndicatorFeedMetadata.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsIndicatorFeedMetadata(
+  createdOn: json['created_on'] != null ? DateTime.parse(json['created_on'] as String) : null,
+  description: json['description'] != null ? CustomIndicatorFeedsDescription.fromJson(json['description'] as String) : null,
+  id: json['id'] != null ? CustomIndicatorFeedsId.fromJson(json['id'] as num) : null,
+  isAttributable: json['is_attributable'] != null ? CustomIndicatorFeedsIsAttributable.fromJson(json['is_attributable'] as bool) : null,
+  isDownloadable: json['is_downloadable'] != null ? CustomIndicatorFeedsIsDownloadable.fromJson(json['is_downloadable'] as bool) : null,
+  isPublic: json['is_public'] != null ? CustomIndicatorFeedsIsPublic.fromJson(json['is_public'] as bool) : null,
+  latestUploadStatus: json['latest_upload_status'] != null ? CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus.fromJson(json['latest_upload_status'] as String) : null,
+  modifiedOn: json['modified_on'] != null ? DateTime.parse(json['modified_on'] as String) : null,
+  name: json['name'] != null ? CustomIndicatorFeedsName.fromJson(json['name'] as String) : null,
+  providerId: json['provider_id'] != null ? CustomIndicatorFeedsProviderId.fromJson(json['provider_id'] as String) : null,
+  providerName: json['provider_name'] != null ? CustomIndicatorFeedsProviderName.fromJson(json['provider_name'] as String) : null,
+); }
+
+/// The date and time when the data entry was created
+final DateTime? createdOn;
+
+/// The description of the example test
+final CustomIndicatorFeedsDescription? description;
+
+/// The unique identifier for the indicator feed
+final CustomIndicatorFeedsId? id;
+
+final CustomIndicatorFeedsIsAttributable? isAttributable;
+
+final CustomIndicatorFeedsIsDownloadable? isDownloadable;
+
+final CustomIndicatorFeedsIsPublic? isPublic;
+
+/// Status of the latest snapshot uploaded
+final CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus? latestUploadStatus;
+
+/// The date and time when the data entry was last modified
+final DateTime? modifiedOn;
+
+final CustomIndicatorFeedsName? name;
+
+final CustomIndicatorFeedsProviderId? providerId;
+
+final CustomIndicatorFeedsProviderName? providerName;
+
+Map<String, dynamic> toJson() { return {
+  if (createdOn != null) 'created_on': createdOn?.toIso8601String(),
+  if (description != null) 'description': description?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (isAttributable != null) 'is_attributable': isAttributable?.toJson(),
+  if (isDownloadable != null) 'is_downloadable': isDownloadable?.toJson(),
+  if (isPublic != null) 'is_public': isPublic?.toJson(),
+  if (latestUploadStatus != null) 'latest_upload_status': latestUploadStatus?.toJson(),
+  if (modifiedOn != null) 'modified_on': modifiedOn?.toIso8601String(),
+  if (name != null) 'name': name?.toJson(),
+  if (providerId != null) 'provider_id': providerId?.toJson(),
+  if (providerName != null) 'provider_name': providerName?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CustomIndicatorFeedsIndicatorFeedMetadata copyWith({DateTime Function()? createdOn, CustomIndicatorFeedsDescription Function()? description, CustomIndicatorFeedsId Function()? id, CustomIndicatorFeedsIsAttributable Function()? isAttributable, CustomIndicatorFeedsIsDownloadable Function()? isDownloadable, CustomIndicatorFeedsIsPublic Function()? isPublic, CustomIndicatorFeedsIndicatorFeedMetadataLatestUploadStatus Function()? latestUploadStatus, DateTime Function()? modifiedOn, CustomIndicatorFeedsName Function()? name, CustomIndicatorFeedsProviderId Function()? providerId, CustomIndicatorFeedsProviderName Function()? providerName, }) { return CustomIndicatorFeedsIndicatorFeedMetadata(
+  createdOn: createdOn != null ? createdOn() : this.createdOn,
+  description: description != null ? description() : this.description,
+  id: id != null ? id() : this.id,
+  isAttributable: isAttributable != null ? isAttributable() : this.isAttributable,
+  isDownloadable: isDownloadable != null ? isDownloadable() : this.isDownloadable,
+  isPublic: isPublic != null ? isPublic() : this.isPublic,
+  latestUploadStatus: latestUploadStatus != null ? latestUploadStatus() : this.latestUploadStatus,
+  modifiedOn: modifiedOn != null ? modifiedOn() : this.modifiedOn,
+  name: name != null ? name() : this.name,
+  providerId: providerId != null ? providerId() : this.providerId,
+  providerName: providerName != null ? providerName() : this.providerName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomIndicatorFeedsIndicatorFeedMetadata &&
+          createdOn == other.createdOn &&
+          description == other.description &&
+          id == other.id &&
+          isAttributable == other.isAttributable &&
+          isDownloadable == other.isDownloadable &&
+          isPublic == other.isPublic &&
+          latestUploadStatus == other.latestUploadStatus &&
+          modifiedOn == other.modifiedOn &&
+          name == other.name &&
+          providerId == other.providerId &&
+          providerName == other.providerName; } 
+@override int get hashCode { return Object.hash(createdOn, description, id, isAttributable, isDownloadable, isPublic, latestUploadStatus, modifiedOn, name, providerId, providerName); } 
+@override String toString() { return 'CustomIndicatorFeedsIndicatorFeedMetadata(createdOn: $createdOn, description: $description, id: $id, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, latestUploadStatus: $latestUploadStatus, modifiedOn: $modifiedOn, name: $name, providerId: $providerId, providerName: $providerName)'; } 
+ }

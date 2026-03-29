@@ -1,0 +1,120 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'tax_product_resource_tax_rate_details.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. We might extend the possible values for this field to support new tax rules.
+final class TaxProductResourceTaxBreakdownTaxabilityReason {const TaxProductResourceTaxBreakdownTaxabilityReason._(this.value);
+
+factory TaxProductResourceTaxBreakdownTaxabilityReason.fromJson(String json) { return switch (json) {
+  'customer_exempt' => customerExempt,
+  'not_collecting' => notCollecting,
+  'not_subject_to_tax' => notSubjectToTax,
+  'not_supported' => notSupported,
+  'portion_product_exempt' => portionProductExempt,
+  'portion_reduced_rated' => portionReducedRated,
+  'portion_standard_rated' => portionStandardRated,
+  'product_exempt' => productExempt,
+  'product_exempt_holiday' => productExemptHoliday,
+  'proportionally_rated' => proportionallyRated,
+  'reduced_rated' => reducedRated,
+  'reverse_charge' => reverseCharge,
+  'standard_rated' => standardRated,
+  'taxable_basis_reduced' => taxableBasisReduced,
+  'zero_rated' => zeroRated,
+  _ => TaxProductResourceTaxBreakdownTaxabilityReason._(json),
+}; }
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason customerExempt = TaxProductResourceTaxBreakdownTaxabilityReason._('customer_exempt');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason notCollecting = TaxProductResourceTaxBreakdownTaxabilityReason._('not_collecting');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason notSubjectToTax = TaxProductResourceTaxBreakdownTaxabilityReason._('not_subject_to_tax');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason notSupported = TaxProductResourceTaxBreakdownTaxabilityReason._('not_supported');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason portionProductExempt = TaxProductResourceTaxBreakdownTaxabilityReason._('portion_product_exempt');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason portionReducedRated = TaxProductResourceTaxBreakdownTaxabilityReason._('portion_reduced_rated');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason portionStandardRated = TaxProductResourceTaxBreakdownTaxabilityReason._('portion_standard_rated');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason productExempt = TaxProductResourceTaxBreakdownTaxabilityReason._('product_exempt');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason productExemptHoliday = TaxProductResourceTaxBreakdownTaxabilityReason._('product_exempt_holiday');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason proportionallyRated = TaxProductResourceTaxBreakdownTaxabilityReason._('proportionally_rated');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason reducedRated = TaxProductResourceTaxBreakdownTaxabilityReason._('reduced_rated');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason reverseCharge = TaxProductResourceTaxBreakdownTaxabilityReason._('reverse_charge');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason standardRated = TaxProductResourceTaxBreakdownTaxabilityReason._('standard_rated');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason taxableBasisReduced = TaxProductResourceTaxBreakdownTaxabilityReason._('taxable_basis_reduced');
+
+static const TaxProductResourceTaxBreakdownTaxabilityReason zeroRated = TaxProductResourceTaxBreakdownTaxabilityReason._('zero_rated');
+
+static const List<TaxProductResourceTaxBreakdownTaxabilityReason> values = [customerExempt, notCollecting, notSubjectToTax, notSupported, portionProductExempt, portionReducedRated, portionStandardRated, productExempt, productExemptHoliday, proportionallyRated, reducedRated, reverseCharge, standardRated, taxableBasisReduced, zeroRated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TaxProductResourceTaxBreakdownTaxabilityReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TaxProductResourceTaxBreakdownTaxabilityReason($value)'; } 
+ }
+/// 
+final class TaxProductResourceTaxBreakdown {const TaxProductResourceTaxBreakdown({required this.amount, required this.inclusive, required this.taxRateDetails, required this.taxabilityReason, required this.taxableAmount, });
+
+factory TaxProductResourceTaxBreakdown.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxBreakdown(
+  amount: (json['amount'] as num).toInt(),
+  inclusive: json['inclusive'] as bool,
+  taxRateDetails: TaxProductResourceTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>),
+  taxabilityReason: TaxProductResourceTaxBreakdownTaxabilityReason.fromJson(json['taxability_reason'] as String),
+  taxableAmount: (json['taxable_amount'] as num).toInt(),
+); }
+
+/// The amount of tax, in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
+final int amount;
+
+/// Specifies whether the tax amount is included in the line item amount.
+final bool inclusive;
+
+final TaxProductResourceTaxRateDetails taxRateDetails;
+
+/// The reasoning behind this tax, for example, if the product is tax exempt. We might extend the possible values for this field to support new tax rules.
+final TaxProductResourceTaxBreakdownTaxabilityReason taxabilityReason;
+
+/// The amount on which tax is calculated, in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
+final int taxableAmount;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'inclusive': inclusive,
+  'tax_rate_details': taxRateDetails.toJson(),
+  'taxability_reason': taxabilityReason.toJson(),
+  'taxable_amount': taxableAmount,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('inclusive') && json['inclusive'] is bool &&
+      json.containsKey('tax_rate_details') &&
+      json.containsKey('taxability_reason') &&
+      json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
+TaxProductResourceTaxBreakdown copyWith({int? amount, bool? inclusive, TaxProductResourceTaxRateDetails? taxRateDetails, TaxProductResourceTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) { return TaxProductResourceTaxBreakdown(
+  amount: amount ?? this.amount,
+  inclusive: inclusive ?? this.inclusive,
+  taxRateDetails: taxRateDetails ?? this.taxRateDetails,
+  taxabilityReason: taxabilityReason ?? this.taxabilityReason,
+  taxableAmount: taxableAmount ?? this.taxableAmount,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TaxProductResourceTaxBreakdown &&
+          amount == other.amount &&
+          inclusive == other.inclusive &&
+          taxRateDetails == other.taxRateDetails &&
+          taxabilityReason == other.taxabilityReason &&
+          taxableAmount == other.taxableAmount; } 
+@override int get hashCode { return Object.hash(amount, inclusive, taxRateDetails, taxabilityReason, taxableAmount); } 
+@override String toString() { return 'TaxProductResourceTaxBreakdown(amount: $amount, inclusive: $inclusive, taxRateDetails: $taxRateDetails, taxabilityReason: $taxabilityReason, taxableAmount: $taxableAmount)'; } 
+ }

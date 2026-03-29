@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Format in which results will be returned.
+final class RadarGetHttpTimeseriesGroupByBrowsersFormat {const RadarGetHttpTimeseriesGroupByBrowsersFormat._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByBrowsersFormat.fromJson(String json) { return switch (json) {
+  'JSON' => $json,
+  'CSV' => csv,
+  _ => RadarGetHttpTimeseriesGroupByBrowsersFormat._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByBrowsersFormat $json = RadarGetHttpTimeseriesGroupByBrowsersFormat._('JSON');
+
+static const RadarGetHttpTimeseriesGroupByBrowsersFormat csv = RadarGetHttpTimeseriesGroupByBrowsersFormat._('CSV');
+
+static const List<RadarGetHttpTimeseriesGroupByBrowsersFormat> values = [$json, csv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBrowsersFormat && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBrowsersFormat($value)'; } 
+ }

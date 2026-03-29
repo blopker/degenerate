@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_call_user_defined_message_subscription.dart';import '../models/create_user_defined_message_subscription_request.dart';/// Api20100401UserDefinedMessageSubscriptionApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401UserDefinedMessageSubscriptionApi with ApiExecutor {const Api20100401UserDefinedMessageSubscriptionApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Subscribe to User Defined Messages for a given Call SID.
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions.json`
+Future<ApiResult<AccountCallUserDefinedMessageSubscription, Never>> createUserDefinedMessageSubscription({required String accountSid, required String callSid, CreateUserDefinedMessageSubscriptionRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions.json',
+  headers: headers,
+  body: body == null ? null : [
+    'Callback=${Uri.encodeQueryComponent(body.callback.toString())}',
+    if (body.idempotencyKey case final idempotencyKey$?)
+      'IdempotencyKey=${Uri.encodeQueryComponent(idempotencyKey$)}',
+    if (body.method case final method$?)
+      'Method=${Uri.encodeQueryComponent(method$.toJson())}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountCallUserDefinedMessageSubscription.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Delete a specific User Defined Message Subscription.
+///
+/// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/UserDefinedMessageSubscriptions/{Sid}.json`
+Future<ApiResult<void, Never>> deleteUserDefinedMessageSubscription({required String accountSid, required String callSid, required String sid, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'DELETE',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/Calls/${Uri.encodeComponent(callSid)}/UserDefinedMessageSubscriptions/${Uri.encodeComponent(sid)}.json',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (_) {},
+);
+ } 
+ }

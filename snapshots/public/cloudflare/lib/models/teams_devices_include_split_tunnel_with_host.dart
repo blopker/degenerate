@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'teams_devices_include_split_tunnel_description.dart';/// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
+extension type const TeamsDevicesIncludeSplitTunnelHost(String value) {
+factory TeamsDevicesIncludeSplitTunnelHost.fromJson(String json) => TeamsDevicesIncludeSplitTunnelHost(json);
+
+String toJson() => value;
+
+}
+final class TeamsDevicesIncludeSplitTunnelWithHost {const TeamsDevicesIncludeSplitTunnelWithHost({this.description, required this.host, });
+
+factory TeamsDevicesIncludeSplitTunnelWithHost.fromJson(Map<String, dynamic> json) { return TeamsDevicesIncludeSplitTunnelWithHost(
+  description: json['description'] != null ? TeamsDevicesIncludeSplitTunnelDescription.fromJson(json['description'] as String) : null,
+  host: TeamsDevicesIncludeSplitTunnelHost.fromJson(json['host'] as String),
+); }
+
+/// A description of the Split Tunnel item, displayed in the client UI.
+final TeamsDevicesIncludeSplitTunnelDescription? description;
+
+/// The domain name to include in the tunnel. If `host` is present, `address` must not be present.
+final TeamsDevicesIncludeSplitTunnelHost host;
+
+Map<String, dynamic> toJson() { return {
+  if (description != null) 'description': description?.toJson(),
+  'host': host.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('host'); } 
+TeamsDevicesIncludeSplitTunnelWithHost copyWith({TeamsDevicesIncludeSplitTunnelDescription Function()? description, TeamsDevicesIncludeSplitTunnelHost? host, }) { return TeamsDevicesIncludeSplitTunnelWithHost(
+  description: description != null ? description() : this.description,
+  host: host ?? this.host,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesIncludeSplitTunnelWithHost &&
+          description == other.description &&
+          host == other.host; } 
+@override int get hashCode { return Object.hash(description, host); } 
+@override String toString() { return 'TeamsDevicesIncludeSplitTunnelWithHost(description: $description, host: $host)'; } 
+ }

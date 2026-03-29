@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';/// EmojisApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class EmojisApi with ApiExecutor {const EmojisApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get emojis
+///
+/// Lists all the emojis available to use on GitHub.
+///
+/// `GET /emojis`
+Future<ApiResult<Map<String, String>, Never>> emojisGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/emojis',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return (jsonDecode(response.body) as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
+  },
+);
+ } 
+ }

@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReactionsListForPullRequestReviewCommentContent {const ReactionsListForPullRequestReviewCommentContent._(this.value);
+
+factory ReactionsListForPullRequestReviewCommentContent.fromJson(String json) { return switch (json) {
+  '+1' => plus1,
+  '-1' => minus1,
+  'laugh' => laugh,
+  'confused' => confused,
+  'heart' => heart,
+  'hooray' => hooray,
+  'rocket' => rocket,
+  'eyes' => eyes,
+  _ => ReactionsListForPullRequestReviewCommentContent._(json),
+}; }
+
+static const ReactionsListForPullRequestReviewCommentContent plus1 = ReactionsListForPullRequestReviewCommentContent._('+1');
+
+static const ReactionsListForPullRequestReviewCommentContent minus1 = ReactionsListForPullRequestReviewCommentContent._('-1');
+
+static const ReactionsListForPullRequestReviewCommentContent laugh = ReactionsListForPullRequestReviewCommentContent._('laugh');
+
+static const ReactionsListForPullRequestReviewCommentContent confused = ReactionsListForPullRequestReviewCommentContent._('confused');
+
+static const ReactionsListForPullRequestReviewCommentContent heart = ReactionsListForPullRequestReviewCommentContent._('heart');
+
+static const ReactionsListForPullRequestReviewCommentContent hooray = ReactionsListForPullRequestReviewCommentContent._('hooray');
+
+static const ReactionsListForPullRequestReviewCommentContent rocket = ReactionsListForPullRequestReviewCommentContent._('rocket');
+
+static const ReactionsListForPullRequestReviewCommentContent eyes = ReactionsListForPullRequestReviewCommentContent._('eyes');
+
+static const List<ReactionsListForPullRequestReviewCommentContent> values = [plus1, minus1, laugh, confused, heart, hooray, rocket, eyes];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReactionsListForPullRequestReviewCommentContent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReactionsListForPullRequestReviewCommentContent($value)'; } 
+ }

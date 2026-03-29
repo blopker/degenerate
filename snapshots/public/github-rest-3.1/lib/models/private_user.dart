@@ -1,0 +1,312 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'private_user_plan.dart';/// Private User
+final class PrivateUser {const PrivateUser({required this.login, required this.id, this.userViewType, required this.nodeId, required this.avatarUrl, required this.gravatarId, required this.url, required this.htmlUrl, required this.followersUrl, required this.followingUrl, required this.gistsUrl, required this.starredUrl, required this.subscriptionsUrl, required this.organizationsUrl, required this.reposUrl, required this.eventsUrl, required this.receivedEventsUrl, required this.type, required this.siteAdmin, required this.name, required this.company, required this.blog, required this.location, required this.email, this.notificationEmail, required this.hireable, required this.bio, this.twitterUsername, required this.publicRepos, required this.publicGists, required this.followers, required this.following, required this.createdAt, required this.updatedAt, required this.privateGists, required this.totalPrivateRepos, required this.ownedPrivateRepos, required this.diskUsage, required this.collaborators, required this.twoFactorAuthentication, this.plan, this.businessPlus, this.ldapDn, });
+
+factory PrivateUser.fromJson(Map<String, dynamic> json) { return PrivateUser(
+  login: json['login'] as String,
+  id: (json['id'] as num).toInt(),
+  userViewType: json['user_view_type'] as String?,
+  nodeId: json['node_id'] as String,
+  avatarUrl: Uri.parse(json['avatar_url'] as String),
+  gravatarId: json['gravatar_id'] as String?,
+  url: Uri.parse(json['url'] as String),
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  followersUrl: Uri.parse(json['followers_url'] as String),
+  followingUrl: json['following_url'] as String,
+  gistsUrl: json['gists_url'] as String,
+  starredUrl: json['starred_url'] as String,
+  subscriptionsUrl: Uri.parse(json['subscriptions_url'] as String),
+  organizationsUrl: Uri.parse(json['organizations_url'] as String),
+  reposUrl: Uri.parse(json['repos_url'] as String),
+  eventsUrl: json['events_url'] as String,
+  receivedEventsUrl: Uri.parse(json['received_events_url'] as String),
+  type: json['type'] as String,
+  siteAdmin: json['site_admin'] as bool,
+  name: json['name'] as String?,
+  company: json['company'] as String?,
+  blog: json['blog'] as String?,
+  location: json['location'] as String?,
+  email: json['email'] as String?,
+  notificationEmail: json['notification_email'] as String?,
+  hireable: json['hireable'] as bool?,
+  bio: json['bio'] as String?,
+  twitterUsername: json['twitter_username'] as String?,
+  publicRepos: (json['public_repos'] as num).toInt(),
+  publicGists: (json['public_gists'] as num).toInt(),
+  followers: (json['followers'] as num).toInt(),
+  following: (json['following'] as num).toInt(),
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  privateGists: (json['private_gists'] as num).toInt(),
+  totalPrivateRepos: (json['total_private_repos'] as num).toInt(),
+  ownedPrivateRepos: (json['owned_private_repos'] as num).toInt(),
+  diskUsage: (json['disk_usage'] as num).toInt(),
+  collaborators: (json['collaborators'] as num).toInt(),
+  twoFactorAuthentication: json['two_factor_authentication'] as bool,
+  plan: json['plan'] != null ? PrivateUserPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
+  businessPlus: json['business_plus'] as bool?,
+  ldapDn: json['ldap_dn'] as String?,
+); }
+
+final String login;
+
+final int id;
+
+final String? userViewType;
+
+final String nodeId;
+
+final Uri avatarUrl;
+
+final String? gravatarId;
+
+final Uri url;
+
+final Uri htmlUrl;
+
+final Uri followersUrl;
+
+final String followingUrl;
+
+final String gistsUrl;
+
+final String starredUrl;
+
+final Uri subscriptionsUrl;
+
+final Uri organizationsUrl;
+
+final Uri reposUrl;
+
+final String eventsUrl;
+
+final Uri receivedEventsUrl;
+
+final String type;
+
+final bool siteAdmin;
+
+final String? name;
+
+final String? company;
+
+final String? blog;
+
+final String? location;
+
+final String? email;
+
+final String? notificationEmail;
+
+final bool? hireable;
+
+final String? bio;
+
+final String? twitterUsername;
+
+final int publicRepos;
+
+final int publicGists;
+
+final int followers;
+
+final int following;
+
+final DateTime createdAt;
+
+final DateTime updatedAt;
+
+final int privateGists;
+
+final int totalPrivateRepos;
+
+final int ownedPrivateRepos;
+
+final int diskUsage;
+
+final int collaborators;
+
+final bool twoFactorAuthentication;
+
+final PrivateUserPlan? plan;
+
+final bool? businessPlus;
+
+final String? ldapDn;
+
+Map<String, dynamic> toJson() { return {
+  'login': login,
+  'id': id,
+  'user_view_type': ?userViewType,
+  'node_id': nodeId,
+  'avatar_url': avatarUrl.toString(),
+  'gravatar_id': ?gravatarId,
+  'url': url.toString(),
+  'html_url': htmlUrl.toString(),
+  'followers_url': followersUrl.toString(),
+  'following_url': followingUrl,
+  'gists_url': gistsUrl,
+  'starred_url': starredUrl,
+  'subscriptions_url': subscriptionsUrl.toString(),
+  'organizations_url': organizationsUrl.toString(),
+  'repos_url': reposUrl.toString(),
+  'events_url': eventsUrl,
+  'received_events_url': receivedEventsUrl.toString(),
+  'type': type,
+  'site_admin': siteAdmin,
+  'name': ?name,
+  'company': ?company,
+  'blog': ?blog,
+  'location': ?location,
+  'email': ?email,
+  'notification_email': ?notificationEmail,
+  'hireable': ?hireable,
+  'bio': ?bio,
+  'twitter_username': ?twitterUsername,
+  'public_repos': publicRepos,
+  'public_gists': publicGists,
+  'followers': followers,
+  'following': following,
+  'created_at': createdAt.toIso8601String(),
+  'updated_at': updatedAt.toIso8601String(),
+  'private_gists': privateGists,
+  'total_private_repos': totalPrivateRepos,
+  'owned_private_repos': ownedPrivateRepos,
+  'disk_usage': diskUsage,
+  'collaborators': collaborators,
+  'two_factor_authentication': twoFactorAuthentication,
+  if (plan != null) 'plan': plan?.toJson(),
+  'business_plus': ?businessPlus,
+  'ldap_dn': ?ldapDn,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('login') && json['login'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('avatar_url') && json['avatar_url'] is String &&
+      json.containsKey('gravatar_id') && json['gravatar_id'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('followers_url') && json['followers_url'] is String &&
+      json.containsKey('following_url') && json['following_url'] is String &&
+      json.containsKey('gists_url') && json['gists_url'] is String &&
+      json.containsKey('starred_url') && json['starred_url'] is String &&
+      json.containsKey('subscriptions_url') && json['subscriptions_url'] is String &&
+      json.containsKey('organizations_url') && json['organizations_url'] is String &&
+      json.containsKey('repos_url') && json['repos_url'] is String &&
+      json.containsKey('events_url') && json['events_url'] is String &&
+      json.containsKey('received_events_url') && json['received_events_url'] is String &&
+      json.containsKey('type') && json['type'] is String &&
+      json.containsKey('site_admin') && json['site_admin'] is bool &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('company') && json['company'] is String &&
+      json.containsKey('blog') && json['blog'] is String &&
+      json.containsKey('location') && json['location'] is String &&
+      json.containsKey('email') && json['email'] is String &&
+      json.containsKey('hireable') && json['hireable'] is bool &&
+      json.containsKey('bio') && json['bio'] is String &&
+      json.containsKey('public_repos') && json['public_repos'] is num &&
+      json.containsKey('public_gists') && json['public_gists'] is num &&
+      json.containsKey('followers') && json['followers'] is num &&
+      json.containsKey('following') && json['following'] is num &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('private_gists') && json['private_gists'] is num &&
+      json.containsKey('total_private_repos') && json['total_private_repos'] is num &&
+      json.containsKey('owned_private_repos') && json['owned_private_repos'] is num &&
+      json.containsKey('disk_usage') && json['disk_usage'] is num &&
+      json.containsKey('collaborators') && json['collaborators'] is num &&
+      json.containsKey('two_factor_authentication') && json['two_factor_authentication'] is bool; } 
+PrivateUser copyWith({String? login, int? id, String Function()? userViewType, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan Function()? plan, bool Function()? businessPlus, String Function()? ldapDn, }) { return PrivateUser(
+  login: login ?? this.login,
+  id: id ?? this.id,
+  userViewType: userViewType != null ? userViewType() : this.userViewType,
+  nodeId: nodeId ?? this.nodeId,
+  avatarUrl: avatarUrl ?? this.avatarUrl,
+  gravatarId: gravatarId != null ? gravatarId() : this.gravatarId,
+  url: url ?? this.url,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  followersUrl: followersUrl ?? this.followersUrl,
+  followingUrl: followingUrl ?? this.followingUrl,
+  gistsUrl: gistsUrl ?? this.gistsUrl,
+  starredUrl: starredUrl ?? this.starredUrl,
+  subscriptionsUrl: subscriptionsUrl ?? this.subscriptionsUrl,
+  organizationsUrl: organizationsUrl ?? this.organizationsUrl,
+  reposUrl: reposUrl ?? this.reposUrl,
+  eventsUrl: eventsUrl ?? this.eventsUrl,
+  receivedEventsUrl: receivedEventsUrl ?? this.receivedEventsUrl,
+  type: type ?? this.type,
+  siteAdmin: siteAdmin ?? this.siteAdmin,
+  name: name != null ? name() : this.name,
+  company: company != null ? company() : this.company,
+  blog: blog != null ? blog() : this.blog,
+  location: location != null ? location() : this.location,
+  email: email != null ? email() : this.email,
+  notificationEmail: notificationEmail != null ? notificationEmail() : this.notificationEmail,
+  hireable: hireable != null ? hireable() : this.hireable,
+  bio: bio != null ? bio() : this.bio,
+  twitterUsername: twitterUsername != null ? twitterUsername() : this.twitterUsername,
+  publicRepos: publicRepos ?? this.publicRepos,
+  publicGists: publicGists ?? this.publicGists,
+  followers: followers ?? this.followers,
+  following: following ?? this.following,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  privateGists: privateGists ?? this.privateGists,
+  totalPrivateRepos: totalPrivateRepos ?? this.totalPrivateRepos,
+  ownedPrivateRepos: ownedPrivateRepos ?? this.ownedPrivateRepos,
+  diskUsage: diskUsage ?? this.diskUsage,
+  collaborators: collaborators ?? this.collaborators,
+  twoFactorAuthentication: twoFactorAuthentication ?? this.twoFactorAuthentication,
+  plan: plan != null ? plan() : this.plan,
+  businessPlus: businessPlus != null ? businessPlus() : this.businessPlus,
+  ldapDn: ldapDn != null ? ldapDn() : this.ldapDn,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PrivateUser &&
+          login == other.login &&
+          id == other.id &&
+          userViewType == other.userViewType &&
+          nodeId == other.nodeId &&
+          avatarUrl == other.avatarUrl &&
+          gravatarId == other.gravatarId &&
+          url == other.url &&
+          htmlUrl == other.htmlUrl &&
+          followersUrl == other.followersUrl &&
+          followingUrl == other.followingUrl &&
+          gistsUrl == other.gistsUrl &&
+          starredUrl == other.starredUrl &&
+          subscriptionsUrl == other.subscriptionsUrl &&
+          organizationsUrl == other.organizationsUrl &&
+          reposUrl == other.reposUrl &&
+          eventsUrl == other.eventsUrl &&
+          receivedEventsUrl == other.receivedEventsUrl &&
+          type == other.type &&
+          siteAdmin == other.siteAdmin &&
+          name == other.name &&
+          company == other.company &&
+          blog == other.blog &&
+          location == other.location &&
+          email == other.email &&
+          notificationEmail == other.notificationEmail &&
+          hireable == other.hireable &&
+          bio == other.bio &&
+          twitterUsername == other.twitterUsername &&
+          publicRepos == other.publicRepos &&
+          publicGists == other.publicGists &&
+          followers == other.followers &&
+          following == other.following &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          privateGists == other.privateGists &&
+          totalPrivateRepos == other.totalPrivateRepos &&
+          ownedPrivateRepos == other.ownedPrivateRepos &&
+          diskUsage == other.diskUsage &&
+          collaborators == other.collaborators &&
+          twoFactorAuthentication == other.twoFactorAuthentication &&
+          plan == other.plan &&
+          businessPlus == other.businessPlus &&
+          ldapDn == other.ldapDn; } 
+@override int get hashCode { return Object.hashAll([login, id, userViewType, nodeId, avatarUrl, gravatarId, url, htmlUrl, followersUrl, followingUrl, gistsUrl, starredUrl, subscriptionsUrl, organizationsUrl, reposUrl, eventsUrl, receivedEventsUrl, type, siteAdmin, name, company, blog, location, email, notificationEmail, hireable, bio, twitterUsername, publicRepos, publicGists, followers, following, createdAt, updatedAt, privateGists, totalPrivateRepos, ownedPrivateRepos, diskUsage, collaborators, twoFactorAuthentication, plan, businessPlus, ldapDn]); } 
+@override String toString() { return 'PrivateUser(login: $login, id: $id, userViewType: $userViewType, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, name: $name, company: $company, blog: $blog, location: $location, email: $email, notificationEmail: $notificationEmail, hireable: $hireable, bio: $bio, twitterUsername: $twitterUsername, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt, privateGists: $privateGists, totalPrivateRepos: $totalPrivateRepos, ownedPrivateRepos: $ownedPrivateRepos, diskUsage: $diskUsage, collaborators: $collaborators, twoFactorAuthentication: $twoFactorAuthentication, plan: $plan, businessPlus: $businessPlus, ldapDn: $ldapDn)'; } 
+ }

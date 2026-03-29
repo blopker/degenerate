@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentPagesCheckoutSessionAdaptivePricing {const PaymentPagesCheckoutSessionAdaptivePricing({required this.enabled});
+
+factory PaymentPagesCheckoutSessionAdaptivePricing.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionAdaptivePricing(
+  enabled: json['enabled'] as bool,
+); }
+
+/// If enabled, Adaptive Pricing is available on [eligible sessions](https://docs.stripe.com/payments/currencies/localize-prices/adaptive-pricing?payment-ui=stripe-hosted#restrictions).
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PaymentPagesCheckoutSessionAdaptivePricing copyWith({bool? enabled}) { return PaymentPagesCheckoutSessionAdaptivePricing(
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionAdaptivePricing &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionAdaptivePricing(enabled: $enabled)'; } 
+ }

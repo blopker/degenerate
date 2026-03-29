@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'secondary_dns_components_schemas_name.dart';final class SecondaryDnsPeerCreatePeerRequest {const SecondaryDnsPeerCreatePeerRequest({required this.name});
+
+factory SecondaryDnsPeerCreatePeerRequest.fromJson(Map<String, dynamic> json) { return SecondaryDnsPeerCreatePeerRequest(
+  name: SecondaryDnsComponentsSchemasName.fromJson(json['name'] as String),
+); }
+
+/// The name of the peer.
+final SecondaryDnsComponentsSchemasName name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'); } 
+SecondaryDnsPeerCreatePeerRequest copyWith({SecondaryDnsComponentsSchemasName? name}) { return SecondaryDnsPeerCreatePeerRequest(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecondaryDnsPeerCreatePeerRequest &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'SecondaryDnsPeerCreatePeerRequest(name: $name)'; } 
+ }

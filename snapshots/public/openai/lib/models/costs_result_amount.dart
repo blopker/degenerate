@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The monetary value in its associated currency.
+final class CostsResultAmount {const CostsResultAmount({this.value, this.currency, });
+
+factory CostsResultAmount.fromJson(Map<String, dynamic> json) { return CostsResultAmount(
+  value: json['value'] != null ? (json['value'] as num).toDouble() : null,
+  currency: json['currency'] as String?,
+); }
+
+/// The numeric value of the cost.
+final double? value;
+
+/// Lowercase ISO-4217 currency e.g. "usd"
+final String? currency;
+
+Map<String, dynamic> toJson() { return {
+  'value': ?value,
+  'currency': ?currency,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CostsResultAmount copyWith({double Function()? value, String Function()? currency, }) { return CostsResultAmount(
+  value: value != null ? value() : this.value,
+  currency: currency != null ? currency() : this.currency,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CostsResultAmount &&
+          value == other.value &&
+          currency == other.currency; } 
+@override int get hashCode { return Object.hash(value, currency); } 
+@override String toString() { return 'CostsResultAmount(value: $value, currency: $currency)'; } 
+ }

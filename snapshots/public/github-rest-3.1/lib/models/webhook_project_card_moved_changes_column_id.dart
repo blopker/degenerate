@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookProjectCardMovedChangesColumnId {const WebhookProjectCardMovedChangesColumnId({required this.from});
+
+factory WebhookProjectCardMovedChangesColumnId.fromJson(Map<String, dynamic> json) { return WebhookProjectCardMovedChangesColumnId(
+  from: (json['from'] as num).toInt(),
+); }
+
+final int from;
+
+Map<String, dynamic> toJson() { return {
+  'from': from,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('from') && json['from'] is num; } 
+WebhookProjectCardMovedChangesColumnId copyWith({int? from}) { return WebhookProjectCardMovedChangesColumnId(
+  from: from ?? this.from,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookProjectCardMovedChangesColumnId &&
+          from == other.from; } 
+@override int get hashCode { return from.hashCode; } 
+@override String toString() { return 'WebhookProjectCardMovedChangesColumnId(from: $from)'; } 
+ }

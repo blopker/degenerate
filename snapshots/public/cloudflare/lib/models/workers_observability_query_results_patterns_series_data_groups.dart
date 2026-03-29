@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersObservabilityQueryResultsPatternsSeriesDataGroups {const WorkersObservabilityQueryResultsPatternsSeriesDataGroups({required this.key, required this.value, });
+
+factory WorkersObservabilityQueryResultsPatternsSeriesDataGroups.fromJson(Map<String, dynamic> json) { return WorkersObservabilityQueryResultsPatternsSeriesDataGroups(
+  key: json['key'] as String,
+  value: json['value'],
+); }
+
+final String key;
+
+/// One of: String, double, bool
+final dynamic value;
+
+Map<String, dynamic> toJson() { return {
+  'key': key,
+  'value': value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String &&
+      json.containsKey('value'); } 
+WorkersObservabilityQueryResultsPatternsSeriesDataGroups copyWith({String? key, dynamic value, }) { return WorkersObservabilityQueryResultsPatternsSeriesDataGroups(
+  key: key ?? this.key,
+  value: value ?? this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersObservabilityQueryResultsPatternsSeriesDataGroups &&
+          key == other.key &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(key, value); } 
+@override String toString() { return 'WorkersObservabilityQueryResultsPatternsSeriesDataGroups(key: $key, value: $value)'; } 
+ }

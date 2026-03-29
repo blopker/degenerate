@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback {const AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback({required this.elementId});
+
+factory AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback.fromJson(Map<String, dynamic> json) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback(
+  elementId: json['elementId'] as String,
+); }
+
+final String elementId;
+
+Map<String, dynamic> toJson() { return {
+  'elementId': elementId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('elementId') && json['elementId'] is String; } 
+AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback copyWith({String? elementId}) { return AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback(
+  elementId: elementId ?? this.elementId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback &&
+          elementId == other.elementId; } 
+@override int get hashCode { return elementId.hashCode; } 
+@override String toString() { return 'AigConfigUpdateGatewayDynamicRouteResponseRouteElementsModelOutputsFallback(elementId: $elementId)'; } 
+ }

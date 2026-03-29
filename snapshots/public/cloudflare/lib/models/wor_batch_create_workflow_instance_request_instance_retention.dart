@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorBatchCreateWorkflowInstanceRequestInstanceRetention {const WorBatchCreateWorkflowInstanceRequestInstanceRetention({this.errorRetention, this.successRetention, });
+
+factory WorBatchCreateWorkflowInstanceRequestInstanceRetention.fromJson(Map<String, dynamic> json) { return WorBatchCreateWorkflowInstanceRequestInstanceRetention(
+  errorRetention: json['error_retention'],
+  successRetention: json['success_retention'],
+); }
+
+/// Specifies the duration in milliseconds or as a string like '5 minutes'.
+/// 
+/// Specifies the duration in milliseconds or as a string like '5 minutes'.
+/// 
+/// One of: int, String
+final dynamic errorRetention;
+
+/// Specifies the duration in milliseconds or as a string like '5 minutes'.
+/// 
+/// Specifies the duration in milliseconds or as a string like '5 minutes'.
+/// 
+/// One of: int, String
+final dynamic successRetention;
+
+Map<String, dynamic> toJson() { return {
+  'error_retention': ?errorRetention,
+  'success_retention': ?successRetention,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+WorBatchCreateWorkflowInstanceRequestInstanceRetention copyWith({dynamic Function()? errorRetention, dynamic Function()? successRetention, }) { return WorBatchCreateWorkflowInstanceRequestInstanceRetention(
+  errorRetention: errorRetention != null ? errorRetention() : this.errorRetention,
+  successRetention: successRetention != null ? successRetention() : this.successRetention,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorBatchCreateWorkflowInstanceRequestInstanceRetention &&
+          errorRetention == other.errorRetention &&
+          successRetention == other.successRetention; } 
+@override int get hashCode { return Object.hash(errorRetention, successRetention); } 
+@override String toString() { return 'WorBatchCreateWorkflowInstanceRequestInstanceRetention(errorRetention: $errorRetention, successRetention: $successRetention)'; } 
+ }

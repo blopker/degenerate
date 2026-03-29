@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'errors.dart';/// The payment error encountered in the previous PaymentIntent confirmation. It will be cleared if the PaymentIntent is later updated for any reason.
+final class PaymentIntentLastPaymentError {const PaymentIntentLastPaymentError({this.errors});
+
+factory PaymentIntentLastPaymentError.fromJson(Map<String, dynamic> json) { return PaymentIntentLastPaymentError(
+  errors: Errors.canParse(json) ? Errors.fromJson(json) : null,
+); }
+
+final Errors? errors;
+
+/// At least one variant must be present.
+bool get isValid { return errors != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?errors?.toJson(),
+}; } 
+ }

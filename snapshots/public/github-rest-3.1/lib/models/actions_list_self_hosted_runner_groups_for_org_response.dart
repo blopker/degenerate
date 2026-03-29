@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'runner_groups_org.dart';final class ActionsListSelfHostedRunnerGroupsForOrgResponse {const ActionsListSelfHostedRunnerGroupsForOrgResponse({required this.totalCount, required this.runnerGroups, });
+
+factory ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(Map<String, dynamic> json) { return ActionsListSelfHostedRunnerGroupsForOrgResponse(
+  totalCount: (json['total_count'] as num).toDouble(),
+  runnerGroups: (json['runner_groups'] as List<dynamic>).map((e) => RunnerGroupsOrg.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final double totalCount;
+
+final List<RunnerGroupsOrg> runnerGroups;
+
+Map<String, dynamic> toJson() { return {
+  'total_count': totalCount,
+  'runner_groups': runnerGroups.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('total_count') && json['total_count'] is num &&
+      json.containsKey('runner_groups'); } 
+ActionsListSelfHostedRunnerGroupsForOrgResponse copyWith({double? totalCount, List<RunnerGroupsOrg>? runnerGroups, }) { return ActionsListSelfHostedRunnerGroupsForOrgResponse(
+  totalCount: totalCount ?? this.totalCount,
+  runnerGroups: runnerGroups ?? this.runnerGroups,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ActionsListSelfHostedRunnerGroupsForOrgResponse &&
+          totalCount == other.totalCount &&
+          listEquals(runnerGroups, other.runnerGroups); } 
+@override int get hashCode { return Object.hash(totalCount, Object.hashAll(runnerGroups)); } 
+@override String toString() { return 'ActionsListSelfHostedRunnerGroupsForOrgResponse(totalCount: $totalCount, runnerGroups: $runnerGroups)'; } 
+ }

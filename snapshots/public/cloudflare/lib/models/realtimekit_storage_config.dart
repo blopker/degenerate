@@ -1,0 +1,164 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Authentication method used for "sftp" type storage medium
+/// 
+final class RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod._(this.value);
+
+factory RealtimekitStorageConfigAuthMethod.fromJson(String json) { return switch (json) {
+  'KEY' => key,
+  'PASSWORD' => password,
+  _ => RealtimekitStorageConfigAuthMethod._(json),
+}; }
+
+static const RealtimekitStorageConfigAuthMethod key = RealtimekitStorageConfigAuthMethod._('KEY');
+
+static const RealtimekitStorageConfigAuthMethod password = RealtimekitStorageConfigAuthMethod._('PASSWORD');
+
+static const List<RealtimekitStorageConfigAuthMethod> values = [key, password];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimekitStorageConfigAuthMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimekitStorageConfigAuthMethod($value)'; } 
+ }
+/// Type of storage media.
+final class RealtimekitStorageConfigType {const RealtimekitStorageConfigType._(this.value);
+
+factory RealtimekitStorageConfigType.fromJson(String json) { return switch (json) {
+  'aws' => aws,
+  'azure' => azure,
+  'digitalocean' => digitalocean,
+  'gcs' => gcs,
+  'sftp' => sftp,
+  _ => RealtimekitStorageConfigType._(json),
+}; }
+
+static const RealtimekitStorageConfigType aws = RealtimekitStorageConfigType._('aws');
+
+static const RealtimekitStorageConfigType azure = RealtimekitStorageConfigType._('azure');
+
+static const RealtimekitStorageConfigType digitalocean = RealtimekitStorageConfigType._('digitalocean');
+
+static const RealtimekitStorageConfigType gcs = RealtimekitStorageConfigType._('gcs');
+
+static const RealtimekitStorageConfigType sftp = RealtimekitStorageConfigType._('sftp');
+
+static const List<RealtimekitStorageConfigType> values = [aws, azure, digitalocean, gcs, sftp];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimekitStorageConfigType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimekitStorageConfigType($value)'; } 
+ }
+final class RealtimekitStorageConfig {const RealtimekitStorageConfig({this.accessKey, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, required this.type, this.username, });
+
+factory RealtimekitStorageConfig.fromJson(Map<String, dynamic> json) { return RealtimekitStorageConfig(
+  accessKey: json['access_key'] as String?,
+  authMethod: json['auth_method'] != null ? RealtimekitStorageConfigAuthMethod.fromJson(json['auth_method'] as String) : null,
+  bucket: json['bucket'] as String?,
+  host: json['host'] as String?,
+  password: json['password'] as String?,
+  path: json['path'] as String?,
+  port: json['port'] != null ? (json['port'] as num).toDouble() : null,
+  privateKey: json['private_key'] as String?,
+  region: json['region'] as String?,
+  secret: json['secret'] as String?,
+  type: RealtimekitStorageConfigType.fromJson(json['type'] as String),
+  username: json['username'] as String?,
+); }
+
+/// Access key of the storage medium. Access key is not required for the `gcs` storage media type.
+/// 
+/// Note that this field is not readable by clients, only writeable.
+final String? accessKey;
+
+/// Authentication method used for "sftp" type storage medium
+/// 
+final RealtimekitStorageConfigAuthMethod? authMethod;
+
+/// Name of the storage medium's bucket.
+final String? bucket;
+
+/// SSH destination server host for SFTP type storage medium
+final String? host;
+
+/// SSH destination server password for SFTP type storage medium when auth_method is "PASSWORD". If auth_method is "KEY", this specifies the password for the ssh private key.
+final String? password;
+
+/// Path relative to the bucket root at which the recording will be placed.
+final String? path;
+
+/// SSH destination server port for SFTP type storage medium
+final double? port;
+
+/// Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is "KEY"
+final String? privateKey;
+
+/// Region of the storage medium.
+final String? region;
+
+/// Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable.
+final String? secret;
+
+/// Type of storage media.
+final RealtimekitStorageConfigType type;
+
+/// SSH destination server username for SFTP type storage medium
+final String? username;
+
+Map<String, dynamic> toJson() { return {
+  'access_key': ?accessKey,
+  if (authMethod != null) 'auth_method': authMethod?.toJson(),
+  'bucket': ?bucket,
+  'host': ?host,
+  'password': ?password,
+  'path': ?path,
+  'port': ?port,
+  'private_key': ?privateKey,
+  'region': ?region,
+  'secret': ?secret,
+  'type': type.toJson(),
+  'username': ?username,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+RealtimekitStorageConfig copyWith({String Function()? accessKey, RealtimekitStorageConfigAuthMethod Function()? authMethod, String Function()? bucket, String Function()? host, String Function()? password, String Function()? path, double Function()? port, String Function()? privateKey, String Function()? region, String Function()? secret, RealtimekitStorageConfigType? type, String Function()? username, }) { return RealtimekitStorageConfig(
+  accessKey: accessKey != null ? accessKey() : this.accessKey,
+  authMethod: authMethod != null ? authMethod() : this.authMethod,
+  bucket: bucket != null ? bucket() : this.bucket,
+  host: host != null ? host() : this.host,
+  password: password != null ? password() : this.password,
+  path: path != null ? path() : this.path,
+  port: port != null ? port() : this.port,
+  privateKey: privateKey != null ? privateKey() : this.privateKey,
+  region: region != null ? region() : this.region,
+  secret: secret != null ? secret() : this.secret,
+  type: type ?? this.type,
+  username: username != null ? username() : this.username,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimekitStorageConfig &&
+          accessKey == other.accessKey &&
+          authMethod == other.authMethod &&
+          bucket == other.bucket &&
+          host == other.host &&
+          password == other.password &&
+          path == other.path &&
+          port == other.port &&
+          privateKey == other.privateKey &&
+          region == other.region &&
+          secret == other.secret &&
+          type == other.type &&
+          username == other.username; } 
+@override int get hashCode { return Object.hash(accessKey, authMethod, bucket, host, password, path, port, privateKey, region, secret, type, username); } 
+@override String toString() { return 'RealtimekitStorageConfig(accessKey: $accessKey, authMethod: $authMethod, bucket: $bucket, host: $host, password: $password, path: $path, port: $port, privateKey: $privateKey, region: $region, secret: $secret, type: $type, username: $username)'; } 
+ }

@@ -1,0 +1,118 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'reasoning_effort.dart';/// The type of run data source. Always `responses`.
+final class EvalResponsesSourceType {const EvalResponsesSourceType._(this.value);
+
+factory EvalResponsesSourceType.fromJson(String json) { return switch (json) {
+  'responses' => responses,
+  _ => EvalResponsesSourceType._(json),
+}; }
+
+static const EvalResponsesSourceType responses = EvalResponsesSourceType._('responses');
+
+static const List<EvalResponsesSourceType> values = [responses];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is EvalResponsesSourceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'EvalResponsesSourceType($value)'; } 
+ }
+/// A EvalResponsesSource object describing a run data source configuration.
+/// 
+final class EvalResponsesSource {const EvalResponsesSource({required this.type, this.metadata, this.model, this.instructionsSearch, this.createdAfter, this.createdBefore, this.reasoningEffort, this.temperature, this.topP, this.users, this.tools, });
+
+factory EvalResponsesSource.fromJson(Map<String, dynamic> json) { return EvalResponsesSource(
+  type: EvalResponsesSourceType.fromJson(json['type'] as String),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
+  model: json['model'] as String?,
+  instructionsSearch: json['instructions_search'] as String?,
+  createdAfter: json['created_after'] != null ? (json['created_after'] as num).toInt() : null,
+  createdBefore: json['created_before'] != null ? (json['created_before'] as num).toInt() : null,
+  reasoningEffort: json['reasoning_effort'] != null ? ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  users: (json['users'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  tools: (json['tools'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The type of run data source. Always `responses`.
+final EvalResponsesSourceType type;
+
+/// Metadata filter for the responses. This is a query parameter used to select responses.
+final Map<String,dynamic>? metadata;
+
+/// The name of the model to find responses for. This is a query parameter used to select responses.
+final String? model;
+
+/// Optional string to search the 'instructions' field. This is a query parameter used to select responses.
+final String? instructionsSearch;
+
+/// Only include items created after this timestamp (inclusive). This is a query parameter used to select responses.
+final int? createdAfter;
+
+/// Only include items created before this timestamp (inclusive). This is a query parameter used to select responses.
+final int? createdBefore;
+
+/// Optional reasoning effort parameter. This is a query parameter used to select responses.
+final ReasoningEffort? reasoningEffort;
+
+/// Sampling temperature. This is a query parameter used to select responses.
+final double? temperature;
+
+/// Nucleus sampling parameter. This is a query parameter used to select responses.
+final double? topP;
+
+/// List of user identifiers. This is a query parameter used to select responses.
+final List<String>? users;
+
+/// List of tool names. This is a query parameter used to select responses.
+final List<String>? tools;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'metadata': ?metadata,
+  'model': ?model,
+  'instructions_search': ?instructionsSearch,
+  'created_after': ?createdAfter,
+  'created_before': ?createdBefore,
+  if (reasoningEffort != null) 'reasoning_effort': reasoningEffort?.toJson(),
+  'temperature': ?temperature,
+  'top_p': ?topP,
+  'users': ?users,
+  'tools': ?tools,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+EvalResponsesSource copyWith({EvalResponsesSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(
+  type: type ?? this.type,
+  metadata: metadata != null ? metadata() : this.metadata,
+  model: model != null ? model() : this.model,
+  instructionsSearch: instructionsSearch != null ? instructionsSearch() : this.instructionsSearch,
+  createdAfter: createdAfter != null ? createdAfter() : this.createdAfter,
+  createdBefore: createdBefore != null ? createdBefore() : this.createdBefore,
+  reasoningEffort: reasoningEffort != null ? reasoningEffort() : this.reasoningEffort,
+  temperature: temperature != null ? temperature() : this.temperature,
+  topP: topP != null ? topP() : this.topP,
+  users: users != null ? users() : this.users,
+  tools: tools != null ? tools() : this.tools,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EvalResponsesSource &&
+          type == other.type &&
+          metadata == other.metadata &&
+          model == other.model &&
+          instructionsSearch == other.instructionsSearch &&
+          createdAfter == other.createdAfter &&
+          createdBefore == other.createdBefore &&
+          reasoningEffort == other.reasoningEffort &&
+          temperature == other.temperature &&
+          topP == other.topP &&
+          listEquals(users, other.users) &&
+          listEquals(tools, other.tools); } 
+@override int get hashCode { return Object.hash(type, metadata, model, instructionsSearch, createdAfter, createdBefore, reasoningEffort, temperature, topP, Object.hashAll(users ?? const []), Object.hashAll(tools ?? const [])); } 
+@override String toString() { return 'EvalResponsesSource(type: $type, metadata: $metadata, model: $model, instructionsSearch: $instructionsSearch, createdAfter: $createdAfter, createdBefore: $createdBefore, reasoningEffort: $reasoningEffort, temperature: $temperature, topP: $topP, users: $users, tools: $tools)'; } 
+ }

@@ -1,0 +1,159 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'teams_devices_account.dart';import 'teams_devices_created.dart';import 'teams_devices_deleted.dart';import 'teams_devices_ip.dart';import 'teams_devices_key.dart';import 'teams_devices_last_seen.dart';import 'teams_devices_mac_address.dart';import 'teams_devices_model.dart';import 'teams_devices_os_version.dart';import 'teams_devices_registration_id.dart';import 'teams_devices_schemas_name.dart';import 'teams_devices_serial_number.dart';import 'teams_devices_updated.dart';import 'teams_devices_user.dart';import 'teams_devices_version.dart';extension type const TeamsDevicesDeviceType(String value) {
+factory TeamsDevicesDeviceType.fromJson(String json) => TeamsDevicesDeviceType(json);
+
+String toJson() => value;
+
+}
+extension type const TeamsDevicesGatewayDeviceId(String value) {
+factory TeamsDevicesGatewayDeviceId.fromJson(String json) => TeamsDevicesGatewayDeviceId(json);
+
+String toJson() => value;
+
+}
+/// Type of the key.
+extension type const TeamsDevicesKeyType(String value) {
+factory TeamsDevicesKeyType.fromJson(String json) => TeamsDevicesKeyType(json);
+
+String toJson() => value;
+
+}
+/// Type of the tunnel connection used.
+extension type const TeamsDevicesTunnelType(String value) {
+factory TeamsDevicesTunnelType.fromJson(String json) => TeamsDevicesTunnelType(json);
+
+String toJson() => value;
+
+}
+final class TeamsDevicesDevice {const TeamsDevicesDevice({this.account, this.created, this.deleted, this.deviceType, this.gatewayDeviceId, this.id, this.ip, this.key, this.keyType, this.lastSeen, this.macAddress, this.model, this.name, this.osVersion, this.serialNumber, this.tunnelType, this.updated, this.user, this.version, });
+
+factory TeamsDevicesDevice.fromJson(Map<String, dynamic> json) { return TeamsDevicesDevice(
+  account: json['account'] != null ? TeamsDevicesAccount.fromJson(json['account'] as Map<String, dynamic>) : null,
+  created: json['created'] != null ? TeamsDevicesCreated.fromJson(json['created'] as String) : null,
+  deleted: json['deleted'] != null ? TeamsDevicesDeleted.fromJson(json['deleted'] as bool) : null,
+  deviceType: json['device_type'] != null ? TeamsDevicesDeviceType.fromJson(json['device_type'] as String) : null,
+  gatewayDeviceId: json['gateway_device_id'] != null ? TeamsDevicesGatewayDeviceId.fromJson(json['gateway_device_id'] as String) : null,
+  id: json['id'] != null ? TeamsDevicesRegistrationId.fromJson(json['id'] as String) : null,
+  ip: json['ip'] != null ? TeamsDevicesIp.fromJson(json['ip'] as String) : null,
+  key: json['key'] != null ? TeamsDevicesKey.fromJson(json['key'] as String) : null,
+  keyType: json['key_type'] != null ? TeamsDevicesKeyType.fromJson(json['key_type'] as String) : null,
+  lastSeen: json['last_seen'] != null ? TeamsDevicesLastSeen.fromJson(json['last_seen'] as String) : null,
+  macAddress: json['mac_address'] != null ? TeamsDevicesMacAddress.fromJson(json['mac_address'] as String) : null,
+  model: json['model'] != null ? TeamsDevicesModel.fromJson(json['model'] as String) : null,
+  name: json['name'] != null ? TeamsDevicesSchemasName.fromJson(json['name'] as String) : null,
+  osVersion: json['os_version'] != null ? TeamsDevicesOsVersion.fromJson(json['os_version'] as String) : null,
+  serialNumber: json['serial_number'] != null ? TeamsDevicesSerialNumber.fromJson(json['serial_number'] as String) : null,
+  tunnelType: json['tunnel_type'] != null ? TeamsDevicesTunnelType.fromJson(json['tunnel_type'] as String) : null,
+  updated: json['updated'] != null ? TeamsDevicesUpdated.fromJson(json['updated'] as String) : null,
+  user: json['user'] != null ? TeamsDevicesUser.fromJson(json['user'] as Map<String, dynamic>) : null,
+  version: json['version'] != null ? TeamsDevicesVersion.fromJson(json['version'] as String) : null,
+); }
+
+final TeamsDevicesAccount? account;
+
+/// When the device was created.
+final TeamsDevicesCreated? created;
+
+/// True if the device was deleted.
+final TeamsDevicesDeleted? deleted;
+
+final TeamsDevicesDeviceType? deviceType;
+
+final TeamsDevicesGatewayDeviceId? gatewayDeviceId;
+
+final TeamsDevicesRegistrationId? id;
+
+final TeamsDevicesIp? ip;
+
+final TeamsDevicesKey? key;
+
+final TeamsDevicesKeyType? keyType;
+
+final TeamsDevicesLastSeen? lastSeen;
+
+final TeamsDevicesMacAddress? macAddress;
+
+final TeamsDevicesModel? model;
+
+final TeamsDevicesSchemasName? name;
+
+final TeamsDevicesOsVersion? osVersion;
+
+final TeamsDevicesSerialNumber? serialNumber;
+
+final TeamsDevicesTunnelType? tunnelType;
+
+final TeamsDevicesUpdated? updated;
+
+final TeamsDevicesUser? user;
+
+final TeamsDevicesVersion? version;
+
+Map<String, dynamic> toJson() { return {
+  if (account != null) 'account': account?.toJson(),
+  if (created != null) 'created': created?.toJson(),
+  if (deleted != null) 'deleted': deleted?.toJson(),
+  if (deviceType != null) 'device_type': deviceType?.toJson(),
+  if (gatewayDeviceId != null) 'gateway_device_id': gatewayDeviceId?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (ip != null) 'ip': ip?.toJson(),
+  if (key != null) 'key': key?.toJson(),
+  if (keyType != null) 'key_type': keyType?.toJson(),
+  if (lastSeen != null) 'last_seen': lastSeen?.toJson(),
+  if (macAddress != null) 'mac_address': macAddress?.toJson(),
+  if (model != null) 'model': model?.toJson(),
+  if (name != null) 'name': name?.toJson(),
+  if (osVersion != null) 'os_version': osVersion?.toJson(),
+  if (serialNumber != null) 'serial_number': serialNumber?.toJson(),
+  if (tunnelType != null) 'tunnel_type': tunnelType?.toJson(),
+  if (updated != null) 'updated': updated?.toJson(),
+  if (user != null) 'user': user?.toJson(),
+  if (version != null) 'version': version?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TeamsDevicesDevice copyWith({TeamsDevicesAccount Function()? account, TeamsDevicesCreated Function()? created, TeamsDevicesDeleted Function()? deleted, TeamsDevicesDeviceType Function()? deviceType, TeamsDevicesGatewayDeviceId Function()? gatewayDeviceId, TeamsDevicesRegistrationId Function()? id, TeamsDevicesIp Function()? ip, TeamsDevicesKey Function()? key, TeamsDevicesKeyType Function()? keyType, TeamsDevicesLastSeen Function()? lastSeen, TeamsDevicesMacAddress Function()? macAddress, TeamsDevicesModel Function()? model, TeamsDevicesSchemasName Function()? name, TeamsDevicesOsVersion Function()? osVersion, TeamsDevicesSerialNumber Function()? serialNumber, TeamsDevicesTunnelType Function()? tunnelType, TeamsDevicesUpdated Function()? updated, TeamsDevicesUser Function()? user, TeamsDevicesVersion Function()? version, }) { return TeamsDevicesDevice(
+  account: account != null ? account() : this.account,
+  created: created != null ? created() : this.created,
+  deleted: deleted != null ? deleted() : this.deleted,
+  deviceType: deviceType != null ? deviceType() : this.deviceType,
+  gatewayDeviceId: gatewayDeviceId != null ? gatewayDeviceId() : this.gatewayDeviceId,
+  id: id != null ? id() : this.id,
+  ip: ip != null ? ip() : this.ip,
+  key: key != null ? key() : this.key,
+  keyType: keyType != null ? keyType() : this.keyType,
+  lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
+  macAddress: macAddress != null ? macAddress() : this.macAddress,
+  model: model != null ? model() : this.model,
+  name: name != null ? name() : this.name,
+  osVersion: osVersion != null ? osVersion() : this.osVersion,
+  serialNumber: serialNumber != null ? serialNumber() : this.serialNumber,
+  tunnelType: tunnelType != null ? tunnelType() : this.tunnelType,
+  updated: updated != null ? updated() : this.updated,
+  user: user != null ? user() : this.user,
+  version: version != null ? version() : this.version,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TeamsDevicesDevice &&
+          account == other.account &&
+          created == other.created &&
+          deleted == other.deleted &&
+          deviceType == other.deviceType &&
+          gatewayDeviceId == other.gatewayDeviceId &&
+          id == other.id &&
+          ip == other.ip &&
+          key == other.key &&
+          keyType == other.keyType &&
+          lastSeen == other.lastSeen &&
+          macAddress == other.macAddress &&
+          model == other.model &&
+          name == other.name &&
+          osVersion == other.osVersion &&
+          serialNumber == other.serialNumber &&
+          tunnelType == other.tunnelType &&
+          updated == other.updated &&
+          user == other.user &&
+          version == other.version; } 
+@override int get hashCode { return Object.hash(account, created, deleted, deviceType, gatewayDeviceId, id, ip, key, keyType, lastSeen, macAddress, model, name, osVersion, serialNumber, tunnelType, updated, user, version); } 
+@override String toString() { return 'TeamsDevicesDevice(account: $account, created: $created, deleted: $deleted, deviceType: $deviceType, gatewayDeviceId: $gatewayDeviceId, id: $id, ip: $ip, key: $key, keyType: $keyType, lastSeen: $lastSeen, macAddress: $macAddress, model: $model, name: $name, osVersion: $osVersion, serialNumber: $serialNumber, tunnelType: $tunnelType, updated: $updated, user: $user, version: $version)'; } 
+ }

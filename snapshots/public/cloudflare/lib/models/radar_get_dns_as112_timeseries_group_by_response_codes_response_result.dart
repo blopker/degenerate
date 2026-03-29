@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_dns_as112_timeseries_group_by_response_codes_response_result_meta.dart';import 'radar_get_dns_as112_timeseries_group_by_response_codes_response_result_serie0.dart';final class RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult {const RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult({required this.meta, required this.serie0, });
+
+factory RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult(
+  meta: RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  serie0: RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta meta;
+
+final RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultSerie0 serie0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'serie_0': serie0.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('serie_0'); } 
+RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult copyWith({RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultMeta? meta, RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResultSerie0? serie0, }) { return RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult(
+  meta: meta ?? this.meta,
+  serie0: serie0 ?? this.serie0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult &&
+          meta == other.meta &&
+          serie0 == other.serie0; } 
+@override int get hashCode { return Object.hash(meta, serie0); } 
+@override String toString() { return 'RadarGetDnsAs112TimeseriesGroupByResponseCodesResponseResult(meta: $meta, serie0: $serie0)'; } 
+ }

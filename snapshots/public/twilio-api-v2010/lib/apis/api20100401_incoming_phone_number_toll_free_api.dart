@@ -1,0 +1,109 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/account_incoming_phone_number_incoming_phone_number_toll_free.dart';import '../models/create_incoming_phone_number_toll_free_request.dart';import '../models/list_incoming_phone_number_toll_free_response.dart';/// Api20100401IncomingPhoneNumberTollFreeApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class Api20100401IncomingPhoneNumberTollFreeApi with ApiExecutor {const Api20100401IncomingPhoneNumberTollFreeApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// 
+///
+/// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json`
+Future<ApiResult<ListIncomingPhoneNumberTollFreeResponse, Never>> listIncomingPhoneNumberTollFree({required String accountSid, bool? beta, String? friendlyName, String? phoneNumber, String? origin, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (beta != null) queryParameters['Beta'] = beta.toString();
+if (friendlyName != null) queryParameters['FriendlyName'] = friendlyName;
+if (phoneNumber != null) queryParameters['PhoneNumber'] = phoneNumber;
+if (origin != null) queryParameters['Origin'] = origin;
+if (pageSize != null) queryParameters['PageSize'] = pageSize.toString();
+if (page != null) queryParameters['Page'] = page.toString();
+if (pageToken != null) queryParameters['PageToken'] = pageToken;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/TollFree.json',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ListIncomingPhoneNumberTollFreeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// 
+///
+/// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/TollFree.json`
+Future<ApiResult<AccountIncomingPhoneNumberIncomingPhoneNumberTollFree, Never>> createIncomingPhoneNumberTollFree({required String accountSid, CreateIncomingPhoneNumberTollFreeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/x-www-form-urlencoded';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid)}/IncomingPhoneNumbers/TollFree.json',
+  headers: headers,
+  body: body == null ? null : [
+    'PhoneNumber=${Uri.encodeQueryComponent(body.phoneNumber)}',
+    if (body.apiVersion case final apiVersion$?)
+      'ApiVersion=${Uri.encodeQueryComponent(apiVersion$)}',
+    if (body.friendlyName case final friendlyName$?)
+      'FriendlyName=${Uri.encodeQueryComponent(friendlyName$)}',
+    if (body.smsApplicationSid case final smsApplicationSid$?)
+      'SmsApplicationSid=${Uri.encodeQueryComponent(smsApplicationSid$)}',
+    if (body.smsFallbackMethod case final smsFallbackMethod$?)
+      'SmsFallbackMethod=${Uri.encodeQueryComponent(smsFallbackMethod$.toJson())}',
+    if (body.smsFallbackUrl case final smsFallbackUrl$?)
+      'SmsFallbackUrl=${Uri.encodeQueryComponent(smsFallbackUrl$.toString())}',
+    if (body.smsMethod case final smsMethod$?)
+      'SmsMethod=${Uri.encodeQueryComponent(smsMethod$.toJson())}',
+    if (body.smsUrl case final smsUrl$?)
+      'SmsUrl=${Uri.encodeQueryComponent(smsUrl$.toString())}',
+    if (body.statusCallback case final statusCallback$?)
+      'StatusCallback=${Uri.encodeQueryComponent(statusCallback$.toString())}',
+    if (body.statusCallbackMethod case final statusCallbackMethod$?)
+      'StatusCallbackMethod=${Uri.encodeQueryComponent(statusCallbackMethod$.toJson())}',
+    if (body.voiceApplicationSid case final voiceApplicationSid$?)
+      'VoiceApplicationSid=${Uri.encodeQueryComponent(voiceApplicationSid$)}',
+    if (body.voiceCallerIdLookup case final voiceCallerIdLookup$?)
+      'VoiceCallerIdLookup=${Uri.encodeQueryComponent(voiceCallerIdLookup$.toString())}',
+    if (body.voiceFallbackMethod case final voiceFallbackMethod$?)
+      'VoiceFallbackMethod=${Uri.encodeQueryComponent(voiceFallbackMethod$.toJson())}',
+    if (body.voiceFallbackUrl case final voiceFallbackUrl$?)
+      'VoiceFallbackUrl=${Uri.encodeQueryComponent(voiceFallbackUrl$.toString())}',
+    if (body.voiceMethod case final voiceMethod$?)
+      'VoiceMethod=${Uri.encodeQueryComponent(voiceMethod$.toJson())}',
+    if (body.voiceUrl case final voiceUrl$?)
+      'VoiceUrl=${Uri.encodeQueryComponent(voiceUrl$.toString())}',
+    if (body.identitySid case final identitySid$?)
+      'IdentitySid=${Uri.encodeQueryComponent(identitySid$)}',
+    if (body.addressSid case final addressSid$?)
+      'AddressSid=${Uri.encodeQueryComponent(addressSid$)}',
+    if (body.emergencyStatus case final emergencyStatus$?)
+      'EmergencyStatus=${Uri.encodeQueryComponent(emergencyStatus$.toJson())}',
+    if (body.emergencyAddressSid case final emergencyAddressSid$?)
+      'EmergencyAddressSid=${Uri.encodeQueryComponent(emergencyAddressSid$)}',
+    if (body.trunkSid case final trunkSid$?)
+      'TrunkSid=${Uri.encodeQueryComponent(trunkSid$)}',
+    if (body.voiceReceiveMode case final voiceReceiveMode$?)
+      'VoiceReceiveMode=${Uri.encodeQueryComponent(voiceReceiveMode$.toJson())}',
+    if (body.bundleSid case final bundleSid$?)
+      'BundleSid=${Uri.encodeQueryComponent(bundleSid$)}',
+  ].join('&'),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

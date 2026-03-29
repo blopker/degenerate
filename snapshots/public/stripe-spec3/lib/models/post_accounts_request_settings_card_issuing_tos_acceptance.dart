@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_request_settings_card_issuing_tos_acceptance_user_agent.dart';final class PostAccountsRequestSettingsCardIssuingTosAcceptance {const PostAccountsRequestSettingsCardIssuingTosAcceptance({this.date, this.ip, this.userAgent, });
+
+factory PostAccountsRequestSettingsCardIssuingTosAcceptance.fromJson(Map<String, dynamic> json) { return PostAccountsRequestSettingsCardIssuingTosAcceptance(
+  date: json['date'] != null ? (json['date'] as num).toInt() : null,
+  ip: json['ip'] as String?,
+  userAgent: json['user_agent'] != null ? OneOf2.parse(json['user_agent'], fromA: (v) => v as String, fromB: (v) => PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgentVariant2.fromJson(v as String),) : null,
+); }
+
+final int? date;
+
+final String? ip;
+
+final PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgent? userAgent;
+
+Map<String, dynamic> toJson() { return {
+  'date': ?date,
+  'ip': ?ip,
+  if (userAgent != null) 'user_agent': userAgent?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsRequestSettingsCardIssuingTosAcceptance copyWith({int Function()? date, String Function()? ip, PostAccountsRequestSettingsCardIssuingTosAcceptanceUserAgent Function()? userAgent, }) { return PostAccountsRequestSettingsCardIssuingTosAcceptance(
+  date: date != null ? date() : this.date,
+  ip: ip != null ? ip() : this.ip,
+  userAgent: userAgent != null ? userAgent() : this.userAgent,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsRequestSettingsCardIssuingTosAcceptance &&
+          date == other.date &&
+          ip == other.ip &&
+          userAgent == other.userAgent; } 
+@override int get hashCode { return Object.hash(date, ip, userAgent); } 
+@override String toString() { return 'PostAccountsRequestSettingsCardIssuingTosAcceptance(date: $date, ip: $ip, userAgent: $userAgent)'; } 
+ }

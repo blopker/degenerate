@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'rulesets_redirect_from_value_target_url.dart';/// A redirect based on the request properties.
+final class RulesetsRedirectFromValue {const RulesetsRedirectFromValue({this.preserveQueryString = false, this.statusCode, required this.targetUrl, });
+
+factory RulesetsRedirectFromValue.fromJson(Map<String, dynamic> json) { return RulesetsRedirectFromValue(
+  preserveQueryString: json.containsKey('preserve_query_string') ? json['preserve_query_string'] as bool : false,
+  statusCode: json['status_code'] != null ? (json['status_code'] as num).toInt() : null,
+  targetUrl: RulesetsRedirectFromValueTargetUrl.fromJson(json['target_url'] as Map<String, dynamic>),
+); }
+
+/// Whether to keep the query string of the original request.
+final bool preserveQueryString;
+
+/// The status code to use for the redirect.
+final int? statusCode;
+
+/// A URL to redirect the request to.
+final RulesetsRedirectFromValueTargetUrl targetUrl;
+
+Map<String, dynamic> toJson() { return {
+  'preserve_query_string': preserveQueryString,
+  'status_code': ?statusCode,
+  'target_url': targetUrl.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('target_url'); } 
+RulesetsRedirectFromValue copyWith({bool Function()? preserveQueryString, int Function()? statusCode, RulesetsRedirectFromValueTargetUrl? targetUrl, }) { return RulesetsRedirectFromValue(
+  preserveQueryString: preserveQueryString != null ? preserveQueryString() : this.preserveQueryString,
+  statusCode: statusCode != null ? statusCode() : this.statusCode,
+  targetUrl: targetUrl ?? this.targetUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RulesetsRedirectFromValue &&
+          preserveQueryString == other.preserveQueryString &&
+          statusCode == other.statusCode &&
+          targetUrl == other.targetUrl; } 
+@override int get hashCode { return Object.hash(preserveQueryString, statusCode, targetUrl); } 
+@override String toString() { return 'RulesetsRedirectFromValue(preserveQueryString: $preserveQueryString, statusCode: $statusCode, targetUrl: $targetUrl)'; } 
+ }

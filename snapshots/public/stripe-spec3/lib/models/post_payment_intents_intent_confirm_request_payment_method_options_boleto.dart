@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_options_param82.dart';final class PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2 {const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2._(this.value);
+
+factory PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2._(json),
+}; }
+
+static const PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2 $empty = PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2._('');
+
+static const List<PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2($value)'; } 
+ }
+typedef PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoleto = OneOf2<PaymentMethodOptionsParam82,PostPaymentIntentsIntentConfirmRequestPaymentMethodOptionsBoletoVariant2>;

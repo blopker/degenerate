@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// If this Card is part of a card wallet, this contains the details of the card wallet.
+final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet({this.paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet});
+
+factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet.fromJson(Map<String, dynamic> json) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet(
+  paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.canParse(json) ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json) : null,
+); }
+
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet;
+
+/// At least one variant must be present.
+bool get isValid { return paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet?.toJson(),
+}; } 
+ }

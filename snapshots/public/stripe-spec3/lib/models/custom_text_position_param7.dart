@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CustomTextPositionParam7 {const CustomTextPositionParam7({required this.message});
+
+factory CustomTextPositionParam7.fromJson(Map<String, dynamic> json) { return CustomTextPositionParam7(
+  message: json['message'] as String,
+); }
+
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
+CustomTextPositionParam7 copyWith({String? message}) { return CustomTextPositionParam7(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomTextPositionParam7 &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'CustomTextPositionParam7(message: $message)'; } 
+ }

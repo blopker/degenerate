@@ -1,0 +1,28 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
+/// 
+final class NoiseReductionType {const NoiseReductionType._(this.value);
+
+factory NoiseReductionType.fromJson(String json) { return switch (json) {
+  'near_field' => nearField,
+  'far_field' => farField,
+  _ => NoiseReductionType._(json),
+}; }
+
+static const NoiseReductionType nearField = NoiseReductionType._('near_field');
+
+static const NoiseReductionType farField = NoiseReductionType._('far_field');
+
+static const List<NoiseReductionType> values = [nearField, farField];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NoiseReductionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'NoiseReductionType($value)'; } 
+ }

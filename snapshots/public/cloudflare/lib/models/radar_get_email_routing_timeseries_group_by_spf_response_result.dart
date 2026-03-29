@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_get_email_routing_timeseries_group_by_spf_response_result_meta.dart';import 'radar_get_email_routing_timeseries_group_by_spf_response_result_serie0.dart';final class RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult {const RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult({required this.meta, required this.serie0, });
+
+factory RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult.fromJson(Map<String, dynamic> json) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult(
+  meta: RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta.fromJson(json['meta'] as Map<String, dynamic>),
+  serie0: RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0.fromJson(json['serie_0'] as Map<String, dynamic>),
+); }
+
+/// Metadata for the results.
+final RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta meta;
+
+final RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0 serie0;
+
+Map<String, dynamic> toJson() { return {
+  'meta': meta.toJson(),
+  'serie_0': serie0.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('meta') &&
+      json.containsKey('serie_0'); } 
+RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult copyWith({RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultMeta? meta, RadarGetEmailRoutingTimeseriesGroupBySpfResponseResultSerie0? serie0, }) { return RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult(
+  meta: meta ?? this.meta,
+  serie0: serie0 ?? this.serie0,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult &&
+          meta == other.meta &&
+          serie0 == other.serie0; } 
+@override int get hashCode { return Object.hash(meta, serie0); } 
+@override String toString() { return 'RadarGetEmailRoutingTimeseriesGroupBySpfResponseResult(meta: $meta, serie0: $serie0)'; } 
+ }

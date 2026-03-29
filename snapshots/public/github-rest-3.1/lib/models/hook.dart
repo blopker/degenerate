@@ -1,0 +1,111 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'hook_response.dart';import 'webhook_config.dart';/// Webhooks for repositories.
+final class Hook {const Hook({required this.type, required this.id, required this.name, required this.active, required this.events, required this.config, required this.updatedAt, required this.createdAt, required this.url, required this.testUrl, required this.pingUrl, this.deliveriesUrl, required this.lastResponse, });
+
+factory Hook.fromJson(Map<String, dynamic> json) { return Hook(
+  type: json['type'] as String,
+  id: (json['id'] as num).toInt(),
+  name: json['name'] as String,
+  active: json['active'] as bool,
+  events: (json['events'] as List<dynamic>).map((e) => e as String).toList(),
+  config: WebhookConfig.fromJson(json['config'] as Map<String, dynamic>),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: DateTime.parse(json['created_at'] as String),
+  url: Uri.parse(json['url'] as String),
+  testUrl: Uri.parse(json['test_url'] as String),
+  pingUrl: Uri.parse(json['ping_url'] as String),
+  deliveriesUrl: json['deliveries_url'] != null ? Uri.parse(json['deliveries_url'] as String) : null,
+  lastResponse: HookResponse.fromJson(json['last_response'] as Map<String, dynamic>),
+); }
+
+final String type;
+
+/// Unique identifier of the webhook.
+final int id;
+
+/// The name of a valid service, use 'web' for a webhook.
+final String name;
+
+/// Determines whether the hook is actually triggered on pushes.
+final bool active;
+
+/// Determines what events the hook is triggered for. Default: ['push'].
+final List<String> events;
+
+final WebhookConfig config;
+
+final DateTime updatedAt;
+
+final DateTime createdAt;
+
+final Uri url;
+
+final Uri testUrl;
+
+final Uri pingUrl;
+
+final Uri? deliveriesUrl;
+
+final HookResponse lastResponse;
+
+Map<String, dynamic> toJson() { return {
+  'type': type,
+  'id': id,
+  'name': name,
+  'active': active,
+  'events': events,
+  'config': config.toJson(),
+  'updated_at': updatedAt.toIso8601String(),
+  'created_at': createdAt.toIso8601String(),
+  'url': url.toString(),
+  'test_url': testUrl.toString(),
+  'ping_url': pingUrl.toString(),
+  if (deliveriesUrl != null) 'deliveries_url': deliveriesUrl?.toString(),
+  'last_response': lastResponse.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('active') && json['active'] is bool &&
+      json.containsKey('events') &&
+      json.containsKey('config') &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('test_url') && json['test_url'] is String &&
+      json.containsKey('ping_url') && json['ping_url'] is String &&
+      json.containsKey('last_response'); } 
+Hook copyWith({String? type, int? id, String? name, bool? active, List<String>? events, WebhookConfig? config, DateTime? updatedAt, DateTime? createdAt, Uri? url, Uri? testUrl, Uri? pingUrl, Uri Function()? deliveriesUrl, HookResponse? lastResponse, }) { return Hook(
+  type: type ?? this.type,
+  id: id ?? this.id,
+  name: name ?? this.name,
+  active: active ?? this.active,
+  events: events ?? this.events,
+  config: config ?? this.config,
+  updatedAt: updatedAt ?? this.updatedAt,
+  createdAt: createdAt ?? this.createdAt,
+  url: url ?? this.url,
+  testUrl: testUrl ?? this.testUrl,
+  pingUrl: pingUrl ?? this.pingUrl,
+  deliveriesUrl: deliveriesUrl != null ? deliveriesUrl() : this.deliveriesUrl,
+  lastResponse: lastResponse ?? this.lastResponse,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Hook &&
+          type == other.type &&
+          id == other.id &&
+          name == other.name &&
+          active == other.active &&
+          listEquals(events, other.events) &&
+          config == other.config &&
+          updatedAt == other.updatedAt &&
+          createdAt == other.createdAt &&
+          url == other.url &&
+          testUrl == other.testUrl &&
+          pingUrl == other.pingUrl &&
+          deliveriesUrl == other.deliveriesUrl &&
+          lastResponse == other.lastResponse; } 
+@override int get hashCode { return Object.hash(type, id, name, active, Object.hashAll(events), config, updatedAt, createdAt, url, testUrl, pingUrl, deliveriesUrl, lastResponse); } 
+@override String toString() { return 'Hook(type: $type, id: $id, name: $name, active: $active, events: $events, config: $config, updatedAt: $updatedAt, createdAt: $createdAt, url: $url, testUrl: $testUrl, pingUrl: $pingUrl, deliveriesUrl: $deliveriesUrl, lastResponse: $lastResponse)'; } 
+ }

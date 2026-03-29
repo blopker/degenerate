@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class AmountDetailsShippingParam4AmountVariant2 {const AmountDetailsShippingParam4AmountVariant2._(this.value);
+
+factory AmountDetailsShippingParam4AmountVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => AmountDetailsShippingParam4AmountVariant2._(json),
+}; }
+
+static const AmountDetailsShippingParam4AmountVariant2 $empty = AmountDetailsShippingParam4AmountVariant2._('');
+
+static const List<AmountDetailsShippingParam4AmountVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is AmountDetailsShippingParam4AmountVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'AmountDetailsShippingParam4AmountVariant2($value)'; } 
+ }
+typedef AmountDetailsShippingParam4Amount = OneOf2<int,AmountDetailsShippingParam4AmountVariant2>;

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_invoices_invoice_add_lines_request_lines_tax_amounts_variant1.dart';final class PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2 {const PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2._(this.value);
+
+factory PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2._(json),
+}; }
+
+static const PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2 $empty = PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2._('');
+
+static const List<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2($value)'; } 
+ }
+typedef PostInvoicesInvoiceAddLinesRequestLinesTaxAmounts = OneOf2<List<PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant1>,PostInvoicesInvoiceAddLinesRequestLinesTaxAmountsVariant2>;

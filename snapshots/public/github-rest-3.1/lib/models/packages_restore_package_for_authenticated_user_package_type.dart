@@ -1,0 +1,38 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PackagesRestorePackageForAuthenticatedUserPackageType {const PackagesRestorePackageForAuthenticatedUserPackageType._(this.value);
+
+factory PackagesRestorePackageForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
+  'npm' => npm,
+  'maven' => maven,
+  'rubygems' => rubygems,
+  'docker' => docker,
+  'nuget' => nuget,
+  'container' => container,
+  _ => PackagesRestorePackageForAuthenticatedUserPackageType._(json),
+}; }
+
+static const PackagesRestorePackageForAuthenticatedUserPackageType npm = PackagesRestorePackageForAuthenticatedUserPackageType._('npm');
+
+static const PackagesRestorePackageForAuthenticatedUserPackageType maven = PackagesRestorePackageForAuthenticatedUserPackageType._('maven');
+
+static const PackagesRestorePackageForAuthenticatedUserPackageType rubygems = PackagesRestorePackageForAuthenticatedUserPackageType._('rubygems');
+
+static const PackagesRestorePackageForAuthenticatedUserPackageType docker = PackagesRestorePackageForAuthenticatedUserPackageType._('docker');
+
+static const PackagesRestorePackageForAuthenticatedUserPackageType nuget = PackagesRestorePackageForAuthenticatedUserPackageType._('nuget');
+
+static const PackagesRestorePackageForAuthenticatedUserPackageType container = PackagesRestorePackageForAuthenticatedUserPackageType._('container');
+
+static const List<PackagesRestorePackageForAuthenticatedUserPackageType> values = [npm, maven, rubygems, docker, nuget, container];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PackagesRestorePackageForAuthenticatedUserPackageType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PackagesRestorePackageForAuthenticatedUserPackageType($value)'; } 
+ }

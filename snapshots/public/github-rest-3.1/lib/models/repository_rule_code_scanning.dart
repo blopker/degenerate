@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'repository_rule_code_scanning_parameters.dart';final class RepositoryRuleCodeScanningType {const RepositoryRuleCodeScanningType._(this.value);
+
+factory RepositoryRuleCodeScanningType.fromJson(String json) { return switch (json) {
+  'code_scanning' => codeScanning,
+  _ => RepositoryRuleCodeScanningType._(json),
+}; }
+
+static const RepositoryRuleCodeScanningType codeScanning = RepositoryRuleCodeScanningType._('code_scanning');
+
+static const List<RepositoryRuleCodeScanningType> values = [codeScanning];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RepositoryRuleCodeScanningType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RepositoryRuleCodeScanningType($value)'; } 
+ }
+/// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
+final class RepositoryRuleCodeScanning {const RepositoryRuleCodeScanning({required this.type, this.parameters, });
+
+factory RepositoryRuleCodeScanning.fromJson(Map<String, dynamic> json) { return RepositoryRuleCodeScanning(
+  type: RepositoryRuleCodeScanningType.fromJson(json['type'] as String),
+  parameters: json['parameters'] != null ? RepositoryRuleCodeScanningParameters.fromJson(json['parameters'] as Map<String, dynamic>) : null,
+); }
+
+final RepositoryRuleCodeScanningType type;
+
+final RepositoryRuleCodeScanningParameters? parameters;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  if (parameters != null) 'parameters': parameters?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+RepositoryRuleCodeScanning copyWith({RepositoryRuleCodeScanningType? type, RepositoryRuleCodeScanningParameters Function()? parameters, }) { return RepositoryRuleCodeScanning(
+  type: type ?? this.type,
+  parameters: parameters != null ? parameters() : this.parameters,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryRuleCodeScanning &&
+          type == other.type &&
+          parameters == other.parameters; } 
+@override int get hashCode { return Object.hash(type, parameters); } 
+@override String toString() { return 'RepositoryRuleCodeScanning(type: $type, parameters: $parameters)'; } 
+ }

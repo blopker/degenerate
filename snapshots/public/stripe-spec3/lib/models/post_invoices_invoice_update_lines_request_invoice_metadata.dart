@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2 {const PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2._(this.value);
+
+factory PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2._(json),
+}; }
+
+static const PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2 $empty = PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2._('');
+
+static const List<PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2($value)'; } 
+ }
+typedef PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadata = OneOf2<Map<String,String>,PostInvoicesInvoiceUpdateLinesRequestInvoiceMetadataVariant2>;

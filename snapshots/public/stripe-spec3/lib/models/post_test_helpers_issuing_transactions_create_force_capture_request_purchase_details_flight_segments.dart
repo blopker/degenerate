@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments {const PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments({this.arrivalAirportCode, this.carrier, this.departureAirportCode, this.flightNumber, this.serviceClass, this.stopoverAllowed, });
+
+factory PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments.fromJson(Map<String, dynamic> json) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(
+  arrivalAirportCode: json['arrival_airport_code'] as String?,
+  carrier: json['carrier'] as String?,
+  departureAirportCode: json['departure_airport_code'] as String?,
+  flightNumber: json['flight_number'] as String?,
+  serviceClass: json['service_class'] as String?,
+  stopoverAllowed: json['stopover_allowed'] as bool?,
+); }
+
+final String? arrivalAirportCode;
+
+final String? carrier;
+
+final String? departureAirportCode;
+
+final String? flightNumber;
+
+final String? serviceClass;
+
+final bool? stopoverAllowed;
+
+Map<String, dynamic> toJson() { return {
+  'arrival_airport_code': ?arrivalAirportCode,
+  'carrier': ?carrier,
+  'departure_airport_code': ?departureAirportCode,
+  'flight_number': ?flightNumber,
+  'service_class': ?serviceClass,
+  'stopover_allowed': ?stopoverAllowed,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments copyWith({String Function()? arrivalAirportCode, String Function()? carrier, String Function()? departureAirportCode, String Function()? flightNumber, String Function()? serviceClass, bool Function()? stopoverAllowed, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(
+  arrivalAirportCode: arrivalAirportCode != null ? arrivalAirportCode() : this.arrivalAirportCode,
+  carrier: carrier != null ? carrier() : this.carrier,
+  departureAirportCode: departureAirportCode != null ? departureAirportCode() : this.departureAirportCode,
+  flightNumber: flightNumber != null ? flightNumber() : this.flightNumber,
+  serviceClass: serviceClass != null ? serviceClass() : this.serviceClass,
+  stopoverAllowed: stopoverAllowed != null ? stopoverAllowed() : this.stopoverAllowed,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments &&
+          arrivalAirportCode == other.arrivalAirportCode &&
+          carrier == other.carrier &&
+          departureAirportCode == other.departureAirportCode &&
+          flightNumber == other.flightNumber &&
+          serviceClass == other.serviceClass &&
+          stopoverAllowed == other.stopoverAllowed; } 
+@override int get hashCode { return Object.hash(arrivalAirportCode, carrier, departureAirportCode, flightNumber, serviceClass, stopoverAllowed); } 
+@override String toString() { return 'PostTestHelpersIssuingTransactionsCreateForceCaptureRequestPurchaseDetailsFlightSegments(arrivalAirportCode: $arrivalAirportCode, carrier: $carrier, departureAirportCode: $departureAirportCode, flightNumber: $flightNumber, serviceClass: $serviceClass, stopoverAllowed: $stopoverAllowed)'; } 
+ }

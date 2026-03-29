@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage._(this.value);
+
+factory DestinationListResponse404ErrorsMessage.fromJson(String json) { return switch (json) {
+  'Not found' => notFound,
+  _ => DestinationListResponse404ErrorsMessage._(json),
+}; }
+
+static const DestinationListResponse404ErrorsMessage notFound = DestinationListResponse404ErrorsMessage._('Not found');
+
+static const List<DestinationListResponse404ErrorsMessage> values = [notFound];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DestinationListResponse404ErrorsMessage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DestinationListResponse404ErrorsMessage($value)'; } 
+ }
+final class DestinationListResponse404Errors {const DestinationListResponse404Errors({this.detail, required this.message, });
+
+factory DestinationListResponse404Errors.fromJson(Map<String, dynamic> json) { return DestinationListResponse404Errors(
+  detail: json['detail'] as String?,
+  message: DestinationListResponse404ErrorsMessage.fromJson(json['message'] as String),
+); }
+
+final String? detail;
+
+final DestinationListResponse404ErrorsMessage message;
+
+Map<String, dynamic> toJson() { return {
+  'detail': ?detail,
+  'message': message.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
+DestinationListResponse404Errors copyWith({String Function()? detail, DestinationListResponse404ErrorsMessage? message, }) { return DestinationListResponse404Errors(
+  detail: detail != null ? detail() : this.detail,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DestinationListResponse404Errors &&
+          detail == other.detail &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(detail, message); } 
+@override String toString() { return 'DestinationListResponse404Errors(detail: $detail, message: $message)'; } 
+ }

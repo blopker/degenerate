@@ -41,16 +41,18 @@ final class DioApiClient implements ApiClient {
             case ApiMultipartTextField():
               formData.fields.add(MapEntry(field.name, field.value));
             case ApiMultipartFileField():
-              formData.files.add(MapEntry(
-                field.name,
-                dio.MultipartFile.fromBytes(
-                  field.bytes,
-                  filename: field.filename ?? field.name,
-                  contentType: field.contentType != null
-                      ? dio.DioMediaType.parse(field.contentType!)
-                      : null,
+              formData.files.add(
+                MapEntry(
+                  field.name,
+                  dio.MultipartFile.fromBytes(
+                    field.bytes,
+                    filename: field.filename ?? field.name,
+                    contentType: field.contentType != null
+                        ? dio.DioMediaType.parse(field.contentType!)
+                        : null,
+                  ),
                 ),
-              ));
+              );
           }
         }
         data = formData;
@@ -71,7 +73,11 @@ final class DioApiClient implements ApiClient {
         data: data,
         cancelToken: dioCancelToken,
       );
-      return _toApiResponse(response.statusCode, response.headers, response.data);
+      return _toApiResponse(
+        response.statusCode,
+        response.headers,
+        response.data,
+      );
     } on dio.DioException catch (e) {
       if (e.type == dio.DioExceptionType.cancel) {
         throw const CancelledException();

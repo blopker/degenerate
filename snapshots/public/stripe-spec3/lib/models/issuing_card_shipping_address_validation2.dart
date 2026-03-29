@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_card_shipping_address_validation.dart';/// Address validation details for the shipment.
+final class IssuingCardShippingAddressValidation2 {const IssuingCardShippingAddressValidation2({this.issuingCardShippingAddressValidation});
+
+factory IssuingCardShippingAddressValidation2.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation2(
+  issuingCardShippingAddressValidation: IssuingCardShippingAddressValidation.canParse(json) ? IssuingCardShippingAddressValidation.fromJson(json) : null,
+); }
+
+final IssuingCardShippingAddressValidation? issuingCardShippingAddressValidation;
+
+/// At least one variant must be present.
+bool get isValid { return issuingCardShippingAddressValidation != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingCardShippingAddressValidation?.toJson(),
+}; } 
+ }

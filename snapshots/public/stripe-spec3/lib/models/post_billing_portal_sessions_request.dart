@@ -1,0 +1,233 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_billing_portal_sessions_request_flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+final class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale._(this.value);
+
+factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return switch (json) {
+  'auto' => auto,
+  'bg' => bg,
+  'cs' => cs,
+  'da' => da,
+  'de' => de,
+  'el' => el,
+  'en' => en,
+  'en-AU' => enAu,
+  'en-CA' => enCa,
+  'en-GB' => enGb,
+  'en-IE' => enIe,
+  'en-IN' => enIn,
+  'en-NZ' => enNz,
+  'en-SG' => enSg,
+  'es' => es,
+  'es-419' => es419,
+  'et' => et,
+  'fi' => fi,
+  'fil' => fil,
+  'fr' => fr,
+  'fr-CA' => frCa,
+  'hr' => hr,
+  'hu' => hu,
+  'id' => id,
+  'it' => it,
+  'ja' => ja,
+  'ko' => ko,
+  'lt' => lt,
+  'lv' => lv,
+  'ms' => ms,
+  'mt' => mt,
+  'nb' => nb,
+  'nl' => nl,
+  'pl' => pl,
+  'pt' => pt,
+  'pt-BR' => ptBr,
+  'ro' => ro,
+  'ru' => ru,
+  'sk' => sk,
+  'sl' => sl,
+  'sv' => sv,
+  'th' => th,
+  'tr' => tr,
+  'vi' => vi,
+  'zh' => zh,
+  'zh-HK' => zhHk,
+  'zh-TW' => zhTw,
+  _ => PostBillingPortalSessionsRequestLocale._(json),
+}; }
+
+static const PostBillingPortalSessionsRequestLocale auto = PostBillingPortalSessionsRequestLocale._('auto');
+
+static const PostBillingPortalSessionsRequestLocale bg = PostBillingPortalSessionsRequestLocale._('bg');
+
+static const PostBillingPortalSessionsRequestLocale cs = PostBillingPortalSessionsRequestLocale._('cs');
+
+static const PostBillingPortalSessionsRequestLocale da = PostBillingPortalSessionsRequestLocale._('da');
+
+static const PostBillingPortalSessionsRequestLocale de = PostBillingPortalSessionsRequestLocale._('de');
+
+static const PostBillingPortalSessionsRequestLocale el = PostBillingPortalSessionsRequestLocale._('el');
+
+static const PostBillingPortalSessionsRequestLocale en = PostBillingPortalSessionsRequestLocale._('en');
+
+static const PostBillingPortalSessionsRequestLocale enAu = PostBillingPortalSessionsRequestLocale._('en-AU');
+
+static const PostBillingPortalSessionsRequestLocale enCa = PostBillingPortalSessionsRequestLocale._('en-CA');
+
+static const PostBillingPortalSessionsRequestLocale enGb = PostBillingPortalSessionsRequestLocale._('en-GB');
+
+static const PostBillingPortalSessionsRequestLocale enIe = PostBillingPortalSessionsRequestLocale._('en-IE');
+
+static const PostBillingPortalSessionsRequestLocale enIn = PostBillingPortalSessionsRequestLocale._('en-IN');
+
+static const PostBillingPortalSessionsRequestLocale enNz = PostBillingPortalSessionsRequestLocale._('en-NZ');
+
+static const PostBillingPortalSessionsRequestLocale enSg = PostBillingPortalSessionsRequestLocale._('en-SG');
+
+static const PostBillingPortalSessionsRequestLocale es = PostBillingPortalSessionsRequestLocale._('es');
+
+static const PostBillingPortalSessionsRequestLocale es419 = PostBillingPortalSessionsRequestLocale._('es-419');
+
+static const PostBillingPortalSessionsRequestLocale et = PostBillingPortalSessionsRequestLocale._('et');
+
+static const PostBillingPortalSessionsRequestLocale fi = PostBillingPortalSessionsRequestLocale._('fi');
+
+static const PostBillingPortalSessionsRequestLocale fil = PostBillingPortalSessionsRequestLocale._('fil');
+
+static const PostBillingPortalSessionsRequestLocale fr = PostBillingPortalSessionsRequestLocale._('fr');
+
+static const PostBillingPortalSessionsRequestLocale frCa = PostBillingPortalSessionsRequestLocale._('fr-CA');
+
+static const PostBillingPortalSessionsRequestLocale hr = PostBillingPortalSessionsRequestLocale._('hr');
+
+static const PostBillingPortalSessionsRequestLocale hu = PostBillingPortalSessionsRequestLocale._('hu');
+
+static const PostBillingPortalSessionsRequestLocale id = PostBillingPortalSessionsRequestLocale._('id');
+
+static const PostBillingPortalSessionsRequestLocale it = PostBillingPortalSessionsRequestLocale._('it');
+
+static const PostBillingPortalSessionsRequestLocale ja = PostBillingPortalSessionsRequestLocale._('ja');
+
+static const PostBillingPortalSessionsRequestLocale ko = PostBillingPortalSessionsRequestLocale._('ko');
+
+static const PostBillingPortalSessionsRequestLocale lt = PostBillingPortalSessionsRequestLocale._('lt');
+
+static const PostBillingPortalSessionsRequestLocale lv = PostBillingPortalSessionsRequestLocale._('lv');
+
+static const PostBillingPortalSessionsRequestLocale ms = PostBillingPortalSessionsRequestLocale._('ms');
+
+static const PostBillingPortalSessionsRequestLocale mt = PostBillingPortalSessionsRequestLocale._('mt');
+
+static const PostBillingPortalSessionsRequestLocale nb = PostBillingPortalSessionsRequestLocale._('nb');
+
+static const PostBillingPortalSessionsRequestLocale nl = PostBillingPortalSessionsRequestLocale._('nl');
+
+static const PostBillingPortalSessionsRequestLocale pl = PostBillingPortalSessionsRequestLocale._('pl');
+
+static const PostBillingPortalSessionsRequestLocale pt = PostBillingPortalSessionsRequestLocale._('pt');
+
+static const PostBillingPortalSessionsRequestLocale ptBr = PostBillingPortalSessionsRequestLocale._('pt-BR');
+
+static const PostBillingPortalSessionsRequestLocale ro = PostBillingPortalSessionsRequestLocale._('ro');
+
+static const PostBillingPortalSessionsRequestLocale ru = PostBillingPortalSessionsRequestLocale._('ru');
+
+static const PostBillingPortalSessionsRequestLocale sk = PostBillingPortalSessionsRequestLocale._('sk');
+
+static const PostBillingPortalSessionsRequestLocale sl = PostBillingPortalSessionsRequestLocale._('sl');
+
+static const PostBillingPortalSessionsRequestLocale sv = PostBillingPortalSessionsRequestLocale._('sv');
+
+static const PostBillingPortalSessionsRequestLocale th = PostBillingPortalSessionsRequestLocale._('th');
+
+static const PostBillingPortalSessionsRequestLocale tr = PostBillingPortalSessionsRequestLocale._('tr');
+
+static const PostBillingPortalSessionsRequestLocale vi = PostBillingPortalSessionsRequestLocale._('vi');
+
+static const PostBillingPortalSessionsRequestLocale zh = PostBillingPortalSessionsRequestLocale._('zh');
+
+static const PostBillingPortalSessionsRequestLocale zhHk = PostBillingPortalSessionsRequestLocale._('zh-HK');
+
+static const PostBillingPortalSessionsRequestLocale zhTw = PostBillingPortalSessionsRequestLocale._('zh-TW');
+
+static const List<PostBillingPortalSessionsRequestLocale> values = [auto, bg, cs, da, de, el, en, enAu, enCa, enGb, enIe, enIn, enNz, enSg, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostBillingPortalSessionsRequestLocale && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostBillingPortalSessionsRequestLocale($value)'; } 
+ }
+final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });
+
+factory PostBillingPortalSessionsRequest.fromJson(Map<String, dynamic> json) { return PostBillingPortalSessionsRequest(
+  configuration: json['configuration'] as String?,
+  customer: json['customer'] as String?,
+  customerAccount: json['customer_account'] as String?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  flowData: json['flow_data'] != null ? PostBillingPortalSessionsRequestFlowData.fromJson(json['flow_data'] as Map<String, dynamic>) : null,
+  locale: json['locale'] != null ? PostBillingPortalSessionsRequestLocale.fromJson(json['locale'] as String) : null,
+  onBehalfOf: json['on_behalf_of'] as String?,
+  returnUrl: json['return_url'] as String?,
+); }
+
+/// The ID of an existing [configuration](https://docs.stripe.com/api/customer_portal/configurations) to use for this session, describing its functionality and features. If not specified, the session uses the default configuration.
+final String? configuration;
+
+/// The ID of an existing customer.
+final String? customer;
+
+/// The ID of an existing account.
+final String? customerAccount;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
+final PostBillingPortalSessionsRequestFlowData? flowData;
+
+/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+final PostBillingPortalSessionsRequestLocale? locale;
+
+/// The `on_behalf_of` account to use for this session. When specified, only subscriptions and invoices with this `on_behalf_of` account appear in the portal. For more information, see the [docs](https://docs.stripe.com/connect/separate-charges-and-transfers#settlement-merchant). Use the [Accounts API](https://docs.stripe.com/api/accounts/object#account_object-settings-branding) to modify the `on_behalf_of` account's branding settings, which the portal displays.
+final String? onBehalfOf;
+
+/// The default URL to redirect customers to when they click on the portal's link to return to your website.
+final String? returnUrl;
+
+Map<String, dynamic> toJson() { return {
+  'configuration': ?configuration,
+  'customer': ?customer,
+  'customer_account': ?customerAccount,
+  'expand': ?expand,
+  if (flowData != null) 'flow_data': flowData?.toJson(),
+  if (locale != null) 'locale': locale?.toJson(),
+  'on_behalf_of': ?onBehalfOf,
+  'return_url': ?returnUrl,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostBillingPortalSessionsRequest copyWith({String Function()? configuration, String Function()? customer, String Function()? customerAccount, List<String> Function()? expand, PostBillingPortalSessionsRequestFlowData Function()? flowData, PostBillingPortalSessionsRequestLocale Function()? locale, String Function()? onBehalfOf, String Function()? returnUrl, }) { return PostBillingPortalSessionsRequest(
+  configuration: configuration != null ? configuration() : this.configuration,
+  customer: customer != null ? customer() : this.customer,
+  customerAccount: customerAccount != null ? customerAccount() : this.customerAccount,
+  expand: expand != null ? expand() : this.expand,
+  flowData: flowData != null ? flowData() : this.flowData,
+  locale: locale != null ? locale() : this.locale,
+  onBehalfOf: onBehalfOf != null ? onBehalfOf() : this.onBehalfOf,
+  returnUrl: returnUrl != null ? returnUrl() : this.returnUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostBillingPortalSessionsRequest &&
+          configuration == other.configuration &&
+          customer == other.customer &&
+          customerAccount == other.customerAccount &&
+          listEquals(expand, other.expand) &&
+          flowData == other.flowData &&
+          locale == other.locale &&
+          onBehalfOf == other.onBehalfOf &&
+          returnUrl == other.returnUrl; } 
+@override int get hashCode { return Object.hash(configuration, customer, customerAccount, Object.hashAll(expand ?? const []), flowData, locale, onBehalfOf, returnUrl); } 
+@override String toString() { return 'PostBillingPortalSessionsRequest(configuration: $configuration, customer: $customer, customerAccount: $customerAccount, expand: $expand, flowData: $flowData, locale: $locale, onBehalfOf: $onBehalfOf, returnUrl: $returnUrl)'; } 
+ }

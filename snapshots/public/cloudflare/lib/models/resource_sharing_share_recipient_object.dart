@@ -1,0 +1,93 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_account_id.dart';import 'resource_sharing_created.dart';import 'resource_sharing_modified.dart';import 'resource_sharing_recipient_id.dart';import 'resource_sharing_share_recipient_resource_object.dart';/// Share Recipient association status.
+final class ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus._(this.value);
+
+factory ResourceSharingRecipientAssociationStatus.fromJson(String json) { return switch (json) {
+  'associating' => associating,
+  'associated' => associated,
+  'disassociating' => disassociating,
+  'disassociated' => disassociated,
+  _ => ResourceSharingRecipientAssociationStatus._(json),
+}; }
+
+static const ResourceSharingRecipientAssociationStatus associating = ResourceSharingRecipientAssociationStatus._('associating');
+
+static const ResourceSharingRecipientAssociationStatus associated = ResourceSharingRecipientAssociationStatus._('associated');
+
+static const ResourceSharingRecipientAssociationStatus disassociating = ResourceSharingRecipientAssociationStatus._('disassociating');
+
+static const ResourceSharingRecipientAssociationStatus disassociated = ResourceSharingRecipientAssociationStatus._('disassociated');
+
+static const List<ResourceSharingRecipientAssociationStatus> values = [associating, associated, disassociating, disassociated];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ResourceSharingRecipientAssociationStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ResourceSharingRecipientAssociationStatus($value)'; } 
+ }
+final class ResourceSharingShareRecipientObject {const ResourceSharingShareRecipientObject({required this.accountId, required this.associationStatus, required this.created, required this.id, required this.modified, this.resources, });
+
+factory ResourceSharingShareRecipientObject.fromJson(Map<String, dynamic> json) { return ResourceSharingShareRecipientObject(
+  accountId: ResourceSharingAccountId.fromJson(json['account_id'] as String),
+  associationStatus: ResourceSharingRecipientAssociationStatus.fromJson(json['association_status'] as String),
+  created: ResourceSharingCreated.fromJson(json['created'] as String),
+  id: ResourceSharingRecipientId.fromJson(json['id'] as String),
+  modified: ResourceSharingModified.fromJson(json['modified'] as String),
+  resources: (json['resources'] as List<dynamic>?)?.map((e) => ResourceSharingShareRecipientResourceObject.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Account identifier.
+final ResourceSharingAccountId accountId;
+
+/// Share Recipient association status.
+final ResourceSharingRecipientAssociationStatus associationStatus;
+
+/// When the share was created.
+final ResourceSharingCreated created;
+
+/// Share Recipient identifier tag.
+final ResourceSharingRecipientId id;
+
+/// When the share was modified.
+final ResourceSharingModified modified;
+
+final List<ResourceSharingShareRecipientResourceObject>? resources;
+
+Map<String, dynamic> toJson() { return {
+  'account_id': accountId.toJson(),
+  'association_status': associationStatus.toJson(),
+  'created': created.toJson(),
+  'id': id.toJson(),
+  'modified': modified.toJson(),
+  if (resources != null) 'resources': resources?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('account_id') &&
+      json.containsKey('association_status') &&
+      json.containsKey('created') &&
+      json.containsKey('id') &&
+      json.containsKey('modified'); } 
+ResourceSharingShareRecipientObject copyWith({ResourceSharingAccountId? accountId, ResourceSharingRecipientAssociationStatus? associationStatus, ResourceSharingCreated? created, ResourceSharingRecipientId? id, ResourceSharingModified? modified, List<ResourceSharingShareRecipientResourceObject> Function()? resources, }) { return ResourceSharingShareRecipientObject(
+  accountId: accountId ?? this.accountId,
+  associationStatus: associationStatus ?? this.associationStatus,
+  created: created ?? this.created,
+  id: id ?? this.id,
+  modified: modified ?? this.modified,
+  resources: resources != null ? resources() : this.resources,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResourceSharingShareRecipientObject &&
+          accountId == other.accountId &&
+          associationStatus == other.associationStatus &&
+          created == other.created &&
+          id == other.id &&
+          modified == other.modified &&
+          listEquals(resources, other.resources); } 
+@override int get hashCode { return Object.hash(accountId, associationStatus, created, id, modified, Object.hashAll(resources ?? const [])); } 
+@override String toString() { return 'ResourceSharingShareRecipientObject(accountId: $accountId, associationStatus: $associationStatus, created: $created, id: $id, modified: $modified, resources: $resources)'; } 
+ }

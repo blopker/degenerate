@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class UrlscannerSearchScansResponse2ResultsPage {const UrlscannerSearchScansResponse2ResultsPage({required this.asn, required this.country, required this.ip, required this.url, });
+
+factory UrlscannerSearchScansResponse2ResultsPage.fromJson(Map<String, dynamic> json) { return UrlscannerSearchScansResponse2ResultsPage(
+  asn: json['asn'] as String,
+  country: json['country'] as String,
+  ip: json['ip'] as String,
+  url: json['url'] as String,
+); }
+
+final String asn;
+
+final String country;
+
+final String ip;
+
+final String url;
+
+Map<String, dynamic> toJson() { return {
+  'asn': asn,
+  'country': country,
+  'ip': ip,
+  'url': url,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('asn') && json['asn'] is String &&
+      json.containsKey('country') && json['country'] is String &&
+      json.containsKey('ip') && json['ip'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+UrlscannerSearchScansResponse2ResultsPage copyWith({String? asn, String? country, String? ip, String? url, }) { return UrlscannerSearchScansResponse2ResultsPage(
+  asn: asn ?? this.asn,
+  country: country ?? this.country,
+  ip: ip ?? this.ip,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerSearchScansResponse2ResultsPage &&
+          asn == other.asn &&
+          country == other.country &&
+          ip == other.ip &&
+          url == other.url; } 
+@override int get hashCode { return Object.hash(asn, country, ip, url); } 
+@override String toString() { return 'UrlscannerSearchScansResponse2ResultsPage(asn: $asn, country: $country, ip: $ip, url: $url)'; } 
+ }

@@ -1,0 +1,50 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetSubscriptionsStatus {const GetSubscriptionsStatus._(this.value);
+
+factory GetSubscriptionsStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'all' => all,
+  'canceled' => canceled,
+  'ended' => ended,
+  'incomplete' => incomplete,
+  'incomplete_expired' => incompleteExpired,
+  'past_due' => pastDue,
+  'paused' => paused,
+  'trialing' => trialing,
+  'unpaid' => unpaid,
+  _ => GetSubscriptionsStatus._(json),
+}; }
+
+static const GetSubscriptionsStatus active = GetSubscriptionsStatus._('active');
+
+static const GetSubscriptionsStatus all = GetSubscriptionsStatus._('all');
+
+static const GetSubscriptionsStatus canceled = GetSubscriptionsStatus._('canceled');
+
+static const GetSubscriptionsStatus ended = GetSubscriptionsStatus._('ended');
+
+static const GetSubscriptionsStatus incomplete = GetSubscriptionsStatus._('incomplete');
+
+static const GetSubscriptionsStatus incompleteExpired = GetSubscriptionsStatus._('incomplete_expired');
+
+static const GetSubscriptionsStatus pastDue = GetSubscriptionsStatus._('past_due');
+
+static const GetSubscriptionsStatus paused = GetSubscriptionsStatus._('paused');
+
+static const GetSubscriptionsStatus trialing = GetSubscriptionsStatus._('trialing');
+
+static const GetSubscriptionsStatus unpaid = GetSubscriptionsStatus._('unpaid');
+
+static const List<GetSubscriptionsStatus> values = [active, all, canceled, ended, incomplete, incompleteExpired, pastDue, paused, trialing, unpaid];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetSubscriptionsStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetSubscriptionsStatus($value)'; } 
+ }

@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetEvalRunsStatus {const GetEvalRunsStatus._(this.value);
+
+factory GetEvalRunsStatus.fromJson(String json) { return switch (json) {
+  'queued' => queued,
+  'in_progress' => inProgress,
+  'completed' => completed,
+  'canceled' => canceled,
+  'failed' => failed,
+  _ => GetEvalRunsStatus._(json),
+}; }
+
+static const GetEvalRunsStatus queued = GetEvalRunsStatus._('queued');
+
+static const GetEvalRunsStatus inProgress = GetEvalRunsStatus._('in_progress');
+
+static const GetEvalRunsStatus completed = GetEvalRunsStatus._('completed');
+
+static const GetEvalRunsStatus canceled = GetEvalRunsStatus._('canceled');
+
+static const GetEvalRunsStatus failed = GetEvalRunsStatus._('failed');
+
+static const List<GetEvalRunsStatus> values = [queued, inProgress, completed, canceled, failed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GetEvalRunsStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GetEvalRunsStatus($value)'; } 
+ }

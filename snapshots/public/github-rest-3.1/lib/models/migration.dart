@@ -1,0 +1,143 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository.dart';import 'simple_user.dart';/// A migration.
+final class Migration {const Migration({required this.id, required this.owner, required this.guid, required this.state, required this.lockRepositories, required this.excludeMetadata, required this.excludeGitData, required this.excludeAttachments, required this.excludeReleases, required this.excludeOwnerProjects, required this.orgMetadataOnly, required this.repositories, required this.url, required this.createdAt, required this.updatedAt, required this.nodeId, this.archiveUrl, this.exclude, });
+
+factory Migration.fromJson(Map<String, dynamic> json) { return Migration(
+  id: (json['id'] as num).toInt(),
+  owner: json['owner'] != null ? SimpleUser.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  guid: json['guid'] as String,
+  state: json['state'] as String,
+  lockRepositories: json['lock_repositories'] as bool,
+  excludeMetadata: json['exclude_metadata'] as bool,
+  excludeGitData: json['exclude_git_data'] as bool,
+  excludeAttachments: json['exclude_attachments'] as bool,
+  excludeReleases: json['exclude_releases'] as bool,
+  excludeOwnerProjects: json['exclude_owner_projects'] as bool,
+  orgMetadataOnly: json['org_metadata_only'] as bool,
+  repositories: (json['repositories'] as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList(),
+  url: Uri.parse(json['url'] as String),
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  nodeId: json['node_id'] as String,
+  archiveUrl: json['archive_url'] != null ? Uri.parse(json['archive_url'] as String) : null,
+  exclude: (json['exclude'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+final int id;
+
+final SimpleUser? owner;
+
+final String guid;
+
+final String state;
+
+final bool lockRepositories;
+
+final bool excludeMetadata;
+
+final bool excludeGitData;
+
+final bool excludeAttachments;
+
+final bool excludeReleases;
+
+final bool excludeOwnerProjects;
+
+final bool orgMetadataOnly;
+
+/// The repositories included in the migration. Only returned for export migrations.
+final List<Repository> repositories;
+
+final Uri url;
+
+final DateTime createdAt;
+
+final DateTime updatedAt;
+
+final String nodeId;
+
+final Uri? archiveUrl;
+
+/// Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
+final List<String>? exclude;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  if (owner != null) 'owner': owner?.toJson(),
+  'guid': guid,
+  'state': state,
+  'lock_repositories': lockRepositories,
+  'exclude_metadata': excludeMetadata,
+  'exclude_git_data': excludeGitData,
+  'exclude_attachments': excludeAttachments,
+  'exclude_releases': excludeReleases,
+  'exclude_owner_projects': excludeOwnerProjects,
+  'org_metadata_only': orgMetadataOnly,
+  'repositories': repositories.map((e) => e.toJson()).toList(),
+  'url': url.toString(),
+  'created_at': createdAt.toIso8601String(),
+  'updated_at': updatedAt.toIso8601String(),
+  'node_id': nodeId,
+  if (archiveUrl != null) 'archive_url': archiveUrl?.toString(),
+  'exclude': ?exclude,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('owner') &&
+      json.containsKey('guid') && json['guid'] is String &&
+      json.containsKey('state') && json['state'] is String &&
+      json.containsKey('lock_repositories') && json['lock_repositories'] is bool &&
+      json.containsKey('exclude_metadata') && json['exclude_metadata'] is bool &&
+      json.containsKey('exclude_git_data') && json['exclude_git_data'] is bool &&
+      json.containsKey('exclude_attachments') && json['exclude_attachments'] is bool &&
+      json.containsKey('exclude_releases') && json['exclude_releases'] is bool &&
+      json.containsKey('exclude_owner_projects') && json['exclude_owner_projects'] is bool &&
+      json.containsKey('org_metadata_only') && json['org_metadata_only'] is bool &&
+      json.containsKey('repositories') &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('created_at') && json['created_at'] is String &&
+      json.containsKey('updated_at') && json['updated_at'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String; } 
+Migration copyWith({int? id, SimpleUser? Function()? owner, String? guid, String? state, bool? lockRepositories, bool? excludeMetadata, bool? excludeGitData, bool? excludeAttachments, bool? excludeReleases, bool? excludeOwnerProjects, bool? orgMetadataOnly, List<Repository>? repositories, Uri? url, DateTime? createdAt, DateTime? updatedAt, String? nodeId, Uri Function()? archiveUrl, List<String> Function()? exclude, }) { return Migration(
+  id: id ?? this.id,
+  owner: owner != null ? owner() : this.owner,
+  guid: guid ?? this.guid,
+  state: state ?? this.state,
+  lockRepositories: lockRepositories ?? this.lockRepositories,
+  excludeMetadata: excludeMetadata ?? this.excludeMetadata,
+  excludeGitData: excludeGitData ?? this.excludeGitData,
+  excludeAttachments: excludeAttachments ?? this.excludeAttachments,
+  excludeReleases: excludeReleases ?? this.excludeReleases,
+  excludeOwnerProjects: excludeOwnerProjects ?? this.excludeOwnerProjects,
+  orgMetadataOnly: orgMetadataOnly ?? this.orgMetadataOnly,
+  repositories: repositories ?? this.repositories,
+  url: url ?? this.url,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  nodeId: nodeId ?? this.nodeId,
+  archiveUrl: archiveUrl != null ? archiveUrl() : this.archiveUrl,
+  exclude: exclude != null ? exclude() : this.exclude,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Migration &&
+          id == other.id &&
+          owner == other.owner &&
+          guid == other.guid &&
+          state == other.state &&
+          lockRepositories == other.lockRepositories &&
+          excludeMetadata == other.excludeMetadata &&
+          excludeGitData == other.excludeGitData &&
+          excludeAttachments == other.excludeAttachments &&
+          excludeReleases == other.excludeReleases &&
+          excludeOwnerProjects == other.excludeOwnerProjects &&
+          orgMetadataOnly == other.orgMetadataOnly &&
+          listEquals(repositories, other.repositories) &&
+          url == other.url &&
+          createdAt == other.createdAt &&
+          updatedAt == other.updatedAt &&
+          nodeId == other.nodeId &&
+          archiveUrl == other.archiveUrl &&
+          listEquals(exclude, other.exclude); } 
+@override int get hashCode { return Object.hash(id, owner, guid, state, lockRepositories, excludeMetadata, excludeGitData, excludeAttachments, excludeReleases, excludeOwnerProjects, orgMetadataOnly, Object.hashAll(repositories), url, createdAt, updatedAt, nodeId, archiveUrl, Object.hashAll(exclude ?? const [])); } 
+@override String toString() { return 'Migration(id: $id, owner: $owner, guid: $guid, state: $state, lockRepositories: $lockRepositories, excludeMetadata: $excludeMetadata, excludeGitData: $excludeGitData, excludeAttachments: $excludeAttachments, excludeReleases: $excludeReleases, excludeOwnerProjects: $excludeOwnerProjects, orgMetadataOnly: $orgMetadataOnly, repositories: $repositories, url: $url, createdAt: $createdAt, updatedAt: $updatedAt, nodeId: $nodeId, archiveUrl: $archiveUrl, exclude: $exclude)'; } 
+ }

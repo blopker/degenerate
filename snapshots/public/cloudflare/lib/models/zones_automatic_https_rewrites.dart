@@ -1,0 +1,54 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
+final class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId._(this.value);
+
+factory ZonesAutomaticHttpsRewritesId.fromJson(String json) { return switch (json) {
+  'automatic_https_rewrites' => automaticHttpsRewrites,
+  _ => ZonesAutomaticHttpsRewritesId._(json),
+}; }
+
+static const ZonesAutomaticHttpsRewritesId automaticHttpsRewrites = ZonesAutomaticHttpsRewritesId._('automatic_https_rewrites');
+
+static const List<ZonesAutomaticHttpsRewritesId> values = [automaticHttpsRewrites];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesAutomaticHttpsRewritesId && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesAutomaticHttpsRewritesId($value)'; } 
+ }
+final class ZonesAutomaticHttpsRewrites {const ZonesAutomaticHttpsRewrites({this.id, this.value, });
+
+factory ZonesAutomaticHttpsRewrites.fromJson(Map<String, dynamic> json) { return ZonesAutomaticHttpsRewrites(
+  id: json['id'] != null ? ZonesAutomaticHttpsRewritesId.fromJson(json['id'] as String) : null,
+  value: json['value'] != null ? ZonesAutomaticHttpsRewritesValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Turn on or off Automatic HTTPS Rewrites.
+final ZonesAutomaticHttpsRewritesId? id;
+
+/// The status of Automatic HTTPS Rewrites.
+/// 
+final ZonesAutomaticHttpsRewritesValue? value;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesAutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesId Function()? id, ZonesAutomaticHttpsRewritesValue Function()? value, }) { return ZonesAutomaticHttpsRewrites(
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesAutomaticHttpsRewrites &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(id, value); } 
+@override String toString() { return 'ZonesAutomaticHttpsRewrites(id: $id, value: $value)'; } 
+ }

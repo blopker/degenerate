@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'payments_primitives_payment_records_resource_payment_method_konbini_details_resource_store.dart';/// If the payment succeeded, this contains the details of the convenience store where the payment was completed.
+final class PaymentMethodDetailsPaymentRecordKonbiniStore {const PaymentMethodDetailsPaymentRecordKonbiniStore({this.paymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore});
+
+factory PaymentMethodDetailsPaymentRecordKonbiniStore.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsPaymentRecordKonbiniStore(
+  paymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.canParse(json) ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore.fromJson(json) : null,
+); }
+
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore? paymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore;
+
+/// At least one variant must be present.
+bool get isValid { return paymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?paymentsPrimitivesPaymentRecordsResourcePaymentMethodKonbiniDetailsResourceStore?.toJson(),
+}; } 
+ }

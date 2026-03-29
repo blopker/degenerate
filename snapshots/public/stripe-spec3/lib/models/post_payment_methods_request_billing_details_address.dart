@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_details_address5.dart';final class PostPaymentMethodsRequestBillingDetailsAddressVariant2 {const PostPaymentMethodsRequestBillingDetailsAddressVariant2._(this.value);
+
+factory PostPaymentMethodsRequestBillingDetailsAddressVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentMethodsRequestBillingDetailsAddressVariant2._(json),
+}; }
+
+static const PostPaymentMethodsRequestBillingDetailsAddressVariant2 $empty = PostPaymentMethodsRequestBillingDetailsAddressVariant2._('');
+
+static const List<PostPaymentMethodsRequestBillingDetailsAddressVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentMethodsRequestBillingDetailsAddressVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentMethodsRequestBillingDetailsAddressVariant2($value)'; } 
+ }
+typedef PostPaymentMethodsRequestBillingDetailsAddress = OneOf2<BillingDetailsAddress5,PostPaymentMethodsRequestBillingDetailsAddressVariant2>;

@@ -1,0 +1,79 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'addressing_address_map_identifier.dart';import 'addressing_default_sni.dart';import 'addressing_enabled.dart';import 'addressing_schemas_description.dart';import 'addressing_timestamp.dart';/// If set to false, then the Address Map cannot be deleted via API. This is true for Cloudflare-managed maps.
+extension type const AddressingCanDelete(bool value) {
+factory AddressingCanDelete.fromJson(bool json) => AddressingCanDelete(json);
+
+bool toJson() => value;
+
+}
+/// If set to false, then the IPs on the Address Map cannot be modified via the API. This is true for Cloudflare-managed maps.
+extension type const AddressingCanModifyIps(bool value) {
+factory AddressingCanModifyIps.fromJson(bool json) => AddressingCanModifyIps(json);
+
+bool toJson() => value;
+
+}
+final class AddressingAddressMaps {const AddressingAddressMaps({this.canDelete, this.canModifyIps, this.createdAt, this.defaultSni, this.description, this.enabled, this.id, this.modifiedAt, });
+
+factory AddressingAddressMaps.fromJson(Map<String, dynamic> json) { return AddressingAddressMaps(
+  canDelete: json['can_delete'] != null ? AddressingCanDelete.fromJson(json['can_delete'] as bool) : null,
+  canModifyIps: json['can_modify_ips'] != null ? AddressingCanModifyIps.fromJson(json['can_modify_ips'] as bool) : null,
+  createdAt: json['created_at'] != null ? AddressingTimestamp.fromJson(json['created_at'] as String) : null,
+  defaultSni: json['default_sni'] != null ? AddressingDefaultSni.fromJson(json['default_sni'] as String) : null,
+  description: json['description'] != null ? AddressingSchemasDescription.fromJson(json['description'] as String) : null,
+  enabled: json['enabled'] != null ? AddressingEnabled.fromJson(json['enabled'] as bool) : null,
+  id: json['id'] != null ? AddressingAddressMapIdentifier.fromJson(json['id'] as String) : null,
+  modifiedAt: json['modified_at'] != null ? AddressingTimestamp.fromJson(json['modified_at'] as String) : null,
+); }
+
+final AddressingCanDelete? canDelete;
+
+final AddressingCanModifyIps? canModifyIps;
+
+final AddressingTimestamp? createdAt;
+
+final AddressingDefaultSni? defaultSni;
+
+final AddressingSchemasDescription? description;
+
+final AddressingEnabled? enabled;
+
+final AddressingAddressMapIdentifier? id;
+
+final AddressingTimestamp? modifiedAt;
+
+Map<String, dynamic> toJson() { return {
+  if (canDelete != null) 'can_delete': canDelete?.toJson(),
+  if (canModifyIps != null) 'can_modify_ips': canModifyIps?.toJson(),
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (defaultSni != null) 'default_sni': defaultSni?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (enabled != null) 'enabled': enabled?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  if (modifiedAt != null) 'modified_at': modifiedAt?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AddressingAddressMaps copyWith({AddressingCanDelete Function()? canDelete, AddressingCanModifyIps Function()? canModifyIps, AddressingTimestamp Function()? createdAt, AddressingDefaultSni? Function()? defaultSni, AddressingSchemasDescription? Function()? description, AddressingEnabled? Function()? enabled, AddressingAddressMapIdentifier Function()? id, AddressingTimestamp Function()? modifiedAt, }) { return AddressingAddressMaps(
+  canDelete: canDelete != null ? canDelete() : this.canDelete,
+  canModifyIps: canModifyIps != null ? canModifyIps() : this.canModifyIps,
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  defaultSni: defaultSni != null ? defaultSni() : this.defaultSni,
+  description: description != null ? description() : this.description,
+  enabled: enabled != null ? enabled() : this.enabled,
+  id: id != null ? id() : this.id,
+  modifiedAt: modifiedAt != null ? modifiedAt() : this.modifiedAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AddressingAddressMaps &&
+          canDelete == other.canDelete &&
+          canModifyIps == other.canModifyIps &&
+          createdAt == other.createdAt &&
+          defaultSni == other.defaultSni &&
+          description == other.description &&
+          enabled == other.enabled &&
+          id == other.id &&
+          modifiedAt == other.modifiedAt; } 
+@override int get hashCode { return Object.hash(canDelete, canModifyIps, createdAt, defaultSni, description, enabled, id, modifiedAt); } 
+@override String toString() { return 'AddressingAddressMaps(canDelete: $canDelete, canModifyIps: $canModifyIps, createdAt: $createdAt, defaultSni: $defaultSni, description: $description, enabled: $enabled, id: $id, modifiedAt: $modifiedAt)'; } 
+ }

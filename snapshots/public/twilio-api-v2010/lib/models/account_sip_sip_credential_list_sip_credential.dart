@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class AccountSipSipCredentialListSipCredential {const AccountSipSipCredentialListSipCredential({this.sid, this.accountSid, this.credentialListSid, this.username, this.dateCreated, this.dateUpdated, this.uri, });
+
+factory AccountSipSipCredentialListSipCredential.fromJson(Map<String, dynamic> json) { return AccountSipSipCredentialListSipCredential(
+  sid: json['sid'] as String?,
+  accountSid: json['account_sid'] as String?,
+  credentialListSid: json['credential_list_sid'] as String?,
+  username: json['username'] as String?,
+  dateCreated: json['date_created'] as String?,
+  dateUpdated: json['date_updated'] as String?,
+  uri: json['uri'] as String?,
+); }
+
+/// A 34 character string that uniquely identifies this resource.
+final String? sid;
+
+/// The unique id of the Account that is responsible for this resource.
+final String? accountSid;
+
+/// The unique id that identifies the credential list that includes this credential.
+final String? credentialListSid;
+
+/// The username for this credential.
+final String? username;
+
+/// The date that this resource was created, given as GMT in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.
+final String? dateCreated;
+
+/// The date that this resource was last updated, given as GMT in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.
+final String? dateUpdated;
+
+/// The URI for this resource, relative to `https://api.twilio.com`
+final String? uri;
+
+Map<String, dynamic> toJson() { return {
+  'sid': ?sid,
+  'account_sid': ?accountSid,
+  'credential_list_sid': ?credentialListSid,
+  'username': ?username,
+  'date_created': ?dateCreated,
+  'date_updated': ?dateUpdated,
+  'uri': ?uri,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountSipSipCredentialListSipCredential copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? credentialListSid, String? Function()? username, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountSipSipCredentialListSipCredential(
+  sid: sid != null ? sid() : this.sid,
+  accountSid: accountSid != null ? accountSid() : this.accountSid,
+  credentialListSid: credentialListSid != null ? credentialListSid() : this.credentialListSid,
+  username: username != null ? username() : this.username,
+  dateCreated: dateCreated != null ? dateCreated() : this.dateCreated,
+  dateUpdated: dateUpdated != null ? dateUpdated() : this.dateUpdated,
+  uri: uri != null ? uri() : this.uri,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountSipSipCredentialListSipCredential &&
+          sid == other.sid &&
+          accountSid == other.accountSid &&
+          credentialListSid == other.credentialListSid &&
+          username == other.username &&
+          dateCreated == other.dateCreated &&
+          dateUpdated == other.dateUpdated &&
+          uri == other.uri; } 
+@override int get hashCode { return Object.hash(sid, accountSid, credentialListSid, username, dateCreated, dateUpdated, uri); } 
+@override String toString() { return 'AccountSipSipCredentialListSipCredential(sid: $sid, accountSid: $accountSid, credentialListSid: $credentialListSid, username: $username, dateCreated: $dateCreated, dateUpdated: $dateUpdated, uri: $uri)'; } 
+ }

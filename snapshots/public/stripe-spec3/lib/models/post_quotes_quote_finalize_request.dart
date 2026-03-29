@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostQuotesQuoteFinalizeRequest {const PostQuotesQuoteFinalizeRequest({this.expand, this.expiresAt, });
+
+factory PostQuotesQuoteFinalizeRequest.fromJson(Map<String, dynamic> json) { return PostQuotesQuoteFinalizeRequest(
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
+); }
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// A future timestamp on which the quote will be canceled if in `open` or `draft` status. Measured in seconds since the Unix epoch.
+final int? expiresAt;
+
+Map<String, dynamic> toJson() { return {
+  'expand': ?expand,
+  'expires_at': ?expiresAt,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostQuotesQuoteFinalizeRequest copyWith({List<String> Function()? expand, int Function()? expiresAt, }) { return PostQuotesQuoteFinalizeRequest(
+  expand: expand != null ? expand() : this.expand,
+  expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostQuotesQuoteFinalizeRequest &&
+          listEquals(expand, other.expand) &&
+          expiresAt == other.expiresAt; } 
+@override int get hashCode { return Object.hash(Object.hashAll(expand ?? const []), expiresAt); } 
+@override String toString() { return 'PostQuotesQuoteFinalizeRequest(expand: $expand, expiresAt: $expiresAt)'; } 
+ }

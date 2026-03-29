@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WorkersErrorWorkerNameInvalid {const WorkersErrorWorkerNameInvalid({required this.code, required this.message, });
+
+factory WorkersErrorWorkerNameInvalid.fromJson(Map<String, dynamic> json) { return WorkersErrorWorkerNameInvalid(
+  code: (json['code'] as num).toInt(),
+  message: json['message'] as String,
+); }
+
+/// Code indicating that the Worker name is invalid.
+final int code;
+
+/// Message explaining why the Worker name is invalid.
+final String message;
+
+Map<String, dynamic> toJson() { return {
+  'code': code,
+  'message': message,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('code') && json['code'] is num &&
+      json.containsKey('message') && json['message'] is String; } 
+WorkersErrorWorkerNameInvalid copyWith({int? code, String? message, }) { return WorkersErrorWorkerNameInvalid(
+  code: code ?? this.code,
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersErrorWorkerNameInvalid &&
+          code == other.code &&
+          message == other.message; } 
+@override int get hashCode { return Object.hash(code, message); } 
+@override String toString() { return 'WorkersErrorWorkerNameInvalid(code: $code, message: $message)'; } 
+ }

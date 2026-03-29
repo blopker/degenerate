@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf {const WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf({required this.href});
+
+factory WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf.fromJson(Map<String, dynamic> json) { return WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf(
+  href: json['href'] as String,
+); }
+
+final String href;
+
+Map<String, dynamic> toJson() { return {
+  'href': href,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('href') && json['href'] is String; } 
+WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf copyWith({String? href}) { return WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf(
+  href: href ?? this.href,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf &&
+          href == other.href; } 
+@override int get hashCode { return href.hashCode; } 
+@override String toString() { return 'WebhookPullRequestReviewThreadResolvedThreadCommentsLinksSelf(href: $href)'; } 
+ }

@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specify whether to inspect encrypted HTTP traffic.
+final class ZeroTrustGatewayTlsSettings {const ZeroTrustGatewayTlsSettings({this.enabled});
+
+factory ZeroTrustGatewayTlsSettings.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayTlsSettings(
+  enabled: json['enabled'] as bool?,
+); }
+
+/// Specify whether to inspect encrypted HTTP traffic.
+final bool? enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': ?enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZeroTrustGatewayTlsSettings copyWith({bool Function()? enabled}) { return ZeroTrustGatewayTlsSettings(
+  enabled: enabled != null ? enabled() : this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZeroTrustGatewayTlsSettings &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'ZeroTrustGatewayTlsSettings(enabled: $enabled)'; } 
+ }

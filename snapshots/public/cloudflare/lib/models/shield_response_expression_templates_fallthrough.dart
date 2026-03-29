@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ShieldResponseExpressionTemplatesFallthrough {const ShieldResponseExpressionTemplatesFallthrough({required this.expression, required this.title, });
+
+factory ShieldResponseExpressionTemplatesFallthrough.fromJson(Map<String, dynamic> json) { return ShieldResponseExpressionTemplatesFallthrough(
+  expression: json['expression'] as String,
+  title: json['title'] as String,
+); }
+
+/// WAF Expression for fallthrough
+final String expression;
+
+/// Title for the expression
+final String title;
+
+Map<String, dynamic> toJson() { return {
+  'expression': expression,
+  'title': title,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('expression') && json['expression'] is String &&
+      json.containsKey('title') && json['title'] is String; } 
+ShieldResponseExpressionTemplatesFallthrough copyWith({String? expression, String? title, }) { return ShieldResponseExpressionTemplatesFallthrough(
+  expression: expression ?? this.expression,
+  title: title ?? this.title,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ShieldResponseExpressionTemplatesFallthrough &&
+          expression == other.expression &&
+          title == other.title; } 
+@override int get hashCode { return Object.hash(expression, title); } 
+@override String toString() { return 'ShieldResponseExpressionTemplatesFallthrough(expression: $expression, title: $title)'; } 
+ }

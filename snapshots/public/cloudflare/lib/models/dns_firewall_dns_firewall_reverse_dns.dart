@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DnsFirewallDnsFirewallReverseDns {const DnsFirewallDnsFirewallReverseDns({this.ptr});
+
+factory DnsFirewallDnsFirewallReverseDns.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallReverseDns(
+  ptr: (json['ptr'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+); }
+
+/// Map of cluster IP addresses to PTR record contents
+final Map<String,String>? ptr;
+
+Map<String, dynamic> toJson() { return {
+  'ptr': ?ptr,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DnsFirewallDnsFirewallReverseDns copyWith({Map<String, String> Function()? ptr}) { return DnsFirewallDnsFirewallReverseDns(
+  ptr: ptr != null ? ptr() : this.ptr,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DnsFirewallDnsFirewallReverseDns &&
+          ptr == other.ptr; } 
+@override int get hashCode { return ptr.hashCode; } 
+@override String toString() { return 'DnsFirewallDnsFirewallReverseDns(ptr: $ptr)'; } 
+ }

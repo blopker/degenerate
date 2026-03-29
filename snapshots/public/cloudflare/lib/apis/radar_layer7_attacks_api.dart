@@ -1,0 +1,569 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_attacks_layer7_summary_dimension.dart';import '../models/radar_get_attacks_layer7_summary_format.dart';import '../models/radar_get_attacks_layer7_summary_http_method.dart';import '../models/radar_get_attacks_layer7_summary_http_version.dart';import '../models/radar_get_attacks_layer7_summary_ip_version.dart';import '../models/radar_get_attacks_layer7_summary_mitigation_product.dart';import '../models/radar_get_attacks_layer7_summary_response.dart';import '../models/radar_get_attacks_layer7_summary_response400.dart';import '../models/radar_get_attacks_layer7_timeseries_agg_interval.dart';import '../models/radar_get_attacks_layer7_timeseries_format.dart';import '../models/radar_get_attacks_layer7_timeseries_group_agg_interval.dart';import '../models/radar_get_attacks_layer7_timeseries_group_dimension.dart';import '../models/radar_get_attacks_layer7_timeseries_group_format.dart';import '../models/radar_get_attacks_layer7_timeseries_group_http_method.dart';import '../models/radar_get_attacks_layer7_timeseries_group_http_version.dart';import '../models/radar_get_attacks_layer7_timeseries_group_ip_version.dart';import '../models/radar_get_attacks_layer7_timeseries_group_mitigation_product.dart';import '../models/radar_get_attacks_layer7_timeseries_group_normalization.dart';import '../models/radar_get_attacks_layer7_timeseries_group_response.dart';import '../models/radar_get_attacks_layer7_timeseries_group_response400.dart';import '../models/radar_get_attacks_layer7_timeseries_http_method.dart';import '../models/radar_get_attacks_layer7_timeseries_http_version.dart';import '../models/radar_get_attacks_layer7_timeseries_ip_version.dart';import '../models/radar_get_attacks_layer7_timeseries_mitigation_product.dart';import '../models/radar_get_attacks_layer7_timeseries_normalization.dart';import '../models/radar_get_attacks_layer7_timeseries_response.dart';import '../models/radar_get_attacks_layer7_timeseries_response400.dart';import '../models/radar_get_attacks_layer7_top_attacks_format.dart';import '../models/radar_get_attacks_layer7_top_attacks_limit_direction.dart';import '../models/radar_get_attacks_layer7_top_attacks_mitigation_product.dart';import '../models/radar_get_attacks_layer7_top_attacks_normalization.dart';import '../models/radar_get_attacks_layer7_top_attacks_response.dart';import '../models/radar_get_attacks_layer7_top_attacks_response404.dart';import '../models/radar_get_attacks_layer7_top_origin_as_format.dart';import '../models/radar_get_attacks_layer7_top_origin_as_http_method.dart';import '../models/radar_get_attacks_layer7_top_origin_as_http_version.dart';import '../models/radar_get_attacks_layer7_top_origin_as_ip_version.dart';import '../models/radar_get_attacks_layer7_top_origin_as_mitigation_product.dart';import '../models/radar_get_attacks_layer7_top_origin_as_response.dart';import '../models/radar_get_attacks_layer7_top_origin_as_response404.dart';import '../models/radar_get_attacks_layer7_top_origin_location_format.dart';import '../models/radar_get_attacks_layer7_top_origin_location_http_method.dart';import '../models/radar_get_attacks_layer7_top_origin_location_http_version.dart';import '../models/radar_get_attacks_layer7_top_origin_location_ip_version.dart';import '../models/radar_get_attacks_layer7_top_origin_location_mitigation_product.dart';import '../models/radar_get_attacks_layer7_top_origin_location_response.dart';import '../models/radar_get_attacks_layer7_top_origin_location_response404.dart';import '../models/radar_get_attacks_layer7_top_target_location_format.dart';import '../models/radar_get_attacks_layer7_top_target_location_mitigation_product.dart';import '../models/radar_get_attacks_layer7_top_target_location_response.dart';import '../models/radar_get_attacks_layer7_top_target_location_response404.dart';/// RadarLayer7AttacksApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class RadarLayer7AttacksApi with ApiExecutor {const RadarLayer7AttacksApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Get layer 7 attacks summary by dimension
+///
+/// Retrieves the distribution of layer 7 attacks by the specified dimension.
+///
+/// `GET /radar/attacks/layer7/summary/{dimension}`
+Future<ApiResult<RadarGetAttacksLayer7SummaryResponse, RadarGetAttacksLayer7SummaryResponse400>> radarGetAttacksLayer7Summary({required RadarGetAttacksLayer7SummaryDimension dimension, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7SummaryIpVersion>? ipVersion, List<RadarGetAttacksLayer7SummaryHttpVersion>? httpVersion, List<RadarGetAttacksLayer7SummaryHttpMethod>? httpMethod, List<RadarGetAttacksLayer7SummaryMitigationProduct>? mitigationProduct, int? limitPerGroup, RadarGetAttacksLayer7SummaryFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpVersion != null) {
+for (final item in httpVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpMethod != null) {
+for (final item in httpMethod) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpMethod', value: item.toJson(), allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/summary/${Uri.encodeComponent(dimension.toString())}',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7SummaryResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7SummaryResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get layer 7 attacks time series
+///
+/// Retrieves layer 7 attacks over time.
+///
+/// `GET /radar/attacks/layer7/timeseries`
+Future<ApiResult<RadarGetAttacksLayer7TimeseriesResponse, RadarGetAttacksLayer7TimeseriesResponse400>> radarGetAttacksLayer7Timeseries({RadarGetAttacksLayer7TimeseriesAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, RadarGetAttacksLayer7TimeseriesNormalization? normalization, List<RadarGetAttacksLayer7TimeseriesIpVersion>? ipVersion, List<RadarGetAttacksLayer7TimeseriesHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TimeseriesHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TimeseriesMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpVersion != null) {
+for (final item in httpVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpMethod != null) {
+for (final item in httpMethod) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpMethod', value: item.toJson(), allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/timeseries',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7TimeseriesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7TimeseriesResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get layer 7 attacks time series grouped by dimension
+///
+/// Retrieves the distribution of layer 7 attacks grouped by dimension over time.
+///
+/// `GET /radar/attacks/layer7/timeseries_groups/{dimension}`
+Future<ApiResult<RadarGetAttacksLayer7TimeseriesGroupResponse, RadarGetAttacksLayer7TimeseriesGroupResponse400>> radarGetAttacksLayer7TimeseriesGroup({required RadarGetAttacksLayer7TimeseriesGroupDimension dimension, RadarGetAttacksLayer7TimeseriesGroupAggInterval? aggInterval, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TimeseriesGroupIpVersion>? ipVersion, List<RadarGetAttacksLayer7TimeseriesGroupHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TimeseriesGroupHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TimeseriesGroupMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TimeseriesGroupNormalization? normalization, int? limitPerGroup, RadarGetAttacksLayer7TimeseriesGroupFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (aggInterval != null) queryParameters['aggInterval'] = aggInterval.toJson();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpVersion != null) {
+for (final item in httpVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpMethod != null) {
+for (final item in httpMethod) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpMethod', value: item.toJson(), allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (limitPerGroup != null) queryParameters['limitPerGroup'] = limitPerGroup.toString();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/timeseries_groups/${Uri.encodeComponent(dimension.toString())}',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7TimeseriesGroupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7TimeseriesGroupResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get top origin ASes of layer 7 attacks
+///
+/// Retrieves the top origin autonomous systems of layer 7 attacks. Values are percentages of the total layer 7 attacks, with the origin autonomous systems determined by the client IP address.
+///
+/// `GET /radar/attacks/layer7/top/ases/origin`
+Future<ApiResult<RadarGetAttacksLayer7TopOriginAsResponse, RadarGetAttacksLayer7TopOriginAsResponse404>> radarGetAttacksLayer7TopOriginAs({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TopOriginAsIpVersion>? ipVersion, List<RadarGetAttacksLayer7TopOriginAsHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TopOriginAsHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TopOriginAsMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopOriginAsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpVersion != null) {
+for (final item in httpVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpMethod != null) {
+for (final item in httpMethod) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpMethod', value: item.toJson(), allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/top/ases/origin',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7TopOriginAsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7TopOriginAsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get top layer 7 attack pairs (origin and target locations)
+///
+/// Retrieves the top attacks from origin to target location. Values are percentages of the total layer 7 attacks (with billing country). The attack magnitude can be defined by the number of mitigated requests or by the number of zones affected. You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
+///
+/// `GET /radar/attacks/layer7/top/attacks`
+Future<ApiResult<RadarGetAttacksLayer7TopAttacksResponse, RadarGetAttacksLayer7TopAttacksResponse404>> radarGetAttacksLayer7TopAttacks({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? location, List<String>? continent, List<RadarGetAttacksLayer7TopAttacksMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopAttacksLimitDirection? limitDirection, int? limitPerLocation, RadarGetAttacksLayer7TopAttacksNormalization? normalization, RadarGetAttacksLayer7TopAttacksFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (location != null) {
+for (final item in location) {
+  queryParametersList.add(ApiQueryParameter(name: 'location', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (limitDirection != null) queryParameters['limitDirection'] = limitDirection.toJson();
+if (limitPerLocation != null) queryParameters['limitPerLocation'] = limitPerLocation.toString();
+if (normalization != null) queryParameters['normalization'] = normalization.toJson();
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/top/attacks',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7TopAttacksResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7TopAttacksResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get top origin locations of layer 7 attacks
+///
+/// Retrieves the top origin locations of layer 7 attacks. Values are percentages of the total layer 7 attacks, with the origin location determined by the client IP address.
+///
+/// `GET /radar/attacks/layer7/top/locations/origin`
+Future<ApiResult<RadarGetAttacksLayer7TopOriginLocationResponse, RadarGetAttacksLayer7TopOriginLocationResponse404>> radarGetAttacksLayer7TopOriginLocation({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? asn, List<String>? continent, List<RadarGetAttacksLayer7TopOriginLocationIpVersion>? ipVersion, List<RadarGetAttacksLayer7TopOriginLocationHttpVersion>? httpVersion, List<RadarGetAttacksLayer7TopOriginLocationHttpMethod>? httpMethod, List<RadarGetAttacksLayer7TopOriginLocationMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopOriginLocationFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (asn != null) {
+for (final item in asn) {
+  queryParametersList.add(ApiQueryParameter(name: 'asn', value: item, allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (ipVersion != null) {
+for (final item in ipVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'ipVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpVersion != null) {
+for (final item in httpVersion) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpVersion', value: item.toJson(), allowReserved: false));
+}
+}
+if (httpMethod != null) {
+for (final item in httpMethod) {
+  queryParametersList.add(ApiQueryParameter(name: 'httpMethod', value: item.toJson(), allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/top/locations/origin',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7TopOriginLocationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7TopOriginLocationResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get top target locations of layer 7 attacks
+///
+/// Retrieves the top target locations of and by layer 7 attacks. Values are a percentage out of the total layer 7 attacks. The target location is determined by the attacked zone's billing country, when available.
+///
+/// `GET /radar/attacks/layer7/top/locations/target`
+Future<ApiResult<RadarGetAttacksLayer7TopTargetLocationResponse, RadarGetAttacksLayer7TopTargetLocationResponse404>> radarGetAttacksLayer7TopTargetLocation({int? limit, List<String>? name, List<String>? dateRange, List<DateTime>? dateStart, List<DateTime>? dateEnd, List<String>? continent, List<RadarGetAttacksLayer7TopTargetLocationMitigationProduct>? mitigationProduct, RadarGetAttacksLayer7TopTargetLocationFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (name != null) {
+for (final item in name) {
+  queryParametersList.add(ApiQueryParameter(name: 'name', value: item, allowReserved: false));
+}
+}
+if (dateRange != null) {
+for (final item in dateRange) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateRange', value: item, allowReserved: false));
+}
+}
+if (dateStart != null) {
+for (final item in dateStart) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateStart', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (dateEnd != null) {
+for (final item in dateEnd) {
+  queryParametersList.add(ApiQueryParameter(name: 'dateEnd', value: item.toIso8601String(), allowReserved: false));
+}
+}
+if (continent != null) {
+for (final item in continent) {
+  queryParametersList.add(ApiQueryParameter(name: 'continent', value: item, allowReserved: false));
+}
+}
+if (mitigationProduct != null) {
+for (final item in mitigationProduct) {
+  queryParametersList.add(ApiQueryParameter(name: 'mitigationProduct', value: item.toJson(), allowReserved: false));
+}
+}
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/attacks/layer7/top/locations/target',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetAttacksLayer7TopTargetLocationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetAttacksLayer7TopTargetLocationResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

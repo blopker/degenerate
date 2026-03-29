@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'resource_sharing_create_share_recipient_request.dart';import 'resource_sharing_create_share_resource_request.dart';import 'resource_sharing_share_name.dart';final class ResourceSharingCreateShareRequest {const ResourceSharingCreateShareRequest({required this.name, required this.recipients, required this.resources, });
+
+factory ResourceSharingCreateShareRequest.fromJson(Map<String, dynamic> json) { return ResourceSharingCreateShareRequest(
+  name: ResourceSharingShareName.fromJson(json['name'] as String),
+  recipients: (json['recipients'] as List<dynamic>).map((e) => ResourceSharingCreateShareRecipientRequest.fromJson(e as Map<String, dynamic>)).toList(),
+  resources: (json['resources'] as List<dynamic>).map((e) => ResourceSharingCreateShareResourceRequest.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final ResourceSharingShareName name;
+
+final List<ResourceSharingCreateShareRecipientRequest> recipients;
+
+final List<ResourceSharingCreateShareResourceRequest> resources;
+
+Map<String, dynamic> toJson() { return {
+  'name': name.toJson(),
+  'recipients': recipients.map((e) => e.toJson()).toList(),
+  'resources': resources.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') &&
+      json.containsKey('recipients') &&
+      json.containsKey('resources'); } 
+ResourceSharingCreateShareRequest copyWith({ResourceSharingShareName? name, List<ResourceSharingCreateShareRecipientRequest>? recipients, List<ResourceSharingCreateShareResourceRequest>? resources, }) { return ResourceSharingCreateShareRequest(
+  name: name ?? this.name,
+  recipients: recipients ?? this.recipients,
+  resources: resources ?? this.resources,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResourceSharingCreateShareRequest &&
+          name == other.name &&
+          listEquals(recipients, other.recipients) &&
+          listEquals(resources, other.resources); } 
+@override int get hashCode { return Object.hash(name, Object.hashAll(recipients), Object.hashAll(resources)); } 
+@override String toString() { return 'ResourceSharingCreateShareRequest(name: $name, recipients: $recipients, resources: $resources)'; } 
+ }

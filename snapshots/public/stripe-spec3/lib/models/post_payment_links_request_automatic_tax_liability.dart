@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentLinksRequestAutomaticTaxLiabilityType {const PostPaymentLinksRequestAutomaticTaxLiabilityType._(this.value);
+
+factory PostPaymentLinksRequestAutomaticTaxLiabilityType.fromJson(String json) { return switch (json) {
+  'account' => account,
+  'self' => self,
+  _ => PostPaymentLinksRequestAutomaticTaxLiabilityType._(json),
+}; }
+
+static const PostPaymentLinksRequestAutomaticTaxLiabilityType account = PostPaymentLinksRequestAutomaticTaxLiabilityType._('account');
+
+static const PostPaymentLinksRequestAutomaticTaxLiabilityType self = PostPaymentLinksRequestAutomaticTaxLiabilityType._('self');
+
+static const List<PostPaymentLinksRequestAutomaticTaxLiabilityType> values = [account, self];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentLinksRequestAutomaticTaxLiabilityType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentLinksRequestAutomaticTaxLiabilityType($value)'; } 
+ }
+final class PostPaymentLinksRequestAutomaticTaxLiability {const PostPaymentLinksRequestAutomaticTaxLiability({this.account, required this.type, });
+
+factory PostPaymentLinksRequestAutomaticTaxLiability.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestAutomaticTaxLiability(
+  account: json['account'] as String?,
+  type: PostPaymentLinksRequestAutomaticTaxLiabilityType.fromJson(json['type'] as String),
+); }
+
+final String? account;
+
+final PostPaymentLinksRequestAutomaticTaxLiabilityType type;
+
+Map<String, dynamic> toJson() { return {
+  'account': ?account,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostPaymentLinksRequestAutomaticTaxLiability copyWith({String Function()? account, PostPaymentLinksRequestAutomaticTaxLiabilityType? type, }) { return PostPaymentLinksRequestAutomaticTaxLiability(
+  account: account != null ? account() : this.account,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksRequestAutomaticTaxLiability &&
+          account == other.account &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(account, type); } 
+@override String toString() { return 'PostPaymentLinksRequestAutomaticTaxLiability(account: $account, type: $type)'; } 
+ }

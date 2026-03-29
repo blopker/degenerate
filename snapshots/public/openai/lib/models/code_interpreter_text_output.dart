@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of the code interpreter text output. Always `logs`.
+/// 
+final class CodeInterpreterTextOutputType {const CodeInterpreterTextOutputType._(this.value);
+
+factory CodeInterpreterTextOutputType.fromJson(String json) { return switch (json) {
+  'logs' => logs,
+  _ => CodeInterpreterTextOutputType._(json),
+}; }
+
+static const CodeInterpreterTextOutputType logs = CodeInterpreterTextOutputType._('logs');
+
+static const List<CodeInterpreterTextOutputType> values = [logs];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeInterpreterTextOutputType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeInterpreterTextOutputType($value)'; } 
+ }
+/// The output of a code interpreter tool call that is text.
+/// 
+final class CodeInterpreterTextOutput {const CodeInterpreterTextOutput({required this.type, required this.logs, });
+
+factory CodeInterpreterTextOutput.fromJson(Map<String, dynamic> json) { return CodeInterpreterTextOutput(
+  type: CodeInterpreterTextOutputType.fromJson(json['type'] as String),
+  logs: json['logs'] as String,
+); }
+
+/// The type of the code interpreter text output. Always `logs`.
+/// 
+final CodeInterpreterTextOutputType type;
+
+/// The logs of the code interpreter tool call.
+/// 
+final String logs;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'logs': logs,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('logs') && json['logs'] is String; } 
+CodeInterpreterTextOutput copyWith({CodeInterpreterTextOutputType? type, String? logs, }) { return CodeInterpreterTextOutput(
+  type: type ?? this.type,
+  logs: logs ?? this.logs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CodeInterpreterTextOutput &&
+          type == other.type &&
+          logs == other.logs; } 
+@override int get hashCode { return Object.hash(type, logs); } 
+@override String toString() { return 'CodeInterpreterTextOutput(type: $type, logs: $logs)'; } 
+ }

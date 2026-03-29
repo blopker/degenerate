@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Type discriminator that is always `file`.
+final class FileAnnotationSourceType {const FileAnnotationSourceType._(this.value);
+
+factory FileAnnotationSourceType.fromJson(String json) { return switch (json) {
+  'file' => file,
+  _ => FileAnnotationSourceType._(json),
+}; }
+
+static const FileAnnotationSourceType file = FileAnnotationSourceType._('file');
+
+static const List<FileAnnotationSourceType> values = [file];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FileAnnotationSourceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FileAnnotationSourceType($value)'; } 
+ }
+/// Attachment source referenced by an annotation.
+final class FileAnnotationSource {const FileAnnotationSource({this.type = FileAnnotationSourceType.file, required this.filename, });
+
+factory FileAnnotationSource.fromJson(Map<String, dynamic> json) { return FileAnnotationSource(
+  type: FileAnnotationSourceType.fromJson(json['type'] as String),
+  filename: json['filename'] as String,
+); }
+
+/// Type discriminator that is always `file`.
+final FileAnnotationSourceType type;
+
+/// Filename referenced by the annotation.
+final String filename;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'filename': filename,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('filename') && json['filename'] is String; } 
+FileAnnotationSource copyWith({FileAnnotationSourceType? type, String? filename, }) { return FileAnnotationSource(
+  type: type ?? this.type,
+  filename: filename ?? this.filename,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is FileAnnotationSource &&
+          type == other.type &&
+          filename == other.filename; } 
+@override int get hashCode { return Object.hash(type, filename); } 
+@override String toString() { return 'FileAnnotationSource(type: $type, filename: $filename)'; } 
+ }

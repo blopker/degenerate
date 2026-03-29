@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentPagesCheckoutSessionPhoneNumberCollection {const PaymentPagesCheckoutSessionPhoneNumberCollection({required this.enabled});
+
+factory PaymentPagesCheckoutSessionPhoneNumberCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionPhoneNumberCollection(
+  enabled: json['enabled'] as bool,
+); }
+
+/// Indicates whether phone number collection is enabled for the session
+final bool enabled;
+
+Map<String, dynamic> toJson() { return {
+  'enabled': enabled,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
+PaymentPagesCheckoutSessionPhoneNumberCollection copyWith({bool? enabled}) { return PaymentPagesCheckoutSessionPhoneNumberCollection(
+  enabled: enabled ?? this.enabled,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentPagesCheckoutSessionPhoneNumberCollection &&
+          enabled == other.enabled; } 
+@override int get hashCode { return enabled.hashCode; } 
+@override String toString() { return 'PaymentPagesCheckoutSessionPhoneNumberCollection(enabled: $enabled)'; } 
+ }

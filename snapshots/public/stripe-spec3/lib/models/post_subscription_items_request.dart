@@ -1,0 +1,172 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param5.dart';import 'post_subscription_items_request_billing_thresholds.dart';import 'post_subscription_items_request_discounts.dart';import 'post_subscription_items_request_discounts_variant1.dart';import 'post_subscription_items_request_price_data.dart';import 'post_subscription_items_request_tax_rates.dart';/// Use `allow_incomplete` to transition the subscription to `status=past_due` if a payment is required but cannot be paid. This allows you to manage scenarios where additional user actions are needed to pay a subscription's invoice. For example, SCA regulation may require 3DS authentication to complete payment. See the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication) for Billing to learn more. This is the default behavior.
+/// 
+/// Use `default_incomplete` to transition the subscription to `status=past_due` when payment is required and await explicit confirmation of the invoice's payment intent. This allows simpler management of scenarios where additional user actions are needed to pay a subscription’s invoice. Such as failed payments, [SCA regulation](https://docs.stripe.com/billing/migration/strong-customer-authentication), or collecting a mandate for a bank debit payment method.
+/// 
+/// Use `pending_if_incomplete` to update the subscription using [pending updates](https://docs.stripe.com/billing/subscriptions/pending-updates). When you use `pending_if_incomplete` you can only pass the parameters [supported by pending updates](https://docs.stripe.com/billing/pending-updates-reference#supported-attributes).
+/// 
+/// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's invoice cannot be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further user action is needed, this parameter does not update the subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/changelog/2019-03-14) to learn more.
+final class PostSubscriptionItemsRequestPaymentBehavior {const PostSubscriptionItemsRequestPaymentBehavior._(this.value);
+
+factory PostSubscriptionItemsRequestPaymentBehavior.fromJson(String json) { return switch (json) {
+  'allow_incomplete' => allowIncomplete,
+  'default_incomplete' => defaultIncomplete,
+  'error_if_incomplete' => errorIfIncomplete,
+  'pending_if_incomplete' => pendingIfIncomplete,
+  _ => PostSubscriptionItemsRequestPaymentBehavior._(json),
+}; }
+
+static const PostSubscriptionItemsRequestPaymentBehavior allowIncomplete = PostSubscriptionItemsRequestPaymentBehavior._('allow_incomplete');
+
+static const PostSubscriptionItemsRequestPaymentBehavior defaultIncomplete = PostSubscriptionItemsRequestPaymentBehavior._('default_incomplete');
+
+static const PostSubscriptionItemsRequestPaymentBehavior errorIfIncomplete = PostSubscriptionItemsRequestPaymentBehavior._('error_if_incomplete');
+
+static const PostSubscriptionItemsRequestPaymentBehavior pendingIfIncomplete = PostSubscriptionItemsRequestPaymentBehavior._('pending_if_incomplete');
+
+static const List<PostSubscriptionItemsRequestPaymentBehavior> values = [allowIncomplete, defaultIncomplete, errorIfIncomplete, pendingIfIncomplete];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionItemsRequestPaymentBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionItemsRequestPaymentBehavior($value)'; } 
+ }
+/// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) when the billing cycle changes (e.g., when switching plans, resetting `billing_cycle_anchor=now`, or starting a trial), or if an item's `quantity` changes. The default value is `create_prorations`.
+final class PostSubscriptionItemsRequestProrationBehavior {const PostSubscriptionItemsRequestProrationBehavior._(this.value);
+
+factory PostSubscriptionItemsRequestProrationBehavior.fromJson(String json) { return switch (json) {
+  'always_invoice' => alwaysInvoice,
+  'create_prorations' => createProrations,
+  'none' => none,
+  _ => PostSubscriptionItemsRequestProrationBehavior._(json),
+}; }
+
+static const PostSubscriptionItemsRequestProrationBehavior alwaysInvoice = PostSubscriptionItemsRequestProrationBehavior._('always_invoice');
+
+static const PostSubscriptionItemsRequestProrationBehavior createProrations = PostSubscriptionItemsRequestProrationBehavior._('create_prorations');
+
+static const PostSubscriptionItemsRequestProrationBehavior none = PostSubscriptionItemsRequestProrationBehavior._('none');
+
+static const List<PostSubscriptionItemsRequestProrationBehavior> values = [alwaysInvoice, createProrations, none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSubscriptionItemsRequestProrationBehavior && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSubscriptionItemsRequestProrationBehavior($value)'; } 
+ }
+final class PostSubscriptionItemsRequest {const PostSubscriptionItemsRequest({this.billingThresholds, this.discounts, this.expand, this.metadata, this.paymentBehavior, this.price, this.priceData, this.prorationBehavior, this.prorationDate, this.quantity, required this.subscription, this.taxRates, });
+
+factory PostSubscriptionItemsRequest.fromJson(Map<String, dynamic> json) { return PostSubscriptionItemsRequest(
+  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => ItemBillingThresholdsParam5.fromJson(v as Map<String, dynamic>), fromB: (v) => PostSubscriptionItemsRequestBillingThresholdsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostSubscriptionItemsRequestDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostSubscriptionItemsRequestDiscountsVariant2.fromJson(v as String),) : null,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  paymentBehavior: json['payment_behavior'] != null ? PostSubscriptionItemsRequestPaymentBehavior.fromJson(json['payment_behavior'] as String) : null,
+  price: json['price'] as String?,
+  priceData: json['price_data'] != null ? PostSubscriptionItemsRequestPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
+  prorationBehavior: json['proration_behavior'] != null ? PostSubscriptionItemsRequestProrationBehavior.fromJson(json['proration_behavior'] as String) : null,
+  prorationDate: json['proration_date'] != null ? (json['proration_date'] as num).toInt() : null,
+  quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
+  subscription: json['subscription'] as String,
+  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostSubscriptionItemsRequestTaxRatesVariant2.fromJson(v as String),) : null,
+); }
+
+/// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period. Pass an empty string to remove previously-defined thresholds.
+final PostSubscriptionItemsRequestBillingThresholds? billingThresholds;
+
+/// The coupons to redeem into discounts for the subscription item.
+final PostSubscriptionItemsRequestDiscounts? discounts;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final Map<String,String>? metadata;
+
+/// Use `allow_incomplete` to transition the subscription to `status=past_due` if a payment is required but cannot be paid. This allows you to manage scenarios where additional user actions are needed to pay a subscription's invoice. For example, SCA regulation may require 3DS authentication to complete payment. See the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication) for Billing to learn more. This is the default behavior.
+/// 
+/// Use `default_incomplete` to transition the subscription to `status=past_due` when payment is required and await explicit confirmation of the invoice's payment intent. This allows simpler management of scenarios where additional user actions are needed to pay a subscription’s invoice. Such as failed payments, [SCA regulation](https://docs.stripe.com/billing/migration/strong-customer-authentication), or collecting a mandate for a bank debit payment method.
+/// 
+/// Use `pending_if_incomplete` to update the subscription using [pending updates](https://docs.stripe.com/billing/subscriptions/pending-updates). When you use `pending_if_incomplete` you can only pass the parameters [supported by pending updates](https://docs.stripe.com/billing/pending-updates-reference#supported-attributes).
+/// 
+/// Use `error_if_incomplete` if you want Stripe to return an HTTP 402 status code if a subscription's invoice cannot be paid. For example, if a payment method requires 3DS authentication due to SCA regulation and further user action is needed, this parameter does not update the subscription and returns an error instead. This was the default behavior for API versions prior to 2019-03-14. See the [changelog](https://docs.stripe.com/changelog/2019-03-14) to learn more.
+final PostSubscriptionItemsRequestPaymentBehavior? paymentBehavior;
+
+/// The ID of the price object.
+final String? price;
+
+/// Data used to generate a new [Price](https://docs.stripe.com/api/prices) object inline.
+final PostSubscriptionItemsRequestPriceData? priceData;
+
+/// Determines how to handle [prorations](https://docs.stripe.com/billing/subscriptions/prorations) when the billing cycle changes (e.g., when switching plans, resetting `billing_cycle_anchor=now`, or starting a trial), or if an item's `quantity` changes. The default value is `create_prorations`.
+final PostSubscriptionItemsRequestProrationBehavior? prorationBehavior;
+
+/// If set, the proration will be calculated as though the subscription was updated at the given time. This can be used to apply the same proration that was previewed with the [upcoming invoice](https://api.stripe.com#retrieve_customer_invoice) endpoint.
+final int? prorationDate;
+
+/// The quantity you'd like to apply to the subscription item you're creating.
+final int? quantity;
+
+/// The identifier of the subscription to modify.
+final String subscription;
+
+/// A list of [Tax Rate](https://docs.stripe.com/api/tax_rates) ids. These Tax Rates will override the [`default_tax_rates`](https://docs.stripe.com/api/subscriptions/create#create_subscription-default_tax_rates) on the Subscription. When updating, pass an empty string to remove previously-defined tax rates.
+final PostSubscriptionItemsRequestTaxRates? taxRates;
+
+Map<String, dynamic> toJson() { return {
+  if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
+  if (discounts != null) 'discounts': discounts?.toJson(),
+  'expand': ?expand,
+  'metadata': ?metadata,
+  if (paymentBehavior != null) 'payment_behavior': paymentBehavior?.toJson(),
+  'price': ?price,
+  if (priceData != null) 'price_data': priceData?.toJson(),
+  if (prorationBehavior != null) 'proration_behavior': prorationBehavior?.toJson(),
+  'proration_date': ?prorationDate,
+  'quantity': ?quantity,
+  'subscription': subscription,
+  if (taxRates != null) 'tax_rates': taxRates?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
+PostSubscriptionItemsRequest copyWith({PostSubscriptionItemsRequestBillingThresholds Function()? billingThresholds, PostSubscriptionItemsRequestDiscounts Function()? discounts, List<String> Function()? expand, Map<String, String> Function()? metadata, PostSubscriptionItemsRequestPaymentBehavior Function()? paymentBehavior, String Function()? price, PostSubscriptionItemsRequestPriceData Function()? priceData, PostSubscriptionItemsRequestProrationBehavior Function()? prorationBehavior, int Function()? prorationDate, int Function()? quantity, String? subscription, PostSubscriptionItemsRequestTaxRates Function()? taxRates, }) { return PostSubscriptionItemsRequest(
+  billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
+  discounts: discounts != null ? discounts() : this.discounts,
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+  paymentBehavior: paymentBehavior != null ? paymentBehavior() : this.paymentBehavior,
+  price: price != null ? price() : this.price,
+  priceData: priceData != null ? priceData() : this.priceData,
+  prorationBehavior: prorationBehavior != null ? prorationBehavior() : this.prorationBehavior,
+  prorationDate: prorationDate != null ? prorationDate() : this.prorationDate,
+  quantity: quantity != null ? quantity() : this.quantity,
+  subscription: subscription ?? this.subscription,
+  taxRates: taxRates != null ? taxRates() : this.taxRates,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionItemsRequest &&
+          billingThresholds == other.billingThresholds &&
+          discounts == other.discounts &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata &&
+          paymentBehavior == other.paymentBehavior &&
+          price == other.price &&
+          priceData == other.priceData &&
+          prorationBehavior == other.prorationBehavior &&
+          prorationDate == other.prorationDate &&
+          quantity == other.quantity &&
+          subscription == other.subscription &&
+          taxRates == other.taxRates; } 
+@override int get hashCode { return Object.hash(billingThresholds, discounts, Object.hashAll(expand ?? const []), metadata, paymentBehavior, price, priceData, prorationBehavior, prorationDate, quantity, subscription, taxRates); } 
+@override String toString() { return 'PostSubscriptionItemsRequest(billingThresholds: $billingThresholds, discounts: $discounts, expand: $expand, metadata: $metadata, paymentBehavior: $paymentBehavior, price: $price, priceData: $priceData, prorationBehavior: $prorationBehavior, prorationDate: $prorationDate, quantity: $quantity, subscription: $subscription, taxRates: $taxRates)'; } 
+ }

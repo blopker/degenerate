@@ -1,0 +1,53 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData {const PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData({this.description, this.images, this.metadata, required this.name, this.taxCode, this.unitLabel, });
+
+factory PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData.fromJson(Map<String, dynamic> json) { return PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData(
+  description: json['description'] as String?,
+  images: (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  name: json['name'] as String,
+  taxCode: json['tax_code'] as String?,
+  unitLabel: json['unit_label'] as String?,
+); }
+
+final String? description;
+
+final List<String>? images;
+
+final Map<String,String>? metadata;
+
+final String name;
+
+final String? taxCode;
+
+final String? unitLabel;
+
+Map<String, dynamic> toJson() { return {
+  'description': ?description,
+  'images': ?images,
+  'metadata': ?metadata,
+  'name': name,
+  'tax_code': ?taxCode,
+  'unit_label': ?unitLabel,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData copyWith({String Function()? description, List<String> Function()? images, Map<String, String> Function()? metadata, String? name, String Function()? taxCode, String Function()? unitLabel, }) { return PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData(
+  description: description != null ? description() : this.description,
+  images: images != null ? images() : this.images,
+  metadata: metadata != null ? metadata() : this.metadata,
+  name: name ?? this.name,
+  taxCode: taxCode != null ? taxCode() : this.taxCode,
+  unitLabel: unitLabel != null ? unitLabel() : this.unitLabel,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData &&
+          description == other.description &&
+          listEquals(images, other.images) &&
+          metadata == other.metadata &&
+          name == other.name &&
+          taxCode == other.taxCode &&
+          unitLabel == other.unitLabel; } 
+@override int get hashCode { return Object.hash(description, Object.hashAll(images ?? const []), metadata, name, taxCode, unitLabel); } 
+@override String toString() { return 'PostInvoicesInvoiceUpdateLinesRequestLinesPriceDataProductData(description: $description, images: $images, metadata: $metadata, name: $name, taxCode: $taxCode, unitLabel: $unitLabel)'; } 
+ }

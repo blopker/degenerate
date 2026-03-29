@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_deployment_rule_app.dart';final class ReposListCustomDeploymentRuleIntegrationsResponse {const ReposListCustomDeploymentRuleIntegrationsResponse({this.totalCount, this.availableCustomDeploymentProtectionRuleIntegrations, });
+
+factory ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(Map<String, dynamic> json) { return ReposListCustomDeploymentRuleIntegrationsResponse(
+  totalCount: json['total_count'] != null ? (json['total_count'] as num).toInt() : null,
+  availableCustomDeploymentProtectionRuleIntegrations: (json['available_custom_deployment_protection_rule_integrations'] as List<dynamic>?)?.map((e) => CustomDeploymentRuleApp.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The total number of custom deployment protection rule integrations available for this environment.
+final int? totalCount;
+
+final List<CustomDeploymentRuleApp>? availableCustomDeploymentProtectionRuleIntegrations;
+
+Map<String, dynamic> toJson() { return {
+  'total_count': ?totalCount,
+  if (availableCustomDeploymentProtectionRuleIntegrations != null) 'available_custom_deployment_protection_rule_integrations': availableCustomDeploymentProtectionRuleIntegrations?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposListCustomDeploymentRuleIntegrationsResponse copyWith({int Function()? totalCount, List<CustomDeploymentRuleApp> Function()? availableCustomDeploymentProtectionRuleIntegrations, }) { return ReposListCustomDeploymentRuleIntegrationsResponse(
+  totalCount: totalCount != null ? totalCount() : this.totalCount,
+  availableCustomDeploymentProtectionRuleIntegrations: availableCustomDeploymentProtectionRuleIntegrations != null ? availableCustomDeploymentProtectionRuleIntegrations() : this.availableCustomDeploymentProtectionRuleIntegrations,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposListCustomDeploymentRuleIntegrationsResponse &&
+          totalCount == other.totalCount &&
+          listEquals(availableCustomDeploymentProtectionRuleIntegrations, other.availableCustomDeploymentProtectionRuleIntegrations); } 
+@override int get hashCode { return Object.hash(totalCount, Object.hashAll(availableCustomDeploymentProtectionRuleIntegrations ?? const [])); } 
+@override String toString() { return 'ReposListCustomDeploymentRuleIntegrationsResponse(totalCount: $totalCount, availableCustomDeploymentProtectionRuleIntegrations: $availableCustomDeploymentProtectionRuleIntegrations)'; } 
+ }

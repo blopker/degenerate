@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 {const RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0({required this.clean, required this.compromised, required this.timestamps, });
+
+factory RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0.fromJson(Map<String, dynamic> json) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
+  clean: (json['CLEAN'] as List<dynamic>).map((e) => e as String).toList(),
+  compromised: (json['COMPROMISED'] as List<dynamic>).map((e) => e as String).toList(),
+  timestamps: (json['timestamps'] as List<dynamic>).map((e) => DateTime.parse(e as String)).toList(),
+); }
+
+final List<String> clean;
+
+final List<String> compromised;
+
+final List<DateTime> timestamps;
+
+Map<String, dynamic> toJson() { return {
+  'CLEAN': clean,
+  'COMPROMISED': compromised,
+  'timestamps': timestamps.map((e) => e.toIso8601String()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('CLEAN') &&
+      json.containsKey('COMPROMISED') &&
+      json.containsKey('timestamps'); } 
+RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 copyWith({List<String>? clean, List<String>? compromised, List<DateTime>? timestamps, }) { return RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(
+  clean: clean ?? this.clean,
+  compromised: compromised ?? this.compromised,
+  timestamps: timestamps ?? this.timestamps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0 &&
+          listEquals(clean, other.clean) &&
+          listEquals(compromised, other.compromised) &&
+          listEquals(timestamps, other.timestamps); } 
+@override int get hashCode { return Object.hash(Object.hashAll(clean), Object.hashAll(compromised), Object.hashAll(timestamps)); } 
+@override String toString() { return 'RadarGetLeakedCredentialChecksTimeseriesGroupByCompromisedResponseResultSerie0(clean: $clean, compromised: $compromised, timestamps: $timestamps)'; } 
+ }

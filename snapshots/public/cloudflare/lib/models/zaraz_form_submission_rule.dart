@@ -1,0 +1,58 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'zaraz_form_submission_rule_settings.dart';final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
+
+factory ZarazFormSubmissionRuleAction.fromJson(String json) { return switch (json) {
+  'formSubmission' => formSubmission,
+  _ => ZarazFormSubmissionRuleAction._(json),
+}; }
+
+static const ZarazFormSubmissionRuleAction formSubmission = ZarazFormSubmissionRuleAction._('formSubmission');
+
+static const List<ZarazFormSubmissionRuleAction> values = [formSubmission];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZarazFormSubmissionRuleAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZarazFormSubmissionRuleAction($value)'; } 
+ }
+final class ZarazFormSubmissionRule {const ZarazFormSubmissionRule({required this.action, required this.id, required this.settings, });
+
+factory ZarazFormSubmissionRule.fromJson(Map<String, dynamic> json) { return ZarazFormSubmissionRule(
+  action: ZarazFormSubmissionRuleAction.fromJson(json['action'] as String),
+  id: json['id'] as String,
+  settings: ZarazFormSubmissionRuleSettings.fromJson(json['settings'] as Map<String, dynamic>),
+); }
+
+final ZarazFormSubmissionRuleAction action;
+
+final String id;
+
+final ZarazFormSubmissionRuleSettings settings;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  'id': id,
+  'settings': settings.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('settings'); } 
+ZarazFormSubmissionRule copyWith({ZarazFormSubmissionRuleAction? action, String? id, ZarazFormSubmissionRuleSettings? settings, }) { return ZarazFormSubmissionRule(
+  action: action ?? this.action,
+  id: id ?? this.id,
+  settings: settings ?? this.settings,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZarazFormSubmissionRule &&
+          action == other.action &&
+          id == other.id &&
+          settings == other.settings; } 
+@override int get hashCode { return Object.hash(action, id, settings); } 
+@override String toString() { return 'ZarazFormSubmissionRule(action: $action, id: $id, settings: $settings)'; } 
+ }

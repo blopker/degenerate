@@ -1,0 +1,76 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/radar_get_tld_details_format.dart';import '../models/radar_get_tld_details_response.dart';import '../models/radar_get_tld_details_response404.dart';import '../models/radar_get_tlds_format.dart';import '../models/radar_get_tlds_response.dart';import '../models/radar_get_tlds_response400.dart';import '../models/radar_get_tlds_tld_type.dart';/// RadarTopLevelDomainsApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class RadarTopLevelDomainsApi with ApiExecutor {const RadarTopLevelDomainsApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// List TLDs
+///
+/// Retrieves a list of TLDs.
+///
+/// `GET /radar/tlds`
+Future<ApiResult<RadarGetTldsResponse, RadarGetTldsResponse400>> radarGetTlds({int? limit, int? offset, String? tldManager, RadarGetTldsTldType? tldType, String? tld, RadarGetTldsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (limit != null) queryParameters['limit'] = limit.toString();
+if (offset != null) queryParameters['offset'] = offset.toString();
+if (tldManager != null) queryParameters['tldManager'] = tldManager;
+if (tldType != null) queryParameters['tldType'] = tldType.toJson();
+if (tld != null) queryParameters['tld'] = tld;
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/tlds',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetTldsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetTldsResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get TLD details
+///
+/// Retrieves the requested TLD information.
+///
+/// `GET /radar/tlds/{tld}`
+Future<ApiResult<RadarGetTldDetailsResponse, RadarGetTldDetailsResponse404>> radarGetTldDetails({required String tld, RadarGetTldDetailsFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (format != null) queryParameters['format'] = format.toJson();
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/radar/tlds/${Uri.encodeComponent(tld)}',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return RadarGetTldDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return RadarGetTldDetailsResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

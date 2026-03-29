@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
+/// typically a partner-hosted zone or a CNAME setup.
+/// 
+final class ZonesType {const ZonesType._(this.value);
+
+factory ZonesType.fromJson(String json) { return switch (json) {
+  'full' => full,
+  'partial' => partial,
+  'secondary' => secondary,
+  'internal' => internal,
+  _ => ZonesType._(json),
+}; }
+
+static const ZonesType full = ZonesType._('full');
+
+static const ZonesType partial = ZonesType._('partial');
+
+static const ZonesType secondary = ZonesType._('secondary');
+
+static const ZonesType internal = ZonesType._('internal');
+
+static const List<ZonesType> values = [full, partial, secondary, internal];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ZonesType($value)'; } 
+ }

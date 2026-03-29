@@ -1,0 +1,241 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'charge.dart';import 'dispute_charge.dart';import 'dispute_evidence.dart';import 'dispute_evidence_details.dart';import 'dispute_payment_intent.dart';import 'dispute_payment_method_details.dart';import 'payment_intent.dart';final class DisputeEnhancedEligibilityTypes {const DisputeEnhancedEligibilityTypes._(this.value);
+
+factory DisputeEnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
+  'visa_compelling_evidence_3' => visaCompellingEvidence3,
+  'visa_compliance' => visaCompliance,
+  _ => DisputeEnhancedEligibilityTypes._(json),
+}; }
+
+static const DisputeEnhancedEligibilityTypes visaCompellingEvidence3 = DisputeEnhancedEligibilityTypes._('visa_compelling_evidence_3');
+
+static const DisputeEnhancedEligibilityTypes visaCompliance = DisputeEnhancedEligibilityTypes._('visa_compliance');
+
+static const List<DisputeEnhancedEligibilityTypes> values = [visaCompellingEvidence3, visaCompliance];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DisputeEnhancedEligibilityTypes && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DisputeEnhancedEligibilityTypes($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class DisputeObject {const DisputeObject._(this.value);
+
+factory DisputeObject.fromJson(String json) { return switch (json) {
+  'dispute' => dispute,
+  _ => DisputeObject._(json),
+}; }
+
+static const DisputeObject dispute = DisputeObject._('dispute');
+
+static const List<DisputeObject> values = [dispute];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DisputeObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DisputeObject($value)'; } 
+ }
+/// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
+final class DisputeStatus {const DisputeStatus._(this.value);
+
+factory DisputeStatus.fromJson(String json) { return switch (json) {
+  'lost' => lost,
+  'needs_response' => needsResponse,
+  'prevented' => prevented,
+  'under_review' => underReview,
+  'warning_closed' => warningClosed,
+  'warning_needs_response' => warningNeedsResponse,
+  'warning_under_review' => warningUnderReview,
+  'won' => won,
+  _ => DisputeStatus._(json),
+}; }
+
+static const DisputeStatus lost = DisputeStatus._('lost');
+
+static const DisputeStatus needsResponse = DisputeStatus._('needs_response');
+
+static const DisputeStatus prevented = DisputeStatus._('prevented');
+
+static const DisputeStatus underReview = DisputeStatus._('under_review');
+
+static const DisputeStatus warningClosed = DisputeStatus._('warning_closed');
+
+static const DisputeStatus warningNeedsResponse = DisputeStatus._('warning_needs_response');
+
+static const DisputeStatus warningUnderReview = DisputeStatus._('warning_under_review');
+
+static const DisputeStatus won = DisputeStatus._('won');
+
+static const List<DisputeStatus> values = [lost, needsResponse, prevented, underReview, warningClosed, warningNeedsResponse, warningUnderReview, won];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DisputeStatus && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DisputeStatus($value)'; } 
+ }
+/// A dispute occurs when a customer questions your charge with their card issuer.
+/// When this happens, you have the opportunity to respond to the dispute with
+/// evidence that shows that the charge is legitimate.
+/// 
+/// Related guide: [Disputes and fraud](https://docs.stripe.com/disputes)
+final class Dispute {const Dispute({required this.amount, required this.balanceTransactions, required this.charge, required this.created, required this.currency, required this.enhancedEligibilityTypes, required this.evidence, required this.evidenceDetails, required this.id, required this.isChargeRefundable, required this.livemode, required this.metadata, required this.object, this.paymentIntent, this.paymentMethodDetails, required this.reason, required this.status, });
+
+factory Dispute.fromJson(Map<String, dynamic> json) { return Dispute(
+  amount: (json['amount'] as num).toInt(),
+  balanceTransactions: (json['balance_transactions'] as List<dynamic>).map((e) => BalanceTransaction.fromJson(e as Map<String, dynamic>)).toList(),
+  charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
+  created: (json['created'] as num).toInt(),
+  currency: json['currency'] as String,
+  enhancedEligibilityTypes: (json['enhanced_eligibility_types'] as List<dynamic>).map((e) => DisputeEnhancedEligibilityTypes.fromJson(e as String)).toList(),
+  evidence: DisputeEvidence.fromJson(json['evidence'] as Map<String, dynamic>),
+  evidenceDetails: DisputeEvidenceDetails.fromJson(json['evidence_details'] as Map<String, dynamic>),
+  id: json['id'] as String,
+  isChargeRefundable: json['is_charge_refundable'] as bool,
+  livemode: json['livemode'] as bool,
+  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  object: DisputeObject.fromJson(json['object'] as String),
+  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? DisputePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  reason: json['reason'] as String,
+  status: DisputeStatus.fromJson(json['status'] as String),
+); }
+
+/// Disputed amount. Usually the amount of the charge, but it can differ (usually because of currency fluctuation or because only part of the order is disputed).
+final int amount;
+
+/// List of zero, one, or two balance transactions that show funds withdrawn and reinstated to your Stripe account as a result of this dispute.
+final List<BalanceTransaction> balanceTransactions;
+
+/// ID of the charge that's disputed.
+final DisputeCharge charge;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// List of eligibility types that are included in `enhanced_evidence`.
+final List<DisputeEnhancedEligibilityTypes> enhancedEligibilityTypes;
+
+final DisputeEvidence evidence;
+
+final DisputeEvidenceDetails evidenceDetails;
+
+/// Unique identifier for the object.
+final String id;
+
+/// If true, it's still possible to refund the disputed payment. After the payment has been fully refunded, no further funds are withdrawn from your Stripe account as a result of this dispute.
+final bool isChargeRefundable;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String> metadata;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final DisputeObject object;
+
+/// ID of the PaymentIntent that's disputed.
+final DisputePaymentIntent? paymentIntent;
+
+final DisputePaymentMethodDetails? paymentMethodDetails;
+
+/// Reason given by cardholder for dispute. Possible values are `bank_cannot_process`, `check_returned`, `credit_not_processed`, `customer_initiated`, `debit_not_authorized`, `duplicate`, `fraudulent`, `general`, `incorrect_account_details`, `insufficient_funds`, `noncompliant`, `product_not_received`, `product_unacceptable`, `subscription_canceled`, or `unrecognized`. Learn more about [dispute reasons](https://docs.stripe.com/disputes/categories).
+final String reason;
+
+/// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
+final DisputeStatus status;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'balance_transactions': balanceTransactions.map((e) => e.toJson()).toList(),
+  'charge': charge.toJson(),
+  'created': created,
+  'currency': currency,
+  'enhanced_eligibility_types': enhancedEligibilityTypes.map((e) => e.toJson()).toList(),
+  'evidence': evidence.toJson(),
+  'evidence_details': evidenceDetails.toJson(),
+  'id': id,
+  'is_charge_refundable': isChargeRefundable,
+  'livemode': livemode,
+  'metadata': metadata,
+  'object': object.toJson(),
+  if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
+  if (paymentMethodDetails != null) 'payment_method_details': paymentMethodDetails?.toJson(),
+  'reason': reason,
+  'status': status.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('balance_transactions') &&
+      json.containsKey('charge') &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('enhanced_eligibility_types') &&
+      json.containsKey('evidence') &&
+      json.containsKey('evidence_details') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('is_charge_refundable') && json['is_charge_refundable'] is bool &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('metadata') &&
+      json.containsKey('object') &&
+      json.containsKey('reason') && json['reason'] is String &&
+      json.containsKey('status'); } 
+Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, DisputeCharge? charge, int? created, String? currency, List<DisputeEnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, DisputePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
+  amount: amount ?? this.amount,
+  balanceTransactions: balanceTransactions ?? this.balanceTransactions,
+  charge: charge ?? this.charge,
+  created: created ?? this.created,
+  currency: currency ?? this.currency,
+  enhancedEligibilityTypes: enhancedEligibilityTypes ?? this.enhancedEligibilityTypes,
+  evidence: evidence ?? this.evidence,
+  evidenceDetails: evidenceDetails ?? this.evidenceDetails,
+  id: id ?? this.id,
+  isChargeRefundable: isChargeRefundable ?? this.isChargeRefundable,
+  livemode: livemode ?? this.livemode,
+  metadata: metadata ?? this.metadata,
+  object: object ?? this.object,
+  paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
+  paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
+  reason: reason ?? this.reason,
+  status: status ?? this.status,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Dispute &&
+          amount == other.amount &&
+          listEquals(balanceTransactions, other.balanceTransactions) &&
+          charge == other.charge &&
+          created == other.created &&
+          currency == other.currency &&
+          listEquals(enhancedEligibilityTypes, other.enhancedEligibilityTypes) &&
+          evidence == other.evidence &&
+          evidenceDetails == other.evidenceDetails &&
+          id == other.id &&
+          isChargeRefundable == other.isChargeRefundable &&
+          livemode == other.livemode &&
+          metadata == other.metadata &&
+          object == other.object &&
+          paymentIntent == other.paymentIntent &&
+          paymentMethodDetails == other.paymentMethodDetails &&
+          reason == other.reason &&
+          status == other.status; } 
+@override int get hashCode { return Object.hash(amount, Object.hashAll(balanceTransactions), charge, created, currency, Object.hashAll(enhancedEligibilityTypes), evidence, evidenceDetails, id, isChargeRefundable, livemode, metadata, object, paymentIntent, paymentMethodDetails, reason, status); } 
+@override String toString() { return 'Dispute(amount: $amount, balanceTransactions: $balanceTransactions, charge: $charge, created: $created, currency: $currency, enhancedEligibilityTypes: $enhancedEligibilityTypes, evidence: $evidence, evidenceDetails: $evidenceDetails, id: $id, isChargeRefundable: $isChargeRefundable, livemode: $livemode, metadata: $metadata, object: $object, paymentIntent: $paymentIntent, paymentMethodDetails: $paymentMethodDetails, reason: $reason, status: $status)'; } 
+ }

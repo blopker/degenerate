@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'firewall_lockdowns_components_schemas_id.dart';final class ZoneLockdownDeleteAZoneLockdownRuleResponseResult {const ZoneLockdownDeleteAZoneLockdownRuleResponseResult({this.id});
+
+factory ZoneLockdownDeleteAZoneLockdownRuleResponseResult.fromJson(Map<String, dynamic> json) { return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
+  id: json['id'] != null ? FirewallLockdownsComponentsSchemasId.fromJson(json['id'] as String) : null,
+); }
+
+/// The unique identifier of the Zone Lockdown rule.
+final FirewallLockdownsComponentsSchemasId? id;
+
+Map<String, dynamic> toJson() { return {
+  if (id != null) 'id': id?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZoneLockdownDeleteAZoneLockdownRuleResponseResult copyWith({FirewallLockdownsComponentsSchemasId Function()? id}) { return ZoneLockdownDeleteAZoneLockdownRuleResponseResult(
+  id: id != null ? id() : this.id,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZoneLockdownDeleteAZoneLockdownRuleResponseResult &&
+          id == other.id; } 
+@override int get hashCode { return id.hashCode; } 
+@override String toString() { return 'ZoneLockdownDeleteAZoneLockdownRuleResponseResult(id: $id)'; } 
+ }

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'carrier_text_param.dart';final class PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 {const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._(this.value);
+
+factory PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._(json),
+}; }
+
+static const PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 $empty = PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2._('');
+
+static const List<PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2($value)'; } 
+ }
+typedef PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText = OneOf2<CarrierTextParam,PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierTextVariant2>;

@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_payment_links_payment_link_request_optional_items_variant1.dart';final class PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2 {const PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2._(this.value);
+
+factory PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2._(json),
+}; }
+
+static const PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2 $empty = PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2._('');
+
+static const List<PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2($value)'; } 
+ }
+typedef PostPaymentLinksPaymentLinkRequestOptionalItems = OneOf2<List<PostPaymentLinksPaymentLinkRequestOptionalItemsVariant1>,PostPaymentLinksPaymentLinkRequestOptionalItemsVariant2>;

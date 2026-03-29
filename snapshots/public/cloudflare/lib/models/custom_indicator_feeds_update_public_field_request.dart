@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CustomIndicatorFeedsUpdatePublicFieldRequest {const CustomIndicatorFeedsUpdatePublicFieldRequest({this.description, this.isAttributable, this.isDownloadable, this.isPublic, this.name, });
+
+factory CustomIndicatorFeedsUpdatePublicFieldRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
+  description: json['description'] as String?,
+  isAttributable: json['is_attributable'] as bool?,
+  isDownloadable: json['is_downloadable'] as bool?,
+  isPublic: json['is_public'] as bool?,
+  name: json['name'] as String?,
+); }
+
+/// The new description of the feed
+final String? description;
+
+/// The new is_attributable value of the feed
+final bool? isAttributable;
+
+/// The new is_downloadable value of the feed
+final bool? isDownloadable;
+
+/// The new is_public value of the feed
+final bool? isPublic;
+
+/// The new name of the feed
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'description': ?description,
+  'is_attributable': ?isAttributable,
+  'is_downloadable': ?isDownloadable,
+  'is_public': ?isPublic,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CustomIndicatorFeedsUpdatePublicFieldRequest copyWith({String Function()? description, bool Function()? isAttributable, bool Function()? isDownloadable, bool Function()? isPublic, String Function()? name, }) { return CustomIndicatorFeedsUpdatePublicFieldRequest(
+  description: description != null ? description() : this.description,
+  isAttributable: isAttributable != null ? isAttributable() : this.isAttributable,
+  isDownloadable: isDownloadable != null ? isDownloadable() : this.isDownloadable,
+  isPublic: isPublic != null ? isPublic() : this.isPublic,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomIndicatorFeedsUpdatePublicFieldRequest &&
+          description == other.description &&
+          isAttributable == other.isAttributable &&
+          isDownloadable == other.isDownloadable &&
+          isPublic == other.isPublic &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(description, isAttributable, isDownloadable, isPublic, name); } 
+@override String toString() { return 'CustomIndicatorFeedsUpdatePublicFieldRequest(description: $description, isAttributable: $isAttributable, isDownloadable: $isDownloadable, isPublic: $isPublic, name: $name)'; } 
+ }

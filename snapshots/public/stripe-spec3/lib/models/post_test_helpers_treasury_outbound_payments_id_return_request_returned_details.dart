@@ -1,0 +1,72 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(this.value);
+
+factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(String json) { return switch (json) {
+  'account_closed' => accountClosed,
+  'account_frozen' => accountFrozen,
+  'bank_account_restricted' => bankAccountRestricted,
+  'bank_ownership_changed' => bankOwnershipChanged,
+  'declined' => declined,
+  'incorrect_account_holder_name' => incorrectAccountHolderName,
+  'invalid_account_number' => invalidAccountNumber,
+  'invalid_currency' => invalidCurrency,
+  'no_account' => noAccount,
+  'other' => $other,
+  _ => PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._(json),
+}; }
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode accountClosed = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('account_closed');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode accountFrozen = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('account_frozen');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode bankAccountRestricted = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('bank_account_restricted');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode bankOwnershipChanged = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('bank_ownership_changed');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode declined = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('declined');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode incorrectAccountHolderName = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('incorrect_account_holder_name');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode invalidAccountNumber = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('invalid_account_number');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode invalidCurrency = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('invalid_currency');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode noAccount = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('no_account');
+
+static const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode $other = PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode._('other');
+
+static const List<PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode> values = [accountClosed, accountFrozen, bankAccountRestricted, bankOwnershipChanged, declined, incorrectAccountHolderName, invalidAccountNumber, invalidCurrency, noAccount, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode($value)'; } 
+ }
+/// Optional hash to set the return code.
+final class PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails {const PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails({this.code});
+
+factory PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails.fromJson(Map<String, dynamic> json) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
+  code: json['code'] != null ? PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode.fromJson(json['code'] as String) : null,
+); }
+
+final PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode? code;
+
+Map<String, dynamic> toJson() { return {
+  if (code != null) 'code': code?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails copyWith({PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetailsCode Function()? code}) { return PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(
+  code: code != null ? code() : this.code,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails &&
+          code == other.code; } 
+@override int get hashCode { return code.hashCode; } 
+@override String toString() { return 'PostTestHelpersTreasuryOutboundPaymentsIdReturnRequestReturnedDetails(code: $code)'; } 
+ }

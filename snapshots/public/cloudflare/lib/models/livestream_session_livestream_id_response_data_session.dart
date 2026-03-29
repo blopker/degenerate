@@ -1,0 +1,85 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class LivestreamSessionLivestreamIdResponseDataSession {const LivestreamSessionLivestreamIdResponseDataSession({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.startedTime, this.stoppedTime, this.updatedAt, this.viewerSeconds, });
+
+factory LivestreamSessionLivestreamIdResponseDataSession.fromJson(Map<String, dynamic> json) { return LivestreamSessionLivestreamIdResponseDataSession(
+  createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
+  errMessage: json['err_message'] as String?,
+  id: json['id'] as String?,
+  ingestSeconds: json['ingest_seconds'] != null ? (json['ingest_seconds'] as num).toDouble() : null,
+  invokedTime: json['invoked_time'] != null ? DateTime.parse(json['invoked_time'] as String) : null,
+  livestreamId: json['livestream_id'] as String?,
+  startedTime: json['started_time'] != null ? DateTime.parse(json['started_time'] as String) : null,
+  stoppedTime: json['stopped_time'] != null ? DateTime.parse(json['stopped_time'] as String) : null,
+  updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
+  viewerSeconds: json['viewer_seconds'] != null ? (json['viewer_seconds'] as num).toDouble() : null,
+); }
+
+/// Timestamp the object was created at. The time is returned in ISO format.
+final DateTime? createdAt;
+
+final String? errMessage;
+
+/// ID of the session.
+final String? id;
+
+/// The time duration for which the input was given or the meeting was streamed.
+final double? ingestSeconds;
+
+/// Timestamp the object was invoked. The time is returned in ISO format.
+final DateTime? invokedTime;
+
+final String? livestreamId;
+
+/// Timestamp the object was started. The time is returned in ISO format.
+final DateTime? startedTime;
+
+/// Timestamp the object was stopped. The time is returned in ISO format.
+final DateTime? stoppedTime;
+
+/// Timestamp the object was updated at. The time is returned in ISO format.
+final DateTime? updatedAt;
+
+/// The total view time for which the viewers watched the stream.
+final double? viewerSeconds;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toIso8601String(),
+  'err_message': ?errMessage,
+  'id': ?id,
+  'ingest_seconds': ?ingestSeconds,
+  if (invokedTime != null) 'invoked_time': invokedTime?.toIso8601String(),
+  'livestream_id': ?livestreamId,
+  if (startedTime != null) 'started_time': startedTime?.toIso8601String(),
+  if (stoppedTime != null) 'stopped_time': stoppedTime?.toIso8601String(),
+  if (updatedAt != null) 'updated_at': updatedAt?.toIso8601String(),
+  'viewer_seconds': ?viewerSeconds,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+LivestreamSessionLivestreamIdResponseDataSession copyWith({DateTime Function()? createdAt, String Function()? errMessage, String Function()? id, double Function()? ingestSeconds, DateTime Function()? invokedTime, String Function()? livestreamId, DateTime Function()? startedTime, DateTime Function()? stoppedTime, DateTime Function()? updatedAt, double Function()? viewerSeconds, }) { return LivestreamSessionLivestreamIdResponseDataSession(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  errMessage: errMessage != null ? errMessage() : this.errMessage,
+  id: id != null ? id() : this.id,
+  ingestSeconds: ingestSeconds != null ? ingestSeconds() : this.ingestSeconds,
+  invokedTime: invokedTime != null ? invokedTime() : this.invokedTime,
+  livestreamId: livestreamId != null ? livestreamId() : this.livestreamId,
+  startedTime: startedTime != null ? startedTime() : this.startedTime,
+  stoppedTime: stoppedTime != null ? stoppedTime() : this.stoppedTime,
+  updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,
+  viewerSeconds: viewerSeconds != null ? viewerSeconds() : this.viewerSeconds,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is LivestreamSessionLivestreamIdResponseDataSession &&
+          createdAt == other.createdAt &&
+          errMessage == other.errMessage &&
+          id == other.id &&
+          ingestSeconds == other.ingestSeconds &&
+          invokedTime == other.invokedTime &&
+          livestreamId == other.livestreamId &&
+          startedTime == other.startedTime &&
+          stoppedTime == other.stoppedTime &&
+          updatedAt == other.updatedAt &&
+          viewerSeconds == other.viewerSeconds; } 
+@override int get hashCode { return Object.hash(createdAt, errMessage, id, ingestSeconds, invokedTime, livestreamId, startedTime, stoppedTime, updatedAt, viewerSeconds); } 
+@override String toString() { return 'LivestreamSessionLivestreamIdResponseDataSession(createdAt: $createdAt, errMessage: $errMessage, id: $id, ingestSeconds: $ingestSeconds, invokedTime: $invokedTime, livestreamId: $livestreamId, startedTime: $startedTime, stoppedTime: $stoppedTime, updatedAt: $updatedAt, viewerSeconds: $viewerSeconds)'; } 
+ }

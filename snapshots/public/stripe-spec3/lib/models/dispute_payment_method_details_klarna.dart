@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class DisputePaymentMethodDetailsKlarna {const DisputePaymentMethodDetailsKlarna({this.chargebackLossReasonCode, this.reasonCode, });
+
+factory DisputePaymentMethodDetailsKlarna.fromJson(Map<String, dynamic> json) { return DisputePaymentMethodDetailsKlarna(
+  chargebackLossReasonCode: json['chargeback_loss_reason_code'] as String?,
+  reasonCode: json['reason_code'] as String?,
+); }
+
+/// Chargeback loss reason mapped by Stripe from Klarna's chargeback loss reason
+final String? chargebackLossReasonCode;
+
+/// The reason for the dispute as defined by Klarna
+final String? reasonCode;
+
+Map<String, dynamic> toJson() { return {
+  'chargeback_loss_reason_code': ?chargebackLossReasonCode,
+  'reason_code': ?reasonCode,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+DisputePaymentMethodDetailsKlarna copyWith({String Function()? chargebackLossReasonCode, String? Function()? reasonCode, }) { return DisputePaymentMethodDetailsKlarna(
+  chargebackLossReasonCode: chargebackLossReasonCode != null ? chargebackLossReasonCode() : this.chargebackLossReasonCode,
+  reasonCode: reasonCode != null ? reasonCode() : this.reasonCode,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DisputePaymentMethodDetailsKlarna &&
+          chargebackLossReasonCode == other.chargebackLossReasonCode &&
+          reasonCode == other.reasonCode; } 
+@override int get hashCode { return Object.hash(chargebackLossReasonCode, reasonCode); } 
+@override String toString() { return 'DisputePaymentMethodDetailsKlarna(chargebackLossReasonCode: $chargebackLossReasonCode, reasonCode: $reasonCode)'; } 
+ }

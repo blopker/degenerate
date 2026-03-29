@@ -1,0 +1,36 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'urlscanner_get_scan_response2_meta_processors_robots_txt_data_rules.dart';final class UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData {const UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData({this.hash, required this.rules, required this.sitemaps, });
+
+factory UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData.fromJson(Map<String, dynamic> json) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData(
+  hash: json['hash'] as String?,
+  rules: UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules.fromJson(json['rules'] as Map<String, dynamic>),
+  sitemaps: (json['sitemaps'] as List<dynamic>).map((e) => e as String).toList(),
+); }
+
+final String? hash;
+
+final UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules rules;
+
+final List<String> sitemaps;
+
+Map<String, dynamic> toJson() { return {
+  'hash': ?hash,
+  'rules': rules.toJson(),
+  'sitemaps': sitemaps,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('rules') &&
+      json.containsKey('sitemaps'); } 
+UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData copyWith({String Function()? hash, UrlscannerGetScanResponse2MetaProcessorsRobotsTxtDataRules? rules, List<String>? sitemaps, }) { return UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData(
+  hash: hash != null ? hash() : this.hash,
+  rules: rules ?? this.rules,
+  sitemaps: sitemaps ?? this.sitemaps,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData &&
+          hash == other.hash &&
+          rules == other.rules &&
+          listEquals(sitemaps, other.sitemaps); } 
+@override int get hashCode { return Object.hash(hash, rules, Object.hashAll(sitemaps)); } 
+@override String toString() { return 'UrlscannerGetScanResponse2MetaProcessorsRobotsTxtData(hash: $hash, rules: $rules, sitemaps: $sitemaps)'; } 
+ }

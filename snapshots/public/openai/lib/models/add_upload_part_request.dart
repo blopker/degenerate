@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'dart:typed_data';final class AddUploadPartRequest {const AddUploadPartRequest({required this.data});
+
+factory AddUploadPartRequest.fromJson(Map<String, dynamic> json) { return AddUploadPartRequest(
+  data: base64Decode(json['data'] as String),
+); }
+
+/// The chunk of bytes for this Part.
+/// 
+final Uint8List data;
+
+Map<String, dynamic> toJson() { return {
+  'data': base64Encode(data),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'); } 
+AddUploadPartRequest copyWith({Uint8List? data}) { return AddUploadPartRequest(
+  data: data ?? this.data,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AddUploadPartRequest &&
+          data == other.data; } 
+@override int get hashCode { return data.hashCode; } 
+@override String toString() { return 'AddUploadPartRequest(data: $data)'; } 
+ }

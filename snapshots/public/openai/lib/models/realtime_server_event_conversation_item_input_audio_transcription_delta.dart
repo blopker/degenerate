@@ -1,0 +1,85 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'log_prob_properties.dart';/// The event type, must be `conversation.item.input_audio_transcription.delta`.
+final class RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType._(this.value);
+
+factory RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(String json) { return switch (json) {
+  'conversation.item.input_audio_transcription.delta' => conversationItemInputAudioTranscriptionDelta,
+  _ => RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType._(json),
+}; }
+
+static const RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType conversationItemInputAudioTranscriptionDelta = RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType._('conversation.item.input_audio_transcription.delta');
+
+static const List<RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType> values = [conversationItemInputAudioTranscriptionDelta];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType($value)'; } 
+ }
+/// Returned when the text value of an input audio transcription content part is updated with incremental transcription results.
+/// 
+final class RealtimeServerEventConversationItemInputAudioTranscriptionDelta {const RealtimeServerEventConversationItemInputAudioTranscriptionDelta({required this.eventId, required this.type, required this.itemId, this.contentIndex, this.delta, this.logprobs, });
+
+factory RealtimeServerEventConversationItemInputAudioTranscriptionDelta.fromJson(Map<String, dynamic> json) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
+  eventId: json['event_id'] as String,
+  type: RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(json['type'] as String),
+  itemId: json['item_id'] as String,
+  contentIndex: json['content_index'] != null ? (json['content_index'] as num).toInt() : null,
+  delta: json['delta'] as String?,
+  logprobs: (json['logprobs'] as List<dynamic>?)?.map((e) => LogProbProperties.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The unique ID of the server event.
+final String eventId;
+
+/// The event type, must be `conversation.item.input_audio_transcription.delta`.
+final RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType type;
+
+/// The ID of the item containing the audio that is being transcribed.
+final String itemId;
+
+/// The index of the content part in the item's content array.
+final int? contentIndex;
+
+/// The text delta.
+final String? delta;
+
+/// The log probabilities of the transcription. These can be enabled by configurating the session with `"include": ["item.input_audio_transcription.logprobs"]`. Each entry in the array corresponds a log probability of which token would be selected for this chunk of transcription. This can help to identify if it was possible there were multiple valid options for a given chunk of transcription.
+final List<LogProbProperties>? logprobs;
+
+Map<String, dynamic> toJson() { return {
+  'event_id': eventId,
+  'type': type.toJson(),
+  'item_id': itemId,
+  'content_index': ?contentIndex,
+  'delta': ?delta,
+  if (logprobs != null) 'logprobs': logprobs?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_id') && json['event_id'] is String &&
+      json.containsKey('type') &&
+      json.containsKey('item_id') && json['item_id'] is String; } 
+RealtimeServerEventConversationItemInputAudioTranscriptionDelta copyWith({String? eventId, RealtimeServerEventConversationItemInputAudioTranscriptionDeltaType? type, String? itemId, int Function()? contentIndex, String Function()? delta, List<LogProbProperties>? Function()? logprobs, }) { return RealtimeServerEventConversationItemInputAudioTranscriptionDelta(
+  eventId: eventId ?? this.eventId,
+  type: type ?? this.type,
+  itemId: itemId ?? this.itemId,
+  contentIndex: contentIndex != null ? contentIndex() : this.contentIndex,
+  delta: delta != null ? delta() : this.delta,
+  logprobs: logprobs != null ? logprobs() : this.logprobs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeServerEventConversationItemInputAudioTranscriptionDelta &&
+          eventId == other.eventId &&
+          type == other.type &&
+          itemId == other.itemId &&
+          contentIndex == other.contentIndex &&
+          delta == other.delta &&
+          listEquals(logprobs, other.logprobs); } 
+@override int get hashCode { return Object.hash(eventId, type, itemId, contentIndex, delta, Object.hashAll(logprobs ?? const [])); } 
+@override String toString() { return 'RealtimeServerEventConversationItemInputAudioTranscriptionDelta(eventId: $eventId, type: $type, itemId: $itemId, contentIndex: $contentIndex, delta: $delta, logprobs: $logprobs)'; } 
+ }

@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'workers_ai_post_run_cf_black_forest_labs_flux2_klein9b_request_multipart.dart';final class WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest {const WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest({required this.multipart});
+
+factory WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest.fromJson(Map<String, dynamic> json) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest(
+  multipart: WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart.fromJson(json['multipart'] as Map<String, dynamic>),
+); }
+
+final WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart multipart;
+
+Map<String, dynamic> toJson() { return {
+  'multipart': multipart.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('multipart'); } 
+WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest copyWith({WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequestMultipart? multipart}) { return WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest(
+  multipart: multipart ?? this.multipart,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest &&
+          multipart == other.multipart; } 
+@override int get hashCode { return multipart.hashCode; } 
+@override String toString() { return 'WorkersAiPostRunCfBlackForestLabsFlux2Klein9bRequest(multipart: $multipart)'; } 
+ }

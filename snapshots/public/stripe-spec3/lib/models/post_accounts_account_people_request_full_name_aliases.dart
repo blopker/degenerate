@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostAccountsAccountPeopleRequestFullNameAliasesVariant2 {const PostAccountsAccountPeopleRequestFullNameAliasesVariant2._(this.value);
+
+factory PostAccountsAccountPeopleRequestFullNameAliasesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostAccountsAccountPeopleRequestFullNameAliasesVariant2._(json),
+}; }
+
+static const PostAccountsAccountPeopleRequestFullNameAliasesVariant2 $empty = PostAccountsAccountPeopleRequestFullNameAliasesVariant2._('');
+
+static const List<PostAccountsAccountPeopleRequestFullNameAliasesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsAccountPeopleRequestFullNameAliasesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsAccountPeopleRequestFullNameAliasesVariant2($value)'; } 
+ }
+typedef PostAccountsAccountPeopleRequestFullNameAliases = OneOf2<List<String>,PostAccountsAccountPeopleRequestFullNameAliasesVariant2>;

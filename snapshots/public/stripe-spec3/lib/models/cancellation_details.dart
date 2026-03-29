@@ -1,0 +1,110 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
+final class CancellationDetailsFeedback {const CancellationDetailsFeedback._(this.value);
+
+factory CancellationDetailsFeedback.fromJson(String json) { return switch (json) {
+  'customer_service' => customerService,
+  'low_quality' => lowQuality,
+  'missing_features' => missingFeatures,
+  'other' => $other,
+  'switched_service' => switchedService,
+  'too_complex' => tooComplex,
+  'too_expensive' => tooExpensive,
+  'unused' => unused,
+  _ => CancellationDetailsFeedback._(json),
+}; }
+
+static const CancellationDetailsFeedback customerService = CancellationDetailsFeedback._('customer_service');
+
+static const CancellationDetailsFeedback lowQuality = CancellationDetailsFeedback._('low_quality');
+
+static const CancellationDetailsFeedback missingFeatures = CancellationDetailsFeedback._('missing_features');
+
+static const CancellationDetailsFeedback $other = CancellationDetailsFeedback._('other');
+
+static const CancellationDetailsFeedback switchedService = CancellationDetailsFeedback._('switched_service');
+
+static const CancellationDetailsFeedback tooComplex = CancellationDetailsFeedback._('too_complex');
+
+static const CancellationDetailsFeedback tooExpensive = CancellationDetailsFeedback._('too_expensive');
+
+static const CancellationDetailsFeedback unused = CancellationDetailsFeedback._('unused');
+
+static const List<CancellationDetailsFeedback> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CancellationDetailsFeedback && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CancellationDetailsFeedback($value)'; } 
+ }
+/// Why this subscription was canceled.
+final class CancellationDetailsReason {const CancellationDetailsReason._(this.value);
+
+factory CancellationDetailsReason.fromJson(String json) { return switch (json) {
+  'cancellation_requested' => cancellationRequested,
+  'payment_disputed' => paymentDisputed,
+  'payment_failed' => paymentFailed,
+  _ => CancellationDetailsReason._(json),
+}; }
+
+static const CancellationDetailsReason cancellationRequested = CancellationDetailsReason._('cancellation_requested');
+
+static const CancellationDetailsReason paymentDisputed = CancellationDetailsReason._('payment_disputed');
+
+static const CancellationDetailsReason paymentFailed = CancellationDetailsReason._('payment_failed');
+
+static const List<CancellationDetailsReason> values = [cancellationRequested, paymentDisputed, paymentFailed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CancellationDetailsReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CancellationDetailsReason($value)'; } 
+ }
+/// 
+final class CancellationDetails {const CancellationDetails({this.comment, this.feedback, this.reason, });
+
+factory CancellationDetails.fromJson(Map<String, dynamic> json) { return CancellationDetails(
+  comment: json['comment'] as String?,
+  feedback: json['feedback'] != null ? CancellationDetailsFeedback.fromJson(json['feedback'] as String) : null,
+  reason: json['reason'] != null ? CancellationDetailsReason.fromJson(json['reason'] as String) : null,
+); }
+
+/// Additional comments about why the user canceled the subscription, if the subscription was canceled explicitly by the user.
+final String? comment;
+
+/// The customer submitted reason for why they canceled, if the subscription was canceled explicitly by the user.
+final CancellationDetailsFeedback? feedback;
+
+/// Why this subscription was canceled.
+final CancellationDetailsReason? reason;
+
+Map<String, dynamic> toJson() { return {
+  'comment': ?comment,
+  if (feedback != null) 'feedback': feedback?.toJson(),
+  if (reason != null) 'reason': reason?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFeedback? Function()? feedback, CancellationDetailsReason? Function()? reason, }) { return CancellationDetails(
+  comment: comment != null ? comment() : this.comment,
+  feedback: feedback != null ? feedback() : this.feedback,
+  reason: reason != null ? reason() : this.reason,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CancellationDetails &&
+          comment == other.comment &&
+          feedback == other.feedback &&
+          reason == other.reason; } 
+@override int get hashCode { return Object.hash(comment, feedback, reason); } 
+@override String toString() { return 'CancellationDetails(comment: $comment, feedback: $feedback, reason: $reason)'; } 
+ }

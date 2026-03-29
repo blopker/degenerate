@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsRequestCapabilitiesSofortPayments {const PostAccountsRequestCapabilitiesSofortPayments({this.requested});
+
+factory PostAccountsRequestCapabilitiesSofortPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesSofortPayments(
+  requested: json['requested'] as bool?,
+); }
+
+final bool? requested;
+
+Map<String, dynamic> toJson() { return {
+  'requested': ?requested,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsRequestCapabilitiesSofortPayments copyWith({bool Function()? requested}) { return PostAccountsRequestCapabilitiesSofortPayments(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsRequestCapabilitiesSofortPayments &&
+          requested == other.requested; } 
+@override int get hashCode { return requested.hashCode; } 
+@override String toString() { return 'PostAccountsRequestCapabilitiesSofortPayments(requested: $requested)'; } 
+ }

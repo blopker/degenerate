@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_tokens_request_person_us_cfpb_data_ethnicity_details.dart';import 'post_tokens_request_person_us_cfpb_data_race_details.dart';final class PostTokensRequestPersonUsCfpbData {const PostTokensRequestPersonUsCfpbData({this.ethnicityDetails, this.raceDetails, this.selfIdentifiedGender, });
+
+factory PostTokensRequestPersonUsCfpbData.fromJson(Map<String, dynamic> json) { return PostTokensRequestPersonUsCfpbData(
+  ethnicityDetails: json['ethnicity_details'] != null ? PostTokensRequestPersonUsCfpbDataEthnicityDetails.fromJson(json['ethnicity_details'] as Map<String, dynamic>) : null,
+  raceDetails: json['race_details'] != null ? PostTokensRequestPersonUsCfpbDataRaceDetails.fromJson(json['race_details'] as Map<String, dynamic>) : null,
+  selfIdentifiedGender: json['self_identified_gender'] as String?,
+); }
+
+final PostTokensRequestPersonUsCfpbDataEthnicityDetails? ethnicityDetails;
+
+final PostTokensRequestPersonUsCfpbDataRaceDetails? raceDetails;
+
+final String? selfIdentifiedGender;
+
+Map<String, dynamic> toJson() { return {
+  if (ethnicityDetails != null) 'ethnicity_details': ethnicityDetails?.toJson(),
+  if (raceDetails != null) 'race_details': raceDetails?.toJson(),
+  'self_identified_gender': ?selfIdentifiedGender,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostTokensRequestPersonUsCfpbData copyWith({PostTokensRequestPersonUsCfpbDataEthnicityDetails Function()? ethnicityDetails, PostTokensRequestPersonUsCfpbDataRaceDetails Function()? raceDetails, String Function()? selfIdentifiedGender, }) { return PostTokensRequestPersonUsCfpbData(
+  ethnicityDetails: ethnicityDetails != null ? ethnicityDetails() : this.ethnicityDetails,
+  raceDetails: raceDetails != null ? raceDetails() : this.raceDetails,
+  selfIdentifiedGender: selfIdentifiedGender != null ? selfIdentifiedGender() : this.selfIdentifiedGender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTokensRequestPersonUsCfpbData &&
+          ethnicityDetails == other.ethnicityDetails &&
+          raceDetails == other.raceDetails &&
+          selfIdentifiedGender == other.selfIdentifiedGender; } 
+@override int get hashCode { return Object.hash(ethnicityDetails, raceDetails, selfIdentifiedGender); } 
+@override String toString() { return 'PostTokensRequestPersonUsCfpbData(ethnicityDetails: $ethnicityDetails, raceDetails: $raceDetails, selfIdentifiedGender: $selfIdentifiedGender)'; } 
+ }

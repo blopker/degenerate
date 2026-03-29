@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Mandate collection method
+final class PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod {const PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(this.value);
+
+factory PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
+  'paper' => paper,
+  _ => PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._(json),
+}; }
+
+static const PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod paper = PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod._('paper');
+
+static const List<PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod> values = [paper];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod($value)'; } 
+ }
+/// 
+final class PaymentMethodOptionsUsBankAccountMandateOptions {const PaymentMethodOptionsUsBankAccountMandateOptions({this.collectionMethod});
+
+factory PaymentMethodOptionsUsBankAccountMandateOptions.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsUsBankAccountMandateOptions(
+  collectionMethod: json['collection_method'] != null ? PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod.fromJson(json['collection_method'] as String) : null,
+); }
+
+/// Mandate collection method
+final PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod? collectionMethod;
+
+Map<String, dynamic> toJson() { return {
+  if (collectionMethod != null) 'collection_method': collectionMethod?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodOptionsUsBankAccountMandateOptions copyWith({PaymentMethodOptionsUsBankAccountMandateOptionsCollectionMethod Function()? collectionMethod}) { return PaymentMethodOptionsUsBankAccountMandateOptions(
+  collectionMethod: collectionMethod != null ? collectionMethod() : this.collectionMethod,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodOptionsUsBankAccountMandateOptions &&
+          collectionMethod == other.collectionMethod; } 
+@override int get hashCode { return collectionMethod.hashCode; } 
+@override String toString() { return 'PaymentMethodOptionsUsBankAccountMandateOptions(collectionMethod: $collectionMethod)'; } 
+ }

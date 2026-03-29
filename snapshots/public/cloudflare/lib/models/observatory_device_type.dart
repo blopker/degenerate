@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The type of device.
+final class ObservatoryDeviceType {const ObservatoryDeviceType._(this.value);
+
+factory ObservatoryDeviceType.fromJson(String json) { return switch (json) {
+  'DESKTOP' => desktop,
+  'MOBILE' => mobile,
+  _ => ObservatoryDeviceType._(json),
+}; }
+
+static const ObservatoryDeviceType desktop = ObservatoryDeviceType._('DESKTOP');
+
+static const ObservatoryDeviceType mobile = ObservatoryDeviceType._('MOBILE');
+
+static const List<ObservatoryDeviceType> values = [desktop, mobile];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ObservatoryDeviceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ObservatoryDeviceType($value)'; } 
+ }

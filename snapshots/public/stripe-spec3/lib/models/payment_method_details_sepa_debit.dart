@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// 
+final class PaymentMethodDetailsSepaDebit {const PaymentMethodDetailsSepaDebit({this.bankCode, this.branchCode, this.country, this.expectedDebitDate, this.fingerprint, this.last4, this.mandate, });
+
+factory PaymentMethodDetailsSepaDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsSepaDebit(
+  bankCode: json['bank_code'] as String?,
+  branchCode: json['branch_code'] as String?,
+  country: json['country'] as String?,
+  expectedDebitDate: json['expected_debit_date'] as String?,
+  fingerprint: json['fingerprint'] as String?,
+  last4: json['last4'] as String?,
+  mandate: json['mandate'] as String?,
+); }
+
+/// Bank code of bank associated with the bank account.
+final String? bankCode;
+
+/// Branch code of bank associated with the bank account.
+final String? branchCode;
+
+/// Two-letter ISO code representing the country the bank account is located in.
+final String? country;
+
+/// Estimated date to debit the customer's bank account. A date string in YYYY-MM-DD format.
+final String? expectedDebitDate;
+
+/// Uniquely identifies this particular bank account. You can use this attribute to check whether two bank accounts are the same.
+final String? fingerprint;
+
+/// Last four characters of the IBAN.
+final String? last4;
+
+/// Find the ID of the mandate used for this payment under the [payment_method_details.sepa_debit.mandate](https://docs.stripe.com/api/charges/object#charge_object-payment_method_details-sepa_debit-mandate) property on the Charge. Use this mandate ID to [retrieve the Mandate](https://docs.stripe.com/api/mandates/retrieve).
+final String? mandate;
+
+Map<String, dynamic> toJson() { return {
+  'bank_code': ?bankCode,
+  'branch_code': ?branchCode,
+  'country': ?country,
+  'expected_debit_date': ?expectedDebitDate,
+  'fingerprint': ?fingerprint,
+  'last4': ?last4,
+  'mandate': ?mandate,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentMethodDetailsSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String Function()? expectedDebitDate, String? Function()? fingerprint, String? Function()? last4, String? Function()? mandate, }) { return PaymentMethodDetailsSepaDebit(
+  bankCode: bankCode != null ? bankCode() : this.bankCode,
+  branchCode: branchCode != null ? branchCode() : this.branchCode,
+  country: country != null ? country() : this.country,
+  expectedDebitDate: expectedDebitDate != null ? expectedDebitDate() : this.expectedDebitDate,
+  fingerprint: fingerprint != null ? fingerprint() : this.fingerprint,
+  last4: last4 != null ? last4() : this.last4,
+  mandate: mandate != null ? mandate() : this.mandate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentMethodDetailsSepaDebit &&
+          bankCode == other.bankCode &&
+          branchCode == other.branchCode &&
+          country == other.country &&
+          expectedDebitDate == other.expectedDebitDate &&
+          fingerprint == other.fingerprint &&
+          last4 == other.last4 &&
+          mandate == other.mandate; } 
+@override int get hashCode { return Object.hash(bankCode, branchCode, country, expectedDebitDate, fingerprint, last4, mandate); } 
+@override String toString() { return 'PaymentMethodDetailsSepaDebit(bankCode: $bankCode, branchCode: $branchCode, country: $country, expectedDebitDate: $expectedDebitDate, fingerprint: $fingerprint, last4: $last4, mandate: $mandate)'; } 
+ }

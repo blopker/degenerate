@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specify the target gateway of the hostname.
+final class Web3Target {const Web3Target._(this.value);
+
+factory Web3Target.fromJson(String json) { return switch (json) {
+  'ethereum' => ethereum,
+  'ipfs' => ipfs,
+  'ipfs_universal_path' => ipfsUniversalPath,
+  _ => Web3Target._(json),
+}; }
+
+static const Web3Target ethereum = Web3Target._('ethereum');
+
+static const Web3Target ipfs = Web3Target._('ipfs');
+
+static const Web3Target ipfsUniversalPath = Web3Target._('ipfs_universal_path');
+
+static const List<Web3Target> values = [ethereum, ipfs, ipfsUniversalPath];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is Web3Target && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'Web3Target($value)'; } 
+ }

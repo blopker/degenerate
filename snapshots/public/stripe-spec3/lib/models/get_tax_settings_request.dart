@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetTaxSettingsRequest {const GetTaxSettingsRequest();
+
+factory GetTaxSettingsRequest.fromJson(Map<String, dynamic> json) { return GetTaxSettingsRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetTaxSettingsRequest copyWith() { return GetTaxSettingsRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetTaxSettingsRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetTaxSettingsRequest()'; } 
+ }

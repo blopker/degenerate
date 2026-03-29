@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2 {const PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2._(this.value);
+
+factory PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2._(json),
+}; }
+
+static const PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2 $empty = PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2._('');
+
+static const List<PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2($value)'; } 
+ }
+typedef PostIssuingPersonalizationDesignsRequestCarrierTextFooterBody = OneOf2<String,PostIssuingPersonalizationDesignsRequestCarrierTextFooterBodyVariant2>;

@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final class PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage {const PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage._(this.value);
+
+factory PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage.fromJson(String json) { return switch (json) {
+  'none' => none,
+  _ => PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage._(json),
+}; }
+
+static const PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage none = PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage._('none');
+
+static const List<PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage> values = [none];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage($value)'; } 
+ }
+/// 
+final class PaymentIntentPaymentMethodOptionsSwish {const PaymentIntentPaymentMethodOptionsSwish({this.reference, this.setupFutureUsage, });
+
+factory PaymentIntentPaymentMethodOptionsSwish.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsSwish(
+  reference: json['reference'] as String?,
+  setupFutureUsage: json['setup_future_usage'] != null ? PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
+); }
+
+/// A reference for this payment to be displayed in the Swish app.
+final String? reference;
+
+/// Indicates that you intend to make future payments with this PaymentIntent's payment method.
+/// 
+/// If you provide a Customer with the PaymentIntent, you can use this parameter to [attach the payment method](/payments/save-during-payment) to the Customer after the PaymentIntent is confirmed and the customer completes any required actions. If you don't provide a Customer, you can still [attach](/api/payment_methods/attach) the payment method to a Customer after the transaction completes.
+/// 
+/// If the payment method is `card_present` and isn't a digital wallet, Stripe creates and attaches a [generated_card](/api/charges/object#charge_object-payment_method_details-card_present-generated_card) payment method representing the card to the Customer instead.
+/// 
+/// When processing card payments, Stripe uses `setup_future_usage` to help you comply with regional legislation and network rules, such as [SCA](/strong-customer-authentication).
+final PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage? setupFutureUsage;
+
+Map<String, dynamic> toJson() { return {
+  'reference': ?reference,
+  if (setupFutureUsage != null) 'setup_future_usage': setupFutureUsage?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PaymentIntentPaymentMethodOptionsSwish copyWith({String? Function()? reference, PaymentIntentPaymentMethodOptionsSwishSetupFutureUsage Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsSwish(
+  reference: reference != null ? reference() : this.reference,
+  setupFutureUsage: setupFutureUsage != null ? setupFutureUsage() : this.setupFutureUsage,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PaymentIntentPaymentMethodOptionsSwish &&
+          reference == other.reference &&
+          setupFutureUsage == other.setupFutureUsage; } 
+@override int get hashCode { return Object.hash(reference, setupFutureUsage); } 
+@override String toString() { return 'PaymentIntentPaymentMethodOptionsSwish(reference: $reference, setupFutureUsage: $setupFutureUsage)'; } 
+ }

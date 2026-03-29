@@ -1,0 +1,70 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
+final class RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType._(this.value);
+
+factory RealtimeConversationItemMessageAssistantContentType.fromJson(String json) { return switch (json) {
+  'output_text' => outputText,
+  'output_audio' => outputAudio,
+  _ => RealtimeConversationItemMessageAssistantContentType._(json),
+}; }
+
+static const RealtimeConversationItemMessageAssistantContentType outputText = RealtimeConversationItemMessageAssistantContentType._('output_text');
+
+static const RealtimeConversationItemMessageAssistantContentType outputAudio = RealtimeConversationItemMessageAssistantContentType._('output_audio');
+
+static const List<RealtimeConversationItemMessageAssistantContentType> values = [outputText, outputAudio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RealtimeConversationItemMessageAssistantContentType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RealtimeConversationItemMessageAssistantContentType($value)'; } 
+ }
+final class RealtimeConversationItemMessageAssistantContent {const RealtimeConversationItemMessageAssistantContent({this.type, this.text, this.audio, this.transcript, });
+
+factory RealtimeConversationItemMessageAssistantContent.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessageAssistantContent(
+  type: json['type'] != null ? RealtimeConversationItemMessageAssistantContentType.fromJson(json['type'] as String) : null,
+  text: json['text'] as String?,
+  audio: json['audio'] as String?,
+  transcript: json['transcript'] as String?,
+); }
+
+/// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
+final RealtimeConversationItemMessageAssistantContentType? type;
+
+/// The text content.
+final String? text;
+
+/// Base64-encoded audio bytes, these will be parsed as the format specified in the session output audio type configuration. This defaults to PCM 16-bit 24kHz mono if not specified.
+final String? audio;
+
+/// The transcript of the audio content, this will always be present if the output type is `audio`.
+final String? transcript;
+
+Map<String, dynamic> toJson() { return {
+  if (type != null) 'type': type?.toJson(),
+  'text': ?text,
+  'audio': ?audio,
+  'transcript': ?transcript,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+RealtimeConversationItemMessageAssistantContent copyWith({RealtimeConversationItemMessageAssistantContentType Function()? type, String Function()? text, String Function()? audio, String Function()? transcript, }) { return RealtimeConversationItemMessageAssistantContent(
+  type: type != null ? type() : this.type,
+  text: text != null ? text() : this.text,
+  audio: audio != null ? audio() : this.audio,
+  transcript: transcript != null ? transcript() : this.transcript,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RealtimeConversationItemMessageAssistantContent &&
+          type == other.type &&
+          text == other.text &&
+          audio == other.audio &&
+          transcript == other.transcript; } 
+@override int get hashCode { return Object.hash(type, text, audio, transcript); } 
+@override String toString() { return 'RealtimeConversationItemMessageAssistantContent(type: $type, text: $text, audio: $audio, transcript: $transcript)'; } 
+ }

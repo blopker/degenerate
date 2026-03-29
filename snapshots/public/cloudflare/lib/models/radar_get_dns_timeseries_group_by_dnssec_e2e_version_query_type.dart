@@ -1,0 +1,284 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._(this.value);
+
+factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType.fromJson(String json) { return switch (json) {
+  'A' => a,
+  'AAAA' => aaaa,
+  'A6' => a6,
+  'AFSDB' => afsdb,
+  'ANY' => any,
+  'APL' => apl,
+  'ATMA' => atma,
+  'AXFR' => axfr,
+  'CAA' => caa,
+  'CDNSKEY' => cdnskey,
+  'CDS' => cds,
+  'CERT' => cert,
+  'CNAME' => cname,
+  'CSYNC' => csync,
+  'DHCID' => dhcid,
+  'DLV' => dlv,
+  'DNAME' => dname,
+  'DNSKEY' => dnskey,
+  'DOA' => doa,
+  'DS' => ds,
+  'EID' => eid,
+  'EUI48' => eui48,
+  'EUI64' => eui64,
+  'GPOS' => gpos,
+  'GID' => gid,
+  'HINFO' => hinfo,
+  'HIP' => hip,
+  'HTTPS' => https,
+  'IPSECKEY' => ipseckey,
+  'ISDN' => isdn,
+  'IXFR' => ixfr,
+  'KEY' => key,
+  'KX' => kx,
+  'L32' => l32,
+  'L64' => l64,
+  'LOC' => loc,
+  'LP' => lp,
+  'MAILA' => maila,
+  'MAILB' => mailb,
+  'MB' => mb,
+  'MD' => md,
+  'MF' => mf,
+  'MG' => mg,
+  'MINFO' => minfo,
+  'MR' => mr,
+  'MX' => mx,
+  'NAPTR' => naptr,
+  'NB' => nb,
+  'NBSTAT' => nbstat,
+  'NID' => nid,
+  'NIMLOC' => nimloc,
+  'NINFO' => ninfo,
+  'NS' => ns,
+  'NSAP' => nsap,
+  'NSEC' => nsec,
+  'NSEC3' => nsec3,
+  'NSEC3PARAM' => nsec3Param,
+  'NULL' => $null,
+  'NXT' => nxt,
+  'OPENPGPKEY' => openpgpkey,
+  'OPT' => opt,
+  'PTR' => ptr,
+  'PX' => px,
+  'RKEY' => rkey,
+  'RP' => rp,
+  'RRSIG' => rrsig,
+  'RT' => rt,
+  'SIG' => sig,
+  'SINK' => sink,
+  'SMIMEA' => smimea,
+  'SOA' => soa,
+  'SPF' => spf,
+  'SRV' => srv,
+  'SSHFP' => sshfp,
+  'SVCB' => svcb,
+  'TA' => ta,
+  'TALINK' => talink,
+  'TKEY' => tkey,
+  'TLSA' => tlsa,
+  'TSIG' => tsig,
+  'TXT' => txt,
+  'UINFO' => uinfo,
+  'UID' => uid,
+  'UNSPEC' => unspec,
+  'URI' => uri,
+  'WKS' => wks,
+  'X25' => x25,
+  'ZONEMD' => zonemd,
+  _ => RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._(json),
+}; }
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType a = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('A');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType aaaa = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('AAAA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType a6 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('A6');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType afsdb = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('AFSDB');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType any = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('ANY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType apl = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('APL');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType atma = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('ATMA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType axfr = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('AXFR');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType caa = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('CAA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType cdnskey = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('CDNSKEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType cds = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('CDS');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType cert = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('CERT');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType cname = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('CNAME');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType csync = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('CSYNC');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType dhcid = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('DHCID');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType dlv = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('DLV');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType dname = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('DNAME');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType dnskey = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('DNSKEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType doa = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('DOA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ds = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('DS');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType eid = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('EID');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType eui48 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('EUI48');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType eui64 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('EUI64');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType gpos = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('GPOS');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType gid = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('GID');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType hinfo = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('HINFO');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType hip = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('HIP');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType https = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('HTTPS');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ipseckey = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('IPSECKEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType isdn = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('ISDN');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ixfr = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('IXFR');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType key = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('KEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType kx = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('KX');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType l32 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('L32');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType l64 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('L64');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType loc = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('LOC');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType lp = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('LP');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType maila = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MAILA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType mailb = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MAILB');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType mb = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MB');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType md = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MD');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType mf = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MF');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType mg = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MG');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType minfo = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MINFO');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType mr = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MR');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType mx = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('MX');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType naptr = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NAPTR');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nb = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NB');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nbstat = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NBSTAT');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nid = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NID');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nimloc = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NIMLOC');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ninfo = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NINFO');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ns = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NS');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nsap = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NSAP');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nsec = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NSEC');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nsec3 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NSEC3');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nsec3Param = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NSEC3PARAM');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType $null = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NULL');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType nxt = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('NXT');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType openpgpkey = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('OPENPGPKEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType opt = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('OPT');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ptr = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('PTR');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType px = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('PX');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType rkey = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('RKEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType rp = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('RP');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType rrsig = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('RRSIG');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType rt = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('RT');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType sig = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SIG');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType sink = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SINK');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType smimea = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SMIMEA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType soa = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SOA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType spf = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SPF');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType srv = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SRV');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType sshfp = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SSHFP');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType svcb = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('SVCB');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType ta = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('TA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType talink = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('TALINK');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType tkey = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('TKEY');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType tlsa = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('TLSA');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType tsig = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('TSIG');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType txt = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('TXT');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType uinfo = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('UINFO');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType uid = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('UID');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType unspec = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('UNSPEC');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType uri = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('URI');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType wks = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('WKS');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType x25 = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('X25');
+
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType zonemd = RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType._('ZONEMD');
+
+static const List<RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionQueryType($value)'; } 
+ }

@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'object_meta.dart';import 'persistent_volume_claim_spec.dart';/// PersistentVolumeClaimTemplate is used to produce PersistentVolumeClaim objects as part of an EphemeralVolumeSource.
+final class PersistentVolumeClaimTemplate {const PersistentVolumeClaimTemplate({this.metadata, required this.spec, });
+
+factory PersistentVolumeClaimTemplate.fromJson(Map<String, dynamic> json) { return PersistentVolumeClaimTemplate(
+  metadata: json['metadata'] != null ? ObjectMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+  spec: PersistentVolumeClaimSpec.fromJson(json['spec'] as Map<String, dynamic>),
+); }
+
+/// May contain labels and annotations that will be copied into the PVC when creating it. No other fields are allowed and will be rejected during validation.
+final ObjectMeta? metadata;
+
+/// The specification for the PersistentVolumeClaim. The entire content is copied unchanged into the PVC that gets created from this template. The same fields as in a PersistentVolumeClaim are also valid here.
+final PersistentVolumeClaimSpec spec;
+
+Map<String, dynamic> toJson() { return {
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  'spec': spec.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('spec'); } 
+PersistentVolumeClaimTemplate copyWith({ObjectMeta Function()? metadata, PersistentVolumeClaimSpec? spec, }) { return PersistentVolumeClaimTemplate(
+  metadata: metadata != null ? metadata() : this.metadata,
+  spec: spec ?? this.spec,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PersistentVolumeClaimTemplate &&
+          metadata == other.metadata &&
+          spec == other.spec; } 
+@override int get hashCode { return Object.hash(metadata, spec); } 
+@override String toString() { return 'PersistentVolumeClaimTemplate(metadata: $metadata, spec: $spec)'; } 
+ }

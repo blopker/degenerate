@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class Traffic {const Traffic({required this.timestamp, required this.uniques, required this.count, });
+
+factory Traffic.fromJson(Map<String, dynamic> json) { return Traffic(
+  timestamp: DateTime.parse(json['timestamp'] as String),
+  uniques: (json['uniques'] as num).toInt(),
+  count: (json['count'] as num).toInt(),
+); }
+
+final DateTime timestamp;
+
+final int uniques;
+
+final int count;
+
+Map<String, dynamic> toJson() { return {
+  'timestamp': timestamp.toIso8601String(),
+  'uniques': uniques,
+  'count': count,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('timestamp') && json['timestamp'] is String &&
+      json.containsKey('uniques') && json['uniques'] is num &&
+      json.containsKey('count') && json['count'] is num; } 
+Traffic copyWith({DateTime? timestamp, int? uniques, int? count, }) { return Traffic(
+  timestamp: timestamp ?? this.timestamp,
+  uniques: uniques ?? this.uniques,
+  count: count ?? this.count,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is Traffic &&
+          timestamp == other.timestamp &&
+          uniques == other.uniques &&
+          count == other.count; } 
+@override int get hashCode { return Object.hash(timestamp, uniques, count); } 
+@override String toString() { return 'Traffic(timestamp: $timestamp, uniques: $uniques, count: $count)'; } 
+ }

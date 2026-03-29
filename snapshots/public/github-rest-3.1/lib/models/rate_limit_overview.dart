@@ -1,0 +1,31 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'rate_limit.dart';import 'rate_limit_overview_resources.dart';/// Rate Limit Overview
+final class RateLimitOverview {const RateLimitOverview({required this.resources, required this.rate, });
+
+factory RateLimitOverview.fromJson(Map<String, dynamic> json) { return RateLimitOverview(
+  resources: RateLimitOverviewResources.fromJson(json['resources'] as Map<String, dynamic>),
+  rate: RateLimit.fromJson(json['rate'] as Map<String, dynamic>),
+); }
+
+final RateLimitOverviewResources resources;
+
+final RateLimit rate;
+
+Map<String, dynamic> toJson() { return {
+  'resources': resources.toJson(),
+  'rate': rate.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('resources') &&
+      json.containsKey('rate'); } 
+RateLimitOverview copyWith({RateLimitOverviewResources? resources, RateLimit? rate, }) { return RateLimitOverview(
+  resources: resources ?? this.resources,
+  rate: rate ?? this.rate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RateLimitOverview &&
+          resources == other.resources &&
+          rate == other.rate; } 
+@override int get hashCode { return Object.hash(resources, rate); } 
+@override String toString() { return 'RateLimitOverview(resources: $resources, rate: $rate)'; } 
+ }

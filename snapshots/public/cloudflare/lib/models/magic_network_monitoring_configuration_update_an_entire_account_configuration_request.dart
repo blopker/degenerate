@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'magic_visibility_mnm_mnm_config_default_sampling.dart';import 'magic_visibility_mnm_mnm_config_name.dart';import 'magic_visibility_mnm_mnm_config_router_ip.dart';import 'magic_visibility_mnm_mnm_config_warp_device.dart';final class MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest {const MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest({required this.defaultSampling, required this.name, this.routerIps, this.warpDevices, });
+
+factory MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest.fromJson(Map<String, dynamic> json) { return MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(
+  defaultSampling: MagicVisibilityMnmMnmConfigDefaultSampling.fromJson(json['default_sampling'] as num),
+  name: MagicVisibilityMnmMnmConfigName.fromJson(json['name'] as String),
+  routerIps: (json['router_ips'] as List<dynamic>?)?.map((e) => MagicVisibilityMnmMnmConfigRouterIp.fromJson(e as String)).toList(),
+  warpDevices: (json['warp_devices'] as List<dynamic>?)?.map((e) => MagicVisibilityMnmMnmConfigWarpDevice.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.
+final MagicVisibilityMnmMnmConfigDefaultSampling defaultSampling;
+
+/// The account name.
+final MagicVisibilityMnmMnmConfigName name;
+
+final List<MagicVisibilityMnmMnmConfigRouterIp>? routerIps;
+
+final List<MagicVisibilityMnmMnmConfigWarpDevice>? warpDevices;
+
+Map<String, dynamic> toJson() { return {
+  'default_sampling': defaultSampling.toJson(),
+  'name': name.toJson(),
+  if (routerIps != null) 'router_ips': routerIps?.map((e) => e.toJson()).toList(),
+  if (warpDevices != null) 'warp_devices': warpDevices?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('default_sampling') &&
+      json.containsKey('name'); } 
+MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest copyWith({MagicVisibilityMnmMnmConfigDefaultSampling? defaultSampling, MagicVisibilityMnmMnmConfigName? name, List<MagicVisibilityMnmMnmConfigRouterIp> Function()? routerIps, List<MagicVisibilityMnmMnmConfigWarpDevice> Function()? warpDevices, }) { return MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(
+  defaultSampling: defaultSampling ?? this.defaultSampling,
+  name: name ?? this.name,
+  routerIps: routerIps != null ? routerIps() : this.routerIps,
+  warpDevices: warpDevices != null ? warpDevices() : this.warpDevices,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest &&
+          defaultSampling == other.defaultSampling &&
+          name == other.name &&
+          listEquals(routerIps, other.routerIps) &&
+          listEquals(warpDevices, other.warpDevices); } 
+@override int get hashCode { return Object.hash(defaultSampling, name, Object.hashAll(routerIps ?? const []), Object.hashAll(warpDevices ?? const [])); } 
+@override String toString() { return 'MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationRequest(defaultSampling: $defaultSampling, name: $name, routerIps: $routerIps, warpDevices: $warpDevices)'; } 
+ }

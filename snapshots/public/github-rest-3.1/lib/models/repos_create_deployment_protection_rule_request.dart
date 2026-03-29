@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReposCreateDeploymentProtectionRuleRequest {const ReposCreateDeploymentProtectionRuleRequest({this.integrationId});
+
+factory ReposCreateDeploymentProtectionRuleRequest.fromJson(Map<String, dynamic> json) { return ReposCreateDeploymentProtectionRuleRequest(
+  integrationId: json['integration_id'] != null ? (json['integration_id'] as num).toInt() : null,
+); }
+
+/// The ID of the custom app that will be enabled on the environment.
+final int? integrationId;
+
+Map<String, dynamic> toJson() { return {
+  'integration_id': ?integrationId,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ReposCreateDeploymentProtectionRuleRequest copyWith({int Function()? integrationId}) { return ReposCreateDeploymentProtectionRuleRequest(
+  integrationId: integrationId != null ? integrationId() : this.integrationId,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReposCreateDeploymentProtectionRuleRequest &&
+          integrationId == other.integrationId; } 
+@override int get hashCode { return integrationId.hashCode; } 
+@override String toString() { return 'ReposCreateDeploymentProtectionRuleRequest(integrationId: $integrationId)'; } 
+ }

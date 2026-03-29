@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Delete the specified file.
+final class ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType._(this.value);
+
+factory ApplyPatchDeleteFileOperationType.fromJson(String json) { return switch (json) {
+  'delete_file' => deleteFile,
+  _ => ApplyPatchDeleteFileOperationType._(json),
+}; }
+
+static const ApplyPatchDeleteFileOperationType deleteFile = ApplyPatchDeleteFileOperationType._('delete_file');
+
+static const List<ApplyPatchDeleteFileOperationType> values = [deleteFile];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ApplyPatchDeleteFileOperationType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ApplyPatchDeleteFileOperationType($value)'; } 
+ }
+/// Instruction describing how to delete a file via the apply_patch tool.
+final class ApplyPatchDeleteFileOperation {const ApplyPatchDeleteFileOperation({this.type = ApplyPatchDeleteFileOperationType.deleteFile, required this.path, });
+
+factory ApplyPatchDeleteFileOperation.fromJson(Map<String, dynamic> json) { return ApplyPatchDeleteFileOperation(
+  type: ApplyPatchDeleteFileOperationType.fromJson(json['type'] as String),
+  path: json['path'] as String,
+); }
+
+/// Delete the specified file.
+final ApplyPatchDeleteFileOperationType type;
+
+/// Path of the file to delete.
+final String path;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+  'path': path,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
+      json.containsKey('path') && json['path'] is String; } 
+ApplyPatchDeleteFileOperation copyWith({ApplyPatchDeleteFileOperationType? type, String? path, }) { return ApplyPatchDeleteFileOperation(
+  type: type ?? this.type,
+  path: path ?? this.path,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ApplyPatchDeleteFileOperation &&
+          type == other.type &&
+          path == other.path; } 
+@override int get hashCode { return Object.hash(type, path); } 
+@override String toString() { return 'ApplyPatchDeleteFileOperation(type: $type, path: $path)'; } 
+ }

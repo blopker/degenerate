@@ -1,0 +1,37 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// If `invalidate_immediately` is set to `false`, the previous secret will
+/// remain valid for two hours. Otherwise, the secret is immediately
+/// invalidated, and requests using it will be rejected.
+/// 
+extension type const TurnstileInvalidateImmediately(bool value) {
+factory TurnstileInvalidateImmediately.fromJson(bool json) => TurnstileInvalidateImmediately(json);
+
+bool toJson() => value;
+
+}
+final class AccountsTurnstileWidgetRotateSecretRequest {const AccountsTurnstileWidgetRotateSecretRequest({this.invalidateImmediately});
+
+factory AccountsTurnstileWidgetRotateSecretRequest.fromJson(Map<String, dynamic> json) { return AccountsTurnstileWidgetRotateSecretRequest(
+  invalidateImmediately: json['invalidate_immediately'] != null ? TurnstileInvalidateImmediately.fromJson(json['invalidate_immediately'] as bool) : null,
+); }
+
+/// If `invalidate_immediately` is set to `false`, the previous secret will
+/// remain valid for two hours. Otherwise, the secret is immediately
+/// invalidated, and requests using it will be rejected.
+/// 
+final TurnstileInvalidateImmediately? invalidateImmediately;
+
+Map<String, dynamic> toJson() { return {
+  if (invalidateImmediately != null) 'invalidate_immediately': invalidateImmediately?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AccountsTurnstileWidgetRotateSecretRequest copyWith({TurnstileInvalidateImmediately Function()? invalidateImmediately}) { return AccountsTurnstileWidgetRotateSecretRequest(
+  invalidateImmediately: invalidateImmediately != null ? invalidateImmediately() : this.invalidateImmediately,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AccountsTurnstileWidgetRotateSecretRequest &&
+          invalidateImmediately == other.invalidateImmediately; } 
+@override int get hashCode { return invalidateImmediately.hashCode; } 
+@override String toString() { return 'AccountsTurnstileWidgetRotateSecretRequest(invalidateImmediately: $invalidateImmediately)'; } 
+ }

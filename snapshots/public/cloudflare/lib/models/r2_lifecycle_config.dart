@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'r2_lifecycle_rule.dart';final class R2LifecycleConfig {const R2LifecycleConfig({this.rules});
+
+factory R2LifecycleConfig.fromJson(Map<String, dynamic> json) { return R2LifecycleConfig(
+  rules: (json['rules'] as List<dynamic>?)?.map((e) => R2LifecycleRule.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final List<R2LifecycleRule>? rules;
+
+Map<String, dynamic> toJson() { return {
+  if (rules != null) 'rules': rules?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+R2LifecycleConfig copyWith({List<R2LifecycleRule> Function()? rules}) { return R2LifecycleConfig(
+  rules: rules != null ? rules() : this.rules,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is R2LifecycleConfig &&
+          listEquals(rules, other.rules); } 
+@override int get hashCode { return Object.hashAll(rules ?? const []).hashCode; } 
+@override String toString() { return 'R2LifecycleConfig(rules: $rules)'; } 
+ }

@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetFilesFileRequest {const GetFilesFileRequest();
+
+factory GetFilesFileRequest.fromJson(Map<String, dynamic> json) { return GetFilesFileRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetFilesFileRequest copyWith() { return GetFilesFileRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetFilesFileRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetFilesFileRequest()'; } 
+ }

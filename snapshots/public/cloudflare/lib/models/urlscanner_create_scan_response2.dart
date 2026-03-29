@@ -1,0 +1,94 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'urlscanner_create_scan_response2_options.dart';/// Submitted visibility status.
+final class UrlscannerCreateScanResponse2Visibility {const UrlscannerCreateScanResponse2Visibility._(this.value);
+
+factory UrlscannerCreateScanResponse2Visibility.fromJson(String json) { return switch (json) {
+  'public' => public,
+  'unlisted' => unlisted,
+  _ => UrlscannerCreateScanResponse2Visibility._(json),
+}; }
+
+static const UrlscannerCreateScanResponse2Visibility public = UrlscannerCreateScanResponse2Visibility._('public');
+
+static const UrlscannerCreateScanResponse2Visibility unlisted = UrlscannerCreateScanResponse2Visibility._('unlisted');
+
+static const List<UrlscannerCreateScanResponse2Visibility> values = [public, unlisted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is UrlscannerCreateScanResponse2Visibility && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'UrlscannerCreateScanResponse2Visibility($value)'; } 
+ }
+final class UrlscannerCreateScanResponse2 {const UrlscannerCreateScanResponse2({required this.api, required this.message, this.options, required this.result, required this.url, required this.uuid, required this.visibility, });
+
+factory UrlscannerCreateScanResponse2.fromJson(Map<String, dynamic> json) { return UrlscannerCreateScanResponse2(
+  api: json['api'] as String,
+  message: json['message'] as String,
+  options: json['options'] != null ? UrlscannerCreateScanResponse2Options.fromJson(json['options'] as Map<String, dynamic>) : null,
+  result: json['result'] as String,
+  url: json['url'] as String,
+  uuid: json['uuid'] as String,
+  visibility: UrlscannerCreateScanResponse2Visibility.fromJson(json['visibility'] as String),
+); }
+
+/// URL to api report.
+final String api;
+
+final String message;
+
+final UrlscannerCreateScanResponse2Options? options;
+
+/// Public URL to report.
+final String result;
+
+/// Canonical form of submitted URL. Use this if you want to later search by URL.
+final String url;
+
+/// Scan ID.
+final String uuid;
+
+/// Submitted visibility status.
+final UrlscannerCreateScanResponse2Visibility visibility;
+
+Map<String, dynamic> toJson() { return {
+  'api': api,
+  'message': message,
+  if (options != null) 'options': options?.toJson(),
+  'result': result,
+  'url': url,
+  'uuid': uuid,
+  'visibility': visibility.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('api') && json['api'] is String &&
+      json.containsKey('message') && json['message'] is String &&
+      json.containsKey('result') && json['result'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('uuid') && json['uuid'] is String &&
+      json.containsKey('visibility'); } 
+UrlscannerCreateScanResponse2 copyWith({String? api, String? message, UrlscannerCreateScanResponse2Options Function()? options, String? result, String? url, String? uuid, UrlscannerCreateScanResponse2Visibility? visibility, }) { return UrlscannerCreateScanResponse2(
+  api: api ?? this.api,
+  message: message ?? this.message,
+  options: options != null ? options() : this.options,
+  result: result ?? this.result,
+  url: url ?? this.url,
+  uuid: uuid ?? this.uuid,
+  visibility: visibility ?? this.visibility,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is UrlscannerCreateScanResponse2 &&
+          api == other.api &&
+          message == other.message &&
+          options == other.options &&
+          result == other.result &&
+          url == other.url &&
+          uuid == other.uuid &&
+          visibility == other.visibility; } 
+@override int get hashCode { return Object.hash(api, message, options, result, url, uuid, visibility); } 
+@override String toString() { return 'UrlscannerCreateScanResponse2(api: $api, message: $message, options: $options, result: $result, url: $url, uuid: $uuid, visibility: $visibility)'; } 
+ }

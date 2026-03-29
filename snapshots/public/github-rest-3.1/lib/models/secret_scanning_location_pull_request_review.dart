@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Represents a 'pull_request_review' secret scanning location type. This location type shows that a secret was detected in a review on a pull request.
+final class SecretScanningLocationPullRequestReview {const SecretScanningLocationPullRequestReview({required this.pullRequestReviewUrl});
+
+factory SecretScanningLocationPullRequestReview.fromJson(Map<String, dynamic> json) { return SecretScanningLocationPullRequestReview(
+  pullRequestReviewUrl: Uri.parse(json['pull_request_review_url'] as String),
+); }
+
+/// The API URL to get the pull request review where the secret was detected.
+final Uri pullRequestReviewUrl;
+
+Map<String, dynamic> toJson() { return {
+  'pull_request_review_url': pullRequestReviewUrl.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('pull_request_review_url') && json['pull_request_review_url'] is String; } 
+SecretScanningLocationPullRequestReview copyWith({Uri? pullRequestReviewUrl}) { return SecretScanningLocationPullRequestReview(
+  pullRequestReviewUrl: pullRequestReviewUrl ?? this.pullRequestReviewUrl,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SecretScanningLocationPullRequestReview &&
+          pullRequestReviewUrl == other.pullRequestReviewUrl; } 
+@override int get hashCode { return pullRequestReviewUrl.hashCode; } 
+@override String toString() { return 'SecretScanningLocationPullRequestReview(pullRequestReviewUrl: $pullRequestReviewUrl)'; } 
+ }

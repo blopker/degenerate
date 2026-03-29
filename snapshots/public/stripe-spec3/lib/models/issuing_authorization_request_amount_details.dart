@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'issuing_authorization_amount_details.dart';/// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
+final class IssuingAuthorizationRequestAmountDetails {const IssuingAuthorizationRequestAmountDetails({this.issuingAuthorizationAmountDetails});
+
+factory IssuingAuthorizationRequestAmountDetails.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationRequestAmountDetails(
+  issuingAuthorizationAmountDetails: IssuingAuthorizationAmountDetails.canParse(json) ? IssuingAuthorizationAmountDetails.fromJson(json) : null,
+); }
+
+final IssuingAuthorizationAmountDetails? issuingAuthorizationAmountDetails;
+
+/// At least one variant must be present.
+bool get isValid { return issuingAuthorizationAmountDetails != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?issuingAuthorizationAmountDetails?.toJson(),
+}; } 
+ }

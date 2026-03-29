@@ -1,0 +1,59 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_billing_thresholds_param3.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_billing_thresholds.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_discounts.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_discounts_variant1.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_price_data.dart';import 'post_invoices_create_preview_request_schedule_details_phases_items_tax_rates.dart';final class PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems {const PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems({this.billingThresholds, this.discounts, this.metadata, this.price, this.priceData, this.quantity, this.taxRates, });
+
+factory PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems.fromJson(Map<String, dynamic> json) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
+  billingThresholds: json['billing_thresholds'] != null ? OneOf2.parse(json['billing_thresholds'], fromA: (v) => ItemBillingThresholdsParam3.fromJson(v as Map<String, dynamic>), fromB: (v) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholdsVariant2.fromJson(v as String),) : null,
+  discounts: json['discounts'] != null ? OneOf2.parse(json['discounts'], fromA: (v) => (v as List<dynamic>).map((e) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscountsVariant1.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscountsVariant2.fromJson(v as String),) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  price: json['price'] as String?,
+  priceData: json['price_data'] != null ? PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData.fromJson(json['price_data'] as Map<String, dynamic>) : null,
+  quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
+  taxRates: json['tax_rates'] != null ? OneOf2.parse(json['tax_rates'], fromA: (v) => (v as List<dynamic>).map((e) => e as String).toList(), fromB: (v) => PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRatesVariant2.fromJson(v as String),) : null,
+); }
+
+final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds? billingThresholds;
+
+final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts? discounts;
+
+final Map<String,String>? metadata;
+
+final String? price;
+
+final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData? priceData;
+
+final int? quantity;
+
+final PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates? taxRates;
+
+Map<String, dynamic> toJson() { return {
+  if (billingThresholds != null) 'billing_thresholds': billingThresholds?.toJson(),
+  if (discounts != null) 'discounts': discounts?.toJson(),
+  'metadata': ?metadata,
+  'price': ?price,
+  if (priceData != null) 'price_data': priceData?.toJson(),
+  'quantity': ?quantity,
+  if (taxRates != null) 'tax_rates': taxRates?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems copyWith({PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsBillingThresholds Function()? billingThresholds, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsDiscounts Function()? discounts, Map<String, String> Function()? metadata, String Function()? price, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsPriceData Function()? priceData, int Function()? quantity, PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItemsTaxRates Function()? taxRates, }) { return PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(
+  billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
+  discounts: discounts != null ? discounts() : this.discounts,
+  metadata: metadata != null ? metadata() : this.metadata,
+  price: price != null ? price() : this.price,
+  priceData: priceData != null ? priceData() : this.priceData,
+  quantity: quantity != null ? quantity() : this.quantity,
+  taxRates: taxRates != null ? taxRates() : this.taxRates,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems &&
+          billingThresholds == other.billingThresholds &&
+          discounts == other.discounts &&
+          metadata == other.metadata &&
+          price == other.price &&
+          priceData == other.priceData &&
+          quantity == other.quantity &&
+          taxRates == other.taxRates; } 
+@override int get hashCode { return Object.hash(billingThresholds, discounts, metadata, price, priceData, quantity, taxRates); } 
+@override String toString() { return 'PostInvoicesCreatePreviewRequestScheduleDetailsPhasesItems(billingThresholds: $billingThresholds, discounts: $discounts, metadata: $metadata, price: $price, priceData: $priceData, quantity: $quantity, taxRates: $taxRates)'; } 
+ }

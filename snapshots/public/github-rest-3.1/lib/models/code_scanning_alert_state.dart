@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// State of a code scanning alert.
+final class CodeScanningAlertState {const CodeScanningAlertState._(this.value);
+
+factory CodeScanningAlertState.fromJson(String json) { return switch (json) {
+  'open' => open,
+  'dismissed' => dismissed,
+  'fixed' => fixed,
+  'null' => $null,
+  _ => CodeScanningAlertState._(json),
+}; }
+
+static const CodeScanningAlertState open = CodeScanningAlertState._('open');
+
+static const CodeScanningAlertState dismissed = CodeScanningAlertState._('dismissed');
+
+static const CodeScanningAlertState fixed = CodeScanningAlertState._('fixed');
+
+static const CodeScanningAlertState $null = CodeScanningAlertState._('null');
+
+static const List<CodeScanningAlertState> values = [open, dismissed, fixed, $null];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningAlertState && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningAlertState($value)'; } 
+ }

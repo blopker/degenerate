@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetCtTimeseriesGroupNormalization {const RadarGetCtTimeseriesGroupNormalization._(this.value);
+
+factory RadarGetCtTimeseriesGroupNormalization.fromJson(String json) { return switch (json) {
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE' => percentage,
+  _ => RadarGetCtTimeseriesGroupNormalization._(json),
+}; }
+
+static const RadarGetCtTimeseriesGroupNormalization rawValues = RadarGetCtTimeseriesGroupNormalization._('RAW_VALUES');
+
+static const RadarGetCtTimeseriesGroupNormalization percentage = RadarGetCtTimeseriesGroupNormalization._('PERCENTAGE');
+
+static const List<RadarGetCtTimeseriesGroupNormalization> values = [rawValues, percentage];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetCtTimeseriesGroupNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetCtTimeseriesGroupNormalization($value)'; } 
+ }

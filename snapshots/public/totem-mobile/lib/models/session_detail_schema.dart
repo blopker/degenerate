@@ -1,0 +1,156 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'meeting_provider_enum.dart';import 'mobile_space_detail_schema.dart';final class SessionDetailSchema {const SessionDetailSchema({required this.slug, required this.title, required this.space, required this.content, required this.seatsLeft, required this.duration, required this.start, required this.attending, required this.open, required this.started, required this.cancelled, required this.joinable, required this.ended, required this.rsvpUrl, required this.joinUrl, required this.subscribeUrl, required this.calLink, required this.subscribed, required this.userTimezone, required this.meetingProvider, });
+
+factory SessionDetailSchema.fromJson(Map<String, dynamic> json) { return SessionDetailSchema(
+  slug: json['slug'] as String,
+  title: json['title'] as String,
+  space: MobileSpaceDetailSchema.fromJson(json['space'] as Map<String, dynamic>),
+  content: json['content'] as String,
+  seatsLeft: (json['seats_left'] as num).toInt(),
+  duration: (json['duration'] as num).toInt(),
+  start: DateTime.parse(json['start'] as String),
+  attending: json['attending'] as bool,
+  open: json['open'] as bool,
+  started: json['started'] as bool,
+  cancelled: json['cancelled'] as bool,
+  joinable: json['joinable'] as bool,
+  ended: json['ended'] as bool,
+  rsvpUrl: json['rsvp_url'] as String,
+  joinUrl: json['join_url'] as String?,
+  subscribeUrl: json['subscribe_url'] as String,
+  calLink: json['cal_link'] as String,
+  subscribed: json['subscribed'] as bool?,
+  userTimezone: json['user_timezone'] as String?,
+  meetingProvider: MeetingProviderEnum.fromJson(json['meeting_provider'] as String),
+); }
+
+final String slug;
+
+final String title;
+
+final MobileSpaceDetailSchema space;
+
+final String content;
+
+final int seatsLeft;
+
+final int duration;
+
+final DateTime start;
+
+final bool attending;
+
+final bool open;
+
+final bool started;
+
+final bool cancelled;
+
+final bool joinable;
+
+final bool ended;
+
+final String rsvpUrl;
+
+final String? joinUrl;
+
+final String subscribeUrl;
+
+final String calLink;
+
+final bool? subscribed;
+
+final String? userTimezone;
+
+final MeetingProviderEnum meetingProvider;
+
+Map<String, dynamic> toJson() { return {
+  'slug': slug,
+  'title': title,
+  'space': space.toJson(),
+  'content': content,
+  'seats_left': seatsLeft,
+  'duration': duration,
+  'start': start.toIso8601String(),
+  'attending': attending,
+  'open': open,
+  'started': started,
+  'cancelled': cancelled,
+  'joinable': joinable,
+  'ended': ended,
+  'rsvp_url': rsvpUrl,
+  'join_url': ?joinUrl,
+  'subscribe_url': subscribeUrl,
+  'cal_link': calLink,
+  'subscribed': ?subscribed,
+  'user_timezone': ?userTimezone,
+  'meeting_provider': meetingProvider.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('slug') && json['slug'] is String &&
+      json.containsKey('title') && json['title'] is String &&
+      json.containsKey('space') &&
+      json.containsKey('content') && json['content'] is String &&
+      json.containsKey('seats_left') && json['seats_left'] is num &&
+      json.containsKey('duration') && json['duration'] is num &&
+      json.containsKey('start') && json['start'] is String &&
+      json.containsKey('attending') && json['attending'] is bool &&
+      json.containsKey('open') && json['open'] is bool &&
+      json.containsKey('started') && json['started'] is bool &&
+      json.containsKey('cancelled') && json['cancelled'] is bool &&
+      json.containsKey('joinable') && json['joinable'] is bool &&
+      json.containsKey('ended') && json['ended'] is bool &&
+      json.containsKey('rsvp_url') && json['rsvp_url'] is String &&
+      json.containsKey('join_url') && json['join_url'] is String &&
+      json.containsKey('subscribe_url') && json['subscribe_url'] is String &&
+      json.containsKey('cal_link') && json['cal_link'] is String &&
+      json.containsKey('subscribed') && json['subscribed'] is bool &&
+      json.containsKey('user_timezone') && json['user_timezone'] is String &&
+      json.containsKey('meeting_provider'); } 
+SessionDetailSchema copyWith({String? slug, String? title, MobileSpaceDetailSchema? space, String? content, int? seatsLeft, int? duration, DateTime? start, bool? attending, bool? open, bool? started, bool? cancelled, bool? joinable, bool? ended, String? rsvpUrl, String? Function()? joinUrl, String? subscribeUrl, String? calLink, bool? Function()? subscribed, String? Function()? userTimezone, MeetingProviderEnum? meetingProvider, }) { return SessionDetailSchema(
+  slug: slug ?? this.slug,
+  title: title ?? this.title,
+  space: space ?? this.space,
+  content: content ?? this.content,
+  seatsLeft: seatsLeft ?? this.seatsLeft,
+  duration: duration ?? this.duration,
+  start: start ?? this.start,
+  attending: attending ?? this.attending,
+  open: open ?? this.open,
+  started: started ?? this.started,
+  cancelled: cancelled ?? this.cancelled,
+  joinable: joinable ?? this.joinable,
+  ended: ended ?? this.ended,
+  rsvpUrl: rsvpUrl ?? this.rsvpUrl,
+  joinUrl: joinUrl != null ? joinUrl() : this.joinUrl,
+  subscribeUrl: subscribeUrl ?? this.subscribeUrl,
+  calLink: calLink ?? this.calLink,
+  subscribed: subscribed != null ? subscribed() : this.subscribed,
+  userTimezone: userTimezone != null ? userTimezone() : this.userTimezone,
+  meetingProvider: meetingProvider ?? this.meetingProvider,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SessionDetailSchema &&
+          slug == other.slug &&
+          title == other.title &&
+          space == other.space &&
+          content == other.content &&
+          seatsLeft == other.seatsLeft &&
+          duration == other.duration &&
+          start == other.start &&
+          attending == other.attending &&
+          open == other.open &&
+          started == other.started &&
+          cancelled == other.cancelled &&
+          joinable == other.joinable &&
+          ended == other.ended &&
+          rsvpUrl == other.rsvpUrl &&
+          joinUrl == other.joinUrl &&
+          subscribeUrl == other.subscribeUrl &&
+          calLink == other.calLink &&
+          subscribed == other.subscribed &&
+          userTimezone == other.userTimezone &&
+          meetingProvider == other.meetingProvider; } 
+@override int get hashCode { return Object.hash(slug, title, space, content, seatsLeft, duration, start, attending, open, started, cancelled, joinable, ended, rsvpUrl, joinUrl, subscribeUrl, calLink, subscribed, userTimezone, meetingProvider); } 
+@override String toString() { return 'SessionDetailSchema(slug: $slug, title: $title, space: $space, content: $content, seatsLeft: $seatsLeft, duration: $duration, start: $start, attending: $attending, open: $open, started: $started, cancelled: $cancelled, joinable: $joinable, ended: $ended, rsvpUrl: $rsvpUrl, joinUrl: $joinUrl, subscribeUrl: $subscribeUrl, calLink: $calLink, subscribed: $subscribed, userTimezone: $userTimezone, meetingProvider: $meetingProvider)'; } 
+ }

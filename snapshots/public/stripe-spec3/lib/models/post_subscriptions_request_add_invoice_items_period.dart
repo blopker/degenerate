@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'post_subscriptions_request_add_invoice_items_period_end.dart';import 'post_subscriptions_request_add_invoice_items_period_start.dart';final class PostSubscriptionsRequestAddInvoiceItemsPeriod {const PostSubscriptionsRequestAddInvoiceItemsPeriod({required this.end, required this.start, });
+
+factory PostSubscriptionsRequestAddInvoiceItemsPeriod.fromJson(Map<String, dynamic> json) { return PostSubscriptionsRequestAddInvoiceItemsPeriod(
+  end: PostSubscriptionsRequestAddInvoiceItemsPeriodEnd.fromJson(json['end'] as Map<String, dynamic>),
+  start: PostSubscriptionsRequestAddInvoiceItemsPeriodStart.fromJson(json['start'] as Map<String, dynamic>),
+); }
+
+final PostSubscriptionsRequestAddInvoiceItemsPeriodEnd end;
+
+final PostSubscriptionsRequestAddInvoiceItemsPeriodStart start;
+
+Map<String, dynamic> toJson() { return {
+  'end': end.toJson(),
+  'start': start.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('end') &&
+      json.containsKey('start'); } 
+PostSubscriptionsRequestAddInvoiceItemsPeriod copyWith({PostSubscriptionsRequestAddInvoiceItemsPeriodEnd? end, PostSubscriptionsRequestAddInvoiceItemsPeriodStart? start, }) { return PostSubscriptionsRequestAddInvoiceItemsPeriod(
+  end: end ?? this.end,
+  start: start ?? this.start,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSubscriptionsRequestAddInvoiceItemsPeriod &&
+          end == other.end &&
+          start == other.start; } 
+@override int get hashCode { return Object.hash(end, start); } 
+@override String toString() { return 'PostSubscriptionsRequestAddInvoiceItemsPeriod(end: $end, start: $start)'; } 
+ }

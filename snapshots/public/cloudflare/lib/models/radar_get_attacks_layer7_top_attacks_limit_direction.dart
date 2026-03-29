@@ -1,0 +1,27 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies whether the `limitPerLocation` applies to the source or target location.
+final class RadarGetAttacksLayer7TopAttacksLimitDirection {const RadarGetAttacksLayer7TopAttacksLimitDirection._(this.value);
+
+factory RadarGetAttacksLayer7TopAttacksLimitDirection.fromJson(String json) { return switch (json) {
+  'ORIGIN' => origin,
+  'TARGET' => target,
+  _ => RadarGetAttacksLayer7TopAttacksLimitDirection._(json),
+}; }
+
+static const RadarGetAttacksLayer7TopAttacksLimitDirection origin = RadarGetAttacksLayer7TopAttacksLimitDirection._('ORIGIN');
+
+static const RadarGetAttacksLayer7TopAttacksLimitDirection target = RadarGetAttacksLayer7TopAttacksLimitDirection._('TARGET');
+
+static const List<RadarGetAttacksLayer7TopAttacksLimitDirection> values = [origin, target];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer7TopAttacksLimitDirection && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer7TopAttacksLimitDirection($value)'; } 
+ }

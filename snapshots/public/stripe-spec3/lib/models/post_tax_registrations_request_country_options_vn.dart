@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostTaxRegistrationsRequestCountryOptionsVnType {const PostTaxRegistrationsRequestCountryOptionsVnType._(this.value);
+
+factory PostTaxRegistrationsRequestCountryOptionsVnType.fromJson(String json) { return switch (json) {
+  'simplified' => simplified,
+  _ => PostTaxRegistrationsRequestCountryOptionsVnType._(json),
+}; }
+
+static const PostTaxRegistrationsRequestCountryOptionsVnType simplified = PostTaxRegistrationsRequestCountryOptionsVnType._('simplified');
+
+static const List<PostTaxRegistrationsRequestCountryOptionsVnType> values = [simplified];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTaxRegistrationsRequestCountryOptionsVnType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsVnType($value)'; } 
+ }
+final class PostTaxRegistrationsRequestCountryOptionsVn {const PostTaxRegistrationsRequestCountryOptionsVn({required this.type});
+
+factory PostTaxRegistrationsRequestCountryOptionsVn.fromJson(Map<String, dynamic> json) { return PostTaxRegistrationsRequestCountryOptionsVn(
+  type: PostTaxRegistrationsRequestCountryOptionsVnType.fromJson(json['type'] as String),
+); }
+
+final PostTaxRegistrationsRequestCountryOptionsVnType type;
+
+Map<String, dynamic> toJson() { return {
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
+PostTaxRegistrationsRequestCountryOptionsVn copyWith({PostTaxRegistrationsRequestCountryOptionsVnType? type}) { return PostTaxRegistrationsRequestCountryOptionsVn(
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTaxRegistrationsRequestCountryOptionsVn &&
+          type == other.type; } 
+@override int get hashCode { return type.hashCode; } 
+@override String toString() { return 'PostTaxRegistrationsRequestCountryOptionsVn(type: $type)'; } 
+ }

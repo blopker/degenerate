@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountSessionsRequestComponentsTaxSettingsFeatures {const PostAccountSessionsRequestComponentsTaxSettingsFeatures();
+
+factory PostAccountSessionsRequestComponentsTaxSettingsFeatures.fromJson(Map<String, dynamic> json) { return PostAccountSessionsRequestComponentsTaxSettingsFeatures(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountSessionsRequestComponentsTaxSettingsFeatures copyWith() { return PostAccountSessionsRequestComponentsTaxSettingsFeatures(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is PostAccountSessionsRequestComponentsTaxSettingsFeatures; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'PostAccountSessionsRequestComponentsTaxSettingsFeatures()'; } 
+ }

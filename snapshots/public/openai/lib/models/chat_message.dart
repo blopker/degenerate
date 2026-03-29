@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ChatMessage {const ChatMessage({required this.role, required this.content, });
+
+factory ChatMessage.fromJson(Map<String, dynamic> json) { return ChatMessage(
+  role: json['role'] as String,
+  content: json['content'] as String,
+); }
+
+/// The role of the message (e.g. "system", "assistant", "user").
+final String role;
+
+/// The content of the message.
+final String content;
+
+Map<String, dynamic> toJson() { return {
+  'role': role,
+  'content': content,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('role') && json['role'] is String &&
+      json.containsKey('content') && json['content'] is String; } 
+ChatMessage copyWith({String? role, String? content, }) { return ChatMessage(
+  role: role ?? this.role,
+  content: content ?? this.content,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ChatMessage &&
+          role == other.role &&
+          content == other.content; } 
+@override int get hashCode { return Object.hash(role, content); } 
+@override String toString() { return 'ChatMessage(role: $role, content: $content)'; } 
+ }

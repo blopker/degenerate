@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Feature fields to add features about the end-user (client) into
+/// the Cache Key.
+/// 
+final class ZonesCacheKeyFieldsValueUser {const ZonesCacheKeyFieldsValueUser({this.deviceType, this.geo, this.lang, });
+
+factory ZonesCacheKeyFieldsValueUser.fromJson(Map<String, dynamic> json) { return ZonesCacheKeyFieldsValueUser(
+  deviceType: json['device_type'] as bool?,
+  geo: json['geo'] as bool?,
+  lang: json['lang'] as bool?,
+); }
+
+/// Classifies a request as `mobile`, `desktop`, or `tablet`
+/// based on the User Agent.
+/// 
+final bool? deviceType;
+
+/// Includes the client's country, derived from the IP address.
+/// 
+final bool? geo;
+
+/// Includes the first language code contained in the
+/// `Accept-Language` header sent by the client.
+/// 
+final bool? lang;
+
+Map<String, dynamic> toJson() { return {
+  'device_type': ?deviceType,
+  'geo': ?geo,
+  'lang': ?lang,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ZonesCacheKeyFieldsValueUser copyWith({bool Function()? deviceType, bool Function()? geo, bool Function()? lang, }) { return ZonesCacheKeyFieldsValueUser(
+  deviceType: deviceType != null ? deviceType() : this.deviceType,
+  geo: geo != null ? geo() : this.geo,
+  lang: lang != null ? lang() : this.lang,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ZonesCacheKeyFieldsValueUser &&
+          deviceType == other.deviceType &&
+          geo == other.geo &&
+          lang == other.lang; } 
+@override int get hashCode { return Object.hash(deviceType, geo, lang); } 
+@override String toString() { return 'ZonesCacheKeyFieldsValueUser(deviceType: $deviceType, geo: $geo, lang: $lang)'; } 
+ }

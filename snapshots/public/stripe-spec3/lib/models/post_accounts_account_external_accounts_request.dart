@@ -1,0 +1,52 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'external_account_payout_bank_account3.dart';import 'post_accounts_account_external_accounts_request_bank_account.dart';final class PostAccountsAccountExternalAccountsRequest {const PostAccountsAccountExternalAccountsRequest({this.bankAccount, this.defaultForCurrency, this.expand, this.externalAccount, this.metadata, });
+
+factory PostAccountsAccountExternalAccountsRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountExternalAccountsRequest(
+  bankAccount: json['bank_account'] != null ? OneOf2.parse(json['bank_account'], fromA: (v) => ExternalAccountPayoutBankAccount3.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,) : null,
+  defaultForCurrency: json['default_for_currency'] as bool?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  externalAccount: json['external_account'] as String?,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+); }
+
+/// Either a token, like the ones returned by [Stripe.js](https://stripe.com/docs/js), or a dictionary containing a user's bank account details.
+final PostAccountsAccountExternalAccountsRequestBankAccount? bankAccount;
+
+/// When set to true, or if this is the first external account added in this currency, this account becomes the default external account for its currency.
+final bool? defaultForCurrency;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// A token, like the ones returned by [Stripe.js](https://docs.stripe.com/js) or a dictionary containing a user's external account details (with the options shown below). Please refer to full [documentation](https://stripe.com/docs/api/external_accounts) instead.
+final String? externalAccount;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final Map<String,String>? metadata;
+
+Map<String, dynamic> toJson() { return {
+  if (bankAccount != null) 'bank_account': bankAccount?.toJson(),
+  'default_for_currency': ?defaultForCurrency,
+  'expand': ?expand,
+  'external_account': ?externalAccount,
+  'metadata': ?metadata,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountExternalAccountsRequest copyWith({PostAccountsAccountExternalAccountsRequestBankAccount Function()? bankAccount, bool Function()? defaultForCurrency, List<String> Function()? expand, String Function()? externalAccount, Map<String, String> Function()? metadata, }) { return PostAccountsAccountExternalAccountsRequest(
+  bankAccount: bankAccount != null ? bankAccount() : this.bankAccount,
+  defaultForCurrency: defaultForCurrency != null ? defaultForCurrency() : this.defaultForCurrency,
+  expand: expand != null ? expand() : this.expand,
+  externalAccount: externalAccount != null ? externalAccount() : this.externalAccount,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountExternalAccountsRequest &&
+          bankAccount == other.bankAccount &&
+          defaultForCurrency == other.defaultForCurrency &&
+          listEquals(expand, other.expand) &&
+          externalAccount == other.externalAccount &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(bankAccount, defaultForCurrency, Object.hashAll(expand ?? const []), externalAccount, metadata); } 
+@override String toString() { return 'PostAccountsAccountExternalAccountsRequest(bankAccount: $bankAccount, defaultForCurrency: $defaultForCurrency, expand: $expand, externalAccount: $externalAccount, metadata: $metadata)'; } 
+ }

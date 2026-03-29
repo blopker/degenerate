@@ -1,0 +1,26 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetCtSummaryUniqueEntries {const RadarGetCtSummaryUniqueEntries._(this.value);
+
+factory RadarGetCtSummaryUniqueEntries.fromJson(String json) { return switch (json) {
+  'true' => $true,
+  'false' => $false,
+  _ => RadarGetCtSummaryUniqueEntries._(json),
+}; }
+
+static const RadarGetCtSummaryUniqueEntries $true = RadarGetCtSummaryUniqueEntries._('true');
+
+static const RadarGetCtSummaryUniqueEntries $false = RadarGetCtSummaryUniqueEntries._('false');
+
+static const List<RadarGetCtSummaryUniqueEntries> values = [$true, $false];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetCtSummaryUniqueEntries && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetCtSummaryUniqueEntries($value)'; } 
+ }

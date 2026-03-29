@@ -1,0 +1,61 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'magic_automatic_return_routing.dart';import 'magic_gre.dart';import 'magic_health_check_base.dart';import 'magic_interconnect_components_schemas_description.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_schemas_mtu.dart';final class MagicInterconnectTunnelUpdateRequest {const MagicInterconnectTunnelUpdateRequest({this.automaticReturnRouting, this.description, this.gre, this.healthCheck, this.interfaceAddress, this.interfaceAddress6, this.mtu, });
+
+factory MagicInterconnectTunnelUpdateRequest.fromJson(Map<String, dynamic> json) { return MagicInterconnectTunnelUpdateRequest(
+  automaticReturnRouting: json['automatic_return_routing'] != null ? MagicAutomaticReturnRouting.fromJson(json['automatic_return_routing'] as bool) : null,
+  description: json['description'] != null ? MagicInterconnectComponentsSchemasDescription.fromJson(json['description'] as String) : null,
+  gre: json['gre'] != null ? MagicGre.fromJson(json['gre'] as Map<String, dynamic>) : null,
+  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
+  interfaceAddress: json['interface_address'] != null ? MagicInterfaceAddress.fromJson(json['interface_address'] as String) : null,
+  interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
+  mtu: json['mtu'] != null ? MagicSchemasMtu.fromJson(json['mtu'] as num) : null,
+); }
+
+/// True if automatic stateful return routing should be enabled for a tunnel, false otherwise.
+final MagicAutomaticReturnRouting? automaticReturnRouting;
+
+/// An optional description of the interconnect.
+final MagicInterconnectComponentsSchemasDescription? description;
+
+final MagicGre? gre;
+
+final MagicHealthCheckBase? healthCheck;
+
+final MagicInterfaceAddress? interfaceAddress;
+
+final MagicInterfaceAddress6? interfaceAddress6;
+
+final MagicSchemasMtu? mtu;
+
+Map<String, dynamic> toJson() { return {
+  if (automaticReturnRouting != null) 'automatic_return_routing': automaticReturnRouting?.toJson(),
+  if (description != null) 'description': description?.toJson(),
+  if (gre != null) 'gre': gre?.toJson(),
+  if (healthCheck != null) 'health_check': healthCheck?.toJson(),
+  if (interfaceAddress != null) 'interface_address': interfaceAddress?.toJson(),
+  if (interfaceAddress6 != null) 'interface_address6': interfaceAddress6?.toJson(),
+  if (mtu != null) 'mtu': mtu?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+MagicInterconnectTunnelUpdateRequest copyWith({MagicAutomaticReturnRouting Function()? automaticReturnRouting, MagicInterconnectComponentsSchemasDescription Function()? description, MagicGre Function()? gre, MagicHealthCheckBase Function()? healthCheck, MagicInterfaceAddress Function()? interfaceAddress, MagicInterfaceAddress6 Function()? interfaceAddress6, MagicSchemasMtu Function()? mtu, }) { return MagicInterconnectTunnelUpdateRequest(
+  automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
+  description: description != null ? description() : this.description,
+  gre: gre != null ? gre() : this.gre,
+  healthCheck: healthCheck != null ? healthCheck() : this.healthCheck,
+  interfaceAddress: interfaceAddress != null ? interfaceAddress() : this.interfaceAddress,
+  interfaceAddress6: interfaceAddress6 != null ? interfaceAddress6() : this.interfaceAddress6,
+  mtu: mtu != null ? mtu() : this.mtu,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is MagicInterconnectTunnelUpdateRequest &&
+          automaticReturnRouting == other.automaticReturnRouting &&
+          description == other.description &&
+          gre == other.gre &&
+          healthCheck == other.healthCheck &&
+          interfaceAddress == other.interfaceAddress &&
+          interfaceAddress6 == other.interfaceAddress6 &&
+          mtu == other.mtu; } 
+@override int get hashCode { return Object.hash(automaticReturnRouting, description, gre, healthCheck, interfaceAddress, interfaceAddress6, mtu); } 
+@override String toString() { return 'MagicInterconnectTunnelUpdateRequest(automaticReturnRouting: $automaticReturnRouting, description: $description, gre: $gre, healthCheck: $healthCheck, interfaceAddress: $interfaceAddress, interfaceAddress6: $interfaceAddress6, mtu: $mtu)'; } 
+ }

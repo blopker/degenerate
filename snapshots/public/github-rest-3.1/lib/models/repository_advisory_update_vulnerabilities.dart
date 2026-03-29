@@ -1,0 +1,45 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'repository_advisory_update_vulnerabilities_package.dart';final class RepositoryAdvisoryUpdateVulnerabilities {const RepositoryAdvisoryUpdateVulnerabilities({required this.package, this.vulnerableVersionRange, this.patchedVersions, this.vulnerableFunctions, });
+
+factory RepositoryAdvisoryUpdateVulnerabilities.fromJson(Map<String, dynamic> json) { return RepositoryAdvisoryUpdateVulnerabilities(
+  package: RepositoryAdvisoryUpdateVulnerabilitiesPackage.fromJson(json['package'] as Map<String, dynamic>),
+  vulnerableVersionRange: json['vulnerable_version_range'] as String?,
+  patchedVersions: json['patched_versions'] as String?,
+  vulnerableFunctions: (json['vulnerable_functions'] as List<dynamic>?)?.map((e) => e as String).toList(),
+); }
+
+/// The name of the package affected by the vulnerability.
+final RepositoryAdvisoryUpdateVulnerabilitiesPackage package;
+
+/// The range of the package versions affected by the vulnerability.
+final String? vulnerableVersionRange;
+
+/// The package version(s) that resolve the vulnerability.
+final String? patchedVersions;
+
+/// The functions in the package that are affected.
+final List<String>? vulnerableFunctions;
+
+Map<String, dynamic> toJson() { return {
+  'package': package.toJson(),
+  'vulnerable_version_range': ?vulnerableVersionRange,
+  'patched_versions': ?patchedVersions,
+  'vulnerable_functions': ?vulnerableFunctions,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('package'); } 
+RepositoryAdvisoryUpdateVulnerabilities copyWith({RepositoryAdvisoryUpdateVulnerabilitiesPackage? package, String? Function()? vulnerableVersionRange, String? Function()? patchedVersions, List<String>? Function()? vulnerableFunctions, }) { return RepositoryAdvisoryUpdateVulnerabilities(
+  package: package ?? this.package,
+  vulnerableVersionRange: vulnerableVersionRange != null ? vulnerableVersionRange() : this.vulnerableVersionRange,
+  patchedVersions: patchedVersions != null ? patchedVersions() : this.patchedVersions,
+  vulnerableFunctions: vulnerableFunctions != null ? vulnerableFunctions() : this.vulnerableFunctions,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RepositoryAdvisoryUpdateVulnerabilities &&
+          package == other.package &&
+          vulnerableVersionRange == other.vulnerableVersionRange &&
+          patchedVersions == other.patchedVersions &&
+          listEquals(vulnerableFunctions, other.vulnerableFunctions); } 
+@override int get hashCode { return Object.hash(package, vulnerableVersionRange, patchedVersions, Object.hashAll(vulnerableFunctions ?? const [])); } 
+@override String toString() { return 'RepositoryAdvisoryUpdateVulnerabilities(package: $package, vulnerableVersionRange: $vulnerableVersionRange, patchedVersions: $patchedVersions, vulnerableFunctions: $vulnerableFunctions)'; } 
+ }

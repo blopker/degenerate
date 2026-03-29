@@ -1,0 +1,248 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_network_token_address.dart';/// The method used for tokenizing a card.
+final class IssuingNetworkTokenWalletProviderCardNumberSource {const IssuingNetworkTokenWalletProviderCardNumberSource._(this.value);
+
+factory IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(String json) { return switch (json) {
+  'app' => app,
+  'manual' => manual,
+  'on_file' => onFile,
+  'other' => $other,
+  _ => IssuingNetworkTokenWalletProviderCardNumberSource._(json),
+}; }
+
+static const IssuingNetworkTokenWalletProviderCardNumberSource app = IssuingNetworkTokenWalletProviderCardNumberSource._('app');
+
+static const IssuingNetworkTokenWalletProviderCardNumberSource manual = IssuingNetworkTokenWalletProviderCardNumberSource._('manual');
+
+static const IssuingNetworkTokenWalletProviderCardNumberSource onFile = IssuingNetworkTokenWalletProviderCardNumberSource._('on_file');
+
+static const IssuingNetworkTokenWalletProviderCardNumberSource $other = IssuingNetworkTokenWalletProviderCardNumberSource._('other');
+
+static const List<IssuingNetworkTokenWalletProviderCardNumberSource> values = [app, manual, onFile, $other];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingNetworkTokenWalletProviderCardNumberSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingNetworkTokenWalletProviderCardNumberSource($value)'; } 
+ }
+final class IssuingNetworkTokenWalletProviderReasonCodes {const IssuingNetworkTokenWalletProviderReasonCodes._(this.value);
+
+factory IssuingNetworkTokenWalletProviderReasonCodes.fromJson(String json) { return switch (json) {
+  'account_card_too_new' => accountCardTooNew,
+  'account_recently_changed' => accountRecentlyChanged,
+  'account_too_new' => accountTooNew,
+  'account_too_new_since_launch' => accountTooNewSinceLaunch,
+  'additional_device' => additionalDevice,
+  'data_expired' => dataExpired,
+  'defer_id_v_decision' => deferIdVDecision,
+  'device_recently_lost' => deviceRecentlyLost,
+  'good_activity_history' => goodActivityHistory,
+  'has_suspended_tokens' => hasSuspendedTokens,
+  'high_risk' => highRisk,
+  'inactive_account' => inactiveAccount,
+  'long_account_tenure' => longAccountTenure,
+  'low_account_score' => lowAccountScore,
+  'low_device_score' => lowDeviceScore,
+  'low_phone_number_score' => lowPhoneNumberScore,
+  'network_service_error' => networkServiceError,
+  'outside_home_territory' => outsideHomeTerritory,
+  'provisioning_cardholder_mismatch' => provisioningCardholderMismatch,
+  'provisioning_device_and_cardholder_mismatch' => provisioningDeviceAndCardholderMismatch,
+  'provisioning_device_mismatch' => provisioningDeviceMismatch,
+  'same_device_no_prior_authentication' => sameDeviceNoPriorAuthentication,
+  'same_device_successful_prior_authentication' => sameDeviceSuccessfulPriorAuthentication,
+  'software_update' => softwareUpdate,
+  'suspicious_activity' => suspiciousActivity,
+  'too_many_different_cardholders' => tooManyDifferentCardholders,
+  'too_many_recent_attempts' => tooManyRecentAttempts,
+  'too_many_recent_tokens' => tooManyRecentTokens,
+  _ => IssuingNetworkTokenWalletProviderReasonCodes._(json),
+}; }
+
+static const IssuingNetworkTokenWalletProviderReasonCodes accountCardTooNew = IssuingNetworkTokenWalletProviderReasonCodes._('account_card_too_new');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes accountRecentlyChanged = IssuingNetworkTokenWalletProviderReasonCodes._('account_recently_changed');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes accountTooNew = IssuingNetworkTokenWalletProviderReasonCodes._('account_too_new');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes accountTooNewSinceLaunch = IssuingNetworkTokenWalletProviderReasonCodes._('account_too_new_since_launch');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes additionalDevice = IssuingNetworkTokenWalletProviderReasonCodes._('additional_device');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes dataExpired = IssuingNetworkTokenWalletProviderReasonCodes._('data_expired');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes deferIdVDecision = IssuingNetworkTokenWalletProviderReasonCodes._('defer_id_v_decision');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes deviceRecentlyLost = IssuingNetworkTokenWalletProviderReasonCodes._('device_recently_lost');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes goodActivityHistory = IssuingNetworkTokenWalletProviderReasonCodes._('good_activity_history');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes hasSuspendedTokens = IssuingNetworkTokenWalletProviderReasonCodes._('has_suspended_tokens');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes highRisk = IssuingNetworkTokenWalletProviderReasonCodes._('high_risk');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes inactiveAccount = IssuingNetworkTokenWalletProviderReasonCodes._('inactive_account');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes longAccountTenure = IssuingNetworkTokenWalletProviderReasonCodes._('long_account_tenure');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes lowAccountScore = IssuingNetworkTokenWalletProviderReasonCodes._('low_account_score');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes lowDeviceScore = IssuingNetworkTokenWalletProviderReasonCodes._('low_device_score');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes lowPhoneNumberScore = IssuingNetworkTokenWalletProviderReasonCodes._('low_phone_number_score');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes networkServiceError = IssuingNetworkTokenWalletProviderReasonCodes._('network_service_error');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes outsideHomeTerritory = IssuingNetworkTokenWalletProviderReasonCodes._('outside_home_territory');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes provisioningCardholderMismatch = IssuingNetworkTokenWalletProviderReasonCodes._('provisioning_cardholder_mismatch');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes provisioningDeviceAndCardholderMismatch = IssuingNetworkTokenWalletProviderReasonCodes._('provisioning_device_and_cardholder_mismatch');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes provisioningDeviceMismatch = IssuingNetworkTokenWalletProviderReasonCodes._('provisioning_device_mismatch');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes sameDeviceNoPriorAuthentication = IssuingNetworkTokenWalletProviderReasonCodes._('same_device_no_prior_authentication');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes sameDeviceSuccessfulPriorAuthentication = IssuingNetworkTokenWalletProviderReasonCodes._('same_device_successful_prior_authentication');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes softwareUpdate = IssuingNetworkTokenWalletProviderReasonCodes._('software_update');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes suspiciousActivity = IssuingNetworkTokenWalletProviderReasonCodes._('suspicious_activity');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes tooManyDifferentCardholders = IssuingNetworkTokenWalletProviderReasonCodes._('too_many_different_cardholders');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes tooManyRecentAttempts = IssuingNetworkTokenWalletProviderReasonCodes._('too_many_recent_attempts');
+
+static const IssuingNetworkTokenWalletProviderReasonCodes tooManyRecentTokens = IssuingNetworkTokenWalletProviderReasonCodes._('too_many_recent_tokens');
+
+static const List<IssuingNetworkTokenWalletProviderReasonCodes> values = [accountCardTooNew, accountRecentlyChanged, accountTooNew, accountTooNewSinceLaunch, additionalDevice, dataExpired, deferIdVDecision, deviceRecentlyLost, goodActivityHistory, hasSuspendedTokens, highRisk, inactiveAccount, longAccountTenure, lowAccountScore, lowDeviceScore, lowPhoneNumberScore, networkServiceError, outsideHomeTerritory, provisioningCardholderMismatch, provisioningDeviceAndCardholderMismatch, provisioningDeviceMismatch, sameDeviceNoPriorAuthentication, sameDeviceSuccessfulPriorAuthentication, softwareUpdate, suspiciousActivity, tooManyDifferentCardholders, tooManyRecentAttempts, tooManyRecentTokens];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingNetworkTokenWalletProviderReasonCodes && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingNetworkTokenWalletProviderReasonCodes($value)'; } 
+ }
+/// The recommendation on responding to the tokenization request.
+final class IssuingNetworkTokenWalletProviderSuggestedDecision {const IssuingNetworkTokenWalletProviderSuggestedDecision._(this.value);
+
+factory IssuingNetworkTokenWalletProviderSuggestedDecision.fromJson(String json) { return switch (json) {
+  'approve' => approve,
+  'decline' => decline,
+  'require_auth' => requireAuth,
+  _ => IssuingNetworkTokenWalletProviderSuggestedDecision._(json),
+}; }
+
+static const IssuingNetworkTokenWalletProviderSuggestedDecision approve = IssuingNetworkTokenWalletProviderSuggestedDecision._('approve');
+
+static const IssuingNetworkTokenWalletProviderSuggestedDecision decline = IssuingNetworkTokenWalletProviderSuggestedDecision._('decline');
+
+static const IssuingNetworkTokenWalletProviderSuggestedDecision requireAuth = IssuingNetworkTokenWalletProviderSuggestedDecision._('require_auth');
+
+static const List<IssuingNetworkTokenWalletProviderSuggestedDecision> values = [approve, decline, requireAuth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is IssuingNetworkTokenWalletProviderSuggestedDecision && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'IssuingNetworkTokenWalletProviderSuggestedDecision($value)'; } 
+ }
+/// 
+final class IssuingNetworkTokenWalletProvider {const IssuingNetworkTokenWalletProvider({this.accountId, this.accountTrustScore, this.cardNumberSource, this.cardholderAddress, this.cardholderName, this.deviceTrustScore, this.hashedAccountEmailAddress, this.reasonCodes, this.suggestedDecision, this.suggestedDecisionVersion, });
+
+factory IssuingNetworkTokenWalletProvider.fromJson(Map<String, dynamic> json) { return IssuingNetworkTokenWalletProvider(
+  accountId: json['account_id'] as String?,
+  accountTrustScore: json['account_trust_score'] != null ? (json['account_trust_score'] as num).toInt() : null,
+  cardNumberSource: json['card_number_source'] != null ? IssuingNetworkTokenWalletProviderCardNumberSource.fromJson(json['card_number_source'] as String) : null,
+  cardholderAddress: json['cardholder_address'] != null ? IssuingNetworkTokenAddress.fromJson(json['cardholder_address'] as Map<String, dynamic>) : null,
+  cardholderName: json['cardholder_name'] as String?,
+  deviceTrustScore: json['device_trust_score'] != null ? (json['device_trust_score'] as num).toInt() : null,
+  hashedAccountEmailAddress: json['hashed_account_email_address'] as String?,
+  reasonCodes: (json['reason_codes'] as List<dynamic>?)?.map((e) => IssuingNetworkTokenWalletProviderReasonCodes.fromJson(e as String)).toList(),
+  suggestedDecision: json['suggested_decision'] != null ? IssuingNetworkTokenWalletProviderSuggestedDecision.fromJson(json['suggested_decision'] as String) : null,
+  suggestedDecisionVersion: json['suggested_decision_version'] as String?,
+); }
+
+/// The wallet provider-given account ID of the digital wallet the token belongs to.
+final String? accountId;
+
+/// An evaluation on the trustworthiness of the wallet account between 1 and 5. A higher score indicates more trustworthy.
+final int? accountTrustScore;
+
+/// The method used for tokenizing a card.
+final IssuingNetworkTokenWalletProviderCardNumberSource? cardNumberSource;
+
+final IssuingNetworkTokenAddress? cardholderAddress;
+
+/// The name of the cardholder tokenizing the card.
+final String? cardholderName;
+
+/// An evaluation on the trustworthiness of the device. A higher score indicates more trustworthy.
+final int? deviceTrustScore;
+
+/// The hashed email address of the cardholder's account with the wallet provider.
+final String? hashedAccountEmailAddress;
+
+/// The reasons for suggested tokenization given by the card network.
+final List<IssuingNetworkTokenWalletProviderReasonCodes>? reasonCodes;
+
+/// The recommendation on responding to the tokenization request.
+final IssuingNetworkTokenWalletProviderSuggestedDecision? suggestedDecision;
+
+/// The version of the standard for mapping reason codes followed by the wallet provider.
+final String? suggestedDecisionVersion;
+
+Map<String, dynamic> toJson() { return {
+  'account_id': ?accountId,
+  'account_trust_score': ?accountTrustScore,
+  if (cardNumberSource != null) 'card_number_source': cardNumberSource?.toJson(),
+  if (cardholderAddress != null) 'cardholder_address': cardholderAddress?.toJson(),
+  'cardholder_name': ?cardholderName,
+  'device_trust_score': ?deviceTrustScore,
+  'hashed_account_email_address': ?hashedAccountEmailAddress,
+  if (reasonCodes != null) 'reason_codes': reasonCodes?.map((e) => e.toJson()).toList(),
+  if (suggestedDecision != null) 'suggested_decision': suggestedDecision?.toJson(),
+  'suggested_decision_version': ?suggestedDecisionVersion,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+IssuingNetworkTokenWalletProvider copyWith({String Function()? accountId, int Function()? accountTrustScore, IssuingNetworkTokenWalletProviderCardNumberSource Function()? cardNumberSource, IssuingNetworkTokenAddress Function()? cardholderAddress, String Function()? cardholderName, int Function()? deviceTrustScore, String Function()? hashedAccountEmailAddress, List<IssuingNetworkTokenWalletProviderReasonCodes> Function()? reasonCodes, IssuingNetworkTokenWalletProviderSuggestedDecision Function()? suggestedDecision, String Function()? suggestedDecisionVersion, }) { return IssuingNetworkTokenWalletProvider(
+  accountId: accountId != null ? accountId() : this.accountId,
+  accountTrustScore: accountTrustScore != null ? accountTrustScore() : this.accountTrustScore,
+  cardNumberSource: cardNumberSource != null ? cardNumberSource() : this.cardNumberSource,
+  cardholderAddress: cardholderAddress != null ? cardholderAddress() : this.cardholderAddress,
+  cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
+  deviceTrustScore: deviceTrustScore != null ? deviceTrustScore() : this.deviceTrustScore,
+  hashedAccountEmailAddress: hashedAccountEmailAddress != null ? hashedAccountEmailAddress() : this.hashedAccountEmailAddress,
+  reasonCodes: reasonCodes != null ? reasonCodes() : this.reasonCodes,
+  suggestedDecision: suggestedDecision != null ? suggestedDecision() : this.suggestedDecision,
+  suggestedDecisionVersion: suggestedDecisionVersion != null ? suggestedDecisionVersion() : this.suggestedDecisionVersion,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is IssuingNetworkTokenWalletProvider &&
+          accountId == other.accountId &&
+          accountTrustScore == other.accountTrustScore &&
+          cardNumberSource == other.cardNumberSource &&
+          cardholderAddress == other.cardholderAddress &&
+          cardholderName == other.cardholderName &&
+          deviceTrustScore == other.deviceTrustScore &&
+          hashedAccountEmailAddress == other.hashedAccountEmailAddress &&
+          listEquals(reasonCodes, other.reasonCodes) &&
+          suggestedDecision == other.suggestedDecision &&
+          suggestedDecisionVersion == other.suggestedDecisionVersion; } 
+@override int get hashCode { return Object.hash(accountId, accountTrustScore, cardNumberSource, cardholderAddress, cardholderName, deviceTrustScore, hashedAccountEmailAddress, Object.hashAll(reasonCodes ?? const []), suggestedDecision, suggestedDecisionVersion); } 
+@override String toString() { return 'IssuingNetworkTokenWalletProvider(accountId: $accountId, accountTrustScore: $accountTrustScore, cardNumberSource: $cardNumberSource, cardholderAddress: $cardholderAddress, cardholderName: $cardholderName, deviceTrustScore: $deviceTrustScore, hashedAccountEmailAddress: $hashedAccountEmailAddress, reasonCodes: $reasonCodes, suggestedDecision: $suggestedDecision, suggestedDecisionVersion: $suggestedDecisionVersion)'; } 
+ }

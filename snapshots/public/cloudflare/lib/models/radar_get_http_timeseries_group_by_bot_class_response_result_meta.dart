@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_http_timeseries_group_by_bot_class_response_result_meta_confidence_info.dart';import 'radar_get_http_timeseries_group_by_bot_class_response_result_meta_date_range.dart';import 'radar_get_http_timeseries_group_by_bot_class_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval {const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval fifteenMinutes = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval oneHour = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval oneDay = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval oneWeek = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval oneMonth = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization {const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._(this.value);
+
+factory RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization percentage = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization min0Max = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization minMax = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization rawValues = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization percentageChange = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization rollingAverage = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization overlappedPercentage = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization ratio = RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta {const RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta(
+  aggInterval: RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval aggInterval;
+
+final RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta copyWith({RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaAggInterval? aggInterval, RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaNormalization? normalization, List<RadarGetHttpTimeseriesGroupByBotClassResponseResultMetaUnits>? units, }) { return RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetHttpTimeseriesGroupByBotClassResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

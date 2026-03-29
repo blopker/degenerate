@@ -1,0 +1,90 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'enterprise_webhooks.dart';import 'issue_type.dart';import 'organization_simple_webhooks.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhooks_issue.dart';final class WebhookIssuesTypedAction {const WebhookIssuesTypedAction._(this.value);
+
+factory WebhookIssuesTypedAction.fromJson(String json) { return switch (json) {
+  'typed' => typed,
+  _ => WebhookIssuesTypedAction._(json),
+}; }
+
+static const WebhookIssuesTypedAction typed = WebhookIssuesTypedAction._('typed');
+
+static const List<WebhookIssuesTypedAction> values = [typed];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is WebhookIssuesTypedAction && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'WebhookIssuesTypedAction($value)'; } 
+ }
+final class WebhookIssuesTyped {const WebhookIssuesTyped({required this.action, this.enterprise, this.installation, required this.issue, required this.type, this.organization, required this.repository, required this.sender, });
+
+factory WebhookIssuesTyped.fromJson(Map<String, dynamic> json) { return WebhookIssuesTyped(
+  action: WebhookIssuesTypedAction.fromJson(json['action'] as String),
+  enterprise: json['enterprise'] != null ? EnterpriseWebhooks.fromJson(json['enterprise'] as Map<String, dynamic>) : null,
+  installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
+  issue: WebhooksIssue.fromJson(json['issue'] as Map<String, dynamic>),
+  type: IssueType.fromJson(json['type'] as Map<String, dynamic>),
+  organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
+  repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
+  sender: SimpleUser.fromJson(json['sender'] as Map<String, dynamic>),
+); }
+
+final WebhookIssuesTypedAction action;
+
+final EnterpriseWebhooks? enterprise;
+
+final SimpleInstallation? installation;
+
+final WebhooksIssue issue;
+
+final IssueType type;
+
+final OrganizationSimpleWebhooks? organization;
+
+final RepositoryWebhooks repository;
+
+final SimpleUser sender;
+
+Map<String, dynamic> toJson() { return {
+  'action': action.toJson(),
+  if (enterprise != null) 'enterprise': enterprise?.toJson(),
+  if (installation != null) 'installation': installation?.toJson(),
+  'issue': issue.toJson(),
+  'type': type.toJson(),
+  if (organization != null) 'organization': organization?.toJson(),
+  'repository': repository.toJson(),
+  'sender': sender.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('action') &&
+      json.containsKey('issue') &&
+      json.containsKey('type') &&
+      json.containsKey('repository') &&
+      json.containsKey('sender'); } 
+WebhookIssuesTyped copyWith({WebhookIssuesTypedAction? action, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksIssue? issue, IssueType? type, OrganizationSimpleWebhooks Function()? organization, RepositoryWebhooks? repository, SimpleUser? sender, }) { return WebhookIssuesTyped(
+  action: action ?? this.action,
+  enterprise: enterprise != null ? enterprise() : this.enterprise,
+  installation: installation != null ? installation() : this.installation,
+  issue: issue ?? this.issue,
+  type: type ?? this.type,
+  organization: organization != null ? organization() : this.organization,
+  repository: repository ?? this.repository,
+  sender: sender ?? this.sender,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookIssuesTyped &&
+          action == other.action &&
+          enterprise == other.enterprise &&
+          installation == other.installation &&
+          issue == other.issue &&
+          type == other.type &&
+          organization == other.organization &&
+          repository == other.repository &&
+          sender == other.sender; } 
+@override int get hashCode { return Object.hash(action, enterprise, installation, issue, type, organization, repository, sender); } 
+@override String toString() { return 'WebhookIssuesTyped(action: $action, enterprise: $enterprise, installation: $installation, issue: $issue, type: $type, organization: $organization, repository: $repository, sender: $sender)'; } 
+ }

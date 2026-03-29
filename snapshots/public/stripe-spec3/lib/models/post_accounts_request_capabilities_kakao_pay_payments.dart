@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostAccountsRequestCapabilitiesKakaoPayPayments {const PostAccountsRequestCapabilitiesKakaoPayPayments({this.requested});
+
+factory PostAccountsRequestCapabilitiesKakaoPayPayments.fromJson(Map<String, dynamic> json) { return PostAccountsRequestCapabilitiesKakaoPayPayments(
+  requested: json['requested'] as bool?,
+); }
+
+final bool? requested;
+
+Map<String, dynamic> toJson() { return {
+  'requested': ?requested,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsRequestCapabilitiesKakaoPayPayments copyWith({bool Function()? requested}) { return PostAccountsRequestCapabilitiesKakaoPayPayments(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsRequestCapabilitiesKakaoPayPayments &&
+          requested == other.requested; } 
+@override int get hashCode { return requested.hashCode; } 
+@override String toString() { return 'PostAccountsRequestCapabilitiesKakaoPayPayments(requested: $requested)'; } 
+ }

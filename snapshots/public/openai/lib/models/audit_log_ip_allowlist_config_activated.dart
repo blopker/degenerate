@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'audit_log_ip_allowlist_config_activated_configs.dart';/// The details for events with this `type`.
+final class AuditLogIpAllowlistConfigActivated {const AuditLogIpAllowlistConfigActivated({this.configs});
+
+factory AuditLogIpAllowlistConfigActivated.fromJson(Map<String, dynamic> json) { return AuditLogIpAllowlistConfigActivated(
+  configs: (json['configs'] as List<dynamic>?)?.map((e) => AuditLogIpAllowlistConfigActivatedConfigs.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// The configurations that were activated.
+final List<AuditLogIpAllowlistConfigActivatedConfigs>? configs;
+
+Map<String, dynamic> toJson() { return {
+  if (configs != null) 'configs': configs?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+AuditLogIpAllowlistConfigActivated copyWith({List<AuditLogIpAllowlistConfigActivatedConfigs> Function()? configs}) { return AuditLogIpAllowlistConfigActivated(
+  configs: configs != null ? configs() : this.configs,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AuditLogIpAllowlistConfigActivated &&
+          listEquals(configs, other.configs); } 
+@override int get hashCode { return Object.hashAll(configs ?? const []).hashCode; } 
+@override String toString() { return 'AuditLogIpAllowlistConfigActivated(configs: $configs)'; } 
+ }

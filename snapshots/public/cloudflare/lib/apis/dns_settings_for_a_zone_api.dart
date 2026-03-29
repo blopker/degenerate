@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_settings_dns_settings_base.dart';import '../models/dns_settings_identifier.dart';import '../models/response_common26.dart';/// DnsSettingsForAZoneApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class DnsSettingsForAZoneApi with ApiExecutor {const DnsSettingsForAZoneApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Show DNS Settings
+///
+/// Show DNS settings for a zone
+///
+/// `GET /zones/{zone_id}/dns_settings`
+Future<ApiResult<ResponseCommon26, Never>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_settings',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon26.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Update DNS Settings
+///
+/// Update DNS settings for a zone
+///
+/// `PATCH /zones/{zone_id}/dns_settings`
+Future<ApiResult<ResponseCommon26, Never>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'PATCH',
+  path: '/zones/${Uri.encodeComponent(zoneId.toString())}/dns_settings',
+  headers: headers,
+  body: jsonEncode(body.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return ResponseCommon26.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

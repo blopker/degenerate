@@ -1,0 +1,51 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'model.dart';final class ListModelsResponseObject {const ListModelsResponseObject._(this.value);
+
+factory ListModelsResponseObject.fromJson(String json) { return switch (json) {
+  'list' => list,
+  _ => ListModelsResponseObject._(json),
+}; }
+
+static const ListModelsResponseObject list = ListModelsResponseObject._('list');
+
+static const List<ListModelsResponseObject> values = [list];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ListModelsResponseObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ListModelsResponseObject($value)'; } 
+ }
+final class ListModelsResponse {const ListModelsResponse({required this.object, required this.data, });
+
+factory ListModelsResponse.fromJson(Map<String, dynamic> json) { return ListModelsResponse(
+  object: ListModelsResponseObject.fromJson(json['object'] as String),
+  data: (json['data'] as List<dynamic>).map((e) => Model.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+final ListModelsResponseObject object;
+
+final List<Model> data;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'data': data.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('data'); } 
+ListModelsResponse copyWith({ListModelsResponseObject? object, List<Model>? data, }) { return ListModelsResponse(
+  object: object ?? this.object,
+  data: data ?? this.data,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ListModelsResponse &&
+          object == other.object &&
+          listEquals(data, other.data); } 
+@override int get hashCode { return Object.hash(object, Object.hashAll(data)); } 
+@override String toString() { return 'ListModelsResponse(object: $object, data: $data)'; } 
+ }

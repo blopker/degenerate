@@ -1,0 +1,84 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'nsc_status_info_variant1.dart';import 'nsc_status_info_variant2.dart';import 'nsc_status_info_variant3.dart';import 'nsc_status_info_variant4.dart';sealed class NscStatusInfo {const NscStatusInfo();
+
+/// Deserialize from JSON, dispatching on the `state` discriminator.
+factory NscStatusInfo.fromJson(Map<String, dynamic> json) { return switch (json['state']) {
+  'Pending' => NscStatusInfoPending.fromJson(json),
+  'Down' => NscStatusInfoDown.fromJson(json),
+  'Unhealthy' => NscStatusInfoUnhealthy.fromJson(json),
+  'Healthy' => NscStatusInfoHealthy.fromJson(json),
+  _ => NscStatusInfo$Unknown(json),
+}; }
+
+/// The discriminator value identifying this variant.
+String get state;
+Map<String, dynamic> toJson();
+/// Whether this variant is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is NscStatusInfo$Unknown; } 
+ }
+final class NscStatusInfoPending extends NscStatusInfo {const NscStatusInfoPending(this.nscStatusInfoVariant1);
+
+factory NscStatusInfoPending.fromJson(Map<String, dynamic> json) { return NscStatusInfoPending(NscStatusInfoVariant1.fromJson(json)); }
+
+final NscStatusInfoVariant1 nscStatusInfoVariant1;
+
+@override String get state { return 'Pending'; } 
+@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant1.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NscStatusInfoPending && nscStatusInfoVariant1 == other.nscStatusInfoVariant1; } 
+@override int get hashCode { return nscStatusInfoVariant1.hashCode; } 
+@override String toString() { return 'NscStatusInfoPending(nscStatusInfoVariant1: $nscStatusInfoVariant1)'; } 
+ }
+final class NscStatusInfoDown extends NscStatusInfo {const NscStatusInfoDown(this.nscStatusInfoVariant2);
+
+factory NscStatusInfoDown.fromJson(Map<String, dynamic> json) { return NscStatusInfoDown(NscStatusInfoVariant2.fromJson(json)); }
+
+final NscStatusInfoVariant2 nscStatusInfoVariant2;
+
+@override String get state { return 'Down'; } 
+@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant2.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NscStatusInfoDown && nscStatusInfoVariant2 == other.nscStatusInfoVariant2; } 
+@override int get hashCode { return nscStatusInfoVariant2.hashCode; } 
+@override String toString() { return 'NscStatusInfoDown(nscStatusInfoVariant2: $nscStatusInfoVariant2)'; } 
+ }
+final class NscStatusInfoUnhealthy extends NscStatusInfo {const NscStatusInfoUnhealthy(this.nscStatusInfoVariant3);
+
+factory NscStatusInfoUnhealthy.fromJson(Map<String, dynamic> json) { return NscStatusInfoUnhealthy(NscStatusInfoVariant3.fromJson(json)); }
+
+final NscStatusInfoVariant3 nscStatusInfoVariant3;
+
+@override String get state { return 'Unhealthy'; } 
+@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant3.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NscStatusInfoUnhealthy && nscStatusInfoVariant3 == other.nscStatusInfoVariant3; } 
+@override int get hashCode { return nscStatusInfoVariant3.hashCode; } 
+@override String toString() { return 'NscStatusInfoUnhealthy(nscStatusInfoVariant3: $nscStatusInfoVariant3)'; } 
+ }
+final class NscStatusInfoHealthy extends NscStatusInfo {const NscStatusInfoHealthy(this.nscStatusInfoVariant4);
+
+factory NscStatusInfoHealthy.fromJson(Map<String, dynamic> json) { return NscStatusInfoHealthy(NscStatusInfoVariant4.fromJson(json)); }
+
+final NscStatusInfoVariant4 nscStatusInfoVariant4;
+
+@override String get state { return 'Healthy'; } 
+@override Map<String, dynamic> toJson() { return {'state': state, ...nscStatusInfoVariant4.toJson()}; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NscStatusInfoHealthy && nscStatusInfoVariant4 == other.nscStatusInfoVariant4; } 
+@override int get hashCode { return nscStatusInfoVariant4.hashCode; } 
+@override String toString() { return 'NscStatusInfoHealthy(nscStatusInfoVariant4: $nscStatusInfoVariant4)'; } 
+ }
+/// An unknown variant not defined in the OpenAPI spec.
+/// Returned when the server sends a discriminator value that this client does not recognize.
+final class NscStatusInfo$Unknown extends NscStatusInfo {const NscStatusInfo$Unknown(this.json);
+
+final Map<String, dynamic> json;
+
+@override String get state { return json['state'] as String? ?? ''; } 
+@override Map<String, dynamic> toJson() { return json; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is NscStatusInfo$Unknown && json == other.json; } 
+@override int get hashCode { return json.hashCode; } 
+@override String toString() { return 'NscStatusInfo.unknown($json)'; } 
+ }

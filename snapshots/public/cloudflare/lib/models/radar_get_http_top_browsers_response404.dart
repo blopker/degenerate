@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopBrowsersResponse404 {const RadarGetHttpTopBrowsersResponse404({required this.error});
+
+factory RadarGetHttpTopBrowsersResponse404.fromJson(Map<String, dynamic> json) { return RadarGetHttpTopBrowsersResponse404(
+  error: json['error'] as String,
+); }
+
+final String error;
+
+Map<String, dynamic> toJson() { return {
+  'error': error,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('error') && json['error'] is String; } 
+RadarGetHttpTopBrowsersResponse404 copyWith({String? error}) { return RadarGetHttpTopBrowsersResponse404(
+  error: error ?? this.error,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetHttpTopBrowsersResponse404 &&
+          error == other.error; } 
+@override int get hashCode { return error.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopBrowsersResponse404(error: $error)'; } 
+ }

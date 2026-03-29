@@ -1,0 +1,355 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction_source.dart';import 'fee.dart';/// The balance that this transaction impacts.
+final class BalanceTransactionBalanceType {const BalanceTransactionBalanceType._(this.value);
+
+factory BalanceTransactionBalanceType.fromJson(String json) { return switch (json) {
+  'issuing' => issuing,
+  'payments' => payments,
+  'refund_and_dispute_prefunding' => refundAndDisputePrefunding,
+  'risk_reserved' => riskReserved,
+  _ => BalanceTransactionBalanceType._(json),
+}; }
+
+static const BalanceTransactionBalanceType issuing = BalanceTransactionBalanceType._('issuing');
+
+static const BalanceTransactionBalanceType payments = BalanceTransactionBalanceType._('payments');
+
+static const BalanceTransactionBalanceType refundAndDisputePrefunding = BalanceTransactionBalanceType._('refund_and_dispute_prefunding');
+
+static const BalanceTransactionBalanceType riskReserved = BalanceTransactionBalanceType._('risk_reserved');
+
+static const List<BalanceTransactionBalanceType> values = [issuing, payments, refundAndDisputePrefunding, riskReserved];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BalanceTransactionBalanceType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BalanceTransactionBalanceType($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class BalanceTransactionObject {const BalanceTransactionObject._(this.value);
+
+factory BalanceTransactionObject.fromJson(String json) { return switch (json) {
+  'balance_transaction' => balanceTransaction,
+  _ => BalanceTransactionObject._(json),
+}; }
+
+static const BalanceTransactionObject balanceTransaction = BalanceTransactionObject._('balance_transaction');
+
+static const List<BalanceTransactionObject> values = [balanceTransaction];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BalanceTransactionObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BalanceTransactionObject($value)'; } 
+ }
+/// Transaction type: `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `contribution`, `issuing_authorization_hold`, `issuing_authorization_release`, `issuing_dispute`, `issuing_transaction`, `obligation_outbound`, `obligation_reversal_inbound`, `payment`, `payment_failure_refund`, `payment_network_reserve_hold`, `payment_network_reserve_release`, `payment_refund`, `payment_reversal`, `payment_unreconciled`, `payout`, `payout_cancel`, `payout_failure`, `payout_minimum_balance_hold`, `payout_minimum_balance_release`, `refund`, `refund_failure`, `reserve_transaction`, `reserved_funds`, `reserve_hold`, `reserve_release`, `stripe_fee`, `stripe_fx_fee`, `stripe_balance_payment_debit`, `stripe_balance_payment_debit_reversal`, `tax_fee`, `topup`, `topup_reversal`, `transfer`, `transfer_cancel`, `transfer_failure`, or `transfer_refund`. Learn more about [balance transaction types and what they represent](https://stripe.com/docs/reports/balance-transaction-types). To classify transactions for accounting purposes, consider `reporting_category` instead.
+final class BalanceTransactionType {const BalanceTransactionType._(this.value);
+
+factory BalanceTransactionType.fromJson(String json) { return switch (json) {
+  'adjustment' => adjustment,
+  'advance' => advance,
+  'advance_funding' => advanceFunding,
+  'anticipation_repayment' => anticipationRepayment,
+  'application_fee' => applicationFee,
+  'application_fee_refund' => applicationFeeRefund,
+  'charge' => charge,
+  'climate_order_purchase' => climateOrderPurchase,
+  'climate_order_refund' => climateOrderRefund,
+  'connect_collection_transfer' => connectCollectionTransfer,
+  'contribution' => contribution,
+  'issuing_authorization_hold' => issuingAuthorizationHold,
+  'issuing_authorization_release' => issuingAuthorizationRelease,
+  'issuing_dispute' => issuingDispute,
+  'issuing_transaction' => issuingTransaction,
+  'obligation_outbound' => obligationOutbound,
+  'obligation_reversal_inbound' => obligationReversalInbound,
+  'payment' => payment,
+  'payment_failure_refund' => paymentFailureRefund,
+  'payment_network_reserve_hold' => paymentNetworkReserveHold,
+  'payment_network_reserve_release' => paymentNetworkReserveRelease,
+  'payment_refund' => paymentRefund,
+  'payment_reversal' => paymentReversal,
+  'payment_unreconciled' => paymentUnreconciled,
+  'payout' => payout,
+  'payout_cancel' => payoutCancel,
+  'payout_failure' => payoutFailure,
+  'payout_minimum_balance_hold' => payoutMinimumBalanceHold,
+  'payout_minimum_balance_release' => payoutMinimumBalanceRelease,
+  'refund' => refund,
+  'refund_failure' => refundFailure,
+  'reserve_hold' => reserveHold,
+  'reserve_release' => reserveRelease,
+  'reserve_transaction' => reserveTransaction,
+  'reserved_funds' => reservedFunds,
+  'stripe_balance_payment_debit' => stripeBalancePaymentDebit,
+  'stripe_balance_payment_debit_reversal' => stripeBalancePaymentDebitReversal,
+  'stripe_fee' => stripeFee,
+  'stripe_fx_fee' => stripeFxFee,
+  'tax_fee' => taxFee,
+  'topup' => topup,
+  'topup_reversal' => topupReversal,
+  'transfer' => transfer,
+  'transfer_cancel' => transferCancel,
+  'transfer_failure' => transferFailure,
+  'transfer_refund' => transferRefund,
+  _ => BalanceTransactionType._(json),
+}; }
+
+static const BalanceTransactionType adjustment = BalanceTransactionType._('adjustment');
+
+static const BalanceTransactionType advance = BalanceTransactionType._('advance');
+
+static const BalanceTransactionType advanceFunding = BalanceTransactionType._('advance_funding');
+
+static const BalanceTransactionType anticipationRepayment = BalanceTransactionType._('anticipation_repayment');
+
+static const BalanceTransactionType applicationFee = BalanceTransactionType._('application_fee');
+
+static const BalanceTransactionType applicationFeeRefund = BalanceTransactionType._('application_fee_refund');
+
+static const BalanceTransactionType charge = BalanceTransactionType._('charge');
+
+static const BalanceTransactionType climateOrderPurchase = BalanceTransactionType._('climate_order_purchase');
+
+static const BalanceTransactionType climateOrderRefund = BalanceTransactionType._('climate_order_refund');
+
+static const BalanceTransactionType connectCollectionTransfer = BalanceTransactionType._('connect_collection_transfer');
+
+static const BalanceTransactionType contribution = BalanceTransactionType._('contribution');
+
+static const BalanceTransactionType issuingAuthorizationHold = BalanceTransactionType._('issuing_authorization_hold');
+
+static const BalanceTransactionType issuingAuthorizationRelease = BalanceTransactionType._('issuing_authorization_release');
+
+static const BalanceTransactionType issuingDispute = BalanceTransactionType._('issuing_dispute');
+
+static const BalanceTransactionType issuingTransaction = BalanceTransactionType._('issuing_transaction');
+
+static const BalanceTransactionType obligationOutbound = BalanceTransactionType._('obligation_outbound');
+
+static const BalanceTransactionType obligationReversalInbound = BalanceTransactionType._('obligation_reversal_inbound');
+
+static const BalanceTransactionType payment = BalanceTransactionType._('payment');
+
+static const BalanceTransactionType paymentFailureRefund = BalanceTransactionType._('payment_failure_refund');
+
+static const BalanceTransactionType paymentNetworkReserveHold = BalanceTransactionType._('payment_network_reserve_hold');
+
+static const BalanceTransactionType paymentNetworkReserveRelease = BalanceTransactionType._('payment_network_reserve_release');
+
+static const BalanceTransactionType paymentRefund = BalanceTransactionType._('payment_refund');
+
+static const BalanceTransactionType paymentReversal = BalanceTransactionType._('payment_reversal');
+
+static const BalanceTransactionType paymentUnreconciled = BalanceTransactionType._('payment_unreconciled');
+
+static const BalanceTransactionType payout = BalanceTransactionType._('payout');
+
+static const BalanceTransactionType payoutCancel = BalanceTransactionType._('payout_cancel');
+
+static const BalanceTransactionType payoutFailure = BalanceTransactionType._('payout_failure');
+
+static const BalanceTransactionType payoutMinimumBalanceHold = BalanceTransactionType._('payout_minimum_balance_hold');
+
+static const BalanceTransactionType payoutMinimumBalanceRelease = BalanceTransactionType._('payout_minimum_balance_release');
+
+static const BalanceTransactionType refund = BalanceTransactionType._('refund');
+
+static const BalanceTransactionType refundFailure = BalanceTransactionType._('refund_failure');
+
+static const BalanceTransactionType reserveHold = BalanceTransactionType._('reserve_hold');
+
+static const BalanceTransactionType reserveRelease = BalanceTransactionType._('reserve_release');
+
+static const BalanceTransactionType reserveTransaction = BalanceTransactionType._('reserve_transaction');
+
+static const BalanceTransactionType reservedFunds = BalanceTransactionType._('reserved_funds');
+
+static const BalanceTransactionType stripeBalancePaymentDebit = BalanceTransactionType._('stripe_balance_payment_debit');
+
+static const BalanceTransactionType stripeBalancePaymentDebitReversal = BalanceTransactionType._('stripe_balance_payment_debit_reversal');
+
+static const BalanceTransactionType stripeFee = BalanceTransactionType._('stripe_fee');
+
+static const BalanceTransactionType stripeFxFee = BalanceTransactionType._('stripe_fx_fee');
+
+static const BalanceTransactionType taxFee = BalanceTransactionType._('tax_fee');
+
+static const BalanceTransactionType topup = BalanceTransactionType._('topup');
+
+static const BalanceTransactionType topupReversal = BalanceTransactionType._('topup_reversal');
+
+static const BalanceTransactionType transfer = BalanceTransactionType._('transfer');
+
+static const BalanceTransactionType transferCancel = BalanceTransactionType._('transfer_cancel');
+
+static const BalanceTransactionType transferFailure = BalanceTransactionType._('transfer_failure');
+
+static const BalanceTransactionType transferRefund = BalanceTransactionType._('transfer_refund');
+
+static const List<BalanceTransactionType> values = [adjustment, advance, advanceFunding, anticipationRepayment, applicationFee, applicationFeeRefund, charge, climateOrderPurchase, climateOrderRefund, connectCollectionTransfer, contribution, issuingAuthorizationHold, issuingAuthorizationRelease, issuingDispute, issuingTransaction, obligationOutbound, obligationReversalInbound, payment, paymentFailureRefund, paymentNetworkReserveHold, paymentNetworkReserveRelease, paymentRefund, paymentReversal, paymentUnreconciled, payout, payoutCancel, payoutFailure, payoutMinimumBalanceHold, payoutMinimumBalanceRelease, refund, refundFailure, reserveHold, reserveRelease, reserveTransaction, reservedFunds, stripeBalancePaymentDebit, stripeBalancePaymentDebitReversal, stripeFee, stripeFxFee, taxFee, topup, topupReversal, transfer, transferCancel, transferFailure, transferRefund];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is BalanceTransactionType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'BalanceTransactionType($value)'; } 
+ }
+/// Balance transactions represent funds moving through your Stripe account.
+/// Stripe creates them for every type of transaction that enters or leaves your Stripe account balance.
+/// 
+/// Related guide: [Balance transaction types](https://docs.stripe.com/reports/balance-transaction-types)
+final class BalanceTransaction {const BalanceTransaction({required this.amount, required this.availableOn, required this.balanceType, required this.created, required this.currency, this.description, this.exchangeRate, required this.fee, required this.feeDetails, required this.id, required this.net, required this.object, required this.reportingCategory, this.source, required this.status, required this.type, });
+
+factory BalanceTransaction.fromJson(Map<String, dynamic> json) { return BalanceTransaction(
+  amount: (json['amount'] as num).toInt(),
+  availableOn: (json['available_on'] as num).toInt(),
+  balanceType: BalanceTransactionBalanceType.fromJson(json['balance_type'] as String),
+  created: (json['created'] as num).toInt(),
+  currency: json['currency'] as String,
+  description: json['description'] as String?,
+  exchangeRate: json['exchange_rate'] != null ? (json['exchange_rate'] as num).toDouble() : null,
+  fee: (json['fee'] as num).toInt(),
+  feeDetails: (json['fee_details'] as List<dynamic>).map((e) => Fee.fromJson(e as Map<String, dynamic>)).toList(),
+  id: json['id'] as String,
+  net: (json['net'] as num).toInt(),
+  object: BalanceTransactionObject.fromJson(json['object'] as String),
+  reportingCategory: json['reporting_category'] as String,
+  source: json['source'] != null ? BalanceTransactionSource.fromJson(json['source'] as Map<String, dynamic>) : null,
+  status: json['status'] as String,
+  type: BalanceTransactionType.fromJson(json['type'] as String),
+); }
+
+/// Gross amount of this transaction (in cents (or local equivalent)). A positive value represents funds charged to another party, and a negative value represents funds sent to another party.
+final int amount;
+
+/// The date that the transaction's net funds become available in the Stripe balance.
+final int availableOn;
+
+/// The balance that this transaction impacts.
+final BalanceTransactionBalanceType balanceType;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// An arbitrary string attached to the object. Often useful for displaying to users.
+final String? description;
+
+/// If applicable, this transaction uses an exchange rate. If money converts from currency A to currency B, then the `amount` in currency A, multipled by the `exchange_rate`, equals the `amount` in currency B. For example, if you charge a customer 10.00 EUR, the PaymentIntent's `amount` is `1000` and `currency` is `eur`. If this converts to 12.34 USD in your Stripe account, the BalanceTransaction's `amount` is `1234`, its `currency` is `usd`, and the `exchange_rate` is `1.234`.
+final double? exchangeRate;
+
+/// Fees (in cents (or local equivalent)) paid for this transaction. Represented as a positive integer when assessed.
+final int fee;
+
+/// Detailed breakdown of fees (in cents (or local equivalent)) paid for this transaction.
+final List<Fee> feeDetails;
+
+/// Unique identifier for the object.
+final String id;
+
+/// Net impact to a Stripe balance (in cents (or local equivalent)). A positive value represents incrementing a Stripe balance, and a negative value decrementing a Stripe balance. You can calculate the net impact of a transaction on a balance by `amount` - `fee`
+final int net;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final BalanceTransactionObject object;
+
+/// Learn more about how [reporting categories](https://stripe.com/docs/reports/reporting-categories) can help you understand balance transactions from an accounting perspective.
+final String reportingCategory;
+
+/// This transaction relates to the Stripe object.
+final BalanceTransactionSource? source;
+
+/// The transaction's net funds status in the Stripe balance, which are either `available` or `pending`.
+final String status;
+
+/// Transaction type: `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `contribution`, `issuing_authorization_hold`, `issuing_authorization_release`, `issuing_dispute`, `issuing_transaction`, `obligation_outbound`, `obligation_reversal_inbound`, `payment`, `payment_failure_refund`, `payment_network_reserve_hold`, `payment_network_reserve_release`, `payment_refund`, `payment_reversal`, `payment_unreconciled`, `payout`, `payout_cancel`, `payout_failure`, `payout_minimum_balance_hold`, `payout_minimum_balance_release`, `refund`, `refund_failure`, `reserve_transaction`, `reserved_funds`, `reserve_hold`, `reserve_release`, `stripe_fee`, `stripe_fx_fee`, `stripe_balance_payment_debit`, `stripe_balance_payment_debit_reversal`, `tax_fee`, `topup`, `topup_reversal`, `transfer`, `transfer_cancel`, `transfer_failure`, or `transfer_refund`. Learn more about [balance transaction types and what they represent](https://stripe.com/docs/reports/balance-transaction-types). To classify transactions for accounting purposes, consider `reporting_category` instead.
+final BalanceTransactionType type;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'available_on': availableOn,
+  'balance_type': balanceType.toJson(),
+  'created': created,
+  'currency': currency,
+  'description': ?description,
+  'exchange_rate': ?exchangeRate,
+  'fee': fee,
+  'fee_details': feeDetails.map((e) => e.toJson()).toList(),
+  'id': id,
+  'net': net,
+  'object': object.toJson(),
+  'reporting_category': reportingCategory,
+  if (source != null) 'source': source?.toJson(),
+  'status': status,
+  'type': type.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('available_on') && json['available_on'] is num &&
+      json.containsKey('balance_type') &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('fee') && json['fee'] is num &&
+      json.containsKey('fee_details') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('net') && json['net'] is num &&
+      json.containsKey('object') &&
+      json.containsKey('reporting_category') && json['reporting_category'] is String &&
+      json.containsKey('status') && json['status'] is String &&
+      json.containsKey('type'); } 
+BalanceTransaction copyWith({int? amount, int? availableOn, BalanceTransactionBalanceType? balanceType, int? created, String? currency, String? Function()? description, double? Function()? exchangeRate, int? fee, List<Fee>? feeDetails, String? id, int? net, BalanceTransactionObject? object, String? reportingCategory, BalanceTransactionSource? Function()? source, String? status, BalanceTransactionType? type, }) { return BalanceTransaction(
+  amount: amount ?? this.amount,
+  availableOn: availableOn ?? this.availableOn,
+  balanceType: balanceType ?? this.balanceType,
+  created: created ?? this.created,
+  currency: currency ?? this.currency,
+  description: description != null ? description() : this.description,
+  exchangeRate: exchangeRate != null ? exchangeRate() : this.exchangeRate,
+  fee: fee ?? this.fee,
+  feeDetails: feeDetails ?? this.feeDetails,
+  id: id ?? this.id,
+  net: net ?? this.net,
+  object: object ?? this.object,
+  reportingCategory: reportingCategory ?? this.reportingCategory,
+  source: source != null ? source() : this.source,
+  status: status ?? this.status,
+  type: type ?? this.type,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BalanceTransaction &&
+          amount == other.amount &&
+          availableOn == other.availableOn &&
+          balanceType == other.balanceType &&
+          created == other.created &&
+          currency == other.currency &&
+          description == other.description &&
+          exchangeRate == other.exchangeRate &&
+          fee == other.fee &&
+          listEquals(feeDetails, other.feeDetails) &&
+          id == other.id &&
+          net == other.net &&
+          object == other.object &&
+          reportingCategory == other.reportingCategory &&
+          source == other.source &&
+          status == other.status &&
+          type == other.type; } 
+@override int get hashCode { return Object.hash(amount, availableOn, balanceType, created, currency, description, exchangeRate, fee, Object.hashAll(feeDetails), id, net, object, reportingCategory, source, status, type); } 
+@override String toString() { return 'BalanceTransaction(amount: $amount, availableOn: $availableOn, balanceType: $balanceType, created: $created, currency: $currency, description: $description, exchangeRate: $exchangeRate, fee: $fee, feeDetails: $feeDetails, id: $id, net: $net, object: $object, reportingCategory: $reportingCategory, source: $source, status: $status, type: $type)'; } 
+ }

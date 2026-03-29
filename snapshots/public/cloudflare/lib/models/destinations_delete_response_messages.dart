@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class DestinationsDeleteResponseMessagesMessage {const DestinationsDeleteResponseMessagesMessage._(this.value);
+
+factory DestinationsDeleteResponseMessagesMessage.fromJson(String json) { return switch (json) {
+  'Successful request' => successfulRequest,
+  _ => DestinationsDeleteResponseMessagesMessage._(json),
+}; }
+
+static const DestinationsDeleteResponseMessagesMessage successfulRequest = DestinationsDeleteResponseMessagesMessage._('Successful request');
+
+static const List<DestinationsDeleteResponseMessagesMessage> values = [successfulRequest];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DestinationsDeleteResponseMessagesMessage && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'DestinationsDeleteResponseMessagesMessage($value)'; } 
+ }
+final class DestinationsDeleteResponseMessages {const DestinationsDeleteResponseMessages({required this.message});
+
+factory DestinationsDeleteResponseMessages.fromJson(Map<String, dynamic> json) { return DestinationsDeleteResponseMessages(
+  message: DestinationsDeleteResponseMessagesMessage.fromJson(json['message'] as String),
+); }
+
+final DestinationsDeleteResponseMessagesMessage message;
+
+Map<String, dynamic> toJson() { return {
+  'message': message.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('message'); } 
+DestinationsDeleteResponseMessages copyWith({DestinationsDeleteResponseMessagesMessage? message}) { return DestinationsDeleteResponseMessages(
+  message: message ?? this.message,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is DestinationsDeleteResponseMessages &&
+          message == other.message; } 
+@override int get hashCode { return message.hashCode; } 
+@override String toString() { return 'DestinationsDeleteResponseMessages(message: $message)'; } 
+ }

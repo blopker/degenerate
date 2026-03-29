@@ -1,0 +1,19 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GetBillingPortalConfigurationsRequest {const GetBillingPortalConfigurationsRequest();
+
+factory GetBillingPortalConfigurationsRequest.fromJson(Map<String, dynamic> json) { return GetBillingPortalConfigurationsRequest(
+
+); }
+
+Map<String, dynamic> toJson() { return {
+
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+GetBillingPortalConfigurationsRequest copyWith() { return GetBillingPortalConfigurationsRequest(
+
+); } 
+@override bool operator ==(Object other) { return identical(this, other) || other is GetBillingPortalConfigurationsRequest; } 
+@override int get hashCode { return runtimeType.hashCode; } 
+@override String toString() { return 'GetBillingPortalConfigurationsRequest()'; } 
+ }

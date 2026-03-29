@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class CustomIndicatorFeedsUpdateIndicatorFeedDataRequest {const CustomIndicatorFeedsUpdateIndicatorFeedDataRequest({this.source});
+
+factory CustomIndicatorFeedsUpdateIndicatorFeedDataRequest.fromJson(Map<String, dynamic> json) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
+  source: json['source'] as String?,
+); }
+
+/// The file to upload
+final String? source;
+
+Map<String, dynamic> toJson() { return {
+  'source': ?source,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+CustomIndicatorFeedsUpdateIndicatorFeedDataRequest copyWith({String Function()? source}) { return CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(
+  source: source != null ? source() : this.source,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is CustomIndicatorFeedsUpdateIndicatorFeedDataRequest &&
+          source == other.source; } 
+@override int get hashCode { return source.hashCode; } 
+@override String toString() { return 'CustomIndicatorFeedsUpdateIndicatorFeedDataRequest(source: $source)'; } 
+ }

@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'shield_timestamp.dart';import 'shield_uuid.dart';/// Schema active on endpoint.
+final class ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema {const ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema({this.createdAt, this.id, this.isLearned, this.name, });
+
+factory ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema.fromJson(Map<String, dynamic> json) { return ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema(
+  createdAt: json['created_at'] != null ? ShieldTimestamp.fromJson(json['created_at'] as String) : null,
+  id: json['id'] != null ? ShieldUuid.fromJson(json['id'] as String) : null,
+  isLearned: json['is_learned'] as bool?,
+  name: json['name'] as String?,
+); }
+
+final ShieldTimestamp? createdAt;
+
+final ShieldUuid? id;
+
+/// True if schema is Cloudflare-provided.
+final bool? isLearned;
+
+/// Schema file name.
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  if (createdAt != null) 'created_at': createdAt?.toJson(),
+  if (id != null) 'id': id?.toJson(),
+  'is_learned': ?isLearned,
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema copyWith({ShieldTimestamp Function()? createdAt, ShieldUuid Function()? id, bool Function()? isLearned, String Function()? name, }) { return ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema(
+  createdAt: createdAt != null ? createdAt() : this.createdAt,
+  id: id != null ? id() : this.id,
+  isLearned: isLearned != null ? isLearned() : this.isLearned,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema &&
+          createdAt == other.createdAt &&
+          id == other.id &&
+          isLearned == other.isLearned &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(createdAt, id, isLearned, name); } 
+@override String toString() { return 'ShieldOperationFeatureSchemaInfoSchemaInfoActiveSchema(createdAt: $createdAt, id: $id, isLearned: $isLearned, name: $name)'; } 
+ }

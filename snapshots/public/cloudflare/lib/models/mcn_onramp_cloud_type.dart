@@ -1,0 +1,29 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class McnOnrampCloudType {const McnOnrampCloudType._(this.value);
+
+factory McnOnrampCloudType.fromJson(String json) { return switch (json) {
+  'AWS' => aws,
+  'AZURE' => azure,
+  'GOOGLE' => google,
+  _ => McnOnrampCloudType._(json),
+}; }
+
+static const McnOnrampCloudType aws = McnOnrampCloudType._('AWS');
+
+static const McnOnrampCloudType azure = McnOnrampCloudType._('AZURE');
+
+static const McnOnrampCloudType google = McnOnrampCloudType._('GOOGLE');
+
+static const List<McnOnrampCloudType> values = [aws, azure, google];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is McnOnrampCloudType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'McnOnrampCloudType($value)'; } 
+ }

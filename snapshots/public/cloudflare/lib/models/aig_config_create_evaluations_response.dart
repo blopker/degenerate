@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'aig_config_create_evaluations_response_result.dart';final class AigConfigCreateEvaluationsResponse {const AigConfigCreateEvaluationsResponse({required this.result, required this.success, });
+
+factory AigConfigCreateEvaluationsResponse.fromJson(Map<String, dynamic> json) { return AigConfigCreateEvaluationsResponse(
+  result: AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>),
+  success: json['success'] as bool,
+); }
+
+final AigConfigCreateEvaluationsResponseResult result;
+
+final bool success;
+
+Map<String, dynamic> toJson() { return {
+  'result': result.toJson(),
+  'success': success,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('result') &&
+      json.containsKey('success') && json['success'] is bool; } 
+AigConfigCreateEvaluationsResponse copyWith({AigConfigCreateEvaluationsResponseResult? result, bool? success, }) { return AigConfigCreateEvaluationsResponse(
+  result: result ?? this.result,
+  success: success ?? this.success,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is AigConfigCreateEvaluationsResponse &&
+          result == other.result &&
+          success == other.success; } 
+@override int get hashCode { return Object.hash(result, success); } 
+@override String toString() { return 'AigConfigCreateEvaluationsResponse(result: $result, success: $success)'; } 
+ }

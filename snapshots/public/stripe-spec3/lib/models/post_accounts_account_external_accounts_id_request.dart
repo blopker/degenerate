@@ -1,0 +1,188 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_accounts_account_external_accounts_id_request_documents.dart';import 'post_accounts_account_external_accounts_id_request_metadata.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
+final class PostAccountsAccountExternalAccountsIdRequestAccountHolderType {const PostAccountsAccountExternalAccountsIdRequestAccountHolderType._(this.value);
+
+factory PostAccountsAccountExternalAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  'company' => company,
+  'individual' => individual,
+  _ => PostAccountsAccountExternalAccountsIdRequestAccountHolderType._(json),
+}; }
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountHolderType $empty = PostAccountsAccountExternalAccountsIdRequestAccountHolderType._('');
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountHolderType company = PostAccountsAccountExternalAccountsIdRequestAccountHolderType._('company');
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountHolderType individual = PostAccountsAccountExternalAccountsIdRequestAccountHolderType._('individual');
+
+static const List<PostAccountsAccountExternalAccountsIdRequestAccountHolderType> values = [$empty, company, individual];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsAccountExternalAccountsIdRequestAccountHolderType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsAccountExternalAccountsIdRequestAccountHolderType($value)'; } 
+ }
+/// The bank account type. This can only be `checking` or `savings` in most countries. In Japan, this can only be `futsu` or `toza`.
+final class PostAccountsAccountExternalAccountsIdRequestAccountType {const PostAccountsAccountExternalAccountsIdRequestAccountType._(this.value);
+
+factory PostAccountsAccountExternalAccountsIdRequestAccountType.fromJson(String json) { return switch (json) {
+  'checking' => checking,
+  'futsu' => futsu,
+  'savings' => savings,
+  'toza' => toza,
+  _ => PostAccountsAccountExternalAccountsIdRequestAccountType._(json),
+}; }
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountType checking = PostAccountsAccountExternalAccountsIdRequestAccountType._('checking');
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountType futsu = PostAccountsAccountExternalAccountsIdRequestAccountType._('futsu');
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountType savings = PostAccountsAccountExternalAccountsIdRequestAccountType._('savings');
+
+static const PostAccountsAccountExternalAccountsIdRequestAccountType toza = PostAccountsAccountExternalAccountsIdRequestAccountType._('toza');
+
+static const List<PostAccountsAccountExternalAccountsIdRequestAccountType> values = [checking, futsu, savings, toza];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostAccountsAccountExternalAccountsIdRequestAccountType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostAccountsAccountExternalAccountsIdRequestAccountType($value)'; } 
+ }
+final class PostAccountsAccountExternalAccountsIdRequest {const PostAccountsAccountExternalAccountsIdRequest({this.accountHolderName, this.accountHolderType, this.accountType, this.addressCity, this.addressCountry, this.addressLine1, this.addressLine2, this.addressState, this.addressZip, this.defaultForCurrency, this.documents, this.expMonth, this.expYear, this.expand, this.metadata, this.name, });
+
+factory PostAccountsAccountExternalAccountsIdRequest.fromJson(Map<String, dynamic> json) { return PostAccountsAccountExternalAccountsIdRequest(
+  accountHolderName: json['account_holder_name'] as String?,
+  accountHolderType: json['account_holder_type'] != null ? PostAccountsAccountExternalAccountsIdRequestAccountHolderType.fromJson(json['account_holder_type'] as String) : null,
+  accountType: json['account_type'] != null ? PostAccountsAccountExternalAccountsIdRequestAccountType.fromJson(json['account_type'] as String) : null,
+  addressCity: json['address_city'] as String?,
+  addressCountry: json['address_country'] as String?,
+  addressLine1: json['address_line1'] as String?,
+  addressLine2: json['address_line2'] as String?,
+  addressState: json['address_state'] as String?,
+  addressZip: json['address_zip'] as String?,
+  defaultForCurrency: json['default_for_currency'] as bool?,
+  documents: json['documents'] != null ? PostAccountsAccountExternalAccountsIdRequestDocuments.fromJson(json['documents'] as Map<String, dynamic>) : null,
+  expMonth: json['exp_month'] as String?,
+  expYear: json['exp_year'] as String?,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  metadata: json['metadata'] != null ? OneOf2.parse(json['metadata'], fromA: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)), fromB: (v) => PostAccountsAccountExternalAccountsIdRequestMetadataVariant2.fromJson(v as String),) : null,
+  name: json['name'] as String?,
+); }
+
+/// The name of the person or business that owns the bank account.
+final String? accountHolderName;
+
+/// The type of entity that holds the account. This can be either `individual` or `company`.
+final PostAccountsAccountExternalAccountsIdRequestAccountHolderType? accountHolderType;
+
+/// The bank account type. This can only be `checking` or `savings` in most countries. In Japan, this can only be `futsu` or `toza`.
+final PostAccountsAccountExternalAccountsIdRequestAccountType? accountType;
+
+/// City/District/Suburb/Town/Village.
+final String? addressCity;
+
+/// Billing address country, if provided when creating card.
+final String? addressCountry;
+
+/// Address line 1 (Street address/PO Box/Company name).
+final String? addressLine1;
+
+/// Address line 2 (Apartment/Suite/Unit/Building).
+final String? addressLine2;
+
+/// State/County/Province/Region.
+final String? addressState;
+
+/// ZIP or postal code.
+final String? addressZip;
+
+/// When set to true, this becomes the default external account for its currency.
+final bool? defaultForCurrency;
+
+/// Documents that may be submitted to satisfy various informational requests.
+final PostAccountsAccountExternalAccountsIdRequestDocuments? documents;
+
+/// Two digit number representing the card’s expiration month.
+final String? expMonth;
+
+/// Four digit number representing the card’s expiration year.
+final String? expYear;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final PostAccountsAccountExternalAccountsIdRequestMetadata? metadata;
+
+/// Cardholder name.
+final String? name;
+
+Map<String, dynamic> toJson() { return {
+  'account_holder_name': ?accountHolderName,
+  if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
+  if (accountType != null) 'account_type': accountType?.toJson(),
+  'address_city': ?addressCity,
+  'address_country': ?addressCountry,
+  'address_line1': ?addressLine1,
+  'address_line2': ?addressLine2,
+  'address_state': ?addressState,
+  'address_zip': ?addressZip,
+  'default_for_currency': ?defaultForCurrency,
+  if (documents != null) 'documents': documents?.toJson(),
+  'exp_month': ?expMonth,
+  'exp_year': ?expYear,
+  'expand': ?expand,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+  'name': ?name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostAccountsAccountExternalAccountsIdRequest copyWith({String Function()? accountHolderName, PostAccountsAccountExternalAccountsIdRequestAccountHolderType Function()? accountHolderType, PostAccountsAccountExternalAccountsIdRequestAccountType Function()? accountType, String Function()? addressCity, String Function()? addressCountry, String Function()? addressLine1, String Function()? addressLine2, String Function()? addressState, String Function()? addressZip, bool Function()? defaultForCurrency, PostAccountsAccountExternalAccountsIdRequestDocuments Function()? documents, String Function()? expMonth, String Function()? expYear, List<String> Function()? expand, PostAccountsAccountExternalAccountsIdRequestMetadata Function()? metadata, String Function()? name, }) { return PostAccountsAccountExternalAccountsIdRequest(
+  accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
+  accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
+  accountType: accountType != null ? accountType() : this.accountType,
+  addressCity: addressCity != null ? addressCity() : this.addressCity,
+  addressCountry: addressCountry != null ? addressCountry() : this.addressCountry,
+  addressLine1: addressLine1 != null ? addressLine1() : this.addressLine1,
+  addressLine2: addressLine2 != null ? addressLine2() : this.addressLine2,
+  addressState: addressState != null ? addressState() : this.addressState,
+  addressZip: addressZip != null ? addressZip() : this.addressZip,
+  defaultForCurrency: defaultForCurrency != null ? defaultForCurrency() : this.defaultForCurrency,
+  documents: documents != null ? documents() : this.documents,
+  expMonth: expMonth != null ? expMonth() : this.expMonth,
+  expYear: expYear != null ? expYear() : this.expYear,
+  expand: expand != null ? expand() : this.expand,
+  metadata: metadata != null ? metadata() : this.metadata,
+  name: name != null ? name() : this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostAccountsAccountExternalAccountsIdRequest &&
+          accountHolderName == other.accountHolderName &&
+          accountHolderType == other.accountHolderType &&
+          accountType == other.accountType &&
+          addressCity == other.addressCity &&
+          addressCountry == other.addressCountry &&
+          addressLine1 == other.addressLine1 &&
+          addressLine2 == other.addressLine2 &&
+          addressState == other.addressState &&
+          addressZip == other.addressZip &&
+          defaultForCurrency == other.defaultForCurrency &&
+          documents == other.documents &&
+          expMonth == other.expMonth &&
+          expYear == other.expYear &&
+          listEquals(expand, other.expand) &&
+          metadata == other.metadata &&
+          name == other.name; } 
+@override int get hashCode { return Object.hash(accountHolderName, accountHolderType, accountType, addressCity, addressCountry, addressLine1, addressLine2, addressState, addressZip, defaultForCurrency, documents, expMonth, expYear, Object.hashAll(expand ?? const []), metadata, name); } 
+@override String toString() { return 'PostAccountsAccountExternalAccountsIdRequest(accountHolderName: $accountHolderName, accountHolderType: $accountHolderType, accountType: $accountType, addressCity: $addressCity, addressCountry: $addressCountry, addressLine1: $addressLine1, addressLine2: $addressLine2, addressState: $addressState, addressZip: $addressZip, defaultForCurrency: $defaultForCurrency, documents: $documents, expMonth: $expMonth, expYear: $expYear, expand: $expand, metadata: $metadata, name: $name)'; } 
+ }

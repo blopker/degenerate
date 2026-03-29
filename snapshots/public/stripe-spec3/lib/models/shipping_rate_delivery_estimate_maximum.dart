@@ -1,0 +1,17 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'shipping_rate_delivery_estimate_bound.dart';/// The upper bound of the estimated range. If empty, represents no upper bound i.e., infinite.
+final class ShippingRateDeliveryEstimateMaximum {const ShippingRateDeliveryEstimateMaximum({this.shippingRateDeliveryEstimateBound});
+
+factory ShippingRateDeliveryEstimateMaximum.fromJson(Map<String, dynamic> json) { return ShippingRateDeliveryEstimateMaximum(
+  shippingRateDeliveryEstimateBound: ShippingRateDeliveryEstimateBound.canParse(json) ? ShippingRateDeliveryEstimateBound.fromJson(json) : null,
+); }
+
+final ShippingRateDeliveryEstimateBound? shippingRateDeliveryEstimateBound;
+
+/// At least one variant must be present.
+bool get isValid { return shippingRateDeliveryEstimateBound != null; } 
+Map<String, dynamic> toJson() { return {
+  ...?shippingRateDeliveryEstimateBound?.toJson(),
+}; } 
+ }

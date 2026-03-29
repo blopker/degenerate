@@ -1,0 +1,168 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._(this.value);
+
+factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1.fromJson(String json) { return switch (json) {
+  'ach_credit_transfer' => achCreditTransfer,
+  'ach_debit' => achDebit,
+  'acss_debit' => acssDebit,
+  'affirm' => affirm,
+  'amazon_pay' => amazonPay,
+  'au_becs_debit' => auBecsDebit,
+  'bacs_debit' => bacsDebit,
+  'bancontact' => bancontact,
+  'boleto' => boleto,
+  'card' => card,
+  'cashapp' => cashapp,
+  'crypto' => crypto,
+  'custom' => custom,
+  'customer_balance' => customerBalance,
+  'eps' => eps,
+  'fpx' => fpx,
+  'giropay' => giropay,
+  'grabpay' => grabpay,
+  'ideal' => ideal,
+  'jp_credit_transfer' => jpCreditTransfer,
+  'kakao_pay' => kakaoPay,
+  'klarna' => klarna,
+  'konbini' => konbini,
+  'kr_card' => krCard,
+  'link' => link,
+  'multibanco' => multibanco,
+  'naver_pay' => naverPay,
+  'nz_bank_account' => nzBankAccount,
+  'p24' => p24,
+  'pay_by_bank' => payByBank,
+  'payco' => payco,
+  'paynow' => paynow,
+  'paypal' => paypal,
+  'payto' => payto,
+  'promptpay' => promptpay,
+  'revolut_pay' => revolutPay,
+  'sepa_credit_transfer' => sepaCreditTransfer,
+  'sepa_debit' => sepaDebit,
+  'sofort' => sofort,
+  'swish' => swish,
+  'us_bank_account' => usBankAccount,
+  'wechat_pay' => wechatPay,
+  _ => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._(json),
+}; }
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 achCreditTransfer = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('ach_credit_transfer');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 achDebit = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('ach_debit');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 acssDebit = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('acss_debit');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 affirm = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('affirm');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 amazonPay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('amazon_pay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 auBecsDebit = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('au_becs_debit');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 bacsDebit = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('bacs_debit');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 bancontact = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('bancontact');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 boleto = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('boleto');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 card = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('card');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 cashapp = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('cashapp');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 crypto = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('crypto');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 custom = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('custom');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 customerBalance = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('customer_balance');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 eps = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('eps');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 fpx = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('fpx');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 giropay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('giropay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 grabpay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('grabpay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 ideal = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('ideal');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 jpCreditTransfer = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('jp_credit_transfer');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 kakaoPay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('kakao_pay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 klarna = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('klarna');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 konbini = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('konbini');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 krCard = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('kr_card');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 link = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('link');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 multibanco = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('multibanco');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 naverPay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('naver_pay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 nzBankAccount = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('nz_bank_account');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 p24 = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('p24');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 payByBank = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('pay_by_bank');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 payco = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('payco');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 paynow = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('paynow');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 paypal = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('paypal');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 payto = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('payto');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 promptpay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('promptpay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 revolutPay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('revolut_pay');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 sepaCreditTransfer = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('sepa_credit_transfer');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 sepaDebit = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('sepa_debit');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 sofort = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('sofort');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 swish = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('swish');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 usBankAccount = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('us_bank_account');
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 wechatPay = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1._('wechat_pay');
+
+static const List<PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1> values = [achCreditTransfer, achDebit, acssDebit, affirm, amazonPay, auBecsDebit, bacsDebit, bancontact, boleto, card, cashapp, crypto, custom, customerBalance, eps, fpx, giropay, grabpay, ideal, jpCreditTransfer, kakaoPay, klarna, konbini, krCard, link, multibanco, naverPay, nzBankAccount, p24, payByBank, payco, paynow, paypal, payto, promptpay, revolutPay, sepaCreditTransfer, sepaDebit, sofort, swish, usBankAccount, wechatPay];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1($value)'; } 
+ }
+final class PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 {const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2._(this.value);
+
+factory PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2.fromJson(String json) { return switch (json) {
+  '' => $empty,
+  _ => PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2._(json),
+}; }
+
+static const PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 $empty = PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2._('');
+
+static const List<PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2> values = [$empty];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2($value)'; } 
+ }
+typedef PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypes = OneOf2<List<PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant1>,PostInvoicesInvoiceRequestPaymentSettingsPaymentMethodTypesVariant2>;

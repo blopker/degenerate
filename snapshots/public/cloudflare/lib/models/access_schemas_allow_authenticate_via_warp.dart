@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// When set to true, users can authenticate to this application using their WARP session.  When set to false this application will always require direct IdP authentication. This setting always overrides the organization setting for WARP authentication.
+extension type const AccessSchemasAllowAuthenticateViaWarp(bool value) {
+factory AccessSchemasAllowAuthenticateViaWarp.fromJson(bool json) => AccessSchemasAllowAuthenticateViaWarp(json);
+
+bool toJson() => value;
+
+}

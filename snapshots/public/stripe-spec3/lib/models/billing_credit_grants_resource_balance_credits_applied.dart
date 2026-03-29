@@ -1,0 +1,33 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_grants_resource_balance_credits_applied_invoice.dart';import 'invoice.dart';/// 
+final class BillingCreditGrantsResourceBalanceCreditsApplied {const BillingCreditGrantsResourceBalanceCreditsApplied({required this.invoice, required this.invoiceLineItem, });
+
+factory BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCreditsApplied(
+  invoice: OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),),
+  invoiceLineItem: json['invoice_line_item'] as String,
+); }
+
+/// The invoice to which the billing credits were applied.
+final BillingCreditGrantsResourceBalanceCreditsAppliedInvoice invoice;
+
+/// The invoice line item to which the billing credits were applied.
+final String invoiceLineItem;
+
+Map<String, dynamic> toJson() { return {
+  'invoice': invoice.toJson(),
+  'invoice_line_item': invoiceLineItem,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice') &&
+      json.containsKey('invoice_line_item') && json['invoice_line_item'] is String; } 
+BillingCreditGrantsResourceBalanceCreditsApplied copyWith({BillingCreditGrantsResourceBalanceCreditsAppliedInvoice? invoice, String? invoiceLineItem, }) { return BillingCreditGrantsResourceBalanceCreditsApplied(
+  invoice: invoice ?? this.invoice,
+  invoiceLineItem: invoiceLineItem ?? this.invoiceLineItem,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is BillingCreditGrantsResourceBalanceCreditsApplied &&
+          invoice == other.invoice &&
+          invoiceLineItem == other.invoiceLineItem; } 
+@override int get hashCode { return Object.hash(invoice, invoiceLineItem); } 
+@override String toString() { return 'BillingCreditGrantsResourceBalanceCreditsApplied(invoice: $invoice, invoiceLineItem: $invoiceLineItem)'; } 
+ }

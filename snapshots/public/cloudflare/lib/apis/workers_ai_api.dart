@@ -1,0 +1,202 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/workers_ai_get_model_schema_response.dart';import '../models/workers_ai_get_model_schema_response400.dart';import '../models/workers_ai_get_to_markdown_supported_response.dart';import '../models/workers_ai_get_to_markdown_supported_response400.dart';import '../models/workers_ai_post_run_model_request.dart';import '../models/workers_ai_post_run_model_response.dart';import '../models/workers_ai_post_run_model_response400.dart';import '../models/workers_ai_post_to_markdown_request.dart';import '../models/workers_ai_post_to_markdown_response.dart';import '../models/workers_ai_post_to_markdown_response400.dart';import '../models/workers_ai_search_author_response.dart';import '../models/workers_ai_search_author_response400.dart';import '../models/workers_ai_search_model_response.dart';import '../models/workers_ai_search_model_response404.dart';import '../models/workers_ai_search_task_response.dart';import '../models/workers_ai_search_task_response404.dart';/// WorkersAiApi operations.
+///
+/// All operations return [ApiResult] - use pattern matching to handle
+/// success, error, and exception cases.
+final class WorkersAiApi with ApiExecutor {const WorkersAiApi(this.apiConfig);
+
+@override final ApiConfig apiConfig;
+
+/// Author Search
+///
+/// `GET /accounts/{account_id}/ai/authors/search`
+Future<ApiResult<WorkersAiSearchAuthorResponse, WorkersAiSearchAuthorResponse400>> workersAiSearchAuthor({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/authors/search',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiSearchAuthorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiSearchAuthorResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get Model Schema
+///
+/// Retrieves the input and output JSON schema definition for a Workers AI model.
+///
+/// `GET /accounts/{account_id}/ai/models/schema`
+Future<ApiResult<WorkersAiGetModelSchemaResponse, WorkersAiGetModelSchemaResponse400>> workersAiGetModelSchema({required String accountId, required String model, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+queryParameters['model'] = model;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/models/schema',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiGetModelSchemaResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiGetModelSchemaResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Model Search
+///
+/// `GET /accounts/{account_id}/ai/models/search`
+Future<ApiResult<WorkersAiSearchModelResponse, WorkersAiSearchModelResponse404>> workersAiSearchModel({required String accountId, int? perPage, int? page, String? task, String? author, double? source, bool? hideExperimental, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+final queryParametersList = <ApiQueryParameter>[];
+if (perPage != null) queryParameters['per_page'] = perPage.toString();
+if (page != null) queryParameters['page'] = page.toString();
+if (task != null) queryParameters['task'] = task;
+if (author != null) queryParameters['author'] = author;
+if (source != null) queryParameters['source'] = source.toString();
+if (hideExperimental != null) queryParameters['hide_experimental'] = hideExperimental.toString();
+if (search != null) queryParameters['search'] = search;
+
+final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/models/search',
+  headers: headers,
+  queryParameters: queryParameters,
+  queryParametersList: queryParametersList,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiSearchModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiSearchModelResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Execute AI model
+///
+/// This endpoint provides users with the capability to run specific AI models on-demand.
+/// 
+/// By submitting the required input data, users can receive real-time predictions or results generated by the chosen AI
+/// model. The endpoint supports various AI model types, ensuring flexibility and adaptability for diverse use cases.
+/// 
+/// Model specific inputs available in [Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/).
+///
+/// `POST /accounts/{account_id}/ai/run/{model_name}`
+Future<ApiResult<WorkersAiPostRunModelResponse, WorkersAiPostRunModelResponse400>> workersAiPostRunModel({required String accountId, required String modelName, WorkersAiPostRunModelRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+headers['Content-Type'] = 'application/json';
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/run/${Uri.encodeComponent(modelName)}',
+  headers: headers,
+  body: jsonEncode(body?.toJson()),
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiPostRunModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiPostRunModelResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Task Search
+///
+/// `GET /accounts/{account_id}/ai/tasks/search`
+Future<ApiResult<WorkersAiSearchTaskResponse, WorkersAiSearchTaskResponse404>> workersAiSearchTask({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tasks/search',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiSearchTaskResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiSearchTaskResponse404.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Convert Files into Markdown
+///
+/// Converts uploaded files into Markdown format using Workers AI.
+///
+/// `POST /accounts/{account_id}/ai/tomarkdown`
+Future<ApiResult<WorkersAiPostToMarkdownResponse, WorkersAiPostToMarkdownResponse400>> workersAiPostToMarkdown({required String accountId, WorkersAiPostToMarkdownRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'POST',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown',
+  headers: headers,
+  body: body == null ? null : [
+    ApiMultipartField.text('files', body.files.toString()),
+  ],
+  contentType: 'multipart/form-data',
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiPostToMarkdownResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiPostToMarkdownResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+/// Get all converted formats supported
+///
+/// Lists all file formats supported for conversion to Markdown.
+///
+/// `GET /accounts/{account_id}/ai/tomarkdown/supported`
+Future<ApiResult<WorkersAiGetToMarkdownSupportedResponse, WorkersAiGetToMarkdownSupportedResponse400>> workersAiGetToMarkdownSupported({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+
+final request = ApiRequest(
+  method: 'GET',
+  path: '/accounts/${Uri.encodeComponent(accountId)}/ai/tomarkdown/supported',
+  headers: headers,
+  options: options,
+);
+
+return execute(
+  request,
+  onSuccess: (response) {
+    return WorkersAiGetToMarkdownSupportedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+  onError: (response) {
+    return WorkersAiGetToMarkdownSupportedResponse400.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
+);
+ } 
+ }

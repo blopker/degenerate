@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Always `group.deleted`.
+final class GroupDeletedResourceObject {const GroupDeletedResourceObject._(this.value);
+
+factory GroupDeletedResourceObject.fromJson(String json) { return switch (json) {
+  'group.deleted' => groupDeleted,
+  _ => GroupDeletedResourceObject._(json),
+}; }
+
+static const GroupDeletedResourceObject groupDeleted = GroupDeletedResourceObject._('group.deleted');
+
+static const List<GroupDeletedResourceObject> values = [groupDeleted];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is GroupDeletedResourceObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'GroupDeletedResourceObject($value)'; } 
+ }
+/// Confirmation payload returned after deleting a group.
+final class GroupDeletedResource {const GroupDeletedResource({required this.object, required this.id, required this.deleted, });
+
+factory GroupDeletedResource.fromJson(Map<String, dynamic> json) { return GroupDeletedResource(
+  object: GroupDeletedResourceObject.fromJson(json['object'] as String),
+  id: json['id'] as String,
+  deleted: json['deleted'] as bool,
+); }
+
+/// Always `group.deleted`.
+final GroupDeletedResourceObject object;
+
+/// Identifier of the deleted group.
+final String id;
+
+/// Whether the group was deleted.
+final bool deleted;
+
+Map<String, dynamic> toJson() { return {
+  'object': object.toJson(),
+  'id': id,
+  'deleted': deleted,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('object') &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('deleted') && json['deleted'] is bool; } 
+GroupDeletedResource copyWith({GroupDeletedResourceObject? object, String? id, bool? deleted, }) { return GroupDeletedResource(
+  object: object ?? this.object,
+  id: id ?? this.id,
+  deleted: deleted ?? this.deleted,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GroupDeletedResource &&
+          object == other.object &&
+          id == other.id &&
+          deleted == other.deleted; } 
+@override int get hashCode { return Object.hash(object, id, deleted); } 
+@override String toString() { return 'GroupDeletedResource(object: $object, id: $id, deleted: $deleted)'; } 
+ }

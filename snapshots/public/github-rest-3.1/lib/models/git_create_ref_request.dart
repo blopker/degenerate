@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class GitCreateRefRequest {const GitCreateRefRequest({required this.ref, required this.sha, });
+
+factory GitCreateRefRequest.fromJson(Map<String, dynamic> json) { return GitCreateRefRequest(
+  ref: json['ref'] as String,
+  sha: json['sha'] as String,
+); }
+
+/// The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
+final String ref;
+
+/// The SHA1 value for this reference.
+final String sha;
+
+Map<String, dynamic> toJson() { return {
+  'ref': ref,
+  'sha': sha,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('ref') && json['ref'] is String &&
+      json.containsKey('sha') && json['sha'] is String; } 
+GitCreateRefRequest copyWith({String? ref, String? sha, }) { return GitCreateRefRequest(
+  ref: ref ?? this.ref,
+  sha: sha ?? this.sha,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is GitCreateRefRequest &&
+          ref == other.ref &&
+          sha == other.sha; } 
+@override int get hashCode { return Object.hash(ref, sha); } 
+@override String toString() { return 'GitCreateRefRequest(ref: $ref, sha: $sha)'; } 
+ }

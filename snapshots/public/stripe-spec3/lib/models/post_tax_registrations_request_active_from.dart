@@ -1,0 +1,24 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostTaxRegistrationsRequestActiveFromVariant1 {const PostTaxRegistrationsRequestActiveFromVariant1._(this.value);
+
+factory PostTaxRegistrationsRequestActiveFromVariant1.fromJson(String json) { return switch (json) {
+  'now' => now,
+  _ => PostTaxRegistrationsRequestActiveFromVariant1._(json),
+}; }
+
+static const PostTaxRegistrationsRequestActiveFromVariant1 now = PostTaxRegistrationsRequestActiveFromVariant1._('now');
+
+static const List<PostTaxRegistrationsRequestActiveFromVariant1> values = [now];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostTaxRegistrationsRequestActiveFromVariant1 && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostTaxRegistrationsRequestActiveFromVariant1($value)'; } 
+ }
+typedef PostTaxRegistrationsRequestActiveFrom = OneOf2<PostTaxRegistrationsRequestActiveFromVariant1,int>;

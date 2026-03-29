@@ -1,0 +1,9 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The unique identifier of a notification policy
+extension type const AaaPolicyId(String value) {
+factory AaaPolicyId.fromJson(String json) => AaaPolicyId(json);
+
+String toJson() => value;
+
+}

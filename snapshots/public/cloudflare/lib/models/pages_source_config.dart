@@ -1,0 +1,150 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether commits to preview branches trigger a preview deployment.
+final class PagesSourceConfigPreviewDeploymentSetting {const PagesSourceConfigPreviewDeploymentSetting._(this.value);
+
+factory PagesSourceConfigPreviewDeploymentSetting.fromJson(String json) { return switch (json) {
+  'all' => all,
+  'none' => none,
+  'custom' => custom,
+  _ => PagesSourceConfigPreviewDeploymentSetting._(json),
+}; }
+
+static const PagesSourceConfigPreviewDeploymentSetting all = PagesSourceConfigPreviewDeploymentSetting._('all');
+
+static const PagesSourceConfigPreviewDeploymentSetting none = PagesSourceConfigPreviewDeploymentSetting._('none');
+
+static const PagesSourceConfigPreviewDeploymentSetting custom = PagesSourceConfigPreviewDeploymentSetting._('custom');
+
+static const List<PagesSourceConfigPreviewDeploymentSetting> values = [all, none, custom];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PagesSourceConfigPreviewDeploymentSetting && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PagesSourceConfigPreviewDeploymentSetting($value)'; } 
+ }
+final class PagesSourceConfig {const PagesSourceConfig({required this.deploymentsEnabled, required this.owner, required this.ownerId, required this.pathExcludes, required this.pathIncludes, required this.prCommentsEnabled, required this.previewBranchExcludes, required this.previewBranchIncludes, required this.previewDeploymentSetting, required this.productionBranch, required this.productionDeploymentsEnabled, required this.repoId, required this.repoName, });
+
+factory PagesSourceConfig.fromJson(Map<String, dynamic> json) { return PagesSourceConfig(
+  deploymentsEnabled: json['deployments_enabled'] as bool,
+  owner: json['owner'] as String,
+  ownerId: json['owner_id'] as String,
+  pathExcludes: (json['path_excludes'] as List<dynamic>).map((e) => e as String).toList(),
+  pathIncludes: (json['path_includes'] as List<dynamic>).map((e) => e as String).toList(),
+  prCommentsEnabled: json['pr_comments_enabled'] as bool,
+  previewBranchExcludes: (json['preview_branch_excludes'] as List<dynamic>).map((e) => e as String).toList(),
+  previewBranchIncludes: (json['preview_branch_includes'] as List<dynamic>).map((e) => e as String).toList(),
+  previewDeploymentSetting: PagesSourceConfigPreviewDeploymentSetting.fromJson(json['preview_deployment_setting'] as String),
+  productionBranch: json['production_branch'] as String,
+  productionDeploymentsEnabled: json['production_deployments_enabled'] as bool,
+  repoId: json['repo_id'] as String,
+  repoName: json['repo_name'] as String,
+); }
+
+/// Whether to enable automatic deployments when pushing to the source repository.
+/// When disabled, no deployments (production or preview) will be triggered automatically.
+/// 
+final bool deploymentsEnabled;
+
+/// The owner of the repository.
+final String owner;
+
+/// The owner ID of the repository.
+final String ownerId;
+
+/// A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+final List<String> pathExcludes;
+
+/// A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+final List<String> pathIncludes;
+
+/// Whether to enable PR comments.
+final bool prCommentsEnabled;
+
+/// A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
+final List<String> previewBranchExcludes;
+
+/// A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
+final List<String> previewBranchIncludes;
+
+/// Controls whether commits to preview branches trigger a preview deployment.
+final PagesSourceConfigPreviewDeploymentSetting previewDeploymentSetting;
+
+/// The production branch of the repository.
+final String productionBranch;
+
+/// Whether to trigger a production deployment on commits to the production branch.
+final bool productionDeploymentsEnabled;
+
+/// The ID of the repository.
+final String repoId;
+
+/// The name of the repository.
+final String repoName;
+
+Map<String, dynamic> toJson() { return {
+  'deployments_enabled': deploymentsEnabled,
+  'owner': owner,
+  'owner_id': ownerId,
+  'path_excludes': pathExcludes,
+  'path_includes': pathIncludes,
+  'pr_comments_enabled': prCommentsEnabled,
+  'preview_branch_excludes': previewBranchExcludes,
+  'preview_branch_includes': previewBranchIncludes,
+  'preview_deployment_setting': previewDeploymentSetting.toJson(),
+  'production_branch': productionBranch,
+  'production_deployments_enabled': productionDeploymentsEnabled,
+  'repo_id': repoId,
+  'repo_name': repoName,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('deployments_enabled') && json['deployments_enabled'] is bool &&
+      json.containsKey('owner') && json['owner'] is String &&
+      json.containsKey('owner_id') && json['owner_id'] is String &&
+      json.containsKey('path_excludes') &&
+      json.containsKey('path_includes') &&
+      json.containsKey('pr_comments_enabled') && json['pr_comments_enabled'] is bool &&
+      json.containsKey('preview_branch_excludes') &&
+      json.containsKey('preview_branch_includes') &&
+      json.containsKey('preview_deployment_setting') &&
+      json.containsKey('production_branch') && json['production_branch'] is String &&
+      json.containsKey('production_deployments_enabled') && json['production_deployments_enabled'] is bool &&
+      json.containsKey('repo_id') && json['repo_id'] is String &&
+      json.containsKey('repo_name') && json['repo_name'] is String; } 
+PagesSourceConfig copyWith({bool? deploymentsEnabled, String? owner, String? ownerId, List<String>? pathExcludes, List<String>? pathIncludes, bool? prCommentsEnabled, List<String>? previewBranchExcludes, List<String>? previewBranchIncludes, PagesSourceConfigPreviewDeploymentSetting? previewDeploymentSetting, String? productionBranch, bool? productionDeploymentsEnabled, String? repoId, String? repoName, }) { return PagesSourceConfig(
+  deploymentsEnabled: deploymentsEnabled ?? this.deploymentsEnabled,
+  owner: owner ?? this.owner,
+  ownerId: ownerId ?? this.ownerId,
+  pathExcludes: pathExcludes ?? this.pathExcludes,
+  pathIncludes: pathIncludes ?? this.pathIncludes,
+  prCommentsEnabled: prCommentsEnabled ?? this.prCommentsEnabled,
+  previewBranchExcludes: previewBranchExcludes ?? this.previewBranchExcludes,
+  previewBranchIncludes: previewBranchIncludes ?? this.previewBranchIncludes,
+  previewDeploymentSetting: previewDeploymentSetting ?? this.previewDeploymentSetting,
+  productionBranch: productionBranch ?? this.productionBranch,
+  productionDeploymentsEnabled: productionDeploymentsEnabled ?? this.productionDeploymentsEnabled,
+  repoId: repoId ?? this.repoId,
+  repoName: repoName ?? this.repoName,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PagesSourceConfig &&
+          deploymentsEnabled == other.deploymentsEnabled &&
+          owner == other.owner &&
+          ownerId == other.ownerId &&
+          listEquals(pathExcludes, other.pathExcludes) &&
+          listEquals(pathIncludes, other.pathIncludes) &&
+          prCommentsEnabled == other.prCommentsEnabled &&
+          listEquals(previewBranchExcludes, other.previewBranchExcludes) &&
+          listEquals(previewBranchIncludes, other.previewBranchIncludes) &&
+          previewDeploymentSetting == other.previewDeploymentSetting &&
+          productionBranch == other.productionBranch &&
+          productionDeploymentsEnabled == other.productionDeploymentsEnabled &&
+          repoId == other.repoId &&
+          repoName == other.repoName; } 
+@override int get hashCode { return Object.hash(deploymentsEnabled, owner, ownerId, Object.hashAll(pathExcludes), Object.hashAll(pathIncludes), prCommentsEnabled, Object.hashAll(previewBranchExcludes), Object.hashAll(previewBranchIncludes), previewDeploymentSetting, productionBranch, productionDeploymentsEnabled, repoId, repoName); } 
+@override String toString() { return 'PagesSourceConfig(deploymentsEnabled: $deploymentsEnabled, owner: $owner, ownerId: $ownerId, pathExcludes: $pathExcludes, pathIncludes: $pathIncludes, prCommentsEnabled: $prCommentsEnabled, previewBranchExcludes: $previewBranchExcludes, previewBranchIncludes: $previewBranchIncludes, previewDeploymentSetting: $previewDeploymentSetting, productionBranch: $productionBranch, productionDeploymentsEnabled: $productionDeploymentsEnabled, repoId: $repoId, repoName: $repoName)'; } 
+ }

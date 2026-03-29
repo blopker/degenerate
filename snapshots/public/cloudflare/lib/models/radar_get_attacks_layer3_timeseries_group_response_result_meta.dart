@@ -1,0 +1,140 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'radar_get_attacks_layer3_timeseries_group_response_result_meta_confidence_info.dart';import 'radar_get_attacks_layer3_timeseries_group_response_result_meta_date_range.dart';import 'radar_get_attacks_layer3_timeseries_group_response_result_meta_units.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final class RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval {const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._(this.value);
+
+factory RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
+  'FIFTEEN_MINUTES' => fifteenMinutes,
+  'ONE_HOUR' => oneHour,
+  'ONE_DAY' => oneDay,
+  'ONE_WEEK' => oneWeek,
+  'ONE_MONTH' => oneMonth,
+  _ => RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._(json),
+}; }
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval fifteenMinutes = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._('FIFTEEN_MINUTES');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval oneHour = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._('ONE_HOUR');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval oneDay = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._('ONE_DAY');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval oneWeek = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._('ONE_WEEK');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval oneMonth = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval._('ONE_MONTH');
+
+static const List<RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval> values = [fifteenMinutes, oneHour, oneDay, oneWeek, oneMonth];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval($value)'; } 
+ }
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final class RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization {const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._(this.value);
+
+factory RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization.fromJson(String json) { return switch (json) {
+  'PERCENTAGE' => percentage,
+  'MIN0_MAX' => min0Max,
+  'MIN_MAX' => minMax,
+  'RAW_VALUES' => rawValues,
+  'PERCENTAGE_CHANGE' => percentageChange,
+  'ROLLING_AVERAGE' => rollingAverage,
+  'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
+  'RATIO' => ratio,
+  _ => RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._(json),
+}; }
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization percentage = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization min0Max = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('MIN0_MAX');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization minMax = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('MIN_MAX');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization rawValues = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('RAW_VALUES');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization percentageChange = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('PERCENTAGE_CHANGE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization rollingAverage = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('ROLLING_AVERAGE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization overlappedPercentage = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('OVERLAPPED_PERCENTAGE');
+
+static const RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization ratio = RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization._('RATIO');
+
+static const List<RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization($value)'; } 
+ }
+/// Metadata for the results.
+final class RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta {const RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, required this.normalization, required this.units, });
+
+factory RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta.fromJson(Map<String, dynamic> json) { return RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta(
+  aggInterval: RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval.fromJson(json['aggInterval'] as String),
+  confidenceInfo: RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaConfidenceInfo.fromJson(json['confidenceInfo'] as Map<String, dynamic>),
+  dateRange: (json['dateRange'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaDateRange.fromJson(e as Map<String, dynamic>)).toList(),
+  lastUpdated: DateTime.parse(json['lastUpdated'] as String),
+  normalization: RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization.fromJson(json['normalization'] as String),
+  units: (json['units'] as List<dynamic>).map((e) => RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaUnits.fromJson(e as Map<String, dynamic>)).toList(),
+); }
+
+/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
+final RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval aggInterval;
+
+final RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaConfidenceInfo confidenceInfo;
+
+final List<RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaDateRange> dateRange;
+
+/// Timestamp of the last dataset update.
+final DateTime lastUpdated;
+
+/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+final RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization normalization;
+
+/// Measurement units for the results.
+final List<RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaUnits> units;
+
+Map<String, dynamic> toJson() { return {
+  'aggInterval': aggInterval.toJson(),
+  'confidenceInfo': confidenceInfo.toJson(),
+  'dateRange': dateRange.map((e) => e.toJson()).toList(),
+  'lastUpdated': lastUpdated.toIso8601String(),
+  'normalization': normalization.toJson(),
+  'units': units.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggInterval') &&
+      json.containsKey('confidenceInfo') &&
+      json.containsKey('dateRange') &&
+      json.containsKey('lastUpdated') && json['lastUpdated'] is String &&
+      json.containsKey('normalization') &&
+      json.containsKey('units'); } 
+RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta copyWith({RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaAggInterval? aggInterval, RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaConfidenceInfo? confidenceInfo, List<RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaDateRange>? dateRange, DateTime? lastUpdated, RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaNormalization? normalization, List<RadarGetAttacksLayer3TimeseriesGroupResponseResultMetaUnits>? units, }) { return RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta(
+  aggInterval: aggInterval ?? this.aggInterval,
+  confidenceInfo: confidenceInfo ?? this.confidenceInfo,
+  dateRange: dateRange ?? this.dateRange,
+  lastUpdated: lastUpdated ?? this.lastUpdated,
+  normalization: normalization ?? this.normalization,
+  units: units ?? this.units,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta &&
+          aggInterval == other.aggInterval &&
+          confidenceInfo == other.confidenceInfo &&
+          listEquals(dateRange, other.dateRange) &&
+          lastUpdated == other.lastUpdated &&
+          normalization == other.normalization &&
+          listEquals(units, other.units); } 
+@override int get hashCode { return Object.hash(aggInterval, confidenceInfo, Object.hashAll(dateRange), lastUpdated, normalization, Object.hashAll(units)); } 
+@override String toString() { return 'RadarGetAttacksLayer3TimeseriesGroupResponseResultMeta(aggInterval: $aggInterval, confidenceInfo: $confidenceInfo, dateRange: $dateRange, lastUpdated: $lastUpdated, normalization: $normalization, units: $units)'; } 
+ }

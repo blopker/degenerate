@@ -1,0 +1,42 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Severity of a code scanning alert.
+final class CodeScanningAlertSeverity {const CodeScanningAlertSeverity._(this.value);
+
+factory CodeScanningAlertSeverity.fromJson(String json) { return switch (json) {
+  'critical' => critical,
+  'high' => high,
+  'medium' => medium,
+  'low' => low,
+  'warning' => warning,
+  'note' => note,
+  'error' => error,
+  _ => CodeScanningAlertSeverity._(json),
+}; }
+
+static const CodeScanningAlertSeverity critical = CodeScanningAlertSeverity._('critical');
+
+static const CodeScanningAlertSeverity high = CodeScanningAlertSeverity._('high');
+
+static const CodeScanningAlertSeverity medium = CodeScanningAlertSeverity._('medium');
+
+static const CodeScanningAlertSeverity low = CodeScanningAlertSeverity._('low');
+
+static const CodeScanningAlertSeverity warning = CodeScanningAlertSeverity._('warning');
+
+static const CodeScanningAlertSeverity note = CodeScanningAlertSeverity._('note');
+
+static const CodeScanningAlertSeverity error = CodeScanningAlertSeverity._('error');
+
+static const List<CodeScanningAlertSeverity> values = [critical, high, medium, low, warning, note, error];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is CodeScanningAlertSeverity && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'CodeScanningAlertSeverity($value)'; } 
+ }

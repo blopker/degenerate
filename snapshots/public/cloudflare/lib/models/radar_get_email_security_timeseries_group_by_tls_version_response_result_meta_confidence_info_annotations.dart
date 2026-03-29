@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetEmailSecurityTimeseriesGroupByTlsVersionResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

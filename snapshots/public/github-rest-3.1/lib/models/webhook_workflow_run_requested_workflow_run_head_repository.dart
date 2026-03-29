@@ -1,0 +1,341 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'webhook_workflow_run_requested_workflow_run_head_repository_owner.dart';final class WebhookWorkflowRunRequestedWorkflowRunHeadRepository {const WebhookWorkflowRunRequestedWorkflowRunHeadRepository({required this.archiveUrl, required this.assigneesUrl, required this.blobsUrl, required this.branchesUrl, required this.collaboratorsUrl, required this.commentsUrl, required this.commitsUrl, required this.compareUrl, required this.contentsUrl, required this.contributorsUrl, required this.deploymentsUrl, required this.description, required this.downloadsUrl, required this.eventsUrl, required this.fork, required this.forksUrl, required this.fullName, required this.gitCommitsUrl, required this.gitRefsUrl, required this.gitTagsUrl, required this.hooksUrl, required this.htmlUrl, required this.id, required this.issueCommentUrl, required this.issueEventsUrl, required this.issuesUrl, required this.keysUrl, required this.labelsUrl, required this.languagesUrl, required this.mergesUrl, required this.milestonesUrl, required this.name, required this.nodeId, required this.notificationsUrl, required this.owner, required this.private, required this.pullsUrl, required this.releasesUrl, required this.stargazersUrl, required this.statusesUrl, required this.subscribersUrl, required this.subscriptionUrl, required this.tagsUrl, required this.teamsUrl, required this.treesUrl, required this.url, });
+
+factory WebhookWorkflowRunRequestedWorkflowRunHeadRepository.fromJson(Map<String, dynamic> json) { return WebhookWorkflowRunRequestedWorkflowRunHeadRepository(
+  archiveUrl: json['archive_url'] as String,
+  assigneesUrl: json['assignees_url'] as String,
+  blobsUrl: json['blobs_url'] as String,
+  branchesUrl: json['branches_url'] as String,
+  collaboratorsUrl: json['collaborators_url'] as String,
+  commentsUrl: json['comments_url'] as String,
+  commitsUrl: json['commits_url'] as String,
+  compareUrl: json['compare_url'] as String,
+  contentsUrl: json['contents_url'] as String,
+  contributorsUrl: Uri.parse(json['contributors_url'] as String),
+  deploymentsUrl: Uri.parse(json['deployments_url'] as String),
+  description: json['description'] as String?,
+  downloadsUrl: Uri.parse(json['downloads_url'] as String),
+  eventsUrl: Uri.parse(json['events_url'] as String),
+  fork: json['fork'] as bool,
+  forksUrl: Uri.parse(json['forks_url'] as String),
+  fullName: json['full_name'] as String,
+  gitCommitsUrl: json['git_commits_url'] as String,
+  gitRefsUrl: json['git_refs_url'] as String,
+  gitTagsUrl: json['git_tags_url'] as String,
+  hooksUrl: Uri.parse(json['hooks_url'] as String),
+  htmlUrl: Uri.parse(json['html_url'] as String),
+  id: (json['id'] as num).toInt(),
+  issueCommentUrl: json['issue_comment_url'] as String,
+  issueEventsUrl: json['issue_events_url'] as String,
+  issuesUrl: json['issues_url'] as String,
+  keysUrl: json['keys_url'] as String,
+  labelsUrl: json['labels_url'] as String,
+  languagesUrl: Uri.parse(json['languages_url'] as String),
+  mergesUrl: Uri.parse(json['merges_url'] as String),
+  milestonesUrl: json['milestones_url'] as String,
+  name: json['name'] as String,
+  nodeId: json['node_id'] as String,
+  notificationsUrl: json['notifications_url'] as String,
+  owner: json['owner'] != null ? WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  private: json['private'] as bool,
+  pullsUrl: json['pulls_url'] as String,
+  releasesUrl: json['releases_url'] as String,
+  stargazersUrl: Uri.parse(json['stargazers_url'] as String),
+  statusesUrl: json['statuses_url'] as String,
+  subscribersUrl: Uri.parse(json['subscribers_url'] as String),
+  subscriptionUrl: Uri.parse(json['subscription_url'] as String),
+  tagsUrl: Uri.parse(json['tags_url'] as String),
+  teamsUrl: Uri.parse(json['teams_url'] as String),
+  treesUrl: json['trees_url'] as String,
+  url: Uri.parse(json['url'] as String),
+); }
+
+final String archiveUrl;
+
+final String assigneesUrl;
+
+final String blobsUrl;
+
+final String branchesUrl;
+
+final String collaboratorsUrl;
+
+final String commentsUrl;
+
+final String commitsUrl;
+
+final String compareUrl;
+
+final String contentsUrl;
+
+final Uri contributorsUrl;
+
+final Uri deploymentsUrl;
+
+final String? description;
+
+final Uri downloadsUrl;
+
+final Uri eventsUrl;
+
+final bool fork;
+
+final Uri forksUrl;
+
+final String fullName;
+
+final String gitCommitsUrl;
+
+final String gitRefsUrl;
+
+final String gitTagsUrl;
+
+final Uri hooksUrl;
+
+final Uri htmlUrl;
+
+/// Unique identifier of the repository
+final int id;
+
+final String issueCommentUrl;
+
+final String issueEventsUrl;
+
+final String issuesUrl;
+
+final String keysUrl;
+
+final String labelsUrl;
+
+final Uri languagesUrl;
+
+final Uri mergesUrl;
+
+final String milestonesUrl;
+
+/// The name of the repository.
+final String name;
+
+final String nodeId;
+
+final String notificationsUrl;
+
+final WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner? owner;
+
+/// Whether the repository is private or public.
+final bool private;
+
+final String pullsUrl;
+
+final String releasesUrl;
+
+final Uri stargazersUrl;
+
+final String statusesUrl;
+
+final Uri subscribersUrl;
+
+final Uri subscriptionUrl;
+
+final Uri tagsUrl;
+
+final Uri teamsUrl;
+
+final String treesUrl;
+
+final Uri url;
+
+Map<String, dynamic> toJson() { return {
+  'archive_url': archiveUrl,
+  'assignees_url': assigneesUrl,
+  'blobs_url': blobsUrl,
+  'branches_url': branchesUrl,
+  'collaborators_url': collaboratorsUrl,
+  'comments_url': commentsUrl,
+  'commits_url': commitsUrl,
+  'compare_url': compareUrl,
+  'contents_url': contentsUrl,
+  'contributors_url': contributorsUrl.toString(),
+  'deployments_url': deploymentsUrl.toString(),
+  'description': ?description,
+  'downloads_url': downloadsUrl.toString(),
+  'events_url': eventsUrl.toString(),
+  'fork': fork,
+  'forks_url': forksUrl.toString(),
+  'full_name': fullName,
+  'git_commits_url': gitCommitsUrl,
+  'git_refs_url': gitRefsUrl,
+  'git_tags_url': gitTagsUrl,
+  'hooks_url': hooksUrl.toString(),
+  'html_url': htmlUrl.toString(),
+  'id': id,
+  'issue_comment_url': issueCommentUrl,
+  'issue_events_url': issueEventsUrl,
+  'issues_url': issuesUrl,
+  'keys_url': keysUrl,
+  'labels_url': labelsUrl,
+  'languages_url': languagesUrl.toString(),
+  'merges_url': mergesUrl.toString(),
+  'milestones_url': milestonesUrl,
+  'name': name,
+  'node_id': nodeId,
+  'notifications_url': notificationsUrl,
+  if (owner != null) 'owner': owner?.toJson(),
+  'private': private,
+  'pulls_url': pullsUrl,
+  'releases_url': releasesUrl,
+  'stargazers_url': stargazersUrl.toString(),
+  'statuses_url': statusesUrl,
+  'subscribers_url': subscribersUrl.toString(),
+  'subscription_url': subscriptionUrl.toString(),
+  'tags_url': tagsUrl.toString(),
+  'teams_url': teamsUrl.toString(),
+  'trees_url': treesUrl,
+  'url': url.toString(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('archive_url') && json['archive_url'] is String &&
+      json.containsKey('assignees_url') && json['assignees_url'] is String &&
+      json.containsKey('blobs_url') && json['blobs_url'] is String &&
+      json.containsKey('branches_url') && json['branches_url'] is String &&
+      json.containsKey('collaborators_url') && json['collaborators_url'] is String &&
+      json.containsKey('comments_url') && json['comments_url'] is String &&
+      json.containsKey('commits_url') && json['commits_url'] is String &&
+      json.containsKey('compare_url') && json['compare_url'] is String &&
+      json.containsKey('contents_url') && json['contents_url'] is String &&
+      json.containsKey('contributors_url') && json['contributors_url'] is String &&
+      json.containsKey('deployments_url') && json['deployments_url'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('downloads_url') && json['downloads_url'] is String &&
+      json.containsKey('events_url') && json['events_url'] is String &&
+      json.containsKey('fork') && json['fork'] is bool &&
+      json.containsKey('forks_url') && json['forks_url'] is String &&
+      json.containsKey('full_name') && json['full_name'] is String &&
+      json.containsKey('git_commits_url') && json['git_commits_url'] is String &&
+      json.containsKey('git_refs_url') && json['git_refs_url'] is String &&
+      json.containsKey('git_tags_url') && json['git_tags_url'] is String &&
+      json.containsKey('hooks_url') && json['hooks_url'] is String &&
+      json.containsKey('html_url') && json['html_url'] is String &&
+      json.containsKey('id') && json['id'] is num &&
+      json.containsKey('issue_comment_url') && json['issue_comment_url'] is String &&
+      json.containsKey('issue_events_url') && json['issue_events_url'] is String &&
+      json.containsKey('issues_url') && json['issues_url'] is String &&
+      json.containsKey('keys_url') && json['keys_url'] is String &&
+      json.containsKey('labels_url') && json['labels_url'] is String &&
+      json.containsKey('languages_url') && json['languages_url'] is String &&
+      json.containsKey('merges_url') && json['merges_url'] is String &&
+      json.containsKey('milestones_url') && json['milestones_url'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('notifications_url') && json['notifications_url'] is String &&
+      json.containsKey('owner') &&
+      json.containsKey('private') && json['private'] is bool &&
+      json.containsKey('pulls_url') && json['pulls_url'] is String &&
+      json.containsKey('releases_url') && json['releases_url'] is String &&
+      json.containsKey('stargazers_url') && json['stargazers_url'] is String &&
+      json.containsKey('statuses_url') && json['statuses_url'] is String &&
+      json.containsKey('subscribers_url') && json['subscribers_url'] is String &&
+      json.containsKey('subscription_url') && json['subscription_url'] is String &&
+      json.containsKey('tags_url') && json['tags_url'] is String &&
+      json.containsKey('teams_url') && json['teams_url'] is String &&
+      json.containsKey('trees_url') && json['trees_url'] is String &&
+      json.containsKey('url') && json['url'] is String; } 
+WebhookWorkflowRunRequestedWorkflowRunHeadRepository copyWith({String? archiveUrl, String? assigneesUrl, String? blobsUrl, String? branchesUrl, String? collaboratorsUrl, String? commentsUrl, String? commitsUrl, String? compareUrl, String? contentsUrl, Uri? contributorsUrl, Uri? deploymentsUrl, String? Function()? description, Uri? downloadsUrl, Uri? eventsUrl, bool? fork, Uri? forksUrl, String? fullName, String? gitCommitsUrl, String? gitRefsUrl, String? gitTagsUrl, Uri? hooksUrl, Uri? htmlUrl, int? id, String? issueCommentUrl, String? issueEventsUrl, String? issuesUrl, String? keysUrl, String? labelsUrl, Uri? languagesUrl, Uri? mergesUrl, String? milestonesUrl, String? name, String? nodeId, String? notificationsUrl, WebhookWorkflowRunRequestedWorkflowRunHeadRepositoryOwner? Function()? owner, bool? private, String? pullsUrl, String? releasesUrl, Uri? stargazersUrl, String? statusesUrl, Uri? subscribersUrl, Uri? subscriptionUrl, Uri? tagsUrl, Uri? teamsUrl, String? treesUrl, Uri? url, }) { return WebhookWorkflowRunRequestedWorkflowRunHeadRepository(
+  archiveUrl: archiveUrl ?? this.archiveUrl,
+  assigneesUrl: assigneesUrl ?? this.assigneesUrl,
+  blobsUrl: blobsUrl ?? this.blobsUrl,
+  branchesUrl: branchesUrl ?? this.branchesUrl,
+  collaboratorsUrl: collaboratorsUrl ?? this.collaboratorsUrl,
+  commentsUrl: commentsUrl ?? this.commentsUrl,
+  commitsUrl: commitsUrl ?? this.commitsUrl,
+  compareUrl: compareUrl ?? this.compareUrl,
+  contentsUrl: contentsUrl ?? this.contentsUrl,
+  contributorsUrl: contributorsUrl ?? this.contributorsUrl,
+  deploymentsUrl: deploymentsUrl ?? this.deploymentsUrl,
+  description: description != null ? description() : this.description,
+  downloadsUrl: downloadsUrl ?? this.downloadsUrl,
+  eventsUrl: eventsUrl ?? this.eventsUrl,
+  fork: fork ?? this.fork,
+  forksUrl: forksUrl ?? this.forksUrl,
+  fullName: fullName ?? this.fullName,
+  gitCommitsUrl: gitCommitsUrl ?? this.gitCommitsUrl,
+  gitRefsUrl: gitRefsUrl ?? this.gitRefsUrl,
+  gitTagsUrl: gitTagsUrl ?? this.gitTagsUrl,
+  hooksUrl: hooksUrl ?? this.hooksUrl,
+  htmlUrl: htmlUrl ?? this.htmlUrl,
+  id: id ?? this.id,
+  issueCommentUrl: issueCommentUrl ?? this.issueCommentUrl,
+  issueEventsUrl: issueEventsUrl ?? this.issueEventsUrl,
+  issuesUrl: issuesUrl ?? this.issuesUrl,
+  keysUrl: keysUrl ?? this.keysUrl,
+  labelsUrl: labelsUrl ?? this.labelsUrl,
+  languagesUrl: languagesUrl ?? this.languagesUrl,
+  mergesUrl: mergesUrl ?? this.mergesUrl,
+  milestonesUrl: milestonesUrl ?? this.milestonesUrl,
+  name: name ?? this.name,
+  nodeId: nodeId ?? this.nodeId,
+  notificationsUrl: notificationsUrl ?? this.notificationsUrl,
+  owner: owner != null ? owner() : this.owner,
+  private: private ?? this.private,
+  pullsUrl: pullsUrl ?? this.pullsUrl,
+  releasesUrl: releasesUrl ?? this.releasesUrl,
+  stargazersUrl: stargazersUrl ?? this.stargazersUrl,
+  statusesUrl: statusesUrl ?? this.statusesUrl,
+  subscribersUrl: subscribersUrl ?? this.subscribersUrl,
+  subscriptionUrl: subscriptionUrl ?? this.subscriptionUrl,
+  tagsUrl: tagsUrl ?? this.tagsUrl,
+  teamsUrl: teamsUrl ?? this.teamsUrl,
+  treesUrl: treesUrl ?? this.treesUrl,
+  url: url ?? this.url,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is WebhookWorkflowRunRequestedWorkflowRunHeadRepository &&
+          archiveUrl == other.archiveUrl &&
+          assigneesUrl == other.assigneesUrl &&
+          blobsUrl == other.blobsUrl &&
+          branchesUrl == other.branchesUrl &&
+          collaboratorsUrl == other.collaboratorsUrl &&
+          commentsUrl == other.commentsUrl &&
+          commitsUrl == other.commitsUrl &&
+          compareUrl == other.compareUrl &&
+          contentsUrl == other.contentsUrl &&
+          contributorsUrl == other.contributorsUrl &&
+          deploymentsUrl == other.deploymentsUrl &&
+          description == other.description &&
+          downloadsUrl == other.downloadsUrl &&
+          eventsUrl == other.eventsUrl &&
+          fork == other.fork &&
+          forksUrl == other.forksUrl &&
+          fullName == other.fullName &&
+          gitCommitsUrl == other.gitCommitsUrl &&
+          gitRefsUrl == other.gitRefsUrl &&
+          gitTagsUrl == other.gitTagsUrl &&
+          hooksUrl == other.hooksUrl &&
+          htmlUrl == other.htmlUrl &&
+          id == other.id &&
+          issueCommentUrl == other.issueCommentUrl &&
+          issueEventsUrl == other.issueEventsUrl &&
+          issuesUrl == other.issuesUrl &&
+          keysUrl == other.keysUrl &&
+          labelsUrl == other.labelsUrl &&
+          languagesUrl == other.languagesUrl &&
+          mergesUrl == other.mergesUrl &&
+          milestonesUrl == other.milestonesUrl &&
+          name == other.name &&
+          nodeId == other.nodeId &&
+          notificationsUrl == other.notificationsUrl &&
+          owner == other.owner &&
+          private == other.private &&
+          pullsUrl == other.pullsUrl &&
+          releasesUrl == other.releasesUrl &&
+          stargazersUrl == other.stargazersUrl &&
+          statusesUrl == other.statusesUrl &&
+          subscribersUrl == other.subscribersUrl &&
+          subscriptionUrl == other.subscriptionUrl &&
+          tagsUrl == other.tagsUrl &&
+          teamsUrl == other.teamsUrl &&
+          treesUrl == other.treesUrl &&
+          url == other.url; } 
+@override int get hashCode { return Object.hashAll([archiveUrl, assigneesUrl, blobsUrl, branchesUrl, collaboratorsUrl, commentsUrl, commitsUrl, compareUrl, contentsUrl, contributorsUrl, deploymentsUrl, description, downloadsUrl, eventsUrl, fork, forksUrl, fullName, gitCommitsUrl, gitRefsUrl, gitTagsUrl, hooksUrl, htmlUrl, id, issueCommentUrl, issueEventsUrl, issuesUrl, keysUrl, labelsUrl, languagesUrl, mergesUrl, milestonesUrl, name, nodeId, notificationsUrl, owner, private, pullsUrl, releasesUrl, stargazersUrl, statusesUrl, subscribersUrl, subscriptionUrl, tagsUrl, teamsUrl, treesUrl, url]); } 
+@override String toString() { return 'WebhookWorkflowRunRequestedWorkflowRunHeadRepository(archiveUrl: $archiveUrl, assigneesUrl: $assigneesUrl, blobsUrl: $blobsUrl, branchesUrl: $branchesUrl, collaboratorsUrl: $collaboratorsUrl, commentsUrl: $commentsUrl, commitsUrl: $commitsUrl, compareUrl: $compareUrl, contentsUrl: $contentsUrl, contributorsUrl: $contributorsUrl, deploymentsUrl: $deploymentsUrl, description: $description, downloadsUrl: $downloadsUrl, eventsUrl: $eventsUrl, fork: $fork, forksUrl: $forksUrl, fullName: $fullName, gitCommitsUrl: $gitCommitsUrl, gitRefsUrl: $gitRefsUrl, gitTagsUrl: $gitTagsUrl, hooksUrl: $hooksUrl, htmlUrl: $htmlUrl, id: $id, issueCommentUrl: $issueCommentUrl, issueEventsUrl: $issueEventsUrl, issuesUrl: $issuesUrl, keysUrl: $keysUrl, labelsUrl: $labelsUrl, languagesUrl: $languagesUrl, mergesUrl: $mergesUrl, milestonesUrl: $milestonesUrl, name: $name, nodeId: $nodeId, notificationsUrl: $notificationsUrl, owner: $owner, private: $private, pullsUrl: $pullsUrl, releasesUrl: $releasesUrl, stargazersUrl: $stargazersUrl, statusesUrl: $statusesUrl, subscribersUrl: $subscribersUrl, subscriptionUrl: $subscriptionUrl, tagsUrl: $tagsUrl, teamsUrl: $teamsUrl, treesUrl: $treesUrl, url: $url)'; } 
+ }

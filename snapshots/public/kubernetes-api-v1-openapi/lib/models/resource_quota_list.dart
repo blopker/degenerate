@@ -1,0 +1,46 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'list_meta.dart';import 'resource_quota.dart';/// ResourceQuotaList is a list of ResourceQuota items.
+final class ResourceQuotaList {const ResourceQuotaList({this.apiVersion, required this.items, this.kind, this.metadata, });
+
+factory ResourceQuotaList.fromJson(Map<String, dynamic> json) { return ResourceQuotaList(
+  apiVersion: json['apiVersion'] as String?,
+  items: (json['items'] as List<dynamic>).map((e) => ResourceQuota.fromJson(e as Map<String, dynamic>)).toList(),
+  kind: json['kind'] as String?,
+  metadata: json['metadata'] != null ? ListMeta.fromJson(json['metadata'] as Map<String, dynamic>) : null,
+); }
+
+/// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+final String? apiVersion;
+
+/// Items is a list of ResourceQuota objects. More info: https://kubernetes.io/docs/concepts/policy/resource-quotas/
+final List<ResourceQuota> items;
+
+/// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+final String? kind;
+
+/// Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+final ListMeta? metadata;
+
+Map<String, dynamic> toJson() { return {
+  'apiVersion': ?apiVersion,
+  'items': items.map((e) => e.toJson()).toList(),
+  'kind': ?kind,
+  if (metadata != null) 'metadata': metadata?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('items'); } 
+ResourceQuotaList copyWith({String Function()? apiVersion, List<ResourceQuota>? items, String Function()? kind, ListMeta Function()? metadata, }) { return ResourceQuotaList(
+  apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
+  items: items ?? this.items,
+  kind: kind != null ? kind() : this.kind,
+  metadata: metadata != null ? metadata() : this.metadata,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ResourceQuotaList &&
+          apiVersion == other.apiVersion &&
+          listEquals(items, other.items) &&
+          kind == other.kind &&
+          metadata == other.metadata; } 
+@override int get hashCode { return Object.hash(apiVersion, Object.hashAll(items), kind, metadata); } 
+@override String toString() { return 'ResourceQuotaList(apiVersion: $apiVersion, items: $items, kind: $kind, metadata: $metadata)'; } 
+ }

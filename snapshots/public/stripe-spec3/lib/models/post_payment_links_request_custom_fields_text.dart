@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PostPaymentLinksRequestCustomFieldsText {const PostPaymentLinksRequestCustomFieldsText({this.defaultValue, this.maximumLength, this.minimumLength, });
+
+factory PostPaymentLinksRequestCustomFieldsText.fromJson(Map<String, dynamic> json) { return PostPaymentLinksRequestCustomFieldsText(
+  defaultValue: json['default_value'] as String?,
+  maximumLength: json['maximum_length'] != null ? (json['maximum_length'] as num).toInt() : null,
+  minimumLength: json['minimum_length'] != null ? (json['minimum_length'] as num).toInt() : null,
+); }
+
+final String? defaultValue;
+
+final int? maximumLength;
+
+final int? minimumLength;
+
+Map<String, dynamic> toJson() { return {
+  'default_value': ?defaultValue,
+  'maximum_length': ?maximumLength,
+  'minimum_length': ?minimumLength,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostPaymentLinksRequestCustomFieldsText copyWith({String Function()? defaultValue, int Function()? maximumLength, int Function()? minimumLength, }) { return PostPaymentLinksRequestCustomFieldsText(
+  defaultValue: defaultValue != null ? defaultValue() : this.defaultValue,
+  maximumLength: maximumLength != null ? maximumLength() : this.maximumLength,
+  minimumLength: minimumLength != null ? minimumLength() : this.minimumLength,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostPaymentLinksRequestCustomFieldsText &&
+          defaultValue == other.defaultValue &&
+          maximumLength == other.maximumLength &&
+          minimumLength == other.minimumLength; } 
+@override int get hashCode { return Object.hash(defaultValue, maximumLength, minimumLength); } 
+@override String toString() { return 'PostPaymentLinksRequestCustomFieldsText(defaultValue: $defaultValue, maximumLength: $maximumLength, minimumLength: $minimumLength)'; } 
+ }

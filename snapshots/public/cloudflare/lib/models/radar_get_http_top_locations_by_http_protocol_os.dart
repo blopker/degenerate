@@ -1,0 +1,41 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class RadarGetHttpTopLocationsByHttpProtocolOs {const RadarGetHttpTopLocationsByHttpProtocolOs._(this.value);
+
+factory RadarGetHttpTopLocationsByHttpProtocolOs.fromJson(String json) { return switch (json) {
+  'WINDOWS' => windows,
+  'MACOSX' => macosx,
+  'IOS' => ios,
+  'ANDROID' => android,
+  'CHROMEOS' => chromeos,
+  'LINUX' => linux,
+  'SMART_TV' => smartTv,
+  _ => RadarGetHttpTopLocationsByHttpProtocolOs._(json),
+}; }
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs windows = RadarGetHttpTopLocationsByHttpProtocolOs._('WINDOWS');
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs macosx = RadarGetHttpTopLocationsByHttpProtocolOs._('MACOSX');
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs ios = RadarGetHttpTopLocationsByHttpProtocolOs._('IOS');
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs android = RadarGetHttpTopLocationsByHttpProtocolOs._('ANDROID');
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs chromeos = RadarGetHttpTopLocationsByHttpProtocolOs._('CHROMEOS');
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs linux = RadarGetHttpTopLocationsByHttpProtocolOs._('LINUX');
+
+static const RadarGetHttpTopLocationsByHttpProtocolOs smartTv = RadarGetHttpTopLocationsByHttpProtocolOs._('SMART_TV');
+
+static const List<RadarGetHttpTopLocationsByHttpProtocolOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetHttpTopLocationsByHttpProtocolOs && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetHttpTopLocationsByHttpProtocolOs($value)'; } 
+ }

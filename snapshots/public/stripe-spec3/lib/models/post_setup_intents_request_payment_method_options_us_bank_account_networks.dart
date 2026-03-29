@@ -1,0 +1,47 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested._(this.value);
+
+factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(String json) { return switch (json) {
+  'ach' => ach,
+  'us_domestic_wire' => usDomesticWire,
+  _ => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested._(json),
+}; }
+
+static const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested ach = PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested._('ach');
+
+static const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested usDomesticWire = PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested._('us_domestic_wire');
+
+static const List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested> values = [ach, usDomesticWire];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested($value)'; } 
+ }
+final class PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks {const PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks({this.requested});
+
+factory PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks.fromJson(Map<String, dynamic> json) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks(
+  requested: (json['requested'] as List<dynamic>?)?.map((e) => PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested.fromJson(e as String)).toList(),
+); }
+
+final List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested>? requested;
+
+Map<String, dynamic> toJson() { return {
+  if (requested != null) 'requested': requested?.map((e) => e.toJson()).toList(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks copyWith({List<PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworksRequested> Function()? requested}) { return PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks(
+  requested: requested != null ? requested() : this.requested,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks &&
+          listEquals(requested, other.requested); } 
+@override int get hashCode { return Object.hashAll(requested ?? const []).hashCode; } 
+@override String toString() { return 'PostSetupIntentsRequestPaymentMethodOptionsUsBankAccountNetworks(requested: $requested)'; } 
+ }

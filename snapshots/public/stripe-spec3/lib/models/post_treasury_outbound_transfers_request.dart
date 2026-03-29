@@ -1,0 +1,89 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_data.dart';import 'post_treasury_outbound_transfers_request_destination_payment_method_options.dart';final class PostTreasuryOutboundTransfersRequest {const PostTreasuryOutboundTransfersRequest({required this.amount, required this.currency, this.description, this.destinationPaymentMethod, this.destinationPaymentMethodData, this.destinationPaymentMethodOptions, this.expand, required this.financialAccount, this.metadata, this.statementDescriptor, });
+
+factory PostTreasuryOutboundTransfersRequest.fromJson(Map<String, dynamic> json) { return PostTreasuryOutboundTransfersRequest(
+  amount: (json['amount'] as num).toInt(),
+  currency: json['currency'] as String,
+  description: json['description'] as String?,
+  destinationPaymentMethod: json['destination_payment_method'] as String?,
+  destinationPaymentMethodData: json['destination_payment_method_data'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData.fromJson(json['destination_payment_method_data'] as Map<String, dynamic>) : null,
+  destinationPaymentMethodOptions: json['destination_payment_method_options'] != null ? PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions.fromJson(json['destination_payment_method_options'] as Map<String, dynamic>) : null,
+  expand: (json['expand'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  financialAccount: json['financial_account'] as String,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  statementDescriptor: json['statement_descriptor'] as String?,
+); }
+
+/// Amount (in cents) to be transferred.
+final int amount;
+
+/// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
+final String currency;
+
+/// An arbitrary string attached to the object. Often useful for displaying to users.
+final String? description;
+
+/// The PaymentMethod to use as the payment instrument for the OutboundTransfer.
+final String? destinationPaymentMethod;
+
+/// Hash used to generate the PaymentMethod to be used for this OutboundTransfer. Exclusive with `destination_payment_method`.
+final PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData? destinationPaymentMethodData;
+
+/// Hash describing payment method configuration details.
+final PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions? destinationPaymentMethodOptions;
+
+/// Specifies which fields in the response should be expanded.
+final List<String>? expand;
+
+/// The FinancialAccount to pull funds from.
+final String financialAccount;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format. Individual keys can be unset by posting an empty value to them. All keys can be unset by posting an empty value to `metadata`.
+final Map<String,String>? metadata;
+
+/// Statement descriptor to be shown on the receiving end of an OutboundTransfer. Maximum 10 characters for `ach` transfers or 140 characters for `us_domestic_wire` transfers. The default value is "transfer". Can only include -#.$&*, spaces, and alphanumeric characters.
+final String? statementDescriptor;
+
+Map<String, dynamic> toJson() { return {
+  'amount': amount,
+  'currency': currency,
+  'description': ?description,
+  'destination_payment_method': ?destinationPaymentMethod,
+  if (destinationPaymentMethodData != null) 'destination_payment_method_data': destinationPaymentMethodData?.toJson(),
+  if (destinationPaymentMethodOptions != null) 'destination_payment_method_options': destinationPaymentMethodOptions?.toJson(),
+  'expand': ?expand,
+  'financial_account': financialAccount,
+  'metadata': ?metadata,
+  'statement_descriptor': ?statementDescriptor,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
+      json.containsKey('currency') && json['currency'] is String &&
+      json.containsKey('financial_account') && json['financial_account'] is String; } 
+PostTreasuryOutboundTransfersRequest copyWith({int? amount, String? currency, String Function()? description, String Function()? destinationPaymentMethod, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodData Function()? destinationPaymentMethodData, PostTreasuryOutboundTransfersRequestDestinationPaymentMethodOptions Function()? destinationPaymentMethodOptions, List<String> Function()? expand, String? financialAccount, Map<String, String> Function()? metadata, String Function()? statementDescriptor, }) { return PostTreasuryOutboundTransfersRequest(
+  amount: amount ?? this.amount,
+  currency: currency ?? this.currency,
+  description: description != null ? description() : this.description,
+  destinationPaymentMethod: destinationPaymentMethod != null ? destinationPaymentMethod() : this.destinationPaymentMethod,
+  destinationPaymentMethodData: destinationPaymentMethodData != null ? destinationPaymentMethodData() : this.destinationPaymentMethodData,
+  destinationPaymentMethodOptions: destinationPaymentMethodOptions != null ? destinationPaymentMethodOptions() : this.destinationPaymentMethodOptions,
+  expand: expand != null ? expand() : this.expand,
+  financialAccount: financialAccount ?? this.financialAccount,
+  metadata: metadata != null ? metadata() : this.metadata,
+  statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PostTreasuryOutboundTransfersRequest &&
+          amount == other.amount &&
+          currency == other.currency &&
+          description == other.description &&
+          destinationPaymentMethod == other.destinationPaymentMethod &&
+          destinationPaymentMethodData == other.destinationPaymentMethodData &&
+          destinationPaymentMethodOptions == other.destinationPaymentMethodOptions &&
+          listEquals(expand, other.expand) &&
+          financialAccount == other.financialAccount &&
+          metadata == other.metadata &&
+          statementDescriptor == other.statementDescriptor; } 
+@override int get hashCode { return Object.hash(amount, currency, description, destinationPaymentMethod, destinationPaymentMethodData, destinationPaymentMethodOptions, Object.hashAll(expand ?? const []), financialAccount, metadata, statementDescriptor); } 
+@override String toString() { return 'PostTreasuryOutboundTransfersRequest(amount: $amount, currency: $currency, description: $description, destinationPaymentMethod: $destinationPaymentMethod, destinationPaymentMethodData: $destinationPaymentMethodData, destinationPaymentMethodOptions: $destinationPaymentMethodOptions, expand: $expand, financialAccount: $financialAccount, metadata: $metadata, statementDescriptor: $statementDescriptor)'; } 
+ }

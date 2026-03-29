@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
+final class ReactionsCreateForPullRequestReviewCommentRequestContent {const ReactionsCreateForPullRequestReviewCommentRequestContent._(this.value);
+
+factory ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(String json) { return switch (json) {
+  '+1' => plus1,
+  '-1' => minus1,
+  'laugh' => laugh,
+  'confused' => confused,
+  'heart' => heart,
+  'hooray' => hooray,
+  'rocket' => rocket,
+  'eyes' => eyes,
+  _ => ReactionsCreateForPullRequestReviewCommentRequestContent._(json),
+}; }
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent plus1 = ReactionsCreateForPullRequestReviewCommentRequestContent._('+1');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent minus1 = ReactionsCreateForPullRequestReviewCommentRequestContent._('-1');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent laugh = ReactionsCreateForPullRequestReviewCommentRequestContent._('laugh');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent confused = ReactionsCreateForPullRequestReviewCommentRequestContent._('confused');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent heart = ReactionsCreateForPullRequestReviewCommentRequestContent._('heart');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent hooray = ReactionsCreateForPullRequestReviewCommentRequestContent._('hooray');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent rocket = ReactionsCreateForPullRequestReviewCommentRequestContent._('rocket');
+
+static const ReactionsCreateForPullRequestReviewCommentRequestContent eyes = ReactionsCreateForPullRequestReviewCommentRequestContent._('eyes');
+
+static const List<ReactionsCreateForPullRequestReviewCommentRequestContent> values = [plus1, minus1, laugh, confused, heart, hooray, rocket, eyes];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReactionsCreateForPullRequestReviewCommentRequestContent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReactionsCreateForPullRequestReviewCommentRequestContent($value)'; } 
+ }
+final class ReactionsCreateForPullRequestReviewCommentRequest {const ReactionsCreateForPullRequestReviewCommentRequest({required this.content});
+
+factory ReactionsCreateForPullRequestReviewCommentRequest.fromJson(Map<String, dynamic> json) { return ReactionsCreateForPullRequestReviewCommentRequest(
+  content: ReactionsCreateForPullRequestReviewCommentRequestContent.fromJson(json['content'] as String),
+); }
+
+/// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.
+final ReactionsCreateForPullRequestReviewCommentRequestContent content;
+
+Map<String, dynamic> toJson() { return {
+  'content': content.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('content'); } 
+ReactionsCreateForPullRequestReviewCommentRequest copyWith({ReactionsCreateForPullRequestReviewCommentRequestContent? content}) { return ReactionsCreateForPullRequestReviewCommentRequest(
+  content: content ?? this.content,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is ReactionsCreateForPullRequestReviewCommentRequest &&
+          content == other.content; } 
+@override int get hashCode { return content.hashCode; } 
+@override String toString() { return 'ReactionsCreateForPullRequestReviewCommentRequest(content: $content)'; } 
+ }

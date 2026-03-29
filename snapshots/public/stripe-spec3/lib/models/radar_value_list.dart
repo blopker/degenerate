@@ -1,0 +1,170 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'radar_value_list_list_items.dart';/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
+final class RadarValueListItemType {const RadarValueListItemType._(this.value);
+
+factory RadarValueListItemType.fromJson(String json) { return switch (json) {
+  'card_bin' => cardBin,
+  'card_fingerprint' => cardFingerprint,
+  'case_sensitive_string' => caseSensitiveString,
+  'country' => country,
+  'customer_id' => customerId,
+  'email' => email,
+  'ip_address' => ipAddress,
+  'sepa_debit_fingerprint' => sepaDebitFingerprint,
+  'string' => string,
+  'us_bank_account_fingerprint' => usBankAccountFingerprint,
+  _ => RadarValueListItemType._(json),
+}; }
+
+static const RadarValueListItemType cardBin = RadarValueListItemType._('card_bin');
+
+static const RadarValueListItemType cardFingerprint = RadarValueListItemType._('card_fingerprint');
+
+static const RadarValueListItemType caseSensitiveString = RadarValueListItemType._('case_sensitive_string');
+
+static const RadarValueListItemType country = RadarValueListItemType._('country');
+
+static const RadarValueListItemType customerId = RadarValueListItemType._('customer_id');
+
+static const RadarValueListItemType email = RadarValueListItemType._('email');
+
+static const RadarValueListItemType ipAddress = RadarValueListItemType._('ip_address');
+
+static const RadarValueListItemType sepaDebitFingerprint = RadarValueListItemType._('sepa_debit_fingerprint');
+
+static const RadarValueListItemType string = RadarValueListItemType._('string');
+
+static const RadarValueListItemType usBankAccountFingerprint = RadarValueListItemType._('us_bank_account_fingerprint');
+
+static const List<RadarValueListItemType> values = [cardBin, cardFingerprint, caseSensitiveString, country, customerId, email, ipAddress, sepaDebitFingerprint, string, usBankAccountFingerprint];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarValueListItemType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarValueListItemType($value)'; } 
+ }
+/// String representing the object's type. Objects of the same type share the same value.
+final class RadarValueListObject {const RadarValueListObject._(this.value);
+
+factory RadarValueListObject.fromJson(String json) { return switch (json) {
+  'radar.value_list' => radarValueList,
+  _ => RadarValueListObject._(json),
+}; }
+
+static const RadarValueListObject radarValueList = RadarValueListObject._('radar.value_list');
+
+static const List<RadarValueListObject> values = [radarValueList];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarValueListObject && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarValueListObject($value)'; } 
+ }
+/// Value lists allow you to group values together which can then be referenced in rules.
+/// 
+/// Related guide: [Default Stripe lists](https://docs.stripe.com/radar/lists#managing-list-items)
+final class RadarValueList {const RadarValueList({required this.alias, required this.created, required this.createdBy, required this.id, required this.itemType, required this.listItems, required this.livemode, required this.metadata, required this.name, required this.object, });
+
+factory RadarValueList.fromJson(Map<String, dynamic> json) { return RadarValueList(
+  alias: json['alias'] as String,
+  created: (json['created'] as num).toInt(),
+  createdBy: json['created_by'] as String,
+  id: json['id'] as String,
+  itemType: RadarValueListItemType.fromJson(json['item_type'] as String),
+  listItems: RadarValueListListItems.fromJson(json['list_items'] as Map<String, dynamic>),
+  livemode: json['livemode'] as bool,
+  metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  name: json['name'] as String,
+  object: RadarValueListObject.fromJson(json['object'] as String),
+); }
+
+/// The name of the value list for use in rules.
+final String alias;
+
+/// Time at which the object was created. Measured in seconds since the Unix epoch.
+final int created;
+
+/// The name or email address of the user who created this value list.
+final String createdBy;
+
+/// Unique identifier for the object.
+final String id;
+
+/// The type of items in the value list. One of `card_fingerprint`, `card_bin`, `email`, `ip_address`, `country`, `string`, `case_sensitive_string`, `customer_id`, `sepa_debit_fingerprint`, or `us_bank_account_fingerprint`.
+final RadarValueListItemType itemType;
+
+/// List of items contained within this value list.
+final RadarValueListListItems listItems;
+
+/// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
+final bool livemode;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String> metadata;
+
+/// The name of the value list.
+final String name;
+
+/// String representing the object's type. Objects of the same type share the same value.
+final RadarValueListObject object;
+
+Map<String, dynamic> toJson() { return {
+  'alias': alias,
+  'created': created,
+  'created_by': createdBy,
+  'id': id,
+  'item_type': itemType.toJson(),
+  'list_items': listItems.toJson(),
+  'livemode': livemode,
+  'metadata': metadata,
+  'name': name,
+  'object': object.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias') && json['alias'] is String &&
+      json.containsKey('created') && json['created'] is num &&
+      json.containsKey('created_by') && json['created_by'] is String &&
+      json.containsKey('id') && json['id'] is String &&
+      json.containsKey('item_type') &&
+      json.containsKey('list_items') &&
+      json.containsKey('livemode') && json['livemode'] is bool &&
+      json.containsKey('metadata') &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('object'); } 
+RadarValueList copyWith({String? alias, int? created, String? createdBy, String? id, RadarValueListItemType? itemType, RadarValueListListItems? listItems, bool? livemode, Map<String,String>? metadata, String? name, RadarValueListObject? object, }) { return RadarValueList(
+  alias: alias ?? this.alias,
+  created: created ?? this.created,
+  createdBy: createdBy ?? this.createdBy,
+  id: id ?? this.id,
+  itemType: itemType ?? this.itemType,
+  listItems: listItems ?? this.listItems,
+  livemode: livemode ?? this.livemode,
+  metadata: metadata ?? this.metadata,
+  name: name ?? this.name,
+  object: object ?? this.object,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarValueList &&
+          alias == other.alias &&
+          created == other.created &&
+          createdBy == other.createdBy &&
+          id == other.id &&
+          itemType == other.itemType &&
+          listItems == other.listItems &&
+          livemode == other.livemode &&
+          metadata == other.metadata &&
+          name == other.name &&
+          object == other.object; } 
+@override int get hashCode { return Object.hash(alias, created, createdBy, id, itemType, listItems, livemode, metadata, name, object); } 
+@override String toString() { return 'RadarValueList(alias: $alias, created: $created, createdBy: $createdBy, id: $id, itemType: $itemType, listItems: $listItems, livemode: $livemode, metadata: $metadata, name: $name, object: $object)'; } 
+ }

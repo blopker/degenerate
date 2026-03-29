@@ -1,0 +1,44 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class ReactionsListForIssueContent {const ReactionsListForIssueContent._(this.value);
+
+factory ReactionsListForIssueContent.fromJson(String json) { return switch (json) {
+  '+1' => plus1,
+  '-1' => minus1,
+  'laugh' => laugh,
+  'confused' => confused,
+  'heart' => heart,
+  'hooray' => hooray,
+  'rocket' => rocket,
+  'eyes' => eyes,
+  _ => ReactionsListForIssueContent._(json),
+}; }
+
+static const ReactionsListForIssueContent plus1 = ReactionsListForIssueContent._('+1');
+
+static const ReactionsListForIssueContent minus1 = ReactionsListForIssueContent._('-1');
+
+static const ReactionsListForIssueContent laugh = ReactionsListForIssueContent._('laugh');
+
+static const ReactionsListForIssueContent confused = ReactionsListForIssueContent._('confused');
+
+static const ReactionsListForIssueContent heart = ReactionsListForIssueContent._('heart');
+
+static const ReactionsListForIssueContent hooray = ReactionsListForIssueContent._('hooray');
+
+static const ReactionsListForIssueContent rocket = ReactionsListForIssueContent._('rocket');
+
+static const ReactionsListForIssueContent eyes = ReactionsListForIssueContent._('eyes');
+
+static const List<ReactionsListForIssueContent> values = [plus1, minus1, laugh, confused, heart, hooray, rocket, eyes];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ReactionsListForIssueContent && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'ReactionsListForIssueContent($value)'; } 
+ }

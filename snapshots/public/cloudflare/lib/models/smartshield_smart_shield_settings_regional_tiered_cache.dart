@@ -1,0 +1,63 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Specifies the enablement value of Cache Reserve.
+final class SmartshieldSmartShieldSettingsRegionalTieredCacheValue {const SmartshieldSmartShieldSettingsRegionalTieredCacheValue._(this.value);
+
+factory SmartshieldSmartShieldSettingsRegionalTieredCacheValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => SmartshieldSmartShieldSettingsRegionalTieredCacheValue._(json),
+}; }
+
+static const SmartshieldSmartShieldSettingsRegionalTieredCacheValue $on = SmartshieldSmartShieldSettingsRegionalTieredCacheValue._('on');
+
+static const SmartshieldSmartShieldSettingsRegionalTieredCacheValue off = SmartshieldSmartShieldSettingsRegionalTieredCacheValue._('off');
+
+static const List<SmartshieldSmartShieldSettingsRegionalTieredCacheValue> values = [$on, off];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is SmartshieldSmartShieldSettingsRegionalTieredCacheValue && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'SmartshieldSmartShieldSettingsRegionalTieredCacheValue($value)'; } 
+ }
+final class SmartshieldSmartShieldSettingsRegionalTieredCache {const SmartshieldSmartShieldSettingsRegionalTieredCache({this.editable, this.id, this.value, });
+
+factory SmartshieldSmartShieldSettingsRegionalTieredCache.fromJson(Map<String, dynamic> json) { return SmartshieldSmartShieldSettingsRegionalTieredCache(
+  editable: json['editable'] as bool?,
+  id: json['id'] as String?,
+  value: json['value'] != null ? SmartshieldSmartShieldSettingsRegionalTieredCacheValue.fromJson(json['value'] as String) : null,
+); }
+
+/// Whether the setting is editable.
+final bool? editable;
+
+/// The id of the Regional Tiered Cache setting.
+final String? id;
+
+/// Specifies the enablement value of Cache Reserve.
+final SmartshieldSmartShieldSettingsRegionalTieredCacheValue? value;
+
+Map<String, dynamic> toJson() { return {
+  'editable': ?editable,
+  'id': ?id,
+  if (value != null) 'value': value?.toJson(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+SmartshieldSmartShieldSettingsRegionalTieredCache copyWith({bool Function()? editable, String Function()? id, SmartshieldSmartShieldSettingsRegionalTieredCacheValue Function()? value, }) { return SmartshieldSmartShieldSettingsRegionalTieredCache(
+  editable: editable != null ? editable() : this.editable,
+  id: id != null ? id() : this.id,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is SmartshieldSmartShieldSettingsRegionalTieredCache &&
+          editable == other.editable &&
+          id == other.id &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(editable, id, value); } 
+@override String toString() { return 'SmartshieldSmartShieldSettingsRegionalTieredCache(editable: $editable, id: $id, value: $value)'; } 
+ }

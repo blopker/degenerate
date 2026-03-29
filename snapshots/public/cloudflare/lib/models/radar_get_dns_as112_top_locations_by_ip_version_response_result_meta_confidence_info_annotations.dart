@@ -1,0 +1,200 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// Data source for annotations.
+final class RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource {const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(this.value);
+
+factory RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(String json) { return switch (json) {
+  'ALL' => all,
+  'AI_BOTS' => aiBots,
+  'AI_GATEWAY' => aiGateway,
+  'BGP' => bgp,
+  'BOTS' => bots,
+  'CONNECTION_ANOMALY' => connectionAnomaly,
+  'CT' => ct,
+  'DNS' => dns,
+  'DNS_MAGNITUDE' => dnsMagnitude,
+  'DNS_AS112' => dnsAs112,
+  'DOS' => dos,
+  'EMAIL_ROUTING' => emailRouting,
+  'EMAIL_SECURITY' => emailSecurity,
+  'FW' => fw,
+  'FW_PG' => fwPg,
+  'HTTP' => http,
+  'HTTP_CONTROL' => httpControl,
+  'HTTP_CRAWLER_REFERER' => httpCrawlerReferer,
+  'HTTP_ORIGINS' => httpOrigins,
+  'IQI' => iqi,
+  'LEAKED_CREDENTIALS' => leakedCredentials,
+  'NET' => net,
+  'ROBOTS_TXT' => robotsTxt,
+  'SPEED' => speed,
+  'WORKERS_AI' => workersAi,
+  _ => RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._(json),
+}; }
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource all = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('ALL');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource aiBots = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_BOTS');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource aiGateway = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('AI_GATEWAY');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource bgp = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('BGP');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource bots = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('BOTS');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource connectionAnomaly = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('CONNECTION_ANOMALY');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource ct = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('CT');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dns = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dnsMagnitude = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_MAGNITUDE');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dnsAs112 = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DNS_AS112');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dos = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('DOS');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource emailRouting = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_ROUTING');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource emailSecurity = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('EMAIL_SECURITY');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource fw = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource fwPg = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('FW_PG');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource http = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpControl = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CONTROL');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpCrawlerReferer = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_CRAWLER_REFERER');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource httpOrigins = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('HTTP_ORIGINS');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource iqi = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('IQI');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource leakedCredentials = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('LEAKED_CREDENTIALS');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource net = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('NET');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource robotsTxt = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('ROBOTS_TXT');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource speed = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('SPEED');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource workersAi = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource._('WORKERS_AI');
+
+static const List<RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource($value)'; } 
+ }
+/// Event type for annotations.
+final class RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType {const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(this.value);
+
+factory RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(String json) { return switch (json) {
+  'EVENT' => event,
+  'GENERAL' => general,
+  'OUTAGE' => outage,
+  'PARTIAL_PROJECTION' => partialProjection,
+  'PIPELINE' => pipeline,
+  'TRAFFIC_ANOMALY' => trafficAnomaly,
+  _ => RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._(json),
+}; }
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType event = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('EVENT');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType general = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('GENERAL');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType outage = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('OUTAGE');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType partialProjection = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('PARTIAL_PROJECTION');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType pipeline = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('PIPELINE');
+
+static const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType trafficAnomaly = RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType._('TRAFFIC_ANOMALY');
+
+static const List<RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType($value)'; } 
+ }
+/// Annotation associated with the result (e.g. outage or other type of event).
+final class RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations {const RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations({required this.dataSource, required this.description, required this.endDate, required this.eventType, required this.isInstantaneous, required this.linkedUrl, required this.startDate, });
+
+factory RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations.fromJson(Map<String, dynamic> json) { return RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource.fromJson(json['dataSource'] as String),
+  description: json['description'] as String,
+  endDate: DateTime.parse(json['endDate'] as String),
+  eventType: RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType.fromJson(json['eventType'] as String),
+  isInstantaneous: json['isInstantaneous'] as bool,
+  linkedUrl: Uri.parse(json['linkedUrl'] as String),
+  startDate: DateTime.parse(json['startDate'] as String),
+); }
+
+/// Data source for annotations.
+final RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource dataSource;
+
+final String description;
+
+final DateTime endDate;
+
+/// Event type for annotations.
+final RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType eventType;
+
+/// Whether event is a single point in time or a time range.
+final bool isInstantaneous;
+
+final Uri linkedUrl;
+
+final DateTime startDate;
+
+Map<String, dynamic> toJson() { return {
+  'dataSource': dataSource.toJson(),
+  'description': description,
+  'endDate': endDate.toIso8601String(),
+  'eventType': eventType.toJson(),
+  'isInstantaneous': isInstantaneous,
+  'linkedUrl': linkedUrl.toString(),
+  'startDate': startDate.toIso8601String(),
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('dataSource') &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('endDate') && json['endDate'] is String &&
+      json.containsKey('eventType') &&
+      json.containsKey('isInstantaneous') && json['isInstantaneous'] is bool &&
+      json.containsKey('linkedUrl') && json['linkedUrl'] is String &&
+      json.containsKey('startDate') && json['startDate'] is String; } 
+RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations copyWith({RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsDataSource? dataSource, String? description, DateTime? endDate, RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotationsEventType? eventType, bool? isInstantaneous, Uri? linkedUrl, DateTime? startDate, }) { return RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations(
+  dataSource: dataSource ?? this.dataSource,
+  description: description ?? this.description,
+  endDate: endDate ?? this.endDate,
+  eventType: eventType ?? this.eventType,
+  isInstantaneous: isInstantaneous ?? this.isInstantaneous,
+  linkedUrl: linkedUrl ?? this.linkedUrl,
+  startDate: startDate ?? this.startDate,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations &&
+          dataSource == other.dataSource &&
+          description == other.description &&
+          endDate == other.endDate &&
+          eventType == other.eventType &&
+          isInstantaneous == other.isInstantaneous &&
+          linkedUrl == other.linkedUrl &&
+          startDate == other.startDate; } 
+@override int get hashCode { return Object.hash(dataSource, description, endDate, eventType, isInstantaneous, linkedUrl, startDate); } 
+@override String toString() { return 'RadarGetDnsAs112TopLocationsByIpVersionResponseResultMetaConfidenceInfoAnnotations(dataSource: $dataSource, description: $description, endDate: $endDate, eventType: $eventType, isInstantaneous: $isInstantaneous, linkedUrl: $linkedUrl, startDate: $startDate)'; } 
+ }

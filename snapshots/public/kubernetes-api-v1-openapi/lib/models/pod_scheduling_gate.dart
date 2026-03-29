@@ -1,0 +1,25 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// PodSchedulingGate is associated to a Pod to guard its scheduling.
+final class PodSchedulingGate {const PodSchedulingGate({this.name = ''});
+
+factory PodSchedulingGate.fromJson(Map<String, dynamic> json) { return PodSchedulingGate(
+  name: json['name'] as String,
+); }
+
+/// Name of the scheduling gate. Each scheduling gate must have a unique name field.
+final String name;
+
+Map<String, dynamic> toJson() { return {
+  'name': name,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
+PodSchedulingGate copyWith({String? name}) { return PodSchedulingGate(
+  name: name ?? this.name,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PodSchedulingGate &&
+          name == other.name; } 
+@override int get hashCode { return name.hashCode; } 
+@override String toString() { return 'PodSchedulingGate(name: $name)'; } 
+ }

@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'refund.dart';import 'terminal_reader_reader_resource_refund_payment_action_charge.dart';import 'terminal_reader_reader_resource_refund_payment_action_payment_intent.dart';import 'terminal_reader_reader_resource_refund_payment_action_refund.dart';import 'terminal_reader_reader_resource_refund_payment_config.dart';/// The reason for the refund.
+final class TerminalReaderReaderResourceRefundPaymentActionReason {const TerminalReaderReaderResourceRefundPaymentActionReason._(this.value);
+
+factory TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(String json) { return switch (json) {
+  'duplicate' => duplicate,
+  'fraudulent' => fraudulent,
+  'requested_by_customer' => requestedByCustomer,
+  _ => TerminalReaderReaderResourceRefundPaymentActionReason._(json),
+}; }
+
+static const TerminalReaderReaderResourceRefundPaymentActionReason duplicate = TerminalReaderReaderResourceRefundPaymentActionReason._('duplicate');
+
+static const TerminalReaderReaderResourceRefundPaymentActionReason fraudulent = TerminalReaderReaderResourceRefundPaymentActionReason._('fraudulent');
+
+static const TerminalReaderReaderResourceRefundPaymentActionReason requestedByCustomer = TerminalReaderReaderResourceRefundPaymentActionReason._('requested_by_customer');
+
+static const List<TerminalReaderReaderResourceRefundPaymentActionReason> values = [duplicate, fraudulent, requestedByCustomer];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is TerminalReaderReaderResourceRefundPaymentActionReason && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'TerminalReaderReaderResourceRefundPaymentActionReason($value)'; } 
+ }
+/// Represents a reader action to refund a payment
+final class TerminalReaderReaderResourceRefundPaymentAction {const TerminalReaderReaderResourceRefundPaymentAction({this.amount, this.charge, this.metadata, this.paymentIntent, this.reason, this.refund, this.refundApplicationFee, this.refundPaymentConfig, this.reverseTransfer, });
+
+factory TerminalReaderReaderResourceRefundPaymentAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceRefundPaymentAction(
+  amount: json['amount'] != null ? (json['amount'] as num).toInt() : null,
+  charge: json['charge'] != null ? OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),) : null,
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
+  reason: json['reason'] != null ? TerminalReaderReaderResourceRefundPaymentActionReason.fromJson(json['reason'] as String) : null,
+  refund: json['refund'] != null ? OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),) : null,
+  refundApplicationFee: json['refund_application_fee'] as bool?,
+  refundPaymentConfig: json['refund_payment_config'] != null ? TerminalReaderReaderResourceRefundPaymentConfig.fromJson(json['refund_payment_config'] as Map<String, dynamic>) : null,
+  reverseTransfer: json['reverse_transfer'] as bool?,
+); }
+
+/// The amount being refunded.
+final int? amount;
+
+/// Charge that is being refunded.
+final TerminalReaderReaderResourceRefundPaymentActionCharge? charge;
+
+/// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
+final Map<String,String>? metadata;
+
+/// Payment intent that is being refunded.
+final TerminalReaderReaderResourceRefundPaymentActionPaymentIntent? paymentIntent;
+
+/// The reason for the refund.
+final TerminalReaderReaderResourceRefundPaymentActionReason? reason;
+
+/// Unique identifier for the refund object.
+final TerminalReaderReaderResourceRefundPaymentActionRefund? refund;
+
+/// Boolean indicating whether the application fee should be refunded when refunding this charge. If a full charge refund is given, the full application fee will be refunded. Otherwise, the application fee will be refunded in an amount proportional to the amount of the charge refunded. An application fee can be refunded only by the application that created the charge.
+final bool? refundApplicationFee;
+
+final TerminalReaderReaderResourceRefundPaymentConfig? refundPaymentConfig;
+
+/// Boolean indicating whether the transfer should be reversed when refunding this charge. The transfer will be reversed proportionally to the amount being refunded (either the entire or partial amount). A transfer can be reversed only by the application that created the charge.
+final bool? reverseTransfer;
+
+Map<String, dynamic> toJson() { return {
+  'amount': ?amount,
+  if (charge != null) 'charge': charge?.toJson(),
+  'metadata': ?metadata,
+  if (paymentIntent != null) 'payment_intent': paymentIntent?.toJson(),
+  if (reason != null) 'reason': reason?.toJson(),
+  if (refund != null) 'refund': refund?.toJson(),
+  'refund_application_fee': ?refundApplicationFee,
+  if (refundPaymentConfig != null) 'refund_payment_config': refundPaymentConfig?.toJson(),
+  'reverse_transfer': ?reverseTransfer,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return true; } 
+TerminalReaderReaderResourceRefundPaymentAction copyWith({int Function()? amount, TerminalReaderReaderResourceRefundPaymentActionCharge Function()? charge, Map<String, String> Function()? metadata, TerminalReaderReaderResourceRefundPaymentActionPaymentIntent Function()? paymentIntent, TerminalReaderReaderResourceRefundPaymentActionReason Function()? reason, TerminalReaderReaderResourceRefundPaymentActionRefund Function()? refund, bool Function()? refundApplicationFee, TerminalReaderReaderResourceRefundPaymentConfig Function()? refundPaymentConfig, bool Function()? reverseTransfer, }) { return TerminalReaderReaderResourceRefundPaymentAction(
+  amount: amount != null ? amount() : this.amount,
+  charge: charge != null ? charge() : this.charge,
+  metadata: metadata != null ? metadata() : this.metadata,
+  paymentIntent: paymentIntent != null ? paymentIntent() : this.paymentIntent,
+  reason: reason != null ? reason() : this.reason,
+  refund: refund != null ? refund() : this.refund,
+  refundApplicationFee: refundApplicationFee != null ? refundApplicationFee() : this.refundApplicationFee,
+  refundPaymentConfig: refundPaymentConfig != null ? refundPaymentConfig() : this.refundPaymentConfig,
+  reverseTransfer: reverseTransfer != null ? reverseTransfer() : this.reverseTransfer,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is TerminalReaderReaderResourceRefundPaymentAction &&
+          amount == other.amount &&
+          charge == other.charge &&
+          metadata == other.metadata &&
+          paymentIntent == other.paymentIntent &&
+          reason == other.reason &&
+          refund == other.refund &&
+          refundApplicationFee == other.refundApplicationFee &&
+          refundPaymentConfig == other.refundPaymentConfig &&
+          reverseTransfer == other.reverseTransfer; } 
+@override int get hashCode { return Object.hash(amount, charge, metadata, paymentIntent, reason, refund, refundApplicationFee, refundPaymentConfig, reverseTransfer); } 
+@override String toString() { return 'TerminalReaderReaderResourceRefundPaymentAction(amount: $amount, charge: $charge, metadata: $metadata, paymentIntent: $paymentIntent, reason: $reason, refund: $refund, refundApplicationFee: $refundApplicationFee, refundPaymentConfig: $refundPaymentConfig, reverseTransfer: $reverseTransfer)'; } 
+ }
