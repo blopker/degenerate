@@ -4,8 +4,8 @@ import 'mcn_resource_preview_item.dart';import 'mcn_string_item.dart';sealed cla
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnListItemList.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
-  'McnStringItem' => McnListItemListMcnStringItem.fromJson(json),
-  'McnResourcePreviewItem' => McnListItemListMcnResourcePreviewItem.fromJson(json),
+  'mcn_string_item' => McnListItemListMcnStringItem.fromJson(json),
+  'mcn_resource_preview_item' => McnListItemListMcnResourcePreviewItem.fromJson(json),
   _ => McnListItemList$Unknown(json),
 }; }
 
@@ -21,7 +21,7 @@ factory McnListItemListMcnStringItem.fromJson(Map<String, dynamic> json) { retur
 
 final McnStringItem mcnStringItem;
 
-@override String get itemType { return 'McnStringItem'; } 
+@override String get itemType { return 'mcn_string_item'; } 
 @override Map<String, dynamic> toJson() { return {'item_type': itemType, ...mcnStringItem.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnListItemListMcnStringItem && mcnStringItem == other.mcnStringItem; } 
@@ -34,7 +34,7 @@ factory McnListItemListMcnResourcePreviewItem.fromJson(Map<String, dynamic> json
 
 final McnResourcePreviewItem mcnResourcePreviewItem;
 
-@override String get itemType { return 'McnResourcePreviewItem'; } 
+@override String get itemType { return 'mcn_resource_preview_item'; } 
 @override Map<String, dynamic> toJson() { return {'item_type': itemType, ...mcnResourcePreviewItem.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is McnListItemListMcnResourcePreviewItem && mcnResourcePreviewItem == other.mcnResourcePreviewItem; } 

@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
+import '../models/yield_topic.dart';
 
 /// DefaultApi operations.
 ///
@@ -70,16 +71,25 @@ final class DefaultApi with ApiExecutor {
   ///
   /// `GET /prophecies`
   Future<ApiResult<void, Never>> $yield({
-    required dynamic topic,
+    required YieldTopic topic,
     RequestOptions? options,
   }) async {
     final queryParameters = <String, String>{
       ...apiConfig.defaultQueryParameters,
     };
     final queryParametersList = <ApiQueryParameter>[];
-    if (topic != null) {
-      queryParameters['topic'] = topic.toString();
-    }
+    if (topic.$await case final $await$?)
+      queryParametersList.add(
+        ApiQueryParameter(name: 'await', value: $await$, allowReserved: false),
+      );
+    if (topic.$async case final $async$?)
+      queryParametersList.add(
+        ApiQueryParameter(
+          name: 'async',
+          value: $async$.toString(),
+          allowReserved: false,
+        ),
+      );
 
     final headers = <String, String>{...apiConfig.defaultHeaders};
 

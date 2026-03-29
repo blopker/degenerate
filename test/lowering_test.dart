@@ -473,6 +473,57 @@ void main() {
     });
   });
 
+  group('OperationLowerer - content-based parameter schema', () {
+    test('extracts schema from parameter content field', () {
+      final doc = OpenApiDocument({
+        'openapi': '3.1.0',
+        'info': {'title': 'Test', 'version': '1'},
+        'paths': {
+          '/search': {
+            'get': {
+              'operationId': 'search',
+              'parameters': [
+                {
+                  'name': 'filter',
+                  'in': 'query',
+                  'required': true,
+                  'content': {
+                    'application/json': {
+                      'schema': {
+                        'type': 'object',
+                        'properties': {
+                          'field': {'type': 'string'},
+                          'value': {'type': 'string'},
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+              'responses': {
+                '200': {'description': 'ok'},
+              },
+            },
+          },
+        },
+      });
+      final ctx = SchemaNormalizer().normalize(doc.schemas);
+      final mapper = IrMapper(ctx);
+      mapper.lowerSchemas(doc.schemas);
+      final opLowerer = OperationLowerer(mapper, doc: doc);
+      final apis = opLowerer.lowerPaths(doc.paths);
+
+      final op = apis.first.operations.first;
+      final param = op.parameters.first;
+      expect(param.name, 'filter');
+      expect(param.isRequired, isTrue);
+      // Should be an object type, not dynamic
+      expect(param.type, isNot(isA<IrPrimitive>().having(
+        (p) => p.kind, 'kind', PrimitiveKind.dynamic_,
+      )));
+    });
+  });
+
   // ─── External ref handling ─────────────────────────────────────
 
   group('OperationLowerer - external refs', () {
@@ -943,6 +994,57 @@ void main() {
         lowerer.typeRegistry.keys.where((k) => k.startsWith('InlineObject')),
         isEmpty,
       );
+    });
+
+    test('inferred discriminator mapping uses original schema names, not Dart names', () {
+      final ctx = SchemaNormalizer().normalize({
+        'Animal': {
+          'oneOf': [
+            {r'$ref': '#/components/schemas/Cat'},
+            {r'$ref': '#/components/schemas/__dog__'},
+          ],
+          'discriminator': {
+            'propertyName': 'type',
+          },
+        },
+        'Cat': {
+          'type': 'object',
+          'properties': {
+            'type': {'type': 'string'},
+            'purr': {'type': 'boolean'},
+          },
+        },
+        '__dog__': {
+          'type': 'object',
+          'properties': {
+            'type': {'type': 'string'},
+            'bark': {'type': 'boolean'},
+          },
+        },
+      });
+      final lowerer = IrMapper(ctx);
+      lowerer.lowerSchemas(ctx.nameMapping.map((k, v) => MapEntry(k, {
+        'type': 'object',
+        'properties': {
+          'type': {'type': 'string'},
+        },
+      })));
+      // Lower the union schema
+      lowerer.lowerSchema('Animal', {
+        'oneOf': [
+          {r'$ref': '#/components/schemas/Cat'},
+          {r'$ref': '#/components/schemas/__dog__'},
+        ],
+        'discriminator': {
+          'propertyName': 'type',
+        },
+      });
+      final union = lowerer.typeRegistry['Animal']! as IrDiscriminatedUnion;
+      // Mapping keys should be the original schema names (what appears in JSON),
+      // not the Dart type names.
+      expect(union.mapping.keys, contains('Cat'));
+      expect(union.mapping.keys, contains('__dog__'));
+      expect(union.mapping.keys, isNot(contains('Dog')));
     });
   });
 

@@ -127,6 +127,13 @@ void main() {
       expect(sanitizeDartName('_private'), '_private');
     });
 
+    test('transliterates accented Latin characters to ASCII', () {
+      expect(sanitizeDartName('café'), 'cafe');
+      expect(sanitizeDartName('naïve'), 'naive');
+      expect(sanitizeDartName('über'), 'uber');
+      expect(sanitizeDartName('résumé'), 'resume');
+    });
+
     test('handles all invalid characters', () {
       expect(sanitizeDartName('!!!'), r'$empty');
     });

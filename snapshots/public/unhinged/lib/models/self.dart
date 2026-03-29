@@ -11,8 +11,8 @@ sealed class Self {
   factory Self.fromJson(Map<String, dynamic> json) {
     return switch (json['type']) {
       'True' => SelfTrue.fromJson(json),
-      'Proto' => SelfProto.fromJson(json),
-      'StringModel' => SelfStringModel.fromJson(json),
+      '__proto__' => SelfProto.fromJson(json),
+      'String' => SelfString.fromJson(json),
       _ => Self$Unknown(json),
     };
   }
@@ -73,7 +73,7 @@ final class SelfProto extends Self {
 
   @override
   String get type {
-    return 'Proto';
+    return '__proto__';
   }
 
   @override
@@ -97,18 +97,18 @@ final class SelfProto extends Self {
   }
 }
 
-final class SelfStringModel extends Self {
-  const SelfStringModel(this.stringModel);
+final class SelfString extends Self {
+  const SelfString(this.stringModel);
 
-  factory SelfStringModel.fromJson(Map<String, dynamic> json) {
-    return SelfStringModel(StringModel.fromJson(json));
+  factory SelfString.fromJson(Map<String, dynamic> json) {
+    return SelfString(StringModel.fromJson(json));
   }
 
   final StringModel stringModel;
 
   @override
   String get type {
-    return 'StringModel';
+    return 'String';
   }
 
   @override
@@ -119,7 +119,7 @@ final class SelfStringModel extends Self {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        other is SelfStringModel && stringModel == other.stringModel;
+        other is SelfString && stringModel == other.stringModel;
   }
 
   @override
@@ -129,7 +129,7 @@ final class SelfStringModel extends Self {
 
   @override
   String toString() {
-    return 'SelfStringModel(stringModel: $stringModel)';
+    return 'SelfString(stringModel: $stringModel)';
   }
 }
 

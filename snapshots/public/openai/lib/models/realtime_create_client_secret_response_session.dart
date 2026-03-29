@@ -6,8 +6,8 @@ sealed class RealtimeCreateClientSecretResponseSession {const RealtimeCreateClie
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory RealtimeCreateClientSecretResponseSession.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'RealtimeSessionCreateResponseGa' => RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa.fromJson(json),
-  'RealtimeTranscriptionSessionCreateResponseGa' => RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCreateResponseGa.fromJson(json),
+  'RealtimeSessionCreateResponseGA' => RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa.fromJson(json),
+  'RealtimeTranscriptionSessionCreateResponseGA' => RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCreateResponseGa.fromJson(json),
   _ => RealtimeCreateClientSecretResponseSession$Unknown(json),
 }; }
 
@@ -23,7 +23,7 @@ factory RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa
 
 final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
-@override String get type { return 'RealtimeSessionCreateResponseGa'; } 
+@override String get type { return 'RealtimeSessionCreateResponseGA'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...realtimeSessionCreateResponseGa.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionRealtimeSessionCreateResponseGa && realtimeSessionCreateResponseGa == other.realtimeSessionCreateResponseGa; } 
@@ -36,7 +36,7 @@ factory RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCre
 
 final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionCreateResponseGa;
 
-@override String get type { return 'RealtimeTranscriptionSessionCreateResponseGa'; } 
+@override String get type { return 'RealtimeTranscriptionSessionCreateResponseGA'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...realtimeTranscriptionSessionCreateResponseGa.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is RealtimeCreateClientSecretResponseSessionRealtimeTranscriptionSessionCreateResponseGa && realtimeTranscriptionSessionCreateResponseGa == other.realtimeTranscriptionSessionCreateResponseGa; } 

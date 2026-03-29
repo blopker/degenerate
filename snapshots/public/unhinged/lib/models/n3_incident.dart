@@ -7,7 +7,7 @@ final class $3Incident {
     required this.$1id,
     required this.$2species,
     this.$3DreadLevel = 6.66,
-    this.caf,
+    this.cafe,
     this.gnirts,
     this.ab,
   });
@@ -19,7 +19,7 @@ final class $3Incident {
       $3DreadLevel: json.containsKey('3-dread-level')
           ? (json['3-dread-level'] as num).toDouble()
           : 6.66,
-      caf: json['café'] as String?,
+      cafe: json['café'] as String?,
       gnirts: json['\u202Egnirts'] as String?,
       ab: json['a\u200Bb'] as String?,
     );
@@ -31,7 +31,7 @@ final class $3Incident {
 
   final double $3DreadLevel;
 
-  final String? caf;
+  final String? cafe;
 
   /// Begins with U+202E RIGHT-TO-LEFT OVERRIDE.
   final String? gnirts;
@@ -44,7 +44,7 @@ final class $3Incident {
       '1id': $1id,
       '2species': $2species.toJson(),
       '3-dread-level': $3DreadLevel,
-      'café': ?caf,
+      'café': ?cafe,
       '\u202Egnirts': ?gnirts,
       'a\u200Bb': ?ab,
     };
@@ -60,7 +60,7 @@ final class $3Incident {
     String? $1id,
     Phase? $2species,
     double Function()? $3DreadLevel,
-    String Function()? caf,
+    String Function()? cafe,
     String Function()? gnirts,
     String Function()? ab,
   }) {
@@ -68,7 +68,7 @@ final class $3Incident {
       $1id: $1id ?? this.$1id,
       $2species: $2species ?? this.$2species,
       $3DreadLevel: $3DreadLevel != null ? $3DreadLevel() : this.$3DreadLevel,
-      caf: caf != null ? caf() : this.caf,
+      cafe: cafe != null ? cafe() : this.cafe,
       gnirts: gnirts != null ? gnirts() : this.gnirts,
       ab: ab != null ? ab() : this.ab,
     );
@@ -81,18 +81,18 @@ final class $3Incident {
             $1id == other.$1id &&
             $2species == other.$2species &&
             $3DreadLevel == other.$3DreadLevel &&
-            caf == other.caf &&
+            cafe == other.cafe &&
             gnirts == other.gnirts &&
             ab == other.ab;
   }
 
   @override
   int get hashCode {
-    return Object.hash($1id, $2species, $3DreadLevel, caf, gnirts, ab);
+    return Object.hash($1id, $2species, $3DreadLevel, cafe, gnirts, ab);
   }
 
   @override
   String toString() {
-    return '\$3Incident(\$1id: ${$1id}, \$2species: ${$2species}, \$3DreadLevel: ${$3DreadLevel}, caf: $caf, gnirts: $gnirts, ab: $ab)';
+    return '\$3Incident(\$1id: ${$1id}, \$2species: ${$2species}, \$3DreadLevel: ${$3DreadLevel}, cafe: $cafe, gnirts: $gnirts, ab: $ab)';
   }
 }

@@ -234,7 +234,18 @@ class OperationLowerer {
     final explode = param['explode'] as bool?;
     final allowReserved = param['allowReserved'] == true;
 
-    final rawSchema = param['schema'];
+    // OAS 3.x parameters can define their type via `schema` (simple) or
+    // `content` (single media-type entry with a schema). Try both.
+    var rawSchema = param['schema'];
+    if (rawSchema == null) {
+      final content = param['content'] as Map<String, dynamic>?;
+      if (content != null && content.isNotEmpty) {
+        final mediaEntry = content.values.first;
+        if (mediaEntry is Map<String, dynamic>) {
+          rawSchema = mediaEntry['schema'];
+        }
+      }
+    }
     // Generate a name hint for inline parameter schemas.
     String? paramNameHint;
     if (_currentOperationId != null) {

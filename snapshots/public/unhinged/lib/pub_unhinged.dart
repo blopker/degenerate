@@ -13,6 +13,7 @@ export 'models/self.dart';
 export 'models/string_model.dart';
 export 'models/true.dart';
 export 'models/type_model.dart';
+export 'models/yield_topic.dart';
 export 'apis/class_api.dart';
 export 'apis/default_api.dart';
 export 'apis/incidents_api.dart';

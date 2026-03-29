@@ -11,7 +11,7 @@ factory Tool.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
   'ComputerTool' => ToolComputerTool.fromJson(json),
   'ComputerUsePreviewTool' => ToolComputerUsePreviewTool.fromJson(json),
   'WebSearchTool' => ToolWebSearchTool.fromJson(json),
-  'McpTool' => ToolMcpTool.fromJson(json),
+  'MCPTool' => ToolMcpTool.fromJson(json),
   'CodeInterpreterTool' => ToolCodeInterpreterTool.fromJson(json),
   'ImageGenTool' => ToolImageGenTool.fromJson(json),
   'LocalShellToolParam' => ToolLocalShellToolParam.fromJson(json),
@@ -101,7 +101,7 @@ factory ToolMcpTool.fromJson(Map<String, dynamic> json) { return ToolMcpTool(Mcp
 
 final McpTool mcpTool;
 
-@override String get type { return 'McpTool'; } 
+@override String get type { return 'MCPTool'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...mcpTool.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ToolMcpTool && mcpTool == other.mcpTool; } 

@@ -671,7 +671,7 @@ class IrMapper {
           final dartRefName =
               _nameMapping[rawRefName] ??
               sanitizeDartName(toPascalCase(rawRefName));
-          mapping[dartRefName] = IrTypeRef(dartRefName);
+          mapping[rawRefName] = IrTypeRef(dartRefName);
         } else if (variant is Map<String, dynamic> &&
             (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
           final hint =

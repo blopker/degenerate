@@ -24,10 +24,10 @@ factory ItemResource.fromJson(Map<String, dynamic> json) { return switch (json['
   'FunctionShellCallOutput' => ItemResourceFunctionShellCallOutput.fromJson(json),
   'ApplyPatchToolCall' => ItemResourceApplyPatchToolCall.fromJson(json),
   'ApplyPatchToolCallOutput' => ItemResourceApplyPatchToolCallOutput.fromJson(json),
-  'McpListTools' => ItemResourceMcpListTools.fromJson(json),
-  'McpApprovalRequest' => ItemResourceMcpApprovalRequest.fromJson(json),
-  'McpApprovalResponseResource' => ItemResourceMcpApprovalResponseResource.fromJson(json),
-  'McpToolCall' => ItemResourceMcpToolCall.fromJson(json),
+  'MCPListTools' => ItemResourceMcpListTools.fromJson(json),
+  'MCPApprovalRequest' => ItemResourceMcpApprovalRequest.fromJson(json),
+  'MCPApprovalResponseResource' => ItemResourceMcpApprovalResponseResource.fromJson(json),
+  'MCPToolCall' => ItemResourceMcpToolCall.fromJson(json),
   _ => ItemResource$Unknown(json),
 }; }
 
@@ -277,7 +277,7 @@ factory ItemResourceMcpListTools.fromJson(Map<String, dynamic> json) { return It
 
 final McpListTools mcpListTools;
 
-@override String get type { return 'McpListTools'; } 
+@override String get type { return 'MCPListTools'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...mcpListTools.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ItemResourceMcpListTools && mcpListTools == other.mcpListTools; } 
@@ -290,7 +290,7 @@ factory ItemResourceMcpApprovalRequest.fromJson(Map<String, dynamic> json) { ret
 
 final McpApprovalRequest mcpApprovalRequest;
 
-@override String get type { return 'McpApprovalRequest'; } 
+@override String get type { return 'MCPApprovalRequest'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...mcpApprovalRequest.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ItemResourceMcpApprovalRequest && mcpApprovalRequest == other.mcpApprovalRequest; } 
@@ -303,7 +303,7 @@ factory ItemResourceMcpApprovalResponseResource.fromJson(Map<String, dynamic> js
 
 final McpApprovalResponseResource mcpApprovalResponseResource;
 
-@override String get type { return 'McpApprovalResponseResource'; } 
+@override String get type { return 'MCPApprovalResponseResource'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...mcpApprovalResponseResource.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ItemResourceMcpApprovalResponseResource && mcpApprovalResponseResource == other.mcpApprovalResponseResource; } 
@@ -316,7 +316,7 @@ factory ItemResourceMcpToolCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final McpToolCall mcpToolCall;
 
-@override String get type { return 'McpToolCall'; } 
+@override String get type { return 'MCPToolCall'; } 
 @override Map<String, dynamic> toJson() { return {'type': type, ...mcpToolCall.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
     other is ItemResourceMcpToolCall && mcpToolCall == other.mcpToolCall; } 
