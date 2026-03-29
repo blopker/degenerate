@@ -1,6 +1,6 @@
 name: degenerate_http
 description: package:http adapter for degenerate-generated API clients.
-version: 0.1.5
+version: 0.2.0
 repository: https://github.com/blopker/degenerate
 resolution: workspace
 
@@ -16,7 +16,7 @@ environment:
   sdk: ^3.8.0
 
 dependencies:
-  degenerate_runtime: ^0.1.0
+  degenerate_runtime: ^0.2.0
   http: ^1.2.0
 
 dev_dependencies:
