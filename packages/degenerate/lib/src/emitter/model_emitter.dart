@@ -200,7 +200,7 @@ class ModelEmitter {
       (m) => m
         ..name = 'toJson'
         ..returns = refer('Map<String, dynamic>')
-        ..body = Code('return {\n$entries\n${_overflowToJsonSpread}};'),
+        ..body = Code('return {\n$entries\n$_overflowToJsonSpread};'),
     );
   }
 
