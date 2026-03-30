@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_dispute.dart';import 'issuing_token.dart';import 'issuing_transaction_amount_details2.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data2.dart';import 'issuing_transaction_purchase_details2.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury2.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_authorization.dart';import 'issuing_authorization_merchant_data.dart';import 'issuing_card.dart';import 'issuing_cardholder.dart';import 'issuing_dispute.dart';import 'issuing_token.dart';import 'issuing_transaction_amount_details.dart';import 'issuing_transaction_authorization.dart';import 'issuing_transaction_balance_transaction.dart';import 'issuing_transaction_card.dart';import 'issuing_transaction_cardholder.dart';import 'issuing_transaction_dispute.dart';import 'issuing_transaction_network_data.dart';import 'issuing_transaction_purchase_details.dart';import 'issuing_transaction_token.dart';import 'issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
 
 factory IssuingTransactionObject.fromJson(String json) { return switch (json) {
@@ -84,7 +84,7 @@ final class IssuingTransaction {const IssuingTransaction({required this.amount, 
 
 factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingTransaction(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingTransactionAmountDetails2.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  amountDetails: json['amount_details'] != null ? IssuingTransactionAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   authorization: json['authorization'] != null ? OneOf2.parse(json['authorization'], fromA: (v) => v as String, fromB: (v) => IssuingAuthorization.fromJson(v as Map<String, dynamic>),) : null,
   balanceTransaction: json['balance_transaction'] != null ? OneOf2.parse(json['balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
   card: OneOf2.parse(json['card'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),),
@@ -98,11 +98,11 @@ factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingT
   merchantCurrency: json['merchant_currency'] as String,
   merchantData: IssuingAuthorizationMerchantData.fromJson(json['merchant_data'] as Map<String, dynamic>),
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  networkData: json['network_data'] != null ? IssuingTransactionNetworkData2.fromJson(json['network_data'] as Map<String, dynamic>) : null,
+  networkData: json['network_data'] != null ? IssuingTransactionNetworkData.fromJson(json['network_data'] as Map<String, dynamic>) : null,
   object: IssuingTransactionObject.fromJson(json['object'] as String),
-  purchaseDetails: json['purchase_details'] != null ? IssuingTransactionPurchaseDetails2.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
+  purchaseDetails: json['purchase_details'] != null ? IssuingTransactionPurchaseDetails.fromJson(json['purchase_details'] as Map<String, dynamic>) : null,
   token: json['token'] != null ? OneOf2.parse(json['token'], fromA: (v) => v as String, fromB: (v) => IssuingToken.fromJson(v as Map<String, dynamic>),) : null,
-  treasury: json['treasury'] != null ? IssuingTransactionTreasury2.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+  treasury: json['treasury'] != null ? IssuingTransactionTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
   type: IssuingTransactionType.fromJson(json['type'] as String),
   wallet: json['wallet'] != null ? IssuingTransactionWallet.fromJson(json['wallet'] as String) : null,
 ); }
@@ -111,7 +111,7 @@ factory IssuingTransaction.fromJson(Map<String, dynamic> json) { return IssuingT
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingTransactionAmountDetails2? amountDetails;
+final IssuingTransactionAmountDetails? amountDetails;
 
 /// The `Authorization` object that led to this transaction.
 final IssuingTransactionAuthorization? authorization;
@@ -152,19 +152,19 @@ final IssuingAuthorizationMerchantData merchantData;
 final Map<String,String> metadata;
 
 /// Details about the transaction, such as processing dates, set by the card network.
-final IssuingTransactionNetworkData2? networkData;
+final IssuingTransactionNetworkData? networkData;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final IssuingTransactionObject object;
 
 /// Additional purchase information that is optionally provided by the merchant.
-final IssuingTransactionPurchaseDetails2? purchaseDetails;
+final IssuingTransactionPurchaseDetails? purchaseDetails;
 
 /// [Token](https://docs.stripe.com/api/issuing/tokens/object) object used for this transaction. If a network token was not used for this transaction, this field will be null.
 final IssuingTransactionToken? token;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this transaction if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
-final IssuingTransactionTreasury2? treasury;
+final IssuingTransactionTreasury? treasury;
 
 /// The nature of the transaction.
 final IssuingTransactionType type;
@@ -208,7 +208,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-IssuingTransaction copyWith({int? amount, IssuingTransactionAmountDetails2? Function()? amountDetails, IssuingTransactionAuthorization? Function()? authorization, IssuingTransactionBalanceTransaction? Function()? balanceTransaction, IssuingTransactionCard? card, IssuingTransactionCardholder? Function()? cardholder, int? created, String? currency, IssuingTransactionDispute? Function()? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingTransactionNetworkData2? Function()? networkData, IssuingTransactionObject? object, IssuingTransactionPurchaseDetails2? Function()? purchaseDetails, IssuingTransactionToken? Function()? token, IssuingTransactionTreasury2? Function()? treasury, IssuingTransactionType? type, IssuingTransactionWallet? Function()? wallet, }) { return IssuingTransaction(
+IssuingTransaction copyWith({int? amount, IssuingTransactionAmountDetails? Function()? amountDetails, IssuingTransactionAuthorization? Function()? authorization, IssuingTransactionBalanceTransaction? Function()? balanceTransaction, IssuingTransactionCard? card, IssuingTransactionCardholder? Function()? cardholder, int? created, String? currency, IssuingTransactionDispute? Function()? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingTransactionNetworkData? Function()? networkData, IssuingTransactionObject? object, IssuingTransactionPurchaseDetails? Function()? purchaseDetails, IssuingTransactionToken? Function()? token, IssuingTransactionTreasury? Function()? treasury, IssuingTransactionType? type, IssuingTransactionWallet? Function()? wallet, }) { return IssuingTransaction(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   authorization: authorization != null ? authorization() : this.authorization,

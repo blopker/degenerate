@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'plan_transform_usage.dart';import 'product.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_product.dart';import 'plan_product.dart';import 'plan_tier.dart';import 'product.dart';import 'transform_usage.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `amount`) will be charged per unit in `quantity` (for plans with `usage_type=licensed`), or per unit of total usage (for plans with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 final class PlanBillingScheme {const PlanBillingScheme._(this.value);
 
 factory PlanBillingScheme.fromJson(String json) { return switch (json) {
@@ -156,7 +156,7 @@ factory Plan.fromJson(Map<String, dynamic> json) { return Plan(
   product: json['product'] != null ? OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PlanTier.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PlanTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformUsage: json['transform_usage'] != null ? PlanTransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
+  transformUsage: json['transform_usage'] != null ? TransformUsage.fromJson(json['transform_usage'] as Map<String, dynamic>) : null,
   trialPeriodDays: json['trial_period_days'] != null ? (json['trial_period_days'] as num).toInt() : null,
   usageType: PlanUsageType.fromJson(json['usage_type'] as String),
 ); }
@@ -213,7 +213,7 @@ final List<PlanTier>? tiers;
 final PlanTiersMode? tiersMode;
 
 /// Apply a transformation to the reported usage or set quantity before computing the amount billed. Cannot be combined with `tiers`.
-final PlanTransformUsage? transformUsage;
+final TransformUsage? transformUsage;
 
 /// Default number of trial days when subscribing a customer to this plan using [`trial_from_plan=true`](https://docs.stripe.com/api#create_subscription-trial_from_plan).
 final int? trialPeriodDays;
@@ -253,7 +253,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('usage_type'); } 
-Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, PlanObject? object, PlanProduct? Function()? product, List<PlanTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, PlanTransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, PlanUsageType? usageType, }) { return Plan(
+Plan copyWith({bool? active, int? Function()? amount, String? Function()? amountDecimal, PlanBillingScheme? billingScheme, int? created, String? currency, String? id, PlanInterval? interval, int? intervalCount, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? meter, String? Function()? nickname, PlanObject? object, PlanProduct? Function()? product, List<PlanTier> Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, PlanUsageType? usageType, }) { return Plan(
   active: active ?? this.active,
   amount: amount != null ? amount() : this.amount,
   amountDecimal: amountDecimal != null ? amountDecimal() : this.amountDecimal,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text2.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';import 'issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'file.dart';import 'issuing_personalization_design_card_logo.dart';import 'issuing_personalization_design_carrier_text.dart';import 'issuing_personalization_design_physical_bundle.dart';import 'issuing_personalization_design_preferences.dart';import 'issuing_personalization_design_rejection_reasons.dart';import 'issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
 
 factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
@@ -58,7 +58,7 @@ final class IssuingPersonalizationDesign {const IssuingPersonalizationDesign({th
 
 factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { return IssuingPersonalizationDesign(
   cardLogo: json['card_logo'] != null ? OneOf2.parse(json['card_logo'], fromA: (v) => v as String, fromB: (v) => File.fromJson(v as Map<String, dynamic>),) : null,
-  carrierText: json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText2.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
+  carrierText: json['carrier_text'] != null ? IssuingPersonalizationDesignCarrierText.fromJson(json['carrier_text'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -76,7 +76,7 @@ factory IssuingPersonalizationDesign.fromJson(Map<String, dynamic> json) { retur
 final IssuingPersonalizationDesignCardLogo? cardLogo;
 
 /// Hash containing carrier text, for use with physical bundles that support carrier text.
-final IssuingPersonalizationDesignCarrierText2? carrierText;
+final IssuingPersonalizationDesignCarrierText? carrierText;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -133,7 +133,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('preferences') &&
       json.containsKey('rejection_reasons') &&
       json.containsKey('status'); } 
-IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Function()? cardLogo, IssuingPersonalizationDesignCarrierText2? Function()? carrierText, int? created, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? name, IssuingPersonalizationDesignObject? object, IssuingPersonalizationDesignPhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
+IssuingPersonalizationDesign copyWith({IssuingPersonalizationDesignCardLogo? Function()? cardLogo, IssuingPersonalizationDesignCarrierText? Function()? carrierText, int? created, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? name, IssuingPersonalizationDesignObject? object, IssuingPersonalizationDesignPhysicalBundle? physicalBundle, IssuingPersonalizationDesignPreferences? preferences, IssuingPersonalizationDesignRejectionReasons? rejectionReasons, IssuingPersonalizationDesignStatus? status, }) { return IssuingPersonalizationDesign(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,
   carrierText: carrierText != null ? carrierText() : this.carrierText,
   created: created ?? this.created,

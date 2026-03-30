@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_client_device_metadata.dart';import 'insights_resources_payment_evaluation_customer_details.dart';import 'insights_resources_payment_evaluation_event.dart';import 'insights_resources_payment_evaluation_insights.dart';import 'insights_resources_payment_evaluation_payment_details.dart';import 'radar_payment_evaluation_outcome.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'insights_resources_payment_evaluation_client_device_metadata.dart';import 'insights_resources_payment_evaluation_customer_details.dart';import 'insights_resources_payment_evaluation_event.dart';import 'insights_resources_payment_evaluation_insights.dart';import 'insights_resources_payment_evaluation_outcome.dart';import 'insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject._(this.value);
 
 factory RadarPaymentEvaluationObject.fromJson(String json) { return switch (json) {
@@ -35,7 +35,7 @@ factory RadarPaymentEvaluation.fromJson(Map<String, dynamic> json) { return Rada
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: RadarPaymentEvaluationObject.fromJson(json['object'] as String),
-  outcome: json['outcome'] != null ? RadarPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null,
+  outcome: json['outcome'] != null ? InsightsResourcesPaymentEvaluationOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null,
   paymentDetails: json['payment_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(json['payment_details'] as Map<String, dynamic>) : null,
 ); }
 
@@ -64,7 +64,7 @@ final Map<String,String>? metadata;
 final RadarPaymentEvaluationObject object;
 
 /// Indicates the final outcome for the payment evaluation.
-final RadarPaymentEvaluationOutcome? outcome;
+final InsightsResourcesPaymentEvaluationOutcome? outcome;
 
 final InsightsResourcesPaymentEvaluationPaymentDetails? paymentDetails;
 
@@ -87,7 +87,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('insights') &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Map<String, String>? Function()? metadata, RadarPaymentEvaluationObject? object, RadarPaymentEvaluationOutcome? Function()? outcome, InsightsResourcesPaymentEvaluationPaymentDetails Function()? paymentDetails, }) { return RadarPaymentEvaluation(
+RadarPaymentEvaluation copyWith({InsightsResourcesPaymentEvaluationClientDeviceMetadata Function()? clientDeviceMetadataDetails, int? createdAt, InsightsResourcesPaymentEvaluationCustomerDetails Function()? customerDetails, List<InsightsResourcesPaymentEvaluationEvent>? events, String? id, InsightsResourcesPaymentEvaluationInsights? insights, bool? livemode, Map<String, String>? Function()? metadata, RadarPaymentEvaluationObject? object, InsightsResourcesPaymentEvaluationOutcome? Function()? outcome, InsightsResourcesPaymentEvaluationPaymentDetails Function()? paymentDetails, }) { return RadarPaymentEvaluation(
   clientDeviceMetadataDetails: clientDeviceMetadataDetails != null ? clientDeviceMetadataDetails() : this.clientDeviceMetadataDetails,
   createdAt: createdAt ?? this.createdAt,
   customerDetails: customerDetails != null ? customerDetails() : this.customerDetails,

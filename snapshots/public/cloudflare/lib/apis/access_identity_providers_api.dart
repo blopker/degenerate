@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_cf_resource_id.dart';import '../models/access_email.dart';import '../models/access_groups.dart';import '../models/access_groups_name.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_identity_providers.dart';import '../models/access_idp_resource_id.dart';import '../models/access_response_collection_result.dart';import '../models/access_username.dart';import '../models/access_users.dart';import '../models/access_users_cf_resource_id.dart';import '../models/access_users_idp_resource_id.dart';import '../models/access_users_name.dart';import '../models/access_uuid.dart';/// AccessIdentityProvidersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_cf_resource_id.dart';import '../models/access_email.dart';import '../models/access_groups.dart';import '../models/access_groups_name.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_identity_provider.dart';import '../models/access_identity_providers.dart';import '../models/access_idp_resource_id.dart';import '../models/access_response_collection_result.dart';import '../models/access_username.dart';import '../models/access_users.dart';import '../models/access_users_cf_resource_id.dart';import '../models/access_users_idp_resource_id.dart';import '../models/access_users_name.dart';import '../models/access_uuid.dart';/// AccessIdentityProvidersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -40,7 +40,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as List<dynamic>?)?.map((e) => AccessResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList();
+    return (json['result'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),)).toList();
   },
 );
  } 
@@ -64,7 +64,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -86,7 +86,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -110,7 +110,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? OneOf9.parse(json['result'], fromA: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>), fromI: (v) => AccessIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 

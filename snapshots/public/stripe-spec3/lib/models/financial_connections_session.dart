@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_link_account_session_filters.dart';import 'financial_connections_session_account_holder.dart';import 'financial_connections_session_accounts.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_link_account_session_filters.dart';import 'financial_connections_session_accounts.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject._(this.value);
 
 factory FinancialConnectionsSessionObject.fromJson(String json) { return switch (json) {
@@ -83,7 +83,7 @@ bool get isUnknown { return !values.contains(this); }
 final class FinancialConnectionsSession {const FinancialConnectionsSession({this.accountHolder, required this.accounts, this.clientSecret, this.filters, required this.id, required this.livemode, required this.object, required this.permissions, this.prefetch, this.returnUrl, });
 
 factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) { return FinancialConnectionsSession(
-  accountHolder: json['account_holder'] != null ? FinancialConnectionsSessionAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
+  accountHolder: json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
   accounts: FinancialConnectionsSessionAccounts.fromJson(json['accounts'] as Map<String, dynamic>),
   clientSecret: json['client_secret'] as String?,
   filters: json['filters'] != null ? BankConnectionsResourceLinkAccountSessionFilters.fromJson(json['filters'] as Map<String, dynamic>) : null,
@@ -96,7 +96,7 @@ factory FinancialConnectionsSession.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// The account holder for whom accounts are collected in this session.
-final FinancialConnectionsSessionAccountHolder? accountHolder;
+final BankConnectionsResourceAccountholder? accountHolder;
 
 /// The accounts that were collected as part of this Session.
 final FinancialConnectionsSessionAccounts accounts;
@@ -141,7 +141,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('permissions'); } 
-FinancialConnectionsSession copyWith({FinancialConnectionsSessionAccountHolder? Function()? accountHolder, FinancialConnectionsSessionAccounts? accounts, String? Function()? clientSecret, BankConnectionsResourceLinkAccountSessionFilters Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsSessionPermissions>? permissions, List<FinancialConnectionsSessionPrefetch>? Function()? prefetch, String Function()? returnUrl, }) { return FinancialConnectionsSession(
+FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, FinancialConnectionsSessionAccounts? accounts, String? Function()? clientSecret, BankConnectionsResourceLinkAccountSessionFilters Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsSessionPermissions>? permissions, List<FinancialConnectionsSessionPrefetch>? Function()? prefetch, String Function()? returnUrl, }) { return FinancialConnectionsSession(
   accountHolder: accountHolder != null ? accountHolder() : this.accountHolder,
   accounts: accounts ?? this.accounts,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,

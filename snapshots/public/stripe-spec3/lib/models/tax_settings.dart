@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_settings_defaults.dart';import 'tax_product_resource_tax_settings_status_details.dart';import 'tax_settings_head_office.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'tax_product_resource_tax_settings_defaults.dart';import 'tax_product_resource_tax_settings_head_office.dart';import 'tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class TaxSettingsObject {const TaxSettingsObject._(this.value);
 
 factory TaxSettingsObject.fromJson(String json) { return switch (json) {
@@ -54,7 +54,7 @@ final class TaxSettings {const TaxSettings({required this.defaults, this.headOff
 
 factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
   defaults: TaxProductResourceTaxSettingsDefaults.fromJson(json['defaults'] as Map<String, dynamic>),
-  headOffice: json['head_office'] != null ? TaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null,
+  headOffice: json['head_office'] != null ? TaxProductResourceTaxSettingsHeadOffice.fromJson(json['head_office'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: TaxSettingsObject.fromJson(json['object'] as String),
   status: TaxSettingsStatus.fromJson(json['status'] as String),
@@ -64,7 +64,7 @@ factory TaxSettings.fromJson(Map<String, dynamic> json) { return TaxSettings(
 final TaxProductResourceTaxSettingsDefaults defaults;
 
 /// The place where your business is located.
-final TaxSettingsHeadOffice? headOffice;
+final TaxProductResourceTaxSettingsHeadOffice? headOffice;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -90,7 +90,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_details'); } 
-TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, TaxSettingsHeadOffice? Function()? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) { return TaxSettings(
+TaxSettings copyWith({TaxProductResourceTaxSettingsDefaults? defaults, TaxProductResourceTaxSettingsHeadOffice? Function()? headOffice, bool? livemode, TaxSettingsObject? object, TaxSettingsStatus? status, TaxProductResourceTaxSettingsStatusDetails? statusDetails, }) { return TaxSettings(
   defaults: defaults ?? this.defaults,
   headOffice: headOffice != null ? headOffice() : this.headOffice,
   livemode: livemode ?? this.livemode,

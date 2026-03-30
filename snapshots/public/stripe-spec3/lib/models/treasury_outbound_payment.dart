@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_outbound_payment_destination_payment_method_details.dart';import 'treasury_outbound_payment_end_user_details.dart';import 'treasury_outbound_payment_returned_details.dart';import 'treasury_outbound_payment_tracking_details.dart';import 'treasury_outbound_payment_transaction.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'outbound_payments_payment_method_details.dart';import 'treasury_outbound_payment_transaction.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'treasury_outbound_payments_resource_returned_status.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
 
 factory TreasuryOutboundPaymentObject.fromJson(String json) { return switch (json) {
@@ -71,8 +71,8 @@ factory TreasuryOutboundPayment.fromJson(Map<String, dynamic> json) { return Tre
   customer: json['customer'] as String?,
   description: json['description'] as String?,
   destinationPaymentMethod: json['destination_payment_method'] as String?,
-  destinationPaymentMethodDetails: json['destination_payment_method_details'] != null ? TreasuryOutboundPaymentDestinationPaymentMethodDetails.fromJson(json['destination_payment_method_details'] as Map<String, dynamic>) : null,
-  endUserDetails: json['end_user_details'] != null ? TreasuryOutboundPaymentEndUserDetails.fromJson(json['end_user_details'] as Map<String, dynamic>) : null,
+  destinationPaymentMethodDetails: json['destination_payment_method_details'] != null ? OutboundPaymentsPaymentMethodDetails.fromJson(json['destination_payment_method_details'] as Map<String, dynamic>) : null,
+  endUserDetails: json['end_user_details'] != null ? TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails.fromJson(json['end_user_details'] as Map<String, dynamic>) : null,
   expectedArrivalDate: (json['expected_arrival_date'] as num).toInt(),
   financialAccount: json['financial_account'] as String,
   hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
@@ -80,11 +80,11 @@ factory TreasuryOutboundPayment.fromJson(Map<String, dynamic> json) { return Tre
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryOutboundPaymentObject.fromJson(json['object'] as String),
-  returnedDetails: json['returned_details'] != null ? TreasuryOutboundPaymentReturnedDetails.fromJson(json['returned_details'] as Map<String, dynamic>) : null,
+  returnedDetails: json['returned_details'] != null ? TreasuryOutboundPaymentsResourceReturnedStatus.fromJson(json['returned_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryOutboundPaymentStatus.fromJson(json['status'] as String),
   statusTransitions: TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions.fromJson(json['status_transitions'] as Map<String, dynamic>),
-  trackingDetails: json['tracking_details'] != null ? TreasuryOutboundPaymentTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null,
+  trackingDetails: json['tracking_details'] != null ? TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails.fromJson(json['tracking_details'] as Map<String, dynamic>) : null,
   transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),),
 ); }
 
@@ -110,10 +110,10 @@ final String? description;
 final String? destinationPaymentMethod;
 
 /// Details about the PaymentMethod for an OutboundPayment.
-final TreasuryOutboundPaymentDestinationPaymentMethodDetails? destinationPaymentMethodDetails;
+final OutboundPaymentsPaymentMethodDetails? destinationPaymentMethodDetails;
 
 /// Details about the end user.
-final TreasuryOutboundPaymentEndUserDetails? endUserDetails;
+final TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? endUserDetails;
 
 /// The date when funds are expected to arrive in the destination account.
 final int expectedArrivalDate;
@@ -137,7 +137,7 @@ final Map<String,String> metadata;
 final TreasuryOutboundPaymentObject object;
 
 /// Details about a returned OutboundPayment. Only set when the status is `returned`.
-final TreasuryOutboundPaymentReturnedDetails? returnedDetails;
+final TreasuryOutboundPaymentsResourceReturnedStatus? returnedDetails;
 
 /// The description that appears on the receiving end for an OutboundPayment (for example, bank statement for external bank transfer).
 final String statementDescriptor;
@@ -148,7 +148,7 @@ final TreasuryOutboundPaymentStatus status;
 final TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions statusTransitions;
 
 /// Details about network-specific tracking information if available.
-final TreasuryOutboundPaymentTrackingDetails? trackingDetails;
+final TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? trackingDetails;
 
 /// The Transaction associated with this object.
 final TreasuryOutboundPaymentTransaction transaction;
@@ -191,7 +191,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status') &&
       json.containsKey('status_transitions') &&
       json.containsKey('transaction'); } 
-TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, TreasuryOutboundPaymentDestinationPaymentMethodDetails? Function()? destinationPaymentMethodDetails, TreasuryOutboundPaymentEndUserDetails? Function()? endUserDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundPaymentObject? object, TreasuryOutboundPaymentReturnedDetails? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions? statusTransitions, TreasuryOutboundPaymentTrackingDetails? Function()? trackingDetails, TreasuryOutboundPaymentTransaction? transaction, }) { return TreasuryOutboundPayment(
+TreasuryOutboundPayment copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, OutboundPaymentsPaymentMethodDetails? Function()? destinationPaymentMethodDetails, TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails? Function()? endUserDetails, int? expectedArrivalDate, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryOutboundPaymentObject? object, TreasuryOutboundPaymentsResourceReturnedStatus? Function()? returnedDetails, String? statementDescriptor, TreasuryOutboundPaymentStatus? status, TreasuryOutboundPaymentsResourceOutboundPaymentResourceStatusTransitions? statusTransitions, TreasuryOutboundPaymentsResourceOutboundPaymentResourceTrackingDetails? Function()? trackingDetails, TreasuryOutboundPaymentTransaction? transaction, }) { return TreasuryOutboundPayment(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,

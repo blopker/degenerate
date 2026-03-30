@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card_authorization_controls.dart';import 'issuing_card_latest_fraud_warning.dart';import 'issuing_card_personalization_design.dart';import 'issuing_card_replaced_by.dart';import 'issuing_card_replacement_for.dart';import 'issuing_card_shipping2.dart';import 'issuing_card_wallets2.dart';import 'issuing_cardholder.dart';import 'issuing_personalization_design.dart';/// The reason why the card was canceled.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_card_authorization_controls.dart';import 'issuing_card_fraud_warning.dart';import 'issuing_card_personalization_design.dart';import 'issuing_card_replaced_by.dart';import 'issuing_card_replacement_for.dart';import 'issuing_card_shipping.dart';import 'issuing_card_wallets.dart';import 'issuing_cardholder.dart';import 'issuing_personalization_design.dart';/// The reason why the card was canceled.
 final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);
 
 factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
@@ -149,7 +149,7 @@ factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   financialAccount: json['financial_account'] as String?,
   id: json['id'] as String,
   last4: json['last4'] as String,
-  latestFraudWarning: json['latest_fraud_warning'] != null ? IssuingCardLatestFraudWarning.fromJson(json['latest_fraud_warning'] as Map<String, dynamic>) : null,
+  latestFraudWarning: json['latest_fraud_warning'] != null ? IssuingCardFraudWarning.fromJson(json['latest_fraud_warning'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   number: json['number'] as String?,
@@ -159,11 +159,11 @@ factory IssuingCard.fromJson(Map<String, dynamic> json) { return IssuingCard(
   replacementFor: json['replacement_for'] != null ? OneOf2.parse(json['replacement_for'], fromA: (v) => v as String, fromB: (v) => IssuingCard.fromJson(v as Map<String, dynamic>),) : null,
   replacementReason: json['replacement_reason'] != null ? IssuingCardReplacementReason.fromJson(json['replacement_reason'] as String) : null,
   secondLine: json['second_line'] as String?,
-  shipping: json['shipping'] != null ? IssuingCardShipping2.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? IssuingCardShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   spendingControls: IssuingCardAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>),
   status: IssuingCardStatus.fromJson(json['status'] as String),
   type: IssuingCardType.fromJson(json['type'] as String),
-  wallets: json['wallets'] != null ? IssuingCardWallets2.fromJson(json['wallets'] as Map<String, dynamic>) : null,
+  wallets: json['wallets'] != null ? IssuingCardWallets.fromJson(json['wallets'] as Map<String, dynamic>) : null,
 ); }
 
 /// The brand of the card.
@@ -199,7 +199,7 @@ final String id;
 final String last4;
 
 /// Stripe’s assessment of whether this card’s details have been compromised. If this property isn't null, cancel and reissue the card to prevent fraudulent activity risk.
-final IssuingCardLatestFraudWarning? latestFraudWarning;
+final IssuingCardFraudWarning? latestFraudWarning;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -229,7 +229,7 @@ final IssuingCardReplacementReason? replacementReason;
 final String? secondLine;
 
 /// Where and how the card will be shipped.
-final IssuingCardShipping2? shipping;
+final IssuingCardShipping? shipping;
 
 final IssuingCardAuthorizationControls spendingControls;
 
@@ -240,7 +240,7 @@ final IssuingCardStatus status;
 final IssuingCardType type;
 
 /// Information relating to digital wallets (like Apple Pay and Google Pay).
-final IssuingCardWallets2? wallets;
+final IssuingCardWallets? wallets;
 
 Map<String, dynamic> toJson() { return {
   'brand': brand,
@@ -284,7 +284,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('spending_controls') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String Function()? cvc, int? expMonth, int? expYear, String? Function()? financialAccount, String? id, String? last4, IssuingCardLatestFraudWarning? Function()? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String Function()? number, IssuingCardObject? object, IssuingCardPersonalizationDesign? Function()? personalizationDesign, IssuingCardReplacedBy? Function()? replacedBy, IssuingCardReplacementFor? Function()? replacementFor, IssuingCardReplacementReason? Function()? replacementReason, String? Function()? secondLine, IssuingCardShipping2? Function()? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, IssuingCardWallets2? Function()? wallets, }) { return IssuingCard(
+IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String Function()? cvc, int? expMonth, int? expYear, String? Function()? financialAccount, String? id, String? last4, IssuingCardFraudWarning? Function()? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String Function()? number, IssuingCardObject? object, IssuingCardPersonalizationDesign? Function()? personalizationDesign, IssuingCardReplacedBy? Function()? replacedBy, IssuingCardReplacementFor? Function()? replacementFor, IssuingCardReplacementReason? Function()? replacementReason, String? Function()? secondLine, IssuingCardShipping? Function()? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, IssuingCardWallets? Function()? wallets, }) { return IssuingCard(
   brand: brand ?? this.brand,
   cancellationReason: cancellationReason != null ? cancellationReason() : this.cancellationReason,
   cardholder: cardholder ?? this.cardholder,

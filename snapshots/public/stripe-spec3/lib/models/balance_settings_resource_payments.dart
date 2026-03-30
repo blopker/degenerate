@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'balance_settings_resource_payments_payouts.dart';import 'balance_settings_resource_settlement_timing.dart';/// 
+import 'balance_settings_resource_payouts.dart';import 'balance_settings_resource_settlement_timing.dart';/// 
 final class BalanceSettingsResourcePayments {const BalanceSettingsResourcePayments({this.debitNegativeBalances, this.payouts, required this.settlementTiming, });
 
 factory BalanceSettingsResourcePayments.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayments(
   debitNegativeBalances: json['debit_negative_balances'] as bool?,
-  payouts: json['payouts'] != null ? BalanceSettingsResourcePaymentsPayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
+  payouts: json['payouts'] != null ? BalanceSettingsResourcePayouts.fromJson(json['payouts'] as Map<String, dynamic>) : null,
   settlementTiming: BalanceSettingsResourceSettlementTiming.fromJson(json['settlement_timing'] as Map<String, dynamic>),
 ); }
 
@@ -13,7 +13,7 @@ factory BalanceSettingsResourcePayments.fromJson(Map<String, dynamic> json) { re
 final bool? debitNegativeBalances;
 
 /// Settings specific to the account's payouts.
-final BalanceSettingsResourcePaymentsPayouts? payouts;
+final BalanceSettingsResourcePayouts? payouts;
 
 final BalanceSettingsResourceSettlementTiming settlementTiming;
 
@@ -23,7 +23,7 @@ Map<String, dynamic> toJson() { return {
   'settlement_timing': settlementTiming.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('settlement_timing'); } 
-BalanceSettingsResourcePayments copyWith({bool? Function()? debitNegativeBalances, BalanceSettingsResourcePaymentsPayouts? Function()? payouts, BalanceSettingsResourceSettlementTiming? settlementTiming, }) { return BalanceSettingsResourcePayments(
+BalanceSettingsResourcePayments copyWith({bool? Function()? debitNegativeBalances, BalanceSettingsResourcePayouts? Function()? payouts, BalanceSettingsResourceSettlementTiming? settlementTiming, }) { return BalanceSettingsResourcePayments(
   debitNegativeBalances: debitNegativeBalances != null ? debitNegativeBalances() : this.debitNegativeBalances,
   payouts: payouts != null ? payouts() : this.payouts,
   settlementTiming: settlementTiming ?? this.settlementTiming,

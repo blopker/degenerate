@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_installments_plan.dart';import 'payment_method_options_card_installments_plan.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_card_installments_plan.dart';/// 
 final class PaymentMethodOptionsCardInstallments {const PaymentMethodOptionsCardInstallments({this.availablePlans, required this.enabled, this.plan, });
 
 factory PaymentMethodOptionsCardInstallments.fromJson(Map<String, dynamic> json) { return PaymentMethodOptionsCardInstallments(
   availablePlans: (json['available_plans'] as List<dynamic>?)?.map((e) => PaymentMethodDetailsCardInstallmentsPlan.fromJson(e as Map<String, dynamic>)).toList(),
   enabled: json['enabled'] as bool,
-  plan: json['plan'] != null ? PaymentMethodOptionsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
+  plan: json['plan'] != null ? PaymentMethodDetailsCardInstallmentsPlan.fromJson(json['plan'] as Map<String, dynamic>) : null,
 ); }
 
 /// Installment plans that may be selected for this PaymentIntent.
@@ -16,7 +16,7 @@ final List<PaymentMethodDetailsCardInstallmentsPlan>? availablePlans;
 final bool enabled;
 
 /// Installment plan selected for this PaymentIntent.
-final PaymentMethodOptionsCardInstallmentsPlan? plan;
+final PaymentMethodDetailsCardInstallmentsPlan? plan;
 
 Map<String, dynamic> toJson() { return {
   if (availablePlans != null) 'available_plans': availablePlans?.map((e) => e.toJson()).toList(),
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (plan != null) 'plan': plan?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-PaymentMethodOptionsCardInstallments copyWith({List<PaymentMethodDetailsCardInstallmentsPlan>? Function()? availablePlans, bool? enabled, PaymentMethodOptionsCardInstallmentsPlan? Function()? plan, }) { return PaymentMethodOptionsCardInstallments(
+PaymentMethodOptionsCardInstallments copyWith({List<PaymentMethodDetailsCardInstallmentsPlan>? Function()? availablePlans, bool? enabled, PaymentMethodDetailsCardInstallmentsPlan? Function()? plan, }) { return PaymentMethodOptionsCardInstallments(
   availablePlans: availablePlans != null ? availablePlans() : this.availablePlans,
   enabled: enabled ?? this.enabled,
   plan: plan != null ? plan() : this.plan,

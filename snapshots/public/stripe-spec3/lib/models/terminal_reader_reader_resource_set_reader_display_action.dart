@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'terminal_reader_reader_resource_set_reader_display_action_cart.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
+import 'terminal_reader_reader_resource_cart.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
 final class TerminalReaderReaderResourceSetReaderDisplayActionType {const TerminalReaderReaderResourceSetReaderDisplayActionType._(this.value);
 
 factory TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(String json) { return switch (json) {
@@ -26,12 +26,12 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReaderReaderResourceSetReaderDisplayAction {const TerminalReaderReaderResourceSetReaderDisplayAction({this.cart, required this.type, });
 
 factory TerminalReaderReaderResourceSetReaderDisplayAction.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceSetReaderDisplayAction(
-  cart: json['cart'] != null ? TerminalReaderReaderResourceSetReaderDisplayActionCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
+  cart: json['cart'] != null ? TerminalReaderReaderResourceCart.fromJson(json['cart'] as Map<String, dynamic>) : null,
   type: TerminalReaderReaderResourceSetReaderDisplayActionType.fromJson(json['type'] as String),
 ); }
 
 /// Cart object to be displayed by the reader, including line items, amounts, and currency.
-final TerminalReaderReaderResourceSetReaderDisplayActionCart? cart;
+final TerminalReaderReaderResourceCart? cart;
 
 /// Type of information to be displayed by the reader. Only `cart` is currently supported.
 final TerminalReaderReaderResourceSetReaderDisplayActionType type;
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalReaderReaderResourceSetReaderDisplayAction copyWith({TerminalReaderReaderResourceSetReaderDisplayActionCart? Function()? cart, TerminalReaderReaderResourceSetReaderDisplayActionType? type, }) { return TerminalReaderReaderResourceSetReaderDisplayAction(
+TerminalReaderReaderResourceSetReaderDisplayAction copyWith({TerminalReaderReaderResourceCart? Function()? cart, TerminalReaderReaderResourceSetReaderDisplayActionType? type, }) { return TerminalReaderReaderResourceSetReaderDisplayAction(
   cart: cart != null ? cart() : this.cart,
   type: type ?? this.type,
 ); } 

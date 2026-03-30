@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_location.dart';import 'terminal_reader_action.dart';import 'terminal_reader_location.dart';/// Device type of the reader.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_location.dart';import 'terminal_reader_location.dart';import 'terminal_reader_reader_resource_reader_action.dart';/// Device type of the reader.
 final class TerminalReaderDeviceType {const TerminalReaderDeviceType._(this.value);
 
 factory TerminalReaderDeviceType.fromJson(String json) { return switch (json) {
@@ -105,7 +105,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReader {const TerminalReader({this.action, this.deviceSwVersion, required this.deviceType, required this.id, this.ipAddress, required this.label, this.lastSeenAt, required this.livemode, this.location, required this.metadata, required this.object, required this.serialNumber, this.status, });
 
 factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalReader(
-  action: json['action'] != null ? TerminalReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null,
+  action: json['action'] != null ? TerminalReaderReaderResourceReaderAction.fromJson(json['action'] as Map<String, dynamic>) : null,
   deviceSwVersion: json['device_sw_version'] as String?,
   deviceType: TerminalReaderDeviceType.fromJson(json['device_type'] as String),
   id: json['id'] as String,
@@ -121,7 +121,7 @@ factory TerminalReader.fromJson(Map<String, dynamic> json) { return TerminalRead
 ); }
 
 /// The most recent action performed by the reader.
-final TerminalReaderAction? action;
+final TerminalReaderReaderResourceReaderAction? action;
 
 /// The current software version of the reader.
 final String? deviceSwVersion;
@@ -181,7 +181,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('devic
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('serial_number') && json['serial_number'] is String; } 
-TerminalReader copyWith({TerminalReaderAction? Function()? action, String? Function()? deviceSwVersion, TerminalReaderDeviceType? deviceType, String? id, String? Function()? ipAddress, String? label, int? Function()? lastSeenAt, bool? livemode, TerminalReaderLocation? Function()? location, Map<String,String>? metadata, TerminalReaderObject? object, String? serialNumber, TerminalReaderStatus? Function()? status, }) { return TerminalReader(
+TerminalReader copyWith({TerminalReaderReaderResourceReaderAction? Function()? action, String? Function()? deviceSwVersion, TerminalReaderDeviceType? deviceType, String? id, String? Function()? ipAddress, String? label, int? Function()? lastSeenAt, bool? livemode, TerminalReaderLocation? Function()? location, Map<String,String>? metadata, TerminalReaderObject? object, String? serialNumber, TerminalReaderStatus? Function()? status, }) { return TerminalReader(
   action: action != null ? action() : this.action,
   deviceSwVersion: deviceSwVersion != null ? deviceSwVersion() : this.deviceSwVersion,
   deviceType: deviceType ?? this.deviceType,

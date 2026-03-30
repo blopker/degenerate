@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_verification_data_authentication_exemption.dart';import 'issuing_authorization_verification_data_three_d_secure.dart';/// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
+import 'issuing_authorization_authentication_exemption.dart';import 'issuing_authorization_three_d_secure.dart';/// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
 final class IssuingAuthorizationVerificationDataAddressLine1Check {const IssuingAuthorizationVerificationDataAddressLine1Check._(this.value);
 
 factory IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(String json) { return switch (json) {
@@ -118,11 +118,11 @@ final class IssuingAuthorizationVerificationData {const IssuingAuthorizationVeri
 factory IssuingAuthorizationVerificationData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationVerificationData(
   addressLine1Check: IssuingAuthorizationVerificationDataAddressLine1Check.fromJson(json['address_line1_check'] as String),
   addressPostalCodeCheck: IssuingAuthorizationVerificationDataAddressPostalCodeCheck.fromJson(json['address_postal_code_check'] as String),
-  authenticationExemption: json['authentication_exemption'] != null ? IssuingAuthorizationVerificationDataAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
+  authenticationExemption: json['authentication_exemption'] != null ? IssuingAuthorizationAuthenticationExemption.fromJson(json['authentication_exemption'] as Map<String, dynamic>) : null,
   cvcCheck: IssuingAuthorizationVerificationDataCvcCheck.fromJson(json['cvc_check'] as String),
   expiryCheck: IssuingAuthorizationVerificationDataExpiryCheck.fromJson(json['expiry_check'] as String),
   postalCode: json['postal_code'] as String?,
-  threeDSecure: json['three_d_secure'] != null ? IssuingAuthorizationVerificationDataThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  threeDSecure: json['three_d_secure'] != null ? IssuingAuthorizationThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the cardholder provided an address first line and if it matched the cardholder’s `billing.address.line1`.
@@ -132,7 +132,7 @@ final IssuingAuthorizationVerificationDataAddressLine1Check addressLine1Check;
 final IssuingAuthorizationVerificationDataAddressPostalCodeCheck addressPostalCodeCheck;
 
 /// The exemption applied to this authorization.
-final IssuingAuthorizationVerificationDataAuthenticationExemption? authenticationExemption;
+final IssuingAuthorizationAuthenticationExemption? authenticationExemption;
 
 /// Whether the cardholder provided a CVC and if it matched Stripe’s record.
 final IssuingAuthorizationVerificationDataCvcCheck cvcCheck;
@@ -144,7 +144,7 @@ final IssuingAuthorizationVerificationDataExpiryCheck expiryCheck;
 final String? postalCode;
 
 /// 3D Secure details.
-final IssuingAuthorizationVerificationDataThreeDSecure? threeDSecure;
+final IssuingAuthorizationThreeDSecure? threeDSecure;
 
 Map<String, dynamic> toJson() { return {
   'address_line1_check': addressLine1Check.toJson(),
@@ -159,7 +159,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('address_postal_code_check') &&
       json.containsKey('cvc_check') &&
       json.containsKey('expiry_check'); } 
-IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, IssuingAuthorizationVerificationDataAuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, IssuingAuthorizationVerificationDataExpiryCheck? expiryCheck, String? Function()? postalCode, IssuingAuthorizationVerificationDataThreeDSecure? Function()? threeDSecure, }) { return IssuingAuthorizationVerificationData(
+IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, IssuingAuthorizationAuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, IssuingAuthorizationVerificationDataExpiryCheck? expiryCheck, String? Function()? postalCode, IssuingAuthorizationThreeDSecure? Function()? threeDSecure, }) { return IssuingAuthorizationVerificationData(
   addressLine1Check: addressLine1Check ?? this.addressLine1Check,
   addressPostalCodeCheck: addressPostalCodeCheck ?? this.addressPostalCodeCheck,
   authenticationExemption: authenticationExemption != null ? authenticationExemption() : this.authenticationExemption,

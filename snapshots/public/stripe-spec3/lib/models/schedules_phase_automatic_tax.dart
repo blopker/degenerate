@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'schedules_phase_automatic_tax_liability.dart';/// If Stripe disabled automatic tax, this enum describes why.
+import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
 final class SchedulesPhaseAutomaticTaxDisabledReason {const SchedulesPhaseAutomaticTaxDisabledReason._(this.value);
 
 factory SchedulesPhaseAutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
@@ -28,7 +28,7 @@ final class SchedulesPhaseAutomaticTax {const SchedulesPhaseAutomaticTax({this.d
 factory SchedulesPhaseAutomaticTax.fromJson(Map<String, dynamic> json) { return SchedulesPhaseAutomaticTax(
   disabledReason: json['disabled_reason'] != null ? SchedulesPhaseAutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null ? SchedulesPhaseAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
+  liability: json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null,
 ); }
 
 /// If Stripe disabled automatic tax, this enum describes why.
@@ -38,7 +38,7 @@ final SchedulesPhaseAutomaticTaxDisabledReason? disabledReason;
 final bool enabled;
 
 /// The account that's liable for tax. If set, the business address and tax registrations required to perform the tax calculation are loaded from this account. The tax transaction is returned in the report of the connected account.
-final SchedulesPhaseAutomaticTaxLiability? liability;
+final ConnectAccountReference? liability;
 
 Map<String, dynamic> toJson() { return {
   if (disabledReason != null) 'disabled_reason': disabledReason?.toJson(),
@@ -46,7 +46,7 @@ Map<String, dynamic> toJson() { return {
   if (liability != null) 'liability': liability?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-SchedulesPhaseAutomaticTax copyWith({SchedulesPhaseAutomaticTaxDisabledReason? Function()? disabledReason, bool? enabled, SchedulesPhaseAutomaticTaxLiability? Function()? liability, }) { return SchedulesPhaseAutomaticTax(
+SchedulesPhaseAutomaticTax copyWith({SchedulesPhaseAutomaticTaxDisabledReason? Function()? disabledReason, bool? enabled, ConnectAccountReference? Function()? liability, }) { return SchedulesPhaseAutomaticTax(
   disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,

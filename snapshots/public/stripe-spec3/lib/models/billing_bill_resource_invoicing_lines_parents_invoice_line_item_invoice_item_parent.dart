@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_invoice_item_parent_proration_details.dart';/// 
+import 'billing_bill_resource_invoicing_lines_common_proration_details.dart';/// 
 final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent({required this.invoiceItem, required this.proration, this.prorationDetails, this.subscription, });
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(
   invoiceItem: json['invoice_item'] as String,
   proration: json['proration'] as bool,
-  prorationDetails: json['proration_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParentProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
+  prorationDetails: json['proration_details'] != null ? BillingBillResourceInvoicingLinesCommonProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String?,
 ); }
 
@@ -17,7 +17,7 @@ final String invoiceItem;
 final bool proration;
 
 /// Additional details for proration line items
-final BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParentProrationDetails? prorationDetails;
+final BillingBillResourceInvoicingLinesCommonProrationDetails? prorationDetails;
 
 /// The subscription that the invoice item belongs to
 final String? subscription;
@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoice_item') && json['invoice_item'] is String &&
       json.containsKey('proration') && json['proration'] is bool; } 
-BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent copyWith({String? invoiceItem, bool? proration, BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParentProrationDetails? Function()? prorationDetails, String? Function()? subscription, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(
+BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent copyWith({String? invoiceItem, bool? proration, BillingBillResourceInvoicingLinesCommonProrationDetails? Function()? prorationDetails, String? Function()? subscription, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent(
   invoiceItem: invoiceItem ?? this.invoiceItem,
   proration: proration ?? this.proration,
   prorationDetails: prorationDetails != null ? prorationDetails() : this.prorationDetails,

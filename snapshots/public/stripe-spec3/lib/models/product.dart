@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'price.dart';import 'product_default_price.dart';import 'product_marketing_feature.dart';import 'product_package_dimensions.dart';import 'product_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package_dimensions.dart';import 'price.dart';import 'product_default_price.dart';import 'product_marketing_feature.dart';import 'product_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ProductObject {const ProductObject._(this.value);
 
 factory ProductObject.fromJson(String json) { return switch (json) {
@@ -44,7 +44,7 @@ factory Product.fromJson(Map<String, dynamic> json) { return Product(
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
   object: ProductObject.fromJson(json['object'] as String),
-  packageDimensions: json['package_dimensions'] != null ? ProductPackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
+  packageDimensions: json['package_dimensions'] != null ? PackageDimensions.fromJson(json['package_dimensions'] as Map<String, dynamic>) : null,
   shippable: json['shippable'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String?,
   taxCode: json['tax_code'] != null ? OneOf2.parse(json['tax_code'], fromA: (v) => v as String, fromB: (v) => TaxCode.fromJson(v as Map<String, dynamic>),) : null,
@@ -87,7 +87,7 @@ final String name;
 final ProductObject object;
 
 /// The dimensions of this product for shipping purposes.
-final ProductPackageDimensions? packageDimensions;
+final PackageDimensions? packageDimensions;
 
 /// Whether this product is shipped (i.e., physical goods).
 final bool? shippable;
@@ -137,7 +137,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('object') &&
       json.containsKey('updated') && json['updated'] is num; } 
-Product copyWith({bool? active, int? created, ProductDefaultPrice? Function()? defaultPrice, String? Function()? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, ProductObject? object, ProductPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, ProductTaxCode? Function()? taxCode, String? Function()? unitLabel, int? updated, String? Function()? url, }) { return Product(
+Product copyWith({bool? active, int? created, ProductDefaultPrice? Function()? defaultPrice, String? Function()? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, ProductObject? object, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, ProductTaxCode? Function()? taxCode, String? Function()? unitLabel, int? updated, String? Function()? url, }) { return Product(
   active: active ?? this.active,
   created: created ?? this.created,
   defaultPrice: defaultPrice != null ? defaultPrice() : this.defaultPrice,

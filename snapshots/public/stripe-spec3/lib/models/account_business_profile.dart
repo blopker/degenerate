@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_business_profile_annual_revenue.dart';import 'account_business_profile_support_address.dart';import 'account_monthly_estimated_revenue.dart';final class AccountBusinessProfileMinorityOwnedBusinessDesignation {const AccountBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account_annual_revenue.dart';import 'account_monthly_estimated_revenue.dart';import 'address.dart';final class AccountBusinessProfileMinorityOwnedBusinessDesignation {const AccountBusinessProfileMinorityOwnedBusinessDesignation._(this.value);
 
 factory AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(String json) { return switch (json) {
   'lgbtqi_owned_business' => lgbtqiOwnedBusiness,
@@ -37,14 +37,14 @@ bool get isUnknown { return !values.contains(this); }
 final class AccountBusinessProfile {const AccountBusinessProfile({this.annualRevenue, this.estimatedWorkerCount, this.mcc, this.minorityOwnedBusinessDesignation, this.monthlyEstimatedRevenue, this.name, this.productDescription, this.supportAddress, this.supportEmail, this.supportPhone, this.supportUrl, this.url, });
 
 factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return AccountBusinessProfile(
-  annualRevenue: json['annual_revenue'] != null ? AccountBusinessProfileAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
+  annualRevenue: json['annual_revenue'] != null ? AccountAnnualRevenue.fromJson(json['annual_revenue'] as Map<String, dynamic>) : null,
   estimatedWorkerCount: json['estimated_worker_count'] != null ? (json['estimated_worker_count'] as num).toInt() : null,
   mcc: json['mcc'] as String?,
   minorityOwnedBusinessDesignation: (json['minority_owned_business_designation'] as List<dynamic>?)?.map((e) => AccountBusinessProfileMinorityOwnedBusinessDesignation.fromJson(e as String)).toList(),
   monthlyEstimatedRevenue: json['monthly_estimated_revenue'] != null ? AccountMonthlyEstimatedRevenue.fromJson(json['monthly_estimated_revenue'] as Map<String, dynamic>) : null,
   name: json['name'] as String?,
   productDescription: json['product_description'] as String?,
-  supportAddress: json['support_address'] != null ? AccountBusinessProfileSupportAddress.fromJson(json['support_address'] as Map<String, dynamic>) : null,
+  supportAddress: json['support_address'] != null ? Address.fromJson(json['support_address'] as Map<String, dynamic>) : null,
   supportEmail: json['support_email'] as String?,
   supportPhone: json['support_phone'] as String?,
   supportUrl: json['support_url'] as String?,
@@ -52,7 +52,7 @@ factory AccountBusinessProfile.fromJson(Map<String, dynamic> json) { return Acco
 ); }
 
 /// The applicant's gross annual revenue for its preceding fiscal year.
-final AccountBusinessProfileAnnualRevenue? annualRevenue;
+final AccountAnnualRevenue? annualRevenue;
 
 /// An estimated upper bound of employees, contractors, vendors, etc. currently working for the business.
 final int? estimatedWorkerCount;
@@ -72,7 +72,7 @@ final String? name;
 final String? productDescription;
 
 /// A publicly available mailing address for sending support issues to.
-final AccountBusinessProfileSupportAddress? supportAddress;
+final Address? supportAddress;
 
 /// A publicly available email address for sending support issues to.
 final String? supportEmail;
@@ -101,7 +101,7 @@ Map<String, dynamic> toJson() { return {
   'url': ?url,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'annual_revenue', 'estimated_worker_count', 'mcc', 'minority_owned_business_designation', 'monthly_estimated_revenue', 'name', 'product_description', 'support_address', 'support_email', 'support_phone', 'support_url', 'url'}.contains(key)); } 
-AccountBusinessProfile copyWith({AccountBusinessProfileAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<AccountBusinessProfileMinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, AccountBusinessProfileSupportAddress? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
+AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<AccountBusinessProfileMinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(
   annualRevenue: annualRevenue != null ? annualRevenue() : this.annualRevenue,
   estimatedWorkerCount: estimatedWorkerCount != null ? estimatedWorkerCount() : this.estimatedWorkerCount,
   mcc: mcc != null ? mcc() : this.mcc,

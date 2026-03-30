@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_calculation_line_items.dart';import 'tax_calculation_ship_from_details.dart';import 'tax_calculation_shipping_cost.dart';import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_tax_breakdown.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_calculation_line_items.dart';import 'tax_product_resource_customer_details.dart';import 'tax_product_resource_ship_from_details.dart';import 'tax_product_resource_tax_breakdown.dart';import 'tax_product_resource_tax_calculation_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class TaxCalculationObject {const TaxCalculationObject._(this.value);
 
 factory TaxCalculationObject.fromJson(String json) { return switch (json) {
@@ -37,8 +37,8 @@ factory TaxCalculation.fromJson(Map<String, dynamic> json) { return TaxCalculati
   lineItems: json['line_items'] != null ? TaxCalculationLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: TaxCalculationObject.fromJson(json['object'] as String),
-  shipFromDetails: json['ship_from_details'] != null ? TaxCalculationShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? TaxCalculationShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shipFromDetails: json['ship_from_details'] != null ? TaxProductResourceShipFromDetails.fromJson(json['ship_from_details'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? TaxProductResourceTaxCalculationShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   taxAmountExclusive: (json['tax_amount_exclusive'] as num).toInt(),
   taxAmountInclusive: (json['tax_amount_inclusive'] as num).toInt(),
   taxBreakdown: (json['tax_breakdown'] as List<dynamic>).map((e) => TaxProductResourceTaxBreakdown.fromJson(e as Map<String, dynamic>)).toList(),
@@ -72,10 +72,10 @@ final bool livemode;
 final TaxCalculationObject object;
 
 /// The details of the ship from location, such as the address.
-final TaxCalculationShipFromDetails? shipFromDetails;
+final TaxProductResourceShipFromDetails? shipFromDetails;
 
 /// The shipping cost details for the calculation.
-final TaxCalculationShippingCost? shippingCost;
+final TaxProductResourceTaxCalculationShippingCost? shippingCost;
 
 /// The amount of tax to be collected on top of the line item prices.
 final int taxAmountExclusive;
@@ -115,7 +115,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_amount_inclusive') && json['tax_amount_inclusive'] is num &&
       json.containsKey('tax_breakdown') &&
       json.containsKey('tax_date') && json['tax_date'] is num; } 
-TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, int? Function()? expiresAt, String? Function()? id, TaxCalculationLineItems? Function()? lineItems, bool? livemode, TaxCalculationObject? object, TaxCalculationShipFromDetails? Function()? shipFromDetails, TaxCalculationShippingCost? Function()? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) { return TaxCalculation(
+TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, int? Function()? expiresAt, String? Function()? id, TaxCalculationLineItems? Function()? lineItems, bool? livemode, TaxCalculationObject? object, TaxProductResourceShipFromDetails? Function()? shipFromDetails, TaxProductResourceTaxCalculationShippingCost? Function()? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) { return TaxCalculation(
   amountTotal: amountTotal ?? this.amountTotal,
   currency: currency ?? this.currency,
   customer: customer != null ? customer() : this.customer,

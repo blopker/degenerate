@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_received_credits_resource_linked_flows_source_flow_details.dart';/// 
+import 'treasury_received_credits_resource_source_flows_details.dart';/// 
 final class TreasuryReceivedCreditsResourceLinkedFlows {const TreasuryReceivedCreditsResourceLinkedFlows({this.creditReversal, this.issuingAuthorization, this.issuingTransaction, this.sourceFlow, this.sourceFlowDetails, this.sourceFlowType, });
 
 factory TreasuryReceivedCreditsResourceLinkedFlows.fromJson(Map<String, dynamic> json) { return TreasuryReceivedCreditsResourceLinkedFlows(
@@ -8,7 +8,7 @@ factory TreasuryReceivedCreditsResourceLinkedFlows.fromJson(Map<String, dynamic>
   issuingAuthorization: json['issuing_authorization'] as String?,
   issuingTransaction: json['issuing_transaction'] as String?,
   sourceFlow: json['source_flow'] as String?,
-  sourceFlowDetails: json['source_flow_details'] != null ? TreasuryReceivedCreditsResourceLinkedFlowsSourceFlowDetails.fromJson(json['source_flow_details'] as Map<String, dynamic>) : null,
+  sourceFlowDetails: json['source_flow_details'] != null ? TreasuryReceivedCreditsResourceSourceFlowsDetails.fromJson(json['source_flow_details'] as Map<String, dynamic>) : null,
   sourceFlowType: json['source_flow_type'] as String?,
 ); }
 
@@ -25,7 +25,7 @@ final String? issuingTransaction;
 final String? sourceFlow;
 
 /// The expandable object of the source flow.
-final TreasuryReceivedCreditsResourceLinkedFlowsSourceFlowDetails? sourceFlowDetails;
+final TreasuryReceivedCreditsResourceSourceFlowsDetails? sourceFlowDetails;
 
 /// The type of flow that originated the ReceivedCredit (for example, `outbound_payment`).
 final String? sourceFlowType;
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'source_flow_type': ?sourceFlowType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'credit_reversal', 'issuing_authorization', 'issuing_transaction', 'source_flow', 'source_flow_details', 'source_flow_type'}.contains(key)); } 
-TreasuryReceivedCreditsResourceLinkedFlows copyWith({String? Function()? creditReversal, String? Function()? issuingAuthorization, String? Function()? issuingTransaction, String? Function()? sourceFlow, TreasuryReceivedCreditsResourceLinkedFlowsSourceFlowDetails? Function()? sourceFlowDetails, String? Function()? sourceFlowType, }) { return TreasuryReceivedCreditsResourceLinkedFlows(
+TreasuryReceivedCreditsResourceLinkedFlows copyWith({String? Function()? creditReversal, String? Function()? issuingAuthorization, String? Function()? issuingTransaction, String? Function()? sourceFlow, TreasuryReceivedCreditsResourceSourceFlowsDetails? Function()? sourceFlowDetails, String? Function()? sourceFlowType, }) { return TreasuryReceivedCreditsResourceLinkedFlows(
   creditReversal: creditReversal != null ? creditReversal() : this.creditReversal,
   issuingAuthorization: issuingAuthorization != null ? issuingAuthorization() : this.issuingAuthorization,
   issuingTransaction: issuingTransaction != null ? issuingTransaction() : this.issuingTransaction,

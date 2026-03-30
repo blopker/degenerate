@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_rate_flat_amount2.dart';/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
+import 'tax_rate_flat_amount.dart';/// The level of the jurisdiction that imposes this tax rate. Will be `null` for manually defined tax rates.
 final class TaxRateJurisdictionLevel {const TaxRateJurisdictionLevel._(this.value);
 
 factory TaxRateJurisdictionLevel.fromJson(String json) { return switch (json) {
@@ -157,7 +157,7 @@ factory TaxRate.fromJson(Map<String, dynamic> json) { return TaxRate(
   description: json['description'] as String?,
   displayName: json['display_name'] as String,
   effectivePercentage: json['effective_percentage'] != null ? (json['effective_percentage'] as num).toDouble() : null,
-  flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount2.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
+  flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   inclusive: json['inclusive'] as bool,
   jurisdiction: json['jurisdiction'] as String?,
@@ -192,7 +192,7 @@ final String displayName;
 final double? effectivePercentage;
 
 /// The amount of the tax rate when the `rate_type` is `flat_amount`. Tax rates with `rate_type` `percentage` can vary based on the transaction, resulting in this field being `null`. This field exposes the amount and currency of the flat tax rate.
-final TaxRateFlatAmount2? flatAmount;
+final TaxRateFlatAmount? flatAmount;
 
 /// Unique identifier for the object.
 final String id;
@@ -255,7 +255,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('percentage') && json['percentage'] is num; } 
-TaxRate copyWith({bool? active, String? Function()? country, int? created, String? Function()? description, String? displayName, double? Function()? effectivePercentage, TaxRateFlatAmount2? Function()? flatAmount, String? id, bool? inclusive, String? Function()? jurisdiction, TaxRateJurisdictionLevel? Function()? jurisdictionLevel, bool? livemode, Map<String, String>? Function()? metadata, TaxRateObject? object, double? percentage, TaxRateRateType? Function()? rateType, String? Function()? state, TaxRateTaxType? Function()? taxType, }) { return TaxRate(
+TaxRate copyWith({bool? active, String? Function()? country, int? created, String? Function()? description, String? displayName, double? Function()? effectivePercentage, TaxRateFlatAmount? Function()? flatAmount, String? id, bool? inclusive, String? Function()? jurisdiction, TaxRateJurisdictionLevel? Function()? jurisdictionLevel, bool? livemode, Map<String, String>? Function()? metadata, TaxRateObject? object, double? percentage, TaxRateRateType? Function()? rateType, String? Function()? state, TaxRateTaxType? Function()? taxType, }) { return TaxRate(
   active: active ?? this.active,
   country: country != null ? country() : this.country,
   created: created ?? this.created,

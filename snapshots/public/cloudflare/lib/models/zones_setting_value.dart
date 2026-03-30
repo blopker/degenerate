@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_h2_max_streams_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
+import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
 final class Zones0rttValue {const Zones0rttValue._(this.value);
 
 factory Zones0rttValue.fromJson(String json) { return switch (json) {
@@ -745,14 +745,6 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesPrivacyPassValue($value)'; } 
  }
-/// Value of the zone setting.
-/// Notes: Value must be between 1 and 6000
-extension type const ZonesProxyReadTimeoutValue(double value) {
-factory ZonesProxyReadTimeoutValue.fromJson(num json) => ZonesProxyReadTimeoutValue(json.toDouble());
-
-num toJson() => value;
-
-}
 /// Value of the Pseudo IPv4 setting.
 final class ZonesPseudoIpv4Value {const ZonesPseudoIpv4Value._(this.value);
 
@@ -1010,7 +1002,7 @@ bool get isUnknown { return !values.contains(this); }
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesWebsocketsValue($value)'; } 
  }
-/// A value that is one of: `Zones0rttValue`, `ZonesAdvancedDdosValue`, `ZonesCacheRulesAegisValue`, `ZonesAlwaysOnlineValue`, `ZonesAlwaysUseHttpsValue`, `ZonesAutomaticHttpsRewritesValue`, `ZonesBrotliValue`, `ZonesBrowserCacheTtlValue`, `ZonesBrowserCheckValue`, `ZonesCacheLevelValue`, `ZonesChallengeTtlValue`, `ZonesChinaNetworkEnabledValue`, `ZonesContentConverterValue`, `List<String>`, `ZonesCnameFlatteningValue`, `ZonesDevelopmentModeValue`, `ZonesEarlyHintsValue`, `ZonesEdgeCacheTtlValue`, `ZonesEmailObfuscationValue`, `ZonesH2PrioritizationValue`, `ZonesHotlinkProtectionValue`, `ZonesHttp2Value`, `ZonesHttp3Value`, `ZonesImageResizingValue`, `ZonesIpGeolocationValue`, `ZonesIpv6Value`, `ZonesMaxUploadValue`, `ZonesMinTlsVersionValue`, `ZonesMirageValue`, `ZonesNelValue`, `ZonesOpportunisticEncryptionValue`, `ZonesOpportunisticOnionValue`, `ZonesOrangeToOrangeValue`, `ZonesOriginErrorPagePassThruValue`, `ZonesCacheRulesOriginH2MaxStreamsValue`, `ZonesCacheRulesOriginMaxHttpVersionValue`, `ZonesPolishValue`, `ZonesPrefetchPreloadValue`, `ZonesPrivacyPassValue`, `ZonesProxyReadTimeoutValue`, `ZonesPseudoIpv4Value`, `ZonesRedirectsForAiTrainingValue`, `ZonesReplaceInsecureJsValue`, `ZonesResponseBufferingValue`, `ZonesRocketLoaderValue`, `ZonesAutomaticPlatformOptimization`, `ZonesSecurityHeaderValue`, `ZonesSecurityLevelValue`, `ZonesServerSideExcludeValue`, `ZonesSha1SupportValue`, `ZonesSortQueryStringForCacheValue`, `ZonesSslValue`, `ZonesTls12OnlyValue`, `ZonesTls13Value`, `ZonesTlsClientAuthValue`, `ZonesTrueClientIpHeaderValue`, `ZonesWafValue`, `ZonesWebpValue`, `ZonesWebsocketsValue`.
+/// A value that is one of: `Zones0rttValue`, `ZonesAdvancedDdosValue`, `ZonesCacheRulesAegisValue`, `ZonesAlwaysOnlineValue`, `ZonesAlwaysUseHttpsValue`, `ZonesAutomaticHttpsRewritesValue`, `ZonesBrotliValue`, `ZonesBrowserCacheTtlValue`, `ZonesBrowserCheckValue`, `ZonesCacheLevelValue`, `ZonesChallengeTtlValue`, `ZonesChinaNetworkEnabledValue`, `ZonesContentConverterValue`, `List<String>`, `ZonesCnameFlatteningValue`, `ZonesDevelopmentModeValue`, `ZonesEarlyHintsValue`, `ZonesEdgeCacheTtlValue`, `ZonesEmailObfuscationValue`, `ZonesH2PrioritizationValue`, `ZonesHotlinkProtectionValue`, `ZonesHttp2Value`, `ZonesHttp3Value`, `ZonesImageResizingValue`, `ZonesIpGeolocationValue`, `ZonesIpv6Value`, `ZonesMaxUploadValue`, `ZonesMinTlsVersionValue`, `ZonesMirageValue`, `ZonesNelValue`, `ZonesOpportunisticEncryptionValue`, `ZonesOpportunisticOnionValue`, `ZonesOrangeToOrangeValue`, `ZonesOriginErrorPagePassThruValue`, `ZonesCacheRulesOriginMaxHttpVersionValue`, `ZonesPolishValue`, `ZonesPrefetchPreloadValue`, `ZonesPrivacyPassValue`, `ZonesPseudoIpv4Value`, `ZonesRedirectsForAiTrainingValue`, `ZonesReplaceInsecureJsValue`, `ZonesResponseBufferingValue`, `ZonesRocketLoaderValue`, `ZonesAutomaticPlatformOptimization`, `ZonesSecurityHeaderValue`, `ZonesSecurityLevelValue`, `ZonesServerSideExcludeValue`, `ZonesSha1SupportValue`, `ZonesSortQueryStringForCacheValue`, `ZonesSslValue`, `ZonesTls12OnlyValue`, `ZonesTls13Value`, `ZonesTlsClientAuthValue`, `ZonesTrueClientIpHeaderValue`, `ZonesWafValue`, `ZonesWebpValue`, `ZonesWebsocketsValue`.
 sealed class ZonesSettingValue {const ZonesSettingValue();
 
 factory ZonesSettingValue.fromJson(Map<String, dynamic> json) {   if (ZonesCacheRulesAegisValue.canParse(json)) {
@@ -1371,16 +1363,6 @@ final ZonesOriginErrorPagePassThruValue _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesOriginErrorPagePassThruValue($_value)'; } 
  }
-final class ZonesSettingValueZonesCacheRulesOriginH2MaxStreamsValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesOriginH2MaxStreamsValue(this._value);
-
-final ZonesCacheRulesOriginH2MaxStreamsValue _value;
-
-@override ZonesCacheRulesOriginH2MaxStreamsValue get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesCacheRulesOriginH2MaxStreamsValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesCacheRulesOriginH2MaxStreamsValue($_value)'; } 
- }
 final class ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue extends ZonesSettingValue {const ZonesSettingValueZonesCacheRulesOriginMaxHttpVersionValue(this._value);
 
 final ZonesCacheRulesOriginMaxHttpVersionValue _value;
@@ -1420,16 +1402,6 @@ final ZonesPrivacyPassValue _value;
     other is ZonesSettingValueZonesPrivacyPassValue && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSettingValue.zonesPrivacyPassValue($_value)'; } 
- }
-final class ZonesSettingValueZonesProxyReadTimeoutValue extends ZonesSettingValue {const ZonesSettingValueZonesProxyReadTimeoutValue(this._value);
-
-final ZonesProxyReadTimeoutValue _value;
-
-@override ZonesProxyReadTimeoutValue get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingValueZonesProxyReadTimeoutValue && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSettingValue.zonesProxyReadTimeoutValue($_value)'; } 
  }
 final class ZonesSettingValueZonesPseudoIpv4Value extends ZonesSettingValue {const ZonesSettingValueZonesPseudoIpv4Value(this._value);
 

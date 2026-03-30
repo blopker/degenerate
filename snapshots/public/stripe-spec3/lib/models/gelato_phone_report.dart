@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_phone_report_error2.dart';/// Status of this `phone` check.
+import 'gelato_phone_report_error.dart';/// Status of this `phone` check.
 final class GelatoPhoneReportStatus {const GelatoPhoneReportStatus._(this.value);
 
 factory GelatoPhoneReportStatus.fromJson(String json) { return switch (json) {
@@ -29,13 +29,13 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoPhoneReport {const GelatoPhoneReport({this.error, this.phone, required this.status, });
 
 factory GelatoPhoneReport.fromJson(Map<String, dynamic> json) { return GelatoPhoneReport(
-  error: json['error'] != null ? GelatoPhoneReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoPhoneReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
   phone: json['phone'] as String?,
   status: GelatoPhoneReportStatus.fromJson(json['status'] as String),
 ); }
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoPhoneReportError2? error;
+final GelatoPhoneReportError? error;
 
 /// Phone to be verified.
 final String? phone;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoPhoneReport copyWith({GelatoPhoneReportError2? Function()? error, String? Function()? phone, GelatoPhoneReportStatus? status, }) { return GelatoPhoneReport(
+GelatoPhoneReport copyWith({GelatoPhoneReportError? Function()? error, String? Function()? phone, GelatoPhoneReportStatus? status, }) { return GelatoPhoneReport(
   error: error != null ? error() : this.error,
   phone: phone != null ? phone() : this.phone,
   status: status ?? this.status,

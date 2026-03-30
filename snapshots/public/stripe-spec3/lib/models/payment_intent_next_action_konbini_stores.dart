@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_next_action_konbini_stores_familymart.dart';import 'payment_intent_next_action_konbini_stores_lawson.dart';import 'payment_intent_next_action_konbini_stores_ministop.dart';import 'payment_intent_next_action_konbini_stores_seicomart.dart';/// 
+import 'payment_intent_next_action_konbini_familymart.dart';import 'payment_intent_next_action_konbini_lawson.dart';import 'payment_intent_next_action_konbini_ministop.dart';import 'payment_intent_next_action_konbini_seicomart.dart';/// 
 final class PaymentIntentNextActionKonbiniStores {const PaymentIntentNextActionKonbiniStores({this.familymart, this.lawson, this.ministop, this.seicomart, });
 
 factory PaymentIntentNextActionKonbiniStores.fromJson(Map<String, dynamic> json) { return PaymentIntentNextActionKonbiniStores(
-  familymart: json['familymart'] != null ? PaymentIntentNextActionKonbiniStoresFamilymart.fromJson(json['familymart'] as Map<String, dynamic>) : null,
-  lawson: json['lawson'] != null ? PaymentIntentNextActionKonbiniStoresLawson.fromJson(json['lawson'] as Map<String, dynamic>) : null,
-  ministop: json['ministop'] != null ? PaymentIntentNextActionKonbiniStoresMinistop.fromJson(json['ministop'] as Map<String, dynamic>) : null,
-  seicomart: json['seicomart'] != null ? PaymentIntentNextActionKonbiniStoresSeicomart.fromJson(json['seicomart'] as Map<String, dynamic>) : null,
+  familymart: json['familymart'] != null ? PaymentIntentNextActionKonbiniFamilymart.fromJson(json['familymart'] as Map<String, dynamic>) : null,
+  lawson: json['lawson'] != null ? PaymentIntentNextActionKonbiniLawson.fromJson(json['lawson'] as Map<String, dynamic>) : null,
+  ministop: json['ministop'] != null ? PaymentIntentNextActionKonbiniMinistop.fromJson(json['ministop'] as Map<String, dynamic>) : null,
+  seicomart: json['seicomart'] != null ? PaymentIntentNextActionKonbiniSeicomart.fromJson(json['seicomart'] as Map<String, dynamic>) : null,
 ); }
 
 /// FamilyMart instruction details.
-final PaymentIntentNextActionKonbiniStoresFamilymart? familymart;
+final PaymentIntentNextActionKonbiniFamilymart? familymart;
 
 /// Lawson instruction details.
-final PaymentIntentNextActionKonbiniStoresLawson? lawson;
+final PaymentIntentNextActionKonbiniLawson? lawson;
 
 /// Ministop instruction details.
-final PaymentIntentNextActionKonbiniStoresMinistop? ministop;
+final PaymentIntentNextActionKonbiniMinistop? ministop;
 
 /// Seicomart instruction details.
-final PaymentIntentNextActionKonbiniStoresSeicomart? seicomart;
+final PaymentIntentNextActionKonbiniSeicomart? seicomart;
 
 Map<String, dynamic> toJson() { return {
   if (familymart != null) 'familymart': familymart?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (seicomart != null) 'seicomart': seicomart?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'familymart', 'lawson', 'ministop', 'seicomart'}.contains(key)); } 
-PaymentIntentNextActionKonbiniStores copyWith({PaymentIntentNextActionKonbiniStoresFamilymart? Function()? familymart, PaymentIntentNextActionKonbiniStoresLawson? Function()? lawson, PaymentIntentNextActionKonbiniStoresMinistop? Function()? ministop, PaymentIntentNextActionKonbiniStoresSeicomart? Function()? seicomart, }) { return PaymentIntentNextActionKonbiniStores(
+PaymentIntentNextActionKonbiniStores copyWith({PaymentIntentNextActionKonbiniFamilymart? Function()? familymart, PaymentIntentNextActionKonbiniLawson? Function()? lawson, PaymentIntentNextActionKonbiniMinistop? Function()? ministop, PaymentIntentNextActionKonbiniSeicomart? Function()? seicomart, }) { return PaymentIntentNextActionKonbiniStores(
   familymart: familymart != null ? familymart() : this.familymart,
   lawson: lawson != null ? lawson() : this.lawson,
   ministop: ministop != null ? ministop() : this.ministop,

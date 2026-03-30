@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_payment_method_options_card_installments.dart';import 'payment_intent_payment_method_options_card_mandate_options.dart';/// Controls when the funds will be captured from the customer's account.
+import 'payment_method_options_card_installments.dart';import 'payment_method_options_card_mandate_options.dart';/// Controls when the funds will be captured from the customer's account.
 final class PaymentIntentPaymentMethodOptionsCardCaptureMethod {const PaymentIntentPaymentMethodOptionsCardCaptureMethod._(this.value);
 
 factory PaymentIntentPaymentMethodOptionsCardCaptureMethod.fromJson(String json) { return switch (json) {
@@ -247,8 +247,8 @@ final class PaymentIntentPaymentMethodOptionsCard {const PaymentIntentPaymentMet
 
 factory PaymentIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return PaymentIntentPaymentMethodOptionsCard(
   captureMethod: json['capture_method'] != null ? PaymentIntentPaymentMethodOptionsCardCaptureMethod.fromJson(json['capture_method'] as String) : null,
-  installments: json['installments'] != null ? PaymentIntentPaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
-  mandateOptions: json['mandate_options'] != null ? PaymentIntentPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  installments: json['installments'] != null ? PaymentMethodOptionsCardInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? PaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? PaymentIntentPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
   requestExtendedAuthorization: json['request_extended_authorization'] != null ? PaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization.fromJson(json['request_extended_authorization'] as String) : null,
   requestIncrementalAuthorization: json['request_incremental_authorization'] != null ? PaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization.fromJson(json['request_incremental_authorization'] as String) : null,
@@ -267,10 +267,10 @@ final PaymentIntentPaymentMethodOptionsCardCaptureMethod? captureMethod;
 /// Installment details for this payment.
 /// 
 /// For more information, see the [installments integration guide](https://docs.stripe.com/payments/installments).
-final PaymentIntentPaymentMethodOptionsCardInstallments? installments;
+final PaymentMethodOptionsCardInstallments? installments;
 
 /// Configuration options for setting up an eMandate for cards issued in India.
-final PaymentIntentPaymentMethodOptionsCardMandateOptions? mandateOptions;
+final PaymentMethodOptionsCardMandateOptions? mandateOptions;
 
 /// Selected network to process this payment intent on. Depends on the available networks of the card attached to the payment intent. Can be only set confirm-time.
 final PaymentIntentPaymentMethodOptionsCardNetwork? network;
@@ -324,7 +324,7 @@ Map<String, dynamic> toJson() { return {
   'statement_descriptor_suffix_kanji': ?statementDescriptorSuffixKanji,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'capture_method', 'installments', 'mandate_options', 'network', 'request_extended_authorization', 'request_incremental_authorization', 'request_multicapture', 'request_overcapture', 'request_three_d_secure', 'require_cvc_recollection', 'setup_future_usage', 'statement_descriptor_suffix_kana', 'statement_descriptor_suffix_kanji'}.contains(key)); } 
-PaymentIntentPaymentMethodOptionsCard copyWith({PaymentIntentPaymentMethodOptionsCardCaptureMethod Function()? captureMethod, PaymentIntentPaymentMethodOptionsCardInstallments? Function()? installments, PaymentIntentPaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsCardNetwork? Function()? network, PaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization Function()? requestExtendedAuthorization, PaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization Function()? requestIncrementalAuthorization, PaymentIntentPaymentMethodOptionsCardRequestMulticapture Function()? requestMulticapture, PaymentIntentPaymentMethodOptionsCardRequestOvercapture Function()? requestOvercapture, PaymentIntentPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, bool Function()? requireCvcRecollection, PaymentIntentPaymentMethodOptionsCardSetupFutureUsage Function()? setupFutureUsage, String Function()? statementDescriptorSuffixKana, String Function()? statementDescriptorSuffixKanji, }) { return PaymentIntentPaymentMethodOptionsCard(
+PaymentIntentPaymentMethodOptionsCard copyWith({PaymentIntentPaymentMethodOptionsCardCaptureMethod Function()? captureMethod, PaymentMethodOptionsCardInstallments? Function()? installments, PaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsCardNetwork? Function()? network, PaymentIntentPaymentMethodOptionsCardRequestExtendedAuthorization Function()? requestExtendedAuthorization, PaymentIntentPaymentMethodOptionsCardRequestIncrementalAuthorization Function()? requestIncrementalAuthorization, PaymentIntentPaymentMethodOptionsCardRequestMulticapture Function()? requestMulticapture, PaymentIntentPaymentMethodOptionsCardRequestOvercapture Function()? requestOvercapture, PaymentIntentPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, bool Function()? requireCvcRecollection, PaymentIntentPaymentMethodOptionsCardSetupFutureUsage Function()? setupFutureUsage, String Function()? statementDescriptorSuffixKana, String Function()? statementDescriptorSuffixKanji, }) { return PaymentIntentPaymentMethodOptionsCard(
   captureMethod: captureMethod != null ? captureMethod() : this.captureMethod,
   installments: installments != null ? installments() : this.installments,
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,

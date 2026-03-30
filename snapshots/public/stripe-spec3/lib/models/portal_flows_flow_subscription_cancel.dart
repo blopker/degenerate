@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_flow_subscription_cancel_retention.dart';/// 
+import 'portal_flows_retention.dart';/// 
 final class PortalFlowsFlowSubscriptionCancel {const PortalFlowsFlowSubscriptionCancel({this.retention, required this.subscription, });
 
 factory PortalFlowsFlowSubscriptionCancel.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowSubscriptionCancel(
-  retention: json['retention'] != null ? PortalFlowsFlowSubscriptionCancelRetention.fromJson(json['retention'] as Map<String, dynamic>) : null,
+  retention: json['retention'] != null ? PortalFlowsRetention.fromJson(json['retention'] as Map<String, dynamic>) : null,
   subscription: json['subscription'] as String,
 ); }
 
 /// Specify a retention strategy to be used in the cancellation flow.
-final PortalFlowsFlowSubscriptionCancelRetention? retention;
+final PortalFlowsRetention? retention;
 
 /// The ID of the subscription to be canceled.
 final String subscription;
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   'subscription': subscription,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
-PortalFlowsFlowSubscriptionCancel copyWith({PortalFlowsFlowSubscriptionCancelRetention? Function()? retention, String? subscription, }) { return PortalFlowsFlowSubscriptionCancel(
+PortalFlowsFlowSubscriptionCancel copyWith({PortalFlowsRetention? Function()? retention, String? subscription, }) { return PortalFlowsFlowSubscriptionCancel(
   retention: retention != null ? retention() : this.retention,
   subscription: subscription ?? this.subscription,
 ); } 

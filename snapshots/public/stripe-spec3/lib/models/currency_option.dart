@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option_custom_unit_amount.dart';import 'price_tier.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_unit_amount.dart';import 'price_tier.dart';/// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 final class CurrencyOptionTaxBehavior {const CurrencyOptionTaxBehavior._(this.value);
 
 factory CurrencyOptionTaxBehavior.fromJson(String json) { return switch (json) {
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 final class CurrencyOption {const CurrencyOption({this.customUnitAmount, this.taxBehavior, this.tiers, this.unitAmount, this.unitAmountDecimal, });
 
 factory CurrencyOption.fromJson(Map<String, dynamic> json) { return CurrencyOption(
-  customUnitAmount: json['custom_unit_amount'] != null ? CurrencyOptionCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? CurrencyOptionTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
@@ -40,7 +40,7 @@ factory CurrencyOption.fromJson(Map<String, dynamic> json) { return CurrencyOpti
 ); }
 
 /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
-final CurrencyOptionCustomUnitAmount? customUnitAmount;
+final CustomUnitAmount? customUnitAmount;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 final CurrencyOptionTaxBehavior? taxBehavior;
@@ -62,7 +62,7 @@ Map<String, dynamic> toJson() { return {
   'unit_amount_decimal': ?unitAmountDecimal,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'custom_unit_amount', 'tax_behavior', 'tiers', 'unit_amount', 'unit_amount_decimal'}.contains(key)); } 
-CurrencyOption copyWith({CurrencyOptionCustomUnitAmount? Function()? customUnitAmount, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return CurrencyOption(
+CurrencyOption copyWith({CustomUnitAmount? Function()? customUnitAmount, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return CurrencyOption(
   customUnitAmount: customUnitAmount != null ? customUnitAmount() : this.customUnitAmount,
   taxBehavior: taxBehavior != null ? taxBehavior() : this.taxBehavior,
   tiers: tiers != null ? tiers() : this.tiers,

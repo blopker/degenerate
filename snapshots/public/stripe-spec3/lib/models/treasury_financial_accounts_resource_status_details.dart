@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_financial_accounts_resource_status_details_closed.dart';/// 
+import 'treasury_financial_accounts_resource_closed_status_details.dart';/// 
 final class TreasuryFinancialAccountsResourceStatusDetails {const TreasuryFinancialAccountsResourceStatusDetails({this.closed});
 
 factory TreasuryFinancialAccountsResourceStatusDetails.fromJson(Map<String, dynamic> json) { return TreasuryFinancialAccountsResourceStatusDetails(
-  closed: json['closed'] != null ? TreasuryFinancialAccountsResourceStatusDetailsClosed.fromJson(json['closed'] as Map<String, dynamic>) : null,
+  closed: json['closed'] != null ? TreasuryFinancialAccountsResourceClosedStatusDetails.fromJson(json['closed'] as Map<String, dynamic>) : null,
 ); }
 
 /// Details related to the closure of this FinancialAccount
-final TreasuryFinancialAccountsResourceStatusDetailsClosed? closed;
+final TreasuryFinancialAccountsResourceClosedStatusDetails? closed;
 
 Map<String, dynamic> toJson() { return {
   if (closed != null) 'closed': closed?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'closed'}.contains(key)); } 
-TreasuryFinancialAccountsResourceStatusDetails copyWith({TreasuryFinancialAccountsResourceStatusDetailsClosed? Function()? closed}) { return TreasuryFinancialAccountsResourceStatusDetails(
+TreasuryFinancialAccountsResourceStatusDetails copyWith({TreasuryFinancialAccountsResourceClosedStatusDetails? Function()? closed}) { return TreasuryFinancialAccountsResourceStatusDetails(
   closed: closed != null ? closed() : this.closed,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

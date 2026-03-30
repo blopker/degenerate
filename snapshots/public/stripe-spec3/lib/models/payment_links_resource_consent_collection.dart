@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_consent_collection_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
+import 'payment_links_resource_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications.
 final class PaymentLinksResourceConsentCollectionPromotions {const PaymentLinksResourceConsentCollectionPromotions._(this.value);
 
 factory PaymentLinksResourceConsentCollectionPromotions.fromJson(String json) { return switch (json) {
@@ -54,13 +54,13 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentLinksResourceConsentCollection {const PaymentLinksResourceConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PaymentLinksResourceConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceConsentCollection(
-  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentLinksResourceConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
+  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentLinksResourcePaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
   promotions: json['promotions'] != null ? PaymentLinksResourceConsentCollectionPromotions.fromJson(json['promotions'] as String) : null,
   termsOfService: json['terms_of_service'] != null ? PaymentLinksResourceConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null,
 ); }
 
 /// Settings related to the payment method reuse text shown in the Checkout UI.
-final PaymentLinksResourceConsentCollectionPaymentMethodReuseAgreement? paymentMethodReuseAgreement;
+final PaymentLinksResourcePaymentMethodReuseAgreement? paymentMethodReuseAgreement;
 
 /// If set to `auto`, enables the collection of customer consent for promotional communications.
 final PaymentLinksResourceConsentCollectionPromotions? promotions;
@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_reuse_agreement', 'promotions', 'terms_of_service'}.contains(key)); } 
-PaymentLinksResourceConsentCollection copyWith({PaymentLinksResourceConsentCollectionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PaymentLinksResourceConsentCollectionPromotions? Function()? promotions, PaymentLinksResourceConsentCollectionTermsOfService? Function()? termsOfService, }) { return PaymentLinksResourceConsentCollection(
+PaymentLinksResourceConsentCollection copyWith({PaymentLinksResourcePaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PaymentLinksResourceConsentCollectionPromotions? Function()? promotions, PaymentLinksResourceConsentCollectionTermsOfService? Function()? termsOfService, }) { return PaymentLinksResourceConsentCollection(
   paymentMethodReuseAgreement: paymentMethodReuseAgreement != null ? paymentMethodReuseAgreement() : this.paymentMethodReuseAgreement,
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,

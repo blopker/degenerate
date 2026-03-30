@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dispute_visa_compelling_evidence3_prior_undisputed_transaction_shipping_address.dart';/// 
+import 'dispute_transaction_shipping_address.dart';/// 
 final class DisputeVisaCompellingEvidence3PriorUndisputedTransaction {const DisputeVisaCompellingEvidence3PriorUndisputedTransaction({required this.charge, this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.productDescription, this.shippingAddress, });
 
 factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<String, dynamic> json) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
@@ -11,7 +11,7 @@ factory DisputeVisaCompellingEvidence3PriorUndisputedTransaction.fromJson(Map<St
   customerEmailAddress: json['customer_email_address'] as String?,
   customerPurchaseIp: json['customer_purchase_ip'] as String?,
   productDescription: json['product_description'] as String?,
-  shippingAddress: json['shipping_address'] != null ? DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? DisputeTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 /// Stripe charge ID for the Visa Compelling Evidence 3.0 eligible prior charge.
@@ -36,7 +36,7 @@ final String? customerPurchaseIp;
 final String? productDescription;
 
 /// The address to which a physical product was shipped. All fields are required for Visa Compelling Evidence 3.0 evidence submission.
-final DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress? shippingAddress;
+final DisputeTransactionShippingAddress? shippingAddress;
 
 Map<String, dynamic> toJson() { return {
   'charge': charge,
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('charge') && json['charge'] is String; } 
-DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charge, String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, String? Function()? productDescription, DisputeVisaCompellingEvidence3PriorUndisputedTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
+DisputeVisaCompellingEvidence3PriorUndisputedTransaction copyWith({String? charge, String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, String? Function()? productDescription, DisputeTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3PriorUndisputedTransaction(
   charge: charge ?? this.charge,
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,

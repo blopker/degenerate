@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/connectivity_services_list_type.dart';import '../models/infra_account_tag.dart';import '../models/infra_service_config.dart';/// ConnectivityServicesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/infra_account_tag.dart';import '../models/infra_service_config.dart';import '../models/infra_service_type.dart';/// ConnectivityServicesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,10 +11,10 @@ final class ConnectivityServicesApi with ApiExecutor {const ConnectivityServices
 /// List connectivity services
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<List<InfraServiceConfig>?, Never>> connectivityServicesList({required InfraAccountTag accountId, ConnectivityServicesListType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InfraServiceConfig>?, Never>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
-queryParametersList.add(ApiQueryParameter(name: 'type', value: type.toString(), allowReserved: false));
+  queryParameters['type'] = type.toJson();
 }
 if (page != null) {
   queryParameters['page'] = page.toString();

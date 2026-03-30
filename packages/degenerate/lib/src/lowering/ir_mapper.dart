@@ -849,9 +849,21 @@ class IrMapper {
       );
     }
 
+    // Deduplicate variants that resolve to the same Dart type.
+    final deduped = _deduplicateVariants(variants);
+
+    // If dedup collapsed to a single variant and this is an inline union,
+    // return the variant directly. Named unions keep their identity since
+    // other schemas may reference them by name.
+    if (deduped.length == 1 && isInline) {
+      return deduped.first.isNullable == nullable
+          ? deduped.first
+          : (nullable ? deduped.first.copyAsNullable() : deduped.first);
+    }
+
     return IrUntaggedUnion(
       unionName,
-      variants,
+      deduped.length >= 2 ? deduped : variants,
       description: description,
       isNullable: nullable,
     );
@@ -904,15 +916,44 @@ class IrMapper {
       );
     }
 
+    final deduped = _deduplicateVariants(variants);
+    if (deduped.length == 1 && isInline) {
+      return deduped.first.isNullable == nullable
+          ? deduped.first
+          : (nullable ? deduped.first.copyAsNullable() : deduped.first);
+    }
+
     return IrAnyOf(
       anyOfName,
-      variants,
+      deduped.length >= 2 ? deduped : variants,
       description: description,
       isNullable: nullable,
     );
   }
 
   // ─── Utilities ────────────────────────────────────────────────
+
+  /// Detects anyOf/oneOf where every variant is a single-value string enum,
+  /// Remove duplicate variants that resolve to the same Dart type name.
+  /// Keeps the first occurrence of each type.
+  List<IrType> _deduplicateVariants(List<IrType> variants) {
+    final seen = <String>{};
+    return variants.where((v) {
+      final name = _variantTypeName(v);
+      return seen.add(name);
+    }).toList();
+  }
+
+  /// Get a comparable type name for deduplication purposes.
+  String _variantTypeName(IrType type) => switch (type) {
+        IrTypeRef(:final name) => name,
+        IrObject(:final name) => name,
+        IrEnum(:final name) => name,
+        IrPrimitive(:final kind) => kind.name,
+        IrList(:final items) => 'List<${_variantTypeName(items)}>',
+        IrMap(:final values) => 'Map<String,${_variantTypeName(values)}>',
+        _ => type.toString(),
+      };
 
   /// Detects anyOf/oneOf where every variant is a single-value string enum,
   /// e.g. `anyOf: [{enum: [Strict]}, {enum: [Lax]}, {enum: [None]}]`.

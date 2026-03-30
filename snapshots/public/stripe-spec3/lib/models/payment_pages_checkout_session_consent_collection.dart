@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_consent_collection_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications. The Checkout
+import 'payment_pages_checkout_session_payment_method_reuse_agreement.dart';/// If set to `auto`, enables the collection of customer consent for promotional communications. The Checkout
 /// Session will determine whether to display an option to opt into promotional communication
 /// from the merchant depending on the customer's locale. Only available to US merchants.
 final class PaymentPagesCheckoutSessionConsentCollectionPromotions {const PaymentPagesCheckoutSessionConsentCollectionPromotions._(this.value);
@@ -56,13 +56,13 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentPagesCheckoutSessionConsentCollection {const PaymentPagesCheckoutSessionConsentCollection({this.paymentMethodReuseAgreement, this.promotions, this.termsOfService, });
 
 factory PaymentPagesCheckoutSessionConsentCollection.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionConsentCollection(
-  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
+  paymentMethodReuseAgreement: json['payment_method_reuse_agreement'] != null ? PaymentPagesCheckoutSessionPaymentMethodReuseAgreement.fromJson(json['payment_method_reuse_agreement'] as Map<String, dynamic>) : null,
   promotions: json['promotions'] != null ? PaymentPagesCheckoutSessionConsentCollectionPromotions.fromJson(json['promotions'] as String) : null,
   termsOfService: json['terms_of_service'] != null ? PaymentPagesCheckoutSessionConsentCollectionTermsOfService.fromJson(json['terms_of_service'] as String) : null,
 ); }
 
 /// If set to `hidden`, it will hide legal text related to the reuse of a payment method.
-final PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement? paymentMethodReuseAgreement;
+final PaymentPagesCheckoutSessionPaymentMethodReuseAgreement? paymentMethodReuseAgreement;
 
 /// If set to `auto`, enables the collection of customer consent for promotional communications. The Checkout
 /// Session will determine whether to display an option to opt into promotional communication
@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   if (termsOfService != null) 'terms_of_service': termsOfService?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payment_method_reuse_agreement', 'promotions', 'terms_of_service'}.contains(key)); } 
-PaymentPagesCheckoutSessionConsentCollection copyWith({PaymentPagesCheckoutSessionConsentCollectionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PaymentPagesCheckoutSessionConsentCollectionPromotions? Function()? promotions, PaymentPagesCheckoutSessionConsentCollectionTermsOfService? Function()? termsOfService, }) { return PaymentPagesCheckoutSessionConsentCollection(
+PaymentPagesCheckoutSessionConsentCollection copyWith({PaymentPagesCheckoutSessionPaymentMethodReuseAgreement? Function()? paymentMethodReuseAgreement, PaymentPagesCheckoutSessionConsentCollectionPromotions? Function()? promotions, PaymentPagesCheckoutSessionConsentCollectionTermsOfService? Function()? termsOfService, }) { return PaymentPagesCheckoutSessionConsentCollection(
   paymentMethodReuseAgreement: paymentMethodReuseAgreement != null ? paymentMethodReuseAgreement() : this.paymentMethodReuseAgreement,
   promotions: promotions != null ? promotions() : this.promotions,
   termsOfService: termsOfService != null ? termsOfService() : this.termsOfService,

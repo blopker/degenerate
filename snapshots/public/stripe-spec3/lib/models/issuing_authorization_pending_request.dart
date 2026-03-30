@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_pending_request_amount_details.dart';/// 
+import 'issuing_authorization_amount_details.dart';/// 
 final class IssuingAuthorizationPendingRequest {const IssuingAuthorizationPendingRequest({required this.amount, this.amountDetails, required this.currency, required this.isAmountControllable, required this.merchantAmount, required this.merchantCurrency, this.networkRiskScore, });
 
 factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationPendingRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingAuthorizationPendingRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String,
   isAmountControllable: json['is_amount_controllable'] as bool,
   merchantAmount: (json['merchant_amount'] as num).toInt(),
@@ -17,7 +17,7 @@ factory IssuingAuthorizationPendingRequest.fromJson(Map<String, dynamic> json) {
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingAuthorizationPendingRequestAmountDetails? amountDetails;
+final IssuingAuthorizationAmountDetails? amountDetails;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String currency;
@@ -48,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('is_amount_controllable') && json['is_amount_controllable'] is bool &&
       json.containsKey('merchant_amount') && json['merchant_amount'] is num &&
       json.containsKey('merchant_currency') && json['merchant_currency'] is String; } 
-IssuingAuthorizationPendingRequest copyWith({int? amount, IssuingAuthorizationPendingRequestAmountDetails? Function()? amountDetails, String? currency, bool? isAmountControllable, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, }) { return IssuingAuthorizationPendingRequest(
+IssuingAuthorizationPendingRequest copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, String? currency, bool? isAmountControllable, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, }) { return IssuingAuthorizationPendingRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   currency: currency ?? this.currency,

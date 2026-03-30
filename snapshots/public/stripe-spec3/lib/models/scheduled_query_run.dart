@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'scheduled_query_run_file.dart';import 'sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'file.dart';import 'sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ScheduledQueryRunObject {const ScheduledQueryRunObject._(this.value);
 
 factory ScheduledQueryRunObject.fromJson(String json) { return switch (json) {
@@ -32,7 +32,7 @@ factory ScheduledQueryRun.fromJson(Map<String, dynamic> json) { return Scheduled
   created: (json['created'] as num).toInt(),
   dataLoadTime: (json['data_load_time'] as num).toInt(),
   error: json['error'] != null ? SigmaScheduledQueryRunError.fromJson(json['error'] as Map<String, dynamic>) : null,
-  file: json['file'] != null ? ScheduledQueryRunFile.fromJson(json['file'] as Map<String, dynamic>) : null,
+  file: json['file'] != null ? File.fromJson(json['file'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ScheduledQueryRunObject.fromJson(json['object'] as String),
@@ -51,7 +51,7 @@ final int dataLoadTime;
 final SigmaScheduledQueryRunError? error;
 
 /// The file object representing the results of the query.
-final ScheduledQueryRunFile? file;
+final File? file;
 
 /// Unique identifier for the object.
 final String id;
@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('sql') && json['sql'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('title') && json['title'] is String; } 
-ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError Function()? error, ScheduledQueryRunFile? Function()? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
+ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError Function()? error, File? Function()? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
   created: created ?? this.created,
   dataLoadTime: dataLoadTime ?? this.dataLoadTime,
   error: error != null ? error() : this.error,

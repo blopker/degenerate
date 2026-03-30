@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_dob.dart';import 'legal_entity_person_verification.dart';import 'person_additional_tos_acceptances.dart';import 'person_address_kana.dart';import 'person_address_kanji.dart';import 'person_future_requirements2.dart';import 'person_relationship.dart';import 'person_requirements2.dart';import 'person_us_cfpb_data2.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'legal_entity_dob.dart';import 'legal_entity_japan_address.dart';import 'legal_entity_person_verification.dart';import 'person_additional_tos_acceptances.dart';import 'person_future_requirements.dart';import 'person_relationship.dart';import 'person_requirements.dart';import 'person_us_cfpb_data.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class PersonObject {const PersonObject._(this.value);
 
 factory PersonObject.fromJson(String json) { return switch (json) {
@@ -58,8 +58,8 @@ factory Person.fromJson(Map<String, dynamic> json) { return Person(
   account: json['account'] as String,
   additionalTosAcceptances: json['additional_tos_acceptances'] != null ? PersonAdditionalTosAcceptances.fromJson(json['additional_tos_acceptances'] as Map<String, dynamic>) : null,
   address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
-  addressKana: json['address_kana'] != null ? PersonAddressKana.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
-  addressKanji: json['address_kanji'] != null ? PersonAddressKanji.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
+  addressKana: json['address_kana'] != null ? LegalEntityJapanAddress.fromJson(json['address_kana'] as Map<String, dynamic>) : null,
+  addressKanji: json['address_kanji'] != null ? LegalEntityJapanAddress.fromJson(json['address_kanji'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   dob: json['dob'] != null ? LegalEntityDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
@@ -67,7 +67,7 @@ factory Person.fromJson(Map<String, dynamic> json) { return Person(
   firstNameKana: json['first_name_kana'] as String?,
   firstNameKanji: json['first_name_kanji'] as String?,
   fullNameAliases: (json['full_name_aliases'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  futureRequirements: json['future_requirements'] != null ? PersonFutureRequirements2.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
+  futureRequirements: json['future_requirements'] != null ? PersonFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   gender: json['gender'] as String?,
   id: json['id'] as String,
   idNumberProvided: json['id_number_provided'] as bool?,
@@ -83,9 +83,9 @@ factory Person.fromJson(Map<String, dynamic> json) { return Person(
   politicalExposure: json['political_exposure'] != null ? PersonPoliticalExposure.fromJson(json['political_exposure'] as String) : null,
   registeredAddress: json['registered_address'] != null ? Address.fromJson(json['registered_address'] as Map<String, dynamic>) : null,
   relationship: json['relationship'] != null ? PersonRelationship.fromJson(json['relationship'] as Map<String, dynamic>) : null,
-  requirements: json['requirements'] != null ? PersonRequirements2.fromJson(json['requirements'] as Map<String, dynamic>) : null,
+  requirements: json['requirements'] != null ? PersonRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
   ssnLast4Provided: json['ssn_last_4_provided'] as bool?,
-  usCfpbData: json['us_cfpb_data'] != null ? PersonUsCfpbData2.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null,
+  usCfpbData: json['us_cfpb_data'] != null ? PersonUsCfpbData.fromJson(json['us_cfpb_data'] as Map<String, dynamic>) : null,
   verification: json['verification'] != null ? LegalEntityPersonVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
@@ -96,9 +96,9 @@ final PersonAdditionalTosAcceptances? additionalTosAcceptances;
 
 final Address? address;
 
-final PersonAddressKana? addressKana;
+final LegalEntityJapanAddress? addressKana;
 
-final PersonAddressKanji? addressKanji;
+final LegalEntityJapanAddress? addressKanji;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -120,7 +120,7 @@ final String? firstNameKanji;
 /// A list of alternate names or aliases that the person is known by. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`.
 final List<String>? fullNameAliases;
 
-final PersonFutureRequirements2? futureRequirements;
+final PersonFutureRequirements? futureRequirements;
 
 /// The person's gender.
 final String? gender;
@@ -165,13 +165,13 @@ final Address? registeredAddress;
 
 final PersonRelationship? relationship;
 
-final PersonRequirements2? requirements;
+final PersonRequirements? requirements;
 
 /// Whether the last four digits of the person's Social Security number have been provided (U.S. only).
 final bool? ssnLast4Provided;
 
 /// Demographic data related to the person.
-final PersonUsCfpbData2? usCfpbData;
+final PersonUsCfpbData? usCfpbData;
 
 final LegalEntityPersonVerification? verification;
 
@@ -213,7 +213,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('created') && json['created'] is num &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Person copyWith({String? account, PersonAdditionalTosAcceptances Function()? additionalTosAcceptances, Address Function()? address, PersonAddressKana? Function()? addressKana, PersonAddressKanji? Function()? addressKanji, int? created, LegalEntityDob Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, List<String> Function()? fullNameAliases, PersonFutureRequirements2? Function()? futureRequirements, String? Function()? gender, String? id, bool Function()? idNumberProvided, bool Function()? idNumberSecondaryProvided, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Map<String, String> Function()? metadata, String? Function()? nationality, PersonObject? object, String? Function()? phone, PersonPoliticalExposure Function()? politicalExposure, Address Function()? registeredAddress, PersonRelationship Function()? relationship, PersonRequirements2? Function()? requirements, bool Function()? ssnLast4Provided, PersonUsCfpbData2? Function()? usCfpbData, LegalEntityPersonVerification Function()? verification, }) { return Person(
+Person copyWith({String? account, PersonAdditionalTosAcceptances Function()? additionalTosAcceptances, Address Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, int? created, LegalEntityDob Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, List<String> Function()? fullNameAliases, PersonFutureRequirements? Function()? futureRequirements, String? Function()? gender, String? id, bool Function()? idNumberProvided, bool Function()? idNumberSecondaryProvided, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Map<String, String> Function()? metadata, String? Function()? nationality, PersonObject? object, String? Function()? phone, PersonPoliticalExposure Function()? politicalExposure, Address Function()? registeredAddress, PersonRelationship Function()? relationship, PersonRequirements? Function()? requirements, bool Function()? ssnLast4Provided, PersonUsCfpbData? Function()? usCfpbData, LegalEntityPersonVerification Function()? verification, }) { return Person(
   account: account ?? this.account,
   additionalTosAcceptances: additionalTosAcceptances != null ? additionalTosAcceptances() : this.additionalTosAcceptances,
   address: address != null ? address() : this.address,

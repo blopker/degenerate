@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_security_txt_response_result.dart';import 'security_center_messages2.dart';final class GetSecurityTxtResponse {const GetSecurityTxtResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'security_center_messages2.dart';import 'security_center_security_txt.dart';final class GetSecurityTxtResponse {const GetSecurityTxtResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory GetSecurityTxtResponse.fromJson(Map<String, dynamic> json) { return GetSecurityTxtResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? GetSecurityTxtResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? SecurityCenterSecurityTxt.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SecurityCenterMessages2> errors;
@@ -16,7 +16,7 @@ final List<SecurityCenterMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final GetSecurityTxtResponseResult? result;
+final SecurityCenterSecurityTxt? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetSecurityTxtResponse copyWith({List<SecurityCenterMessages2>? errors, List<SecurityCenterMessages2>? messages, bool? success, GetSecurityTxtResponseResult Function()? result, }) { return GetSecurityTxtResponse(
+GetSecurityTxtResponse copyWith({List<SecurityCenterMessages2>? errors, List<SecurityCenterMessages2>? messages, bool? success, SecurityCenterSecurityTxt Function()? result, }) { return GetSecurityTxtResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

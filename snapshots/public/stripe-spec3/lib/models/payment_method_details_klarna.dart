@@ -1,16 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_details_klarna_payer_details.dart';/// 
+import 'klarna_payer_details.dart';/// 
 final class PaymentMethodDetailsKlarna {const PaymentMethodDetailsKlarna({this.payerDetails, this.paymentMethodCategory, this.preferredLocale, });
 
 factory PaymentMethodDetailsKlarna.fromJson(Map<String, dynamic> json) { return PaymentMethodDetailsKlarna(
-  payerDetails: json['payer_details'] != null ? PaymentMethodDetailsKlarnaPayerDetails.fromJson(json['payer_details'] as Map<String, dynamic>) : null,
+  payerDetails: json['payer_details'] != null ? KlarnaPayerDetails.fromJson(json['payer_details'] as Map<String, dynamic>) : null,
   paymentMethodCategory: json['payment_method_category'] as String?,
   preferredLocale: json['preferred_locale'] as String?,
 ); }
 
 /// The payer details for this transaction.
-final PaymentMethodDetailsKlarnaPayerDetails? payerDetails;
+final KlarnaPayerDetails? payerDetails;
 
 /// The Klarna payment method used for this transaction.
 /// Can be one of `pay_later`, `pay_now`, `pay_with_financing`, or `pay_in_installments`
@@ -26,7 +26,7 @@ Map<String, dynamic> toJson() { return {
   'preferred_locale': ?preferredLocale,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'payer_details', 'payment_method_category', 'preferred_locale'}.contains(key)); } 
-PaymentMethodDetailsKlarna copyWith({PaymentMethodDetailsKlarnaPayerDetails? Function()? payerDetails, String? Function()? paymentMethodCategory, String? Function()? preferredLocale, }) { return PaymentMethodDetailsKlarna(
+PaymentMethodDetailsKlarna copyWith({KlarnaPayerDetails? Function()? payerDetails, String? Function()? paymentMethodCategory, String? Function()? preferredLocale, }) { return PaymentMethodDetailsKlarna(
   payerDetails: payerDetails != null ? payerDetails() : this.payerDetails,
   paymentMethodCategory: paymentMethodCategory != null ? paymentMethodCategory() : this.paymentMethodCategory,
   preferredLocale: preferredLocale != null ? preferredLocale() : this.preferredLocale,

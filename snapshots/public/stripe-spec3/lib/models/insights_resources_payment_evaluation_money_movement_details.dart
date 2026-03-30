@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_money_movement_details_card.dart';/// Describes the type of money movement. Currently only `card` is supported.
+import 'insights_resources_payment_evaluation_money_movement_card.dart';/// Describes the type of money movement. Currently only `card` is supported.
 final class InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType {const InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType._(this.value);
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(String json) { return switch (json) {
@@ -26,12 +26,12 @@ bool get isUnknown { return !values.contains(this); }
 final class InsightsResourcesPaymentEvaluationMoneyMovementDetails {const InsightsResourcesPaymentEvaluationMoneyMovementDetails({this.card, required this.moneyMovementType, });
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
-  card: json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementCard.fromJson(json['card'] as Map<String, dynamic>) : null,
   moneyMovementType: InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType.fromJson(json['money_movement_type'] as String),
 ); }
 
 /// Describes card money movement details for the payment evaluation.
-final InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard? card;
+final InsightsResourcesPaymentEvaluationMoneyMovementCard? card;
 
 /// Describes the type of money movement. Currently only `card` is supported.
 final InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType moneyMovementType;
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'money_movement_type': moneyMovementType.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('money_movement_type'); } 
-InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({InsightsResourcesPaymentEvaluationMoneyMovementDetailsCard? Function()? card, InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
+InsightsResourcesPaymentEvaluationMoneyMovementDetails copyWith({InsightsResourcesPaymentEvaluationMoneyMovementCard? Function()? card, InsightsResourcesPaymentEvaluationMoneyMovementDetailsMoneyMovementType? moneyMovementType, }) { return InsightsResourcesPaymentEvaluationMoneyMovementDetails(
   card: card != null ? card() : this.card,
   moneyMovementType: moneyMovementType ?? this.moneyMovementType,
 ); } 

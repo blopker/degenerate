@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate2.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shipping_rate_delivery_estimate.dart';import 'shipping_rate_fixed_amount.dart';import 'shipping_rate_tax_code.dart';import 'tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ShippingRateObject {const ShippingRateObject._(this.value);
 
 factory ShippingRateObject.fromJson(String json) { return switch (json) {
@@ -79,7 +79,7 @@ final class ShippingRate {const ShippingRate({required this.active, required thi
 factory ShippingRate.fromJson(Map<String, dynamic> json) { return ShippingRate(
   active: json['active'] as bool,
   created: (json['created'] as num).toInt(),
-  deliveryEstimate: json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate2.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
+  deliveryEstimate: json['delivery_estimate'] != null ? ShippingRateDeliveryEstimate.fromJson(json['delivery_estimate'] as Map<String, dynamic>) : null,
   displayName: json['display_name'] as String?,
   fixedAmount: json['fixed_amount'] != null ? ShippingRateFixedAmount.fromJson(json['fixed_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
@@ -98,7 +98,7 @@ final bool active;
 final int created;
 
 /// The estimated range for how long shipping will take, meant to be displayable to the customer. This will appear on CheckoutSessions.
-final ShippingRateDeliveryEstimate2? deliveryEstimate;
+final ShippingRateDeliveryEstimate? deliveryEstimate;
 
 /// The name of the shipping rate, meant to be displayable to the customer. This will appear on CheckoutSessions.
 final String? displayName;
@@ -147,7 +147,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('type'); } 
-ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate2? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, ShippingRateTaxBehavior? Function()? taxBehavior, ShippingRateTaxCode? Function()? taxCode, ShippingRateType? type, }) { return ShippingRate(
+ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, ShippingRateTaxBehavior? Function()? taxBehavior, ShippingRateTaxCode? Function()? taxCode, ShippingRateType? type, }) { return ShippingRate(
   active: active ?? this.active,
   created: created ?? this.created,
   deliveryEstimate: deliveryEstimate != null ? deliveryEstimate() : this.deliveryEstimate,

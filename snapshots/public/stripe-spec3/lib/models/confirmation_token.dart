@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'confirmation_token_mandate_data.dart';import 'confirmation_token_payment_method_options.dart';import 'confirmation_token_payment_method_preview.dart';import 'confirmation_token_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'confirmation_tokens_resource_mandate_data.dart';import 'confirmation_tokens_resource_payment_method_options.dart';import 'confirmation_tokens_resource_payment_method_preview.dart';import 'confirmation_tokens_resource_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ConfirmationTokenObject {const ConfirmationTokenObject._(this.value);
 
 factory ConfirmationTokenObject.fromJson(String json) { return switch (json) {
@@ -63,15 +63,15 @@ factory ConfirmationToken.fromJson(Map<String, dynamic> json) { return Confirmat
   expiresAt: json['expires_at'] != null ? (json['expires_at'] as num).toInt() : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
-  mandateData: json['mandate_data'] != null ? ConfirmationTokenMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null,
+  mandateData: json['mandate_data'] != null ? ConfirmationTokensResourceMandateData.fromJson(json['mandate_data'] as Map<String, dynamic>) : null,
   object: ConfirmationTokenObject.fromJson(json['object'] as String),
   paymentIntent: json['payment_intent'] as String?,
-  paymentMethodOptions: json['payment_method_options'] != null ? ConfirmationTokenPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
-  paymentMethodPreview: json['payment_method_preview'] != null ? ConfirmationTokenPaymentMethodPreview.fromJson(json['payment_method_preview'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? ConfirmationTokensResourcePaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodPreview: json['payment_method_preview'] != null ? ConfirmationTokensResourcePaymentMethodPreview.fromJson(json['payment_method_preview'] as Map<String, dynamic>) : null,
   returnUrl: json['return_url'] as String?,
   setupFutureUsage: json['setup_future_usage'] != null ? ConfirmationTokenSetupFutureUsage.fromJson(json['setup_future_usage'] as String) : null,
   setupIntent: json['setup_intent'] as String?,
-  shipping: json['shipping'] != null ? ConfirmationTokenShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? ConfirmationTokensResourceShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   useStripeSdk: json['use_stripe_sdk'] as bool,
 ); }
 
@@ -88,7 +88,7 @@ final String id;
 final bool livemode;
 
 /// Data used for generating a Mandate.
-final ConfirmationTokenMandateData? mandateData;
+final ConfirmationTokensResourceMandateData? mandateData;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final ConfirmationTokenObject object;
@@ -97,10 +97,10 @@ final ConfirmationTokenObject object;
 final String? paymentIntent;
 
 /// Payment-method-specific configuration for this ConfirmationToken.
-final ConfirmationTokenPaymentMethodOptions? paymentMethodOptions;
+final ConfirmationTokensResourcePaymentMethodOptions? paymentMethodOptions;
 
 /// Payment details collected by the Payment Element, used to create a PaymentMethod when a PaymentIntent or SetupIntent is confirmed with this ConfirmationToken.
-final ConfirmationTokenPaymentMethodPreview? paymentMethodPreview;
+final ConfirmationTokensResourcePaymentMethodPreview? paymentMethodPreview;
 
 /// Return URL used to confirm the Intent.
 final String? returnUrl;
@@ -114,7 +114,7 @@ final ConfirmationTokenSetupFutureUsage? setupFutureUsage;
 final String? setupIntent;
 
 /// Shipping information collected on this ConfirmationToken.
-final ConfirmationTokenShipping? shipping;
+final ConfirmationTokensResourceShipping? shipping;
 
 /// Indicates whether the Stripe SDK is used to handle confirmation flow. Defaults to `true` on ConfirmationToken.
 final bool useStripeSdk;
@@ -140,7 +140,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('use_stripe_sdk') && json['use_stripe_sdk'] is bool; } 
-ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id, bool? livemode, ConfirmationTokenMandateData? Function()? mandateData, ConfirmationTokenObject? object, String? Function()? paymentIntent, ConfirmationTokenPaymentMethodOptions? Function()? paymentMethodOptions, ConfirmationTokenPaymentMethodPreview? Function()? paymentMethodPreview, String? Function()? returnUrl, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, String? Function()? setupIntent, ConfirmationTokenShipping? Function()? shipping, bool? useStripeSdk, }) { return ConfirmationToken(
+ConfirmationToken copyWith({int? created, int? Function()? expiresAt, String? id, bool? livemode, ConfirmationTokensResourceMandateData? Function()? mandateData, ConfirmationTokenObject? object, String? Function()? paymentIntent, ConfirmationTokensResourcePaymentMethodOptions? Function()? paymentMethodOptions, ConfirmationTokensResourcePaymentMethodPreview? Function()? paymentMethodPreview, String? Function()? returnUrl, ConfirmationTokenSetupFutureUsage? Function()? setupFutureUsage, String? Function()? setupIntent, ConfirmationTokensResourceShipping? Function()? shipping, bool? useStripeSdk, }) { return ConfirmationToken(
   created: created ?? this.created,
   expiresAt: expiresAt != null ? expiresAt() : this.expiresAt,
   id: id ?? this.id,

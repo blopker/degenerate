@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_address.dart';import 'issuing_cardholder_company2.dart';import 'issuing_cardholder_individual2.dart';import 'issuing_cardholder_requirements.dart';import 'issuing_cardholder_spending_controls.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_cardholder_address.dart';import 'issuing_cardholder_authorization_controls.dart';import 'issuing_cardholder_company.dart';import 'issuing_cardholder_individual.dart';import 'issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class IssuingCardholderObject {const IssuingCardholderObject._(this.value);
 
 factory IssuingCardholderObject.fromJson(String json) { return switch (json) {
@@ -115,11 +115,11 @@ final class IssuingCardholder {const IssuingCardholder({required this.billing, t
 
 factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCardholder(
   billing: IssuingCardholderAddress.fromJson(json['billing'] as Map<String, dynamic>),
-  company: json['company'] != null ? IssuingCardholderCompany2.fromJson(json['company'] as Map<String, dynamic>) : null,
+  company: json['company'] != null ? IssuingCardholderCompany.fromJson(json['company'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   email: json['email'] as String?,
   id: json['id'] as String,
-  individual: json['individual'] != null ? IssuingCardholderIndividual2.fromJson(json['individual'] as Map<String, dynamic>) : null,
+  individual: json['individual'] != null ? IssuingCardholderIndividual.fromJson(json['individual'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   name: json['name'] as String,
@@ -127,7 +127,7 @@ factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCa
   phoneNumber: json['phone_number'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => IssuingCardholderPreferredLocales.fromJson(e as String)).toList(),
   requirements: IssuingCardholderRequirements.fromJson(json['requirements'] as Map<String, dynamic>),
-  spendingControls: json['spending_controls'] != null ? IssuingCardholderSpendingControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
+  spendingControls: json['spending_controls'] != null ? IssuingCardholderAuthorizationControls.fromJson(json['spending_controls'] as Map<String, dynamic>) : null,
   status: IssuingCardholderStatus.fromJson(json['status'] as String),
   type: IssuingCardholderType.fromJson(json['type'] as String),
 ); }
@@ -135,7 +135,7 @@ factory IssuingCardholder.fromJson(Map<String, dynamic> json) { return IssuingCa
 final IssuingCardholderAddress billing;
 
 /// Additional information about a `company` cardholder.
-final IssuingCardholderCompany2? company;
+final IssuingCardholderCompany? company;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -147,7 +147,7 @@ final String? email;
 final String id;
 
 /// Additional information about an `individual` cardholder.
-final IssuingCardholderIndividual2? individual;
+final IssuingCardholderIndividual? individual;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -171,7 +171,7 @@ final List<IssuingCardholderPreferredLocales>? preferredLocales;
 final IssuingCardholderRequirements requirements;
 
 /// Rules that control spending across this cardholder's cards. Refer to our [documentation](https://docs.stripe.com/issuing/controls/spending-controls) for more details.
-final IssuingCardholderSpendingControls? spendingControls;
+final IssuingCardholderAuthorizationControls? spendingControls;
 
 /// Specifies whether to permit authorizations on this cardholder's cards.
 final IssuingCardholderStatus status;
@@ -207,7 +207,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('requirements') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany2? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual2? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<IssuingCardholderPreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderSpendingControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
+IssuingCardholder copyWith({IssuingCardholderAddress? billing, IssuingCardholderCompany? Function()? company, int? created, String? Function()? email, String? id, IssuingCardholderIndividual? Function()? individual, bool? livemode, Map<String,String>? metadata, String? name, IssuingCardholderObject? object, String? Function()? phoneNumber, List<IssuingCardholderPreferredLocales>? Function()? preferredLocales, IssuingCardholderRequirements? requirements, IssuingCardholderAuthorizationControls? Function()? spendingControls, IssuingCardholderStatus? status, IssuingCardholderType? type, }) { return IssuingCardholder(
   billing: billing ?? this.billing,
   company: company != null ? company() : this.company,
   created: created ?? this.created,

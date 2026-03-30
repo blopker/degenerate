@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_filters_components_schemas_id.dart';import 'firewall_filters_components_schemas_paused.dart';/// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
+import 'firewall_filters_components_schemas_id.dart';/// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
 extension type const FirewallExpression(String value) {
 factory FirewallExpression.fromJson(String json) => FirewallExpression(json);
 
@@ -12,6 +12,13 @@ extension type const FirewallFiltersComponentsSchemasDescription(String value) {
 factory FirewallFiltersComponentsSchemasDescription.fromJson(String json) => FirewallFiltersComponentsSchemasDescription(json);
 
 String toJson() => value;
+
+}
+/// When true, indicates that the filter is currently paused.
+extension type const FirewallFiltersComponentsSchemasPaused(bool value) {
+factory FirewallFiltersComponentsSchemasPaused.fromJson(bool json) => FirewallFiltersComponentsSchemasPaused(json);
+
+bool toJson() => value;
 
 }
 /// A short reference tag. Allows you to select related filters.

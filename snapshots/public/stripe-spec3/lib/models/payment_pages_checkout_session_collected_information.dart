@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_collected_information_shipping_details.dart';/// 
+import 'payment_pages_checkout_session_checkout_address_details.dart';/// 
 final class PaymentPagesCheckoutSessionCollectedInformation {const PaymentPagesCheckoutSessionCollectedInformation({this.businessName, this.individualName, this.shippingDetails, });
 
 factory PaymentPagesCheckoutSessionCollectedInformation.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCollectedInformation(
   businessName: json['business_name'] as String?,
   individualName: json['individual_name'] as String?,
-  shippingDetails: json['shipping_details'] != null ? PaymentPagesCheckoutSessionCollectedInformationShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PaymentPagesCheckoutSessionCheckoutAddressDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Customer’s business name for this Checkout Session
@@ -16,7 +16,7 @@ final String? businessName;
 final String? individualName;
 
 /// Shipping information for this Checkout Session.
-final PaymentPagesCheckoutSessionCollectedInformationShippingDetails? shippingDetails;
+final PaymentPagesCheckoutSessionCheckoutAddressDetails? shippingDetails;
 
 Map<String, dynamic> toJson() { return {
   'business_name': ?businessName,
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingDetails != null) 'shipping_details': shippingDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'business_name', 'individual_name', 'shipping_details'}.contains(key)); } 
-PaymentPagesCheckoutSessionCollectedInformation copyWith({String? Function()? businessName, String? Function()? individualName, PaymentPagesCheckoutSessionCollectedInformationShippingDetails? Function()? shippingDetails, }) { return PaymentPagesCheckoutSessionCollectedInformation(
+PaymentPagesCheckoutSessionCollectedInformation copyWith({String? Function()? businessName, String? Function()? individualName, PaymentPagesCheckoutSessionCheckoutAddressDetails? Function()? shippingDetails, }) { return PaymentPagesCheckoutSessionCollectedInformation(
   businessName: businessName != null ? businessName() : this.businessName,
   individualName: individualName != null ? individualName() : this.individualName,
   shippingDetails: shippingDetails != null ? shippingDetails() : this.shippingDetails,

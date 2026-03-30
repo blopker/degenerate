@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_pages_checkout_session_customer_details_address.dart';import 'payment_pages_checkout_session_tax_id.dart';/// The customer’s tax exempt status after a completed Checkout Session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'payment_pages_checkout_session_tax_id.dart';/// The customer’s tax exempt status after a completed Checkout Session.
 final class PaymentPagesCheckoutSessionCustomerDetailsTaxExempt {const PaymentPagesCheckoutSessionCustomerDetailsTaxExempt._(this.value);
 
 factory PaymentPagesCheckoutSessionCustomerDetailsTaxExempt.fromJson(String json) { return switch (json) {
@@ -32,7 +32,7 @@ bool get isUnknown { return !values.contains(this); }
 final class PaymentPagesCheckoutSessionCustomerDetails {const PaymentPagesCheckoutSessionCustomerDetails({this.address, this.businessName, this.email, this.individualName, this.name, this.phone, this.taxExempt, this.taxIds, });
 
 factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomerDetails(
-  address: json['address'] != null ? PaymentPagesCheckoutSessionCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
   businessName: json['business_name'] as String?,
   email: json['email'] as String?,
   individualName: json['individual_name'] as String?,
@@ -43,7 +43,7 @@ factory PaymentPagesCheckoutSessionCustomerDetails.fromJson(Map<String, dynamic>
 ); }
 
 /// The customer's address after a completed Checkout Session. Note: This property is populated only for sessions on or after March 30, 2022.
-final PaymentPagesCheckoutSessionCustomerDetailsAddress? address;
+final Address? address;
 
 /// The customer's business name after a completed Checkout Session.
 final String? businessName;
@@ -78,7 +78,7 @@ Map<String, dynamic> toJson() { return {
   if (taxIds != null) 'tax_ids': taxIds?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'business_name', 'email', 'individual_name', 'name', 'phone', 'tax_exempt', 'tax_ids'}.contains(key)); } 
-PaymentPagesCheckoutSessionCustomerDetails copyWith({PaymentPagesCheckoutSessionCustomerDetailsAddress? Function()? address, String? Function()? businessName, String? Function()? email, String? Function()? individualName, String? Function()? name, String? Function()? phone, PaymentPagesCheckoutSessionCustomerDetailsTaxExempt? Function()? taxExempt, List<PaymentPagesCheckoutSessionTaxId>? Function()? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
+PaymentPagesCheckoutSessionCustomerDetails copyWith({Address? Function()? address, String? Function()? businessName, String? Function()? email, String? Function()? individualName, String? Function()? name, String? Function()? phone, PaymentPagesCheckoutSessionCustomerDetailsTaxExempt? Function()? taxExempt, List<PaymentPagesCheckoutSessionTaxId>? Function()? taxIds, }) { return PaymentPagesCheckoutSessionCustomerDetails(
   address: address != null ? address() : this.address,
   businessName: businessName != null ? businessName() : this.businessName,
   email: email != null ? email() : this.email,

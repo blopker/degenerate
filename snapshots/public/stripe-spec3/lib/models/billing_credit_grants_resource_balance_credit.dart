@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credit_credits_application_invoice_voided.dart';/// The type of credit transaction.
+import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credits_application_invoice_voided.dart';/// The type of credit transaction.
 final class BillingCreditGrantsResourceBalanceCreditType {const BillingCreditGrantsResourceBalanceCreditType._(this.value);
 
 factory BillingCreditGrantsResourceBalanceCreditType.fromJson(String json) { return switch (json) {
@@ -30,14 +30,14 @@ final class BillingCreditGrantsResourceBalanceCredit {const BillingCreditGrantsR
 
 factory BillingCreditGrantsResourceBalanceCredit.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceCredit(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
-  creditsApplicationInvoiceVoided: json['credits_application_invoice_voided'] != null ? BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided.fromJson(json['credits_application_invoice_voided'] as Map<String, dynamic>) : null,
+  creditsApplicationInvoiceVoided: json['credits_application_invoice_voided'] != null ? BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided.fromJson(json['credits_application_invoice_voided'] as Map<String, dynamic>) : null,
   type: BillingCreditGrantsResourceBalanceCreditType.fromJson(json['type'] as String),
 ); }
 
 final BillingCreditGrantsResourceAmount amount;
 
 /// Details of the invoice to which the reinstated credits were originally applied. Only present if `type` is `credits_application_invoice_voided`.
-final BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided? creditsApplicationInvoiceVoided;
+final BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided? creditsApplicationInvoiceVoided;
 
 /// The type of credit transaction.
 final BillingCreditGrantsResourceBalanceCreditType type;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
       json.containsKey('type'); } 
-BillingCreditGrantsResourceBalanceCredit copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceBalanceCreditCreditsApplicationInvoiceVoided? Function()? creditsApplicationInvoiceVoided, BillingCreditGrantsResourceBalanceCreditType? type, }) { return BillingCreditGrantsResourceBalanceCredit(
+BillingCreditGrantsResourceBalanceCredit copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoided? Function()? creditsApplicationInvoiceVoided, BillingCreditGrantsResourceBalanceCreditType? type, }) { return BillingCreditGrantsResourceBalanceCredit(
   amount: amount ?? this.amount,
   creditsApplicationInvoiceVoided: creditsApplicationInvoiceVoided != null ? creditsApplicationInvoiceVoided() : this.creditsApplicationInvoiceVoided,
   type: type ?? this.type,

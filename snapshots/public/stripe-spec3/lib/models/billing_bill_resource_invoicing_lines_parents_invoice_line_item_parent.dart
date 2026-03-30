@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent_invoice_item_details.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent_subscription_item_details.dart';/// The type of parent that generated this line item
+import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_subscription_item_parent.dart';/// The type of parent that generated this line item
 final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._(this.value);
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType.fromJson(String json) { return switch (json) {
@@ -29,16 +29,16 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent({this.invoiceItemDetails, this.subscriptionItemDetails, required this.type, });
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(
-  invoiceItemDetails: json['invoice_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentInvoiceItemDetails.fromJson(json['invoice_item_details'] as Map<String, dynamic>) : null,
-  subscriptionItemDetails: json['subscription_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentSubscriptionItemDetails.fromJson(json['subscription_item_details'] as Map<String, dynamic>) : null,
+  invoiceItemDetails: json['invoice_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent.fromJson(json['invoice_item_details'] as Map<String, dynamic>) : null,
+  subscriptionItemDetails: json['subscription_item_details'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent.fromJson(json['subscription_item_details'] as Map<String, dynamic>) : null,
   type: BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType.fromJson(json['type'] as String),
 ); }
 
 /// Details about the invoice item that generated this line item
-final BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentInvoiceItemDetails? invoiceItemDetails;
+final BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent? invoiceItemDetails;
 
 /// Details about the subscription item that generated this line item
-final BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentSubscriptionItemDetails? subscriptionItemDetails;
+final BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent? subscriptionItemDetails;
 
 /// The type of parent that generated this line item
 final BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType type;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent copyWith({BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentInvoiceItemDetails? Function()? invoiceItemDetails, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentSubscriptionItemDetails? Function()? subscriptionItemDetails, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType? type, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(
+BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent copyWith({BillingBillResourceInvoicingLinesParentsInvoiceLineItemInvoiceItemParent? Function()? invoiceItemDetails, BillingBillResourceInvoicingLinesParentsInvoiceLineItemSubscriptionItemParent? Function()? subscriptionItemDetails, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType? type, }) { return BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent(
   invoiceItemDetails: invoiceItemDetails != null ? invoiceItemDetails() : this.invoiceItemDetails,
   subscriptionItemDetails: subscriptionItemDetails != null ? subscriptionItemDetails() : this.subscriptionItemDetails,
   type: type ?? this.type,

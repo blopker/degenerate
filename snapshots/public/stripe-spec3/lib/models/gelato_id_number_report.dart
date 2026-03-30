@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_id_number_report_dob.dart';import 'gelato_id_number_report_error2.dart';/// Type of ID number.
+import 'gelato_data_id_number_report_date.dart';import 'gelato_id_number_report_error.dart';/// Type of ID number.
 final class GelatoIdNumberReportIdNumberType {const GelatoIdNumberReportIdNumberType._(this.value);
 
 factory GelatoIdNumberReportIdNumberType.fromJson(String json) { return switch (json) {
@@ -57,8 +57,8 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoIdNumberReport {const GelatoIdNumberReport({this.dob, this.error, this.firstName, this.idNumber, this.idNumberType, this.lastName, required this.status, });
 
 factory GelatoIdNumberReport.fromJson(Map<String, dynamic> json) { return GelatoIdNumberReport(
-  dob: json['dob'] != null ? GelatoIdNumberReportDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
-  error: json['error'] != null ? GelatoIdNumberReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? GelatoDataIdNumberReportDate.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoIdNumberReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
   firstName: json['first_name'] as String?,
   idNumber: json['id_number'] as String?,
   idNumberType: json['id_number_type'] != null ? GelatoIdNumberReportIdNumberType.fromJson(json['id_number_type'] as String) : null,
@@ -67,10 +67,10 @@ factory GelatoIdNumberReport.fromJson(Map<String, dynamic> json) { return Gelato
 ); }
 
 /// Date of birth.
-final GelatoIdNumberReportDob? dob;
+final GelatoDataIdNumberReportDate? dob;
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoIdNumberReportError2? error;
+final GelatoIdNumberReportError? error;
 
 /// First name.
 final String? firstName;
@@ -97,7 +97,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoIdNumberReport copyWith({GelatoIdNumberReportDob? Function()? dob, GelatoIdNumberReportError2? Function()? error, String? Function()? firstName, String? Function()? idNumber, GelatoIdNumberReportIdNumberType? Function()? idNumberType, String? Function()? lastName, GelatoIdNumberReportStatus? status, }) { return GelatoIdNumberReport(
+GelatoIdNumberReport copyWith({GelatoDataIdNumberReportDate? Function()? dob, GelatoIdNumberReportError? Function()? error, String? Function()? firstName, String? Function()? idNumber, GelatoIdNumberReportIdNumberType? Function()? idNumberType, String? Function()? lastName, GelatoIdNumberReportStatus? status, }) { return GelatoIdNumberReport(
   dob: dob != null ? dob() : this.dob,
   error: error != null ? error() : this.error,
   firstName: firstName != null ? firstName() : this.firstName,

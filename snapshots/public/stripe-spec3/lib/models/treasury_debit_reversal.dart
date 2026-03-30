@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_debit_reversal_linked_flows.dart';import 'treasury_debit_reversal_transaction.dart';import 'treasury_received_debits_resource_status_transitions.dart';import 'treasury_transaction.dart';/// The rails used to reverse the funds.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_debit_reversal_transaction.dart';import 'treasury_received_debits_resource_debit_reversal_linked_flows.dart';import 'treasury_received_debits_resource_status_transitions.dart';import 'treasury_transaction.dart';/// The rails used to reverse the funds.
 final class TreasuryDebitReversalNetwork {const TreasuryDebitReversalNetwork._(this.value);
 
 factory TreasuryDebitReversalNetwork.fromJson(String json) { return switch (json) {
@@ -85,7 +85,7 @@ factory TreasuryDebitReversal.fromJson(Map<String, dynamic> json) { return Treas
   financialAccount: json['financial_account'] as String?,
   hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
   id: json['id'] as String,
-  linkedFlows: json['linked_flows'] != null ? TreasuryDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null,
+  linkedFlows: json['linked_flows'] != null ? TreasuryReceivedDebitsResourceDebitReversalLinkedFlows.fromJson(json['linked_flows'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   network: TreasuryDebitReversalNetwork.fromJson(json['network'] as String),
@@ -115,7 +115,7 @@ final String? hostedRegulatoryReceiptUrl;
 final String id;
 
 /// Other flows linked to a DebitReversal.
-final TreasuryDebitReversalLinkedFlows? linkedFlows;
+final TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? linkedFlows;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -168,7 +168,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('received_debit') && json['received_debit'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryDebitReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
+TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryDebitReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,

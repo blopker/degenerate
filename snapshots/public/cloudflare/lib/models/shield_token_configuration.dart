@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_timestamp.dart';import 'shield_title.dart';import 'shield_token_sources2.dart';import 'shield_token_type.dart';import 'shield_uuid.dart';final class ShieldTokenConfiguration {const ShieldTokenConfiguration({required this.createdAt, required this.credentials, required this.description, required this.id, required this.lastUpdated, required this.title, required this.tokenSources, required this.tokenType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_timestamp.dart';import 'shield_title.dart';import 'shield_token_type.dart';import 'shield_uuid.dart';final class ShieldTokenConfiguration {const ShieldTokenConfiguration({required this.createdAt, required this.credentials, required this.description, required this.id, required this.lastUpdated, required this.title, required this.tokenSources, required this.tokenType, });
 
 factory ShieldTokenConfiguration.fromJson(Map<String, dynamic> json) { return ShieldTokenConfiguration(
   createdAt: ShieldTimestamp.fromJson(json['created_at'] as String),
@@ -9,7 +9,7 @@ factory ShieldTokenConfiguration.fromJson(Map<String, dynamic> json) { return Sh
   id: ShieldUuid.fromJson(json['id'] as String),
   lastUpdated: ShieldTimestamp.fromJson(json['last_updated'] as String),
   title: ShieldTitle.fromJson(json['title'] as String),
-  tokenSources: (json['token_sources'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldHeader.fromJson(v as String), fromB: (v) => ShieldCookie.fromJson(v as String),)).toList(),
+  tokenSources: (json['token_sources'] as List<dynamic>).map((e) => ShieldHeader.fromJson(e as String)).toList(),
   tokenType: ShieldTokenType.fromJson(json['token_type'] as String),
 ); }
 
@@ -25,7 +25,7 @@ final ShieldTimestamp lastUpdated;
 
 final ShieldTitle title;
 
-final List<ShieldTokenSources2> tokenSources;
+final List<ShieldHeader> tokenSources;
 
 final ShieldTokenType tokenType;
 
@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('title') &&
       json.containsKey('token_sources') &&
       json.containsKey('token_type'); } 
-ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials? credentials, ShieldDescription? description, ShieldUuid? id, ShieldTimestamp? lastUpdated, ShieldTitle? title, List<ShieldTokenSources2>? tokenSources, ShieldTokenType? tokenType, }) { return ShieldTokenConfiguration(
+ShieldTokenConfiguration copyWith({ShieldTimestamp? createdAt, ShieldCredentials? credentials, ShieldDescription? description, ShieldUuid? id, ShieldTimestamp? lastUpdated, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) { return ShieldTokenConfiguration(
   createdAt: createdAt ?? this.createdAt,
   credentials: credentials ?? this.credentials,
   description: description ?? this.description,

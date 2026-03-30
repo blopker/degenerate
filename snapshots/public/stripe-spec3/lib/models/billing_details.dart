@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_details_address.dart';/// 
+import 'address.dart';/// 
 final class BillingDetails {const BillingDetails({this.address, this.email, this.name, this.phone, this.taxId, });
 
 factory BillingDetails.fromJson(Map<String, dynamic> json) { return BillingDetails(
-  address: json['address'] != null ? BillingDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
@@ -12,7 +12,7 @@ factory BillingDetails.fromJson(Map<String, dynamic> json) { return BillingDetai
 ); }
 
 /// Billing address.
-final BillingDetailsAddress? address;
+final Address? address;
 
 /// Email address.
 final String? email;
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   'tax_id': ?taxId,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone', 'tax_id'}.contains(key)); } 
-BillingDetails copyWith({BillingDetailsAddress? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, String? Function()? taxId, }) { return BillingDetails(
+BillingDetails copyWith({Address? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, String? Function()? taxId, }) { return BillingDetails(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

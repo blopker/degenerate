@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'mandate.dart';import 'payment_method.dart';import 'setup_attempt.dart';import 'setup_intent_application.dart';import 'setup_intent_automatic_payment_methods.dart';import 'setup_intent_customer.dart';import 'setup_intent_last_setup_error.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action2.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_configuration_details.dart';import 'setup_intent_payment_method_options2.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'mandate.dart';import 'payment_flows_automatic_payment_methods_setup_intent.dart';import 'payment_method.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'setup_attempt.dart';import 'setup_intent_application.dart';import 'setup_intent_customer.dart';import 'setup_intent_latest_attempt.dart';import 'setup_intent_mandate.dart';import 'setup_intent_next_action.dart';import 'setup_intent_on_behalf_of.dart';import 'setup_intent_payment_method.dart';import 'setup_intent_payment_method_options.dart';import 'setup_intent_single_use_mandate.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
 final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
 
 factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
@@ -302,7 +302,7 @@ final class SetupIntent {const SetupIntent({this.application, this.attachToSelf,
 factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
   application: json['application'] != null ? OneOf2.parse(json['application'], fromA: (v) => v as String, fromB: (v) => Application.fromJson(v as Map<String, dynamic>),) : null,
   attachToSelf: json['attach_to_self'] as bool?,
-  automaticPaymentMethods: json['automatic_payment_methods'] != null ? SetupIntentAutomaticPaymentMethods.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
+  automaticPaymentMethods: json['automatic_payment_methods'] != null ? PaymentFlowsAutomaticPaymentMethodsSetupIntent.fromJson(json['automatic_payment_methods'] as Map<String, dynamic>) : null,
   cancellationReason: json['cancellation_reason'] != null ? SetupIntentCancellationReason.fromJson(json['cancellation_reason'] as String) : null,
   clientSecret: json['client_secret'] as String?,
   created: (json['created'] as num).toInt(),
@@ -312,17 +312,17 @@ factory SetupIntent.fromJson(Map<String, dynamic> json) { return SetupIntent(
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => SetupIntentExcludedPaymentMethodTypes.fromJson(e as String)).toList(),
   flowDirections: (json['flow_directions'] as List<dynamic>?)?.map((e) => SetupIntentFlowDirections.fromJson(e as String)).toList(),
   id: json['id'] as String,
-  lastSetupError: json['last_setup_error'] != null ? SetupIntentLastSetupError.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null,
+  lastSetupError: json['last_setup_error'] != null ? Errors.fromJson(json['last_setup_error'] as Map<String, dynamic>) : null,
   latestAttempt: json['latest_attempt'] != null ? OneOf2.parse(json['latest_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null,
   livemode: json['livemode'] as bool,
   mandate: json['mandate'] != null ? OneOf2.parse(json['mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  nextAction: json['next_action'] != null ? SetupIntentNextAction2.fromJson(json['next_action'] as Map<String, dynamic>) : null,
+  nextAction: json['next_action'] != null ? SetupIntentNextAction.fromJson(json['next_action'] as Map<String, dynamic>) : null,
   object: SetupIntentObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
   paymentMethod: json['payment_method'] != null ? OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
-  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? SetupIntentPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
-  paymentMethodOptions: json['payment_method_options'] != null ? SetupIntentPaymentMethodOptions2.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? SetupIntentPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>).map((e) => e as String).toList(),
   singleUseMandate: json['single_use_mandate'] != null ? OneOf2.parse(json['single_use_mandate'], fromA: (v) => v as String, fromB: (v) => Mandate.fromJson(v as Map<String, dynamic>),) : null,
   status: SetupIntentStatus.fromJson(json['status'] as String),
@@ -338,7 +338,7 @@ final SetupIntentApplication? application;
 final bool? attachToSelf;
 
 /// Settings for dynamic payment methods compatible with this Setup Intent
-final SetupIntentAutomaticPaymentMethods? automaticPaymentMethods;
+final PaymentFlowsAutomaticPaymentMethodsSetupIntent? automaticPaymentMethods;
 
 /// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
 final SetupIntentCancellationReason? cancellationReason;
@@ -376,7 +376,7 @@ final List<SetupIntentFlowDirections>? flowDirections;
 final String id;
 
 /// The error encountered in the previous SetupIntent confirmation.
-final SetupIntentLastSetupError? lastSetupError;
+final Errors? lastSetupError;
 
 /// The most recent SetupAttempt for this SetupIntent.
 final SetupIntentLatestAttempt? latestAttempt;
@@ -391,7 +391,7 @@ final SetupIntentMandate? mandate;
 final Map<String,String>? metadata;
 
 /// If present, this property tells you what actions you need to take in order for your customer to continue payment setup.
-final SetupIntentNextAction2? nextAction;
+final SetupIntentNextAction? nextAction;
 
 /// String representing the object's type. Objects of the same type share the same value.
 final SetupIntentObject object;
@@ -403,10 +403,10 @@ final SetupIntentOnBehalfOf? onBehalfOf;
 final SetupIntentPaymentMethod? paymentMethod;
 
 /// Information about the [payment method configuration](https://docs.stripe.com/api/payment_method_configurations) used for this Setup Intent.
-final SetupIntentPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
+final PaymentMethodConfigBizPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
 
 /// Payment method-specific configuration for this SetupIntent.
-final SetupIntentPaymentMethodOptions2? paymentMethodOptions;
+final SetupIntentPaymentMethodOptions? paymentMethodOptions;
 
 /// The list of payment method types (e.g. card) that this SetupIntent is allowed to set up. A list of valid payment method types can be found [here](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type).
 final List<String> paymentMethodTypes;
@@ -458,7 +458,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('payment_method_types') &&
       json.containsKey('status') &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupIntent copyWith({SetupIntentApplication? Function()? application, bool Function()? attachToSelf, SetupIntentAutomaticPaymentMethods? Function()? automaticPaymentMethods, SetupIntentCancellationReason? Function()? cancellationReason, String? Function()? clientSecret, int? created, SetupIntentCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<SetupIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<SetupIntentFlowDirections>? Function()? flowDirections, String? id, SetupIntentLastSetupError? Function()? lastSetupError, SetupIntentLatestAttempt? Function()? latestAttempt, bool? livemode, SetupIntentMandate? Function()? mandate, Map<String, String>? Function()? metadata, SetupIntentNextAction2? Function()? nextAction, SetupIntentObject? object, SetupIntentOnBehalfOf? Function()? onBehalfOf, SetupIntentPaymentMethod? Function()? paymentMethod, SetupIntentPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, SetupIntentPaymentMethodOptions2? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, SetupIntentSingleUseMandate? Function()? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
+SetupIntent copyWith({SetupIntentApplication? Function()? application, bool Function()? attachToSelf, PaymentFlowsAutomaticPaymentMethodsSetupIntent? Function()? automaticPaymentMethods, SetupIntentCancellationReason? Function()? cancellationReason, String? Function()? clientSecret, int? created, SetupIntentCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<SetupIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<SetupIntentFlowDirections>? Function()? flowDirections, String? id, Errors? Function()? lastSetupError, SetupIntentLatestAttempt? Function()? latestAttempt, bool? livemode, SetupIntentMandate? Function()? mandate, Map<String, String>? Function()? metadata, SetupIntentNextAction? Function()? nextAction, SetupIntentObject? object, SetupIntentOnBehalfOf? Function()? onBehalfOf, SetupIntentPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, SetupIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, SetupIntentSingleUseMandate? Function()? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   automaticPaymentMethods: automaticPaymentMethods != null ? automaticPaymentMethods() : this.automaticPaymentMethods,

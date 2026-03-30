@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee_account.dart';import 'application_fee_application.dart';import 'application_fee_balance_transaction.dart';import 'application_fee_charge.dart';import 'application_fee_fee_source.dart';import 'application_fee_originating_transaction.dart';import 'application_fee_refunds.dart';import 'balance_transaction.dart';import 'charge.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee_account.dart';import 'application_fee_application.dart';import 'application_fee_balance_transaction.dart';import 'application_fee_charge.dart';import 'application_fee_originating_transaction.dart';import 'application_fee_refunds.dart';import 'balance_transaction.dart';import 'charge.dart';import 'platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ApplicationFeeObject {const ApplicationFeeObject._(this.value);
 
 factory ApplicationFeeObject.fromJson(String json) { return switch (json) {
@@ -34,7 +34,7 @@ factory ApplicationFee.fromJson(Map<String, dynamic> json) { return ApplicationF
   charge: OneOf2.parse(json['charge'], fromA: (v) => v as String, fromB: (v) => Charge.fromJson(v as Map<String, dynamic>),),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
-  feeSource: json['fee_source'] != null ? ApplicationFeeFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>) : null,
+  feeSource: json['fee_source'] != null ? PlatformEarningFeeSource.fromJson(json['fee_source'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   object: ApplicationFeeObject.fromJson(json['object'] as String),
@@ -68,7 +68,7 @@ final int created;
 final String currency;
 
 /// Polymorphic source of the application fee. Includes the ID of the object the application fee was created from.
-final ApplicationFeeFeeSource? feeSource;
+final PlatformEarningFeeSource? feeSource;
 
 /// Unique identifier for the object.
 final String id;
@@ -117,7 +117,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object') &&
       json.containsKey('refunded') && json['refunded'] is bool &&
       json.containsKey('refunds'); } 
-ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, ApplicationFeeFeeSource? Function()? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, ApplicationFeeOriginatingTransaction? Function()? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
+ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, PlatformEarningFeeSource? Function()? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, ApplicationFeeOriginatingTransaction? Function()? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
   account: account ?? this.account,
   amount: amount ?? this.amount,
   amountRefunded: amountRefunded ?? this.amountRefunded,

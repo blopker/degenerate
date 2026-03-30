@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_payment_settings_payment_method_options.dart';final class InvoicesPaymentSettingsPaymentMethodTypes {const InvoicesPaymentSettingsPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'invoices_payment_method_options.dart';final class InvoicesPaymentSettingsPaymentMethodTypes {const InvoicesPaymentSettingsPaymentMethodTypes._(this.value);
 
 factory InvoicesPaymentSettingsPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -149,7 +149,7 @@ final class InvoicesPaymentSettings {const InvoicesPaymentSettings({this.default
 
 factory InvoicesPaymentSettings.fromJson(Map<String, dynamic> json) { return InvoicesPaymentSettings(
   defaultMandate: json['default_mandate'] as String?,
-  paymentMethodOptions: json['payment_method_options'] != null ? InvoicesPaymentSettingsPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? InvoicesPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => InvoicesPaymentSettingsPaymentMethodTypes.fromJson(e as String)).toList(),
 ); }
 
@@ -157,7 +157,7 @@ factory InvoicesPaymentSettings.fromJson(Map<String, dynamic> json) { return Inv
 final String? defaultMandate;
 
 /// Payment-method-specific configuration to provide to the invoice’s PaymentIntent.
-final InvoicesPaymentSettingsPaymentMethodOptions? paymentMethodOptions;
+final InvoicesPaymentMethodOptions? paymentMethodOptions;
 
 /// The list of payment method types (e.g. card) to provide to the invoice’s PaymentIntent. If not set, Stripe attempts to automatically determine the types to use by looking at the invoice’s default payment method, the subscription’s default payment method, the customer’s default payment method, and your [invoice template settings](https://dashboard.stripe.com/settings/billing/invoice).
 final List<InvoicesPaymentSettingsPaymentMethodTypes>? paymentMethodTypes;
@@ -168,7 +168,7 @@ Map<String, dynamic> toJson() { return {
   if (paymentMethodTypes != null) 'payment_method_types': paymentMethodTypes?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_mandate', 'payment_method_options', 'payment_method_types'}.contains(key)); } 
-InvoicesPaymentSettings copyWith({String? Function()? defaultMandate, InvoicesPaymentSettingsPaymentMethodOptions? Function()? paymentMethodOptions, List<InvoicesPaymentSettingsPaymentMethodTypes>? Function()? paymentMethodTypes, }) { return InvoicesPaymentSettings(
+InvoicesPaymentSettings copyWith({String? Function()? defaultMandate, InvoicesPaymentMethodOptions? Function()? paymentMethodOptions, List<InvoicesPaymentSettingsPaymentMethodTypes>? Function()? paymentMethodTypes, }) { return InvoicesPaymentSettings(
   defaultMandate: defaultMandate != null ? defaultMandate() : this.defaultMandate,
   paymentMethodOptions: paymentMethodOptions != null ? paymentMethodOptions() : this.paymentMethodOptions,
   paymentMethodTypes: paymentMethodTypes != null ? paymentMethodTypes() : this.paymentMethodTypes,

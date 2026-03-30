@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_us_bank_account_networks.dart';import 'payment_method_us_bank_account_status_details2.dart';/// Account holder type: individual or company.
+import 'payment_method_us_bank_account_status_details.dart';import 'us_bank_account_networks.dart';/// Account holder type: individual or company.
 final class PaymentMethodUsBankAccountAccountHolderType {const PaymentMethodUsBankAccountAccountHolderType._(this.value);
 
 factory PaymentMethodUsBankAccountAccountHolderType.fromJson(String json) { return switch (json) {
@@ -60,9 +60,9 @@ factory PaymentMethodUsBankAccount.fromJson(Map<String, dynamic> json) { return 
   financialConnectionsAccount: json['financial_connections_account'] as String?,
   fingerprint: json['fingerprint'] as String?,
   last4: json['last4'] as String?,
-  networks: json['networks'] != null ? PaymentMethodUsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? UsBankAccountNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   routingNumber: json['routing_number'] as String?,
-  statusDetails: json['status_details'] != null ? PaymentMethodUsBankAccountStatusDetails2.fromJson(json['status_details'] as Map<String, dynamic>) : null,
+  statusDetails: json['status_details'] != null ? PaymentMethodUsBankAccountStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>) : null,
 ); }
 
 /// Account holder type: individual or company.
@@ -84,13 +84,13 @@ final String? fingerprint;
 final String? last4;
 
 /// Contains information about US bank account networks that can be used.
-final PaymentMethodUsBankAccountNetworks? networks;
+final UsBankAccountNetworks? networks;
 
 /// Routing number of the bank account.
 final String? routingNumber;
 
 /// Contains information about the future reusability of this PaymentMethod.
-final PaymentMethodUsBankAccountStatusDetails2? statusDetails;
+final PaymentMethodUsBankAccountStatusDetails? statusDetails;
 
 Map<String, dynamic> toJson() { return {
   if (accountHolderType != null) 'account_holder_type': accountHolderType?.toJson(),
@@ -104,7 +104,7 @@ Map<String, dynamic> toJson() { return {
   if (statusDetails != null) 'status_details': statusDetails?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_holder_type', 'account_type', 'bank_name', 'financial_connections_account', 'fingerprint', 'last4', 'networks', 'routing_number', 'status_details'}.contains(key)); } 
-PaymentMethodUsBankAccount copyWith({PaymentMethodUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? financialConnectionsAccount, String? Function()? fingerprint, String? Function()? last4, PaymentMethodUsBankAccountNetworks? Function()? networks, String? Function()? routingNumber, PaymentMethodUsBankAccountStatusDetails2? Function()? statusDetails, }) { return PaymentMethodUsBankAccount(
+PaymentMethodUsBankAccount copyWith({PaymentMethodUsBankAccountAccountHolderType? Function()? accountHolderType, PaymentMethodUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? financialConnectionsAccount, String? Function()? fingerprint, String? Function()? last4, UsBankAccountNetworks? Function()? networks, String? Function()? routingNumber, PaymentMethodUsBankAccountStatusDetails? Function()? statusDetails, }) { return PaymentMethodUsBankAccount(
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,
   accountType: accountType != null ? accountType() : this.accountType,
   bankName: bankName != null ? bankName() : this.bankName,

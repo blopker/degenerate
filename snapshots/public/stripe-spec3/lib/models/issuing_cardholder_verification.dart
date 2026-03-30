@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_cardholder_verification_document.dart';/// 
+import 'issuing_cardholder_id_document.dart';/// 
 final class IssuingCardholderVerification {const IssuingCardholderVerification({this.document});
 
 factory IssuingCardholderVerification.fromJson(Map<String, dynamic> json) { return IssuingCardholderVerification(
-  document: json['document'] != null ? IssuingCardholderVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
+  document: json['document'] != null ? IssuingCardholderIdDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
 ); }
 
 /// An identifying document, either a passport or local ID card.
-final IssuingCardholderVerificationDocument? document;
+final IssuingCardholderIdDocument? document;
 
 Map<String, dynamic> toJson() { return {
   if (document != null) 'document': document?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'document'}.contains(key)); } 
-IssuingCardholderVerification copyWith({IssuingCardholderVerificationDocument? Function()? document}) { return IssuingCardholderVerification(
+IssuingCardholderVerification copyWith({IssuingCardholderIdDocument? Function()? document}) { return IssuingCardholderVerification(
   document: document != null ? document() : this.document,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

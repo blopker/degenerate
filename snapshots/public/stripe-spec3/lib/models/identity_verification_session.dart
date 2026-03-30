@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_related_person.dart';import 'identity_verification_report.dart';import 'identity_verification_session_last_error.dart';import 'identity_verification_session_last_verification_report.dart';import 'identity_verification_session_options.dart';import 'identity_verification_session_provided_details.dart';import 'identity_verification_session_redaction.dart';import 'identity_verification_session_verified_outputs.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_provided_details.dart';import 'gelato_related_person.dart';import 'gelato_session_last_error.dart';import 'gelato_verification_session_options.dart';import 'gelato_verified_outputs.dart';import 'identity_verification_report.dart';import 'identity_verification_session_last_verification_report.dart';import 'verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);
 
 factory IdentityVerificationSessionObject.fromJson(String json) { return switch (json) {
@@ -99,14 +99,14 @@ factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return
   clientSecret: json['client_secret'] as String?,
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
-  lastError: json['last_error'] != null ? IdentityVerificationSessionLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
+  lastError: json['last_error'] != null ? GelatoSessionLastError.fromJson(json['last_error'] as Map<String, dynamic>) : null,
   lastVerificationReport: json['last_verification_report'] != null ? OneOf2.parse(json['last_verification_report'], fromA: (v) => v as String, fromB: (v) => IdentityVerificationReport.fromJson(v as Map<String, dynamic>),) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: IdentityVerificationSessionObject.fromJson(json['object'] as String),
-  options: json['options'] != null ? IdentityVerificationSessionOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
-  providedDetails: json['provided_details'] != null ? IdentityVerificationSessionProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
-  redaction: json['redaction'] != null ? IdentityVerificationSessionRedaction.fromJson(json['redaction'] as Map<String, dynamic>) : null,
+  options: json['options'] != null ? GelatoVerificationSessionOptions.fromJson(json['options'] as Map<String, dynamic>) : null,
+  providedDetails: json['provided_details'] != null ? GelatoProvidedDetails.fromJson(json['provided_details'] as Map<String, dynamic>) : null,
+  redaction: json['redaction'] != null ? VerificationSessionRedaction.fromJson(json['redaction'] as Map<String, dynamic>) : null,
   relatedCustomer: json['related_customer'] as String?,
   relatedCustomerAccount: json['related_customer_account'] as String?,
   relatedPerson: json['related_person'] != null ? GelatoRelatedPerson.fromJson(json['related_person'] as Map<String, dynamic>) : null,
@@ -114,7 +114,7 @@ factory IdentityVerificationSession.fromJson(Map<String, dynamic> json) { return
   type: IdentityVerificationSessionType.fromJson(json['type'] as String),
   url: json['url'] as String?,
   verificationFlow: json['verification_flow'] as String?,
-  verifiedOutputs: json['verified_outputs'] != null ? IdentityVerificationSessionVerifiedOutputs.fromJson(json['verified_outputs'] as Map<String, dynamic>) : null,
+  verifiedOutputs: json['verified_outputs'] != null ? GelatoVerifiedOutputs.fromJson(json['verified_outputs'] as Map<String, dynamic>) : null,
 ); }
 
 /// A string to reference this user. This can be a customer ID, a session ID, or similar, and can be used to reconcile this verification with your internal systems.
@@ -130,7 +130,7 @@ final int created;
 final String id;
 
 /// If present, this property tells you the last error encountered when processing the verification.
-final IdentityVerificationSessionLastError? lastError;
+final GelatoSessionLastError? lastError;
 
 /// ID of the most recent VerificationReport. [Learn more about accessing detailed verification results.](https://docs.stripe.com/identity/verification-sessions#results)
 final IdentityVerificationSessionLastVerificationReport? lastVerificationReport;
@@ -145,13 +145,13 @@ final Map<String,String> metadata;
 final IdentityVerificationSessionObject object;
 
 /// A set of options for the session’s verification checks.
-final IdentityVerificationSessionOptions? options;
+final GelatoVerificationSessionOptions? options;
 
 /// Details provided about the user being verified. These details may be shown to the user.
-final IdentityVerificationSessionProvidedDetails? providedDetails;
+final GelatoProvidedDetails? providedDetails;
 
 /// Redaction status of this VerificationSession. If the VerificationSession is not redacted, this field will be null.
-final IdentityVerificationSessionRedaction? redaction;
+final VerificationSessionRedaction? redaction;
 
 /// Customer ID
 final String? relatedCustomer;
@@ -174,7 +174,7 @@ final String? url;
 final String? verificationFlow;
 
 /// The user’s verified data.
-final IdentityVerificationSessionVerifiedOutputs? verifiedOutputs;
+final GelatoVerifiedOutputs? verifiedOutputs;
 
 Map<String, dynamic> toJson() { return {
   'client_reference_id': ?clientReferenceId,
@@ -205,7 +205,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-IdentityVerificationSession copyWith({String? Function()? clientReferenceId, String? Function()? clientSecret, int? created, String? id, IdentityVerificationSessionLastError? Function()? lastError, IdentityVerificationSessionLastVerificationReport? Function()? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, IdentityVerificationSessionOptions? Function()? options, IdentityVerificationSessionProvidedDetails? Function()? providedDetails, IdentityVerificationSessionRedaction? Function()? redaction, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, GelatoRelatedPerson Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationSessionType? type, String? Function()? url, String Function()? verificationFlow, IdentityVerificationSessionVerifiedOutputs? Function()? verifiedOutputs, }) { return IdentityVerificationSession(
+IdentityVerificationSession copyWith({String? Function()? clientReferenceId, String? Function()? clientSecret, int? created, String? id, GelatoSessionLastError? Function()? lastError, IdentityVerificationSessionLastVerificationReport? Function()? lastVerificationReport, bool? livemode, Map<String,String>? metadata, IdentityVerificationSessionObject? object, GelatoVerificationSessionOptions? Function()? options, GelatoProvidedDetails? Function()? providedDetails, VerificationSessionRedaction? Function()? redaction, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, GelatoRelatedPerson Function()? relatedPerson, IdentityVerificationSessionStatus? status, IdentityVerificationSessionType? type, String? Function()? url, String Function()? verificationFlow, GelatoVerifiedOutputs? Function()? verifiedOutputs, }) { return IdentityVerificationSession(
   clientReferenceId: clientReferenceId != null ? clientReferenceId() : this.clientReferenceId,
   clientSecret: clientSecret != null ? clientSecret() : this.clientSecret,
   created: created ?? this.created,

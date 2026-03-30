@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_security_center_issues_response_result.dart';import 'security_center_messages2.dart';final class GetSecurityCenterIssuesResponse {const GetSecurityCenterIssuesResponse({required this.errors, required this.messages, required this.success, this.result, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'get_security_center_issues_response_result_variant1.dart';import 'security_center_messages2.dart';final class GetSecurityCenterIssuesResponse {const GetSecurityCenterIssuesResponse({required this.errors, required this.messages, required this.success, this.result, });
 
 factory GetSecurityCenterIssuesResponse.fromJson(Map<String, dynamic> json) { return GetSecurityCenterIssuesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => SecurityCenterMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  result: json['result'] != null ? GetSecurityCenterIssuesResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? GetSecurityCenterIssuesResponseResultVariant1.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
 final List<SecurityCenterMessages2> errors;
@@ -16,7 +16,7 @@ final List<SecurityCenterMessages2> messages;
 /// Whether the API call was successful.
 final bool success;
 
-final GetSecurityCenterIssuesResponseResult? result;
+final GetSecurityCenterIssuesResponseResultVariant1? result;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
       json.containsKey('success') && json['success'] is bool; } 
-GetSecurityCenterIssuesResponse copyWith({List<SecurityCenterMessages2>? errors, List<SecurityCenterMessages2>? messages, bool? success, GetSecurityCenterIssuesResponseResult Function()? result, }) { return GetSecurityCenterIssuesResponse(
+GetSecurityCenterIssuesResponse copyWith({List<SecurityCenterMessages2>? errors, List<SecurityCenterMessages2>? messages, bool? success, GetSecurityCenterIssuesResponseResultVariant1 Function()? result, }) { return GetSecurityCenterIssuesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   success: success ?? this.success,

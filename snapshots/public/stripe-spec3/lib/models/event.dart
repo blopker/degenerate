@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'event_request.dart';import 'notification_event_data.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'notification_event_data.dart';import 'notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class EventObject {const EventObject._(this.value);
 
 factory EventObject.fromJson(String json) { return switch (json) {
@@ -52,7 +52,7 @@ factory Event.fromJson(Map<String, dynamic> json) { return Event(
   livemode: json['livemode'] as bool,
   object: EventObject.fromJson(json['object'] as String),
   pendingWebhooks: (json['pending_webhooks'] as num).toInt(),
-  request: json['request'] != null ? EventRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
+  request: json['request'] != null ? NotificationEventRequest.fromJson(json['request'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 
@@ -83,7 +83,7 @@ final EventObject object;
 final int pendingWebhooks;
 
 /// Information on the API request that triggers the event.
-final EventRequest? request;
+final NotificationEventRequest? request;
 
 /// Description of the event (for example, `invoice.created` or `charge.refunded`).
 final String type;
@@ -108,7 +108,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('pending_webhooks') && json['pending_webhooks'] is num &&
       json.containsKey('type') && json['type'] is String; } 
-Event copyWith({String Function()? account, String? Function()? apiVersion, String Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, EventRequest? Function()? request, String? type, }) { return Event(
+Event copyWith({String Function()? account, String? Function()? apiVersion, String Function()? context, int? created, NotificationEventData? data, String? id, bool? livemode, EventObject? object, int? pendingWebhooks, NotificationEventRequest? Function()? request, String? type, }) { return Event(
   account: account != null ? account() : this.account,
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,
   context: context != null ? context() : this.context,

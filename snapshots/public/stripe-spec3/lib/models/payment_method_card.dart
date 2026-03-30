@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_card_checks2.dart';import 'payment_method_card_generated_from.dart';import 'payment_method_card_networks.dart';import 'payment_method_card_three_d_secure_usage.dart';import 'payment_method_card_wallet2.dart';/// Status of a card based on the card issuer.
+import 'networks.dart';import 'payment_method_card_checks.dart';import 'payment_method_card_generated_card.dart';import 'payment_method_card_wallet.dart';import 'three_d_secure_usage.dart';/// Status of a card based on the card issuer.
 final class PaymentMethodCardRegulatedStatus {const PaymentMethodCardRegulatedStatus._(this.value);
 
 factory PaymentMethodCardRegulatedStatus.fromJson(String json) { return switch (json) {
@@ -30,26 +30,26 @@ final class PaymentMethodCard {const PaymentMethodCard({required this.brand, thi
 
 factory PaymentMethodCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCard(
   brand: json['brand'] as String,
-  checks: json['checks'] != null ? PaymentMethodCardChecks2.fromJson(json['checks'] as Map<String, dynamic>) : null,
+  checks: json['checks'] != null ? PaymentMethodCardChecks.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   displayBrand: json['display_brand'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
   expYear: (json['exp_year'] as num).toInt(),
   fingerprint: json['fingerprint'] as String?,
   funding: json['funding'] as String,
-  generatedFrom: json['generated_from'] != null ? PaymentMethodCardGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
+  generatedFrom: json['generated_from'] != null ? PaymentMethodCardGeneratedCard.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
   last4: json['last4'] as String,
-  networks: json['networks'] != null ? PaymentMethodCardNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? Networks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   regulatedStatus: json['regulated_status'] != null ? PaymentMethodCardRegulatedStatus.fromJson(json['regulated_status'] as String) : null,
-  threeDSecureUsage: json['three_d_secure_usage'] != null ? PaymentMethodCardThreeDSecureUsage.fromJson(json['three_d_secure_usage'] as Map<String, dynamic>) : null,
-  wallet: json['wallet'] != null ? PaymentMethodCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>) : null,
+  threeDSecureUsage: json['three_d_secure_usage'] != null ? ThreeDSecureUsage.fromJson(json['three_d_secure_usage'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? PaymentMethodCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final String brand;
 
 /// Checks on Card address and CVC if provided.
-final PaymentMethodCardChecks2? checks;
+final PaymentMethodCardChecks? checks;
 
 /// Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you've collected.
 final String? country;
@@ -72,22 +72,22 @@ final String? fingerprint;
 final String funding;
 
 /// Details of the original PaymentMethod that created this object.
-final PaymentMethodCardGeneratedFrom? generatedFrom;
+final PaymentMethodCardGeneratedCard? generatedFrom;
 
 /// The last four digits of the card.
 final String last4;
 
 /// Contains information about card networks that can be used to process the payment.
-final PaymentMethodCardNetworks? networks;
+final Networks? networks;
 
 /// Status of a card based on the card issuer.
 final PaymentMethodCardRegulatedStatus? regulatedStatus;
 
 /// Contains details on how this Card may be used for 3D Secure authentication.
-final PaymentMethodCardThreeDSecureUsage? threeDSecureUsage;
+final ThreeDSecureUsage? threeDSecureUsage;
 
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
-final PaymentMethodCardWallet2? wallet;
+final PaymentMethodCardWallet? wallet;
 
 Map<String, dynamic> toJson() { return {
   'brand': brand,
@@ -110,7 +110,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') && json['funding'] is String &&
       json.containsKey('last4') && json['last4'] is String; } 
-PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks2? Function()? checks, String? Function()? country, String? Function()? displayBrand, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, PaymentMethodCardGeneratedFrom? Function()? generatedFrom, String? last4, PaymentMethodCardNetworks? Function()? networks, PaymentMethodCardRegulatedStatus? Function()? regulatedStatus, PaymentMethodCardThreeDSecureUsage? Function()? threeDSecureUsage, PaymentMethodCardWallet2? Function()? wallet, }) { return PaymentMethodCard(
+PaymentMethodCard copyWith({String? brand, PaymentMethodCardChecks? Function()? checks, String? Function()? country, String? Function()? displayBrand, int? expMonth, int? expYear, String? Function()? fingerprint, String? funding, PaymentMethodCardGeneratedCard? Function()? generatedFrom, String? last4, Networks? Function()? networks, PaymentMethodCardRegulatedStatus? Function()? regulatedStatus, ThreeDSecureUsage? Function()? threeDSecureUsage, PaymentMethodCardWallet? Function()? wallet, }) { return PaymentMethodCard(
   brand: brand ?? this.brand,
   checks: checks != null ? checks() : this.checks,
   country: country != null ? country() : this.country,

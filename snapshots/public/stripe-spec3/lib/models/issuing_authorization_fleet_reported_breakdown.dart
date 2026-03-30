@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_fleet_reported_breakdown_fuel.dart';import 'issuing_authorization_fleet_reported_breakdown_non_fuel.dart';import 'issuing_authorization_fleet_reported_breakdown_tax.dart';/// 
+import 'issuing_authorization_fleet_fuel_price_data.dart';import 'issuing_authorization_fleet_non_fuel_price_data.dart';import 'issuing_authorization_fleet_tax_data.dart';/// 
 final class IssuingAuthorizationFleetReportedBreakdown {const IssuingAuthorizationFleetReportedBreakdown({this.fuel, this.nonFuel, this.tax, });
 
 factory IssuingAuthorizationFleetReportedBreakdown.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetReportedBreakdown(
-  fuel: json['fuel'] != null ? IssuingAuthorizationFleetReportedBreakdownFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
-  nonFuel: json['non_fuel'] != null ? IssuingAuthorizationFleetReportedBreakdownNonFuel.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
-  tax: json['tax'] != null ? IssuingAuthorizationFleetReportedBreakdownTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? IssuingAuthorizationFleetFuelPriceData.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  nonFuel: json['non_fuel'] != null ? IssuingAuthorizationFleetNonFuelPriceData.fromJson(json['non_fuel'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? IssuingAuthorizationFleetTaxData.fromJson(json['tax'] as Map<String, dynamic>) : null,
 ); }
 
 /// Breakdown of fuel portion of the purchase.
-final IssuingAuthorizationFleetReportedBreakdownFuel? fuel;
+final IssuingAuthorizationFleetFuelPriceData? fuel;
 
 /// Breakdown of non-fuel portion of the purchase.
-final IssuingAuthorizationFleetReportedBreakdownNonFuel? nonFuel;
+final IssuingAuthorizationFleetNonFuelPriceData? nonFuel;
 
 /// Information about tax included in this transaction.
-final IssuingAuthorizationFleetReportedBreakdownTax? tax;
+final IssuingAuthorizationFleetTaxData? tax;
 
 Map<String, dynamic> toJson() { return {
   if (fuel != null) 'fuel': fuel?.toJson(),
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (tax != null) 'tax': tax?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fuel', 'non_fuel', 'tax'}.contains(key)); } 
-IssuingAuthorizationFleetReportedBreakdown copyWith({IssuingAuthorizationFleetReportedBreakdownFuel? Function()? fuel, IssuingAuthorizationFleetReportedBreakdownNonFuel? Function()? nonFuel, IssuingAuthorizationFleetReportedBreakdownTax? Function()? tax, }) { return IssuingAuthorizationFleetReportedBreakdown(
+IssuingAuthorizationFleetReportedBreakdown copyWith({IssuingAuthorizationFleetFuelPriceData? Function()? fuel, IssuingAuthorizationFleetNonFuelPriceData? Function()? nonFuel, IssuingAuthorizationFleetTaxData? Function()? tax, }) { return IssuingAuthorizationFleetReportedBreakdown(
   fuel: fuel != null ? fuel() : this.fuel,
   nonFuel: nonFuel != null ? nonFuel() : this.nonFuel,
   tax: tax != null ? tax() : this.tax,

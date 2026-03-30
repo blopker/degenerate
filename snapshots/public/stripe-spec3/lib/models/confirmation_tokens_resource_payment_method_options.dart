@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'confirmation_tokens_resource_payment_method_options_card.dart';/// Payment-method-specific configuration
+import 'confirmation_tokens_resource_payment_method_options_resource_card.dart';/// Payment-method-specific configuration
 final class ConfirmationTokensResourcePaymentMethodOptions {const ConfirmationTokensResourcePaymentMethodOptions({this.card});
 
 factory ConfirmationTokensResourcePaymentMethodOptions.fromJson(Map<String, dynamic> json) { return ConfirmationTokensResourcePaymentMethodOptions(
-  card: json['card'] != null ? ConfirmationTokensResourcePaymentMethodOptionsCard.fromJson(json['card'] as Map<String, dynamic>) : null,
+  card: json['card'] != null ? ConfirmationTokensResourcePaymentMethodOptionsResourceCard.fromJson(json['card'] as Map<String, dynamic>) : null,
 ); }
 
 /// This hash contains the card payment method options.
-final ConfirmationTokensResourcePaymentMethodOptionsCard? card;
+final ConfirmationTokensResourcePaymentMethodOptionsResourceCard? card;
 
 Map<String, dynamic> toJson() { return {
   if (card != null) 'card': card?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card'}.contains(key)); } 
-ConfirmationTokensResourcePaymentMethodOptions copyWith({ConfirmationTokensResourcePaymentMethodOptionsCard? Function()? card}) { return ConfirmationTokensResourcePaymentMethodOptions(
+ConfirmationTokensResourcePaymentMethodOptions copyWith({ConfirmationTokensResourcePaymentMethodOptionsResourceCard? Function()? card}) { return ConfirmationTokensResourcePaymentMethodOptions(
   card: card != null ? card() : this.card,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

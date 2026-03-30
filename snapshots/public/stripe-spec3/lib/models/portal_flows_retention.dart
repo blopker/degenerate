@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_retention_coupon_offer.dart';/// Type of retention strategy that will be used.
+import 'portal_flows_coupon_offer.dart';/// Type of retention strategy that will be used.
 final class PortalFlowsRetentionType {const PortalFlowsRetentionType._(this.value);
 
 factory PortalFlowsRetentionType.fromJson(String json) { return switch (json) {
@@ -26,12 +26,12 @@ bool get isUnknown { return !values.contains(this); }
 final class PortalFlowsRetention {const PortalFlowsRetention({this.couponOffer, required this.type, });
 
 factory PortalFlowsRetention.fromJson(Map<String, dynamic> json) { return PortalFlowsRetention(
-  couponOffer: json['coupon_offer'] != null ? PortalFlowsRetentionCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>) : null,
+  couponOffer: json['coupon_offer'] != null ? PortalFlowsCouponOffer.fromJson(json['coupon_offer'] as Map<String, dynamic>) : null,
   type: PortalFlowsRetentionType.fromJson(json['type'] as String),
 ); }
 
 /// Configuration when `retention.type=coupon_offer`.
-final PortalFlowsRetentionCouponOffer? couponOffer;
+final PortalFlowsCouponOffer? couponOffer;
 
 /// Type of retention strategy that will be used.
 final PortalFlowsRetentionType type;
@@ -41,7 +41,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PortalFlowsRetention copyWith({PortalFlowsRetentionCouponOffer? Function()? couponOffer, PortalFlowsRetentionType? type, }) { return PortalFlowsRetention(
+PortalFlowsRetention copyWith({PortalFlowsCouponOffer? Function()? couponOffer, PortalFlowsRetentionType? type, }) { return PortalFlowsRetention(
   couponOffer: couponOffer != null ? couponOffer() : this.couponOffer,
   type: type ?? this.type,
 ); } 

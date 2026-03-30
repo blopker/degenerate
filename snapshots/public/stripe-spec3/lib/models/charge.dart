@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'billing_details.dart';import 'charge_application.dart';import 'charge_application_fee.dart';import 'charge_balance_transaction.dart';import 'charge_customer.dart';import 'charge_failure_balance_transaction.dart';import 'charge_fraud_details2.dart';import 'charge_on_behalf_of.dart';import 'charge_outcome2.dart';import 'charge_payment_intent.dart';import 'charge_payment_method_details.dart';import 'charge_refunds.dart';import 'charge_review.dart';import 'charge_shipping.dart';import 'charge_source_transfer.dart';import 'charge_transfer.dart';import 'charge_transfer_data2.dart';import 'customer.dart';import 'deleted_customer.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'radar_radar_options.dart';import 'review.dart';import 'transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'billing_details.dart';import 'charge_application.dart';import 'charge_application_fee.dart';import 'charge_balance_transaction.dart';import 'charge_customer.dart';import 'charge_failure_balance_transaction.dart';import 'charge_fraud_details.dart';import 'charge_on_behalf_of.dart';import 'charge_outcome.dart';import 'charge_payment_intent.dart';import 'charge_refunds.dart';import 'charge_review.dart';import 'charge_source_transfer.dart';import 'charge_transfer.dart';import 'charge_transfer_data.dart';import 'customer.dart';import 'deleted_customer.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_method_details.dart';import 'radar_radar_options.dart';import 'review.dart';import 'shipping.dart';import 'transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ChargeObject {const ChargeObject._(this.value);
 
 factory ChargeObject.fromJson(String json) { return switch (json) {
@@ -74,17 +74,17 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   failureBalanceTransaction: json['failure_balance_transaction'] != null ? OneOf2.parse(json['failure_balance_transaction'], fromA: (v) => v as String, fromB: (v) => BalanceTransaction.fromJson(v as Map<String, dynamic>),) : null,
   failureCode: json['failure_code'] as String?,
   failureMessage: json['failure_message'] as String?,
-  fraudDetails: json['fraud_details'] != null ? ChargeFraudDetails2.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
+  fraudDetails: json['fraud_details'] != null ? ChargeFraudDetails.fromJson(json['fraud_details'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: ChargeObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  outcome: json['outcome'] != null ? ChargeOutcome2.fromJson(json['outcome'] as Map<String, dynamic>) : null,
+  outcome: json['outcome'] != null ? ChargeOutcome.fromJson(json['outcome'] as Map<String, dynamic>) : null,
   paid: json['paid'] as bool,
   paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
   paymentMethod: json['payment_method'] as String?,
-  paymentMethodDetails: json['payment_method_details'] != null ? ChargePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? PaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
   radarOptions: json['radar_options'] != null ? RadarRadarOptions.fromJson(json['radar_options'] as Map<String, dynamic>) : null,
   receiptEmail: json['receipt_email'] as String?,
@@ -93,13 +93,13 @@ factory Charge.fromJson(Map<String, dynamic> json) { return Charge(
   refunded: json['refunded'] as bool,
   refunds: json['refunds'] != null ? ChargeRefunds.fromJson(json['refunds'] as Map<String, dynamic>) : null,
   review: json['review'] != null ? OneOf2.parse(json['review'], fromA: (v) => v as String, fromB: (v) => Review.fromJson(v as Map<String, dynamic>),) : null,
-  shipping: json['shipping'] != null ? ChargeShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   sourceTransfer: json['source_transfer'] != null ? OneOf2.parse(json['source_transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   statementDescriptorSuffix: json['statement_descriptor_suffix'] as String?,
   status: ChargeStatus.fromJson(json['status'] as String),
   transfer: json['transfer'] != null ? OneOf2.parse(json['transfer'], fromA: (v) => v as String, fromB: (v) => Transfer.fromJson(v as Map<String, dynamic>),) : null,
-  transferData: json['transfer_data'] != null ? ChargeTransferData2.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? ChargeTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   transferGroup: json['transfer_group'] as String?,
 ); }
 
@@ -157,7 +157,7 @@ final String? failureCode;
 final String? failureMessage;
 
 /// Information on fraud assessments for the charge.
-final ChargeFraudDetails2? fraudDetails;
+final ChargeFraudDetails? fraudDetails;
 
 /// Unique identifier for the object.
 final String id;
@@ -175,7 +175,7 @@ final ChargeObject object;
 final ChargeOnBehalfOf? onBehalfOf;
 
 /// Details about whether the payment was accepted, and why. See [understanding declines](https://docs.stripe.com/declines) for details.
-final ChargeOutcome2? outcome;
+final ChargeOutcome? outcome;
 
 /// `true` if the charge succeeded, or was successfully authorized for later capture.
 final bool paid;
@@ -187,7 +187,7 @@ final ChargePaymentIntent? paymentIntent;
 final String? paymentMethod;
 
 /// Details about the payment method at the time of the transaction.
-final ChargePaymentMethodDetails? paymentMethodDetails;
+final PaymentMethodDetails? paymentMethodDetails;
 
 final PaymentFlowsPaymentIntentPresentmentDetails? presentmentDetails;
 
@@ -212,7 +212,7 @@ final ChargeRefunds? refunds;
 final ChargeReview? review;
 
 /// Shipping information for the charge.
-final ChargeShipping? shipping;
+final Shipping? shipping;
 
 /// The transfer ID which created this charge. Only present if the charge came from another Stripe account. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
 final ChargeSourceTransfer? sourceTransfer;
@@ -232,7 +232,7 @@ final ChargeStatus status;
 final ChargeTransfer? transfer;
 
 /// An optional dictionary including the account to automatically transfer to as part of a destination charge. [See the Connect documentation](https://docs.stripe.com/connect/destination-charges) for details.
-final ChargeTransferData2? transferData;
+final ChargeTransferData? transferData;
 
 /// A string that identifies this transaction as part of a group. See the [Connect documentation](https://docs.stripe.com/connect/separate-charges-and-transfers#transfer-options) for details.
 final String? transferGroup;
@@ -299,7 +299,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('paid') && json['paid'] is bool &&
       json.containsKey('refunded') && json['refunded'] is bool &&
       json.containsKey('status'); } 
-Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, ChargeApplication? Function()? application, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, ChargeBalanceTransaction? Function()? balanceTransaction, BillingDetails? billingDetails, String? Function()? calculatedStatementDescriptor, bool? captured, int? created, String? currency, ChargeCustomer? Function()? customer, String? Function()? description, bool? disputed, ChargeFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, ChargeFraudDetails2? Function()? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, ChargeOutcome2? Function()? outcome, bool? paid, ChargePaymentIntent? Function()? paymentIntent, String? Function()? paymentMethod, ChargePaymentMethodDetails? Function()? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, RadarRadarOptions Function()? radarOptions, String? Function()? receiptEmail, String? Function()? receiptNumber, String? Function()? receiptUrl, bool? refunded, ChargeRefunds? Function()? refunds, ChargeReview? Function()? review, ChargeShipping? Function()? shipping, ChargeSourceTransfer? Function()? sourceTransfer, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, ChargeStatus? status, ChargeTransfer Function()? transfer, ChargeTransferData2? Function()? transferData, String? Function()? transferGroup, }) { return Charge(
+Charge copyWith({int? amount, int? amountCaptured, int? amountRefunded, ChargeApplication? Function()? application, ChargeApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, ChargeBalanceTransaction? Function()? balanceTransaction, BillingDetails? billingDetails, String? Function()? calculatedStatementDescriptor, bool? captured, int? created, String? currency, ChargeCustomer? Function()? customer, String? Function()? description, bool? disputed, ChargeFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, ChargeFraudDetails? Function()? fraudDetails, String? id, bool? livemode, Map<String,String>? metadata, ChargeObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, ChargeOutcome? Function()? outcome, bool? paid, ChargePaymentIntent? Function()? paymentIntent, String? Function()? paymentMethod, PaymentMethodDetails? Function()? paymentMethodDetails, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, RadarRadarOptions Function()? radarOptions, String? Function()? receiptEmail, String? Function()? receiptNumber, String? Function()? receiptUrl, bool? refunded, ChargeRefunds? Function()? refunds, ChargeReview? Function()? review, Shipping? Function()? shipping, ChargeSourceTransfer? Function()? sourceTransfer, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, ChargeStatus? status, ChargeTransfer Function()? transfer, ChargeTransferData? Function()? transferData, String? Function()? transferGroup, }) { return Charge(
   amount: amount ?? this.amount,
   amountCaptured: amountCaptured ?? this.amountCaptured,
   amountRefunded: amountRefunded ?? this.amountRefunded,

@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_optional_item_adjustable_quantity2.dart';/// 
+import 'payment_pages_checkout_session_optional_item_adjustable_quantity.dart';/// 
 final class PaymentPagesCheckoutSessionOptionalItem {const PaymentPagesCheckoutSessionOptionalItem({this.adjustableQuantity, required this.price, required this.quantity, });
 
 factory PaymentPagesCheckoutSessionOptionalItem.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionOptionalItem(
-  adjustableQuantity: json['adjustable_quantity'] != null ? PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity2.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   price: json['price'] as String,
   quantity: (json['quantity'] as num).toInt(),
 ); }
 
-final PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity2? adjustableQuantity;
+final PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity? adjustableQuantity;
 
 final String price;
 
@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('price') && json['price'] is String &&
       json.containsKey('quantity') && json['quantity'] is num; } 
-PaymentPagesCheckoutSessionOptionalItem copyWith({PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity2? Function()? adjustableQuantity, String? price, int? quantity, }) { return PaymentPagesCheckoutSessionOptionalItem(
+PaymentPagesCheckoutSessionOptionalItem copyWith({PaymentPagesCheckoutSessionOptionalItemAdjustableQuantity? Function()? adjustableQuantity, String? price, int? quantity, }) { return PaymentPagesCheckoutSessionOptionalItem(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   price: price ?? this.price,
   quantity: quantity ?? this.quantity,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'subscriptions_resource_billing_mode_flexible2.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
+import 'subscriptions_resource_billing_mode_flexible.dart';/// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 final class SubscriptionsResourceBillingModeType {const SubscriptionsResourceBillingModeType._(this.value);
 
 factory SubscriptionsResourceBillingModeType.fromJson(String json) { return switch (json) {
@@ -29,13 +29,13 @@ bool get isUnknown { return !values.contains(this); }
 final class SubscriptionsResourceBillingMode {const SubscriptionsResourceBillingMode({this.flexible, required this.type, this.updatedAt, });
 
 factory SubscriptionsResourceBillingMode.fromJson(Map<String, dynamic> json) { return SubscriptionsResourceBillingMode(
-  flexible: json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible2.fromJson(json['flexible'] as Map<String, dynamic>) : null,
+  flexible: json['flexible'] != null ? SubscriptionsResourceBillingModeFlexible.fromJson(json['flexible'] as Map<String, dynamic>) : null,
   type: SubscriptionsResourceBillingModeType.fromJson(json['type'] as String),
   updatedAt: json['updated_at'] != null ? (json['updated_at'] as num).toInt() : null,
 ); }
 
 /// Configure behavior for flexible billing mode
-final SubscriptionsResourceBillingModeFlexible2? flexible;
+final SubscriptionsResourceBillingModeFlexible? flexible;
 
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.
 final SubscriptionsResourceBillingModeType type;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'updated_at': ?updatedAt,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible2? Function()? flexible, SubscriptionsResourceBillingModeType? type, int Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
+SubscriptionsResourceBillingMode copyWith({SubscriptionsResourceBillingModeFlexible? Function()? flexible, SubscriptionsResourceBillingModeType? type, int Function()? updatedAt, }) { return SubscriptionsResourceBillingMode(
   flexible: flexible != null ? flexible() : this.flexible,
   type: type ?? this.type,
   updatedAt: updatedAt != null ? updatedAt() : this.updatedAt,

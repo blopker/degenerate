@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_custom_text_after_submit.dart';import 'payment_pages_checkout_session_custom_text_shipping_address.dart';import 'payment_pages_checkout_session_custom_text_submit.dart';import 'payment_pages_checkout_session_custom_text_terms_of_service_acceptance.dart';/// 
+import 'payment_pages_checkout_session_custom_text_position.dart';/// 
 final class PaymentPagesCheckoutSessionCustomText {const PaymentPagesCheckoutSessionCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentPagesCheckoutSessionCustomText.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionCustomText(
-  afterSubmit: json['after_submit'] != null ? PaymentPagesCheckoutSessionCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
-  shippingAddress: json['shipping_address'] != null ? PaymentPagesCheckoutSessionCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
-  submit: json['submit'] != null ? PaymentPagesCheckoutSessionCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>) : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
+  afterSubmit: json['after_submit'] != null ? PaymentPagesCheckoutSessionCustomTextPosition.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? PaymentPagesCheckoutSessionCustomTextPosition.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  submit: json['submit'] != null ? PaymentPagesCheckoutSessionCustomTextPosition.fromJson(json['submit'] as Map<String, dynamic>) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PaymentPagesCheckoutSessionCustomTextPosition.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 /// Custom text that should be displayed after the payment confirmation button.
-final PaymentPagesCheckoutSessionCustomTextAfterSubmit? afterSubmit;
+final PaymentPagesCheckoutSessionCustomTextPosition? afterSubmit;
 
 /// Custom text that should be displayed alongside shipping address collection.
-final PaymentPagesCheckoutSessionCustomTextShippingAddress? shippingAddress;
+final PaymentPagesCheckoutSessionCustomTextPosition? shippingAddress;
 
 /// Custom text that should be displayed alongside the payment confirmation button.
-final PaymentPagesCheckoutSessionCustomTextSubmit? submit;
+final PaymentPagesCheckoutSessionCustomTextPosition? submit;
 
 /// Custom text that should be displayed in place of the default terms of service agreement text.
-final PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance? termsOfServiceAcceptance;
+final PaymentPagesCheckoutSessionCustomTextPosition? termsOfServiceAcceptance;
 
 Map<String, dynamic> toJson() { return {
   if (afterSubmit != null) 'after_submit': afterSubmit?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (termsOfServiceAcceptance != null) 'terms_of_service_acceptance': termsOfServiceAcceptance?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after_submit', 'shipping_address', 'submit', 'terms_of_service_acceptance'}.contains(key)); } 
-PaymentPagesCheckoutSessionCustomText copyWith({PaymentPagesCheckoutSessionCustomTextAfterSubmit? Function()? afterSubmit, PaymentPagesCheckoutSessionCustomTextShippingAddress? Function()? shippingAddress, PaymentPagesCheckoutSessionCustomTextSubmit? Function()? submit, PaymentPagesCheckoutSessionCustomTextTermsOfServiceAcceptance? Function()? termsOfServiceAcceptance, }) { return PaymentPagesCheckoutSessionCustomText(
+PaymentPagesCheckoutSessionCustomText copyWith({PaymentPagesCheckoutSessionCustomTextPosition? Function()? afterSubmit, PaymentPagesCheckoutSessionCustomTextPosition? Function()? shippingAddress, PaymentPagesCheckoutSessionCustomTextPosition? Function()? submit, PaymentPagesCheckoutSessionCustomTextPosition? Function()? termsOfServiceAcceptance, }) { return PaymentPagesCheckoutSessionCustomText(
   afterSubmit: afterSubmit != null ? afterSubmit() : this.afterSubmit,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
   submit: submit != null ? submit() : this.submit,

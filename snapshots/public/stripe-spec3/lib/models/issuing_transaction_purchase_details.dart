@@ -1,28 +1,28 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_transaction_purchase_details_fleet.dart';import 'issuing_transaction_purchase_details_flight.dart';import 'issuing_transaction_purchase_details_fuel.dart';import 'issuing_transaction_purchase_details_lodging.dart';import 'issuing_transaction_receipt_data.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'issuing_transaction_fleet_data.dart';import 'issuing_transaction_flight_data.dart';import 'issuing_transaction_fuel_data.dart';import 'issuing_transaction_lodging_data.dart';import 'issuing_transaction_receipt_data.dart';/// 
 final class IssuingTransactionPurchaseDetails {const IssuingTransactionPurchaseDetails({this.fleet, this.flight, this.fuel, this.lodging, this.receipt, this.reference, });
 
 factory IssuingTransactionPurchaseDetails.fromJson(Map<String, dynamic> json) { return IssuingTransactionPurchaseDetails(
-  fleet: json['fleet'] != null ? IssuingTransactionPurchaseDetailsFleet.fromJson(json['fleet'] as Map<String, dynamic>) : null,
-  flight: json['flight'] != null ? IssuingTransactionPurchaseDetailsFlight.fromJson(json['flight'] as Map<String, dynamic>) : null,
-  fuel: json['fuel'] != null ? IssuingTransactionPurchaseDetailsFuel.fromJson(json['fuel'] as Map<String, dynamic>) : null,
-  lodging: json['lodging'] != null ? IssuingTransactionPurchaseDetailsLodging.fromJson(json['lodging'] as Map<String, dynamic>) : null,
+  fleet: json['fleet'] != null ? IssuingTransactionFleetData.fromJson(json['fleet'] as Map<String, dynamic>) : null,
+  flight: json['flight'] != null ? IssuingTransactionFlightData.fromJson(json['flight'] as Map<String, dynamic>) : null,
+  fuel: json['fuel'] != null ? IssuingTransactionFuelData.fromJson(json['fuel'] as Map<String, dynamic>) : null,
+  lodging: json['lodging'] != null ? IssuingTransactionLodgingData.fromJson(json['lodging'] as Map<String, dynamic>) : null,
   receipt: (json['receipt'] as List<dynamic>?)?.map((e) => IssuingTransactionReceiptData.fromJson(e as Map<String, dynamic>)).toList(),
   reference: json['reference'] as String?,
 ); }
 
 /// Fleet-specific information for transactions using Fleet cards.
-final IssuingTransactionPurchaseDetailsFleet? fleet;
+final IssuingTransactionFleetData? fleet;
 
 /// Information about the flight that was purchased with this transaction.
-final IssuingTransactionPurchaseDetailsFlight? flight;
+final IssuingTransactionFlightData? flight;
 
 /// Information about fuel that was purchased with this transaction.
-final IssuingTransactionPurchaseDetailsFuel? fuel;
+final IssuingTransactionFuelData? fuel;
 
 /// Information about lodging that was purchased with this transaction.
-final IssuingTransactionPurchaseDetailsLodging? lodging;
+final IssuingTransactionLodgingData? lodging;
 
 /// The line items in the purchase.
 final List<IssuingTransactionReceiptData>? receipt;
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'reference': ?reference,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'fleet', 'flight', 'fuel', 'lodging', 'receipt', 'reference'}.contains(key)); } 
-IssuingTransactionPurchaseDetails copyWith({IssuingTransactionPurchaseDetailsFleet? Function()? fleet, IssuingTransactionPurchaseDetailsFlight? Function()? flight, IssuingTransactionPurchaseDetailsFuel? Function()? fuel, IssuingTransactionPurchaseDetailsLodging? Function()? lodging, List<IssuingTransactionReceiptData>? Function()? receipt, String? Function()? reference, }) { return IssuingTransactionPurchaseDetails(
+IssuingTransactionPurchaseDetails copyWith({IssuingTransactionFleetData? Function()? fleet, IssuingTransactionFlightData? Function()? flight, IssuingTransactionFuelData? Function()? fuel, IssuingTransactionLodgingData? Function()? lodging, List<IssuingTransactionReceiptData>? Function()? receipt, String? Function()? reference, }) { return IssuingTransactionPurchaseDetails(
   fleet: fleet != null ? fleet() : this.fleet,
   flight: flight != null ? flight() : this.flight,
   fuel: fuel != null ? fuel() : this.fuel,

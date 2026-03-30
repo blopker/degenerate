@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'payment_method_card_present_networks2.dart';import 'payment_method_card_present_offline.dart';/// How card details were read in this transaction.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_flows_private_payment_methods_card_present_common_wallet.dart';import 'payment_method_card_present_networks.dart';import 'payment_method_details_card_present_offline.dart';/// How card details were read in this transaction.
 final class PaymentMethodCardPresentReadMethod {const PaymentMethodCardPresentReadMethod._(this.value);
 
 factory PaymentMethodCardPresentReadMethod.fromJson(String json) { return switch (json) {
@@ -49,8 +49,8 @@ factory PaymentMethodCardPresent.fromJson(Map<String, dynamic> json) { return Pa
   funding: json['funding'] as String?,
   issuer: json['issuer'] as String?,
   last4: json['last4'] as String?,
-  networks: json['networks'] != null ? PaymentMethodCardPresentNetworks2.fromJson(json['networks'] as Map<String, dynamic>) : null,
-  offline: json['offline'] != null ? PaymentMethodCardPresentOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? PaymentMethodCardPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  offline: json['offline'] != null ? PaymentMethodDetailsCardPresentOffline.fromJson(json['offline'] as Map<String, dynamic>) : null,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodCardPresentReadMethod.fromJson(json['read_method'] as String) : null,
   wallet: json['wallet'] != null ? PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
@@ -92,10 +92,10 @@ final String? issuer;
 final String? last4;
 
 /// Contains information about card networks that can be used to process the payment.
-final PaymentMethodCardPresentNetworks2? networks;
+final PaymentMethodCardPresentNetworks? networks;
 
 /// Details about payment methods collected offline.
-final PaymentMethodCardPresentOffline? offline;
+final PaymentMethodDetailsCardPresentOffline? offline;
 
 /// The languages that the issuing bank recommends using for localizing any customer-facing text, as read from the card. Referenced from EMV tag 5F2D, data encoded on the card's chip.
 final List<String>? preferredLocales;
@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodCardPresent copyWith({String? Function()? brand, String? Function()? brandProduct, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks2? Function()? networks, PaymentMethodCardPresentOffline? Function()? offline, List<String>? Function()? preferredLocales, PaymentMethodCardPresentReadMethod? Function()? readMethod, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet Function()? wallet, }) { return PaymentMethodCardPresent(
+PaymentMethodCardPresent copyWith({String? Function()? brand, String? Function()? brandProduct, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, PaymentMethodDetailsCardPresentOffline? Function()? offline, List<String>? Function()? preferredLocales, PaymentMethodCardPresentReadMethod? Function()? readMethod, PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet Function()? wallet, }) { return PaymentMethodCardPresent(
   brand: brand != null ? brand() : this.brand,
   brandProduct: brandProduct != null ? brandProduct() : this.brandProduct,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,

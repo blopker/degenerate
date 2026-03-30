@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'quotes_resource_automatic_tax_liability.dart';/// The status of the most recent automated tax calculation for this quote.
+import 'connect_account_reference.dart';/// The status of the most recent automated tax calculation for this quote.
 final class QuotesResourceAutomaticTaxStatus {const QuotesResourceAutomaticTaxStatus._(this.value);
 
 factory QuotesResourceAutomaticTaxStatus.fromJson(String json) { return switch (json) {
@@ -33,7 +33,7 @@ final class QuotesResourceAutomaticTax {const QuotesResourceAutomaticTax({requir
 
 factory QuotesResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return QuotesResourceAutomaticTax(
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null ? QuotesResourceAutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
+  liability: json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null,
   provider: json['provider'] as String?,
   status: json['status'] != null ? QuotesResourceAutomaticTaxStatus.fromJson(json['status'] as String) : null,
 ); }
@@ -42,7 +42,7 @@ factory QuotesResourceAutomaticTax.fromJson(Map<String, dynamic> json) { return 
 final bool enabled;
 
 /// The account that's liable for tax. If set, the business address and tax registrations required to perform the tax calculation are loaded from this account. The tax transaction is returned in the report of the connected account.
-final QuotesResourceAutomaticTaxLiability? liability;
+final ConnectAccountReference? liability;
 
 /// The tax provider powering automatic tax.
 final String? provider;
@@ -57,7 +57,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-QuotesResourceAutomaticTax copyWith({bool? enabled, QuotesResourceAutomaticTaxLiability? Function()? liability, String? Function()? provider, QuotesResourceAutomaticTaxStatus? Function()? status, }) { return QuotesResourceAutomaticTax(
+QuotesResourceAutomaticTax copyWith({bool? enabled, ConnectAccountReference? Function()? liability, String? Function()? provider, QuotesResourceAutomaticTaxStatus? Function()? status, }) { return QuotesResourceAutomaticTax(
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,
   provider: provider != null ? provider() : this.provider,

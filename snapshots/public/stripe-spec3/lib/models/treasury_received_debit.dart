@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_debit_reversal_details.dart';import 'treasury_received_debit_transaction.dart';import 'treasury_received_debits_resource_linked_flows.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedDebit might fail because the FinancialAccount doesn't have sufficient funds, is closed, or is frozen.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_debit_transaction.dart';import 'treasury_received_debits_resource_linked_flows.dart';import 'treasury_received_debits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedDebit might fail because the FinancialAccount doesn't have sufficient funds, is closed, or is frozen.
 final class TreasuryReceivedDebitFailureCode {const TreasuryReceivedDebitFailureCode._(this.value);
 
 factory TreasuryReceivedDebitFailureCode.fromJson(String json) { return switch (json) {
@@ -126,7 +126,7 @@ factory TreasuryReceivedDebit.fromJson(Map<String, dynamic> json) { return Treas
   livemode: json['livemode'] as bool,
   network: TreasuryReceivedDebitNetwork.fromJson(json['network'] as String),
   object: TreasuryReceivedDebitObject.fromJson(json['object'] as String),
-  reversalDetails: json['reversal_details'] != null ? TreasuryReceivedDebitReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null,
+  reversalDetails: json['reversal_details'] != null ? TreasuryReceivedDebitsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null,
   status: TreasuryReceivedDebitStatus.fromJson(json['status'] as String),
   transaction: json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null,
 ); }
@@ -169,7 +169,7 @@ final TreasuryReceivedDebitNetwork network;
 final TreasuryReceivedDebitObject object;
 
 /// Details describing when a ReceivedDebit might be reversed.
-final TreasuryReceivedDebitReversalDetails? reversalDetails;
+final TreasuryReceivedDebitsResourceReversalDetails? reversalDetails;
 
 /// Status of the ReceivedDebit. ReceivedDebits are created with a status of either `succeeded` (approved) or `failed` (declined). The failure reason can be found under the `failure_code`.
 final TreasuryReceivedDebitStatus status;
@@ -205,7 +205,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('network') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedDebitFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails Function()? initiatingPaymentMethodDetails, TreasuryReceivedDebitsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedDebitNetwork? network, TreasuryReceivedDebitObject? object, TreasuryReceivedDebitReversalDetails? Function()? reversalDetails, TreasuryReceivedDebitStatus? status, TreasuryReceivedDebitTransaction? Function()? transaction, }) { return TreasuryReceivedDebit(
+TreasuryReceivedDebit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedDebitFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails Function()? initiatingPaymentMethodDetails, TreasuryReceivedDebitsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedDebitNetwork? network, TreasuryReceivedDebitObject? object, TreasuryReceivedDebitsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedDebitStatus? status, TreasuryReceivedDebitTransaction? Function()? transaction, }) { return TreasuryReceivedDebit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,

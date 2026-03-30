@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'source_code_verification_flow.dart';import 'source_order.dart';import 'source_owner2.dart';import 'source_receiver_flow.dart';import 'source_redirect_flow.dart';import 'source_type_ach_credit_transfer.dart';import 'source_type_ach_debit.dart';import 'source_type_acss_debit.dart';import 'source_type_alipay.dart';import 'source_type_au_becs_debit.dart';import 'source_type_bancontact.dart';import 'source_type_card.dart';import 'source_type_card_present.dart';import 'source_type_eps.dart';import 'source_type_giropay.dart';import 'source_type_ideal.dart';import 'source_type_klarna.dart';import 'source_type_multibanco.dart';import 'source_type_p24.dart';import 'source_type_sepa_debit.dart';import 'source_type_sofort.dart';import 'source_type_three_d_secure.dart';import 'source_type_wechat.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
+import 'source_code_verification_flow.dart';import 'source_order.dart';import 'source_owner.dart';import 'source_receiver_flow.dart';import 'source_redirect_flow.dart';import 'source_type_ach_credit_transfer.dart';import 'source_type_ach_debit.dart';import 'source_type_acss_debit.dart';import 'source_type_alipay.dart';import 'source_type_au_becs_debit.dart';import 'source_type_bancontact.dart';import 'source_type_card.dart';import 'source_type_card_present.dart';import 'source_type_eps.dart';import 'source_type_giropay.dart';import 'source_type_ideal.dart';import 'source_type_klarna.dart';import 'source_type_multibanco.dart';import 'source_type_p24.dart';import 'source_type_sepa_debit.dart';import 'source_type_sofort.dart';import 'source_type_three_d_secure.dart';import 'source_type_wechat.dart';/// This field indicates whether this payment method can be shown again to its customer in a checkout flow. Stripe products such as Checkout and Elements use this field to determine whether a payment method can be shown as a saved payment method in a checkout flow. The field defaults to “unspecified”.
 final class SourceAllowRedisplay {const SourceAllowRedisplay._(this.value);
 
 factory SourceAllowRedisplay.fromJson(String json) { return switch (json) {
@@ -161,7 +161,7 @@ factory Source.fromJson(Map<String, dynamic> json) { return Source(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   multibanco: json['multibanco'] != null ? SourceTypeMultibanco.fromJson(json['multibanco'] as Map<String, dynamic>) : null,
   object: SourceObject.fromJson(json['object'] as String),
-  owner: json['owner'] != null ? SourceOwner2.fromJson(json['owner'] as Map<String, dynamic>) : null,
+  owner: json['owner'] != null ? SourceOwner.fromJson(json['owner'] as Map<String, dynamic>) : null,
   p24: json['p24'] != null ? SourceTypeP24.fromJson(json['p24'] as Map<String, dynamic>) : null,
   receiver: json['receiver'] != null ? SourceReceiverFlow.fromJson(json['receiver'] as Map<String, dynamic>) : null,
   redirect: json['redirect'] != null ? SourceRedirectFlow.fromJson(json['redirect'] as Map<String, dynamic>) : null,
@@ -238,7 +238,7 @@ final SourceTypeMultibanco? multibanco;
 final SourceObject object;
 
 /// Information about the owner of the payment instrument that may be used or required by particular source types.
-final SourceOwner2? owner;
+final SourceOwner? owner;
 
 final SourceTypeP24? p24;
 
@@ -316,7 +316,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, SourceTypeAchDebit Function()? achDebit, SourceTypeAcssDebit Function()? acssDebit, SourceTypeAlipay Function()? alipay, SourceAllowRedisplay? Function()? allowRedisplay, int? Function()? amount, SourceTypeAuBecsDebit Function()? auBecsDebit, SourceTypeBancontact Function()? bancontact, SourceTypeCard Function()? card, SourceTypeCardPresent Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow Function()? codeVerification, int? created, String? Function()? currency, String Function()? customer, SourceTypeEps Function()? eps, String? flow, SourceTypeGiropay Function()? giropay, String? id, SourceTypeIdeal Function()? ideal, SourceTypeKlarna Function()? klarna, bool? livemode, Map<String, String>? Function()? metadata, SourceTypeMultibanco Function()? multibanco, SourceObject? object, SourceOwner2? Function()? owner, SourceTypeP24 Function()? p24, SourceReceiverFlow Function()? receiver, SourceRedirectFlow Function()? redirect, SourceTypeSepaDebit Function()? sepaDebit, SourceTypeSofort Function()? sofort, SourceOrder Function()? sourceOrder, String? Function()? statementDescriptor, String? status, SourceTypeThreeDSecure Function()? threeDSecure, SourceType? type, String? Function()? usage, SourceTypeWechat Function()? wechat, }) { return Source(
+Source copyWith({SourceTypeAchCreditTransfer Function()? achCreditTransfer, SourceTypeAchDebit Function()? achDebit, SourceTypeAcssDebit Function()? acssDebit, SourceTypeAlipay Function()? alipay, SourceAllowRedisplay? Function()? allowRedisplay, int? Function()? amount, SourceTypeAuBecsDebit Function()? auBecsDebit, SourceTypeBancontact Function()? bancontact, SourceTypeCard Function()? card, SourceTypeCardPresent Function()? cardPresent, String? clientSecret, SourceCodeVerificationFlow Function()? codeVerification, int? created, String? Function()? currency, String Function()? customer, SourceTypeEps Function()? eps, String? flow, SourceTypeGiropay Function()? giropay, String? id, SourceTypeIdeal Function()? ideal, SourceTypeKlarna Function()? klarna, bool? livemode, Map<String, String>? Function()? metadata, SourceTypeMultibanco Function()? multibanco, SourceObject? object, SourceOwner? Function()? owner, SourceTypeP24 Function()? p24, SourceReceiverFlow Function()? receiver, SourceRedirectFlow Function()? redirect, SourceTypeSepaDebit Function()? sepaDebit, SourceTypeSofort Function()? sofort, SourceOrder Function()? sourceOrder, String? Function()? statementDescriptor, String? status, SourceTypeThreeDSecure Function()? threeDSecure, SourceType? type, String? Function()? usage, SourceTypeWechat Function()? wechat, }) { return Source(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,
   achDebit: achDebit != null ? achDebit() : this.achDebit,
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,

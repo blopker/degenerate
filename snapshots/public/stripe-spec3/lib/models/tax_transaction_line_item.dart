@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_transaction_line_item_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'tax_product_resource_tax_transaction_line_item_resource_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class TaxTransactionLineItemObject {const TaxTransactionLineItemObject._(this.value);
 
 factory TaxTransactionLineItemObject.fromJson(String json) { return switch (json) {
@@ -85,7 +85,7 @@ factory TaxTransactionLineItem.fromJson(Map<String, dynamic> json) { return TaxT
   product: json['product'] as String?,
   quantity: (json['quantity'] as num).toInt(),
   reference: json['reference'] as String,
-  reversal: json['reversal'] != null ? TaxTransactionLineItemReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
+  reversal: json['reversal'] != null ? TaxProductResourceTaxTransactionLineItemResourceReversal.fromJson(json['reversal'] as Map<String, dynamic>) : null,
   taxBehavior: TaxTransactionLineItemTaxBehavior.fromJson(json['tax_behavior'] as String),
   taxCode: json['tax_code'] as String,
   type: TaxTransactionLineItemType.fromJson(json['type'] as String),
@@ -119,7 +119,7 @@ final int quantity;
 final String reference;
 
 /// If `type=reversal`, contains information about what was reversed.
-final TaxTransactionLineItemReversal? reversal;
+final TaxProductResourceTaxTransactionLineItemResourceReversal? reversal;
 
 /// Specifies whether the `amount` includes taxes. If `tax_behavior=inclusive`, then the amount includes taxes.
 final TaxTransactionLineItemTaxBehavior taxBehavior;
@@ -155,7 +155,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_behavior') &&
       json.containsKey('tax_code') && json['tax_code'] is String &&
       json.containsKey('type'); } 
-TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxTransactionLineItemReversal? Function()? reversal, TaxTransactionLineItemTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
+TaxTransactionLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionLineItemObject? object, String? Function()? product, int? quantity, String? reference, TaxProductResourceTaxTransactionLineItemResourceReversal? Function()? reversal, TaxTransactionLineItemTaxBehavior? taxBehavior, String? taxCode, TaxTransactionLineItemType? type, }) { return TaxTransactionLineItem(
   amount: amount ?? this.amount,
   amountTax: amountTax ?? this.amountTax,
   id: id ?? this.id,

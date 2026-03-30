@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'shipping_rate_delivery_estimate_maximum.dart';import 'shipping_rate_delivery_estimate_minimum.dart';/// 
+import 'shipping_rate_delivery_estimate_bound.dart';/// 
 final class ShippingRateDeliveryEstimate {const ShippingRateDeliveryEstimate({this.maximum, this.minimum, });
 
 factory ShippingRateDeliveryEstimate.fromJson(Map<String, dynamic> json) { return ShippingRateDeliveryEstimate(
-  maximum: json['maximum'] != null ? ShippingRateDeliveryEstimateMaximum.fromJson(json['maximum'] as Map<String, dynamic>) : null,
-  minimum: json['minimum'] != null ? ShippingRateDeliveryEstimateMinimum.fromJson(json['minimum'] as Map<String, dynamic>) : null,
+  maximum: json['maximum'] != null ? ShippingRateDeliveryEstimateBound.fromJson(json['maximum'] as Map<String, dynamic>) : null,
+  minimum: json['minimum'] != null ? ShippingRateDeliveryEstimateBound.fromJson(json['minimum'] as Map<String, dynamic>) : null,
 ); }
 
 /// The upper bound of the estimated range. If empty, represents no upper bound i.e., infinite.
-final ShippingRateDeliveryEstimateMaximum? maximum;
+final ShippingRateDeliveryEstimateBound? maximum;
 
 /// The lower bound of the estimated range. If empty, represents no lower bound.
-final ShippingRateDeliveryEstimateMinimum? minimum;
+final ShippingRateDeliveryEstimateBound? minimum;
 
 Map<String, dynamic> toJson() { return {
   if (maximum != null) 'maximum': maximum?.toJson(),
   if (minimum != null) 'minimum': minimum?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'maximum', 'minimum'}.contains(key)); } 
-ShippingRateDeliveryEstimate copyWith({ShippingRateDeliveryEstimateMaximum? Function()? maximum, ShippingRateDeliveryEstimateMinimum? Function()? minimum, }) { return ShippingRateDeliveryEstimate(
+ShippingRateDeliveryEstimate copyWith({ShippingRateDeliveryEstimateBound? Function()? maximum, ShippingRateDeliveryEstimateBound? Function()? minimum, }) { return ShippingRateDeliveryEstimate(
   maximum: maximum != null ? maximum() : this.maximum,
   minimum: minimum != null ? minimum() : this.minimum,
 ); } 

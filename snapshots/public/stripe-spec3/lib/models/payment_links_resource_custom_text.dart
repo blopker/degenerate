@@ -1,26 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_links_resource_custom_text_after_submit.dart';import 'payment_links_resource_custom_text_shipping_address.dart';import 'payment_links_resource_custom_text_submit.dart';import 'payment_links_resource_custom_text_terms_of_service_acceptance.dart';/// 
+import 'payment_links_resource_custom_text_position.dart';/// 
 final class PaymentLinksResourceCustomText {const PaymentLinksResourceCustomText({this.afterSubmit, this.shippingAddress, this.submit, this.termsOfServiceAcceptance, });
 
 factory PaymentLinksResourceCustomText.fromJson(Map<String, dynamic> json) { return PaymentLinksResourceCustomText(
-  afterSubmit: json['after_submit'] != null ? PaymentLinksResourceCustomTextAfterSubmit.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
-  shippingAddress: json['shipping_address'] != null ? PaymentLinksResourceCustomTextShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
-  submit: json['submit'] != null ? PaymentLinksResourceCustomTextSubmit.fromJson(json['submit'] as Map<String, dynamic>) : null,
-  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PaymentLinksResourceCustomTextTermsOfServiceAcceptance.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
+  afterSubmit: json['after_submit'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['after_submit'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  submit: json['submit'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['submit'] as Map<String, dynamic>) : null,
+  termsOfServiceAcceptance: json['terms_of_service_acceptance'] != null ? PaymentLinksResourceCustomTextPosition.fromJson(json['terms_of_service_acceptance'] as Map<String, dynamic>) : null,
 ); }
 
 /// Custom text that should be displayed after the payment confirmation button.
-final PaymentLinksResourceCustomTextAfterSubmit? afterSubmit;
+final PaymentLinksResourceCustomTextPosition? afterSubmit;
 
 /// Custom text that should be displayed alongside shipping address collection.
-final PaymentLinksResourceCustomTextShippingAddress? shippingAddress;
+final PaymentLinksResourceCustomTextPosition? shippingAddress;
 
 /// Custom text that should be displayed alongside the payment confirmation button.
-final PaymentLinksResourceCustomTextSubmit? submit;
+final PaymentLinksResourceCustomTextPosition? submit;
 
 /// Custom text that should be displayed in place of the default terms of service agreement text.
-final PaymentLinksResourceCustomTextTermsOfServiceAcceptance? termsOfServiceAcceptance;
+final PaymentLinksResourceCustomTextPosition? termsOfServiceAcceptance;
 
 Map<String, dynamic> toJson() { return {
   if (afterSubmit != null) 'after_submit': afterSubmit?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (termsOfServiceAcceptance != null) 'terms_of_service_acceptance': termsOfServiceAcceptance?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'after_submit', 'shipping_address', 'submit', 'terms_of_service_acceptance'}.contains(key)); } 
-PaymentLinksResourceCustomText copyWith({PaymentLinksResourceCustomTextAfterSubmit? Function()? afterSubmit, PaymentLinksResourceCustomTextShippingAddress? Function()? shippingAddress, PaymentLinksResourceCustomTextSubmit? Function()? submit, PaymentLinksResourceCustomTextTermsOfServiceAcceptance? Function()? termsOfServiceAcceptance, }) { return PaymentLinksResourceCustomText(
+PaymentLinksResourceCustomText copyWith({PaymentLinksResourceCustomTextPosition? Function()? afterSubmit, PaymentLinksResourceCustomTextPosition? Function()? shippingAddress, PaymentLinksResourceCustomTextPosition? Function()? submit, PaymentLinksResourceCustomTextPosition? Function()? termsOfServiceAcceptance, }) { return PaymentLinksResourceCustomText(
   afterSubmit: afterSubmit != null ? afterSubmit() : this.afterSubmit,
   shippingAddress: shippingAddress != null ? shippingAddress() : this.shippingAddress,
   submit: submit != null ? submit() : this.submit,

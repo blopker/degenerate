@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_request_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
+import 'issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
 final class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason._(this.value);
 
 factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch (json) {
@@ -84,7 +84,7 @@ final class IssuingAuthorizationRequest {const IssuingAuthorizationRequest({requ
 
 factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationRequest(
   amount: (json['amount'] as num).toInt(),
-  amountDetails: json['amount_details'] != null ? IssuingAuthorizationRequestAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
+  amountDetails: json['amount_details'] != null ? IssuingAuthorizationAmountDetails.fromJson(json['amount_details'] as Map<String, dynamic>) : null,
   approved: json['approved'] as bool,
   authorizationCode: json['authorization_code'] as String?,
   created: (json['created'] as num).toInt(),
@@ -101,7 +101,7 @@ factory IssuingAuthorizationRequest.fromJson(Map<String, dynamic> json) { return
 final int amount;
 
 /// Detailed breakdown of amount components. These amounts are denominated in `currency` and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal).
-final IssuingAuthorizationRequestAmountDetails? amountDetails;
+final IssuingAuthorizationAmountDetails? amountDetails;
 
 /// Whether this request was approved.
 final bool approved;
@@ -154,7 +154,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('merchant_amount') && json['merchant_amount'] is num &&
       json.containsKey('merchant_currency') && json['merchant_currency'] is String &&
       json.containsKey('reason'); } 
-IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationRequestAmountDetails? Function()? amountDetails, bool? approved, String? Function()? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, IssuingAuthorizationRequestReason? reason, String? Function()? reasonMessage, int? Function()? requestedAt, }) { return IssuingAuthorizationRequest(
+IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, String? Function()? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, IssuingAuthorizationRequestReason? reason, String? Function()? reasonMessage, int? Function()? requestedAt, }) { return IssuingAuthorizationRequest(
   amount: amount ?? this.amount,
   amountDetails: amountDetails != null ? amountDetails() : this.amountDetails,
   approved: approved ?? this.approved,

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'climate_removals_order_deliveries_location.dart';import 'climate_supplier.dart';/// The delivery of a specified quantity of carbon for an order.
+import 'climate_removals_location.dart';import 'climate_supplier.dart';/// The delivery of a specified quantity of carbon for an order.
 final class ClimateRemovalsOrderDeliveries {const ClimateRemovalsOrderDeliveries({required this.deliveredAt, this.location, required this.metricTons, this.registryUrl, required this.supplier, });
 
 factory ClimateRemovalsOrderDeliveries.fromJson(Map<String, dynamic> json) { return ClimateRemovalsOrderDeliveries(
   deliveredAt: (json['delivered_at'] as num).toInt(),
-  location: json['location'] != null ? ClimateRemovalsOrderDeliveriesLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
+  location: json['location'] != null ? ClimateRemovalsLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   metricTons: json['metric_tons'] as String,
   registryUrl: json['registry_url'] as String?,
   supplier: ClimateSupplier.fromJson(json['supplier'] as Map<String, dynamic>),
@@ -15,7 +15,7 @@ factory ClimateRemovalsOrderDeliveries.fromJson(Map<String, dynamic> json) { ret
 final int deliveredAt;
 
 /// Specific location of this delivery.
-final ClimateRemovalsOrderDeliveriesLocation? location;
+final ClimateRemovalsLocation? location;
 
 /// Quantity of carbon removal supplied by this delivery.
 final String metricTons;
@@ -35,7 +35,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('delivered_at') && json['delivered_at'] is num &&
       json.containsKey('metric_tons') && json['metric_tons'] is String &&
       json.containsKey('supplier'); } 
-ClimateRemovalsOrderDeliveries copyWith({int? deliveredAt, ClimateRemovalsOrderDeliveriesLocation? Function()? location, String? metricTons, String? Function()? registryUrl, ClimateSupplier? supplier, }) { return ClimateRemovalsOrderDeliveries(
+ClimateRemovalsOrderDeliveries copyWith({int? deliveredAt, ClimateRemovalsLocation? Function()? location, String? metricTons, String? Function()? registryUrl, ClimateSupplier? supplier, }) { return ClimateRemovalsOrderDeliveries(
   deliveredAt: deliveredAt ?? this.deliveredAt,
   location: location != null ? location() : this.location,
   metricTons: metricTons ?? this.metricTons,

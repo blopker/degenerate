@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'deleted_application.dart';import 'payment_link_application.dart';import 'payment_link_consent_collection.dart';import 'payment_link_invoice_creation.dart';import 'payment_link_line_items.dart';import 'payment_link_on_behalf_of.dart';import 'payment_link_payment_intent_data.dart';import 'payment_link_restrictions.dart';import 'payment_link_shipping_address_collection.dart';import 'payment_link_subscription_data.dart';import 'payment_link_transfer_data.dart';import 'payment_links_resource_after_completion.dart';import 'payment_links_resource_automatic_tax.dart';import 'payment_links_resource_custom_fields.dart';import 'payment_links_resource_custom_text.dart';import 'payment_links_resource_name_collection.dart';import 'payment_links_resource_optional_item.dart';import 'payment_links_resource_phone_number_collection.dart';import 'payment_links_resource_shipping_option.dart';import 'payment_links_resource_tax_id_collection.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'deleted_application.dart';import 'payment_link_application.dart';import 'payment_link_line_items.dart';import 'payment_link_on_behalf_of.dart';import 'payment_links_resource_after_completion.dart';import 'payment_links_resource_automatic_tax.dart';import 'payment_links_resource_consent_collection.dart';import 'payment_links_resource_custom_fields.dart';import 'payment_links_resource_custom_text.dart';import 'payment_links_resource_invoice_creation.dart';import 'payment_links_resource_name_collection.dart';import 'payment_links_resource_optional_item.dart';import 'payment_links_resource_payment_intent_data.dart';import 'payment_links_resource_phone_number_collection.dart';import 'payment_links_resource_restrictions.dart';import 'payment_links_resource_shipping_address_collection.dart';import 'payment_links_resource_shipping_option.dart';import 'payment_links_resource_subscription_data.dart';import 'payment_links_resource_tax_id_collection.dart';import 'payment_links_resource_transfer_data.dart';/// Configuration for collecting the customer's billing address. Defaults to `auto`.
 final class PaymentLinkBillingAddressCollection {const PaymentLinkBillingAddressCollection._(this.value);
 
 factory PaymentLinkBillingAddressCollection.fromJson(String json) { return switch (json) {
@@ -282,14 +282,14 @@ factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: PaymentLinksResourceAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
   billingAddressCollection: PaymentLinkBillingAddressCollection.fromJson(json['billing_address_collection'] as String),
-  consentCollection: json['consent_collection'] != null ? PaymentLinkConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
+  consentCollection: json['consent_collection'] != null ? PaymentLinksResourceConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
   currency: json['currency'] as String,
   customFields: (json['custom_fields'] as List<dynamic>).map((e) => PaymentLinksResourceCustomFields.fromJson(e as Map<String, dynamic>)).toList(),
   customText: PaymentLinksResourceCustomText.fromJson(json['custom_text'] as Map<String, dynamic>),
   customerCreation: PaymentLinkCustomerCreation.fromJson(json['customer_creation'] as String),
   id: json['id'] as String,
   inactiveMessage: json['inactive_message'] as String?,
-  invoiceCreation: json['invoice_creation'] != null ? PaymentLinkInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
+  invoiceCreation: json['invoice_creation'] != null ? PaymentLinksResourceInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
   lineItems: json['line_items'] != null ? PaymentLinkLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
@@ -297,17 +297,17 @@ factory PaymentLink.fromJson(Map<String, dynamic> json) { return PaymentLink(
   object: PaymentLinkObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
   optionalItems: (json['optional_items'] as List<dynamic>?)?.map((e) => PaymentLinksResourceOptionalItem.fromJson(e as Map<String, dynamic>)).toList(),
-  paymentIntentData: json['payment_intent_data'] != null ? PaymentLinkPaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>) : null,
+  paymentIntentData: json['payment_intent_data'] != null ? PaymentLinksResourcePaymentIntentData.fromJson(json['payment_intent_data'] as Map<String, dynamic>) : null,
   paymentMethodCollection: PaymentLinkPaymentMethodCollection.fromJson(json['payment_method_collection'] as String),
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>?)?.map((e) => PaymentLinkPaymentMethodTypes.fromJson(e as String)).toList(),
   phoneNumberCollection: PaymentLinksResourcePhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>),
-  restrictions: json['restrictions'] != null ? PaymentLinkRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
-  shippingAddressCollection: json['shipping_address_collection'] != null ? PaymentLinkShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
+  restrictions: json['restrictions'] != null ? PaymentLinksResourceRestrictions.fromJson(json['restrictions'] as Map<String, dynamic>) : null,
+  shippingAddressCollection: json['shipping_address_collection'] != null ? PaymentLinksResourceShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
   shippingOptions: (json['shipping_options'] as List<dynamic>).map((e) => PaymentLinksResourceShippingOption.fromJson(e as Map<String, dynamic>)).toList(),
   submitType: PaymentLinkSubmitType.fromJson(json['submit_type'] as String),
-  subscriptionData: json['subscription_data'] != null ? PaymentLinkSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
+  subscriptionData: json['subscription_data'] != null ? PaymentLinksResourceSubscriptionData.fromJson(json['subscription_data'] as Map<String, dynamic>) : null,
   taxIdCollection: PaymentLinksResourceTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>),
-  transferData: json['transfer_data'] != null ? PaymentLinkTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? PaymentLinksResourceTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   url: json['url'] as String,
 ); }
 
@@ -334,7 +334,7 @@ final PaymentLinksResourceAutomaticTax automaticTax;
 final PaymentLinkBillingAddressCollection billingAddressCollection;
 
 /// When set, provides configuration to gather active consent from customers.
-final PaymentLinkConsentCollection? consentCollection;
+final PaymentLinksResourceConsentCollection? consentCollection;
 
 /// Three-letter [ISO currency code](https://www.iso.org/iso-4217-currency-codes.html), in lowercase. Must be a [supported currency](https://stripe.com/docs/currencies).
 final String currency;
@@ -354,7 +354,7 @@ final String id;
 final String? inactiveMessage;
 
 /// Configuration for creating invoice for payment mode payment links.
-final PaymentLinkInvoiceCreation? invoiceCreation;
+final PaymentLinksResourceInvoiceCreation? invoiceCreation;
 
 /// The line items representing what is being sold.
 final PaymentLinkLineItems? lineItems;
@@ -377,7 +377,7 @@ final PaymentLinkOnBehalfOf? onBehalfOf;
 final List<PaymentLinksResourceOptionalItem>? optionalItems;
 
 /// Indicates the parameters to be passed to PaymentIntent creation during checkout.
-final PaymentLinkPaymentIntentData? paymentIntentData;
+final PaymentLinksResourcePaymentIntentData? paymentIntentData;
 
 /// Configuration for collecting a payment method during checkout. Defaults to `always`.
 final PaymentLinkPaymentMethodCollection paymentMethodCollection;
@@ -388,10 +388,10 @@ final List<PaymentLinkPaymentMethodTypes>? paymentMethodTypes;
 final PaymentLinksResourcePhoneNumberCollection phoneNumberCollection;
 
 /// Settings that restrict the usage of a payment link.
-final PaymentLinkRestrictions? restrictions;
+final PaymentLinksResourceRestrictions? restrictions;
 
 /// Configuration for collecting the customer's shipping address.
-final PaymentLinkShippingAddressCollection? shippingAddressCollection;
+final PaymentLinksResourceShippingAddressCollection? shippingAddressCollection;
 
 /// The shipping rate options applied to the session.
 final List<PaymentLinksResourceShippingOption> shippingOptions;
@@ -400,12 +400,12 @@ final List<PaymentLinksResourceShippingOption> shippingOptions;
 final PaymentLinkSubmitType submitType;
 
 /// When creating a subscription, the specified configuration data will be used. There must be at least one line item with a recurring price to use `subscription_data`.
-final PaymentLinkSubscriptionData? subscriptionData;
+final PaymentLinksResourceSubscriptionData? subscriptionData;
 
 final PaymentLinksResourceTaxIdCollection taxIdCollection;
 
 /// The account (if any) the payments will be attributed to for tax reporting, and where funds from each payment will be transferred to.
-final PaymentLinkTransferData? transferData;
+final PaymentLinksResourceTransferData? transferData;
 
 /// The public URL that can be shared with customers.
 final String url;
@@ -466,7 +466,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('submit_type') &&
       json.containsKey('tax_id_collection') &&
       json.containsKey('url') && json['url'] is String; } 
-PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, PaymentLinkApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, PaymentLinkConsentCollection? Function()? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, String? Function()? inactiveMessage, PaymentLinkInvoiceCreation? Function()? invoiceCreation, PaymentLinkLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection Function()? nameCollection, PaymentLinkObject? object, PaymentLinkOnBehalfOf? Function()? onBehalfOf, List<PaymentLinksResourceOptionalItem>? Function()? optionalItems, PaymentLinkPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, PaymentLinkRestrictions? Function()? restrictions, PaymentLinkShippingAddressCollection? Function()? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, PaymentLinkSubscriptionData? Function()? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, PaymentLinkTransferData? Function()? transferData, String? url, }) { return PaymentLink(
+PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, PaymentLinkApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, PaymentLinksResourceConsentCollection? Function()? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, String? Function()? inactiveMessage, PaymentLinksResourceInvoiceCreation? Function()? invoiceCreation, PaymentLinkLineItems Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection Function()? nameCollection, PaymentLinkObject? object, PaymentLinkOnBehalfOf? Function()? onBehalfOf, List<PaymentLinksResourceOptionalItem>? Function()? optionalItems, PaymentLinksResourcePaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, PaymentLinksResourceRestrictions? Function()? restrictions, PaymentLinksResourceShippingAddressCollection? Function()? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, PaymentLinksResourceSubscriptionData? Function()? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, PaymentLinksResourceTransferData? Function()? transferData, String? url, }) { return PaymentLink(
   active: active ?? this.active,
   afterCompletion: afterCompletion ?? this.afterCompletion,
   allowPromotionCodes: allowPromotionCodes ?? this.allowPromotionCodes,

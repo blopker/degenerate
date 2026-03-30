@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_flow_after_completion_hosted_confirmation.dart';import 'portal_flows_flow_after_completion_redirect.dart';/// The specified type of behavior after the flow is completed.
+import 'portal_flows_after_completion_hosted_confirmation.dart';import 'portal_flows_after_completion_redirect.dart';/// The specified type of behavior after the flow is completed.
 final class PortalFlowsFlowAfterCompletionType {const PortalFlowsFlowAfterCompletionType._(this.value);
 
 factory PortalFlowsFlowAfterCompletionType.fromJson(String json) { return switch (json) {
@@ -32,16 +32,16 @@ bool get isUnknown { return !values.contains(this); }
 final class PortalFlowsFlowAfterCompletion {const PortalFlowsFlowAfterCompletion({this.hostedConfirmation, this.redirect, required this.type, });
 
 factory PortalFlowsFlowAfterCompletion.fromJson(Map<String, dynamic> json) { return PortalFlowsFlowAfterCompletion(
-  hostedConfirmation: json['hosted_confirmation'] != null ? PortalFlowsFlowAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
-  redirect: json['redirect'] != null ? PortalFlowsFlowAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
+  hostedConfirmation: json['hosted_confirmation'] != null ? PortalFlowsAfterCompletionHostedConfirmation.fromJson(json['hosted_confirmation'] as Map<String, dynamic>) : null,
+  redirect: json['redirect'] != null ? PortalFlowsAfterCompletionRedirect.fromJson(json['redirect'] as Map<String, dynamic>) : null,
   type: PortalFlowsFlowAfterCompletionType.fromJson(json['type'] as String),
 ); }
 
 /// Configuration when `after_completion.type=hosted_confirmation`.
-final PortalFlowsFlowAfterCompletionHostedConfirmation? hostedConfirmation;
+final PortalFlowsAfterCompletionHostedConfirmation? hostedConfirmation;
 
 /// Configuration when `after_completion.type=redirect`.
-final PortalFlowsFlowAfterCompletionRedirect? redirect;
+final PortalFlowsAfterCompletionRedirect? redirect;
 
 /// The specified type of behavior after the flow is completed.
 final PortalFlowsFlowAfterCompletionType type;
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-PortalFlowsFlowAfterCompletion copyWith({PortalFlowsFlowAfterCompletionHostedConfirmation? Function()? hostedConfirmation, PortalFlowsFlowAfterCompletionRedirect? Function()? redirect, PortalFlowsFlowAfterCompletionType? type, }) { return PortalFlowsFlowAfterCompletion(
+PortalFlowsFlowAfterCompletion copyWith({PortalFlowsAfterCompletionHostedConfirmation? Function()? hostedConfirmation, PortalFlowsAfterCompletionRedirect? Function()? redirect, PortalFlowsFlowAfterCompletionType? type, }) { return PortalFlowsFlowAfterCompletion(
   hostedConfirmation: hostedConfirmation != null ? hostedConfirmation() : this.hostedConfirmation,
   redirect: redirect != null ? redirect() : this.redirect,
   type: type ?? this.type,

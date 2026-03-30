@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_email_report_error2.dart';/// Status of this `email` check.
+import 'gelato_email_report_error.dart';/// Status of this `email` check.
 final class GelatoEmailReportStatus {const GelatoEmailReportStatus._(this.value);
 
 factory GelatoEmailReportStatus.fromJson(String json) { return switch (json) {
@@ -30,7 +30,7 @@ final class GelatoEmailReport {const GelatoEmailReport({this.email, this.error, 
 
 factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEmailReport(
   email: json['email'] as String?,
-  error: json['error'] != null ? GelatoEmailReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoEmailReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
   status: GelatoEmailReportStatus.fromJson(json['status'] as String),
 ); }
 
@@ -38,7 +38,7 @@ factory GelatoEmailReport.fromJson(Map<String, dynamic> json) { return GelatoEma
 final String? email;
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoEmailReportError2? error;
+final GelatoEmailReportError? error;
 
 /// Status of this `email` check.
 final GelatoEmailReportStatus status;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError2? Function()? error, GelatoEmailReportStatus? status, }) { return GelatoEmailReport(
+GelatoEmailReport copyWith({String? Function()? email, GelatoEmailReportError? Function()? error, GelatoEmailReportStatus? status, }) { return GelatoEmailReport(
   email: email != null ? email() : this.email,
   error: error != null ? error() : this.error,
   status: status ?? this.status,

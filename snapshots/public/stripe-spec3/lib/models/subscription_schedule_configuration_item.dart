@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_price.dart';import 'price.dart';import 'stackable_discount_with_discount_settings.dart';import 'subscription_schedule_configuration_item_billing_thresholds.dart';import 'subscription_schedule_configuration_item_price.dart';import 'tax_rate.dart';/// A phase item describes the price and quantity of a phase.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_price.dart';import 'price.dart';import 'stackable_discount_with_discount_settings.dart';import 'subscription_item_billing_thresholds.dart';import 'subscription_schedule_configuration_item_price.dart';import 'tax_rate.dart';/// A phase item describes the price and quantity of a phase.
 final class SubscriptionScheduleConfigurationItem {const SubscriptionScheduleConfigurationItem({this.billingThresholds, required this.discounts, this.metadata, required this.price, this.quantity, this.taxRates, });
 
 factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json) { return SubscriptionScheduleConfigurationItem(
-  billingThresholds: json['billing_thresholds'] != null ? SubscriptionScheduleConfigurationItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionItemBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   discounts: (json['discounts'] as List<dynamic>).map((e) => StackableDiscountWithDiscountSettings.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   price: OneOf3.parse(json['price'], fromA: (v) => v as String, fromB: (v) => Price.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedPrice.fromJson(v as Map<String, dynamic>),),
@@ -13,7 +13,7 @@ factory SubscriptionScheduleConfigurationItem.fromJson(Map<String, dynamic> json
 ); }
 
 /// Define thresholds at which an invoice will be sent, and the related subscription advanced to a new billing period
-final SubscriptionScheduleConfigurationItemBillingThresholds? billingThresholds;
+final SubscriptionItemBillingThresholds? billingThresholds;
 
 /// The discounts applied to the subscription item. Subscription item discounts are applied before subscription discounts. Use `expand[]=discounts` to expand each discount.
 final List<StackableDiscountWithDiscountSettings> discounts;
@@ -40,7 +40,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('discounts') &&
       json.containsKey('price'); } 
-SubscriptionScheduleConfigurationItem copyWith({SubscriptionScheduleConfigurationItemBillingThresholds? Function()? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Map<String, String>? Function()? metadata, SubscriptionScheduleConfigurationItemPrice? price, int Function()? quantity, List<TaxRate>? Function()? taxRates, }) { return SubscriptionScheduleConfigurationItem(
+SubscriptionScheduleConfigurationItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, List<StackableDiscountWithDiscountSettings>? discounts, Map<String, String>? Function()? metadata, SubscriptionScheduleConfigurationItemPrice? price, int Function()? quantity, List<TaxRate>? Function()? taxRates, }) { return SubscriptionScheduleConfigurationItem(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,
   discounts: discounts ?? this.discounts,
   metadata: metadata != null ? metadata() : this.metadata,

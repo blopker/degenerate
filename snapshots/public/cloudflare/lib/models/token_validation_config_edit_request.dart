@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_description.dart';import 'shield_title.dart';import 'shield_token_sources2.dart';final class TokenValidationConfigEditRequest {const TokenValidationConfigEditRequest({this.description, this.title, this.tokenSources, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_title.dart';final class TokenValidationConfigEditRequest {const TokenValidationConfigEditRequest({this.description, this.title, this.tokenSources, });
 
 factory TokenValidationConfigEditRequest.fromJson(Map<String, dynamic> json) { return TokenValidationConfigEditRequest(
   description: json['description'] != null ? ShieldDescription.fromJson(json['description'] as String) : null,
   title: json['title'] != null ? ShieldTitle.fromJson(json['title'] as String) : null,
-  tokenSources: (json['token_sources'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ShieldHeader.fromJson(v as String), fromB: (v) => ShieldCookie.fromJson(v as String),)).toList(),
+  tokenSources: (json['token_sources'] as List<dynamic>?)?.map((e) => ShieldHeader.fromJson(e as String)).toList(),
 ); }
 
 final ShieldDescription? description;
 
 final ShieldTitle? title;
 
-final List<ShieldTokenSources2>? tokenSources;
+final List<ShieldHeader>? tokenSources;
 
 Map<String, dynamic> toJson() { return {
   if (description != null) 'description': description?.toJson(),
@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
   if (tokenSources != null) 'token_sources': tokenSources?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'description', 'title', 'token_sources'}.contains(key)); } 
-TokenValidationConfigEditRequest copyWith({ShieldDescription Function()? description, ShieldTitle Function()? title, List<ShieldTokenSources2> Function()? tokenSources, }) { return TokenValidationConfigEditRequest(
+TokenValidationConfigEditRequest copyWith({ShieldDescription Function()? description, ShieldTitle Function()? title, List<ShieldHeader> Function()? tokenSources, }) { return TokenValidationConfigEditRequest(
   description: description != null ? description() : this.description,
   title: title != null ? title() : this.title,
   tokenSources: tokenSources != null ? tokenSources() : this.tokenSources,

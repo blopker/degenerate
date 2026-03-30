@@ -1,9 +1,9 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_identity_providers.dart';final class AccessIdentityProvidersComponentsSchemasSingleResponse {const AccessIdentityProvidersComponentsSchemasSingleResponse({this.result});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_schemas_identity_provider.dart';import 'access_schemas_identity_providers.dart';final class AccessIdentityProvidersComponentsSchemasSingleResponse {const AccessIdentityProvidersComponentsSchemasSingleResponse({this.result});
 
 factory AccessIdentityProvidersComponentsSchemasSingleResponse.fromJson(Map<String, dynamic> json) { return AccessIdentityProvidersComponentsSchemasSingleResponse(
-  result: json['result'] != null ? AccessSchemasIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
 final AccessSchemasIdentityProviders? result;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction_credit.dart';import 'billing_credit_balance_transaction_credit_grant.dart';import 'billing_credit_balance_transaction_debit.dart';import 'billing_credit_balance_transaction_test_clock.dart';import 'billing_credit_grant.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_credit_balance_transaction_credit_grant.dart';import 'billing_credit_balance_transaction_test_clock.dart';import 'billing_credit_grant.dart';import 'billing_credit_grants_resource_balance_credit.dart';import 'billing_credit_grants_resource_balance_debit.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);
 
 factory BillingCreditBalanceTransactionObject.fromJson(String json) { return switch (json) {
@@ -52,9 +52,9 @@ final class BillingCreditBalanceTransaction {const BillingCreditBalanceTransacti
 
 factory BillingCreditBalanceTransaction.fromJson(Map<String, dynamic> json) { return BillingCreditBalanceTransaction(
   created: (json['created'] as num).toInt(),
-  credit: json['credit'] != null ? BillingCreditBalanceTransactionCredit.fromJson(json['credit'] as Map<String, dynamic>) : null,
+  credit: json['credit'] != null ? BillingCreditGrantsResourceBalanceCredit.fromJson(json['credit'] as Map<String, dynamic>) : null,
   creditGrant: OneOf2.parse(json['credit_grant'], fromA: (v) => v as String, fromB: (v) => BillingCreditGrant.fromJson(v as Map<String, dynamic>),),
-  debit: json['debit'] != null ? BillingCreditBalanceTransactionDebit.fromJson(json['debit'] as Map<String, dynamic>) : null,
+  debit: json['debit'] != null ? BillingCreditGrantsResourceBalanceDebit.fromJson(json['debit'] as Map<String, dynamic>) : null,
   effectiveAt: (json['effective_at'] as num).toInt(),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -67,13 +67,13 @@ factory BillingCreditBalanceTransaction.fromJson(Map<String, dynamic> json) { re
 final int created;
 
 /// Credit details for this credit balance transaction. Only present if type is `credit`.
-final BillingCreditBalanceTransactionCredit? credit;
+final BillingCreditGrantsResourceBalanceCredit? credit;
 
 /// The credit grant associated with this credit balance transaction.
 final BillingCreditBalanceTransactionCreditGrant creditGrant;
 
 /// Debit details for this credit balance transaction. Only present if type is `debit`.
-final BillingCreditBalanceTransactionDebit? debit;
+final BillingCreditGrantsResourceBalanceDebit? debit;
 
 /// The effective time of this credit balance transaction.
 final int effectiveAt;
@@ -111,7 +111,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-BillingCreditBalanceTransaction copyWith({int? created, BillingCreditBalanceTransactionCredit? Function()? credit, BillingCreditBalanceTransactionCreditGrant? creditGrant, BillingCreditBalanceTransactionDebit? Function()? debit, int? effectiveAt, String? id, bool? livemode, BillingCreditBalanceTransactionObject? object, BillingCreditBalanceTransactionTestClock? Function()? testClock, BillingCreditBalanceTransactionType? Function()? type, }) { return BillingCreditBalanceTransaction(
+BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResourceBalanceCredit? Function()? credit, BillingCreditBalanceTransactionCreditGrant? creditGrant, BillingCreditGrantsResourceBalanceDebit? Function()? debit, int? effectiveAt, String? id, bool? livemode, BillingCreditBalanceTransactionObject? object, BillingCreditBalanceTransactionTestClock? Function()? testClock, BillingCreditBalanceTransactionType? Function()? type, }) { return BillingCreditBalanceTransaction(
   created: created ?? this.created,
   credit: credit != null ? credit() : this.credit,
   creditGrant: creditGrant ?? this.creditGrant,

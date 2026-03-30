@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_interac_present_receipt2.dart';/// How card details were read in this transaction.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_details_interac_present_receipt.dart';/// How card details were read in this transaction.
 final class PaymentMethodDetailsInteracPresentReadMethod {const PaymentMethodDetailsInteracPresentReadMethod._(this.value);
 
 factory PaymentMethodDetailsInteracPresentReadMethod.fromJson(String json) { return switch (json) {
@@ -56,7 +56,7 @@ factory PaymentMethodDetailsInteracPresent.fromJson(Map<String, dynamic> json) {
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodDetailsInteracPresentReadMethod.fromJson(json['read_method'] as String) : null,
   reader: json['reader'] as String?,
-  receipt: json['receipt'] != null ? PaymentMethodDetailsInteracPresentReceipt2.fromJson(json['receipt'] as Map<String, dynamic>) : null,
+  receipt: json['receipt'] != null ? PaymentMethodDetailsInteracPresentReceipt.fromJson(json['receipt'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `interac`, `mastercard` or `visa`.
@@ -116,7 +116,7 @@ final PaymentMethodDetailsInteracPresentReadMethod? readMethod;
 final String? reader;
 
 /// A collection of fields required to be displayed on receipts. Only required for EMV transactions.
-final PaymentMethodDetailsInteracPresentReceipt2? receipt;
+final PaymentMethodDetailsInteracPresentReceipt? receipt;
 
 Map<String, dynamic> toJson() { return {
   'brand': ?brand,
@@ -141,7 +141,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodDetailsInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, String? Function()? emvAuthData, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? generatedCard, String? Function()? issuer, String? Function()? last4, String Function()? location, String? Function()? network, String? Function()? networkTransactionId, List<String>? Function()? preferredLocales, PaymentMethodDetailsInteracPresentReadMethod? Function()? readMethod, String Function()? reader, PaymentMethodDetailsInteracPresentReceipt2? Function()? receipt, }) { return PaymentMethodDetailsInteracPresent(
+PaymentMethodDetailsInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, String? Function()? emvAuthData, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? generatedCard, String? Function()? issuer, String? Function()? last4, String Function()? location, String? Function()? network, String? Function()? networkTransactionId, List<String>? Function()? preferredLocales, PaymentMethodDetailsInteracPresentReadMethod? Function()? readMethod, String Function()? reader, PaymentMethodDetailsInteracPresentReceipt? Function()? receipt, }) { return PaymentMethodDetailsInteracPresent(
   brand: brand != null ? brand() : this.brand,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
   country: country != null ? country() : this.country,

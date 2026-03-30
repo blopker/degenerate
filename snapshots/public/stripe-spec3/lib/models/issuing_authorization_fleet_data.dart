@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_authorization_fleet_data_cardholder_prompt_data.dart';import 'issuing_authorization_fleet_data_reported_breakdown.dart';/// The type of purchase.
+import 'issuing_authorization_fleet_cardholder_prompt_data.dart';import 'issuing_authorization_fleet_reported_breakdown.dart';/// The type of purchase.
 final class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType._(this.value);
 
 factory IssuingAuthorizationFleetDataPurchaseType.fromJson(String json) { return switch (json) {
@@ -60,20 +60,20 @@ bool get isUnknown { return !values.contains(this); }
 final class IssuingAuthorizationFleetData {const IssuingAuthorizationFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory IssuingAuthorizationFleetData.fromJson(Map<String, dynamic> json) { return IssuingAuthorizationFleetData(
-  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
+  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingAuthorizationFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] != null ? IssuingAuthorizationFleetDataPurchaseType.fromJson(json['purchase_type'] as String) : null,
-  reportedBreakdown: json['reported_breakdown'] != null ? IssuingAuthorizationFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
+  reportedBreakdown: json['reported_breakdown'] != null ? IssuingAuthorizationFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] != null ? IssuingAuthorizationFleetDataServiceType.fromJson(json['service_type'] as String) : null,
 ); }
 
 /// Answers to prompts presented to the cardholder at the point of sale. Prompted fields vary depending on the configuration of your physical fleet cards. Typical points of sale support only numeric entry.
-final IssuingAuthorizationFleetDataCardholderPromptData? cardholderPromptData;
+final IssuingAuthorizationFleetCardholderPromptData? cardholderPromptData;
 
 /// The type of purchase.
 final IssuingAuthorizationFleetDataPurchaseType? purchaseType;
 
 /// More information about the total amount. Typically this information is received from the merchant after the authorization has been approved and the fuel dispensed. This information is not guaranteed to be accurate as some merchants may provide unreliable data.
-final IssuingAuthorizationFleetDataReportedBreakdown? reportedBreakdown;
+final IssuingAuthorizationFleetReportedBreakdown? reportedBreakdown;
 
 /// The type of fuel service.
 final IssuingAuthorizationFleetDataServiceType? serviceType;
@@ -85,7 +85,7 @@ Map<String, dynamic> toJson() { return {
   if (serviceType != null) 'service_type': serviceType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
-IssuingAuthorizationFleetData copyWith({IssuingAuthorizationFleetDataCardholderPromptData? Function()? cardholderPromptData, IssuingAuthorizationFleetDataPurchaseType? Function()? purchaseType, IssuingAuthorizationFleetDataReportedBreakdown? Function()? reportedBreakdown, IssuingAuthorizationFleetDataServiceType? Function()? serviceType, }) { return IssuingAuthorizationFleetData(
+IssuingAuthorizationFleetData copyWith({IssuingAuthorizationFleetCardholderPromptData? Function()? cardholderPromptData, IssuingAuthorizationFleetDataPurchaseType? Function()? purchaseType, IssuingAuthorizationFleetReportedBreakdown? Function()? reportedBreakdown, IssuingAuthorizationFleetDataServiceType? Function()? serviceType, }) { return IssuingAuthorizationFleetData(
   cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
   purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,

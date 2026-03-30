@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'bank_account.dart';import 'card.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'payment_method.dart';import 'setup_intent.dart';import 'source.dart';import 'subscription_application.dart';import 'subscription_automatic_tax.dart';import 'subscription_billing_cycle_anchor_config.dart';import 'subscription_billing_thresholds2.dart';import 'subscription_cancellation_details.dart';import 'subscription_customer.dart';import 'subscription_default_payment_method.dart';import 'subscription_default_source.dart';import 'subscription_discounts.dart';import 'subscription_items.dart';import 'subscription_latest_invoice.dart';import 'subscription_on_behalf_of.dart';import 'subscription_pause_collection.dart';import 'subscription_payment_settings.dart';import 'subscription_pending_invoice_item_interval2.dart';import 'subscription_pending_setup_intent.dart';import 'subscription_pending_update.dart';import 'subscription_schedule.dart';import 'subscription_schedule2.dart';import 'subscription_test_clock.dart';import 'subscription_transfer_data2.dart';import 'subscription_trial_settings.dart';import 'subscriptions_resource_billing_mode.dart';import 'subscriptions_resource_subscription_invoice_settings.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'bank_account.dart';import 'cancellation_details.dart';import 'card.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'payment_method.dart';import 'setup_intent.dart';import 'source.dart';import 'subscription_application.dart';import 'subscription_automatic_tax.dart';import 'subscription_billing_thresholds.dart';import 'subscription_customer.dart';import 'subscription_default_payment_method.dart';import 'subscription_default_source.dart';import 'subscription_discounts.dart';import 'subscription_items.dart';import 'subscription_latest_invoice.dart';import 'subscription_on_behalf_of.dart';import 'subscription_pending_invoice_item_interval.dart';import 'subscription_pending_setup_intent.dart';import 'subscription_schedule.dart';import 'subscription_schedule2.dart';import 'subscription_test_clock.dart';import 'subscription_transfer_data.dart';import 'subscriptions_resource_billing_cycle_anchor_config.dart';import 'subscriptions_resource_billing_mode.dart';import 'subscriptions_resource_pause_collection.dart';import 'subscriptions_resource_payment_settings.dart';import 'subscriptions_resource_pending_update.dart';import 'subscriptions_resource_subscription_invoice_settings.dart';import 'subscriptions_resource_trial_settings_trial_settings.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
 final class SubscriptionCollectionMethod {const SubscriptionCollectionMethod._(this.value);
 
 factory SubscriptionCollectionMethod.fromJson(String json) { return switch (json) {
@@ -110,13 +110,13 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: SubscriptionAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>),
   billingCycleAnchor: (json['billing_cycle_anchor'] as num).toInt(),
-  billingCycleAnchorConfig: json['billing_cycle_anchor_config'] != null ? SubscriptionBillingCycleAnchorConfig.fromJson(json['billing_cycle_anchor_config'] as Map<String, dynamic>) : null,
+  billingCycleAnchorConfig: json['billing_cycle_anchor_config'] != null ? SubscriptionsResourceBillingCycleAnchorConfig.fromJson(json['billing_cycle_anchor_config'] as Map<String, dynamic>) : null,
   billingMode: SubscriptionsResourceBillingMode.fromJson(json['billing_mode'] as Map<String, dynamic>),
-  billingThresholds: json['billing_thresholds'] != null ? SubscriptionBillingThresholds2.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   cancelAt: json['cancel_at'] != null ? (json['cancel_at'] as num).toInt() : null,
   cancelAtPeriodEnd: json['cancel_at_period_end'] as bool,
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
-  cancellationDetails: json['cancellation_details'] != null ? SubscriptionCancellationDetails.fromJson(json['cancellation_details'] as Map<String, dynamic>) : null,
+  cancellationDetails: json['cancellation_details'] != null ? CancellationDetails.fromJson(json['cancellation_details'] as Map<String, dynamic>) : null,
   collectionMethod: SubscriptionCollectionMethod.fromJson(json['collection_method'] as String),
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
@@ -138,18 +138,18 @@ factory Subscription.fromJson(Map<String, dynamic> json) { return Subscription(
   nextPendingInvoiceItemInvoice: json['next_pending_invoice_item_invoice'] != null ? (json['next_pending_invoice_item_invoice'] as num).toInt() : null,
   object: SubscriptionObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  pauseCollection: json['pause_collection'] != null ? SubscriptionPauseCollection.fromJson(json['pause_collection'] as Map<String, dynamic>) : null,
-  paymentSettings: json['payment_settings'] != null ? SubscriptionPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
-  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null ? SubscriptionPendingInvoiceItemInterval2.fromJson(json['pending_invoice_item_interval'] as Map<String, dynamic>) : null,
+  pauseCollection: json['pause_collection'] != null ? SubscriptionsResourcePauseCollection.fromJson(json['pause_collection'] as Map<String, dynamic>) : null,
+  paymentSettings: json['payment_settings'] != null ? SubscriptionsResourcePaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>) : null,
+  pendingInvoiceItemInterval: json['pending_invoice_item_interval'] != null ? SubscriptionPendingInvoiceItemInterval.fromJson(json['pending_invoice_item_interval'] as Map<String, dynamic>) : null,
   pendingSetupIntent: json['pending_setup_intent'] != null ? OneOf2.parse(json['pending_setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),) : null,
-  pendingUpdate: json['pending_update'] != null ? SubscriptionPendingUpdate.fromJson(json['pending_update'] as Map<String, dynamic>) : null,
+  pendingUpdate: json['pending_update'] != null ? SubscriptionsResourcePendingUpdate.fromJson(json['pending_update'] as Map<String, dynamic>) : null,
   schedule: json['schedule'] != null ? OneOf2.parse(json['schedule'], fromA: (v) => v as String, fromB: (v) => SubscriptionSchedule.fromJson(v as Map<String, dynamic>),) : null,
   startDate: (json['start_date'] as num).toInt(),
   status: SubscriptionStatus.fromJson(json['status'] as String),
   testClock: json['test_clock'] != null ? OneOf2.parse(json['test_clock'], fromA: (v) => v as String, fromB: (v) => TestHelpersTestClock.fromJson(v as Map<String, dynamic>),) : null,
-  transferData: json['transfer_data'] != null ? SubscriptionTransferData2.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? SubscriptionTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
-  trialSettings: json['trial_settings'] != null ? SubscriptionTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
+  trialSettings: json['trial_settings'] != null ? SubscriptionsResourceTrialSettingsTrialSettings.fromJson(json['trial_settings'] as Map<String, dynamic>) : null,
   trialStart: json['trial_start'] != null ? (json['trial_start'] as num).toInt() : null,
 ); }
 
@@ -165,12 +165,12 @@ final SubscriptionAutomaticTax automaticTax;
 final int billingCycleAnchor;
 
 /// The fixed values used to calculate the `billing_cycle_anchor`.
-final SubscriptionBillingCycleAnchorConfig? billingCycleAnchorConfig;
+final SubscriptionsResourceBillingCycleAnchorConfig? billingCycleAnchorConfig;
 
 final SubscriptionsResourceBillingMode billingMode;
 
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period
-final SubscriptionBillingThresholds2? billingThresholds;
+final SubscriptionBillingThresholds? billingThresholds;
 
 /// A date in the future at which the subscription will automatically get canceled
 final int? cancelAt;
@@ -182,7 +182,7 @@ final bool cancelAtPeriodEnd;
 final int? canceledAt;
 
 /// Details about why this subscription was cancelled
-final SubscriptionCancellationDetails? cancellationDetails;
+final CancellationDetails? cancellationDetails;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay this subscription at the end of the cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
 final SubscriptionCollectionMethod collectionMethod;
@@ -247,19 +247,19 @@ final SubscriptionObject object;
 final SubscriptionOnBehalfOf? onBehalfOf;
 
 /// If specified, payment collection for this subscription will be paused. Note that the subscription status will be unchanged and will not be updated to `paused`. Learn more about [pausing collection](https://docs.stripe.com/billing/subscriptions/pause-payment).
-final SubscriptionPauseCollection? pauseCollection;
+final SubscriptionsResourcePauseCollection? pauseCollection;
 
 /// Payment settings passed on to invoices created by the subscription.
-final SubscriptionPaymentSettings? paymentSettings;
+final SubscriptionsResourcePaymentSettings? paymentSettings;
 
 /// Specifies an interval for how often to bill for any pending invoice items. It is analogous to calling [Create an invoice](https://docs.stripe.com/api#create_invoice) for the given subscription at the specified interval.
-final SubscriptionPendingInvoiceItemInterval2? pendingInvoiceItemInterval;
+final SubscriptionPendingInvoiceItemInterval? pendingInvoiceItemInterval;
 
 /// You can use this [SetupIntent](https://docs.stripe.com/api/setup_intents) to collect user authentication when creating a subscription without immediate payment or updating a subscription's payment method, allowing you to optimize for off-session payments. Learn more in the [SCA Migration Guide](https://docs.stripe.com/billing/migration/strong-customer-authentication#scenario-2).
 final SubscriptionPendingSetupIntent? pendingSetupIntent;
 
 /// If specified, [pending updates](https://docs.stripe.com/billing/subscriptions/pending-updates) that will be applied to the subscription once the `latest_invoice` has been paid.
-final SubscriptionPendingUpdate? pendingUpdate;
+final SubscriptionsResourcePendingUpdate? pendingUpdate;
 
 /// The schedule attached to the subscription
 final SubscriptionSchedule2? schedule;
@@ -284,13 +284,13 @@ final SubscriptionStatus status;
 final SubscriptionTestClock? testClock;
 
 /// The account (if any) the subscription's payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the subscription's invoices.
-final SubscriptionTransferData2? transferData;
+final SubscriptionTransferData? transferData;
 
 /// If the subscription has a trial, the end of that trial.
 final int? trialEnd;
 
 /// Settings related to subscription trials.
-final SubscriptionTrialSettings? trialSettings;
+final SubscriptionsResourceTrialSettingsTrialSettings? trialSettings;
 
 /// If the subscription has a trial, the beginning of that trial.
 final int? trialStart;
@@ -359,7 +359,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('object') &&
       json.containsKey('start_date') && json['start_date'] is num &&
       json.containsKey('status'); } 
-Subscription copyWith({SubscriptionApplication? Function()? application, double? Function()? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, SubscriptionBillingCycleAnchorConfig? Function()? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, SubscriptionBillingThresholds2? Function()? billingThresholds, int? Function()? cancelAt, bool? cancelAtPeriodEnd, int? Function()? canceledAt, SubscriptionCancellationDetails? Function()? cancellationDetails, SubscriptionCollectionMethod? collectionMethod, int? created, String? currency, SubscriptionCustomer? customer, String? Function()? customerAccount, int? Function()? daysUntilDue, SubscriptionDefaultPaymentMethod? Function()? defaultPaymentMethod, SubscriptionDefaultSource? Function()? defaultSource, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<SubscriptionDiscounts>? discounts, int? Function()? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, SubscriptionLatestInvoice? Function()? latestInvoice, bool? livemode, Map<String,String>? metadata, int? Function()? nextPendingInvoiceItemInvoice, SubscriptionObject? object, SubscriptionOnBehalfOf? Function()? onBehalfOf, SubscriptionPauseCollection? Function()? pauseCollection, SubscriptionPaymentSettings? Function()? paymentSettings, SubscriptionPendingInvoiceItemInterval2? Function()? pendingInvoiceItemInterval, SubscriptionPendingSetupIntent? Function()? pendingSetupIntent, SubscriptionPendingUpdate? Function()? pendingUpdate, SubscriptionSchedule2? Function()? schedule, int? startDate, SubscriptionStatus? status, SubscriptionTestClock? Function()? testClock, SubscriptionTransferData2? Function()? transferData, int? Function()? trialEnd, SubscriptionTrialSettings? Function()? trialSettings, int? Function()? trialStart, }) { return Subscription(
+Subscription copyWith({SubscriptionApplication? Function()? application, double? Function()? applicationFeePercent, SubscriptionAutomaticTax? automaticTax, int? billingCycleAnchor, SubscriptionsResourceBillingCycleAnchorConfig? Function()? billingCycleAnchorConfig, SubscriptionsResourceBillingMode? billingMode, SubscriptionBillingThresholds? Function()? billingThresholds, int? Function()? cancelAt, bool? cancelAtPeriodEnd, int? Function()? canceledAt, CancellationDetails? Function()? cancellationDetails, SubscriptionCollectionMethod? collectionMethod, int? created, String? currency, SubscriptionCustomer? customer, String? Function()? customerAccount, int? Function()? daysUntilDue, SubscriptionDefaultPaymentMethod? Function()? defaultPaymentMethod, SubscriptionDefaultSource? Function()? defaultSource, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<SubscriptionDiscounts>? discounts, int? Function()? endedAt, String? id, SubscriptionsResourceSubscriptionInvoiceSettings? invoiceSettings, SubscriptionItems? items, SubscriptionLatestInvoice? Function()? latestInvoice, bool? livemode, Map<String,String>? metadata, int? Function()? nextPendingInvoiceItemInvoice, SubscriptionObject? object, SubscriptionOnBehalfOf? Function()? onBehalfOf, SubscriptionsResourcePauseCollection? Function()? pauseCollection, SubscriptionsResourcePaymentSettings? Function()? paymentSettings, SubscriptionPendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, SubscriptionPendingSetupIntent? Function()? pendingSetupIntent, SubscriptionsResourcePendingUpdate? Function()? pendingUpdate, SubscriptionSchedule2? Function()? schedule, int? startDate, SubscriptionStatus? status, SubscriptionTestClock? Function()? testClock, SubscriptionTransferData? Function()? transferData, int? Function()? trialEnd, SubscriptionsResourceTrialSettingsTrialSettings? Function()? trialSettings, int? Function()? trialStart, }) { return Subscription(
   application: application != null ? application() : this.application,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax ?? this.automaticTax,

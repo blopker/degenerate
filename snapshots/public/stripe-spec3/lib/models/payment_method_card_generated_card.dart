@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_card_generated_card_payment_method_details.dart';import 'payment_method_card_generated_card_setup_attempt.dart';import 'setup_attempt.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'card_generated_from_payment_method_details.dart';import 'payment_method_card_generated_card_setup_attempt.dart';import 'setup_attempt.dart';/// 
 final class PaymentMethodCardGeneratedCard {const PaymentMethodCardGeneratedCard({this.charge, this.paymentMethodDetails, this.setupAttempt, });
 
 factory PaymentMethodCardGeneratedCard.fromJson(Map<String, dynamic> json) { return PaymentMethodCardGeneratedCard(
   charge: json['charge'] as String?,
-  paymentMethodDetails: json['payment_method_details'] != null ? PaymentMethodCardGeneratedCardPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? CardGeneratedFromPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   setupAttempt: json['setup_attempt'] != null ? OneOf2.parse(json['setup_attempt'], fromA: (v) => v as String, fromB: (v) => SetupAttempt.fromJson(v as Map<String, dynamic>),) : null,
 ); }
 
@@ -13,7 +13,7 @@ factory PaymentMethodCardGeneratedCard.fromJson(Map<String, dynamic> json) { ret
 final String? charge;
 
 /// Transaction-specific details of the payment method used in the payment.
-final PaymentMethodCardGeneratedCardPaymentMethodDetails? paymentMethodDetails;
+final CardGeneratedFromPaymentMethodDetails? paymentMethodDetails;
 
 /// The ID of the SetupAttempt that generated this PaymentMethod, if any.
 final PaymentMethodCardGeneratedCardSetupAttempt? setupAttempt;
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   if (setupAttempt != null) 'setup_attempt': setupAttempt?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'charge', 'payment_method_details', 'setup_attempt'}.contains(key)); } 
-PaymentMethodCardGeneratedCard copyWith({String? Function()? charge, PaymentMethodCardGeneratedCardPaymentMethodDetails? Function()? paymentMethodDetails, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return PaymentMethodCardGeneratedCard(
+PaymentMethodCardGeneratedCard copyWith({String? Function()? charge, CardGeneratedFromPaymentMethodDetails? Function()? paymentMethodDetails, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return PaymentMethodCardGeneratedCard(
   charge: charge != null ? charge() : this.charge,
   paymentMethodDetails: paymentMethodDetails != null ? paymentMethodDetails() : this.paymentMethodDetails,
   setupAttempt: setupAttempt != null ? setupAttempt() : this.setupAttempt,

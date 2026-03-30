@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_intent_amount_details_line_item_payment_method_options.dart';import 'payment_intent_amount_details_line_item_tax.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_payment_method_options.dart';import 'payment_flows_amount_details_resource_line_items_list_resource_line_item_resource_tax.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class PaymentIntentAmountDetailsLineItemObject {const PaymentIntentAmountDetailsLineItemObject._(this.value);
 
 factory PaymentIntentAmountDetailsLineItemObject.fromJson(String json) { return switch (json) {
@@ -29,11 +29,11 @@ factory PaymentIntentAmountDetailsLineItem.fromJson(Map<String, dynamic> json) {
   discountAmount: json['discount_amount'] != null ? (json['discount_amount'] as num).toInt() : null,
   id: json['id'] as String,
   object: PaymentIntentAmountDetailsLineItemObject.fromJson(json['object'] as String),
-  paymentMethodOptions: json['payment_method_options'] != null ? PaymentIntentAmountDetailsLineItemPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   productCode: json['product_code'] as String?,
   productName: json['product_name'] as String,
   quantity: (json['quantity'] as num).toInt(),
-  tax: json['tax'] != null ? PaymentIntentAmountDetailsLineItemTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
+  tax: json['tax'] != null ? PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
   unitCost: (json['unit_cost'] as num).toInt(),
   unitOfMeasure: json['unit_of_measure'] as String?,
 ); }
@@ -50,7 +50,7 @@ final String id;
 final PaymentIntentAmountDetailsLineItemObject object;
 
 /// Payment method-specific information for line items.
-final PaymentIntentAmountDetailsLineItemPaymentMethodOptions? paymentMethodOptions;
+final PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions? paymentMethodOptions;
 
 /// The product code of the line item, such as an SKU. Required for L3 rates. At most 12 characters long.
 final String? productCode;
@@ -64,7 +64,7 @@ final String productName;
 final int quantity;
 
 /// Contains information about the tax on the item.
-final PaymentIntentAmountDetailsLineItemTax? tax;
+final PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax? tax;
 
 /// The unit cost of the line item represented in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Required for L3 rates. An integer greater than or equal to 0.
 final int unitCost;
@@ -89,7 +89,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('product_name') && json['product_name'] is String &&
       json.containsKey('quantity') && json['quantity'] is num &&
       json.containsKey('unit_cost') && json['unit_cost'] is num; } 
-PaymentIntentAmountDetailsLineItem copyWith({int? Function()? discountAmount, String? id, PaymentIntentAmountDetailsLineItemObject? object, PaymentIntentAmountDetailsLineItemPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, PaymentIntentAmountDetailsLineItemTax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) { return PaymentIntentAmountDetailsLineItem(
+PaymentIntentAmountDetailsLineItem copyWith({int? Function()? discountAmount, String? id, PaymentIntentAmountDetailsLineItemObject? object, PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) { return PaymentIntentAmountDetailsLineItem(
   discountAmount: discountAmount != null ? discountAmount() : this.discountAmount,
   id: id ?? this.id,
   object: object ?? this.object,

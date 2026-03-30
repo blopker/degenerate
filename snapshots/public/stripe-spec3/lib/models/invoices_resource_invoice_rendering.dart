@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'invoices_resource_invoice_rendering_pdf.dart';/// 
+import 'invoice_rendering_pdf.dart';/// 
 final class InvoicesResourceInvoiceRendering {const InvoicesResourceInvoiceRendering({this.amountTaxDisplay, this.pdf, this.template, this.templateVersion, });
 
 factory InvoicesResourceInvoiceRendering.fromJson(Map<String, dynamic> json) { return InvoicesResourceInvoiceRendering(
   amountTaxDisplay: json['amount_tax_display'] as String?,
-  pdf: json['pdf'] != null ? InvoicesResourceInvoiceRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
+  pdf: json['pdf'] != null ? InvoiceRenderingPdf.fromJson(json['pdf'] as Map<String, dynamic>) : null,
   template: json['template'] as String?,
   templateVersion: json['template_version'] != null ? (json['template_version'] as num).toInt() : null,
 ); }
@@ -14,7 +14,7 @@ factory InvoicesResourceInvoiceRendering.fromJson(Map<String, dynamic> json) { r
 final String? amountTaxDisplay;
 
 /// Invoice pdf rendering options
-final InvoicesResourceInvoiceRenderingPdf? pdf;
+final InvoiceRenderingPdf? pdf;
 
 /// ID of the rendering template that the invoice is formatted by.
 final String? template;
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'template_version': ?templateVersion,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'amount_tax_display', 'pdf', 'template', 'template_version'}.contains(key)); } 
-InvoicesResourceInvoiceRendering copyWith({String? Function()? amountTaxDisplay, InvoicesResourceInvoiceRenderingPdf? Function()? pdf, String? Function()? template, int? Function()? templateVersion, }) { return InvoicesResourceInvoiceRendering(
+InvoicesResourceInvoiceRendering copyWith({String? Function()? amountTaxDisplay, InvoiceRenderingPdf? Function()? pdf, String? Function()? template, int? Function()? templateVersion, }) { return InvoicesResourceInvoiceRendering(
   amountTaxDisplay: amountTaxDisplay != null ? amountTaxDisplay() : this.amountTaxDisplay,
   pdf: pdf != null ? pdf() : this.pdf,
   template: template != null ? template() : this.template,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_tax_location2.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
+import 'customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
 final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);
 
 factory CustomerTaxAutomaticTax.fromJson(String json) { return switch (json) {
@@ -68,7 +68,7 @@ final class CustomerTax {const CustomerTax({required this.automaticTax, this.ipA
 factory CustomerTax.fromJson(Map<String, dynamic> json) { return CustomerTax(
   automaticTax: CustomerTaxAutomaticTax.fromJson(json['automatic_tax'] as String),
   ipAddress: json['ip_address'] as String?,
-  location: json['location'] != null ? CustomerTaxLocation2.fromJson(json['location'] as Map<String, dynamic>) : null,
+  location: json['location'] != null ? CustomerTaxLocation.fromJson(json['location'] as Map<String, dynamic>) : null,
   provider: CustomerTaxProvider.fromJson(json['provider'] as String),
 ); }
 
@@ -79,7 +79,7 @@ final CustomerTaxAutomaticTax automaticTax;
 final String? ipAddress;
 
 /// The identified tax location of the customer.
-final CustomerTaxLocation2? location;
+final CustomerTaxLocation? location;
 
 /// The tax calculation provider used for location resolution. Defaults to `stripe` when not using a [third-party provider](/tax/third-party-apps).
 final CustomerTaxProvider provider;
@@ -92,7 +92,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('automatic_tax') &&
       json.containsKey('provider'); } 
-CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()? ipAddress, CustomerTaxLocation2? Function()? location, CustomerTaxProvider? provider, }) { return CustomerTax(
+CustomerTax copyWith({CustomerTaxAutomaticTax? automaticTax, String? Function()? ipAddress, CustomerTaxLocation? Function()? location, CustomerTaxProvider? provider, }) { return CustomerTax(
   automaticTax: automaticTax ?? this.automaticTax,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,
   location: location != null ? location() : this.location,

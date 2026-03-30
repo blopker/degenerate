@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_identifier.dart';import 'images_image_variants2.dart';/// Can set the creator field with an internal user ID.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'images_image_identifier.dart';/// Can set the creator field with an internal user ID.
 extension type const ImagesImageCreator(String value) {
 factory ImagesImageCreator.fromJson(String json) => ImagesImageCreator(json);
 
@@ -21,6 +21,13 @@ factory ImagesImageRequireSignedUrLs.fromJson(bool json) => ImagesImageRequireSi
 bool toJson() => value;
 
 }
+/// URI to thumbnail variant for an image.
+extension type ImagesImageThumbnailUrl(Uri value) {
+factory ImagesImageThumbnailUrl.fromJson(String json) => ImagesImageThumbnailUrl(Uri.parse(json));
+
+String toJson() => value.toString();
+
+}
 /// When the media item was uploaded.
 extension type ImagesImageUploaded(DateTime value) {
 factory ImagesImageUploaded.fromJson(String json) => ImagesImageUploaded(DateTime.parse(json));
@@ -37,7 +44,7 @@ factory ImagesImage.fromJson(Map<String, dynamic> json) { return ImagesImage(
   meta: (json['meta'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v)),
   requireSignedUrLs: json['requireSignedURLs'] != null ? ImagesImageRequireSignedUrLs.fromJson(json['requireSignedURLs'] as bool) : null,
   uploaded: json['uploaded'] != null ? ImagesImageUploaded.fromJson(json['uploaded'] as String) : null,
-  variants: (json['variants'] as List<dynamic>?)?.map((e) => OneOf3.parse(e, fromA: (v) => ImagesImageThumbnailUrl.fromJson(v as String), fromB: (v) => ImagesImageHeroUrl.fromJson(v as String), fromC: (v) => ImagesImageOriginalUrl.fromJson(v as String),)).toList(),
+  variants: (json['variants'] as List<dynamic>?)?.map((e) => ImagesImageThumbnailUrl.fromJson(e as String)).toList(),
 ); }
 
 final ImagesImageCreator? creator;
@@ -52,7 +59,7 @@ final ImagesImageRequireSignedUrLs? requireSignedUrLs;
 
 final ImagesImageUploaded? uploaded;
 
-final List<ImagesImageVariants2>? variants;
+final List<ImagesImageThumbnailUrl>? variants;
 
 Map<String, dynamic> toJson() { return {
   if (creator != null) 'creator': creator?.toJson(),
@@ -64,7 +71,7 @@ Map<String, dynamic> toJson() { return {
   if (variants != null) 'variants': variants?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'creator', 'filename', 'id', 'meta', 'requireSignedURLs', 'uploaded', 'variants'}.contains(key)); } 
-ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename Function()? filename, ImagesImageIdentifier Function()? id, Map<String, dynamic> Function()? meta, ImagesImageRequireSignedUrLs Function()? requireSignedUrLs, ImagesImageUploaded Function()? uploaded, List<ImagesImageVariants2> Function()? variants, }) { return ImagesImage(
+ImagesImage copyWith({ImagesImageCreator? Function()? creator, ImagesImageFilename Function()? filename, ImagesImageIdentifier Function()? id, Map<String, dynamic> Function()? meta, ImagesImageRequireSignedUrLs Function()? requireSignedUrLs, ImagesImageUploaded Function()? uploaded, List<ImagesImageThumbnailUrl> Function()? variants, }) { return ImagesImage(
   creator: creator != null ? creator() : this.creator,
   filename: filename != null ? filename() : this.filename,
   id: id != null ? id() : this.id,

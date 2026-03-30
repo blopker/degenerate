@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'setup_attempt_payment_method_details_card_checks2.dart';import 'setup_attempt_payment_method_details_card_three_d_secure.dart';import 'setup_attempt_payment_method_details_card_wallet2.dart';/// 
+import 'setup_attempt_payment_method_details_card_checks.dart';import 'setup_attempt_payment_method_details_card_wallet.dart';import 'three_d_secure_details.dart';/// 
 final class SetupAttemptPaymentMethodDetailsCard {const SetupAttemptPaymentMethodDetailsCard({this.brand, this.checks, this.country, this.expMonth, this.expYear, this.fingerprint, this.funding, this.last4, this.network, this.threeDSecure, this.wallet, });
 
 factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json) { return SetupAttemptPaymentMethodDetailsCard(
   brand: json['brand'] as String?,
-  checks: json['checks'] != null ? SetupAttemptPaymentMethodDetailsCardChecks2.fromJson(json['checks'] as Map<String, dynamic>) : null,
+  checks: json['checks'] != null ? SetupAttemptPaymentMethodDetailsCardChecks.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   expMonth: json['exp_month'] != null ? (json['exp_month'] as num).toInt() : null,
   expYear: json['exp_year'] != null ? (json['exp_year'] as num).toInt() : null,
@@ -13,15 +13,15 @@ factory SetupAttemptPaymentMethodDetailsCard.fromJson(Map<String, dynamic> json)
   funding: json['funding'] as String?,
   last4: json['last4'] as String?,
   network: json['network'] as String?,
-  threeDSecure: json['three_d_secure'] != null ? SetupAttemptPaymentMethodDetailsCardThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-  wallet: json['wallet'] != null ? SetupAttemptPaymentMethodDetailsCardWallet2.fromJson(json['wallet'] as Map<String, dynamic>) : null,
+  threeDSecure: json['three_d_secure'] != null ? ThreeDSecureDetails.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? SetupAttemptPaymentMethodDetailsCardWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final String? brand;
 
 /// Check results by Card networks on Card address and CVC at the time of authorization
-final SetupAttemptPaymentMethodDetailsCardChecks2? checks;
+final SetupAttemptPaymentMethodDetailsCardChecks? checks;
 
 /// Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you've collected.
 final String? country;
@@ -47,10 +47,10 @@ final String? last4;
 final String? network;
 
 /// Populated if this authorization used 3D Secure authentication.
-final SetupAttemptPaymentMethodDetailsCardThreeDSecure? threeDSecure;
+final ThreeDSecureDetails? threeDSecure;
 
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
-final SetupAttemptPaymentMethodDetailsCardWallet2? wallet;
+final SetupAttemptPaymentMethodDetailsCardWallet? wallet;
 
 Map<String, dynamic> toJson() { return {
   'brand': ?brand,
@@ -66,7 +66,7 @@ Map<String, dynamic> toJson() { return {
   if (wallet != null) 'wallet': wallet?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'brand', 'checks', 'country', 'exp_month', 'exp_year', 'fingerprint', 'funding', 'last4', 'network', 'three_d_secure', 'wallet'}.contains(key)); } 
-SetupAttemptPaymentMethodDetailsCard copyWith({String? Function()? brand, SetupAttemptPaymentMethodDetailsCardChecks2? Function()? checks, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? last4, String? Function()? network, SetupAttemptPaymentMethodDetailsCardThreeDSecure? Function()? threeDSecure, SetupAttemptPaymentMethodDetailsCardWallet2? Function()? wallet, }) { return SetupAttemptPaymentMethodDetailsCard(
+SetupAttemptPaymentMethodDetailsCard copyWith({String? Function()? brand, SetupAttemptPaymentMethodDetailsCardChecks? Function()? checks, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? last4, String? Function()? network, ThreeDSecureDetails? Function()? threeDSecure, SetupAttemptPaymentMethodDetailsCardWallet? Function()? wallet, }) { return SetupAttemptPaymentMethodDetailsCard(
   brand: brand != null ? brand() : this.brand,
   checks: checks != null ? checks() : this.checks,
   country: country != null ? country() : this.country,

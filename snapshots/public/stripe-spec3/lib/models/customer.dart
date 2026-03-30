@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_account.dart';import 'card.dart';import 'customer_address.dart';import 'customer_cash_balance.dart';import 'customer_default_source.dart';import 'customer_discount.dart';import 'customer_shipping.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'invoice_setting_customer_setting.dart';import 'source.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'bank_account.dart';import 'card.dart';import 'cash_balance.dart';import 'customer_default_source.dart';import 'customer_sources.dart';import 'customer_subscriptions.dart';import 'customer_tax.dart';import 'customer_tax_ids.dart';import 'customer_test_clock.dart';import 'discount.dart';import 'invoice_setting_customer_setting.dart';import 'shipping.dart';import 'source.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class CustomerObject {const CustomerObject._(this.value);
 
 factory CustomerObject.fromJson(String json) { return switch (json) {
@@ -55,17 +55,17 @@ bool get isUnknown { return !values.contains(this); }
 final class Customer {const Customer({this.address, this.balance, this.businessName, this.cashBalance, required this.created, this.currency, this.customerAccount, this.defaultSource, this.delinquent, this.description, this.discount, this.email, required this.id, this.individualName, this.invoiceCreditBalance, this.invoicePrefix, this.invoiceSettings, required this.livemode, this.metadata, this.name, this.nextInvoiceSequence, required this.object, this.phone, this.preferredLocales, this.shipping, this.sources, this.subscriptions, this.tax, this.taxExempt, this.taxIds, this.testClock, });
 
 factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
-  address: json['address'] != null ? CustomerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
   balance: json['balance'] != null ? (json['balance'] as num).toInt() : null,
   businessName: json['business_name'] as String?,
-  cashBalance: json['cash_balance'] != null ? CustomerCashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
+  cashBalance: json['cash_balance'] != null ? CashBalance.fromJson(json['cash_balance'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
   customerAccount: json['customer_account'] as String?,
   defaultSource: json['default_source'] != null ? OneOf4.parse(json['default_source'], fromA: (v) => v as String, fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>), fromC: (v) => Card.fromJson(v as Map<String, dynamic>), fromD: (v) => Source.fromJson(v as Map<String, dynamic>),) : null,
   delinquent: json['delinquent'] as bool?,
   description: json['description'] as String?,
-  discount: json['discount'] != null ? CustomerDiscount.fromJson(json['discount'] as Map<String, dynamic>) : null,
+  discount: json['discount'] != null ? Discount.fromJson(json['discount'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   id: json['id'] as String,
   individualName: json['individual_name'] as String?,
@@ -79,7 +79,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
   object: CustomerObject.fromJson(json['object'] as String),
   phone: json['phone'] as String?,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  shipping: json['shipping'] != null ? CustomerShipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
+  shipping: json['shipping'] != null ? Shipping.fromJson(json['shipping'] as Map<String, dynamic>) : null,
   sources: json['sources'] != null ? CustomerSources.fromJson(json['sources'] as Map<String, dynamic>) : null,
   subscriptions: json['subscriptions'] != null ? CustomerSubscriptions.fromJson(json['subscriptions'] as Map<String, dynamic>) : null,
   tax: json['tax'] != null ? CustomerTax.fromJson(json['tax'] as Map<String, dynamic>) : null,
@@ -89,7 +89,7 @@ factory Customer.fromJson(Map<String, dynamic> json) { return Customer(
 ); }
 
 /// The customer's address.
-final CustomerAddress? address;
+final Address? address;
 
 /// The current balance, if any, that's stored on the customer in their default currency. If negative, the customer has credit to apply to their next invoice. If positive, the customer has an amount owed that's added to their next invoice. The balance only considers amounts that Stripe hasn't successfully applied to any invoice. It doesn't reflect unpaid invoices. This balance is only taken into account after invoices finalize. For multi-currency balances, see [invoice_credit_balance](https://docs.stripe.com/api/customers/object#customer_object-invoice_credit_balance).
 final int? balance;
@@ -98,7 +98,7 @@ final int? balance;
 final String? businessName;
 
 /// The current funds being held by Stripe on behalf of the customer. You can apply these funds towards payment intents when the source is "cash_balance". The `settings[reconciliation_mode]` field describes if these funds apply to these payment intents manually or automatically.
-final CustomerCashBalance? cashBalance;
+final CashBalance? cashBalance;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -125,7 +125,7 @@ final bool? delinquent;
 final String? description;
 
 /// Describes the current discount active on the customer, if there is one.
-final CustomerDiscount? discount;
+final Discount? discount;
 
 /// The customer's email address.
 final String? email;
@@ -166,7 +166,7 @@ final String? phone;
 final List<String>? preferredLocales;
 
 /// Mailing and shipping address for the customer. Appears on invoices emailed to this customer.
-final CustomerShipping? shipping;
+final Shipping? shipping;
 
 /// The customer's payment sources, if any.
 final CustomerSources? sources;
@@ -222,7 +222,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object'); } 
-Customer copyWith({CustomerAddress? Function()? address, int Function()? balance, String Function()? businessName, CustomerCashBalance? Function()? cashBalance, int? created, String? Function()? currency, String? Function()? customerAccount, CustomerDefaultSource? Function()? defaultSource, bool? Function()? delinquent, String? Function()? description, CustomerDiscount? Function()? discount, String? Function()? email, String? id, String Function()? individualName, Map<String, int> Function()? invoiceCreditBalance, String? Function()? invoicePrefix, InvoiceSettingCustomerSetting Function()? invoiceSettings, bool? livemode, Map<String, String> Function()? metadata, String? Function()? name, int Function()? nextInvoiceSequence, CustomerObject? object, String? Function()? phone, List<String>? Function()? preferredLocales, CustomerShipping? Function()? shipping, CustomerSources Function()? sources, CustomerSubscriptions Function()? subscriptions, CustomerTax Function()? tax, CustomerTaxExempt? Function()? taxExempt, CustomerTaxIds Function()? taxIds, CustomerTestClock? Function()? testClock, }) { return Customer(
+Customer copyWith({Address? Function()? address, int Function()? balance, String Function()? businessName, CashBalance? Function()? cashBalance, int? created, String? Function()? currency, String? Function()? customerAccount, CustomerDefaultSource? Function()? defaultSource, bool? Function()? delinquent, String? Function()? description, Discount? Function()? discount, String? Function()? email, String? id, String Function()? individualName, Map<String, int> Function()? invoiceCreditBalance, String? Function()? invoicePrefix, InvoiceSettingCustomerSetting Function()? invoiceSettings, bool? livemode, Map<String, String> Function()? metadata, String? Function()? name, int Function()? nextInvoiceSequence, CustomerObject? object, String? Function()? phone, List<String>? Function()? preferredLocales, Shipping? Function()? shipping, CustomerSources Function()? sources, CustomerSubscriptions Function()? subscriptions, CustomerTax Function()? tax, CustomerTaxExempt? Function()? taxExempt, CustomerTaxIds Function()? taxIds, CustomerTestClock? Function()? testClock, }) { return Customer(
   address: address != null ? address() : this.address,
   balance: balance != null ? balance() : this.balance,
   businessName: businessName != null ? businessName() : this.businessName,

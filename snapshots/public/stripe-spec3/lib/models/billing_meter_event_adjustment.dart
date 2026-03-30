@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);
 
 factory BillingMeterEventAdjustmentObject.fromJson(String json) { return switch (json) {
@@ -73,7 +73,7 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingMeterEventAdjustment {const BillingMeterEventAdjustment({this.cancel, required this.eventName, required this.livemode, required this.object, required this.status, required this.type, });
 
 factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return BillingMeterEventAdjustment(
-  cancel: json['cancel'] != null ? BillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
+  cancel: json['cancel'] != null ? BillingMeterResourceBillingMeterEventAdjustmentCancel.fromJson(json['cancel'] as Map<String, dynamic>) : null,
   eventName: json['event_name'] as String,
   livemode: json['livemode'] as bool,
   object: BillingMeterEventAdjustmentObject.fromJson(json['object'] as String),
@@ -82,7 +82,7 @@ factory BillingMeterEventAdjustment.fromJson(Map<String, dynamic> json) { return
 ); }
 
 /// Specifies which event to cancel.
-final BillingMeterEventAdjustmentCancel? cancel;
+final BillingMeterResourceBillingMeterEventAdjustmentCancel? cancel;
 
 /// The name of the meter event. Corresponds with the `event_name` field on a meter.
 final String eventName;
@@ -112,7 +112,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('type'); } 
-BillingMeterEventAdjustment copyWith({BillingMeterEventAdjustmentCancel? Function()? cancel, String? eventName, bool? livemode, BillingMeterEventAdjustmentObject? object, BillingMeterEventAdjustmentStatus? status, BillingMeterEventAdjustmentType? type, }) { return BillingMeterEventAdjustment(
+BillingMeterEventAdjustment copyWith({BillingMeterResourceBillingMeterEventAdjustmentCancel? Function()? cancel, String? eventName, bool? livemode, BillingMeterEventAdjustmentObject? object, BillingMeterEventAdjustmentStatus? status, BillingMeterEventAdjustmentType? type, }) { return BillingMeterEventAdjustment(
   cancel: cancel != null ? cancel() : this.cancel,
   eventName: eventName ?? this.eventName,
   livemode: livemode ?? this.livemode,

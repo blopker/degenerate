@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_verified_outputs_address.dart';import 'gelato_verified_outputs_dob.dart';/// The user's verified id number type.
+import 'address.dart';import 'gelato_data_verified_outputs_date.dart';/// The user's verified id number type.
 final class GelatoVerifiedOutputsIdNumberType {const GelatoVerifiedOutputsIdNumberType._(this.value);
 
 factory GelatoVerifiedOutputsIdNumberType.fromJson(String json) { return switch (json) {
@@ -63,8 +63,8 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoVerifiedOutputs {const GelatoVerifiedOutputs({this.address, this.dob, this.email, this.firstName, this.idNumber, this.idNumberType, this.lastName, this.phone, this.sex, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return GelatoVerifiedOutputs(
-  address: json['address'] != null ? GelatoVerifiedOutputsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? GelatoVerifiedOutputsDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? GelatoDataVerifiedOutputsDate.fromJson(json['dob'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   firstName: json['first_name'] as String?,
   idNumber: json['id_number'] as String?,
@@ -77,10 +77,10 @@ factory GelatoVerifiedOutputs.fromJson(Map<String, dynamic> json) { return Gelat
 ); }
 
 /// The user's verified address.
-final GelatoVerifiedOutputsAddress? address;
+final Address? address;
 
 /// The user’s verified date of birth.
-final GelatoVerifiedOutputsDob? dob;
+final GelatoDataVerifiedOutputsDate? dob;
 
 /// The user's verified email address
 final String? email;
@@ -123,7 +123,7 @@ Map<String, dynamic> toJson() { return {
   'unparsed_sex': ?unparsedSex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'dob', 'email', 'first_name', 'id_number', 'id_number_type', 'last_name', 'phone', 'sex', 'unparsed_place_of_birth', 'unparsed_sex'}.contains(key)); } 
-GelatoVerifiedOutputs copyWith({GelatoVerifiedOutputsAddress? Function()? address, GelatoVerifiedOutputsDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, GelatoVerifiedOutputsIdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, GelatoVerifiedOutputsSex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
+GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerifiedOutputsDate? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, GelatoVerifiedOutputsIdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, GelatoVerifiedOutputsSex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(
   address: address != null ? address() : this.address,
   dob: dob != null ? dob() : this.dob,
   email: email != null ? email() : this.email,

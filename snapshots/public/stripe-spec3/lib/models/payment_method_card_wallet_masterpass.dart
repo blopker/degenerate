@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_card_wallet_masterpass_billing_address.dart';import 'payment_method_card_wallet_masterpass_shipping_address.dart';/// 
+import 'address.dart';/// 
 final class PaymentMethodCardWalletMasterpass {const PaymentMethodCardWalletMasterpass({this.billingAddress, this.email, this.name, this.shippingAddress, });
 
 factory PaymentMethodCardWalletMasterpass.fromJson(Map<String, dynamic> json) { return PaymentMethodCardWalletMasterpass(
-  billingAddress: json['billing_address'] != null ? PaymentMethodCardWalletMasterpassBillingAddress.fromJson(json['billing_address'] as Map<String, dynamic>) : null,
+  billingAddress: json['billing_address'] != null ? Address.fromJson(json['billing_address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
-  shippingAddress: json['shipping_address'] != null ? PaymentMethodCardWalletMasterpassShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? Address.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 /// Owner's verified billing address. Values are verified or provided by the wallet directly (if supported) at the time of authorization or settlement. They cannot be set or mutated.
-final PaymentMethodCardWalletMasterpassBillingAddress? billingAddress;
+final Address? billingAddress;
 
 /// Owner's verified email. Values are verified or provided by the wallet directly (if supported) at the time of authorization or settlement. They cannot be set or mutated.
 final String? email;
@@ -20,7 +20,7 @@ final String? email;
 final String? name;
 
 /// Owner's verified shipping address. Values are verified or provided by the wallet directly (if supported) at the time of authorization or settlement. They cannot be set or mutated.
-final PaymentMethodCardWalletMasterpassShippingAddress? shippingAddress;
+final Address? shippingAddress;
 
 Map<String, dynamic> toJson() { return {
   if (billingAddress != null) 'billing_address': billingAddress?.toJson(),
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'billing_address', 'email', 'name', 'shipping_address'}.contains(key)); } 
-PaymentMethodCardWalletMasterpass copyWith({PaymentMethodCardWalletMasterpassBillingAddress? Function()? billingAddress, String? Function()? email, String? Function()? name, PaymentMethodCardWalletMasterpassShippingAddress? Function()? shippingAddress, }) { return PaymentMethodCardWalletMasterpass(
+PaymentMethodCardWalletMasterpass copyWith({Address? Function()? billingAddress, String? Function()? email, String? Function()? name, Address? Function()? shippingAddress, }) { return PaymentMethodCardWalletMasterpass(
   billingAddress: billingAddress != null ? billingAddress() : this.billingAddress,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

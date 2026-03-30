@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_taxes_tax_tax_rate_details.dart';/// Whether this tax is inclusive or exclusive.
+import 'billing_bill_resource_invoicing_taxes_tax_rate_details.dart';/// Whether this tax is inclusive or exclusive.
 final class BillingBillResourceInvoicingTaxesTaxTaxBehavior {const BillingBillResourceInvoicingTaxesTaxTaxBehavior._(this.value);
 
 factory BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(String json) { return switch (json) {
@@ -120,7 +120,7 @@ final class BillingBillResourceInvoicingTaxesTax {const BillingBillResourceInvoi
 factory BillingBillResourceInvoicingTaxesTax.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingTaxesTax(
   amount: (json['amount'] as num).toInt(),
   taxBehavior: BillingBillResourceInvoicingTaxesTaxTaxBehavior.fromJson(json['tax_behavior'] as String),
-  taxRateDetails: json['tax_rate_details'] != null ? BillingBillResourceInvoicingTaxesTaxTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
+  taxRateDetails: json['tax_rate_details'] != null ? BillingBillResourceInvoicingTaxesTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
   taxabilityReason: BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(json['taxability_reason'] as String),
   taxableAmount: json['taxable_amount'] != null ? (json['taxable_amount'] as num).toInt() : null,
   type: BillingBillResourceInvoicingTaxesTaxType.fromJson(json['type'] as String),
@@ -133,7 +133,7 @@ final int amount;
 final BillingBillResourceInvoicingTaxesTaxTaxBehavior taxBehavior;
 
 /// Additional details about the tax rate. Only present when `type` is `tax_rate_details`.
-final BillingBillResourceInvoicingTaxesTaxTaxRateDetails? taxRateDetails;
+final BillingBillResourceInvoicingTaxesTaxRateDetails? taxRateDetails;
 
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 final BillingBillResourceInvoicingTaxesTaxTaxabilityReason taxabilityReason;
@@ -156,7 +156,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_behavior') &&
       json.containsKey('taxability_reason') &&
       json.containsKey('type'); } 
-BillingBillResourceInvoicingTaxesTax copyWith({int? amount, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, BillingBillResourceInvoicingTaxesTaxTaxRateDetails? Function()? taxRateDetails, BillingBillResourceInvoicingTaxesTaxTaxabilityReason? taxabilityReason, int? Function()? taxableAmount, BillingBillResourceInvoicingTaxesTaxType? type, }) { return BillingBillResourceInvoicingTaxesTax(
+BillingBillResourceInvoicingTaxesTax copyWith({int? amount, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, BillingBillResourceInvoicingTaxesTaxRateDetails? Function()? taxRateDetails, BillingBillResourceInvoicingTaxesTaxTaxabilityReason? taxabilityReason, int? Function()? taxableAmount, BillingBillResourceInvoicingTaxesTaxType? type, }) { return BillingBillResourceInvoicingTaxesTax(
   amount: amount ?? this.amount,
   taxBehavior: taxBehavior ?? this.taxBehavior,
   taxRateDetails: taxRateDetails != null ? taxRateDetails() : this.taxRateDetails,

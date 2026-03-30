@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'topup_balance_transaction.dart';import 'topup_source.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'source.dart';import 'topup_balance_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class TopupObject {const TopupObject._(this.value);
 
 factory TopupObject.fromJson(String json) { return switch (json) {
@@ -76,7 +76,7 @@ factory Topup.fromJson(Map<String, dynamic> json) { return Topup(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TopupObject.fromJson(json['object'] as String),
-  source: json['source'] != null ? TopupSource.fromJson(json['source'] as Map<String, dynamic>) : null,
+  source: json['source'] != null ? Source.fromJson(json['source'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: TopupStatus.fromJson(json['status'] as String),
   transferGroup: json['transfer_group'] as String?,
@@ -119,7 +119,7 @@ final Map<String,String> metadata;
 final TopupObject object;
 
 /// The source field is deprecated. It might not always be present in the API response.
-final TopupSource? source;
+final Source? source;
 
 /// Extra information about a top-up. This will appear on your source's bank statement. It must contain at least one letter.
 final String? statementDescriptor;
@@ -156,7 +156,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('metadata') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-Topup copyWith({int? amount, TopupBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, int? Function()? expectedAvailabilityDate, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, TopupSource? Function()? source, String? Function()? statementDescriptor, TopupStatus? status, String? Function()? transferGroup, }) { return Topup(
+Topup copyWith({int? amount, TopupBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, int? Function()? expectedAvailabilityDate, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Source? Function()? source, String? Function()? statementDescriptor, TopupStatus? status, String? Function()? transferGroup, }) { return Topup(
   amount: amount ?? this.amount,
   balanceTransaction: balanceTransaction != null ? balanceTransaction() : this.balanceTransaction,
   created: created ?? this.created,

@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_custom_logo.dart';/// 
+import 'custom_logo.dart';/// 
 final class PaymentMethodCustom {const PaymentMethodCustom({this.displayName, this.logo, required this.type, });
 
 factory PaymentMethodCustom.fromJson(Map<String, dynamic> json) { return PaymentMethodCustom(
   displayName: json['display_name'] as String?,
-  logo: json['logo'] != null ? PaymentMethodCustomLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
+  logo: json['logo'] != null ? CustomLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
   type: json['type'] as String,
 ); }
 
@@ -13,7 +13,7 @@ factory PaymentMethodCustom.fromJson(Map<String, dynamic> json) { return Payment
 final String? displayName;
 
 /// Contains information about the Dashboard-only CustomPaymentMethodType logo.
-final PaymentMethodCustomLogo? logo;
+final CustomLogo? logo;
 
 /// ID of the Dashboard-only CustomPaymentMethodType. Not expandable.
 final String type;
@@ -24,7 +24,7 @@ Map<String, dynamic> toJson() { return {
   'type': type,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
-PaymentMethodCustom copyWith({String? Function()? displayName, PaymentMethodCustomLogo? Function()? logo, String? type, }) { return PaymentMethodCustom(
+PaymentMethodCustom copyWith({String? Function()? displayName, CustomLogo? Function()? logo, String? type, }) { return PaymentMethodCustom(
   displayName: displayName != null ? displayName() : this.displayName,
   logo: logo != null ? logo() : this.logo,
   type: type ?? this.type,

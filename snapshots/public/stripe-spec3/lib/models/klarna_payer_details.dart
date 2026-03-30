@@ -1,20 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'klarna_payer_details_address.dart';/// 
+import 'klarna_address.dart';/// 
 final class KlarnaPayerDetails {const KlarnaPayerDetails({this.address});
 
 factory KlarnaPayerDetails.fromJson(Map<String, dynamic> json) { return KlarnaPayerDetails(
-  address: json['address'] != null ? KlarnaPayerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? KlarnaAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
 ); }
 
 /// The payer's address
-final KlarnaPayerDetailsAddress? address;
+final KlarnaAddress? address;
 
 Map<String, dynamic> toJson() { return {
   if (address != null) 'address': address?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address'}.contains(key)); } 
-KlarnaPayerDetails copyWith({KlarnaPayerDetailsAddress? Function()? address}) { return KlarnaPayerDetails(
+KlarnaPayerDetails copyWith({KlarnaAddress? Function()? address}) { return KlarnaPayerDetails(
   address: address != null ? address() : this.address,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

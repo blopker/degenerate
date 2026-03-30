@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_customer_details_address.dart';import 'tax_product_resource_customer_details_resource_tax_id.dart';/// The type of customer address provided.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'tax_product_resource_customer_details_resource_tax_id.dart';import 'tax_product_resource_postal_address.dart';/// The type of customer address provided.
 final class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource._(this.value);
 
 factory TaxProductResourceCustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
@@ -57,7 +57,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TaxProductResourceCustomerDetails {const TaxProductResourceCustomerDetails({this.address, this.addressSource, this.ipAddress, required this.taxIds, required this.taxabilityOverride, });
 
 factory TaxProductResourceCustomerDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceCustomerDetails(
-  address: json['address'] != null ? TaxProductResourceCustomerDetailsAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? TaxProductResourcePostalAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
   addressSource: json['address_source'] != null ? TaxProductResourceCustomerDetailsAddressSource.fromJson(json['address_source'] as String) : null,
   ipAddress: json['ip_address'] as String?,
   taxIds: (json['tax_ids'] as List<dynamic>).map((e) => TaxProductResourceCustomerDetailsResourceTaxId.fromJson(e as Map<String, dynamic>)).toList(),
@@ -65,7 +65,7 @@ factory TaxProductResourceCustomerDetails.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// The customer's postal address (for example, home or business location).
-final TaxProductResourceCustomerDetailsAddress? address;
+final TaxProductResourcePostalAddress? address;
 
 /// The type of customer address provided.
 final TaxProductResourceCustomerDetailsAddressSource? addressSource;
@@ -88,7 +88,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_ids') &&
       json.containsKey('taxability_override'); } 
-TaxProductResourceCustomerDetails copyWith({TaxProductResourceCustomerDetailsAddress? Function()? address, TaxProductResourceCustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<TaxProductResourceCustomerDetailsResourceTaxId>? taxIds, TaxProductResourceCustomerDetailsTaxabilityOverride? taxabilityOverride, }) { return TaxProductResourceCustomerDetails(
+TaxProductResourceCustomerDetails copyWith({TaxProductResourcePostalAddress? Function()? address, TaxProductResourceCustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<TaxProductResourceCustomerDetailsResourceTaxId>? taxIds, TaxProductResourceCustomerDetailsTaxabilityOverride? taxabilityOverride, }) { return TaxProductResourceCustomerDetails(
   address: address != null ? address() : this.address,
   addressSource: addressSource != null ? addressSource() : this.addressSource,
   ipAddress: ipAddress != null ? ipAddress() : this.ipAddress,

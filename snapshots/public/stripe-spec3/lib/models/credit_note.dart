@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'credit_note_customer.dart';import 'credit_note_customer_balance_transaction.dart';import 'credit_note_invoice.dart';import 'credit_note_lines.dart';import 'credit_note_refund.dart';import 'credit_note_shipping_cost.dart';import 'credit_notes_pretax_credit_amount.dart';import 'customer.dart';import 'customer_balance_transaction.dart';import 'deleted_customer.dart';import 'discounts_resource_discount_amount.dart';import 'invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'credit_note_customer.dart';import 'credit_note_customer_balance_transaction.dart';import 'credit_note_invoice.dart';import 'credit_note_lines.dart';import 'credit_note_refund.dart';import 'credit_notes_pretax_credit_amount.dart';import 'customer.dart';import 'customer_balance_transaction.dart';import 'deleted_customer.dart';import 'discounts_resource_discount_amount.dart';import 'invoice.dart';import 'invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class CreditNoteObject {const CreditNoteObject._(this.value);
 
 factory CreditNoteObject.fromJson(String json) { return switch (json) {
@@ -137,7 +137,7 @@ factory CreditNote.fromJson(Map<String, dynamic> json) { return CreditNote(
   pretaxCreditAmounts: (json['pretax_credit_amounts'] as List<dynamic>).map((e) => CreditNotesPretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
   reason: json['reason'] != null ? CreditNoteReason.fromJson(json['reason'] as String) : null,
   refunds: (json['refunds'] as List<dynamic>).map((e) => CreditNoteRefund.fromJson(e as Map<String, dynamic>)).toList(),
-  shippingCost: json['shipping_cost'] != null ? CreditNoteShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? InvoicesResourceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   status: CreditNoteStatus.fromJson(json['status'] as String),
   subtotal: (json['subtotal'] as num).toInt(),
   subtotalExcludingTax: json['subtotal_excluding_tax'] != null ? (json['subtotal_excluding_tax'] as num).toInt() : null,
@@ -224,7 +224,7 @@ final CreditNoteReason? reason;
 final List<CreditNoteRefund> refunds;
 
 /// The details of the cost of shipping, including the ShippingRate applied to the invoice.
-final CreditNoteShippingCost? shippingCost;
+final InvoicesResourceShippingCost? shippingCost;
 
 /// Status of this credit note, one of `issued` or `void`. Learn more about [voiding credit notes](https://docs.stripe.com/billing/invoices/credit-notes#voiding).
 final CreditNoteStatus status;
@@ -308,7 +308,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num &&
       json.containsKey('type'); } 
-CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, CreditNoteCustomer? customer, String? Function()? customerAccount, CreditNoteCustomerBalanceTransaction? Function()? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, int? Function()? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, String? Function()? memo, Map<String, String>? Function()? metadata, String? number, CreditNoteObject? object, int? Function()? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, CreditNoteReason? Function()? reason, List<CreditNoteRefund>? refunds, CreditNoteShippingCost? Function()? shippingCost, CreditNoteStatus? status, int? subtotal, int? Function()? subtotalExcludingTax, int? total, int? Function()? totalExcludingTax, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, CreditNoteType? type, int? Function()? voidedAt, }) { return CreditNote(
+CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, CreditNoteCustomer? customer, String? Function()? customerAccount, CreditNoteCustomerBalanceTransaction? Function()? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, int? Function()? effectiveAt, String? id, CreditNoteInvoice? invoice, CreditNoteLines? lines, bool? livemode, String? Function()? memo, Map<String, String>? Function()? metadata, String? number, CreditNoteObject? object, int? Function()? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, CreditNoteReason? Function()? reason, List<CreditNoteRefund>? refunds, InvoicesResourceShippingCost? Function()? shippingCost, CreditNoteStatus? status, int? subtotal, int? Function()? subtotalExcludingTax, int? total, int? Function()? totalExcludingTax, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, CreditNoteType? type, int? Function()? voidedAt, }) { return CreditNote(
   amount: amount ?? this.amount,
   amountShipping: amountShipping ?? this.amountShipping,
   created: created ?? this.created,

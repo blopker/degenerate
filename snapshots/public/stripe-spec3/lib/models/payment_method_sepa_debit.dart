@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_method_sepa_debit_generated_from.dart';/// 
+import 'sepa_debit_generated_from.dart';/// 
 final class PaymentMethodSepaDebit {const PaymentMethodSepaDebit({this.bankCode, this.branchCode, this.country, this.fingerprint, this.generatedFrom, this.last4, });
 
 factory PaymentMethodSepaDebit.fromJson(Map<String, dynamic> json) { return PaymentMethodSepaDebit(
@@ -8,7 +8,7 @@ factory PaymentMethodSepaDebit.fromJson(Map<String, dynamic> json) { return Paym
   branchCode: json['branch_code'] as String?,
   country: json['country'] as String?,
   fingerprint: json['fingerprint'] as String?,
-  generatedFrom: json['generated_from'] != null ? PaymentMethodSepaDebitGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
+  generatedFrom: json['generated_from'] != null ? SepaDebitGeneratedFrom.fromJson(json['generated_from'] as Map<String, dynamic>) : null,
   last4: json['last4'] as String?,
 ); }
 
@@ -25,7 +25,7 @@ final String? country;
 final String? fingerprint;
 
 /// Information about the object that generated this PaymentMethod.
-final PaymentMethodSepaDebitGeneratedFrom? generatedFrom;
+final SepaDebitGeneratedFrom? generatedFrom;
 
 /// Last four characters of the IBAN.
 final String? last4;
@@ -39,7 +39,7 @@ Map<String, dynamic> toJson() { return {
   'last4': ?last4,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'bank_code', 'branch_code', 'country', 'fingerprint', 'generated_from', 'last4'}.contains(key)); } 
-PaymentMethodSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String? Function()? fingerprint, PaymentMethodSepaDebitGeneratedFrom? Function()? generatedFrom, String? Function()? last4, }) { return PaymentMethodSepaDebit(
+PaymentMethodSepaDebit copyWith({String? Function()? bankCode, String? Function()? branchCode, String? Function()? country, String? Function()? fingerprint, SepaDebitGeneratedFrom? Function()? generatedFrom, String? Function()? last4, }) { return PaymentMethodSepaDebit(
   bankCode: bankCode != null ? bankCode() : this.bankCode,
   branchCode: branchCode != null ? branchCode() : this.branchCode,
   country: country != null ? country() : this.country,

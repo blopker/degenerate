@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:typed_data';import 'automatic_speech_recognition2.dart';import 'image_classification2.dart';import 'image_text_to_text2.dart';import 'image_to_text2.dart';import 'multimodal_embeddings2.dart';import 'object_detection2.dart';import 'summarization2.dart';import 'text_classification2.dart';import 'text_embeddings2.dart';import 'text_generation2.dart';import 'text_to_speech2.dart';import 'translation2.dart';/// A value that is one of: `List<TextClassification2>`, `Uint8List`, `TextToSpeech2`, `TextEmbeddings2`, `AutomaticSpeechRecognition2`, `List<ImageClassification2>`, `List<ObjectDetection2>`, `TextGeneration2`, `Translation2`, `Summarization2`, `ImageToText2`, `ImageTextToText2`, `MultimodalEmbeddings2`.
+import 'dart:typed_data';import 'automatic_speech_recognition2.dart';import 'image_classification2.dart';import 'image_text_to_text2.dart';import 'image_to_text2.dart';import 'multimodal_embeddings2.dart';import 'object_detection2.dart';import 'summarization2.dart';import 'text_classification2.dart';import 'text_embeddings2.dart';import 'text_to_speech2.dart';import 'translation2.dart';/// A value that is one of: `List<TextClassification2>`, `Uint8List`, `TextToSpeech2`, `TextEmbeddings2`, `AutomaticSpeechRecognition2`, `List<ImageClassification2>`, `List<ObjectDetection2>`, `Translation2`, `Summarization2`, `ImageToText2`, `ImageTextToText2`, `MultimodalEmbeddings2`.
 sealed class WorkersAiPostRunModelResponseResult {const WorkersAiPostRunModelResponseResult();
 
 factory WorkersAiPostRunModelResponseResult.fromJson(Map<String, dynamic> json) {   if (TextEmbeddings2.canParse(json)) {
@@ -99,16 +99,6 @@ final List<ObjectDetection2> _value;
     other is WorkersAiPostRunModelResponseResultListObjectDetection2 && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'WorkersAiPostRunModelResponseResult.list<ObjectDetection2>($_value)'; } 
- }
-final class WorkersAiPostRunModelResponseResultTextGeneration2 extends WorkersAiPostRunModelResponseResult {const WorkersAiPostRunModelResponseResultTextGeneration2(this._value);
-
-final TextGeneration2 _value;
-
-@override TextGeneration2 get value { return _value; } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is WorkersAiPostRunModelResponseResultTextGeneration2 && _value == other._value; } 
-@override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'WorkersAiPostRunModelResponseResult.textGeneration2($_value)'; } 
  }
 final class WorkersAiPostRunModelResponseResultTranslation2 extends WorkersAiPostRunModelResponseResult {const WorkersAiPostRunModelResponseResultTranslation2(this._value);
 

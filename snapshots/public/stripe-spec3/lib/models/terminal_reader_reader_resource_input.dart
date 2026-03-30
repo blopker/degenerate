@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_email.dart';import 'terminal_reader_reader_resource_input_custom_text.dart';import 'terminal_reader_reader_resource_numeric.dart';import 'terminal_reader_reader_resource_phone.dart';import 'terminal_reader_reader_resource_selection.dart';import 'terminal_reader_reader_resource_signature.dart';import 'terminal_reader_reader_resource_text.dart';import 'terminal_reader_reader_resource_toggle.dart';/// Type of input being collected.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'terminal_reader_reader_resource_custom_text.dart';import 'terminal_reader_reader_resource_email.dart';import 'terminal_reader_reader_resource_numeric.dart';import 'terminal_reader_reader_resource_phone.dart';import 'terminal_reader_reader_resource_selection.dart';import 'terminal_reader_reader_resource_signature.dart';import 'terminal_reader_reader_resource_text.dart';import 'terminal_reader_reader_resource_toggle.dart';/// Type of input being collected.
 final class TerminalReaderReaderResourceInputType {const TerminalReaderReaderResourceInputType._(this.value);
 
 factory TerminalReaderReaderResourceInputType.fromJson(String json) { return switch (json) {
@@ -41,7 +41,7 @@ bool get isUnknown { return !values.contains(this); }
 final class TerminalReaderReaderResourceInput {const TerminalReaderReaderResourceInput({this.customText, this.email, this.numeric, this.phone, this.$required, this.selection, this.signature, this.skipped, this.text, this.toggles, required this.type, });
 
 factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { return TerminalReaderReaderResourceInput(
-  customText: json['custom_text'] != null ? TerminalReaderReaderResourceInputCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,
+  customText: json['custom_text'] != null ? TerminalReaderReaderResourceCustomText.fromJson(json['custom_text'] as Map<String, dynamic>) : null,
   email: json['email'] != null ? TerminalReaderReaderResourceEmail.fromJson(json['email'] as Map<String, dynamic>) : null,
   numeric: json['numeric'] != null ? TerminalReaderReaderResourceNumeric.fromJson(json['numeric'] as Map<String, dynamic>) : null,
   phone: json['phone'] != null ? TerminalReaderReaderResourcePhone.fromJson(json['phone'] as Map<String, dynamic>) : null,
@@ -55,7 +55,7 @@ factory TerminalReaderReaderResourceInput.fromJson(Map<String, dynamic> json) { 
 ); }
 
 /// Default text of input being collected.
-final TerminalReaderReaderResourceInputCustomText? customText;
+final TerminalReaderReaderResourceCustomText? customText;
 
 final TerminalReaderReaderResourceEmail? email;
 
@@ -95,7 +95,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceInputCustomText? Function()? customText, TerminalReaderReaderResourceEmail Function()? email, TerminalReaderReaderResourceNumeric Function()? numeric, TerminalReaderReaderResourcePhone Function()? phone, bool? Function()? $required, TerminalReaderReaderResourceSelection Function()? selection, TerminalReaderReaderResourceSignature Function()? signature, bool Function()? skipped, TerminalReaderReaderResourceText Function()? text, List<TerminalReaderReaderResourceToggle>? Function()? toggles, TerminalReaderReaderResourceInputType? type, }) { return TerminalReaderReaderResourceInput(
+TerminalReaderReaderResourceInput copyWith({TerminalReaderReaderResourceCustomText? Function()? customText, TerminalReaderReaderResourceEmail Function()? email, TerminalReaderReaderResourceNumeric Function()? numeric, TerminalReaderReaderResourcePhone Function()? phone, bool? Function()? $required, TerminalReaderReaderResourceSelection Function()? selection, TerminalReaderReaderResourceSignature Function()? signature, bool Function()? skipped, TerminalReaderReaderResourceText Function()? text, List<TerminalReaderReaderResourceToggle>? Function()? toggles, TerminalReaderReaderResourceInputType? type, }) { return TerminalReaderReaderResourceInput(
   customText: customText != null ? customText() : this.customText,
   email: email != null ? email() : this.email,
   numeric: numeric != null ? numeric() : this.numeric,

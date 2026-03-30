@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_bill_resource_invoicing_parents_invoice_parent_quote_details.dart';import 'billing_bill_resource_invoicing_parents_invoice_parent_subscription_details.dart';/// The type of parent that generated this invoice
+import 'billing_bill_resource_invoicing_parents_invoice_quote_parent.dart';import 'billing_bill_resource_invoicing_parents_invoice_subscription_parent.dart';/// The type of parent that generated this invoice
 final class BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType._(this.value);
 
 factory BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(String json) { return switch (json) {
@@ -29,16 +29,16 @@ bool get isUnknown { return !values.contains(this); }
 final class BillingBillResourceInvoicingParentsInvoiceParent {const BillingBillResourceInvoicingParentsInvoiceParent({this.quoteDetails, this.subscriptionDetails, required this.type, });
 
 factory BillingBillResourceInvoicingParentsInvoiceParent.fromJson(Map<String, dynamic> json) { return BillingBillResourceInvoicingParentsInvoiceParent(
-  quoteDetails: json['quote_details'] != null ? BillingBillResourceInvoicingParentsInvoiceParentQuoteDetails.fromJson(json['quote_details'] as Map<String, dynamic>) : null,
-  subscriptionDetails: json['subscription_details'] != null ? BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
+  quoteDetails: json['quote_details'] != null ? BillingBillResourceInvoicingParentsInvoiceQuoteParent.fromJson(json['quote_details'] as Map<String, dynamic>) : null,
+  subscriptionDetails: json['subscription_details'] != null ? BillingBillResourceInvoicingParentsInvoiceSubscriptionParent.fromJson(json['subscription_details'] as Map<String, dynamic>) : null,
   type: BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(json['type'] as String),
 ); }
 
 /// Details about the quote that generated this invoice
-final BillingBillResourceInvoicingParentsInvoiceParentQuoteDetails? quoteDetails;
+final BillingBillResourceInvoicingParentsInvoiceQuoteParent? quoteDetails;
 
 /// Details about the subscription that generated this invoice
-final BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails? subscriptionDetails;
+final BillingBillResourceInvoicingParentsInvoiceSubscriptionParent? subscriptionDetails;
 
 /// The type of parent that generated this invoice
 final BillingBillResourceInvoicingParentsInvoiceParentType type;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'); } 
-BillingBillResourceInvoicingParentsInvoiceParent copyWith({BillingBillResourceInvoicingParentsInvoiceParentQuoteDetails? Function()? quoteDetails, BillingBillResourceInvoicingParentsInvoiceParentSubscriptionDetails? Function()? subscriptionDetails, BillingBillResourceInvoicingParentsInvoiceParentType? type, }) { return BillingBillResourceInvoicingParentsInvoiceParent(
+BillingBillResourceInvoicingParentsInvoiceParent copyWith({BillingBillResourceInvoicingParentsInvoiceQuoteParent? Function()? quoteDetails, BillingBillResourceInvoicingParentsInvoiceSubscriptionParent? Function()? subscriptionDetails, BillingBillResourceInvoicingParentsInvoiceParentType? type, }) { return BillingBillResourceInvoicingParentsInvoiceParent(
   quoteDetails: quoteDetails != null ? quoteDetails() : this.quoteDetails,
   subscriptionDetails: subscriptionDetails != null ? subscriptionDetails() : this.subscriptionDetails,
   type: type ?? this.type,

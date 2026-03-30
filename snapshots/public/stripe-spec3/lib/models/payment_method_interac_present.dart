@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_interac_present_networks.dart';/// How card details were read in this transaction.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'payment_method_card_present_networks.dart';/// How card details were read in this transaction.
 final class PaymentMethodInteracPresentReadMethod {const PaymentMethodInteracPresentReadMethod._(this.value);
 
 factory PaymentMethodInteracPresentReadMethod.fromJson(String json) { return switch (json) {
@@ -48,7 +48,7 @@ factory PaymentMethodInteracPresent.fromJson(Map<String, dynamic> json) { return
   funding: json['funding'] as String?,
   issuer: json['issuer'] as String?,
   last4: json['last4'] as String?,
-  networks: json['networks'] != null ? PaymentMethodInteracPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
+  networks: json['networks'] != null ? PaymentMethodCardPresentNetworks.fromJson(json['networks'] as Map<String, dynamic>) : null,
   preferredLocales: (json['preferred_locales'] as List<dynamic>?)?.map((e) => e as String).toList(),
   readMethod: json['read_method'] != null ? PaymentMethodInteracPresentReadMethod.fromJson(json['read_method'] as String) : null,
 ); }
@@ -86,7 +86,7 @@ final String? issuer;
 final String? last4;
 
 /// Contains information about card networks that can be used to process the payment.
-final PaymentMethodInteracPresentNetworks? networks;
+final PaymentMethodCardPresentNetworks? networks;
 
 /// The languages that the issuing bank recommends using for localizing any customer-facing text, as read from the card. Referenced from EMV tag 5F2D, data encoded on the card's chip.
 final List<String>? preferredLocales;
@@ -111,7 +111,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_month') && json['exp_month'] is num &&
       json.containsKey('exp_year') && json['exp_year'] is num; } 
-PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodInteracPresentNetworks? Function()? networks, List<String>? Function()? preferredLocales, PaymentMethodInteracPresentReadMethod? Function()? readMethod, }) { return PaymentMethodInteracPresent(
+PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, List<String>? Function()? preferredLocales, PaymentMethodInteracPresentReadMethod? Function()? readMethod, }) { return PaymentMethodInteracPresent(
   brand: brand != null ? brand() : this.brand,
   cardholderName: cardholderName != null ? cardholderName() : this.cardholderName,
   country: country != null ? country() : this.country,

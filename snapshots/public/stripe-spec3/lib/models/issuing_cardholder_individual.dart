@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_cardholder_individual_card_issuing.dart';import 'issuing_cardholder_individual_dob2.dart';import 'issuing_cardholder_individual_verification.dart';/// 
+import 'issuing_cardholder_card_issuing.dart';import 'issuing_cardholder_individual_dob.dart';import 'issuing_cardholder_verification.dart';/// 
 final class IssuingCardholderIndividual {const IssuingCardholderIndividual({this.cardIssuing, this.dob, this.firstName, this.lastName, this.verification, });
 
 factory IssuingCardholderIndividual.fromJson(Map<String, dynamic> json) { return IssuingCardholderIndividual(
-  cardIssuing: json['card_issuing'] != null ? IssuingCardholderIndividualCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? IssuingCardholderIndividualDob2.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  cardIssuing: json['card_issuing'] != null ? IssuingCardholderCardIssuing.fromJson(json['card_issuing'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? IssuingCardholderIndividualDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
   firstName: json['first_name'] as String?,
   lastName: json['last_name'] as String?,
-  verification: json['verification'] != null ? IssuingCardholderIndividualVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
+  verification: json['verification'] != null ? IssuingCardholderVerification.fromJson(json['verification'] as Map<String, dynamic>) : null,
 ); }
 
 /// Information related to the card_issuing program for this cardholder.
-final IssuingCardholderIndividualCardIssuing? cardIssuing;
+final IssuingCardholderCardIssuing? cardIssuing;
 
 /// The date of birth of this cardholder.
-final IssuingCardholderIndividualDob2? dob;
+final IssuingCardholderIndividualDob? dob;
 
 /// The first name of this cardholder. Required before activating Cards. This field cannot contain any numbers, special characters (except periods, commas, hyphens, spaces and apostrophes) or non-latin letters.
 final String? firstName;
@@ -24,7 +24,7 @@ final String? firstName;
 final String? lastName;
 
 /// Government-issued ID document for this cardholder.
-final IssuingCardholderIndividualVerification? verification;
+final IssuingCardholderVerification? verification;
 
 Map<String, dynamic> toJson() { return {
   if (cardIssuing != null) 'card_issuing': cardIssuing?.toJson(),
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
   if (verification != null) 'verification': verification?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'card_issuing', 'dob', 'first_name', 'last_name', 'verification'}.contains(key)); } 
-IssuingCardholderIndividual copyWith({IssuingCardholderIndividualCardIssuing? Function()? cardIssuing, IssuingCardholderIndividualDob2? Function()? dob, String? Function()? firstName, String? Function()? lastName, IssuingCardholderIndividualVerification? Function()? verification, }) { return IssuingCardholderIndividual(
+IssuingCardholderIndividual copyWith({IssuingCardholderCardIssuing? Function()? cardIssuing, IssuingCardholderIndividualDob? Function()? dob, String? Function()? firstName, String? Function()? lastName, IssuingCardholderVerification? Function()? verification, }) { return IssuingCardholderIndividual(
   cardIssuing: cardIssuing != null ? cardIssuing() : this.cardIssuing,
   dob: dob != null ? dob() : this.dob,
   firstName: firstName != null ? firstName() : this.firstName,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'review_charge.dart';import 'review_ip_address_location.dart';import 'review_payment_intent.dart';import 'review_session.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'charge.dart';import 'payment_intent.dart';import 'radar_review_resource_location.dart';import 'radar_review_resource_session.dart';import 'review_charge.dart';import 'review_payment_intent.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
 final class ReviewClosedReason {const ReviewClosedReason._(this.value);
 
 factory ReviewClosedReason.fromJson(String json) { return switch (json) {
@@ -103,14 +103,14 @@ factory Review.fromJson(Map<String, dynamic> json) { return Review(
   created: (json['created'] as num).toInt(),
   id: json['id'] as String,
   ipAddress: json['ip_address'] as String?,
-  ipAddressLocation: json['ip_address_location'] != null ? ReviewIpAddressLocation.fromJson(json['ip_address_location'] as Map<String, dynamic>) : null,
+  ipAddressLocation: json['ip_address_location'] != null ? RadarReviewResourceLocation.fromJson(json['ip_address_location'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   object: ReviewObject.fromJson(json['object'] as String),
   open: json['open'] as bool,
   openedReason: ReviewOpenedReason.fromJson(json['opened_reason'] as String),
   paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
   reason: json['reason'] as String,
-  session: json['session'] != null ? ReviewSession.fromJson(json['session'] as Map<String, dynamic>) : null,
+  session: json['session'] != null ? RadarReviewResourceSession.fromJson(json['session'] as Map<String, dynamic>) : null,
 ); }
 
 /// The ZIP or postal code of the card used, if applicable.
@@ -132,7 +132,7 @@ final String id;
 final String? ipAddress;
 
 /// Information related to the location of the payment. Note that this information is an approximation and attempts to locate the nearest population center - it should not be used to determine a specific address.
-final ReviewIpAddressLocation? ipAddressLocation;
+final RadarReviewResourceLocation? ipAddressLocation;
 
 /// Has the value `true` if the object exists in live mode or the value `false` if the object exists in test mode.
 final bool livemode;
@@ -153,7 +153,7 @@ final ReviewPaymentIntent? paymentIntent;
 final String reason;
 
 /// Information related to the browsing session of the user who initiated the payment.
-final ReviewSession? session;
+final RadarReviewResourceSession? session;
 
 Map<String, dynamic> toJson() { return {
   'billing_zip': ?billingZip,
@@ -178,7 +178,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('open') && json['open'] is bool &&
       json.containsKey('opened_reason') &&
       json.containsKey('reason') && json['reason'] is String; } 
-Review copyWith({String? Function()? billingZip, ReviewCharge? Function()? charge, ReviewClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, ReviewIpAddressLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent Function()? paymentIntent, String? reason, ReviewSession? Function()? session, }) { return Review(
+Review copyWith({String? Function()? billingZip, ReviewCharge? Function()? charge, ReviewClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, ReviewOpenedReason? openedReason, ReviewPaymentIntent Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
   billingZip: billingZip != null ? billingZip() : this.billingZip,
   charge: charge != null ? charge() : this.charge,
   closedReason: closedReason != null ? closedReason() : this.closedReason,

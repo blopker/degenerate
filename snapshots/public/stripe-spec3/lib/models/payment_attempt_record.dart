@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_attempt_record_customer_details.dart';import 'payment_attempt_record_payment_method_details.dart';import 'payment_attempt_record_shipping_details.dart';import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
+import 'payments_primitives_payment_records_resource_amount.dart';import 'payments_primitives_payment_records_resource_customer_details.dart';import 'payments_primitives_payment_records_resource_payment_method_details.dart';import 'payments_primitives_payment_records_resource_processor_details.dart';import 'payments_primitives_payment_records_resource_shipping_details.dart';/// Indicates whether the customer was present in your checkout flow during this payment.
 final class PaymentAttemptRecordCustomerPresence {const PaymentAttemptRecordCustomerPresence._(this.value);
 
 factory PaymentAttemptRecordCustomerPresence.fromJson(String json) { return switch (json) {
@@ -88,18 +88,18 @@ factory PaymentAttemptRecord.fromJson(Map<String, dynamic> json) { return Paymen
   amountRequested: PaymentsPrimitivesPaymentRecordsResourceAmount.fromJson(json['amount_requested'] as Map<String, dynamic>),
   application: json['application'] as String?,
   created: (json['created'] as num).toInt(),
-  customerDetails: json['customer_details'] != null ? PaymentAttemptRecordCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
+  customerDetails: json['customer_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   customerPresence: json['customer_presence'] != null ? PaymentAttemptRecordCustomerPresence.fromJson(json['customer_presence'] as String) : null,
   description: json['description'] as String?,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: PaymentAttemptRecordObject.fromJson(json['object'] as String),
-  paymentMethodDetails: json['payment_method_details'] != null ? PaymentAttemptRecordPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
   paymentRecord: json['payment_record'] as String?,
   processorDetails: PaymentsPrimitivesPaymentRecordsResourceProcessorDetails.fromJson(json['processor_details'] as Map<String, dynamic>),
   reportedBy: PaymentAttemptRecordReportedBy.fromJson(json['reported_by'] as String),
-  shippingDetails: json['shipping_details'] != null ? PaymentAttemptRecordShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? PaymentsPrimitivesPaymentRecordsResourceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
 ); }
 
 final PaymentsPrimitivesPaymentRecordsResourceAmount amount;
@@ -123,7 +123,7 @@ final String? application;
 final int created;
 
 /// Customer information for this payment.
-final PaymentAttemptRecordCustomerDetails? customerDetails;
+final PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? customerDetails;
 
 /// Indicates whether the customer was present in your checkout flow during this payment.
 final PaymentAttemptRecordCustomerPresence? customerPresence;
@@ -144,7 +144,7 @@ final Map<String,String> metadata;
 final PaymentAttemptRecordObject object;
 
 /// Information about the Payment Method debited for this payment.
-final PaymentAttemptRecordPaymentMethodDetails? paymentMethodDetails;
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? paymentMethodDetails;
 
 /// ID of the Payment Record this Payment Attempt Record belongs to.
 final String? paymentRecord;
@@ -155,7 +155,7 @@ final PaymentsPrimitivesPaymentRecordsResourceProcessorDetails processorDetails;
 final PaymentAttemptRecordReportedBy reportedBy;
 
 /// Shipping information for this payment.
-final PaymentAttemptRecordShippingDetails? shippingDetails;
+final PaymentsPrimitivesPaymentRecordsResourceShippingDetails? shippingDetails;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount.toJson(),
@@ -194,7 +194,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('processor_details') &&
       json.containsKey('reported_by'); } 
-PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentAttemptRecordCustomerDetails? Function()? customerDetails, PaymentAttemptRecordCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, PaymentAttemptRecordPaymentMethodDetails? Function()? paymentMethodDetails, String? Function()? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, PaymentAttemptRecordReportedBy? reportedBy, PaymentAttemptRecordShippingDetails? Function()? shippingDetails, }) { return PaymentAttemptRecord(
+PaymentAttemptRecord copyWith({PaymentsPrimitivesPaymentRecordsResourceAmount? amount, PaymentsPrimitivesPaymentRecordsResourceAmount? amountAuthorized, PaymentsPrimitivesPaymentRecordsResourceAmount? amountCanceled, PaymentsPrimitivesPaymentRecordsResourceAmount? amountFailed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountGuaranteed, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRefunded, PaymentsPrimitivesPaymentRecordsResourceAmount? amountRequested, String? Function()? application, int? created, PaymentsPrimitivesPaymentRecordsResourceCustomerDetails? Function()? customerDetails, PaymentAttemptRecordCustomerPresence? Function()? customerPresence, String? Function()? description, String? id, bool? livemode, Map<String,String>? metadata, PaymentAttemptRecordObject? object, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodDetails? Function()? paymentMethodDetails, String? Function()? paymentRecord, PaymentsPrimitivesPaymentRecordsResourceProcessorDetails? processorDetails, PaymentAttemptRecordReportedBy? reportedBy, PaymentsPrimitivesPaymentRecordsResourceShippingDetails? Function()? shippingDetails, }) { return PaymentAttemptRecord(
   amount: amount ?? this.amount,
   amountAuthorized: amountAuthorized ?? this.amountAuthorized,
   amountCanceled: amountCanceled ?? this.amountCanceled,

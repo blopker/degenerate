@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_dispute_evidence.dart';import 'issuing_dispute_transaction.dart';import 'issuing_dispute_treasury2.dart';import 'issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'balance_transaction.dart';import 'issuing_dispute_evidence.dart';import 'issuing_dispute_transaction.dart';import 'issuing_dispute_treasury.dart';import 'issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
 final class IssuingDisputeLossReason {const IssuingDisputeLossReason._(this.value);
 
 factory IssuingDisputeLossReason.fromJson(String json) { return switch (json) {
@@ -153,7 +153,7 @@ factory IssuingDispute.fromJson(Map<String, dynamic> json) { return IssuingDispu
   object: IssuingDisputeObject.fromJson(json['object'] as String),
   status: IssuingDisputeStatus.fromJson(json['status'] as String),
   transaction: OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => IssuingTransaction.fromJson(v as Map<String, dynamic>),),
-  treasury: json['treasury'] != null ? IssuingDisputeTreasury2.fromJson(json['treasury'] as Map<String, dynamic>) : null,
+  treasury: json['treasury'] != null ? IssuingDisputeTreasury.fromJson(json['treasury'] as Map<String, dynamic>) : null,
 ); }
 
 /// Disputed amount in the card's currency and in the [smallest currency unit](https://docs.stripe.com/currencies#zero-decimal). Usually the amount of the `transaction`, but can differ (usually because of currency fluctuation).
@@ -192,7 +192,7 @@ final IssuingDisputeStatus status;
 final IssuingDisputeTransaction transaction;
 
 /// [Treasury](https://docs.stripe.com/api/treasury) details related to this dispute if it was created on a [FinancialAccount](/docs/api/treasury/financial_accounts
-final IssuingDisputeTreasury2? treasury;
+final IssuingDisputeTreasury? treasury;
 
 Map<String, dynamic> toJson() { return {
   'amount': amount,
@@ -219,7 +219,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('transaction'); } 
-IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, IssuingDisputeLossReason Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, IssuingDisputeTreasury2? Function()? treasury, }) { return IssuingDispute(
+IssuingDispute copyWith({int? amount, List<BalanceTransaction>? Function()? balanceTransactions, int? created, String? currency, IssuingDisputeEvidence? evidence, String? id, bool? livemode, IssuingDisputeLossReason Function()? lossReason, Map<String,String>? metadata, IssuingDisputeObject? object, IssuingDisputeStatus? status, IssuingDisputeTransaction? transaction, IssuingDisputeTreasury? Function()? treasury, }) { return IssuingDispute(
   amount: amount ?? this.amount,
   balanceTransactions: balanceTransactions != null ? balanceTransactions() : this.balanceTransactions,
   created: created ?? this.created,

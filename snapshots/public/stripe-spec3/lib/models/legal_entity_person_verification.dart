@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'legal_entity_person_verification_additional_document.dart';import 'legal_entity_person_verification_document.dart';/// 
+import 'legal_entity_person_verification_document.dart';/// 
 final class LegalEntityPersonVerification {const LegalEntityPersonVerification({this.additionalDocument, this.details, this.detailsCode, this.document, required this.status, });
 
 factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) { return LegalEntityPersonVerification(
-  additionalDocument: json['additional_document'] != null ? LegalEntityPersonVerificationAdditionalDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
+  additionalDocument: json['additional_document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['additional_document'] as Map<String, dynamic>) : null,
   details: json['details'] as String?,
   detailsCode: json['details_code'] as String?,
   document: json['document'] != null ? LegalEntityPersonVerificationDocument.fromJson(json['document'] as Map<String, dynamic>) : null,
@@ -12,7 +12,7 @@ factory LegalEntityPersonVerification.fromJson(Map<String, dynamic> json) { retu
 ); }
 
 /// A document showing address, either a passport, local ID card, or utility bill from a well-known utility company.
-final LegalEntityPersonVerificationAdditionalDocument? additionalDocument;
+final LegalEntityPersonVerificationDocument? additionalDocument;
 
 /// A user-displayable string describing the verification state for the person. For example, this may say "Provided identity information could not be verified".
 final String? details;
@@ -33,7 +33,7 @@ Map<String, dynamic> toJson() { return {
   'status': status,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status') && json['status'] is String; } 
-LegalEntityPersonVerification copyWith({LegalEntityPersonVerificationAdditionalDocument? Function()? additionalDocument, String? Function()? details, String? Function()? detailsCode, LegalEntityPersonVerificationDocument Function()? document, String? status, }) { return LegalEntityPersonVerification(
+LegalEntityPersonVerification copyWith({LegalEntityPersonVerificationDocument? Function()? additionalDocument, String? Function()? details, String? Function()? detailsCode, LegalEntityPersonVerificationDocument Function()? document, String? status, }) { return LegalEntityPersonVerification(
   additionalDocument: additionalDocument != null ? additionalDocument() : this.additionalDocument,
   details: details != null ? details() : this.details,
   detailsCode: detailsCode != null ? detailsCode() : this.detailsCode,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_parent.dart';import 'line_item_pricing.dart';import 'line_item_subscription.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_line_item_period.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'line_item_discounts.dart';import 'line_item_subscription.dart';import 'subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class LineItemObject {const LineItemObject._(this.value);
 
 factory LineItemObject.fromJson(String json) { return switch (json) {
@@ -39,10 +39,10 @@ factory LineItem.fromJson(Map<String, dynamic> json) { return LineItem(
   livemode: json['livemode'] as bool,
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: LineItemObject.fromJson(json['object'] as String),
-  parent: json['parent'] != null ? LineItemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   period: InvoiceLineItemPeriod.fromJson(json['period'] as Map<String, dynamic>),
   pretaxCreditAmounts: (json['pretax_credit_amounts'] as List<dynamic>?)?.map((e) => InvoicesResourcePretaxCreditAmount.fromJson(e as Map<String, dynamic>)).toList(),
-  pricing: json['pricing'] != null ? LineItemPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
+  pricing: json['pricing'] != null ? BillingBillResourceInvoicingPricingPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   subscription: json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null,
   subtotal: (json['subtotal'] as num).toInt(),
@@ -83,7 +83,7 @@ final Map<String,String> metadata;
 final LineItemObject object;
 
 /// The parent that generated this line item.
-final LineItemParent? parent;
+final BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent? parent;
 
 final InvoiceLineItemPeriod period;
 
@@ -91,7 +91,7 @@ final InvoiceLineItemPeriod period;
 final List<InvoicesResourcePretaxCreditAmount>? pretaxCreditAmounts;
 
 /// The pricing information of the line item.
-final LineItemPricing? pricing;
+final BillingBillResourceInvoicingPricingPricing? pricing;
 
 /// The quantity of the subscription, if the line item is a subscription or a proration.
 final int? quantity;
@@ -135,7 +135,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('period') &&
       json.containsKey('subtotal') && json['subtotal'] is num; } 
-LineItem copyWith({int? amount, String? currency, String? Function()? description, List<DiscountsResourceDiscountAmount>? Function()? discountAmounts, bool? discountable, List<LineItemDiscounts>? discounts, String? id, String? Function()? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, LineItemParent? Function()? parent, InvoiceLineItemPeriod? period, List<InvoicesResourcePretaxCreditAmount>? Function()? pretaxCreditAmounts, LineItemPricing? Function()? pricing, int? Function()? quantity, LineItemSubscription? Function()? subscription, int? subtotal, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, }) { return LineItem(
+LineItem copyWith({int? amount, String? currency, String? Function()? description, List<DiscountsResourceDiscountAmount>? Function()? discountAmounts, bool? discountable, List<LineItemDiscounts>? discounts, String? id, String? Function()? invoice, bool? livemode, Map<String,String>? metadata, LineItemObject? object, BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent? Function()? parent, InvoiceLineItemPeriod? period, List<InvoicesResourcePretaxCreditAmount>? Function()? pretaxCreditAmounts, BillingBillResourceInvoicingPricingPricing? Function()? pricing, int? Function()? quantity, LineItemSubscription? Function()? subscription, int? subtotal, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, }) { return LineItem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

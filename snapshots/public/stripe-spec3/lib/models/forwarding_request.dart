@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarding_request_request_context.dart';import 'forwarding_request_request_details.dart';import 'forwarding_request_response_details.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'forwarded_request_context.dart';import 'forwarded_request_details.dart';import 'forwarded_response_details.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ForwardingRequestObject {const ForwardingRequestObject._(this.value);
 
 factory ForwardingRequestObject.fromJson(String json) { return switch (json) {
@@ -81,9 +81,9 @@ factory ForwardingRequest.fromJson(Map<String, dynamic> json) { return Forwardin
   object: ForwardingRequestObject.fromJson(json['object'] as String),
   paymentMethod: json['payment_method'] as String,
   replacements: (json['replacements'] as List<dynamic>).map((e) => ForwardingRequestReplacements.fromJson(e as String)).toList(),
-  requestContext: json['request_context'] != null ? ForwardingRequestRequestContext.fromJson(json['request_context'] as Map<String, dynamic>) : null,
-  requestDetails: json['request_details'] != null ? ForwardingRequestRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null,
-  responseDetails: json['response_details'] != null ? ForwardingRequestResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null,
+  requestContext: json['request_context'] != null ? ForwardedRequestContext.fromJson(json['request_context'] as Map<String, dynamic>) : null,
+  requestDetails: json['request_details'] != null ? ForwardedRequestDetails.fromJson(json['request_details'] as Map<String, dynamic>) : null,
+  responseDetails: json['response_details'] != null ? ForwardedResponseDetails.fromJson(json['response_details'] as Map<String, dynamic>) : null,
   url: json['url'] as String?,
 ); }
 
@@ -109,13 +109,13 @@ final String paymentMethod;
 final List<ForwardingRequestReplacements> replacements;
 
 /// Context about the request from Stripe's servers to the destination endpoint.
-final ForwardingRequestRequestContext? requestContext;
+final ForwardedRequestContext? requestContext;
 
 /// The request that was sent to the destination endpoint. We redact any sensitive fields.
-final ForwardingRequestRequestDetails? requestDetails;
+final ForwardedRequestDetails? requestDetails;
 
 /// The response that the destination endpoint returned to us. We redact any sensitive fields.
-final ForwardingRequestResponseDetails? responseDetails;
+final ForwardedResponseDetails? responseDetails;
 
 /// The destination URL for the forwarded request. Must be supported by the config.
 final String? url;
@@ -139,7 +139,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object') &&
       json.containsKey('payment_method') && json['payment_method'] is String &&
       json.containsKey('replacements'); } 
-ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, ForwardingRequestObject? object, String? paymentMethod, List<ForwardingRequestReplacements>? replacements, ForwardingRequestRequestContext? Function()? requestContext, ForwardingRequestRequestDetails? Function()? requestDetails, ForwardingRequestResponseDetails? Function()? responseDetails, String? Function()? url, }) { return ForwardingRequest(
+ForwardingRequest copyWith({int? created, String? id, bool? livemode, Map<String, String>? Function()? metadata, ForwardingRequestObject? object, String? paymentMethod, List<ForwardingRequestReplacements>? replacements, ForwardedRequestContext? Function()? requestContext, ForwardedRequestDetails? Function()? requestDetails, ForwardedResponseDetails? Function()? responseDetails, String? Function()? url, }) { return ForwardingRequest(
   created: created ?? this.created,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_card_shipping_address_validation_normalized_address.dart';/// The address validation capabilities to use.
+import 'address.dart';/// The address validation capabilities to use.
 final class IssuingCardShippingAddressValidationMode {const IssuingCardShippingAddressValidationMode._(this.value);
 
 factory IssuingCardShippingAddressValidationMode.fromJson(String json) { return switch (json) {
@@ -61,7 +61,7 @@ final class IssuingCardShippingAddressValidation {const IssuingCardShippingAddre
 
 factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json) { return IssuingCardShippingAddressValidation(
   mode: IssuingCardShippingAddressValidationMode.fromJson(json['mode'] as String),
-  normalizedAddress: json['normalized_address'] != null ? IssuingCardShippingAddressValidationNormalizedAddress.fromJson(json['normalized_address'] as Map<String, dynamic>) : null,
+  normalizedAddress: json['normalized_address'] != null ? Address.fromJson(json['normalized_address'] as Map<String, dynamic>) : null,
   result: json['result'] != null ? IssuingCardShippingAddressValidationResult.fromJson(json['result'] as String) : null,
 ); }
 
@@ -69,7 +69,7 @@ factory IssuingCardShippingAddressValidation.fromJson(Map<String, dynamic> json)
 final IssuingCardShippingAddressValidationMode mode;
 
 /// The normalized shipping address.
-final IssuingCardShippingAddressValidationNormalizedAddress? normalizedAddress;
+final Address? normalizedAddress;
 
 /// The validation result for the shipping address.
 final IssuingCardShippingAddressValidationResult? result;
@@ -80,7 +80,7 @@ Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'); } 
-IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, IssuingCardShippingAddressValidationNormalizedAddress? Function()? normalizedAddress, IssuingCardShippingAddressValidationResult? Function()? result, }) { return IssuingCardShippingAddressValidation(
+IssuingCardShippingAddressValidation copyWith({IssuingCardShippingAddressValidationMode? mode, Address? Function()? normalizedAddress, IssuingCardShippingAddressValidationResult? Function()? result, }) { return IssuingCardShippingAddressValidation(
   mode: mode ?? this.mode,
   normalizedAddress: normalizedAddress != null ? normalizedAddress() : this.normalizedAddress,
   result: result != null ? result() : this.result,

@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'issuing_transaction_fleet_data_cardholder_prompt_data.dart';import 'issuing_transaction_fleet_data_reported_breakdown.dart';/// 
+import 'issuing_transaction_fleet_cardholder_prompt_data.dart';import 'issuing_transaction_fleet_reported_breakdown.dart';/// 
 final class IssuingTransactionFleetData {const IssuingTransactionFleetData({this.cardholderPromptData, this.purchaseType, this.reportedBreakdown, this.serviceType, });
 
 factory IssuingTransactionFleetData.fromJson(Map<String, dynamic> json) { return IssuingTransactionFleetData(
-  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingTransactionFleetDataCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
+  cardholderPromptData: json['cardholder_prompt_data'] != null ? IssuingTransactionFleetCardholderPromptData.fromJson(json['cardholder_prompt_data'] as Map<String, dynamic>) : null,
   purchaseType: json['purchase_type'] as String?,
-  reportedBreakdown: json['reported_breakdown'] != null ? IssuingTransactionFleetDataReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
+  reportedBreakdown: json['reported_breakdown'] != null ? IssuingTransactionFleetReportedBreakdown.fromJson(json['reported_breakdown'] as Map<String, dynamic>) : null,
   serviceType: json['service_type'] as String?,
 ); }
 
 /// Answers to prompts presented to cardholder at point of sale.
-final IssuingTransactionFleetDataCardholderPromptData? cardholderPromptData;
+final IssuingTransactionFleetCardholderPromptData? cardholderPromptData;
 
 /// The type of purchase. One of `fuel_purchase`, `non_fuel_purchase`, or `fuel_and_non_fuel_purchase`.
 final String? purchaseType;
 
 /// More information about the total amount. This information is not guaranteed to be accurate as some merchants may provide unreliable data.
-final IssuingTransactionFleetDataReportedBreakdown? reportedBreakdown;
+final IssuingTransactionFleetReportedBreakdown? reportedBreakdown;
 
 /// The type of fuel service. One of `non_fuel_transaction`, `full_service`, or `self_service`.
 final String? serviceType;
@@ -29,7 +29,7 @@ Map<String, dynamic> toJson() { return {
   'service_type': ?serviceType,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'cardholder_prompt_data', 'purchase_type', 'reported_breakdown', 'service_type'}.contains(key)); } 
-IssuingTransactionFleetData copyWith({IssuingTransactionFleetDataCardholderPromptData? Function()? cardholderPromptData, String? Function()? purchaseType, IssuingTransactionFleetDataReportedBreakdown? Function()? reportedBreakdown, String? Function()? serviceType, }) { return IssuingTransactionFleetData(
+IssuingTransactionFleetData copyWith({IssuingTransactionFleetCardholderPromptData? Function()? cardholderPromptData, String? Function()? purchaseType, IssuingTransactionFleetReportedBreakdown? Function()? reportedBreakdown, String? Function()? serviceType, }) { return IssuingTransactionFleetData(
   cardholderPromptData: cardholderPromptData != null ? cardholderPromptData() : this.cardholderPromptData,
   purchaseType: purchaseType != null ? purchaseType() : this.purchaseType,
   reportedBreakdown: reportedBreakdown != null ? reportedBreakdown() : this.reportedBreakdown,

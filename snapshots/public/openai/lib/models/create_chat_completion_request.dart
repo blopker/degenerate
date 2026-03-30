@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_allowed_tools_choice.dart';import 'chat_completion_function_call_option.dart';import 'chat_completion_functions.dart';import 'chat_completion_named_tool_choice.dart';import 'chat_completion_named_tool_choice_custom.dart';import 'chat_completion_request_message.dart';import 'chat_completion_stream_options.dart';import 'chat_completion_tool.dart';import 'chat_completion_tool_choice_option.dart';import 'create_chat_completion_request_audio.dart';import 'create_chat_completion_request_function_call.dart';import 'create_chat_completion_request_prediction.dart';import 'create_chat_completion_request_response_format.dart';import 'create_chat_completion_request_tools.dart';import 'create_chat_completion_request_web_search_options.dart';import 'custom_tool_chat_completions.dart';import 'model_ids_shared.dart';import 'parallel_tool_calls.dart';import 'reasoning_effort.dart';import 'stop_configuration.dart';import 'tool_choice_mode.dart';import 'verbosity.dart';final class ResponseModalities2 {const ResponseModalities2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'chat_completion_allowed_tools_choice.dart';import 'chat_completion_function_call_option.dart';import 'chat_completion_functions.dart';import 'chat_completion_named_tool_choice.dart';import 'chat_completion_named_tool_choice_custom.dart';import 'chat_completion_request_message.dart';import 'chat_completion_stream_options.dart';import 'chat_completion_tool.dart';import 'chat_completion_tool_choice_option.dart';import 'create_chat_completion_request_audio.dart';import 'create_chat_completion_request_function_call.dart';import 'create_chat_completion_request_response_format.dart';import 'create_chat_completion_request_tools.dart';import 'create_chat_completion_request_web_search_options.dart';import 'custom_tool_chat_completions.dart';import 'model_ids_shared.dart';import 'parallel_tool_calls.dart';import 'prediction_content.dart';import 'reasoning_effort.dart';import 'stop_configuration.dart';import 'tool_choice_mode.dart';import 'verbosity.dart';final class ResponseModalities2 {const ResponseModalities2._(this.value);
 
 factory ResponseModalities2.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -46,7 +46,7 @@ factory CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) { return
   logprobs: json.containsKey('logprobs') ? json['logprobs'] as bool? : false,
   maxTokens: json['max_tokens'] != null ? (json['max_tokens'] as num).toInt() : null,
   n: json.containsKey('n') ? json['n'] != null ? (json['n'] as num).toInt() : null : 1,
-  prediction: json['prediction'] != null ? CreateChatCompletionRequestPrediction.fromJson(json['prediction']) : null,
+  prediction: json['prediction'] != null ? PredictionContent.fromJson(json['prediction'] as Map<String, dynamic>) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   streamOptions: json['stream_options'] != null ? ChatCompletionStreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => ChatCompletionTool.fromJson(v as Map<String, dynamic>), fromB: (v) => CustomToolChatCompletions.fromJson(v as Map<String, dynamic>),)).toList(),
@@ -173,7 +173,7 @@ final int? n;
 /// response are known ahead of time. This is most common when you are
 /// regenerating a file with only minor changes to most of the content.
 /// 
-final CreateChatCompletionRequestPrediction? prediction;
+final PredictionContent? prediction;
 
 /// This feature is in Beta.
 /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.
@@ -248,7 +248,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages') &&
       json.containsKey('model'); } 
-CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, List<ResponseModalities2>? Function()? modalities, Verbosity? Function()? verbosity, ReasoningEffort? Function()? reasoningEffort, int? Function()? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, CreateChatCompletionRequestWebSearchOptions Function()? webSearchOptions, int? Function()? topLogprobs, CreateChatCompletionRequestResponseFormat Function()? responseFormat, CreateChatCompletionRequestAudio? Function()? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration Function()? stop, Map<String, int>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, CreateChatCompletionRequestPrediction? Function()? prediction, int? Function()? seed, ChatCompletionStreamOptions Function()? streamOptions, List<CreateChatCompletionRequestTools> Function()? tools, ChatCompletionToolChoiceOption Function()? toolChoice, ParallelToolCalls Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall Function()? functionCall, List<ChatCompletionFunctions> Function()? functions, }) { return CreateChatCompletionRequest(
+CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, List<ResponseModalities2>? Function()? modalities, Verbosity? Function()? verbosity, ReasoningEffort? Function()? reasoningEffort, int? Function()? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, CreateChatCompletionRequestWebSearchOptions Function()? webSearchOptions, int? Function()? topLogprobs, CreateChatCompletionRequestResponseFormat Function()? responseFormat, CreateChatCompletionRequestAudio? Function()? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration Function()? stop, Map<String, int>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, PredictionContent? Function()? prediction, int? Function()? seed, ChatCompletionStreamOptions Function()? streamOptions, List<CreateChatCompletionRequestTools> Function()? tools, ChatCompletionToolChoiceOption Function()? toolChoice, ParallelToolCalls Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall Function()? functionCall, List<ChatCompletionFunctions> Function()? functions, }) { return CreateChatCompletionRequest(
   messages: messages ?? this.messages,
   model: model ?? this.model,
   modalities: modalities != null ? modalities() : this.modalities,

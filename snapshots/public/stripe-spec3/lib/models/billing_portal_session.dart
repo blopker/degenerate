@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration.dart';import 'billing_portal_session_configuration.dart';import 'billing_portal_session_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_portal_configuration.dart';import 'billing_portal_session_configuration.dart';import 'portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
 final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
 
 factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
@@ -203,7 +203,7 @@ factory BillingPortalSession.fromJson(Map<String, dynamic> json) { return Billin
   created: (json['created'] as num).toInt(),
   customer: json['customer'] as String,
   customerAccount: json['customer_account'] as String?,
-  flow: json['flow'] != null ? BillingPortalSessionFlow.fromJson(json['flow'] as Map<String, dynamic>) : null,
+  flow: json['flow'] != null ? PortalFlowsFlow.fromJson(json['flow'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   locale: json['locale'] != null ? BillingPortalSessionLocale.fromJson(json['locale'] as String) : null,
@@ -226,7 +226,7 @@ final String customer;
 final String? customerAccount;
 
 /// Information about a specific flow for the customer to go through. See the [docs](https://docs.stripe.com/customer-management/portal-deep-links) to learn more about using customer portal deep links and flows.
-final BillingPortalSessionFlow? flow;
+final PortalFlowsFlow? flow;
 
 /// Unique identifier for the object.
 final String id;
@@ -270,7 +270,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('url') && json['url'] is String; } 
-BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, String? Function()? customerAccount, BillingPortalSessionFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
+BillingPortalSession copyWith({BillingPortalSessionConfiguration? configuration, int? created, String? customer, String? Function()? customerAccount, PortalFlowsFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
   configuration: configuration ?? this.configuration,
   created: created ?? this.created,
   customer: customer ?? this.customer,

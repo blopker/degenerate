@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_tax_rate_details_flat_amount.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
+import 'tax_rate_flat_amount.dart';/// Indicates the type of tax rate applied to the taxable amount. This value can be `null` when no tax applies to the location. This field is only present for TaxRates created by Stripe Tax.
 final class TaxProductResourceTaxRateDetailsRateType {const TaxProductResourceTaxRateDetailsRateType._(this.value);
 
 factory TaxProductResourceTaxRateDetailsRateType.fromJson(String json) { return switch (json) {
@@ -91,7 +91,7 @@ final class TaxProductResourceTaxRateDetails {const TaxProductResourceTaxRateDet
 
 factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { return TaxProductResourceTaxRateDetails(
   country: json['country'] as String?,
-  flatAmount: json['flat_amount'] != null ? TaxProductResourceTaxRateDetailsFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
+  flatAmount: json['flat_amount'] != null ? TaxRateFlatAmount.fromJson(json['flat_amount'] as Map<String, dynamic>) : null,
   percentageDecimal: json['percentage_decimal'] as String,
   rateType: json['rate_type'] != null ? TaxProductResourceTaxRateDetailsRateType.fromJson(json['rate_type'] as String) : null,
   state: json['state'] as String?,
@@ -102,7 +102,7 @@ factory TaxProductResourceTaxRateDetails.fromJson(Map<String, dynamic> json) { r
 final String? country;
 
 /// The amount of the tax rate when the `rate_type` is `flat_amount`. Tax rates with `rate_type` `percentage` can vary based on the transaction, resulting in this field being `null`. This field exposes the amount and currency of the flat tax rate.
-final TaxProductResourceTaxRateDetailsFlatAmount? flatAmount;
+final TaxRateFlatAmount? flatAmount;
 
 /// The tax rate percentage as a string. For example, 8.5% is represented as `"8.5"`.
 final String percentageDecimal;
@@ -125,7 +125,7 @@ Map<String, dynamic> toJson() { return {
   if (taxType != null) 'tax_type': taxType?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('percentage_decimal') && json['percentage_decimal'] is String; } 
-TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxProductResourceTaxRateDetailsFlatAmount? Function()? flatAmount, String? percentageDecimal, TaxProductResourceTaxRateDetailsRateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxProductResourceTaxRateDetails(
+TaxProductResourceTaxRateDetails copyWith({String? Function()? country, TaxRateFlatAmount? Function()? flatAmount, String? percentageDecimal, TaxProductResourceTaxRateDetailsRateType? Function()? rateType, String? Function()? state, TaxProductResourceTaxRateDetailsTaxType? Function()? taxType, }) { return TaxProductResourceTaxRateDetails(
   country: country != null ? country() : this.country,
   flatAmount: flatAmount != null ? flatAmount() : this.flatAmount,
   percentageDecimal: percentageDecimal ?? this.percentageDecimal,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_title.dart';import 'shield_token_sources2.dart';import 'shield_token_type.dart';final class TokenValidationConfigCreateRequest {const TokenValidationConfigCreateRequest({required this.credentials, required this.description, required this.title, required this.tokenSources, required this.tokenType, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'shield_credentials.dart';import 'shield_description.dart';import 'shield_header.dart';import 'shield_title.dart';import 'shield_token_type.dart';final class TokenValidationConfigCreateRequest {const TokenValidationConfigCreateRequest({required this.credentials, required this.description, required this.title, required this.tokenSources, required this.tokenType, });
 
 factory TokenValidationConfigCreateRequest.fromJson(Map<String, dynamic> json) { return TokenValidationConfigCreateRequest(
   credentials: ShieldCredentials.fromJson(json['credentials'] as Map<String, dynamic>),
   description: ShieldDescription.fromJson(json['description'] as String),
   title: ShieldTitle.fromJson(json['title'] as String),
-  tokenSources: (json['token_sources'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => ShieldHeader.fromJson(v as String), fromB: (v) => ShieldCookie.fromJson(v as String),)).toList(),
+  tokenSources: (json['token_sources'] as List<dynamic>).map((e) => ShieldHeader.fromJson(e as String)).toList(),
   tokenType: ShieldTokenType.fromJson(json['token_type'] as String),
 ); }
 
@@ -16,7 +16,7 @@ final ShieldDescription description;
 
 final ShieldTitle title;
 
-final List<ShieldTokenSources2> tokenSources;
+final List<ShieldHeader> tokenSources;
 
 final ShieldTokenType tokenType;
 
@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('crede
       json.containsKey('title') &&
       json.containsKey('token_sources') &&
       json.containsKey('token_type'); } 
-TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, ShieldDescription? description, ShieldTitle? title, List<ShieldTokenSources2>? tokenSources, ShieldTokenType? tokenType, }) { return TokenValidationConfigCreateRequest(
+TokenValidationConfigCreateRequest copyWith({ShieldCredentials? credentials, ShieldDescription? description, ShieldTitle? title, List<ShieldHeader>? tokenSources, ShieldTokenType? tokenType, }) { return TokenValidationConfigCreateRequest(
   credentials: credentials ?? this.credentials,
   description: description ?? this.description,
   title: title ?? this.title,

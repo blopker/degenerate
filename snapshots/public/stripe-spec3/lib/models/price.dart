@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option.dart';import 'deleted_product.dart';import 'price_custom_unit_amount.dart';import 'price_product.dart';import 'price_recurring.dart';import 'price_tier.dart';import 'price_transform_quantity.dart';import 'product.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'currency_option.dart';import 'custom_unit_amount.dart';import 'deleted_product.dart';import 'price_product.dart';import 'price_tier.dart';import 'product.dart';import 'recurring.dart';import 'transform_quantity.dart';/// Describes how to compute the price per period. Either `per_unit` or `tiered`. `per_unit` indicates that the fixed amount (specified in `unit_amount` or `unit_amount_decimal`) will be charged per unit in `quantity` (for prices with `usage_type=licensed`), or per unit of total usage (for prices with `usage_type=metered`). `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the `tiers` and `tiers_mode` attributes.
 final class PriceBillingScheme {const PriceBillingScheme._(this.value);
 
 factory PriceBillingScheme.fromJson(String json) { return switch (json) {
@@ -139,7 +139,7 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   currencyOptions: (json['currency_options'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, CurrencyOption.fromJson(v as Map<String, dynamic>))),
-  customUnitAmount: json['custom_unit_amount'] != null ? PriceCustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
+  customUnitAmount: json['custom_unit_amount'] != null ? CustomUnitAmount.fromJson(json['custom_unit_amount'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
   lookupKey: json['lookup_key'] as String?,
@@ -147,11 +147,11 @@ factory Price.fromJson(Map<String, dynamic> json) { return Price(
   nickname: json['nickname'] as String?,
   object: PriceObject.fromJson(json['object'] as String),
   product: OneOf3.parse(json['product'], fromA: (v) => v as String, fromB: (v) => Product.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedProduct.fromJson(v as Map<String, dynamic>),),
-  recurring: json['recurring'] != null ? PriceRecurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
+  recurring: json['recurring'] != null ? Recurring.fromJson(json['recurring'] as Map<String, dynamic>) : null,
   taxBehavior: json['tax_behavior'] != null ? PriceTaxBehavior.fromJson(json['tax_behavior'] as String) : null,
   tiers: (json['tiers'] as List<dynamic>?)?.map((e) => PriceTier.fromJson(e as Map<String, dynamic>)).toList(),
   tiersMode: json['tiers_mode'] != null ? PriceTiersMode.fromJson(json['tiers_mode'] as String) : null,
-  transformQuantity: json['transform_quantity'] != null ? PriceTransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
+  transformQuantity: json['transform_quantity'] != null ? TransformQuantity.fromJson(json['transform_quantity'] as Map<String, dynamic>) : null,
   type: PriceType.fromJson(json['type'] as String),
   unitAmount: json['unit_amount'] != null ? (json['unit_amount'] as num).toInt() : null,
   unitAmountDecimal: json['unit_amount_decimal'] as String?,
@@ -173,7 +173,7 @@ final String currency;
 final Map<String,CurrencyOption>? currencyOptions;
 
 /// When set, provides configuration for the amount to be adjusted by the customer during Checkout Sessions and Payment Links.
-final PriceCustomUnitAmount? customUnitAmount;
+final CustomUnitAmount? customUnitAmount;
 
 /// Unique identifier for the object.
 final String id;
@@ -197,7 +197,7 @@ final PriceObject object;
 final PriceProduct product;
 
 /// The recurring components of a price such as `interval` and `usage_type`.
-final PriceRecurring? recurring;
+final Recurring? recurring;
 
 /// Only required if a [default tax behavior](https://docs.stripe.com/tax/products-prices-tax-categories-tax-behavior#setting-a-default-tax-behavior-(recommended)) was not provided in the Stripe Tax settings. Specifies whether the price is considered inclusive of taxes or exclusive of taxes. One of `inclusive`, `exclusive`, or `unspecified`. Once specified as either `inclusive` or `exclusive`, it cannot be changed.
 final PriceTaxBehavior? taxBehavior;
@@ -209,7 +209,7 @@ final List<PriceTier>? tiers;
 final PriceTiersMode? tiersMode;
 
 /// Apply a transformation to the reported usage or set quantity before computing the amount billed. Cannot be combined with `tiers`.
-final PriceTransformQuantity? transformQuantity;
+final TransformQuantity? transformQuantity;
 
 /// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
 final PriceType type;
@@ -253,7 +253,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('object') &&
       json.containsKey('product') &&
       json.containsKey('type'); } 
-Price copyWith({bool? active, PriceBillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, PriceCustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, PriceObject? object, PriceProduct? product, PriceRecurring? Function()? recurring, PriceTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PriceTiersMode? Function()? tiersMode, PriceTransformQuantity? Function()? transformQuantity, PriceType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
+Price copyWith({bool? active, PriceBillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption> Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, PriceObject? object, PriceProduct? product, Recurring? Function()? recurring, PriceTaxBehavior? Function()? taxBehavior, List<PriceTier> Function()? tiers, PriceTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(
   active: active ?? this.active,
   billingScheme: billingScheme ?? this.billingScheme,
   created: created ?? this.created,

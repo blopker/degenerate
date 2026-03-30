@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_account_number_details.dart';import 'financial_connections_account_account_holder.dart';import 'financial_connections_account_balance.dart';import 'financial_connections_account_balance_refresh.dart';import 'financial_connections_account_ownership.dart';import 'financial_connections_account_ownership2.dart';import 'financial_connections_account_ownership_refresh.dart';import 'financial_connections_account_transaction_refresh.dart';/// The type of the account. Account category is further divided in `subcategory`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'bank_connections_resource_account_number_details.dart';import 'bank_connections_resource_accountholder.dart';import 'bank_connections_resource_balance.dart';import 'bank_connections_resource_balance_refresh.dart';import 'bank_connections_resource_ownership_refresh.dart';import 'bank_connections_resource_transaction_refresh.dart';import 'financial_connections_account_ownership.dart';import 'financial_connections_account_ownership2.dart';/// The type of the account. Account category is further divided in `subcategory`.
 final class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory._(this.value);
 
 factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
@@ -210,10 +210,10 @@ bool get isUnknown { return !values.contains(this); }
 final class FinancialConnectionsAccount {const FinancialConnectionsAccount({this.accountHolder, this.accountNumbers, this.balance, this.balanceRefresh, required this.category, required this.created, this.displayName, required this.id, required this.institutionName, this.last4, required this.livemode, required this.object, this.ownership, this.ownershipRefresh, this.permissions, required this.status, required this.subcategory, this.subscriptions, required this.supportedPaymentMethodTypes, this.transactionRefresh, });
 
 factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return FinancialConnectionsAccount(
-  accountHolder: json['account_holder'] != null ? FinancialConnectionsAccountAccountHolder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
+  accountHolder: json['account_holder'] != null ? BankConnectionsResourceAccountholder.fromJson(json['account_holder'] as Map<String, dynamic>) : null,
   accountNumbers: (json['account_numbers'] as List<dynamic>?)?.map((e) => BankConnectionsResourceAccountNumberDetails.fromJson(e as Map<String, dynamic>)).toList(),
-  balance: json['balance'] != null ? FinancialConnectionsAccountBalance.fromJson(json['balance'] as Map<String, dynamic>) : null,
-  balanceRefresh: json['balance_refresh'] != null ? FinancialConnectionsAccountBalanceRefresh.fromJson(json['balance_refresh'] as Map<String, dynamic>) : null,
+  balance: json['balance'] != null ? BankConnectionsResourceBalance.fromJson(json['balance'] as Map<String, dynamic>) : null,
+  balanceRefresh: json['balance_refresh'] != null ? BankConnectionsResourceBalanceRefresh.fromJson(json['balance_refresh'] as Map<String, dynamic>) : null,
   category: FinancialConnectionsAccountCategory.fromJson(json['category'] as String),
   created: (json['created'] as num).toInt(),
   displayName: json['display_name'] as String?,
@@ -223,26 +223,26 @@ factory FinancialConnectionsAccount.fromJson(Map<String, dynamic> json) { return
   livemode: json['livemode'] as bool,
   object: FinancialConnectionsAccountObject.fromJson(json['object'] as String),
   ownership: json['ownership'] != null ? OneOf2.parse(json['ownership'], fromA: (v) => v as String, fromB: (v) => FinancialConnectionsAccountOwnership.fromJson(v as Map<String, dynamic>),) : null,
-  ownershipRefresh: json['ownership_refresh'] != null ? FinancialConnectionsAccountOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null,
+  ownershipRefresh: json['ownership_refresh'] != null ? BankConnectionsResourceOwnershipRefresh.fromJson(json['ownership_refresh'] as Map<String, dynamic>) : null,
   permissions: (json['permissions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountPermissions.fromJson(e as String)).toList(),
   status: FinancialConnectionsAccountStatus.fromJson(json['status'] as String),
   subcategory: FinancialConnectionsAccountSubcategory.fromJson(json['subcategory'] as String),
   subscriptions: (json['subscriptions'] as List<dynamic>?)?.map((e) => FinancialConnectionsAccountSubscriptions.fromJson(e as String)).toList(),
   supportedPaymentMethodTypes: (json['supported_payment_method_types'] as List<dynamic>).map((e) => FinancialConnectionsAccountSupportedPaymentMethodTypes.fromJson(e as String)).toList(),
-  transactionRefresh: json['transaction_refresh'] != null ? FinancialConnectionsAccountTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null,
+  transactionRefresh: json['transaction_refresh'] != null ? BankConnectionsResourceTransactionRefresh.fromJson(json['transaction_refresh'] as Map<String, dynamic>) : null,
 ); }
 
 /// The account holder that this account belongs to.
-final FinancialConnectionsAccountAccountHolder? accountHolder;
+final BankConnectionsResourceAccountholder? accountHolder;
 
 /// Details about the account numbers.
 final List<BankConnectionsResourceAccountNumberDetails>? accountNumbers;
 
 /// The most recent information about the account's balance.
-final FinancialConnectionsAccountBalance? balance;
+final BankConnectionsResourceBalance? balance;
 
 /// The state of the most recent attempt to refresh the account balance.
-final FinancialConnectionsAccountBalanceRefresh? balanceRefresh;
+final BankConnectionsResourceBalanceRefresh? balanceRefresh;
 
 /// The type of the account. Account category is further divided in `subcategory`.
 final FinancialConnectionsAccountCategory category;
@@ -272,7 +272,7 @@ final FinancialConnectionsAccountObject object;
 final FinancialConnectionsAccountOwnership2? ownership;
 
 /// The state of the most recent attempt to refresh the account owners.
-final FinancialConnectionsAccountOwnershipRefresh? ownershipRefresh;
+final BankConnectionsResourceOwnershipRefresh? ownershipRefresh;
 
 /// The list of permissions granted by this account.
 final List<FinancialConnectionsAccountPermissions>? permissions;
@@ -303,7 +303,7 @@ final List<FinancialConnectionsAccountSubscriptions>? subscriptions;
 final List<FinancialConnectionsAccountSupportedPaymentMethodTypes> supportedPaymentMethodTypes;
 
 /// The state of the most recent attempt to refresh the account transactions.
-final FinancialConnectionsAccountTransactionRefresh? transactionRefresh;
+final BankConnectionsResourceTransactionRefresh? transactionRefresh;
 
 Map<String, dynamic> toJson() { return {
   if (accountHolder != null) 'account_holder': accountHolder?.toJson(),
@@ -336,7 +336,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
       json.containsKey('status') &&
       json.containsKey('subcategory') &&
       json.containsKey('supported_payment_method_types'); } 
-FinancialConnectionsAccount copyWith({FinancialConnectionsAccountAccountHolder? Function()? accountHolder, List<BankConnectionsResourceAccountNumberDetails>? Function()? accountNumbers, FinancialConnectionsAccountBalance? Function()? balance, FinancialConnectionsAccountBalanceRefresh? Function()? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, String? Function()? displayName, String? id, String? institutionName, String? Function()? last4, bool? livemode, FinancialConnectionsAccountObject? object, FinancialConnectionsAccountOwnership2? Function()? ownership, FinancialConnectionsAccountOwnershipRefresh? Function()? ownershipRefresh, List<FinancialConnectionsAccountPermissions>? Function()? permissions, FinancialConnectionsAccountStatus? status, FinancialConnectionsAccountSubcategory? subcategory, List<FinancialConnectionsAccountSubscriptions>? Function()? subscriptions, List<FinancialConnectionsAccountSupportedPaymentMethodTypes>? supportedPaymentMethodTypes, FinancialConnectionsAccountTransactionRefresh? Function()? transactionRefresh, }) { return FinancialConnectionsAccount(
+FinancialConnectionsAccount copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, List<BankConnectionsResourceAccountNumberDetails>? Function()? accountNumbers, BankConnectionsResourceBalance? Function()? balance, BankConnectionsResourceBalanceRefresh? Function()? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, String? Function()? displayName, String? id, String? institutionName, String? Function()? last4, bool? livemode, FinancialConnectionsAccountObject? object, FinancialConnectionsAccountOwnership2? Function()? ownership, BankConnectionsResourceOwnershipRefresh? Function()? ownershipRefresh, List<FinancialConnectionsAccountPermissions>? Function()? permissions, FinancialConnectionsAccountStatus? status, FinancialConnectionsAccountSubcategory? subcategory, List<FinancialConnectionsAccountSubscriptions>? Function()? subscriptions, List<FinancialConnectionsAccountSupportedPaymentMethodTypes>? supportedPaymentMethodTypes, BankConnectionsResourceTransactionRefresh? Function()? transactionRefresh, }) { return FinancialConnectionsAccount(
   accountHolder: accountHolder != null ? accountHolder() : this.accountHolder,
   accountNumbers: accountNumbers != null ? accountNumbers() : this.accountNumbers,
   balance: balance != null ? balance() : this.balance,

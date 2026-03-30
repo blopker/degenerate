@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'financial_reporting_finance_report_run_run_parameters.dart';import 'reporting_report_run_result.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'file.dart';import 'financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ReportingReportRunObject {const ReportingReportRunObject._(this.value);
 
 factory ReportingReportRunObject.fromJson(String json) { return switch (json) {
@@ -40,7 +40,7 @@ factory ReportingReportRun.fromJson(Map<String, dynamic> json) { return Reportin
   object: ReportingReportRunObject.fromJson(json['object'] as String),
   parameters: FinancialReportingFinanceReportRunRunParameters.fromJson(json['parameters'] as Map<String, dynamic>),
   reportType: json['report_type'] as String,
-  result: json['result'] != null ? ReportingReportRunResult.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? File.fromJson(json['result'] as Map<String, dynamic>) : null,
   status: json['status'] as String,
   succeededAt: json['succeeded_at'] != null ? (json['succeeded_at'] as num).toInt() : null,
 ); }
@@ -68,7 +68,7 @@ final String reportType;
 
 /// The file object representing the result of the report run (populated when
 ///  `status=succeeded`).
-final ReportingReportRunResult? result;
+final File? result;
 
 /// Status of this report run. This will be `pending` when the run is initially created.
 ///  When the run finishes, this will be set to `succeeded` and the `result` field will be populated.
@@ -98,7 +98,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('parameters') &&
       json.containsKey('report_type') && json['report_type'] is String &&
       json.containsKey('status') && json['status'] is String; } 
-ReportingReportRun copyWith({int? created, String? Function()? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, ReportingReportRunResult? Function()? result, String? status, int? Function()? succeededAt, }) { return ReportingReportRun(
+ReportingReportRun copyWith({int? created, String? Function()? error, String? id, bool? livemode, ReportingReportRunObject? object, FinancialReportingFinanceReportRunRunParameters? parameters, String? reportType, File? Function()? result, String? status, int? Function()? succeededAt, }) { return ReportingReportRun(
   created: created ?? this.created,
   error: error != null ? error() : this.error,
   id: id ?? this.id,

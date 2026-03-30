@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio.dart';import 'messages51_chat_template_kwargs.dart';import 'messages51_function_call.dart';import 'messages51_function_call_variant2.dart';import 'messages51_functions.dart';import 'messages51_messages.dart';import 'messages51_messages_assistant.dart';import 'messages51_messages_developer.dart';import 'messages51_messages_function.dart';import 'messages51_messages_system.dart';import 'messages51_messages_tool.dart';import 'messages51_messages_user.dart';import 'messages51_prediction.dart';import 'messages51_response_format.dart';import 'messages51_stop.dart';import 'messages51_stream_options.dart';import 'messages51_tool_choice.dart';import 'messages51_tools.dart';import 'messages51_tools_custom.dart';import 'messages51_tools_function.dart';import 'messages51_web_search_options.dart';final class Messages51Modalities {const Messages51Modalities._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'messages51_audio_variant1.dart';import 'messages51_chat_template_kwargs.dart';import 'messages51_function_call.dart';import 'messages51_function_call_variant2.dart';import 'messages51_functions.dart';import 'messages51_messages.dart';import 'messages51_messages_assistant.dart';import 'messages51_messages_developer.dart';import 'messages51_messages_function.dart';import 'messages51_messages_system.dart';import 'messages51_messages_tool.dart';import 'messages51_messages_user.dart';import 'messages51_prediction_content.dart';import 'messages51_response_format_variant1.dart';import 'messages51_response_format_variant1_json_object.dart';import 'messages51_response_format_variant1_json_schema.dart';import 'messages51_response_format_variant1_text.dart';import 'messages51_stop.dart';import 'messages51_stream_options_variant1.dart';import 'messages51_tool_choice_variant1.dart';import 'messages51_tool_choice_variant1_allowed_tools.dart';import 'messages51_tool_choice_variant1_custom.dart';import 'messages51_tool_choice_variant1_function.dart';import 'messages51_tools.dart';import 'messages51_tools_custom.dart';import 'messages51_tools_function.dart';import 'messages51_web_search_options_variant1.dart';final class Messages51Modalities {const Messages51Modalities._(this.value);
 
 factory Messages51Modalities.fromJson(String json) { return switch (json) {
   'text' => text,
@@ -87,7 +87,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Messages51 {const Messages51({this.audio, this.chatTemplateKwargs, this.frequencyPenalty, this.functionCall, this.functions, this.logitBias, this.logprobs, this.maxCompletionTokens, this.maxTokens, required this.messages, this.metadata, this.modalities, this.model, this.n, this.parallelToolCalls = true, this.prediction, this.presencePenalty, this.reasoningEffort, this.responseFormat, this.seed, this.serviceTier, this.stop, this.store, this.stream, this.streamOptions, this.temperature, this.toolChoice, this.tools, this.topLogprobs, this.topP, this.user, this.webSearchOptions, });
 
 factory Messages51.fromJson(Map<String, dynamic> json) { return Messages51(
-  audio: json['audio'] != null ? Messages51Audio.fromJson(json['audio'] as Map<String, dynamic>) : null,
+  audio: json['audio'] != null ? Messages51AudioVariant1.fromJson(json['audio'] as Map<String, dynamic>) : null,
   chatTemplateKwargs: json['chat_template_kwargs'] != null ? Messages51ChatTemplateKwargs.fromJson(json['chat_template_kwargs'] as Map<String, dynamic>) : null,
   frequencyPenalty: json['frequency_penalty'] != null ? (json['frequency_penalty'] as num).toDouble() : null,
   functionCall: json['function_call'] != null ? OneOf2.parse(json['function_call'], fromA: (v) => Messages51FunctionCallVariant1.fromJson(v as String), fromB: (v) => Messages51FunctionCallVariant2.fromJson(v as Map<String, dynamic>),) : null,
@@ -102,26 +102,27 @@ factory Messages51.fromJson(Map<String, dynamic> json) { return Messages51(
   model: json['model'] as String?,
   n: json['n'] != null ? (json['n'] as num).toInt() : null,
   parallelToolCalls: json.containsKey('parallel_tool_calls') ? json['parallel_tool_calls'] as bool : true,
-  prediction: json['prediction'] != null ? Messages51Prediction.fromJson(json['prediction'] as Map<String, dynamic>) : null,
+  prediction: json['prediction'] != null ? Messages51PredictionContent.fromJson(json['prediction'] as Map<String, dynamic>) : null,
   presencePenalty: json['presence_penalty'] != null ? (json['presence_penalty'] as num).toDouble() : null,
   reasoningEffort: json['reasoning_effort'] != null ? Messages51ReasoningEffort.fromJson(json['reasoning_effort'] as String) : null,
-  responseFormat: json['response_format'] != null ? Messages51ResponseFormat.fromJson(json['response_format'] as Map<String, dynamic>) : null,
+  responseFormat: json['response_format'] != null ? OneOf3.parse(json['response_format'], fromA: (v) => Messages51ResponseFormatVariant1Text.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages51ResponseFormatVariant1JsonObject.fromJson(v as Map<String, dynamic>), fromC: (v) => Messages51ResponseFormatVariant1JsonSchema.fromJson(v as Map<String, dynamic>),) : null,
   seed: json['seed'] != null ? (json['seed'] as num).toInt() : null,
   serviceTier: json['service_tier'] != null ? Messages51ServiceTier.fromJson(json['service_tier'] as String) : null,
   stop: json['stop'] != null ? OneOf2.parse(json['stop'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => e as String).toList(),) : null,
   store: json['store'] as bool?,
   stream: json['stream'] as bool?,
-  streamOptions: json['stream_options'] != null ? Messages51StreamOptions.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
+  streamOptions: json['stream_options'] != null ? Messages51StreamOptionsVariant1.fromJson(json['stream_options'] as Map<String, dynamic>) : null,
   temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
-  toolChoice: json['tool_choice'] != null ? Messages51ToolChoice.fromJson(json['tool_choice'] as Map<String, dynamic>) : null,
+  toolChoice: json['tool_choice'] != null ? OneOf4.parse(json['tool_choice'], fromA: (v) => Messages51ToolChoiceVariant1Variant1.fromJson(v as String), fromB: (v) => Messages51ToolChoiceVariant1Function.fromJson(v as Map<String, dynamic>), fromC: (v) => Messages51ToolChoiceVariant1Custom.fromJson(v as Map<String, dynamic>), fromD: (v) => Messages51ToolChoiceVariant1AllowedTools.fromJson(v as Map<String, dynamic>),) : null,
   tools: (json['tools'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => Messages51ToolsFunction.fromJson(v as Map<String, dynamic>), fromB: (v) => Messages51ToolsCustom.fromJson(v as Map<String, dynamic>),)).toList(),
   topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
   topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
   user: json['user'] as String?,
-  webSearchOptions: json['web_search_options'] != null ? Messages51WebSearchOptions.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
+  webSearchOptions: json['web_search_options'] != null ? Messages51WebSearchOptionsVariant1.fromJson(json['web_search_options'] as Map<String, dynamic>) : null,
 ); }
 
-final Messages51Audio? audio;
+/// Parameters for audio output. Required when modalities includes 'audio'.
+final Messages51AudioVariant1? audio;
 
 final Messages51ChatTemplateKwargs? chatTemplateKwargs;
 
@@ -154,13 +155,14 @@ final int? n;
 /// Whether to enable parallel function calling during tool use.
 final bool parallelToolCalls;
 
-final Messages51Prediction? prediction;
+final Messages51PredictionContent? prediction;
 
 final double? presencePenalty;
 
 final Messages51ReasoningEffort? reasoningEffort;
 
-final Messages51ResponseFormat? responseFormat;
+/// Specifies the format the model must output.
+final Messages51ResponseFormatVariant1? responseFormat;
 
 final int? seed;
 
@@ -172,11 +174,12 @@ final bool? store;
 
 final bool? stream;
 
-final Messages51StreamOptions? streamOptions;
+final Messages51StreamOptionsVariant1? streamOptions;
 
 final double? temperature;
 
-final Messages51ToolChoice? toolChoice;
+/// Controls which (if any) tool is called by the model. 'none' = no tools, 'auto' = model decides, 'required' = must call a tool.
+final Messages51ToolChoiceVariant1? toolChoice;
 
 /// A list of tools the model may call.
 final List<Messages51Tools>? tools;
@@ -188,7 +191,8 @@ final double? topP;
 /// A unique identifier representing your end-user, for abuse monitoring.
 final String? user;
 
-final Messages51WebSearchOptions? webSearchOptions;
+/// Options for the web search tool (when using built-in web search).
+final Messages51WebSearchOptionsVariant1? webSearchOptions;
 
 Map<String, dynamic> toJson() { return {
   if (audio != null) 'audio': audio?.toJson(),
@@ -225,7 +229,7 @@ Map<String, dynamic> toJson() { return {
   if (webSearchOptions != null) 'web_search_options': webSearchOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('messages'); } 
-Messages51 copyWith({Messages51Audio Function()? audio, Messages51ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Messages51FunctionCall Function()? functionCall, List<Messages51Functions> Function()? functions, Map<String, dynamic>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<Messages51Messages>? messages, Map<String, dynamic>? Function()? metadata, List<Messages51Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Messages51Prediction Function()? prediction, double? Function()? presencePenalty, Messages51ReasoningEffort? Function()? reasoningEffort, Messages51ResponseFormat Function()? responseFormat, int? Function()? seed, Messages51ServiceTier? Function()? serviceTier, Messages51Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Messages51StreamOptions Function()? streamOptions, double? Function()? temperature, Messages51ToolChoice Function()? toolChoice, List<Messages51Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Messages51WebSearchOptions Function()? webSearchOptions, }) { return Messages51(
+Messages51 copyWith({Messages51AudioVariant1 Function()? audio, Messages51ChatTemplateKwargs Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, Messages51FunctionCall Function()? functionCall, List<Messages51Functions> Function()? functions, Map<String, dynamic>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, List<Messages51Messages>? messages, Map<String, dynamic>? Function()? metadata, List<Messages51Modalities>? Function()? modalities, String Function()? model, int? Function()? n, bool Function()? parallelToolCalls, Messages51PredictionContent Function()? prediction, double? Function()? presencePenalty, Messages51ReasoningEffort? Function()? reasoningEffort, Messages51ResponseFormatVariant1 Function()? responseFormat, int? Function()? seed, Messages51ServiceTier? Function()? serviceTier, Messages51Stop Function()? stop, bool? Function()? store, bool? Function()? stream, Messages51StreamOptionsVariant1 Function()? streamOptions, double? Function()? temperature, Messages51ToolChoiceVariant1 Function()? toolChoice, List<Messages51Tools> Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String Function()? user, Messages51WebSearchOptionsVariant1 Function()? webSearchOptions, }) { return Messages51(
   audio: audio != null ? audio() : this.audio,
   chatTemplateKwargs: chatTemplateKwargs != null ? chatTemplateKwargs() : this.chatTemplateKwargs,
   frequencyPenalty: frequencyPenalty != null ? frequencyPenalty() : this.frequencyPenalty,

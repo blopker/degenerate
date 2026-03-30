@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_response.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_get_database_database_id.dart';import '../models/d1_import_database_request.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_timestamp.dart';/// D1Api operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_response.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_import_database_request.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_timestamp.dart';/// D1Api operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -73,7 +73,7 @@ return execute(
 /// Returns the specified D1 database.
 ///
 /// `GET /accounts/{account_id}/d1/database/{database_id}`
-Future<ApiResult<Map<String, dynamic>, Never>> d1GetDatabase({required D1AccountIdentifier accountId, required D1GetDatabaseDatabaseId databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>, Never>> d1GetDatabase({required D1AccountIdentifier accountId, required D1DatabaseIdentifier databaseId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',

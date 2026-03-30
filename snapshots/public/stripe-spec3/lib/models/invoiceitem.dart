@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_parent.dart';import 'invoiceitem_pricing.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'billing_bill_resource_invoice_item_parents_invoice_item_parent.dart';import 'billing_bill_resource_invoicing_pricing_pricing.dart';import 'customer.dart';import 'deleted_customer.dart';import 'discount.dart';import 'invoice.dart';import 'invoice_line_item_period.dart';import 'invoiceitem_customer.dart';import 'invoiceitem_discounts.dart';import 'invoiceitem_invoice.dart';import 'invoiceitem_test_clock.dart';import 'proration_details.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class InvoiceitemObject {const InvoiceitemObject._(this.value);
 
 factory InvoiceitemObject.fromJson(String json) { return switch (json) {
@@ -47,9 +47,9 @@ factory Invoiceitem.fromJson(Map<String, dynamic> json) { return Invoiceitem(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   netAmount: json['net_amount'] != null ? (json['net_amount'] as num).toInt() : null,
   object: InvoiceitemObject.fromJson(json['object'] as String),
-  parent: json['parent'] != null ? InvoiceitemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? BillingBillResourceInvoiceItemParentsInvoiceItemParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   period: InvoiceLineItemPeriod.fromJson(json['period'] as Map<String, dynamic>),
-  pricing: json['pricing'] != null ? InvoiceitemPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
+  pricing: json['pricing'] != null ? BillingBillResourceInvoicingPricingPricing.fromJson(json['pricing'] as Map<String, dynamic>) : null,
   proration: json['proration'] as bool,
   prorationDetails: json['proration_details'] != null ? ProrationDetails.fromJson(json['proration_details'] as Map<String, dynamic>) : null,
   quantity: (json['quantity'] as num).toInt(),
@@ -100,12 +100,12 @@ final int? netAmount;
 final InvoiceitemObject object;
 
 /// The parent that generated this invoice item.
-final InvoiceitemParent? parent;
+final BillingBillResourceInvoiceItemParentsInvoiceItemParent? parent;
 
 final InvoiceLineItemPeriod period;
 
 /// The pricing information of the invoice item.
-final InvoiceitemPricing? pricing;
+final BillingBillResourceInvoicingPricingPricing? pricing;
 
 /// Whether the invoice item was created automatically as a proration adjustment when the customer switched plans.
 final bool proration;
@@ -156,7 +156,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('period') &&
       json.containsKey('proration') && json['proration'] is bool &&
       json.containsKey('quantity') && json['quantity'] is num; } 
-Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? customer, String? Function()? customerAccount, int? date, String? Function()? description, bool? discountable, List<InvoiceitemDiscounts>? Function()? discounts, String? id, InvoiceitemInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, int Function()? netAmount, InvoiceitemObject? object, InvoiceitemParent? Function()? parent, InvoiceLineItemPeriod? period, InvoiceitemPricing? Function()? pricing, bool? proration, ProrationDetails Function()? prorationDetails, int? quantity, List<TaxRate>? Function()? taxRates, InvoiceitemTestClock? Function()? testClock, }) { return Invoiceitem(
+Invoiceitem copyWith({int? amount, String? currency, InvoiceitemCustomer? customer, String? Function()? customerAccount, int? date, String? Function()? description, bool? discountable, List<InvoiceitemDiscounts>? Function()? discounts, String? id, InvoiceitemInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, int Function()? netAmount, InvoiceitemObject? object, BillingBillResourceInvoiceItemParentsInvoiceItemParent? Function()? parent, InvoiceLineItemPeriod? period, BillingBillResourceInvoicingPricingPricing? Function()? pricing, bool? proration, ProrationDetails Function()? prorationDetails, int? quantity, List<TaxRate>? Function()? taxRates, InvoiceitemTestClock? Function()? testClock, }) { return Invoiceitem(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   customer: customer ?? this.customer,

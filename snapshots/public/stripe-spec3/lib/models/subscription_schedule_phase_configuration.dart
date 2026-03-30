@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'payment_method.dart';import 'schedules_phase_automatic_tax.dart';import 'stackable_discount_with_discount_settings_and_discount_end.dart';import 'subscription_schedule_add_invoice_item.dart';import 'subscription_schedule_configuration_item.dart';import 'subscription_schedule_phase_configuration_billing_thresholds.dart';import 'subscription_schedule_phase_configuration_default_payment_method.dart';import 'subscription_schedule_phase_configuration_invoice_settings.dart';import 'subscription_schedule_phase_configuration_on_behalf_of.dart';import 'subscription_schedule_phase_configuration_transfer_data.dart';import 'tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'invoice_setting_subscription_schedule_phase_setting.dart';import 'payment_method.dart';import 'schedules_phase_automatic_tax.dart';import 'stackable_discount_with_discount_settings_and_discount_end.dart';import 'subscription_billing_thresholds.dart';import 'subscription_schedule_add_invoice_item.dart';import 'subscription_schedule_configuration_item.dart';import 'subscription_schedule_phase_configuration_default_payment_method.dart';import 'subscription_schedule_phase_configuration_on_behalf_of.dart';import 'subscription_transfer_data.dart';import 'tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
 final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(this.value);
 
 factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) { return switch (json) {
@@ -86,7 +86,7 @@ factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> jso
   applicationFeePercent: json['application_fee_percent'] != null ? (json['application_fee_percent'] as num).toDouble() : null,
   automaticTax: json['automatic_tax'] != null ? SchedulesPhaseAutomaticTax.fromJson(json['automatic_tax'] as Map<String, dynamic>) : null,
   billingCycleAnchor: json['billing_cycle_anchor'] != null ? SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(json['billing_cycle_anchor'] as String) : null,
-  billingThresholds: json['billing_thresholds'] != null ? SubscriptionSchedulePhaseConfigurationBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
+  billingThresholds: json['billing_thresholds'] != null ? SubscriptionBillingThresholds.fromJson(json['billing_thresholds'] as Map<String, dynamic>) : null,
   collectionMethod: json['collection_method'] != null ? SubscriptionSchedulePhaseConfigurationCollectionMethod.fromJson(json['collection_method'] as String) : null,
   currency: json['currency'] as String,
   defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
@@ -94,13 +94,13 @@ factory SubscriptionSchedulePhaseConfiguration.fromJson(Map<String, dynamic> jso
   description: json['description'] as String?,
   discounts: (json['discounts'] as List<dynamic>).map((e) => StackableDiscountWithDiscountSettingsAndDiscountEnd.fromJson(e as Map<String, dynamic>)).toList(),
   endDate: (json['end_date'] as num).toInt(),
-  invoiceSettings: json['invoice_settings'] != null ? SubscriptionSchedulePhaseConfigurationInvoiceSettings.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
+  invoiceSettings: json['invoice_settings'] != null ? InvoiceSettingSubscriptionSchedulePhaseSetting.fromJson(json['invoice_settings'] as Map<String, dynamic>) : null,
   items: (json['items'] as List<dynamic>).map((e) => SubscriptionScheduleConfigurationItem.fromJson(e as Map<String, dynamic>)).toList(),
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
   prorationBehavior: SubscriptionSchedulePhaseConfigurationProrationBehavior.fromJson(json['proration_behavior'] as String),
   startDate: (json['start_date'] as num).toInt(),
-  transferData: json['transfer_data'] != null ? SubscriptionSchedulePhaseConfigurationTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
+  transferData: json['transfer_data'] != null ? SubscriptionTransferData.fromJson(json['transfer_data'] as Map<String, dynamic>) : null,
   trialEnd: json['trial_end'] != null ? (json['trial_end'] as num).toInt() : null,
 ); }
 
@@ -116,7 +116,7 @@ final SchedulesPhaseAutomaticTax? automaticTax;
 final SubscriptionSchedulePhaseConfigurationBillingCycleAnchor? billingCycleAnchor;
 
 /// Define thresholds at which an invoice will be sent, and the subscription advanced to a new billing period
-final SubscriptionSchedulePhaseConfigurationBillingThresholds? billingThresholds;
+final SubscriptionBillingThresholds? billingThresholds;
 
 /// Either `charge_automatically`, or `send_invoice`. When charging automatically, Stripe will attempt to pay the underlying subscription at the end of each billing cycle using the default source attached to the customer. When sending an invoice, Stripe will email your customer an invoice with payment instructions and mark the subscription as `active`.
 final SubscriptionSchedulePhaseConfigurationCollectionMethod? collectionMethod;
@@ -140,7 +140,7 @@ final List<StackableDiscountWithDiscountSettingsAndDiscountEnd> discounts;
 final int endDate;
 
 /// The invoice settings applicable during this phase.
-final SubscriptionSchedulePhaseConfigurationInvoiceSettings? invoiceSettings;
+final InvoiceSettingSubscriptionSchedulePhaseSetting? invoiceSettings;
 
 /// Subscription items to configure the subscription to during this phase of the subscription schedule.
 final List<SubscriptionScheduleConfigurationItem> items;
@@ -158,7 +158,7 @@ final SubscriptionSchedulePhaseConfigurationProrationBehavior prorationBehavior;
 final int startDate;
 
 /// The account (if any) the associated subscription's payments will be attributed to for tax reporting, and where funds from each payment will be transferred to for each of the subscription's invoices.
-final SubscriptionSchedulePhaseConfigurationTransferData? transferData;
+final SubscriptionTransferData? transferData;
 
 /// When the trial ends within the phase.
 final int? trialEnd;
@@ -192,7 +192,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('add_i
       json.containsKey('items') &&
       json.containsKey('proration_behavior') &&
       json.containsKey('start_date') && json['start_date'] is num; } 
-SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, double? Function()? applicationFeePercent, SchedulesPhaseAutomaticTax Function()? automaticTax, SubscriptionSchedulePhaseConfigurationBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionSchedulePhaseConfigurationBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, String? currency, SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod? Function()? defaultPaymentMethod, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, SubscriptionSchedulePhaseConfigurationInvoiceSettings? Function()? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Map<String, String>? Function()? metadata, SubscriptionSchedulePhaseConfigurationOnBehalfOf? Function()? onBehalfOf, SubscriptionSchedulePhaseConfigurationProrationBehavior? prorationBehavior, int? startDate, SubscriptionSchedulePhaseConfigurationTransferData? Function()? transferData, int? Function()? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(
+SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, double? Function()? applicationFeePercent, SchedulesPhaseAutomaticTax Function()? automaticTax, SubscriptionSchedulePhaseConfigurationBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, String? currency, SubscriptionSchedulePhaseConfigurationDefaultPaymentMethod? Function()? defaultPaymentMethod, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, InvoiceSettingSubscriptionSchedulePhaseSetting? Function()? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Map<String, String>? Function()? metadata, SubscriptionSchedulePhaseConfigurationOnBehalfOf? Function()? onBehalfOf, SubscriptionSchedulePhaseConfigurationProrationBehavior? prorationBehavior, int? startDate, SubscriptionTransferData? Function()? transferData, int? Function()? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(
   addInvoiceItems: addInvoiceItems ?? this.addInvoiceItems,
   applicationFeePercent: applicationFeePercent != null ? applicationFeePercent() : this.applicationFeePercent,
   automaticTax: automaticTax != null ? automaticTax() : this.automaticTax,

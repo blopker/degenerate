@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'balance_settings_resource_payouts_schedule.dart';/// Whether the funds in this account can be paid out.
+import 'balance_settings_resource_payout_schedule.dart';/// Whether the funds in this account can be paid out.
 final class BalanceSettingsResourcePayoutsStatus {const BalanceSettingsResourcePayoutsStatus._(this.value);
 
 factory BalanceSettingsResourcePayoutsStatus.fromJson(String json) { return switch (json) {
@@ -30,7 +30,7 @@ final class BalanceSettingsResourcePayouts {const BalanceSettingsResourcePayouts
 
 factory BalanceSettingsResourcePayouts.fromJson(Map<String, dynamic> json) { return BalanceSettingsResourcePayouts(
   minimumBalanceByCurrency: (json['minimum_balance_by_currency'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as num).toInt())),
-  schedule: json['schedule'] != null ? BalanceSettingsResourcePayoutsSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
+  schedule: json['schedule'] != null ? BalanceSettingsResourcePayoutSchedule.fromJson(json['schedule'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: BalanceSettingsResourcePayoutsStatus.fromJson(json['status'] as String),
 ); }
@@ -39,7 +39,7 @@ factory BalanceSettingsResourcePayouts.fromJson(Map<String, dynamic> json) { ret
 final Map<String,int>? minimumBalanceByCurrency;
 
 /// Details on when funds from charges are available, and when they are paid out to an external account. See our [Setting Bank and Debit Card Payouts](https://docs.stripe.com/connect/bank-transfers#payout-information) documentation for details.
-final BalanceSettingsResourcePayoutsSchedule? schedule;
+final BalanceSettingsResourcePayoutSchedule? schedule;
 
 /// The text that appears on the bank account statement for payouts. If not set, this defaults to the platform's bank descriptor as set in the Dashboard.
 final String? statementDescriptor;
@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-BalanceSettingsResourcePayouts copyWith({Map<String, int>? Function()? minimumBalanceByCurrency, BalanceSettingsResourcePayoutsSchedule? Function()? schedule, String? Function()? statementDescriptor, BalanceSettingsResourcePayoutsStatus? status, }) { return BalanceSettingsResourcePayouts(
+BalanceSettingsResourcePayouts copyWith({Map<String, int>? Function()? minimumBalanceByCurrency, BalanceSettingsResourcePayoutSchedule? Function()? schedule, String? Function()? statementDescriptor, BalanceSettingsResourcePayoutsStatus? status, }) { return BalanceSettingsResourcePayouts(
   minimumBalanceByCurrency: minimumBalanceByCurrency != null ? minimumBalanceByCurrency() : this.minimumBalanceByCurrency,
   schedule: schedule != null ? schedule() : this.schedule,
   statementDescriptor: statementDescriptor != null ? statementDescriptor() : this.statementDescriptor,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dispute_visa_compelling_evidence3_disputed_transaction_shipping_address.dart';/// Categorization of disputed payment.
+import 'dispute_transaction_shipping_address.dart';/// Categorization of disputed payment.
 final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._(this.value);
 
 factory DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(String json) { return switch (json) {
@@ -36,7 +36,7 @@ factory DisputeVisaCompellingEvidence3DisputedTransaction.fromJson(Map<String, d
   customerPurchaseIp: json['customer_purchase_ip'] as String?,
   merchandiseOrServices: json['merchandise_or_services'] != null ? DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(json['merchandise_or_services'] as String) : null,
   productDescription: json['product_description'] as String?,
-  shippingAddress: json['shipping_address'] != null ? DisputeVisaCompellingEvidence3DisputedTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
+  shippingAddress: json['shipping_address'] != null ? DisputeTransactionShippingAddress.fromJson(json['shipping_address'] as Map<String, dynamic>) : null,
 ); }
 
 /// User Account ID used to log into business platform. Must be recognizable by the user.
@@ -61,7 +61,7 @@ final DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices? me
 final String? productDescription;
 
 /// The address to which a physical product was shipped. All fields are required for Visa Compelling Evidence 3.0 evidence submission.
-final DisputeVisaCompellingEvidence3DisputedTransactionShippingAddress? shippingAddress;
+final DisputeTransactionShippingAddress? shippingAddress;
 
 Map<String, dynamic> toJson() { return {
   'customer_account_id': ?customerAccountId,
@@ -74,7 +74,7 @@ Map<String, dynamic> toJson() { return {
   if (shippingAddress != null) 'shipping_address': shippingAddress?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'customer_account_id', 'customer_device_fingerprint', 'customer_device_id', 'customer_email_address', 'customer_purchase_ip', 'merchandise_or_services', 'product_description', 'shipping_address'}.contains(key)); } 
-DisputeVisaCompellingEvidence3DisputedTransaction copyWith({String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices? Function()? merchandiseOrServices, String? Function()? productDescription, DisputeVisaCompellingEvidence3DisputedTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3DisputedTransaction(
+DisputeVisaCompellingEvidence3DisputedTransaction copyWith({String? Function()? customerAccountId, String? Function()? customerDeviceFingerprint, String? Function()? customerDeviceId, String? Function()? customerEmailAddress, String? Function()? customerPurchaseIp, DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices? Function()? merchandiseOrServices, String? Function()? productDescription, DisputeTransactionShippingAddress? Function()? shippingAddress, }) { return DisputeVisaCompellingEvidence3DisputedTransaction(
   customerAccountId: customerAccountId != null ? customerAccountId() : this.customerAccountId,
   customerDeviceFingerprint: customerDeviceFingerprint != null ? customerDeviceFingerprint() : this.customerDeviceFingerprint,
   customerDeviceId: customerDeviceId != null ? customerDeviceId() : this.customerDeviceId,

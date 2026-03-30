@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'automatic_tax.dart';import 'bank_account.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'card.dart';import 'connect_account_reference.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'deleted_discount.dart';import 'deleted_tax_id.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'invoice_account_tax_ids.dart';import 'invoice_application.dart';import 'invoice_confirmation_secret.dart';import 'invoice_customer.dart';import 'invoice_customer_address.dart';import 'invoice_customer_shipping.dart';import 'invoice_default_payment_method.dart';import 'invoice_default_source.dart';import 'invoice_discounts.dart';import 'invoice_from_invoice.dart';import 'invoice_last_finalization_error.dart';import 'invoice_latest_revision.dart';import 'invoice_lines.dart';import 'invoice_on_behalf_of.dart';import 'invoice_parent.dart';import 'invoice_payments.dart';import 'invoice_rendering.dart';import 'invoice_setting_custom_field.dart';import 'invoice_shipping_cost.dart';import 'invoice_shipping_details.dart';import 'invoice_test_clock.dart';import 'invoice_threshold_reason.dart';import 'invoices_payment_settings.dart';import 'invoices_resource_invoice_tax_id.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'invoices_resource_status_transitions.dart';import 'payment_method.dart';import 'source.dart';import 'tax_id.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Indicates the reason why the invoice was created.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'address.dart';import 'application.dart';import 'automatic_tax.dart';import 'bank_account.dart';import 'billing_bill_resource_invoicing_parents_invoice_parent.dart';import 'billing_bill_resource_invoicing_taxes_tax.dart';import 'card.dart';import 'connect_account_reference.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'deleted_discount.dart';import 'deleted_tax_id.dart';import 'discount.dart';import 'discounts_resource_discount_amount.dart';import 'errors.dart';import 'invoice_account_tax_ids.dart';import 'invoice_application.dart';import 'invoice_customer.dart';import 'invoice_default_payment_method.dart';import 'invoice_default_source.dart';import 'invoice_discounts.dart';import 'invoice_latest_revision.dart';import 'invoice_lines.dart';import 'invoice_on_behalf_of.dart';import 'invoice_payments.dart';import 'invoice_setting_custom_field.dart';import 'invoice_test_clock.dart';import 'invoice_threshold_reason.dart';import 'invoices_payment_settings.dart';import 'invoices_resource_confirmation_secret.dart';import 'invoices_resource_from_invoice.dart';import 'invoices_resource_invoice_rendering.dart';import 'invoices_resource_invoice_tax_id.dart';import 'invoices_resource_pretax_credit_amount.dart';import 'invoices_resource_shipping_cost.dart';import 'invoices_resource_status_transitions.dart';import 'payment_method.dart';import 'shipping.dart';import 'source.dart';import 'tax_id.dart';import 'tax_rate.dart';import 'test_helpers_test_clock.dart';/// Indicates the reason why the invoice was created.
 /// 
 /// * `manual`: Unrelated to a subscription, for example, created via the invoice editor.
 /// * `subscription`: No longer in use. Applies to subscriptions from before May 2018 where no distinction was made between updates, cycles, and thresholds.
@@ -214,17 +214,17 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   automaticallyFinalizesAt: json['automatically_finalizes_at'] != null ? (json['automatically_finalizes_at'] as num).toInt() : null,
   billingReason: json['billing_reason'] != null ? InvoiceBillingReason.fromJson(json['billing_reason'] as String) : null,
   collectionMethod: InvoiceCollectionMethod.fromJson(json['collection_method'] as String),
-  confirmationSecret: json['confirmation_secret'] != null ? InvoiceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>) : null,
+  confirmationSecret: json['confirmation_secret'] != null ? InvoicesResourceConfirmationSecret.fromJson(json['confirmation_secret'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
   customerAccount: json['customer_account'] as String?,
-  customerAddress: json['customer_address'] != null ? InvoiceCustomerAddress.fromJson(json['customer_address'] as Map<String, dynamic>) : null,
+  customerAddress: json['customer_address'] != null ? Address.fromJson(json['customer_address'] as Map<String, dynamic>) : null,
   customerEmail: json['customer_email'] as String?,
   customerName: json['customer_name'] as String?,
   customerPhone: json['customer_phone'] as String?,
-  customerShipping: json['customer_shipping'] != null ? InvoiceCustomerShipping.fromJson(json['customer_shipping'] as Map<String, dynamic>) : null,
+  customerShipping: json['customer_shipping'] != null ? Shipping.fromJson(json['customer_shipping'] as Map<String, dynamic>) : null,
   customerTaxExempt: json['customer_tax_exempt'] != null ? InvoiceCustomerTaxExempt.fromJson(json['customer_tax_exempt'] as String) : null,
   customerTaxIds: (json['customer_tax_ids'] as List<dynamic>?)?.map((e) => InvoicesResourceInvoiceTaxId.fromJson(e as Map<String, dynamic>)).toList(),
   defaultPaymentMethod: json['default_payment_method'] != null ? OneOf2.parse(json['default_payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),) : null,
@@ -236,12 +236,12 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   effectiveAt: json['effective_at'] != null ? (json['effective_at'] as num).toInt() : null,
   endingBalance: json['ending_balance'] != null ? (json['ending_balance'] as num).toInt() : null,
   footer: json['footer'] as String?,
-  fromInvoice: json['from_invoice'] != null ? InvoiceFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null,
+  fromInvoice: json['from_invoice'] != null ? InvoicesResourceFromInvoice.fromJson(json['from_invoice'] as Map<String, dynamic>) : null,
   hostedInvoiceUrl: json['hosted_invoice_url'] as String?,
   id: json['id'] as String,
   invoicePdf: json['invoice_pdf'] as String?,
   issuer: ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>),
-  lastFinalizationError: json['last_finalization_error'] != null ? InvoiceLastFinalizationError.fromJson(json['last_finalization_error'] as Map<String, dynamic>) : null,
+  lastFinalizationError: json['last_finalization_error'] != null ? Errors.fromJson(json['last_finalization_error'] as Map<String, dynamic>) : null,
   latestRevision: json['latest_revision'] != null ? OneOf2.parse(json['latest_revision'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null,
   lines: InvoiceLines.fromJson(json['lines'] as Map<String, dynamic>),
   livemode: json['livemode'] as bool,
@@ -250,7 +250,7 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   number: json['number'] as String?,
   object: InvoiceObject.fromJson(json['object'] as String),
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
-  parent: json['parent'] != null ? InvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
+  parent: json['parent'] != null ? BillingBillResourceInvoicingParentsInvoiceParent.fromJson(json['parent'] as Map<String, dynamic>) : null,
   paymentSettings: InvoicesPaymentSettings.fromJson(json['payment_settings'] as Map<String, dynamic>),
   payments: json['payments'] != null ? InvoicePayments.fromJson(json['payments'] as Map<String, dynamic>) : null,
   periodEnd: (json['period_end'] as num).toInt(),
@@ -258,9 +258,9 @@ factory Invoice.fromJson(Map<String, dynamic> json) { return Invoice(
   postPaymentCreditNotesAmount: (json['post_payment_credit_notes_amount'] as num).toInt(),
   prePaymentCreditNotesAmount: (json['pre_payment_credit_notes_amount'] as num).toInt(),
   receiptNumber: json['receipt_number'] as String?,
-  rendering: json['rendering'] != null ? InvoiceRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? InvoiceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
-  shippingDetails: json['shipping_details'] != null ? InvoiceShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+  rendering: json['rendering'] != null ? InvoicesResourceInvoiceRendering.fromJson(json['rendering'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? InvoicesResourceShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? Shipping.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   startingBalance: (json['starting_balance'] as num).toInt(),
   statementDescriptor: json['statement_descriptor'] as String?,
   status: json['status'] != null ? InvoiceStatus.fromJson(json['status'] as String) : null,
@@ -333,7 +333,7 @@ final InvoiceBillingReason? billingReason;
 final InvoiceCollectionMethod collectionMethod;
 
 /// The confirmation secret associated with this invoice. Currently, this contains the client_secret of the PaymentIntent that Stripe creates during invoice finalization.
-final InvoiceConfirmationSecret? confirmationSecret;
+final InvoicesResourceConfirmationSecret? confirmationSecret;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -351,7 +351,7 @@ final InvoiceCustomer customer;
 final String? customerAccount;
 
 /// The customer's address. Until the invoice is finalized, this field will equal `customer.address`. Once the invoice is finalized, this field will no longer be updated.
-final InvoiceCustomerAddress? customerAddress;
+final Address? customerAddress;
 
 /// The customer's email. Until the invoice is finalized, this field will equal `customer.email`. Once the invoice is finalized, this field will no longer be updated.
 final String? customerEmail;
@@ -363,7 +363,7 @@ final String? customerName;
 final String? customerPhone;
 
 /// The customer's shipping information. Until the invoice is finalized, this field will equal `customer.shipping`. Once the invoice is finalized, this field will no longer be updated.
-final InvoiceCustomerShipping? customerShipping;
+final Shipping? customerShipping;
 
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
 final InvoiceCustomerTaxExempt? customerTaxExempt;
@@ -399,7 +399,7 @@ final int? endingBalance;
 final String? footer;
 
 /// Details of the invoice that was cloned. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.
-final InvoiceFromInvoice? fromInvoice;
+final InvoicesResourceFromInvoice? fromInvoice;
 
 /// The URL for the hosted invoice page, which allows customers to view and pay an invoice. If the invoice has not been finalized yet, this will be null.
 final String? hostedInvoiceUrl;
@@ -413,7 +413,7 @@ final String? invoicePdf;
 final ConnectAccountReference issuer;
 
 /// The error encountered during the previous attempt to finalize the invoice. This field is cleared when the invoice is successfully finalized.
-final InvoiceLastFinalizationError? lastFinalizationError;
+final Errors? lastFinalizationError;
 
 /// The ID of the most recent non-draft revision of this invoice
 final InvoiceLatestRevision? latestRevision;
@@ -440,7 +440,7 @@ final InvoiceObject object;
 final InvoiceOnBehalfOf? onBehalfOf;
 
 /// The parent that generated this invoice
-final InvoiceParent? parent;
+final BillingBillResourceInvoicingParentsInvoiceParent? parent;
 
 final InvoicesPaymentSettings paymentSettings;
 
@@ -463,13 +463,13 @@ final int prePaymentCreditNotesAmount;
 final String? receiptNumber;
 
 /// The rendering-related settings that control how the invoice is displayed on customer-facing surfaces such as PDF and Hosted Invoice Page.
-final InvoiceRendering? rendering;
+final InvoicesResourceInvoiceRendering? rendering;
 
 /// The details of the cost of shipping, including the ShippingRate applied on the invoice.
-final InvoiceShippingCost? shippingCost;
+final InvoicesResourceShippingCost? shippingCost;
 
 /// Shipping details for the invoice. The Invoice PDF will use the `shipping_details` value if it is set, otherwise the PDF will render the shipping address from the customer.
-final InvoiceShippingDetails? shippingDetails;
+final Shipping? shippingDetails;
 
 /// Starting customer balance before the invoice is finalized. If the invoice has not been finalized yet, this will be the current customer balance. For revision invoices, this also includes any customer balance that was applied to the original invoice.
 final int startingBalance;
@@ -619,7 +619,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions') &&
       json.containsKey('subtotal') && json['subtotal'] is num &&
       json.containsKey('total') && json['total'] is num; } 
-Invoice copyWith({String? Function()? accountCountry, String? Function()? accountName, List<InvoiceAccountTaxIds>? Function()? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, InvoiceApplication? Function()? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceBillingReason? Function()? billingReason, InvoiceCollectionMethod? collectionMethod, InvoiceConfirmationSecret? Function()? confirmationSecret, int? created, String? currency, List<InvoiceSettingCustomField>? Function()? customFields, InvoiceCustomer? customer, String? Function()? customerAccount, InvoiceCustomerAddress? Function()? customerAddress, String? Function()? customerEmail, String? Function()? customerName, String? Function()? customerPhone, InvoiceCustomerShipping? Function()? customerShipping, InvoiceCustomerTaxExempt? Function()? customerTaxExempt, List<InvoicesResourceInvoiceTaxId>? Function()? customerTaxIds, InvoiceDefaultPaymentMethod? Function()? defaultPaymentMethod, InvoiceDefaultSource? Function()? defaultSource, List<TaxRate>? defaultTaxRates, String? Function()? description, List<InvoiceDiscounts>? discounts, int? Function()? dueDate, int? Function()? effectiveAt, int? Function()? endingBalance, String? Function()? footer, InvoiceFromInvoice? Function()? fromInvoice, String? Function()? hostedInvoiceUrl, String? id, String? Function()? invoicePdf, ConnectAccountReference? issuer, InvoiceLastFinalizationError? Function()? lastFinalizationError, InvoiceLatestRevision? Function()? latestRevision, InvoiceLines? lines, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? nextPaymentAttempt, String? Function()? number, InvoiceObject? object, InvoiceOnBehalfOf? Function()? onBehalfOf, InvoiceParent? Function()? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, String? Function()? receiptNumber, InvoiceRendering? Function()? rendering, InvoiceShippingCost? Function()? shippingCost, InvoiceShippingDetails? Function()? shippingDetails, int? startingBalance, String? Function()? statementDescriptor, InvoiceStatus? Function()? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, int? Function()? subtotalExcludingTax, InvoiceTestClock? Function()? testClock, InvoiceThresholdReason Function()? thresholdReason, int? total, List<DiscountsResourceDiscountAmount>? Function()? totalDiscountAmounts, int? Function()? totalExcludingTax, List<InvoicesResourcePretaxCreditAmount>? Function()? totalPretaxCreditAmounts, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, int? Function()? webhooksDeliveredAt, }) { return Invoice(
+Invoice copyWith({String? Function()? accountCountry, String? Function()? accountName, List<InvoiceAccountTaxIds>? Function()? accountTaxIds, int? amountDue, int? amountOverpaid, int? amountPaid, int? amountRemaining, int? amountShipping, InvoiceApplication? Function()? application, int? attemptCount, bool? attempted, bool? autoAdvance, AutomaticTax? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceBillingReason? Function()? billingReason, InvoiceCollectionMethod? collectionMethod, InvoicesResourceConfirmationSecret? Function()? confirmationSecret, int? created, String? currency, List<InvoiceSettingCustomField>? Function()? customFields, InvoiceCustomer? customer, String? Function()? customerAccount, Address? Function()? customerAddress, String? Function()? customerEmail, String? Function()? customerName, String? Function()? customerPhone, Shipping? Function()? customerShipping, InvoiceCustomerTaxExempt? Function()? customerTaxExempt, List<InvoicesResourceInvoiceTaxId>? Function()? customerTaxIds, InvoiceDefaultPaymentMethod? Function()? defaultPaymentMethod, InvoiceDefaultSource? Function()? defaultSource, List<TaxRate>? defaultTaxRates, String? Function()? description, List<InvoiceDiscounts>? discounts, int? Function()? dueDate, int? Function()? effectiveAt, int? Function()? endingBalance, String? Function()? footer, InvoicesResourceFromInvoice? Function()? fromInvoice, String? Function()? hostedInvoiceUrl, String? id, String? Function()? invoicePdf, ConnectAccountReference? issuer, Errors? Function()? lastFinalizationError, InvoiceLatestRevision? Function()? latestRevision, InvoiceLines? lines, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? nextPaymentAttempt, String? Function()? number, InvoiceObject? object, InvoiceOnBehalfOf? Function()? onBehalfOf, BillingBillResourceInvoicingParentsInvoiceParent? Function()? parent, InvoicesPaymentSettings? paymentSettings, InvoicePayments Function()? payments, int? periodEnd, int? periodStart, int? postPaymentCreditNotesAmount, int? prePaymentCreditNotesAmount, String? Function()? receiptNumber, InvoicesResourceInvoiceRendering? Function()? rendering, InvoicesResourceShippingCost? Function()? shippingCost, Shipping? Function()? shippingDetails, int? startingBalance, String? Function()? statementDescriptor, InvoiceStatus? Function()? status, InvoicesResourceStatusTransitions? statusTransitions, int? subtotal, int? Function()? subtotalExcludingTax, InvoiceTestClock? Function()? testClock, InvoiceThresholdReason Function()? thresholdReason, int? total, List<DiscountsResourceDiscountAmount>? Function()? totalDiscountAmounts, int? Function()? totalExcludingTax, List<InvoicesResourcePretaxCreditAmount>? Function()? totalPretaxCreditAmounts, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, int? Function()? webhooksDeliveredAt, }) { return Invoice(
   accountCountry: accountCountry != null ? accountCountry() : this.accountCountry,
   accountName: accountName != null ? accountName() : this.accountName,
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,

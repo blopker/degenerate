@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_account_features.dart';import 'treasury_financial_account_platform_restrictions.dart';import 'treasury_financial_accounts_resource_balance.dart';import 'treasury_financial_accounts_resource_financial_address.dart';import 'treasury_financial_accounts_resource_status_details.dart';final class TreasuryFinancialAccountActiveFeatures {const TreasuryFinancialAccountActiveFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_financial_account_features.dart';import 'treasury_financial_accounts_resource_balance.dart';import 'treasury_financial_accounts_resource_financial_address.dart';import 'treasury_financial_accounts_resource_platform_restrictions.dart';import 'treasury_financial_accounts_resource_status_details.dart';final class TreasuryFinancialAccountActiveFeatures {const TreasuryFinancialAccountActiveFeatures._(this.value);
 
 factory TreasuryFinancialAccountActiveFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -218,7 +218,7 @@ factory TreasuryFinancialAccount.fromJson(Map<String, dynamic> json) { return Tr
   nickname: json['nickname'] as String?,
   object: TreasuryFinancialAccountObject.fromJson(json['object'] as String),
   pendingFeatures: (json['pending_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountPendingFeatures.fromJson(e as String)).toList(),
-  platformRestrictions: json['platform_restrictions'] != null ? TreasuryFinancialAccountPlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
+  platformRestrictions: json['platform_restrictions'] != null ? TreasuryFinancialAccountsResourcePlatformRestrictions.fromJson(json['platform_restrictions'] as Map<String, dynamic>) : null,
   restrictedFeatures: (json['restricted_features'] as List<dynamic>?)?.map((e) => TreasuryFinancialAccountRestrictedFeatures.fromJson(e as String)).toList(),
   status: TreasuryFinancialAccountStatus.fromJson(json['status'] as String),
   statusDetails: TreasuryFinancialAccountsResourceStatusDetails.fromJson(json['status_details'] as Map<String, dynamic>),
@@ -262,7 +262,7 @@ final TreasuryFinancialAccountObject object;
 final List<TreasuryFinancialAccountPendingFeatures>? pendingFeatures;
 
 /// The set of functionalities that the platform can restrict on the FinancialAccount.
-final TreasuryFinancialAccountPlatformRestrictions? platformRestrictions;
+final TreasuryFinancialAccountsResourcePlatformRestrictions? platformRestrictions;
 
 /// The array of paths to restricted Features in the Features hash.
 final List<TreasuryFinancialAccountRestrictedFeatures>? restrictedFeatures;
@@ -305,7 +305,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('status') &&
       json.containsKey('status_details') &&
       json.containsKey('supported_currencies'); } 
-TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures> Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures> Function()? pendingFeatures, TreasuryFinancialAccountPlatformRestrictions? Function()? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures> Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
+TreasuryFinancialAccount copyWith({List<TreasuryFinancialAccountActiveFeatures> Function()? activeFeatures, TreasuryFinancialAccountsResourceBalance? balance, String? country, int? created, TreasuryFinancialAccountFeatures Function()? features, List<TreasuryFinancialAccountsResourceFinancialAddress>? financialAddresses, String? id, bool Function()? isDefault, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? nickname, TreasuryFinancialAccountObject? object, List<TreasuryFinancialAccountPendingFeatures> Function()? pendingFeatures, TreasuryFinancialAccountsResourcePlatformRestrictions? Function()? platformRestrictions, List<TreasuryFinancialAccountRestrictedFeatures> Function()? restrictedFeatures, TreasuryFinancialAccountStatus? status, TreasuryFinancialAccountsResourceStatusDetails? statusDetails, List<String>? supportedCurrencies, }) { return TreasuryFinancialAccount(
   activeFeatures: activeFeatures != null ? activeFeatures() : this.activeFeatures,
   balance: balance ?? this.balance,
   country: country ?? this.country,

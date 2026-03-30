@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'setup_intent_payment_method_options_card_mandate_options2.dart';/// Selected network to process this SetupIntent on. Depends on the available networks of the card attached to the setup intent. Can be only set confirm-time.
+import 'setup_intent_payment_method_options_card_mandate_options.dart';/// Selected network to process this SetupIntent on. Depends on the available networks of the card attached to the setup intent. Can be only set confirm-time.
 final class SetupIntentPaymentMethodOptionsCardNetwork {const SetupIntentPaymentMethodOptionsCardNetwork._(this.value);
 
 factory SetupIntentPaymentMethodOptionsCardNetwork.fromJson(String json) { return switch (json) {
@@ -90,13 +90,13 @@ bool get isUnknown { return !values.contains(this); }
 final class SetupIntentPaymentMethodOptionsCard {const SetupIntentPaymentMethodOptionsCard({this.mandateOptions, this.network, this.requestThreeDSecure, });
 
 factory SetupIntentPaymentMethodOptionsCard.fromJson(Map<String, dynamic> json) { return SetupIntentPaymentMethodOptionsCard(
-  mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsCardMandateOptions2.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
+  mandateOptions: json['mandate_options'] != null ? SetupIntentPaymentMethodOptionsCardMandateOptions.fromJson(json['mandate_options'] as Map<String, dynamic>) : null,
   network: json['network'] != null ? SetupIntentPaymentMethodOptionsCardNetwork.fromJson(json['network'] as String) : null,
   requestThreeDSecure: json['request_three_d_secure'] != null ? SetupIntentPaymentMethodOptionsCardRequestThreeDSecure.fromJson(json['request_three_d_secure'] as String) : null,
 ); }
 
 /// Configuration options for setting up an eMandate for cards issued in India.
-final SetupIntentPaymentMethodOptionsCardMandateOptions2? mandateOptions;
+final SetupIntentPaymentMethodOptionsCardMandateOptions? mandateOptions;
 
 /// Selected network to process this SetupIntent on. Depends on the available networks of the card attached to the setup intent. Can be only set confirm-time.
 final SetupIntentPaymentMethodOptionsCardNetwork? network;
@@ -110,7 +110,7 @@ Map<String, dynamic> toJson() { return {
   if (requestThreeDSecure != null) 'request_three_d_secure': requestThreeDSecure?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'mandate_options', 'network', 'request_three_d_secure'}.contains(key)); } 
-SetupIntentPaymentMethodOptionsCard copyWith({SetupIntentPaymentMethodOptionsCardMandateOptions2? Function()? mandateOptions, SetupIntentPaymentMethodOptionsCardNetwork? Function()? network, SetupIntentPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, }) { return SetupIntentPaymentMethodOptionsCard(
+SetupIntentPaymentMethodOptionsCard copyWith({SetupIntentPaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, SetupIntentPaymentMethodOptionsCardNetwork? Function()? network, SetupIntentPaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, }) { return SetupIntentPaymentMethodOptionsCard(
   mandateOptions: mandateOptions != null ? mandateOptions() : this.mandateOptions,
   network: network != null ? network() : this.network,
   requestThreeDSecure: requestThreeDSecure != null ? requestThreeDSecure() : this.requestThreeDSecure,

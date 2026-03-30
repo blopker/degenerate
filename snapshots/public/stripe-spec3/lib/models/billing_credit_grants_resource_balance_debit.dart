@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_debit_credits_applied.dart';/// The type of debit transaction.
+import 'billing_credit_grants_resource_amount.dart';import 'billing_credit_grants_resource_balance_credits_applied.dart';/// The type of debit transaction.
 final class BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType._(this.value);
 
 factory BillingCreditGrantsResourceBalanceDebitType.fromJson(String json) { return switch (json) {
@@ -33,14 +33,14 @@ final class BillingCreditGrantsResourceBalanceDebit {const BillingCreditGrantsRe
 
 factory BillingCreditGrantsResourceBalanceDebit.fromJson(Map<String, dynamic> json) { return BillingCreditGrantsResourceBalanceDebit(
   amount: BillingCreditGrantsResourceAmount.fromJson(json['amount'] as Map<String, dynamic>),
-  creditsApplied: json['credits_applied'] != null ? BillingCreditGrantsResourceBalanceDebitCreditsApplied.fromJson(json['credits_applied'] as Map<String, dynamic>) : null,
+  creditsApplied: json['credits_applied'] != null ? BillingCreditGrantsResourceBalanceCreditsApplied.fromJson(json['credits_applied'] as Map<String, dynamic>) : null,
   type: BillingCreditGrantsResourceBalanceDebitType.fromJson(json['type'] as String),
 ); }
 
 final BillingCreditGrantsResourceAmount amount;
 
 /// Details of how the billing credits were applied to an invoice. Only present if `type` is `credits_applied`.
-final BillingCreditGrantsResourceBalanceDebitCreditsApplied? creditsApplied;
+final BillingCreditGrantsResourceBalanceCreditsApplied? creditsApplied;
 
 /// The type of debit transaction.
 final BillingCreditGrantsResourceBalanceDebitType type;
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') &&
       json.containsKey('type'); } 
-BillingCreditGrantsResourceBalanceDebit copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceBalanceDebitCreditsApplied? Function()? creditsApplied, BillingCreditGrantsResourceBalanceDebitType? type, }) { return BillingCreditGrantsResourceBalanceDebit(
+BillingCreditGrantsResourceBalanceDebit copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceBalanceCreditsApplied? Function()? creditsApplied, BillingCreditGrantsResourceBalanceDebitType? type, }) { return BillingCreditGrantsResourceBalanceDebit(
   amount: amount ?? this.amount,
   creditsApplied: creditsApplied != null ? creditsApplied() : this.creditsApplied,
   type: type ?? this.type,

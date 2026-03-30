@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tax_product_resource_jurisdiction.dart';import 'tax_product_resource_line_item_tax_breakdown_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
+import 'tax_product_resource_jurisdiction.dart';import 'tax_product_resource_line_item_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
 final class TaxProductResourceLineItemTaxBreakdownSourcing {const TaxProductResourceLineItemTaxBreakdownSourcing._(this.value);
 
 factory TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(String json) { return switch (json) {
@@ -96,7 +96,7 @@ factory TaxProductResourceLineItemTaxBreakdown.fromJson(Map<String, dynamic> jso
   amount: (json['amount'] as num).toInt(),
   jurisdiction: TaxProductResourceJurisdiction.fromJson(json['jurisdiction'] as Map<String, dynamic>),
   sourcing: TaxProductResourceLineItemTaxBreakdownSourcing.fromJson(json['sourcing'] as String),
-  taxRateDetails: json['tax_rate_details'] != null ? TaxProductResourceLineItemTaxBreakdownTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
+  taxRateDetails: json['tax_rate_details'] != null ? TaxProductResourceLineItemTaxRateDetails.fromJson(json['tax_rate_details'] as Map<String, dynamic>) : null,
   taxabilityReason: TaxProductResourceLineItemTaxBreakdownTaxabilityReason.fromJson(json['taxability_reason'] as String),
   taxableAmount: (json['taxable_amount'] as num).toInt(),
 ); }
@@ -110,7 +110,7 @@ final TaxProductResourceJurisdiction jurisdiction;
 final TaxProductResourceLineItemTaxBreakdownSourcing sourcing;
 
 /// Details regarding the rate for this tax. This field will be `null` when the tax is not imposed, for example if the product is exempt from tax.
-final TaxProductResourceLineItemTaxBreakdownTaxRateDetails? taxRateDetails;
+final TaxProductResourceLineItemTaxRateDetails? taxRateDetails;
 
 /// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
 final TaxProductResourceLineItemTaxBreakdownTaxabilityReason taxabilityReason;
@@ -131,7 +131,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('sourcing') &&
       json.containsKey('taxability_reason') &&
       json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
-TaxProductResourceLineItemTaxBreakdown copyWith({int? amount, TaxProductResourceJurisdiction? jurisdiction, TaxProductResourceLineItemTaxBreakdownSourcing? sourcing, TaxProductResourceLineItemTaxBreakdownTaxRateDetails? Function()? taxRateDetails, TaxProductResourceLineItemTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) { return TaxProductResourceLineItemTaxBreakdown(
+TaxProductResourceLineItemTaxBreakdown copyWith({int? amount, TaxProductResourceJurisdiction? jurisdiction, TaxProductResourceLineItemTaxBreakdownSourcing? sourcing, TaxProductResourceLineItemTaxRateDetails? Function()? taxRateDetails, TaxProductResourceLineItemTaxBreakdownTaxabilityReason? taxabilityReason, int? taxableAmount, }) { return TaxProductResourceLineItemTaxBreakdown(
   amount: amount ?? this.amount,
   jurisdiction: jurisdiction ?? this.jurisdiction,
   sourcing: sourcing ?? this.sourcing,

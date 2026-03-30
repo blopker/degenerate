@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'payment_method.dart';import 'setup_attempt_application.dart';import 'setup_attempt_customer.dart';import 'setup_attempt_on_behalf_of.dart';import 'setup_attempt_payment_method.dart';import 'setup_attempt_payment_method_details.dart';import 'setup_attempt_setup_error.dart';import 'setup_attempt_setup_intent.dart';import 'setup_intent.dart';final class SetupAttemptFlowDirections {const SetupAttemptFlowDirections._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'application.dart';import 'customer.dart';import 'deleted_customer.dart';import 'errors.dart';import 'payment_method.dart';import 'setup_attempt_application.dart';import 'setup_attempt_customer.dart';import 'setup_attempt_on_behalf_of.dart';import 'setup_attempt_payment_method.dart';import 'setup_attempt_payment_method_details.dart';import 'setup_attempt_setup_intent.dart';import 'setup_intent.dart';final class SetupAttemptFlowDirections {const SetupAttemptFlowDirections._(this.value);
 
 factory SetupAttemptFlowDirections.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
@@ -65,7 +65,7 @@ factory SetupAttempt.fromJson(Map<String, dynamic> json) { return SetupAttempt(
   onBehalfOf: json['on_behalf_of'] != null ? OneOf2.parse(json['on_behalf_of'], fromA: (v) => v as String, fromB: (v) => Account.fromJson(v as Map<String, dynamic>),) : null,
   paymentMethod: OneOf2.parse(json['payment_method'], fromA: (v) => v as String, fromB: (v) => PaymentMethod.fromJson(v as Map<String, dynamic>),),
   paymentMethodDetails: SetupAttemptPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>),
-  setupError: json['setup_error'] != null ? SetupAttemptSetupError.fromJson(json['setup_error'] as Map<String, dynamic>) : null,
+  setupError: json['setup_error'] != null ? Errors.fromJson(json['setup_error'] as Map<String, dynamic>) : null,
   setupIntent: OneOf2.parse(json['setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),),
   status: json['status'] as String,
   usage: json['usage'] as String,
@@ -111,7 +111,7 @@ final SetupAttemptPaymentMethod paymentMethod;
 final SetupAttemptPaymentMethodDetails paymentMethodDetails;
 
 /// The error encountered during this attempt to confirm the SetupIntent, if any.
-final SetupAttemptSetupError? setupError;
+final Errors? setupError;
 
 /// ID of the SetupIntent that this attempt belongs to.
 final SetupAttemptSetupIntent setupIntent;
@@ -149,7 +149,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('setup_intent') &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('usage') && json['usage'] is String; } 
-SetupAttempt copyWith({SetupAttemptApplication? Function()? application, bool Function()? attachToSelf, int? created, SetupAttemptCustomer? Function()? customer, String? Function()? customerAccount, List<SetupAttemptFlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, SetupAttemptOnBehalfOf? Function()? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, SetupAttemptSetupError? Function()? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
+SetupAttempt copyWith({SetupAttemptApplication? Function()? application, bool Function()? attachToSelf, int? created, SetupAttemptCustomer? Function()? customer, String? Function()? customerAccount, List<SetupAttemptFlowDirections>? Function()? flowDirections, String? id, bool? livemode, SetupAttemptObject? object, SetupAttemptOnBehalfOf? Function()? onBehalfOf, SetupAttemptPaymentMethod? paymentMethod, SetupAttemptPaymentMethodDetails? paymentMethodDetails, Errors? Function()? setupError, SetupAttemptSetupIntent? setupIntent, String? status, String? usage, }) { return SetupAttempt(
   application: application != null ? application() : this.application,
   attachToSelf: attachToSelf != null ? attachToSelf() : this.attachToSelf,
   created: created ?? this.created,

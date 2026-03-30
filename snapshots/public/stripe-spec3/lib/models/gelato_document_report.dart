@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'gelato_document_report_address.dart';import 'gelato_document_report_dob.dart';import 'gelato_document_report_error2.dart';import 'gelato_document_report_expiration_date.dart';import 'gelato_document_report_issued_date.dart';/// Sex of the person in the document.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'address.dart';import 'gelato_data_document_report_date_of_birth.dart';import 'gelato_data_document_report_expiration_date.dart';import 'gelato_data_document_report_issued_date.dart';import 'gelato_document_report_error.dart';/// Sex of the person in the document.
 final class GelatoDocumentReportSex {const GelatoDocumentReportSex._(this.value);
 
 factory GelatoDocumentReportSex.fromJson(String json) { return switch (json) {
@@ -88,13 +88,13 @@ bool get isUnknown { return !values.contains(this); }
 final class GelatoDocumentReport {const GelatoDocumentReport({this.address, this.dob, this.error, this.expirationDate, this.files, this.firstName, this.issuedDate, this.issuingCountry, this.lastName, this.number, this.sex, required this.status, this.type, this.unparsedPlaceOfBirth, this.unparsedSex, });
 
 factory GelatoDocumentReport.fromJson(Map<String, dynamic> json) { return GelatoDocumentReport(
-  address: json['address'] != null ? GelatoDocumentReportAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
-  dob: json['dob'] != null ? GelatoDocumentReportDob.fromJson(json['dob'] as Map<String, dynamic>) : null,
-  error: json['error'] != null ? GelatoDocumentReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
-  expirationDate: json['expiration_date'] != null ? GelatoDocumentReportExpirationDate.fromJson(json['expiration_date'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
+  dob: json['dob'] != null ? GelatoDataDocumentReportDateOfBirth.fromJson(json['dob'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoDocumentReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
+  expirationDate: json['expiration_date'] != null ? GelatoDataDocumentReportExpirationDate.fromJson(json['expiration_date'] as Map<String, dynamic>) : null,
   files: (json['files'] as List<dynamic>?)?.map((e) => e as String).toList(),
   firstName: json['first_name'] as String?,
-  issuedDate: json['issued_date'] != null ? GelatoDocumentReportIssuedDate.fromJson(json['issued_date'] as Map<String, dynamic>) : null,
+  issuedDate: json['issued_date'] != null ? GelatoDataDocumentReportIssuedDate.fromJson(json['issued_date'] as Map<String, dynamic>) : null,
   issuingCountry: json['issuing_country'] as String?,
   lastName: json['last_name'] as String?,
   number: json['number'] as String?,
@@ -106,16 +106,16 @@ factory GelatoDocumentReport.fromJson(Map<String, dynamic> json) { return Gelato
 ); }
 
 /// Address as it appears in the document.
-final GelatoDocumentReportAddress? address;
+final Address? address;
 
 /// Date of birth as it appears in the document.
-final GelatoDocumentReportDob? dob;
+final GelatoDataDocumentReportDateOfBirth? dob;
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoDocumentReportError2? error;
+final GelatoDocumentReportError? error;
 
 /// Expiration date of the document.
-final GelatoDocumentReportExpirationDate? expirationDate;
+final GelatoDataDocumentReportExpirationDate? expirationDate;
 
 /// Array of [File](https://docs.stripe.com/api/files) ids containing images for this document.
 final List<String>? files;
@@ -124,7 +124,7 @@ final List<String>? files;
 final String? firstName;
 
 /// Issued date of the document.
-final GelatoDocumentReportIssuedDate? issuedDate;
+final GelatoDataDocumentReportIssuedDate? issuedDate;
 
 /// Issuing country of the document.
 final String? issuingCountry;
@@ -168,7 +168,7 @@ Map<String, dynamic> toJson() { return {
   'unparsed_sex': ?unparsedSex,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoDocumentReport copyWith({GelatoDocumentReportAddress? Function()? address, GelatoDocumentReportDob? Function()? dob, GelatoDocumentReportError2? Function()? error, GelatoDocumentReportExpirationDate? Function()? expirationDate, List<String>? Function()? files, String? Function()? firstName, GelatoDocumentReportIssuedDate? Function()? issuedDate, String? Function()? issuingCountry, String? Function()? lastName, String? Function()? number, GelatoDocumentReportSex? Function()? sex, GelatoDocumentReportStatus? status, GelatoDocumentReportType? Function()? type, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoDocumentReport(
+GelatoDocumentReport copyWith({Address? Function()? address, GelatoDataDocumentReportDateOfBirth? Function()? dob, GelatoDocumentReportError? Function()? error, GelatoDataDocumentReportExpirationDate? Function()? expirationDate, List<String>? Function()? files, String? Function()? firstName, GelatoDataDocumentReportIssuedDate? Function()? issuedDate, String? Function()? issuingCountry, String? Function()? lastName, String? Function()? number, GelatoDocumentReportSex? Function()? sex, GelatoDocumentReportStatus? status, GelatoDocumentReportType? Function()? type, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoDocumentReport(
   address: address != null ? address() : this.address,
   dob: dob != null ? dob() : this.dob,
   error: error != null ? error() : this.error,

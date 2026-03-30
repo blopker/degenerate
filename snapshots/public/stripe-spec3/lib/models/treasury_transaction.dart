@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'treasury_transaction_entries.dart';import 'treasury_transaction_flow_details.dart';import 'treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'treasury_transactions_resource_balance_impact.dart';/// Type of the flow that created the Transaction.
+import 'treasury_transaction_entries.dart';import 'treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'treasury_transactions_resource_balance_impact.dart';import 'treasury_transactions_resource_flow_details.dart';/// Type of the flow that created the Transaction.
 final class TreasuryTransactionFlowType {const TreasuryTransactionFlowType._(this.value);
 
 factory TreasuryTransactionFlowType.fromJson(String json) { return switch (json) {
@@ -108,7 +108,7 @@ factory TreasuryTransaction.fromJson(Map<String, dynamic> json) { return Treasur
   entries: json['entries'] != null ? TreasuryTransactionEntries.fromJson(json['entries'] as Map<String, dynamic>) : null,
   financialAccount: json['financial_account'] as String,
   flow: json['flow'] as String?,
-  flowDetails: json['flow_details'] != null ? TreasuryTransactionFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null,
+  flowDetails: json['flow_details'] != null ? TreasuryTransactionsResourceFlowDetails.fromJson(json['flow_details'] as Map<String, dynamic>) : null,
   flowType: TreasuryTransactionFlowType.fromJson(json['flow_type'] as String),
   id: json['id'] as String,
   livemode: json['livemode'] as bool,
@@ -141,7 +141,7 @@ final String financialAccount;
 final String? flow;
 
 /// Details of the flow that created the Transaction.
-final TreasuryTransactionFlowDetails? flowDetails;
+final TreasuryTransactionsResourceFlowDetails? flowDetails;
 
 /// Type of the flow that created the Transaction.
 final TreasuryTransactionFlowType flowType;
@@ -189,7 +189,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object') &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, String? description, TreasuryTransactionEntries? Function()? entries, String? financialAccount, String? Function()? flow, TreasuryTransactionFlowDetails? Function()? flowDetails, TreasuryTransactionFlowType? flowType, String? id, bool? livemode, TreasuryTransactionObject? object, TreasuryTransactionStatus? status, TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions? statusTransitions, }) { return TreasuryTransaction(
+TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, String? description, TreasuryTransactionEntries? Function()? entries, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, TreasuryTransactionFlowType? flowType, String? id, bool? livemode, TreasuryTransactionObject? object, TreasuryTransactionStatus? status, TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions? statusTransitions, }) { return TreasuryTransaction(
   amount: amount ?? this.amount,
   balanceImpact: balanceImpact ?? this.balanceImpact,
   created: created ?? this.created,

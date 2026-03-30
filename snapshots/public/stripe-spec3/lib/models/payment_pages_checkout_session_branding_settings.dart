@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payment_pages_checkout_session_branding_settings_icon2.dart';import 'payment_pages_checkout_session_branding_settings_logo2.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
+import 'payment_pages_checkout_session_branding_settings_icon.dart';import 'payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
 final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(this.value);
 
 factory PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
@@ -37,8 +37,8 @@ factory PaymentPagesCheckoutSessionBrandingSettings.fromJson(Map<String, dynamic
   buttonColor: json['button_color'] as String,
   displayName: json['display_name'] as String,
   fontFamily: json['font_family'] as String,
-  icon: json['icon'] != null ? PaymentPagesCheckoutSessionBrandingSettingsIcon2.fromJson(json['icon'] as Map<String, dynamic>) : null,
-  logo: json['logo'] != null ? PaymentPagesCheckoutSessionBrandingSettingsLogo2.fromJson(json['logo'] as Map<String, dynamic>) : null,
+  icon: json['icon'] != null ? PaymentPagesCheckoutSessionBrandingSettingsIcon.fromJson(json['icon'] as Map<String, dynamic>) : null,
+  logo: json['logo'] != null ? PaymentPagesCheckoutSessionBrandingSettingsLogo.fromJson(json['logo'] as Map<String, dynamic>) : null,
 ); }
 
 /// A hex color value starting with `#` representing the background color for the Checkout Session.
@@ -57,10 +57,10 @@ final String displayName;
 final String fontFamily;
 
 /// The icon for the Checkout Session. You cannot set both `logo` and `icon`.
-final PaymentPagesCheckoutSessionBrandingSettingsIcon2? icon;
+final PaymentPagesCheckoutSessionBrandingSettingsIcon? icon;
 
 /// The logo for the Checkout Session. You cannot set both `logo` and `icon`.
-final PaymentPagesCheckoutSessionBrandingSettingsLogo2? logo;
+final PaymentPagesCheckoutSessionBrandingSettingsLogo? logo;
 
 Map<String, dynamic> toJson() { return {
   'background_color': backgroundColor,
@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('backg
       json.containsKey('button_color') && json['button_color'] is String &&
       json.containsKey('display_name') && json['display_name'] is String &&
       json.containsKey('font_family') && json['font_family'] is String; } 
-PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, PaymentPagesCheckoutSessionBrandingSettingsIcon2? Function()? icon, PaymentPagesCheckoutSessionBrandingSettingsLogo2? Function()? logo, }) { return PaymentPagesCheckoutSessionBrandingSettings(
+PaymentPagesCheckoutSessionBrandingSettings copyWith({String? backgroundColor, PaymentPagesCheckoutSessionBrandingSettingsBorderStyle? borderStyle, String? buttonColor, String? displayName, String? fontFamily, PaymentPagesCheckoutSessionBrandingSettingsIcon? Function()? icon, PaymentPagesCheckoutSessionBrandingSettingsLogo? Function()? logo, }) { return PaymentPagesCheckoutSessionBrandingSettings(
   backgroundColor: backgroundColor ?? this.backgroundColor,
   borderStyle: borderStyle ?? this.borderStyle,
   buttonColor: buttonColor ?? this.buttonColor,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_identity_providers_components_schemas_response_collection_result.dart';import '../models/access_schemas_identity_providers.dart';import '../models/access_uuid.dart';/// ZoneLevelAccessIdentityProvidersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_id_response_result.dart';import '../models/access_identifier.dart';import '../models/access_identity_providers_components_schemas_response_collection_result.dart';import '../models/access_schemas_identity_provider.dart';import '../models/access_schemas_identity_providers.dart';import '../models/access_uuid.dart';/// ZoneLevelAccessIdentityProvidersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -50,7 +50,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessSchemasIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -72,7 +72,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessSchemasIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 
@@ -96,7 +96,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return json['result'] != null ? AccessSchemasIdentityProviders.fromJson(json['result'] as Map<String, dynamic>) : null;
+    return json['result'] != null ? OneOf8.parse(json['result'], fromA: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromB: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromC: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromD: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromE: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromF: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromG: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>), fromH: (v) => AccessSchemasIdentityProvider.fromJson(v as Map<String, dynamic>),) : null;
   },
 );
  } 

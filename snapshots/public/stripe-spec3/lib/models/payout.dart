@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'bank_account.dart';import 'card.dart';import 'deleted_bank_account.dart';import 'deleted_card.dart';import 'payout_application_fee.dart';import 'payout_balance_transaction.dart';import 'payout_destination.dart';import 'payout_failure_balance_transaction.dart';import 'payout_original_payout.dart';import 'payout_reversed_by.dart';import 'payout_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application_fee.dart';import 'balance_transaction.dart';import 'bank_account.dart';import 'card.dart';import 'deleted_bank_account.dart';import 'deleted_card.dart';import 'payout_application_fee.dart';import 'payout_balance_transaction.dart';import 'payout_destination.dart';import 'payout_failure_balance_transaction.dart';import 'payout_original_payout.dart';import 'payout_reversed_by.dart';import 'payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class PayoutObject {const PayoutObject._(this.value);
 
 factory PayoutObject.fromJson(String json) { return switch (json) {
@@ -111,7 +111,7 @@ factory Payout.fromJson(Map<String, dynamic> json) { return Payout(
   sourceType: json['source_type'] as String,
   statementDescriptor: json['statement_descriptor'] as String?,
   status: json['status'] as String,
-  traceId: json['trace_id'] != null ? PayoutTraceId.fromJson(json['trace_id'] as Map<String, dynamic>) : null,
+  traceId: json['trace_id'] != null ? PayoutsTraceId.fromJson(json['trace_id'] as Map<String, dynamic>) : null,
   type: PayoutType.fromJson(json['type'] as String),
 ); }
 
@@ -191,7 +191,7 @@ final String? statementDescriptor;
 final String status;
 
 /// A value that generates from the beneficiary's bank that allows users to track payouts with their bank. Banks might call this a "reference number" or something similar.
-final PayoutTraceId? traceId;
+final PayoutsTraceId? traceId;
 
 /// Can be `bank_account` or `card`.
 final PayoutType type;
@@ -238,7 +238,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('source_type') && json['source_type'] is String &&
       json.containsKey('status') && json['status'] is String &&
       json.containsKey('type'); } 
-Payout copyWith({int? amount, PayoutApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, PayoutBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, PayoutFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, PayoutOriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, PayoutReconciliationStatus? reconciliationStatus, PayoutReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
+Payout copyWith({int? amount, PayoutApplicationFee? Function()? applicationFee, int? Function()? applicationFeeAmount, int? arrivalDate, bool? automatic, PayoutBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, PayoutDestination? Function()? destination, PayoutFailureBalanceTransaction? Function()? failureBalanceTransaction, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String, String>? Function()? metadata, String? method, PayoutObject? object, PayoutOriginalPayout? Function()? originalPayout, String? Function()? payoutMethod, PayoutReconciliationStatus? reconciliationStatus, PayoutReversedBy? Function()? reversedBy, String? sourceType, String? Function()? statementDescriptor, String? status, PayoutsTraceId? Function()? traceId, PayoutType? type, }) { return Payout(
   amount: amount ?? this.amount,
   applicationFee: applicationFee != null ? applicationFee() : this.applicationFee,
   applicationFeeAmount: applicationFeeAmount != null ? applicationFeeAmount() : this.applicationFeeAmount,

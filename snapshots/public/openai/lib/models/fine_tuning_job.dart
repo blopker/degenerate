@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_method.dart';import 'fine_tuning_job_error.dart';import 'fine_tuning_job_hyperparameters.dart';import 'fine_tuning_job_integrations2.dart';/// The object type, which is always "fine_tuning.job".
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'fine_tune_method.dart';import 'fine_tuning_integration.dart';import 'fine_tuning_job_error.dart';import 'fine_tuning_job_hyperparameters.dart';/// The object type, which is always "fine_tuning.job".
 final class FineTuningJobObject {const FineTuningJobObject._(this.value);
 
 factory FineTuningJobObject.fromJson(String json) { return switch (json) {
@@ -78,7 +78,7 @@ factory FineTuningJob.fromJson(Map<String, dynamic> json) { return FineTuningJob
   trainedTokens: json['trained_tokens'] != null ? (json['trained_tokens'] as num).toInt() : null,
   trainingFile: json['training_file'] as String,
   validationFile: json['validation_file'] as String?,
-  integrations: (json['integrations'] as List<dynamic>?)?.map((e) => FineTuningJobIntegrations2.fromJson(e)).toList(),
+  integrations: (json['integrations'] as List<dynamic>?)?.map((e) => FineTuningIntegration.fromJson(e as Map<String, dynamic>)).toList(),
   seed: (json['seed'] as num).toInt(),
   estimatedFinish: json['estimated_finish'] != null ? (json['estimated_finish'] as num).toInt() : null,
   method: json['method'] != null ? FineTuneMethod.fromJson(json['method'] as Map<String, dynamic>) : null,
@@ -128,7 +128,7 @@ final String trainingFile;
 final String? validationFile;
 
 /// A list of integrations to enable for this fine-tuning job.
-final List<FineTuningJobIntegrations2>? integrations;
+final List<FineTuningIntegration>? integrations;
 
 /// The seed used for the fine-tuning job.
 final int seed;
@@ -176,7 +176,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('training_file') && json['training_file'] is String &&
       json.containsKey('validation_file') && json['validation_file'] is String &&
       json.containsKey('seed') && json['seed'] is num; } 
-FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, List<FineTuningJobIntegrations2>? Function()? integrations, int? seed, int? Function()? estimatedFinish, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return FineTuningJob(
+FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, List<FineTuningIntegration>? Function()? integrations, int? seed, int? Function()? estimatedFinish, FineTuneMethod Function()? method, Map<String, String>? Function()? metadata, }) { return FineTuningJob(
   id: id ?? this.id,
   createdAt: createdAt ?? this.createdAt,
   error: error != null ? error() : this.error,

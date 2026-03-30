@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_session_resource_components_resource_payment_element_features.dart';/// This hash contains whether the Payment Element is enabled and the features it supports.
+import 'customer_session_resource_components_resource_payment_element_resource_features.dart';/// This hash contains whether the Payment Element is enabled and the features it supports.
 final class CustomerSessionResourceComponentsResourcePaymentElement {const CustomerSessionResourceComponentsResourcePaymentElement({required this.enabled, this.features, });
 
 factory CustomerSessionResourceComponentsResourcePaymentElement.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourcePaymentElement(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null ? CustomerSessionResourceComponentsResourcePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
+  features: json['features'] != null ? CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the Payment Element is enabled.
 final bool enabled;
 
 /// This hash defines whether the Payment Element supports certain features.
-final CustomerSessionResourceComponentsResourcePaymentElementFeatures? features;
+final CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures? features;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-CustomerSessionResourceComponentsResourcePaymentElement copyWith({bool? enabled, CustomerSessionResourceComponentsResourcePaymentElementFeatures? Function()? features, }) { return CustomerSessionResourceComponentsResourcePaymentElement(
+CustomerSessionResourceComponentsResourcePaymentElement copyWith({bool? enabled, CustomerSessionResourceComponentsResourcePaymentElementResourceFeatures? Function()? features, }) { return CustomerSessionResourceComponentsResourcePaymentElement(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 

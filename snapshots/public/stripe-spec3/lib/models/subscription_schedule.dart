@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'subscription.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase2.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';import 'test_helpers_test_clock.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'application.dart';import 'customer.dart';import 'deleted_application.dart';import 'deleted_customer.dart';import 'subscription.dart';import 'subscription_schedule_application.dart';import 'subscription_schedule_current_phase.dart';import 'subscription_schedule_customer.dart';import 'subscription_schedule_phase_configuration.dart';import 'subscription_schedule_subscription.dart';import 'subscription_schedule_test_clock.dart';import 'subscription_schedules_resource_default_settings.dart';import 'subscriptions_resource_billing_mode.dart';import 'test_helpers_test_clock.dart';/// Behavior of the subscription schedule and underlying subscription when it ends. Possible values are `release` or `cancel` with the default being `release`. `release` will end the subscription schedule and keep the underlying subscription running. `cancel` will end the subscription schedule and cancel the underlying subscription.
 final class SubscriptionScheduleEndBehavior {const SubscriptionScheduleEndBehavior._(this.value);
 
 factory SubscriptionScheduleEndBehavior.fromJson(String json) { return switch (json) {
@@ -98,7 +98,7 @@ factory SubscriptionSchedule.fromJson(Map<String, dynamic> json) { return Subscr
   canceledAt: json['canceled_at'] != null ? (json['canceled_at'] as num).toInt() : null,
   completedAt: json['completed_at'] != null ? (json['completed_at'] as num).toInt() : null,
   created: (json['created'] as num).toInt(),
-  currentPhase: json['current_phase'] != null ? SubscriptionScheduleCurrentPhase2.fromJson(json['current_phase'] as Map<String, dynamic>) : null,
+  currentPhase: json['current_phase'] != null ? SubscriptionScheduleCurrentPhase.fromJson(json['current_phase'] as Map<String, dynamic>) : null,
   customer: OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),),
   customerAccount: json['customer_account'] as String?,
   defaultSettings: SubscriptionSchedulesResourceDefaultSettings.fromJson(json['default_settings'] as Map<String, dynamic>),
@@ -130,7 +130,7 @@ final int? completedAt;
 final int created;
 
 /// Object representing the start and end dates for the current phase of the subscription schedule, if it is `active`.
-final SubscriptionScheduleCurrentPhase2? currentPhase;
+final SubscriptionScheduleCurrentPhase? currentPhase;
 
 /// ID of the customer who owns the subscription schedule.
 final SubscriptionScheduleCustomer customer;
@@ -205,7 +205,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
       json.containsKey('object') &&
       json.containsKey('phases') &&
       json.containsKey('status'); } 
-SubscriptionSchedule copyWith({SubscriptionScheduleApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase2? Function()? currentPhase, SubscriptionScheduleCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, SubscriptionScheduleSubscription? Function()? subscription, SubscriptionScheduleTestClock? Function()? testClock, }) { return SubscriptionSchedule(
+SubscriptionSchedule copyWith({SubscriptionScheduleApplication? Function()? application, SubscriptionsResourceBillingMode? billingMode, int? Function()? canceledAt, int? Function()? completedAt, int? created, SubscriptionScheduleCurrentPhase? Function()? currentPhase, SubscriptionScheduleCustomer? customer, String? Function()? customerAccount, SubscriptionSchedulesResourceDefaultSettings? defaultSettings, SubscriptionScheduleEndBehavior? endBehavior, String? id, bool? livemode, Map<String, String>? Function()? metadata, SubscriptionScheduleObject? object, List<SubscriptionSchedulePhaseConfiguration>? phases, int? Function()? releasedAt, String? Function()? releasedSubscription, SubscriptionScheduleStatus? status, SubscriptionScheduleSubscription? Function()? subscription, SubscriptionScheduleTestClock? Function()? testClock, }) { return SubscriptionSchedule(
   application: application != null ? application() : this.application,
   billingMode: billingMode ?? this.billingMode,
   canceledAt: canceledAt != null ? canceledAt() : this.canceledAt,

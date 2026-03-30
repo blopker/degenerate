@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_inbound_transfer_failure_details.dart';import 'treasury_inbound_transfer_origin_payment_method_details.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'inbound_transfers.dart';import 'treasury_inbound_transfer_transaction.dart';import 'treasury_inbound_transfers_resource_failure_details.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
 
 factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
@@ -64,7 +64,7 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  failureDetails: json['failure_details'] != null ? TreasuryInboundTransferFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
+  failureDetails: json['failure_details'] != null ? TreasuryInboundTransfersResourceFailureDetails.fromJson(json['failure_details'] as Map<String, dynamic>) : null,
   financialAccount: json['financial_account'] as String,
   hostedRegulatoryReceiptUrl: json['hosted_regulatory_receipt_url'] as String?,
   id: json['id'] as String,
@@ -73,7 +73,7 @@ factory TreasuryInboundTransfer.fromJson(Map<String, dynamic> json) { return Tre
   metadata: (json['metadata'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   object: TreasuryInboundTransferObject.fromJson(json['object'] as String),
   originPaymentMethod: json['origin_payment_method'] as String?,
-  originPaymentMethodDetails: json['origin_payment_method_details'] != null ? TreasuryInboundTransferOriginPaymentMethodDetails.fromJson(json['origin_payment_method_details'] as Map<String, dynamic>) : null,
+  originPaymentMethodDetails: json['origin_payment_method_details'] != null ? InboundTransfers.fromJson(json['origin_payment_method_details'] as Map<String, dynamic>) : null,
   returned: json['returned'] as bool?,
   statementDescriptor: json['statement_descriptor'] as String,
   status: TreasuryInboundTransferStatus.fromJson(json['status'] as String),
@@ -97,7 +97,7 @@ final String currency;
 final String? description;
 
 /// Details about this InboundTransfer's failure. Only set when status is `failed`.
-final TreasuryInboundTransferFailureDetails? failureDetails;
+final TreasuryInboundTransfersResourceFailureDetails? failureDetails;
 
 /// The FinancialAccount that received the funds.
 final String financialAccount;
@@ -123,7 +123,7 @@ final TreasuryInboundTransferObject object;
 final String? originPaymentMethod;
 
 /// Details about the PaymentMethod for an InboundTransfer.
-final TreasuryInboundTransferOriginPaymentMethodDetails? originPaymentMethodDetails;
+final InboundTransfers? originPaymentMethodDetails;
 
 /// Returns `true` if the funds for an InboundTransfer were returned after the InboundTransfer went to the `succeeded` state.
 final bool? returned;
@@ -174,7 +174,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('statement_descriptor') && json['statement_descriptor'] is String &&
       json.containsKey('status') &&
       json.containsKey('status_transitions'); } 
-TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, TreasuryInboundTransferFailureDetails? Function()? failureDetails, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, String? Function()? originPaymentMethod, TreasuryInboundTransferOriginPaymentMethodDetails? Function()? originPaymentMethodDetails, bool? Function()? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, TreasuryInboundTransferTransaction? Function()? transaction, }) { return TreasuryInboundTransfer(
+TreasuryInboundTransfer copyWith({int? amount, bool? cancelable, int? created, String? currency, String? Function()? description, TreasuryInboundTransfersResourceFailureDetails? Function()? failureDetails, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryInboundTransferObject? object, String? Function()? originPaymentMethod, InboundTransfers? Function()? originPaymentMethodDetails, bool? Function()? returned, String? statementDescriptor, TreasuryInboundTransferStatus? status, TreasuryInboundTransfersResourceInboundTransferResourceStatusTransitions? statusTransitions, TreasuryInboundTransferTransaction? Function()? transaction, }) { return TreasuryInboundTransfer(
   amount: amount ?? this.amount,
   cancelable: cancelable ?? this.cancelable,
   created: created ?? this.created,

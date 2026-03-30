@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'portal_flows_flow_after_completion.dart';import 'portal_flows_flow_subscription_cancel2.dart';import 'portal_flows_flow_subscription_update2.dart';import 'portal_flows_flow_subscription_update_confirm2.dart';/// Type of flow that the customer will go through.
+import 'portal_flows_flow_after_completion.dart';import 'portal_flows_flow_subscription_cancel.dart';import 'portal_flows_flow_subscription_update.dart';import 'portal_flows_flow_subscription_update_confirm.dart';/// Type of flow that the customer will go through.
 final class PortalFlowsFlowType {const PortalFlowsFlowType._(this.value);
 
 factory PortalFlowsFlowType.fromJson(String json) { return switch (json) {
@@ -36,22 +36,22 @@ final class PortalFlowsFlow {const PortalFlowsFlow({required this.afterCompletio
 
 factory PortalFlowsFlow.fromJson(Map<String, dynamic> json) { return PortalFlowsFlow(
   afterCompletion: PortalFlowsFlowAfterCompletion.fromJson(json['after_completion'] as Map<String, dynamic>),
-  subscriptionCancel: json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel2.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
-  subscriptionUpdate: json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate2.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
-  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm2.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
+  subscriptionCancel: json['subscription_cancel'] != null ? PortalFlowsFlowSubscriptionCancel.fromJson(json['subscription_cancel'] as Map<String, dynamic>) : null,
+  subscriptionUpdate: json['subscription_update'] != null ? PortalFlowsFlowSubscriptionUpdate.fromJson(json['subscription_update'] as Map<String, dynamic>) : null,
+  subscriptionUpdateConfirm: json['subscription_update_confirm'] != null ? PortalFlowsFlowSubscriptionUpdateConfirm.fromJson(json['subscription_update_confirm'] as Map<String, dynamic>) : null,
   type: PortalFlowsFlowType.fromJson(json['type'] as String),
 ); }
 
 final PortalFlowsFlowAfterCompletion afterCompletion;
 
 /// Configuration when `flow.type=subscription_cancel`.
-final PortalFlowsFlowSubscriptionCancel2? subscriptionCancel;
+final PortalFlowsFlowSubscriptionCancel? subscriptionCancel;
 
 /// Configuration when `flow.type=subscription_update`.
-final PortalFlowsFlowSubscriptionUpdate2? subscriptionUpdate;
+final PortalFlowsFlowSubscriptionUpdate? subscriptionUpdate;
 
 /// Configuration when `flow.type=subscription_update_confirm`.
-final PortalFlowsFlowSubscriptionUpdateConfirm2? subscriptionUpdateConfirm;
+final PortalFlowsFlowSubscriptionUpdateConfirm? subscriptionUpdateConfirm;
 
 /// Type of flow that the customer will go through.
 final PortalFlowsFlowType type;
@@ -65,7 +65,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('after_completion') &&
       json.containsKey('type'); } 
-PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, PortalFlowsFlowSubscriptionCancel2? Function()? subscriptionCancel, PortalFlowsFlowSubscriptionUpdate2? Function()? subscriptionUpdate, PortalFlowsFlowSubscriptionUpdateConfirm2? Function()? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return PortalFlowsFlow(
+PortalFlowsFlow copyWith({PortalFlowsFlowAfterCompletion? afterCompletion, PortalFlowsFlowSubscriptionCancel? Function()? subscriptionCancel, PortalFlowsFlowSubscriptionUpdate? Function()? subscriptionUpdate, PortalFlowsFlowSubscriptionUpdateConfirm? Function()? subscriptionUpdateConfirm, PortalFlowsFlowType? type, }) { return PortalFlowsFlow(
   afterCompletion: afterCompletion ?? this.afterCompletion,
   subscriptionCancel: subscriptionCancel != null ? subscriptionCancel() : this.subscriptionCancel,
   subscriptionUpdate: subscriptionUpdate != null ? subscriptionUpdate() : this.subscriptionUpdate,

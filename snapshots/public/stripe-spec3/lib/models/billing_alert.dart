@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'billing_alert_usage_threshold.dart';/// Defines the type of the alert.
+import 'thresholds_resource_usage_threshold_config.dart';/// Defines the type of the alert.
 final class BillingAlertAlertType {const BillingAlertAlertType._(this.value);
 
 factory BillingAlertAlertType.fromJson(String json) { return switch (json) {
@@ -82,7 +82,7 @@ factory BillingAlert.fromJson(Map<String, dynamic> json) { return BillingAlert(
   object: BillingAlertObject.fromJson(json['object'] as String),
   status: json['status'] != null ? BillingAlertStatus.fromJson(json['status'] as String) : null,
   title: json['title'] as String,
-  usageThreshold: json['usage_threshold'] != null ? BillingAlertUsageThreshold.fromJson(json['usage_threshold'] as Map<String, dynamic>) : null,
+  usageThreshold: json['usage_threshold'] != null ? ThresholdsResourceUsageThresholdConfig.fromJson(json['usage_threshold'] as Map<String, dynamic>) : null,
 ); }
 
 /// Defines the type of the alert.
@@ -104,7 +104,7 @@ final BillingAlertStatus? status;
 final String title;
 
 /// Encapsulates configuration of the alert to monitor usage on a specific [Billing Meter](https://docs.stripe.com/api/billing/meter).
-final BillingAlertUsageThreshold? usageThreshold;
+final ThresholdsResourceUsageThresholdConfig? usageThreshold;
 
 Map<String, dynamic> toJson() { return {
   'alert_type': alertType.toJson(),
@@ -120,7 +120,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert
       json.containsKey('livemode') && json['livemode'] is bool &&
       json.containsKey('object') &&
       json.containsKey('title') && json['title'] is String; } 
-BillingAlert copyWith({BillingAlertAlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, BillingAlertStatus? Function()? status, String? title, BillingAlertUsageThreshold? Function()? usageThreshold, }) { return BillingAlert(
+BillingAlert copyWith({BillingAlertAlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, BillingAlertStatus? Function()? status, String? title, ThresholdsResourceUsageThresholdConfig? Function()? usageThreshold, }) { return BillingAlert(
   alertType: alertType ?? this.alertType,
   id: id ?? this.id,
   livemode: livemode ?? this.livemode,

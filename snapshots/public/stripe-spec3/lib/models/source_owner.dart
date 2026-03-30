@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'source_owner_address.dart';import 'source_owner_verified_address.dart';/// 
+import 'address.dart';/// 
 final class SourceOwner {const SourceOwner({this.address, this.email, this.name, this.phone, this.verifiedAddress, this.verifiedEmail, this.verifiedName, this.verifiedPhone, });
 
 factory SourceOwner.fromJson(Map<String, dynamic> json) { return SourceOwner(
-  address: json['address'] != null ? SourceOwnerAddress.fromJson(json['address'] as Map<String, dynamic>) : null,
+  address: json['address'] != null ? Address.fromJson(json['address'] as Map<String, dynamic>) : null,
   email: json['email'] as String?,
   name: json['name'] as String?,
   phone: json['phone'] as String?,
-  verifiedAddress: json['verified_address'] != null ? SourceOwnerVerifiedAddress.fromJson(json['verified_address'] as Map<String, dynamic>) : null,
+  verifiedAddress: json['verified_address'] != null ? Address.fromJson(json['verified_address'] as Map<String, dynamic>) : null,
   verifiedEmail: json['verified_email'] as String?,
   verifiedName: json['verified_name'] as String?,
   verifiedPhone: json['verified_phone'] as String?,
 ); }
 
 /// Owner's address.
-final SourceOwnerAddress? address;
+final Address? address;
 
 /// Owner's email address.
 final String? email;
@@ -27,7 +27,7 @@ final String? name;
 final String? phone;
 
 /// Verified owner's address. Verified values are verified or provided by the payment method directly (and if supported) at the time of authorization or settlement. They cannot be set or mutated.
-final SourceOwnerVerifiedAddress? verifiedAddress;
+final Address? verifiedAddress;
 
 /// Verified owner's email address. Verified values are verified or provided by the payment method directly (and if supported) at the time of authorization or settlement. They cannot be set or mutated.
 final String? verifiedEmail;
@@ -49,7 +49,7 @@ Map<String, dynamic> toJson() { return {
   'verified_phone': ?verifiedPhone,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'address', 'email', 'name', 'phone', 'verified_address', 'verified_email', 'verified_name', 'verified_phone'}.contains(key)); } 
-SourceOwner copyWith({SourceOwnerAddress? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, SourceOwnerVerifiedAddress? Function()? verifiedAddress, String? Function()? verifiedEmail, String? Function()? verifiedName, String? Function()? verifiedPhone, }) { return SourceOwner(
+SourceOwner copyWith({Address? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, Address? Function()? verifiedAddress, String? Function()? verifiedEmail, String? Function()? verifiedName, String? Function()? verifiedPhone, }) { return SourceOwner(
   address: address != null ? address() : this.address,
   email: email != null ? email() : this.email,
   name: name != null ? name() : this.name,

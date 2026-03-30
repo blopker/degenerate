@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_payment_record_refund.dart';import 'credit_note_refund_refund.dart';import 'refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'credit_note_refund_refund.dart';import 'credit_notes_payment_record_refund.dart';import 'refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
 final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
 
 factory CreditNoteRefundType.fromJson(String json) { return switch (json) {
@@ -30,7 +30,7 @@ final class CreditNoteRefund {const CreditNoteRefund({required this.amountRefund
 
 factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNoteRefund(
   amountRefunded: (json['amount_refunded'] as num).toInt(),
-  paymentRecordRefund: json['payment_record_refund'] != null ? CreditNoteRefundPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
+  paymentRecordRefund: json['payment_record_refund'] != null ? CreditNotesPaymentRecordRefund.fromJson(json['payment_record_refund'] as Map<String, dynamic>) : null,
   refund: OneOf2.parse(json['refund'], fromA: (v) => v as String, fromB: (v) => Refund.fromJson(v as Map<String, dynamic>),),
   type: json['type'] != null ? CreditNoteRefundType.fromJson(json['type'] as String) : null,
 ); }
@@ -39,7 +39,7 @@ factory CreditNoteRefund.fromJson(Map<String, dynamic> json) { return CreditNote
 final int amountRefunded;
 
 /// The PaymentRecord refund details associated with this credit note refund.
-final CreditNoteRefundPaymentRecordRefund? paymentRecordRefund;
+final CreditNotesPaymentRecordRefund? paymentRecordRefund;
 
 /// ID of the refund.
 final CreditNoteRefundRefund refund;
@@ -55,7 +55,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount_refunded') && json['amount_refunded'] is num &&
       json.containsKey('refund'); } 
-CreditNoteRefund copyWith({int? amountRefunded, CreditNoteRefundPaymentRecordRefund? Function()? paymentRecordRefund, CreditNoteRefundRefund? refund, CreditNoteRefundType? Function()? type, }) { return CreditNoteRefund(
+CreditNoteRefund copyWith({int? amountRefunded, CreditNotesPaymentRecordRefund? Function()? paymentRecordRefund, CreditNoteRefundRefund? refund, CreditNoteRefundType? Function()? type, }) { return CreditNoteRefund(
   amountRefunded: amountRefunded ?? this.amountRefunded,
   paymentRecordRefund: paymentRecordRefund != null ? paymentRecordRefund() : this.paymentRecordRefund,
   refund: refund ?? this.refund,

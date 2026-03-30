@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'gelato_selfie_report_error2.dart';/// Status of this `selfie` check.
+import 'gelato_selfie_report_error.dart';/// Status of this `selfie` check.
 final class GelatoSelfieReportStatus {const GelatoSelfieReportStatus._(this.value);
 
 factory GelatoSelfieReportStatus.fromJson(String json) { return switch (json) {
@@ -30,7 +30,7 @@ final class GelatoSelfieReport {const GelatoSelfieReport({this.document, this.er
 
 factory GelatoSelfieReport.fromJson(Map<String, dynamic> json) { return GelatoSelfieReport(
   document: json['document'] as String?,
-  error: json['error'] != null ? GelatoSelfieReportError2.fromJson(json['error'] as Map<String, dynamic>) : null,
+  error: json['error'] != null ? GelatoSelfieReportError.fromJson(json['error'] as Map<String, dynamic>) : null,
   selfie: json['selfie'] as String?,
   status: GelatoSelfieReportStatus.fromJson(json['status'] as String),
 ); }
@@ -39,7 +39,7 @@ factory GelatoSelfieReport.fromJson(Map<String, dynamic> json) { return GelatoSe
 final String? document;
 
 /// Details on the verification error. Present when status is `unverified`.
-final GelatoSelfieReportError2? error;
+final GelatoSelfieReportError? error;
 
 /// ID of the [File](https://docs.stripe.com/api/files) holding the image of the selfie used in this check.
 final String? selfie;
@@ -54,7 +54,7 @@ Map<String, dynamic> toJson() { return {
   'status': status.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('status'); } 
-GelatoSelfieReport copyWith({String? Function()? document, GelatoSelfieReportError2? Function()? error, String? Function()? selfie, GelatoSelfieReportStatus? status, }) { return GelatoSelfieReport(
+GelatoSelfieReport copyWith({String? Function()? document, GelatoSelfieReportError? Function()? error, String? Function()? selfie, GelatoSelfieReportStatus? status, }) { return GelatoSelfieReport(
   document: document != null ? document() : this.document,
   error: error != null ? error() : this.error,
   selfie: selfie != null ? selfie() : this.selfie,

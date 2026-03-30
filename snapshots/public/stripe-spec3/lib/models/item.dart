@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'item_adjustable_quantity.dart';import 'item_price.dart';import 'line_items_discount_amount.dart';import 'line_items_tax_amount.dart';/// String representing the object's type. Objects of the same type share the same value.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'line_items_adjustable_quantity.dart';import 'line_items_discount_amount.dart';import 'line_items_tax_amount.dart';import 'price.dart';/// String representing the object's type. Objects of the same type share the same value.
 final class ItemObject {const ItemObject._(this.value);
 
 factory ItemObject.fromJson(String json) { return switch (json) {
@@ -26,7 +26,7 @@ bool get isUnknown { return !values.contains(this); }
 final class Item {const Item({this.adjustableQuantity, required this.amountDiscount, required this.amountSubtotal, required this.amountTax, required this.amountTotal, required this.currency, this.description, this.discounts, required this.id, this.metadata, required this.object, this.price, this.quantity, this.taxes, });
 
 factory Item.fromJson(Map<String, dynamic> json) { return Item(
-  adjustableQuantity: json['adjustable_quantity'] != null ? ItemAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
+  adjustableQuantity: json['adjustable_quantity'] != null ? LineItemsAdjustableQuantity.fromJson(json['adjustable_quantity'] as Map<String, dynamic>) : null,
   amountDiscount: (json['amount_discount'] as num).toInt(),
   amountSubtotal: (json['amount_subtotal'] as num).toInt(),
   amountTax: (json['amount_tax'] as num).toInt(),
@@ -37,12 +37,12 @@ factory Item.fromJson(Map<String, dynamic> json) { return Item(
   id: json['id'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: ItemObject.fromJson(json['object'] as String),
-  price: json['price'] != null ? ItemPrice.fromJson(json['price'] as Map<String, dynamic>) : null,
+  price: json['price'] != null ? Price.fromJson(json['price'] as Map<String, dynamic>) : null,
   quantity: json['quantity'] != null ? (json['quantity'] as num).toInt() : null,
   taxes: (json['taxes'] as List<dynamic>?)?.map((e) => LineItemsTaxAmount.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final ItemAdjustableQuantity? adjustableQuantity;
+final LineItemsAdjustableQuantity? adjustableQuantity;
 
 /// Total discount amount applied. If no discounts were applied, defaults to 0.
 final int amountDiscount;
@@ -75,7 +75,7 @@ final Map<String,String>? metadata;
 final ItemObject object;
 
 /// The price used to generate the line item.
-final ItemPrice? price;
+final Price? price;
 
 /// The quantity of products being purchased.
 final int? quantity;
@@ -106,7 +106,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String &&
       json.containsKey('id') && json['id'] is String &&
       json.containsKey('object'); } 
-Item copyWith({ItemAdjustableQuantity? Function()? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, String? Function()? description, List<LineItemsDiscountAmount> Function()? discounts, String? id, Map<String, String>? Function()? metadata, ItemObject? object, ItemPrice? Function()? price, int? Function()? quantity, List<LineItemsTaxAmount> Function()? taxes, }) { return Item(
+Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, String? Function()? description, List<LineItemsDiscountAmount> Function()? discounts, String? id, Map<String, String>? Function()? metadata, ItemObject? object, Price? Function()? price, int? Function()? quantity, List<LineItemsTaxAmount> Function()? taxes, }) { return Item(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,
   amountDiscount: amountDiscount ?? this.amountDiscount,
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,

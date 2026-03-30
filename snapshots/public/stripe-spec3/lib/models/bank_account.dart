@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'bank_account_future_requirements.dart';import 'bank_account_requirements.dart';import 'customer.dart';import 'deleted_customer.dart';final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'account.dart';import 'bank_account_account.dart';import 'bank_account_customer.dart';import 'customer.dart';import 'deleted_customer.dart';import 'external_account_requirements.dart';final class BankAccountAvailablePayoutMethods {const BankAccountAvailablePayoutMethods._(this.value);
 
 factory BankAccountAvailablePayoutMethods.fromJson(String json) { return switch (json) {
   'instant' => instant,
@@ -67,12 +67,12 @@ factory BankAccount.fromJson(Map<String, dynamic> json) { return BankAccount(
   customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
   defaultForCurrency: json['default_for_currency'] as bool?,
   fingerprint: json['fingerprint'] as String?,
-  futureRequirements: json['future_requirements'] != null ? BankAccountFutureRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
+  futureRequirements: json['future_requirements'] != null ? ExternalAccountRequirements.fromJson(json['future_requirements'] as Map<String, dynamic>) : null,
   id: json['id'] as String,
   last4: json['last4'] as String,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   object: BankAccountObject.fromJson(json['object'] as String),
-  requirements: json['requirements'] != null ? BankAccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
+  requirements: json['requirements'] != null ? ExternalAccountRequirements.fromJson(json['requirements'] as Map<String, dynamic>) : null,
   routingNumber: json['routing_number'] as String?,
   status: json['status'] as String,
 ); }
@@ -111,7 +111,7 @@ final bool? defaultForCurrency;
 final String? fingerprint;
 
 /// Information about the [upcoming new requirements for the bank account](https://docs.stripe.com/connect/custom-accounts/future-requirements), including what information needs to be collected, and by when.
-final BankAccountFutureRequirements? futureRequirements;
+final ExternalAccountRequirements? futureRequirements;
 
 /// Unique identifier for the object.
 final String id;
@@ -126,7 +126,7 @@ final Map<String,String>? metadata;
 final BankAccountObject object;
 
 /// Information about the requirements for the bank account, including what information needs to be collected.
-final BankAccountRequirements? requirements;
+final ExternalAccountRequirements? requirements;
 
 /// The routing transit number for the bank account.
 final String? routingNumber;
@@ -163,7 +163,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('last4') && json['last4'] is String &&
       json.containsKey('object') &&
       json.containsKey('status') && json['status'] is String; } 
-BankAccount copyWith({BankAccountAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<BankAccountAvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, BankAccountFutureRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, BankAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
+BankAccount copyWith({BankAccountAccount? Function()? account, String? Function()? accountHolderName, String? Function()? accountHolderType, String? Function()? accountType, List<BankAccountAvailablePayoutMethods>? Function()? availablePayoutMethods, String? Function()? bankName, String? country, String? currency, BankAccountCustomer? Function()? customer, bool? Function()? defaultForCurrency, String? Function()? fingerprint, ExternalAccountRequirements? Function()? futureRequirements, String? id, String? last4, Map<String, String>? Function()? metadata, BankAccountObject? object, ExternalAccountRequirements? Function()? requirements, String? Function()? routingNumber, String? status, }) { return BankAccount(
   account: account != null ? account() : this.account,
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,
   accountHolderType: accountHolderType != null ? accountHolderType() : this.accountHolderType,

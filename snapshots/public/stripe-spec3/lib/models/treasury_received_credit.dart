@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_reversal_details.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'treasury_received_credit_transaction.dart';import 'treasury_received_credits_resource_linked_flows.dart';import 'treasury_received_credits_resource_reversal_details.dart';import 'treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
 final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
 
 factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
@@ -126,7 +126,7 @@ factory TreasuryReceivedCredit.fromJson(Map<String, dynamic> json) { return Trea
   livemode: json['livemode'] as bool,
   network: TreasuryReceivedCreditNetwork.fromJson(json['network'] as String),
   object: TreasuryReceivedCreditObject.fromJson(json['object'] as String),
-  reversalDetails: json['reversal_details'] != null ? TreasuryReceivedCreditReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null,
+  reversalDetails: json['reversal_details'] != null ? TreasuryReceivedCreditsResourceReversalDetails.fromJson(json['reversal_details'] as Map<String, dynamic>) : null,
   status: TreasuryReceivedCreditStatus.fromJson(json['status'] as String),
   transaction: json['transaction'] != null ? OneOf2.parse(json['transaction'], fromA: (v) => v as String, fromB: (v) => TreasuryTransaction.fromJson(v as Map<String, dynamic>),) : null,
 ); }
@@ -169,7 +169,7 @@ final TreasuryReceivedCreditNetwork network;
 final TreasuryReceivedCreditObject object;
 
 /// Details describing when a ReceivedCredit may be reversed.
-final TreasuryReceivedCreditReversalDetails? reversalDetails;
+final TreasuryReceivedCreditsResourceReversalDetails? reversalDetails;
 
 /// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
 final TreasuryReceivedCreditStatus status;
@@ -206,7 +206,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('network') &&
       json.containsKey('object') &&
       json.containsKey('status'); } 
-TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryReceivedCreditTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
+TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryReceivedCreditTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
   amount: amount ?? this.amount,
   created: created ?? this.created,
   currency: currency ?? this.currency,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'deleted_tax_id.dart';import 'invoice_setting_custom_field.dart';import 'payment_pages_checkout_session_invoice_settings_account_tax_ids.dart';import 'payment_pages_checkout_session_invoice_settings_issuer.dart';import 'payment_pages_checkout_session_invoice_settings_rendering_options.dart';import 'tax_id.dart';/// 
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'connect_account_reference.dart';import 'deleted_tax_id.dart';import 'invoice_setting_checkout_rendering_options.dart';import 'invoice_setting_custom_field.dart';import 'payment_pages_checkout_session_invoice_settings_account_tax_ids.dart';import 'tax_id.dart';/// 
 final class PaymentPagesCheckoutSessionInvoiceSettings {const PaymentPagesCheckoutSessionInvoiceSettings({this.accountTaxIds, this.customFields, this.description, this.footer, this.issuer, this.metadata, this.renderingOptions, });
 
 factory PaymentPagesCheckoutSessionInvoiceSettings.fromJson(Map<String, dynamic> json) { return PaymentPagesCheckoutSessionInvoiceSettings(
@@ -8,9 +8,9 @@ factory PaymentPagesCheckoutSessionInvoiceSettings.fromJson(Map<String, dynamic>
   customFields: (json['custom_fields'] as List<dynamic>?)?.map((e) => InvoiceSettingCustomField.fromJson(e as Map<String, dynamic>)).toList(),
   description: json['description'] as String?,
   footer: json['footer'] as String?,
-  issuer: json['issuer'] != null ? PaymentPagesCheckoutSessionInvoiceSettingsIssuer.fromJson(json['issuer'] as Map<String, dynamic>) : null,
+  issuer: json['issuer'] != null ? ConnectAccountReference.fromJson(json['issuer'] as Map<String, dynamic>) : null,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
-  renderingOptions: json['rendering_options'] != null ? PaymentPagesCheckoutSessionInvoiceSettingsRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
+  renderingOptions: json['rendering_options'] != null ? InvoiceSettingCheckoutRenderingOptions.fromJson(json['rendering_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// The account tax IDs associated with the invoice.
@@ -26,13 +26,13 @@ final String? description;
 final String? footer;
 
 /// The connected account that issues the invoice. The invoice is presented with the branding and support information of the specified account.
-final PaymentPagesCheckoutSessionInvoiceSettingsIssuer? issuer;
+final ConnectAccountReference? issuer;
 
 /// Set of [key-value pairs](https://docs.stripe.com/api/metadata) that you can attach to an object. This can be useful for storing additional information about the object in a structured format.
 final Map<String,String>? metadata;
 
 /// Options for invoice PDF rendering.
-final PaymentPagesCheckoutSessionInvoiceSettingsRenderingOptions? renderingOptions;
+final InvoiceSettingCheckoutRenderingOptions? renderingOptions;
 
 Map<String, dynamic> toJson() { return {
   if (accountTaxIds != null) 'account_tax_ids': accountTaxIds?.map((e) => e.toJson()).toList(),
@@ -44,7 +44,7 @@ Map<String, dynamic> toJson() { return {
   if (renderingOptions != null) 'rendering_options': renderingOptions?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'account_tax_ids', 'custom_fields', 'description', 'footer', 'issuer', 'metadata', 'rendering_options'}.contains(key)); } 
-PaymentPagesCheckoutSessionInvoiceSettings copyWith({List<PaymentPagesCheckoutSessionInvoiceSettingsAccountTaxIds>? Function()? accountTaxIds, List<InvoiceSettingCustomField>? Function()? customFields, String? Function()? description, String? Function()? footer, PaymentPagesCheckoutSessionInvoiceSettingsIssuer? Function()? issuer, Map<String, String>? Function()? metadata, PaymentPagesCheckoutSessionInvoiceSettingsRenderingOptions? Function()? renderingOptions, }) { return PaymentPagesCheckoutSessionInvoiceSettings(
+PaymentPagesCheckoutSessionInvoiceSettings copyWith({List<PaymentPagesCheckoutSessionInvoiceSettingsAccountTaxIds>? Function()? accountTaxIds, List<InvoiceSettingCustomField>? Function()? customFields, String? Function()? description, String? Function()? footer, ConnectAccountReference? Function()? issuer, Map<String, String>? Function()? metadata, InvoiceSettingCheckoutRenderingOptions? Function()? renderingOptions, }) { return PaymentPagesCheckoutSessionInvoiceSettings(
   accountTaxIds: accountTaxIds != null ? accountTaxIds() : this.accountTaxIds,
   customFields: customFields != null ? customFields() : this.customFields,
   description: description != null ? description() : this.description,

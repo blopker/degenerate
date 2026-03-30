@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'automatic_tax_liability.dart';/// If Stripe disabled automatic tax, this enum describes why.
+import 'connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
 final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);
 
 factory AutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
@@ -59,7 +59,7 @@ final class AutomaticTax {const AutomaticTax({this.disabledReason, required this
 factory AutomaticTax.fromJson(Map<String, dynamic> json) { return AutomaticTax(
   disabledReason: json['disabled_reason'] != null ? AutomaticTaxDisabledReason.fromJson(json['disabled_reason'] as String) : null,
   enabled: json['enabled'] as bool,
-  liability: json['liability'] != null ? AutomaticTaxLiability.fromJson(json['liability'] as Map<String, dynamic>) : null,
+  liability: json['liability'] != null ? ConnectAccountReference.fromJson(json['liability'] as Map<String, dynamic>) : null,
   provider: json['provider'] as String?,
   status: json['status'] != null ? AutomaticTaxStatus.fromJson(json['status'] as String) : null,
 ); }
@@ -71,7 +71,7 @@ final AutomaticTaxDisabledReason? disabledReason;
 final bool enabled;
 
 /// The account that's liable for tax. If set, the business address and tax registrations required to perform the tax calculation are loaded from this account. The tax transaction is returned in the report of the connected account.
-final AutomaticTaxLiability? liability;
+final ConnectAccountReference? liability;
 
 /// The tax provider powering automatic tax.
 final String? provider;
@@ -87,7 +87,7 @@ Map<String, dynamic> toJson() { return {
   if (status != null) 'status': status?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-AutomaticTax copyWith({AutomaticTaxDisabledReason? Function()? disabledReason, bool? enabled, AutomaticTaxLiability? Function()? liability, String? Function()? provider, AutomaticTaxStatus? Function()? status, }) { return AutomaticTax(
+AutomaticTax copyWith({AutomaticTaxDisabledReason? Function()? disabledReason, bool? enabled, ConnectAccountReference? Function()? liability, String? Function()? provider, AutomaticTaxStatus? Function()? status, }) { return AutomaticTax(
   disabledReason: disabledReason != null ? disabledReason() : this.disabledReason,
   enabled: enabled ?? this.enabled,
   liability: liability != null ? liability() : this.liability,

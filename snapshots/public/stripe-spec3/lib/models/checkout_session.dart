@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session_adaptive_pricing.dart';import 'checkout_session_after_expiration.dart';import 'checkout_session_collected_information.dart';import 'checkout_session_consent.dart';import 'checkout_session_consent_collection.dart';import 'checkout_session_currency_conversion.dart';import 'checkout_session_customer.dart';import 'checkout_session_customer_details.dart';import 'checkout_session_invoice.dart';import 'checkout_session_invoice_creation.dart';import 'checkout_session_line_items.dart';import 'checkout_session_payment_intent.dart';import 'checkout_session_payment_link.dart';import 'checkout_session_payment_method_configuration_details.dart';import 'checkout_session_payment_method_options2.dart';import 'checkout_session_permissions.dart';import 'checkout_session_saved_payment_method_options.dart';import 'checkout_session_setup_intent.dart';import 'checkout_session_shipping_address_collection.dart';import 'checkout_session_shipping_cost.dart';import 'checkout_session_subscription.dart';import 'checkout_session_total_details.dart';import 'checkout_session_wallet_options2.dart';import 'customer.dart';import 'deleted_customer.dart';import 'invoice.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_link.dart';import 'payment_pages_checkout_session_automatic_tax.dart';import 'payment_pages_checkout_session_branding_settings.dart';import 'payment_pages_checkout_session_custom_fields.dart';import 'payment_pages_checkout_session_custom_text.dart';import 'payment_pages_checkout_session_discount.dart';import 'payment_pages_checkout_session_name_collection.dart';import 'payment_pages_checkout_session_optional_item.dart';import 'payment_pages_checkout_session_phone_number_collection.dart';import 'payment_pages_checkout_session_shipping_option.dart';import 'payment_pages_checkout_session_tax_id_collection.dart';import 'setup_intent.dart';import 'subscription.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'checkout_session_customer.dart';import 'checkout_session_invoice.dart';import 'checkout_session_line_items.dart';import 'checkout_session_payment_intent.dart';import 'checkout_session_payment_link.dart';import 'checkout_session_payment_method_options.dart';import 'checkout_session_setup_intent.dart';import 'checkout_session_subscription.dart';import 'checkout_session_wallet_options.dart';import 'customer.dart';import 'deleted_customer.dart';import 'invoice.dart';import 'payment_flows_payment_intent_presentment_details.dart';import 'payment_intent.dart';import 'payment_link.dart';import 'payment_method_config_biz_payment_method_configuration_details.dart';import 'payment_pages_checkout_session_adaptive_pricing.dart';import 'payment_pages_checkout_session_after_expiration.dart';import 'payment_pages_checkout_session_automatic_tax.dart';import 'payment_pages_checkout_session_branding_settings.dart';import 'payment_pages_checkout_session_collected_information.dart';import 'payment_pages_checkout_session_consent.dart';import 'payment_pages_checkout_session_consent_collection.dart';import 'payment_pages_checkout_session_currency_conversion.dart';import 'payment_pages_checkout_session_custom_fields.dart';import 'payment_pages_checkout_session_custom_text.dart';import 'payment_pages_checkout_session_customer_details.dart';import 'payment_pages_checkout_session_discount.dart';import 'payment_pages_checkout_session_invoice_creation.dart';import 'payment_pages_checkout_session_name_collection.dart';import 'payment_pages_checkout_session_optional_item.dart';import 'payment_pages_checkout_session_permissions.dart';import 'payment_pages_checkout_session_phone_number_collection.dart';import 'payment_pages_checkout_session_saved_payment_method_options.dart';import 'payment_pages_checkout_session_shipping_address_collection.dart';import 'payment_pages_checkout_session_shipping_cost.dart';import 'payment_pages_checkout_session_shipping_option.dart';import 'payment_pages_checkout_session_tax_id_collection.dart';import 'payment_pages_checkout_session_total_details.dart';import 'setup_intent.dart';import 'subscription.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
 final class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection._(this.value);
 
 factory CheckoutSessionBillingAddressCollection.fromJson(String json) { return switch (json) {
@@ -458,8 +458,8 @@ bool get isUnknown { return !values.contains(this); }
 final class CheckoutSession {const CheckoutSession({this.adaptivePricing, this.afterExpiration, this.allowPromotionCodes, this.amountSubtotal, this.amountTotal, required this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.clientSecret, this.collectedInformation, this.consent, this.consentCollection, required this.created, this.currency, this.currencyConversion, required this.customFields, required this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerDetails, this.customerEmail, this.discounts, this.excludedPaymentMethodTypes, required this.expiresAt, required this.id, this.invoice, this.invoiceCreation, this.lineItems, required this.livemode, this.locale, this.metadata, required this.mode, this.nameCollection, required this.object, this.optionalItems, this.originContext, this.paymentIntent, this.paymentLink, this.paymentMethodCollection, this.paymentMethodConfigurationDetails, this.paymentMethodOptions, required this.paymentMethodTypes, required this.paymentStatus, this.permissions, this.phoneNumberCollection, this.presentmentDetails, this.recoveredFrom, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntent, this.shippingAddressCollection, this.shippingCost, required this.shippingOptions, this.status, this.submitType, this.subscription, this.successUrl, this.taxIdCollection, this.totalDetails, this.uiMode, this.url, this.walletOptions, });
 
 factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSession(
-  adaptivePricing: json['adaptive_pricing'] != null ? CheckoutSessionAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
-  afterExpiration: json['after_expiration'] != null ? CheckoutSessionAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
+  adaptivePricing: json['adaptive_pricing'] != null ? PaymentPagesCheckoutSessionAdaptivePricing.fromJson(json['adaptive_pricing'] as Map<String, dynamic>) : null,
+  afterExpiration: json['after_expiration'] != null ? PaymentPagesCheckoutSessionAfterExpiration.fromJson(json['after_expiration'] as Map<String, dynamic>) : null,
   allowPromotionCodes: json['allow_promotion_codes'] as bool?,
   amountSubtotal: json['amount_subtotal'] != null ? (json['amount_subtotal'] as num).toInt() : null,
   amountTotal: json['amount_total'] != null ? (json['amount_total'] as num).toInt() : null,
@@ -469,25 +469,25 @@ factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSes
   cancelUrl: json['cancel_url'] as String?,
   clientReferenceId: json['client_reference_id'] as String?,
   clientSecret: json['client_secret'] as String?,
-  collectedInformation: json['collected_information'] != null ? CheckoutSessionCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
-  consent: json['consent'] != null ? CheckoutSessionConsent.fromJson(json['consent'] as Map<String, dynamic>) : null,
-  consentCollection: json['consent_collection'] != null ? CheckoutSessionConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
+  collectedInformation: json['collected_information'] != null ? PaymentPagesCheckoutSessionCollectedInformation.fromJson(json['collected_information'] as Map<String, dynamic>) : null,
+  consent: json['consent'] != null ? PaymentPagesCheckoutSessionConsent.fromJson(json['consent'] as Map<String, dynamic>) : null,
+  consentCollection: json['consent_collection'] != null ? PaymentPagesCheckoutSessionConsentCollection.fromJson(json['consent_collection'] as Map<String, dynamic>) : null,
   created: (json['created'] as num).toInt(),
   currency: json['currency'] as String?,
-  currencyConversion: json['currency_conversion'] != null ? CheckoutSessionCurrencyConversion.fromJson(json['currency_conversion'] as Map<String, dynamic>) : null,
+  currencyConversion: json['currency_conversion'] != null ? PaymentPagesCheckoutSessionCurrencyConversion.fromJson(json['currency_conversion'] as Map<String, dynamic>) : null,
   customFields: (json['custom_fields'] as List<dynamic>).map((e) => PaymentPagesCheckoutSessionCustomFields.fromJson(e as Map<String, dynamic>)).toList(),
   customText: PaymentPagesCheckoutSessionCustomText.fromJson(json['custom_text'] as Map<String, dynamic>),
   customer: json['customer'] != null ? OneOf3.parse(json['customer'], fromA: (v) => v as String, fromB: (v) => Customer.fromJson(v as Map<String, dynamic>), fromC: (v) => DeletedCustomer.fromJson(v as Map<String, dynamic>),) : null,
   customerAccount: json['customer_account'] as String?,
   customerCreation: json['customer_creation'] != null ? CheckoutSessionCustomerCreation.fromJson(json['customer_creation'] as String) : null,
-  customerDetails: json['customer_details'] != null ? CheckoutSessionCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
+  customerDetails: json['customer_details'] != null ? PaymentPagesCheckoutSessionCustomerDetails.fromJson(json['customer_details'] as Map<String, dynamic>) : null,
   customerEmail: json['customer_email'] as String?,
   discounts: (json['discounts'] as List<dynamic>?)?.map((e) => PaymentPagesCheckoutSessionDiscount.fromJson(e as Map<String, dynamic>)).toList(),
   excludedPaymentMethodTypes: (json['excluded_payment_method_types'] as List<dynamic>?)?.map((e) => e as String).toList(),
   expiresAt: (json['expires_at'] as num).toInt(),
   id: json['id'] as String,
   invoice: json['invoice'] != null ? OneOf2.parse(json['invoice'], fromA: (v) => v as String, fromB: (v) => Invoice.fromJson(v as Map<String, dynamic>),) : null,
-  invoiceCreation: json['invoice_creation'] != null ? CheckoutSessionInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
+  invoiceCreation: json['invoice_creation'] != null ? PaymentPagesCheckoutSessionInvoiceCreation.fromJson(json['invoice_creation'] as Map<String, dynamic>) : null,
   lineItems: json['line_items'] != null ? CheckoutSessionLineItems.fromJson(json['line_items'] as Map<String, dynamic>) : null,
   livemode: json['livemode'] as bool,
   locale: json['locale'] != null ? CheckoutSessionLocale.fromJson(json['locale'] as String) : null,
@@ -500,37 +500,37 @@ factory CheckoutSession.fromJson(Map<String, dynamic> json) { return CheckoutSes
   paymentIntent: json['payment_intent'] != null ? OneOf2.parse(json['payment_intent'], fromA: (v) => v as String, fromB: (v) => PaymentIntent.fromJson(v as Map<String, dynamic>),) : null,
   paymentLink: json['payment_link'] != null ? OneOf2.parse(json['payment_link'], fromA: (v) => v as String, fromB: (v) => PaymentLink.fromJson(v as Map<String, dynamic>),) : null,
   paymentMethodCollection: json['payment_method_collection'] != null ? CheckoutSessionPaymentMethodCollection.fromJson(json['payment_method_collection'] as String) : null,
-  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? CheckoutSessionPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
-  paymentMethodOptions: json['payment_method_options'] != null ? CheckoutSessionPaymentMethodOptions2.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
+  paymentMethodConfigurationDetails: json['payment_method_configuration_details'] != null ? PaymentMethodConfigBizPaymentMethodConfigurationDetails.fromJson(json['payment_method_configuration_details'] as Map<String, dynamic>) : null,
+  paymentMethodOptions: json['payment_method_options'] != null ? CheckoutSessionPaymentMethodOptions.fromJson(json['payment_method_options'] as Map<String, dynamic>) : null,
   paymentMethodTypes: (json['payment_method_types'] as List<dynamic>).map((e) => e as String).toList(),
   paymentStatus: CheckoutSessionPaymentStatus.fromJson(json['payment_status'] as String),
-  permissions: json['permissions'] != null ? CheckoutSessionPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
+  permissions: json['permissions'] != null ? PaymentPagesCheckoutSessionPermissions.fromJson(json['permissions'] as Map<String, dynamic>) : null,
   phoneNumberCollection: json['phone_number_collection'] != null ? PaymentPagesCheckoutSessionPhoneNumberCollection.fromJson(json['phone_number_collection'] as Map<String, dynamic>) : null,
   presentmentDetails: json['presentment_details'] != null ? PaymentFlowsPaymentIntentPresentmentDetails.fromJson(json['presentment_details'] as Map<String, dynamic>) : null,
   recoveredFrom: json['recovered_from'] as String?,
   redirectOnCompletion: json['redirect_on_completion'] != null ? CheckoutSessionRedirectOnCompletion.fromJson(json['redirect_on_completion'] as String) : null,
   returnUrl: json['return_url'] as String?,
-  savedPaymentMethodOptions: json['saved_payment_method_options'] != null ? CheckoutSessionSavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>) : null,
+  savedPaymentMethodOptions: json['saved_payment_method_options'] != null ? PaymentPagesCheckoutSessionSavedPaymentMethodOptions.fromJson(json['saved_payment_method_options'] as Map<String, dynamic>) : null,
   setupIntent: json['setup_intent'] != null ? OneOf2.parse(json['setup_intent'], fromA: (v) => v as String, fromB: (v) => SetupIntent.fromJson(v as Map<String, dynamic>),) : null,
-  shippingAddressCollection: json['shipping_address_collection'] != null ? CheckoutSessionShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
-  shippingCost: json['shipping_cost'] != null ? CheckoutSessionShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
+  shippingAddressCollection: json['shipping_address_collection'] != null ? PaymentPagesCheckoutSessionShippingAddressCollection.fromJson(json['shipping_address_collection'] as Map<String, dynamic>) : null,
+  shippingCost: json['shipping_cost'] != null ? PaymentPagesCheckoutSessionShippingCost.fromJson(json['shipping_cost'] as Map<String, dynamic>) : null,
   shippingOptions: (json['shipping_options'] as List<dynamic>).map((e) => PaymentPagesCheckoutSessionShippingOption.fromJson(e as Map<String, dynamic>)).toList(),
   status: json['status'] != null ? CheckoutSessionStatus.fromJson(json['status'] as String) : null,
   submitType: json['submit_type'] != null ? CheckoutSessionSubmitType.fromJson(json['submit_type'] as String) : null,
   subscription: json['subscription'] != null ? OneOf2.parse(json['subscription'], fromA: (v) => v as String, fromB: (v) => Subscription.fromJson(v as Map<String, dynamic>),) : null,
   successUrl: json['success_url'] as String?,
   taxIdCollection: json['tax_id_collection'] != null ? PaymentPagesCheckoutSessionTaxIdCollection.fromJson(json['tax_id_collection'] as Map<String, dynamic>) : null,
-  totalDetails: json['total_details'] != null ? CheckoutSessionTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>) : null,
+  totalDetails: json['total_details'] != null ? PaymentPagesCheckoutSessionTotalDetails.fromJson(json['total_details'] as Map<String, dynamic>) : null,
   uiMode: json['ui_mode'] != null ? CheckoutSessionUiMode.fromJson(json['ui_mode'] as String) : null,
   url: json['url'] as String?,
-  walletOptions: json['wallet_options'] != null ? CheckoutSessionWalletOptions2.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
+  walletOptions: json['wallet_options'] != null ? CheckoutSessionWalletOptions.fromJson(json['wallet_options'] as Map<String, dynamic>) : null,
 ); }
 
 /// Settings for price localization with [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing).
-final CheckoutSessionAdaptivePricing? adaptivePricing;
+final PaymentPagesCheckoutSessionAdaptivePricing? adaptivePricing;
 
 /// When set, provides configuration for actions to take if this Checkout Session expires.
-final CheckoutSessionAfterExpiration? afterExpiration;
+final PaymentPagesCheckoutSessionAfterExpiration? afterExpiration;
 
 /// Enables user redeemable promotion codes.
 final bool? allowPromotionCodes;
@@ -561,13 +561,13 @@ final String? clientReferenceId;
 final String? clientSecret;
 
 /// Information about the customer collected within the Checkout Session.
-final CheckoutSessionCollectedInformation? collectedInformation;
+final PaymentPagesCheckoutSessionCollectedInformation? collectedInformation;
 
 /// Results of `consent_collection` for this session.
-final CheckoutSessionConsent? consent;
+final PaymentPagesCheckoutSessionConsent? consent;
 
 /// When set, provides configuration for the Checkout Session to gather active consent from customers.
-final CheckoutSessionConsentCollection? consentCollection;
+final PaymentPagesCheckoutSessionConsentCollection? consentCollection;
 
 /// Time at which the object was created. Measured in seconds since the Unix epoch.
 final int created;
@@ -576,7 +576,7 @@ final int created;
 final String? currency;
 
 /// Currency conversion details for [Adaptive Pricing](https://docs.stripe.com/payments/checkout/adaptive-pricing) sessions created before 2025-03-31.
-final CheckoutSessionCurrencyConversion? currencyConversion;
+final PaymentPagesCheckoutSessionCurrencyConversion? currencyConversion;
 
 /// Collect additional information from your customer using custom fields. Up to 3 fields are supported. You can't set this parameter if `ui_mode` is `custom`.
 final List<PaymentPagesCheckoutSessionCustomFields> customFields;
@@ -597,7 +597,7 @@ final String? customerAccount;
 final CheckoutSessionCustomerCreation? customerCreation;
 
 /// The customer details including the customer's tax exempt status and the customer's tax IDs. Customer's address details are not present on Sessions in `setup` mode.
-final CheckoutSessionCustomerDetails? customerDetails;
+final PaymentPagesCheckoutSessionCustomerDetails? customerDetails;
 
 /// If provided, this value will be used when the Customer object is created.
 /// If not provided, customers will be asked to enter their email address.
@@ -622,7 +622,7 @@ final String id;
 final CheckoutSessionInvoice? invoice;
 
 /// Details on the state of invoice creation for the Checkout Session.
-final CheckoutSessionInvoiceCreation? invoiceCreation;
+final PaymentPagesCheckoutSessionInvoiceCreation? invoiceCreation;
 
 /// The line items purchased by the customer.
 final CheckoutSessionLineItems? lineItems;
@@ -660,10 +660,10 @@ final CheckoutSessionPaymentLink? paymentLink;
 final CheckoutSessionPaymentMethodCollection? paymentMethodCollection;
 
 /// Information about the payment method configuration used for this Checkout session if using dynamic payment methods.
-final CheckoutSessionPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
+final PaymentMethodConfigBizPaymentMethodConfigurationDetails? paymentMethodConfigurationDetails;
 
 /// Payment-method-specific configuration for the PaymentIntent or SetupIntent of this CheckoutSession.
-final CheckoutSessionPaymentMethodOptions2? paymentMethodOptions;
+final CheckoutSessionPaymentMethodOptions? paymentMethodOptions;
 
 /// A list of the types of payment methods (e.g. card) this Checkout
 /// Session is allowed to accept.
@@ -676,7 +676,7 @@ final CheckoutSessionPaymentStatus paymentStatus;
 /// This property is used to set up permissions for various actions (e.g., update) on the CheckoutSession object.
 /// 
 /// For specific permissions, please refer to their dedicated subsections, such as `permissions.update_shipping_details`.
-final CheckoutSessionPermissions? permissions;
+final PaymentPagesCheckoutSessionPermissions? permissions;
 
 final PaymentPagesCheckoutSessionPhoneNumberCollection? phoneNumberCollection;
 
@@ -692,16 +692,16 @@ final CheckoutSessionRedirectOnCompletion? redirectOnCompletion;
 final String? returnUrl;
 
 /// Controls saved payment method settings for the session. Only available in `payment` and `subscription` mode.
-final CheckoutSessionSavedPaymentMethodOptions? savedPaymentMethodOptions;
+final PaymentPagesCheckoutSessionSavedPaymentMethodOptions? savedPaymentMethodOptions;
 
 /// The ID of the SetupIntent for Checkout Sessions in `setup` mode. You can't confirm or cancel the SetupIntent for a Checkout Session. To cancel, [expire the Checkout Session](https://docs.stripe.com/api/checkout/sessions/expire) instead.
 final CheckoutSessionSetupIntent? setupIntent;
 
 /// When set, provides configuration for Checkout to collect a shipping address from a customer.
-final CheckoutSessionShippingAddressCollection? shippingAddressCollection;
+final PaymentPagesCheckoutSessionShippingAddressCollection? shippingAddressCollection;
 
 /// The details of the customer cost of shipping, including the customer chosen ShippingRate.
-final CheckoutSessionShippingCost? shippingCost;
+final PaymentPagesCheckoutSessionShippingCost? shippingCost;
 
 /// The shipping rate options applied to this Session.
 final List<PaymentPagesCheckoutSessionShippingOption> shippingOptions;
@@ -724,7 +724,7 @@ final String? successUrl;
 final PaymentPagesCheckoutSessionTaxIdCollection? taxIdCollection;
 
 /// Tax and discount details for the computed total amount.
-final CheckoutSessionTotalDetails? totalDetails;
+final PaymentPagesCheckoutSessionTotalDetails? totalDetails;
 
 /// The UI mode of the Session. Defaults to `hosted`.
 final CheckoutSessionUiMode? uiMode;
@@ -734,7 +734,7 @@ final CheckoutSessionUiMode? uiMode;
 final String? url;
 
 /// Wallet-specific configuration for this Checkout Session.
-final CheckoutSessionWalletOptions2? walletOptions;
+final CheckoutSessionWalletOptions? walletOptions;
 
 Map<String, dynamic> toJson() { return {
   if (adaptivePricing != null) 'adaptive_pricing': adaptivePricing?.toJson(),
@@ -816,7 +816,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
       json.containsKey('payment_method_types') &&
       json.containsKey('payment_status') &&
       json.containsKey('shipping_options'); } 
-CheckoutSession copyWith({CheckoutSessionAdaptivePricing? Function()? adaptivePricing, CheckoutSessionAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, int? Function()? amountSubtotal, int? Function()? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, CheckoutSessionBillingAddressCollection? Function()? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, String? Function()? clientSecret, CheckoutSessionCollectedInformation? Function()? collectedInformation, CheckoutSessionConsent? Function()? consent, CheckoutSessionConsentCollection? Function()? consentCollection, int? created, String? Function()? currency, CheckoutSessionCurrencyConversion? Function()? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, CheckoutSessionCustomer? Function()? customer, String? Function()? customerAccount, CheckoutSessionCustomerCreation? Function()? customerCreation, CheckoutSessionCustomerDetails? Function()? customerDetails, String? Function()? customerEmail, List<PaymentPagesCheckoutSessionDiscount>? Function()? discounts, List<String> Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, CheckoutSessionInvoice? Function()? invoice, CheckoutSessionInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems Function()? lineItems, bool? livemode, CheckoutSessionLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection Function()? nameCollection, CheckoutSessionObject? object, List<PaymentPagesCheckoutSessionOptionalItem>? Function()? optionalItems, CheckoutSessionOriginContext? Function()? originContext, CheckoutSessionPaymentIntent? Function()? paymentIntent, CheckoutSessionPaymentLink? Function()? paymentLink, CheckoutSessionPaymentMethodCollection? Function()? paymentMethodCollection, CheckoutSessionPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, CheckoutSessionPaymentMethodOptions2? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, CheckoutSessionPaymentStatus? paymentStatus, CheckoutSessionPermissions? Function()? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, String? Function()? recoveredFrom, CheckoutSessionRedirectOnCompletion Function()? redirectOnCompletion, String Function()? returnUrl, CheckoutSessionSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, CheckoutSessionSetupIntent? Function()? setupIntent, CheckoutSessionShippingAddressCollection? Function()? shippingAddressCollection, CheckoutSessionShippingCost? Function()? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, CheckoutSessionStatus? Function()? status, CheckoutSessionSubmitType? Function()? submitType, CheckoutSessionSubscription? Function()? subscription, String? Function()? successUrl, PaymentPagesCheckoutSessionTaxIdCollection Function()? taxIdCollection, CheckoutSessionTotalDetails? Function()? totalDetails, CheckoutSessionUiMode? Function()? uiMode, String? Function()? url, CheckoutSessionWalletOptions2? Function()? walletOptions, }) { return CheckoutSession(
+CheckoutSession copyWith({PaymentPagesCheckoutSessionAdaptivePricing? Function()? adaptivePricing, PaymentPagesCheckoutSessionAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, int? Function()? amountSubtotal, int? Function()? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, CheckoutSessionBillingAddressCollection? Function()? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, String? Function()? clientSecret, PaymentPagesCheckoutSessionCollectedInformation? Function()? collectedInformation, PaymentPagesCheckoutSessionConsent? Function()? consent, PaymentPagesCheckoutSessionConsentCollection? Function()? consentCollection, int? created, String? Function()? currency, PaymentPagesCheckoutSessionCurrencyConversion? Function()? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, CheckoutSessionCustomer? Function()? customer, String? Function()? customerAccount, CheckoutSessionCustomerCreation? Function()? customerCreation, PaymentPagesCheckoutSessionCustomerDetails? Function()? customerDetails, String? Function()? customerEmail, List<PaymentPagesCheckoutSessionDiscount>? Function()? discounts, List<String> Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, CheckoutSessionInvoice? Function()? invoice, PaymentPagesCheckoutSessionInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems Function()? lineItems, bool? livemode, CheckoutSessionLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection Function()? nameCollection, CheckoutSessionObject? object, List<PaymentPagesCheckoutSessionOptionalItem>? Function()? optionalItems, CheckoutSessionOriginContext? Function()? originContext, CheckoutSessionPaymentIntent? Function()? paymentIntent, CheckoutSessionPaymentLink? Function()? paymentLink, CheckoutSessionPaymentMethodCollection? Function()? paymentMethodCollection, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, CheckoutSessionPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, CheckoutSessionPaymentStatus? paymentStatus, PaymentPagesCheckoutSessionPermissions? Function()? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails Function()? presentmentDetails, String? Function()? recoveredFrom, CheckoutSessionRedirectOnCompletion Function()? redirectOnCompletion, String Function()? returnUrl, PaymentPagesCheckoutSessionSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, CheckoutSessionSetupIntent? Function()? setupIntent, PaymentPagesCheckoutSessionShippingAddressCollection? Function()? shippingAddressCollection, PaymentPagesCheckoutSessionShippingCost? Function()? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, CheckoutSessionStatus? Function()? status, CheckoutSessionSubmitType? Function()? submitType, CheckoutSessionSubscription? Function()? subscription, String? Function()? successUrl, PaymentPagesCheckoutSessionTaxIdCollection Function()? taxIdCollection, PaymentPagesCheckoutSessionTotalDetails? Function()? totalDetails, CheckoutSessionUiMode? Function()? uiMode, String? Function()? url, CheckoutSessionWalletOptions? Function()? walletOptions, }) { return CheckoutSession(
   adaptivePricing: adaptivePricing != null ? adaptivePricing() : this.adaptivePricing,
   afterExpiration: afterExpiration != null ? afterExpiration() : this.afterExpiration,
   allowPromotionCodes: allowPromotionCodes != null ? allowPromotionCodes() : this.allowPromotionCodes,

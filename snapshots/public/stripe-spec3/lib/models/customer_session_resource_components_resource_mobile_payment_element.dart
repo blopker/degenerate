@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'customer_session_resource_components_resource_mobile_payment_element_features.dart';/// This hash contains whether the mobile payment element is enabled and the features it supports.
+import 'customer_session_resource_components_resource_mobile_payment_element_resource_features.dart';/// This hash contains whether the mobile payment element is enabled and the features it supports.
 final class CustomerSessionResourceComponentsResourceMobilePaymentElement {const CustomerSessionResourceComponentsResourceMobilePaymentElement({required this.enabled, this.features, });
 
 factory CustomerSessionResourceComponentsResourceMobilePaymentElement.fromJson(Map<String, dynamic> json) { return CustomerSessionResourceComponentsResourceMobilePaymentElement(
   enabled: json['enabled'] as bool,
-  features: json['features'] != null ? CustomerSessionResourceComponentsResourceMobilePaymentElementFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
+  features: json['features'] != null ? CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures.fromJson(json['features'] as Map<String, dynamic>) : null,
 ); }
 
 /// Whether the mobile payment element is enabled.
 final bool enabled;
 
 /// This hash defines whether the mobile payment element supports certain features.
-final CustomerSessionResourceComponentsResourceMobilePaymentElementFeatures? features;
+final CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures? features;
 
 Map<String, dynamic> toJson() { return {
   'enabled': enabled,
   if (features != null) 'features': features?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabled') && json['enabled'] is bool; } 
-CustomerSessionResourceComponentsResourceMobilePaymentElement copyWith({bool? enabled, CustomerSessionResourceComponentsResourceMobilePaymentElementFeatures? Function()? features, }) { return CustomerSessionResourceComponentsResourceMobilePaymentElement(
+CustomerSessionResourceComponentsResourceMobilePaymentElement copyWith({bool? enabled, CustomerSessionResourceComponentsResourceMobilePaymentElementResourceFeatures? Function()? features, }) { return CustomerSessionResourceComponentsResourceMobilePaymentElement(
   enabled: enabled ?? this.enabled,
   features: features != null ? features() : this.features,
 ); } 

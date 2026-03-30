@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'insights_resources_payment_evaluation_payment_details_money_movement_details.dart';import 'insights_resources_payment_evaluation_payment_details_payment_method_details.dart';import 'insights_resources_payment_evaluation_payment_details_shipping_details.dart';/// Payment details attached to this payment evaluation.
+import 'insights_resources_payment_evaluation_money_movement_details.dart';import 'insights_resources_payment_evaluation_payment_method_details.dart';import 'insights_resources_payment_evaluation_shipping.dart';/// Payment details attached to this payment evaluation.
 final class InsightsResourcesPaymentEvaluationPaymentDetails {const InsightsResourcesPaymentEvaluationPaymentDetails({required this.amount, required this.currency, this.description, this.moneyMovementDetails, this.paymentMethodDetails, this.shippingDetails, this.statementDescriptor, });
 
 factory InsightsResourcesPaymentEvaluationPaymentDetails.fromJson(Map<String, dynamic> json) { return InsightsResourcesPaymentEvaluationPaymentDetails(
   amount: (json['amount'] as num).toInt(),
   currency: json['currency'] as String,
   description: json['description'] as String?,
-  moneyMovementDetails: json['money_movement_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails.fromJson(json['money_movement_details'] as Map<String, dynamic>) : null,
-  paymentMethodDetails: json['payment_method_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetailsPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
-  shippingDetails: json['shipping_details'] != null ? InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
+  moneyMovementDetails: json['money_movement_details'] != null ? InsightsResourcesPaymentEvaluationMoneyMovementDetails.fromJson(json['money_movement_details'] as Map<String, dynamic>) : null,
+  paymentMethodDetails: json['payment_method_details'] != null ? InsightsResourcesPaymentEvaluationPaymentMethodDetails.fromJson(json['payment_method_details'] as Map<String, dynamic>) : null,
+  shippingDetails: json['shipping_details'] != null ? InsightsResourcesPaymentEvaluationShipping.fromJson(json['shipping_details'] as Map<String, dynamic>) : null,
   statementDescriptor: json['statement_descriptor'] as String?,
 ); }
 
@@ -23,13 +23,13 @@ final String currency;
 final String? description;
 
 /// Details about the payment's customer presence and type.
-final InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails? moneyMovementDetails;
+final InsightsResourcesPaymentEvaluationMoneyMovementDetails? moneyMovementDetails;
 
 /// Details about the payment method used for the payment.
-final InsightsResourcesPaymentEvaluationPaymentDetailsPaymentMethodDetails? paymentMethodDetails;
+final InsightsResourcesPaymentEvaluationPaymentMethodDetails? paymentMethodDetails;
 
 /// Shipping details for the payment evaluation.
-final InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails? shippingDetails;
+final InsightsResourcesPaymentEvaluationShipping? shippingDetails;
 
 /// Payment statement descriptor.
 final String? statementDescriptor;
@@ -45,7 +45,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('amount') && json['amount'] is num &&
       json.containsKey('currency') && json['currency'] is String; } 
-InsightsResourcesPaymentEvaluationPaymentDetails copyWith({int? amount, String? currency, String? Function()? description, InsightsResourcesPaymentEvaluationPaymentDetailsMoneyMovementDetails? Function()? moneyMovementDetails, InsightsResourcesPaymentEvaluationPaymentDetailsPaymentMethodDetails? Function()? paymentMethodDetails, InsightsResourcesPaymentEvaluationPaymentDetailsShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, }) { return InsightsResourcesPaymentEvaluationPaymentDetails(
+InsightsResourcesPaymentEvaluationPaymentDetails copyWith({int? amount, String? currency, String? Function()? description, InsightsResourcesPaymentEvaluationMoneyMovementDetails? Function()? moneyMovementDetails, InsightsResourcesPaymentEvaluationPaymentMethodDetails? Function()? paymentMethodDetails, InsightsResourcesPaymentEvaluationShipping? Function()? shippingDetails, String? Function()? statementDescriptor, }) { return InsightsResourcesPaymentEvaluationPaymentDetails(
   amount: amount ?? this.amount,
   currency: currency ?? this.currency,
   description: description != null ? description() : this.description,

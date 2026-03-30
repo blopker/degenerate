@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'address.dart';import 'issuing_card_shipping_address_validation2.dart';import 'issuing_card_shipping_customs2.dart';/// The delivery company that shipped a card.
+import 'address.dart';import 'issuing_card_shipping_address_validation.dart';import 'issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
 final class IssuingCardShippingCarrier {const IssuingCardShippingCarrier._(this.value);
 
 factory IssuingCardShippingCarrier.fromJson(String json) { return switch (json) {
@@ -129,9 +129,9 @@ final class IssuingCardShipping {const IssuingCardShipping({required this.addres
 
 factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return IssuingCardShipping(
   address: Address.fromJson(json['address'] as Map<String, dynamic>),
-  addressValidation: json['address_validation'] != null ? IssuingCardShippingAddressValidation2.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
+  addressValidation: json['address_validation'] != null ? IssuingCardShippingAddressValidation.fromJson(json['address_validation'] as Map<String, dynamic>) : null,
   carrier: json['carrier'] != null ? IssuingCardShippingCarrier.fromJson(json['carrier'] as String) : null,
-  customs: json['customs'] != null ? IssuingCardShippingCustoms2.fromJson(json['customs'] as Map<String, dynamic>) : null,
+  customs: json['customs'] != null ? IssuingCardShippingCustoms.fromJson(json['customs'] as Map<String, dynamic>) : null,
   eta: json['eta'] != null ? (json['eta'] as num).toInt() : null,
   name: json['name'] as String,
   phoneNumber: json['phone_number'] as String?,
@@ -146,13 +146,13 @@ factory IssuingCardShipping.fromJson(Map<String, dynamic> json) { return Issuing
 final Address address;
 
 /// Address validation details for the shipment.
-final IssuingCardShippingAddressValidation2? addressValidation;
+final IssuingCardShippingAddressValidation? addressValidation;
 
 /// The delivery company that shipped a card.
 final IssuingCardShippingCarrier? carrier;
 
 /// Additional information that may be required for clearing customs.
-final IssuingCardShippingCustoms2? customs;
+final IssuingCardShippingCustoms? customs;
 
 /// A unix timestamp representing a best estimate of when the card will be delivered.
 final int? eta;
@@ -200,7 +200,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('name') && json['name'] is String &&
       json.containsKey('service') &&
       json.containsKey('type'); } 
-IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValidation2? Function()? addressValidation, IssuingCardShippingCarrier? Function()? carrier, IssuingCardShippingCustoms2? Function()? customs, int? Function()? eta, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, IssuingCardShippingService? service, IssuingCardShippingStatus? Function()? status, String? Function()? trackingNumber, String? Function()? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
+IssuingCardShipping copyWith({Address? address, IssuingCardShippingAddressValidation? Function()? addressValidation, IssuingCardShippingCarrier? Function()? carrier, IssuingCardShippingCustoms? Function()? customs, int? Function()? eta, String? name, String? Function()? phoneNumber, bool? Function()? requireSignature, IssuingCardShippingService? service, IssuingCardShippingStatus? Function()? status, String? Function()? trackingNumber, String? Function()? trackingUrl, IssuingCardShippingType? type, }) { return IssuingCardShipping(
   address: address ?? this.address,
   addressValidation: addressValidation != null ? addressValidation() : this.addressValidation,
   carrier: carrier != null ? carrier() : this.carrier,

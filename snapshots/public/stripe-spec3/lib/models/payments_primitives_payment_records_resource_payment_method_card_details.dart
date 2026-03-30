@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'payments_primitives_payment_records_resource_payment_method_card_details_checks.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_installments.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_network_token.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_three_d_secure.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
+import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
 final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(this.value);
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) { return switch (json) {
@@ -173,7 +173,7 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   authorizationCode: json['authorization_code'] as String?,
   brand: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(json['brand'] as String),
   captureBefore: json['capture_before'] != null ? (json['capture_before'] as num).toInt() : null,
-  checks: json['checks'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsChecks.fromJson(json['checks'] as Map<String, dynamic>) : null,
+  checks: json['checks'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks.fromJson(json['checks'] as Map<String, dynamic>) : null,
   country: json['country'] as String?,
   description: json['description'] as String?,
   expMonth: (json['exp_month'] as num).toInt(),
@@ -181,17 +181,17 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails.fromJso
   fingerprint: json['fingerprint'] as String?,
   funding: PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(json['funding'] as String),
   iin: json['iin'] as String?,
-  installments: json['installments'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
+  installments: json['installments'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments.fromJson(json['installments'] as Map<String, dynamic>) : null,
   issuer: json['issuer'] as String?,
   last4: json['last4'] as String,
   network: json['network'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(json['network'] as String) : null,
   networkAdviceCode: json['network_advice_code'] as String?,
   networkDeclineCode: json['network_decline_code'] as String?,
-  networkToken: json['network_token'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null,
+  networkToken: json['network_token'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken.fromJson(json['network_token'] as Map<String, dynamic>) : null,
   networkTransactionId: json['network_transaction_id'] as String?,
   storedCredentialUsage: json['stored_credential_usage'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage.fromJson(json['stored_credential_usage'] as String) : null,
-  threeDSecure: json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
-  wallet: json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
+  threeDSecure: json['three_d_secure'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure.fromJson(json['three_d_secure'] as Map<String, dynamic>) : null,
+  wallet: json['wallet'] != null ? PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet.fromJson(json['wallet'] as Map<String, dynamic>) : null,
 ); }
 
 /// The authorization code of the payment.
@@ -204,7 +204,7 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand bran
 final int? captureBefore;
 
 /// Check results by Card networks on Card address and CVC at time of payment.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsChecks? checks;
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? checks;
 
 /// Two-letter ISO code representing the country of the card. You could use this attribute to get a sense of the international breakdown of cards you've collected.
 final String? country;
@@ -230,7 +230,7 @@ final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding fu
 final String? iin;
 
 /// Installment details for this payment.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments? installments;
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? installments;
 
 /// The name of the card's issuing bank.
 final String? issuer;
@@ -248,7 +248,7 @@ final String? networkAdviceCode;
 final String? networkDeclineCode;
 
 /// If this card has network token credentials, this contains the details of the network token credentials.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetworkToken? networkToken;
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? networkToken;
 
 /// This is used by the financial networks to identify a transaction. Visa calls this the Transaction ID, Mastercard calls this the Trace ID, and American Express calls this the Acquirer Reference Data. This value will be present if it is returned by the financial network in the authorization response, and null otherwise.
 final String? networkTransactionId;
@@ -257,10 +257,10 @@ final String? networkTransactionId;
 final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? storedCredentialUsage;
 
 /// Populated if this transaction used 3D Secure authentication.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsThreeDSecure? threeDSecure;
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? threeDSecure;
 
 /// If this Card is part of a card wallet, this contains the details of the card wallet.
-final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet? wallet;
+final PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? wallet;
 
 Map<String, dynamic> toJson() { return {
   'authorization_code': ?authorizationCode,
@@ -291,7 +291,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('exp_year') && json['exp_year'] is num &&
       json.containsKey('funding') &&
       json.containsKey('last4') && json['last4'] is String; } 
-PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({String? Function()? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int Function()? captureBefore, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsChecks? Function()? checks, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, String? Function()? iin, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsInstallments? Function()? installments, String? Function()? issuer, String? last4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? Function()? network, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? Function()? storedCredentialUsage, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsThreeDSecure? Function()? threeDSecure, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsWallet? Function()? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
+PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails copyWith({String? Function()? authorizationCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand? brand, int Function()? captureBefore, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceChecks? Function()? checks, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding? funding, String? Function()? iin, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceInstallments? Function()? installments, String? Function()? issuer, String? last4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork? Function()? network, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsStoredCredentialUsage? Function()? storedCredentialUsage, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceThreeDSecure? Function()? threeDSecure, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet? Function()? wallet, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails(
   authorizationCode: authorizationCode != null ? authorizationCode() : this.authorizationCode,
   brand: brand ?? this.brand,
   captureBefore: captureBefore != null ? captureBefore() : this.captureBefore,
