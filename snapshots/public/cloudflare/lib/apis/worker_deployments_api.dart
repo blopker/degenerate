@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common80.dart';import '../models/workers_deployment.dart';import '../models/workers_identifier.dart';import '../models/workers_script_name.dart';/// WorkerDeploymentsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common80.dart';import '../models/worker_deployments_create_deployment_response.dart';import '../models/worker_deployments_get_deployment_response.dart';import '../models/worker_deployments_list_deployments_response.dart';import '../models/workers_deployment.dart';import '../models/workers_identifier.dart';import '../models/workers_script_name.dart';/// WorkerDeploymentsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WorkerDeploymentsApi with ApiExecutor {const WorkerDeploymentsApi(th
 /// List of Worker Deployments. The first deployment in the list is the latest deployment actively serving traffic.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsListDeployments({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerDeploymentsListDeploymentsResponse, Never>> workerDeploymentsListDeployments({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerDeploymentsListDeploymentsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Deployments configure how [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions) are deployed to traffic. A deployment can consist of one or two versions of a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/deployments`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, required WorkersDeployment body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkerDeploymentsCreateDeploymentResponse, Never>> workerDeploymentsCreateDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, required WorkersDeployment body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (force != null) {
   queryParameters['force'] = force.toString();
@@ -56,7 +56,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerDeploymentsCreateDeploymentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -65,7 +65,7 @@ return execute(
 /// Get information about a Worker Deployment.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/deployments/{deployment_id}`
-Future<ApiResult<ResponseCommon80, Never>> workerDeploymentsGetDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerDeploymentsGetDeploymentResponse, Never>> workerDeploymentsGetDeployment({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required String deploymentId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,7 +77,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerDeploymentsGetDeploymentResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

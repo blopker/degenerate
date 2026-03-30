@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_auto_install.dart';import 'rum_rule.dart';import 'rum_ruleset.dart';import 'rum_timestamp.dart';/// The Web Analytics site identifier.
-extension type const RumSiteTag(String value) {
-factory RumSiteTag.fromJson(String json) => RumSiteTag(json);
-
-String toJson() => value;
-
-}
-/// The Web Analytics site token.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'rum_auto_install.dart';import 'rum_rule.dart';import 'rum_ruleset.dart';import 'rum_site_tag.dart';import 'rum_timestamp.dart';/// The Web Analytics site token.
 extension type const RumSiteToken(String value) {
 factory RumSiteToken.fromJson(String json) => RumSiteToken(json);
 

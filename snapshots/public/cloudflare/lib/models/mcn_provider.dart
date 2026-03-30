@@ -1,33 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_status.dart';final class McnProviderLifecycleState {const McnProviderLifecycleState._(this.value);
-
-factory McnProviderLifecycleState.fromJson(String json) { return switch (json) {
-  'ACTIVE' => active,
-  'PENDING_SETUP' => pendingSetup,
-  'RETIRED' => retired,
-  _ => McnProviderLifecycleState._(json),
-}; }
-
-static const McnProviderLifecycleState active = McnProviderLifecycleState._('ACTIVE');
-
-static const McnProviderLifecycleState pendingSetup = McnProviderLifecycleState._('PENDING_SETUP');
-
-static const McnProviderLifecycleState retired = McnProviderLifecycleState._('RETIRED');
-
-static const List<McnProviderLifecycleState> values = [active, pendingSetup, retired];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is McnProviderLifecycleState && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'McnProviderLifecycleState($value)'; } 
- }
-final class McnProvider {const McnProvider({this.awsArn, this.azureSubscriptionId, this.azureTenantId, required this.cloudType, this.description, required this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.status, });
+import 'mcn_cloud_type.dart';import 'mcn_provider_discovery_status.dart';import 'mcn_provider_id.dart';import 'mcn_provider_lifecycle_state.dart';import 'mcn_provider_status.dart';final class McnProvider {const McnProvider({this.awsArn, this.azureSubscriptionId, this.azureTenantId, required this.cloudType, this.description, required this.friendlyName, this.gcpProjectId, this.gcpServiceAccountEmail, required this.id, required this.lastUpdated, required this.lifecycleState, required this.state, required this.stateV2, this.status, });
 
 factory McnProvider.fromJson(Map<String, dynamic> json) { return McnProvider(
   awsArn: json['aws_arn'] as String?,

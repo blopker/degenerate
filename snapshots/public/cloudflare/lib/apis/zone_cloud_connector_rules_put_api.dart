@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloud_connector_identifier.dart';import '../models/cloud_connector_rule.dart';import '../models/response_common12.dart';/// ZoneCloudConnectorRulesPutApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloud_connector_identifier.dart';import '../models/cloud_connector_rule.dart';import '../models/zone_cloud_conenctor_rules_put_response.dart';/// ZoneCloudConnectorRulesPutApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class ZoneCloudConnectorRulesPutApi with ApiExecutor {const ZoneCloudConne
 /// Put Rules
 ///
 /// `PUT /zones/{zone_id}/cloud_connector/rules`
-Future<ApiResult<ResponseCommon12, Never>> zoneCloudConenctorRulesPut({required CloudConnectorIdentifier zoneId, List<CloudConnectorRule>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneCloudConenctorRulesPutResponse, Never>> zoneCloudConenctorRulesPut({required CloudConnectorIdentifier zoneId, List<CloudConnectorRule>? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon12.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneCloudConenctorRulesPutResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

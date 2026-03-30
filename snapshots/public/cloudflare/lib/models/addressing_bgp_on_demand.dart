@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
-extension type AddressingModifiedAtNullable(DateTime value) {
-factory AddressingModifiedAtNullable.fromJson(String json) => AddressingModifiedAtNullable(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+import 'addressing_modified_at_nullable.dart';/// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
 extension type const AddressingSchemasAdvertised(bool value) {
 factory AddressingSchemasAdvertised.fromJson(bool json) => AddressingSchemasAdvertised(json);
 

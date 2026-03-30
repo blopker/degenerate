@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_user_group_policy_write_body.dart';final class IamUpdateUserGroupBody {const IamUpdateUserGroupBody({this.name, this.policies, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'iam_update_user_group_body_policies.dart';final class IamUpdateUserGroupBody {const IamUpdateUserGroupBody({this.name, this.policies, });
 
 factory IamUpdateUserGroupBody.fromJson(Map<String, dynamic> json) { return IamUpdateUserGroupBody(
   name: json['name'] as String?,
-  policies: (json['policies'] as List<dynamic>?)?.map((e) => IamUserGroupPolicyWriteBody.fromJson(e as Map<String, dynamic>)).toList(),
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => IamUpdateUserGroupBodyPolicies.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
 /// Name of the User group.
 final String? name;
 
 /// Policies attached to the User group
-final List<IamUserGroupPolicyWriteBody>? policies;
+final List<IamUpdateUserGroupBodyPolicies>? policies;
 
 Map<String, dynamic> toJson() { return {
   'name': ?name,
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'name', 'policies'}.contains(key)); } 
-IamUpdateUserGroupBody copyWith({String Function()? name, List<IamUserGroupPolicyWriteBody> Function()? policies, }) { return IamUpdateUserGroupBody(
+IamUpdateUserGroupBody copyWith({String Function()? name, List<IamUpdateUserGroupBodyPolicies> Function()? policies, }) { return IamUpdateUserGroupBody(
   name: name != null ? name() : this.name,
   policies: policies != null ? policies() : this.policies,
 ); } 

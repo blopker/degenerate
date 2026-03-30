@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logpush_identifier.dart';import '../models/post_zones_zone_id_logpush_edge_jobs_request.dart';import '../models/response_common44.dart';/// InstantLogsJobsForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logpush_identifier.dart';import '../models/logpush_instant_logs_job_response_collection.dart';import '../models/logpush_instant_logs_job_response_single.dart';import '../models/post_zones_zone_id_logpush_edge_jobs_request.dart';/// InstantLogsJobsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class InstantLogsJobsForAZoneApi with ApiExecutor {const InstantLogsJobsFo
 /// Lists Instant Logs jobs for a zone.
 ///
 /// `GET /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<ResponseCommon44, Never>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushInstantLogsJobResponseCollection, Never>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LogpushInstantLogsJobResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Creates a new Instant Logs job for a zone.
 ///
 /// `POST /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<ResponseCommon44, Never>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushInstantLogsJobResponseSingle, Never>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon44.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LogpushInstantLogsJobResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_requests_identifier.dart';import '../models/cloudforce_one_requests_request_asset_edit.dart';import '../models/cloudforce_one_requests_request_asset_list.dart';import '../models/cloudforce_one_requests_request_edit.dart';import '../models/cloudforce_one_requests_request_list.dart';import '../models/cloudforce_one_requests_request_message_edit.dart';import '../models/cloudforce_one_requests_request_message_list.dart';import '../models/cloudforce_one_requests_uuid.dart';import '../models/response_common14.dart';/// RequestForInformationRfiApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudforce_one_request_asset_get_response.dart';import '../models/cloudforce_one_request_asset_list_response.dart';import '../models/cloudforce_one_request_asset_new_response.dart';import '../models/cloudforce_one_request_asset_update_response.dart';import '../models/cloudforce_one_request_constants_response.dart';import '../models/cloudforce_one_request_get_response.dart';import '../models/cloudforce_one_request_list_response.dart';import '../models/cloudforce_one_request_message_list_response.dart';import '../models/cloudforce_one_request_message_new_response.dart';import '../models/cloudforce_one_request_message_update_response.dart';import '../models/cloudforce_one_request_new_response.dart';import '../models/cloudforce_one_request_quota_response.dart';import '../models/cloudforce_one_request_types_response.dart';import '../models/cloudforce_one_request_update_response.dart';import '../models/cloudforce_one_requests_identifier.dart';import '../models/cloudforce_one_requests_request_asset_edit.dart';import '../models/cloudforce_one_requests_request_asset_list.dart';import '../models/cloudforce_one_requests_request_edit.dart';import '../models/cloudforce_one_requests_request_list.dart';import '../models/cloudforce_one_requests_request_message_edit.dart';import '../models/cloudforce_one_requests_request_message_list.dart';import '../models/cloudforce_one_requests_uuid.dart';import '../models/response_common14.dart';/// RequestForInformationRfiApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class RequestForInformationRfiApi with ApiExecutor {const RequestForInform
 /// List Requests
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestListResponse, Never>> cloudforceOneRequestList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -25,14 +25,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get a Request
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestGetResponse, Never>> cloudforceOneRequestGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -44,7 +44,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -53,7 +53,7 @@ return execute(
 /// Updating a request alters the request in the Cloudforce One queue. This API may be used to update any attributes of the request after the initial submission. Only fields that you choose to update need to be add to the request body.
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestUpdateResponse, Never>> cloudforceOneRequestUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -67,7 +67,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -93,7 +93,7 @@ return execute(
 /// List Request Assets
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestAssetListResponse, Never>> cloudforceOneRequestAssetList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -107,14 +107,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestAssetListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get a Request Asset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestAssetGetResponse, Never>> cloudforceOneRequestAssetGet({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -126,14 +126,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestAssetGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Update a Request Asset
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestAssetUpdateResponse, Never>> cloudforceOneRequestAssetUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsUuid assetId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -147,7 +147,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestAssetUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -173,7 +173,7 @@ return execute(
 /// Create a New Request Asset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestAssetNewResponse, Never>> cloudforceOneRequestAssetNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestAssetEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -190,14 +190,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestAssetNewResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// List Request Messages
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestMessageListResponse, Never>> cloudforceOneRequestMessageList({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageList body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -211,14 +211,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestMessageListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Update a Request Message
 ///
 /// `PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestMessageUpdateResponse, Never>> cloudforceOneRequestMessageUpdate({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required int messageId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -232,7 +232,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestMessageUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -258,7 +258,7 @@ return execute(
 /// Create a New Request Message
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestMessageNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestMessageNewResponse, Never>> cloudforceOneRequestMessageNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsUuid requestId, required CloudforceOneRequestsRequestMessageEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -272,14 +272,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestMessageNewResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get Request Priority, Status, and TLP constants
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/constants`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestConstants({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestConstantsResponse, Never>> cloudforceOneRequestConstants({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -291,7 +291,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestConstantsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -300,7 +300,7 @@ return execute(
 /// Creating a request adds the request into the Cloudforce One queue for analysis. In addition to the content, a short title, type, priority, and releasability should be provided. If one is not provided, a default will be assigned.
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/requests/new`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestNewResponse, Never>> cloudforceOneRequestNew({required CloudforceOneRequestsIdentifier accountId, required CloudforceOneRequestsRequestEdit body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -314,14 +314,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestNewResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get Request Quota
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/quota`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestQuotaResponse, Never>> cloudforceOneRequestQuota({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -333,14 +333,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestQuotaResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get Request Types
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/requests/types`
-Future<ApiResult<ResponseCommon14, Never>> cloudforceOneRequestTypes({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CloudforceOneRequestTypesResponse, Never>> cloudforceOneRequestTypes({required CloudforceOneRequestsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -352,7 +352,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon14.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CloudforceOneRequestTypesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/calls_account_identifier.dart';import '../models/calls_app_editable_fields.dart';import '../models/calls_identifier.dart';import '../models/response_common11.dart';/// CallsAppsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/calls_account_identifier.dart';import '../models/calls_app_editable_fields.dart';import '../models/calls_app_response_collection.dart';import '../models/calls_app_response_single.dart';import '../models/calls_app_response_single_with_secret.dart';import '../models/calls_identifier.dart';/// CallsAppsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CallsAppsApi with ApiExecutor {const CallsAppsApi(this.apiConfig);
 /// Lists all apps in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsAppResponseCollection, Never>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsAppResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Creates a new Cloudflare calls app. An app is an unique enviroment where each Session can access all Tracks within the app.
 ///
 /// `POST /accounts/{account_id}/calls/apps`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsAppResponseSingleWithSecret, Never>> callsAppsCreateANewApp({required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsAppResponseSingleWithSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Fetches details for a single Calls app.
 ///
 /// `GET /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsAppResponseSingle, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsAppResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return execute(
 /// Edit details for a single app.
 ///
 /// `PUT /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsAppResponseSingle, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsAppResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +101,7 @@ return execute(
 /// Deletes an app from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsAppResponseSingle, Never>> callsAppsDeleteApp({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -113,7 +113,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsAppResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

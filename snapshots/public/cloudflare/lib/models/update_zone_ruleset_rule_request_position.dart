@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'update_zone_ruleset_rule_request_position_variant1.dart';import 'update_zone_ruleset_rule_request_position_variant2.dart';import 'update_zone_ruleset_rule_request_position_variant3.dart';typedef UpdateZoneRulesetRuleRequestPosition = OneOf3<UpdateZoneRulesetRuleRequestPositionVariant1,UpdateZoneRulesetRuleRequestPositionVariant2,UpdateZoneRulesetRuleRequestPositionVariant3>;

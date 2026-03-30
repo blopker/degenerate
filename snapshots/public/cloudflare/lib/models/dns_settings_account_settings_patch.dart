@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_settings_dns_settings_base.dart';final class DnsSettingsAccountSettingsPatch {const DnsSettingsAccountSettingsPatch({this.zoneDefaults});
+import 'dns_settings_dns_settings_account_patch.dart';final class DnsSettingsAccountSettingsPatch {const DnsSettingsAccountSettingsPatch({this.zoneDefaults});
 
 factory DnsSettingsAccountSettingsPatch.fromJson(Map<String, dynamic> json) { return DnsSettingsAccountSettingsPatch(
-  zoneDefaults: json['zone_defaults'] != null ? DnsSettingsDnsSettingsBase.fromJson(json['zone_defaults'] as Map<String, dynamic>) : null,
+  zoneDefaults: json['zone_defaults'] != null ? DnsSettingsDnsSettingsAccountPatch.fromJson(json['zone_defaults'] as Map<String, dynamic>) : null,
 ); }
 
-final DnsSettingsDnsSettingsBase? zoneDefaults;
+final DnsSettingsDnsSettingsAccountPatch? zoneDefaults;
 
 Map<String, dynamic> toJson() { return {
   if (zoneDefaults != null) 'zone_defaults': zoneDefaults?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'zone_defaults'}.contains(key)); } 
-DnsSettingsAccountSettingsPatch copyWith({DnsSettingsDnsSettingsBase Function()? zoneDefaults}) { return DnsSettingsAccountSettingsPatch(
+DnsSettingsAccountSettingsPatch copyWith({DnsSettingsDnsSettingsAccountPatch Function()? zoneDefaults}) { return DnsSettingsAccountSettingsPatch(
   zoneDefaults: zoneDefaults != null ? zoneDefaults() : this.zoneDefaults,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

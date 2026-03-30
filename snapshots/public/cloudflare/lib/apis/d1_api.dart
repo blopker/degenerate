@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_get_database_database_id.dart';import '../models/d1_import_database_request.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_timestamp.dart';import '../models/response_common18.dart';/// D1Api operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/d1_account_identifier.dart';import '../models/d1_batch_query.dart';import '../models/d1_create_database_request.dart';import '../models/d1_database_identifier.dart';import '../models/d1_database_update_partial_request_body.dart';import '../models/d1_database_update_request_body.dart';import '../models/d1_export_database_request.dart';import '../models/d1_get_database_database_id.dart';import '../models/d1_import_database_request.dart';import '../models/d1_list_databases_response.dart';import '../models/d1_time_travel_bookmark.dart';import '../models/d1_time_travel_timestamp.dart';import '../models/response_common18.dart';/// D1Api operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class D1Api with ApiExecutor {const D1Api(this.apiConfig);
 /// Returns a list of D1 databases.
 ///
 /// `GET /accounts/{account_id}/d1/database`
-Future<ApiResult<ResponseCommon18, Never>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<D1ListDatabasesResponse, Never>> d1ListDatabases({required D1AccountIdentifier accountId, String? name, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -39,7 +39,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon18.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return D1ListDatabasesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

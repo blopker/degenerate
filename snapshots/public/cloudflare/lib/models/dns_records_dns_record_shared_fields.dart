@@ -1,20 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';/// Comments or notes about the DNS record. This field has no effect on DNS responses.
-extension type const DnsRecordsComment(String value) {
-factory DnsRecordsComment.fromJson(String json) => DnsRecordsComment(json);
-
-String toJson() => value;
-
-}
-/// Complete DNS record name, including the zone name, in Punycode.
-extension type const DnsRecordsName(String value) {
-factory DnsRecordsName.fromJson(String json) => DnsRecordsName(json);
-
-String toJson() => value;
-
-}
-final class DnsRecordsDnsRecordSharedFields {const DnsRecordsDnsRecordSharedFields({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dns_records_comment.dart';import 'dns_records_name.dart';import 'dns_records_proxied.dart';import 'dns_records_settings.dart';import 'dns_records_ttl.dart';final class DnsRecordsDnsRecordSharedFields {const DnsRecordsDnsRecordSharedFields({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, });
 
 factory DnsRecordsDnsRecordSharedFields.fromJson(Map<String, dynamic> json) { return DnsRecordsDnsRecordSharedFields(
   comment: json['comment'] != null ? DnsRecordsComment.fromJson(json['comment'] as String) : null,

@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'dlp_custom_entry.dart';import 'dlp_document_fingerprint_entry.dart';import 'dlp_exact_data_entry.dart';import 'dlp_integration_entry.dart';import 'dlp_predefined_entry.dart';import 'dlp_word_list_entry.dart';typedef DlpEntry = OneOf6<DlpCustomEntry,DlpPredefinedEntry,DlpIntegrationEntry,DlpExactDataEntry,DlpDocumentFingerprintEntry,DlpWordListEntry>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'custom_entry.dart';import 'document_fingerprint_entry.dart';import 'exact_data_entry.dart';import 'integration_entry.dart';import 'predefined_entry.dart';import 'word_list_entry.dart';typedef DlpEntry = OneOf6<CustomEntry,PredefinedEntry,IntegrationEntry,ExactDataEntry,DocumentFingerprintEntry,WordListEntry>;

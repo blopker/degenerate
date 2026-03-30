@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_create_payload.dart';import '../models/iam_token_base.dart';import '../models/iam_token_identifier.dart';import '../models/response_common35.dart';import '../models/tokens_list_tokens_direction2.dart';/// TokensApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_collection_tokens_response.dart';import '../models/iam_create_payload.dart';import '../models/iam_permissions_group_response_collection.dart';import '../models/iam_response_single_value.dart';import '../models/iam_single_token_create_response.dart';import '../models/iam_single_token_response.dart';import '../models/iam_token_base.dart';import '../models/iam_token_identifier.dart';import '../models/iam_token_verify_response_single_segment.dart';import '../models/response_single_id4.dart';import '../models/tokens_list_tokens_direction2.dart';/// TokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TokensApi with ApiExecutor {const TokensApi(this.apiConfig);
 /// List all access tokens you created.
 ///
 /// `GET /user/tokens`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IamCollectionTokensResponse, Never>> userApiTokensListTokens({double? page, double? perPage, TokensListTokensDirection2? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -39,7 +39,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamCollectionTokensResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +48,7 @@ return execute(
 /// Create a new access token.
 ///
 /// `POST /user/tokens`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensCreateToken({required IamCreatePayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleTokenCreateResponse, Never>> userApiTokensCreateToken({required IamCreatePayload body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,7 +62,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleTokenCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -71,7 +71,7 @@ return execute(
 /// Get information about a specific token.
 ///
 /// `GET /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleTokenResponse, Never>> userApiTokensTokenDetails({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +83,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleTokenResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -92,7 +92,7 @@ return execute(
 /// Update an existing token.
 ///
 /// `PUT /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleTokenResponse, Never>> userApiTokensUpdateToken({required IamTokenIdentifier tokenId, required IamTokenBase body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,7 +106,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleTokenResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -115,7 +115,7 @@ return execute(
 /// Destroy a token.
 ///
 /// `DELETE /user/tokens/{token_id}`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4, Never>> userApiTokensDeleteToken({required IamTokenIdentifier tokenId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,7 +127,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResponseSingleId4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -136,7 +136,7 @@ return execute(
 /// Roll the token secret.
 ///
 /// `PUT /user/tokens/{token_id}/value`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResponseSingleValue, Never>> userApiTokensRollToken({required IamTokenIdentifier tokenId, required Map<String,dynamic> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,7 +150,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamResponseSingleValue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -159,7 +159,7 @@ return execute(
 /// Find all available permission groups for API Tokens
 ///
 /// `GET /user/tokens/permission_groups`
-Future<ApiResult<ResponseCommon35, Never>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IamPermissionsGroupResponseCollection, Never>> permissionGroupsListPermissionGroups({String? name, String? scope, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -182,7 +182,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamPermissionsGroupResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -191,7 +191,7 @@ return execute(
 /// Test whether a token works.
 ///
 /// `GET /user/tokens/verify`
-Future<ApiResult<ResponseCommon35, Never>> userApiTokensVerifyToken({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamTokenVerifyResponseSingleSegment, Never>> userApiTokensVerifyToken({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -203,7 +203,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamTokenVerifyResponseSingleSegment.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

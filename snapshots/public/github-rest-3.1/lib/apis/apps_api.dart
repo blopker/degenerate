@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/apps_check_token_request.dart';import '../models/apps_create_installation_access_token_request.dart';import '../models/apps_delete_authorization_request.dart';import '../models/apps_delete_token_request.dart';import '../models/apps_list_accounts_for_plan_direction.dart';import '../models/apps_list_accounts_for_plan_sort.dart';import '../models/apps_list_accounts_for_plan_stubbed_direction.dart';import '../models/apps_list_accounts_for_plan_stubbed_sort.dart';import '../models/apps_list_installation_repos_for_authenticated_user_response.dart';import '../models/apps_list_installations_for_authenticated_user_response.dart';import '../models/apps_list_repos_accessible_to_installation_response.dart';import '../models/apps_reset_token_request.dart';import '../models/apps_scope_token_request.dart';import '../models/apps_update_webhook_config_for_app_request.dart';import '../models/authorization.dart';import '../models/basic_error.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/installation.dart';import '../models/installation_token.dart';import '../models/integration.dart';import '../models/integration_installation_request.dart';import '../models/marketplace_listing_plan.dart';import '../models/marketplace_purchase.dart';import '../models/user_marketplace_purchase.dart';import '../models/validation_error.dart';import '../models/webhook_config.dart';/// AppsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/apps_check_token_request.dart';import '../models/apps_create_from_manifest_response.dart';import '../models/apps_create_installation_access_token_request.dart';import '../models/apps_delete_authorization_request.dart';import '../models/apps_delete_token_request.dart';import '../models/apps_list_accounts_for_plan_direction.dart';import '../models/apps_list_accounts_for_plan_sort.dart';import '../models/apps_list_accounts_for_plan_stubbed_direction.dart';import '../models/apps_list_accounts_for_plan_stubbed_sort.dart';import '../models/apps_list_installation_repos_for_authenticated_user_response.dart';import '../models/apps_list_installations_for_authenticated_user_response.dart';import '../models/apps_list_repos_accessible_to_installation_response.dart';import '../models/apps_reset_token_request.dart';import '../models/apps_scope_token_request.dart';import '../models/apps_update_webhook_config_for_app_request.dart';import '../models/authorization.dart';import '../models/basic_error.dart';import '../models/hook_delivery.dart';import '../models/hook_delivery_item.dart';import '../models/installation.dart';import '../models/installation_token.dart';import '../models/integration.dart';import '../models/integration_installation_request.dart';import '../models/marketplace_listing_plan.dart';import '../models/marketplace_purchase.dart';import '../models/user_marketplace_purchase.dart';import '../models/validation_error.dart';import '../models/webhook_config.dart';/// AppsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -36,7 +36,7 @@ return execute(
 /// Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
 ///
 /// `POST /app-manifests/{code}/conversions`
-Future<ApiResult<Integration, BasicError>> appsCreateFromManifest({required String code, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AppsCreateFromManifestResponse, BasicError>> appsCreateFromManifest({required String code, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Integration.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AppsCreateFromManifestResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return BasicError.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

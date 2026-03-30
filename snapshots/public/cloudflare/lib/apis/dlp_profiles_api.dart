@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dlp_custom_profile_update.dart';import '../models/dlp_new_custom_profile.dart';import '../models/dlp_predefined_profile_config_update.dart';import '../models/dlp_predefined_profile_update.dart';import '../models/response_common20.dart';/// DlpProfilesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dlp_custom_profile_update.dart';import '../models/dlp_new_custom_profile.dart';import '../models/dlp_new_predefined_profile.dart';import '../models/dlp_predefined_profile_config_update.dart';import '../models/dlp_predefined_profile_update.dart';import '../models/dlp_profiles_create_custom_profiles_response.dart';import '../models/dlp_profiles_create_predefined_profile_config_response.dart';import '../models/dlp_profiles_create_predefined_profile_response.dart';import '../models/dlp_profiles_delete_custom_profile_response.dart';import '../models/dlp_profiles_delete_predefined_profile_response.dart';import '../models/dlp_profiles_get_custom_profile_response.dart';import '../models/dlp_profiles_get_dlp_profile_response.dart';import '../models/dlp_profiles_get_predefined_profile_config_response.dart';import '../models/dlp_profiles_get_predefined_profile_response.dart';import '../models/dlp_profiles_list_all_custom_profiles_response.dart';import '../models/dlp_profiles_list_all_profiles_response.dart';import '../models/dlp_profiles_update_custom_profile_response.dart';import '../models/dlp_profiles_update_predefined_profile_config_response.dart';import '../models/dlp_profiles_update_predefined_profile_response.dart';/// DlpProfilesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DlpProfilesApi with ApiExecutor {const DlpProfilesApi(this.apiConfig
 /// Lists all DLP profiles in an account.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesListAllProfiles({required String accountId, bool? all, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DlpProfilesListAllProfilesResponse, Never>> dlpProfilesListAllProfiles({required String accountId, bool? all, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (all != null) {
   queryParameters['all'] = all.toString();
@@ -33,7 +33,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesListAllProfilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -42,7 +42,7 @@ return execute(
 /// Fetches a DLP profile by ID.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetDlpProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesGetDlpProfileResponse, Never>> dlpProfilesGetDlpProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -54,7 +54,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesGetDlpProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -63,7 +63,7 @@ return execute(
 /// Lists all DLP custom profiles in an account.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/custom`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesListAllCustomProfiles({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesListAllCustomProfilesResponse, Never>> dlpProfilesListAllCustomProfiles({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,7 +75,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesListAllCustomProfilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -84,7 +84,7 @@ return execute(
 /// Creates a DLP custom profile.
 ///
 /// `POST /accounts/{account_id}/dlp/profiles/custom`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesCreateCustomProfiles({required String accountId, required DlpNewCustomProfile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesCreateCustomProfilesResponse, Never>> dlpProfilesCreateCustomProfiles({required String accountId, required DlpNewCustomProfile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,7 +98,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesCreateCustomProfilesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -107,7 +107,7 @@ return execute(
 /// Fetches a custom DLP profile by id.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/custom/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetCustomProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesGetCustomProfileResponse, Never>> dlpProfilesGetCustomProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -119,7 +119,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesGetCustomProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -128,7 +128,7 @@ return execute(
 /// Updates a DLP custom profile.
 ///
 /// `PUT /accounts/{account_id}/dlp/profiles/custom/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesUpdateCustomProfile({required String accountId, required String profileId, required DlpCustomProfileUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesUpdateCustomProfileResponse, Never>> dlpProfilesUpdateCustomProfile({required String accountId, required String profileId, required DlpCustomProfileUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -142,7 +142,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesUpdateCustomProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -151,7 +151,7 @@ return execute(
 /// Deletes a DLP custom profile.
 ///
 /// `DELETE /accounts/{account_id}/dlp/profiles/custom/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesDeleteCustomProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesDeleteCustomProfileResponse, Never>> dlpProfilesDeleteCustomProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -163,7 +163,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesDeleteCustomProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -172,7 +172,7 @@ return execute(
 /// Creates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `POST /accounts/{account_id}/dlp/profiles/predefined`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesCreatePredefinedProfile({required String accountId, required DlpPredefinedProfileUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesCreatePredefinedProfileResponse, Never>> dlpProfilesCreatePredefinedProfile({required String accountId, required DlpNewPredefinedProfile body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -186,7 +186,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesCreatePredefinedProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -195,7 +195,7 @@ return execute(
 /// Fetches a predefined DLP profile by id.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetPredefinedProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesGetPredefinedProfileResponse, Never>> dlpProfilesGetPredefinedProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -207,7 +207,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesGetPredefinedProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -216,7 +216,7 @@ return execute(
 /// Updates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesUpdatePredefinedProfile({required String accountId, required String profileId, required DlpPredefinedProfileUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesUpdatePredefinedProfileResponse, Never>> dlpProfilesUpdatePredefinedProfile({required String accountId, required String profileId, required DlpPredefinedProfileUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -230,7 +230,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesUpdatePredefinedProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -239,7 +239,7 @@ return execute(
 /// This is a no-op as predefined profiles can't be deleted but is needed for our generated terraform API.
 ///
 /// `DELETE /accounts/{account_id}/dlp/profiles/predefined/{profile_id}`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesDeletePredefinedProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesDeletePredefinedProfileResponse, Never>> dlpProfilesDeletePredefinedProfile({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -251,7 +251,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesDeletePredefinedProfileResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -262,7 +262,7 @@ return execute(
 /// Fetches a predefined DLP profile by id.
 ///
 /// `GET /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesGetPredefinedProfileConfig({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesGetPredefinedProfileConfigResponse, Never>> dlpProfilesGetPredefinedProfileConfig({required String accountId, required String profileId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -274,7 +274,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesGetPredefinedProfileConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -285,7 +285,7 @@ return execute(
 /// Creates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `POST /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesCreatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesCreatePredefinedProfileConfigResponse, Never>> dlpProfilesCreatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -299,7 +299,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesCreatePredefinedProfileConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -310,7 +310,7 @@ return execute(
 /// Updates a DLP predefined profile. Only supports enabling/disabling entries.
 ///
 /// `PUT /accounts/{account_id}/dlp/profiles/predefined/{profile_id}/config`
-Future<ApiResult<ResponseCommon20, Never>> dlpProfilesUpdatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpProfilesUpdatePredefinedProfileConfigResponse, Never>> dlpProfilesUpdatePredefinedProfileConfig({required String accountId, required String profileId, required DlpPredefinedProfileConfigUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -324,7 +324,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon20.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlpProfilesUpdatePredefinedProfileConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

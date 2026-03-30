@@ -1,0 +1,65 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class PullRequestWebhookLabels {const PullRequestWebhookLabels({required this.id, required this.nodeId, required this.url, required this.name, required this.description, required this.color, required this.$default, });
+
+factory PullRequestWebhookLabels.fromJson(Map<String, dynamic> json) { return PullRequestWebhookLabels(
+  id: (json['id'] as num).toInt(),
+  nodeId: json['node_id'] as String,
+  url: json['url'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String?,
+  color: json['color'] as String,
+  $default: json['default'] as bool,
+); }
+
+final int id;
+
+final String nodeId;
+
+final String url;
+
+final String name;
+
+final String? description;
+
+final String color;
+
+final bool $default;
+
+Map<String, dynamic> toJson() { return {
+  'id': id,
+  'node_id': nodeId,
+  'url': url,
+  'name': name,
+  'description': ?description,
+  'color': color,
+  'default': $default,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is num &&
+      json.containsKey('node_id') && json['node_id'] is String &&
+      json.containsKey('url') && json['url'] is String &&
+      json.containsKey('name') && json['name'] is String &&
+      json.containsKey('description') && json['description'] is String &&
+      json.containsKey('color') && json['color'] is String &&
+      json.containsKey('default') && json['default'] is bool; } 
+PullRequestWebhookLabels copyWith({int? id, String? nodeId, String? url, String? name, String? Function()? description, String? color, bool? $default, }) { return PullRequestWebhookLabels(
+  id: id ?? this.id,
+  nodeId: nodeId ?? this.nodeId,
+  url: url ?? this.url,
+  name: name ?? this.name,
+  description: description != null ? description() : this.description,
+  color: color ?? this.color,
+  $default: $default ?? this.$default,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is PullRequestWebhookLabels &&
+          id == other.id &&
+          nodeId == other.nodeId &&
+          url == other.url &&
+          name == other.name &&
+          description == other.description &&
+          color == other.color &&
+          $default == other.$default; } 
+@override int get hashCode { return Object.hash(id, nodeId, url, name, description, color, $default); } 
+@override String toString() { return 'PullRequestWebhookLabels(id: $id, nodeId: $nodeId, url: $url, name: $name, description: $description, color: $color, \$default: ${$default})'; } 
+ }

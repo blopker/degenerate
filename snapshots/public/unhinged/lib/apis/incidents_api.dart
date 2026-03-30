@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import '../models/error_model.dart';
 import '../models/n3_incident.dart';
+import '../models/new.dart';
 import '../models/phase.dart';
 import '../models/true.dart';
 
@@ -84,7 +85,7 @@ final class IncidentsApi with ApiExecutor {
   ///
   /// `POST /incidents`
   Future<ApiResult<$3Incident, Never>> $empty({
-    required True body,
+    required New body,
     RequestOptions? options,
   }) async {
     final headers = <String, String>{...apiConfig.defaultHeaders};

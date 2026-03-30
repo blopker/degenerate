@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common78.dart';import '../models/web3_content_list_entry_create_request.dart';import '../models/web3_content_list_update_request.dart';import '../models/web3_create_request.dart';import '../models/web3_identifier.dart';import '../models/web3_modify_request.dart';/// Web3HostnameApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common78.dart';import '../models/web3_collection_response.dart';import '../models/web3_content_list_details_response.dart';import '../models/web3_content_list_entry_collection_response.dart';import '../models/web3_content_list_entry_create_request.dart';import '../models/web3_content_list_entry_single_response.dart';import '../models/web3_content_list_update_request.dart';import '../models/web3_create_request.dart';import '../models/web3_identifier.dart';import '../models/web3_modify_request.dart';import '../models/web3_single_response.dart';/// Web3HostnameApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class Web3HostnameApi with ApiExecutor {const Web3HostnameApi(this.apiConf
 /// List Web3 Hostnames
 ///
 /// `GET /zones/{zone_id}/web3/hostnames`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameListWeb3Hostnames({required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3CollectionResponse, Never>> web3HostnameListWeb3Hostnames({required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -23,14 +23,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3CollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Create Web3 Hostname
 ///
 /// `POST /zones/{zone_id}/web3/hostnames`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameCreateWeb3Hostname({required Web3Identifier zoneId, required Web3CreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3SingleResponse, Never>> web3HostnameCreateWeb3Hostname({required Web3Identifier zoneId, required Web3CreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -44,14 +44,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3SingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Web3 Hostname Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameDetails({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3SingleResponse, Never>> web3HostnameDetails({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -63,14 +63,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3SingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Edit Web3 Hostname
 ///
 /// `PATCH /zones/{zone_id}/web3/hostnames/{identifier}`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameEditWeb3Hostname({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ModifyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3SingleResponse, Never>> web3HostnameEditWeb3Hostname({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ModifyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -84,7 +84,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3SingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -110,7 +110,7 @@ return execute(
 /// IPFS Universal Path Gateway Content List Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameIpfsUniversalPathGatewayContentListDetails({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListDetailsResponse, Never>> web3HostnameIpfsUniversalPathGatewayContentListDetails({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -122,14 +122,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3ContentListDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Update IPFS Universal Path Gateway Content List
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameUpdateIpfsUniversalPathGatewayContentList({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListDetailsResponse, Never>> web3HostnameUpdateIpfsUniversalPathGatewayContentList({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -143,14 +143,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3ContentListDetailsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// List IPFS Universal Path Gateway Content List Entries
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameListIpfsUniversalPathGatewayContentListEntries({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListEntryCollectionResponse, Never>> web3HostnameListIpfsUniversalPathGatewayContentListEntries({required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -162,14 +162,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3ContentListEntryCollectionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Create IPFS Universal Path Gateway Content List Entry
 ///
 /// `POST /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameCreateIpfsUniversalPathGatewayContentListEntry({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListEntryCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListEntrySingleResponse, Never>> web3HostnameCreateIpfsUniversalPathGatewayContentListEntry({required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListEntryCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,14 +183,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3ContentListEntrySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// IPFS Universal Path Gateway Content List Entry Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameIpfsUniversalPathGatewayContentListEntryDetails({required Web3Identifier contentListEntryIdentifier, required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListEntrySingleResponse, Never>> web3HostnameIpfsUniversalPathGatewayContentListEntryDetails({required Web3Identifier contentListEntryIdentifier, required Web3Identifier identifier, required Web3Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -202,14 +202,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3ContentListEntrySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Edit IPFS Universal Path Gateway Content List Entry
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
-Future<ApiResult<ResponseCommon78, Never>> web3HostnameEditIpfsUniversalPathGatewayContentListEntry({required Web3Identifier contentListEntryIdentifier, required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListEntryCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Web3ContentListEntrySingleResponse, Never>> web3HostnameEditIpfsUniversalPathGatewayContentListEntry({required Web3Identifier contentListEntryIdentifier, required Web3Identifier identifier, required Web3Identifier zoneId, required Web3ContentListEntryCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -223,7 +223,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon78.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Web3ContentListEntrySingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

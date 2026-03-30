@@ -1,10 +1,46 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_records_dns_record_shared_fields.dart';/// A value that is one of: `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`, `DnsRecordsDnsRecordSharedFields`.
+import 'dns_records_caa_record.dart';import 'dns_records_cert_record.dart';import 'dns_records_dnskey_record.dart';import 'dns_records_ds_record.dart';import 'dns_records_https_record.dart';import 'dns_records_loc_record.dart';import 'dns_records_naptr_record.dart';import 'dns_records_smimea_record.dart';import 'dns_records_srv_record.dart';import 'dns_records_sshfp_record.dart';import 'dns_records_svcb_record.dart';import 'dns_records_tlsa_record.dart';import 'dns_records_uri_record.dart';/// A value that is one of: `DnsRecordsCaaRecord`, `DnsRecordsCertRecord`, `DnsRecordsDnskeyRecord`, `DnsRecordsDsRecord`, `DnsRecordsHttpsRecord`, `DnsRecordsLocRecord`, `DnsRecordsNaptrRecord`, `DnsRecordsSmimeaRecord`, `DnsRecordsSrvRecord`, `DnsRecordsSshfpRecord`, `DnsRecordsSvcbRecord`, `DnsRecordsTlsaRecord`, `DnsRecordsUriRecord`.
 sealed class DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData();
 
-factory DnsRecordsDnsRecordWithData.fromJson(Map<String, dynamic> json) {   if (DnsRecordsDnsRecordSharedFields.canParse(json)) {
-    return DnsRecordsDnsRecordWithDataDnsRecordsDnsRecordSharedFields(DnsRecordsDnsRecordSharedFields.fromJson(json));
+factory DnsRecordsDnsRecordWithData.fromJson(Map<String, dynamic> json) {   if (DnsRecordsCaaRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord(DnsRecordsCaaRecord.fromJson(json));
+  }
+  if (DnsRecordsCertRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsCertRecord(DnsRecordsCertRecord.fromJson(json));
+  }
+  if (DnsRecordsDnskeyRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord(DnsRecordsDnskeyRecord.fromJson(json));
+  }
+  if (DnsRecordsDsRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsDsRecord(DnsRecordsDsRecord.fromJson(json));
+  }
+  if (DnsRecordsHttpsRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord(DnsRecordsHttpsRecord.fromJson(json));
+  }
+  if (DnsRecordsLocRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsLocRecord(DnsRecordsLocRecord.fromJson(json));
+  }
+  if (DnsRecordsNaptrRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord(DnsRecordsNaptrRecord.fromJson(json));
+  }
+  if (DnsRecordsSmimeaRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord(DnsRecordsSmimeaRecord.fromJson(json));
+  }
+  if (DnsRecordsSrvRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(DnsRecordsSrvRecord.fromJson(json));
+  }
+  if (DnsRecordsSshfpRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord(DnsRecordsSshfpRecord.fromJson(json));
+  }
+  if (DnsRecordsSvcbRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord(DnsRecordsSvcbRecord.fromJson(json));
+  }
+  if (DnsRecordsTlsaRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord(DnsRecordsTlsaRecord.fromJson(json));
+  }
+  if (DnsRecordsUriRecord.canParse(json)) {
+    return DnsRecordsDnsRecordWithDataDnsRecordsUriRecord(DnsRecordsUriRecord.fromJson(json));
   }
   return DnsRecordsDnsRecordWithData$Unknown(json); }
 
@@ -12,15 +48,135 @@ factory DnsRecordsDnsRecordWithData.fromJson(Map<String, dynamic> json) {   if (
 dynamic get value;
 dynamic toJson() { return value; } 
  }
-final class DnsRecordsDnsRecordWithDataDnsRecordsDnsRecordSharedFields extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDnsRecordSharedFields(this._value);
+final class DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord(this._value);
 
-final DnsRecordsDnsRecordSharedFields _value;
+final DnsRecordsCaaRecord _value;
 
-@override DnsRecordsDnsRecordSharedFields get value { return _value; } 
+@override DnsRecordsCaaRecord get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is DnsRecordsDnsRecordWithDataDnsRecordsDnsRecordSharedFields && _value == other._value; } 
+    other is DnsRecordsDnsRecordWithDataDnsRecordsCaaRecord && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDnsRecordSharedFields($_value)'; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsCaaRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsCertRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsCertRecord(this._value);
+
+final DnsRecordsCertRecord _value;
+
+@override DnsRecordsCertRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsCertRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsCertRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord(this._value);
+
+final DnsRecordsDnskeyRecord _value;
+
+@override DnsRecordsDnskeyRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsDnskeyRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDnskeyRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsDsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsDsRecord(this._value);
+
+final DnsRecordsDsRecord _value;
+
+@override DnsRecordsDsRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsDsRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsDsRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord(this._value);
+
+final DnsRecordsHttpsRecord _value;
+
+@override DnsRecordsHttpsRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsHttpsRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsHttpsRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsLocRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsLocRecord(this._value);
+
+final DnsRecordsLocRecord _value;
+
+@override DnsRecordsLocRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsLocRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsLocRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord(this._value);
+
+final DnsRecordsNaptrRecord _value;
+
+@override DnsRecordsNaptrRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsNaptrRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsNaptrRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord(this._value);
+
+final DnsRecordsSmimeaRecord _value;
+
+@override DnsRecordsSmimeaRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSmimeaRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSmimeaRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord(this._value);
+
+final DnsRecordsSrvRecord _value;
+
+@override DnsRecordsSrvRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSrvRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSrvRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord(this._value);
+
+final DnsRecordsSshfpRecord _value;
+
+@override DnsRecordsSshfpRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSshfpRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSshfpRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord(this._value);
+
+final DnsRecordsSvcbRecord _value;
+
+@override DnsRecordsSvcbRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsSvcbRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsSvcbRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord(this._value);
+
+final DnsRecordsTlsaRecord _value;
+
+@override DnsRecordsTlsaRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsTlsaRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsTlsaRecord($_value)'; } 
+ }
+final class DnsRecordsDnsRecordWithDataDnsRecordsUriRecord extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithDataDnsRecordsUriRecord(this._value);
+
+final DnsRecordsUriRecord _value;
+
+@override DnsRecordsUriRecord get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is DnsRecordsDnsRecordWithDataDnsRecordsUriRecord && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'DnsRecordsDnsRecordWithData.dnsRecordsUriRecord($_value)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 final class DnsRecordsDnsRecordWithData$Unknown extends DnsRecordsDnsRecordWithData {const DnsRecordsDnsRecordWithData$Unknown(this._value);

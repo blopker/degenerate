@@ -1,20 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_enabled.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_status.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_schemas_hostname.dart';import 'tls_certificates_and_hostnames_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';/// The time when the certificate was created.
-extension type TlsCertificatesAndHostnamesComponentsSchemasCreatedAt(DateTime value) {
-factory TlsCertificatesAndHostnamesComponentsSchemasCreatedAt.fromJson(String json) => TlsCertificatesAndHostnamesComponentsSchemasCreatedAt(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-/// The time when the certificate was updated.
-extension type TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt(DateTime value) {
-factory TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt.fromJson(String json) => TlsCertificatesAndHostnamesComponentsSchemasUpdatedAt(DateTime.parse(json));
-
-String toJson() => value.toIso8601String();
-
-}
-final class TlsCertificatesAndHostnamesHostnameCertidObject {const TlsCertificatesAndHostnamesHostnameCertidObject({this.certId, this.certStatus, this.certUpdatedAt, this.certUploadedOn, this.certificate, this.createdAt, this.enabled, this.expiresOn, this.hostname, this.issuer, this.serialNumber, this.signature, this.status, this.updatedAt, });
+import 'tls_certificates_and_hostnames_components_schemas_created_at.dart';import 'tls_certificates_and_hostnames_components_schemas_updated_at.dart';import 'tls_certificates_and_hostnames_components_schemas_uploaded_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_enabled.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_expires_on.dart';import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_status.dart';import 'tls_certificates_and_hostnames_identifier.dart';import 'tls_certificates_and_hostnames_issuer.dart';import 'tls_certificates_and_hostnames_schemas_hostname.dart';import 'tls_certificates_and_hostnames_serial_number.dart';import 'tls_certificates_and_hostnames_signature.dart';final class TlsCertificatesAndHostnamesHostnameCertidObject {const TlsCertificatesAndHostnamesHostnameCertidObject({this.certId, this.certStatus, this.certUpdatedAt, this.certUploadedOn, this.certificate, this.createdAt, this.enabled, this.expiresOn, this.hostname, this.issuer, this.serialNumber, this.signature, this.status, this.updatedAt, });
 
 factory TlsCertificatesAndHostnamesHostnameCertidObject.fromJson(Map<String, dynamic> json) { return TlsCertificatesAndHostnamesHostnameCertidObject(
   certId: json['cert_id'] != null ? TlsCertificatesAndHostnamesIdentifier.fromJson(json['cert_id'] as String) : null,

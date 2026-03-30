@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_identifier.dart';import '../models/response_common10.dart';import '../models/response_common65.dart';import '../models/response_common88.dart';import '../models/speed_identifier.dart';import '../models/zone_cache_settings_change_aegis_setting_request.dart';import '../models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import '../models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import '../models/zone_settings_change_fonts_setting_request.dart';import '../models/zone_settings_change_speed_brain_setting_request.dart';import '../models/zones_identifier.dart';import '../models/zones_setting_name.dart';import '../models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_rules_identifier.dart';import '../models/cache_rules_origin_h2_max_streams_response_value.dart';import '../models/cache_rules_zone_cache_settings_response_single.dart';import '../models/speed_identifier.dart';import '../models/zone_cache_settings_change_aegis_setting_request.dart';import '../models/zone_cache_settings_change_origin_h2_max_streams_setting_request.dart';import '../models/zone_cache_settings_change_origin_max_http_version_setting_request.dart';import '../models/zone_settings_change_fonts_setting_request.dart';import '../models/zone_settings_change_fonts_setting_response.dart';import '../models/zone_settings_change_speed_brain_setting_request.dart';import '../models/zone_settings_change_speed_brain_setting_response.dart';import '../models/zone_settings_edit_single_setting_response.dart';import '../models/zone_settings_get_fonts_setting_response.dart';import '../models/zone_settings_get_single_setting_response.dart';import '../models/zone_settings_get_speed_brain_setting_response.dart';import '../models/zones_identifier.dart';import '../models/zones_setting_name.dart';import '../models/zones_zone_settings_single_request.dart';/// ZoneSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneSettingsApi with ApiExecutor {const ZoneSettingsApi(this.apiConf
 /// Fetch a single zone setting by name
 ///
 /// `GET /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ResponseCommon88, Never>> zoneSettingsGetSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneSettingsGetSingleSettingResponse, Never>> zoneSettingsGetSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon88.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneSettingsGetSingleSettingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Updates a single zone setting by the identifier
 ///
 /// `PATCH /zones/{zone_id}/settings/{setting_id}`
-Future<ApiResult<ResponseCommon88, Never>> zoneSettingsEditSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, required ZonesZoneSettingsSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneSettingsEditSingleSettingResponse, Never>> zoneSettingsEditSingleSetting({required ZonesIdentifier zoneId, required ZonesSettingName settingId, required ZonesZoneSettingsSingleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon88.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneSettingsEditSingleSettingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `GET /zones/{zone_id}/settings/aegis`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesZoneCacheSettingsResponseSingle, Never>> zoneCacheSettingsGetAegisSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CacheRulesZoneCacheSettingsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return execute(
 /// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
 ///
 /// `PATCH /zones/{zone_id}/settings/aegis`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesZoneCacheSettingsResponseSingle, Never>> zoneCacheSettingsChangeAegisSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeAegisSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CacheRulesZoneCacheSettingsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -103,7 +103,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/fonts`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneSettingsGetFontsSettingResponse, Never>> zoneSettingsGetFontsSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -115,7 +115,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneSettingsGetFontsSettingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -126,7 +126,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/fonts`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneSettingsChangeFontsSettingResponse, Never>> zoneSettingsChangeFontsSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeFontsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,7 +140,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneSettingsChangeFontsSettingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -149,7 +149,7 @@ return execute(
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `GET /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginH2MaxStreamsResponseValue, Never>> zoneCacheSettingsGetOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -161,7 +161,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CacheRulesOriginH2MaxStreamsResponseValue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -170,7 +170,7 @@ return execute(
 /// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_h2_max_streams`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesOriginH2MaxStreamsResponseValue, Never>> zoneCacheSettingsChangeOriginH2MaxStreamsSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -184,7 +184,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CacheRulesOriginH2MaxStreamsResponseValue.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -193,7 +193,7 @@ return execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `GET /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesZoneCacheSettingsResponseSingle, Never>> zoneCacheSettingsGetOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -205,7 +205,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CacheRulesZoneCacheSettingsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -214,7 +214,7 @@ return execute(
 /// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
 ///
 /// `PATCH /zones/{zone_id}/settings/origin_max_http_version`
-Future<ApiResult<ResponseCommon10, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CacheRulesZoneCacheSettingsResponseSingle, Never>> zoneCacheSettingsChangeOriginMaxHttpVersionSetting({required CacheRulesIdentifier zoneId, required ZoneCacheSettingsChangeOriginMaxHttpVersionSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -228,7 +228,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon10.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CacheRulesZoneCacheSettingsResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -239,7 +239,7 @@ return execute(
 /// 
 ///
 /// `GET /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneSettingsGetSpeedBrainSettingResponse, Never>> zoneSettingsGetSpeedBrainSetting({required SpeedIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -251,7 +251,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneSettingsGetSpeedBrainSettingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -262,7 +262,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/settings/speed_brain`
-Future<ApiResult<ResponseCommon65, Never>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZoneSettingsChangeSpeedBrainSettingResponse, Never>> zoneSettingsChangeSpeedBrainSetting({required SpeedIdentifier zoneId, required ZoneSettingsChangeSpeedBrainSettingRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -276,7 +276,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon65.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZoneSettingsChangeSpeedBrainSettingResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

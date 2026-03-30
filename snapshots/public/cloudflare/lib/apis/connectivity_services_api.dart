@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/connectivity_services_list_type.dart';import '../models/infra_account_tag.dart';import '../models/infra_service_config.dart';import '../models/response_common37.dart';/// ConnectivityServicesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/connectivity_services_get_response.dart';import '../models/connectivity_services_list_response.dart';import '../models/connectivity_services_list_type.dart';import '../models/connectivity_services_post_response.dart';import '../models/connectivity_services_put_response.dart';import '../models/infra_account_tag.dart';import '../models/infra_service_config.dart';/// ConnectivityServicesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class ConnectivityServicesApi with ApiExecutor {const ConnectivityServices
 /// List connectivity services
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesList({required InfraAccountTag accountId, ConnectivityServicesListType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ConnectivityServicesListResponse, Never>> connectivityServicesList({required InfraAccountTag accountId, ConnectivityServicesListType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
 queryParametersList.add(ApiQueryParameter(name: 'type', value: type.toString(), allowReserved: false));
@@ -37,14 +37,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ConnectivityServicesListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Create connectivity service
 ///
 /// `POST /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConnectivityServicesPostResponse, Never>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,14 +58,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ConnectivityServicesPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get connectivity service
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConnectivityServicesGetResponse, Never>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -77,14 +77,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ConnectivityServicesGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Update connectivity service
 ///
 /// `PUT /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<ResponseCommon37, Never>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ConnectivityServicesPutResponse, Never>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -98,7 +98,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ConnectivityServicesPutResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

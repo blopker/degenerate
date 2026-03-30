@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/load_balancing_components_schemas_identifier.dart';import '../models/load_balancing_region_code.dart';import '../models/load_balancing_subdivision_code_a2.dart';import '../models/response_common42.dart';/// LoadBalancerRegionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/load_balancing_components_schemas_identifier.dart';import '../models/load_balancing_components_schemas_single_response.dart';import '../models/load_balancing_region_code.dart';import '../models/load_balancing_region_components_schemas_response_collection.dart';import '../models/load_balancing_subdivision_code_a2.dart';/// LoadBalancerRegionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class LoadBalancerRegionsApi with ApiExecutor {const LoadBalancerRegionsAp
 /// List all region mappings.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<LoadBalancingRegionComponentsSchemasResponseCollection, Never>> loadBalancerRegionsListRegions({required LoadBalancingComponentsSchemasIdentifier accountId, LoadBalancingSubdivisionCodeA2? subdivisionCode, LoadBalancingSubdivisionCodeA2? subdivisionCodeA2, String? countryCodeA2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (subdivisionCode != null) {
   queryParameters['subdivision_code'] = subdivisionCode.toString();
@@ -39,7 +39,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingRegionComponentsSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +48,7 @@ return execute(
 /// Get a single region mapping.
 ///
 /// `GET /accounts/{account_id}/load_balancers/regions/{region_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasSingleResponse, Never>> loadBalancerRegionsGetRegion({required LoadBalancingRegionCode regionId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -60,7 +60,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

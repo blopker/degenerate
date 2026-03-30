@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Value of the Origin H2 Max Streams Setting.
-extension type const CacheRulesOriginH2MaxStreamsValue(int value) {
-factory CacheRulesOriginH2MaxStreamsValue.fromJson(num json) => CacheRulesOriginH2MaxStreamsValue(json.toInt());
-
-num toJson() => value;
-
-}
-final class ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest {const ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest({required this.value});
+import 'cache_rules_origin_h2_max_streams_value.dart';final class ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest {const ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest({required this.value});
 
 factory ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest.fromJson(Map<String, dynamic> json) { return ZoneCacheSettingsChangeOriginH2MaxStreamsSettingRequest(
   value: CacheRulesOriginH2MaxStreamsValue.fromJson(json['value'] as num),

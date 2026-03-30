@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/per_hostname_tls_settings_put_request.dart';import '../models/response_common68.dart';import '../models/tls_certificates_and_hostnames_components_schemas_hostname.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_setting_id.dart';/// PerHostnameTlsSettingsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/per_hostname_tls_settings_put_request.dart';import '../models/tls_certificates_and_hostnames_components_schemas_hostname.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';import '../models/tls_certificates_and_hostnames_per_hostname_settings_response.dart';import '../models/tls_certificates_and_hostnames_per_hostname_settings_response_collection.dart';import '../models/tls_certificates_and_hostnames_per_hostname_settings_response_delete.dart';import '../models/tls_certificates_and_hostnames_setting_id.dart';/// PerHostnameTlsSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class PerHostnameTlsSettingsApi with ApiExecutor {const PerHostnameTlsSett
 /// List the requested TLS setting for the hostnames under this zone.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsList({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection, Never>> perHostnameTlsSettingsList({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Get the requested TLS setting for the hostname.
 ///
 /// `GET /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsGet({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesPerHostnameSettingsResponse, Never>> perHostnameTlsSettingsGet({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,7 +46,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesPerHostnameSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -55,7 +55,7 @@ return execute(
 /// Update the tls setting value for the hostname.
 ///
 /// `PUT /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsPut({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, required PerHostnameTlsSettingsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesPerHostnameSettingsResponse, Never>> perHostnameTlsSettingsPut({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, required PerHostnameTlsSettingsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesPerHostnameSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return execute(
 /// Delete the tls setting value for the hostname.
 ///
 /// `DELETE /zones/{zone_id}/hostnames/settings/{setting_id}/{hostname}`
-Future<ApiResult<ResponseCommon68, Never>> perHostnameTlsSettingsDelete({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete, Never>> perHostnameTlsSettingsDelete({required TlsCertificatesAndHostnamesIdentifier zoneId, required TlsCertificatesAndHostnamesSettingId settingId, required TlsCertificatesAndHostnamesComponentsSchemasHostname hostname, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -90,7 +90,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesPerHostnameSettingsResponseDelete.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

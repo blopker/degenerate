@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/infra_account_tag.dart';import '../models/infra_sorting_direction.dart';import '../models/infra_target_id.dart';import '../models/infra_targets_delete_batch_post_request.dart';import '../models/infra_targets_list_order.dart';import '../models/infra_targets_post_request.dart';import '../models/infra_targets_put_batch_request.dart';import '../models/infra_targets_put_request.dart';import '../models/response_common37.dart';/// InfrastructureAccessTargetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/infra_account_tag.dart';import '../models/infra_sorting_direction.dart';import '../models/infra_target_id.dart';import '../models/infra_targets_delete_batch_post_request.dart';import '../models/infra_targets_get_response.dart';import '../models/infra_targets_list_order.dart';import '../models/infra_targets_list_response.dart';import '../models/infra_targets_post_request.dart';import '../models/infra_targets_post_response.dart';import '../models/infra_targets_put_batch_request.dart';import '../models/infra_targets_put_batch_response.dart';import '../models/infra_targets_put_request.dart';import '../models/infra_targets_put_response.dart';/// InfrastructureAccessTargetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class InfrastructureAccessTargetsApi with ApiExecutor {const Infrastructur
 /// together.
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<InfraTargetsListResponse, Never>> infraTargetsList({required InfraAccountTag accountId, String? hostname, String? hostnameContains, String? virtualNetworkId, String? ipV4, String? ipV6, DateTime? createdBefore, DateTime? createdAfter, DateTime? modifiedBefore, DateTime? modifiedAfter, List<String>? ips, List<String>? targetIds, String? ipLike, String? ipv4Start, String? ipv4End, String? ipv6Start, String? ipv6End, int? page, int? perPage, InfraTargetsListOrder? order, InfraSortingDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (hostname != null) {
   queryParameters['hostname'] = hostname;
@@ -95,14 +95,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return InfraTargetsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Create new target
 ///
 /// `POST /accounts/{account_id}/infrastructure/targets`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTargetsPostResponse, Never>> infraTargetsPost({required InfraAccountTag accountId, required InfraTargetsPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,14 +116,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return InfraTargetsPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Get target
 ///
 /// `GET /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTargetsGetResponse, Never>> infraTargetsGet({required InfraAccountTag accountId, required InfraTargetId targetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -135,14 +135,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return InfraTargetsGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Update target
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/{target_id}`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTargetsPutResponse, Never>> infraTargetsPut({required InfraAccountTag accountId, required InfraTargetId targetId, required InfraTargetsPutRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -156,7 +156,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return InfraTargetsPutResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -182,7 +182,7 @@ return execute(
 /// Adds one or more targets.
 ///
 /// `PUT /accounts/{account_id}/infrastructure/targets/batch`
-Future<ApiResult<ResponseCommon37, Never>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraTargetsPutBatchResponse, Never>> infraTargetsPutBatch({required InfraAccountTag accountId, required List<InfraTargetsPutBatchRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -196,7 +196,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon37.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return InfraTargetsPutBatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

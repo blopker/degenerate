@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'model_response_properties.dart';/// The type of the event. Always `response.failed`.
+import 'response.dart';/// The type of the event. Always `response.failed`.
 /// 
 final class ResponseFailedEventType {const ResponseFailedEventType._(this.value);
 
@@ -30,7 +30,7 @@ final class ResponseFailedEvent {const ResponseFailedEvent({required this.type, 
 factory ResponseFailedEvent.fromJson(Map<String, dynamic> json) { return ResponseFailedEvent(
   type: ResponseFailedEventType.fromJson(json['type'] as String),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
-  response: ModelResponseProperties.fromJson(json['response'] as Map<String, dynamic>),
+  response: Response.fromJson(json['response'] as Map<String, dynamic>),
 ); }
 
 /// The type of the event. Always `response.failed`.
@@ -42,7 +42,7 @@ final int sequenceNumber;
 
 /// The response that failed.
 /// 
-final ModelResponseProperties response;
+final Response response;
 
 Map<String, dynamic> toJson() { return {
   'type': type.toJson(),
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num &&
       json.containsKey('response'); } 
-ResponseFailedEvent copyWith({ResponseFailedEventType? type, int? sequenceNumber, ModelResponseProperties? response, }) { return ResponseFailedEvent(
+ResponseFailedEvent copyWith({ResponseFailedEventType? type, int? sequenceNumber, Response? response, }) { return ResponseFailedEvent(
   type: type ?? this.type,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,
   response: response ?? this.response,

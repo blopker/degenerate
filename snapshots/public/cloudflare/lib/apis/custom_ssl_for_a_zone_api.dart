@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_ssl_for_a_zone_create_ssl_configuration_request.dart';import '../models/custom_ssl_for_a_zone_edit_ssl_configuration_request.dart';import '../models/custom_ssl_for_a_zone_list_ssl_configurations_match.dart';import '../models/custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request.dart';import '../models/response_common68.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomSslForAZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_ssl_for_a_zone_create_ssl_configuration_request.dart';import '../models/custom_ssl_for_a_zone_edit_ssl_configuration_request.dart';import '../models/custom_ssl_for_a_zone_list_ssl_configurations_match.dart';import '../models/custom_ssl_for_a_zone_re_prioritize_ssl_certificates_request.dart';import '../models/tls_certificates_and_hostnames_certificate_response_collection.dart';import '../models/tls_certificates_and_hostnames_certificate_response_id_only.dart';import '../models/tls_certificates_and_hostnames_certificate_response_single.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomSslForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CustomSslForAZoneApi with ApiExecutor {const CustomSslForAZoneApi(th
 /// List, search, and filter all of your custom SSL certificates. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
 ///
 /// `GET /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseCollection, Never>> customSslForAZoneListSslConfigurations({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, CustomSslForAZoneListSslConfigurationsMatch? match, dynamic status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCertificateResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Upload a new SSL certificate for a zone.
 ///
 /// `POST /zones/{zone_id}/custom_certificates`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneCreateSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneCreateSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseSingle, Never>> customSslForAZoneCreateSslConfiguration({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneCreateSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCertificateResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +74,7 @@ return execute(
 /// Retrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration.
 ///
 /// `GET /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneSslConfigurationDetails({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseSingle, Never>> customSslForAZoneSslConfigurationDetails({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,7 +86,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCertificateResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -95,7 +95,7 @@ return execute(
 /// Upload a new private key and/or PEM/CRT for the SSL certificate. Note: PATCHing a configuration for sni_custom certificates will result in a new resource id being returned, and the previous one being deleted.
 ///
 /// `PATCH /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneEditSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneEditSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseSingle, Never>> customSslForAZoneEditSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneEditSslConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,7 +109,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCertificateResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -118,7 +118,7 @@ return execute(
 /// Remove a SSL certificate from a zone.
 ///
 /// `DELETE /zones/{zone_id}/custom_certificates/{custom_certificate_id}`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneDeleteSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseIdOnly, Never>> customSslForAZoneDeleteSslConfiguration({required TlsCertificatesAndHostnamesIdentifier customCertificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -130,7 +130,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCertificateResponseIdOnly.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -139,7 +139,7 @@ return execute(
 /// If a zone has multiple SSL certificates, you can set the order in which they should be used during a request. The higher priority will break ties across overlapping 'legacy_custom' certificates.
 ///
 /// `PUT /zones/{zone_id}/custom_certificates/prioritize`
-Future<ApiResult<ResponseCommon68, Never>> customSslForAZoneRePrioritizeSslCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneRePrioritizeSslCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCertificateResponseCollection, Never>> customSslForAZoneRePrioritizeSslCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomSslForAZoneRePrioritizeSslCertificatesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -153,7 +153,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCertificateResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

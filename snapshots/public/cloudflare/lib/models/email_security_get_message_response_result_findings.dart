@@ -1,0 +1,71 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'email_security_disposition_label.dart';final class EmailSecurityGetMessageResponseResultFindings {const EmailSecurityGetMessageResponseResultFindings({this.attachment, this.detail, this.detection, this.field, this.name, this.portion, this.reason, this.score, this.value, });
+
+factory EmailSecurityGetMessageResponseResultFindings.fromJson(Map<String, dynamic> json) { return EmailSecurityGetMessageResponseResultFindings(
+  attachment: json['attachment'] as String?,
+  detail: json['detail'] as String?,
+  detection: json['detection'] != null ? EmailSecurityDispositionLabel.fromJson(json['detection'] as String) : null,
+  field: json['field'] as String?,
+  name: json['name'] as String?,
+  portion: json['portion'] as String?,
+  reason: json['reason'] as String?,
+  score: json['score'] != null ? (json['score'] as num).toDouble() : null,
+  value: json['value'] as String?,
+); }
+
+final String? attachment;
+
+final String? detail;
+
+final EmailSecurityDispositionLabel? detection;
+
+final String? field;
+
+final String? name;
+
+final String? portion;
+
+final String? reason;
+
+final double? score;
+
+final String? value;
+
+Map<String, dynamic> toJson() { return {
+  'attachment': ?attachment,
+  'detail': ?detail,
+  if (detection != null) 'detection': detection?.toJson(),
+  'field': ?field,
+  'name': ?name,
+  'portion': ?portion,
+  'reason': ?reason,
+  'score': ?score,
+  'value': ?value,
+}; } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attachment', 'detail', 'detection', 'field', 'name', 'portion', 'reason', 'score', 'value'}.contains(key)); } 
+EmailSecurityGetMessageResponseResultFindings copyWith({String? Function()? attachment, String? Function()? detail, EmailSecurityDispositionLabel? Function()? detection, String? Function()? field, String? Function()? name, String? Function()? portion, String? Function()? reason, double? Function()? score, String? Function()? value, }) { return EmailSecurityGetMessageResponseResultFindings(
+  attachment: attachment != null ? attachment() : this.attachment,
+  detail: detail != null ? detail() : this.detail,
+  detection: detection != null ? detection() : this.detection,
+  field: field != null ? field() : this.field,
+  name: name != null ? name() : this.name,
+  portion: portion != null ? portion() : this.portion,
+  reason: reason != null ? reason() : this.reason,
+  score: score != null ? score() : this.score,
+  value: value != null ? value() : this.value,
+); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+      other is EmailSecurityGetMessageResponseResultFindings &&
+          attachment == other.attachment &&
+          detail == other.detail &&
+          detection == other.detection &&
+          field == other.field &&
+          name == other.name &&
+          portion == other.portion &&
+          reason == other.reason &&
+          score == other.score &&
+          value == other.value; } 
+@override int get hashCode { return Object.hash(attachment, detail, detection, field, name, portion, reason, score, value); } 
+@override String toString() { return 'EmailSecurityGetMessageResponseResultFindings(attachment: $attachment, detail: $detail, detection: $detection, field: $field, name: $name, portion: $portion, reason: $reason, score: $score, value: $value)'; } 
+ }

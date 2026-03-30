@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alexandria_create_application_request.dart';import '../models/alexandria_update_application_version_request.dart';import '../models/response_common5.dart';/// ApplicationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/alexandria_create_application_request.dart';import '../models/alexandria_get_application_response.dart';import '../models/alexandria_get_applications_response.dart';import '../models/alexandria_update_application_version_request.dart';/// ApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ApplicationsApi with ApiExecutor {const ApplicationsApi(this.apiConf
 /// Get applications with different filters.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<ResponseCommon5, Never>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AlexandriaGetApplicationsResponse, Never>> getApplications({required String accountId, String? filter, int? limit, int? offset, String? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (filter != null) {
   queryParameters['filter'] = filter;
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AlexandriaGetApplicationsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Create application.
 ///
 /// `POST /accounts/{accountId}/resource-library/applications`
-Future<ApiResult<ResponseCommon5, Never>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaGetApplicationResponse, Never>> createApplication({required String accountId, required AlexandriaCreateApplicationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AlexandriaGetApplicationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +74,7 @@ return execute(
 /// Get application by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<ResponseCommon5, Never>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaGetApplicationResponse, Never>> getApplicationById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,7 +86,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AlexandriaGetApplicationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -95,7 +95,7 @@ return execute(
 /// Update application version.
 ///
 /// `PATCH /accounts/{accountId}/resource-library/applications/{id}`
-Future<ApiResult<ResponseCommon5, Never>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaGetApplicationResponse, Never>> updateApplicationVersion({required String accountId, required String id, required AlexandriaUpdateApplicationVersionRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,7 +109,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AlexandriaGetApplicationResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

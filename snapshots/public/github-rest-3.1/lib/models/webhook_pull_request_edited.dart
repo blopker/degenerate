@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_edited_changes.dart';import 'webhooks_number.dart';final class WebhookPullRequestEditedAction {const WebhookPullRequestEditedAction._(this.value);
+import 'enterprise_webhooks.dart';import 'organization_simple_webhooks.dart';import 'pull_request_webhook.dart';import 'repository_webhooks.dart';import 'simple_installation.dart';import 'simple_user.dart';import 'webhook_pull_request_edited_changes.dart';import 'webhooks_number.dart';final class WebhookPullRequestEditedAction {const WebhookPullRequestEditedAction._(this.value);
 
 factory WebhookPullRequestEditedAction.fromJson(String json) { return switch (json) {
   'edited' => edited,
@@ -30,7 +30,7 @@ factory WebhookPullRequestEdited.fromJson(Map<String, dynamic> json) { return We
   installation: json['installation'] != null ? SimpleInstallation.fromJson(json['installation'] as Map<String, dynamic>) : null,
   number: WebhooksNumber.fromJson(json['number'] as num),
   organization: json['organization'] != null ? OrganizationSimpleWebhooks.fromJson(json['organization'] as Map<String, dynamic>) : null,
-  pullRequest: PullRequest.fromJson(json['pull_request'] as Map<String, dynamic>),
+  pullRequest: PullRequestWebhook.fromJson(json['pull_request'] as Map<String, dynamic>),
   repository: RepositoryWebhooks.fromJson(json['repository'] as Map<String, dynamic>),
   sender: json['sender'] != null ? SimpleUser.fromJson(json['sender'] as Map<String, dynamic>) : null,
 ); }
@@ -49,7 +49,7 @@ final WebhooksNumber number;
 
 final OrganizationSimpleWebhooks? organization;
 
-final PullRequest pullRequest;
+final PullRequestWebhook pullRequest;
 
 final RepositoryWebhooks repository;
 
@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('number') &&
       json.containsKey('pull_request') &&
       json.containsKey('repository'); } 
-WebhookPullRequestEdited copyWith({WebhookPullRequestEditedAction? action, WebhookPullRequestEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequest? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestEdited(
+WebhookPullRequestEdited copyWith({WebhookPullRequestEditedAction? action, WebhookPullRequestEditedChanges? changes, EnterpriseWebhooks Function()? enterprise, SimpleInstallation Function()? installation, WebhooksNumber? number, OrganizationSimpleWebhooks Function()? organization, PullRequestWebhook? pullRequest, RepositoryWebhooks? repository, SimpleUser Function()? sender, }) { return WebhookPullRequestEdited(
   action: action ?? this.action,
   changes: changes ?? this.changes,
   enterprise: enterprise != null ? enterprise() : this.enterprise,

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_empty_response.dart';import '../models/access_identifier.dart';import '../models/response_common3.dart';import '../models/zero_trust_organization_create_your_zero_trust_organization_request.dart';import '../models/zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZeroTrustOrganizationApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_empty_response.dart';import '../models/access_identifier.dart';import '../models/access_single_response.dart';import '../models/zero_trust_organization_create_your_zero_trust_organization_request.dart';import '../models/zero_trust_organization_get_your_zero_trust_organization_doh_settings_response.dart';import '../models/zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_request.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_doh_settings_response.dart';import '../models/zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZeroTrustOrganizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustOrganizationApi with ApiExecutor {const ZeroTrustOrganizati
 /// Returns the configuration for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganization({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleResponse, Never>> zeroTrustOrganizationGetYourZeroTrustOrganization({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Sets up a Zero Trust organization for your account.
 ///
 /// `POST /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleResponse, Never>> zeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Updates the configuration for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleResponse, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessIdentifier accountId, required ZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +71,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +80,7 @@ return execute(
 /// Returns the DoH settings for your Zero Trust organization.
 ///
 /// `GET /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse, Never>> zeroTrustOrganizationGetYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZeroTrustOrganizationGetYourZeroTrustOrganizationDohSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +101,7 @@ return execute(
 /// Updates the DoH settings for your Zero Trust organization.
 ///
 /// `PUT /accounts/{account_id}/access/organizations/doh`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponse, Never>> zeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettings({required AccessIdentifier accountId, ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +115,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZeroTrustOrganizationUpdateYourZeroTrustOrganizationDohSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/get_worker_version_include.dart';import '../models/response_common80.dart';import '../models/workers_identifier.dart';import '../models/workers_version.dart';/// VersionsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/create_worker_version_response.dart';import '../models/get_worker_version_include.dart';import '../models/get_worker_version_response.dart';import '../models/list_worker_versions_response.dart';import '../models/response_common80.dart';import '../models/workers_identifier.dart';import '../models/workers_version.dart';/// VersionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class VersionsApi with ApiExecutor {const VersionsApi(this.apiConfig);
 /// List all versions for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListWorkerVersionsResponse, Never>> listWorkerVersions({required WorkersIdentifier accountId, required String workerId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -36,7 +36,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListWorkerVersionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -45,7 +45,7 @@ return execute(
 /// Create a new version.
 ///
 /// `POST /accounts/{account_id}/workers/workers/{worker_id}/versions`
-Future<ApiResult<ResponseCommon80, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CreateWorkerVersionResponse, Never>> createWorkerVersion({required WorkersIdentifier accountId, required String workerId, bool? deploy, required WorkersVersion body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (deploy != null) {
   queryParameters['deploy'] = deploy.toString();
@@ -67,7 +67,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CreateWorkerVersionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -76,7 +76,7 @@ return execute(
 /// Get details about a specific version.
 ///
 /// `GET /accounts/{account_id}/workers/workers/{worker_id}/versions/{version_id}`
-Future<ApiResult<ResponseCommon80, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<GetWorkerVersionResponse, Never>> getWorkerVersion({required WorkersIdentifier accountId, required String workerId, required String versionId, GetWorkerVersionInclude? include, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (include != null) {
   queryParameters['include'] = include.toJson();
@@ -96,7 +96,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return GetWorkerVersionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

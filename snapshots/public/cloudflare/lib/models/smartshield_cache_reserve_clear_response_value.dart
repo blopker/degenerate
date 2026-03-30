@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'smartshield_base.dart';final class SmartshieldCacheReserveClearResponseValue {const SmartshieldCacheReserveClearResponseValue({this.result});
+import 'smartshield_cache_reserve_clear_response_value_result.dart';final class SmartshieldCacheReserveClearResponseValue {const SmartshieldCacheReserveClearResponseValue({this.result});
 
 factory SmartshieldCacheReserveClearResponseValue.fromJson(Map<String, dynamic> json) { return SmartshieldCacheReserveClearResponseValue(
-  result: json['result'] != null ? SmartshieldBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? SmartshieldCacheReserveClearResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
-/// You can use Cache Reserve Clear to clear your Cache Reserve, but you must first disable Cache Reserve. In most cases, this will be accomplished within 24 hours. You cannot re-enable Cache Reserve while this process is ongoing. Keep in mind that you cannot undo or cancel this operation.
-final SmartshieldBase? result;
+final SmartshieldCacheReserveClearResponseValueResult? result;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-SmartshieldCacheReserveClearResponseValue copyWith({SmartshieldBase Function()? result}) { return SmartshieldCacheReserveClearResponseValue(
+SmartshieldCacheReserveClearResponseValue copyWith({SmartshieldCacheReserveClearResponseValueResult Function()? result}) { return SmartshieldCacheReserveClearResponseValue(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

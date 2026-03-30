@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
+import 'zones_automatic_https_rewrites_value.dart';import 'zones_automatic_platform_optimization.dart';import 'zones_browser_check_value.dart';import 'zones_cache_level_value.dart';import 'zones_cache_rules_aegis_value.dart';import 'zones_cache_rules_origin_h2_max_streams_value.dart';import 'zones_cache_rules_origin_max_http_version_value.dart';import 'zones_development_mode_value.dart';import 'zones_email_obfuscation_value.dart';import 'zones_ip_geolocation_value.dart';import 'zones_mirage_value.dart';import 'zones_nel_value.dart';import 'zones_opportunistic_encryption_value.dart';import 'zones_origin_error_page_pass_thru_value.dart';import 'zones_polish_value.dart';import 'zones_response_buffering_value.dart';import 'zones_rocket_loader_value.dart';import 'zones_security_header_value.dart';import 'zones_security_level_value.dart';import 'zones_sort_query_string_for_cache_value.dart';import 'zones_ssl_value.dart';import 'zones_true_client_ip_header_value.dart';import 'zones_waf_value.dart';/// Value of the 0-RTT setting.
 final class Zones0rttValue {const Zones0rttValue._(this.value);
 
 factory Zones0rttValue.fromJson(String json) { return switch (json) {
@@ -139,38 +139,6 @@ factory ZonesBrowserCacheTtlValue.fromJson(num json) => ZonesBrowserCacheTtlValu
 num toJson() => value;
 
 }
-/// Value of the Origin H2 Max Streams Setting.
-extension type const ZonesCacheRulesOriginH2MaxStreamsValue(int value) {
-factory ZonesCacheRulesOriginH2MaxStreamsValue.fromJson(num json) => ZonesCacheRulesOriginH2MaxStreamsValue(json.toInt());
-
-num toJson() => value;
-
-}
-/// Value of the Origin Max HTTP Version Setting.
-final class ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue._(this.value);
-
-factory ZonesCacheRulesOriginMaxHttpVersionValue.fromJson(String json) { return switch (json) {
-  '2' => $2,
-  '1' => $1,
-  _ => ZonesCacheRulesOriginMaxHttpVersionValue._(json),
-}; }
-
-static const ZonesCacheRulesOriginMaxHttpVersionValue $2 = ZonesCacheRulesOriginMaxHttpVersionValue._('2');
-
-static const ZonesCacheRulesOriginMaxHttpVersionValue $1 = ZonesCacheRulesOriginMaxHttpVersionValue._('1');
-
-static const List<ZonesCacheRulesOriginMaxHttpVersionValue> values = [$2, $1];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesCacheRulesOriginMaxHttpVersionValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesCacheRulesOriginMaxHttpVersionValue($value)'; } 
- }
 /// Value of the zone setting.
 final class ZonesChallengeTtlValue {const ZonesChallengeTtlValue._(this.value);
 
@@ -306,31 +274,6 @@ bool get isUnknown { return !values.contains(this); }
     other is ZonesContentConverterValue && other.value == value; } 
 @override int get hashCode { return value.hashCode; } 
 @override String toString() { return 'ZonesContentConverterValue($value)'; } 
- }
-/// Value of the zone setting.
-final class ZonesDevelopmentModeValue {const ZonesDevelopmentModeValue._(this.value);
-
-factory ZonesDevelopmentModeValue.fromJson(String json) { return switch (json) {
-  'on' => $on,
-  'off' => off,
-  _ => ZonesDevelopmentModeValue._(json),
-}; }
-
-static const ZonesDevelopmentModeValue $on = ZonesDevelopmentModeValue._('on');
-
-static const ZonesDevelopmentModeValue off = ZonesDevelopmentModeValue._('off');
-
-static const List<ZonesDevelopmentModeValue> values = [$on, off];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesDevelopmentModeValue && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'ZonesDevelopmentModeValue($value)'; } 
  }
 /// Value of the zone setting.
 final class ZonesEarlyHintsValue {const ZonesEarlyHintsValue._(this.value);

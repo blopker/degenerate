@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/email_create_rule_properties.dart';import '../models/email_identifier.dart';import '../models/email_rule_identifier.dart';import '../models/email_update_catch_all_rule_properties.dart';import '../models/email_update_rule_properties.dart';import '../models/response_common30.dart';/// EmailRoutingRoutingRulesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/email_catch_all_rule_response_single.dart';import '../models/email_create_rule_properties.dart';import '../models/email_identifier.dart';import '../models/email_rule_identifier.dart';import '../models/email_rule_response_single.dart';import '../models/email_rules_response_collection.dart';import '../models/email_update_catch_all_rule_properties.dart';import '../models/email_update_rule_properties.dart';/// EmailRoutingRoutingRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class EmailRoutingRoutingRulesApi with ApiExecutor {const EmailRoutingRout
 /// Lists existing routing rules.
 ///
 /// `GET /zones/{zone_id}/email/routing/rules`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesListRoutingRules({required EmailIdentifier zoneId, double? page, double? perPage, bool? enabled, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<EmailRulesResponseCollection, Never>> emailRoutingRulesListRoutingRules({required EmailIdentifier zoneId, double? page, double? perPage, bool? enabled, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -39,7 +39,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRulesResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -48,7 +48,7 @@ return execute(
 /// Rules consist of a set of criteria for matching emails (such as an email being sent to a specific custom email address) plus a set of actions to take on the email (like forwarding it to a specific destination address).
 ///
 /// `POST /zones/{zone_id}/email/routing/rules`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesCreateRoutingRule({required EmailIdentifier zoneId, required EmailCreateRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailRuleResponseSingle, Never>> emailRoutingRulesCreateRoutingRule({required EmailIdentifier zoneId, required EmailCreateRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -62,7 +62,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -71,7 +71,7 @@ return execute(
 /// Get information for a specific routing rule already created.
 ///
 /// `GET /zones/{zone_id}/email/routing/rules/{rule_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesGetRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailRuleResponseSingle, Never>> emailRoutingRulesGetRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,7 +83,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -92,7 +92,7 @@ return execute(
 /// Update actions and matches, or enable/disable specific routing rules.
 ///
 /// `PUT /zones/{zone_id}/email/routing/rules/{rule_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesUpdateRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, required EmailUpdateRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailRuleResponseSingle, Never>> emailRoutingRulesUpdateRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, required EmailUpdateRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -106,7 +106,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -115,7 +115,7 @@ return execute(
 /// Delete a specific routing rule.
 ///
 /// `DELETE /zones/{zone_id}/email/routing/rules/{rule_identifier}`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesDeleteRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailRuleResponseSingle, Never>> emailRoutingRulesDeleteRoutingRule({required EmailRuleIdentifier ruleIdentifier, required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -127,7 +127,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -136,7 +136,7 @@ return execute(
 /// Get information on the default catch-all routing rule.
 ///
 /// `GET /zones/{zone_id}/email/routing/rules/catch_all`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesGetCatchAllRule({required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailCatchAllRuleResponseSingle, Never>> emailRoutingRulesGetCatchAllRule({required EmailIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -148,7 +148,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailCatchAllRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -157,7 +157,7 @@ return execute(
 /// Enable or disable catch-all routing rule, or change action to forward to specific destination address.
 ///
 /// `PUT /zones/{zone_id}/email/routing/rules/catch_all`
-Future<ApiResult<ResponseCommon30, Never>> emailRoutingRulesUpdateCatchAllRule({required EmailIdentifier zoneId, required EmailUpdateCatchAllRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<EmailCatchAllRuleResponseSingle, Never>> emailRoutingRulesUpdateCatchAllRule({required EmailIdentifier zoneId, required EmailUpdateCatchAllRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -171,7 +171,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon30.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return EmailCatchAllRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

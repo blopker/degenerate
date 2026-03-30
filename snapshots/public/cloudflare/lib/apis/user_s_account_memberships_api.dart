@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_membership_components_schemas_identifier.dart';import '../models/iam_properties_name.dart';import '../models/response_common35.dart';import '../models/user_s_account_memberships_list_memberships_direction.dart';import '../models/user_s_account_memberships_list_memberships_order.dart';import '../models/user_s_account_memberships_list_memberships_response.dart';import '../models/user_s_account_memberships_list_memberships_status.dart';import '../models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_collection_membership_response.dart';import '../models/iam_collection_membership_response_with_policies.dart';import '../models/iam_membership_components_schemas_identifier.dart';import '../models/iam_properties_name.dart';import '../models/iam_single_membership_response_with_policies.dart';import '../models/user_s_account_memberships_delete_membership_response.dart';import '../models/user_s_account_memberships_list_memberships_direction.dart';import '../models/user_s_account_memberships_list_memberships_order.dart';import '../models/user_s_account_memberships_list_memberships_response.dart';import '../models/user_s_account_memberships_list_memberships_status.dart';import '../models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -51,7 +51,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon35.fromJson(v as Map<String, dynamic>),);
+    return OneOf2.parse(jsonDecode(response.body), fromA: (v) => IamCollectionMembershipResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => IamCollectionMembershipResponseWithPolicies.fromJson(v as Map<String, dynamic>),);
   },
 );
  } 
@@ -60,7 +60,7 @@ return execute(
 /// Get a specific membership.
 ///
 /// `GET /memberships/{membership_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleMembershipResponseWithPolicies, Never>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -72,7 +72,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleMembershipResponseWithPolicies.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -81,7 +81,7 @@ return execute(
 /// Accept or reject this account invitation.
 ///
 /// `PUT /memberships/{membership_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleMembershipResponseWithPolicies, Never>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -95,7 +95,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleMembershipResponseWithPolicies.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -104,7 +104,7 @@ return execute(
 /// Remove the associated member from an account.
 ///
 /// `DELETE /memberships/{membership_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<UserSAccountMembershipsDeleteMembershipResponse, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -116,7 +116,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return UserSAccountMembershipsDeleteMembershipResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

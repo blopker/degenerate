@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_custom_page.dart';import '../models/access_identifier.dart';import '../models/access_uuid.dart';import '../models/response_common3.dart';/// AccessCustomPagesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_components_schemas_id_response.dart';import '../models/access_custom_page.dart';import '../models/access_custom_pages_components_schemas_response_collection.dart';import '../models/access_custom_pages_components_schemas_single_response.dart';import '../models/access_identifier.dart';import '../models/access_single_response_without_html.dart';import '../models/access_uuid.dart';/// AccessCustomPagesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -11,7 +11,7 @@ final class AccessCustomPagesApi with ApiExecutor {const AccessCustomPagesApi(th
 /// List custom pages
 ///
 /// `GET /accounts/{account_id}/access/custom_pages`
-Future<ApiResult<ResponseCommon3, Never>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AccessCustomPagesComponentsSchemasResponseCollection, Never>> accessCustomPagesListCustomPages({required AccessIdentifier accountId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -34,14 +34,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessCustomPagesComponentsSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Create a custom page
 ///
 /// `POST /accounts/{account_id}/access/custom_pages`
-Future<ApiResult<ResponseCommon3, Never>> accessCustomPagesCreateACustomPage({required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleResponseWithoutHtml, Never>> accessCustomPagesCreateACustomPage({required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -55,7 +55,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleResponseWithoutHtml.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -64,7 +64,7 @@ return execute(
 /// Fetches a custom page and also returns its HTML.
 ///
 /// `GET /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessCustomPagesGetACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCustomPagesComponentsSchemasSingleResponse, Never>> accessCustomPagesGetACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,14 +76,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessCustomPagesComponentsSchemasSingleResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Update a custom page
 ///
 /// `PUT /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessCustomPagesUpdateACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleResponseWithoutHtml, Never>> accessCustomPagesUpdateACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, AccessCustomPage? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,14 +97,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleResponseWithoutHtml.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Delete a custom page
 ///
 /// `DELETE /accounts/{account_id}/access/custom_pages/{custom_page_id}`
-Future<ApiResult<ResponseCommon3, Never>> accessCustomPagesDeleteACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessComponentsSchemasIdResponse, Never>> accessCustomPagesDeleteACustomPage({required AccessUuid customPageId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -116,7 +116,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessComponentsSchemasIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

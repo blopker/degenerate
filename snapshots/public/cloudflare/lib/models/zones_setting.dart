@@ -1,13 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zones_base.dart';import 'zones_cache_rules_base.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';/// A value that is one of: `ZonesBase`, `ZonesBase`, `ZonesCacheRulesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesCacheRulesBase`, `ZonesCacheRulesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesSchemasBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesSslRecommender`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`.
+import 'zones_base.dart';import 'zones_cache_rules_aegis.dart';import 'zones_cache_rules_origin_h2_max_streams.dart';import 'zones_cache_rules_origin_max_http_version.dart';import 'zones_development_mode.dart';import 'zones_schemas_base.dart';import 'zones_ssl_recommender.dart';/// A value that is one of: `ZonesBase`, `ZonesBase`, `ZonesCacheRulesAegis`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesDevelopmentMode`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesCacheRulesOriginH2MaxStreams`, `ZonesCacheRulesOriginMaxHttpVersion`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesSchemasBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesSslRecommender`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`, `ZonesBase`.
 sealed class ZonesSetting {const ZonesSetting();
 
 factory ZonesSetting.fromJson(Map<String, dynamic> json) {   if (ZonesBase.canParse(json)) {
     return ZonesSettingZonesBase(ZonesBase.fromJson(json));
   }
-  if (ZonesCacheRulesBase.canParse(json)) {
-    return ZonesSettingZonesCacheRulesBase(ZonesCacheRulesBase.fromJson(json));
+  if (ZonesCacheRulesAegis.canParse(json)) {
+    return ZonesSettingZonesCacheRulesAegis(ZonesCacheRulesAegis.fromJson(json));
+  }
+  if (ZonesDevelopmentMode.canParse(json)) {
+    return ZonesSettingZonesDevelopmentMode(ZonesDevelopmentMode.fromJson(json));
+  }
+  if (ZonesCacheRulesOriginH2MaxStreams.canParse(json)) {
+    return ZonesSettingZonesCacheRulesOriginH2MaxStreams(ZonesCacheRulesOriginH2MaxStreams.fromJson(json));
+  }
+  if (ZonesCacheRulesOriginMaxHttpVersion.canParse(json)) {
+    return ZonesSettingZonesCacheRulesOriginMaxHttpVersion(ZonesCacheRulesOriginMaxHttpVersion.fromJson(json));
   }
   if (ZonesSchemasBase.canParse(json)) {
     return ZonesSettingZonesSchemasBase(ZonesSchemasBase.fromJson(json));
@@ -31,15 +40,45 @@ final ZonesBase _value;
 @override int get hashCode { return _value.hashCode; } 
 @override String toString() { return 'ZonesSetting.zonesBase($_value)'; } 
  }
-final class ZonesSettingZonesCacheRulesBase extends ZonesSetting {const ZonesSettingZonesCacheRulesBase(this._value);
+final class ZonesSettingZonesCacheRulesAegis extends ZonesSetting {const ZonesSettingZonesCacheRulesAegis(this._value);
 
-final ZonesCacheRulesBase _value;
+final ZonesCacheRulesAegis _value;
 
-@override ZonesCacheRulesBase get value { return _value; } 
+@override ZonesCacheRulesAegis get value { return _value; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is ZonesSettingZonesCacheRulesBase && _value == other._value; } 
+    other is ZonesSettingZonesCacheRulesAegis && _value == other._value; } 
 @override int get hashCode { return _value.hashCode; } 
-@override String toString() { return 'ZonesSetting.zonesCacheRulesBase($_value)'; } 
+@override String toString() { return 'ZonesSetting.zonesCacheRulesAegis($_value)'; } 
+ }
+final class ZonesSettingZonesDevelopmentMode extends ZonesSetting {const ZonesSettingZonesDevelopmentMode(this._value);
+
+final ZonesDevelopmentMode _value;
+
+@override ZonesDevelopmentMode get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSettingZonesDevelopmentMode && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'ZonesSetting.zonesDevelopmentMode($_value)'; } 
+ }
+final class ZonesSettingZonesCacheRulesOriginH2MaxStreams extends ZonesSetting {const ZonesSettingZonesCacheRulesOriginH2MaxStreams(this._value);
+
+final ZonesCacheRulesOriginH2MaxStreams _value;
+
+@override ZonesCacheRulesOriginH2MaxStreams get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSettingZonesCacheRulesOriginH2MaxStreams && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'ZonesSetting.zonesCacheRulesOriginH2MaxStreams($_value)'; } 
+ }
+final class ZonesSettingZonesCacheRulesOriginMaxHttpVersion extends ZonesSetting {const ZonesSettingZonesCacheRulesOriginMaxHttpVersion(this._value);
+
+final ZonesCacheRulesOriginMaxHttpVersion _value;
+
+@override ZonesCacheRulesOriginMaxHttpVersion get value { return _value; } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is ZonesSettingZonesCacheRulesOriginMaxHttpVersion && _value == other._value; } 
+@override int get hashCode { return _value.hashCode; } 
+@override String toString() { return 'ZonesSetting.zonesCacheRulesOriginMaxHttpVersion($_value)'; } 
  }
 final class ZonesSettingZonesSchemasBase extends ZonesSetting {const ZonesSettingZonesSchemasBase(this._value);
 

@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_base_policy_resp.dart';/// The policies that Access applies to the application.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'access_infra_policy_resp.dart';/// The policies that Access applies to the application.
 final class AccessInfraAppRespEmbeddedPolicies {const AccessInfraAppRespEmbeddedPolicies({this.policies});
 
 factory AccessInfraAppRespEmbeddedPolicies.fromJson(Map<String, dynamic> json) { return AccessInfraAppRespEmbeddedPolicies(
-  policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessBasePolicyResp.fromJson(e as Map<String, dynamic>)).toList(),
+  policies: (json['policies'] as List<dynamic>?)?.map((e) => AccessInfraPolicyResp.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
 
-final List<AccessBasePolicyResp>? policies;
+final List<AccessInfraPolicyResp>? policies;
 
 Map<String, dynamic> toJson() { return {
   if (policies != null) 'policies': policies?.map((e) => e.toJson()).toList(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'policies'}.contains(key)); } 
-AccessInfraAppRespEmbeddedPolicies copyWith({List<AccessBasePolicyResp> Function()? policies}) { return AccessInfraAppRespEmbeddedPolicies(
+AccessInfraAppRespEmbeddedPolicies copyWith({List<AccessInfraPolicyResp> Function()? policies}) { return AccessInfraAppRespEmbeddedPolicies(
   policies: policies != null ? policies() : this.policies,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_authenticator_id.dart';import '../models/access_identifier.dart';import '../models/access_nonce.dart';import '../models/access_uuid.dart';import '../models/response_common3.dart';import '../models/zero_trust_users_create_user_request.dart';import '../models/zero_trust_users_update_user_request.dart';/// ZeroTrustUsersApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_active_session_response.dart';import '../models/access_active_sessions_response.dart';import '../models/access_authenticator_id.dart';import '../models/access_delete_authenticator_response.dart';import '../models/access_delete_user_response.dart';import '../models/access_failed_login_response.dart';import '../models/access_identifier.dart';import '../models/access_last_seen_identity_response.dart';import '../models/access_nonce.dart';import '../models/access_single_user_response.dart';import '../models/access_users_components_schemas_response_collection.dart';import '../models/access_uuid.dart';import '../models/zero_trust_users_create_user_request.dart';import '../models/zero_trust_users_update_user_request.dart';/// ZeroTrustUsersApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustUsersApi with ApiExecutor {const ZeroTrustUsersApi(this.api
 /// Gets a list of users for an account.
 ///
 /// `GET /accounts/{account_id}/access/users`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AccessUsersComponentsSchemasResponseCollection, Never>> zeroTrustUsersGetUsers({required AccessIdentifier accountId, String? name, String? email, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -45,7 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessUsersComponentsSchemasResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -54,7 +54,7 @@ return execute(
 /// Creates a new user.
 ///
 /// `POST /accounts/{account_id}/access/users`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersCreateUser({required AccessIdentifier accountId, required ZeroTrustUsersCreateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleUserResponse, Never>> zeroTrustUsersCreateUser({required AccessIdentifier accountId, required ZeroTrustUsersCreateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -68,7 +68,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -77,7 +77,7 @@ return execute(
 /// Gets a specific user for an account.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleUserResponse, Never>> zeroTrustUsersGetUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -89,7 +89,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -98,7 +98,7 @@ return execute(
 /// Updates a specific user's name for an account. Requires the user's current email as confirmation (email cannot be changed).
 ///
 /// `PUT /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersUpdateUser({required AccessUuid userId, required AccessIdentifier accountId, required ZeroTrustUsersUpdateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSingleUserResponse, Never>> zeroTrustUsersUpdateUser({required AccessUuid userId, required AccessIdentifier accountId, required ZeroTrustUsersUpdateUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -112,7 +112,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessSingleUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -121,7 +121,7 @@ return execute(
 /// Deletes a specific user for an account. This will also revoke any active seats and tokens for the user.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessDeleteUserResponse, Never>> zeroTrustUsersDeleteUser({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -133,7 +133,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessDeleteUserResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -142,7 +142,7 @@ return execute(
 /// Get active sessions for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSessions({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessActiveSessionsResponse, Never>> zeroTrustUsersGetActiveSessions({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -154,7 +154,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessActiveSessionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -163,7 +163,7 @@ return execute(
 /// Get an active session for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/active_sessions/{nonce}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetActiveSession({required AccessUuid userId, required AccessIdentifier accountId, required AccessNonce nonce, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessActiveSessionResponse, Never>> zeroTrustUsersGetActiveSession({required AccessUuid userId, required AccessIdentifier accountId, required AccessNonce nonce, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -175,7 +175,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessActiveSessionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -184,7 +184,7 @@ return execute(
 /// Get all failed login attempts for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/failed_logins`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetFailedLogins({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessFailedLoginResponse, Never>> zeroTrustUsersGetFailedLogins({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -196,7 +196,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessFailedLoginResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -205,7 +205,7 @@ return execute(
 /// Get last seen identity for a single user.
 ///
 /// `GET /accounts/{account_id}/access/users/{user_id}/last_seen_identity`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersGetLastSeenIdentity({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessLastSeenIdentityResponse, Never>> zeroTrustUsersGetLastSeenIdentity({required AccessUuid userId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -217,7 +217,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessLastSeenIdentityResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -226,7 +226,7 @@ return execute(
 /// Deletes a specific MFA device for a user. This action is only available if MFA is turned on for the organization.
 ///
 /// `DELETE /accounts/{account_id}/access/users/{user_id}/mfa_authenticators/{authenticator_id}`
-Future<ApiResult<ResponseCommon3, Never>> zeroTrustUsersDeleteMfaAuthenticator({required AccessUuid userId, required AccessIdentifier accountId, required AccessAuthenticatorId authenticatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessDeleteAuthenticatorResponse, Never>> zeroTrustUsersDeleteMfaAuthenticator({required AccessUuid userId, required AccessIdentifier accountId, required AccessAuthenticatorId authenticatorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -238,7 +238,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessDeleteAuthenticatorResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,20 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_contents.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';/// URL-friendly version of the PAC file name.
-extension type const ZeroTrustGatewaySlug(String value) {
-factory ZeroTrustGatewaySlug.fromJson(String json) => ZeroTrustGatewaySlug(json);
-
-String toJson() => value;
-
-}
-/// Unique URL to download the PAC file.
-extension type const ZeroTrustGatewayUrl(String value) {
-factory ZeroTrustGatewayUrl.fromJson(String json) => ZeroTrustGatewayUrl(json);
-
-String toJson() => value;
-
-}
-final class ZeroTrustGatewayPacfile {const ZeroTrustGatewayPacfile({this.contents, this.createdAt, this.description, this.id, this.name, this.slug, this.updatedAt, this.url, });
+import 'zero_trust_gateway_components_schemas_uuid.dart';import 'zero_trust_gateway_contents.dart';import 'zero_trust_gateway_pacfiles_components_schemas_description.dart';import 'zero_trust_gateway_pacfiles_components_schemas_name.dart';import 'zero_trust_gateway_read_only_timestamp.dart';import 'zero_trust_gateway_slug.dart';import 'zero_trust_gateway_url.dart';final class ZeroTrustGatewayPacfile {const ZeroTrustGatewayPacfile({this.contents, this.createdAt, this.description, this.id, this.name, this.slug, this.updatedAt, this.url, });
 
 factory ZeroTrustGatewayPacfile.fromJson(Map<String, dynamic> json) { return ZeroTrustGatewayPacfile(
   contents: json['contents'] != null ? ZeroTrustGatewayContents.fromJson(json['contents'] as String) : null,

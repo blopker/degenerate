@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/snippets_page.dart';import '../models/snippets_per_page.dart';import '../models/snippets_response.dart';import '../models/snippets_snippet_name.dart';import '../models/snippets_zone_id.dart';import '../models/update_zone_snippet_request.dart';import '../models/update_zone_snippet_rules_request.dart';/// ZoneSnippetsApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/list_zone_snippets_response.dart';import '../models/snippets_page.dart';import '../models/snippets_per_page.dart';import '../models/snippets_response.dart';import '../models/snippets_snippet_name.dart';import '../models/snippets_zone_id.dart';import '../models/update_zone_snippet_request.dart';import '../models/update_zone_snippet_rules_request.dart';/// ZoneSnippetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZoneSnippetsApi with ApiExecutor {const ZoneSnippetsApi(this.apiConf
 /// Fetches all snippets belonging to the zone.
 ///
 /// `GET /zones/{zone_id}/snippets`
-Future<ApiResult<SnippetsResponse, Never>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListZoneSnippetsResponse, Never>> listZoneSnippets({required SnippetsZoneId zoneId, SnippetsPage? page, SnippetsPerPage? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -36,7 +36,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return SnippetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListZoneSnippetsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

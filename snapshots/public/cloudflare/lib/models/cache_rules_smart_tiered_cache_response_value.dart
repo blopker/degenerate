@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cache_rules_base.dart';final class CacheRulesSmartTieredCacheResponseValue {const CacheRulesSmartTieredCacheResponseValue({this.result});
+import 'cache_rules_smart_tiered_cache_response_value_result.dart';final class CacheRulesSmartTieredCacheResponseValue {const CacheRulesSmartTieredCacheResponseValue({this.result});
 
 factory CacheRulesSmartTieredCacheResponseValue.fromJson(Map<String, dynamic> json) { return CacheRulesSmartTieredCacheResponseValue(
-  result: json['result'] != null ? CacheRulesBase.fromJson(json['result'] as Map<String, dynamic>) : null,
+  result: json['result'] != null ? CacheRulesSmartTieredCacheResponseValueResult.fromJson(json['result'] as Map<String, dynamic>) : null,
 ); }
 
-final CacheRulesBase? result;
+final CacheRulesSmartTieredCacheResponseValueResult? result;
 
 Map<String, dynamic> toJson() { return {
   if (result != null) 'result': result?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'result'}.contains(key)); } 
-CacheRulesSmartTieredCacheResponseValue copyWith({CacheRulesBase Function()? result}) { return CacheRulesSmartTieredCacheResponseValue(
+CacheRulesSmartTieredCacheResponseValue copyWith({CacheRulesSmartTieredCacheResponseValueResult Function()? result}) { return CacheRulesSmartTieredCacheResponseValue(
   result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

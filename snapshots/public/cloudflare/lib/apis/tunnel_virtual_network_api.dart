@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_virtual_network_create_a_virtual_network_request.dart';import '../models/tunnel_virtual_network_get_request.dart';import '../models/tunnel_virtual_network_id.dart';import '../models/tunnel_virtual_network_name.dart';import '../models/tunnel_virtual_network_update_request.dart';/// TunnelVirtualNetworkApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_virtual_network_create_a_virtual_network_request.dart';import '../models/tunnel_virtual_network_get_request.dart';import '../models/tunnel_virtual_network_id.dart';import '../models/tunnel_virtual_network_name.dart';import '../models/tunnel_virtual_network_update_request.dart';import '../models/tunnel_vnet_response_collection.dart';/// TunnelVirtualNetworkApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TunnelVirtualNetworkApi with ApiExecutor {const TunnelVirtualNetwork
 /// Lists and filters virtual networks in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/virtual_networks`
-Future<ApiResult<ResponseCommon69, Never>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelVnetResponseCollection, Never>> tunnelVirtualNetworkListVirtualNetworks({required TunnelAccountId accountId, TunnelVirtualNetworkId? id, TunnelVirtualNetworkName? name, bool? isDefault, bool? isDefaultNetwork, bool? isDeleted, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toString();
@@ -45,7 +45,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelVnetResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

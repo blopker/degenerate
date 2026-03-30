@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common66.dart';import '../models/stream_account_identifier.dart';import '../models/stream_asc.dart';import '../models/stream_creator.dart';import '../models/stream_direct_upload_request.dart';import '../models/stream_direct_user.dart';import '../models/stream_end.dart';import '../models/stream_identifier.dart';import '../models/stream_include_counts.dart';import '../models/stream_media_state.dart';import '../models/stream_search.dart';import '../models/stream_signed_token_request.dart';import '../models/stream_start.dart';import '../models/stream_tus_resumable.dart';import '../models/stream_type.dart';import '../models/stream_upload_length.dart';import '../models/stream_upload_metadata.dart';import '../models/stream_video_copy_request.dart';import '../models/stream_video_name.dart';import '../models/stream_video_update.dart';/// StreamVideosApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/stream_account_identifier.dart';import '../models/stream_asc.dart';import '../models/stream_creator.dart';import '../models/stream_direct_upload_request.dart';import '../models/stream_direct_upload_response.dart';import '../models/stream_direct_user.dart';import '../models/stream_end.dart';import '../models/stream_identifier.dart';import '../models/stream_include_counts.dart';import '../models/stream_media_state.dart';import '../models/stream_search.dart';import '../models/stream_signed_token_request.dart';import '../models/stream_signed_token_response.dart';import '../models/stream_start.dart';import '../models/stream_storage_use_response.dart';import '../models/stream_tus_resumable.dart';import '../models/stream_type.dart';import '../models/stream_upload_length.dart';import '../models/stream_upload_metadata.dart';import '../models/stream_video_copy_request.dart';import '../models/stream_video_name.dart';import '../models/stream_video_response_collection.dart';import '../models/stream_video_response_single.dart';import '../models/stream_video_update.dart';/// StreamVideosApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class StreamVideosApi with ApiExecutor {const StreamVideosApi(this.apiConf
 /// Lists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.
 ///
 /// `GET /accounts/{account_id}/stream`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosListVideos({required StreamAccountIdentifier accountId, StreamMediaState? status, StreamCreator? creator, StreamType? type, StreamAsc? asc, StreamVideoName? videoName, StreamSearch? search, StreamStart? start, StreamEnd? end, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<StreamVideoResponseCollection, Never>> streamVideosListVideos({required StreamAccountIdentifier accountId, StreamMediaState? status, StreamCreator? creator, StreamType? type, StreamAsc? asc, StreamVideoName? videoName, StreamSearch? search, StreamStart? start, StreamEnd? end, StreamIncludeCounts? includeCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -57,7 +57,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamVideoResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +101,7 @@ return execute(
 /// Fetches details for a single video.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosRetrieveVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideoResponseSingle, Never>> streamVideosRetrieveVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,7 +113,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamVideoResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -122,7 +122,7 @@ return execute(
 /// Edit details for a single video.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosUpdateVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamVideoUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideoResponseSingle, Never>> streamVideosUpdateVideoDetails({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamVideoUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -136,7 +136,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamVideoResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -185,7 +185,7 @@ return execute(
 /// Creates a signed URL token for a video. If a body is not provided in the request, a token is created with default values.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/token`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosCreateSignedUrlTokensForVideos({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamSignedTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamSignedTokenResponse, Never>> streamVideosCreateSignedUrlTokensForVideos({required StreamIdentifier identifier, required StreamAccountIdentifier accountId, required StreamSignedTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -199,7 +199,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamSignedTokenResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -208,7 +208,7 @@ return execute(
 /// Uploads a video to Stream from a provided URL.
 ///
 /// `POST /accounts/{account_id}/stream/copy`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamVideoCopyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamVideoResponseSingle, Never>> streamVideosUploadVideosFromAUrl({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamVideoCopyRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
   headers['Upload-Creator'] = uploadCreator.toString();
@@ -225,7 +225,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamVideoResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -234,7 +234,7 @@ return execute(
 /// Creates a direct upload that allows video uploads without an API key.
 ///
 /// `POST /accounts/{account_id}/stream/direct_upload`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDirectUploadResponse, Never>> streamVideosUploadVideosViaDirectUploadUrLs({required StreamAccountIdentifier accountId, StreamCreator? uploadCreator, required StreamDirectUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (uploadCreator != null) {
   headers['Upload-Creator'] = uploadCreator.toString();
@@ -251,7 +251,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamDirectUploadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -260,7 +260,7 @@ return execute(
 /// Returns information about an account's storage use.
 ///
 /// `GET /accounts/{account_id}/stream/storage-usage`
-Future<ApiResult<ResponseCommon66, Never>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<StreamStorageUseResponse, Never>> streamVideosStorageUsage({required StreamAccountIdentifier accountId, StreamCreator? creator, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (creator != null) {
   queryParameters['creator'] = creator.toString();
@@ -280,7 +280,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamStorageUseResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

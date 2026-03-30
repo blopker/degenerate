@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dns_settings_dns_settings_base.dart';final class DnsSettingsAccountSettings {const DnsSettingsAccountSettings({required this.zoneDefaults});
+import 'dns_settings_dns_settings_account_response.dart';final class DnsSettingsAccountSettings {const DnsSettingsAccountSettings({required this.zoneDefaults});
 
 factory DnsSettingsAccountSettings.fromJson(Map<String, dynamic> json) { return DnsSettingsAccountSettings(
-  zoneDefaults: DnsSettingsDnsSettingsBase.fromJson(json['zone_defaults'] as Map<String, dynamic>),
+  zoneDefaults: DnsSettingsDnsSettingsAccountResponse.fromJson(json['zone_defaults'] as Map<String, dynamic>),
 ); }
 
-final DnsSettingsDnsSettingsBase zoneDefaults;
+final DnsSettingsDnsSettingsAccountResponse zoneDefaults;
 
 Map<String, dynamic> toJson() { return {
   'zone_defaults': zoneDefaults.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('zone_defaults'); } 
-DnsSettingsAccountSettings copyWith({DnsSettingsDnsSettingsBase? zoneDefaults}) { return DnsSettingsAccountSettings(
+DnsSettingsAccountSettings copyWith({DnsSettingsDnsSettingsAccountResponse? zoneDefaults}) { return DnsSettingsAccountSettings(
   zoneDefaults: zoneDefaults ?? this.zoneDefaults,
 ); } 
 @override bool operator ==(Object other) { return identical(this, other) ||

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/failure.dart';import '../models/mq_consumer_request.dart';import '../models/mq_identifier.dart';import '../models/mq_queue.dart';import '../models/mq_queue_batch.dart';import '../models/mq_queue_message.dart';import '../models/queues_ack_messages_request.dart';import '../models/queues_create_request.dart';import '../models/queues_pull_messages_request.dart';import '../models/queues_purge_request.dart';import '../models/subscriptions_create_request.dart';import '../models/subscriptions_list_direction.dart';import '../models/subscriptions_list_order.dart';import '../models/subscriptions_patch_request.dart';import '../models/success.dart';/// QueueApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/failure.dart';import '../models/mq_consumer_request.dart';import '../models/mq_identifier.dart';import '../models/mq_queue.dart';import '../models/mq_queue_batch.dart';import '../models/mq_queue_message.dart';import '../models/queues_ack_messages_request.dart';import '../models/queues_ack_messages_response.dart';import '../models/queues_create_consumer_response.dart';import '../models/queues_create_request.dart';import '../models/queues_create_response.dart';import '../models/queues_get_consumer_response.dart';import '../models/queues_get_response.dart';import '../models/queues_list_consumers_response.dart';import '../models/queues_list_response.dart';import '../models/queues_pull_messages_request.dart';import '../models/queues_pull_messages_response.dart';import '../models/queues_purge_get_response.dart';import '../models/queues_purge_request.dart';import '../models/queues_purge_response.dart';import '../models/queues_update_consumer_response.dart';import '../models/queues_update_partial_response.dart';import '../models/queues_update_response.dart';import '../models/subscriptions_create_request.dart';import '../models/subscriptions_create_response.dart';import '../models/subscriptions_delete_response.dart';import '../models/subscriptions_get_response.dart';import '../models/subscriptions_list_direction.dart';import '../models/subscriptions_list_order.dart';import '../models/subscriptions_list_response.dart';import '../models/subscriptions_patch_request.dart';import '../models/subscriptions_patch_response.dart';import '../models/success.dart';/// QueueApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class QueueApi with ApiExecutor {const QueueApi(this.apiConfig);
 /// Get a paginated list of event subscriptions with optional sorting and filtering
 ///
 /// `GET /accounts/{account_id}/event_subscriptions/subscriptions`
-Future<ApiResult<Success, Never>> subscriptionsList({required MqIdentifier accountId, int? page, int? perPage, SubscriptionsListOrder? order, SubscriptionsListDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SubscriptionsListResponse, Never>> subscriptionsList({required MqIdentifier accountId, int? page, int? perPage, SubscriptionsListOrder? order, SubscriptionsListDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SubscriptionsListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Create a new event subscription for a queue
 ///
 /// `POST /accounts/{account_id}/event_subscriptions/subscriptions`
-Future<ApiResult<Success, Failure>> subscriptionsCreate({required MqIdentifier accountId, required SubscriptionsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionsCreateResponse, Failure>> subscriptionsCreate({required MqIdentifier accountId, required SubscriptionsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SubscriptionsCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -77,7 +77,7 @@ return execute(
 /// Get details about an existing event subscription
 ///
 /// `GET /accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}`
-Future<ApiResult<Success, Failure>> subscriptionsGet({required MqIdentifier accountId, required MqIdentifier subscriptionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionsGetResponse, Failure>> subscriptionsGet({required MqIdentifier accountId, required MqIdentifier subscriptionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -89,7 +89,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SubscriptionsGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -101,7 +101,7 @@ return execute(
 /// Update an existing event subscription
 ///
 /// `PATCH /accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}`
-Future<ApiResult<Success, Failure>> subscriptionsPatch({required MqIdentifier accountId, required MqIdentifier subscriptionId, required SubscriptionsPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionsPatchResponse, Failure>> subscriptionsPatch({required MqIdentifier accountId, required MqIdentifier subscriptionId, required SubscriptionsPatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +115,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SubscriptionsPatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return Failure.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -127,7 +127,7 @@ return execute(
 /// Delete an existing event subscription
 ///
 /// `DELETE /accounts/{account_id}/event_subscriptions/subscriptions/{subscription_id}`
-Future<ApiResult<Success, Never>> subscriptionsDelete({required MqIdentifier accountId, required MqIdentifier subscriptionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SubscriptionsDeleteResponse, Never>> subscriptionsDelete({required MqIdentifier accountId, required MqIdentifier subscriptionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -139,7 +139,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SubscriptionsDeleteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -148,7 +148,7 @@ return execute(
 /// Returns the queues owned by an account.
 ///
 /// `GET /accounts/{account_id}/queues`
-Future<ApiResult<Success, Never>> queuesList({required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesListResponse, Never>> queuesList({required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -160,7 +160,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesListResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -169,7 +169,7 @@ return execute(
 /// Create a new queue
 ///
 /// `POST /accounts/{account_id}/queues`
-Future<ApiResult<Success, Never>> queuesCreate({required MqIdentifier accountId, QueuesCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesCreateResponse, Never>> queuesCreate({required MqIdentifier accountId, QueuesCreateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -183,7 +183,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesCreateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -192,7 +192,7 @@ return execute(
 /// Get details about a specific queue.
 ///
 /// `GET /accounts/{account_id}/queues/{queue_id}`
-Future<ApiResult<Success, Never>> queuesGet({required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesGetResponse, Never>> queuesGet({required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -204,7 +204,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -213,7 +213,7 @@ return execute(
 /// Updates a Queue. Note that this endpoint does not support partial updates. If successful, the Queue's configuration is overwritten with the supplied configuration.
 ///
 /// `PUT /accounts/{account_id}/queues/{queue_id}`
-Future<ApiResult<Success, Never>> queuesUpdate({required MqIdentifier queueId, required MqIdentifier accountId, MqQueue? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesUpdateResponse, Never>> queuesUpdate({required MqIdentifier queueId, required MqIdentifier accountId, MqQueue? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -227,7 +227,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesUpdateResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -236,7 +236,7 @@ return execute(
 /// Updates a Queue.
 ///
 /// `PATCH /accounts/{account_id}/queues/{queue_id}`
-Future<ApiResult<Success, Never>> queuesUpdatePartial({required MqIdentifier queueId, required MqIdentifier accountId, MqQueue? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesUpdatePartialResponse, Never>> queuesUpdatePartial({required MqIdentifier queueId, required MqIdentifier accountId, MqQueue? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -250,7 +250,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesUpdatePartialResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -280,7 +280,7 @@ return execute(
 /// Returns the consumers for a Queue
 ///
 /// `GET /accounts/{account_id}/queues/{queue_id}/consumers`
-Future<ApiResult<Success, Never>> queuesListConsumers({required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesListConsumersResponse, Never>> queuesListConsumers({required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -292,7 +292,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesListConsumersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -301,7 +301,7 @@ return execute(
 /// Creates a new consumer for a Queue
 ///
 /// `POST /accounts/{account_id}/queues/{queue_id}/consumers`
-Future<ApiResult<Success, Never>> queuesCreateConsumer({required MqIdentifier queueId, required MqIdentifier accountId, MqConsumerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesCreateConsumerResponse, Never>> queuesCreateConsumer({required MqIdentifier queueId, required MqIdentifier accountId, MqConsumerRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -315,7 +315,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesCreateConsumerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -324,7 +324,7 @@ return execute(
 /// Fetches the consumer for a queue by consumer id
 ///
 /// `GET /accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}`
-Future<ApiResult<Success, Never>> queuesGetConsumer({required MqIdentifier consumerId, required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesGetConsumerResponse, Never>> queuesGetConsumer({required MqIdentifier consumerId, required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -336,7 +336,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesGetConsumerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -345,7 +345,7 @@ return execute(
 /// Updates the consumer for a queue, or creates one if it does not exist.
 ///
 /// `PUT /accounts/{account_id}/queues/{queue_id}/consumers/{consumer_id}`
-Future<ApiResult<Success, Never>> queuesUpdateConsumer({required MqIdentifier consumerId, required MqIdentifier queueId, required MqIdentifier accountId, required MqConsumerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesUpdateConsumerResponse, Never>> queuesUpdateConsumer({required MqIdentifier consumerId, required MqIdentifier queueId, required MqIdentifier accountId, required MqConsumerRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -359,7 +359,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesUpdateConsumerResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -412,7 +412,7 @@ return execute(
 /// Acknowledge + Retry messages from a Queue
 ///
 /// `POST /accounts/{account_id}/queues/{queue_id}/messages/ack`
-Future<ApiResult<Success, Never>> queuesAckMessages({required MqIdentifier queueId, required MqIdentifier accountId, QueuesAckMessagesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesAckMessagesResponse, Never>> queuesAckMessages({required MqIdentifier queueId, required MqIdentifier accountId, QueuesAckMessagesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -426,7 +426,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesAckMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -458,7 +458,7 @@ return execute(
 /// Pull a batch of messages from a Queue
 ///
 /// `POST /accounts/{account_id}/queues/{queue_id}/messages/pull`
-Future<ApiResult<Success, Never>> queuesPullMessages({required MqIdentifier queueId, required MqIdentifier accountId, QueuesPullMessagesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesPullMessagesResponse, Never>> queuesPullMessages({required MqIdentifier queueId, required MqIdentifier accountId, QueuesPullMessagesRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -472,7 +472,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesPullMessagesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -481,7 +481,7 @@ return execute(
 /// Get details about a Queue's purge status.
 ///
 /// `GET /accounts/{account_id}/queues/{queue_id}/purge`
-Future<ApiResult<Success, Never>> queuesPurgeGet({required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesPurgeGetResponse, Never>> queuesPurgeGet({required MqIdentifier queueId, required MqIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -493,7 +493,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesPurgeGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -502,7 +502,7 @@ return execute(
 /// Deletes all messages from the Queue.
 ///
 /// `POST /accounts/{account_id}/queues/{queue_id}/purge`
-Future<ApiResult<Success, Never>> queuesPurge({required MqIdentifier queueId, required MqIdentifier accountId, QueuesPurgeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<QueuesPurgeResponse, Never>> queuesPurge({required MqIdentifier queueId, required MqIdentifier accountId, QueuesPurgeRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -516,7 +516,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Success.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return QueuesPurgeResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

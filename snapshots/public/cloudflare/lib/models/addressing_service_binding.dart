@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'addressing_cidr.dart';import 'addressing_provisioning.dart';import 'addressing_service_binding_identifier.dart';import 'addressing_service_identifier.dart';/// Name of a service running on the Cloudflare network
-extension type const AddressingServiceName(String value) {
-factory AddressingServiceName.fromJson(String json) => AddressingServiceName(json);
-
-String toJson() => value;
-
-}
-final class AddressingServiceBinding {const AddressingServiceBinding({this.cidr, this.id, this.provisioning, this.serviceId, this.serviceName, });
+import 'addressing_cidr.dart';import 'addressing_provisioning.dart';import 'addressing_service_binding_identifier.dart';import 'addressing_service_identifier.dart';import 'addressing_service_name.dart';final class AddressingServiceBinding {const AddressingServiceBinding({this.cidr, this.id, this.provisioning, this.serviceId, this.serviceName, });
 
 factory AddressingServiceBinding.fromJson(Map<String, dynamic> json) { return AddressingServiceBinding(
   cidr: json['cidr'] != null ? AddressingCidr.fromJson(json['cidr'] as String) : null,

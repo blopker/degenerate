@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'firewall_identifier.dart';/// The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a 'block' action will win over a 'challenge' action).
+import 'firewall_identifier.dart';import 'firewall_status.dart';/// The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a 'block' action will win over a 'challenge' action).
 final class FirewallDetectionMode {const FirewallDetectionMode._(this.value);
 
 factory FirewallDetectionMode.fromJson(String json) { return switch (json) {
@@ -39,28 +39,6 @@ factory FirewallSchemasDescription.fromJson(String json) => FirewallSchemasDescr
 String toJson() => value;
 
 }
-/// When set to `active`, indicates that the WAF package will be applied to the zone.
-final class FirewallStatus {const FirewallStatus._(this.value);
-
-factory FirewallStatus.fromJson(String json) { return switch (json) {
-  'active' => active,
-  _ => FirewallStatus._(json),
-}; }
-
-static const FirewallStatus active = FirewallStatus._('active');
-
-static const List<FirewallStatus> values = [active];
-
-final String value;
-
-String toJson() { return value; } 
-/// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) { return identical(this, other) ||
-    other is FirewallStatus && other.value == value; } 
-@override int get hashCode { return value.hashCode; } 
-@override String toString() { return 'FirewallStatus($value)'; } 
- }
 final class FirewallPackageDefinition {const FirewallPackageDefinition({required this.description, required this.detectionMode, required this.id, required this.name, this.status, required this.zoneId, });
 
 factory FirewallPackageDefinition.fromJson(Map<String, dynamic> json) { return FirewallPackageDefinition(

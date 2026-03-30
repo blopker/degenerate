@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common80.dart';import '../models/worker_script_patch_settings_request.dart';import '../models/worker_script_post_subdomain_request.dart';import '../models/worker_script_put_content_request.dart';import '../models/worker_script_search_workers_order_by.dart';import '../models/worker_script_update_usage_model_request.dart';import '../models/worker_script_upload_worker_module_bindings_inherit.dart';import '../models/workers_create_assets_upload_session_object.dart';import '../models/workers_identifier.dart';import '../models/workers_multipart_script.dart';import '../models/workers_script_name.dart';import '../models/workers_script_settings_item.dart';import '../models/workers_secret.dart';import '../models/workers_secret_name.dart';import '../models/workers_secret_name_url_encoded.dart';/// WorkerScriptApi operations.
+import 'dart:async';import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_null_result.dart';import '../models/worker_get_script_secret_response.dart';import '../models/worker_list_script_secrets_response.dart';import '../models/worker_put_script_secret_response.dart';import '../models/worker_script_delete_subdomain_response.dart';import '../models/worker_script_get_subdomain_response.dart';import '../models/worker_script_patch_settings_request.dart';import '../models/worker_script_post_subdomain_request.dart';import '../models/worker_script_post_subdomain_response.dart';import '../models/worker_script_put_content_request.dart';import '../models/worker_script_search_workers_order_by.dart';import '../models/worker_script_search_workers_response.dart';import '../models/worker_script_update_usage_model_request.dart';import '../models/worker_script_upload_worker_module_bindings_inherit.dart';import '../models/workers_completed_upload_assets_response.dart';import '../models/workers_create_assets_upload_session_object.dart';import '../models/workers_create_assets_upload_session_response.dart';import '../models/workers_identifier.dart';import '../models/workers_multipart_script.dart';import '../models/workers_script_and_version_settings_response.dart';import '../models/workers_script_name.dart';import '../models/workers_script_response_collection.dart';import '../models/workers_script_response_single.dart';import '../models/workers_script_response_upload_single.dart';import '../models/workers_script_settings_item.dart';import '../models/workers_script_settings_response.dart';import '../models/workers_secret.dart';import '../models/workers_secret_name.dart';import '../models/workers_secret_name_url_encoded.dart';import '../models/workers_usage_model_response.dart';/// WorkerScriptApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,14 +13,14 @@ final class WorkerScriptApi with ApiExecutor {const WorkerScriptApi(this.apiConf
 /// Upload assets ahead of creating a Worker version.  To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/assets/upload`
-Future<ApiResult<ResponseCommon80, Never>> workerAssetsUpload({required WorkersIdentifier accountId, required bool base64, required Map<String,String> body, RequestOptions? options, }) async  { throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from Map<String, String>');
+Future<ApiResult<WorkersCompletedUploadAssetsResponse, Never>> workerAssetsUpload({required WorkersIdentifier accountId, required bool base64, required Map<String,String> body, RequestOptions? options, }) async  { throw UnsupportedError('Cannot encode non-JSON multipart/form-data request body from Map<String, String>');
  } 
 /// List Workers
 ///
 /// Fetch a list of uploaded workers.
 ///
 /// `GET /accounts/{account_id}/workers/scripts`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptListWorkers({required WorkersIdentifier accountId, String? tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersScriptResponseCollection, Never>> workerScriptListWorkers({required WorkersIdentifier accountId, String? tags, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (tags != null) {
   queryParameters['tags'] = tags;
@@ -40,7 +40,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -49,7 +49,7 @@ return execute(
 /// Search for Workers in an account.
 ///
 /// `GET /accounts/{account_id}/workers/scripts-search`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptSearchWorkers({required WorkersIdentifier accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkerScriptSearchWorkersResponse, Never>> workerScriptSearchWorkers({required WorkersIdentifier accountId, String? name, String? id, WorkerScriptSearchWorkersOrderBy? orderBy, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -81,7 +81,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerScriptSearchWorkersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -112,7 +112,7 @@ throw UnsupportedError('Cannot decode multipart/form-data response into Map<Stri
 /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required WorkersMultipartScript body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkersScriptResponseUploadSingle, Never>> workerScriptUploadWorkerModule({required WorkersIdentifier accountId, required WorkersScriptName scriptName, WorkerScriptUploadWorkerModuleBindingsInherit? bindingsInherit, required WorkersMultipartScript body, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bindingsInherit != null) {
   queryParameters['bindings_inherit'] = bindingsInherit.toJson();
@@ -138,7 +138,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptResponseUploadSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -147,7 +147,7 @@ return execute(
 /// Delete your worker. This call has no response body on a successful delete.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseNullResult, Never>> workerScriptDeleteWorker({required WorkersIdentifier accountId, required WorkersScriptName scriptName, bool? force, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (force != null) {
   queryParameters['force'] = force.toString();
@@ -167,7 +167,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResponseNullResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -176,7 +176,7 @@ return execute(
 /// Start uploading a collection of assets for use in a Worker version. To learn more about the direct uploads of assets, see https://developers.cloudflare.com/workers/static-assets/direct-upload/.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/assets-upload-session`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateCreateAssetsUploadSession({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersCreateAssetsUploadSessionObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersCreateAssetsUploadSessionResponse, Never>> workerScriptUpdateCreateAssetsUploadSession({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersCreateAssetsUploadSessionObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -190,7 +190,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersCreateAssetsUploadSessionResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -199,7 +199,7 @@ return execute(
 /// Put script content without touching config or metadata.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/content`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptResponseSingle, Never>> workerScriptPutContent({required WorkersIdentifier accountId, required WorkersScriptName scriptName, String? cfWorkerBodyPart, String? cfWorkerMainModulePart, required WorkerScriptPutContentRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (cfWorkerBodyPart != null) {
   headers['CF-WORKER-BODY-PART'] = cfWorkerBodyPart;
 }
@@ -223,7 +223,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -253,7 +253,7 @@ return execute(
 /// Get script-level settings when using [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions). Includes Logpush and Tail Consumers.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/script-settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsResponse, Never>> workerScriptSettingsGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -265,7 +265,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -274,7 +274,7 @@ return execute(
 /// Patch script-level settings when using [Worker Versions](https://developers.cloudflare.com/api/operations/worker-versions-list-versions). Including but not limited to Logpush and Tail Consumers.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/script-settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptSettingsPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersScriptSettingsItem body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptSettingsResponse, Never>> workerScriptSettingsPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersScriptSettingsItem body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -288,7 +288,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -297,7 +297,7 @@ return execute(
 /// List secrets bound to a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80, Never>> workerListScriptSecrets({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerListScriptSecretsResponse, Never>> workerListScriptSecrets({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -309,7 +309,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerListScriptSecretsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -318,7 +318,7 @@ return execute(
 /// Add a secret to a script.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/secrets`
-Future<ApiResult<ResponseCommon80, Never>> workerPutScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecret body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerPutScriptSecretResponse, Never>> workerPutScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecret body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -332,7 +332,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerPutScriptSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -341,7 +341,7 @@ return execute(
 /// Get a given secret binding (value omitted) on a script.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<WorkerGetScriptSecretResponse, Never>> workerGetScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (urlEncoded != null) {
   queryParameters['url_encoded'] = urlEncoded.toString();
@@ -361,7 +361,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerGetScriptSecretResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -370,7 +370,7 @@ return execute(
 /// Remove a secret from a script.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/secrets/{secret_name}`
-Future<ApiResult<ResponseCommon80, Never>> workerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResponseNullResult, Never>> workerDeleteScriptSecret({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersSecretName secretName, WorkersSecretNameUrlEncoded? urlEncoded, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (urlEncoded != null) {
   queryParameters['url_encoded'] = urlEncoded.toString();
@@ -390,7 +390,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResponseNullResult.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -399,7 +399,7 @@ return execute(
 /// Get metadata and config, such as bindings or usage model.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptAndVersionSettingsResponse, Never>> workerScriptGetSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -411,7 +411,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptAndVersionSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -420,7 +420,7 @@ return execute(
 /// Patch metadata or config, such as bindings or usage model.
 ///
 /// `PATCH /accounts/{account_id}/workers/scripts/{script_name}/settings`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersScriptAndVersionSettingsResponse, Never>> workerScriptPatchSettings({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPatchSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PATCH',
@@ -437,7 +437,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersScriptAndVersionSettingsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -446,7 +446,7 @@ return execute(
 /// Get if the Worker is available on the workers.dev subdomain.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptGetSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerScriptGetSubdomainResponse, Never>> workerScriptGetSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -458,7 +458,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerScriptGetSubdomainResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -467,7 +467,7 @@ return execute(
 /// Enable or disable the Worker on the workers.dev subdomain.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptPostSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPostSubdomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerScriptPostSubdomainResponse, Never>> workerScriptPostSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptPostSubdomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -481,7 +481,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerScriptPostSubdomainResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -490,7 +490,7 @@ return execute(
 /// Disable all workers.dev subdomains for a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/subdomain`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptDeleteSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerScriptDeleteSubdomainResponse, Never>> workerScriptDeleteSubdomain({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -502,7 +502,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkerScriptDeleteSubdomainResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -511,7 +511,7 @@ return execute(
 /// Fetches the Usage Model for a given Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/usage-model`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptFetchUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersUsageModelResponse, Never>> workerScriptFetchUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -523,7 +523,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersUsageModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -532,7 +532,7 @@ return execute(
 /// Updates the Usage Model for a given Worker. Requires a Workers Paid subscription.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/usage-model`
-Future<ApiResult<ResponseCommon80, Never>> workerScriptUpdateUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptUpdateUsageModelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersUsageModelResponse, Never>> workerScriptUpdateUsageModel({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkerScriptUpdateUsageModelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -546,7 +546,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return WorkersUsageModelResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

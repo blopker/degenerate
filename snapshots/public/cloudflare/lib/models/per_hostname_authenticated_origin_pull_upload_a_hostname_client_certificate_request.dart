@@ -1,13 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';/// The hostname certificate's private key.
-extension type const TlsCertificatesAndHostnamesSchemasPrivateKey(String value) {
-factory TlsCertificatesAndHostnamesSchemasPrivateKey.fromJson(String json) => TlsCertificatesAndHostnamesSchemasPrivateKey(json);
-
-String toJson() => value;
-
-}
-final class PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest {const PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest({required this.certificate, required this.privateKey, });
+import 'tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate.dart';import 'tls_certificates_and_hostnames_schemas_private_key.dart';final class PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest {const PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest({required this.certificate, required this.privateKey, });
 
 factory PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest.fromJson(Map<String, dynamic> json) { return PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest(
   certificate: TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasCertificate.fromJson(json['certificate'] as String),

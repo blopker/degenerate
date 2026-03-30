@@ -27,6 +27,9 @@ class IrMapper {
   /// Warnings collected during lowering (e.g., unknown schema fallbacks).
   final List<String> warnings;
 
+  /// Raw OpenAPI schemas for resolving $ref targets during allOf expansion.
+  Map<String, dynamic> _rawSchemas = {};
+
   /// Resolver for IrTypeRef nodes, created lazily over typeRegistry.
   late final TypeRefResolver _resolver = TypeRefResolver(typeRegistry);
 
@@ -42,6 +45,7 @@ class IrMapper {
   /// Each entry in [schemas] is a raw schema map keyed by its OpenAPI name.
   /// Returns the list of top-level IR types and populates [typeRegistry].
   List<IrType> lowerSchemas(Map<String, dynamic> schemas) {
+    _rawSchemas = schemas;
     final results = <IrType>[];
     for (final entry in schemas.entries) {
       final name = entry.key;
@@ -278,7 +282,40 @@ class IrMapper {
       final refName =
           _nameMapping[rawRefName] ??
           sanitizeDartName(toPascalCase(rawRefName));
-      {
+
+      // Check if the allOf added properties beyond what the $ref target has.
+      // If so, merge the ref's properties and treat as a full object.
+      final refSchema = _rawSchemas[rawRefName];
+      final refPropKeys = refSchema is Map<String, dynamic>
+          ? (refSchema['properties'] as Map<String, dynamic>?)?.keys.toSet() ??
+              <String>{}
+          : <String>{};
+      final flatProps =
+          flattened['properties'] as Map<String, dynamic>? ?? {};
+      final hasExtraProperties =
+          flatProps.keys.toSet().difference(refPropKeys).isNotEmpty;
+
+      // Don't expand discriminator variants — they should stay as refs so
+      // the sealed union emitter can wrap them correctly.
+      final isDiscriminatorVariant = discriminatorProperty != null;
+      if (hasExtraProperties && !isDiscriminatorVariant &&
+          refSchema is Map<String, dynamic>) {
+        // Merge ref target's properties into the flattened schema.
+        final refProps =
+            refSchema['properties'] as Map<String, dynamic>? ?? {};
+        flattened['properties'] = <String, dynamic>{
+          ...refProps,
+          ...flatProps,
+        };
+        final refReq =
+            (refSchema['required'] as List?)?.cast<String>() ?? [];
+        final localReq =
+            (flattened['required'] as List?)?.cast<String>() ?? [];
+        flattened['required'] = {...refReq, ...localReq}.toList();
+        flattened.remove(r'$ref');
+        // Falls through to object handling below.
+      } else {
+        // Pure ref alias or ref + description only — return type reference.
         final flatDescription =
             flattened['description'] as String? ?? description;
         final flatNullable = _isNullable(flattened) || nullable;

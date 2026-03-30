@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'true.dart';
+import 'new.dart';
 
 final class Proto {
   const Proto({
@@ -13,7 +13,7 @@ final class Proto {
   factory Proto.fromJson(Map<String, dynamic> json) {
     return Proto(
       constructor: json['constructor'] != null
-          ? True.fromJson(json['constructor'] as Map<String, dynamic>)
+          ? New.fromJson(json['constructor'] as Map<String, dynamic>)
           : null,
       $toString: json.containsKey('toString')
           ? json['toString'] as String
@@ -27,7 +27,7 @@ final class Proto {
     );
   }
 
-  final True? constructor;
+  final New? constructor;
 
   final String $toString;
 
@@ -56,7 +56,7 @@ final class Proto {
   }
 
   Proto copyWith({
-    True Function()? constructor,
+    New Function()? constructor,
     String Function()? $toString,
     int Function()? valueOf,
     Proto Function()? prototype,

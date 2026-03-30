@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'currency.dart';import 'schemas_zone.dart';/// The billing item action.
+import 'components_schemas_identifier.dart';import 'currency.dart';import 'schemas_zone.dart';/// The billing item action.
 extension type const Action(String value) {
 factory Action.fromJson(String json) => Action(json);
 
@@ -12,13 +12,6 @@ extension type const Amount(double value) {
 factory Amount.fromJson(num json) => Amount(json.toDouble());
 
 num toJson() => value;
-
-}
-/// Billing item identifier tag.
-extension type const ComponentsSchemasIdentifier(String value) {
-factory ComponentsSchemasIdentifier.fromJson(String json) => ComponentsSchemasIdentifier(json);
-
-String toJson() => value;
 
 }
 /// The billing item description.

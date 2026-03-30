@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_policy_init_req.dart';import '../models/access_policy_test_id.dart';import '../models/access_policy_tests_get_a_user_page_status.dart';import '../models/response_common3.dart';import '../models/response_common_failure4.dart';/// AccessPolicyTesterApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/access_identifier.dart';import '../models/access_policy_init_req.dart';import '../models/access_policy_init_resp.dart';import '../models/access_policy_test_id.dart';import '../models/access_policy_tests_get_a_user_page_status.dart';import '../models/access_policy_update_resp.dart';import '../models/access_policy_users_resp.dart';import '../models/response_common_failure4.dart';/// AccessPolicyTesterApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccessPolicyTesterApi with ApiExecutor {const AccessPolicyTesterApi(
 /// Starts an Access policy test.
 ///
 /// `POST /accounts/{account_id}/access/policy-tests`
-Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTests({required AccessIdentifier accountId, required AccessPolicyInitReq body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicyInitResp, ResponseCommonFailure4>> accessPolicyTests({required AccessIdentifier accountId, required AccessPolicyInitReq body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,7 +27,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessPolicyInitResp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -39,7 +39,7 @@ return execute(
 /// Fetches the current status of a given Access policy test.
 ///
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}`
-Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAnUpdate({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessPolicyUpdateResp, ResponseCommonFailure4>> accessPolicyTestsGetAnUpdate({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,7 +51,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessPolicyUpdateResp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
@@ -63,7 +63,7 @@ return execute(
 /// Fetches a single page of user results from an Access policy test.
 ///
 /// `GET /accounts/{account_id}/access/policy-tests/{policy_test_id}/users`
-Future<ApiResult<ResponseCommon3, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<AccessPolicyUsersResp, ResponseCommonFailure4>> accessPolicyTestsGetAUserPage({required AccessIdentifier accountId, required AccessPolicyTestId policyTestId, int? page, int? perPage, AccessPolicyTestsGetAUserPageStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -89,7 +89,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon3.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return AccessPolicyUsersResp.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
     return ResponseCommonFailure4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);

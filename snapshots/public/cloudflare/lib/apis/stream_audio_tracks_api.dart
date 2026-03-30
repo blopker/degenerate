@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common66.dart';import '../models/stream_account_identifier.dart';import '../models/stream_audio_identifier.dart';import '../models/stream_copy_audio_track.dart';import '../models/stream_edit_audio_track.dart';import '../models/stream_identifier.dart';/// StreamAudioTracksApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/stream_account_identifier.dart';import '../models/stream_add_audio_track_response.dart';import '../models/stream_audio_identifier.dart';import '../models/stream_copy_audio_track.dart';import '../models/stream_deleted_response.dart';import '../models/stream_edit_audio_track.dart';import '../models/stream_identifier.dart';import '../models/stream_list_audio_track_response.dart';/// StreamAudioTracksApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class StreamAudioTracksApi with ApiExecutor {const StreamAudioTracksApi(th
 /// Lists additional audio tracks on a video. Note this API will not return information for audio attached to the video upload.
 ///
 /// `GET /accounts/{account_id}/stream/{identifier}/audio`
-Future<ApiResult<ResponseCommon66, Never>> listAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamListAudioTrackResponse, Never>> listAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamListAudioTrackResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Edits additional audio tracks on a video. Editing the default status of an audio track to `true` will mark all other audio tracks on the video default status to `false`.
 ///
 /// `PATCH /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> editAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, required StreamEditAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamAddAudioTrackResponse, Never>> editAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, required StreamEditAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamAddAudioTrackResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Deletes additional audio tracks on a video. Deleting a default audio track is not allowed. You must assign another audio track as default prior to deletion.
 ///
 /// `DELETE /accounts/{account_id}/stream/{identifier}/audio/{audio_identifier}`
-Future<ApiResult<ResponseCommon66, Never>> deleteAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamDeletedResponse, Never>> deleteAudioTracks({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamAudioIdentifier audioIdentifier, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamDeletedResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return execute(
 /// Adds an additional audio track to a video using the provided audio track URL.
 ///
 /// `POST /accounts/{account_id}/stream/{identifier}/audio/copy`
-Future<ApiResult<ResponseCommon66, Never>> addAudioTrack({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamCopyAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamAddAudioTrackResponse, Never>> addAudioTrack({required StreamAccountIdentifier accountId, required StreamIdentifier identifier, required StreamCopyAudioTrack body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon66.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return StreamAddAudioTrackResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

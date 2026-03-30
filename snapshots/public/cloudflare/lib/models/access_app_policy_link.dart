@@ -1,14 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'access_schemas_uuid.dart';/// The order of execution for this policy. Must be unique for each policy within an app.
-/// 
-extension type const AccessPrecedence(int value) {
-factory AccessPrecedence.fromJson(num json) => AccessPrecedence(json.toInt());
-
-num toJson() => value;
-
-}
-/// A JSON that links a reusable policy to an application.
+import 'access_precedence.dart';import 'access_schemas_uuid.dart';/// A JSON that links a reusable policy to an application.
 final class AccessAppPolicyLink {const AccessAppPolicyLink({this.id, this.precedence, });
 
 factory AccessAppPolicyLink.fromJson(Map<String, dynamic> json) { return AccessAppPolicyLink(

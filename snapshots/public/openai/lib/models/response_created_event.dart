@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'model_response_properties.dart';/// The type of the event. Always `response.created`.
+import 'response.dart';/// The type of the event. Always `response.created`.
 /// 
 final class ResponseCreatedEventType {const ResponseCreatedEventType._(this.value);
 
@@ -29,7 +29,7 @@ final class ResponseCreatedEvent {const ResponseCreatedEvent({required this.type
 
 factory ResponseCreatedEvent.fromJson(Map<String, dynamic> json) { return ResponseCreatedEvent(
   type: ResponseCreatedEventType.fromJson(json['type'] as String),
-  response: ModelResponseProperties.fromJson(json['response'] as Map<String, dynamic>),
+  response: Response.fromJson(json['response'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
@@ -39,7 +39,7 @@ final ResponseCreatedEventType type;
 
 /// The response that was created.
 /// 
-final ModelResponseProperties response;
+final Response response;
 
 /// The sequence number for this event.
 final int sequenceNumber;
@@ -52,7 +52,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('response') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseCreatedEvent copyWith({ResponseCreatedEventType? type, ModelResponseProperties? response, int? sequenceNumber, }) { return ResponseCreatedEvent(
+ResponseCreatedEvent copyWith({ResponseCreatedEventType? type, Response? response, int? sequenceNumber, }) { return ResponseCreatedEvent(
   type: type ?? this.type,
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

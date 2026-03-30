@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_purge_identifier.dart';import '../models/response_common83.dart';import '../models/response_common85.dart';import '../models/response_single_id.dart';import '../models/zone_activation_identifier.dart';import '../models/zone_purge_request.dart';import '../models/zones0_patch_request.dart';import '../models/zones_get_direction.dart';import '../models/zones_get_match.dart';import '../models/zones_get_order.dart';import '../models/zones_get_status.dart';import '../models/zones_identifier.dart';import '../models/zones_post_request.dart';/// ZoneApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cache_purge_identifier.dart';import '../models/put_zones_zone_id_activation_check_response.dart';import '../models/response_single_id.dart';import '../models/response_single_id8.dart';import '../models/zone_activation_identifier.dart';import '../models/zone_purge_request.dart';import '../models/zones0_get_response.dart';import '../models/zones0_patch_request.dart';import '../models/zones0_patch_response.dart';import '../models/zones_get_direction.dart';import '../models/zones_get_match.dart';import '../models/zones_get_order.dart';import '../models/zones_get_response.dart';import '../models/zones_get_status.dart';import '../models/zones_identifier.dart';import '../models/zones_post_request.dart';import '../models/zones_post_response.dart';/// ZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -15,7 +15,7 @@ final class ZoneApi with ApiExecutor {const ZoneApi(this.apiConfig);
 /// 
 ///
 /// `GET /zones`
-Future<ApiResult<ResponseCommon85, Never>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ZonesGetResponse, Never>> zonesGet({String? name, ZonesGetStatus? status, String? accountId, String? accountName, double? page, double? perPage, ZonesGetOrder? order, ZonesGetDirection? direction, ZonesGetMatch? match, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -59,14 +59,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon85.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZonesGetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Create Zone
 ///
 /// `POST /zones`
-Future<ApiResult<ResponseCommon85, Never>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZonesPostResponse, Never>> zonesPost({required ZonesPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -80,14 +80,14 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon85.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ZonesPostResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
 /// Zone Details
 ///
 /// `GET /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85, Never>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Zones0GetResponse, Never>> zones0Get({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -99,7 +99,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon85.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Zones0GetResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -108,7 +108,7 @@ return execute(
 /// Edits a zone. Only one zone property can be changed at a time.
 ///
 /// `PATCH /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85, Never>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Zones0PatchResponse, Never>> zones0Patch({required ZonesIdentifier zoneId, required Zones0PatchRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,7 +122,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon85.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return Zones0PatchResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -131,7 +131,7 @@ return execute(
 /// Deletes an existing zone.
 ///
 /// `DELETE /zones/{zone_id}`
-Future<ApiResult<ResponseCommon85, Never>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId8, Never>> zones0Delete({required ZonesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -143,7 +143,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon85.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResponseSingleId8.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -154,7 +154,7 @@ return execute(
 /// Zones.
 ///
 /// `PUT /zones/{zone_id}/activation_check`
-Future<ApiResult<ResponseCommon83, Never>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PutZonesZoneIdActivationCheckResponse, Never>> putZonesZoneIdActivationCheck({required ZoneActivationIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -166,7 +166,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon83.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return PutZonesZoneIdActivationCheckResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

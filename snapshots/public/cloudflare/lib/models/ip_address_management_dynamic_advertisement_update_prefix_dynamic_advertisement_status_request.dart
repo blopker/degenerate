@@ -1,15 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-/// Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If
-/// `false`, the BGP route is withdrawn.
-/// 
-extension type const AddressingComponentsSchemasAdvertised(bool value) {
-factory AddressingComponentsSchemasAdvertised.fromJson(bool json) => AddressingComponentsSchemasAdvertised(json);
-
-bool toJson() => value;
-
-}
-final class IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest {const IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest({required this.advertised});
+import 'addressing_components_schemas_advertised.dart';final class IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest {const IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest({required this.advertised});
 
 factory IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest.fromJson(Map<String, dynamic> json) { return IpAddressManagementDynamicAdvertisementUpdatePrefixDynamicAdvertisementStatusRequest(
   advertised: AddressingComponentsSchemasAdvertised.fromJson(json['advertised'] as bool),

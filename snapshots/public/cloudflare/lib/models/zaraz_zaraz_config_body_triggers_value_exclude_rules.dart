@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'zaraz_click_listener_rule.dart';import 'zaraz_element_visibility_rule.dart';import 'zaraz_form_submission_rule.dart';import 'zaraz_load_rule.dart';import 'zaraz_scroll_depth_rule.dart';import 'zaraz_timer_rule.dart';import 'zaraz_variable_match_rule.dart';typedef ZarazZarazConfigBodyTriggersValueExcludeRules = OneOf7<ZarazLoadRule,ZarazClickListenerRule,ZarazTimerRule,ZarazFormSubmissionRule,ZarazVariableMatchRule,ZarazScrollDepthRule,ZarazElementVisibilityRule>;

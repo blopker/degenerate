@@ -1,3 +1,3 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_package_definition.dart';typedef FirewallPackage = OneOf2<FirewallPackageDefinition,FirewallPackageDefinition>;
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'firewall_anomaly_package.dart';import 'firewall_package_definition.dart';typedef FirewallPackage = OneOf2<FirewallPackageDefinition,FirewallAnomalyPackage>;

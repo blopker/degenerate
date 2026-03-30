@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common64.dart';import '../models/spectrum_applications_list_spectrum_applications_direction.dart';import '../models/spectrum_applications_list_spectrum_applications_order.dart';import '../models/spectrum_config_identifier.dart';import '../models/spectrum_config_update_app_config.dart';/// SpectrumApplicationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_single_id5.dart';import '../models/spectrum_applications_list_spectrum_applications_direction.dart';import '../models/spectrum_applications_list_spectrum_applications_order.dart';import '../models/spectrum_config_app_config_collection.dart';import '../models/spectrum_config_app_config_single.dart';import '../models/spectrum_config_identifier.dart';import '../models/spectrum_config_update_app_config.dart';/// SpectrumApplicationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class SpectrumApplicationsApi with ApiExecutor {const SpectrumApplications
 /// Retrieves a list of currently existing Spectrum applications inside a zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/apps`
-Future<ApiResult<ResponseCommon64, Never>> spectrumApplicationsListSpectrumApplications({required SpectrumConfigIdentifier zoneId, double? page, double? perPage, SpectrumApplicationsListSpectrumApplicationsDirection? direction, SpectrumApplicationsListSpectrumApplicationsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumConfigAppConfigCollection, Never>> spectrumApplicationsListSpectrumApplications({required SpectrumConfigIdentifier zoneId, double? page, double? perPage, SpectrumApplicationsListSpectrumApplicationsDirection? direction, SpectrumApplicationsListSpectrumApplicationsOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon64.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SpectrumConfigAppConfigCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Creates a new Spectrum application from a configuration using a name for the origin.
 ///
 /// `POST /zones/{zone_id}/spectrum/apps`
-Future<ApiResult<ResponseCommon64, Never>> spectrumApplicationsCreateSpectrumApplicationUsingANameForTheOrigin({required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpectrumConfigAppConfigSingle, Never>> spectrumApplicationsCreateSpectrumApplicationUsingANameForTheOrigin({required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon64.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SpectrumConfigAppConfigSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +74,7 @@ return execute(
 /// Gets the application configuration of a specific application inside a zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<ResponseCommon64, Never>> spectrumApplicationsGetSpectrumApplicationConfiguration({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpectrumConfigAppConfigSingle, Never>> spectrumApplicationsGetSpectrumApplicationConfiguration({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,7 +86,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon64.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SpectrumConfigAppConfigSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -95,7 +95,7 @@ return execute(
 /// Updates a previously existing application's configuration that uses a name for the origin.
 ///
 /// `PUT /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<ResponseCommon64, Never>> spectrumApplicationsUpdateSpectrumApplicationConfigurationUsingANameForTheOrigin({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SpectrumConfigAppConfigSingle, Never>> spectrumApplicationsUpdateSpectrumApplicationConfigurationUsingANameForTheOrigin({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, required SpectrumConfigUpdateAppConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,7 +109,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon64.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return SpectrumConfigAppConfigSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -118,7 +118,7 @@ return execute(
 /// Deletes a previously existing application.
 ///
 /// `DELETE /zones/{zone_id}/spectrum/apps/{app_id}`
-Future<ApiResult<ResponseCommon64, Never>> spectrumApplicationsDeleteSpectrumApplication({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId5, Never>> spectrumApplicationsDeleteSpectrumApplication({required SpectrumConfigIdentifier appId, required SpectrumConfigIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -130,7 +130,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon64.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResponseSingleId5.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

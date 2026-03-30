@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_client_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_status.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_name.dart';import '../models/tunnel_tunnel_type.dart';/// CloudflareTunnelApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/cloudflare_tunnel_create_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_create_a_warp_connector_tunnel_request.dart';import '../models/cloudflare_tunnel_get_a_cloudflare_tunnel_management_token_request.dart';import '../models/cloudflare_tunnel_update_a_cloudflare_tunnel_request.dart';import '../models/cloudflare_tunnel_update_a_warp_connector_tunnel_request.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_cfd_tunnel_response_collection.dart';import '../models/tunnel_client_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_status.dart';import '../models/tunnel_tunnel_connections_response.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_name.dart';import '../models/tunnel_tunnel_response_collection.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_warp_connector_response_collection.dart';/// CloudflareTunnelApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudflareTunnelApi with ApiExecutor {const CloudflareTunnelApi(this
 /// Lists and filters Cloudflare Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelCfdTunnelResponseCollection, Never>> cloudflareTunnelListCloudflareTunnels({required TunnelAccountId accountId, TunnelTunnelName? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name.toString();
@@ -63,7 +63,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelCfdTunnelResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -162,7 +162,7 @@ return execute(
 /// Fetches connection details for a Cloudflare Tunnel.
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/connections`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelTunnelConnectionsResponse, Never>> cloudflareTunnelListCloudflareTunnelConnections({required TunnelAccountId accountId, required TunnelTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -174,7 +174,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelTunnelConnectionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -279,7 +279,7 @@ return execute(
 /// Lists and filters all types of Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/tunnels`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelTunnelResponseCollection, Never>> cloudflareTunnelListAllTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, List<TunnelTunnelType>? tunTypes, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -334,7 +334,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelTunnelResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -343,7 +343,7 @@ return execute(
 /// Lists and filters Warp Connector Tunnels in an account.
 ///
 /// `GET /accounts/{account_id}/warp_connector`
-Future<ApiResult<ResponseCommon69, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelWarpConnectorResponseCollection, Never>> cloudflareTunnelListWarpConnectorTunnels({required TunnelAccountId accountId, String? name, bool? isDeleted, TunnelExistedAt? existedAt, TunnelTunnelId? uuid, DateTime? wasActiveAt, DateTime? wasInactiveAt, String? includePrefix, String? excludePrefix, TunnelStatus? status, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -393,7 +393,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelWarpConnectorResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common57.dart';import '../models/rum_create_rule_request.dart';import '../models/rum_create_site_request.dart';import '../models/rum_identifier.dart';import '../models/rum_modify_rules_request.dart';import '../models/rum_order_by.dart';import '../models/rum_page.dart';import '../models/rum_per_page.dart';import '../models/rum_rule_identifier.dart';import '../models/rum_ruleset_identifier.dart';import '../models/rum_toggle_rum_request.dart';import '../models/rum_update_site_request.dart';/// WebAnalyticsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/rum_create_rule_request.dart';import '../models/rum_create_site_request.dart';import '../models/rum_identifier.dart';import '../models/rum_modify_rules_request.dart';import '../models/rum_order_by.dart';import '../models/rum_page.dart';import '../models/rum_per_page.dart';import '../models/rum_rule_id_response_single.dart';import '../models/rum_rule_identifier.dart';import '../models/rum_rule_response_single.dart';import '../models/rum_rules_response_collection.dart';import '../models/rum_ruleset_identifier.dart';import '../models/rum_rum_site_response_single.dart';import '../models/rum_site_response_single.dart';import '../models/rum_site_tag_response_single.dart';import '../models/rum_sites_response_collection.dart';import '../models/rum_toggle_rum_request.dart';import '../models/rum_update_site_request.dart';/// WebAnalyticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class WebAnalyticsApi with ApiExecutor {const WebAnalyticsApi(this.apiConf
 /// Creates a new Web Analytics site.
 ///
 /// `POST /accounts/{account_id}/rum/site_info`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateSite({required RumIdentifier accountId, required RumCreateSiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSiteResponseSingle, Never>> webAnalyticsCreateSite({required RumIdentifier accountId, required RumCreateSiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -27,7 +27,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumSiteResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -36,7 +36,7 @@ return execute(
 /// Retrieves a Web Analytics site.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSiteResponseSingle, Never>> webAnalyticsGetSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumSiteResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Updates an existing Web Analytics site.
 ///
 /// `PUT /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateSite({required RumIdentifier accountId, required RumIdentifier siteId, required RumUpdateSiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSiteResponseSingle, Never>> webAnalyticsUpdateSite({required RumIdentifier accountId, required RumIdentifier siteId, required RumUpdateSiteRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -71,7 +71,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumSiteResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -80,7 +80,7 @@ return execute(
 /// Deletes an existing Web Analytics site.
 ///
 /// `DELETE /accounts/{account_id}/rum/site_info/{site_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumSiteTagResponseSingle, Never>> webAnalyticsDeleteSite({required RumIdentifier accountId, required RumIdentifier siteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumSiteTagResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +101,7 @@ return execute(
 /// Lists all Web Analytics sites of an account.
 ///
 /// `GET /accounts/{account_id}/rum/site_info/list`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<RumSitesResponseCollection, Never>> webAnalyticsListSites({required RumIdentifier accountId, RumPerPage? perPage, RumPage? page, RumOrderBy? orderBy, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -127,7 +127,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumSitesResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -136,7 +136,7 @@ return execute(
 /// Creates a new rule in a Web Analytics ruleset.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rule`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsCreateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumCreateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRuleResponseSingle, Never>> webAnalyticsCreateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumCreateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -150,7 +150,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -159,7 +159,7 @@ return execute(
 /// Updates a rule in a Web Analytics ruleset.
 ///
 /// `PUT /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsUpdateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, required RumCreateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRuleResponseSingle, Never>> webAnalyticsUpdateRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, required RumCreateRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -173,7 +173,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRuleResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -182,7 +182,7 @@ return execute(
 /// Deletes an existing rule from a Web Analytics ruleset.
 ///
 /// `DELETE /accounts/{account_id}/rum/v2/{ruleset_id}/rule/{rule_id}`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRuleIdResponseSingle, Never>> webAnalyticsDeleteRule({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumRuleIdentifier ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -194,7 +194,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRuleIdResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -203,7 +203,7 @@ return execute(
 /// Lists all the rules in a Web Analytics ruleset.
 ///
 /// `GET /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsListRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRulesResponseCollection, Never>> webAnalyticsListRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -215,7 +215,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRulesResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -224,7 +224,7 @@ return execute(
 /// Modifies one or more rules in a Web Analytics ruleset with a single request.
 ///
 /// `POST /accounts/{account_id}/rum/v2/{ruleset_id}/rules`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsModifyRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumModifyRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRulesResponseCollection, Never>> webAnalyticsModifyRules({required RumIdentifier accountId, required RumRulesetIdentifier rulesetId, required RumModifyRulesRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -238,7 +238,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRulesResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -247,7 +247,7 @@ return execute(
 /// Retrieves RUM status for a zone.
 ///
 /// `GET /zones/{zone_id}/settings/rum`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsGetRumStatus({required RumIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRumSiteResponseSingle, Never>> webAnalyticsGetRumStatus({required RumIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -259,7 +259,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRumSiteResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -268,7 +268,7 @@ return execute(
 /// Toggles RUM on/off for an existing zone.
 ///
 /// `PATCH /zones/{zone_id}/settings/rum`
-Future<ApiResult<ResponseCommon57, Never>> webAnalyticsToggleRum({required RumIdentifier zoneId, required RumToggleRumRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<RumRumSiteResponseSingle, Never>> webAnalyticsToggleRum({required RumIdentifier zoneId, required RumToggleRumRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -282,7 +282,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon57.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return RumRumSiteResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

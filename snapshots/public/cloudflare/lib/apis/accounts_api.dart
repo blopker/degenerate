@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_batch_move_accounts_request.dart';import '../models/accounts_batch_move_accounts_response.dart';import '../models/accounts_get_account_profile_response.dart';import '../models/accounts_list_account_organizations_response.dart';import '../models/accounts_list_accounts_direction.dart';import '../models/accounts_move_accounts_request.dart';import '../models/accounts_move_accounts_response.dart';import '../models/iam_account.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_create_account.dart';import '../models/profile.dart';import '../models/response_common35.dart';/// AccountsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/accounts_batch_move_accounts_request.dart';import '../models/accounts_batch_move_accounts_response.dart';import '../models/accounts_get_account_profile_response.dart';import '../models/accounts_list_account_organizations_response.dart';import '../models/accounts_list_accounts_direction.dart';import '../models/accounts_move_accounts_request.dart';import '../models/accounts_move_accounts_response.dart';import '../models/iam_account.dart';import '../models/iam_common_components_schemas_identifier.dart';import '../models/iam_create_account.dart';import '../models/iam_response_collection_accounts.dart';import '../models/iam_response_single_account.dart';import '../models/profile.dart';import '../models/response_single_id4.dart';/// AccountsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AccountsApi with ApiExecutor {const AccountsApi(this.apiConfig);
 /// List all accounts you have ownership or verified access to.
 ///
 /// `GET /accounts`
-Future<ApiResult<ResponseCommon35, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<IamResponseCollectionAccounts, Never>> accountsListAccounts({String? name, double? page, double? perPage, AccountsListAccountsDirection? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamResponseCollectionAccounts.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Create an account (only available for tenant admins at this time)
 ///
 /// `POST /accounts`
-Future<ApiResult<ResponseCommon35, Never>> accountCreation({required IamCreateAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResponseSingleAccount, Never>> accountCreation({required IamCreateAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamResponseSingleAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +74,7 @@ return execute(
 /// Get information about a specific account that you are a member of.
 ///
 /// `GET /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResponseSingleAccount, Never>> accountsAccountDetails({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,7 +86,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamResponseSingleAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -95,7 +95,7 @@ return execute(
 /// Update an existing account.
 ///
 /// `PUT /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamResponseSingleAccount, Never>> accountsUpdateAccount({required IamCommonComponentsSchemasIdentifier accountId, required IamAccount body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -109,7 +109,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamResponseSingleAccount.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -118,7 +118,7 @@ return execute(
 /// Delete a specific account (only available for tenant admins at this time). This is a permanent operation that will delete any zones or other resources under the account
 ///
 /// `DELETE /accounts/{account_id}`
-Future<ApiResult<ResponseCommon35, Never>> accountDeletion({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4, Never>> accountDeletion({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -130,7 +130,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResponseSingleId4.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

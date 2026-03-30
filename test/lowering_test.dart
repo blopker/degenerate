@@ -1048,13 +1048,7 @@ void main() {
     });
   });
 
-  // TODO: allOf ref resolution requires resolving $ref targets in the
-  // flattener, resolving IrTypeRef→IrObject in the sealed union emitter,
-  // fixing import generation for inlined object variants, and handling
-  // $-prefixed field names in variant toString. Each piece works individually
-  // but the cascading effects across ~3200 Cloudflare allOf schemas need
-  // careful incremental rollout.
-  group('allOf with ref and extra properties', skip: 'Needs allOf ref resolution', () {
+  group('allOf with ref and extra properties', () {
     test('merges ref properties with local properties into IrObject', () {
       final schemas = <String, dynamic>{
         'Base': {
@@ -1121,7 +1115,7 @@ void main() {
       expect(requiredNames, contains('extra'));
     });
 
-    test('discriminator variant with allOf merges into IrObject with all fields', () {
+    test('discriminator variant with allOf stays as IrTypeRef to preserve union wrapping', () {
       final schemas = <String, dynamic>{
         'Animal': {
           'oneOf': [
@@ -1173,15 +1167,15 @@ void main() {
       final mapper = IrMapper(ctx);
       mapper.lowerSchemas(schemas);
 
-      // Cat and Dog are discriminator variants — they should be IrObjects
-      // with merged fields from both the discriminator enum and the base.
+      // Cat and Dog are discriminator variants — they stay as refs to base
+      // so the sealed union emitter can wrap them correctly.
       final cat = mapper.typeRegistry['Cat'];
-      expect(cat, isA<IrObject>());
-      final catFields = (cat as IrObject).fields.map((f) => f.originalName).toSet();
-      expect(catFields, containsAll(['type', 'name']));
+      expect(cat, isA<IrTypeRef>());
+      final dog = mapper.typeRegistry['Dog'];
+      expect(dog, isA<IrTypeRef>());
     });
 
-    test('multiple refs merged into IrObject', () {
+    test('multiple refs merged into IrObject', skip: 'Needs flattener-level ref resolution', () {
       final schemas = <String, dynamic>{
         'HasName': {
           'type': 'object',

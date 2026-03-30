@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip.dart';import '../models/tunnel_ip_network.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_route_comment.dart';import '../models/tunnel_route_create_a_tunnel_route_request.dart';import '../models/tunnel_route_id.dart';import '../models/tunnel_route_update_a_tunnel_route_request.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_virtual_network_id.dart';/// TunnelRoutingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip.dart';import '../models/tunnel_ip_network.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_route_comment.dart';import '../models/tunnel_route_create_a_tunnel_route_request.dart';import '../models/tunnel_route_id.dart';import '../models/tunnel_route_update_a_tunnel_route_request.dart';import '../models/tunnel_teamnet_response_collection.dart';import '../models/tunnel_tunnel_id.dart';import '../models/tunnel_tunnel_type.dart';import '../models/tunnel_virtual_network_id.dart';/// TunnelRoutingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class TunnelRoutingApi with ApiExecutor {const TunnelRoutingApi(this.apiCo
 /// Lists and filters private network routes in an account.
 ///
 /// `GET /accounts/{account_id}/teamnet/routes`
-Future<ApiResult<ResponseCommon69, Never>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelTeamnetResponseCollection, Never>> tunnelRouteListTunnelRoutes({required TunnelAccountId accountId, TunnelRouteComment? comment, bool? isDeleted, TunnelIpNetwork? networkSubset, TunnelIpNetwork? networkSuperset, TunnelExistedAt? existedAt, TunnelTunnelId? tunnelId, TunnelRouteId? routeId, List<TunnelTunnelType>? tunTypes, TunnelVirtualNetworkId? virtualNetworkId, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (comment != null) {
   queryParameters['comment'] = comment.toString();
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelTeamnetResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

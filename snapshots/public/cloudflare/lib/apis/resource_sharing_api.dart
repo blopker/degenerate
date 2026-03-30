@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/organization_shares_list_direction.dart';import '../models/organization_shares_list_order.dart';import '../models/resource_sharing_account_id.dart';import '../models/resource_sharing_create_share_recipient_request.dart';import '../models/resource_sharing_create_share_request.dart';import '../models/resource_sharing_create_share_resource_request.dart';import '../models/resource_sharing_organization_id.dart';import '../models/resource_sharing_recipient_id.dart';import '../models/resource_sharing_resource_id.dart';import '../models/resource_sharing_resource_status.dart';import '../models/resource_sharing_resource_type.dart';import '../models/resource_sharing_share_id.dart';import '../models/resource_sharing_share_kind.dart';import '../models/resource_sharing_share_status.dart';import '../models/resource_sharing_share_target_type.dart';import '../models/resource_sharing_update_share_request.dart';import '../models/resource_sharing_update_share_resource_request.dart';import '../models/response_common55.dart';import '../models/shares_list_direction.dart';import '../models/shares_list_order.dart';/// ResourceSharingApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/organization_shares_list_direction.dart';import '../models/organization_shares_list_order.dart';import '../models/resource_sharing_account_id.dart';import '../models/resource_sharing_create_share_recipient_request.dart';import '../models/resource_sharing_create_share_request.dart';import '../models/resource_sharing_create_share_resource_request.dart';import '../models/resource_sharing_organization_id.dart';import '../models/resource_sharing_recipient_id.dart';import '../models/resource_sharing_resource_id.dart';import '../models/resource_sharing_resource_status.dart';import '../models/resource_sharing_resource_type.dart';import '../models/resource_sharing_share_id.dart';import '../models/resource_sharing_share_kind.dart';import '../models/resource_sharing_share_recipient_response_collection.dart';import '../models/resource_sharing_share_resource_response_collection.dart';import '../models/resource_sharing_share_response_collection.dart';import '../models/resource_sharing_share_status.dart';import '../models/resource_sharing_share_target_type.dart';import '../models/resource_sharing_update_share_request.dart';import '../models/resource_sharing_update_share_resource_request.dart';import '../models/response_common55.dart';import '../models/shares_list_direction.dart';import '../models/shares_list_order.dart';/// ResourceSharingApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ResourceSharingApi with ApiExecutor {const ResourceSharingApi(this.a
 /// Lists all account shares.
 ///
 /// `GET /accounts/{account_id}/shares`
-Future<ApiResult<ResponseCommon55, Never>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceSharingShareResponseCollection, Never>> sharesList({required ResourceSharingAccountId accountId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, SharesListOrder? order, SharesListDirection? direction, int? page, int? perPage, bool? includeResources, bool? includeRecipientCounts, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -62,7 +62,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResourceSharingShareResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -170,7 +170,7 @@ return execute(
 /// List share recipients by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/recipients`
-Future<ApiResult<ResponseCommon55, Never>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceSharingShareRecipientResponseCollection, Never>> shareRecipientsList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, bool? includeResources, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (includeResources != null) {
   queryParameters['include_resources'] = includeResources.toString();
@@ -196,7 +196,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResourceSharingShareRecipientResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -299,7 +299,7 @@ return execute(
 /// List share resources by share ID.
 ///
 /// `GET /accounts/{account_id}/shares/{share_id}/resources`
-Future<ApiResult<ResponseCommon55, Never>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceSharingShareResourceResponseCollection, Never>> shareResourcesList({required ResourceSharingAccountId accountId, required ResourceSharingShareId shareId, ResourceSharingResourceStatus? status, ResourceSharingResourceType? resourceType, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -328,7 +328,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResourceSharingShareResourceResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -425,7 +425,7 @@ return execute(
 /// Lists all organization shares.
 ///
 /// `GET /organizations/{organization_id}/shares`
-Future<ApiResult<ResponseCommon55, Never>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ResourceSharingShareResponseCollection, Never>> organizationSharesList({required ResourceSharingOrganizationId organizationId, ResourceSharingShareStatus? status, ResourceSharingShareKind? kind, ResourceSharingShareTargetType? targetType, List<ResourceSharingResourceType>? resourceTypes, OrganizationSharesListOrder? order, OrganizationSharesListDirection? direction, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toJson();
@@ -468,7 +468,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon55.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ResourceSharingShareResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

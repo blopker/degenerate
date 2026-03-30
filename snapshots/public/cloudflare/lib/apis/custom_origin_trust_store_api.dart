@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_origin_trust_store_create_request.dart';import '../models/response_common68.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomOriginTrustStoreApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/custom_origin_trust_store_create_request.dart';import '../models/tls_certificates_and_hostnames_custom_trust_store_response_collection.dart';import '../models/tls_certificates_and_hostnames_custom_trust_store_response_id_only.dart';import '../models/tls_certificates_and_hostnames_custom_trust_store_response_single.dart';import '../models/tls_certificates_and_hostnames_identifier.dart';/// CustomOriginTrustStoreApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CustomOriginTrustStoreApi with ApiExecutor {const CustomOriginTrustS
 /// Get Custom Origin Trust Store for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/custom_trust_store`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreListDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection, Never>> customOriginTrustStoreListDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, double? page, double? perPage, int? limit, int? offset, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -42,7 +42,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -51,7 +51,7 @@ return execute(
 /// Add Custom Origin Trust Store for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/custom_trust_store`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreCreate({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomOriginTrustStoreCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle, Never>> customOriginTrustStoreCreate({required TlsCertificatesAndHostnamesIdentifier zoneId, required CustomOriginTrustStoreCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -65,7 +65,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -74,7 +74,7 @@ return execute(
 /// Retrieves details about a specific certificate in the custom origin trust store, including expiration and subject information.
 ///
 /// `GET /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDetails({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle, Never>> customOriginTrustStoreDetails({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -86,7 +86,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -95,7 +95,7 @@ return execute(
 /// Removes a CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.
 ///
 /// `DELETE /zones/{zone_id}/acm/custom_trust_store/{custom_origin_trust_store_id}`
-Future<ApiResult<ResponseCommon68, Never>> customOriginTrustStoreDelete({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesCustomTrustStoreResponseIdOnly, Never>> customOriginTrustStoreDelete({required TlsCertificatesAndHostnamesIdentifier customOriginTrustStoreId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -107,7 +107,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon68.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TlsCertificatesAndHostnamesCustomTrustStoreResponseIdOnly.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

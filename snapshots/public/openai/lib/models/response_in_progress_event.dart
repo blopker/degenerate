@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'model_response_properties.dart';/// The type of the event. Always `response.in_progress`.
+import 'response.dart';/// The type of the event. Always `response.in_progress`.
 /// 
 final class ResponseInProgressEventType {const ResponseInProgressEventType._(this.value);
 
@@ -28,7 +28,7 @@ final class ResponseInProgressEvent {const ResponseInProgressEvent({required thi
 
 factory ResponseInProgressEvent.fromJson(Map<String, dynamic> json) { return ResponseInProgressEvent(
   type: ResponseInProgressEventType.fromJson(json['type'] as String),
-  response: ModelResponseProperties.fromJson(json['response'] as Map<String, dynamic>),
+  response: Response.fromJson(json['response'] as Map<String, dynamic>),
   sequenceNumber: (json['sequence_number'] as num).toInt(),
 ); }
 
@@ -38,7 +38,7 @@ final ResponseInProgressEventType type;
 
 /// The response that is in progress.
 /// 
-final ModelResponseProperties response;
+final Response response;
 
 /// The sequence number of this event.
 final int sequenceNumber;
@@ -51,7 +51,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') &&
       json.containsKey('response') &&
       json.containsKey('sequence_number') && json['sequence_number'] is num; } 
-ResponseInProgressEvent copyWith({ResponseInProgressEventType? type, ModelResponseProperties? response, int? sequenceNumber, }) { return ResponseInProgressEvent(
+ResponseInProgressEvent copyWith({ResponseInProgressEventType? type, Response? response, int? sequenceNumber, }) { return ResponseInProgressEvent(
   type: type ?? this.type,
   response: response ?? this.response,
   sequenceNumber: sequenceNumber ?? this.sequenceNumber,

@@ -224,7 +224,8 @@ class DiscriminatedUnionEmitter {
     final toJsonEntries = <String>["  '$_discJsonKey': $_discDartName,"];
     for (final f in fields) {
       final key = "'${f.originalName}'";
-      final value = buildToJsonCode(f.type, f.name);
+      final isNullable = !f.isRequired || f.type.isNullable;
+      final value = buildToJsonCode(f.type, f.name, nullable: isNullable);
       if (!f.isRequired) {
         if (value == f.name) {
           toJsonEntries.add("  $key: ?${f.name},");
@@ -248,7 +249,13 @@ class DiscriminatedUnionEmitter {
         ? 'return runtimeType.hashCode;'
         : 'return Object.hash(runtimeType, $hashFields);';
 
-    final toStrFields = fields.map((f) => '${f.name}: \$${f.name}').join(', ');
+    final toStrFields = fields.map((f) {
+      if (f.name.startsWith(r'$')) {
+        final escaped = f.name.replaceAll(r'$', r'\$');
+        return '$escaped: \${${f.name}}';
+      }
+      return '${f.name}: \$${f.name}';
+    }).join(', ');
 
     return Class(
       (b) => b

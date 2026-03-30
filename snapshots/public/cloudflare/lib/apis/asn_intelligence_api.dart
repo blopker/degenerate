@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/asn_intelligence_get_asn_subnets_response.dart';import '../models/intel_asn.dart';import '../models/intel_identifier.dart';import '../models/response_common40.dart';/// AsnIntelligenceApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/asn_intelligence_get_asn_subnets_response.dart';import '../models/intel_asn.dart';import '../models/intel_asn_components_schemas_response.dart';import '../models/intel_identifier.dart';/// AsnIntelligenceApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class AsnIntelligenceApi with ApiExecutor {const AsnIntelligenceApi(this.a
 /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.
 ///
 /// `GET /accounts/{account_id}/intel/asn/{asn}`
-Future<ApiResult<ResponseCommon40, Never>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IntelAsnComponentsSchemasResponse, Never>> asnIntelligenceGetAsnOverview({required IntelAsn asn, required IntelIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon40.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IntelAsnComponentsSchemasResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

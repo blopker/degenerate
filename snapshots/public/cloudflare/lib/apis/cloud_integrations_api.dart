@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/mcn_account_id.dart';import '../models/mcn_create_provider_request.dart';import '../models/mcn_provider_id.dart';import '../models/mcn_response.dart';import '../models/mcn_update_provider_request.dart';/// CloudIntegrationsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/mcn_account_id.dart';import '../models/mcn_bad_response.dart';import '../models/mcn_create_provider_request.dart';import '../models/mcn_create_provider_response.dart';import '../models/mcn_delete_provider_response.dart';import '../models/mcn_good_response.dart';import '../models/mcn_provider_id.dart';import '../models/mcn_provider_initial_setup_response.dart';import '../models/mcn_read_account_provider_response.dart';import '../models/mcn_read_account_providers_response.dart';import '../models/mcn_update_provider_request.dart';import '../models/mcn_update_provider_response.dart';/// CloudIntegrationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CloudIntegrationsApi with ApiExecutor {const CloudIntegrationsApi(th
 /// List Cloud Integrations (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnResponse, McnResponse>> providersList({required McnAccountId accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnReadAccountProvidersResponse, McnBadResponse>> providersList({required McnAccountId accountId, bool? status, String? orderBy, bool? desc, bool? cloudflare, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toString();
@@ -42,10 +42,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnReadAccountProvidersResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -54,7 +54,7 @@ return execute(
 /// Create a new Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers`
-Future<ApiResult<McnResponse, McnResponse>> providersCreate({required McnAccountId accountId, String? forwarded, required McnCreateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnCreateProviderResponse, McnBadResponse>> providersCreate({required McnAccountId accountId, String? forwarded, required McnCreateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (forwarded != null) {
   headers['forwarded'] = forwarded;
@@ -71,10 +71,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnCreateProviderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -83,7 +83,7 @@ return execute(
 /// Read a Cloud Integration (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersRead({required McnAccountId accountId, required McnProviderId providerId, bool? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnReadAccountProviderResponse, McnBadResponse>> providersRead({required McnAccountId accountId, required McnProviderId providerId, bool? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (status != null) {
   queryParameters['status'] = status.toString();
@@ -103,10 +103,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnReadAccountProviderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -115,7 +115,7 @@ return execute(
 /// Update a Cloud Integration (Closed Beta).
 ///
 /// `PUT /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersUpdate({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnUpdateProviderResponse, McnBadResponse>> providersUpdate({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -129,10 +129,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnUpdateProviderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -141,7 +141,7 @@ return execute(
 /// Update a Cloud Integration (Closed Beta).
 ///
 /// `PATCH /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersPatch({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnUpdateProviderResponse, McnBadResponse>> providersPatch({required McnAccountId accountId, required McnProviderId providerId, required McnUpdateProviderRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -155,10 +155,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnUpdateProviderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -167,7 +167,7 @@ return execute(
 /// Delete a Cloud Integration (Closed Beta).
 ///
 /// `DELETE /accounts/{account_id}/magic/cloud/providers/{provider_id}`
-Future<ApiResult<McnResponse, McnResponse>> providersDelete({required McnAccountId accountId, required McnProviderId providerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnDeleteProviderResponse, McnBadResponse>> providersDelete({required McnAccountId accountId, required McnProviderId providerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -179,10 +179,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnDeleteProviderResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -191,7 +191,7 @@ return execute(
 /// Run discovery for a Cloud Integration (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers/{provider_id}/discover`
-Future<ApiResult<McnResponse, McnResponse>> providersDiscover({required McnAccountId accountId, required McnProviderId providerId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<McnGoodResponse, McnBadResponse>> providersDiscover({required McnAccountId accountId, required McnProviderId providerId, bool? v2, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (v2 != null) {
   queryParameters['v2'] = v2.toString();
@@ -211,10 +211,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnGoodResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -223,7 +223,7 @@ return execute(
 /// Get initial configuration to complete Cloud Integration setup (Closed Beta).
 ///
 /// `GET /accounts/{account_id}/magic/cloud/providers/{provider_id}/initial_setup`
-Future<ApiResult<McnResponse, McnResponse>> providersInitialSetup({required McnAccountId accountId, required McnProviderId providerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnProviderInitialSetupResponse, McnBadResponse>> providersInitialSetup({required McnAccountId accountId, required McnProviderId providerId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -235,10 +235,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnProviderInitialSetupResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -247,7 +247,7 @@ return execute(
 /// Run discovery for all Cloud Integrations in an account (Closed Beta).
 ///
 /// `POST /accounts/{account_id}/magic/cloud/providers/discover`
-Future<ApiResult<McnResponse, McnResponse>> providersDiscoverAll({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<McnGoodResponse, McnBadResponse>> providersDiscoverAll({required McnAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -259,10 +259,10 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnGoodResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
   onError: (response) {
-    return McnResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return McnBadResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

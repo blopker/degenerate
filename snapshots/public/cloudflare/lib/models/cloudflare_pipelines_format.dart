@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'cloudflare_pipelines_json_format.dart';import 'cloudflare_pipelines_parquet_format.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
+import 'json2.dart';import 'parquet.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
-  'Json' => CloudflarePipelinesFormatJson.fromJson(json),
+  'Json2' => CloudflarePipelinesFormatJson2.fromJson(json),
   'Parquet' => CloudflarePipelinesFormatParquet.fromJson(json),
   _ => CloudflarePipelinesFormat$Unknown(json),
 }; }
@@ -15,31 +15,31 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown { return this is CloudflarePipelinesFormat$Unknown; } 
  }
-final class CloudflarePipelinesFormatJson extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatJson(this.cloudflarePipelinesJsonFormat);
+final class CloudflarePipelinesFormatJson2 extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatJson2(this.json2);
 
-factory CloudflarePipelinesFormatJson.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFormatJson(CloudflarePipelinesJsonFormat.fromJson(json)); }
+factory CloudflarePipelinesFormatJson2.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFormatJson2(Json2.fromJson(json)); }
 
-final CloudflarePipelinesJsonFormat cloudflarePipelinesJsonFormat;
+final Json2 json2;
 
-@override String get type { return 'Json'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...cloudflarePipelinesJsonFormat.toJson()}; } 
+@override String get type { return 'Json2'; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...json2.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFormatJson && cloudflarePipelinesJsonFormat == other.cloudflarePipelinesJsonFormat; } 
-@override int get hashCode { return cloudflarePipelinesJsonFormat.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat: $cloudflarePipelinesJsonFormat)'; } 
+    other is CloudflarePipelinesFormatJson2 && json2 == other.json2; } 
+@override int get hashCode { return json2.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesFormatJson2(json2: $json2)'; } 
  }
-final class CloudflarePipelinesFormatParquet extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatParquet(this.cloudflarePipelinesParquetFormat);
+final class CloudflarePipelinesFormatParquet extends CloudflarePipelinesFormat {const CloudflarePipelinesFormatParquet(this.parquet);
 
-factory CloudflarePipelinesFormatParquet.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFormatParquet(CloudflarePipelinesParquetFormat.fromJson(json)); }
+factory CloudflarePipelinesFormatParquet.fromJson(Map<String, dynamic> json) { return CloudflarePipelinesFormatParquet(Parquet.fromJson(json)); }
 
-final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
+final Parquet parquet;
 
 @override String get type { return 'Parquet'; } 
-@override Map<String, dynamic> toJson() { return {'type': type, ...cloudflarePipelinesParquetFormat.toJson()}; } 
+@override Map<String, dynamic> toJson() { return {'type': type, ...parquet.toJson()}; } 
 @override bool operator ==(Object other) { return identical(this, other) ||
-    other is CloudflarePipelinesFormatParquet && cloudflarePipelinesParquetFormat == other.cloudflarePipelinesParquetFormat; } 
-@override int get hashCode { return cloudflarePipelinesParquetFormat.hashCode; } 
-@override String toString() { return 'CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat: $cloudflarePipelinesParquetFormat)'; } 
+    other is CloudflarePipelinesFormatParquet && parquet == other.parquet; } 
+@override int get hashCode { return parquet.hashCode; } 
+@override String toString() { return 'CloudflarePipelinesFormatParquet(parquet: $parquet)'; } 
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.

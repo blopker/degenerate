@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_account_identifier.dart';import '../models/r2_add_custom_domain_request.dart';import '../models/r2_bucket_name.dart';import '../models/r2_create_bucket_request.dart';import '../models/r2_domain_name.dart';import '../models/r2_edit_custom_domain_request.dart';import '../models/r2_edit_managed_domain_request.dart';import '../models/r2_event_notification_delete_config_request.dart';import '../models/r2_get_event_notification_config_cf_r2_jurisdiction.dart';import '../models/r2_jurisdiction.dart';import '../models/r2_list_buckets_direction.dart';import '../models/r2_list_buckets_order.dart';import '../models/r2_put_bucket_cors_policy_request.dart';import '../models/r2_put_bucket_lifecycle_configuration_request.dart';import '../models/r2_put_bucket_local_uploads_configuration_request.dart';import '../models/r2_put_bucket_lock_configuration_request.dart';import '../models/r2_put_bucket_sippy_config_request.dart';import '../models/r2_put_event_notification_config_request.dart';import '../models/r2_queue_identifier.dart';import '../models/r2_storage_class.dart';import '../models/r2_temp_access_creds_request.dart';import '../models/response2.dart';import '../models/response_failure.dart';/// R2BucketApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/r2_account_identifier.dart';import '../models/r2_add_custom_domain_request.dart';import '../models/r2_bucket_name.dart';import '../models/r2_create_bucket_request.dart';import '../models/r2_domain_name.dart';import '../models/r2_edit_custom_domain_request.dart';import '../models/r2_edit_managed_domain_request.dart';import '../models/r2_event_notification_delete_config_request.dart';import '../models/r2_get_event_notification_config_cf_r2_jurisdiction.dart';import '../models/r2_jurisdiction.dart';import '../models/r2_list_buckets_direction.dart';import '../models/r2_list_buckets_order.dart';import '../models/r2_list_buckets_response.dart';import '../models/r2_put_bucket_cors_policy_request.dart';import '../models/r2_put_bucket_lifecycle_configuration_request.dart';import '../models/r2_put_bucket_local_uploads_configuration_request.dart';import '../models/r2_put_bucket_lock_configuration_request.dart';import '../models/r2_put_bucket_sippy_config_request.dart';import '../models/r2_put_event_notification_config_request.dart';import '../models/r2_queue_identifier.dart';import '../models/r2_storage_class.dart';import '../models/r2_temp_access_creds_request.dart';import '../models/response2.dart';import '../models/response_failure.dart';/// R2BucketApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -119,7 +119,7 @@ return execute(
 /// Lists all R2 buckets on your account.
 ///
 /// `GET /accounts/{account_id}/r2/buckets`
-Future<ApiResult<Response2, Never>> r2ListBuckets({required R2AccountIdentifier accountId, String? nameContains, String? startAfter, double? perPage, R2ListBucketsOrder? order, R2ListBucketsDirection? direction, String? cursor, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<R2ListBucketsResponse, Never>> r2ListBuckets({required R2AccountIdentifier accountId, String? nameContains, String? startAfter, double? perPage, R2ListBucketsOrder? order, R2ListBucketsDirection? direction, String? cursor, R2Jurisdiction? cfR2Jurisdiction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (nameContains != null) {
   queryParameters['name_contains'] = nameContains;
@@ -157,7 +157,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return Response2.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return R2ListBucketsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

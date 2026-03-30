@@ -1,27 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';/// Total results returned based on your search parameters.
-extension type const IntelCount(double value) {
-factory IntelCount.fromJson(num json) => IntelCount(json.toDouble());
-
-num toJson() => value;
-
-}
-/// Current page within paginated list of results.
-extension type const IntelPage(double value) {
-factory IntelPage.fromJson(num json) => IntelPage(json.toDouble());
-
-num toJson() => value;
-
-}
-/// Number of results per page of results.
-extension type const IntelPerPage(double value) {
-factory IntelPerPage.fromJson(num json) => IntelPerPage(json.toDouble());
-
-num toJson() => value;
-
-}
-final class AsnIntelligenceGetAsnSubnetsResponse {const AsnIntelligenceGetAsnSubnetsResponse({this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'intel_asn.dart';import 'intel_count.dart';import 'intel_page.dart';import 'intel_per_page.dart';final class AsnIntelligenceGetAsnSubnetsResponse {const AsnIntelligenceGetAsnSubnetsResponse({this.asn, this.count, this.ipCountTotal, this.page, this.perPage, this.subnets, });
 
 factory AsnIntelligenceGetAsnSubnetsResponse.fromJson(Map<String, dynamic> json) { return AsnIntelligenceGetAsnSubnetsResponse(
   asn: json['asn'] != null ? IntelAsn.fromJson(json['asn'] as num) : null,

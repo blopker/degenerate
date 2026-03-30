@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_records_identifier.dart';import '../models/response_common25.dart';/// DnsRecordsForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dns_records_dns_response_account_usage.dart';import '../models/dns_records_identifier.dart';/// DnsRecordsForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DnsRecordsForAnAccountApi with ApiExecutor {const DnsRecordsForAnAcc
 /// Get the current DNS record usage and quota for an account. May include internal DNS usage and quota.
 ///
 /// `GET /accounts/{account_id}/dns_records/usage`
-Future<ApiResult<ResponseCommon25, Never>> dnsRecordsForAnAccountGetUsage({required DnsRecordsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsRecordsDnsResponseAccountUsage, Never>> dnsRecordsForAnAccountGetUsage({required DnsRecordsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon25.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DnsRecordsDnsResponseAccountUsage.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

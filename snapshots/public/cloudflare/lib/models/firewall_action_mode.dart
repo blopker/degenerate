@@ -1,0 +1,30 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+/// The default action performed by the rules in the WAF package.
+final class FirewallActionMode {const FirewallActionMode._(this.value);
+
+factory FirewallActionMode.fromJson(String json) { return switch (json) {
+  'simulate' => simulate,
+  'block' => block,
+  'challenge' => challenge,
+  _ => FirewallActionMode._(json),
+}; }
+
+static const FirewallActionMode simulate = FirewallActionMode._('simulate');
+
+static const FirewallActionMode block = FirewallActionMode._('block');
+
+static const FirewallActionMode challenge = FirewallActionMode._('challenge');
+
+static const List<FirewallActionMode> values = [simulate, block, challenge];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is FirewallActionMode && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'FirewallActionMode($value)'; } 
+ }

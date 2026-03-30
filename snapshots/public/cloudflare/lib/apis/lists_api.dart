@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/lists_account_id.dart';import '../models/lists_create_a_list_request.dart';import '../models/lists_delete_list_items_request.dart';import '../models/lists_item_id.dart';import '../models/lists_items_update_request_collection2.dart';import '../models/lists_list_id.dart';import '../models/lists_operation_id.dart';import '../models/lists_update_a_list_request.dart';import '../models/response_common41.dart';/// ListsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/lists_account_id.dart';import '../models/lists_create_a_list_request.dart';import '../models/lists_delete_list_items_request.dart';import '../models/lists_item_id.dart';import '../models/lists_items_list_response_collection.dart';import '../models/lists_items_update_request_collection2.dart';import '../models/lists_list_id.dart';import '../models/lists_lists_async_response.dart';import '../models/lists_lists_response_collection.dart';import '../models/lists_operation_id.dart';import '../models/lists_update_a_list_request.dart';import '../models/response_common41.dart';/// ListsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ListsApi with ApiExecutor {const ListsApi(this.apiConfig);
 /// Fetches all lists in the account.
 ///
 /// `GET /accounts/{account_id}/rules/lists`
-Future<ApiResult<ResponseCommon41, Never>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsResponseCollection, Never>> listsGetLists({required ListsAccountId accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon41.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListsListsResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -122,7 +122,7 @@ return execute(
 /// Fetches all the items in the list.
 ///
 /// `GET /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41, Never>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<ListsItemsListResponseCollection, Never>> listsGetListItems({required ListsListId listId, required ListsAccountId accountId, String? cursor, int? perPage, String? search, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cursor != null) {
   queryParameters['cursor'] = cursor;
@@ -148,7 +148,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon41.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListsItemsListResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -161,7 +161,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `POST /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41, Never>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponse, Never>> listsCreateListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -175,7 +175,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon41.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListsListsAsyncResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -188,7 +188,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `PUT /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41, Never>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponse, Never>> listsUpdateAllListItems({required ListsListId listId, required ListsAccountId accountId, required List<ListsItemsUpdateRequestCollection2> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -202,7 +202,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon41.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListsListsAsyncResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -215,7 +215,7 @@ return execute(
 /// There is a limit of 1 pending bulk operation per account. If an outstanding bulk operation is in progress, the request will be rejected.
 ///
 /// `DELETE /accounts/{account_id}/rules/lists/{list_id}/items`
-Future<ApiResult<ResponseCommon41, Never>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ListsListsAsyncResponse, Never>> listsDeleteListItems({required ListsListId listId, required ListsAccountId accountId, required ListsDeleteListItemsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -229,7 +229,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon41.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return ListsListsAsyncResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

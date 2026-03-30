@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/load_balancing_identifier.dart';import '../models/load_balancing_monitor_editable.dart';import '../models/load_balancing_preview_id.dart';import '../models/response_common42.dart';/// LoadBalancerMonitorsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/load_balancing_id_response.dart';import '../models/load_balancing_identifier.dart';import '../models/load_balancing_monitor_editable.dart';import '../models/load_balancing_monitor_references_response.dart';import '../models/load_balancing_monitor_response_collection.dart';import '../models/load_balancing_monitor_response_single.dart';import '../models/load_balancing_preview_id.dart';import '../models/load_balancing_preview_response.dart';import '../models/load_balancing_preview_result_response.dart';/// LoadBalancerMonitorsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class LoadBalancerMonitorsApi with ApiExecutor {const LoadBalancerMonitors
 /// List configured monitors for a user.
 ///
 /// `GET /user/load_balancers/monitors`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitors({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorResponseCollection, Never>> loadBalancerMonitorsListMonitors({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingMonitorResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Create a configured monitor.
 ///
 /// `POST /user/load_balancers/monitors`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsCreateMonitor({required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorResponseSingle, Never>> loadBalancerMonitorsCreateMonitor({required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingMonitorResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// List a single configured monitor for a user.
 ///
 /// `GET /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsMonitorDetails({required LoadBalancingIdentifier monitorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorResponseSingle, Never>> loadBalancerMonitorsMonitorDetails({required LoadBalancingIdentifier monitorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingMonitorResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return execute(
 /// Modify a configured monitor.
 ///
 /// `PUT /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsUpdateMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorResponseSingle, Never>> loadBalancerMonitorsUpdateMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingMonitorResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +101,7 @@ return execute(
 /// Apply changes to an existing monitor, overwriting the supplied properties.
 ///
 /// `PATCH /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPatchMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorResponseSingle, Never>> loadBalancerMonitorsPatchMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -115,7 +115,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingMonitorResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -124,7 +124,7 @@ return execute(
 /// Delete a configured monitor.
 ///
 /// `DELETE /user/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsDeleteMonitor({required LoadBalancingIdentifier monitorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingIdResponse, Never>> loadBalancerMonitorsDeleteMonitor({required LoadBalancingIdentifier monitorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,7 +136,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingIdResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -145,7 +145,7 @@ return execute(
 /// Preview pools using the specified monitor with provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /user/load_balancers/monitors/{monitor_id}/preview`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPreviewResponse, Never>> loadBalancerMonitorsPreviewMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -159,7 +159,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingPreviewResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -168,7 +168,7 @@ return execute(
 /// Get the list of resources that reference the provided monitor.
 ///
 /// `GET /user/load_balancers/monitors/{monitor_id}/references`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsListMonitorReferences({required LoadBalancingIdentifier monitorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitorReferencesResponse, Never>> loadBalancerMonitorsListMonitorReferences({required LoadBalancingIdentifier monitorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -180,7 +180,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingMonitorReferencesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -189,7 +189,7 @@ return execute(
 /// Get the result of a previous preview operation using the provided preview_id.
 ///
 /// `GET /user/load_balancers/preview/{preview_id}`
-Future<ApiResult<ResponseCommon42, Never>> loadBalancerMonitorsPreviewResult({required LoadBalancingPreviewId previewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPreviewResultResponse, Never>> loadBalancerMonitorsPreviewResult({required LoadBalancingPreviewId previewId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -201,7 +201,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon42.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LoadBalancingPreviewResultResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

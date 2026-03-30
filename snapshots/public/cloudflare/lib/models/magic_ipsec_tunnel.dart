@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_bgp_status_with_state.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_health_check_base.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_psk_metadata.dart';import 'magic_replay_protection.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';/// When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
+import 'magic_automatic_return_routing.dart';import 'magic_bgp_config.dart';import 'magic_bgp_status_with_state.dart';import 'magic_cloudflare_ipsec_endpoint.dart';import 'magic_components_schemas_description.dart';import 'magic_custom_remote_identities.dart';import 'magic_customer_ipsec_endpoint.dart';import 'magic_interface_address.dart';import 'magic_interface_address6.dart';import 'magic_ipsec_tunnel_name.dart';import 'magic_psk_metadata.dart';import 'magic_replay_protection.dart';import 'magic_schemas_created_on.dart';import 'magic_schemas_identifier.dart';import 'magic_schemas_modified_on.dart';import 'magic_tunnel_health_check.dart';/// When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).
 extension type const MagicAllowNullCipher(bool value) {
 factory MagicAllowNullCipher.fromJson(bool json) => MagicAllowNullCipher(json);
 
@@ -19,7 +19,7 @@ factory MagicIpsecTunnel.fromJson(Map<String, dynamic> json) { return MagicIpsec
   customRemoteIdentities: json['custom_remote_identities'] != null ? MagicCustomRemoteIdentities.fromJson(json['custom_remote_identities'] as Map<String, dynamic>) : null,
   customerEndpoint: json['customer_endpoint'] != null ? MagicCustomerIpsecEndpoint.fromJson(json['customer_endpoint'] as String) : null,
   description: json['description'] != null ? MagicComponentsSchemasDescription.fromJson(json['description'] as String) : null,
-  healthCheck: json['health_check'] != null ? MagicHealthCheckBase.fromJson(json['health_check'] as Map<String, dynamic>) : null,
+  healthCheck: json['health_check'] != null ? MagicTunnelHealthCheck.fromJson(json['health_check'] as Map<String, dynamic>) : null,
   id: MagicSchemasIdentifier.fromJson(json['id'] as String),
   interfaceAddress: MagicInterfaceAddress.fromJson(json['interface_address'] as String),
   interfaceAddress6: json['interface_address6'] != null ? MagicInterfaceAddress6.fromJson(json['interface_address6'] as String) : null,
@@ -52,7 +52,7 @@ final MagicCustomerIpsecEndpoint? customerEndpoint;
 /// An optional description forthe IPsec tunnel.
 final MagicComponentsSchemasDescription? description;
 
-final MagicHealthCheckBase? healthCheck;
+final MagicTunnelHealthCheck? healthCheck;
 
 final MagicSchemasIdentifier id;
 
@@ -93,7 +93,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cloud
       json.containsKey('id') &&
       json.containsKey('interface_address') &&
       json.containsKey('name'); } 
-MagicIpsecTunnel copyWith({MagicAllowNullCipher Function()? allowNullCipher, MagicAutomaticReturnRouting Function()? automaticReturnRouting, MagicBgpConfig Function()? bgp, MagicBgpStatusWithState Function()? bgpStatus, MagicCloudflareIpsecEndpoint? cloudflareEndpoint, MagicSchemasCreatedOn Function()? createdOn, MagicCustomRemoteIdentities Function()? customRemoteIdentities, MagicCustomerIpsecEndpoint Function()? customerEndpoint, MagicComponentsSchemasDescription Function()? description, MagicHealthCheckBase Function()? healthCheck, MagicSchemasIdentifier? id, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6 Function()? interfaceAddress6, MagicSchemasModifiedOn Function()? modifiedOn, MagicIpsecTunnelName? name, MagicPskMetadata Function()? pskMetadata, MagicReplayProtection Function()? replayProtection, }) { return MagicIpsecTunnel(
+MagicIpsecTunnel copyWith({MagicAllowNullCipher Function()? allowNullCipher, MagicAutomaticReturnRouting Function()? automaticReturnRouting, MagicBgpConfig Function()? bgp, MagicBgpStatusWithState Function()? bgpStatus, MagicCloudflareIpsecEndpoint? cloudflareEndpoint, MagicSchemasCreatedOn Function()? createdOn, MagicCustomRemoteIdentities Function()? customRemoteIdentities, MagicCustomerIpsecEndpoint Function()? customerEndpoint, MagicComponentsSchemasDescription Function()? description, MagicTunnelHealthCheck Function()? healthCheck, MagicSchemasIdentifier? id, MagicInterfaceAddress? interfaceAddress, MagicInterfaceAddress6 Function()? interfaceAddress6, MagicSchemasModifiedOn Function()? modifiedOn, MagicIpsecTunnelName? name, MagicPskMetadata Function()? pskMetadata, MagicReplayProtection Function()? replayProtection, }) { return MagicIpsecTunnel(
   allowNullCipher: allowNullCipher != null ? allowNullCipher() : this.allowNullCipher,
   automaticReturnRouting: automaticReturnRouting != null ? automaticReturnRouting() : this.automaticReturnRouting,
   bgp: bgp != null ? bgp() : this.bgp,

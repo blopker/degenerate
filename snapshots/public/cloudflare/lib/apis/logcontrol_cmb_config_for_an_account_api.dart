@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/logcontrol_cmb_config.dart';import '../models/logcontrol_identifier.dart';import '../models/response_common43.dart';/// LogcontrolCmbConfigForAnAccountApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/delete_accounts_account_id_logs_control_cmb_config_response.dart';import '../models/logcontrol_cmb_config.dart';import '../models/logcontrol_cmb_config_response_single.dart';import '../models/logcontrol_identifier.dart';/// LogcontrolCmbConfigForAnAccountApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class LogcontrolCmbConfigForAnAccountApi with ApiExecutor {const Logcontro
 /// Gets CMB config.
 ///
 /// `GET /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<ResponseCommon43, Never>> getAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolCmbConfigResponseSingle, Never>> getAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon43.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LogcontrolCmbConfigResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Updates CMB config.
 ///
 /// `POST /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<ResponseCommon43, Never>> postAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, required LogcontrolCmbConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogcontrolCmbConfigResponseSingle, Never>> postAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, required LogcontrolCmbConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon43.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return LogcontrolCmbConfigResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Deletes CMB config.
 ///
 /// `DELETE /accounts/{account_id}/logs/control/cmb/config`
-Future<ApiResult<ResponseCommon43, Never>> deleteAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DeleteAccountsAccountIdLogsControlCmbConfigResponse, Never>> deleteAccountsAccountIdLogsControlCmbConfig({required LogcontrolIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon43.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DeleteAccountsAccountIdLogsControlCmbConfigResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

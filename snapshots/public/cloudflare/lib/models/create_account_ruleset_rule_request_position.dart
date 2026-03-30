@@ -1,0 +1,3 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_account_ruleset_rule_request_position_variant1.dart';import 'create_account_ruleset_rule_request_position_variant2.dart';import 'create_account_ruleset_rule_request_position_variant3.dart';typedef CreateAccountRulesetRuleRequestPosition = OneOf3<CreateAccountRulesetRuleRequestPositionVariant1,CreateAccountRulesetRuleRequestPositionVariant2,CreateAccountRulesetRuleRequestPositionVariant3>;

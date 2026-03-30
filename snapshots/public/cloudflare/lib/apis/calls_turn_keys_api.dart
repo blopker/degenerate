@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/calls_account_identifier.dart';import '../models/calls_identifier.dart';import '../models/calls_turn_key_editable_fields.dart';import '../models/response_common11.dart';/// CallsTurnKeysApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/calls_account_identifier.dart';import '../models/calls_identifier.dart';import '../models/calls_turn_key_collection.dart';import '../models/calls_turn_key_editable_fields.dart';import '../models/calls_turn_key_response_single.dart';import '../models/calls_turn_key_single_with_secret.dart';/// CallsTurnKeysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class CallsTurnKeysApi with ApiExecutor {const CallsTurnKeysApi(this.apiCo
 /// Lists all TURN keys in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<ResponseCommon11, Never>> callsTurnKeyList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyCollection, Never>> callsTurnKeyList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsTurnKeyCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Creates a new Cloudflare Calls TURN key.
 ///
 /// `POST /accounts/{account_id}/calls/turn_keys`
-Future<ApiResult<ResponseCommon11, Never>> callsTurnKeyCreate({required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeySingleWithSecret, Never>> callsTurnKeyCreate({required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -48,7 +48,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsTurnKeySingleWithSecret.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -57,7 +57,7 @@ return execute(
 /// Fetches details for a single TURN key.
 ///
 /// `GET /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyResponseSingle, Never>> callsRetrieveTurnKeyDetails({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsTurnKeyResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -78,7 +78,7 @@ return execute(
 /// Edit details for a single TURN key.
 ///
 /// `PUT /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyResponseSingle, Never>> callsUpdateTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, required CallsTurnKeyEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,7 +92,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsTurnKeyResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -101,7 +101,7 @@ return execute(
 /// Deletes a TURN key from Cloudflare Calls
 ///
 /// `DELETE /accounts/{account_id}/calls/turn_keys/{key_id}`
-Future<ApiResult<ResponseCommon11, Never>> callsDeleteTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsTurnKeyResponseSingle, Never>> callsDeleteTurnKey({required CallsIdentifier keyId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -113,7 +113,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon11.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return CallsTurnKeyResponseSingle.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

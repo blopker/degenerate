@@ -1,0 +1,35 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+final class R2R2Action {const R2R2Action._(this.value);
+
+factory R2R2Action.fromJson(String json) { return switch (json) {
+  'PutObject' => putObject,
+  'CopyObject' => copyObject,
+  'DeleteObject' => deleteObject,
+  'CompleteMultipartUpload' => completeMultipartUpload,
+  'LifecycleDeletion' => lifecycleDeletion,
+  _ => R2R2Action._(json),
+}; }
+
+static const R2R2Action putObject = R2R2Action._('PutObject');
+
+static const R2R2Action copyObject = R2R2Action._('CopyObject');
+
+static const R2R2Action deleteObject = R2R2Action._('DeleteObject');
+
+static const R2R2Action completeMultipartUpload = R2R2Action._('CompleteMultipartUpload');
+
+static const R2R2Action lifecycleDeletion = R2R2Action._('LifecycleDeletion');
+
+static const List<R2R2Action> values = [putObject, copyObject, deleteObject, completeMultipartUpload, lifecycleDeletion];
+
+final String value;
+
+String toJson() { return value; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return !values.contains(this); } 
+@override bool operator ==(Object other) { return identical(this, other) ||
+    other is R2R2Action && other.value == value; } 
+@override int get hashCode { return value.hashCode; } 
+@override String toString() { return 'R2R2Action($value)'; } 
+ }

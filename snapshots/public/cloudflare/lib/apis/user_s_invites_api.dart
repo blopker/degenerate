@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_invite_components_schemas_identifier.dart';import '../models/response_common35.dart';import '../models/user_s_invites_respond_to_invitation_request.dart';/// UserSInvitesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/iam_invite_components_schemas_identifier.dart';import '../models/iam_schemas_collection_invite_response.dart';import '../models/iam_single_invite_response.dart';import '../models/user_s_invites_respond_to_invitation_request.dart';/// UserSInvitesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class UserSInvitesApi with ApiExecutor {const UserSInvitesApi(this.apiConf
 /// Lists all invitations associated with my user.
 ///
 /// `GET /user/invites`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesListInvitations({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSchemasCollectionInviteResponse, Never>> userSInvitesListInvitations({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSchemasCollectionInviteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// Gets the details of an invitation.
 ///
 /// `GET /user/invites/{invite_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleInviteResponse, Never>> userSInvitesInvitationDetails({required IamInviteComponentsSchemasIdentifier inviteId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,7 +46,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleInviteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -55,7 +55,7 @@ return execute(
 /// Responds to an invitation.
 ///
 /// `PATCH /user/invites/{invite_id}`
-Future<ApiResult<ResponseCommon35, Never>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSingleInviteResponse, Never>> userSInvitesRespondToInvitation({required IamInviteComponentsSchemasIdentifier inviteId, required UserSInvitesRespondToInvitationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return IamSingleInviteResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

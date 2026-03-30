@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_custom_data_source_config.dart';import 'create_eval_label_model_grader.dart';import 'create_eval_logs_data_source_config.dart';import 'create_eval_request_data_source_config.dart';import 'create_eval_request_testing_criteria.dart';import 'create_eval_stored_completions_data_source_config.dart';import 'grader_python.dart';import 'grader_score_model.dart';import 'grader_string_check.dart';import 'grader_text_similarity.dart';final class CreateEvalRequest {const CreateEvalRequest({this.name, this.metadata, required this.dataSourceConfig, required this.testingCriteria, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'create_eval_custom_data_source_config.dart';import 'create_eval_label_model_grader.dart';import 'create_eval_logs_data_source_config.dart';import 'create_eval_request_data_source_config.dart';import 'create_eval_request_testing_criteria.dart';import 'create_eval_stored_completions_data_source_config.dart';import 'eval_grader_python.dart';import 'eval_grader_score_model.dart';import 'eval_grader_text_similarity.dart';import 'grader_string_check.dart';final class CreateEvalRequest {const CreateEvalRequest({this.name, this.metadata, required this.dataSourceConfig, required this.testingCriteria, });
 
 factory CreateEvalRequest.fromJson(Map<String, dynamic> json) { return CreateEvalRequest(
   name: json['name'] as String?,
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
   dataSourceConfig: OneOf3.parse(json['data_source_config'], fromA: (v) => CreateEvalCustomDataSourceConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateEvalLogsDataSourceConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateEvalStoredCompletionsDataSourceConfig.fromJson(v as Map<String, dynamic>),),
-  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => GraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => GraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => GraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
+  testingCriteria: (json['testing_criteria'] as List<dynamic>).map((e) => OneOf5.parse(e, fromA: (v) => CreateEvalLabelModelGrader.fromJson(v as Map<String, dynamic>), fromB: (v) => GraderStringCheck.fromJson(v as Map<String, dynamic>), fromC: (v) => EvalGraderTextSimilarity.fromJson(v as Map<String, dynamic>), fromD: (v) => EvalGraderPython.fromJson(v as Map<String, dynamic>), fromE: (v) => EvalGraderScoreModel.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
 /// The name of the evaluation.

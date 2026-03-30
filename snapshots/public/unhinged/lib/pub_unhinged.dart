@@ -6,6 +6,7 @@ export 'client/pub_unhinged_security.dart';
 export 'models/n3_incident.dart';
 export 'models/error_model.dart';
 export 'models/list_model.dart';
+export 'models/new.dart';
 export 'models/object_model.dart';
 export 'models/phase.dart';
 export 'models/proto.dart';

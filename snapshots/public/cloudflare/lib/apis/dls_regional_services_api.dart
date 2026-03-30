@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dls_account_regional_hostnames_account_create_hostname_request.dart';import '../models/dls_account_regional_hostnames_account_fetch_hostname_response.dart';import '../models/dls_account_regional_hostnames_account_patch_hostname_request.dart';import '../models/dls_hostname.dart';import '../models/dls_identifier.dart';import '../models/response_common21.dart';/// DlsRegionalServicesApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/dls_account_regional_hostnames_account_create_hostname_request.dart';import '../models/dls_account_regional_hostnames_account_create_hostname_response.dart';import '../models/dls_account_regional_hostnames_account_fetch_hostname_response.dart';import '../models/dls_account_regional_hostnames_account_list_hostnames_response.dart';import '../models/dls_account_regional_hostnames_account_list_regions_response.dart';import '../models/dls_account_regional_hostnames_account_patch_hostname_request.dart';import '../models/dls_account_regional_hostnames_account_patch_hostname_response.dart';import '../models/dls_hostname.dart';import '../models/dls_identifier.dart';import '../models/response_common21.dart';/// DlsRegionalServicesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class DlsRegionalServicesApi with ApiExecutor {const DlsRegionalServicesAp
 /// List all Regional Services regions available for use by this account.
 ///
 /// `GET /accounts/{account_id}/addressing/regional_hostnames/regions`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListRegions({required DlsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsAccountRegionalHostnamesAccountListRegionsResponse, Never>> dlsAccountRegionalHostnamesAccountListRegions({required DlsIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -25,7 +25,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon21.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlsAccountRegionalHostnamesAccountListRegionsResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -34,7 +34,7 @@ return execute(
 /// List all Regional Hostnames within a zone.
 ///
 /// `GET /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountListHostnames({required DlsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsAccountRegionalHostnamesAccountListHostnamesResponse, Never>> dlsAccountRegionalHostnamesAccountListHostnames({required DlsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -46,7 +46,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon21.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlsAccountRegionalHostnamesAccountListHostnamesResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -55,7 +55,7 @@ return execute(
 /// Create a new Regional Hostname entry. Cloudflare will only use data centers that are physically located within the chosen region to decrypt and service HTTPS traffic. Learn more about [Regional Services](https://developers.cloudflare.com/data-localization/regional-services/get-started/).
 ///
 /// `POST /zones/{zone_id}/addressing/regional_hostnames`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountCreateHostname({required DlsIdentifier zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsAccountRegionalHostnamesAccountCreateHostnameResponse, Never>> dlsAccountRegionalHostnamesAccountCreateHostname({required DlsIdentifier zoneId, DlsAccountRegionalHostnamesAccountCreateHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -69,7 +69,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon21.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlsAccountRegionalHostnamesAccountCreateHostnameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -99,7 +99,7 @@ return execute(
 /// Update the configuration for a specific Regional Hostname. Only the region_key of a hostname is mutable.
 ///
 /// `PATCH /zones/{zone_id}/addressing/regional_hostnames/{hostname}`
-Future<ApiResult<ResponseCommon21, Never>> dlsAccountRegionalHostnamesAccountPatchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlsAccountRegionalHostnamesAccountPatchHostnameResponse, Never>> dlsAccountRegionalHostnamesAccountPatchHostname({required DlsIdentifier zoneId, required DlsHostname hostname, DlsAccountRegionalHostnamesAccountPatchHostnameRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -113,7 +113,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon21.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return DlsAccountRegionalHostnamesAccountPatchHostnameResponse.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

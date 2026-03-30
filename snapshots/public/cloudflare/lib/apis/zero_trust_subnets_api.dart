@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_address_family.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip_network_encoded.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_subnet_id.dart';import '../models/tunnel_subnet_query_comment.dart';import '../models/tunnel_subnet_query_name.dart';import '../models/zero_trust_networks_subnet_create_warp_request.dart';import '../models/zero_trust_networks_subnet_update_cloudflare_source_request.dart';import '../models/zero_trust_networks_subnet_update_warp_request.dart';import '../models/zero_trust_networks_subnets_list_sort_order.dart';import '../models/zero_trust_networks_subnets_list_subnet_types.dart';/// ZeroTrustSubnetsApi operations.
+import 'dart:async';import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import '../models/response_common69.dart';import '../models/tunnel_account_id.dart';import '../models/tunnel_address_family.dart';import '../models/tunnel_existed_at.dart';import '../models/tunnel_ip_network_encoded.dart';import '../models/tunnel_page_number.dart';import '../models/tunnel_per_page.dart';import '../models/tunnel_subnet_id.dart';import '../models/tunnel_subnet_query_comment.dart';import '../models/tunnel_subnet_query_name.dart';import '../models/tunnel_subnet_response_collection.dart';import '../models/zero_trust_networks_subnet_create_warp_request.dart';import '../models/zero_trust_networks_subnet_update_cloudflare_source_request.dart';import '../models/zero_trust_networks_subnet_update_warp_request.dart';import '../models/zero_trust_networks_subnets_list_sort_order.dart';import '../models/zero_trust_networks_subnets_list_subnet_types.dart';/// ZeroTrustSubnetsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -13,7 +13,7 @@ final class ZeroTrustSubnetsApi with ApiExecutor {const ZeroTrustSubnetsApi(this
 /// Lists and filters subnets in an account.
 ///
 /// `GET /accounts/{account_id}/zerotrust/subnets`
-Future<ApiResult<ResponseCommon69, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TunnelSubnetResponseCollection, Never>> zeroTrustNetworksSubnetsList({required TunnelAccountId accountId, TunnelSubnetQueryName? name, TunnelSubnetQueryComment? comment, TunnelIpNetworkEncoded? network, TunnelExistedAt? existedAt, TunnelAddressFamily? addressFamily, bool? isDefaultNetwork, bool? isDeleted, ZeroTrustNetworksSubnetsListSortOrder? sortOrder, ZeroTrustNetworksSubnetsListSubnetTypes? subnetTypes, TunnelPerPage? perPage, TunnelPageNumber? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name.toString();
@@ -63,7 +63,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return ResponseCommon69.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TunnelSubnetResponseCollection.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 

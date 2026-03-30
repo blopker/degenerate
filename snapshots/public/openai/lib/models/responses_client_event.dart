@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'model_response_properties.dart';/// Client events accepted by the Responses WebSocket server.
+import 'responses_client_event_response_create.dart';/// Client events accepted by the Responses WebSocket server.
 /// 
-final class ResponsesClientEvent {const ResponsesClientEvent({this.modelResponseProperties});
+final class ResponsesClientEvent {const ResponsesClientEvent({this.responsesClientEventResponseCreate});
 
 factory ResponsesClientEvent.fromJson(Map<String, dynamic> json) { return ResponsesClientEvent(
-  modelResponseProperties: ModelResponseProperties.canParse(json) ? ModelResponseProperties.fromJson(json) : null,
+  responsesClientEventResponseCreate: ResponsesClientEventResponseCreate.canParse(json) ? ResponsesClientEventResponseCreate.fromJson(json) : null,
 ); }
 
-final ModelResponseProperties? modelResponseProperties;
+final ResponsesClientEventResponseCreate? responsesClientEventResponseCreate;
 
 /// At least one variant must be present.
-bool get isValid { return modelResponseProperties != null; } 
+bool get isValid { return responsesClientEventResponseCreate != null; } 
 Map<String, dynamic> toJson() { return {
-  ...?modelResponseProperties?.toJson(),
+  ...?responsesClientEventResponseCreate?.toJson(),
 }; } 
  }
